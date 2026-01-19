@@ -2,9 +2,16 @@ import { useState } from "react";
 import { Layout } from "@/components/layout/Layout";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { cn } from "@/lib/utils";
-import { MapPin, Award, Building2, Home, Briefcase } from "lucide-react";
+import {
+  MapPin,
+  Award,
+  Building2,
+  Home,
+  Briefcase,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 
+/* -------------------- Categories -------------------- */
 const categories = [
   { id: "all", label: "All Projects", icon: Building2 },
   { id: "corporate", label: "Corporate", icon: Briefcase },
@@ -12,65 +19,95 @@ const categories = [
   { id: "award", label: "Award Winners", icon: Award },
 ];
 
+/* -------------------- Projects -------------------- */
 const projects = [
   {
     id: 1,
-    title: "LTIMindtree Campus",
-    location: "Navi Mumbai",
+    title: "LTIMindtree Mensa Campus",
+    location: "Mahape, Navi Mumbai",
     category: "corporate",
-    scope: "Curtain Wall System",
+    scope: "ACP & Silicone Facade Work",
     area: "50,000 sq.ft.",
-    image: "https://fineglaze.com/wp-content/uploads/2025/01/ltimindtree-mensa-campus-mahape-navi-mumbai-1.jpg",
+    image:
+      "https://fineglaze.com/wp-content/uploads/2023/12/ltimindtree-mensa-campus-mahape-navi-mumbai.jpg.webp",
   },
   {
     id: 2,
     title: "Embassy 247",
-    location: "Mumbai",
+    location: "Vikhroli, Mumbai",
     category: "award",
     scope: "Facade Glass Replacement",
     area: "75,000 sq.ft.",
-    image: "https://fineglaze.com/wp-content/uploads/2025/01/112406.SMFG-India-Credit-Company-Limited-Formerly-Fullerton-India-Credit-Co.-Ltd.-And-Embassy-REIT-Announce-Partnership-with-194k-sf-Lease-at-Embassy-247-in-Mumbai-nnew.png",
+    image:
+      "https://fineglaze.com/wp-content/uploads/2025/01/112406.SMFG-India-Credit-Company-Limited-Formerly-Fullerton-India-Credit-Co.-Ltd.-And-Embassy-REIT-Announce-Partnership-with-194k-sf-Lease-at-Embassy-247-in-Mumbai-nnew.png",
     isAwardWinner: true,
-    award: "Best Performance Vendor 2024",
+    award: "Best Performance Vendor – 2024 (Embassy REIT)",
   },
   {
     id: 3,
     title: "Salsette-27",
     location: "Byculla, Mumbai",
     category: "residential",
-    scope: "Structural Glazing",
+    scope: "Toilet Shaft Railing & Facade Works",
     area: "30,000 sq.ft.",
-    image: "https://fineglaze.com/wp-content/uploads/2024/05/a4ce7051-1985-4eb6-9e75-faa19ee48def-e1735930548879.jpg",
+    image:
+      "https://fineglaze.com/wp-content/uploads/2024/05/a4ce7051-1985-4eb6-9e75-faa19ee48def-e1735930548879.jpg",
   },
   {
     id: 4,
-    title: "ICICI Prudential Tower",
-    location: "Mumbai",
+    title: "Leela Business Park",
+    location: "Andheri East, Mumbai",
     category: "corporate",
-    scope: "Unitized Curtain Wall",
-    area: "45,000 sq.ft.",
-    image: "https://fineglaze.com/wp-content/uploads/2025/01/ltimindtree-mensa-campus-mahape-navi-mumbai-1.jpg",
+    scope: "Aluminium Louvers",
+    area: "40,000 sq.ft.",
+    image:
+      "https://fineglaze.com/wp-content/uploads/2024/03/enhanced-image-3.png",
   },
   {
     id: 5,
-    title: "Edelweiss Financial Center",
-    location: "Mumbai",
+    title: "Pune International Airport – New Terminal",
+    location: "Pune",
     category: "corporate",
-    scope: "Spider Glazing System",
-    area: "35,000 sq.ft.",
-    image: "https://fineglaze.com/wp-content/uploads/2025/01/112406.SMFG-India-Credit-Company-Limited-Formerly-Fullerton-India-Credit-Co.-Ltd.-And-Embassy-REIT-Announce-Partnership-with-194k-sf-Lease-at-Embassy-247-in-Mumbai-nnew.png",
+    scope: "SS Column Cladding with MS Framing",
+    area: "60,000 sq.ft.",
+    image:
+      "https://fineglaze.com/wp-content/uploads/2024/05/IMG-20231226-WA0026.jpg",
   },
   {
     id: 6,
-    title: "Premium Residences",
+    title: "Jindal House – Balkeshwar 32",
+    location: "Mumbai",
+    category: "residential",
+    scope: "SS Glass Railing",
+    area: "18,000 sq.ft.",
+    image:
+      "https://fineglaze.com/wp-content/uploads/2023/12/02971513-7b21-4565-8759-828d4affb52d-e1702880920162.jpg",
+  },
+  {
+    id: 7,
+    title: "Nirmaann Estrellaa",
     location: "Pune",
     category: "residential",
-    scope: "Glass Railings & Facades",
-    area: "20,000 sq.ft.",
-    image: "https://fineglaze.com/wp-content/uploads/2024/05/a4ce7051-1985-4eb6-9e75-faa19ee48def-e1735930548879.jpg",
+    scope:
+      "Aluminium Louvers, Fins, Windows & SS Railings (Ongoing)",
+    area: "25,000 sq.ft.",
+    image:
+      "https://fineglaze.com/wp-content/uploads/2023/12/big2.jpg.webp",
+  },
+  {
+    id: 8,
+    title: "SSG Honesty",
+    location: "Panvel",
+    category: "residential",
+    scope:
+      "Structural Glazing, Curtain Wall, ACP & Windows",
+    area: "28,000 sq.ft.",
+    image:
+      "https://fineglaze.com/wp-content/uploads/2023/12/0f9c4324-b83b-44b4-8612-7c797ff8ec30-e1735927974146.jpg",
   },
 ];
 
+/* -------------------- Portfolio Page -------------------- */
 const Portfolio = () => {
   const [activeCategory, setActiveCategory] = useState("all");
   const heroRef = useScrollAnimation();
@@ -79,11 +116,15 @@ const Portfolio = () => {
   const filteredProjects =
     activeCategory === "all"
       ? projects
-      : projects.filter((p) => p.category === activeCategory);
+      : projects.filter(
+          (p) =>
+            p.category === activeCategory ||
+            (activeCategory === "award" && p.isAwardWinner)
+        );
 
   return (
     <Layout>
-      {/* Hero Section */}
+      {/* Hero */}
       <section className="pt-32 pb-20 bg-muted" ref={heroRef.ref}>
         <div className="container mx-auto px-4">
           <div
@@ -95,64 +136,63 @@ const Portfolio = () => {
             <span className="text-primary font-medium uppercase tracking-wider text-sm">
               Our Portfolio
             </span>
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground">
+            <h1 className="text-4xl md:text-5xl font-bold">
               Our Masterpieces
             </h1>
             <p className="text-muted-foreground text-lg">
-              Explore our collection of stunning facade projects delivered
-              across India. Each project reflects our commitment to precision,
-              quality, and excellence.
+              Landmark facade projects delivered with precision,
+              safety, and excellence across India.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Filter & Grid */}
-      <section className="py-20 bg-background" ref={gridRef.ref}>
+      {/* Filters + Grid */}
+      <section className="py-20" ref={gridRef.ref}>
         <div className="container mx-auto px-4">
-          {/* Category Filter */}
+          {/* Filters */}
           <div
             className={cn(
               "flex flex-wrap justify-center gap-3 mb-12 slide-up",
               gridRef.isVisible && "visible"
             )}
           >
-            {categories.map((category) => {
-              const CategoryIcon = category.icon;
+            {categories.map((cat) => {
+              const Icon = cat.icon;
               return (
                 <Button
-                  key={category.id}
-                  variant={activeCategory === category.id ? "default" : "outline"}
-                  className={cn(
-                    "gap-2",
-                    activeCategory === category.id &&
-                      "btn-glossy text-primary-foreground border-0"
-                  )}
-                  onClick={() => setActiveCategory(category.id)}
+                  key={cat.id}
+                  variant={
+                    activeCategory === cat.id
+                      ? "default"
+                      : "outline"
+                  }
+                  className="gap-2"
+                  onClick={() => setActiveCategory(cat.id)}
                 >
-                  <CategoryIcon size={16} />
-                  {category.label}
+                  <Icon size={16} />
+                  {cat.label}
                 </Button>
               );
             })}
           </div>
 
-          {/* Projects Grid */}
+          {/* Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredProjects.map((project, index) => (
+            {filteredProjects.map((project, i) => (
               <ProjectCard
                 key={project.id}
                 project={project}
-                index={index}
+                index={i}
                 isVisible={gridRef.isVisible}
               />
             ))}
           </div>
 
           {filteredProjects.length === 0 && (
-            <div className="text-center py-12 text-muted-foreground">
-              No projects found in this category.
-            </div>
+            <p className="text-center text-muted-foreground py-12">
+              No projects found.
+            </p>
           )}
         </div>
       </section>
@@ -160,33 +200,38 @@ const Portfolio = () => {
   );
 };
 
+/* -------------------- Card -------------------- */
 interface ProjectCardProps {
   project: (typeof projects)[0];
   index: number;
   isVisible: boolean;
 }
 
-const ProjectCard = ({ project, index, isVisible }: ProjectCardProps) => {
+const ProjectCard = ({
+  project,
+  index,
+  isVisible,
+}: ProjectCardProps) => {
   return (
     <div
       className={cn(
         "group relative overflow-hidden rounded-xl glass-card metallic-border slide-up",
         isVisible && "visible"
       )}
-      style={{ transitionDelay: `${index * 0.1}s` }}
+      style={{ transitionDelay: `${index * 0.08}s` }}
     >
       {/* Image */}
       <div className="aspect-[4/3] overflow-hidden">
         <img
           src={project.image}
           alt={project.title}
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
         />
       </div>
 
-      {/* Award Badge */}
+      {/* Award */}
       {project.isAwardWinner && (
-        <div className="absolute top-4 right-4 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-accent text-accent-foreground text-xs font-medium">
+        <div className="absolute top-4 right-4 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-accent text-xs font-medium">
           <Award size={14} />
           Award Winner
         </div>
@@ -194,26 +239,26 @@ const ProjectCard = ({ project, index, isVisible }: ProjectCardProps) => {
 
       {/* Content */}
       <div className="p-6 space-y-3">
-        <h3 className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors">
+        <h3 className="text-xl font-semibold group-hover:text-primary transition">
           {project.title}
         </h3>
 
-        <div className="flex items-center gap-1.5 text-muted-foreground text-sm">
+        <div className="flex items-center gap-1.5 text-sm text-muted-foreground">
           <MapPin size={14} />
           {project.location}
         </div>
 
         <div className="flex flex-wrap gap-2 pt-2">
-          <span className="px-2 py-1 rounded bg-primary/10 text-primary text-xs font-medium">
+          <span className="px-2 py-1 text-xs rounded bg-primary/10 text-primary">
             {project.scope}
           </span>
-          <span className="px-2 py-1 rounded bg-secondary text-secondary-foreground text-xs">
+          <span className="px-2 py-1 text-xs rounded bg-secondary">
             {project.area}
           </span>
         </div>
 
-        {project.isAwardWinner && project.award && (
-          <p className="text-sm text-accent font-medium pt-2">
+        {project.award && (
+          <p className="text-sm font-medium text-accent pt-2">
             🏆 {project.award}
           </p>
         )}
