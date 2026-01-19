@@ -98,7 +98,7 @@ const handleSubmit = async (e: React.FormEvent) => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        access_key: "YOUR_WEB3FORMS_ACCESS_KEY",
+        access_key: "74dce7dc-85a9-4479-ab00-bd002f23409a",
         name: formData.name,
         email: formData.email,
         phone: formData.phone,
