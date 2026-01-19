@@ -80,23 +80,58 @@ setFormData((prev) => ({
 [e.target.name]: e.target.value,
 }));
 };
-
 const handleSubmit = async (e: React.FormEvent) => {
-e.preventDefault();
-setIsSubmitting(true);
+  e.preventDefault();
 
-// Simulate form submission  
-await new Promise((resolve) => setTimeout(resolve, 1500));  
+  // Basic validation
+  if (!formData.projectType) {
+    toast.error("Please select a project type");
+    return;
+  }
 
-// Show success  
-setIsSubmitted(true);  
-toast.success("Message sent successfully! We'll get back to you soon.");  
+  setIsSubmitting(true);
 
-setIsSubmitting(false);
+  try {
+    const res = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        access_key: "YOUR_WEB3FORMS_ACCESS_KEY",
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        project_type: formData.projectType,
+        message: formData.message,
 
+        subject: "New Enquiry – Fine Glaze Website",
+        from_name: "Fine Glaze Website",
+      }),
+    });
+
+    const data = await res.json();
+
+    if (data.success) {
+      setIsSubmitted(true);
+      toast.success("Message sent successfully!");
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        projectType: "",
+        message: "",
+      });
+    } else {
+      throw new Error("Submission failed");
+    }
+  } catch (error) {
+    toast.error("Something went wrong. Please try again.");
+  } finally {
+    setIsSubmitting(false);
+  }
 };
-
-return (
+  return (
 <Layout>
 {/* Hero Section */}
 <section className="pt-32 pb-20 bg-muted" ref={heroRef.ref}>
