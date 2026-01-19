@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Play } from "lucide-react";
 
 export const HeroSection = () => {
   return (
@@ -14,7 +14,7 @@ export const HeroSection = () => {
         className="absolute inset-0 w-full h-full object-cover"
       >
         <source
-          src="https://assets.mixkit.co/videos/preview/mixkit-glass-building-facade-sky-reflection-4366-large.mp4"
+          src="https://videos.pexels.com/video-files/2325729/2325729-hd_1920_1080_30fps.mp4"
           type="video/mp4"
         />
       </video>
@@ -24,11 +24,11 @@ export const HeroSection = () => {
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 text-center">
-        <div className="max-w-4xl mx-auto space-y-8">
+        <div className="max-w-4xl mx-auto space-y-6">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card text-sm text-primary-foreground/90 animate-fade-in">
             <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-            Award-Winning Facade Solutions
+            Pune's Trusted Facade Experts
           </div>
 
           {/* Headline */}
@@ -36,8 +36,9 @@ export const HeroSection = () => {
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-primary-foreground leading-tight animate-fade-in-up"
             style={{ animationDelay: "0.1s" }}
           >
-            Elevate Your Space with{" "}
-            <span className="text-gradient">Finest Facade</span>
+            Building <span className="text-gradient">Iconic Facades</span>{" "}
+            <br className="hidden md:block" />
+            That Define Skylines
           </h1>
 
           {/* Sub-headline */}
@@ -45,8 +46,8 @@ export const HeroSection = () => {
             className="text-lg md:text-xl text-primary-foreground/80 max-w-2xl mx-auto animate-fade-in-up"
             style={{ animationDelay: "0.2s" }}
           >
-            Precision Fabrication & Installation Services in Pune. 
-            Transforming architectural visions into stunning realities.
+            Premium glass & aluminium facade fabrication, installation, and maintenance. 
+            Award-winning quality delivered on time.
           </p>
 
           {/* CTA Buttons */}
@@ -59,7 +60,7 @@ export const HeroSection = () => {
                 size="lg"
                 className="btn-glossy text-primary-foreground border-0 px-8 py-6 text-base group"
               >
-                Get a Free Quote
+                Get Free Quote
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
             </Link>
@@ -67,9 +68,10 @@ export const HeroSection = () => {
               <Button
                 size="lg"
                 variant="outline"
-                className="bg-transparent border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground px-8 py-6 text-base"
+                className="bg-transparent border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground px-8 py-6 text-base group"
               >
-                View Our Work
+                <Play className="mr-2 h-4 w-4" />
+                View Projects
               </Button>
             </Link>
           </div>

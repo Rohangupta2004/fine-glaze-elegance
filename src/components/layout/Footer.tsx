@@ -27,9 +27,9 @@ export const Footer = () => {
           {/* Brand */}
           <div className="space-y-4">
             <img
-              src="https://fineglaze.com/wp-content/uploads/2025/01/FINE_GLAZE-removebg-preview.png"
+              src="https://fineglaze.com/wp-content/uploads/2024/09/cropped-output-onlinepngtools.png"
               alt="Fine Glaze Logo"
-              className="h-14 w-auto brightness-0 invert"
+              className="h-12 w-auto brightness-0 invert"
             />
             <p className="text-background/70 text-sm leading-relaxed">
               Precision facade fabrication and installation services. 
