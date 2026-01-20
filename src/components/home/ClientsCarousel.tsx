@@ -19,15 +19,16 @@ const clients = [
     logo: "https://fineglaze.com/wp-content/uploads/2023/12/nirmaann_logo_text.png",
   },
 ];
+
 export const ClientsCarousel = () => {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section className="py-12 bg-muted border-y border-border" ref={ref}>
+    <section className="py-14 bg-secondary/50 border-y border-border" ref={ref}>
       <div className="container mx-auto px-4">
         <p
           className={cn(
-            "text-center text-sm text-muted-foreground uppercase tracking-wider mb-8 slide-up",
+            "text-center text-sm text-muted-foreground uppercase tracking-wider mb-10 slide-up",
             isVisible && "visible"
           )}
         >
@@ -35,21 +36,27 @@ export const ClientsCarousel = () => {
         </p>
 
         <div className="relative overflow-hidden">
-          {/* Gradient Masks */}
-          <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-muted to-transparent z-10" />
-          <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-muted to-transparent z-10" />
+          {/* Gradient Masks - Warm tones */}
+          <div 
+            className="absolute left-0 top-0 bottom-0 w-24 z-10"
+            style={{ background: "linear-gradient(to right, hsl(35 20% 92%), transparent)" }}
+          />
+          <div 
+            className="absolute right-0 top-0 bottom-0 w-24 z-10"
+            style={{ background: "linear-gradient(to left, hsl(35 20% 92%), transparent)" }}
+          />
 
           {/* Marquee */}
           <div className="flex animate-marquee">
             {[...clients, ...clients, ...clients].map((client, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 mx-8 flex items-center justify-center h-12 min-w-[120px] grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100"
+                className="flex-shrink-0 mx-10 flex items-center justify-center h-14 min-w-[140px] grayscale hover:grayscale-0 transition-all duration-300 opacity-50 hover:opacity-100"
               >
                 <img
                   src={client.logo}
                   alt={client.name}
-                  className="h-8 w-auto object-contain"
+                  className="h-10 w-auto object-contain"
                   onError={(e) => {
                     e.currentTarget.style.display = 'none';
                     e.currentTarget.nextElementSibling?.classList.remove('hidden');

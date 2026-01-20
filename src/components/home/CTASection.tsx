@@ -10,7 +10,10 @@ export const CTASection = () => {
   return (
     <section
       ref={ref}
-      className="py-20 bg-blue-600 relative overflow-hidden"
+      className="py-24 relative overflow-hidden"
+      style={{
+        background: "linear-gradient(135deg, hsl(25 55% 35%) 0%, hsl(20 50% 25%) 100%)",
+      }}
     >
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
@@ -22,6 +25,10 @@ export const CTASection = () => {
         />
       </div>
 
+      {/* Decorative Elements */}
+      <div className="absolute top-0 left-0 w-64 h-64 bg-white/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
+
       <div className="container mx-auto px-4 relative z-10">
         <div
           className={cn(
@@ -29,11 +36,11 @@ export const CTASection = () => {
             isVisible && "visible"
           )}
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">
             Ready to Transform Your Building&apos;s Facade?
           </h2>
 
-          <p className="text-white/80 text-lg max-w-xl mx-auto">
+          <p className="text-white/80 text-lg max-w-xl mx-auto leading-relaxed">
             Let&apos;s discuss your project requirements and create something
             extraordinary together.
           </p>
@@ -42,7 +49,7 @@ export const CTASection = () => {
             <Link to="/contact">
               <Button
                 size="lg"
-                className="bg-white text-blue-600 hover:bg-white/90 px-8 py-6 text-base group"
+                className="bg-white text-primary hover:bg-white/90 px-8 py-6 text-base group shadow-lg"
               >
                 Get a Free Quote
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />

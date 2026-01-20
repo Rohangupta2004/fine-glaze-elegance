@@ -35,8 +35,8 @@ export const Header = () => {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         isScrolled
-  ? "bg-white/95 backdrop-blur-md py-3 shadow-lg"
-  : "bg-transparent py-5"
+          ? "bg-white/95 backdrop-blur-md py-3 shadow-lg border-b border-border"
+          : "bg-transparent py-5"
       )}
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
@@ -59,14 +59,16 @@ export const Header = () => {
                 "px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200",
                 location.pathname === link.href
                   ? "text-primary-foreground bg-primary"
-                  : "text-foreground/80 hover:text-foreground hover:bg-secondary"
+                  : isScrolled
+                    ? "text-foreground/80 hover:text-foreground hover:bg-secondary"
+                    : "text-white/90 hover:text-white hover:bg-white/10"
               )}
             >
               {link.label}
             </Link>
           ))}
           <Link to="/contact">
-            <Button className="ml-4 btn-glossy text-primary-foreground border-0">
+            <Button className="ml-4 btn-glossy text-white border-0 shadow-md">
               Get a Quote
             </Button>
           </Link>
@@ -75,7 +77,10 @@ export const Header = () => {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="md:hidden relative z-10 p-2 text-foreground"
+          className={cn(
+            "md:hidden relative z-10 p-2",
+            isScrolled || isMobileMenuOpen ? "text-foreground" : "text-white"
+          )}
           aria-label="Toggle menu"
         >
           {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -84,7 +89,7 @@ export const Header = () => {
         {/* Mobile Navigation */}
         <div
           className={cn(
-            "fixed inset-0 bg-background/95 backdrop-blur-lg md:hidden transition-all duration-300",
+            "fixed inset-0 bg-background/98 backdrop-blur-lg md:hidden transition-all duration-300",
             isMobileMenuOpen
               ? "opacity-100 pointer-events-auto"
               : "opacity-0 pointer-events-none"
@@ -106,7 +111,7 @@ export const Header = () => {
               </Link>
             ))}
             <Link to="/contact" className="mt-4">
-              <Button size="lg" className="btn-glossy text-primary-foreground border-0">
+              <Button size="lg" className="btn-glossy text-white border-0">
                 Get a Quote
               </Button>
             </Link>
