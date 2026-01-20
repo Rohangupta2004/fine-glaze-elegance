@@ -30,7 +30,8 @@ const stats = [
   { value: "5+",label: "Years Experience" },
   { value: "10+",label: "Projects Completed" },
   { value: "50+", label: "Happy Clients" },
-  { value: "1M+", label: "Sq.ft. Installed" },
+  { value: "25+", label: "Skilled Team of Professionals" },
+  
 ];
 
 const About = () => {
