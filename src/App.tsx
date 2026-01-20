@@ -14,9 +14,7 @@ import NotFound from "./pages/NotFound";
 
 /* ✅ SEO SERVICE PAGES (TSX) */
 import AluminiumFacade from "./pages/AluminiumFacade";
-import CurtainWall from "./pages/CurtainWall";
 import StructuralGlazing from "./pages/StructuralGlazing";
-import ACPCladding from "./pages/ACPCladding";
 
 const queryClient = new QueryClient();
 
