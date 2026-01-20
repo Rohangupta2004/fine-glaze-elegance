@@ -1,8 +1,5 @@
 import { Layout } from "@/components/layout/Layout";
-import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { cn } from "@/lib/utils";
 import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
 import {
   Building2,
   Fence,
@@ -11,235 +8,200 @@ import {
   ArrowRight,
   CheckCircle2,
 } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { cn } from "@/lib/utils";
 
-/* -------------------- Services Data -------------------- */
+/* -------------------- SERVICES DATA -------------------- */
 const services = [
   {
-    id: "facade-fabrication",
+    id: "facade",
     icon: Building2,
-    title: "Facade Fabrication",
+    title: "Facade Systems",
     subtitle: "Curtain Walls & Structural Glazing",
     description:
-      "Transform your building's exterior with our precision-engineered facade systems. We specialize in curtain walls, structural glazing, and unitized facade solutions that combine aesthetic appeal with superior performance.",
+      "End-to-end facade solutions engineered for performance, aesthetics, and durability in modern commercial architecture.",
     features: [
-      "Unitized Curtain Wall Systems",
-      "Stick-Built Curtain Walls",
-      "Structural Glazing Systems",
+      "Unitized Curtain Walls",
+      "Structural Glazing",
       "Spider Glazing",
       "Double Skin Facades",
-      "Aluminum Composite Panel Cladding",
+      "ACP Cladding",
     ],
-    image:
-      "https://images.unsplash.com/photo-1529429617124-95b109e86bb8?auto=format&fit=crop&w=1600&q=80",
+    images: [
+      "https://images.pexels.com/photos/417325/pexels-photo-417325.jpeg",
+      "https://images.pexels.com/photos/373912/pexels-photo-373912.jpeg",
+      "https://images.pexels.com/photos/3837649/pexels-photo-3837649.jpeg",
+      "https://images.pexels.com/photos/1497366/pexels-photo-1497366.jpeg",
+    ],
   },
   {
-    id: "custom-railings",
+    id: "railings",
     icon: Fence,
-    title: "Custom Railings",
-    subtitle: "Glass & MS Railing Solutions",
+    title: "Glass Railings",
+    subtitle: "Frameless & Semi-Frameless",
     description:
-      "Enhance safety without compromising aesthetics. Our custom railing solutions are designed to complement your architecture while meeting all safety standards and regulations.",
+      "Premium railing systems combining safety, transparency, and contemporary design.",
     features: [
       "Frameless Glass Railings",
-      "Semi-Frameless Systems",
-      "MS Railings with Glass Infill",
-      "Stainless Steel Railings",
-      "Balustrade Systems",
-      "Handrail Solutions",
+      "Balustrades",
+      "Handrails",
+      "Stainless Steel Systems",
     ],
-    image:
-      "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1600&q=80",
+    images: [
+      "https://images.pexels.com/photos/2253826/pexels-photo-2253826.jpeg",
+      "https://images.pexels.com/photos/1115804/pexels-photo-1115804.jpeg",
+      "https://images.pexels.com/photos/1072171/pexels-photo-1072171.jpeg",
+    ],
   },
   {
     id: "doors-windows",
     icon: DoorOpen,
     title: "Doors & Windows",
-    subtitle: "Premium Aluminium Systems",
+    subtitle: "Aluminium Systems",
     description:
-      "High-performance door and window systems designed for energy efficiency, security, and durability. Our aluminium solutions offer slim profiles with maximum glass area for unobstructed views.",
+      "High-performance aluminium doors and windows offering thermal efficiency and sleek aesthetics.",
     features: [
-      "Sliding Door Systems",
-      "Casement Windows",
-      "Tilt & Turn Windows",
-      "Fixed Glazing Panels",
-      "Automatic Entrance Doors",
-      "Fire-Rated Door Systems",
+      "Sliding Systems",
+      "Casement & Tilt-Turn",
+      "Automatic Doors",
+      "Fire Rated Systems",
     ],
-    image:
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80",
+    images: [
+      "https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg",
+      "https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg",
+      "https://images.pexels.com/photos/17243242/pexels-photo-17243242.jpeg",
+    ],
   },
   {
     id: "maintenance",
     icon: Wrench,
-    title: "Maintenance Services",
-    subtitle: "Facade Care & Repair",
+    title: "AMC & Maintenance",
+    subtitle: "Facade Care Services",
     description:
-      "Keep your building looking pristine with our comprehensive maintenance services. From routine cleaning to emergency repairs, we ensure your facade maintains its beauty and performance.",
+      "Preventive and corrective maintenance services to keep your facade performing and looking new.",
     features: [
-      "Facade Cleaning Services",
+      "Facade Cleaning",
       "Glass Replacement",
       "Sealant Renewal",
-      "Hardware Maintenance",
-      "Leak Investigation & Repair",
-      "Annual Maintenance Contracts",
+      "Leak Repairs",
     ],
-    image:
-      "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1600&q=80",
+    images: [
+      "https://images.pexels.com/photos/327482/pexels-photo-327482.jpeg",
+      "https://images.pexels.com/photos/295000/pexels-photo-295000.jpeg",
+      "https://images.pexels.com/photos/374861/pexels-photo-374861.jpeg",
+    ],
   },
 ];
 
-/* -------------------- Page -------------------- */
-const Services = () => {
-  const heroRef = useScrollAnimation();
+/* -------------------- PAGE -------------------- */
+export default function ServicesPage() {
+  const hero = useScrollAnimation();
 
   return (
     <Layout>
-      {/* Hero */}
-      <section className="pt-32 pb-20 bg-muted" ref={heroRef.ref}>
-        <div className="container mx-auto px-4">
-          <div
-            className={cn(
-              "max-w-3xl mx-auto text-center space-y-6 slide-up",
-              heroRef.isVisible && "visible"
-            )}
-          >
-            <span className="text-primary font-medium uppercase tracking-wider text-sm">
-              Our Services
-            </span>
-            <h1 className="text-4xl md:text-5xl font-bold">
-              Comprehensive Facade Solutions
-            </h1>
-            <p className="text-muted-foreground text-lg">
-              From concept to completion, we provide end-to-end facade services
-              that transform architectural visions into stunning realities.
-            </p>
-          </div>
+      {/* HERO */}
+      <section className="pt-32 pb-20 bg-muted" ref={hero.ref}>
+        <div className="container mx-auto px-4 text-center">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+            Our Services
+          </h1>
+          <p className="max-w-2xl mx-auto text-muted-foreground text-lg">
+            Complete facade solutions from design to execution and long-term
+            maintenance.
+          </p>
         </div>
       </section>
 
-      {/* Services */}
+      {/* SERVICES */}
       {services.map((service, index) => {
-        const ServiceIcon = service.icon;
+        const Icon = service.icon;
+        const section = useScrollAnimation();
+        const isEven = index % 2 === 0;
+
         return (
-          <ServiceSection
+          <section
             key={service.id}
-            service={service}
-            isEven={index % 2 === 0}
-            ServiceIcon={ServiceIcon}
-          />
+            id={service.id}
+            ref={section.ref}
+            className={cn("py-20", isEven ? "bg-background" : "bg-muted")}
+          >
+            <div className="container mx-auto px-4">
+              <div
+                className={cn(
+                  "grid lg:grid-cols-2 gap-12 items-center",
+                  !isEven && "lg:grid-flow-col-dense"
+                )}
+              >
+                {/* IMAGE GALLERY */}
+                <div
+                  className={cn(
+                    "grid grid-cols-2 gap-4 slide-up",
+                    section.isVisible && "visible",
+                    !isEven && "lg:col-start-2"
+                  )}
+                >
+                  {service.images.map((img, i) => (
+                    <div
+                      key={i}
+                      className="aspect-[4/3] rounded-xl overflow-hidden shadow-lg"
+                    >
+                      <img
+                        src={img}
+                        alt={`${service.title} ${i + 1}`}
+                        className="w-full h-full object-cover hover:scale-105 transition"
+                      />
+                    </div>
+                  ))}
+                </div>
+
+                {/* CONTENT */}
+                <div
+                  className={cn(
+                    "space-y-6 slide-up",
+                    section.isVisible && "visible",
+                    !isEven && "lg:col-start-1"
+                  )}
+                >
+                  <div className="flex items-center gap-3">
+                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
+                      <Icon className="text-primary" />
+                    </div>
+                    <div>
+                      <span className="text-primary text-sm uppercase">
+                        {service.subtitle}
+                      </span>
+                      <h2 className="text-3xl font-bold">
+                        {service.title}
+                      </h2>
+                    </div>
+                  </div>
+
+                  <p className="text-muted-foreground">
+                    {service.description}
+                  </p>
+
+                  <div className="grid sm:grid-cols-2 gap-3">
+                    {service.features.map((f) => (
+                      <div key={f} className="flex items-center gap-2">
+                        <CheckCircle2 size={18} className="text-primary" />
+                        <span className="text-sm">{f}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <Link to="/contact">
+                    <Button className="btn-glossy mt-4 group">
+                      Request a Quote
+                      <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </section>
         );
       })}
-
-      {/* CTA */}
-      <section className="py-20 bg-primary">
-        <div className="container mx-auto px-4 text-center space-y-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground">
-            Ready to Start Your Project?
-          </h2>
-          <p className="text-primary-foreground/80 text-lg">
-            Contact us today for a free consultation and quote.
-          </p>
-          <Link to="/contact">
-            <Button
-              size="lg"
-              className="bg-primary-foreground text-primary px-8 py-6 group"
-            >
-              Get a Free Quote
-              <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-            </Button>
-          </Link>
-        </div>
-      </section>
     </Layout>
   );
-};
-
-/* -------------------- Section -------------------- */
-interface ServiceSectionProps {
-  service: (typeof services)[0];
-  isEven: boolean;
-  ServiceIcon: typeof Building2;
-}
-
-const ServiceSection = ({
-  service,
-  isEven,
-  ServiceIcon,
-}: ServiceSectionProps) => {
-  const { ref, isVisible } = useScrollAnimation();
-
-  return (
-    <section
-      id={service.id}
-      ref={ref}
-      className={cn("py-20", isEven ? "bg-background" : "bg-muted")}
-    >
-      <div className="container mx-auto px-4">
-        <div
-          className={cn(
-            "grid lg:grid-cols-2 gap-12 items-center",
-            !isEven && "lg:grid-flow-col-dense"
-          )}
-        >
-          {/* Image */}
-          <div
-            className={cn(
-              "relative slide-up",
-              isVisible && "visible",
-              !isEven && "lg:col-start-2"
-            )}
-          >
-            <div className="aspect-[4/3] rounded-xl overflow-hidden shadow-lg">
-              <img
-                src={service.image}
-                alt={service.title}
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-primary rounded-xl flex items-center justify-center text-primary-foreground shadow-lg">
-              <ServiceIcon size={32} />
-            </div>
-          </div>
-
-          {/* Content */}
-          <div
-            className={cn(
-              "space-y-6 slide-up",
-              isVisible && "visible",
-              !isEven && "lg:col-start-1"
-            )}
-          >
-            <span className="text-primary font-medium uppercase text-sm">
-              {service.subtitle}
-            </span>
-            <h2 className="text-3xl md:text-4xl font-bold">
-              {service.title}
-            </h2>
-
-            <p className="text-muted-foreground">
-              {service.description}
-            </p>
-
-            <div className="grid sm:grid-cols-2 gap-3">
-              {service.features.map((f) => (
-                <div key={f} className="flex items-center gap-2">
-                  <CheckCircle2 size={18} className="text-primary" />
-                  <span className="text-sm">{f}</span>
-                </div>
-              ))}
-            </div>
-
-            <Link to="/contact">
-              <Button className="btn-glossy mt-4 group">
-                Request a Quote
-                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-};
-
-export default Services;
+    }
