@@ -27,8 +27,7 @@ const projects = [
     location: "Mahape, Navi Mumbai",
     category: "corporate",
     scope: "ACP & Silicone Facade Work",
-    image:
-      "https://fineglaze.com/wp-content/uploads/2023/12/ltimindtree-mensa-campus-mahape-navi-mumbai.jpg.webp",
+    image: "/Itimindtree-mensa-campus-mahape-navi-mumbai-1 (1)-elementor-io-optimized.w",
   },
   {
     id: 2,
@@ -36,8 +35,7 @@ const projects = [
     location: "Vikhroli, Mumbai",
     category: "award",
     scope: "Facade Glass Replacement",
-    image:
-      "https://fineglaze.com/wp-content/uploads/2025/01/112406.SMFG-India-Credit-Company-Limited-Formerly-Fullerton-India-Credit-Co.-Ltd.-And-Embassy-REIT-Announce-Partnership-with-194k-sf-Lease-at-Embassy-247-in-Mumbai-nnew.png",
+    image: "/Embassy.webp",
     isAwardWinner: true,
     award: "Best Performance Vendor – 2024 (Embassy REIT)",
   },
@@ -47,8 +45,7 @@ const projects = [
     location: "Byculla, Mumbai",
     category: "residential",
     scope: "Toilet Shaft Railing & Facade Works",
-    image:
-      "https://fineglaze.com/wp-content/uploads/2024/05/a4ce7051-1985-4eb6-9e75-faa19ee48def-e1735930548879.jpg",
+    image: "/Salsette27.webp",
   },
   {
     id: 4,
@@ -56,8 +53,7 @@ const projects = [
     location: "Andheri East, Mumbai",
     category: "corporate",
     scope: "Aluminium Louvers",
-    image:
-      "https://fineglaze.com/wp-content/uploads/2024/03/enhanced-image-3.png",
+    image: "/Business park.webp",
   },
   {
     id: 5,
@@ -65,8 +61,7 @@ const projects = [
     location: "Pune",
     category: "corporate",
     scope: "SS Column Cladding & MS Framing",
-    image:
-      "https://fineglaze.com/wp-content/uploads/2024/05/IMG-20231226-WA0026.jpg",
+    image: "/Puneairport.webp",
   },
   {
     id: 6,
@@ -74,8 +69,7 @@ const projects = [
     location: "Mumbai",
     category: "residential",
     scope: "SS Glass Railing",
-    image:
-      "https://fineglaze.com/wp-content/uploads/2023/12/02971513-7b21-4565-8759-828d4affb52d-e1702880920162.jpg",
+    image: "/Jindal house.webp",
   },
   {
     id: 7,
@@ -83,8 +77,7 @@ const projects = [
     location: "Pune",
     category: "residential",
     scope: "Aluminium Louvers, Windows & SS Railings",
-    image:
-      "https://fineglaze.com/wp-content/uploads/2023/12/big2.jpg.webp",
+    image: "/Nirmann.webp",
   },
   {
     id: 8,
@@ -92,8 +85,7 @@ const projects = [
     location: "Panvel",
     category: "residential",
     scope: "Structural Glazing, Curtain Wall & ACP",
-    image:
-      "https://fineglaze.com/wp-content/uploads/2023/12/0f9c4324-b83b-44b4-8612-7c797ff8ec30-e1735927974146.jpg",
+    image: "/Pan.webp",
   },
   {
     id: 9,
@@ -101,8 +93,7 @@ const projects = [
     location: "Andheri East, Mumbai",
     category: "corporate",
     scope: "Openable Windows & Laundry Area Works",
-    image:
-      "https://fineglaze.com/wp-content/uploads/2024/05/a4ce7051-1985-4eb6-9e75-faa19ee48def-e1735930548879.jpg",
+    image: "/Hotel.webp",
   },
   {
     id: 10,
@@ -110,21 +101,9 @@ const projects = [
     location: "Hinjewadi, Pune",
     category: "corporate",
     scope: "Facade Maintenance Works",
-    image:
-      "https://fineglaze.com/wp-content/uploads/2025/06/FineGlaze-Company-Profile.jpg",
-  },
-  {
-    id: 11,
-    title: "Mittal House",
-    location: "Juhu, Mumbai",
-    category: "residential",
-    scope: "Mirror Glass & Sliding Shower Cubicles",
-    image:
-      "https://fineglaze.com/wp-content/uploads/2024/06/IMG-20240620-WA0015.jpg",
+    image: "/Embassyoark.webp",
   },
 ];
-
-/* -------------------- Portfolio Page -------------------- */
 const Portfolio = () => {
   const [activeCategory, setActiveCategory] = useState("all");
   const heroRef = useScrollAnimation();
@@ -227,3 +206,4 @@ const Portfolio = () => {
 };
 
 export default Portfolio;
+      
