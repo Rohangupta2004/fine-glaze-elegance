@@ -43,7 +43,7 @@ export const Header = () => {
         {/* Logo */}
         <Link to="/" className="relative z-10">
           <img
-            src="https://fineglaze.com/wp-content/uploads/2024/09/cropped-output-onlinepngtools.png"
+            src="/Logofg.webp",
             alt="Fine Glaze Logo"
             className="h-10 md:h-12 w-auto"
           />
