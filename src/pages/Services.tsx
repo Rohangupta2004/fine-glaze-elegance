@@ -28,10 +28,10 @@ const services = [
       "ACP & Aluminium Cladding",
     ],
     images: [
-      "https://images.pexels.com/photos/417325/pexels-photo-417325.jpeg",
-      "https://images.pexels.com/photos/373912/pexels-photo-373912.jpeg",
-      "https://images.pexels.com/photos/3837649/pexels-photo-3837649.jpeg",
-      "https://images.pexels.com/photos/1497366/pexels-photo-1497366.jpeg",
+      "/Glass installation.webp",
+      "/Glazing.webp",
+      "/Panel.webp",
+      "/Unitized.webp",
     ],
   },
   {
@@ -48,10 +48,10 @@ const services = [
       "Custom Railing Designs",
     ],
     images: [
-      "https://images.pexels.com/photos/2253826/pexels-photo-2253826.jpeg",
-      "https://images.pexels.com/photos/1115804/pexels-photo-1115804.jpeg",
-      "https://images.pexels.com/photos/1072171/pexels-photo-1072171.jpeg",
-      "https://images.pexels.com/photos/210617/pexels-photo-210617.jpeg",
+      "/Custom railing.webp",
+      "/Railing.webp",
+      "/Railing2.webp",
+      "/Handle.webp",
     ],
   },
   {
@@ -68,10 +68,10 @@ const services = [
       "Automatic & Entry Doors",
     ],
     images: [
-      "https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg",
-      "https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg",
-      "https://images.pexels.com/photos/3952034/pexels-photo-3952034.jpeg",
-      "https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg",
+      "/Aluminium windows.webp",
+      "/Window.webp",
+      "/Tilt.webp",
+      "/Thermal.webp",
     ],
   },
   {
@@ -88,10 +88,10 @@ const services = [
       "Preventive Maintenance AMC",
     ],
     images: [
-      "https://images.pexels.com/photos/327482/pexels-photo-327482.jpeg",
-      "https://images.pexels.com/photos/295000/pexels-photo-295000.jpeg",
-      "https://images.pexels.com/photos/8486972/pexels-photo-8486972.jpeg",
-      "https://images.pexels.com/photos/8985454/pexels-photo-8985454.jpeg",
+      "/Amc.webp",
+      "/Sealent.webp",
+      "/Glass.webp",
+      "/Images.webp",
     ],
   },
 ];
@@ -205,4 +205,4 @@ export default function Services() {
       })}
     </Layout>
   );
-      }
+                  }
