@@ -2,14 +2,23 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { cn } from "@/lib/utils";
 
 const clients = [
-  { name: "ICICI Prudential", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/ICICI_Prudential_Life_Insurance_logo.svg/200px-ICICI_Prudential_Life_Insurance_logo.svg.png" },
-  { name: "Decathlon", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Decathlon_Logo.png/200px-Decathlon_Logo.png" },
-  { name: "HDFC Bank", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/HDFC_Bank_Logo.svg/200px-HDFC_Bank_Logo.svg.png" },
-  { name: "Edelweiss", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Edelweiss_Financial_Services_logo.svg/200px-Edelweiss_Financial_Services_logo.svg.png" },
-  { name: "Schindler", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Schindler_logo.svg/200px-Schindler_logo.svg.png" },
-  { name: "Johnson Matthey", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Johnson_Matthey_Logo.svg/200px-Johnson_Matthey_Logo.svg.png" },
+  {
+    name: "Peninsula",
+    logo: "https://fineglaze.com/wp-content/uploads/2023/09/logo1-1-1.png",
+  },
+  {
+    name: "Larsen & Toubro",
+    logo: "https://fineglaze.com/wp-content/uploads/2023/12/download-e1702879135621.png",
+  },
+  {
+    name: "JSL",
+    logo: "https://fineglaze.com/wp-content/uploads/2023/12/Logo-Dark.png",
+  },
+  {
+    name: "Nirmaann",
+    logo: "https://fineglaze.com/wp-content/uploads/2023/12/nirmaann_logo_text.png",
+  },
 ];
-
 export const ClientsCarousel = () => {
   const { ref, isVisible } = useScrollAnimation();
 
