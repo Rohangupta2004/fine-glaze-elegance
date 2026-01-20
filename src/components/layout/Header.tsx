@@ -126,7 +126,11 @@ export const Header = () => {
         className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-green-500 hover:bg-green-600 shadow-xl transition-all"
         aria-label="WhatsApp Chat"
       >
-        <MessageCircle className="h-7 w-7 text-white" />
+         <img
+    src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+    alt="WhatsApp"
+    className="h-14 w-14 drop-shadow-xl hover:scale-105 transition-transform"
+  />
       </a>
     </>
   );
