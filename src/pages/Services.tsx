@@ -91,7 +91,7 @@ const services = [
       "/Amc.webp",
       "/Sealent.webp",
       "/Glass.webp",
-      "/Amc1.web",
+      "/Amc1.webp",
     ],
   },
 ];
