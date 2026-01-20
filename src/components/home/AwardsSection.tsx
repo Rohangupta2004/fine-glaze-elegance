@@ -1,4 +1,4 @@
-import { Trophy, Award, Star } from "lucide-react";
+import { Award, Star } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { cn } from "@/lib/utils";
 
@@ -14,9 +14,15 @@ export const AwardsSection = () => {
             isVisible && "visible"
           )}
         >
-          {/* Trophy Icon */}
-          <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-primary/10 text-primary mb-4">
-            <Trophy size={40} />
+          {/* ACTUAL AWARD IMAGE */}
+          <div className="flex justify-center">
+            <div className="w-40 md:w-48 rounded-xl overflow-hidden shadow-lg border bg-white p-3">
+              <img
+                src="/Awards.web"
+                alt="Best Performance Vendor Award 2024 – Embassy REIT"
+                className="w-full h-auto object-contain"
+              />
+            </div>
           </div>
 
           {/* Award Title */}
@@ -41,11 +47,11 @@ export const AwardsSection = () => {
             </div>
           </div>
 
-          {/* Award Description */}
+          {/* Description */}
           <p className="text-slate-600 dark:text-slate-300 text-lg max-w-2xl mx-auto">
-            Awarded for the seamless Facade Glass Replacement of Embassy 247
-            Vikhroli Project, demonstrating exceptional quality and precision
-            in execution.
+            Awarded for the seamless Facade Glass Replacement of Embassy 247,
+            Vikhroli project, recognizing exceptional quality, safety, and
+            execution excellence.
           </p>
         </div>
       </div>
