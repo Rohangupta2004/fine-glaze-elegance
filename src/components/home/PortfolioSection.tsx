@@ -11,7 +11,7 @@ const projects = [
     title: "LTIMindtree Campus",
     location: "Navi Mumbai",
     category: "Corporate",
-    image: "/public/ltimindtree-mensa-campus-mahape-navi-mumbai-1 (1).webp",
+    image: "/ltimindtree-mensa-campus-mahape-navi-mumbai-1 (1).webp",
   },
   {
     id: 2,
