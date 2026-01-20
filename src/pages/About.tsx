@@ -78,7 +78,7 @@ const About = () => {
             >
               <div className="aspect-[4/3] rounded-xl overflow-hidden">
                 <img
-                  src="https://fineglaze.com/wp-content/uploads/2025/01/ltimindtree-mensa-campus-mahape-navi-mumbai-1.jpg"
+                  src="ltimindtree-mensa-campus-mahape-navi-mumbai-1 (1).webp"
                   alt="Fine Glaze Project"
                   className="w-full h-full object-cover"
                 />
