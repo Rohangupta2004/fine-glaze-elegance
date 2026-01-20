@@ -205,7 +205,11 @@ const About = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-20 bg-primary" ref={statsRef.ref}>
+      <section 
+        className="py-24" 
+        ref={statsRef.ref}
+        style={{ background: "linear-gradient(135deg, hsl(25 55% 35%) 0%, hsl(20 50% 25%) 100%)" }}
+      >
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
@@ -217,10 +221,10 @@ const About = () => {
                 )}
                 style={{ transitionDelay: `${index * 0.1}s` }}
               >
-                <p className="text-4xl md:text-5xl font-bold text-primary-foreground mb-2">
+                <p className="text-4xl md:text-5xl font-bold text-white mb-2">
                   {stat.value}
                 </p>
-                <p className="text-primary-foreground/70">{stat.label}</p>
+                <p className="text-white/70">{stat.label}</p>
               </div>
             ))}
           </div>

@@ -35,13 +35,13 @@ export const PortfolioSection = () => {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section className="py-16 bg-background" ref={ref}>
+    <section className="py-20 bg-background" ref={ref}>
       <div className="container mx-auto px-4">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
           <div
             className={cn(
-              "space-y-2 slide-up",
+              "space-y-3 slide-up",
               isVisible && "visible"
             )}
           >
@@ -60,15 +60,15 @@ export const PortfolioSection = () => {
             )}
             style={{ transitionDelay: "0.1s" }}
           >
-            <Button variant="outline" className="group">
+            <Button variant="outline" className="group border-primary/30 hover:border-primary hover:bg-primary/5">
               View All Projects
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Button>
           </Link>
         </div>
 
-        {/* Projects Grid - Compact */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        {/* Projects Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {projects.map((project, index) => (
             <Link
               key={project.id}
@@ -86,24 +86,29 @@ export const PortfolioSection = () => {
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
 
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-foreground/90 via-foreground/30 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-300" />
+              {/* Overlay - Warm brown gradient */}
+              <div 
+                className="absolute inset-0 opacity-70 group-hover:opacity-85 transition-opacity duration-300"
+                style={{
+                  background: "linear-gradient(to top, hsl(25 40% 12% / 0.95) 0%, hsl(25 30% 20% / 0.4) 50%, transparent 100%)"
+                }}
+              />
 
               {/* View Icon */}
-              <div className="absolute top-4 right-4 w-10 h-10 rounded-full bg-primary/80 text-primary-foreground flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+              <div className="absolute top-4 right-4 w-10 h-10 rounded-full bg-primary/90 text-primary-foreground flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
                 <Eye size={18} />
               </div>
 
               {/* Content */}
-              <div className="absolute bottom-0 left-0 right-0 p-5">
-                <span className="inline-block px-2 py-0.5 rounded text-xs font-medium bg-primary/30 text-primary-foreground mb-2">
+              <div className="absolute bottom-0 left-0 right-0 p-6">
+                <span className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-primary/40 text-white mb-3">
                   {project.category}
                 </span>
-                <h3 className="text-lg font-semibold text-primary-foreground mb-1">
+                <h3 className="text-xl font-semibold text-white mb-2">
                   {project.title}
                 </h3>
-                <div className="flex items-center gap-1 text-primary-foreground/70 text-sm">
-                  <MapPin size={12} />
+                <div className="flex items-center gap-1.5 text-white/80 text-sm">
+                  <MapPin size={14} />
                   {project.location}
                 </div>
               </div>
