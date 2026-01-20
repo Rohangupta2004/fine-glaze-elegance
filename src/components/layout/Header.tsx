@@ -43,7 +43,7 @@ export const Header = () => {
         {/* Logo */}
         <Link to="/" className="relative z-10">
           <img
-            src="/Logofg.webp",
+            src="/Logofg.webp">
             alt="Fine Glaze Logo"
             className="h-10 md:h-12 w-auto"
           />
