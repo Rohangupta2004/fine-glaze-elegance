@@ -27,7 +27,7 @@ const projects = [
     location: "Mahape, Navi Mumbai",
     category: "corporate",
     scope: "ACP & Silicone Facade Work",
-    image: "/Itimindtree-mensa-campus-mahape-navi-mumbai-1 (1)-elementor-io-optimized.webp"
+    image: "/ltimindtree-mensa-campus-mahape-navi-mumbai-1 (1)-elementor-io-optimized.webp",
   },
   {
     id: 2,
