@@ -18,7 +18,7 @@ export const AwardsSection = () => {
           <div className="flex justify-center">
             <div className="w-40 md:w-48 rounded-xl overflow-hidden shadow-lg border bg-white p-3">
               <img
-                src="/Awards.web"
+                src="/Awards.webp"
                 alt="Best Performance Vendor Award 2024 – Embassy REIT"
                 className="w-full h-auto object-contain"
               />
