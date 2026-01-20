@@ -55,51 +55,76 @@ export const Header = () => {
             />
           </Link>
 
-          {/* Desktop Nav */}
+          {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-1">
-            {navLinks.slice(0, 2).map((link) => (
+            <Link
+              to="/"
+              className={cn(
+                "px-4 py-2 rounded-lg text-sm font-medium",
+                location.pathname === "/"
+                  ? "bg-primary text-white"
+                  : isScrolled
+                  ? "text-foreground hover:bg-secondary"
+                  : "text-white hover:bg-white/10"
+              )}
+            >
+              Home
+            </Link>
+
+            <Link
+              to="/about"
+              className={cn(
+                "px-4 py-2 rounded-lg text-sm font-medium",
+                location.pathname === "/about"
+                  ? "bg-primary text-white"
+                  : isScrolled
+                  ? "text-foreground hover:bg-secondary"
+                  : "text-white hover:bg-white/10"
+              )}
+            >
+              About
+            </Link>
+
+            {/* Services (CLICK + DROPDOWN) */}
+            <div
+              className="relative flex items-center"
+              onMouseEnter={() => setIsServiceOpen(true)}
+              onMouseLeave={() => setIsServiceOpen(false)}
+            >
               <Link
-                key={link.href}
-                to={link.href}
+                to="/services"
                 className={cn(
                   "px-4 py-2 rounded-lg text-sm font-medium",
-                  location.pathname === link.href
+                  location.pathname.startsWith("/services")
                     ? "bg-primary text-white"
                     : isScrolled
                     ? "text-foreground hover:bg-secondary"
                     : "text-white hover:bg-white/10"
                 )}
               >
-                {link.label}
+                Services
               </Link>
-            ))}
 
-            {/* Services Dropdown */}
-            <div className="relative">
               <button
-                onMouseEnter={() => setIsServiceOpen(true)}
-                onMouseLeave={() => setIsServiceOpen(false)}
+                onClick={() => setIsServiceOpen(!isServiceOpen)}
                 className={cn(
-                  "flex items-center gap-1 px-4 py-2 rounded-lg text-sm font-medium",
+                  "ml-1 p-2 rounded-md",
                   isScrolled
                     ? "text-foreground hover:bg-secondary"
                     : "text-white hover:bg-white/10"
                 )}
+                aria-label="Toggle services menu"
               >
-                Services <ChevronDown size={16} />
+                <ChevronDown size={16} />
               </button>
 
               {isServiceOpen && (
-                <div
-                  onMouseEnter={() => setIsServiceOpen(true)}
-                  onMouseLeave={() => setIsServiceOpen(false)}
-                  className="absolute top-full left-0 mt-2 w-64 bg-white rounded-xl shadow-xl overflow-hidden"
-                >
+                <div className="absolute left-0 top-full mt-2 w-64 bg-white rounded-xl shadow-xl border z-50">
                   {serviceLinks.map((service) => (
                     <Link
                       key={service.href}
                       to={service.href}
-                      className="block px-5 py-3 text-sm hover:bg-muted"
+                      className="block px-5 py-3 text-sm text-foreground hover:bg-muted"
                     >
                       {service.label}
                     </Link>
@@ -108,22 +133,33 @@ export const Header = () => {
               )}
             </div>
 
-            {navLinks.slice(2).map((link) => (
-              <Link
-                key={link.href}
-                to={link.href}
-                className={cn(
-                  "px-4 py-2 rounded-lg text-sm font-medium",
-                  location.pathname === link.href
-                    ? "bg-primary text-white"
-                    : isScrolled
-                    ? "text-foreground hover:bg-secondary"
-                    : "text-white hover:bg-white/10"
-                )}
-              >
-                {link.label}
-              </Link>
-            ))}
+            <Link
+              to="/portfolio"
+              className={cn(
+                "px-4 py-2 rounded-lg text-sm font-medium",
+                location.pathname === "/portfolio"
+                  ? "bg-primary text-white"
+                  : isScrolled
+                  ? "text-foreground hover:bg-secondary"
+                  : "text-white hover:bg-white/10"
+              )}
+            >
+              Portfolio
+            </Link>
+
+            <Link
+              to="/contact"
+              className={cn(
+                "px-4 py-2 rounded-lg text-sm font-medium",
+                location.pathname === "/contact"
+                  ? "bg-primary text-white"
+                  : isScrolled
+                  ? "text-foreground hover:bg-secondary"
+                  : "text-white hover:bg-white/10"
+              )}
+            >
+              Contact
+            </Link>
 
             <Link to="/contact">
               <Button className="ml-4 btn-glossy text-white">
@@ -145,25 +181,22 @@ export const Header = () => {
         {isMobileMenuOpen && (
           <div className="md:hidden bg-background">
             <nav className="flex flex-col items-center gap-6 py-10">
-              {navLinks.map((link) => (
-                <Link key={link.href} to={link.href} className="text-xl">
-                  {link.label}
+              <Link to="/" className="text-xl">Home</Link>
+              <Link to="/about" className="text-xl">About</Link>
+              <Link to="/services" className="text-xl">Services</Link>
+
+              {serviceLinks.map((service) => (
+                <Link
+                  key={service.href}
+                  to={service.href}
+                  className="text-base text-foreground/80"
+                >
+                  {service.label}
                 </Link>
               ))}
 
-              {/* Mobile Services */}
-              <div className="w-full text-center">
-                <p className="text-lg font-semibold mb-3">Services</p>
-                {serviceLinks.map((service) => (
-                  <Link
-                    key={service.href}
-                    to={service.href}
-                    className="block py-2 text-foreground/80"
-                  >
-                    {service.label}
-                  </Link>
-                ))}
-              </div>
+              <Link to="/portfolio" className="text-xl">Portfolio</Link>
+              <Link to="/contact" className="text-xl">Contact</Link>
             </nav>
           </div>
         )}
