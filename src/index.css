@@ -164,8 +164,12 @@
   }
 
   .hero-overlay {
-    background: linear-gradient(180deg, hsl(25 40% 12% / 0.75) 0%, hsl(20 35% 8% / 0.9) 100%);
-  }
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.65) 0%,
+    rgba(0, 0, 0, 0.9) 100%
+  );
+                                }
 
   .text-gradient {
     @apply bg-clip-text text-transparent;
