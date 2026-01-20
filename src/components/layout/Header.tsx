@@ -1,13 +1,19 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, MessageCircle } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+
+const serviceLinks = [
+  { href: "/aluminium-facade", label: "Aluminium Facade Systems" },
+  { href: "/curtain-wall-systems", label: "Curtain Wall Systems" },
+  { href: "/structural-glazing", label: "Structural Glazing" },
+  { href: "/acp-aluminium-cladding", label: "ACP Aluminium Cladding" },
+];
 
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
-  { href: "/services", label: "Services" },
   { href: "/portfolio", label: "Portfolio" },
   { href: "/contact", label: "Contact" },
 ];
@@ -15,6 +21,7 @@ const navLinks = [
 export const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isServiceOpen, setIsServiceOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -25,6 +32,7 @@ export const Header = () => {
 
   useEffect(() => {
     setIsMobileMenuOpen(false);
+    setIsServiceOpen(false);
   }, [location]);
 
   return (
@@ -33,40 +41,92 @@ export const Header = () => {
         className={cn(
           "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
           isScrolled
-            ? "bg-white/95 backdrop-blur-md py-3 shadow-lg border-b border-border"
+            ? "bg-white/95 backdrop-blur-md py-3 shadow-lg border-b"
             : "bg-transparent py-5"
         )}
       >
         <div className="container mx-auto px-4 flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="relative z-10">
+          <Link to="/">
             <img
               src="/Logofg.webp"
               alt="Fine Glaze Logo"
-              className="h-10 md:h-12 w-auto"
+              className="h-10 md:h-12"
             />
           </Link>
 
-          {/* Desktop Navigation */}
+          {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-1">
-            {navLinks.map((link) => (
+            {navLinks.slice(0, 2).map((link) => (
               <Link
                 key={link.href}
                 to={link.href}
                 className={cn(
-                  "px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200",
+                  "px-4 py-2 rounded-lg text-sm font-medium",
                   location.pathname === link.href
-                    ? "text-primary-foreground bg-primary"
+                    ? "bg-primary text-white"
                     : isScrolled
-                    ? "text-foreground/80 hover:text-foreground hover:bg-secondary"
-                    : "text-white/90 hover:text-white hover:bg-white/10"
+                    ? "text-foreground hover:bg-secondary"
+                    : "text-white hover:bg-white/10"
                 )}
               >
                 {link.label}
               </Link>
             ))}
+
+            {/* Services Dropdown */}
+            <div className="relative">
+              <button
+                onMouseEnter={() => setIsServiceOpen(true)}
+                onMouseLeave={() => setIsServiceOpen(false)}
+                className={cn(
+                  "flex items-center gap-1 px-4 py-2 rounded-lg text-sm font-medium",
+                  isScrolled
+                    ? "text-foreground hover:bg-secondary"
+                    : "text-white hover:bg-white/10"
+                )}
+              >
+                Services <ChevronDown size={16} />
+              </button>
+
+              {isServiceOpen && (
+                <div
+                  onMouseEnter={() => setIsServiceOpen(true)}
+                  onMouseLeave={() => setIsServiceOpen(false)}
+                  className="absolute top-full left-0 mt-2 w-64 bg-white rounded-xl shadow-xl overflow-hidden"
+                >
+                  {serviceLinks.map((service) => (
+                    <Link
+                      key={service.href}
+                      to={service.href}
+                      className="block px-5 py-3 text-sm hover:bg-muted"
+                    >
+                      {service.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {navLinks.slice(2).map((link) => (
+              <Link
+                key={link.href}
+                to={link.href}
+                className={cn(
+                  "px-4 py-2 rounded-lg text-sm font-medium",
+                  location.pathname === link.href
+                    ? "bg-primary text-white"
+                    : isScrolled
+                    ? "text-foreground hover:bg-secondary"
+                    : "text-white hover:bg-white/10"
+                )}
+              >
+                {link.label}
+              </Link>
+            ))}
+
             <Link to="/contact">
-              <Button className="ml-4 btn-glossy text-white border-0 shadow-md">
+              <Button className="ml-4 btn-glossy text-white">
                 Get a Quote
               </Button>
             </Link>
@@ -75,63 +135,39 @@ export const Header = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className={cn(
-              "md:hidden relative z-10 p-2",
-              isScrolled || isMobileMenuOpen ? "text-foreground" : "text-white"
-            )}
-            aria-label="Toggle menu"
+            className="md:hidden"
           >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {isMobileMenuOpen ? <X /> : <Menu />}
           </button>
+        </div>
 
-          {/* Mobile Navigation */}
-          <div
-            className={cn(
-              "fixed inset-0 bg-background/98 backdrop-blur-lg md:hidden transition-all duration-300",
-              isMobileMenuOpen
-                ? "opacity-100 pointer-events-auto"
-                : "opacity-0 pointer-events-none"
-            )}
-          >
-            <nav className="flex flex-col items-center justify-center h-full gap-6">
+        {/* Mobile Menu */}
+        {isMobileMenuOpen && (
+          <div className="md:hidden bg-background">
+            <nav className="flex flex-col items-center gap-6 py-10">
               {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  to={link.href}
-                  className={cn(
-                    "text-2xl font-medium transition-colors",
-                    location.pathname === link.href
-                      ? "text-primary"
-                      : "text-foreground/70 hover:text-foreground"
-                  )}
-                >
+                <Link key={link.href} to={link.href} className="text-xl">
                   {link.label}
                 </Link>
               ))}
-              <Link to="/contact" className="mt-4">
-                <Button size="lg" className="btn-glossy text-white border-0">
-                  Get a Quote
-                </Button>
-              </Link>
+
+              {/* Mobile Services */}
+              <div className="w-full text-center">
+                <p className="text-lg font-semibold mb-3">Services</p>
+                {serviceLinks.map((service) => (
+                  <Link
+                    key={service.href}
+                    to={service.href}
+                    className="block py-2 text-foreground/80"
+                  >
+                    {service.label}
+                  </Link>
+                ))}
+              </div>
             </nav>
           </div>
-        </div>
+        )}
       </header>
-
-      {/* 🔥 Floating WhatsApp Button */}
-      <a
-        href="https://wa.me/918369233566?text=Hello%20Fine%20Glaze%2C%20I%20am%20interested%20in%20your%20facade%20solutions."
-        target="_blank"
-        rel="noopener noreferrer"
-        className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-green-500 hover:bg-green-600 shadow-xl transition-all"
-        aria-label="WhatsApp Chat"
-      >
-         <img
-    src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
-    alt="WhatsApp"
-    className="h-14 w-14 drop-shadow-xl hover:scale-105 transition-transform"
-  />
-      </a>
     </>
   );
 };
