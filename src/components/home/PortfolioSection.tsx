@@ -11,7 +11,7 @@ const projects = [
     title: "LTIMindtree Campus",
     location: "Navi Mumbai",
     category: "Corporate",
-    image: "https://fineglaze.com/wp-content/uploads/2025/01/ltimindtree-mensa-campus-mahape-navi-mumbai-1.jpg",
+    image: "/ltimindtree-mensa-campus-mahape-navi-mumbai-1.webp",
   },
   {
     id: 2,
@@ -19,7 +19,7 @@ const projects = [
     title: "Embassy 247",
     location: "Mumbai",
     category: "Award Winner",
-    image: "https://fineglaze.com/wp-content/uploads/2025/01/112406.SMFG-India-Credit-Company-Limited-Formerly-Fullerton-India-Credit-Co.-Ltd.-And-Embassy-REIT-Announce-Partnership-with-194k-sf-Lease-at-Embassy-247-in-Mumbai-nnew.png",
+    image: "/Embassy.webp",
   },
   {
     id: 3,
@@ -27,7 +27,7 @@ const projects = [
     title: "Salsette-27",
     location: "Byculla",
     category: "Residential",
-    image: "https://fineglaze.com/wp-content/uploads/2024/05/a4ce7051-1985-4eb6-9e75-faa19ee48def-e1735930548879.jpg",
+    image: "/Salsette27.webp",
   },
 ];
 
