@@ -1,4 +1,4 @@
-mexport default function AluminiumFacade() {
+export default function AluminiumFacade() {
   return (
     <main className="bg-background">
       {/* HERO */}
