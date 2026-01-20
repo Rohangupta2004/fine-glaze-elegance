@@ -12,7 +12,7 @@ import { Button } from "@/components/ui/button";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { cn } from "@/lib/utils";
 
-/* -------------------- SERVICES DATA -------------------- */
+/* ================= SERVICES DATA ================= */
 const services = [
   {
     id: "facade",
@@ -20,13 +20,12 @@ const services = [
     title: "Facade Systems",
     subtitle: "Curtain Walls & Structural Glazing",
     description:
-      "End-to-end facade solutions engineered for performance, aesthetics, and durability in modern commercial architecture.",
+      "Advanced facade engineering solutions designed for performance, durability, and architectural elegance in commercial and high-rise buildings.",
     features: [
       "Unitized Curtain Walls",
-      "Structural Glazing",
-      "Spider Glazing",
+      "Structural & Spider Glazing",
       "Double Skin Facades",
-      "ACP Cladding",
+      "ACP & Aluminium Cladding",
     ],
     images: [
       "https://images.pexels.com/photos/417325/pexels-photo-417325.jpeg",
@@ -39,63 +38,66 @@ const services = [
     id: "railings",
     icon: Fence,
     title: "Glass Railings",
-    subtitle: "Frameless & Semi-Frameless",
+    subtitle: "Frameless & Semi-Frameless Systems",
     description:
-      "Premium railing systems combining safety, transparency, and contemporary design.",
+      "High-quality glass railing solutions that ensure safety while maintaining unobstructed views and modern aesthetics.",
     features: [
       "Frameless Glass Railings",
       "Balustrades",
-      "Handrails",
-      "Stainless Steel Systems",
+      "Stainless Steel Handrails",
+      "Custom Railing Designs",
     ],
     images: [
       "https://images.pexels.com/photos/2253826/pexels-photo-2253826.jpeg",
       "https://images.pexels.com/photos/1115804/pexels-photo-1115804.jpeg",
       "https://images.pexels.com/photos/1072171/pexels-photo-1072171.jpeg",
+      "https://images.pexels.com/photos/210617/pexels-photo-210617.jpeg",
     ],
   },
   {
     id: "doors-windows",
     icon: DoorOpen,
     title: "Doors & Windows",
-    subtitle: "Aluminium Systems",
+    subtitle: "Premium Aluminium Systems",
     description:
-      "High-performance aluminium doors and windows offering thermal efficiency and sleek aesthetics.",
+      "Precision-engineered aluminium doors and windows offering excellent thermal performance, security, and sleek architectural appeal.",
     features: [
-      "Sliding Systems",
-      "Casement & Tilt-Turn",
-      "Automatic Doors",
-      "Fire Rated Systems",
+      "Sliding & Lift-Slide Systems",
+      "Casement & Tilt-Turn Windows",
+      "Thermal Break Profiles",
+      "Automatic & Entry Doors",
     ],
     images: [
       "https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg",
       "https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg",
-      "https://images.pexels.com/photos/17243242/pexels-photo-17243242.jpeg",
+      "https://images.pexels.com/photos/3952034/pexels-photo-3952034.jpeg",
+      "https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg",
     ],
   },
   {
     id: "maintenance",
     icon: Wrench,
     title: "AMC & Maintenance",
-    subtitle: "Facade Care Services",
+    subtitle: "Facade Care & Repair Services",
     description:
-      "Preventive and corrective maintenance services to keep your facade performing and looking new.",
+      "Comprehensive facade maintenance services to preserve aesthetics, safety, and performance throughout the building lifecycle.",
     features: [
-      "Facade Cleaning",
-      "Glass Replacement",
+      "Facade & Glass Cleaning",
       "Sealant Renewal",
-      "Leak Repairs",
+      "Glass Replacement",
+      "Preventive Maintenance AMC",
     ],
     images: [
       "https://images.pexels.com/photos/327482/pexels-photo-327482.jpeg",
       "https://images.pexels.com/photos/295000/pexels-photo-295000.jpeg",
-      "https://images.pexels.com/photos/374861/pexels-photo-374861.jpeg",
+      "https://images.pexels.com/photos/8486972/pexels-photo-8486972.jpeg",
+      "https://images.pexels.com/photos/8985454/pexels-photo-8985454.jpeg",
     ],
   },
 ];
 
-/* -------------------- PAGE -------------------- */
-export default function ServicesPage() {
+/* ================= PAGE ================= */
+export default function Services() {
   const hero = useScrollAnimation();
 
   return (
@@ -107,13 +109,12 @@ export default function ServicesPage() {
             Our Services
           </h1>
           <p className="max-w-2xl mx-auto text-muted-foreground text-lg">
-            Complete facade solutions from design to execution and long-term
-            maintenance.
+            End-to-end facade solutions from execution to long-term maintenance.
           </p>
         </div>
       </section>
 
-      {/* SERVICES */}
+      {/* SERVICES SECTIONS */}
       {services.map((service, index) => {
         const Icon = service.icon;
         const section = useScrollAnimation();
@@ -133,7 +134,7 @@ export default function ServicesPage() {
                   !isEven && "lg:grid-flow-col-dense"
                 )}
               >
-                {/* IMAGE GALLERY */}
+                {/* IMAGE GRID */}
                 <div
                   className={cn(
                     "grid grid-cols-2 gap-4 slide-up",
@@ -163,15 +164,15 @@ export default function ServicesPage() {
                     !isEven && "lg:col-start-1"
                   )}
                 >
-                  <div className="flex items-center gap-3">
+                  <div className="flex items-center gap-4">
                     <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
                       <Icon className="text-primary" />
                     </div>
                     <div>
-                      <span className="text-primary text-sm uppercase">
+                      <span className="text-primary uppercase text-sm">
                         {service.subtitle}
                       </span>
-                      <h2 className="text-3xl font-bold">
+                      <h2 className="text-3xl md:text-4xl font-bold">
                         {service.title}
                       </h2>
                     </div>
@@ -204,4 +205,4 @@ export default function ServicesPage() {
       })}
     </Layout>
   );
-    }
+      }
