@@ -30,8 +30,8 @@ export const Footer = () => {
           {/* Brand */}
           <div className="space-y-5">
             <img
-              src="https://fineglaze.com/wp-content/uploads/2024/09/cropped-output-onlinepngtools.png"
-              alt="Fine Glaze Logo"
+              src="Logofg.webp"
+             alt="Fine Glaze Logo"
               className="h-12 w-auto brightness-0 invert"
             />
             <p className="text-white/70 text-sm leading-relaxed">
