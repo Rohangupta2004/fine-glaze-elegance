@@ -35,18 +35,8 @@ const App = () => (
 
           {/* ✅ SEO Service Pages (MUST BE ABOVE *) */}
           <Route path="/aluminium-facade" element={<AluminiumFacade />} />
-          <Route
-            path="/curtain-wall-systems"
-            element={<CurtainWall />}
-          />
-          <Route
-            path="/structural-glazing"
-            element={<StructuralGlazing />}
-          />
-          <Route
-            path="/acp-aluminium-cladding"
-            element={<ACPCladding />}
-          />
+          
+          
 
           {/* Catch-all */}
           <Route path="*" element={<NotFound />} />
