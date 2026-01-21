@@ -16,6 +16,8 @@ import NotFound from "./pages/NotFound";
 import AluminiumFacade from "./pages/AluminiumFacade";
 import StructuralGlazing from "./pages/StructuralGlazing";
 
+
+import Portal from "@/pages/Portal";
 const queryClient = new QueryClient();
 
 const App = () => (
