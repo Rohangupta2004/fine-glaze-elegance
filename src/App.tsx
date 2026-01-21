@@ -17,7 +17,7 @@ import AluminiumFacade from "./pages/AluminiumFacade";
 import StructuralGlazing from "./pages/StructuralGlazing";
 
 
-import Portal from "@/pages/Portal";
+import Portal from ""./pages/Portal";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -53,3 +53,4 @@ const App = () => (
 );
 
 export default App;
+
