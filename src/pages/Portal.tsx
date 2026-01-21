@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { supabase } from "../lib/supabase";
+import { Mail, LogIn } from "lucide-react";
 
 type Project = {
   project_name: string;
@@ -11,6 +12,7 @@ export default function Portal(): JSX.Element {
   const [session, setSession] = useState<any>(null);
   const [project, setProject] = useState<Project | null>(null);
   const [loading, setLoading] = useState(true);
+  const [email, setEmail] = useState("");
 
   // Get session
   useEffect(() => {
@@ -20,13 +22,20 @@ export default function Portal(): JSX.Element {
   }, []);
 
   // Google login
-  const signIn = async () => {
+  const signInWithGoogle = async () => {
     await supabase.auth.signInWithOAuth({
       provider: "google",
       options: {
         redirectTo: "https://www.fineglaze.com/portal",
       },
     });
+  };
+
+  // Email login (magic link)
+  const signInWithEmail = async () => {
+    if (!email) return alert("Enter email");
+    await supabase.auth.signInWithOtp({ email });
+    alert("Login link sent to email");
   };
 
   // Fetch project
@@ -43,9 +52,8 @@ export default function Portal(): JSX.Element {
       });
   }, [session]);
 
-  /* ---------------- UI ---------------- */
+  /* ---------------- LOGIN UI ---------------- */
 
-  // Login screen
   if (!session) {
     return (
       <div
@@ -54,81 +62,104 @@ export default function Portal(): JSX.Element {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          background: "#f5f7fa",
+          background: "linear-gradient(135deg, #f5f7fa, #e4e7eb)",
         }}
       >
         <div
           style={{
-            width: 360,
+            width: 380,
             padding: 32,
             background: "#fff",
-            borderRadius: 12,
-            boxShadow: "0 10px 30px rgba(0,0,0,0.08)",
-            textAlign: "center",
+            borderRadius: 14,
+            boxShadow: "0 20px 40px rgba(0,0,0,0.1)",
           }}
         >
-          <h2 style={{ marginBottom: 8 }}>FineGlaze Portal</h2>
+          <h2 style={{ marginBottom: 6 }}>FineGlaze Client Portal</h2>
           <p style={{ color: "#666", marginBottom: 24 }}>
-            Login to view your project details
+            Secure access to your project
           </p>
 
+          {/* Google */}
           <button
-            onClick={signIn}
+            onClick={signInWithGoogle}
             style={{
               width: "100%",
               padding: 12,
               borderRadius: 8,
               border: "1px solid #ddd",
               background: "#fff",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: 8,
               cursor: "pointer",
-              fontSize: 14,
+              marginBottom: 16,
             }}
           >
+            <LogIn size={18} />
             Continue with Google
           </button>
+
+          {/* Divider */}
+          <div
+            style={{
+              textAlign: "center",
+              color: "#999",
+              fontSize: 12,
+              margin: "12px 0",
+            }}
+          >
+            OR
+          </div>
+
+          {/* Email */}
+          <div style={{ display: "flex", gap: 8 }}>
+            <input
+              type="email"
+              placeholder="Email address"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              style={{
+                flex: 1,
+                padding: 10,
+                borderRadius: 8,
+                border: "1px solid #ddd",
+              }}
+            />
+            <button
+              onClick={signInWithEmail}
+              style={{
+                padding: "10px 14px",
+                borderRadius: 8,
+                border: "none",
+                background: "#111",
+                color: "#fff",
+                cursor: "pointer",
+              }}
+            >
+              <Mail size={16} />
+            </button>
+          </div>
         </div>
       </div>
     );
   }
 
-  // Loading
+  /* ---------------- DASHBOARD ---------------- */
+
   if (loading) {
-    return (
-      <div style={{ padding: 40 }}>
-        <p>Loading your project…</p>
-      </div>
-    );
+    return <p style={{ padding: 40 }}>Loading your project…</p>;
   }
 
-  // No project
   if (!project) {
     return (
-      <div
-        style={{
-          padding: 40,
-          minHeight: "100vh",
-          background: "#f5f7fa",
-        }}
-      >
-        <div
-          style={{
-            maxWidth: 500,
-            margin: "0 auto",
-            background: "#fff",
-            padding: 24,
-            borderRadius: 12,
-          }}
-        >
-          <h3>No project assigned yet</h3>
-          <p style={{ color: "#666" }}>
-            Please contact FineGlaze for project details.
-          </p>
-        </div>
+      <div style={{ padding: 40 }}>
+        <h3>No project assigned</h3>
+        <p>Please contact FineGlaze.</p>
       </div>
     );
   }
 
-  // Project view
   return (
     <div
       style={{
@@ -137,17 +168,17 @@ export default function Portal(): JSX.Element {
         padding: 32,
       }}
     >
-      <div style={{ maxWidth: 700, margin: "0 auto" }}>
-        <h2 style={{ marginBottom: 16 }}>{project.project_name}</h2>
+      <div style={{ maxWidth: 800, margin: "0 auto" }}>
+        <h2 style={{ marginBottom: 20 }}>{project.project_name}</h2>
 
         {/* Project Card */}
         <div
           style={{
             background: "#fff",
-            borderRadius: 12,
             padding: 24,
-            boxShadow: "0 6px 20px rgba(0,0,0,0.06)",
-            marginBottom: 20,
+            borderRadius: 14,
+            boxShadow: "0 10px 30px rgba(0,0,0,0.08)",
+            marginBottom: 24,
           }}
         >
           <p>
@@ -158,14 +189,12 @@ export default function Portal(): JSX.Element {
             <b>Progress:</b> {project.progress}%
           </p>
 
-          {/* Progress Bar */}
           <div
             style={{
-              marginTop: 8,
+              marginTop: 10,
               height: 10,
               background: "#eee",
               borderRadius: 6,
-              overflow: "hidden",
             }}
           >
             <div
@@ -173,6 +202,7 @@ export default function Portal(): JSX.Element {
                 width: `${project.progress}%`,
                 height: "100%",
                 background: "#111",
+                borderRadius: 6,
               }}
             />
           </div>
@@ -182,16 +212,16 @@ export default function Portal(): JSX.Element {
         <div
           style={{
             background: "#fff",
-            borderRadius: 12,
             padding: 24,
+            borderRadius: 14,
           }}
         >
           <h3>Project Files</h3>
           <p style={{ color: "#666" }}>
-            Files will appear here once uploaded.
+            Drawings, documents, and updates will appear here.
           </p>
         </div>
       </div>
     </div>
   );
-        }
+}
