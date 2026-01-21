@@ -19,6 +19,8 @@ import StructuralGlazing from "./pages/StructuralGlazing";
 /* ✅ CLIENT PORTAL */
 import Portal from "./pages/Portal";
 
+
+import Dev from "./pages/Dev";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -46,12 +48,13 @@ const App = () => (
           {/* 🔐 Client Portal */}
           <Route path="/portal" element={<Portal />} />
 
-          {/* Catch-all */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <Route path="/dev" element={<Dev />} />
+          </Routes>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
 );
 
 export default App;
+            
+            
