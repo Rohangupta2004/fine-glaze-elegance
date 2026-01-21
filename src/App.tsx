@@ -43,6 +43,7 @@ const App = () => (
 />
           
 
+          <Route path="/portal" element={<Portal />} />
           {/* Catch-all */}
           <Route path="*" element={<NotFound />} />
         </Routes>
