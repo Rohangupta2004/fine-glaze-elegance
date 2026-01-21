@@ -12,12 +12,13 @@ import ProjectDetail from "./pages/ProjectDetail";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
-/* ✅ SEO SERVICE PAGES (TSX) */
+/* SEO Service Pages */
 import AluminiumFacade from "./pages/AluminiumFacade";
 import StructuralGlazing from "./pages/StructuralGlazing";
 
+/* ✅ CLIENT PORTAL */
+import Portal from "./pages/Portal";
 
-import Portal from ""./pages/Portal";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -35,15 +36,16 @@ const App = () => (
           <Route path="/project/:slug" element={<ProjectDetail />} />
           <Route path="/contact" element={<Contact />} />
 
-          {/* ✅ SEO Service Pages (MUST BE ABOVE *) */}
+          {/* SEO Pages */}
           <Route path="/aluminium-facade" element={<AluminiumFacade />} />
           <Route
-  path="/structural-glazing"
-  element={<StructuralGlazing />}
-/>
-          
+            path="/structural-glazing"
+            element={<StructuralGlazing />}
+          />
 
+          {/* 🔐 Client Portal */}
           <Route path="/portal" element={<Portal />} />
+
           {/* Catch-all */}
           <Route path="*" element={<NotFound />} />
         </Routes>
@@ -53,4 +55,3 @@ const App = () => (
 );
 
 export default App;
-
