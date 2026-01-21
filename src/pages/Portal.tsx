@@ -1,10 +1,7 @@
-import { supabase } from "../lib/supabase";
-
-export default function Portal() {
+export default function Portal(): JSX.Element {
   return (
     <div style={{ padding: 40 }}>
-      <h1>PORTAL PAGE WORKING</h1>
-      <p>Supabase imported successfully.</p>
+      <h1>PORTAL TSX OK</h1>
     </div>
   );
 }
