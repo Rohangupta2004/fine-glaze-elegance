@@ -1,11 +1,9 @@
-import type { FC } from "react";
+import "../lib/supabase";
 
-const Portal: FC = () => {
+export default function Portal(): JSX.Element {
   return (
     <div style={{ padding: 40 }}>
-      <h1>TS IMPORT OK</h1>
+      <h1>SUPABASE FILE REACHED</h1>
     </div>
   );
-};
-
-export default Portal;
+}
