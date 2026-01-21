@@ -1,7 +1,11 @@
-export default function Portal(): JSX.Element {
+import type { FC } from "react";
+
+const Portal: FC = () => {
   return (
     <div style={{ padding: 40 }}>
-      <h1>PORTAL TSX OK</h1>
+      <h1>TS IMPORT OK</h1>
     </div>
   );
-}
+};
+
+export default Portal;
