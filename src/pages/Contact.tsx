@@ -41,8 +41,8 @@ link: null,
 {
 icon: Phone,
 title: "Call Us",
-content: "+91 98765 43210",
-link: "tel:+919876543210",
+content: "+91 8369233576",
+link: "tel:+918369233566",
 },
 {
 icon: Mail,
