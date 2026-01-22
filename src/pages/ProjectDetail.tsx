@@ -5,33 +5,32 @@ import {
   ArrowLeft,
   MapPin,
   Calendar,
-  Award,
   CheckCircle2,
   ArrowRight,
   Briefcase,
 } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { cn } from "@/lib/utils";
 
-/* -------------------- DATA -------------------- */
+/* ================= PROJECT DATA ================= */
 const projectsData = {
   "ltimindtree-campus": {
-    title: "LTIMindtree Campus",
-    location: "Navi Mumbai, Maharashtra",
+    title: "LTIMindtree Mensa Campus",
+    location: "Mahape, Navi Mumbai",
     category: "Corporate",
     year: "2023",
     client: "LTIMindtree Ltd.",
-    scope: "Unitized Curtain Wall System",
+    scope: "ACP & Silicone Facade Work",
     description:
-      "A landmark corporate campus featuring a state-of-the-art unitized curtain wall system with high-performance glazing. The project highlights our expertise in large-scale commercial facade execution with precision and timely delivery.",
+      "Large-scale corporate campus executed with precision facade engineering and premium aluminium systems.",
     features: [
-      "Unitized aluminium curtain wall system",
-      "High-performance double glazed units",
-      "Thermal break profiles",
-      "Integrated sun-shading elements",
-      "LEED-compliant specifications",
+      "ACP facade system",
+      "Structural silicone glazing",
+      "High wind-load design",
+      "Premium sealants",
     ],
-    images: ["/Itimindtree-mensa-campus-mahape-navi-mumbai-1 (1)-elementor-io-optimized.webp"]
+    images: [
+      "/ltimindtree-mensa-campus-mahape-navi-mumbai-1 (1)-elementor-io-optimized.webp",
+    ],
   },
 
   "embassy-247": {
@@ -39,16 +38,15 @@ const projectsData = {
     location: "Vikhroli, Mumbai",
     category: "Award Winner",
     year: "2024",
-    client: "Embassy REIT Ltd.",
+    client: "Embassy REIT",
     scope: "Facade Glass Replacement",
     description:
-      "Complete facade glass replacement for a premium commercial tower, executed while the building remained operational. This project earned the Best Performance Vendor – 2024 award for flawless execution and safety.",
+      "Live-building facade glass replacement executed with zero disruption, earning Best Performance Vendor 2024.",
     features: [
-      "Live-building glass replacement",
-      "Solar control high-performance glass",
-      "Structural silicone glazing",
-      "Zero disruption to occupants",
-      "Weather-tight installation",
+      "Live operational replacement",
+      "Solar control glass",
+      "Zero disruption execution",
+      "Safety-first methodology",
     ],
     images: ["/Embassy.webp"],
     isAwardWinner: true,
@@ -61,28 +59,133 @@ const projectsData = {
     category: "Residential",
     year: "2023",
     client: "Private Developer",
-    scope: "Structural Glazing & Glass Railings",
+    scope: "Toilet Shaft Railing & Facade Works",
     description:
-      "A premium residential development featuring floor-to-ceiling structural glazing and frameless glass railings, executed with high-end finishes and strict quality control.",
+      "Premium residential facade and railing works with high-quality finishes.",
     features: [
-      "Minimal-frame structural glazing",
-      "Frameless balcony glass railings",
-      "Acoustic laminated safety glass",
-      "Premium fittings & hardware",
-      "Precision installation",
+      "SS glass railings",
+      "Structural glazing",
+      "Corrosion-resistant fittings",
     ],
     images: ["/Salsette27.webp"],
   },
+
+  "leela-business-park": {
+    title: "Leela Business Park",
+    location: "Andheri East, Mumbai",
+    category: "Corporate",
+    year: "2022",
+    client: "Leela Group",
+    scope: "Aluminium Louvers",
+    description:
+      "Architectural aluminium louvers enhancing facade aesthetics and solar control.",
+    features: [
+      "Custom aluminium louvers",
+      "Powder-coated finish",
+      "High wind resistance",
+    ],
+    images: ["/Business park.webp"],
+  },
+
+  "pune-airport-terminal": {
+    title: "Pune International Airport – New Terminal",
+    location: "Pune",
+    category: "Corporate",
+    year: "2023",
+    client: "AAI",
+    scope: "SS Column Cladding & MS Framing",
+    description:
+      "Heavy-duty stainless steel cladding and framing works for airport infrastructure.",
+    features: [
+      "SS column cladding",
+      "MS structural framing",
+      "Airport-grade finish",
+    ],
+    images: ["/Puneairport.webp"],
+  },
+
+  "jindal-house": {
+    title: "Jindal House – Balkeshwar 32",
+    location: "Mumbai",
+    category: "Residential",
+    year: "2022",
+    client: "Jindal Group",
+    scope: "SS Glass Railing",
+    description:
+      "Luxury residential glass railing systems with premium detailing.",
+    features: ["SS handrails", "Laminated safety glass"],
+    images: ["/Jindal house.webp"],
+  },
+
+  "nirmaann-estrellaa": {
+    title: "Nirmaann Estrellaa",
+    location: "Pune",
+    category: "Residential",
+    year: "2023",
+    client: "Nirmaann Developers",
+    scope: "Aluminium Louvers, Windows & SS Railings",
+    description:
+      "Complete facade and railing package for a premium residential project.",
+    features: [
+      "Aluminium windows",
+      "Architectural louvers",
+      "SS railings",
+    ],
+    images: ["/Nirmann.webp"],
+  },
+
+  "ssg-honesty": {
+    title: "SSG Honesty",
+    location: "Panvel",
+    category: "Residential",
+    year: "2022",
+    client: "SSG Group",
+    scope: "Structural Glazing, Curtain Wall & ACP",
+    description:
+      "Modern residential facade with glazing, curtain wall and ACP systems.",
+    features: [
+      "Curtain wall system",
+      "ACP cladding",
+      "Structural glazing",
+    ],
+    images: ["/Pan.webp"],
+  },
+
+  "leela-hotel": {
+    title: "Leela Hotel",
+    location: "Andheri East, Mumbai",
+    category: "Corporate",
+    year: "2021",
+    client: "Leela Group",
+    scope: "Openable Windows & Laundry Area Works",
+    description:
+      "Hotel-grade aluminium window systems with durability and acoustic control.",
+    features: [
+      "Openable window systems",
+      "Waterproof detailing",
+    ],
+    images: ["/Hotel.webp"],
+  },
+
+  "embassy-techzone": {
+    title: "Embassy Techzone",
+    location: "Hinjewadi, Pune",
+    category: "Corporate",
+    year: "2024",
+    client: "Embassy Group",
+    scope: "Facade Maintenance Works",
+    description:
+      "Facade maintenance ensuring safety, longevity and visual quality.",
+    features: [
+      "Facade inspection",
+      "Glass replacement",
+      "Sealant renewal",
+    ],
+    images: ["/Embassyoark.webp"],
+  },
 };
 
-/* -------------------- RELATED -------------------- */
-const relatedProjects = [
-  { slug: "ltimindtree-campus", title: "LTIMindtree Campus", image: "/Itimindtree-mensa-campus-mahape-navi-mumbai-1 (1)-elementor-io-optimized.w" },
-  { slug: "embassy-247", title: "Embassy 247", image: "/Embassy.webp" },
-  { slug: "salsette-27", title: "Salsette-27", image: "/Salsette27.webp" },
-];
-
-/* -------------------- PAGE -------------------- */
+/* ================= PAGE ================= */
 const ProjectDetail = () => {
   const { slug } = useParams<{ slug: string }>();
   const project = slug ? projectsData[slug as keyof typeof projectsData] : null;
@@ -93,46 +196,50 @@ const ProjectDetail = () => {
   if (!project) {
     return (
       <Layout>
-        <div className="min-h-screen flex items-center justify-center text-center">
-          <div>
-            <h1 className="text-2xl font-bold mb-4">Project Not Found</h1>
-            <Link to="/portfolio">
-              <Button>Back to Portfolio</Button>
-            </Link>
-          </div>
+        <div className="min-h-screen flex items-center justify-center">
+          <Link to="/portfolio">
+            <Button>Back to Portfolio</Button>
+          </Link>
         </div>
       </Layout>
     );
   }
 
-  const otherProjects = relatedProjects.filter(p => p.slug !== slug);
+  const relatedProjects = Object.entries(projectsData)
+    .filter(([key]) => key !== slug)
+    .slice(0, 2)
+    .map(([key, value]) => ({
+      slug: key,
+      title: value.title,
+      image: value.images[0],
+    }));
 
   return (
     <Layout>
       {/* HERO */}
-      <section className="relative h-[60vh] min-h-[400px]" ref={heroRef.ref}>
-        <img src={project.images[0]} alt={project.title} className="w-full h-full object-cover" />
+      <section className="relative h-[60vh]" ref={heroRef.ref}>
+        <img
+          src={project.images[0]}
+          alt={project.title}
+          className="w-full h-full object-cover"
+        />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
 
         <Link to="/portfolio" className="absolute top-24 left-6 z-10">
-          <Button variant="outline" size="sm" className="bg-background/80">
-            <ArrowLeft size={16} className="mr-2" />
-            Back
+          <Button variant="outline" size="sm">
+            <ArrowLeft size={16} className="mr-2" /> Back
           </Button>
         </Link>
 
-        <div className="absolute bottom-8 left-6 right-6">
-          <span className="px-3 py-1 rounded-full bg-primary text-primary-foreground text-sm">
+        <div className="absolute bottom-8 left-6">
+          <span className="px-3 py-1 rounded-full bg-primary text-white text-sm">
             {project.category}
           </span>
-
-          <h1 className="text-3xl md:text-5xl font-bold text-white mt-3">
+          <h1 className="text-4xl font-bold text-white mt-3">
             {project.title}
           </h1>
-
           <div className="flex items-center gap-2 text-white/80 mt-2">
-            <MapPin size={16} />
-            {project.location}
+            <MapPin size={16} /> {project.location}
           </div>
         </div>
       </section>
@@ -140,55 +247,48 @@ const ProjectDetail = () => {
       {/* DETAILS */}
       <section className="py-16" ref={detailsRef.ref}>
         <div className="container mx-auto px-4 grid lg:grid-cols-3 gap-12">
-          {/* LEFT */}
-          <div className="lg:col-span-2 space-y-8">
-            <div>
-              <h2 className="text-2xl font-bold mb-4">About This Project</h2>
-              <p className="text-muted-foreground text-lg">{project.description}</p>
-            </div>
+          <div className="lg:col-span-2 space-y-6">
+            <p className="text-lg text-muted-foreground">
+              {project.description}
+            </p>
 
-            <div>
-              <h3 className="text-xl font-semibold mb-4">Key Features</h3>
-              <div className="grid sm:grid-cols-2 gap-3">
-                {project.features.map((f) => (
-                  <div key={f} className="flex gap-3 p-3 bg-muted rounded-lg">
-                    <CheckCircle2 className="text-primary mt-0.5" size={18} />
-                    <span>{f}</span>
-                  </div>
-                ))}
-              </div>
+            <div className="grid sm:grid-cols-2 gap-3">
+              {project.features.map((f) => (
+                <div
+                  key={f}
+                  className="flex gap-3 p-3 bg-muted rounded-lg"
+                >
+                  <CheckCircle2 className="text-primary" />
+                  <span>{f}</span>
+                </div>
+              ))}
             </div>
           </div>
 
-          {/* SIDEBAR */}
-          <div className="space-y-6">
-            <div className="bg-card border rounded-xl p-6 space-y-5">
-              <h3 className="font-semibold text-lg">Project Details</h3>
-
-              <div className="flex gap-3">
-                <Calendar className="text-primary" />
-                <div>
-                  <p className="text-sm text-muted-foreground">Year</p>
-                  <p className="font-medium">{project.year}</p>
-                </div>
-              </div>
-
-              <div className="flex gap-3">
-                <Briefcase className="text-primary" />
-                <div>
-                  <p className="text-sm text-muted-foreground">Client</p>
-                  <p className="font-medium">{project.client}</p>
-                </div>
-              </div>
-
-              <div className="pt-4 border-t">
-                <p className="text-sm text-muted-foreground">Scope of Work</p>
-                <p className="font-medium">{project.scope}</p>
+          <div className="bg-card border rounded-xl p-6 space-y-4">
+            <div className="flex gap-3">
+              <Calendar className="text-primary" />
+              <div>
+                <p className="text-sm text-muted-foreground">Year</p>
+                <p>{project.year}</p>
               </div>
             </div>
 
+            <div className="flex gap-3">
+              <Briefcase className="text-primary" />
+              <div>
+                <p className="text-sm text-muted-foreground">Client</p>
+                <p>{project.client}</p>
+              </div>
+            </div>
+
+            <div className="pt-3 border-t">
+              <p className="text-sm text-muted-foreground">Scope</p>
+              <p>{project.scope}</p>
+            </div>
+
             <Link to="/contact">
-              <Button className="w-full">Get Free Quote</Button>
+              <Button className="w-full mt-4">Get Free Quote</Button>
             </Link>
           </div>
         </div>
@@ -201,21 +301,25 @@ const ProjectDetail = () => {
             <h2 className="text-2xl font-bold">More Projects</h2>
             <Link to="/portfolio">
               <Button variant="ghost">
-                View All <ArrowRight className="ml-2" size={16} />
+                View All <ArrowRight size={16} className="ml-2" />
               </Button>
             </Link>
           </div>
 
           <div className="grid md:grid-cols-2 gap-6">
-            {otherProjects.map((p) => (
+            {relatedProjects.map((p) => (
               <Link
                 key={p.slug}
                 to={`/project/${p.slug}`}
                 className="group relative aspect-[16/9] rounded-xl overflow-hidden"
               >
-                <img src={p.image} alt={p.title} className="w-full h-full object-cover group-hover:scale-110 transition" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
-                <h3 className="absolute bottom-4 left-4 text-white text-xl font-semibold">
+                <img
+                  src={p.image}
+                  alt={p.title}
+                  className="w-full h-full object-cover group-hover:scale-110 transition"
+                />
+                <div className="absolute inset-0 bg-black/60" />
+                <h3 className="absolute bottom-4 left-4 text-white text-xl">
                   {p.title}
                 </h3>
               </Link>
