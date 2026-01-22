@@ -10,7 +10,6 @@ export const HeroSection = () => {
     <>
       {/* HERO */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background Video */}
         <video
           autoPlay
           loop
@@ -23,31 +22,26 @@ export const HeroSection = () => {
             type="video/mp4"
           />
         </video>
-
-        <div className="absolute inset-0 hero-overlay" />
+        <div className="absolute inset-0 hero-overlay"></div>
 
         <div className="relative z-10 container mx-auto px-4 text-center">
           <div className="max-w-4xl mx-auto space-y-8">
-            {/* Badge */}
             <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full glass-card text-sm text-white/90 border border-white/10">
               <span className="w-2.5 h-2.5 rounded-full bg-amber-500 animate-pulse" />
               Pune's Trusted Facade Experts
             </div>
 
-            {/* Heading */}
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
               Building <span className="text-gradient">Iconic Facades</span>
               <br className="hidden md:block" />
               That Define Skylines
             </h1>
 
-            {/* Subheading */}
             <p className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto">
               Premium glass & aluminium facade fabrication, installation, and maintenance.
               Award-winning quality delivered on time.
             </p>
 
-            {/* CTA */}
             <div className="flex flex-col sm:flex-row justify-center gap-4 pt-6">
               <Link to="/contact">
                 <Button size="lg" className="btn-glossy px-8 py-6">
@@ -56,7 +50,6 @@ export const HeroSection = () => {
                 </Button>
               </Link>
 
-              {/* OPEN VIDEO POPUP */}
               <Button
                 size="lg"
                 variant="outline"
@@ -71,12 +64,11 @@ export const HeroSection = () => {
         </div>
       </section>
 
-      {/* VIDEO MODAL */}
+      {/* VIDEO POPUP */}
       {openVideo && (
-        <div className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center px-4">
+        <div className="fixed inset-0 z-50 bg-black/85 flex items-center justify-center px-4">
           <div className="relative w-full max-w-4xl aspect-video rounded-xl overflow-hidden bg-black">
             
-            {/* Close Button */}
             <button
               onClick={() => setOpenVideo(false)}
               className="absolute top-3 right-3 z-10 text-white hover:text-red-400"
@@ -84,14 +76,12 @@ export const HeroSection = () => {
               <X size={28} />
             </button>
 
-            {/* Weet Video */}
-            <iframe
-              src="https://app.weet.co/play/c12a8df1/create-video-tutorials-with-weet"
-              title="FineGlaze Video"
-              className="w-full h-full"
-              allow="autoplay; fullscreen"
-              allowFullScreen
-            />
+            <video
+              src="https://osbgcuuehfqxyvooogjy.supabase.co/storage/v1/object/sign/project_files/FINE%20GLAZE.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85ZjVjNzQ4ZC1hYWJmLTRlNDMtOWIxYi00OTY1YTMyN2NhZTciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJwcm9qZWNzL0ZJTkUgR0xBWkUubXA0IiwiaWF0IjoxNzY5MTA2ODU5LCJleHAiOjE5ODk4NTg4NTl9.QPCnAmHC5UK-zJ2IFF4HnILXUr6G1mdLyl2KeuVIDE4"
+              controls
+              autoPlay
+              className="w-full h-full object-cover"
+            ></video>
           </div>
         </div>
       )}
