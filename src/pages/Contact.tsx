@@ -41,7 +41,7 @@ link: null,
 {
 icon: Phone,
 title: "Call Us",
-content: "+91 8369233576",
+content: "+91 8369233566",
 link: "tel:+918369233566",
 },
 {
