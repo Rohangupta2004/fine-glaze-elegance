@@ -82,7 +82,7 @@ const About = () => {
             >
               <div className="aspect-[4/3] rounded-xl overflow-hidden">
                 <img
-                  src="ltimindtree-mensa-campus-mahape-navi-mumbai-1 (1).webp"
+                  src="Embassy.webp"
                   alt="Fine Glaze Project"
                   className="w-full h-full object-cover"
                 />
