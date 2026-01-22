@@ -77,14 +77,11 @@ export const HeroSection = () => {
             </button>
 
             <video
-              src="https://osbgcuuehfqxyvooogjy.supabase.co/storage/v1/object/sign/project_files/FINE%20GLAZE.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85ZjVjNzQ4ZC1hYWJmLTRlNDMtOWIxYi00OTY1YTMyN2NhZTciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJwcm9qZWNzL0ZJTkUgR0xBWkUubXA0IiwiaWF0IjoxNzY5MTA2ODU5LCJleHAiOjE5ODk4NTg4NTl9.QPCnAmHC5UK-zJ2IFF4HnILXUr6G1mdLyl2KeuVIDE4"
-              controls
-              autoPlay
-              className="w-full h-full object-cover"
-            ></video>
-          </div>
-        </div>
-      )}
-    </>
-  );
-};
+  src="https://osbgcuuehfqxyvooogjy.supabase.co/storage/v1/object/public/Videos/FINE%20GLAZE.mp4"
+  controls
+  playsInline
+  preload="metadata"
+  className="w-full h-full object-contain bg-black"
+>
+  Your browser does not support the video tag.
+</video>
