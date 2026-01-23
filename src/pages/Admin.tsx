@@ -9,8 +9,8 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Textarea } from "@/components/ui/textarea"; // Make sure you have this component or use <textarea className="..." />
-import { Plus, Trash2, Upload, History, Loader2, Save } from "lucide-react";
+import { Textarea } from "@/components/ui/textarea";
+import { Plus, Trash2, Upload, History, IndianRupee, Save, Loader2 } from "lucide-react";
 
 const ADMIN_EMAIL = "info@fineglaze.com"; 
 
@@ -27,6 +27,8 @@ type Project = {
   status: string;
   progress: number;
   client_email: string;
+  total_amount: number;
+  paid_amount: number;
   timeline: TimelineEvent[];
 };
 
@@ -35,15 +37,17 @@ export default function Admin() {
   const [projects, setProjects] = useState<Project[]>([]);
   const [loading, setLoading] = useState(true);
   
-  // Create Project State
+  // Modals State
   const [createOpen, setCreateOpen] = useState(false);
+  const [timelineOpen, setTimelineOpen] = useState(false);
+  const [financeOpen, setFinanceOpen] = useState(false);
+
+  // Form Data
   const [newName, setNewName] = useState("");
   const [newEmail, setNewEmail] = useState("");
-
-  // Timeline State
-  const [timelineOpen, setTimelineOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [newEvent, setNewEvent] = useState({ title: "", desc: "" });
+  const [financeData, setFinanceData] = useState({ total: 0, paid: 0 });
 
   useEffect(() => {
     const checkAuth = async () => {
@@ -76,7 +80,9 @@ export default function Admin() {
       client_email: newEmail,
       status: "Initiated",
       progress: 0,
-      timeline: [] // Initialize empty timeline
+      total_amount: 0,
+      paid_amount: 0,
+      timeline: [] 
     });
     if (error) toast.error(error.message);
     else {
@@ -95,28 +101,34 @@ export default function Admin() {
     if (!selectedProject || !newEvent.title) return;
     
     const newEntry: TimelineEvent = {
-      date: new Date().toISOString(), // Automatically set today's date
+      date: new Date().toISOString(),
       title: newEvent.title,
       desc: newEvent.desc
     };
 
     const updatedTimeline = [newEntry, ...(selectedProject.timeline || [])];
     
-    // Update Local State
+    // Update Local & DB
     setProjects(projects.map(p => p.id === selectedProject.id ? { ...p, timeline: updatedTimeline } : p));
     setSelectedProject({ ...selectedProject, timeline: updatedTimeline });
+    
+    await supabase.from("Clientproject").update({ timeline: updatedTimeline }).eq("id", selectedProject.id);
+    toast.success("Timeline updated!");
+    setNewEvent({ title: "", desc: "" });
+  };
 
-    // Update DB
-    const { error } = await supabase
-      .from("Clientproject")
-      .update({ timeline: updatedTimeline })
-      .eq("id", selectedProject.id);
-
-    if (error) toast.error("Failed to save event");
-    else {
-      toast.success("Timeline updated!");
-      setNewEvent({ title: "", desc: "" });
-    }
+  const handleUpdateFinance = async () => {
+    if (!selectedProject) return;
+    
+    setProjects(projects.map(p => p.id === selectedProject.id ? { ...p, total_amount: financeData.total, paid_amount: financeData.paid } : p));
+    
+    await supabase.from("Clientproject").update({ 
+      total_amount: financeData.total, 
+      paid_amount: financeData.paid 
+    }).eq("id", selectedProject.id);
+    
+    toast.success("Financials updated");
+    setFinanceOpen(false);
   };
 
   const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>, projectId: string) => {
@@ -136,7 +148,7 @@ export default function Admin() {
         <div className="flex justify-between items-center">
           <div>
             <h1 className="text-3xl font-bold">Admin Dashboard</h1>
-            <p className="text-muted-foreground">Manage projects & updates</p>
+            <p className="text-muted-foreground">Manage projects, payments & updates</p>
           </div>
           <Dialog open={createOpen} onOpenChange={setCreateOpen}>
             <DialogTrigger asChild><Button><Plus className="mr-2 h-4 w-4"/> New Project</Button></DialogTrigger>
@@ -155,10 +167,10 @@ export default function Admin() {
           <Table>
             <TableHeader>
               <TableRow>
-                <TableHead>Project Name</TableHead>
+                <TableHead>Project</TableHead>
                 <TableHead>Status</TableHead>
                 <TableHead>Progress</TableHead>
-                <TableHead className="text-right">Manage</TableHead>
+                <TableHead className="text-right">Actions</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
@@ -187,29 +199,45 @@ export default function Admin() {
                     </div>
                   </TableCell>
                   <TableCell className="text-right flex justify-end gap-2">
-                    {/* TIMELINE BUTTON */}
+                    {/* FINANCE BTN */}
+                    <Dialog open={financeOpen && selectedProject?.id === p.id} onOpenChange={(open) => { setFinanceOpen(open); if(open) { setSelectedProject(p); setFinanceData({ total: p.total_amount, paid: p.paid_amount }); }}}>
+                      <DialogTrigger asChild>
+                        <Button variant="outline" size="icon" title="Finance">
+                          <IndianRupee size={16} className="text-green-600" />
+                        </Button>
+                      </DialogTrigger>
+                      <DialogContent>
+                        <DialogHeader><DialogTitle>Update Financials</DialogTitle></DialogHeader>
+                        <div className="space-y-4 py-4">
+                          <div className="space-y-2"><Label>Total Amount (₹)</Label><Input type="number" value={financeData.total} onChange={e => setFinanceData({...financeData, total: Number(e.target.value)})} /></div>
+                          <div className="space-y-2"><Label>Paid Amount (₹)</Label><Input type="number" value={financeData.paid} onChange={e => setFinanceData({...financeData, paid: Number(e.target.value)})} /></div>
+                          <Button onClick={handleUpdateFinance} className="w-full">Save Financials</Button>
+                        </div>
+                      </DialogContent>
+                    </Dialog>
+
+                    {/* TIMELINE BTN */}
                     <Dialog open={timelineOpen && selectedProject?.id === p.id} onOpenChange={(open) => { setTimelineOpen(open); if(open) setSelectedProject(p); }}>
                       <DialogTrigger asChild>
-                        <Button variant="outline" size="icon" title="Update Timeline">
+                        <Button variant="outline" size="icon" title="Timeline">
                           <History size={16} className="text-purple-600" />
                         </Button>
                       </DialogTrigger>
                       <DialogContent>
-                        <DialogHeader><DialogTitle>Update Timeline: {p.project_name}</DialogTitle></DialogHeader>
+                        <DialogHeader><DialogTitle>Update Timeline</DialogTitle></DialogHeader>
                         <div className="space-y-4">
                           <div className="bg-slate-50 p-4 rounded-md space-y-3 border">
-                            <Label>New Update</Label>
-                            <Input placeholder="Title (e.g. Glass Arrived)" value={newEvent.title} onChange={e => setNewEvent({...newEvent, title: e.target.value})} />
-                            <Textarea placeholder="Description (Optional)" value={newEvent.desc} onChange={e => setNewEvent({...newEvent, desc: e.target.value})} />
+                            <Label>New Event</Label>
+                            <Input placeholder="Title" value={newEvent.title} onChange={e => setNewEvent({...newEvent, title: e.target.value})} />
+                            <Textarea placeholder="Description" value={newEvent.desc} onChange={e => setNewEvent({...newEvent, desc: e.target.value})} />
                             <Button onClick={handleAddTimeline} size="sm" className="w-full"><Save size={14} className="mr-2"/> Add Entry</Button>
                           </div>
                           <div className="space-y-2 max-h-[200px] overflow-y-auto">
-                            <Label>History</Label>
-                            {(p.timeline || []).length === 0 && <p className="text-sm text-muted-foreground">No updates yet.</p>}
-                            {p.timeline?.map((event, i) => (
-                              <div key={i} className="text-sm border-l-2 border-slate-200 pl-3 py-1">
-                                <div className="font-medium">{event.title}</div>
-                                <div className="text-xs text-muted-foreground">{new Date(event.date).toLocaleDateString()}</div>
+                            {(p.timeline || []).length === 0 && <p className="text-xs text-muted-foreground">No events yet.</p>}
+                            {p.timeline?.map((ev, i) => (
+                              <div key={i} className="text-sm border-l-2 pl-3 py-1">
+                                <div className="font-medium">{ev.title}</div>
+                                <div className="text-xs text-muted-foreground">{new Date(ev.date).toLocaleDateString()}</div>
                               </div>
                             ))}
                           </div>
@@ -217,7 +245,7 @@ export default function Admin() {
                       </DialogContent>
                     </Dialog>
 
-                    {/* UPLOAD BUTTON */}
+                    {/* UPLOAD BTN */}
                     <Label className="cursor-pointer inline-flex h-9 w-9 items-center justify-center rounded-md border border-input bg-transparent shadow-sm hover:bg-accent hover:text-accent-foreground">
                       <Upload size={16} className="text-blue-600" />
                       <Input type="file" className="hidden" onChange={(e) => handleFileUpload(e, p.id)} />
@@ -231,4 +259,4 @@ export default function Admin() {
       </div>
     </div>
   );
-  }
+      }
