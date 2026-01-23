@@ -1,269 +1,262 @@
 import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabase";
-import { Session } from "@supabase/supabase-js";
-import { Mail, LogIn, FileText, Download, Calendar, CheckCircle2, AlertCircle } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Progress } from "@/components/ui/progress";
-import { Skeleton } from "@/components/ui/skeleton";
-import { Badge } from "@/components/ui/badge";
+import { Slider } from "@/components/ui/slider";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Label } from "@/components/ui/label";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Textarea } from "@/components/ui/textarea";
+import { Plus, Trash2, Upload, History, IndianRupee, Save, Loader2 } from "lucide-react";
+
+const ADMIN_EMAIL = "info@fineglaze.com"; 
+
+type TimelineEvent = {
+  date: string;
+  title: string;
+  desc: string;
+};
 
 type Project = {
   id: string;
+  created_at: string;
   project_name: string;
   status: string;
   progress: number;
   client_email: string;
-  created_at: string;
+  total_amount: number;
+  paid_amount: number;
+  timeline: TimelineEvent[];
 };
 
-type FileItem = {
-  name: string;
-  url: string;
-};
-
-export default function Portal() {
-  const [session, setSession] = useState<Session | null>(null);
-  const [project, setProject] = useState<Project | null>(null);
-  const [files, setFiles] = useState<FileItem[]>([]);
+export default function Admin() {
+  const navigate = useNavigate();
+  const [projects, setProjects] = useState<Project[]>([]);
   const [loading, setLoading] = useState(true);
-  const [email, setEmail] = useState("");
-  const [isAuthLoading, setIsAuthLoading] = useState(false);
+  
+  // Modals State
+  const [createOpen, setCreateOpen] = useState(false);
+  const [timelineOpen, setTimelineOpen] = useState(false);
+  const [financeOpen, setFinanceOpen] = useState(false);
 
-  // 1. Session Handling
+  // Form Data
+  const [newName, setNewName] = useState("");
+  const [newEmail, setNewEmail] = useState("");
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [newEvent, setNewEvent] = useState({ title: "", desc: "" });
+  const [financeData, setFinanceData] = useState({ total: 0, paid: 0 });
+
   useEffect(() => {
-    supabase.auth.getSession().then(({ data: { session } }) => setSession(session));
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((_, session) => setSession(session));
-    return () => subscription.unsubscribe();
+    const checkAuth = async () => {
+      const { data: { session } } = await supabase.auth.getSession();
+      if (!session || session.user.email !== ADMIN_EMAIL) {
+        navigate("/portal");
+        return;
+      }
+      fetchProjects();
+    };
+    checkAuth();
   }, []);
 
-  // 2. Fetch Project & Files
-  useEffect(() => {
-    if (!session?.user?.email) return;
+  const fetchProjects = async () => {
+    setLoading(true);
+    const { data, error } = await supabase
+      .from("Clientproject")
+      .select("*")
+      .order("created_at", { ascending: false });
 
-    const fetchData = async () => {
-      try {
-        setLoading(true);
-        // A. Find project assigned to this user's email
-        const { data: projectData, error: projectError } = await supabase
-          .from("Clientproject")
-          .select("*")
-          .eq("client_email", session.user.email)
-          .maybeSingle(); // Gets the first match (assuming 1 active project per client)
+    if (error) toast.error("Failed to fetch data");
+    else setProjects(data || []);
+    setLoading(false);
+  };
 
-        if (projectError) throw projectError;
-        setProject(projectData);
+  const handleCreate = async () => {
+    if (!newName || !newEmail) return toast.error("Required fields missing");
+    const { error } = await supabase.from("Clientproject").insert({
+      project_name: newName,
+      client_email: newEmail,
+      status: "Initiated",
+      progress: 0,
+      total_amount: 0,
+      paid_amount: 0,
+      timeline: [] 
+    });
+    if (error) toast.error(error.message);
+    else {
+      toast.success("Project created");
+      setCreateOpen(false);
+      fetchProjects();
+    }
+  };
 
-        // B. If project exists, fetch its files from Storage
-        if (projectData) {
-          const { data: fileList, error: fileError } = await supabase.storage
-            .from("project-files")
-            .list(projectData.id); // Looks inside folder named after Project ID
+  const handleUpdate = async (id: string, updates: Partial<Project>) => {
+    setProjects(projects.map(p => p.id === id ? { ...p, ...updates } : p));
+    await supabase.from("Clientproject").update(updates).eq("id", id);
+  };
 
-          if (fileList) {
-            const filesWithUrls = fileList.map((f) => {
-              const { data } = supabase.storage
-                .from("project-files")
-                .getPublicUrl(`${projectData.id}/${f.name}`);
-              return { name: f.name, url: data.publicUrl };
-            });
-            setFiles(filesWithUrls);
-          }
-        }
-      } catch (error) {
-        console.error("Error loading portal:", error);
-      } finally {
-        setLoading(false);
-      }
+  const handleAddTimeline = async () => {
+    if (!selectedProject || !newEvent.title) return;
+    
+    const newEntry: TimelineEvent = {
+      date: new Date().toISOString(),
+      title: newEvent.title,
+      desc: newEvent.desc
     };
 
-    fetchData();
-  }, [session]);
-
-  // 3. Login Handlers
-  const signInWithGoogle = async () => {
-    await supabase.auth.signInWithOAuth({
-      provider: "google",
-      options: { redirectTo: `${window.location.origin}/portal` },
-    });
+    const updatedTimeline = [newEntry, ...(selectedProject.timeline || [])];
+    
+    // Update Local & DB
+    setProjects(projects.map(p => p.id === selectedProject.id ? { ...p, timeline: updatedTimeline } : p));
+    setSelectedProject({ ...selectedProject, timeline: updatedTimeline });
+    
+    await supabase.from("Clientproject").update({ timeline: updatedTimeline }).eq("id", selectedProject.id);
+    toast.success("Timeline updated!");
+    setNewEvent({ title: "", desc: "" });
   };
 
-  const signInWithEmail = async () => {
-    if (!email) return toast.error("Please enter your email");
-    setIsAuthLoading(true);
-    const { error } = await supabase.auth.signInWithOtp({ email });
-    setIsAuthLoading(false);
-    if (error) toast.error(error.message);
-    else toast.success("Check your email for the login link!");
+  const handleUpdateFinance = async () => {
+    if (!selectedProject) return;
+    
+    setProjects(projects.map(p => p.id === selectedProject.id ? { ...p, total_amount: financeData.total, paid_amount: financeData.paid } : p));
+    
+    await supabase.from("Clientproject").update({ 
+      total_amount: financeData.total, 
+      paid_amount: financeData.paid 
+    }).eq("id", selectedProject.id);
+    
+    toast.success("Financials updated");
+    setFinanceOpen(false);
   };
 
-  /* ------------------- LOGIN VIEW ------------------- */
-  if (!session) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-slate-50 p-4">
-        <Card className="w-full max-w-md shadow-xl border-t-4 border-t-primary">
-          <CardHeader className="text-center space-y-2">
-            <div className="mx-auto w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-2">
-              <LogIn className="text-primary" size={24} />
-            </div>
-            <CardTitle className="text-2xl font-bold">Client Portal</CardTitle>
-            <CardDescription>Enter your email to view your project status</CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-6">
-            <Button variant="outline" className="w-full h-12 gap-2" onClick={signInWithGoogle}>
-              <img src="https://www.google.com/favicon.ico" className="w-4 h-4" alt="Google" />
-              Continue with Google
-            </Button>
-            <div className="relative text-center text-xs uppercase text-muted-foreground">
-              <span className="bg-white px-2 relative z-10">Or use email</span>
-              <div className="absolute inset-0 top-1/2 border-t -z-0" />
-            </div>
-            <div className="flex gap-2">
-              <Input 
-                type="email" 
-                placeholder="client@gmail.com" 
-                value={email} 
-                onChange={(e) => setEmail(e.target.value)} 
-                className="h-11"
-              />
-              <Button onClick={signInWithEmail} disabled={isAuthLoading} className="h-11 px-6">
-                <Mail size={18} />
-              </Button>
-            </div>
-          </CardContent>
-        </Card>
-      </div>
-    );
-  }
+  const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>, projectId: string) => {
+    if (!e.target.files?.length) return;
+    const file = e.target.files[0];
+    const fileName = `${projectId}/${Date.now()}-${file.name}`;
+    
+    toast.info("Uploading...");
+    const { error } = await supabase.storage.from("project-files").upload(fileName, file);
+    if (error) toast.error("Upload failed");
+    else toast.success("File uploaded successfully");
+  };
 
-  /* ------------------- DASHBOARD VIEW ------------------- */
   return (
-    <div className="min-h-screen bg-slate-50 p-4 md:p-10">
-      <div className="max-w-5xl mx-auto space-y-8">
-        
-        {/* Header */}
-        <div className="flex flex-col md:flex-row justify-between md:items-center gap-4">
+    <div className="min-h-screen bg-slate-50 p-8">
+      <div className="max-w-7xl mx-auto space-y-8">
+        <div className="flex justify-between items-center">
           <div>
-            <h1 className="text-3xl font-bold text-slate-900">Project Dashboard</h1>
-            <p className="text-slate-500">Welcome, {session.user.email}</p>
+            <h1 className="text-3xl font-bold">Admin Dashboard</h1>
+            <p className="text-muted-foreground">Manage projects, payments & updates</p>
           </div>
-          <Button variant="outline" onClick={() => supabase.auth.signOut()}>Sign Out</Button>
+          <Dialog open={createOpen} onOpenChange={setCreateOpen}>
+            <DialogTrigger asChild><Button><Plus className="mr-2 h-4 w-4"/> New Project</Button></DialogTrigger>
+            <DialogContent>
+              <DialogHeader><DialogTitle>Create Project</DialogTitle></DialogHeader>
+              <div className="space-y-4 py-4">
+                <div className="space-y-2"><Label>Name</Label><Input value={newName} onChange={e => setNewName(e.target.value)} /></div>
+                <div className="space-y-2"><Label>Client Email</Label><Input value={newEmail} onChange={e => setNewEmail(e.target.value)} /></div>
+                <Button onClick={handleCreate} className="w-full">Create</Button>
+              </div>
+            </DialogContent>
+          </Dialog>
         </div>
 
-        {loading ? (
-          <div className="space-y-4">
-            <Skeleton className="h-48 w-full rounded-xl" />
-            <Skeleton className="h-32 w-full rounded-xl" />
-          </div>
-        ) : !project ? (
-          <Card className="border-dashed border-2">
-            <CardContent className="flex flex-col items-center justify-center py-20 text-center space-y-4">
-              <div className="bg-orange-100 p-4 rounded-full text-orange-600">
-                <AlertCircle size={32} />
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold">No Active Project Found</h3>
-                <p className="text-muted-foreground max-w-sm mx-auto mt-2">
-                  We couldn't find a project linked to <b>{session.user.email}</b>. 
-                  Please ensure you are logged in with the email address provided to our team.
-                </p>
-              </div>
-              <Button variant="secondary">Contact Support</Button>
-            </CardContent>
-          </Card>
-        ) : (
-          <>
-            {/* Status Card */}
-            <Card className="overflow-hidden border-none shadow-lg">
-              <div className="h-2 bg-primary w-full" />
-              <CardHeader className="pb-2">
-                <div className="flex justify-between items-start">
-                  <div>
-                    <CardTitle className="text-2xl mb-1">{project.project_name}</CardTitle>
-                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                      <Calendar size={14} />
-                      Started {new Date(project.created_at).toLocaleDateString()}
+        <div className="bg-white rounded-md border shadow-sm">
+          <Table>
+            <TableHeader>
+              <TableRow>
+                <TableHead>Project</TableHead>
+                <TableHead>Status</TableHead>
+                <TableHead>Progress</TableHead>
+                <TableHead className="text-right">Actions</TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              {projects.map((p) => (
+                <TableRow key={p.id}>
+                  <TableCell className="font-medium">
+                    {p.project_name}
+                    <div className="text-xs text-muted-foreground">{p.client_email}</div>
+                  </TableCell>
+                  <TableCell>
+                    <Select defaultValue={p.status} onValueChange={(val) => handleUpdate(p.id, { status: val })}>
+                      <SelectTrigger className="w-[140px] h-8"><SelectValue /></SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="Initiated">Initiated</SelectItem>
+                        <SelectItem value="Measurements">Measurements</SelectItem>
+                        <SelectItem value="Fabrication">Fabrication</SelectItem>
+                        <SelectItem value="Installation">Installation</SelectItem>
+                        <SelectItem value="Completed">Completed</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </TableCell>
+                  <TableCell>
+                    <div className="flex items-center gap-2">
+                      <Slider defaultValue={[p.progress]} max={100} step={5} className="w-24" onValueCommit={(v) => handleUpdate(p.id, { progress: v[0] })} />
+                      <span className="text-xs w-8">{p.progress}%</span>
                     </div>
-                  </div>
-                  <Badge className="text-sm py-1 px-3" variant={project.progress === 100 ? "default" : "secondary"}>
-                    {project.status}
-                  </Badge>
-                </div>
-              </CardHeader>
-              <CardContent className="space-y-6 pt-6">
-                <div className="space-y-2">
-                  <div className="flex justify-between text-sm font-medium">
-                    <span>Completion Progress</span>
-                    <span>{project.progress}%</span>
-                  </div>
-                  <Progress value={project.progress} className="h-3 w-full bg-slate-100" />
-                </div>
-              </CardContent>
-            </Card>
+                  </TableCell>
+                  <TableCell className="text-right flex justify-end gap-2">
+                    {/* FINANCE BTN */}
+                    <Dialog open={financeOpen && selectedProject?.id === p.id} onOpenChange={(open) => { setFinanceOpen(open); if(open) { setSelectedProject(p); setFinanceData({ total: p.total_amount, paid: p.paid_amount }); }}}>
+                      <DialogTrigger asChild>
+                        <Button variant="outline" size="icon" title="Finance">
+                          <IndianRupee size={16} className="text-green-600" />
+                        </Button>
+                      </DialogTrigger>
+                      <DialogContent>
+                        <DialogHeader><DialogTitle>Update Financials</DialogTitle></DialogHeader>
+                        <div className="space-y-4 py-4">
+                          <div className="space-y-2"><Label>Total Amount (₹)</Label><Input type="number" value={financeData.total} onChange={e => setFinanceData({...financeData, total: Number(e.target.value)})} /></div>
+                          <div className="space-y-2"><Label>Paid Amount (₹)</Label><Input type="number" value={financeData.paid} onChange={e => setFinanceData({...financeData, paid: Number(e.target.value)})} /></div>
+                          <Button onClick={handleUpdateFinance} className="w-full">Save Financials</Button>
+                        </div>
+                      </DialogContent>
+                    </Dialog>
 
-            <div className="grid md:grid-cols-3 gap-6">
-              {/* Documents Section */}
-              <Card className="md:col-span-2 shadow-md">
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
-                    <FileText className="text-primary" size={20} />
-                    Project Documents
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  {files.length === 0 ? (
-                    <div className="text-center py-10 border border-dashed rounded-lg bg-slate-50/50">
-                      <p className="text-sm text-muted-foreground">No documents uploaded yet.</p>
-                    </div>
-                  ) : (
-                    <div className="grid gap-3">
-                      {files.map((file) => (
-                        <a 
-                          key={file.name} 
-                          href={file.url} 
-                          target="_blank" 
-                          rel="noreferrer"
-                          className="flex items-center justify-between p-4 rounded-lg border hover:border-primary hover:bg-primary/5 transition-colors group"
-                        >
-                          <div className="flex items-center gap-3">
-                            <div className="bg-white p-2 rounded shadow-sm">
-                              <FileText size={20} className="text-slate-400 group-hover:text-primary" />
-                            </div>
-                            <span className="font-medium text-sm truncate max-w-[200px] md:max-w-xs">
-                              {file.name}
-                            </span>
+                    {/* TIMELINE BTN */}
+                    <Dialog open={timelineOpen && selectedProject?.id === p.id} onOpenChange={(open) => { setTimelineOpen(open); if(open) setSelectedProject(p); }}>
+                      <DialogTrigger asChild>
+                        <Button variant="outline" size="icon" title="Timeline">
+                          <History size={16} className="text-purple-600" />
+                        </Button>
+                      </DialogTrigger>
+                      <DialogContent>
+                        <DialogHeader><DialogTitle>Update Timeline</DialogTitle></DialogHeader>
+                        <div className="space-y-4">
+                          <div className="bg-slate-50 p-4 rounded-md space-y-3 border">
+                            <Label>New Event</Label>
+                            <Input placeholder="Title" value={newEvent.title} onChange={e => setNewEvent({...newEvent, title: e.target.value})} />
+                            <Textarea placeholder="Description" value={newEvent.desc} onChange={e => setNewEvent({...newEvent, desc: e.target.value})} />
+                            <Button onClick={handleAddTimeline} size="sm" className="w-full"><Save size={14} className="mr-2"/> Add Entry</Button>
                           </div>
-                          <Download size={16} className="text-slate-400 group-hover:text-primary" />
-                        </a>
-                      ))}
-                    </div>
-                  )}
-                </CardContent>
-              </Card>
+                          <div className="space-y-2 max-h-[200px] overflow-y-auto">
+                            {(p.timeline || []).length === 0 && <p className="text-xs text-muted-foreground">No events yet.</p>}
+                            {p.timeline?.map((ev, i) => (
+                              <div key={i} className="text-sm border-l-2 pl-3 py-1">
+                                <div className="font-medium">{ev.title}</div>
+                                <div className="text-xs text-muted-foreground">{new Date(ev.date).toLocaleDateString()}</div>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      </DialogContent>
+                    </Dialog>
 
-              {/* Contact/Updates Section */}
-              <Card className="shadow-md">
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
-                    <CheckCircle2 className="text-green-600" size={20} />
-                    Latest Update
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <div className="p-4 bg-slate-50 rounded-lg text-sm text-slate-600 leading-relaxed">
-                    Current Status: <span className="font-semibold text-slate-900">{project.status}</span>.
-                    <br/><br/>
-                    Our team is currently working on this phase. You will receive an email notification when the next milestone is reached.
-                  </div>
-                  <Button variant="outline" className="w-full">Contact Manager</Button>
-                </CardContent>
-              </Card>
-            </div>
-          </>
-        )}
+                    {/* UPLOAD BTN */}
+                    <Label className="cursor-pointer inline-flex h-9 w-9 items-center justify-center rounded-md border border-input bg-transparent shadow-sm hover:bg-accent hover:text-accent-foreground">
+                      <Upload size={16} className="text-blue-600" />
+                      <Input type="file" className="hidden" onChange={(e) => handleFileUpload(e, p.id)} />
+                    </Label>
+                  </TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </div>
       </div>
     </div>
   );
-    }
+  }
