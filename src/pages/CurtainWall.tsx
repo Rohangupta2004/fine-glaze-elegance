@@ -1,76 +1,169 @@
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/home/CTASection";
-import { CheckCircle2, Building2, ShieldCheck, Maximize2 } from "lucide-react";
+import { CheckCircle2, Building2, ShieldCheck, Maximize2, MapPin, Wrench } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 export default function CurtainWall() {
+  // SCHEMA MARKUP: Tells Google this is a Service
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Curtain Wall Glazing Systems",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "Fine Glaze",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Pune",
+        "addressRegion": "Maharashtra",
+        "addressCountry": "IN"
+      }
+    },
+    "description": "Premium unitized and semi-unitized curtain wall glazing systems for commercial buildings in Pune and Maharashtra.",
+    "areaServed": ["Pune", "Mumbai", "Nashik"],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Glazing Services",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Unitized Curtain Wall" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Semi-Unitized System" } }
+      ]
+    }
+  };
+
   return (
     <Layout>
-      {/* Hero */}
+      {/* 1. SEO METADATA */}
+      <Helmet>
+        <title>Unitized Curtain Wall Systems Manufacturer in Pune | Fine Glaze</title>
+        <meta name="description" content="Leading manufacturer of Unitized & Semi-Unitized Curtain Wall systems in Pune. High-performance structural glazing for commercial towers. Get a quote today." />
+        <meta name="keywords" content="curtain wall system, unitized glazing, structural glazing pune, glass facade manufacturer, commercial facade india" />
+        <link rel="canonical" href="https://www.fineglaze.com/curtain-wall-systems" />
+        <script type="application/ld+json">{JSON.stringify(schemaData)}</script>
+      </Helmet>
+
+      {/* 2. H1: PRIMARY KEYWORD */}
       <section className="relative pt-32 pb-20 bg-slate-900 text-white overflow-hidden">
         <div className="absolute inset-0 bg-[url('/Unitized.webp')] bg-cover bg-center opacity-30" />
         <div className="container mx-auto px-4 relative z-10">
+          <span className="text-amber-500 font-bold tracking-widest uppercase text-sm mb-2 block">Structural Glazing Experts</span>
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
             High-Performance <span className="text-amber-500">Curtain Wall Systems</span>
           </h1>
           <p className="text-xl text-slate-300 max-w-2xl mb-8">
-            Precision-engineered unitized and semi-unitized glazing systems for modern skyscrapers and commercial complexes.
+            Precision-engineered unitized and semi-unitized glazing solutions for modern skyscrapers. 
+            Reducing installation time by 40% with factory-assembled quality.
           </p>
-          <Link to="/contact"><Button size="lg" className="bg-amber-600 hover:bg-amber-700">Request Technical Spec</Button></Link>
+          <div className="flex gap-4">
+            <Link to="/contact"><Button size="lg" className="bg-amber-600 hover:bg-amber-700">Request Quote</Button></Link>
+            <Link to="/portfolio"><Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-slate-900">View Projects</Button></Link>
+          </div>
         </div>
       </section>
 
-      {/* Content */}
+      {/* 3. DEEP CONTENT: "THE WHAT & WHY" */}
       <section className="py-20 bg-white">
-        <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h2 className="text-3xl font-bold text-slate-900 mb-6">Why Choose Our Curtain Walls?</h2>
-            <p className="text-slate-600 mb-6 leading-relaxed">
-              Fine Glaze delivers state-of-the-art curtain wall solutions that define the skyline. Our systems offer superior thermal performance, weather resistance, and architectural flexibility.
+        <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-start">
+          <div className="space-y-6">
+            <h2 className="text-3xl font-bold text-slate-900">Advanced Facade Engineering</h2>
+            <p className="text-slate-600 leading-relaxed">
+              At <strong>Fine Glaze</strong>, we don't just install glass; we engineer building envelopes. Our curtain wall systems are designed to withstand high wind loads, prevent water infiltration, and provide superior thermal insulation.
             </p>
+            <p className="text-slate-600 leading-relaxed">
+              Whether you are building a commercial IT park in <strong>Hinjewadi</strong> or a luxury hotel in <strong>Mumbai</strong>, our systems ensure your facade remains pristine for decades.
+            </p>
+            
+            <div className="grid grid-cols-1 gap-4 mt-6">
+              <div className="flex items-start gap-4 p-4 border rounded-lg bg-slate-50">
+                <Building2 className="text-amber-600 shrink-0" size={24} />
+                <div>
+                  <h3 className="font-bold text-slate-900">Unitized Systems</h3>
+                  <p className="text-sm text-slate-600">
+                    Fully assembled in our factory. These panels are lifted and hung on the building brackets. Best for large towers requiring fast closure.
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-start gap-4 p-4 border rounded-lg bg-slate-50">
+                <Maximize2 className="text-amber-600 shrink-0" size={24} />
+                <div>
+                  <h3 className="font-bold text-slate-900">Semi-Unitized Systems</h3>
+                  <p className="text-sm text-slate-600">
+                    Vertical mullions are installed first, followed by glass panels. Offers flexibility for complex architectural geometries.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div className="bg-slate-100 p-8 rounded-2xl relative">
+            <h3 className="text-2xl font-bold mb-6">Technical Specifications</h3>
             <ul className="space-y-4">
               {[
-                "Unitized Systems for Fast Installation",
-                "High Wind Load Resistance",
-                "Thermal Break Technology",
-                "Seamless Glass Aesthetics"
-              ].map((item, i) => (
-                <li key={i} className="flex items-center gap-3">
-                  <CheckCircle2 className="text-amber-500" />
-                  <span className="font-medium text-slate-800">{item}</span>
+                { label: "Glass Type", val: "DGU / SGU / Laminated" },
+                { label: "Aluminium Grade", val: "6063 T6 Alloy" },
+                { label: "Wind Load", val: "1.5 kPa to 4.5 kPa" },
+                { label: "Weather Seal", val: "EPDM Gaskets & Structural Silicone" },
+                { label: "Finish", val: "PVDF / Anodized / Powder Coated" },
+                { label: "Compliance", val: "ASTM / BS Standards" }
+              ].map((spec, i) => (
+                <li key={i} className="flex justify-between items-center border-b border-slate-300 pb-2">
+                  <span className="font-medium text-slate-700">{spec.label}</span>
+                  <span className="text-slate-900 font-bold">{spec.val}</span>
                 </li>
               ))}
             </ul>
-          </div>
-          <div className="grid grid-cols-2 gap-4">
-            <div className="bg-slate-50 p-6 rounded-xl border hover:border-amber-500 transition-colors">
-              <Building2 className="w-10 h-10 text-amber-600 mb-4" />
-              <h3 className="font-bold mb-2">Unitized</h3>
-              <p className="text-sm text-slate-600">Factory-assembled panels for rapid on-site installation.</p>
-            </div>
-            <div className="bg-slate-50 p-6 rounded-xl border hover:border-amber-500 transition-colors">
-              <Maximize2 className="w-10 h-10 text-amber-600 mb-4" />
-              <h3 className="font-bold mb-2">Semi-Unitized</h3>
-              <p className="text-sm text-slate-600">Flexible hybrid systems ideal for complex architectural forms.</p>
+            <div className="mt-8 bg-amber-100 p-4 rounded-lg flex gap-3 items-start">
+              <ShieldCheck className="text-amber-700 shrink-0" />
+              <p className="text-sm text-amber-900 font-medium">
+                All our systems undergo rigorous water penetration and structural load testing before installation.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* SEO FAQ Section */}
+      {/* 4. LOCAL SEO: AREAS WE SERVE */}
+      <section className="py-20 bg-slate-900 text-white">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl font-bold mb-8">Serving Major Hubs Across Maharashtra</h2>
+          <div className="flex flex-wrap justify-center gap-4">
+            {["Pune IT Parks", "Mumbai BKC", "Navi Mumbai", "Nashik", "Nagpur", "Aurangabad"].map((city) => (
+              <div key={city} className="flex items-center gap-2 bg-white/10 px-6 py-3 rounded-full hover:bg-amber-600 transition-colors cursor-default">
+                <MapPin size={16} />
+                <span>{city}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 5. PROCESS SECTION (INTERNAL LINKING) */}
       <section className="py-20 bg-slate-50">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <h2 className="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2>
-          <div className="space-y-6">
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h3 className="font-bold text-lg mb-2">What is the difference between unitized and stick curtain walls?</h3>
-              <p className="text-slate-600">Unitized systems are assembled in the factory and hung on the building, offering speed and quality control. Stick systems are assembled piece-by-piece on-site, offering more adjustability for irregular structures.</p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h3 className="font-bold text-lg mb-2">Do you provide structural calculations?</h3>
-              <p className="text-slate-600">Yes, our engineering team provides full wind-load analysis and structural stability reports for all curtain wall projects.</p>
-            </div>
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-12">Our Execution Process</h2>
+          <div className="grid md:grid-cols-4 gap-6">
+            {[
+              { title: "Survey", desc: "Site survey & wind pressure calculation." },
+              { title: "Design", desc: "3D modelling & shop drawings approval." },
+              { title: "Fabrication", desc: "Precision cutting & assembly at factory." },
+              { title: "Installation", desc: "Crane-assisted panel lifting & fixing." }
+            ].map((step, i) => (
+              <div key={i} className="text-center p-6 bg-white shadow-sm rounded-xl">
+                <div className="w-12 h-12 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-xl">
+                  {i + 1}
+                </div>
+                <h3 className="font-bold mb-2">{step.title}</h3>
+                <p className="text-sm text-slate-600">{step.desc}</p>
+              </div>
+            ))}
+          </div>
+          <div className="text-center mt-12">
+            <p className="text-slate-600 mb-4">Need maintenance for an existing facade?</p>
+            <Link to="/maintenance-services" className="text-amber-600 font-bold hover:underline flex items-center justify-center gap-2">
+              <Wrench size={16} /> Check our AMC Services
+            </Link>
           </div>
         </div>
       </section>
@@ -78,4 +171,4 @@ export default function CurtainWall() {
       <CTASection />
     </Layout>
   );
-}
+      }
