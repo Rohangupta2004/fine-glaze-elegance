@@ -21,6 +21,7 @@ import Portal from "./pages/Portal";
 
 
 import Dev from "./pages/Dev";
+import Admin from "./pages/Admin";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -49,6 +50,8 @@ const App = () => (
           <Route path="/portal" element={<Portal />} />
 
         <Route path="/dev" element={<Dev />} />
+          {/* Add this line below the portal route */}
+<Route path="/admin" element={<Admin />} />
           </Routes>
       </BrowserRouter>
     </TooltipProvider>
@@ -56,5 +59,6 @@ const App = () => (
 );
 
 export default App;
+            
             
             
