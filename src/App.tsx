@@ -19,9 +19,7 @@ import Dev from "./pages/Dev";
 import AluminiumFacade from "./pages/AluminiumFacade";
 import StructuralGlazing from "./pages/StructuralGlazing";
 
-/* SEO Service Pages (New High-Ranking Pages) */
-import CurtainWall from "./pages/CurtainWall";
-import AcpCladding from "./pages/AcpCladding";
+
 
 
 
@@ -53,11 +51,7 @@ const App = () => (
             <Route path="/aluminium-facade" element={<AluminiumFacade />} />
             <Route path="/structural-glazing" element={<StructuralGlazing />} />
             
-            {/* New Added Pages */}
-            <Route path="/curtain-wall-systems" element={<CurtainWall />} />
-            <Route path="/acp-aluminium-cladding" element={<AcpCladding />} />
-            <Route path="/glass-railings" element={<GlassRailings />} />
-            <Route path="/maintenance-services" element={<Maintenance />} />
+            
 
             {/* --- Application Portals --- */}
             <Route path="/portal" element={<Portal />} />
