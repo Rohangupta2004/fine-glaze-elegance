@@ -1,31 +1,32 @@
-// src/pages/Portal.tsx
-// FULL FILE — EMAIL + PASSWORD + GOOGLE
-// ❌ NO OTP
-// ❌ NO MAGIC LINK UI
-// ✅ EMAIL CONFIRMATION HANDLED BY SUPABASE
-<h1 className="text-red-600 text-4xl">NEW PORTAL FILE</h1>
-
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { supabase } from "@/lib/supabase";
 import { Session } from "@supabase/supabase-js";
 import { toast } from "sonner";
+import {
+  Mail,
+  Lock,
+  LogIn,
+  UserPlus,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 
 export default function Portal() {
-  const navigate = useNavigate();
-
   const [session, setSession] = useState<Session | null>(null);
   const [checked, setChecked] = useState(false);
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [mode, setMode] = useState<"login" | "activate">("login");
+  const [mode, setMode] = useState<"login" | "signup">("login");
   const [loading, setLoading] = useState(false);
+  const [awaitingConfirm, setAwaitingConfirm] = useState(false);
 
-  // SESSION
   useEffect(() => {
     supabase.auth.getSession().then(({ data }) => {
       setSession(data.session);
@@ -34,37 +35,38 @@ export default function Portal() {
 
     const { data } = supabase.auth.onAuthStateChange((_e, s) => {
       setSession(s);
-      if (s) navigate("/portal", { replace: true });
     });
 
     return () => data.subscription.unsubscribe();
-  }, [navigate]);
+  }, []);
 
-  // LOGIN
-  const loginWithPassword = async () => {
+  // ---------- SIGN IN ----------
+  const signInWithPassword = async () => {
     if (!email || !password) return toast.error("Enter email & password");
     setLoading(true);
+
     const { error } = await supabase.auth.signInWithPassword({
       email,
       password,
     });
+
     setLoading(false);
-    if (error) toast.error(error.message);
+
+    if (error) {
+      if (error.message.toLowerCase().includes("confirm")) {
+        setAwaitingConfirm(true);
+        toast.error("Please confirm your email");
+      } else {
+        toast.error(error.message);
+      }
+    }
   };
 
-  // ACTIVATE (SIGN UP)
-  const activateAccount = async () => {
+  // ---------- SIGN UP ----------
+  const signUpWithPassword = async () => {
     if (!email || !password) return toast.error("Enter email & password");
-
-    const { data } = await supabase
-      .from("Clientproject")
-      .select("id")
-      .eq("client_email", email)
-      .single();
-
-    if (!data) return toast.error("No project linked to this email");
-
     setLoading(true);
+
     const { error } = await supabase.auth.signUp({
       email,
       password,
@@ -72,13 +74,31 @@ export default function Portal() {
         emailRedirectTo: `${window.location.origin}/portal`,
       },
     });
+
     setLoading(false);
 
-    if (error) toast.error(error.message);
-    else toast.success("Check email to confirm account");
+    if (error) {
+      toast.error(error.message);
+    } else {
+      setAwaitingConfirm(true);
+      toast.success("Confirmation email sent");
+    }
   };
 
-  // GOOGLE
+  // ---------- RESEND CONFIRM ----------
+  const resendConfirmation = async () => {
+    if (!email) return toast.error("Enter email");
+
+    const { error } = await supabase.auth.resend({
+      type: "signup",
+      email,
+    });
+
+    if (error) toast.error(error.message);
+    else toast.success("Confirmation email resent");
+  };
+
+  // ---------- GOOGLE ----------
   const signInWithGoogle = async () => {
     await supabase.auth.signInWithOAuth({
       provider: "google",
@@ -86,73 +106,107 @@ export default function Portal() {
     });
   };
 
-  // LOGIN SCREEN
+  // ---------- AUTH UI ----------
   if (!session && checked) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-slate-50 p-4">
-        <Card className="w-full max-w-md">
+        <Card className="w-full max-w-md shadow-lg">
           <CardHeader className="text-center">
-            <CardTitle>Client Portal</CardTitle>
+            <CardTitle className="text-2xl">Client Portal</CardTitle>
           </CardHeader>
+
           <CardContent className="space-y-4">
+            {/* GOOGLE */}
             <Button
               variant="outline"
-              className="w-full"
+              className="w-full gap-2"
               onClick={signInWithGoogle}
             >
+              <img
+                src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
+                alt="Google"
+                className="h-4 w-4"
+              />
               Continue with Google
             </Button>
 
-            <Input
-              type="email"
-              placeholder="Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
+            {/* EMAIL */}
+            <div className="relative">
+              <Mail className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
+              <Input
+                type="email"
+                placeholder="Email"
+                className="pl-9"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </div>
 
-            <Input
-              type="password"
-              placeholder="Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
+            {/* PASSWORD */}
+            <div className="relative">
+              <Lock className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
+              <Input
+                type="password"
+                placeholder="Password"
+                className="pl-9"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            </div>
 
             {mode === "login" ? (
               <Button
-                className="w-full"
-                onClick={loginWithPassword}
+                className="w-full gap-2"
+                onClick={signInWithPassword}
                 disabled={loading}
               >
+                <LogIn size={16} />
                 Sign In
               </Button>
             ) : (
               <Button
-                className="w-full"
-                onClick={activateAccount}
+                className="w-full gap-2"
+                onClick={signUpWithPassword}
                 disabled={loading}
               >
-                Activate Account
+                <UserPlus size={16} />
+                Sign Up
               </Button>
             )}
 
-            <button
-              className="text-xs underline w-full"
+            {awaitingConfirm && (
+              <Button
+                variant="secondary"
+                className="w-full"
+                onClick={resendConfirmation}
+              >
+                Resend confirmation email
+              </Button>
+            )}
+
+            <Button
+              variant="ghost"
+              className="w-full text-sm"
               onClick={() =>
-                setMode(mode === "login" ? "activate" : "login")
+                setMode(mode === "login" ? "signup" : "login")
               }
             >
-              {mode === "login" ? "Activate access" : "Back to login"}
-            </button>
+              {mode === "login"
+                ? "Create new account"
+                : "Already have an account? Sign in"}
+            </Button>
           </CardContent>
         </Card>
       </div>
     );
   }
 
-  // PORTAL HOME
+  // ---------- LOGGED IN ----------
   return (
     <div className="min-h-screen flex items-center justify-center">
-      <Button onClick={() => supabase.auth.signOut()}>Sign Out</Button>
+      <Button onClick={() => supabase.auth.signOut()}>
+        Sign Out
+      </Button>
     </div>
   );
-}
+    }
