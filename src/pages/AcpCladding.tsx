@@ -1,6 +1,6 @@
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/home/CTASection";
-import { Layers, Paintbucket, Shield, Zap } from "lucide-react";
+
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
