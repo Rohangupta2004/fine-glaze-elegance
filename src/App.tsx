@@ -22,8 +22,8 @@ import StructuralGlazing from "./pages/StructuralGlazing";
 /* SEO Service Pages (New High-Ranking Pages) */
 import CurtainWall from "./pages/CurtainWall";
 import AcpCladding from "./pages/AcpCladding";
-import GlassRailings from "./pages/GlassRailings";
-import Maintenance from "./pages/Maintenance";
+
+
 
 /* App Portals */
 import Portal from "./pages/Portal"; // Client View
