@@ -1,12 +1,5 @@
 // src/pages/Portal.tsx
-// FULL PORTAL – FINAL, WORKING
-// ✅ Email + Password SIGN UP
-// ✅ Email CONFIRMATION + RESEND
-// ✅ Email + Password SIGN IN
-// ✅ Google SIGN IN
-// ✅ DASHBOARD RENDERS AFTER LOGIN (FIXED)
-// ❌ NO OTP
-// ❌ NO ADMIN
+// FINAL VERSION – SAME DASHBOARD FOR ALL LOGIN METHODS
 
 import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabase";
@@ -51,69 +44,71 @@ export default function Portal() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [mode, setMode] = useState<"login" | "signup">("login");
-  const [loading, setLoading] = useState(false);
-  const [awaitingConfirm, setAwaitingConfirm] = useState(false);
+  const [authLoading, setAuthLoading] = useState(false);
 
   const [project, setProject] = useState<Project | null>(null);
   const [dashboardLoading, setDashboardLoading] = useState(true);
 
-  /* ---------- SESSION ---------- */
+  /* ================= AUTH LISTENER (KEY FIX) ================= */
   useEffect(() => {
     supabase.auth.getSession().then(({ data }) => {
       setSession(data.session);
       setChecked(true);
+      if (data.session?.user?.email) {
+        fetchProject(data.session.user.email);
+      }
     });
 
-    const { data } = supabase.auth.onAuthStateChange((_e, s) => {
-      setSession(s);
-    });
+    const { data } = supabase.auth.onAuthStateChange(
+      async (_event, session) => {
+        setSession(session);
+
+        if (session?.user?.email) {
+          await fetchProject(session.user.email);
+        } else {
+          setProject(null);
+        }
+      }
+    );
 
     return () => data.subscription.unsubscribe();
   }, []);
 
-  /* ---------- FETCH PROJECT AFTER LOGIN ---------- */
-  useEffect(() => {
-    if (session?.user?.email) fetchProject();
-  }, [session]);
-
-  const fetchProject = async () => {
+  /* ================= FETCH PROJECT ================= */
+  const fetchProject = async (email: string) => {
     setDashboardLoading(true);
 
-    const { data } = await supabase
+    const { data, error } = await supabase
       .from("Clientproject")
       .select("*")
-      .eq("client_email", session!.user.email)
+      .eq("client_email", email)
       .maybeSingle();
+
+    if (error) {
+      console.error(error);
+    }
 
     setProject(data || null);
     setDashboardLoading(false);
   };
 
-  /* ---------- AUTH ---------- */
+  /* ================= AUTH ================= */
   const signInWithPassword = async () => {
     if (!email || !password) return toast.error("Enter email & password");
-    setLoading(true);
+    setAuthLoading(true);
 
     const { error } = await supabase.auth.signInWithPassword({
       email,
       password,
     });
 
-    setLoading(false);
-
-    if (error) {
-      if (error.message.toLowerCase().includes("confirm")) {
-        setAwaitingConfirm(true);
-        toast.error("Please confirm your email");
-      } else {
-        toast.error(error.message);
-      }
-    }
+    setAuthLoading(false);
+    if (error) toast.error(error.message);
   };
 
   const signUpWithPassword = async () => {
     if (!email || !password) return toast.error("Enter email & password");
-    setLoading(true);
+    setAuthLoading(true);
 
     const { error } = await supabase.auth.signUp({
       email,
@@ -123,26 +118,9 @@ export default function Portal() {
       },
     });
 
-    setLoading(false);
-
-    if (error) {
-      toast.error(error.message);
-    } else {
-      setAwaitingConfirm(true);
-      toast.success("Confirmation email sent");
-    }
-  };
-
-  const resendConfirmation = async () => {
-    if (!email) return toast.error("Enter email");
-
-    const { error } = await supabase.auth.resend({
-      type: "signup",
-      email,
-    });
-
+    setAuthLoading(false);
     if (error) toast.error(error.message);
-    else toast.success("Confirmation email resent");
+    else toast.success("Check email to confirm");
   };
 
   const signInWithGoogle = async () => {
@@ -152,13 +130,13 @@ export default function Portal() {
     });
   };
 
-  /* ================= AUTH UI ================= */
+  /* ================= LOGIN UI ================= */
   if (!session && checked) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-slate-50 p-4">
-        <Card className="w-full max-w-md shadow-lg">
+        <Card className="w-full max-w-md">
           <CardHeader className="text-center">
-            <CardTitle className="text-2xl">Client Portal</CardTitle>
+            <CardTitle>Client Portal</CardTitle>
           </CardHeader>
 
           <CardContent className="space-y-4">
@@ -200,7 +178,7 @@ export default function Portal() {
               <Button
                 className="w-full gap-2"
                 onClick={signInWithPassword}
-                disabled={loading}
+                disabled={authLoading}
               >
                 <LogIn size={16} /> Sign In
               </Button>
@@ -208,19 +186,9 @@ export default function Portal() {
               <Button
                 className="w-full gap-2"
                 onClick={signUpWithPassword}
-                disabled={loading}
+                disabled={authLoading}
               >
                 <UserPlus size={16} /> Sign Up
-              </Button>
-            )}
-
-            {awaitingConfirm && (
-              <Button
-                variant="secondary"
-                className="w-full"
-                onClick={resendConfirmation}
-              >
-                Resend confirmation email
               </Button>
             )}
 
@@ -253,11 +221,13 @@ export default function Portal() {
 
     if (!project) {
       return (
-        <div className="min-h-screen flex items-center justify-center text-center space-y-4">
-          <p>No project assigned</p>
-          <Button onClick={() => supabase.auth.signOut()}>
-            Sign Out
-          </Button>
+        <div className="min-h-screen flex items-center justify-center">
+          <div className="text-center space-y-4">
+            <p>No project assigned</p>
+            <Button onClick={() => supabase.auth.signOut()}>
+              Sign Out
+            </Button>
+          </div>
         </div>
       );
     }
