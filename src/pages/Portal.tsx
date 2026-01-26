@@ -3,6 +3,7 @@
 // ❌ NO OTP
 // ❌ NO MAGIC LINK UI
 // ✅ EMAIL CONFIRMATION HANDLED BY SUPABASE
+<h1 className="text-red-600 text-4xl">NEW PORTAL FILE</h1>
 
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
