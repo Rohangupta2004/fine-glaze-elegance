@@ -1,3 +1,13 @@
+// src/pages/Portal.tsx
+// FULL PORTAL – FINAL, WORKING
+// ✅ Email + Password SIGN UP
+// ✅ Email CONFIRMATION + RESEND
+// ✅ Email + Password SIGN IN
+// ✅ Google SIGN IN
+// ✅ DASHBOARD RENDERS AFTER LOGIN (FIXED)
+// ❌ NO OTP
+// ❌ NO ADMIN
+
 import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabase";
 import { Session } from "@supabase/supabase-js";
@@ -7,6 +17,9 @@ import {
   Lock,
   LogIn,
   UserPlus,
+  MapPin,
+  Building,
+  User,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -16,7 +29,21 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { Progress } from "@/components/ui/progress";
+import { Skeleton } from "@/components/ui/skeleton";
 
+/* ================= TYPES ================= */
+type Project = {
+  id: string;
+  project_name: string;
+  status: string;
+  progress: number;
+  site_address: string;
+  architect_name: string;
+  client_phone: string;
+};
+
+/* ================= COMPONENT ================= */
 export default function Portal() {
   const [session, setSession] = useState<Session | null>(null);
   const [checked, setChecked] = useState(false);
@@ -27,6 +54,10 @@ export default function Portal() {
   const [loading, setLoading] = useState(false);
   const [awaitingConfirm, setAwaitingConfirm] = useState(false);
 
+  const [project, setProject] = useState<Project | null>(null);
+  const [dashboardLoading, setDashboardLoading] = useState(true);
+
+  /* ---------- SESSION ---------- */
   useEffect(() => {
     supabase.auth.getSession().then(({ data }) => {
       setSession(data.session);
@@ -40,7 +71,25 @@ export default function Portal() {
     return () => data.subscription.unsubscribe();
   }, []);
 
-  // ---------- SIGN IN ----------
+  /* ---------- FETCH PROJECT AFTER LOGIN ---------- */
+  useEffect(() => {
+    if (session?.user?.email) fetchProject();
+  }, [session]);
+
+  const fetchProject = async () => {
+    setDashboardLoading(true);
+
+    const { data } = await supabase
+      .from("Clientproject")
+      .select("*")
+      .eq("client_email", session!.user.email)
+      .maybeSingle();
+
+    setProject(data || null);
+    setDashboardLoading(false);
+  };
+
+  /* ---------- AUTH ---------- */
   const signInWithPassword = async () => {
     if (!email || !password) return toast.error("Enter email & password");
     setLoading(true);
@@ -62,7 +111,6 @@ export default function Portal() {
     }
   };
 
-  // ---------- SIGN UP ----------
   const signUpWithPassword = async () => {
     if (!email || !password) return toast.error("Enter email & password");
     setLoading(true);
@@ -85,7 +133,6 @@ export default function Portal() {
     }
   };
 
-  // ---------- RESEND CONFIRM ----------
   const resendConfirmation = async () => {
     if (!email) return toast.error("Enter email");
 
@@ -98,7 +145,6 @@ export default function Portal() {
     else toast.success("Confirmation email resent");
   };
 
-  // ---------- GOOGLE ----------
   const signInWithGoogle = async () => {
     await supabase.auth.signInWithOAuth({
       provider: "google",
@@ -106,7 +152,7 @@ export default function Portal() {
     });
   };
 
-  // ---------- AUTH UI ----------
+  /* ================= AUTH UI ================= */
   if (!session && checked) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-slate-50 p-4">
@@ -116,7 +162,6 @@ export default function Portal() {
           </CardHeader>
 
           <CardContent className="space-y-4">
-            {/* GOOGLE */}
             <Button
               variant="outline"
               className="w-full gap-2"
@@ -124,31 +169,28 @@ export default function Portal() {
             >
               <img
                 src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
-                alt="Google"
                 className="h-4 w-4"
               />
               Continue with Google
             </Button>
 
-            {/* EMAIL */}
             <div className="relative">
               <Mail className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
               <Input
+                className="pl-9"
                 type="email"
                 placeholder="Email"
-                className="pl-9"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
             </div>
 
-            {/* PASSWORD */}
             <div className="relative">
               <Lock className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
               <Input
+                className="pl-9"
                 type="password"
                 placeholder="Password"
-                className="pl-9"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
@@ -160,8 +202,7 @@ export default function Portal() {
                 onClick={signInWithPassword}
                 disabled={loading}
               >
-                <LogIn size={16} />
-                Sign In
+                <LogIn size={16} /> Sign In
               </Button>
             ) : (
               <Button
@@ -169,8 +210,7 @@ export default function Portal() {
                 onClick={signUpWithPassword}
                 disabled={loading}
               >
-                <UserPlus size={16} />
-                Sign Up
+                <UserPlus size={16} /> Sign Up
               </Button>
             )}
 
@@ -201,12 +241,66 @@ export default function Portal() {
     );
   }
 
-  // ---------- LOGGED IN ----------
-  return (
-    <div className="min-h-screen flex items-center justify-center">
-      <Button onClick={() => supabase.auth.signOut()}>
-        Sign Out
-      </Button>
-    </div>
-  );
+  /* ================= DASHBOARD ================= */
+  if (session && checked) {
+    if (dashboardLoading) {
+      return (
+        <div className="min-h-screen flex items-center justify-center">
+          <Skeleton className="h-40 w-96" />
+        </div>
+      );
     }
+
+    if (!project) {
+      return (
+        <div className="min-h-screen flex items-center justify-center text-center space-y-4">
+          <p>No project assigned</p>
+          <Button onClick={() => supabase.auth.signOut()}>
+            Sign Out
+          </Button>
+        </div>
+      );
+    }
+
+    return (
+      <div className="min-h-screen bg-slate-50 p-6">
+        <div className="max-w-5xl mx-auto space-y-6">
+          <div className="flex justify-between items-center">
+            <h1 className="text-2xl font-bold">
+              {project.project_name}
+            </h1>
+            <Button
+              variant="outline"
+              onClick={() => supabase.auth.signOut()}
+            >
+              Sign Out
+            </Button>
+          </div>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>{project.status}</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <Progress value={project.progress} />
+
+              <div className="flex items-center gap-2 text-sm">
+                <MapPin size={14} /> {project.site_address}
+              </div>
+
+              <div className="flex items-center gap-2 text-sm">
+                <Building size={14} /> {project.architect_name}
+              </div>
+
+              <div className="flex items-center gap-2 text-sm">
+                <User size={14} /> {project.client_phone}
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+    );
+  }
+
+  return null;
+        }
