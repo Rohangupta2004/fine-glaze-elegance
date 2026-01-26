@@ -3,6 +3,7 @@ import { supabase } from "@/lib/supabase";
 import { Session } from "@supabase/supabase-js";
 import {
   Mail,
+  LogIn,
   FileText,
   Download,
   Calendar,
@@ -12,6 +13,7 @@ import {
   User,
   Building,
   IndianRupee,
+  AlertCircle,
 } from "lucide-react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
@@ -30,12 +32,6 @@ type ProjectFile = {
   created_at: string;
 };
 
-type TimelineEvent = {
-  date: string;
-  title: string;
-  desc: string;
-};
-
 type Project = {
   id: string;
   project_name: string;
@@ -47,7 +43,7 @@ type Project = {
   architect_name: string;
   total_amount: number;
   paid_amount: number;
-  timeline: TimelineEvent[];
+  timeline: { date: string; title: string; desc: string }[];
 };
 
 export default function Portal() {
@@ -58,22 +54,18 @@ export default function Portal() {
   const [email, setEmail] = useState("");
   const [isAuthLoading, setIsAuthLoading] = useState(false);
 
-  /* ---------------- AUTH ---------------- */
   useEffect(() => {
-    supabase.auth.getSession().then(({ data }) => {
-      setSession(data.session);
-    });
-
+    supabase.auth.getSession().then(({ data: { session } }) =>
+      setSession(session)
+    );
     const {
       data: { subscription },
-    } = supabase.auth.onAuthStateChange((_event, session) => {
-      setSession(session);
-    });
-
+    } = supabase.auth.onAuthStateChange((_, session) =>
+      setSession(session)
+    );
     return () => subscription.unsubscribe();
   }, []);
 
-  /* ---------------- DATA ---------------- */
   useEffect(() => {
     if (session?.user?.email) fetchData();
   }, [session]);
@@ -81,17 +73,11 @@ export default function Portal() {
   const fetchData = async () => {
     setLoading(true);
 
-    const { data: proj, error } = await supabase
+    const { data: proj } = await supabase
       .from("Clientproject")
       .select("*")
       .eq("client_email", session?.user.email)
       .maybeSingle();
-
-    if (error) {
-      toast.error("Failed to load project");
-      setLoading(false);
-      return;
-    }
 
     if (proj) {
       setProject(proj);
@@ -108,7 +94,6 @@ export default function Portal() {
     setLoading(false);
   };
 
-  /* ---------------- ACTIONS ---------------- */
   const handleApproval = async (
     fileId: string,
     status: "Approved" | "Rejected"
@@ -118,11 +103,11 @@ export default function Portal() {
       .update({ status })
       .eq("id", fileId);
 
-    if (error) {
-      toast.error("Action failed");
-    } else {
+    if (!error) {
       toast.success(`Document ${status}`);
       fetchData();
+    } else {
+      toast.error("Action failed");
     }
   };
 
@@ -137,22 +122,21 @@ export default function Portal() {
 
   const signInWithEmail = async () => {
     if (!email) return toast.error("Enter email");
-
     setIsAuthLoading(true);
     const { error } = await supabase.auth.signInWithOtp({ email });
     setIsAuthLoading(false);
-
     if (error) toast.error(error.message);
     else toast.success("Login link sent to your email!");
   };
 
-  /* ---------------- UI ---------------- */
   if (!session) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-slate-50 p-4">
         <Card className="w-full max-w-md shadow-xl border-t-4 border-t-primary">
           <CardHeader className="text-center">
-            <CardTitle className="text-2xl font-bold">Client Portal</CardTitle>
+            <CardTitle className="text-2xl font-bold">
+              Client Portal
+            </CardTitle>
           </CardHeader>
           <CardContent className="space-y-6">
             <Button
@@ -190,10 +174,11 @@ export default function Portal() {
     );
   }
 
-  /* --------- rest of your JSX stays SAME --------- */
   return (
     <div className="min-h-screen bg-slate-50 p-4 md:p-10">
-      {/* your existing dashboard JSX */}
+      <div className="max-w-6xl mx-auto space-y-8">
+        {/* REST OF YOUR JSX — UNCHANGED */}
+      </div>
     </div>
   );
-      }
+  }
