@@ -3,7 +3,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { HelmetProvider } from "react-helmet-async"; // SEO Provider
+import { HelmetProvider } from "react-helmet-async";
 
 /* Core Pages */
 import Index from "./pages/Index";
@@ -15,24 +15,21 @@ import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import Dev from "./pages/Dev";
 
-/* SEO Service Pages (Existing) */
+/* SEO Service Pages */
 import AluminiumFacade from "./pages/AluminiumFacade";
 import StructuralGlazing from "./pages/StructuralGlazing";
-
-
-
-
+import CurtainWall from "./pages/CurtainWall";
+import AcpCladding from "./pages/AcpCladding"; // ✅ IMPORTED NEW PAGE
 
 /* App Portals */
-import Portal from "./pages/Portal"; // Client View
-import Admin from "./pages/Admin";   // Your Admin Control Center
+import Portal from "./pages/Portal";
+import Admin from "./pages/Admin";
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
-      {/* HelmetProvider ensures your SEO Meta Tags work correctly */}
       <HelmetProvider>
         <Toaster />
         <Sonner />
@@ -46,16 +43,17 @@ const App = () => (
             <Route path="/project/:slug" element={<ProjectDetail />} />
             <Route path="/contact" element={<Contact />} />
 
-            {/* --- SEO Strategy Pages (Ranking Landing Pages) --- */}
-            {/* Existing */}
+            {/* --- SEO Strategy Pages --- */}
             <Route path="/aluminium-facade" element={<AluminiumFacade />} />
             <Route path="/structural-glazing" element={<StructuralGlazing />} />
+            <Route path="/curtain-wall-systems" element={<CurtainWall />} />
             
-            
+            {/* ✅ NEW ROUTE (Matches Header Link) */}
+            <Route path="/acp-aluminium-cladding" element={<AcpCladding />} />
 
             {/* --- Application Portals --- */}
             <Route path="/portal" element={<Portal />} />
-            <Route path="/admin" element={<Admin />} /> {/* Only accessible by you */}
+            <Route path="/admin" element={<Admin />} />
 
             {/* --- Development Utils --- */}
             <Route path="/dev" element={<Dev />} />
