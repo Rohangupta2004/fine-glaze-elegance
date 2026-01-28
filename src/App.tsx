@@ -5,7 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 
-/* Core Pages */
+/* --- Core Business Pages --- */
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Services from "./pages/Services";
@@ -15,13 +15,15 @@ import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import Dev from "./pages/Dev";
 
-/* SEO Service Pages */
+/* --- SEO & Service Pages --- */
 import AluminiumFacade from "./pages/AluminiumFacade";
 import StructuralGlazing from "./pages/StructuralGlazing";
 import CurtainWall from "./pages/CurtainWall";
-import AcpCladding from "./pages/AcpCladding"; // ✅ IMPORTED NEW PAGE
-import GlassRailings from "./pages/GlassRailings";
-/* App Portals */
+import AcpCladding from "./pages/AcpCladding";
+import GlassRailings from "./pages/GlassRailings"; // ✅ Added
+import Maintenance from "./pages/Maintenance";     // ✅ Added
+
+/* --- App Portals --- */
 import Portal from "./pages/Portal";
 import Admin from "./pages/Admin";
 
@@ -43,13 +45,13 @@ const App = () => (
             <Route path="/project/:slug" element={<ProjectDetail />} />
             <Route path="/contact" element={<Contact />} />
 
-            {/* --- SEO Strategy Pages --- */}
+            {/* --- Service Strategy Pages (Matches Header Links) --- */}
             <Route path="/aluminium-facade" element={<AluminiumFacade />} />
             <Route path="/structural-glazing" element={<StructuralGlazing />} />
             <Route path="/curtain-wall-systems" element={<CurtainWall />} />
-            
-            {/* ✅ NEW ROUTE (Matches Header Link) */}
             <Route path="/acp-aluminium-cladding" element={<AcpCladding />} />
+            <Route path="/glass-railings" element={<GlassRailings />} />       {/* ✅ Live */}
+            <Route path="/maintenance-services" element={<Maintenance />} />   {/* ✅ Live */}
 
             {/* --- Application Portals --- */}
             <Route path="/portal" element={<Portal />} />
@@ -60,7 +62,6 @@ const App = () => (
             
             {/* --- Catch All --- */}
             <Route path="*" element={<NotFound />} />
-            <Route path="/glass-railings" element={<GlassRailings />} />
           </Routes>
         </BrowserRouter>
       </HelmetProvider>
@@ -69,4 +70,3 @@ const App = () => (
 );
 
 export default App;
-
