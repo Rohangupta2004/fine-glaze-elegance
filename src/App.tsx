@@ -20,6 +20,7 @@ import AluminiumFacade from "./pages/AluminiumFacade";
 import StructuralGlazing from "./pages/StructuralGlazing";
 import CurtainWall from "./pages/CurtainWall";
 import AcpCladding from "./pages/AcpCladding"; // ✅ IMPORTED NEW PAGE
+import GlassRailings from "./pages/GlassRailings";
 
 /* App Portals */
 import Portal from "./pages/Portal";
@@ -60,6 +61,7 @@ const App = () => (
             
             {/* --- Catch All --- */}
             <Route path="*" element={<NotFound />} />
+            <Route path="/glass-railings" element={<GlassRailings />} />
           </Routes>
         </BrowserRouter>
       </HelmetProvider>
@@ -68,3 +70,4 @@ const App = () => (
 );
 
 export default App;
+
