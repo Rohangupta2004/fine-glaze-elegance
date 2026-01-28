@@ -1,63 +1,70 @@
-import React, { Suspense, lazy } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import ScrollToTop from "@/components/layout/ScrollToTop"; 
-import { PageLoader } from "@/components/ui/page-loader"; 
+import { HelmetProvider } from "react-helmet-async"; // SEO Provider
 
-/* --- Eager Load Core Pages (Fixes Blank Screen & Improves SEO) --- */
-import Index from "./pages/Index"; // IMPORTED DIRECTLY
+/* Core Pages */
+import Index from "./pages/Index";
+import About from "./pages/About";
+import Services from "./pages/Services";
+import Portfolio from "./pages/Portfolio";
+import ProjectDetail from "./pages/ProjectDetail";
+import Contact from "./pages/Contact";
+import NotFound from "./pages/NotFound";
+import Dev from "./pages/Dev";
 
-/* --- Lazy Load Secondary Pages --- */
-const About = lazy(() => import("./pages/About"));
-const Services = lazy(() => import("./pages/Services"));
-const Portfolio = lazy(() => import("./pages/Portfolio"));
-const ProjectDetail = lazy(() => import("./pages/ProjectDetail"));
-const Contact = lazy(() => import("./pages/Contact"));
-const NotFound = lazy(() => import("./pages/NotFound"));
-const Dev = lazy(() => import("./pages/Dev"));
+/* SEO Service Pages (Existing) */
+import AluminiumFacade from "./pages/AluminiumFacade";
+import StructuralGlazing from "./pages/StructuralGlazing";
 
-/* SEO Service Pages */
-const AluminiumFacade = lazy(() => import("./pages/AluminiumFacade"));
-const StructuralGlazing = lazy(() => import("./pages/StructuralGlazing"));
 
-/* Portals */
-const Portal = lazy(() => import("./pages/Portal"));
-const Admin = lazy(() => import("./pages/Admin"));
+
+
+
+/* App Portals */
+import Portal from "./pages/Portal"; // Client View
+import Admin from "./pages/Admin";   // Your Admin Control Center
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <ScrollToTop />
-        {/* Suspense handles the loading of lazy pages */}
-        <Suspense fallback={<PageLoader />}>
+      {/* HelmetProvider ensures your SEO Meta Tags work correctly */}
+      <HelmetProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
           <Routes>
-            {/* Index is now eager loaded, so it will show instantly */}
+            {/* --- Core Business Pages --- */}
             <Route path="/" element={<Index />} />
-            
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/project/:slug" element={<ProjectDetail />} />
             <Route path="/contact" element={<Contact />} />
 
+            {/* --- SEO Strategy Pages (Ranking Landing Pages) --- */}
+            {/* Existing */}
             <Route path="/aluminium-facade" element={<AluminiumFacade />} />
             <Route path="/structural-glazing" element={<StructuralGlazing />} />
+            
+            
 
+            {/* --- Application Portals --- */}
             <Route path="/portal" element={<Portal />} />
-            <Route path="/admin" element={<Admin />} />
+            <Route path="/admin" element={<Admin />} /> {/* Only accessible by you */}
+
+            {/* --- Development Utils --- */}
             <Route path="/dev" element={<Dev />} />
+            
+            {/* --- Catch All --- */}
             <Route path="*" element={<NotFound />} />
           </Routes>
-        </Suspense>
-      </BrowserRouter>
+        </BrowserRouter>
+      </HelmetProvider>
     </TooltipProvider>
   </QueryClientProvider>
 );
