@@ -1,136 +1,126 @@
-export default function Home() {
+export default function AluminiumWindowsDoors() {
   return (
-    <main className="bg-[#f8f8f6] text-[#1f1f1f]">
-
-      {/* NAVBAR */}
-      <header className="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center">
-        <div className="flex items-center gap-3">
-          <img src="/fineglaze-logo.png" className="h-10" alt="FineGlaze" />
-          <span className="font-semibold tracking-wide">FINEGLAZE</span>
-        </div>
-        <nav className="hidden md:flex gap-10 text-sm">
-          {["Systems", "Projects", "About", "Contact"].map(i => (
-            <a key={i} className="hover:text-[#b07a3f] transition">{i}</a>
-          ))}
-        </nav>
-      </header>
+    <main className="bg-[#fbfbfa] text-[#1e1e1e]">
 
       {/* HERO */}
-      <section className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-20 items-center py-28">
+      <section className="max-w-7xl mx-auto px-6 py-28 grid md:grid-cols-2 gap-20 items-center">
         <div>
-          <h1 className="text-5xl md:text-6xl font-bold leading-tight">
-            Premium Facade<br />
-            <span className="text-[#b07a3f]">Engineering Solutions</span>
+          <h1 className="text-5xl md:text-6xl font-semibold leading-tight">
+            Premium Aluminium<br />
+            <span className="text-[#b07a3f]">Windows & Sliding Doors</span>
           </h1>
+
           <p className="mt-6 text-lg text-[#555] max-w-lg">
-            We design, engineer and deliver high-performance aluminium
-            and glass facades for landmark buildings.
+            Slim profiles. Smooth sliding. Long-lasting aluminium systems
+            designed for modern homes and commercial spaces.
           </p>
 
           <div className="mt-10 flex gap-4">
-            <a className="px-8 py-4 rounded-full bg-[#b07a3f] text-white font-medium hover:opacity-90">
-              Get a Quote
+            <a className="px-8 py-4 rounded-full bg-[#b07a3f] text-white font-medium">
+              Get Price on WhatsApp
             </a>
-            <a className="px-8 py-4 rounded-full border border-[#b07a3f] text-[#b07a3f] hover:bg-[#b07a3f]/10">
-              View Projects
+            <a className="px-8 py-4 rounded-full border border-[#b07a3f] text-[#b07a3f]">
+              View Options
             </a>
           </div>
         </div>
 
         <img
-          src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5"
+          src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c"
           className="rounded-3xl shadow-xl"
-          alt="Facade Building"
+          alt="Aluminium sliding door"
         />
       </section>
 
-      {/* TRUST STRIP */}
-      <section className="bg-white py-16">
-        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-10 text-center">
-          {[
-            ["50+", "Projects Delivered"],
-            ["5L+ sq.ft", "Facade Installed"],
-            ["Pan India", "Operations"]
-          ].map(([a, b]) => (
-            <div key={a}>
-              <h3 className="text-3xl font-bold text-[#b07a3f]">{a}</h3>
-              <p className="mt-2 text-[#555]">{b}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* SYSTEMS */}
-      <section className="py-28 max-w-7xl mx-auto px-6">
-        <h2 className="text-4xl font-semibold text-center">
-          Our Facade Systems
-        </h2>
-
-        <div className="mt-16 grid md:grid-cols-4 gap-8">
-          {[
-            "Unitized Facade",
-            "Curtain Wall",
-            "Spider Glazing",
-            "ACP & Louvers"
-          ].map(sys => (
-            <div
-              key={sys}
-              className="bg-white rounded-2xl shadow-md overflow-hidden hover:-translate-y-2 transition"
-            >
-              <img
-                src="https://images.unsplash.com/photo-1529429611273-7d1a6a77d56b"
-                className="h-44 w-full object-cover"
-                alt={sys}
-              />
-              <div className="p-6">
-                <h3 className="font-semibold text-lg">{sys}</h3>
-                <p className="mt-2 text-sm text-[#666]">
-                  Engineered for performance, safety and aesthetics.
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* PROJECT SHOWCASE */}
-      <section className="bg-white py-28">
+      {/* PRODUCT TYPES */}
+      <section className="bg-white py-24">
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-4xl font-semibold mb-12">
-            Selected Projects
+          <h2 className="text-4xl font-semibold text-center">
+            Our Aluminium Systems
           </h2>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {[1,2,3].map(i => (
+          <div className="mt-16 grid md:grid-cols-2 gap-12">
+
+            {/* WINDOWS */}
+            <div className="rounded-3xl bg-[#fbfbfa] shadow-md overflow-hidden">
               <img
-                key={i}
-                src="https://images.unsplash.com/photo-1503387762-592deb58ef4e"
-                className="rounded-2xl shadow-lg"
-                alt="Project"
+                src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf"
+                className="h-64 w-full object-cover"
+                alt="Aluminium windows"
               />
-            ))}
+              <div className="p-8">
+                <h3 className="text-2xl font-semibold text-[#b07a3f]">
+                  Aluminium Windows
+                </h3>
+                <ul className="mt-4 space-y-2 text-[#555]">
+                  <li>• Sliding, Casement & Fixed Windows</li>
+                  <li>• Slim aluminium profiles</li>
+                  <li>• Noise & dust reduction</li>
+                  <li>• Low maintenance & rust-free</li>
+                </ul>
+              </div>
+            </div>
+
+            {/* SLIDING DOORS */}
+            <div className="rounded-3xl bg-[#fbfbfa] shadow-md overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf"
+                className="h-64 w-full object-cover"
+                alt="Aluminium sliding doors"
+              />
+              <div className="p-8">
+                <h3 className="text-2xl font-semibold text-[#b07a3f]">
+                  Sliding Doors
+                </h3>
+                <ul className="mt-4 space-y-2 text-[#555]">
+                  <li>• Balcony & Patio sliding doors</li>
+                  <li>• Smooth roller mechanism</li>
+                  <li>• Large glass panels</li>
+                  <li>• Secure multi-lock systems</li>
+                </ul>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
 
+      {/* WHY FINEGLAZE */}
+      <section className="py-24 max-w-7xl mx-auto px-6">
+        <h2 className="text-4xl font-semibold text-center">
+          Why Choose FineGlaze
+        </h2>
+
+        <div className="mt-16 grid md:grid-cols-4 gap-8 text-center">
+          {[
+            "Premium Aluminium Sections",
+            "Smooth & Silent Sliding",
+            "Custom Sizes & Finishes",
+            "Professional Installation"
+          ].map(point => (
+            <div
+              key={point}
+              className="p-8 bg-white rounded-2xl shadow-sm"
+            >
+              <p className="font-medium">{point}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* CTA */}
-      <section className="py-32 bg-[#1f1f1f] text-white text-center">
+      <section className="bg-[#1e1e1e] text-white py-28 text-center">
         <h2 className="text-4xl font-semibold">
-          Let’s Build Something Iconic
+          Get Aluminium Windows & Doors for Your Space
         </h2>
         <p className="mt-4 text-[#ccc]">
-          Talk to FineGlaze for your next facade project
+          Share your requirement and get a quick estimate
         </p>
-        <a className="inline-block mt-10 px-10 py-4 rounded-full bg-[#b07a3f] hover:opacity-90">
-          Contact Us
+        <a className="inline-block mt-10 px-10 py-4 rounded-full bg-[#b07a3f]">
+          WhatsApp FineGlaze
         </a>
       </section>
 
-      {/* FOOTER */}
-      <footer className="py-10 text-center text-sm text-[#777]">
-        © {new Date().getFullYear()} FineGlaze. All rights reserved.
-      </footer>
-
     </main>
   );
-      }
+          }
