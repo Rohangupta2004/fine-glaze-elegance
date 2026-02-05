@@ -1,6 +1,14 @@
+import { SeoHead } from "@/components/seo/SeoHead";
+
 export default function StructuralGlazing() {
   return (
     <main className="bg-background">
+      <SeoHead
+        title="Structural Glazing Systems in India | Fine Glaze"
+        description="Frameless structural glazing by Fine Glaze for modern commercial towers, showrooms, malls, and premium architecture projects."
+        path="/structural-glazing"
+        keywords="structural glazing systems india, frameless glass facade"
+      />
       {/* HERO */}
       <section className="relative py-24 bg-gradient-to-br from-slate-900 to-slate-800 text-white">
         <div className="container mx-auto px-4 max-w-6xl grid md:grid-cols-2 gap-12 items-center">

@@ -22,6 +22,7 @@ Send,
 CheckCircle2,
 } from "lucide-react";
 import { toast } from "sonner";
+import { SeoHead } from "@/components/seo/SeoHead";
 
 const projectTypes = [
 "Facade Fabrication",
@@ -133,6 +134,12 @@ const handleSubmit = async (e: React.FormEvent) => {
 };
   return (
 <Layout>
+<SeoHead
+  title="Contact Fine Glaze | Get Quote for Facade & Glazing Projects"
+  description="Contact Fine Glaze for aluminium facade, structural glazing, curtain wall, and maintenance project enquiries. Call, email, or submit your requirement."
+  path="/contact"
+  keywords="contact facade contractor, get facade quote, fine glaze contact"
+/>
 {/* Hero Section */}
 <section className="pt-32 pb-20 bg-muted" ref={heroRef.ref}>
 <div className="container mx-auto px-4">
