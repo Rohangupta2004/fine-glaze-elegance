@@ -11,6 +11,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { cn } from "@/lib/utils";
+import { SeoHead } from "@/components/seo/SeoHead";
 
 /* ================= SERVICES DATA ================= */
 const services = [
@@ -102,6 +103,12 @@ export default function Services() {
 
   return (
     <Layout>
+      <SeoHead
+        title="Facade Services | Curtain Wall, Structural Glazing, ACP & Railings"
+        description="Explore Fine Glaze services: facade systems, structural glazing, curtain walls, ACP cladding, glass railings, aluminium doors/windows, and maintenance."
+        path="/services"
+        keywords="facade services india, curtain wall contractor, structural glazing services, glass railing systems"
+      />
       {/* HERO */}
       <section className="pt-32 pb-20 bg-muted" ref={hero.ref}>
         <div className="container mx-auto px-4 text-center">

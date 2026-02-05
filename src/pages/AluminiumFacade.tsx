@@ -1,6 +1,14 @@
+import { SeoHead } from "@/components/seo/SeoHead";
+
 export default function AluminiumFacade() {
   return (
     <main className="bg-background">
+      <SeoHead
+        title="Aluminium Facade Systems in India | Fine Glaze"
+        description="Fine Glaze designs and installs high-performance aluminium facade systems for commercial and residential buildings across India."
+        path="/aluminium-facade"
+        keywords="aluminium facade systems india, aluminium facade contractor"
+      />
       {/* HERO */}
       <section className="relative py-24 bg-gradient-to-br from-slate-900 to-slate-800 text-white">
         <div className="container mx-auto px-4 max-w-6xl grid md:grid-cols-2 gap-12 items-center">
@@ -146,4 +154,4 @@ export default function AluminiumFacade() {
       </section>
     </main>
   );
-      }
+}

@@ -10,6 +10,7 @@ import {
   Briefcase,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { SeoHead } from "@/components/seo/SeoHead";
 
 /* -------------------- Categories -------------------- */
 const categories = [
@@ -120,6 +121,12 @@ const Portfolio = () => {
 
   return (
     <Layout>
+      <SeoHead
+        title="Facade Project Portfolio | Fine Glaze Completed Works"
+        description="View completed Fine Glaze facade and glazing projects across Pune, Mumbai, and India, including corporate towers, airports, hotels, and residences."
+        path="/portfolio"
+        keywords="facade projects india, glazing portfolio, curtain wall project examples"
+      />
       {/* Hero */}
       <section className="pt-32 pb-20 bg-muted" ref={heroRef.ref}>
         <div className="container mx-auto px-4 text-center">

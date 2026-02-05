@@ -2,6 +2,7 @@ import { Layout } from "@/components/layout/Layout";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { cn } from "@/lib/utils";
 import { Target, Eye, Shield, Users, Award, Clock } from "lucide-react";
+import { SeoHead } from "@/components/seo/SeoHead";
 
 const values = [
   {
@@ -46,6 +47,12 @@ const About = () => {
 
   return (
     <Layout>
+      <SeoHead
+        title="About Fine Glaze | Facade Engineering Company in Pune, India"
+        description="Learn about Fine Glaze, a Pune-based facade engineering company delivering precision aluminium, glass, and architectural facade solutions across India."
+        path="/about"
+        keywords="about fine glaze, facade company pune, aluminium and glass experts"
+      />
       {/* Hero Section */}
       <section className="pt-32 pb-20 bg-muted" ref={heroRef.ref}>
         <div className="container mx-auto px-4">
