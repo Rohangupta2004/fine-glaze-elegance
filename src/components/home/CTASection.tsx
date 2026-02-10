@@ -1,6 +1,5 @@
-import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
 import { ArrowRight, Phone } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { cn } from "@/lib/utils";
 
@@ -34,48 +33,52 @@ export const CTASection = () => {
         <div
           className={cn(
             "max-w-3xl mx-auto text-center space-y-8 transition-all duration-700",
-            isVisible
-              ? "opacity-100 translate-y-0"
-              : "opacity-0 translate-y-6"
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
           )}
         >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-tight tracking-tight">
-            Transform Your Building Into a <br className="hidden sm:block" />
-            <span className="text-white/90">Modern Architectural Landmark</span>
+            Transform Your Building Into a{" "}
+            <br className="hidden sm:block" />
+            <span className="text-white/90">
+              Modern Architectural Landmark
+            </span>
           </h2>
 
           <p className="text-white/80 text-lg max-w-xl mx-auto leading-relaxed">
-            Premium facade solutions engineered for performance, aesthetics,
-            and long-term value.
+            Premium facade solutions engineered for performance, aesthetics, and
+            long-term value.
           </p>
 
+          {/* ===== FIXED BUTTONS ===== */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-5 pt-6">
-            {/* WhatsApp Primary */}
-            <a
-              href="https://wa.me/918369233566?text=Hello%20Fine%20Glaze%2C%20I%20would%20like%20to%20discuss%20a%20facade%20project."
-              target="_blank"
-              rel="noopener noreferrer"
+            {/* WhatsApp */}
+            <Button
+              asChild
+              size="lg"
+              className="bg-white text-primary hover:bg-white/90 px-10 py-6 text-base font-semibold shadow-xl group active:scale-[0.97] transition-transform"
             >
-              <Button
-                size="lg"
-                className="bg-white text-primary hover:bg-white/90 px-10 py-6 text-base font-semibold shadow-xl group"
+              <a
+                href="https://wa.me/918369233566?text=Hello%20Fine%20Glaze%2C%20I%20would%20like%20to%20discuss%20a%20facade%20project."
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 Get Instant Quote
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Button>
-            </a>
+              </a>
+            </Button>
 
-            {/* Call Secondary */}
-            <a href="tel:+918369233566">
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-white/40 text-white hover:bg-white/10 px-10 py-6 text-base backdrop-blur-sm"
-              >
+            {/* Call */}
+            <Button
+              asChild
+              size="lg"
+              variant="outline"
+              className="border-white/60 text-white hover:bg-white/15 px-10 py-6 text-base backdrop-blur-sm active:scale-[0.97] transition-transform"
+            >
+              <a href="tel:+918369233566">
                 <Phone className="mr-2 h-4 w-4" />
                 Call Expert
-              </Button>
-            </a>
+              </a>
+            </Button>
           </div>
         </div>
       </div>
