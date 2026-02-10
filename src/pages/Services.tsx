@@ -199,9 +199,6 @@ export default function Services() {
 
                   <p className="text-muted-foreground">
                     {service.description}{" "}
-                    <Link to="/projects" className="text-primary underline">
-                      View projects
-                    </Link>
                   </p>
 
                   <div className="grid sm:grid-cols-2 gap-3">
