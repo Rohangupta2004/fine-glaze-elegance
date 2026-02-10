@@ -11,6 +11,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { cn } from "@/lib/utils";
+import { Helmet } from "react-helmet-async";
 
 /* ================= SERVICES DATA ================= */
 const services = [
@@ -57,7 +58,7 @@ const services = [
   {
     id: "doors-windows",
     icon: DoorOpen,
-    title: "Doors & Windows",
+    title: "Aluminium Doors & Windows",
     subtitle: "Premium Aluminium Systems",
     description:
       "Precision-engineered aluminium doors and windows offering excellent thermal performance, security, and sleek architectural appeal.",
@@ -77,7 +78,7 @@ const services = [
   {
     id: "maintenance",
     icon: Wrench,
-    title: "AMC & Maintenance",
+    title: "Facade AMC & Maintenance",
     subtitle: "Facade Care & Repair Services",
     description:
       "Comprehensive facade maintenance services to preserve aesthetics, safety, and performance throughout the building lifecycle.",
@@ -102,11 +103,21 @@ export default function Services() {
 
   return (
     <Layout>
+      {/* SEO META */}
+      <Helmet>
+        <title>Facade Systems, Glass Railings & Aluminium Doors | Fine Glaze</title>
+        <meta
+          name="description"
+          content="Fine Glaze provides facade systems, curtain wall glazing, glass railings, aluminium doors & windows, and AMC maintenance services."
+        />
+        <link rel="canonical" href="https://fineglaze.com/services" />
+      </Helmet>
+
       {/* HERO */}
       <section className="pt-32 pb-20 bg-muted" ref={hero.ref}>
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            Our Services
+            Facade, Glazing & Aluminium Services
           </h1>
           <p className="max-w-2xl mx-auto text-muted-foreground text-lg">
             End-to-end facade solutions from execution to long-term maintenance.
@@ -114,7 +125,7 @@ export default function Services() {
         </div>
       </section>
 
-      {/* SERVICES SECTIONS */}
+      {/* SERVICES */}
       {services.map((service, index) => {
         const Icon = service.icon;
         const section = useScrollAnimation();
@@ -124,6 +135,7 @@ export default function Services() {
           <section
             key={service.id}
             id={service.id}
+            aria-labelledby={`${service.id}-heading`}
             ref={section.ref}
             className={cn("py-20", isEven ? "bg-background" : "bg-muted")}
           >
@@ -134,7 +146,7 @@ export default function Services() {
                   !isEven && "lg:grid-flow-col-dense"
                 )}
               >
-                {/* IMAGE GRID */}
+                {/* IMAGES */}
                 <div
                   className={cn(
                     "grid grid-cols-2 gap-4 slide-up",
@@ -149,7 +161,11 @@ export default function Services() {
                     >
                       <img
                         src={img}
-                        alt={`${service.title} ${i + 1}`}
+                        loading="lazy"
+                        decoding="async"
+                        width="800"
+                        height="600"
+                        alt={`${service.title} - ${service.subtitle} by Fine Glaze`}
                         className="w-full h-full object-cover hover:scale-105 transition"
                       />
                     </div>
@@ -169,17 +185,23 @@ export default function Services() {
                       <Icon className="text-primary" />
                     </div>
                     <div>
-                      <span className="text-primary uppercase text-sm">
+                      <h3 className="text-primary uppercase text-sm">
                         {service.subtitle}
-                      </span>
-                      <h2 className="text-3xl md:text-4xl font-bold">
+                      </h3>
+                      <h2
+                        id={`${service.id}-heading`}
+                        className="text-3xl md:text-4xl font-bold"
+                      >
                         {service.title}
                       </h2>
                     </div>
                   </div>
 
                   <p className="text-muted-foreground">
-                    {service.description}
+                    {service.description}{" "}
+                    <Link to="/projects" className="text-primary underline">
+                      View projects
+                    </Link>
                   </p>
 
                   <div className="grid sm:grid-cols-2 gap-3">
@@ -193,7 +215,7 @@ export default function Services() {
 
                   <Link to="/contact">
                     <Button className="btn-glossy mt-4 group">
-                      Request a Quote
+                      Get {service.title} Quote
                       <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                     </Button>
                   </Link>
@@ -205,4 +227,4 @@ export default function Services() {
       })}
     </Layout>
   );
-                  }
+      }
