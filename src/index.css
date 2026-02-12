@@ -179,4 +179,30 @@
   .bronze-glow {
     box-shadow: 0 0 40px hsl(28 55% 45% / 0.3);
   }
+
+  .perspective-wrap {
+    perspective: 1200px;
+  }
+
+  .ui-3d-card {
+    @apply relative transition-all duration-500 ease-out;
+    transform-style: preserve-3d;
+    box-shadow: 0 20px 35px -25px hsl(25 45% 20% / 0.45);
+  }
+
+  .ui-3d-card::before {
+    content: "";
+    @apply absolute inset-0 rounded-[inherit] pointer-events-none;
+    border: 1px solid hsl(0 0% 100% / 0.22);
+    background: linear-gradient(140deg, hsl(0 0% 100% / 0.18), transparent 45%);
+  }
+
+  .ui-3d-card:hover {
+    transform: translateY(-10px) rotateX(5deg) rotateY(-4deg);
+    box-shadow: 0 28px 44px -24px hsl(25 45% 20% / 0.55);
+  }
+
+  .ui-3d-layer {
+    transform: translateZ(28px);
+  }
 }
