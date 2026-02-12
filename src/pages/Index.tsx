@@ -1,4 +1,4 @@
-import { ChangeEvent, useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import {
   ArrowRight,
@@ -78,53 +78,17 @@ const Index = () => {
   const [systemType, setSystemType] = useState("Stick Curtain Wall");
   const [thickness, setThickness] = useState(24);
   const [beforeAfter, setBeforeAfter] = useState(50);
-  const [previewImage, setPreviewImage] = useState<string>("/Embassyoark.webp");
   const [acpPattern, setAcpPattern] = useState("Linear Grid");
   const [glassTone, setGlassTone] = useState("Glass Blue");
   const [frameColor, setFrameColor] = useState("Silver Grey");
 
-  useEffect(() => {
-    return () => {
-      if (previewImage.startsWith("blob:")) {
-        URL.revokeObjectURL(previewImage);
-      }
-    };
-  }, [previewImage]);
-
-  const handlePreviewImageChange = (event: ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0];
-
-    if (!file) {
-      return;
-    }
-
-    setPreviewImage((currentImage) => {
-      if (currentImage.startsWith("blob:")) {
-        URL.revokeObjectURL(currentImage);
-      }
-
-      return URL.createObjectURL(file);
-    });
-  };
-
-  const toneClasses: Record<string, string> = {
-    "Glass Blue": "bg-sky-400/30",
-    Clear: "bg-white/10",
-    Bronze: "bg-amber-500/25",
-    Green: "bg-emerald-500/25",
-  };
-
-  const frameClasses: Record<string, string> = {
-    "Silver Grey": "bg-slate-300/80",
-    "Matte Black": "bg-black/80",
-    White: "bg-white/85",
-    Charcoal: "bg-slate-700/85",
-  };
-
-  const panelClasses: Record<string, string> = {
-    "Linear Grid": "bg-[linear-gradient(90deg,rgba(255,255,255,0.26)_1px,transparent_1px),linear-gradient(rgba(255,255,255,0.2)_1px,transparent_1px)] bg-[size:42px_42px]",
-    Diamond: "bg-[linear-gradient(45deg,rgba(255,255,255,0.2)_25%,transparent_25%,transparent_75%,rgba(255,255,255,0.2)_75%),linear-gradient(45deg,rgba(255,255,255,0.2)_25%,transparent_25%,transparent_75%,rgba(255,255,255,0.2)_75%)] bg-[size:38px_38px] bg-[position:0_0,19px_19px]",
-    Checker: "bg-[conic-gradient(from_90deg_at_1px_1px,rgba(255,255,255,0.16)_90deg,transparent_0)] bg-[size:36px_36px]",
+  const realisticPreviewMap: Record<string, { image: string; label: string }> = {
+    "Linear Grid|Glass Blue|Silver Grey": { image: "/Embassyoark.webp", label: "Corporate Unitized Reference" },
+    "Linear Grid|Clear|Matte Black": { image: "/Business park.webp", label: "Commercial Stick Curtain Wall Reference" },
+    "Diamond|Bronze|Charcoal": { image: "/Hotel.webp", label: "Hospitality Bronze Facade Reference" },
+    "Checker|Green|White": { image: "/Puneairport.webp", label: "Transit Green Glazing Reference" },
+    "Diamond|Glass Blue|Silver Grey": { image: "/Salsette27.webp", label: "Mixed-use Blue Glazing Reference" },
+    "Checker|Clear|Matte Black": { image: "/Nirmann.webp", label: "Corporate Neutral Facade Reference" },
   };
 
   const recommendation = useMemo(() => {
@@ -150,6 +114,12 @@ const Index = () => {
     return { minCost, maxCost, timeline, weight };
   }, [area, height, systemType, thickness]);
 
+
+  const realisticPreview = useMemo(() => {
+    const key = `${acpPattern}|${glassTone}|${frameColor}`;
+
+    return realisticPreviewMap[key] ?? realisticPreviewMap["Linear Grid|Glass Blue|Silver Grey"];
+  }, [acpPattern, glassTone, frameColor]);
   return (
     <Layout>
       <main className="bg-slate-950 text-white">
@@ -271,46 +241,32 @@ const Index = () => {
             <Card className="border border-white/15 bg-slate-900 text-white">
               <CardContent className="space-y-4 p-6">
                 <h2 className="text-2xl font-bold">3D Elevation Preview Tool</h2>
-                <p className="text-sm text-slate-300">Upload your front elevation and get ACP, glazing, and frame color mock previews.</p>
-                <div className="space-y-3 rounded-xl border border-dashed border-sky-300/40 p-5 text-sm text-sky-100">
-                  <label htmlFor="elevation-upload" className="flex cursor-pointer items-center justify-center gap-2 rounded-lg border border-white/20 bg-white/5 px-3 py-2 font-medium hover:bg-white/10">
-                    <Upload className="h-4 w-4" />
-                    Upload front image (JPG/PNG)
-                  </label>
-                  <input id="elevation-upload" type="file" accept="image/*" className="hidden" onChange={handlePreviewImageChange} />
-
-                  <div className="grid gap-2 text-xs sm:grid-cols-3">
-                    <select className="rounded-md border border-white/20 bg-slate-900 p-2" value={acpPattern} onChange={(e) => setAcpPattern(e.target.value)}>
-                      <option>Linear Grid</option>
-                      <option>Diamond</option>
-                      <option>Checker</option>
-                    </select>
-                    <select className="rounded-md border border-white/20 bg-slate-900 p-2" value={glassTone} onChange={(e) => setGlassTone(e.target.value)}>
-                      <option>Glass Blue</option>
-                      <option>Clear</option>
-                      <option>Bronze</option>
-                      <option>Green</option>
-                    </select>
-                    <select className="rounded-md border border-white/20 bg-slate-900 p-2" value={frameColor} onChange={(e) => setFrameColor(e.target.value)}>
-                      <option>Silver Grey</option>
-                      <option>Matte Black</option>
-                      <option>White</option>
-                      <option>Charcoal</option>
-                    </select>
-                  </div>
+                <p className="text-sm text-slate-300">Realistic reference preview (actual project photos), not synthetic overlay rendering.</p>
+                <div className="grid gap-2 text-xs sm:grid-cols-3">
+                  <select className="rounded-md border border-white/20 bg-slate-900 p-2" value={acpPattern} onChange={(e) => setAcpPattern(e.target.value)}>
+                    <option>Linear Grid</option>
+                    <option>Diamond</option>
+                    <option>Checker</option>
+                  </select>
+                  <select className="rounded-md border border-white/20 bg-slate-900 p-2" value={glassTone} onChange={(e) => setGlassTone(e.target.value)}>
+                    <option>Glass Blue</option>
+                    <option>Clear</option>
+                    <option>Bronze</option>
+                    <option>Green</option>
+                  </select>
+                  <select className="rounded-md border border-white/20 bg-slate-900 p-2" value={frameColor} onChange={(e) => setFrameColor(e.target.value)}>
+                    <option>Silver Grey</option>
+                    <option>Matte Black</option>
+                    <option>White</option>
+                    <option>Charcoal</option>
+                  </select>
                 </div>
 
                 <div className="relative h-56 overflow-hidden rounded-xl border border-white/20 bg-slate-950">
-                  <img src={previewImage} alt="Facade elevation preview" className="h-full w-full object-cover" />
-                  <div className={`absolute inset-0 ${toneClasses[glassTone]}`} />
-                  <div className={`absolute inset-0 opacity-70 mix-blend-screen ${panelClasses[acpPattern]}`} />
-                  <div className={`absolute inset-y-0 left-6 w-2 ${frameClasses[frameColor]}`} />
-                  <div className={`absolute inset-y-0 right-6 w-2 ${frameClasses[frameColor]}`} />
-                  <div className={`absolute inset-x-0 top-5 h-2 ${frameClasses[frameColor]}`} />
-                  <div className={`absolute inset-x-0 bottom-5 h-2 ${frameClasses[frameColor]}`} />
+                  <img src={realisticPreview.image} alt={realisticPreview.label} className="h-full w-full object-cover" />
                 </div>
 
-                <p className="text-xs text-slate-400">Live preview shown by default (sample elevation). Upload your own image to replace it.</p>
+                <p className="text-xs text-slate-400">Preview source: {realisticPreview.label}. Switch options to view the nearest real project match.</p>
 
                 <div className="grid grid-cols-3 gap-2 text-xs text-slate-300">
                   <span className="rounded-md border border-white/20 p-2">ACP: {acpPattern}</span>
