@@ -3,7 +3,7 @@ import { ChevronDown } from "lucide-react";
 
 export const HeroSection = () => {
   return (
-    <section className="relative min-h-screen overflow-hidden">
+    <section className="relative min-h-screen overflow-hidden py-0">
       <video
         className="absolute inset-0 w-full h-full object-cover"
         autoPlay
