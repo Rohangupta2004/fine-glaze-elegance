@@ -2,7 +2,6 @@ import { ChangeEvent, useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import {
   ArrowRight,
-  Building2,
   Calculator,
   CheckCircle2,
   FileBarChart,
@@ -79,14 +78,14 @@ const Index = () => {
   const [systemType, setSystemType] = useState("Stick Curtain Wall");
   const [thickness, setThickness] = useState(24);
   const [beforeAfter, setBeforeAfter] = useState(50);
-  const [previewImage, setPreviewImage] = useState<string | null>(null);
+  const [previewImage, setPreviewImage] = useState<string>("/Embassyoark.webp");
   const [acpPattern, setAcpPattern] = useState("Linear Grid");
   const [glassTone, setGlassTone] = useState("Glass Blue");
   const [frameColor, setFrameColor] = useState("Silver Grey");
 
   useEffect(() => {
     return () => {
-      if (previewImage) {
+      if (previewImage.startsWith("blob:")) {
         URL.revokeObjectURL(previewImage);
       }
     };
@@ -100,7 +99,7 @@ const Index = () => {
     }
 
     setPreviewImage((currentImage) => {
-      if (currentImage) {
+      if (currentImage.startsWith("blob:")) {
         URL.revokeObjectURL(currentImage);
       }
 
@@ -302,14 +301,7 @@ const Index = () => {
                 </div>
 
                 <div className="relative h-56 overflow-hidden rounded-xl border border-white/20 bg-slate-950">
-                  {previewImage ? (
-                    <img src={previewImage} alt="Uploaded building facade" className="h-full w-full object-cover" />
-                  ) : (
-                    <div className="flex h-full items-center justify-center text-sm text-slate-400">
-                      <Building2 className="mr-2 h-5 w-5" />
-                      Upload an elevation image to generate preview
-                    </div>
-                  )}
+                  <img src={previewImage} alt="Facade elevation preview" className="h-full w-full object-cover" />
                   <div className={`absolute inset-0 ${toneClasses[glassTone]}`} />
                   <div className={`absolute inset-0 opacity-70 mix-blend-screen ${panelClasses[acpPattern]}`} />
                   <div className={`absolute inset-y-0 left-6 w-2 ${frameClasses[frameColor]}`} />
@@ -317,6 +309,8 @@ const Index = () => {
                   <div className={`absolute inset-x-0 top-5 h-2 ${frameClasses[frameColor]}`} />
                   <div className={`absolute inset-x-0 bottom-5 h-2 ${frameClasses[frameColor]}`} />
                 </div>
+
+                <p className="text-xs text-slate-400">Live preview shown by default (sample elevation). Upload your own image to replace it.</p>
 
                 <div className="grid grid-cols-3 gap-2 text-xs text-slate-300">
                   <span className="rounded-md border border-white/20 p-2">ACP: {acpPattern}</span>
