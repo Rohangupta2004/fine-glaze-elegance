@@ -24,49 +24,37 @@ export const ClientsCarousel = () => {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section className="py-14 bg-secondary/50 border-y border-border" ref={ref}>
+    <section className="border-y border-border bg-background py-16" ref={ref}>
       <div className="container mx-auto px-4">
-        <p
-          className={cn(
-            "text-center text-sm text-muted-foreground uppercase tracking-wider mb-10 slide-up",
-            isVisible && "visible"
-          )}
-        >
-          Trusted by Leading Brands
-        </p>
+        <div className={cn("mb-10 text-center slide-up", isVisible && "visible")}>
+          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-primary/80">Trusted by teams that build at scale</p>
+          <h2 className="mt-3 text-2xl font-semibold text-foreground md:text-3xl">Strategic delivery partner to top developers</h2>
+        </div>
 
-        <div className="relative overflow-hidden">
-          {/* Gradient Masks - Warm tones */}
-          <div 
-            className="absolute left-0 top-0 bottom-0 w-24 z-10"
-            style={{ background: "linear-gradient(to right, hsl(35 20% 92%), transparent)" }}
-          />
-          <div 
-            className="absolute right-0 top-0 bottom-0 w-24 z-10"
-            style={{ background: "linear-gradient(to left, hsl(35 20% 92%), transparent)" }}
-          />
+        <div className="rounded-2xl border border-border/80 bg-secondary/50 p-6 md:p-8">
+          <div className="relative overflow-hidden">
+            <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-gradient-to-r from-secondary/90 to-transparent" />
+            <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-gradient-to-l from-secondary/90 to-transparent" />
 
-          {/* Marquee */}
-          <div className="flex animate-marquee">
-            {[...clients, ...clients, ...clients].map((client, index) => (
-              <div
-                key={index}
-                className="flex-shrink-0 mx-10 flex items-center justify-center h-14 min-w-[140px] grayscale hover:grayscale-0 transition-all duration-300 opacity-50 hover:opacity-100"
-              >
-                <img
-                  src={client.logo}
-                  alt={client.name}
-                  className="h-10 w-auto object-contain"
-                  onError={(e) => {
-                    e.currentTarget.style.display = 'none';
-                    e.currentTarget.nextElementSibling?.classList.remove('hidden');
-                  }}
-                />
-                <span className="hidden text-foreground font-semibold text-sm">
-                  {client.name}
-                </span>
-              </div>
-            ))}
+            <div className="flex animate-marquee">
+              {[...clients, ...clients, ...clients].map((client, index) => (
+                <div
+                  key={`${client.name}-${index}`}
+                  className="mx-10 flex h-16 min-w-[160px] flex-shrink-0 items-center justify-center rounded-xl border border-transparent bg-white/70 px-6 grayscale transition-all duration-300 hover:border-primary/25 hover:grayscale-0"
+                >
+                  <img
+                    src={client.logo}
+                    alt={client.name}
+                    className="h-9 w-auto object-contain"
+                    onError={(e) => {
+                      e.currentTarget.style.display = "none";
+                      e.currentTarget.nextElementSibling?.classList.remove("hidden");
+                    }}
+                  />
+                  <span className="hidden text-sm font-semibold text-foreground">{client.name}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
