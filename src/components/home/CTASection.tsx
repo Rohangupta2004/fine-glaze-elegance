@@ -1,7 +1,9 @@
-import { ArrowRight, Phone } from "lucide-react";
+import { ArrowRight, Phone, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { cn } from "@/lib/utils";
+
+const points = ["Dedicated project manager", "Detailed execution schedule", "Transparent cost breakups"];
 
 export const CTASection = () => {
   const { ref, isVisible } = useScrollAnimation();
@@ -9,74 +11,59 @@ export const CTASection = () => {
   return (
     <section
       ref={ref}
-      className="relative py-28 overflow-hidden"
+      className="relative overflow-hidden py-24"
       style={{
-        background:
-          "linear-gradient(135deg, hsl(220 70% 35%) 0%, hsl(215 75% 25%) 50%, hsl(210 80% 20%) 100%)",
+        background: "linear-gradient(135deg, hsl(220 70% 35%) 0%, hsl(215 75% 25%) 50%, hsl(210 80% 20%) 100%)",
       }}
     >
-      {/* Glow blobs */}
-      <div className="absolute -top-24 -left-24 w-96 h-96 bg-white/10 rounded-full blur-3xl" />
-      <div className="absolute -bottom-32 -right-32 w-[30rem] h-[30rem] bg-white/10 rounded-full blur-3xl" />
+      <div className="absolute -left-24 -top-24 h-96 w-96 rounded-full bg-white/10 blur-3xl" />
+      <div className="absolute -bottom-32 -right-32 h-[28rem] w-[28rem] rounded-full bg-white/10 blur-3xl" />
 
-      {/* Pattern */}
-      <div className="absolute inset-0 opacity-[0.07]">
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Ccircle cx='2' cy='2' r='2'/%3E%3C/g%3E%3C/svg%3E")`,
-          }}
-        />
-      </div>
-
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container relative z-10 mx-auto px-4">
         <div
           className={cn(
-            "max-w-3xl mx-auto text-center space-y-8 transition-all duration-700",
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+            "mx-auto grid max-w-5xl gap-8 rounded-3xl border border-white/15 bg-white/10 p-8 backdrop-blur-md transition-all duration-700 md:p-10 lg:grid-cols-[1.2fr_0.8fr]",
+            isVisible ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
           )}
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-tight tracking-tight">
-            Transform Your Building Into a{" "}
-            <br className="hidden sm:block" />
-            <span className="text-white/90">
-              Modern Architectural Landmark
-            </span>
-          </h2>
+          <div className="space-y-5 text-white">
+            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-white/70">Start your next facade program</p>
+            <h2 className="text-3xl font-bold leading-tight md:text-4xl">Let’s design a facade package that improves both performance and perception.</h2>
+            <p className="max-w-xl text-white/80">
+              Share your drawings or project brief and our team will propose a practical system strategy with timeline and budget clarity.
+            </p>
 
-          <p className="text-white/80 text-lg max-w-xl mx-auto leading-relaxed">
-            Premium facade solutions engineered for performance, aesthetics, and
-            long-term value.
-          </p>
+            <div className="grid gap-2.5 pt-2 sm:grid-cols-2">
+              {points.map((point) => (
+                <div key={point} className="flex items-center gap-2 text-sm text-white/90">
+                  <CheckCircle2 size={16} className="text-amber-300" />
+                  {point}
+                </div>
+              ))}
+            </div>
+          </div>
 
-          {/* ===== FIXED BUTTONS ===== */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-5 pt-6">
-            {/* WhatsApp */}
-            <Button
-              asChild
-              size="lg"
-              className="bg-white text-primary hover:bg-white/90 px-10 py-6 text-base font-semibold shadow-xl group active:scale-[0.97] transition-transform"
-            >
+          <div className="flex flex-col justify-center gap-4">
+            <Button asChild size="lg" className="bg-white px-8 py-6 text-base font-semibold text-primary hover:bg-white/90">
               <a
                 href="https://wa.me/918369233566?text=Hello%20Fine%20Glaze%2C%20I%20would%20like%20to%20discuss%20a%20facade%20project."
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 Get Instant Quote
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                <ArrowRight className="ml-2 h-4 w-4" />
               </a>
             </Button>
 
-            {/* Call */}
             <Button
               asChild
               size="lg"
               variant="outline"
-              className="border-white/60 text-white hover:bg-white/15 px-10 py-6 text-base backdrop-blur-sm active:scale-[0.97] transition-transform"
+              className="border-white/60 bg-transparent px-8 py-6 text-base text-white hover:bg-white/15 hover:text-white"
             >
               <a href="tel:+918369233566">
                 <Phone className="mr-2 h-4 w-4" />
-                Call Expert
+                Talk to an Expert
               </a>
             </Button>
           </div>
