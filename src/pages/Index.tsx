@@ -11,9 +11,9 @@ const Index = () => {
     <Layout>
       <HeroSection />
       <ClientsCarousel />
-      <AwardsSection />
-      <PortfolioSection />
       <ServicesSection />
+      <PortfolioSection />
+      <AwardsSection />
       <CTASection />
     </Layout>
   );
