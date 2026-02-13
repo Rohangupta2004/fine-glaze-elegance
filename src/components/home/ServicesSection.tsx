@@ -8,30 +8,30 @@ const services = [
   {
     icon: Building2,
     title: "Facade Systems",
-    description: "Curtain walls, structural glazing & unitized facades for commercial buildings.",
+    description: "Curtain walls, structural glazing, and unitized facades engineered for long-term performance.",
     highlights: ["Curtain Walls", "Spider Glazing", "ACP Cladding"],
-    color: "from-amber-600/20 to-amber-700/20",
+    iconClass: "bg-primary/15 text-primary",
   },
   {
     icon: Fence,
     title: "Glass Railings",
-    description: "Premium frameless & semi-frameless railing systems for safety and elegance.",
+    description: "Frameless and semi-frameless railing systems designed for safety with unobstructed views.",
     highlights: ["Frameless Glass", "Balustrades", "Handrails"],
-    color: "from-orange-500/20 to-orange-600/20",
+    iconClass: "bg-accent/15 text-accent",
   },
   {
     icon: DoorOpen,
     title: "Doors & Windows",
-    description: "High-performance aluminium systems with thermal break technology.",
+    description: "Thermally efficient aluminium door and window systems built for modern architecture.",
     highlights: ["Sliding Systems", "Casement", "Auto Doors"],
-    color: "from-yellow-600/20 to-yellow-700/20",
+    iconClass: "bg-secondary text-primary",
   },
   {
     icon: Wrench,
     title: "AMC Services",
-    description: "Comprehensive maintenance, cleaning, and repair services for facades.",
+    description: "Complete maintenance, cleaning, and repair support to keep facade systems performing.",
     highlights: ["Facade Cleaning", "Glass Repair", "Sealant Work"],
-    color: "from-stone-500/20 to-stone-600/20",
+    iconClass: "bg-muted text-foreground",
   },
 ];
 
@@ -39,67 +39,50 @@ export const ServicesSection = () => {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section className="py-20 bg-muted" ref={ref}>
+    <section className="py-20 bg-muted/60" ref={ref} aria-labelledby="home-services-heading">
       <div className="container mx-auto px-4">
-        {/* Section Header */}
-        <div
-          className={cn(
-            "text-center space-y-4 mb-12 slide-up",
-            isVisible && "visible"
-          )}
-        >
-          <span className="text-primary font-medium uppercase tracking-wider text-sm">
-            Our Expertise
-          </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+        <div className={cn("text-center space-y-4 mb-12 slide-up", isVisible && "visible")}>
+          <span className="text-primary font-medium uppercase tracking-wider text-sm">Our Expertise</span>
+          <h2 id="home-services-heading" className="text-3xl md:text-4xl font-bold text-foreground">
             What We Deliver
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Comprehensive facade solutions crafted with precision and excellence
+            End-to-end facade, railing, and aluminium system services delivered with precision.
           </p>
         </div>
 
-        {/* Services Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service, index) => (
-            <div
+            <article
               key={service.title}
               className={cn(
-                "group relative bg-card rounded-xl p-6 border border-border hover:border-primary/40 hover:shadow-xl transition-all duration-300 slide-up",
+                "group relative rounded-xl p-6 border border-border bg-card/90 backdrop-blur-sm",
+                "hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 slide-up",
                 isVisible && "visible"
               )}
               style={{ transitionDelay: `${index * 0.1}s` }}
             >
-              {/* Icon */}
-              <div className={cn(
-                "w-14 h-14 rounded-xl bg-gradient-to-br flex items-center justify-center mb-5",
-                service.color
-              )}>
-                <service.icon size={26} className="text-primary" />
+              <div className={cn("w-14 h-14 rounded-xl flex items-center justify-center mb-5", service.iconClass)}>
+                <service.icon size={26} />
               </div>
 
-              {/* Content */}
               <h3 className="text-xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors">
                 {service.title}
               </h3>
-              <p className="text-muted-foreground text-sm mb-5 leading-relaxed">
-                {service.description}
-              </p>
+              <p className="text-muted-foreground text-sm mb-5 leading-relaxed">{service.description}</p>
 
-              {/* Highlights */}
               <ul className="space-y-2">
                 {service.highlights.map((item) => (
-                  <li key={item} className="flex items-center gap-2 text-sm text-foreground/80">
+                  <li key={item} className="flex items-center gap-2 text-sm text-foreground/85">
                     <CheckCircle size={14} className="text-primary shrink-0" />
                     {item}
                   </li>
                 ))}
               </ul>
-            </div>
+            </article>
           ))}
         </div>
 
-        {/* CTA */}
         <div className="text-center mt-12">
           <Link to="/services">
             <Button className="btn-glossy text-primary-foreground border-0 group px-8 py-6">
