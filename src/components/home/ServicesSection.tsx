@@ -4,6 +4,14 @@ import { Button } from "@/components/ui/button";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { cn } from "@/lib/utils";
 
+
+const seoLinks = [
+  { label: "Mumbai Facade Contractor", href: "/mumbai-facade-contractor" },
+  { label: "Pune Structural Glazing Company", href: "/pune-structural-glazing-company" },
+  { label: "Mumbai Glass Railings", href: "/mumbai-glass-railings" },
+  { label: "Pune ACP Cladding", href: "/pune-acp-cladding" },
+];
+
 const services = [
   {
     icon: Building2,
@@ -99,6 +107,21 @@ export const ServicesSection = () => {
           ))}
         </div>
 
+
+        <div className="text-center mt-8">
+          <p className="text-sm text-muted-foreground mb-3">Popular city pages:</p>
+          <div className="flex flex-wrap justify-center gap-3">
+            {seoLinks.map((link) => (
+              <Link
+                key={link.href}
+                to={link.href}
+                className="text-sm px-3 py-2 rounded-full border border-border hover:border-primary hover:text-primary transition-colors"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+        </div>
         {/* CTA */}
         <div className="text-center mt-12">
           <Link to="/services">
