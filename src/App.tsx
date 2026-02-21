@@ -22,6 +22,10 @@ import CurtainWall from "./pages/CurtainWall";
 import AcpCladding from "./pages/AcpCladding";
 import GlassRailings from "./pages/GlassRailings"; // ✅ Added
 import Maintenance from "./pages/Maintenance";     // ✅ Added
+import MumbaiFacadeContractor from "./pages/seo/MumbaiFacadeContractor";
+import PuneStructuralGlazing from "./pages/seo/PuneStructuralGlazing";
+import MumbaiGlassRailings from "./pages/seo/MumbaiGlassRailings";
+import PuneAcpCladding from "./pages/seo/PuneAcpCladding";
 
 /* --- App Portals --- */
 import Portal from "./pages/Portal";
@@ -52,6 +56,10 @@ const App = () => (
             <Route path="/acp-aluminium-cladding" element={<AcpCladding />} />
             <Route path="/glass-railings" element={<GlassRailings />} />       {/* ✅ Live */}
             <Route path="/maintenance-services" element={<Maintenance />} />   {/* ✅ Live */}
+            <Route path="/mumbai-facade-contractor" element={<MumbaiFacadeContractor />} />
+            <Route path="/pune-structural-glazing-company" element={<PuneStructuralGlazing />} />
+            <Route path="/mumbai-glass-railings" element={<MumbaiGlassRailings />} />
+            <Route path="/pune-acp-cladding" element={<PuneAcpCladding />} />
 
             {/* --- Application Portals --- */}
             <Route path="/portal" element={<Portal />} />

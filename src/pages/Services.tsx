@@ -97,6 +97,30 @@ const services = [
   },
 ];
 
+
+const seoCityPages = [
+  {
+    title: "Mumbai Facade Contractor",
+    description: "Facade execution, structural glazing, and cladding support for Mumbai projects.",
+    href: "/mumbai-facade-contractor",
+  },
+  {
+    title: "Pune Structural Glazing Company",
+    description: "High-performance structural glazing services for Pune commercial buildings.",
+    href: "/pune-structural-glazing-company",
+  },
+  {
+    title: "Mumbai Glass Railings",
+    description: "Frameless and custom glass railing systems with safety-first installation.",
+    href: "/mumbai-glass-railings",
+  },
+  {
+    title: "Pune ACP Cladding",
+    description: "Exterior and interior ACP cladding solutions for modern facades.",
+    href: "/pune-acp-cladding",
+  },
+];
+
 /* ================= PAGE ================= */
 export default function Services() {
   const hero = useScrollAnimation();
@@ -222,6 +246,30 @@ export default function Services() {
           </section>
         );
       })}
+
+      <section className="py-20 bg-background border-t">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mb-10">
+            <h2 className="text-3xl md:text-4xl font-bold mb-3">City-Specific Facade & Glazing Pages</h2>
+            <p className="text-muted-foreground">
+              Explore local service pages tailored to high-intent search needs in Mumbai and Pune.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {seoCityPages.map((page) => (
+              <article key={page.href} className="rounded-xl border p-6 bg-muted/30">
+                <h3 className="text-xl font-semibold mb-2">{page.title}</h3>
+                <p className="text-muted-foreground mb-4">{page.description}</p>
+                <Link to={page.href} className="inline-flex items-center gap-2 text-primary font-medium hover:underline">
+                  Read more <ArrowRight className="h-4 w-4" />
+                </Link>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
     </Layout>
   );
-      }
+}
