@@ -125,6 +125,31 @@ export default function AluminiumFacade() {
         </div>
       </section>
 
+      {/* SEO CONTENT */}
+      <section className="py-20 bg-muted">
+        <div className="container mx-auto px-4 max-w-5xl space-y-6">
+          <h2 className="text-3xl font-bold">Why Fine Glaze for Aluminium Facade in Pune</h2>
+          <p className="text-muted-foreground leading-relaxed">
+            If you are searching for an aluminium facade company in Pune, you are usually balancing three priorities: speed of execution, long-term facade performance, and clean architectural aesthetics. Fine Glaze works as an end-to-end aluminium facade contractor in Pune for developers, architects, and project management teams that need predictable delivery and technically sound detailing. Our aluminium facade systems are engineered for commercial office parks, high-rise residential towers, mixed-use developments, and institutional campuses where wind load, waterproofing, and thermal movement must all be addressed at design stage. Instead of treating facade work as a final skin, our team coordinates interfaces with civil structure, waterproofing zones, and glazing packages so your project team avoids expensive rework.
+          </p>
+          <h3 className="text-2xl font-semibold">Process and project delivery</h3>
+          <p className="text-muted-foreground leading-relaxed">
+            Our workflow starts with site survey, elevation review, and constructability checks. We then share shop drawings, mock-up strategy, and installation sequencing aligned with your slab cycle. This approach is especially useful for high-rise and commercial facade projects in Pune where crane windows, access planning, and handover milestones are tightly controlled. As an aluminium facade manufacturer and installation partner, we fabricate with tolerance control and pre-installation quality checks to reduce on-site variation.
+          </p>
+          <h3 className="text-2xl font-semibold">Materials, specifications, and use-case fit</h3>
+          <p className="text-muted-foreground leading-relaxed">
+            We commonly specify powder-coated or anodized aluminium profiles, compatible weather sealants, and tested bracket systems to suit project exposure. For projects that require multi-system envelopes, we integrate with <a href="/curtain-wall-systems" className="text-primary underline">curtain wall systems</a>, <a href="/structural-glazing" className="text-primary underline">structural glazing</a>, and <a href="/acp-aluminium-cladding" className="text-primary underline">ACP cladding</a> packages. For residential podiums and clubhouse edges, our team can also coordinate with <a href="/glass-railings" className="text-primary underline">glass railing installations</a>. Need lifecycle support after handover? Our <a href="/maintenance-services" className="text-primary underline">facade maintenance services</a> help retain performance over time.
+          </p>
+          <h3 className="text-2xl font-semibold">FAQ</h3>
+          <p className="text-muted-foreground leading-relaxed">
+            Clients often ask whether aluminium facade systems are suitable for both office parks and premium residential projects in Pune. The answer is yes, provided profile grade, anchorage, and drainage detailing are matched to the building type and exposure. Another common question is whether one contractor can handle design-assist and installation. Fine Glaze supports both, giving consultants and developers one accountable facade partner.
+          </p>
+          <p className="text-muted-foreground leading-relaxed">
+            Looking for an aluminium facade contractor in Pune for a commercial, residential, or high-rise development? <a href="/contact" className="text-primary underline font-medium">Contact Fine Glaze</a> for a specification-led proposal, BOQ review, and site-specific recommendations.
+          </p>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-24 bg-primary text-white text-center">
         <div className="container mx-auto px-4 max-w-4xl">
@@ -146,4 +171,4 @@ export default function AluminiumFacade() {
       </section>
     </main>
   );
-      }
+}
