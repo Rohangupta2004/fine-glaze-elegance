@@ -122,7 +122,7 @@ export default function Portal() {
 
           <div className="inline-flex items-center gap-2 bg-[#B8860B]/20 backdrop-blur-md px-4 py-1 rounded-full text-xs font-semibold uppercase tracking-wider mb-6 border border-[#B8860B]/40">
             <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
-            
+            Fine Glaze
           </div>
 
           <h2 className="text-5xl font-bold leading-tight mb-6">
