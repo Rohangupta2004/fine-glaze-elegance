@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { ArrowRight, Eye, EyeOff } from "lucide-react";
-import logo from "/public/Logofg.webp”;
 
 export default function Portal() {
   const [loading, setLoading] = useState(false);
@@ -21,10 +20,7 @@ export default function Portal() {
       {/* LEFT SIDE */}
       <div className="w-full lg:w-[45%] flex flex-col justify-between bg-white px-10 lg:px-20 py-10 shadow-xl">
 
-        {/* Logo */}
-        <div className="flex items-center gap-3">
-          <img src={logo} alt="Fine Glaze Logo" className="h-10 w-auto" />
-        </div>
+        
 
         {/* Form Section */}
         <div className="max-w-md w-full mx-auto space-y-8">
