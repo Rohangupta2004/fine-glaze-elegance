@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { ArrowRight, Eye, EyeOff } from "lucide-react";
-import logo from "public/Logofg.webp";
+import logo from "/public/Logofg.webp”;
 
 export default function Portal() {
   const [loading, setLoading] = useState(false);
