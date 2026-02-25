@@ -1,227 +1,209 @@
 import { useEffect, useState } from "react";
-import { supabase } from "../lib/supabase";
-import { Mail, LogIn } from "lucide-react";
+import { supabase } from "@/lib/supabase";
+import { Session } from "@supabase/supabase-js";
+import { Mail, LogIn, FileText, Download, Calendar, CheckCircle2, XCircle, MapPin, User, Building, IndianRupee, AlertCircle } from "lucide-react";
+import { toast } from "sonner";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Progress } from "@/components/ui/progress";
+import { Skeleton } from "@/components/ui/skeleton";
 
-type Project = {
-  project_name: string;
-  status: string;
-  progress: number;
+type ProjectFile = {
+id: string;
+name: string;
+url: string;
+status: 'Pending' | 'Approved' | 'Rejected';
+requires_approval: boolean;
+created_at: string;
 };
 
-export default function Portal(): JSX.Element {
-  const [session, setSession] = useState<any>(null);
-  const [project, setProject] = useState<Project | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [email, setEmail] = useState("");
+type Project = {
+id: string;
+project_name: string;
+status: string;
+progress: number;
+client_email: string;
+client_phone: string;
+site_address: string;
+architect_name: string;
+total_amount: number;
+paid_amount: number;
+timeline: { date: string; title: string; desc: string }[];
+};
 
-  // Get session
-  useEffect(() => {
-    supabase.auth.getSession().then(({ data }) => {
-      setSession(data.session);
-    });
-  }, []);
+export default function Portal() {
+const [session, setSession] = useState<Session | null>(null);
+const [project, setProject] = useState<Project | null>(null);
+const [files, setFiles] = useState<ProjectFile[]>([]);
+const [loading, setLoading] = useState(true);
+const [email, setEmail] = useState("");
+const [isAuthLoading, setIsAuthLoading] = useState(false);
 
-  // Google login
-  const signInWithGoogle = async () => {
-    await supabase.auth.signInWithOAuth({
-      provider: "google",
-      options: {
-        redirectTo: "https://www.fineglaze.com/portal",
-      },
-    });
-  };
+useEffect(() => {
+supabase.auth.getSession().then(({ data: { session } }) => setSession(session));
+const { data: { subscription } } = supabase.auth.onAuthStateChange((_, session) => setSession(session));
+return () => subscription.unsubscribe();
+}, []);
 
-  // Email login (magic link)
-  const signInWithEmail = async () => {
-    if (!email) return alert("Enter email");
-    await supabase.auth.signInWithOtp({ email });
-    alert("Login link sent to email");
-  };
+useEffect(() => {
+if (session?.user?.email) fetchData();
+}, [session]);
 
-  // Fetch project
-  useEffect(() => {
-    if (!session) return;
+const fetchData = async () => {
+setLoading(true);
+const { data: proj } = await supabase.from("Clientproject").select("").eq("client_email", session?.user.email).maybeSingle();
+if (proj) {
+setProject(proj);
+const { data: fileData } = await supabase.from("ProjectFiles").select("").eq("project_id", proj.id).order('created_at', { ascending: false });
+setFiles(fileData || []);
+}
+setLoading(false);
+};
 
-    supabase
-      .from("Clientproject")
-      .select("project_name, status, progress")
-      .maybeSingle()
-      .then(({ data }) => {
-        setProject(data);
-        setLoading(false);
-      });
-  }, [session]);
+const handleApproval = async (fileId: string, status: 'Approved' | 'Rejected') => {
+const { error } = await supabase.from("ProjectFiles").update({ status }).eq("id", fileId);
+if (!error) {
+toast.success(Document ${status});
+fetchData();
+} else toast.error("Action failed");
+};
 
-  /* ---------------- LOGIN UI ---------------- */
+const signInWithGoogle = async () => {
+await supabase.auth.signInWithOAuth({ provider: "google", options: { redirectTo: ${window.location.origin}/portal } });
+};
 
-  if (!session) {
-    return (
-      <div
-        style={{
-          minHeight: "100vh",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          background: "linear-gradient(135deg, #f5f7fa, #e4e7eb)",
-        }}
-      >
-        <div
-          style={{
-            width: 380,
-            padding: 32,
-            background: "#fff",
-            borderRadius: 14,
-            boxShadow: "0 20px 40px rgba(0,0,0,0.1)",
-          }}
-        >
-          <h2 style={{ marginBottom: 6 }}>FineGlaze Client Portal</h2>
-          <p style={{ color: "#666", marginBottom: 24 }}>
-            Secure access to your project
-          </p>
+const signInWithEmail = async () => {
+if (!email) return toast.error("Enter email");
+setIsAuthLoading(true);
+const { error } = await supabase.auth.signInWithOtp({ email });
+setIsAuthLoading(false);
+if (error) toast.error(error.message);
+else toast.success("Login link sent to your email!");
+};
 
-          {/* Google */}
-          <button
-            onClick={signInWithGoogle}
-            style={{
-              width: "100%",
-              padding: 12,
-              borderRadius: 8,
-              border: "1px solid #ddd",
-              background: "#fff",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              gap: 8,
-              cursor: "pointer",
-              marginBottom: 16,
-            }}
-          >
-            <LogIn size={18} />
-            Continue with Google
-          </button>
+if (!session) {
+return (
+<div className="min-h-screen flex items-center justify-center bg-slate-50 p-4">
+<Card className="w-full max-w-md shadow-xl border-t-4 border-t-primary">
+<CardHeader className="text-center">
+<CardTitle className="text-2xl font-bold">Client Portal</CardTitle>
+</CardHeader>
+<CardContent className="space-y-6">
+<Button variant="outline" className="w-full h-12 gap-2" onClick={signInWithGoogle}>Continue with Google</Button>
+<div className="relative text-center text-xs uppercase text-muted-foreground"><span className="bg-white px-2 relative z-10">Or use email</span><div className="absolute inset-0 top-1/2 border-t -z-0" /></div>
+<div className="flex gap-2">
+<Input type="email" placeholder="client@gmail.com" value={email} onChange={(e) => setEmail(e.target.value)} />
+<Button onClick={signInWithEmail} disabled={isAuthLoading}><Mail size={18} /></Button>
+</div>
+</CardContent>
+</Card>
+</div>
+);
+}
 
-          {/* Divider */}
-          <div
-            style={{
-              textAlign: "center",
-              color: "#999",
-              fontSize: 12,
-              margin: "12px 0",
-            }}
-          >
-            OR
-          </div>
+return (
+<div className="min-h-screen bg-slate-50 p-4 md:p-10">
+<div className="max-w-6xl mx-auto space-y-8">
+<div className="flex justify-between items-center">
+<div><h1 className="text-3xl font-bold text-slate-900">Project Dashboard</h1><p className="text-slate-500">Welcome, {session.user.email}</p></div>
+<Button variant="outline" onClick={() => supabase.auth.signOut()}>Sign Out</Button>
+</div>
 
-          {/* Email */}
-          <div style={{ display: "flex", gap: 8 }}>
-            <input
-              type="email"
-              placeholder="Email address"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              style={{
-                flex: 1,
-                padding: 10,
-                borderRadius: 8,
-                border: "1px solid #ddd",
-              }}
-            />
-            <button
-              onClick={signInWithEmail}
-              style={{
-                padding: "10px 14px",
-                borderRadius: 8,
-                border: "none",
-                background: "#111",
-                color: "#fff",
-                cursor: "pointer",
-              }}
-            >
-              <Mail size={16} />
-            </button>
-          </div>
-        </div>
-      </div>
-    );
-  }
+{loading ? (  
+      <div className="space-y-4"><Skeleton className="h-48 w-full rounded-xl" /><Skeleton className="h-32 w-full rounded-xl" /></div>  
+    ) : !project ? (  
+      <Card className="border-dashed border-2 p-10 text-center"><h3 className="text-xl">No Active Project</h3><p>Contact support if this is an error.</p></Card>  
+    ) : (  
+      <div className="grid md:grid-cols-3 gap-6">  
+          
+        {/* LEFT: INFO & FINANCE */}  
+        <div className="space-y-6">  
+          <Card className="shadow-md border-t-4 border-t-primary">  
+            <CardHeader className="pb-2"><CardTitle>{project.project_name}</CardTitle><Badge className="w-fit">{project.status}</Badge></CardHeader>  
+            <CardContent className="space-y-4 pt-4">  
+              <div className="space-y-2 text-sm">  
+                <div className="flex items-center gap-2 text-slate-600"><MapPin size={14} className="text-primary"/> {project.site_address || "Address pending"}</div>  
+                <div className="flex items-center gap-2 text-slate-600"><Building size={14} className="text-primary"/> Arch: {project.architect_name || "N/A"}</div>  
+                <div className="flex items-center gap-2 text-slate-600"><User size={14} className="text-primary"/> {project.client_phone || "No phone"}</div>  
+              </div>  
+              <div className="space-y-1"><div className="flex justify-between text-xs font-medium"><span>Progress</span><span>{project.progress}%</span></div><Progress value={project.progress} className="h-2" /></div>  
+            </CardContent>  
+          </Card>  
 
-  /* ---------------- DASHBOARD ---------------- */
+          <Card className="shadow-md">  
+            <CardHeader className="pb-2"><CardTitle className="flex items-center gap-2 text-base"><IndianRupee size={18}/> Financials</CardTitle></CardHeader>  
+            <CardContent className="space-y-3 pt-4">  
+              <div className="flex justify-between items-center p-3 bg-slate-100 rounded-lg"><span className="text-sm text-slate-600">Total</span><span className="font-bold">₹{project.total_amount?.toLocaleString()}</span></div>  
+              <div className="flex justify-between items-center p-3 bg-green-50 text-green-700 rounded-lg border border-green-100"><span className="text-sm">Paid</span><span className="font-bold">₹{project.paid_amount?.toLocaleString()}</span></div>  
+              <div className="text-xs text-center text-slate-400">Pending: ₹{((project.total_amount || 0) - (project.paid_amount || 0)).toLocaleString()}</div>  
+            </CardContent>  
+          </Card>  
+        </div>  
 
-  if (loading) {
-    return <p style={{ padding: 40 }}>Loading your project…</p>;
-  }
+        {/* MIDDLE: DOCUMENTS */}  
+        <Card className="md:col-span-2 shadow-md h-fit">  
+          <CardHeader><CardTitle className="flex items-center gap-2"><FileText className="text-blue-600"/> Documents & Approvals</CardTitle></CardHeader>  
+          <CardContent>  
+            <div className="space-y-3">  
+              {files.length === 0 && <p className="text-muted-foreground text-sm text-center py-4">No documents shared yet.</p>}  
+              {files.map((file) => (  
+                <div key={file.id} className="flex flex-col md:flex-row md:items-center justify-between p-4 rounded-lg border bg-white hover:shadow-sm transition-all gap-4">  
+                  <div className="flex items-center gap-3 overflow-hidden">  
+                    <div className={`p-2 rounded-full ${file.status === 'Approved' ? 'bg-green-100 text-green-600' : 'bg-slate-100 text-slate-500'}`}>  
+                       {file.status === 'Approved' ? <CheckCircle2 size={20}/> : file.status === 'Rejected' ? <XCircle size={20}/> : <FileText size={20}/>}  
+                    </div>  
+                    <div>  
+                      <a href={file.url} target="_blank" className="font-medium hover:underline text-blue-700 block truncate max-w-[180px]">{file.name}</a>  
+                      <div className="text-xs text-muted-foreground">{new Date(file.created_at).toLocaleDateString()}</div>  
+                    </div>  
+                  </div>  
 
-  if (!project) {
-    return (
-      <div style={{ padding: 40 }}>
-        <h3>No project assigned</h3>
-        <p>Please contact FineGlaze.</p>
-      </div>
-    );
-  }
+                  {file.requires_approval && file.status === 'Pending' ? (  
+                    <div className="flex gap-2 shrink-0">  
+                      <Button size="sm" variant="outline" className="text-red-600 hover:bg-red-50" onClick={() => handleApproval(file.id, 'Rejected')}>Reject</Button>  
+                      <Button size="sm" className="bg-green-600 hover:bg-green-700" onClick={() => handleApproval(file.id, 'Approved')}>Approve</Button>  
+                    </div>  
+                  ) : file.requires_approval ? (  
+                    <Badge variant={file.status === 'Approved' ? 'default' : 'destructive'} className={file.status === 'Approved' ? 'bg-green-600' : ''}>{file.status}</Badge>  
+                  ) : (  
+                    <Button size="sm" variant="ghost" asChild><a href={file.url} target="_blank"><Download size={16}/></a></Button>  
+                  )}  
+                </div>  
+              ))}  
+            </div>  
+          </CardContent>  
+        </Card>  
+          
+        {/* RIGHT: TIMELINE (Full Width on Mobile, Col-span-3) */}  
+        <Card className="md:col-span-3 shadow-md flex flex-col max-h-[500px]">  
+          <CardHeader><CardTitle className="flex items-center gap-2"><Calendar className="text-purple-600" size={20}/> Project Timeline</CardTitle></CardHeader>  
+          <CardContent className="overflow-y-auto">  
+            {(!project.timeline || project.timeline.length === 0) ? (  
+              <div className="text-center py-6 text-sm text-muted-foreground">No updates yet.</div>  
+            ) : (  
+              <div className="space-y-6 relative pl-2 pt-2">  
+                <div className="absolute left-[7px] top-2 bottom-2 w-[2px] bg-slate-100" />  
+                {project.timeline.map((event, i) => (  
+                  <div key={i} className="relative flex gap-4">  
+                    <div className={`w-4 h-4 rounded-full border-2 border-white shadow-sm z-10 mt-1 shrink-0 ${i === 0 ? 'bg-purple-600 ring-2 ring-purple-100' : 'bg-slate-300'}`} />  
+                    <div className="space-y-1 pb-2">  
+                      <p className="text-xs font-medium text-slate-500 uppercase">{new Date(event.date).toLocaleDateString()}</p>  
+                      <h4 className={`font-semibold ${i === 0 ? 'text-slate-900' : 'text-slate-600'}`}>{event.title}</h4>  
+                      {event.desc && <p className="text-sm text-muted-foreground">{event.desc}</p>}  
+                    </div>  
+                  </div>  
+                ))}  
+              </div>  
+            )}  
+          </CardContent>  
+        </Card>  
 
-  return (
-    <div
-      style={{
-        minHeight: "100vh",
-        background: "#f5f7fa",
-        padding: 32,
-      }}
-    >
-      <div style={{ maxWidth: 800, margin: "0 auto" }}>
-        <h2 style={{ marginBottom: 20 }}>{project.project_name}</h2>
+      </div>  
+    )}  
+  </div>  
+</div>
 
-        {/* Project Card */}
-        <div
-          style={{
-            background: "#fff",
-            padding: 24,
-            borderRadius: 14,
-            boxShadow: "0 10px 30px rgba(0,0,0,0.08)",
-            marginBottom: 24,
-          }}
-        >
-          <p>
-            <b>Status:</b> {project.status}
-          </p>
-
-          <p style={{ marginTop: 12 }}>
-            <b>Progress:</b> {project.progress}%
-          </p>
-
-          <div
-            style={{
-              marginTop: 10,
-              height: 10,
-              background: "#eee",
-              borderRadius: 6,
-            }}
-          >
-            <div
-              style={{
-                width: `${project.progress}%`,
-                height: "100%",
-                background: "#111",
-                borderRadius: 6,
-              }}
-            />
-          </div>
-        </div>
-
-        {/* Files placeholder */}
-        <div
-          style={{
-            background: "#fff",
-            padding: 24,
-            borderRadius: 14,
-          }}
-        >
-          <h3>Project Files</h3>
-          <p style={{ color: "#666" }}>
-            Drawings, documents, and updates will appear here.
-          </p>
-        </div>
-      </div>
-    </div>
-  );
+);
 }
