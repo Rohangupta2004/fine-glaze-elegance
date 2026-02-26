@@ -182,6 +182,32 @@ const GlassRailings = () => {
         </div>
       </section>
 
+
+
+      <section className="py-24 bg-slate-50">
+        <div className="container px-4 max-w-5xl mx-auto space-y-6">
+          <h2 className="text-3xl font-bold text-slate-900">Why Fine Glaze for Glass Railings in Pune</h2>
+          <p className="text-slate-600 leading-relaxed">
+            Clients searching for glass railings in Pune usually want a modern look without compromising safety. Fine Glaze is a glass railing contractor company delivering frameless and semi-frameless systems for residential balconies, staircases, terraces, office atriums, and hospitality spaces. Our team supports new construction and retrofit requirements, making us a practical partner for high-rise residential communities, office parks, and premium villas.
+          </p>
+          <h3 className="text-2xl font-semibold text-slate-900">Process</h3>
+          <p className="text-slate-600 leading-relaxed">
+            We begin with measurement, edge-condition checks, and fixing strategy based on slab details. Installation planning includes anchor positioning, leveling, and alignment so the finished railing line remains clean and safe. This process is useful for both commercial and residential projects with strict handover schedules.
+          </p>
+          <h3 className="text-2xl font-semibold text-slate-900">Materials and specifications</h3>
+          <p className="text-slate-600 leading-relaxed">
+            Fine Glaze specifies toughened or laminated glass options, suitable profile systems, and corrosion-resistant hardware depending on usage and location. For projects requiring integrated facade packages, we coordinate with <Link to="/curtain-wall-systems" className="text-amber-600 underline">curtain wall</Link>, <Link to="/structural-glazing" className="text-amber-600 underline">structural glazing</Link>, and <Link to="/acp-aluminium-cladding" className="text-amber-600 underline">ACP cladding</Link> teams. Post-installation support is available through <Link to="/maintenance-services" className="text-amber-600 underline">maintenance services</Link>.
+          </p>
+          <h3 className="text-2xl font-semibold text-slate-900">Industries and FAQ</h3>
+          <p className="text-slate-600 leading-relaxed">
+            We execute glass railing projects for residential towers, clubhouses, office interiors, retail spaces, and hospitality assets. FAQ: are frameless railings safe for families and high-rise balconies? Yes, when thickness, lamination, and fixing design are selected correctly. FAQ: can a single railing company support design and installation? Fine Glaze handles complete delivery from specification to handover.
+          </p>
+          <p className="text-slate-600 leading-relaxed">
+            Looking for a glass railing contractor in Pune for residential or commercial use? <Link to="/contact" className="text-amber-600 underline font-semibold">Contact Fine Glaze</Link> for a lead-ready consultation and quote.
+          </p>
+        </div>
+      </section>
+
       {/* --- CTA --- */}
       <section className="py-20 bg-slate-900 text-white text-center">
         <div className="container px-4">

@@ -168,6 +168,30 @@ export default function CurtainWall() {
         </div>
       </section>
 
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4 max-w-5xl space-y-6">
+          <h2 className="text-3xl font-bold text-slate-900">Why Fine Glaze for Curtain Wall Systems in Pune</h2>
+          <p className="text-slate-600 leading-relaxed">
+            When developers search for a curtain wall contractor in Pune, they are usually trying to solve two things at once: architectural impact and construction certainty. Fine Glaze works as a curtain wall company in Pune for commercial offices, IT parks, high-rise residential towers, and hospitality projects that need dependable timelines with performance-led facade detailing. Our team supports design intent, shop drawing development, fabrication planning, and site installation so the envelope package stays coordinated with structure, access, and waterproofing interfaces. This is especially important for large projects where multiple contractors are working in parallel and delays in facade closure affect interior fit-out milestones.
+          </p>
+          <h3 className="text-2xl font-semibold text-slate-900">Process</h3>
+          <p className="text-slate-600 leading-relaxed">
+            We begin with survey, wind-load checks, and a constructability review for anchors and slab edges. After consultant approvals, we proceed with factory-controlled fabrication and sequenced installation. For office parks and high-rise buildings in Pune, this process helps reduce site-level variation and supports safer, faster elevations closing.
+          </p>
+          <h3 className="text-2xl font-semibold text-slate-900">Materials and specifications</h3>
+          <p className="text-slate-600 leading-relaxed">
+            Fine Glaze specifies tested aluminium profiles, compatible gaskets and sealants, and project-suitable glass combinations based on orientation and use case. Projects requiring mixed facade packages often combine curtain wall systems with <Link to="/structural-glazing" className="text-amber-600 underline">structural glazing</Link>, <Link to="/acp-aluminium-cladding" className="text-amber-600 underline">ACP cladding</Link>, and <Link to="/aluminium-facade" className="text-amber-600 underline">aluminium facade solutions</Link>. We also provide lifecycle planning through <Link to="/maintenance-services" className="text-amber-600 underline">facade maintenance services</Link>.
+          </p>
+          <h3 className="text-2xl font-semibold text-slate-900">Industries and FAQ</h3>
+          <p className="text-slate-600 leading-relaxed">
+            Our curtain wall work spans corporate campuses, mixed-use developments, malls, and premium residential complexes. A common FAQ is whether unitized systems are always better than semi-unitized systems. The answer depends on building height, logistics, and target schedule; we recommend the right system after evaluating site constraints and project goals. Another frequent question is whether one facade manufacturer can manage design-assist and execution. Fine Glaze handles both, giving clients one accountable partner.
+          </p>
+          <p className="text-slate-600 leading-relaxed">
+            If you need a curtain wall manufacturer and contractor in Pune for a commercial or high-rise project, <Link to="/contact" className="text-amber-600 underline font-semibold">contact Fine Glaze</Link> for a technical proposal and site-specific quote.
+          </p>
+        </div>
+      </section>
+
       <CTASection />
     </Layout>
   );
