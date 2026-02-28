@@ -22,6 +22,7 @@ import CurtainWall from "./pages/CurtainWall";
 import AcpCladding from "./pages/AcpCladding";
 import GlassRailings from "./pages/GlassRailings"; // ✅ Added
 import Maintenance from "./pages/Maintenance";     // ✅ Added
+import QuotationEstimator from "./pages/QuotationEstimator";
 
 /* --- App Portals --- */
 import Portal from "./pages/Portal";
@@ -52,6 +53,7 @@ const App = () => (
             <Route path="/acp-aluminium-cladding" element={<AcpCladding />} />
             <Route path="/glass-railings" element={<GlassRailings />} />       {/* ✅ Live */}
             <Route path="/maintenance-services" element={<Maintenance />} />   {/* ✅ Live */}
+            <Route path="/quotation-estimator" element={<QuotationEstimator />} />
 
             {/* --- Application Portals --- */}
             <Route path="/portal" element={<Portal />} />
