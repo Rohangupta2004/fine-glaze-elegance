@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, ChevronDown, ShieldCheck, Ruler } from "lucide-react";
+import { ArrowRight, ShieldCheck, Ruler } from "lucide-react";
 
 export const HeroSection = () => {
   return (
-    <section className="relative min-h-[100svh] w-full overflow-hidden bg-zinc-950 flex flex-col justify-center font-sans">
+    <section className="relative min-h-[100svh] w-full overflow-hidden flex flex-col justify-center bg-slate-50">
       
       {/* 1. Background Video */}
       <div className="absolute inset-0 z-0">
@@ -12,7 +12,7 @@ export const HeroSection = () => {
           loop
           muted
           playsInline
-          className="w-full h-full object-cover opacity-50 scale-105"
+          className="w-full h-full object-cover"
         >
           <source
             src="https://www.pexels.com/download/video/26737896/"
@@ -20,87 +20,69 @@ export const HeroSection = () => {
           />
         </video>
         
-        {/* Engineering Blueprint/Grid Overlay */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-[size:3rem_3rem]" />
+        {/* Light Frosted Glass Overlay - Fixes the "Dark Logo" issue */}
+        <div className="absolute inset-0 bg-white/75 backdrop-blur-[3px]" />
         
-        {/* Gradient Masks for readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-zinc-950/90 via-zinc-950/60 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent" />
+        {/* Soft gradient to blend with the next section naturally */}
+        <div className="absolute inset-0 bg-gradient-to-t from-white via-white/40 to-transparent" />
       </div>
 
       {/* 2. Main Content */}
       <div className="relative z-10 container mx-auto px-6 md:px-12 lg:px-20 pt-20">
-        <div className="max-w-3xl animate-in fade-in slide-in-from-bottom-8 duration-1000 fill-mode-both">
+        <div className="max-w-3xl animate-in fade-in slide-in-from-bottom-8 duration-1000">
           
-          {/* Micro label with structural line */}
-          <div className="flex items-center gap-4 mb-8">
+          {/* Micro label */}
+          <div className="flex items-center gap-4 mb-6">
             <div className="h-px w-12 bg-blue-600" />
-            <span className="text-xs md:text-sm font-bold tracking-[0.25em] text-blue-500 uppercase">
+            <span className="text-sm font-bold tracking-widest text-blue-700 uppercase">
               FineGlaze Engineering
             </span>
           </div>
 
-          {/* Headline */}
-          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-black text-white leading-[1.05] tracking-tighter">
+          {/* Headline - Using normal text classes to match your global CSS */}
+          <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold text-slate-900 leading-tight">
             Precision in <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-200 to-slate-400">
-              Every Facade.
-            </span>
+            <span className="text-blue-600">Every Facade.</span>
           </h1>
 
           {/* Description */}
-          <p className="mt-8 text-lg md:text-xl text-zinc-400 leading-relaxed max-w-xl font-light">
+          <p className="mt-6 text-lg md:text-xl text-slate-600 leading-relaxed max-w-xl">
             High-performance glass and aluminium systems for commercial and infrastructure projects. Delivered with uncompromising safety and exactitude.
           </p>
 
           {/* 3. Actions & CTAs */}
-          <div className="mt-12 flex flex-col sm:flex-row items-start sm:items-center gap-8">
+          <div className="mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-4">
             
-            {/* Primary Button with modern 'fill' hover effect */}
             <Link
               to="/contact"
-              className="group relative inline-flex items-center justify-center bg-white text-zinc-950 px-8 py-4 rounded-full text-sm font-bold tracking-wide overflow-hidden transition-all hover:scale-105 active:scale-95 shadow-[0_0_40px_-10px_rgba(255,255,255,0.3)]"
+              className="inline-flex items-center justify-center bg-blue-600 text-white px-8 py-4 rounded-xl text-base font-semibold transition-all hover:bg-blue-700 hover:shadow-lg hover:-translate-y-1"
             >
-              <div className="absolute inset-0 bg-blue-600 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out z-0" />
-              <span className="relative z-10 flex items-center gap-2 group-hover:text-white transition-colors duration-300">
-                Request Project Quote
-                <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-              </span>
+              Request Project Quote
+              <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
 
-            {/* Secondary Button */}
             <Link
               to="/portfolio"
-              className="group flex items-center gap-3 text-sm font-semibold tracking-wide text-zinc-300 hover:text-white transition-colors py-2"
+              className="inline-flex items-center justify-center bg-white text-slate-700 border border-slate-200 px-8 py-4 rounded-xl text-base font-semibold transition-all hover:bg-slate-50 hover:border-slate-300 hover:-translate-y-1"
             >
-              <span className="relative overflow-hidden pb-1">
-                View Selected Projects
-                <span className="absolute bottom-0 left-0 w-full h-[2px] bg-blue-600 transform scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-300" />
-              </span>
+              View Selected Projects
             </Link>
           </div>
 
           {/* 4. Trust Signals / Micro-stats */}
-          <div className="mt-16 flex flex-wrap items-center gap-6 text-sm text-zinc-500 font-medium">
-            <div className="flex items-center gap-2 bg-white/5 border border-white/10 px-4 py-2 rounded-full backdrop-blur-sm">
-              <ShieldCheck className="w-4 h-4 text-blue-500" />
-              <span className="text-zinc-300">ISO 9001 Certified</span>
+          <div className="mt-12 flex flex-wrap items-center gap-4 text-sm text-slate-700 font-medium">
+            <div className="flex items-center gap-2 bg-white/80 border border-white px-4 py-2.5 rounded-lg shadow-sm backdrop-blur-md">
+              <ShieldCheck className="w-5 h-5 text-blue-600" />
+              <span>ISO 9001 Certified</span>
             </div>
-            <div className="flex items-center gap-2 bg-white/5 border border-white/10 px-4 py-2 rounded-full backdrop-blur-sm">
-              <Ruler className="w-4 h-4 text-blue-500" />
-              <span className="text-zinc-300">Custom Value Engineering</span>
+            <div className="flex items-center gap-2 bg-white/80 border border-white px-4 py-2.5 rounded-lg shadow-sm backdrop-blur-md">
+              <Ruler className="w-5 h-5 text-blue-600" />
+              <span>Custom Value Engineering</span>
             </div>
           </div>
 
         </div>
       </div>
-
-      {/* 5. Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 opacity-50 hover:opacity-100 transition-opacity animate-bounce">
-        <span className="text-[10px] uppercase tracking-[0.2em] text-zinc-400 font-bold">Scroll</span>
-        <ChevronDown className="w-4 h-4 text-zinc-400" />
-      </div>
-
     </section>
   );
 };
