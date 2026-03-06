@@ -1,40 +1,83 @@
-import React from "react";
-import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
 
 export const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center text-white">
-      {/* Background Image & Overlay */}
-      <div className="absolute inset-0">
-        <img
-          src="/hero.jpg"
-          alt="FineGlaze Architectural Glazing"
-          className="w-full h-full object-cover"
+    <section className="relative min-h-screen overflow-hidden bg-black flex items-center justify-center">
+
+      {/* Background video */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover"
+      >
+        <source
+          src="https://www.pexels.com/download/video/26737896/"
+          type="video/mp4"
         />
-        <div className="absolute inset-0 bg-black/40" />
-      </div>
+      </video>
+
+      {/* Contrast overlays */}
+      <div className="absolute inset-0 bg-black/65" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/80" />
 
       {/* Content */}
-      <div className="relative container mx-auto px-6 lg:px-16">
-        <div className="max-w-4xl space-y-8">
-          <p className="text-sm tracking-[0.3em] uppercase opacity-80">
-            Defining Skylines Since 1985
-          </p>
+      <div className="relative z-10 text-center px-6 max-w-4xl">
 
-          <h1 className="text-5xl lg:text-7xl font-light leading-tight">
-            Precision Architectural Glazing
-          </h1>
+        {/* Micro label */}
+        <div className="mb-6 text-sm tracking-[0.3em] text-amber-400">
+          FACADE ENGINEERING
+        </div>
 
-          <div className="flex gap-4 pt-4">
-            <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white border-none">
-              View Projects
-            </Button>
-            <Button size="lg" variant="outline" className="text-slate-900 border-white bg-white/90 hover:bg-white">
-              Watch Reel
-            </Button>
-          </div>
+        {/* Headline */}
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium text-white leading-[1.05]">
+          Engineering
+          <br />
+          Modern Facades
+        </h1>
+
+        {/* Divider */}
+        <div className="mx-auto mt-6 h-px w-20 bg-amber-500" />
+
+        {/* Description */}
+        <p className="mt-6 text-lg md:text-xl text-white/75 leading-relaxed max-w-2xl mx-auto">
+          High-performance glass and aluminium facade systems for commercial
+          and infrastructure projects — delivered with precision and reliability.
+        </p>
+
+        {/* Actions */}
+        <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-8">
+
+          {/* Primary CTA */}
+          <Link
+            to="/contact"
+            className="
+              inline-flex items-center gap-3
+              bg-amber-500 text-black
+              px-10 py-4
+              text-sm font-medium tracking-wide
+              hover:bg-amber-400 transition
+            "
+          >
+            Request Project Quote
+            <ArrowRight className="h-4 w-4" />
+          </Link>
+
+          {/* Secondary action (text only) */}
+          <Link
+            to="/portfolio"
+            className="text-sm tracking-wide text-white/70 hover:text-white transition"
+          >
+            View Selected Projects →
+          </Link>
+
         </div>
       </div>
+
+      {/* Bottom depth */}
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-black to-transparent" />
     </section>
   );
 };
