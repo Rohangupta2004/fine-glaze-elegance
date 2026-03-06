@@ -23,4 +23,4 @@
       </div>
     </div>
   </div>
-</section>of it ⁷ se
+</section>
