@@ -1,85 +1,90 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, ShieldCheck, Ruler } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { ArrowRight, Play } from "lucide-react";
 
 export const HeroSection = () => {
   return (
-    <section className="relative min-h-[100svh] w-full flex flex-col justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       
-      {/* 1. Background Video */}
-      <div className="absolute inset-0 z-0">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="w-full h-full object-cover"
-        >
-          <source
-            src="https://www.pexels.com/download/video/26737896/"
-            type="video/mp4"
-          />
-        </video>
-        
-        {/* Using YOUR custom CSS hero-overlay for the perfect dark gradient fade */}
-        <div className="absolute inset-0 hero-overlay" />
-      </div>
+      {/* Video Background */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover"
+      >
+        <source
+          src="https://www.pexels.com/download/video/26737896/"
+          type="video/mp4"
+        />
+      </video>
 
-      {/* 2. Main Content */}
-      <div className="relative z-10 container mx-auto px-6 md:px-12 lg:px-20 pt-20">
-        <div className="max-w-3xl animate-fade-in-up">
-          
-          {/* Micro label */}
-          <div className="flex items-center gap-4 mb-6">
-            <div className="h-px w-12 bg-primary" />
-            <span className="text-sm font-bold tracking-[0.2em] text-primary uppercase">
-              FineGlaze Engineering
-            </span>
+      {/* Gradient Overlay */}
+      <div className="absolute inset-0 hero-overlay" />
+
+      {/* Content */}
+      <div className="relative z-10 container mx-auto px-4 text-center">
+        <div className="max-w-4xl mx-auto space-y-8">
+
+          {/* ✅ Badge (UPDATED) */}
+          <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-black/40 backdrop-blur-md text-sm text-white/75 animate-fade-in border border-white/10">
+            <span className="w-2.5 h-2.5 rounded-full bg-amber-500 animate-pulse" />
+            Trusted Facade Experts
           </div>
 
-          {/* Headline using YOUR text-gradient class */}
-          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-bold text-white leading-[1.05] tracking-tight">
-            Precision in <br />
-            <span className="text-gradient">Every Facade.</span>
+          {/* Headline */}
+          <h1
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight animate-fade-in-up"
+            style={{ animationDelay: "0.1s" }}
+          >
+            Building <span className="text-gradient">Iconic Facades</span>
+            <br className="hidden md:block" />
+            That Define Skylines
           </h1>
 
-          {/* Description utilizing your muted-foreground variable */}
-          <p className="mt-8 text-lg md:text-xl text-muted-foreground leading-relaxed max-w-xl font-light">
-            High-performance glass and aluminium systems for commercial and infrastructure projects. Delivered with uncompromising safety and exactitude.
+          {/* Sub-headline */}
+          <p
+            className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto animate-fade-in-up leading-relaxed"
+            style={{ animationDelay: "0.2s" }}
+          >
+            Premium glass & aluminium facade fabrication, installation, and maintenance.
+            Award-winning quality delivered on time.
           </p>
 
-          {/* 3. Actions & CTAs */}
-          <div className="mt-12 flex flex-col sm:flex-row items-start sm:items-center gap-6">
-            
-            {/* Primary Button using YOUR btn-glossy and bronze-glow classes */}
-            <Link
-              to="/contact"
-              className="btn-glossy inline-flex items-center justify-center text-primary-foreground px-8 py-4 rounded-lg text-sm font-semibold tracking-wide transition-transform hover:-translate-y-1 bronze-glow"
-            >
-              Request Project Quote
-              <ArrowRight className="ml-2 h-4 w-4" />
+          {/* CTA Buttons */}
+          <div
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6 animate-fade-in-up"
+            style={{ animationDelay: "0.3s" }}
+          >
+            <Link to="/contact">
+              <Button
+                size="lg"
+                className="btn-glossy text-white border-0 px-8 py-6 text-base group shadow-lg"
+              >
+                Get Free Quote
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Button>
             </Link>
 
-            {/* Secondary Button using YOUR glass-card-dark class */}
-            <Link
-              to="/portfolio"
-              className="glass-card-dark inline-flex items-center justify-center text-white px-8 py-4 text-sm font-semibold tracking-wide transition-all hover:bg-white/10"
-            >
-              View Selected Projects
+            <Link to="/portfolio">
+              <Button
+                size="lg"
+                variant="outline"
+                className="bg-transparent border-white/30 text-white hover:bg-white/10 hover:text-white px-8 py-6 text-base group"
+              >
+                <Play className="mr-2 h-4 w-4" />
+                View Projects
+              </Button>
             </Link>
           </div>
+        </div>
+      </div>
 
-          {/* 4. Trust Signals using YOUR glass-card-dark class */}
-          <div className="mt-16 flex flex-wrap items-center gap-4 text-sm font-medium">
-            <div className="glass-card-dark flex items-center gap-2 px-4 py-2.5">
-              <ShieldCheck className="w-5 h-5 text-primary" />
-              <span className="text-white/90">ISO 9001 Certified</span>
-            </div>
-            <div className="glass-card-dark flex items-center gap-2 px-4 py-2.5">
-              <Ruler className="w-5 h-5 text-primary" />
-              <span className="text-white/90">Custom Value Engineering</span>
-            </div>
-          </div>
-
+      {/* Scroll Indicator */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+        <div className="w-6 h-10 rounded-full border-2 border-white/30 flex items-start justify-center p-1">
+          <div className="w-1.5 h-3 rounded-full bg-amber-500/70 animate-pulse" />
         </div>
       </div>
     </section>
