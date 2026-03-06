@@ -26,6 +26,8 @@ import Maintenance from "./pages/Maintenance";     // ✅ Added
 /* --- App Portals --- */
 import Portal from "./pages/Portal";
 import Admin from "./pages/Admin";
+import FAQ from './pages/FAQ';
+
 
 const queryClient = new QueryClient();
 
@@ -62,6 +64,8 @@ const App = () => (
             
             {/* --- Catch All --- */}
             <Route path="*" element={<NotFound />} />
+            <Route path="/faq" element={<FAQ />} />
+            
           </Routes>
         </BrowserRouter>
       </HelmetProvider>
