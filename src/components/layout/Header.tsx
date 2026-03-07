@@ -45,10 +45,10 @@ export const Header = () => {
     cn(
       "px-3 py-2 rounded-lg text-sm font-medium transition-colors",
       location.pathname === path
-        ? "bg-primary text-white"
+        ? "bg-amber-500 text-black"
         : isScrolled
-        ? "text-slate-700 hover:bg-slate-100"
-        : "text-white hover:bg-white/20"
+        ? "text-amber-100 hover:bg-amber-400/10"
+        : "text-amber-100 hover:bg-amber-500/10"
     );
 
   return (
@@ -58,7 +58,7 @@ export const Header = () => {
         className={cn(
           "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
           isScrolled
-            ? "bg-white/95 backdrop-blur-md py-3 shadow-sm border-b"
+            ? "bg-black/90 backdrop-blur-md py-3 shadow-sm border-b border-amber-500/20"
             : "bg-transparent py-5"
         )}
       >
@@ -90,7 +90,7 @@ export const Header = () => {
                 onClick={() => setIsServiceOpen(!isServiceOpen)}
                 className={cn(
                   "p-1 rounded-md",
-                  isScrolled ? "text-slate-700" : "text-white"
+                  isScrolled ? "text-amber-100" : "text-white"
                 )}
               >
                 <ChevronDown size={14} />
@@ -104,12 +104,12 @@ export const Header = () => {
                     : "opacity-0 invisible"
                 )}
               >
-                <div className="bg-white rounded-xl shadow-xl border p-2">
+                <div className="bg-black/95 rounded-xl shadow-xl border border-amber-400/30 p-2">
                   {serviceLinks.map((service) => (
                     <Link
                       key={service.href}
                       to={service.href}
-                      className="block px-4 py-3 text-sm text-slate-700 hover:bg-slate-50 rounded-lg"
+                      className="block px-4 py-3 text-sm text-amber-100 hover:bg-amber-400/10 rounded-lg"
                     >
                       {service.label}
                     </Link>
@@ -131,8 +131,8 @@ export const Header = () => {
                 className={cn(
                   "gap-2",
                   isScrolled
-                    ? "text-slate-700"
-                    : "text-white hover:bg-white/20"
+                    ? "text-amber-100"
+                    : "text-amber-100 hover:bg-amber-500/10"
                 )}
               >
                 <User size={16} />
@@ -141,7 +141,7 @@ export const Header = () => {
             </Link>
 
             <Link to="/contact">
-              <Button className="bg-amber-600 hover:bg-amber-700 text-white">
+              <Button className="bg-amber-500 hover:bg-amber-400 text-black">
                 Get a Quote
               </Button>
             </Link>
@@ -152,7 +152,7 @@ export const Header = () => {
             onClick={() => setIsMobileMenuOpen(true)}
             className={cn(
               "lg:hidden p-2 rounded-md",
-              isScrolled ? "text-slate-900" : "text-white"
+              isScrolled ? "text-amber-100" : "text-white"
             )}
           >
             <Menu size={24} />
@@ -162,8 +162,8 @@ export const Header = () => {
 
       {/* MOBILE MENU (FIXED) */}
       {isMobileMenuOpen && (
-        <div className="fixed inset-0 z-[60] bg-white overflow-y-auto">
-          <div className="flex items-center justify-between px-4 py-4 border-b">
+        <div className="fixed inset-0 z-[60] bg-black text-amber-50 overflow-y-auto">
+          <div className="flex items-center justify-between px-4 py-4 border-b border-amber-500/20">
             <span className="font-semibold text-lg">Menu</span>
             <button onClick={() => setIsMobileMenuOpen(false)}>
               <X size={24} />
@@ -175,12 +175,12 @@ export const Header = () => {
             <Link to="/about" className="block text-lg font-medium">About</Link>
 
             <div>
-              <p className="text-sm uppercase text-slate-400 mb-2">Services</p>
+              <p className="text-sm uppercase text-amber-300/70 mb-2">Services</p>
               {serviceLinks.map((s) => (
                 <Link
                   key={s.href}
                   to={s.href}
-                  className="block py-1 text-slate-700"
+                  className="block py-1 text-amber-100"
                 >
                   {s.label}
                 </Link>
@@ -192,12 +192,12 @@ export const Header = () => {
 
             <div className="grid grid-cols-2 gap-4 pt-4">
               <Link to="/portal">
-                <Button variant="outline" className="w-full gap-2">
+                <Button variant="outline" className="w-full gap-2 border-amber-500/40 text-amber-100 hover:bg-amber-500/10">
                   <LogIn size={16} /> Portal
                 </Button>
               </Link>
               <Link to="/contact">
-                <Button className="w-full bg-amber-600 text-white">
+                <Button className="w-full bg-amber-500 hover:bg-amber-400 text-black">
                   Get Quote
                 </Button>
               </Link>
