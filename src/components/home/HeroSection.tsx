@@ -1,12 +1,10 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Play } from "lucide-react";
+import { ArrowRight, MapPin, Plane, Play } from "lucide-react";
 
 export const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      
-      {/* Video Background */}
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
       <video
         autoPlay
         loop
@@ -14,55 +12,58 @@ export const HeroSection = () => {
         playsInline
         className="absolute inset-0 w-full h-full object-cover"
       >
-        <source
-          src="https://www.pexels.com/download/video/26737896/"
-          type="video/mp4"
-        />
+        <source src="https://videos.pexels.com/video-files/26737896/12052989_2560_1440_24fps.mp4" type="video/mp4" />
       </video>
 
-      {/* Gradient Overlay */}
       <div className="absolute inset-0 hero-overlay" />
+      <div className="absolute -top-28 right-8 w-72 h-72 rounded-full bg-amber-500/20 blur-3xl" />
+      <div className="absolute -bottom-16 left-4 w-72 h-72 rounded-full bg-orange-800/30 blur-3xl" />
 
-      {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 text-center">
-        <div className="max-w-4xl mx-auto space-y-8">
-
-          {/* ✅ Badge (UPDATED) */}
-          <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-black/40 backdrop-blur-md text-sm text-white/75 animate-fade-in border border-white/10">
-            <span className="w-2.5 h-2.5 rounded-full bg-amber-500 animate-pulse" />
-            Trusted Facade Experts
+      <div className="relative z-10 container mx-auto px-4 pt-20 text-center">
+        <div className="max-w-5xl mx-auto space-y-8">
+          <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-black/45 backdrop-blur-md text-sm text-amber-100 border border-amber-500/30 animate-fade-in">
+            <span className="w-2.5 h-2.5 rounded-full bg-amber-400 animate-pulse" />
+            Bronze · Gold · Black Signature Facade Design
           </div>
 
-          {/* Headline */}
           <h1
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight animate-fade-in-up"
             style={{ animationDelay: "0.1s" }}
           >
-            Building <span className="text-gradient">Iconic Facades</span>
+            Pune Airport ke liye
             <br className="hidden md:block" />
-            That Define Skylines
+            <span className="text-gradient"> Landmark Structural Glazing</span>
           </h1>
 
-          {/* Sub-headline */}
           <p
-            className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto animate-fade-in-up leading-relaxed"
+            className="text-lg md:text-xl text-white/80 max-w-3xl mx-auto animate-fade-in-up leading-relaxed"
             style={{ animationDelay: "0.2s" }}
           >
-            Premium glass & aluminium facade fabrication, installation, and maintenance.
-            Award-winning quality delivered on time.
+            FineGlaze delivers premium facade systems for high-visibility infrastructure. From terminal glass envelopes to aluminium detailing,
+            we engineer aesthetics, durability, and speed for projects like Pune Airport.
           </p>
 
-          {/* CTA Buttons */}
+          <div className="max-w-2xl mx-auto glass-card-dark metallic-border p-5 md:p-6 text-left animate-fade-in-up" style={{ animationDelay: "0.25s" }}>
+            <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6 text-amber-100">
+              <div className="flex items-center gap-2">
+                <Plane size={18} className="text-amber-300" />
+                <span className="font-semibold">Featured Infrastructure Project</span>
+              </div>
+              <div className="hidden sm:block w-px h-5 bg-amber-500/30" />
+              <div className="flex items-center gap-2 text-sm text-amber-100/90">
+                <MapPin size={16} className="text-amber-300" />
+                Pune International Airport Zone
+              </div>
+            </div>
+          </div>
+
           <div
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6 animate-fade-in-up"
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4 animate-fade-in-up"
             style={{ animationDelay: "0.3s" }}
           >
             <Link to="/contact">
-              <Button
-                size="lg"
-                className="btn-glossy text-white border-0 px-8 py-6 text-base group shadow-lg"
-              >
-                Get Free Quote
+              <Button size="lg" className="btn-glossy text-black border-0 px-8 py-6 text-base group shadow-lg font-semibold">
+                Start Your Facade Project
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
             </Link>
@@ -71,20 +72,19 @@ export const HeroSection = () => {
               <Button
                 size="lg"
                 variant="outline"
-                className="bg-transparent border-white/30 text-white hover:bg-white/10 hover:text-white px-8 py-6 text-base group"
+                className="bg-transparent border-amber-300/40 text-amber-50 hover:bg-amber-400/10 hover:text-white px-8 py-6 text-base group"
               >
                 <Play className="mr-2 h-4 w-4" />
-                View Projects
+                Explore Projects
               </Button>
             </Link>
           </div>
         </div>
       </div>
 
-      {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 rounded-full border-2 border-white/30 flex items-start justify-center p-1">
-          <div className="w-1.5 h-3 rounded-full bg-amber-500/70 animate-pulse" />
+        <div className="w-6 h-10 rounded-full border-2 border-amber-300/40 flex items-start justify-center p-1">
+          <div className="w-1.5 h-3 rounded-full bg-amber-400/80 animate-pulse" />
         </div>
       </div>
     </section>
