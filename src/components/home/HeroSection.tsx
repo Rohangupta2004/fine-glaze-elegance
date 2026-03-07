@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, ClipboardCheck, MapPin, Plane, Play } from "lucide-react";
+import { ArrowRight, ClipboardCheck, MapPin, Plane, Play, Trophy } from "lucide-react";
 
 const heroHighlights = [
   "Structural glazing for airport terminals and high-footfall buildings",
-  "Curtain wall, ACP cladding, aluminium facade and skylight systems",
-  "Engineering-led execution from design coordination to site handover",
+  "ACP cladding, curtain wall, aluminium facade and skylight systems",
+  "Active project focus in Pune and Mumbai commercial corridors",
 ];
 
 export const HeroSection = () => {
@@ -24,32 +24,32 @@ export const HeroSection = () => {
       <div className="relative z-10 container mx-auto px-4 pt-20 text-center">
         <div className="max-w-5xl mx-auto space-y-8">
           <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-black/45 backdrop-blur-md text-sm text-amber-100 border border-amber-500/30 animate-fade-in">
-            <span className="w-2.5 h-2.5 rounded-full bg-amber-400 animate-pulse" />
-            FineGlaze · Premium Structural Glazing & Facade Specialists
+            <Trophy size={14} className="text-amber-300" />
+            2024 Embassy Award Winner · FineGlaze Facade Specialists
           </div>
 
           <h1
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight animate-fade-in-up"
             style={{ animationDelay: "0.1s" }}
           >
-            Structural Glazing Experts
+            Structural Glazing & ACP Cladding Experts
             <br className="hidden md:block" />
-            <span className="text-gradient">Trusted for Pune Airport-Scale Projects</span>
+            <span className="text-gradient">for Pune and Mumbai Landmark Projects</span>
           </h1>
 
           <p
             className="text-lg md:text-xl text-white/80 max-w-3xl mx-auto animate-fade-in-up leading-relaxed"
             style={{ animationDelay: "0.2s" }}
           >
-            FineGlaze helps architects, consultants, and developers deliver high-performance building envelopes. We combine detailed engineering,
-            precision fabrication, and disciplined site execution for commercial towers, institutional campuses, and transport infrastructure.
+            FineGlaze helps architects, consultants, and developers deliver high-performance building envelopes with engineering-led execution,
+            proven site coordination, and quality control built for demanding commercial and infrastructure schedules.
           </p>
 
           <div className="max-w-3xl mx-auto glass-card-dark metallic-border p-5 md:p-6 text-left animate-fade-in-up" style={{ animationDelay: "0.25s" }}>
             <div className="grid grid-cols-1 sm:grid-cols-[1fr_auto_1fr] gap-4 items-center text-amber-100 pb-4 border-b border-amber-400/20">
               <div className="flex items-center gap-2">
                 <Plane size={18} className="text-amber-300" />
-                <span className="font-semibold">Featured Infrastructure Focus</span>
+                <span className="font-semibold">Featured Infrastructure Project</span>
               </div>
               <div className="hidden sm:block w-px h-5 bg-amber-500/30 justify-self-center" />
               <div className="flex items-center gap-2 text-sm text-amber-100/90 sm:justify-end">
