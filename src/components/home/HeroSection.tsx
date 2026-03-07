@@ -5,15 +5,11 @@ import { ArrowRight, MapPin, Plane, Play } from "lucide-react";
 export const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
+      <img
+        src="https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=1920&q=80"
+        alt="Modern airport facade architecture"
         className="absolute inset-0 w-full h-full object-cover"
-      >
-        <source src="https://videos.pexels.com/video-files/26737896/12052989_2560_1440_24fps.mp4" type="video/mp4" />
-      </video>
+      />
 
       <div className="absolute inset-0 hero-overlay" />
       <div className="absolute -top-28 right-8 w-72 h-72 rounded-full bg-amber-500/20 blur-3xl" />
@@ -30,27 +26,27 @@ export const HeroSection = () => {
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight animate-fade-in-up"
             style={{ animationDelay: "0.1s" }}
           >
-            Pune Airport ke liye
+            Landmark Structural Glazing
             <br className="hidden md:block" />
-            <span className="text-gradient"> Landmark Structural Glazing</span>
+            <span className="text-gradient">for Pune Airport Infrastructure</span>
           </h1>
 
           <p
             className="text-lg md:text-xl text-white/80 max-w-3xl mx-auto animate-fade-in-up leading-relaxed"
             style={{ animationDelay: "0.2s" }}
           >
-            FineGlaze delivers premium facade systems for high-visibility infrastructure. From terminal glass envelopes to aluminium detailing,
-            we engineer aesthetics, durability, and speed for projects like Pune Airport.
+            FineGlaze delivers high-performance facade systems for critical infrastructure. From terminal glass envelopes to precision aluminium detailing,
+            we execute airport-grade projects with speed, quality, and engineering confidence.
           </p>
 
-          <div className="max-w-2xl mx-auto glass-card-dark metallic-border p-5 md:p-6 text-left animate-fade-in-up" style={{ animationDelay: "0.25s" }}>
-            <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6 text-amber-100">
+          <div className="max-w-3xl mx-auto glass-card-dark metallic-border p-5 md:p-6 text-left animate-fade-in-up" style={{ animationDelay: "0.25s" }}>
+            <div className="grid grid-cols-1 sm:grid-cols-[1fr_auto_1fr] gap-4 items-center text-amber-100">
               <div className="flex items-center gap-2">
                 <Plane size={18} className="text-amber-300" />
-                <span className="font-semibold">Featured Infrastructure Project</span>
+                <span className="font-semibold">Featured Infrastructure Focus</span>
               </div>
-              <div className="hidden sm:block w-px h-5 bg-amber-500/30" />
-              <div className="flex items-center gap-2 text-sm text-amber-100/90">
+              <div className="hidden sm:block w-px h-5 bg-amber-500/30 justify-self-center" />
+              <div className="flex items-center gap-2 text-sm text-amber-100/90 sm:justify-end">
                 <MapPin size={16} className="text-amber-300" />
                 Pune International Airport Zone
               </div>

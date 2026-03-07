@@ -5,11 +5,13 @@ import { AwardsSection } from "@/components/home/AwardsSection";
 import { PortfolioSection } from "@/components/home/PortfolioSection";
 import { ServicesSection } from "@/components/home/ServicesSection";
 import { CTASection } from "@/components/home/CTASection";
+import { FeatureShowcaseSection } from "@/components/home/FeatureShowcaseSection";
 
 const Index = () => {
   return (
     <Layout>
       <HeroSection />
+      <FeatureShowcaseSection />
       <ClientsCarousel />
       <AwardsSection />
       <PortfolioSection />
