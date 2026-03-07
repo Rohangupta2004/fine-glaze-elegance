@@ -6,6 +6,7 @@ import { PortfolioSection } from "@/components/home/PortfolioSection";
 import { ServicesSection } from "@/components/home/ServicesSection";
 import { CTASection } from "@/components/home/CTASection";
 import { FeatureShowcaseSection } from "@/components/home/FeatureShowcaseSection";
+import { SeoContentSection } from "@/components/home/SeoContentSection";
 
 const Index = () => {
   return (
@@ -17,6 +18,7 @@ const Index = () => {
       <PortfolioSection />
       <ServicesSection />
       <CTASection />
+      <SeoContentSection />
     </Layout>
   );
 };

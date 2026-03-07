@@ -1,6 +1,12 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, MapPin, Plane, Play } from "lucide-react";
+import { ArrowRight, ClipboardCheck, MapPin, Plane, Play } from "lucide-react";
+
+const heroHighlights = [
+  "Structural glazing for airport terminals and high-footfall buildings",
+  "Curtain wall, ACP cladding, aluminium facade and skylight systems",
+  "Engineering-led execution from design coordination to site handover",
+];
 
 export const HeroSection = () => {
   return (
@@ -19,28 +25,28 @@ export const HeroSection = () => {
         <div className="max-w-5xl mx-auto space-y-8">
           <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-black/45 backdrop-blur-md text-sm text-amber-100 border border-amber-500/30 animate-fade-in">
             <span className="w-2.5 h-2.5 rounded-full bg-amber-400 animate-pulse" />
-            Bronze · Gold · Black Signature Facade Design
+            FineGlaze · Premium Structural Glazing & Facade Specialists
           </div>
 
           <h1
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight animate-fade-in-up"
             style={{ animationDelay: "0.1s" }}
           >
-            Landmark Structural Glazing
+            Structural Glazing Experts
             <br className="hidden md:block" />
-            <span className="text-gradient">for Pune Airport Infrastructure</span>
+            <span className="text-gradient">Trusted for Pune Airport-Scale Projects</span>
           </h1>
 
           <p
             className="text-lg md:text-xl text-white/80 max-w-3xl mx-auto animate-fade-in-up leading-relaxed"
             style={{ animationDelay: "0.2s" }}
           >
-            FineGlaze delivers high-performance facade systems for critical infrastructure. From terminal glass envelopes to precision aluminium detailing,
-            we execute airport-grade projects with speed, quality, and engineering confidence.
+            FineGlaze helps architects, consultants, and developers deliver high-performance building envelopes. We combine detailed engineering,
+            precision fabrication, and disciplined site execution for commercial towers, institutional campuses, and transport infrastructure.
           </p>
 
           <div className="max-w-3xl mx-auto glass-card-dark metallic-border p-5 md:p-6 text-left animate-fade-in-up" style={{ animationDelay: "0.25s" }}>
-            <div className="grid grid-cols-1 sm:grid-cols-[1fr_auto_1fr] gap-4 items-center text-amber-100">
+            <div className="grid grid-cols-1 sm:grid-cols-[1fr_auto_1fr] gap-4 items-center text-amber-100 pb-4 border-b border-amber-400/20">
               <div className="flex items-center gap-2">
                 <Plane size={18} className="text-amber-300" />
                 <span className="font-semibold">Featured Infrastructure Focus</span>
@@ -51,6 +57,15 @@ export const HeroSection = () => {
                 Pune International Airport Zone
               </div>
             </div>
+
+            <ul className="mt-4 grid gap-2">
+              {heroHighlights.map((item) => (
+                <li key={item} className="flex items-start gap-2 text-sm text-amber-50/90">
+                  <ClipboardCheck size={16} className="mt-0.5 text-amber-300 shrink-0" />
+                  {item}
+                </li>
+              ))}
+            </ul>
           </div>
 
           <div
@@ -59,7 +74,7 @@ export const HeroSection = () => {
           >
             <Link to="/contact">
               <Button size="lg" className="btn-glossy text-black border-0 px-8 py-6 text-base group shadow-lg font-semibold">
-                Start Your Facade Project
+                Request Project Consultation
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
             </Link>
@@ -71,7 +86,7 @@ export const HeroSection = () => {
                 className="bg-transparent border-amber-300/40 text-amber-50 hover:bg-amber-400/10 hover:text-white px-8 py-6 text-base group"
               >
                 <Play className="mr-2 h-4 w-4" />
-                Explore Projects
+                View Facade Portfolio
               </Button>
             </Link>
           </div>
