@@ -119,6 +119,7 @@ export const Header = () => {
             </div>
 
             <Link to="/portfolio" className={getLinkClass("/portfolio")}>Portfolio</Link>
+            <Link to="/quotation-estimator" className={getLinkClass("/quotation-estimator")}>Estimator</Link>
             <Link to="/contact" className={getLinkClass("/contact")}>Contact</Link>
           </nav>
 
@@ -140,7 +141,7 @@ export const Header = () => {
               </Button>
             </Link>
 
-            <Link to="/contact">
+            <Link to="/quotation-estimator">
               <Button className="bg-amber-600 hover:bg-amber-700 text-white">
                 Get a Quote
               </Button>
@@ -188,6 +189,7 @@ export const Header = () => {
             </div>
 
             <Link to="/portfolio" className="block text-lg font-medium">Portfolio</Link>
+            <Link to="/quotation-estimator" className="block text-lg font-medium">Estimator</Link>
             <Link to="/contact" className="block text-lg font-medium">Contact</Link>
 
             <div className="grid grid-cols-2 gap-4 pt-4">
@@ -196,7 +198,7 @@ export const Header = () => {
                   <LogIn size={16} /> Portal
                 </Button>
               </Link>
-              <Link to="/contact">
+              <Link to="/quotation-estimator">
                 <Button className="w-full bg-amber-600 text-white">
                   Get Quote
                 </Button>
