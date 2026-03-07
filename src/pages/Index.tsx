@@ -7,6 +7,7 @@ import { ServicesSection } from "@/components/home/ServicesSection";
 import { CTASection } from "@/components/home/CTASection";
 import { FeatureShowcaseSection } from "@/components/home/FeatureShowcaseSection";
 import { SeoContentSection } from "@/components/home/SeoContentSection";
+import { ContentFortressSection } from "@/components/home/ContentFortressSection";
 
 const Index = () => {
   return (
@@ -19,6 +20,7 @@ const Index = () => {
       <ServicesSection />
       <CTASection />
       <SeoContentSection />
+      <ContentFortressSection />
     </Layout>
   );
 };
