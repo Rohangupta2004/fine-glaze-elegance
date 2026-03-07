@@ -2,47 +2,47 @@ import { Link } from "react-router-dom";
 
 const entityPillars = [
   {
-    entity: "Structural Glazing Pune",
-    intent: "Airport terminals, IT parks, and commercial towers",
+    entity: "Facade Solutions in Pune",
+    intent: "Structural glazing, ACP cladding, and curtain wall systems for IT parks and commercial hubs",
+    page: "/services",
+  },
+  {
+    entity: "Facade Solutions in Mumbai",
+    intent: "High-rise facade modernization and envelope execution for corporate and mixed-use projects",
+    page: "/services",
+  },
+  {
+    entity: "Structural Glazing Pune & Mumbai",
+    intent: "Airport, institutional, and premium commercial facade systems",
     page: "/structural-glazing",
   },
   {
-    entity: "Structural Glazing Mumbai",
-    intent: "High-rise facade upgrades and new developments",
-    page: "/structural-glazing",
-  },
-  {
-    entity: "ACP Cladding Pune",
-    intent: "Exterior envelope modernization and retrofit",
-    page: "/acp-aluminium-cladding",
-  },
-  {
-    entity: "ACP Cladding Mumbai",
-    intent: "Corporate facades, hospitals, and mixed-use buildings",
+    entity: "ACP Cladding Pune & Mumbai",
+    intent: "Exterior cladding upgrades, retrofit envelopes, and long-term weather protection",
     page: "/acp-aluminium-cladding",
   },
 ];
 
 const faqItems = [
   {
-    question: "Do you handle structural glazing projects in Pune and Mumbai?",
+    question: "Do you handle facade solutions in both Pune and Mumbai?",
     answer:
-      "Yes. FineGlaze executes structural glazing projects across Pune and Mumbai with support for design coordination, fabrication, installation, and handover documentation.",
+      "Yes. FineGlaze executes facade solutions in Pune and Mumbai with complete support for engineering coordination, fabrication planning, installation, and handover workflows.",
   },
   {
-    question: "Is FineGlaze experienced in airport-grade facade work?",
+    question: "What trust signals prove FineGlaze capability?",
     answer:
-      "Yes. Our Pune Airport project experience helps us plan high-compliance, high-coordination infrastructure scopes with strict quality and timeline controls.",
+      "FineGlaze highlights two core proof points: the 2024 Embassy REIT Award and project execution experience in the Pune Airport zone.",
   },
   {
-    question: "What ACP cladding services do you provide?",
+    question: "Do you provide both Structural Glazing and ACP Cladding?",
     answer:
-      "We provide ACP cladding system selection, detailing support, substructure planning, fabrication, installation, and maintenance assistance for commercial and institutional projects.",
+      "Yes. We deliver structural glazing and ACP cladding as integrated envelope packages for commercial, institutional, and infrastructure developments.",
   },
   {
-    question: "How does FineGlaze demonstrate credibility and quality?",
+    question: "How do you help with timeline and quality risk?",
     answer:
-      "FineGlaze was recognized with the 2024 Embassy Award and follows QA/QC-led workflows, milestone tracking, and site-ready documentation for reliable delivery.",
+      "Our QA/QC-led process, milestone tracking, and site-ready detailing help reduce delays, rework, and coordination gaps across facade packages.",
   },
 ];
 
@@ -53,22 +53,21 @@ export const SeoContentSection = () => {
         <div className="max-w-6xl mx-auto space-y-6">
           <div className="glass-card rounded-2xl p-6 md:p-10 space-y-6">
             <h2 className="text-2xl md:text-4xl font-bold text-foreground leading-tight">
-              Entity-Based SEO Hub: Structural Glazing & ACP Cladding in Pune and Mumbai
+              Content Cluster: Facade Solutions in Pune and Mumbai
             </h2>
 
             <p className="text-muted-foreground leading-relaxed">
-              FineGlaze is building an entity-first content architecture around two core service entities—Structural Glazing and ACP Cladding—mapped to
-              Pune and Mumbai. This helps Google AI Search connect our brand with project intent, location relevance, and verified execution signals.
+              This content cluster is built around a central entity: <strong>Facade Solutions in Pune and Mumbai</strong>. Supporting entities include
+              Structural Glazing and ACP Cladding, mapped to local project intent, commercial building demand, and infrastructure execution requirements.
             </p>
 
             <p className="text-muted-foreground leading-relaxed">
-              Our E-E-A-T foundation is backed by real project proof and industry recognition, including our <strong>2024 Embassy Award</strong> and
-              infrastructure execution context from the <strong>Pune Airport project</strong>. This is supported by service-level pages, portfolio evidence,
-              and clear internal linking that improves topical authority.
+              For stronger E-E-A-T signals, FineGlaze highlights real-world proof points: the <strong>Embassy REIT 2024 Award</strong> and
+              <strong> Pune Airport project</strong> execution context. These trust assets reinforce authority and improve relevance for Google AI Search.
             </p>
 
             <div>
-              <h3 className="text-lg font-semibold text-foreground mb-3">Content Cluster Pillars</h3>
+              <h3 className="text-lg font-semibold text-foreground mb-3">Cluster Pillars and Internal Links</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 {entityPillars.map((item) => (
                   <Link
@@ -84,14 +83,14 @@ export const SeoContentSection = () => {
             </div>
 
             <p className="text-muted-foreground leading-relaxed">
-              Continue exploring our <Link to="/services" className="text-primary hover:underline">Services</Link>, validated
+              Explore our <Link to="/services" className="text-primary hover:underline">Services</Link>, project-backed
               <Link to="/portfolio" className="text-primary hover:underline"> Portfolio</Link>, and direct
-              <Link to="/contact" className="text-primary hover:underline"> Contact channel</Link> for project-specific proposals.
+              <Link to="/contact" className="text-primary hover:underline"> Contact channel</Link> to scope your facade package.
             </p>
           </div>
 
           <div className="glass-card rounded-2xl p-6 md:p-10 space-y-5">
-            <h3 className="text-xl md:text-2xl font-bold text-foreground">FAQ: Structural Glazing & ACP Cladding</h3>
+            <h3 className="text-xl md:text-2xl font-bold text-foreground">FAQ: Facade Solutions in Pune and Mumbai</h3>
             <div className="space-y-4">
               {faqItems.map((faq) => (
                 <article key={faq.question} className="border-b border-border/60 pb-4 last:border-0 last:pb-0">
