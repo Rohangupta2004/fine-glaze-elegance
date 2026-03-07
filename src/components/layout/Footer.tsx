@@ -22,7 +22,7 @@ export const Footer = () => {
   return (
     <footer 
       className="text-white"
-      style={{ background: "linear-gradient(180deg, hsl(25 25% 12%) 0%, hsl(20 20% 8%) 100%)" }}
+      style={{ background: "linear-gradient(180deg, hsl(220 14% 8%) 0%, hsl(220 12% 4%) 100%)" }}
     >
       {/* Main Footer */}
       <div className="container mx-auto px-4 py-16">
@@ -43,21 +43,21 @@ export const Footer = () => {
             <div className="flex gap-3 pt-2">
               <a
                 href="#"
-                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-amber-600 transition-colors"
+                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-amber-500 transition-colors"
                 aria-label="LinkedIn"
               >
                 <Linkedin size={18} />
               </a>
               <a
                 href="#"
-                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-amber-600 transition-colors"
+                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-amber-500 transition-colors"
                 aria-label="Facebook"
               >
                 <Facebook size={18} />
               </a>
               <a
                 href="#"
-                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-amber-600 transition-colors"
+                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-amber-500 transition-colors"
                 aria-label="Instagram"
               >
                 <Instagram size={18} />
@@ -73,7 +73,7 @@ export const Footer = () => {
                 <li key={link.href}>
                   <Link
                     to={link.href}
-                    className="text-white/70 hover:text-amber-400 transition-colors text-sm"
+                    className="text-white/70 hover:text-amber-300 transition-colors text-sm"
                   >
                     {link.label}
                   </Link>
@@ -88,7 +88,7 @@ export const Footer = () => {
             <ul className="space-y-3">
               {services.map((service) => (
                 <li key={service}>
-                  <span className="text-white/70 text-sm">{service}</span>
+                  <span className="text-amber-50/75 text-sm">{service}</span>
                 </li>
               ))}
             </ul>
@@ -100,7 +100,7 @@ export const Footer = () => {
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <MapPin size={18} className="text-amber-500 mt-1 shrink-0" />
-                <span className="text-white/70 text-sm">
+                <span className="text-amber-50/75 text-sm">
                   Pune, Maharashtra, India
                 </span>
               </li>
@@ -108,7 +108,7 @@ export const Footer = () => {
                 <Phone size={18} className="text-amber-500 shrink-0" />
                 <a
                   href="tel:+918369233566"
-                  className="text-white/70 hover:text-white text-sm transition-colors"
+                  className="text-amber-50/75 hover:text-amber-100 text-sm transition-colors"
                 >
                   +91 8369233566
                   <br />
@@ -119,7 +119,7 @@ export const Footer = () => {
                 <Mail size={18} className="text-amber-500 shrink-0" />
                 <a
                   href="mailto:info@fineglaze.com"
-                  className="text-white/70 hover:text-white text-sm transition-colors"
+                  className="text-amber-50/75 hover:text-amber-100 text-sm transition-colors"
                 >
                   info@fineglaze.com
                 </a>
@@ -136,10 +136,10 @@ export const Footer = () => {
             © {new Date().getFullYear()} Fine Glaze. All rights reserved.
           </p>
           <div className="flex gap-6 text-sm">
-            <a href="#" className="text-white/50 hover:text-amber-400 transition-colors">
+            <a href="#" className="text-white/50 hover:text-amber-300 transition-colors">
               Privacy Policy
             </a>
-            <a href="#" className="text-white/50 hover:text-amber-400 transition-colors">
+            <a href="#" className="text-white/50 hover:text-amber-300 transition-colors">
               Terms of Service
             </a>
           </div>
