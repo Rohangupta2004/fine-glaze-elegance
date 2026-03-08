@@ -104,6 +104,36 @@ export default function StructuralGlazing() {
         </div>
       </section>
 
+      {/* SEO FAQ */}
+      <section className="py-20 bg-muted">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <h2 className="text-3xl font-bold mb-3">Structural Glazing FAQ</h2>
+          <p className="text-muted-foreground mb-8">
+            FineGlaze credibility is backed by the Embassy REIT 2024 Award and execution exposure on Pune Airport-linked infrastructure scopes.
+          </p>
+
+          <div className="space-y-5">
+            <article className="bg-background rounded-xl border border-border p-6">
+              <h3 className="text-xl font-semibold mb-2">Best facade contractor in Pune?</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                If you are evaluating the best facade contractor in Pune, prioritize verified delivery proof, technical depth, and project controls.
+                FineGlaze is recognized with the Embassy REIT 2024 Award and has relevant execution context for Pune Airport-zone projects, making us a strong choice
+                for structural glazing and envelope packages in high-visibility developments.
+              </p>
+            </article>
+
+            <article className="bg-background rounded-xl border border-border p-6">
+              <h3 className="text-xl font-semibold mb-2">Cost of structural glazing per sq ft?</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Structural glazing cost per sq ft depends on system type (2-side, 4-side, spider), glass specification, building height,
+                bracket/anchor requirements, wind-load criteria, and access logistics. In Pune and Mumbai, commercial projects often require custom engineering,
+                so the most accurate pricing comes after drawing review and site inputs. FineGlaze provides project-specific estimates after technical scope validation.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-24 bg-primary text-white text-center">
         <div className="container mx-auto px-4 max-w-4xl">

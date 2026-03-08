@@ -12,7 +12,7 @@ export const CTASection = () => {
       className="relative py-28 overflow-hidden"
       style={{
         background:
-          "linear-gradient(135deg, hsl(220 70% 35%) 0%, hsl(215 75% 25%) 50%, hsl(210 80% 20%) 100%)",
+          "linear-gradient(135deg, hsl(28 55% 22%) 0%, hsl(35 68% 40%) 52%, hsl(30 10% 7%) 100%)",
       }}
     >
       {/* Glow blobs */}
@@ -55,7 +55,7 @@ export const CTASection = () => {
             <Button
               asChild
               size="lg"
-              className="bg-white text-primary hover:bg-white/90 px-10 py-6 text-base font-semibold shadow-xl group active:scale-[0.97] transition-transform"
+              className="bg-amber-300 text-black hover:bg-amber-200 px-10 py-6 text-base font-semibold shadow-xl group active:scale-[0.97] transition-transform"
             >
               <a
                 href="https://wa.me/918369233566?text=Hello%20Fine%20Glaze%2C%20I%20would%20like%20to%20discuss%20a%20facade%20project."
@@ -72,7 +72,7 @@ export const CTASection = () => {
               asChild
               size="lg"
               variant="outline"
-              className="border-white/60 text-white hover:bg-white/15 px-10 py-6 text-base backdrop-blur-sm active:scale-[0.97] transition-transform"
+              className="border-amber-200/60 text-amber-50 hover:bg-amber-200/10 px-10 py-6 text-base backdrop-blur-sm active:scale-[0.97] transition-transform"
             >
               <a href="tel:+918369233566">
                 <Phone className="mr-2 h-4 w-4" />

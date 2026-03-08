@@ -5,16 +5,22 @@ import { AwardsSection } from "@/components/home/AwardsSection";
 import { PortfolioSection } from "@/components/home/PortfolioSection";
 import { ServicesSection } from "@/components/home/ServicesSection";
 import { CTASection } from "@/components/home/CTASection";
+import { FeatureShowcaseSection } from "@/components/home/FeatureShowcaseSection";
+import { SeoContentSection } from "@/components/home/SeoContentSection";
+import { ContentFortressSection } from "@/components/home/ContentFortressSection";
 
 const Index = () => {
   return (
     <Layout>
       <HeroSection />
+      <FeatureShowcaseSection />
       <ClientsCarousel />
       <AwardsSection />
       <PortfolioSection />
       <ServicesSection />
       <CTASection />
+      <SeoContentSection />
+      <ContentFortressSection />
     </Layout>
   );
 };
