@@ -13,9 +13,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Plus, Trash2, Upload, History, IndianRupee, Save, FileCheck, User, CheckCircle2, XCircle, MapPin, Building, Phone } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Checkbox } from "@/components/ui/checkbox";
-
-// ⚠️ CHANGE THIS TO YOUR EMAIL
-const ADMIN_EMAIL = "info@fineglaze.com"; 
+import type { Session } from "@supabase/supabase-js";
 
 type ProjectFile = {
   id: string;
@@ -45,6 +43,24 @@ export default function Admin() {
   const [projects, setProjects] = useState<Project[]>([]);
   const [files, setFiles] = useState<Record<string, ProjectFile[]>>({});
   const [loading, setLoading] = useState(true);
+
+  const hasAdminClaims = (session: Session) => {
+    const roleClaim = session.user.app_metadata?.role;
+    const isAdminClaim = session.user.app_metadata?.is_admin;
+
+    return roleClaim === "admin" || isAdminClaim === true;
+  };
+
+  const checkProfileAdminRole = async (userId: string) => {
+    const { data, error } = await supabase
+      .from("profiles")
+      .select("role, is_admin")
+      .eq("id", userId)
+      .maybeSingle();
+
+    if (error || !data) return false;
+    return data.role === "admin" || data.is_admin === true;
+  };
   
   // Modals
   const [createOpen, setCreateOpen] = useState(false);
@@ -63,18 +79,31 @@ export default function Admin() {
   useEffect(() => {
     const checkAuth = async () => {
       const { data: { session } } = await supabase.auth.getSession();
-      if (!session || session.user.email !== ADMIN_EMAIL) {
+      if (!session) {
         navigate("/portal");
         return;
       }
+
+      const isAdmin = hasAdminClaims(session) || await checkProfileAdminRole(session.user.id);
+      if (!isAdmin) {
+        navigate("/portal");
+        return;
+      }
+
       fetchProjects();
     };
     checkAuth();
-  }, []);
+  }, [navigate]);
 
   const fetchProjects = async () => {
     setLoading(true);
-    const { data } = await supabase.from("Clientproject").select("*").order("created_at", { ascending: false });
+    const { data, error } = await supabase.from("Clientproject").select("*").order("created_at", { ascending: false });
+    if (error) {
+      toast.error(error.message);
+      setLoading(false);
+      return;
+    }
+
     if (data) {
       setProjects(data);
       data.forEach(p => fetchFiles(p.id));
@@ -83,7 +112,11 @@ export default function Admin() {
   };
 
   const fetchFiles = async (projectId: string) => {
-    const { data } = await supabase.from("ProjectFiles").select("*").eq("project_id", projectId);
+    const { data, error } = await supabase.from("ProjectFiles").select("*").eq("project_id", projectId);
+    if (error) {
+      toast.error(error.message);
+      return;
+    }
     if (data) setFiles(prev => ({ ...prev, [projectId]: data }));
   };
 
@@ -111,7 +144,8 @@ export default function Admin() {
 
   const handleUpdate = async (id: string, updates: Partial<Project>) => {
     setProjects(prev => prev.map(p => p.id === id ? { ...p, ...updates } : p));
-    await supabase.from("Clientproject").update(updates).eq("id", id);
+    const { error } = await supabase.from("Clientproject").update(updates).eq("id", id);
+    if (error) return toast.error(error.message);
     toast.success("Updated");
   };
 
@@ -146,11 +180,16 @@ export default function Admin() {
     const updatedTimeline = [newEntry, ...(selectedProject.timeline || [])];
     
     setProjects(prev => prev.map(p => p.id === selectedProject.id ? { ...p, timeline: updatedTimeline } : p));
-    await supabase.from("Clientproject").update({ timeline: updatedTimeline }).eq("id", selectedProject.id);
+    const { error } = await supabase.from("Clientproject").update({ timeline: updatedTimeline }).eq("id", selectedProject.id);
+    if (error) return toast.error(error.message);
     
     toast.success("Timeline added");
     setNewEvent({ title: "", desc: "" });
   };
+
+  if (loading) {
+    return <div className="min-h-screen bg-slate-50 p-8">Loading admin workspace...</div>;
+  }
 
   return (
     <div className="min-h-screen bg-slate-50 p-8">
