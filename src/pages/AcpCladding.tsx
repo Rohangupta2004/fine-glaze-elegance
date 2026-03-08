@@ -154,6 +154,31 @@ const AcpCladding = () => {
           </div>
         </div>
       </section>
+
+
+      <section className="py-24 bg-slate-50">
+        <div className="container px-4 max-w-5xl mx-auto space-y-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900">Why Fine Glaze for ACP Cladding in Mumbai</h2>
+          <p className="text-slate-600 leading-relaxed">
+            If you are evaluating ACP cladding in Mumbai, you likely need a contractor who can balance speed, finish quality, and weather durability. Fine Glaze is an ACP cladding company serving commercial buildings, high-rise developments, office parks, and residential projects where facade quality directly affects asset value. As an ACP cladding contractor and execution partner, we align design intent with site realities so panels, joints, and support systems perform consistently through monsoon cycles and coastal exposure.
+          </p>
+          <h3 className="text-2xl font-semibold text-slate-900">Process</h3>
+          <p className="text-slate-600 leading-relaxed">
+            We start with survey, elevation breakdown, and fabrication planning. After drawing approval, our team proceeds with routing, tray preparation, subframe checks, and controlled installation. This sequence helps maintain clean lines and reduces rework on large commercial and high-rise sites.
+          </p>
+          <h3 className="text-2xl font-semibold text-slate-900">Materials and specifications</h3>
+          <p className="text-slate-600 leading-relaxed">
+            Fine Glaze recommends project-appropriate ACP thickness, coating system, and fire-rating grade based on design and compliance requirements. For full-envelope projects, ACP works alongside <Link to="/curtain-wall-systems" className="text-amber-600 underline">curtain wall systems</Link>, <Link to="/structural-glazing" className="text-amber-600 underline">structural glazing</Link>, and <Link to="/aluminium-facade" className="text-amber-600 underline">aluminium facade packages</Link>. We also coordinate with <Link to="/maintenance-services" className="text-amber-600 underline">facade maintenance services</Link> for lifecycle performance.
+          </p>
+          <h3 className="text-2xl font-semibold text-slate-900">Industries and FAQ</h3>
+          <p className="text-slate-600 leading-relaxed">
+            Our ACP cladding execution supports retail facades, corporate offices, institutional blocks, and premium housing projects. FAQ: is ACP cladding suitable for both commercial and residential use in Mumbai? Yes, when specification and installation details match exposure and building type. FAQ: can one ACP company handle design support and installation? Fine Glaze provides both for better accountability.
+          </p>
+          <p className="text-slate-600 leading-relaxed">
+            Need an ACP cladding contractor company in Mumbai for your commercial or residential project? <Link to="/contact" className="text-amber-600 underline font-semibold">Contact Fine Glaze</Link> for a technical quote and site assessment.
+          </p>
+        </div>
+      </section>
     </Layout>
   );
 };

@@ -222,6 +222,31 @@ export default function Services() {
           </section>
         );
       })}
+
+
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4 max-w-5xl space-y-6">
+          <h2 className="text-3xl font-bold">Why Fine Glaze for Facade Services in Pune and Mumbai</h2>
+          <p className="text-muted-foreground leading-relaxed">
+            Fine Glaze is a facade services company supporting developers, architects, and facility teams that need one reliable partner across design intent, execution, and upkeep. If you are searching for a facade contractor in Pune or a glazing company in Mumbai, the biggest advantage is coordinated delivery across multiple systems instead of fragmented vendor management. We work on commercial campuses, office parks, high-rise towers, hospitality projects, and premium residential assets where aesthetics, safety, and lifecycle performance all matter.
+          </p>
+          <h3 className="text-2xl font-semibold">Process</h3>
+          <p className="text-muted-foreground leading-relaxed">
+            Our process begins with site survey, design coordination, and constructability checks. We align drawings and BOQ with schedule priorities so installation, quality checks, and handover remain predictable. This workflow is built for fast-paced commercial and high-rise projects in Pune and Mumbai.
+          </p>
+          <h3 className="text-2xl font-semibold">Materials and specifications</h3>
+          <p className="text-muted-foreground leading-relaxed">
+            We execute integrated packages across <Link to="/curtain-wall-systems" className="text-primary underline">curtain wall systems</Link>, <Link to="/structural-glazing" className="text-primary underline">structural glazing</Link>, <Link to="/acp-aluminium-cladding" className="text-primary underline">ACP cladding</Link>, <Link to="/aluminium-facade" className="text-primary underline">aluminium facade systems</Link>, <Link to="/glass-railings" className="text-primary underline">glass railings</Link>, and <Link to="/maintenance-services" className="text-primary underline">maintenance services</Link>. Each scope is detailed around exposure, safety requirements, and use-case performance.
+          </p>
+          <h3 className="text-2xl font-semibold">Industries and FAQ</h3>
+          <p className="text-muted-foreground leading-relaxed">
+            We serve IT parks, retail assets, institutions, residential communities, and mixed-use developments. A common FAQ is whether one company can handle both new execution and post-handover support. Fine Glaze does both, helping owners maintain facade condition and reduce long-term repair costs.
+          </p>
+          <p className="text-muted-foreground leading-relaxed">
+            Looking for a facade contractor company in Pune or Mumbai for a commercial, residential, or high-rise project? <Link to="/contact" className="text-primary underline font-medium">Contact Fine Glaze</Link> for a project-specific consultation and quote.
+          </p>
+        </div>
+      </section>
     </Layout>
   );
       }

@@ -76,9 +76,7 @@ export default function StructuralGlazing() {
                   className="h-48 w-full object-cover"
                 />
                 <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-2">
-                    {item.title}
-                  </h3>
+                  <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
                   <p className="text-muted-foreground">{item.desc}</p>
                 </div>
               </div>
@@ -101,6 +99,31 @@ export default function StructuralGlazing() {
             <li>Glass Facades for Commercial Buildings</li>
             <li>Showrooms & Corporate Offices</li>
           </ul>
+        </div>
+      </section>
+
+      {/* SEO CONTENT */}
+      <section className="py-20 bg-muted">
+        <div className="container mx-auto px-4 max-w-5xl space-y-6">
+          <h2 className="text-3xl font-bold">Why Fine Glaze for Structural Glazing in Mumbai</h2>
+          <p className="text-muted-foreground leading-relaxed">
+            Businesses looking for structural glazing in Mumbai usually want a facade that looks premium while still delivering measurable performance. Fine Glaze operates as a structural glazing company and execution contractor for projects where visual continuity, weather resistance, and program certainty all matter. We support consultants, architects, and developers across commercial towers, office parks, hospitality assets, and high-rise residential developments. Our team works from design intent to site completion, which helps clients avoid the disconnect that often appears when one vendor supplies material and another handles installation.
+          </p>
+          <h3 className="text-2xl font-semibold">Process</h3>
+          <p className="text-muted-foreground leading-relaxed">
+            Every structural glazing package starts with design coordination, wind-load validation, and interface planning with civil and MEP teams. We then finalize shop drawings, mock-up approvals, and installation sequence for safe execution at height. This structured process is designed for fast-moving commercial and high-rise projects in Mumbai where delays impact multiple trades.
+          </p>
+          <h3 className="text-2xl font-semibold">Materials and specifications</h3>
+          <p className="text-muted-foreground leading-relaxed">
+            We specify system-compatible silicone, high-grade framing components, and tested glass combinations based on use case and elevation exposure. When projects need a full envelope strategy, we coordinate structural glazing with <a href="/curtain-wall-systems" className="text-primary underline">curtain wall systems</a>, <a href="/acp-aluminium-cladding" className="text-primary underline">ACP cladding</a>, and <a href="/aluminium-facade" className="text-primary underline">aluminium facade packages</a>. For podiums and amenity decks, we also integrate with <a href="/glass-railings" className="text-primary underline">glass railing solutions</a>.
+          </p>
+          <h3 className="text-2xl font-semibold">Industries and FAQ</h3>
+          <p className="text-muted-foreground leading-relaxed">
+            Fine Glaze executes structural glazing for IT campuses, corporate headquarters, healthcare blocks, retail facades, and upscale residential communities. Clients often ask if frameless systems are practical for coastal and humid environments like Mumbai. They are, when the right sealant grade, drainage detailing, and maintenance planning are built into the project from day one. Another frequent question is whether a single contractor can handle design assist plus installation; our team covers both for better accountability.
+          </p>
+          <p className="text-muted-foreground leading-relaxed">
+            If you need a structural glazing contractor in Mumbai for a commercial or residential project, <a href="/contact" className="text-primary underline font-medium">contact Fine Glaze</a> for a specification-driven quote and site consultation.
+          </p>
         </div>
       </section>
 

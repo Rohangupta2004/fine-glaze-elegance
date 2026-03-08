@@ -154,6 +154,32 @@ const Maintenance = () => {
         </div>
       </section>
 
+
+
+      <section className="py-24 bg-slate-50">
+        <div className="container px-4 max-w-5xl mx-auto space-y-6">
+          <h2 className="text-3xl font-bold text-slate-900">Why Fine Glaze for Facade Maintenance Services in Mumbai</h2>
+          <p className="text-slate-600 leading-relaxed">
+            If you need facade maintenance services in Mumbai, you need more than periodic cleaning. Fine Glaze is a maintenance contractor company focused on preserving facade safety, waterproofing integrity, and visual quality across commercial towers, office parks, residential societies, and high-rise mixed-use buildings. Our team supports preventive and corrective maintenance programs so asset owners can reduce emergency repair costs and protect building performance year-round.
+          </p>
+          <h3 className="text-2xl font-semibold text-slate-900">Process</h3>
+          <p className="text-slate-600 leading-relaxed">
+            We begin with inspection and risk mapping, then define scope for cleaning, sealant renewal, glass replacement, and hardware checks. Work is executed with safety protocols, access planning, and documented handover reports. This process helps facility teams prioritize high-risk zones first while keeping operations uninterrupted.
+          </p>
+          <h3 className="text-2xl font-semibold text-slate-900">Materials and specifications</h3>
+          <p className="text-slate-600 leading-relaxed">
+            We use facade-compatible sealants, tested cleaning chemistry, and specification-matched replacement materials. For buildings with complex envelopes, maintenance planning is coordinated with <Link to="/curtain-wall-systems" className="text-amber-600 underline">curtain wall systems</Link>, <Link to="/structural-glazing" className="text-amber-600 underline">structural glazing</Link>, and <Link to="/acp-aluminium-cladding" className="text-amber-600 underline">ACP cladding</Link> details to avoid patchwork fixes.
+          </p>
+          <h3 className="text-2xl font-semibold text-slate-900">Industries and FAQ</h3>
+          <p className="text-slate-600 leading-relaxed">
+            Fine Glaze serves corporate campuses, hospitals, retail centers, residential communities, and hospitality buildings. FAQ: how often should facade maintenance be scheduled in Mumbai? Most properties benefit from planned checks before and after monsoon, with periodic cleaning and sealant audit cycles. FAQ: can one maintenance company handle both preventive AMC and urgent breakdown calls? Yes, our team supports both service models.
+          </p>
+          <p className="text-slate-600 leading-relaxed">
+            Need a facade maintenance contractor company in Mumbai for a commercial or residential asset? <Link to="/contact" className="text-amber-600 underline font-semibold">Contact Fine Glaze</Link> for AMC planning and a site-specific maintenance proposal.
+          </p>
+        </div>
+      </section>
+
       {/* --- CTA BANNER --- */}
       <section className="py-20 bg-amber-600 text-white">
         <div className="container px-4 text-center">
