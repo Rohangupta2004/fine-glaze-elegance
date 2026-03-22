@@ -39,7 +39,8 @@ export const ServicesSection = () => {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section className="py-20 bg-muted" ref={ref}>
+    <section className="relative py-20 bg-muted overflow-hidden" ref={ref}>
+      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_10%_10%,hsl(30_90%_60%_/_0.1),transparent_36%)]" />
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div
@@ -60,12 +61,12 @@ export const ServicesSection = () => {
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 perspective-wrap">
           {services.map((service, index) => (
             <div
               key={service.title}
               className={cn(
-                "group relative bg-card rounded-xl p-6 border border-border hover:border-primary/40 hover:shadow-xl transition-all duration-300 slide-up",
+                "group relative bg-card rounded-xl p-6 border border-border hover:border-primary/40 transition-all duration-300 slide-up ui-3d-card",
                 isVisible && "visible"
               )}
               style={{ transitionDelay: `${index * 0.1}s` }}
@@ -79,15 +80,15 @@ export const ServicesSection = () => {
               </div>
 
               {/* Content */}
-              <h3 className="text-xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors">
+              <h3 className="text-xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors ui-3d-layer">
                 {service.title}
               </h3>
-              <p className="text-muted-foreground text-sm mb-5 leading-relaxed">
+              <p className="text-muted-foreground text-sm mb-5 leading-relaxed ui-3d-layer">
                 {service.description}
               </p>
 
               {/* Highlights */}
-              <ul className="space-y-2">
+              <ul className="space-y-2 ui-3d-layer">
                 {service.highlights.map((item) => (
                   <li key={item} className="flex items-center gap-2 text-sm text-foreground/80">
                     <CheckCircle size={14} className="text-primary shrink-0" />

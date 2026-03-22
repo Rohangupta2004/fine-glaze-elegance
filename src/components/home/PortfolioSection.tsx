@@ -35,7 +35,8 @@ export const PortfolioSection = () => {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section className="py-20 bg-background" ref={ref}>
+    <section className="relative py-20 bg-background overflow-hidden" ref={ref}>
+      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_90%_15%,hsl(25_80%_58%_/_0.14),transparent_40%)]" />
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
@@ -68,13 +69,13 @@ export const PortfolioSection = () => {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 perspective-wrap">
           {projects.map((project, index) => (
             <Link
               key={project.id}
               to={`/project/${project.slug}`}
               className={cn(
-                "group relative overflow-hidden rounded-xl aspect-[4/3] slide-up",
+                "group relative overflow-hidden rounded-xl aspect-[4/3] slide-up ui-3d-card",
                 isVisible && "visible"
               )}
               style={{ transitionDelay: `${index * 0.1}s` }}
@@ -100,7 +101,7 @@ export const PortfolioSection = () => {
               </div>
 
               {/* Content */}
-              <div className="absolute bottom-0 left-0 right-0 p-6">
+              <div className="absolute bottom-0 left-0 right-0 p-6 ui-3d-layer">
                 <span className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-primary/40 text-white mb-3">
                   {project.category}
                 </span>

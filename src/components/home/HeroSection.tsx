@@ -5,7 +5,6 @@ import { ArrowRight, Play } from "lucide-react";
 export const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      
       {/* Video Background */}
       <video
         autoPlay
@@ -23,19 +22,21 @@ export const HeroSection = () => {
       {/* Gradient Overlay */}
       <div className="absolute inset-0 hero-overlay" />
 
-      {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 text-center">
-        <div className="max-w-4xl mx-auto space-y-8">
+      {/* Ambient depth glow */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_20%,hsl(35_85%_65%_/_0.25),transparent_52%)]" />
 
-          {/* ✅ Badge (UPDATED) */}
-          <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-black/40 backdrop-blur-md text-sm text-white/75 animate-fade-in border border-white/10">
+      {/* Content */}
+      <div className="relative z-10 container mx-auto px-4 text-center perspective-wrap">
+        <div className="max-w-4xl mx-auto space-y-8 glass-card-dark p-8 md:p-12 ui-3d-card">
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-black/40 backdrop-blur-md text-sm text-white/75 animate-fade-in border border-white/10 ui-3d-layer">
             <span className="w-2.5 h-2.5 rounded-full bg-amber-500 animate-pulse" />
             Trusted Facade Experts
           </div>
 
           {/* Headline */}
           <h1
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight animate-fade-in-up"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight animate-fade-in-up ui-3d-layer"
             style={{ animationDelay: "0.1s" }}
           >
             Building <span className="text-gradient">Iconic Facades</span>
@@ -45,7 +46,7 @@ export const HeroSection = () => {
 
           {/* Sub-headline */}
           <p
-            className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto animate-fade-in-up leading-relaxed"
+            className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto animate-fade-in-up leading-relaxed ui-3d-layer"
             style={{ animationDelay: "0.2s" }}
           >
             Premium glass & aluminium facade fabrication, installation, and maintenance.
@@ -54,7 +55,7 @@ export const HeroSection = () => {
 
           {/* CTA Buttons */}
           <div
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6 animate-fade-in-up"
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6 animate-fade-in-up ui-3d-layer"
             style={{ animationDelay: "0.3s" }}
           >
             <Link to="/contact">
