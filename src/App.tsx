@@ -14,6 +14,7 @@ import ProjectDetail from "./pages/ProjectDetail";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import Dev from "./pages/Dev";
+import ProjectsQR from "./pages/ProjectsQR";
 
 /* --- SEO & Service Pages --- */
 import AluminiumFacade from "./pages/AluminiumFacade";
@@ -44,6 +45,7 @@ const App = () => (
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
             <Route path="/portfolio" element={<Portfolio />} />
+            <Route path="/projects-qr" element={<ProjectsQR />} />
             <Route path="/project/:slug" element={<ProjectDetail />} />
             <Route path="/contact" element={<Contact />} />
 
