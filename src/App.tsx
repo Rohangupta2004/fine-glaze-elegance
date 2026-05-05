@@ -29,6 +29,11 @@ import Portal from "./pages/Portal";
 import Admin from "./pages/Admin";
 import FAQ from './pages/FAQ';
 
+/* --- Content & Local SEO Pages --- */
+import Blog from "./pages/Blog";
+import BlogArticle from "./pages/BlogArticle";
+import CityLanding from "./pages/CityLanding";
+
 
 const queryClient = new QueryClient();
 
@@ -63,6 +68,13 @@ const App = () => (
 
             {/* --- Info Pages --- */}
             <Route path="/faq" element={<FAQ />} />
+
+            {/* --- Blog & Content (SEO Traffic Pages) --- */}
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<BlogArticle />} />
+
+            {/* --- Local SEO Landing Pages --- */}
+            <Route path="/facade-contractor/:city" element={<CityLanding />} />
 
             {/* --- Development Utils --- */}
             <Route path="/dev" element={<Dev />} />

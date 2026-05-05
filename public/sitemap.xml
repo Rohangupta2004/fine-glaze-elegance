@@ -39,7 +39,7 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Service SEO Pages (HIGH PRIORITY) -->
+  <!-- Service SEO Pages -->
   <url>
     <loc>https://fineglaze.com/aluminium-facade</loc>
     <lastmod>2026-05-05</lastmod>
@@ -74,6 +74,64 @@
     <loc>https://fineglaze.com/maintenance-services</loc>
     <lastmod>2026-05-05</lastmod>
     <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Blog Pages (Traffic Magnets) -->
+  <url>
+    <loc>https://fineglaze.com/blog</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fineglaze.com/blog/structural-glazing-cost-india-2026</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://fineglaze.com/blog/unitized-vs-stick-system-curtain-wall</loc>
+    <lastmod>2026-05-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://fineglaze.com/blog/types-of-glass-for-building-facades</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://fineglaze.com/blog/how-to-choose-facade-contractor-india</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://fineglaze.com/blog/acp-vs-hpl-cladding-comparison</loc>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Local SEO Landing Pages -->
+  <url>
+    <loc>https://fineglaze.com/facade-contractor/pune</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://fineglaze.com/facade-contractor/mumbai</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://fineglaze.com/facade-contractor/navi-mumbai</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
