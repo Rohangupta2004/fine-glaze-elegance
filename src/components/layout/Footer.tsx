@@ -117,9 +117,16 @@ export const Footer = () => {
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <MapPin size={18} className="text-amber-500 mt-1 shrink-0" />
-                <span className="text-white/70 text-sm">
-                  Pune, Maharashtra, India
-                </span>
+                <a
+                  href="https://maps.app.goo.gl/xMRDQcm6oDfidEiV9"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white/70 hover:text-white text-sm transition-colors"
+                >
+                  Shop No. 1 & 2, Jagdamba Bhawan Marg,
+                  <br />
+                  Undri, Pune – 411060
+                </a>
               </li>
               <li className="flex items-center gap-3">
                 <Phone size={18} className="text-amber-500 shrink-0" />
