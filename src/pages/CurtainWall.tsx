@@ -36,10 +36,10 @@ export default function CurtainWall() {
   return (
     <Layout>
       <SEO
-        title="Unitized Curtain Wall Systems Manufacturer in Pune & Mumbai | Fine Glaze"
-        description="Leading manufacturer of Unitized & Semi-Unitized Curtain Wall systems in Pune. High-performance structural glazing for commercial towers, IT parks & high-rises. Get a free quote today."
+        title="Curtain Wall Manufacturers in Pune & Mumbai | Glass Curtain Wall & Glazed Facade – Fine Glaze"
+        description="Top curtain wall manufacturers in India. Unitized & stick system glass curtain walls, glazed facades for commercial towers & IT parks. ₹350-1200/sq ft. Free site visit & quote."
         canonical="https://fineglaze.com/curtain-wall-systems"
-        keywords="curtain wall system Pune, unitized glazing Mumbai, structural glazing manufacturer, glass facade commercial building, curtain wall installation India, semi-unitized curtain wall"
+        keywords="curtain wall manufacturers, glass curtain wall manufacturers, glazed facade, curtain wall system Pune, unitized glazing Mumbai, glass facade contractors, semi unitized curtain wall installation, fasad glass"
         schema={[schemaData]}
       />
 

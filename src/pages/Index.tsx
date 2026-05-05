@@ -19,10 +19,10 @@ const Index = () => {
   return (
     <Layout>
       <SEO
-        title="Fine Glaze – #1 Aluminium Facade, Curtain Wall & Structural Glazing Company in Pune & Mumbai"
-        description="Fine Glaze is India's leading aluminium facade contractor specialising in curtain wall systems, structural glazing, ACP cladding, glass railings & facade maintenance across Pune, Mumbai & Maharashtra."
+        title="Fine Glaze – Glazed Facade & Glass Curtain Wall Manufacturers in Pune & Mumbai"
+        description="Fine Glaze is India's leading glass facade contractor. Curtain wall manufacturers, structural glazing, ACP cladding & glass railings. 10+ projects. ₹350-1200/sq ft. Free quote."
         canonical="https://fineglaze.com/"
-        keywords="aluminium facade company India, curtain wall system Pune, structural glazing Mumbai, ACP cladding contractor, glass railing installation, facade company near me"
+        keywords="fine glaze, glazed facade, glass facade contractors, curtain wall manufacturers, glaze aluminium, fasad glass, structural glazing Pune, ACP cladding contractor, glass railing Mumbai"
         schema={breadcrumbSchema}
       />
       <HeroSection />

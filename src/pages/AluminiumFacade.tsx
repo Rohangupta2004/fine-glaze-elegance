@@ -77,10 +77,10 @@ export default function AluminiumFacade() {
   return (
     <Layout>
       <SEO
-        title="Aluminium Facade Systems in India | Best Facade Contractor Pune & Mumbai – Fine Glaze"
-        description="Fine Glaze is a trusted aluminium facade contractor in Pune & Mumbai. We deliver unitized facades, stick systems, ACP cladding & custom architectural facades for high-rise commercial & residential buildings."
+        title="Aluminium Facade & Glaze Aluminium Systems | Best Facade Contractor Pune & Mumbai – Fine Glaze"
+        description="Leading aluminium facade company in India. Glazed facade systems, aluminium cladding & curtain wall installation for commercial buildings. Free site visit & quote."
         canonical="https://fineglaze.com/aluminium-facade"
-        keywords="aluminium facade India, aluminium facade contractor Pune, facade systems Mumbai, unitized facade manufacturer, ACP cladding installation, building facade cost per sq ft, aluminium composite panel"
+        keywords="aluminium facade, glaze aluminium, glazed facade, facade contractor Pune, aluminium facade system Mumbai, aluminium cladding, glass facade contractors, facade company India"
         schema={[serviceSchema, faqSchema]}
       />
 

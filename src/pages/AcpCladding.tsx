@@ -23,10 +23,10 @@ const AcpCladding = () => {
   return (
     <Layout>
       <SEO
-        title="ACP Cladding Installation Mumbai & Pune | Best Aluminium Composite Panel Contractor – Fine Glaze"
-        description="Specialized ACP Cladding services by Fine Glaze. We use PVDF-coated, fire-retardant Aluminium Composite Panels for durable, modern building exteriors. Serving Pune, Mumbai & Maharashtra."
+        title="ACP Cladding Contractor & ACP Tray System Installation | Mumbai & Pune – Fine Glaze"
+        description="Expert ACP cladding contractor for commercial & residential buildings. ACP tray system, PVDF panels, fire-retardant FR grade. ₹80-180/sq ft. Serving Mumbai, Pune & Maharashtra."
         canonical="https://fineglaze.com/acp-aluminium-cladding"
-        keywords="ACP cladding Mumbai, aluminium composite panel Pune, ACP facade contractor, PVDF cladding installation, fire retardant ACP, building cladding Maharashtra"
+        keywords="ACP cladding contractor, acp tray system, ACP cladding Mumbai, aluminium composite panel Pune, PVDF cladding installation, fire retardant ACP, acp cladding contractor near me"
         schema={[jsonLd]}
       />
 
