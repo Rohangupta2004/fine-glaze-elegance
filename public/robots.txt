@@ -1,8 +1,13 @@
+# Fine Glaze – Aluminium Facade Company
+# https://fineglaze.com
+
 User-agent: Googlebot
 Allow: /
+Crawl-delay: 1
 
 User-agent: Bingbot
 Allow: /
+Crawl-delay: 2
 
 User-agent: Twitterbot
 Allow: /
@@ -12,3 +17,12 @@ Allow: /
 
 User-agent: *
 Allow: /
+
+# Block internal pages from indexing
+Disallow: /portal
+Disallow: /admin
+Disallow: /dev
+Disallow: /projects-qr
+
+# Sitemap location
+Sitemap: https://fineglaze.com/sitemap.xml

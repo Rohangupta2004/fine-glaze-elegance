@@ -22,6 +22,7 @@ Send,
 CheckCircle2,
 } from "lucide-react";
 import { toast } from "sonner";
+import SEO from "@/components/SEO";
 
 const projectTypes = [
 "Facade Fabrication",
@@ -133,6 +134,28 @@ const handleSubmit = async (e: React.FormEvent) => {
 };
   return (
 <Layout>
+<SEO
+  title="Contact Fine Glaze – Get a Free Facade Quote | Pune & Mumbai"
+  description="Contact Fine Glaze for aluminium facade, curtain wall, structural glazing & ACP cladding projects. Call +91 8369233566 or email info@fineglaze.com. Free site consultation in Pune & Mumbai."
+  canonical="https://fineglaze.com/contact"
+  keywords="contact facade company, facade quote Pune, glass facade Mumbai contact, aluminium cladding enquiry, facade contractor phone number"
+  schema={{
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "mainEntity": {
+      "@type": "LocalBusiness",
+      "name": "Fine Glaze",
+      "telephone": "+91-8369233566",
+      "email": "info@fineglaze.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Pune",
+        "addressRegion": "Maharashtra",
+        "addressCountry": "IN"
+      }
+    }
+  }}
+/>
 {/* Hero Section */}
 <section className="pt-32 pb-20 bg-muted" ref={heroRef.ref}>
 <div className="container mx-auto px-4">

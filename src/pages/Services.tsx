@@ -11,7 +11,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { cn } from "@/lib/utils";
-import { Helmet } from "react-helmet-async";
+import SEO from "@/components/SEO";
 
 /* ================= SERVICES DATA ================= */
 const services = [
@@ -103,15 +103,19 @@ export default function Services() {
 
   return (
     <Layout>
-      {/* SEO META */}
-      <Helmet>
-        <title>Facade Systems, Glass Railings & Aluminium Doors | Fine Glaze</title>
-        <meta
-          name="description"
-          content="Fine Glaze provides facade systems, curtain wall glazing, glass railings, aluminium doors & windows, and AMC maintenance services."
-        />
-        <link rel="canonical" href="https://fineglaze.com/services" />
-      </Helmet>
+      <SEO
+        title="Facade Systems, Glass Railings & Aluminium Doors | Fine Glaze India"
+        description="Fine Glaze provides end-to-end facade solutions: curtain wall glazing, structural glazing, ACP cladding, frameless glass railings, aluminium doors & windows, and AMC maintenance services across Pune & Mumbai."
+        canonical="https://fineglaze.com/services"
+        keywords="facade services India, curtain wall glazing Pune, structural glazing Mumbai, ACP cladding, glass railings contractor, aluminium doors windows, facade maintenance AMC"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "Facade & Glazing Services",
+          "provider": { "@type": "LocalBusiness", "name": "Fine Glaze", "areaServed": ["Pune", "Mumbai", "Maharashtra"] },
+          "description": "End-to-end facade solutions including curtain walls, structural glazing, ACP cladding, glass railings, and AMC maintenance."
+        }}
+      />
 
       {/* HERO */}
       <section className="pt-32 pb-20 bg-muted" ref={hero.ref}>

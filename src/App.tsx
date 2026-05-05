@@ -21,8 +21,8 @@ import AluminiumFacade from "./pages/AluminiumFacade";
 import StructuralGlazing from "./pages/StructuralGlazing";
 import CurtainWall from "./pages/CurtainWall";
 import AcpCladding from "./pages/AcpCladding";
-import GlassRailings from "./pages/GlassRailings"; // ✅ Added
-import Maintenance from "./pages/Maintenance";     // ✅ Added
+import GlassRailings from "./pages/GlassRailings";
+import Maintenance from "./pages/Maintenance";
 
 /* --- App Portals --- */
 import Portal from "./pages/Portal";
@@ -54,20 +54,21 @@ const App = () => (
             <Route path="/structural-glazing" element={<StructuralGlazing />} />
             <Route path="/curtain-wall-systems" element={<CurtainWall />} />
             <Route path="/acp-aluminium-cladding" element={<AcpCladding />} />
-            <Route path="/glass-railings" element={<GlassRailings />} />       {/* ✅ Live */}
-            <Route path="/maintenance-services" element={<Maintenance />} />   {/* ✅ Live */}
+            <Route path="/glass-railings" element={<GlassRailings />} />
+            <Route path="/maintenance-services" element={<Maintenance />} />
 
             {/* --- Application Portals --- */}
             <Route path="/portal" element={<Portal />} />
             <Route path="/admin" element={<Admin />} />
 
+            {/* --- Info Pages --- */}
+            <Route path="/faq" element={<FAQ />} />
+
             {/* --- Development Utils --- */}
             <Route path="/dev" element={<Dev />} />
-            
-            {/* --- Catch All --- */}
+
+            {/* --- Catch All (must be last) --- */}
             <Route path="*" element={<NotFound />} />
-            <Route path="/faq" element={<FAQ />} />
-            
           </Routes>
         </BrowserRouter>
       </HelmetProvider>

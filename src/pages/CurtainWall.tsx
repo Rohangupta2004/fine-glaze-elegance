@@ -3,7 +3,7 @@ import { CTASection } from "@/components/home/CTASection";
 import { CheckCircle2, Building2, ShieldCheck, Maximize2, MapPin, Wrench } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
+import SEO from "@/components/SEO";
 
 export default function CurtainWall() {
   // SCHEMA MARKUP: Tells Google this is a Service
@@ -35,14 +35,13 @@ export default function CurtainWall() {
 
   return (
     <Layout>
-      {/* 1. SEO METADATA */}
-      <Helmet>
-        <title>Unitized Curtain Wall Systems Manufacturer in Pune | Fine Glaze</title>
-        <meta name="description" content="Leading manufacturer of Unitized & Semi-Unitized Curtain Wall systems in Pune. High-performance structural glazing for commercial towers. Get a quote today." />
-        <meta name="keywords" content="curtain wall system, unitized glazing, structural glazing pune, glass facade manufacturer, commercial facade india" />
-        <link rel="canonical" href="https://www.fineglaze.com/curtain-wall-systems" />
-        <script type="application/ld+json">{JSON.stringify(schemaData)}</script>
-      </Helmet>
+      <SEO
+        title="Unitized Curtain Wall Systems Manufacturer in Pune & Mumbai | Fine Glaze"
+        description="Leading manufacturer of Unitized & Semi-Unitized Curtain Wall systems in Pune. High-performance structural glazing for commercial towers, IT parks & high-rises. Get a free quote today."
+        canonical="https://fineglaze.com/curtain-wall-systems"
+        keywords="curtain wall system Pune, unitized glazing Mumbai, structural glazing manufacturer, glass facade commercial building, curtain wall installation India, semi-unitized curtain wall"
+        schema={[schemaData]}
+      />
 
       {/* 2. H1: PRIMARY KEYWORD */}
       <section className="relative pt-32 pb-20 bg-slate-900 text-white overflow-hidden">

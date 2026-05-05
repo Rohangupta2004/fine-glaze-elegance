@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet-async";
+import SEO from "@/components/SEO";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -22,11 +22,13 @@ const AcpCladding = () => {
 
   return (
     <Layout>
-      <Helmet>
-        <title>ACP Cladding Installation Mumbai & Pune | Best Facade Contractor</title>
-        <meta name="description" content="Specialized ACP Cladding services by Fine Glaze. We use PVDF-coated, fire-retardant Aluminium Composite Panels for durable, modern building exteriors." />
-        <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
-      </Helmet>
+      <SEO
+        title="ACP Cladding Installation Mumbai & Pune | Best Aluminium Composite Panel Contractor – Fine Glaze"
+        description="Specialized ACP Cladding services by Fine Glaze. We use PVDF-coated, fire-retardant Aluminium Composite Panels for durable, modern building exteriors. Serving Pune, Mumbai & Maharashtra."
+        canonical="https://fineglaze.com/acp-aluminium-cladding"
+        keywords="ACP cladding Mumbai, aluminium composite panel Pune, ACP facade contractor, PVDF cladding installation, fire retardant ACP, building cladding Maharashtra"
+        schema={[jsonLd]}
+      />
 
       {/* --- PRO HERO SECTION --- */}
       <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">

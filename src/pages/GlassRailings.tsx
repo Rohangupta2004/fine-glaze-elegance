@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet-async";
+import SEO from "@/components/SEO";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -22,11 +22,13 @@ const GlassRailings = () => {
 
   return (
     <Layout>
-      <Helmet>
-        <title>Frameless Glass Railings Mumbai | Balcony & Staircase Designs</title>
-        <meta name="description" content="Premium glass railing systems for modern homes and offices. We use 12mm/15mm Toughened Glass and Sentry Lamination for maximum safety and clear views." />
-        <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
-      </Helmet>
+      <SEO
+        title="Frameless Glass Railings Mumbai & Pune | Balcony, Staircase & Pool Fencing – Fine Glaze"
+        description="Premium frameless glass railing systems for balconies, staircases & pool fencing. 12mm-19mm Toughened Glass with SS 304/316 fittings. Free site visit in Mumbai, Pune & Lonavala."
+        canonical="https://fineglaze.com/glass-railings"
+        keywords="glass railing Mumbai, frameless glass railing Pune, balcony glass railing, staircase glass railing, toughened glass railing, SS spigot railing, glass balustrade India"
+        schema={[jsonLd]}
+      />
 
       {/* --- HERO SECTION --- */}
       <section className="relative h-[75vh] flex items-center justify-center overflow-hidden bg-slate-900">

@@ -3,6 +3,7 @@ import { Layout } from "@/components/layout/Layout";
 import { projectsData } from "@/data/projects";
 import { Link } from "react-router-dom";
 import { MapPin, ArrowRight } from "lucide-react";
+import SEO from "@/components/SEO";
 
 const projects = Object.entries(projectsData).map(([slug, p]) => ({
   slug,
@@ -30,6 +31,19 @@ const Portfolio = () => {
 
   return (
     <Layout>
+      <SEO
+        title="Facade Projects Portfolio – LTIMindtree, Embassy, Pune Airport | Fine Glaze"
+        description="Explore Fine Glaze's portfolio of 10+ landmark facade projects including LTIMindtree Mensa Campus, Embassy 247, Pune Airport Terminal, Salsette-27 & more. Award-winning execution across Mumbai & Pune."
+        canonical="https://fineglaze.com/portfolio"
+        keywords="facade projects India, aluminium facade portfolio, curtain wall projects Mumbai, glass facade Pune, building facade case studies, embassy facade work"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          "name": "Fine Glaze Project Portfolio",
+          "description": "Landmark facade projects delivered across Maharashtra",
+          "url": "https://fineglaze.com/portfolio"
+        }}
+      />
       {/* INTRO */}
       <section className="pt-28 pb-14">
         <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-12 items-end">

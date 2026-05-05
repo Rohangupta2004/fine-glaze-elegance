@@ -2,6 +2,7 @@ import { Layout } from "@/components/layout/Layout";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { cn } from "@/lib/utils";
 import { Target, Eye, Shield, Users, Award, Clock } from "lucide-react";
+import SEO from "@/components/SEO";
 
 const values = [
   {
@@ -46,6 +47,24 @@ const About = () => {
 
   return (
     <Layout>
+      <SEO
+        title="About Fine Glaze – Leading Facade Contractor in Pune & Mumbai | Our Story"
+        description="Fine Glaze is Pune's premier facade fabrication company with 5+ years of experience, 10+ landmark projects & 50+ clients. We deliver precision-engineered glass & aluminium facade solutions across India."
+        canonical="https://fineglaze.com/about"
+        keywords="about Fine Glaze, facade contractor Pune, glass facade company Mumbai, aluminium facade fabrication India, building facade experts Maharashtra"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "AboutPage",
+          "mainEntity": {
+            "@type": "Organization",
+            "name": "Fine Glaze",
+            "url": "https://fineglaze.com",
+            "foundingLocation": { "@type": "Place", "name": "Pune, Maharashtra" },
+            "numberOfEmployees": { "@type": "QuantitativeValue", "value": 25 },
+            "award": "Best Performance Vendor – Embassy REIT 2024"
+          }
+        }}
+      />
       {/* Hero Section */}
       <section className="pt-32 pb-20 bg-muted" ref={heroRef.ref}>
         <div className="container mx-auto px-4">

@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet-async";
+import SEO from "@/components/SEO";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -19,11 +19,13 @@ const Maintenance = () => {
 
   return (
     <Layout>
-      <Helmet>
-        <title>Facade Maintenance AMC Services Mumbai | Glass Repair</title>
-        <meta name="description" content="Expert facade cleaning, silicon sealant replacement, and glass repair services. Protect your building from leakage and damage with our Annual Maintenance Contracts." />
-        <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
-      </Helmet>
+      <SEO
+        title="Facade Maintenance AMC Services Mumbai & Pune | Glass Repair & Waterproofing – Fine Glaze"
+        description="Expert facade cleaning, silicon sealant replacement, glass repair & waterproofing services. Protect your building from leakage with our Annual Maintenance Contracts. Serving Mumbai, Pune & Maharashtra."
+        canonical="https://fineglaze.com/maintenance-services"
+        keywords="facade maintenance Mumbai, AMC services Pune, glass facade repair, waterproofing facade, silicon sealant replacement, building facade cleaning, glass replacement high rise"
+        schema={[jsonLd]}
+      />
 
       {/* --- HERO SECTION --- */}
       <section className="relative h-[65vh] flex items-center bg-slate-900 overflow-hidden">

@@ -10,12 +10,12 @@ const quickLinks = [
 ];
 
 const services = [
-  "Facade Fabrication",
-  "Curtain Walls",
-  "Structural Glazing",
-  "Custom Railings",
-  "Doors & Windows",
-  "Maintenance Services",
+  { label: "Aluminium Facade", href: "/aluminium-facade" },
+  { label: "Curtain Wall Systems", href: "/curtain-wall-systems" },
+  { label: "Structural Glazing", href: "/structural-glazing" },
+  { label: "ACP Cladding", href: "/acp-aluminium-cladding" },
+  { label: "Glass Railings", href: "/glass-railings" },
+  { label: "Facade Maintenance", href: "/maintenance-services" },
 ];
 
 export const Footer = () => {
@@ -79,16 +79,29 @@ export const Footer = () => {
                   </Link>
                 </li>
               ))}
+              <li>
+                <Link
+                  to="/faq"
+                  className="text-white/70 hover:text-amber-400 transition-colors text-sm"
+                >
+                  FAQ
+                </Link>
+              </li>
             </ul>
           </div>
 
-          {/* Services */}
+          {/* Services — Now with internal links */}
           <div>
             <h4 className="text-lg font-semibold mb-6">Our Services</h4>
             <ul className="space-y-3">
               {services.map((service) => (
-                <li key={service}>
-                  <span className="text-white/70 text-sm">{service}</span>
+                <li key={service.href}>
+                  <Link
+                    to={service.href}
+                    className="text-white/70 hover:text-amber-400 transition-colors text-sm"
+                  >
+                    {service.label}
+                  </Link>
                 </li>
               ))}
             </ul>

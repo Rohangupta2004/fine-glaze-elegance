@@ -14,6 +14,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
+import SEO from "@/components/SEO";
 
 // --- DATA & SCHEMA ---
 const faqDatabase = [
@@ -68,11 +69,13 @@ export default function FAQ() {
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900 font-sans selection:bg-blue-200">
-      {/* Injecting Schema for Google Bots (Zero-Click SEO) */}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-
-      {/* Dynamic Background Element */}
-      <div className="absolute top-0 inset-x-0 h-[600px] bg-gradient-to-b from-blue-100/50 to-transparent pointer-events-none" />
+      <SEO
+        title="Facade Engineering FAQ – Curtain Wall, Glazing & Costs | Fine Glaze"
+        description="Get expert answers on curtain wall installation timelines, structural glazing costs, DGU glass energy savings, and wind load standards. Technical FAQ by Fine Glaze, India's facade specialists."
+        canonical="https://fineglaze.com/faq"
+        keywords="curtain wall FAQ, structural glazing cost India, facade engineering questions, DGU glass LEED, wind load IS 875, glazing cost per sq ft 2026"
+        schema={jsonLd}
+      />
 
       <main className="relative max-w-4xl mx-auto py-24 px-6 md:px-8">
         
