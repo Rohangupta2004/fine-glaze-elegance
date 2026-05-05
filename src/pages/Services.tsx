@@ -14,6 +14,10 @@ import {
   Phone,
   Ruler,
   Sparkles,
+  Sun,
+  GlassWater,
+  LayoutGrid,
+  PanelTop,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
@@ -121,6 +125,90 @@ const services = [
     stats: { value: "2x/yr", label: "Recommended Cleaning Cycle" },
     images: ["/Amc.webp", "/Sealent.webp", "/Glass.webp", "/Amc1.webp"],
   },
+  {
+    id: "acp-cladding",
+    icon: PanelTop,
+    title: "ACP & Metal Cladding",
+    subtitle: "Aluminium Composite Panels",
+    href: "/acp-aluminium-cladding",
+    description:
+      "Transform building exteriors with fire-retardant, PVDF-coated Aluminium Composite Panels for a sleek modern look.",
+    longDescription:
+      "Our ACP cladding solutions use panels from trusted brands like Aludecor, Alstrong, and Reynobond. We offer FR (Fire Retardant) grade panels that meet NBC fire safety norms. Available in solid colours, metallic finishes, wood-grain, stone, and mirror finishes with 20+ year colour warranty.",
+    features: [
+      "PVDF & PE Coated Panels",
+      "Fire Retardant (FR) Grade ACP",
+      "Wood-Grain & Stone Finishes",
+      "Column & Soffit Cladding",
+      "Signage & Fascia Panels",
+      "Canopy Cladding",
+    ],
+    stats: { value: "20yr", label: "Colour Warranty on PVDF" },
+    images: ["/Panel.webp", "/Glazing.webp", "/Unitized.webp", "/Glass installation.webp"],
+  },
+  {
+    id: "skylights",
+    icon: Sun,
+    title: "Skylights & Glass Canopies",
+    subtitle: "Overhead Glazing Solutions",
+    href: "/structural-glazing",
+    description:
+      "Bring natural light indoors with engineered glass skylight systems and canopy structures for atriums, lobbies, and entrances.",
+    longDescription:
+      "We design and install structural skylight systems using laminated safety glass with heat-reflective coatings. Our canopy solutions include frameless glass canopies with SS spider fittings, aluminium-framed pergola canopies, and retractable roof systems. All systems are waterproofed and engineered for wind & rain loads.",
+    features: [
+      "Atrium Skylight Systems",
+      "Frameless Glass Canopies",
+      "Spider Fitting Canopies",
+      "Polycarbonate Roofing",
+      "Retractable Roof Systems",
+      "Heat-Reflective Glass Options",
+    ],
+    stats: { value: "50%", label: "More Natural Light vs Solid Roofs" },
+    images: ["/Glazing.webp", "/Glass installation.webp", "/Glass.webp", "/Unitized.webp"],
+  },
+  {
+    id: "louvers",
+    icon: LayoutGrid,
+    title: "Aluminium Louvers & Sun Shading",
+    subtitle: "Solar Control Systems",
+    href: "/aluminium-facade",
+    description:
+      "Reduce solar heat gain and glare with architecturally designed aluminium louver and fin systems for commercial buildings.",
+    longDescription:
+      "Our aluminium louver systems are available in fixed, operable, and motorised configurations. They reduce direct solar heat gain by up to 70% while maintaining airflow and visibility. Available in elliptical, aerofoil, and flat blade profiles with powder-coated or anodised finishes in any custom colour.",
+    features: [
+      "Fixed & Operable Louvers",
+      "Motorised Sun Control",
+      "Vertical & Horizontal Fins",
+      "Aerofoil Blade Profiles",
+      "Parking Ventilation Louvers",
+      "Acoustic Louver Systems",
+    ],
+    stats: { value: "70%", label: "Solar Heat Gain Reduction" },
+    images: ["/Unitized.webp", "/Panel.webp", "/Aluminium windows.webp", "/Glazing.webp"],
+  },
+  {
+    id: "partitions",
+    icon: GlassWater,
+    title: "Glass Partitions & Shower Enclosures",
+    subtitle: "Interior Glass Solutions",
+    href: "/glass-railings",
+    description:
+      "Modern frameless glass partitions for offices and luxury shower enclosures for residential projects.",
+    longDescription:
+      "Create open, light-filled workspaces with our frameless glass partition systems. Available in single-glazed, double-glazed (for sound insulation), and switchable smart glass options. Our shower enclosure range includes sliding, hinged, and walk-in designs using 8mm-12mm toughened glass with anti-limescale nano-coating.",
+    features: [
+      "Frameless Office Partitions",
+      "Acoustic Double-Glazed Walls",
+      "Switchable Smart Glass",
+      "Sliding Shower Enclosures",
+      "Walk-In Shower Panels",
+      "Anti-Limescale Nano Coating",
+    ],
+    stats: { value: "42dB", label: "Sound Insulation (DGU)" },
+    images: ["/Glass.webp", "/Railing.webp", "/Handle.webp", "/Custom railing.webp"],
+  },
 ];
 
 /* ================= PROCESS STEPS ================= */
@@ -180,10 +268,10 @@ export default function Services() {
   return (
     <Layout>
       <SEO
-        title="Facade Systems, Glass Railings & Aluminium Doors | Fine Glaze India"
-        description="Fine Glaze provides end-to-end facade solutions: curtain wall glazing, structural glazing, ACP cladding, frameless glass railings, aluminium doors & windows, and AMC maintenance services across Pune & Mumbai."
+        title="Facade Systems, Glass Railings, Skylights & Aluminium Solutions | Fine Glaze India"
+        description="Fine Glaze offers 8 specialised facade services: curtain walls, structural glazing, ACP cladding, glass railings, skylights, aluminium louvers, glass partitions, shower enclosures & AMC maintenance across Pune & Mumbai."
         canonical="https://fineglaze.com/services"
-        keywords="facade services India, curtain wall glazing Pune, structural glazing Mumbai, ACP cladding, glass railings contractor, aluminium doors windows, facade maintenance AMC"
+        keywords="facade services India, curtain wall glazing Pune, structural glazing Mumbai, ACP cladding, glass railings contractor, aluminium louvers, glass canopy, skylight installation, glass partition office, shower enclosure, facade maintenance AMC"
         schema={{
           "@context": "https://schema.org",
           "@type": "Service",
@@ -194,7 +282,7 @@ export default function Services() {
             "areaServed": ["Pune", "Mumbai", "Maharashtra"],
           },
           "description":
-            "End-to-end facade solutions including curtain walls, structural glazing, ACP cladding, glass railings, and AMC maintenance.",
+            "8 specialised facade & glazing services including curtain walls, structural glazing, ACP cladding, glass railings, skylights, louvers, partitions, and AMC maintenance.",
         }}
       />
 
@@ -222,13 +310,13 @@ export default function Services() {
 
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white leading-tight">
               Facade, Glazing &{" "}
-              <span className="text-gradient">Aluminium Services</span>
+              <span className="text-gradient">Aluminium Solutions</span>
             </h1>
 
             <p className="max-w-2xl mx-auto text-slate-300 text-lg leading-relaxed">
-              From concept to completion — we design, fabricate, install, and
-              maintain premium facade systems for commercial, residential, and
-              institutional buildings across India.
+              8 specialised services — from curtain walls and skylights to glass
+              partitions and shower enclosures. One team for every glass &
+              aluminium need.
             </p>
 
             {/* Quick Stats */}
@@ -236,7 +324,7 @@ export default function Services() {
               {[
                 { value: "10+", label: "Projects Delivered" },
                 { value: "50+", label: "Happy Clients" },
-                { value: "6", label: "Service Categories" },
+                { value: "8", label: "Service Categories" },
                 { value: "5+", label: "Years Experience" },
               ].map((stat) => (
                 <div key={stat.label} className="text-center">

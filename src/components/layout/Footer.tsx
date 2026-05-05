@@ -15,6 +15,9 @@ const services = [
   { label: "Structural Glazing", href: "/structural-glazing" },
   { label: "ACP Cladding", href: "/acp-aluminium-cladding" },
   { label: "Glass Railings", href: "/glass-railings" },
+  { label: "Skylights & Canopies", href: "/structural-glazing" },
+  { label: "Aluminium Louvers", href: "/aluminium-facade" },
+  { label: "Glass Partitions", href: "/glass-railings" },
   { label: "Facade Maintenance", href: "/maintenance-services" },
 ];
 
