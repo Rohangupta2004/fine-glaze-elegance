@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, ChevronDown, User, LogIn } from "lucide-react";
+import { Menu, X, ChevronDown, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -124,7 +124,7 @@ export const Header = () => {
 
           {/* DESKTOP ACTIONS */}
           <div className="hidden lg:flex items-center gap-3">
-            <Link to="/portal">
+            <a href="tel:+918369233566">
               <Button
                 variant="ghost"
                 size="sm"
@@ -135,10 +135,10 @@ export const Header = () => {
                     : "text-white hover:bg-white/20"
                 )}
               >
-                <User size={16} />
-                Client Login
+                <Phone size={16} />
+                Call Now
               </Button>
-            </Link>
+            </a>
 
             <Link to="/contact">
               <Button className="bg-amber-600 hover:bg-amber-700 text-white">
@@ -191,11 +191,11 @@ export const Header = () => {
             <Link to="/contact" className="block text-lg font-medium">Contact</Link>
 
             <div className="grid grid-cols-2 gap-4 pt-4">
-              <Link to="/portal">
+              <a href="tel:+918369233566">
                 <Button variant="outline" className="w-full gap-2">
-                  <LogIn size={16} /> Portal
+                  <Phone size={16} /> Call Now
                 </Button>
-              </Link>
+              </a>
               <Link to="/contact">
                 <Button className="w-full bg-amber-600 text-white">
                   Get Quote
