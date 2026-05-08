@@ -7,6 +7,7 @@ import SEO from "@/components/SEO";
 // ==========================================
 // 1. THE LOCATION TRAP
 // ==========================================
+<
 const microLocations: Record<string, { name: string; city: string; image: string }> = {
   "pune": { name: "Pune", city: "Pune", image: "/Puneairport.webp" },
   "hinjewadi": { name: "Hinjewadi IT Park", city: "Pune", image: "/Puneairport.webp" },
