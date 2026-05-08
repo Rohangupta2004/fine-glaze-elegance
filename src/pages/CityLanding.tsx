@@ -5,10 +5,10 @@ import { MapPin, Phone, ArrowRight, Building2, ShieldCheck, Clock, Award, CheckC
 import SEO from "@/components/SEO";
 
 // ==========================================
-// 1. THE MASSIVE LOCATION TRAP
+// 1. THE LOCATION DICTIONARY (35 Hubs)
 // ==========================================
 const microLocations: Record<string, { name: string; city: string; image: string }> = {
-  // PUNE HUBS
+  // PUNE
   "pune": { name: "Pune", city: "Pune", image: "/Puneairport.webp" },
   "hinjewadi": { name: "Hinjewadi IT Park", city: "Pune", image: "/Puneairport.webp" },
   "kharadi": { name: "Kharadi", city: "Pune", image: "/Puneairport.webp" },
@@ -24,7 +24,7 @@ const microLocations: Record<string, { name: string; city: string; image: string
   "aundh": { name: "Aundh", city: "Pune", image: "/Puneairport.webp" },
   "balewadi": { name: "Balewadi", city: "Pune", image: "/Puneairport.webp" },
 
-  // MUMBAI HUBS
+  // MUMBAI
   "mumbai": { name: "Mumbai", city: "Mumbai", image: "/Embassy.webp" },
   "bkc": { name: "BKC (Bandra Kurla Complex)", city: "Mumbai", image: "/Embassy.webp" },
   "andheri": { name: "Andheri", city: "Mumbai", image: "/Embassy.webp" },
@@ -39,7 +39,7 @@ const microLocations: Record<string, { name: string; city: string; image: string
   "dadar": { name: "Dadar", city: "Mumbai", image: "/Embassy.webp" },
   "nariman-point": { name: "Nariman Point", city: "Mumbai", image: "/Embassy.webp" },
 
-  // NAVI MUMBAI & THANE HUBS
+  // NAVI MUMBAI & THANE
   "navi-mumbai": { name: "Navi Mumbai", city: "Navi Mumbai", image: "/ltimindtree-mensa-campus-mahape-navi-mumbai-1 (1).webp" },
   "vashi": { name: "Vashi", city: "Navi Mumbai", image: "/ltimindtree-mensa-campus-mahape-navi-mumbai-1 (1).webp" },
   "mahape": { name: "Mahape", city: "Navi Mumbai", image: "/ltimindtree-mensa-campus-mahape-navi-mumbai-1 (1).webp" },
@@ -51,52 +51,57 @@ const microLocations: Record<string, { name: string; city: string; image: string
 };
 
 // ==========================================
-// 2. THE MASSIVE SERVICE/KEYWORD TRAP
+// 2. THE SERVICE DICTIONARY (With Stock Images)
 // ==========================================
-const serviceKeywords: Record<string, { label: string; desc: string }> = {
+const serviceKeywords: Record<string, { label: string; desc: string; uniqueParagraph: string; features: string[]; image: string }> = {
   "commercial-construction": { 
     label: "Commercial Construction Facades", 
-    desc: "high-performance facade engineering for new commercial construction and high-rise developments" 
+    desc: "high-performance facade engineering for new commercial construction and high-rise developments",
+    uniqueParagraph: "Our commercial facade systems are engineered specifically to handle the extreme wind-load requirements of modern skyscrapers. By eliminating exterior aluminium caps, we provide a seamless, flush glass aesthetic that defines premium corporate architecture.",
+    features: ["High-Performance DGU Glass", "Dow Corning Structural Silicone", "Frameless Exterior Aesthetics", "Wind-Load Tested up to 4.5kPa"],
+    image: "/Business park.webp" 
   },
   "structural-glazing": { 
     label: "Structural Glazing", 
-    desc: "premium 2-side and 4-side structural glazing solutions for modern corporate towers" 
+    desc: "premium 2-side and 4-side structural glazing solutions for modern corporate towers",
+    uniqueParagraph: "Our structural glazing systems are engineered specifically to handle extreme wind-load requirements. We use advanced structural silicone to bond glass directly to the aluminium framing, ensuring a seamless, uninterrupted glass facade.",
+    features: ["High-Performance DGU Glass", "Dow Corning Structural Silicone", "Seamless Flush Aesthetics", "Wind-Load Tested up to 4.5kPa"],
+    image: "/Glazing.webp" 
   },
   "curtain-wall": { 
     label: "Curtain Wall Systems", 
-    desc: "unitized and semi-unitized glass curtain walls engineered for aggressive wind loads" 
+    desc: "unitized and semi-unitized glass curtain walls engineered for aggressive wind loads",
+    uniqueParagraph: "We specialize in both stick-built and fully unitized curtain wall systems. For high-rise developments where speed is critical, our factory-assembled unitized panels reduce on-site installation time by up to 40% while guaranteeing waterproof integrity.",
+    features: ["Factory-Assembled Unitized Panels", "Thermal Break Technology", "Integrated EPDM Gaskets", "Rapid Crane Installation"],
+    image: "/Unitized.webp" 
   },
   "acp-cladding": { 
     label: "ACP Cladding", 
-    desc: "fire-retardant Aluminium Composite Panel (ACP) cladding for exterior building elevations" 
-  },
-  "glass-facade": { 
-    label: "Glass Facade Systems", 
-    desc: "energy-efficient DGU and Low-E glass facade installations" 
-  },
-  "aluminium-fabrication": { 
-    label: "Commercial Aluminium Fabrication", 
-    desc: "heavy-duty commercial aluminium doors, windows, and structural framing" 
-  },
-  "facade-maintenance": { 
-    label: "Facade Maintenance & Repair", 
-    desc: "expert glass replacement, silicone sealant repair, and facade AMC services" 
+    desc: "fire-retardant Aluminium Composite Panel (ACP) cladding for exterior building elevations",
+    uniqueParagraph: "Safety and durability are paramount in exterior paneling. Our ACP installations strictly utilize Fire Retardant (FR) grade cores and PVDF coatings to ensure your building's exterior remains vibrant, weather-proof, and fully compliant with fire safety codes.",
+    features: ["Class B1 Fire Retardant Core", "Anti-Fading PVDF Coating", "Precision CNC Routing & Grooving", "Seamless Weather Sealing"],
+    image: "/Panel.webp" 
   },
   "glass-railing": { 
     label: "Frameless Glass Railings", 
-    desc: "heavy-duty toughened glass balustrades and railings for commercial spaces" 
+    desc: "heavy-duty toughened glass balustrades and railings for commercial spaces",
+    uniqueParagraph: "We provide premium frameless railing systems that combine unobstructed views with maximum safety standards. Our heavy-duty base shoe systems ensure your balconies and staircases meet all structural safety codes.",
+    features: ["Toughened Laminated Glass", "Heavy-Duty Base Shoes", "SS 304/316 Handrails", "Impact Tested for Commercial Use"],
+    image: "/Railing.webp" 
   },
-  "spider-glazing": { 
-    label: "Spider Glazing", 
-    desc: "architectural point-fixed spider glazing for grand lobbies and atriums" 
-  },
-  "unitized-glazing": { 
-    label: "Unitized Glazing", 
-    desc: "factory-assembled unitized glazing panels for rapid high-rise installation" 
+  "facade-maintenance": { 
+    label: "Facade Maintenance & Repair", 
+    desc: "expert glass replacement, silicone sealant repair, and facade AMC services",
+    uniqueParagraph: "Ensure the longevity and safety of your building with our comprehensive facade maintenance services. Our rope-access technicians can swiftly replace broken DGU glass and reseal weather joints without disrupting your building's daily operations.",
+    features: ["Rope Access Glass Replacement", "Weather Sealant Restoration", "Water Leakage Fixing", "Annual Maintenance Contracts (AMC)"],
+    image: "/Amc.webp" 
   },
   "facade-contractor": { 
     label: "Commercial Facade Contractor", 
-    desc: "comprehensive, end-to-end commercial facade contracting and execution" 
+    desc: "comprehensive, end-to-end commercial facade contracting and execution",
+    uniqueParagraph: "We are the leading partners for end-to-end commercial facade execution. From initial shop drawings and 3D modeling to final site handover, our in-house engineering and fabrication teams ensure your architectural vision is realized without compromise.",
+    features: ["In-House Engineering Team", "Dedicated Local Fabrication", "Safety-First Site Execution", "Strict Timeline Handover"],
+    image: "/Glass installation.webp" 
   }
 };
 
@@ -110,37 +115,37 @@ const defaultServicesList = [
 ];
 
 export default function CityLanding() {
-  // Capture the URL parameter (e.g., "commercial-construction-bkc")
   const { city: slug } = useParams<{ city: string }>();
   
   if (!slug) return <Navigate to="/services" replace />;
 
   const lowerSlug = slug.toLowerCase();
   let matchedLocation = null;
-  let matchedServiceKey = "facade-contractor"; // Fallback default
+  let matchedServiceKey = "facade-contractor"; 
 
-  // Parse Location from URL
-  for (const locKey of Object.keys(microLocations)) {
+  // Sort keys by length descending so "navi-mumbai" matches before "mumbai"
+  const sortedLocKeys = Object.keys(microLocations).sort((a, b) => b.length - a.length);
+  for (const locKey of sortedLocKeys) {
     if (lowerSlug.includes(locKey)) {
       matchedLocation = microLocations[locKey];
       break; 
     }
   }
 
-  // Parse Service from URL
-  for (const srvKey of Object.keys(serviceKeywords)) {
+  // Sort keys by length descending so "glass-railing" matches cleanly
+  const sortedSrvKeys = Object.keys(serviceKeywords).sort((a, b) => b.length - a.length);
+  for (const srvKey of sortedSrvKeys) {
     if (lowerSlug.includes(srvKey)) {
       matchedServiceKey = srvKey;
       break;
     }
   }
 
-  // If no location matched at all, redirect to services page so we don't show a broken page
+  // If we can't find a location in the URL, redirect so we don't show a broken page
   if (!matchedLocation) return <Navigate to="/services" replace />;
 
   const serviceData = serviceKeywords[matchedServiceKey];
 
-  // Dynamic SEO Generation
   const dynamicMetaTitle = `Top ${serviceData.label} in ${matchedLocation.name} | Fine Glaze`;
   const dynamicDescription = `Looking for ${serviceData.label} in ${matchedLocation.name}? Fine Glaze delivers ${serviceData.desc} across ${matchedLocation.city}. Call +91 8369233566 for a site consultation.`;
   const dynamicKeywords = `${serviceData.label} ${matchedLocation.name}, ${serviceData.label} ${matchedLocation.city}, commercial construction ${matchedLocation.name}, glass facade contractors ${matchedLocation.name}, Fine Glaze`;
@@ -199,24 +204,20 @@ export default function CityLanding() {
             <h2 className="text-3xl font-bold mb-6 text-slate-900">
               Why Execute Your {matchedLocation.name} Project With Us?
             </h2>
-            <p className="text-slate-600 leading-relaxed mb-8">
+            <p className="text-slate-600 leading-relaxed mb-6">
               Commercial construction in <strong>{matchedLocation.city}</strong> demands precision engineering, aggressive timelines, and strict adherence to safety codes. 
               Our localized fabrication capabilities and experienced execution teams ensure your {serviceData.label.toLowerCase()} is delivered flawlessly.
             </p>
+            
+            <p className="text-slate-600 leading-relaxed mb-8">
+              {serviceData.uniqueParagraph}
+            </p>
 
-            <div className="grid grid-cols-2 gap-4">
-              {[
-                { icon: Building2, label: "Landmark Projects", sub: "Successfully Delivered" },
-                { icon: ShieldCheck, label: "Stringent QC", sub: "Wind & Water Tested" },
-                { icon: Clock, label: "On-Time Handover", sub: "Strict Milestone Tracking" },
-                { icon: Award, label: "Premium Materials", sub: "Hindalco, Dow Corning" },
-              ].map((stat) => (
-                <div key={stat.label} className="flex items-start gap-3 p-4 bg-slate-50 rounded-xl border border-slate-100">
-                  <stat.icon size={24} className="text-amber-600 shrink-0 mt-1" />
-                  <div>
-                    <p className="font-bold text-slate-900 text-sm mb-1">{stat.label}</p>
-                    <p className="text-xs text-slate-500">{stat.sub}</p>
-                  </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {serviceData.features.map((feature) => (
+                <div key={feature} className="flex items-start gap-3 p-4 bg-slate-50 rounded-xl border border-slate-100">
+                  <CheckCircle2 size={20} className="text-amber-600 shrink-0 mt-0.5" />
+                  <span className="font-bold text-slate-900 text-sm">{feature}</span>
                 </div>
               ))}
             </div>
@@ -224,13 +225,16 @@ export default function CityLanding() {
 
           <div className="relative rounded-2xl overflow-hidden shadow-2xl">
             <img
-              src={matchedLocation.image}
+              src={serviceData.image}
               alt={`${serviceData.label} executed in ${matchedLocation.name}`}
-              className="w-full h-[400px] object-cover hover:scale-105 transition-transform duration-700"
+              className="w-full h-[450px] object-cover hover:scale-105 transition-transform duration-700"
               loading="lazy"
             />
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-slate-900 to-transparent p-6">
-               <p className="text-white font-bold">{matchedLocation.name} Execution Zone</p>
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-slate-900 via-slate-900/80 to-transparent p-6 pt-20">
+               <div className="flex items-center gap-2">
+                 <Building2 className="text-amber-500" size={20} />
+                 <p className="text-white font-bold text-lg">{serviceData.label} Details</p>
+               </div>
             </div>
           </div>
         </div>
@@ -279,4 +283,4 @@ export default function CityLanding() {
       </section>
     </Layout>
   );
-      }
+}
