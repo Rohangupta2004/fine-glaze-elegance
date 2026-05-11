@@ -3,14 +3,56 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
 
+// 1. All 35 Locations from your Sitemap
 const locations = [
-  "pune", "mumbai", "navi-mumbai", "thane", "bkc", "hinjewadi", "kharadi", "andheri"
+  "pune", "hinjewadi", "kharadi", "baner", "wakad", "viman-nagar", "magarpatta",
+  "hadapsar", "pimpri", "chinchwad", "kalyani-nagar", "koregaon-park", "aundh",
+  "balewadi", "mumbai", "bkc", "andheri", "powai", "lower-parel", "vikhroli",
+  "goregaon", "worli", "byculla", "malad", "borivali", "dadar", "nariman-point",
+  "navi-mumbai", "vashi", "mahape", "airoli", "belapur", "kharghar", "panvel", "thane"
 ];
 
+// 2. All 7 Services from your Sitemap
+const services = [
+  "commercial-construction",
+  "structural-glazing",
+  "curtain-wall",
+  "acp-cladding",
+  "glass-railing",
+  "facade-maintenance",
+  "facade-contractor"
+];
+
+// Generate all 245 dynamic facade URLs
 const dynamicUrls: string[] = [];
-locations.forEach(location => {
-  dynamicUrls.push(`/facade-contractor/${location}`);
+services.forEach(service => {
+  locations.forEach(location => {
+    dynamicUrls.push(`/facade-contractor/${service}-${location}`);
+  });
 });
+
+// 3. Blog Slugs (From src/data/blog.ts)
+const blogUrls = [
+  "/blog/structural-glazing-cost-india-2026",
+  "/blog/unitized-vs-stick-system-curtain-wall",
+  "/blog/types-of-glass-for-building-facades",
+  "/blog/how-to-choose-facade-contractor-india",
+  "/blog/acp-vs-hpl-cladding-comparison"
+];
+
+// 4. Project Slugs (From src/data/projects.ts)
+const projectUrls = [
+  "/project/ltimindtree-campus",
+  "/project/embassy-247",
+  "/project/salsette-27",
+  "/project/leela-business-park",
+  "/project/pune-airport-terminal",
+  "/project/jindal-house",
+  "/project/nirmaann-estrellaa",
+  "/project/ssg-honesty",
+  "/project/leela-hotel",
+  "/project/embassy-techzone"
+];
 
 export default defineConfig(({ mode }) => ({
   server: {
@@ -30,10 +72,15 @@ export default defineConfig(({ mode }) => ({
     formatting: 'minify',
     includedRoutes(paths) {
       return [
-        '/', '/about', '/services', '/portfolio', '/contact', '/faq',
+        // Standard Core Pages
+        '/', '/about', '/services', '/portfolio', '/contact', '/faq', '/blog',
+        // Legacy Service Pages
         '/aluminium-facade', '/structural-glazing', '/curtain-wall-systems',
         '/acp-aluminium-cladding', '/glass-railings', '/maintenance-services',
-        ...dynamicUrls
+        // Dynamic Arrays Generated Above
+        ...dynamicUrls,
+        ...blogUrls,
+        ...projectUrls
       ];
     },
   },
