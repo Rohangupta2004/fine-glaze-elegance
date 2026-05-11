@@ -2,8 +2,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { HelmetProvider } from "react-helmet-async";
+import { Outlet } from "react-router-dom";
 
 /* --- Core Business Pages --- */
 import Index from "./pages/Index";
@@ -23,6 +22,7 @@ import CurtainWall from "./pages/CurtainWall";
 import AcpCladding from "./pages/AcpCladding";
 import GlassRailings from "./pages/GlassRailings";
 import Maintenance from "./pages/Maintenance";
+import ServiceDetail from "./pages/ServiceDetail"; // NEW: The Dynamic Pillar Page
 
 /* --- App Portals --- */
 import Portal from "./pages/Portal";
@@ -34,58 +34,65 @@ import Blog from "./pages/Blog";
 import BlogArticle from "./pages/BlogArticle";
 import CityLanding from "./pages/CityLanding";
 
-
 const queryClient = new QueryClient();
 
-const App = () => (
+// AppWrapper handles all your providers so they wrap around every generated page
+const AppWrapper = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
-      <HelmetProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <Routes>
-            {/* --- Core Business Pages --- */}
-            <Route path="/" element={<Index />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/portfolio" element={<Portfolio />} />
-            <Route path="/projects-qr" element={<ProjectsQR />} />
-            <Route path="/project/:slug" element={<ProjectDetail />} />
-            <Route path="/contact" element={<Contact />} />
-
-            {/* --- Service Strategy Pages (Matches Header Links) --- */}
-            <Route path="/aluminium-facade" element={<AluminiumFacade />} />
-            <Route path="/structural-glazing" element={<StructuralGlazing />} />
-            <Route path="/curtain-wall-systems" element={<CurtainWall />} />
-            <Route path="/acp-aluminium-cladding" element={<AcpCladding />} />
-            <Route path="/glass-railings" element={<GlassRailings />} />
-            <Route path="/maintenance-services" element={<Maintenance />} />
-
-            {/* --- Application Portals --- */}
-            <Route path="/portal" element={<Portal />} />
-            <Route path="/admin" element={<Admin />} />
-
-            {/* --- Info Pages --- */}
-            <Route path="/faq" element={<FAQ />} />
-
-            {/* --- Blog & Content (SEO Traffic Pages) --- */}
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/blog/:slug" element={<BlogArticle />} />
-
-            {/* --- Local SEO Landing Pages --- */}
-            <Route path="/facade-contractor/:city" element={<CityLanding />} />
-
-            {/* --- Development Utils --- */}
-            <Route path="/dev" element={<Dev />} />
-
-            {/* --- Catch All (must be last) --- */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </BrowserRouter>
-      </HelmetProvider>
+      <Toaster />
+      <Sonner />
+      <Outlet />
     </TooltipProvider>
   </QueryClientProvider>
 );
 
-export default App;
+// The SSG-Compatible Route Array
+export const routes = [
+  {
+    path: "/",
+    element: <AppWrapper />,
+    children: [
+      /* --- Core Business Pages --- */
+      { index: true, element: <Index /> },
+      { path: "about", element: <About /> },
+      { path: "services", element: <Services /> },
+      { path: "portfolio", element: <Portfolio /> },
+      { path: "projects-qr", element: <ProjectsQR /> },
+      { path: "project/:slug", element: <ProjectDetail /> },
+      { path: "contact", element: <Contact /> },
+
+      /* --- Legacy Service Pages --- */
+      { path: "aluminium-facade", element: <AluminiumFacade /> },
+      { path: "structural-glazing", element: <StructuralGlazing /> },
+      { path: "curtain-wall-systems", element: <CurtainWall /> },
+      { path: "acp-aluminium-cladding", element: <AcpCladding /> },
+      { path: "glass-railings", element: <GlassRailings /> },
+      { path: "maintenance-services", element: <Maintenance /> },
+
+      /* --- NEW: Dynamic Pillar Pages --- */
+      { path: "services/:slug", element: <ServiceDetail /> },
+
+      /* --- App Portals --- */
+      { path: "portal", element: <Portal /> },
+      { path: "admin", element: <Admin /> },
+      { path: "faq", element: <FAQ /> },
+
+      /* --- Blog --- */
+      { path: "blog", element: <Blog /> },
+      { path: "blog/:slug", element: <BlogArticle /> },
+
+      /* --- Local SEO Traps --- */
+      { path: "facade-contractor/:city", element: <CityLanding /> },
+
+      /* --- Dev & 404 --- */
+      { path: "dev", element: <Dev /> },
+      { path: "*", element: <NotFound /> }
+    ]
+  }
+];
+
+// Standard export for Vite SSG to initialize
+export default function App() {
+  return <Outlet />;
+}
