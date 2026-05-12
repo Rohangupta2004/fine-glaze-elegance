@@ -27,10 +27,10 @@ export const HeroSection = () => {
       <div className="relative z-10 container mx-auto px-4 text-center">
         <div className="max-w-4xl mx-auto space-y-8">
 
-          {/* ✅ Badge (UPDATED) */}
+          {/* Badge */}
           <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-black/40 backdrop-blur-md text-sm text-white/75 animate-fade-in border border-white/10">
             <span className="w-2.5 h-2.5 rounded-full bg-amber-500 animate-pulse" />
-            Trusted Facade Experts
+            India's Trusted Facade Experts · Est. 2010
           </div>
 
           {/* Headline */}
@@ -38,9 +38,11 @@ export const HeroSection = () => {
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight animate-fade-in-up"
             style={{ animationDelay: "0.1s" }}
           >
-            Building <span className="text-gradient">Iconic Facades</span>
+            Crafting{" "}
+            <span className="text-gradient-gold">Iconic Facades</span>
             <br className="hidden md:block" />
-            That Define Skylines
+            That{" "}
+            <span className="text-gradient-light">Define Skylines</span>
           </h1>
 
           {/* Sub-headline */}
@@ -48,8 +50,10 @@ export const HeroSection = () => {
             className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto animate-fade-in-up leading-relaxed"
             style={{ animationDelay: "0.2s" }}
           >
-            Premium glass & aluminium facade fabrication, installation, and maintenance.
-            Award-winning quality delivered on time.
+            Premium glass & aluminium facade fabrication, installation, and
+            maintenance — delivered with{" "}
+            <span className="text-amber-400 font-medium">award-winning precision</span>{" "}
+            and zero compromise on quality.
           </p>
 
           {/* CTA Buttons */}
