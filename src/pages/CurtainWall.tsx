@@ -49,7 +49,7 @@ export default function CurtainWall() {
         <div className="container mx-auto px-4 relative z-10">
           <span className="text-amber-500 font-bold tracking-widest uppercase text-sm mb-2 block">Structural Glazing Experts</span>
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            High-Performance <span className="text-amber-500">Curtain Wall Systems</span>
+            High-Performance <span className="text-gradient-gold">Curtain Wall Systems</span>
           </h1>
           <p className="text-xl text-slate-300 max-w-2xl mb-8">
             Precision-engineered unitized and semi-unitized glazing solutions for modern skyscrapers. 

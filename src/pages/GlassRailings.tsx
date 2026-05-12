@@ -39,7 +39,7 @@ const GlassRailings = () => {
         
         <div className="relative z-10 container text-center px-4">
           <h1 className="text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-            Invisible <span className="text-amber-500">Strength</span>
+            Invisible <span className="text-gradient-gold">Strength</span>
           </h1>
           <p className="text-xl text-slate-200 max-w-2xl mx-auto mb-10 font-light">
             Enjoy unobstructed views with our seamless Frameless Glass Railing systems. 

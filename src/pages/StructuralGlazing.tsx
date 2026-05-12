@@ -72,7 +72,7 @@ export default function StructuralGlazing() {
         <div className="container mx-auto px-4 max-w-6xl grid md:grid-cols-2 gap-12 items-center">
           <div>
             <h1 className="text-4xl md:text-5xl font-extrabold mb-6">
-              Structural Glazing Systems in India
+              Structural <span className="text-gradient-gold">Glazing Systems</span> in India
             </h1>
             <p className="text-lg text-white/80 mb-8">
               Frameless structural glazing solutions delivering maximum

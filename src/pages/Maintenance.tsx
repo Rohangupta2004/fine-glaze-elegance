@@ -46,7 +46,7 @@ const Maintenance = () => {
             </div>
             
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
-              Restore Your Building's <span className="text-amber-500">Shine</span>
+              Restore Your Building's <span className="text-gradient-gold">Shine</span>
             </h1>
             <p className="text-lg text-slate-300 mb-8 leading-relaxed">
               Don't let water leakage or dust degrade your property value. We specialize in high-rise leakage waterproofing and glass replacement.

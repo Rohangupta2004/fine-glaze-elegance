@@ -40,7 +40,7 @@ const AcpCladding = () => {
             ARCHITECTURAL FACADE SOLUTIONS
           </div>
           <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight">
-            Advanced <span className="text-amber-500">ACP Cladding</span>
+            Advanced <span className="text-gradient-gold">ACP Cladding</span>
           </h1>
           <p className="text-xl md:text-2xl text-slate-200 max-w-2xl mx-auto mb-8 font-light leading-relaxed">
             Redefining skylines with lightweight, weather-resistant, and fire-rated Aluminium Composite Panels.

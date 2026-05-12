@@ -89,7 +89,7 @@ export default function AluminiumFacade() {
         <div className="container mx-auto px-4 max-w-6xl grid md:grid-cols-2 gap-12 items-center">
           <div>
             <h1 className="text-4xl md:text-5xl font-extrabold mb-6">
-              Aluminium Facade Systems in India
+              Aluminium <span className="text-gradient-gold">Facade Systems</span> in India
             </h1>
             <p className="text-lg text-white/80 mb-8">
               Premium aluminium facade solutions engineered for modern
