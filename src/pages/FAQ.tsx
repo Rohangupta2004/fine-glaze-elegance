@@ -5,7 +5,13 @@ import {
   ThermometerSnowflake, 
   Construction,
   Ruler,
-  PhoneCall
+  PhoneCall,
+  Wrench,
+  DollarSign,
+  Clock,
+  MapPin,
+  Layers,
+  Wind
 } from "lucide-react";
 import {
   Accordion,
@@ -49,6 +55,62 @@ const faqDatabase = [
     icon: <Building2 className="w-5 h-5 text-blue-600" />,
     answer: "Standard stick-system glazing ranges from ₹350–₹550 per sq ft. Premium unitized systems for high-rises start at ₹650–₹1,200 per sq ft. Prices vary based on glass thickness, wind load requirements, and specialized coatings.",
     stats: { metric: "Custom", label: "Value Engineered" }
+  },
+  {
+    id: "item-5",
+    question: "What is the difference between structural glazing and curtain wall?",
+    category: "Engineering",
+    icon: <Layers className="w-5 h-5 text-blue-600" />,
+    answer: "Structural glazing uses silicone adhesive to bond glass directly to the aluminium frame — creating a seamless, frameless glass surface from outside. A curtain wall is the broader system (including mullions, transoms, drainage, and thermal breaks) that the glass sits within. Structural glazing is a type of curtain wall finish, but not all curtain walls use structural glazing — some use pressure plate covers (mechanically fixed).",
+    stats: { metric: "Frameless", label: "Glass Appearance" }
+  },
+  {
+    id: "item-6",
+    question: "How long does curtain wall installation take for a commercial building in India?",
+    category: "Timeline",
+    icon: <Clock className="w-5 h-5 text-blue-600" />,
+    answer: "For a typical 3,000–8,000 sq ft commercial building facade in Mumbai or Pune: Engineering and approvals take 3–5 weeks. Factory fabrication takes 4–6 weeks (runs parallel). Site installation takes 6–10 weeks. Sealant and punch list adds 2–3 weeks. Total project duration: 12–18 weeks from contract signing to handover. High-rise projects above 15 floors add 4–8 weeks for additional safety setup and reduced daily access.",
+    stats: { metric: "12–18 wks", label: "Typical Timeline" }
+  },
+  {
+    id: "item-7",
+    question: "How much does ACP cladding cost per sq ft in India?",
+    category: "Costing",
+    icon: <DollarSign className="w-5 h-5 text-blue-600" />,
+    answer: "ACP (Aluminium Composite Panel) cladding in India costs ₹80–₹220 per sq ft installed, depending on grade and finish. PE (polyethylene) core ACP: ₹80–₹130/sq ft. FR (fire retardant) grade ACP: ₹120–₹180/sq ft. PVDF-coated premium ACP (Aludecor, Viva): ₹150–₹220/sq ft. Prices include fabrication, tray system, and installation. Structural framing is additional and varies by building complexity.",
+    stats: { metric: "₹80–220", label: "Per Sq Ft" }
+  },
+  {
+    id: "item-8",
+    question: "How do you waterproof a glass facade against India's monsoon?",
+    category: "Safety",
+    icon: <ShieldCheck className="w-5 h-5 text-blue-600" />,
+    answer: "Monsoon waterproofing in Indian facade systems relies on a 3-layer defence: First, factory-fitted EPDM gaskets create the primary weather seal inside the aluminium frames. Second, a continuous bead of structural silicone (Dow Corning 795 or Sika-228) forms the secondary weatherproof bond between glass and frame. Third, all perimeter joints and slab interfaces are sealed with weather-grade polysulfide or silicone. Unitized systems are superior in monsoon conditions as all seals are factory-applied under controlled conditions.",
+    stats: { metric: "3-Layer", label: "Weather Seal" }
+  },
+  {
+    id: "item-9",
+    question: "Do you work on projects outside Pune and Mumbai?",
+    category: "Coverage",
+    icon: <MapPin className="w-5 h-5 text-blue-600" />,
+    answer: "Yes. While our base operations are in Pune and Mumbai, Fine Glaze has executed projects across Maharashtra and takes on select projects in Navi Mumbai, Thane, Nashik, Aurangabad, and Nagpur. For large-scale projects above ₹50 lakh in other cities, we mobilize our execution team with site supervision. Contact us at +91 8369233566 to discuss your location and project scope.",
+    stats: { metric: "Pan-MH", label: "Service Area" }
+  },
+  {
+    id: "item-10",
+    question: "What maintenance does an aluminium glass facade need annually?",
+    category: "Maintenance",
+    icon: <Wrench className="w-5 h-5 text-blue-600" />,
+    answer: "An aluminium glass facade requires: Bi-annual full glass cleaning (interior and exterior). Annual sealant joint inspection and re-caulking of any compromised joints. Quarterly drain hole check to prevent water accumulation inside mullions. Every 3–5 years: structural silicone audit by an engineer. Every 5–7 years: aluminium touch-up or re-coating on exposed surfaces. Fine Glaze offers Annual Maintenance Contracts (AMC) that cover all of the above, starting from ₹15,000/year for small commercial properties.",
+    stats: { metric: "2×/year", label: "Glass Cleaning" }
+  },
+  {
+    id: "item-11",
+    question: "What glass thickness is required for high-rise facade in India?",
+    category: "Engineering",
+    icon: <Wind className="w-5 h-5 text-blue-600" />,
+    answer: "Glass thickness for high-rise facades in India is determined by wind load analysis per IS 875 (Part 3) and glass stress calculations per IS 2553. As a general guide: Up to 5 floors: 6mm toughened glass is often sufficient. 5–15 floors: 8mm toughened or 6+6mm DGU is standard. 15–30 floors: 10mm toughened or 8+8mm DGU with Low-E coating is typical. 30+ floors: 12mm toughened, often in DGU configuration, with structural silicone glazing for wind resistance. All glass specifications are confirmed by structural calculation — Fine Glaze provides certified engineering documents with every project.",
+    stats: { metric: "IS 875", label: "Design Standard" }
   }
 ];
 
@@ -70,10 +132,10 @@ export default function FAQ() {
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900 font-sans selection:bg-blue-200">
       <SEO
-        title="Facade Engineering FAQ – Curtain Wall, Glazing & Costs | Fine Glaze"
-        description="Get expert answers on curtain wall installation timelines, structural glazing costs, DGU glass energy savings, and wind load standards. Technical FAQ by Fine Glaze, India's facade specialists."
+        title="Facade FAQ – Curtain Wall, Glazing, ACP Cladding & Costs 2026 | Fine Glaze"
+        description="11 expert answers on curtain wall installation, structural glazing costs, ACP cladding prices, monsoon waterproofing, facade maintenance, and more. India's facade specialists answer your questions."
         canonical="https://fineglaze.com/faq"
-        keywords="curtain wall FAQ, structural glazing cost India, facade engineering questions, DGU glass LEED, wind load IS 875, glazing cost per sq ft 2026"
+        keywords="curtain wall FAQ, structural glazing cost India, facade engineering questions, DGU glass LEED, wind load IS 875, glazing cost per sq ft 2026, ACP cladding FAQ, glass railing cost India, facade maintenance AMC"
         schema={jsonLd}
       />
 

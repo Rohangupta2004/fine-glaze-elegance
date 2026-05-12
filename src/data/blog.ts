@@ -233,6 +233,320 @@ export const blogPosts: Record<string, BlogPost> = {
     ],
   },
 
+  "glass-railing-cost-india-2026": {
+    slug: "glass-railing-cost-india-2026",
+    title: "Glass Railing Cost Per Running Foot in India (2026 Price Guide)",
+    metaTitle: "Glass Railing Cost Per Running Foot India 2026 | Complete Price Guide – Fine Glaze",
+    metaDescription: "Complete pricing guide for glass railings in India. Frameless glass railings: ₹450–₹1,200/rft. SS post, spigot & channel systems compared. Balcony, staircase & pool fencing costs explained.",
+    keywords: "glass railing cost per running foot India, frameless glass railing price, glass balustrade cost, balcony glass railing cost, staircase glass railing India, glass railing 2026 price",
+    date: "2026-05-10",
+    readTime: "7 min read",
+    category: "Pricing Guide",
+    heroImage: "/Railing.webp",
+    excerpt: "A complete 2026 price breakdown for glass railings in India — frameless, SS post-mounted, and spigot systems for balconies, staircases, and pool fencing.",
+    content: [
+      {
+        heading: "How Much Does a Glass Railing Cost in India?",
+        body: "Glass railings are fast becoming the go-to choice for balconies, staircases, terraces, and pool fencing in premium residential and commercial projects. The cost depends on the type of system (frameless, semi-frameless, post-mounted), glass thickness, and hardware grade. Here is the complete 2026 price guide.",
+      },
+      {
+        heading: "Price Range by System Type",
+        body: "The following table shows current market rates for different glass railing systems in India:",
+        table: {
+          headers: ["System Type", "Price Range (₹/rft)", "Best Application"],
+          rows: [
+            ["SS Post-Mounted Railing", "₹450 – ₹700", "Balconies, terraces, staircases"],
+            ["Spigot Frameless Railing", "₹600 – ₹900", "Pool fencing, decks, premium balconies"],
+            ["Channel (U-Channel) Frameless", "₹700 – ₹1,000", "Staircases, floor-fixed balconies"],
+            ["Structural Point-Fixed (Spider)", "₹900 – ₹1,200", "Feature staircases, luxury homes"],
+            ["Aluminium Channel + Glass", "₹400 – ₹600", "Budget balconies, commercial spaces"],
+          ],
+        },
+      },
+      {
+        heading: "Key Factors That Affect Glass Railing Cost",
+        body: "Understanding cost drivers helps you budget accurately:",
+        list: [
+          "Glass Thickness — 12mm toughened is standard for balconies. Staircases often require 15mm–19mm laminated glass, adding 30–50% to cost.",
+          "Hardware Grade — SS 304 is standard; SS 316 (marine grade) costs 20–30% more and is essential near coastal areas or pools.",
+          "Handrail Type — Square hollow section (SHS) SS handrail adds ₹80–₹150/rft. Top-cap or no-handrail designs save cost.",
+          "Glass Finish — Clear toughened is cheapest. Frosted, acid-etched, or tinted glass adds ₹60–₹120/rft.",
+          "Height of Railing — Standard 900mm–1100mm is base price. Heights above 1200mm increase glass area and cost proportionally.",
+          "Floor Type — Glass on concrete (anchor bolts) is straightforward. Hollow or tiled surfaces need special fixings, adding ₹50–₹100/rft.",
+          "Project Size — Orders above 100 running feet typically get 10–15% volume discount.",
+        ],
+      },
+      {
+        heading: "Glass Railing Cost by Application",
+        body: "Here is a practical breakdown by use case for a typical home or commercial project:",
+        table: {
+          headers: ["Application", "Typical Length", "Estimated Total Cost"],
+          rows: [
+            ["3BHK Balcony Railing", "15–25 rft", "₹9,000 – ₹25,000"],
+            ["Villa Staircase (2 floors)", "30–50 rft", "₹18,000 – ₹60,000"],
+            ["Terrace Parapet", "40–80 rft", "₹22,000 – ₹80,000"],
+            ["Pool Fencing (outdoor)", "50–100 rft", "₹35,000 – ₹1,20,000"],
+            ["Office Glass Partition-Railing", "20–40 rft", "₹12,000 – ₹40,000"],
+          ],
+        },
+      },
+      {
+        heading: "IS Code Compliance for Glass Railings",
+        body: "All glass railings must comply with IS 3548 (safety glazing) and NBC 2016 (National Building Code) guidelines:",
+        list: [
+          "Minimum glass thickness: 12mm toughened or 10.38mm laminated for railings up to 1100mm height.",
+          "Structural load: railings must withstand 0.74 kN/m horizontal load (NBC 2016 requirement).",
+          "Laminated glass is mandatory for overhead or staircase applications where glass breakage risk is critical.",
+          "SS 316 hardware is recommended within 5km of coastline to prevent salt corrosion.",
+          "Fine Glaze provides structural load calculations and material certifications with every installation.",
+        ],
+      },
+      {
+        heading: "Get a Free Glass Railing Quote",
+        body: "Glass railing costs vary by site conditions, design, and quantity. At Fine Glaze, we provide free site visits and detailed quotations for residential and commercial projects across Mumbai and Pune. Call +91 8369233566 or email info@fineglaze.com for a quote within 48 hours.",
+      },
+    ],
+  },
+
+  "aluminium-facade-vs-upvc-windows": {
+    slug: "aluminium-facade-vs-upvc-windows",
+    title: "Aluminium Facade vs UPVC Windows: Which is Better for Your Building?",
+    metaTitle: "Aluminium Facade vs UPVC Windows India | Complete Comparison 2026 – Fine Glaze",
+    metaDescription: "Detailed comparison of aluminium facade systems vs UPVC windows for Indian buildings. Cost, durability, thermal performance, and which to choose in 2026.",
+    keywords: "aluminium facade vs UPVC windows, aluminium vs UPVC India, best window system India, aluminium window cost, UPVC window comparison, facade system selection",
+    date: "2026-04-28",
+    readTime: "6 min read",
+    category: "Comparison Guide",
+    heroImage: "/Aluminium windows.webp",
+    excerpt: "Aluminium or UPVC — which window and facade system suits your building in India? A detailed 2026 comparison covering cost, durability, thermal performance and maintenance.",
+    content: [
+      {
+        heading: "The Aluminium vs UPVC Debate",
+        body: "Two materials dominate India's window and facade market: aluminium and UPVC (Unplasticised Polyvinyl Chloride). Both offer good weatherproofing and aesthetics, but they differ significantly in structural strength, design flexibility, lifespan, and cost. This guide helps architects, developers, and homeowners make the right choice.",
+      },
+      {
+        heading: "Head-to-Head Comparison",
+        body: "Here is how aluminium and UPVC compare across all key parameters:",
+        table: {
+          headers: ["Parameter", "Aluminium", "UPVC"],
+          rows: [
+            ["Structural Strength", "Excellent — spans up to 3m", "Good — limited to 1.5m spans"],
+            ["Lifespan", "40–50 years", "20–30 years"],
+            ["Thermal Insulation", "Good with thermal break profile", "Excellent — inherently low conductivity"],
+            ["Cost (₹/sq ft)", "₹350 – ₹1,200", "₹200 – ₹600"],
+            ["Recyclability", "100% recyclable", "Partially recyclable"],
+            ["Colour Options", "Unlimited (powder coat/PVDF)", "Limited (typically white/wood grain)"],
+            ["Section Thickness", "Very slim — 40–65mm", "Bulkier — 60–90mm"],
+            ["Suitability", "Commercial, high-rise, curtain wall", "Residential, low-rise"],
+            ["Maintenance", "Minimal — anodised finish", "Occasional cleaning, no painting"],
+            ["Fire Resistance", "Does not burn", "Softens above 60°C"],
+          ],
+        },
+      },
+      {
+        heading: "When to Choose Aluminium",
+        body: "Aluminium is the clear winner for:",
+        list: [
+          "Commercial buildings, offices, IT parks, and hotels — it supports larger glass spans and curtain wall systems",
+          "High-rise buildings (above 5 floors) where structural loads and wind pressures exceed UPVC's capability",
+          "Buildings where slim sightlines and large glass areas are architecturally important",
+          "Projects requiring custom colours, anodised finishes, or PVDF powder coating",
+          "Coastal locations — marine-grade aluminium outperforms UPVC in salt air environments",
+          "LEED/IGBC certified projects — aluminium's recyclability earns green credits",
+        ],
+      },
+      {
+        heading: "When to Choose UPVC",
+        body: "UPVC makes sense when:",
+        list: [
+          "The project is a standard residential apartment or villa with typical window sizes",
+          "Thermal insulation is the top priority and budget is moderate",
+          "The building is low-rise (1–4 floors) where structural demands are modest",
+          "Noise reduction is a priority — UPVC with DGU offers excellent sound insulation",
+          "Budget is the primary constraint and commercial-grade aluminium is overkill",
+        ],
+      },
+      {
+        heading: "Fine Glaze's Verdict",
+        body: "For commercial and mixed-use buildings in Mumbai and Pune, aluminium is non-negotiable — the structural requirements, design flexibility, and facade integration simply cannot be met by UPVC. For residential villas and apartments, UPVC is a practical choice for standard windows, while aluminium still wins for sliding doors, large picture windows, and any opening exceeding 1.5m in width. Contact Fine Glaze for a free system recommendation based on your specific building type and budget.",
+      },
+    ],
+  },
+
+  "facade-maintenance-guide-india": {
+    slug: "facade-maintenance-guide-india",
+    title: "Building Facade Maintenance Guide for India (2026): Costs, Schedule & Tips",
+    metaTitle: "Building Facade Maintenance India 2026 | AMC Cost, Schedule & Tips – Fine Glaze",
+    metaDescription: "Complete facade maintenance guide for Indian buildings. Learn AMC costs, maintenance schedules, glass cleaning, sealant replacement, and how to extend your facade's life by 15+ years.",
+    keywords: "facade maintenance India, building facade AMC cost, glass facade cleaning, sealant replacement cost India, facade maintenance schedule, facade repair Mumbai Pune",
+    date: "2026-04-05",
+    readTime: "8 min read",
+    category: "Maintenance Guide",
+    heroImage: "/Amc1.webp",
+    excerpt: "A complete guide to maintaining your building facade in India — covering AMC packages, cleaning schedules, common failure points, and cost benchmarks for 2026.",
+    content: [
+      {
+        heading: "Why Facade Maintenance Is Non-Negotiable",
+        body: "India's climate is harsh on building facades. Mumbai's monsoon and salt air, Pune's dust and UV, and the summer heat across Maharashtra accelerate deterioration. A poorly maintained facade can fail within 8–10 years instead of its designed 25–30 year lifespan. Proactive maintenance costs 10x less than emergency repairs or full facade replacement.",
+      },
+      {
+        heading: "Recommended Facade Maintenance Schedule",
+        body: "This is the standard maintenance schedule we follow for glass and aluminium facades in India:",
+        table: {
+          headers: ["Frequency", "Activity", "Purpose"],
+          rows: [
+            ["Monthly", "Visual inspection of glass panels & joints", "Detect early cracks, water ingress"],
+            ["Quarterly", "Check drain holes, pressure-test seals", "Prevent water accumulation"],
+            ["Bi-Annual", "Full glass cleaning (exterior + interior)", "Maintain appearance, spot damage"],
+            ["Annual", "Sealant inspection + re-caulking if needed", "Prevent water ingress"],
+            ["Every 3–5 Years", "Full structural silicone audit", "Identify bond failure before leakage"],
+            ["Every 5–7 Years", "Aluminium re-coating / touch-up", "Prevent corrosion, restore finish"],
+            ["Every 10 Years", "Comprehensive structural audit by engineer", "Full safety assessment"],
+          ],
+        },
+      },
+      {
+        heading: "Facade AMC (Annual Maintenance Contract) Costs in India 2026",
+        body: "Here are typical AMC costs for glass and aluminium facades based on building size:",
+        table: {
+          headers: ["Building Size", "Facade Area", "AMC Cost / Year"],
+          rows: [
+            ["Small commercial (G+2)", "500–1,500 sq ft", "₹15,000 – ₹35,000"],
+            ["Mid-size office (G+5)", "2,000–5,000 sq ft", "₹35,000 – ₹80,000"],
+            ["IT park / Large office", "5,000–20,000 sq ft", "₹80,000 – ₹3,00,000"],
+            ["High-rise residential (20+ floors)", "20,000–50,000 sq ft", "₹3,00,000 – ₹8,00,000"],
+          ],
+        },
+      },
+      {
+        heading: "5 Most Common Facade Failures and How to Prevent Them",
+        body: "These are the failures we encounter most frequently on Indian buildings:",
+        list: [
+          "Sealant Failure — Silicone sealant hardens and cracks after 7–10 years in Indian conditions. Signs: white chalking, visible gaps, water stains inside the building. Fix: re-caulking with Dow Corning or Sika silicone costs ₹15–₹35/rft.",
+          "Glass Panel Cracks — Caused by thermal stress, anchor bolt overtightening, or impact. Single cracked panel replacement: ₹1,500–₹8,000 depending on glass type.",
+          "Aluminium Corrosion — Coastal buildings without PVDF coating develop pitting within 5 years. Prevention: marine-grade anodising and PVDF coating from day one.",
+          "Drain Hole Blockage — Blocked drains cause water to pool inside mullions, leading to interior leakage and aluminium corrosion. Clean drain holes every 6 months.",
+          "Anchor Bolt Loosening — Vibration from traffic and wind can loosen anchor bolts over time. Annual torque check prevents catastrophic panel failure.",
+        ],
+      },
+      {
+        heading: "DIY vs Professional Facade Maintenance",
+        body: "Some maintenance tasks can be done in-house; others require professionals:",
+        list: [
+          "DIY safe: Visual inspection from inside, cleaning accessible ground-floor glass, drain hole clearing at accessible levels.",
+          "Professional required: Any work above 2nd floor, structural sealant inspection, glass replacement, re-coating, and rope access cleaning for high-rises.",
+          "Legal requirement: All rope access work must be done by IRATA-certified personnel with proper safety equipment (IS 15141).",
+        ],
+      },
+      {
+        heading: "Fine Glaze AMC Services",
+        body: "Fine Glaze offers comprehensive facade AMC packages across Mumbai and Pune, covering 2 full cleaning cycles per year, bi-annual sealant inspection, minor repairs included, and a dedicated project manager. We work on both our own installations and third-party facades. Call +91 8369233566 for a free facade inspection and AMC quote.",
+      },
+    ],
+  },
+
+  "curtain-wall-installation-process-india": {
+    slug: "curtain-wall-installation-process-india",
+    title: "Curtain Wall Installation Process in India: Step-by-Step Guide",
+    metaTitle: "Curtain Wall Installation Process India | Step-by-Step Guide – Fine Glaze",
+    metaDescription: "Complete step-by-step guide to curtain wall installation in India. From anchor design to final inspection — timelines, quality checks, and what to expect during your project.",
+    keywords: "curtain wall installation process, curtain wall installation steps India, how curtain wall is installed, glass facade installation guide, curtain wall construction sequence",
+    date: "2026-03-22",
+    readTime: "9 min read",
+    category: "Technical Guide",
+    heroImage: "/Glass installation.webp",
+    excerpt: "A complete step-by-step breakdown of how curtain walls are designed, fabricated, and installed in India — with timelines, quality checks, and what every developer should know.",
+    content: [
+      {
+        heading: "The Curtain Wall Installation Journey",
+        body: "Installing a curtain wall is a precision engineering process that begins weeks before a single panel reaches site. Understanding the full workflow helps developers, architects, and project managers set realistic timelines, anticipate approvals, and ensure quality at every stage.",
+      },
+      {
+        heading: "Stage 1: Engineering & Shop Drawings (Weeks 1–4)",
+        body: "Before any fabrication begins, the engineering team completes:",
+        list: [
+          "Structural Analysis — Wind load calculations per IS 875 (Part 3), dead load assessment, and thermal movement analysis.",
+          "Shop Drawings — Detailed CAD drawings showing every mullion, transom, anchor bracket, drainage path, and glass bite.",
+          "Anchor Layout Drawing — Critical document showing anchor positions relative to the structural slab. Must be approved before casting anchors.",
+          "Mock-Up Panel — For projects above ₹50 lakh, we build a 2m × 3m mock-up panel and conduct water penetration, air infiltration, and structural deflection tests.",
+          "Client/Architect Approval — All shop drawings require architect approval before fabrication begins.",
+        ],
+      },
+      {
+        heading: "Stage 2: Fabrication (Weeks 3–8, overlapping with approvals)",
+        body: "Once drawings are approved, factory fabrication begins:",
+        list: [
+          "Aluminium extrusions are cut to length using CNC saws — accuracy within ±0.5mm.",
+          "All profiles are thermally broken (if specified) and pre-drilled for anchors, drainage, and glass bite.",
+          "Powder coating or PVDF painting is applied in a controlled spray booth environment.",
+          "For unitized systems: panels are fully assembled in the factory including glass, EPDM gaskets, and hardware.",
+          "Every panel undergoes a factory quality check for dimensional accuracy, coating adhesion, and glazing bite depth.",
+        ],
+      },
+      {
+        heading: "Stage 3: Anchor Installation (Weeks 4–6, parallel with fabrication)",
+        body: "Anchors connect the facade to the building structure — the most critical structural step:",
+        list: [
+          "Surveying team marks all anchor positions from the approved anchor layout drawing.",
+          "Anchor bolts (M16 or M20 SS316) are cast into the slab edge or fixed to slab soffit using chemical anchors.",
+          "Pull-out tests are conducted on 10% of anchors to verify load capacity (minimum 5kN pull-out per IS 1367).",
+          "All anchor positions are surveyed with total station to verify they are within ±3mm of design — critical for panel alignment.",
+        ],
+      },
+      {
+        heading: "Stage 4: Mullion & Transom Installation (Weeks 6–10)",
+        body: "The aluminium grid is the backbone of the curtain wall:",
+        list: [
+          "Vertical mullions are hung from anchor brackets — each mullion spans one or two floors.",
+          "Horizontal transoms are connected to mullions using mechanical fasteners or press-fit connectors.",
+          "All joints include EPDM thermal break pads to prevent cold bridging.",
+          "Running lines (plumb and level strings) are set up to ensure the entire grid is within ±2mm plumb over the full building height.",
+          "Drainage channels are verified to ensure all horizontal transoms drain correctly to the exterior.",
+        ],
+      },
+      {
+        heading: "Stage 5: Glass Installation (Weeks 8–12)",
+        body: "Glass installation requires precision and safety protocols:",
+        list: [
+          "Glass panels are lifted to each floor using a tower crane or glass vacuum lifter.",
+          "Each panel is set in the aluminium frame using EPDM setting blocks at quarter points.",
+          "Structural silicone (Dow Corning 795 or equivalent) is applied to create the weatherproof bond for structural glazing systems.",
+          "Pressure plates and snap-in covers are installed for stick system facades.",
+          "Every panel is inspected for scratches, chips, and correct seating before the next panel is installed.",
+        ],
+      },
+      {
+        heading: "Stage 6: Sealant & Finishing (Weeks 11–13)",
+        body: "The final stage that determines weathertightness:",
+        list: [
+          "All perimeter joints between facade and building structure are sealed with weatherproof silicone.",
+          "Top-of-building parapet flashing is installed to prevent water entry at the roof line.",
+          "Weep holes are cleared and drainage is tested by flooding each bay with a hose for 15 minutes.",
+          "Temporary protection film is removed from glass surfaces.",
+          "Final snag list inspection with architect and client.",
+        ],
+      },
+      {
+        heading: "Quality Benchmarks for Curtain Wall Installation",
+        body: "Fine Glaze follows these quality benchmarks on every project:",
+        table: {
+          headers: ["Parameter", "Acceptable Tolerance", "Test Method"],
+          rows: [
+            ["Mullion plumb", "±2mm per floor, ±5mm total height", "Total station survey"],
+            ["Joint width variation", "±1mm from design", "Feeler gauge"],
+            ["Glass bite depth", "Minimum 20mm (IS: 15827)", "Physical measurement"],
+            ["Water penetration", "Zero leakage at 600Pa", "ASTM E1105 hose test"],
+            ["Pull-out strength", "Minimum 5kN per anchor", "Load test"],
+          ],
+        },
+      },
+      {
+        heading: "Typical Curtain Wall Project Timeline",
+        body: "For a medium-sized commercial building with 3,000–8,000 sq ft of curtain wall in India, expect: Engineering & approvals: 3–5 weeks. Fabrication: 4–6 weeks (parallel with approvals). Site installation: 6–10 weeks. Sealant & punch list: 2–3 weeks. Total: 12–18 weeks from contract to completion. Fine Glaze provides a detailed Gantt chart with all milestones at the start of every project. Contact us at +91 8369233566 to discuss your project timeline.",
+      },
+    ],
+  },
+
   "acp-vs-hpl-cladding-comparison": {
     slug: "acp-vs-hpl-cladding-comparison",
     title: "ACP vs HPL Cladding: Which is Better for Your Building?",
