@@ -3,7 +3,7 @@ import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/home/CTASection";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, ArrowRight } from "lucide-react";
 
 export default function AluminiumFacade() {
   const serviceSchema = {
@@ -14,14 +14,22 @@ export default function AluminiumFacade() {
     "provider": {
       "@type": "LocalBusiness",
       "name": "Fine Glaze",
+      "@id": "https://fineglaze.com",
+      "url": "https://fineglaze.com",
+      "telephone": "+91-8369233566",
+      "priceRange": "₹₹₹",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Pune",
         "addressRegion": "Maharashtra",
         "addressCountry": "IN"
       },
-      "telephone": "+91-8369233566",
-      "url": "https://fineglaze.com"
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "35",
+        "bestRating": "5"
+      }
     },
     "areaServed": [
       { "@type": "City", "name": "Pune" },
@@ -30,17 +38,39 @@ export default function AluminiumFacade() {
       { "@type": "City", "name": "Nashik" },
       { "@type": "State", "name": "Maharashtra" }
     ],
-    "description": "Premium aluminium facade systems including unitized, stick system, and ACP cladding for commercial and residential buildings across India.",
+    "description": "Premium aluminium facade systems including unitized, stick system, doors, windows & louvers for commercial and residential buildings across India. ₹350–₹1,200/sq ft.",
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "INR",
+      "priceSpecification": {
+        "@type": "PriceSpecification",
+        "minPrice": "350",
+        "maxPrice": "1200",
+        "priceCurrency": "INR",
+        "unitText": "per sq ft"
+      }
+    },
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
       "name": "Aluminium Facade Solutions",
       "itemListElement": [
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Unitized Aluminium Facade Systems" } },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Stick System Aluminium Facades" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "ACP & Aluminium Composite Panel Cladding" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom Architectural Aluminium Facades" } }
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Aluminium Doors & Windows" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Aluminium Louvers & Sun Shading" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "ACP & Aluminium Composite Panel Cladding" } }
       ]
     }
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://fineglaze.com" },
+      { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://fineglaze.com/services" },
+      { "@type": "ListItem", "position": 3, "name": "Aluminium Facade Systems", "item": "https://fineglaze.com/aluminium-facade" }
+    ]
   };
 
   const faqSchema = {
@@ -77,11 +107,12 @@ export default function AluminiumFacade() {
   return (
     <Layout darkHero>
       <SEO
-        title="Aluminium Facade & Glaze Aluminium Systems | Best Facade Contractor Pune & Mumbai – Fine Glaze"
-        description="Leading aluminium facade company in India. Glazed facade systems, aluminium cladding & curtain wall installation for commercial buildings. Free site visit & quote."
+        title="Aluminium Facade Systems in Pune & Mumbai | Doors, Windows, Louvers & Cladding – Fine Glaze"
+        description="Leading aluminium facade contractor in India. Unitized & stick system facades, thermal break doors & windows, aluminium louvers, ACP cladding. ₹350–₹1,200/sq ft. Trusted by Embassy REIT & LTIMindtree. Free site visit."
         canonical="https://fineglaze.com/aluminium-facade"
-        keywords="aluminium facade, glaze aluminium, glazed facade, facade contractor Pune, aluminium facade system Mumbai, aluminium cladding, glass facade contractors, facade company India"
-        schema={[serviceSchema, faqSchema]}
+        keywords="aluminium facade systems India, aluminium facade contractor Pune, aluminium facade Mumbai, aluminium doors windows contractor, thermal break windows India, aluminium louvers sun shading, stick system curtain wall, unitized aluminium facade, aluminium cladding contractor Maharashtra"
+        ogImage="https://fineglaze.com/Aluminium windows.webp"
+        schema={[serviceSchema, faqSchema, breadcrumbSchema]}
       />
 
       {/* HERO */}
@@ -260,6 +291,31 @@ export default function AluminiumFacade() {
                 Yes. Aluminium facades offer excellent corrosion resistance, withstand monsoon rains, UV exposure, and high temperatures. When combined with PVDF or anodized finishes, they maintain their appearance for 20+ years in Indian weather conditions.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* INTERNAL LINKS */}
+      <section className="py-12 bg-slate-50 border-t border-slate-100">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <h2 className="text-xl font-bold text-slate-800 mb-5">Explore Our Other Facade Services</h2>
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+            {[
+              { title: "Curtain Wall Systems", href: "/curtain-wall-systems", desc: "Unitized & stick system glazing" },
+              { title: "Structural Glazing", href: "/structural-glazing", desc: "2-side, 4-side & spider glazing" },
+              { title: "ACP Cladding", href: "/acp-aluminium-cladding", desc: "Composite panel facades" },
+              { title: "Glass Railings", href: "/glass-railings", desc: "Balcony & staircase railings" },
+              { title: "Facade Maintenance", href: "/maintenance-services", desc: "AMC, repair & waterproofing" },
+              { title: "All Services", href: "/services", desc: "View all 8 service categories" },
+            ].map((link) => (
+              <Link key={link.href} to={link.href} className="group flex items-start gap-3 p-4 rounded-xl border border-slate-200 hover:border-amber-300 hover:bg-amber-50 transition-all bg-white">
+                <ArrowRight size={15} className="text-amber-600 shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" />
+                <div>
+                  <p className="font-semibold text-slate-800 text-sm">{link.title}</p>
+                  <p className="text-xs text-slate-500">{link.desc}</p>
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>

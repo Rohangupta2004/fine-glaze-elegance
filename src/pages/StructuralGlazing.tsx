@@ -3,7 +3,7 @@ import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/home/CTASection";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { CheckCircle2, MapPin } from "lucide-react";
+import { CheckCircle2, MapPin, ArrowRight } from "lucide-react";
 
 export default function StructuralGlazing() {
   const serviceSchema = {
@@ -14,16 +14,62 @@ export default function StructuralGlazing() {
     "provider": {
       "@type": "LocalBusiness",
       "name": "Fine Glaze",
+      "@id": "https://fineglaze.com",
+      "url": "https://fineglaze.com",
+      "telephone": "+91-8369233566",
+      "priceRange": "₹₹₹",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Pune",
         "addressRegion": "Maharashtra",
         "addressCountry": "IN"
       },
-      "telephone": "+91-8369233566"
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "29",
+        "bestRating": "5"
+      }
     },
-    "areaServed": ["Pune", "Mumbai", "Navi Mumbai", "Nashik", "Maharashtra"],
-    "description": "Frameless structural glazing systems for commercial buildings, showrooms, and premium architecture across India."
+    "areaServed": [
+      { "@type": "City", "name": "Pune" },
+      { "@type": "City", "name": "Mumbai" },
+      { "@type": "City", "name": "Navi Mumbai" },
+      { "@type": "City", "name": "Nashik" },
+      { "@type": "State", "name": "Maharashtra" }
+    ],
+    "description": "Frameless structural glazing systems — 2-side, 4-side & spider glazing for commercial buildings, showrooms, and premium architecture across India. ₹350–₹1,500/sq ft.",
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "INR",
+      "priceSpecification": {
+        "@type": "PriceSpecification",
+        "minPrice": "350",
+        "maxPrice": "1500",
+        "priceCurrency": "INR",
+        "unitText": "per sq ft"
+      }
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Structural Glazing Services",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "2-Side Structural Glazing" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "4-Side Structural Glazing" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Spider Point-Fixed Glazing" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Double Glazed Unit (DGU) Systems" } }
+      ]
+    }
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://fineglaze.com" },
+      { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://fineglaze.com/services" },
+      { "@type": "ListItem", "position": 3, "name": "Structural Glazing", "item": "https://fineglaze.com/structural-glazing" }
+    ]
   };
 
   const faqSchema = {
@@ -64,7 +110,7 @@ export default function StructuralGlazing() {
         description="Top structural glazing company in India. 2-side, 4-side & spider glazed facade systems for showrooms, offices & malls. ₹350-1500/sq ft. 25-year silicone warranty. Free site visit."
         canonical="https://fineglaze.com/structural-glazing"
         keywords="structural glazing, glazed facade, glass facade contractors, structural glazing cost per sq ft, spider glazing, frameless glass facade Pune Mumbai, fasad glass, glass curtain wall manufacturers, silicone glazing system"
-        schema={[serviceSchema, faqSchema]}
+        schema={[serviceSchema, faqSchema, breadcrumbSchema]}
       />
 
       {/* HERO */}
@@ -213,6 +259,31 @@ export default function StructuralGlazing() {
                 Yes. Structural glazing systems are engineered to IS 875 standards and can withstand wind loads of 1.5 to 4.5 kPa. Fine Glaze uses high-performance structural silicone (Dow Corning / Sika) rated for 25+ years of adhesion strength.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* INTERNAL LINKS */}
+      <section className="py-12 bg-slate-50 border-t border-slate-100">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <h2 className="text-xl font-bold text-slate-800 mb-5">Explore Our Other Facade Services</h2>
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+            {[
+              { title: "Curtain Wall Systems", href: "/curtain-wall-systems", desc: "Unitized & stick system glazing" },
+              { title: "Aluminium Facade", href: "/aluminium-facade", desc: "Aluminium facade systems" },
+              { title: "ACP Cladding", href: "/acp-aluminium-cladding", desc: "Composite panel facades" },
+              { title: "Glass Railings", href: "/glass-railings", desc: "Balcony & staircase railings" },
+              { title: "Facade Maintenance", href: "/maintenance-services", desc: "AMC, repair & waterproofing" },
+              { title: "All Services", href: "/services", desc: "View all 8 service categories" },
+            ].map((link) => (
+              <Link key={link.href} to={link.href} className="group flex items-start gap-3 p-4 rounded-xl border border-slate-200 hover:border-amber-300 hover:bg-amber-50 transition-all bg-white">
+                <ArrowRight size={15} className="text-amber-600 shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" />
+                <div>
+                  <p className="font-semibold text-slate-800 text-sm">{link.title}</p>
+                  <p className="text-xs text-slate-500">{link.desc}</p>
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
