@@ -57,8 +57,8 @@ const Maintenance = () => {
                   Request Inspection
                 </Button>
               </Link>
-              <a href="tel:+919876543210">
-                <Button variant="outline" size="lg" className="border-slate-600 text-white hover:bg-white hover:text-slate-900 h-auto py-4 px-8 text-lg gap-2 w-full sm:w-auto">
+              <a href="tel:+918369233566">
+                <Button size="lg" className="bg-white text-slate-900 hover:bg-white/90 font-bold h-auto py-4 px-8 text-lg gap-2 w-full sm:w-auto">
                   <Phone size={18} /> Emergency Repair
                 </Button>
               </a>

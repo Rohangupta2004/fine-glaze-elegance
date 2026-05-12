@@ -184,8 +184,7 @@ export default function BlogArticle() {
               </Link>
               <a href="tel:+918369233566">
                 <Button
-                  variant="outline"
-                  className="border-white/30 text-white hover:bg-white/10 hover:text-white gap-2"
+                  className="bg-white text-slate-900 hover:bg-white/90 font-bold gap-2"
                 >
                   <Phone size={16} /> Call Now
                 </Button>
