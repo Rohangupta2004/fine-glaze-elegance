@@ -274,7 +274,7 @@ team for a free consultation and quote.
                     <Input  
                       id="name"  
                       name="name"  
-                      placeholder="Ramesh Patel"  
+                      placeholder="Ramesh Sharma"  
                       required  
                       value={formData.name}  
                       onChange={handleChange}  
@@ -288,7 +288,7 @@ team for a free consultation and quote.
                       id="email"  
                       name="email"  
                       type="email"  
-                      placeholder="ramesh@gmail.com"  
+                      placeholder="ramesh.sharma@gmail.com"  
                       required  
                       value={formData.email}  
                       onChange={handleChange}  
