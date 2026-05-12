@@ -1,17 +1,15 @@
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { cn } from "@/lib/utils";
 
-// Download these logos to /public/clients/ to replace text display
-// e.g. /public/clients/embassy-reit.svg, /public/clients/ltimindtree.svg etc.
 const clients = [
-  { name: "Embassy REIT", abbr: "Embassy\nREIT" },
-  { name: "LTIMindtree", abbr: "LTI\nMindtree" },
-  { name: "Larsen & Toubro", abbr: "L&T" },
-  { name: "Peninsula Land", abbr: "Peninsula" },
-  { name: "Leela Group", abbr: "Leela\nGroup" },
-  { name: "Nirmaann", abbr: "Nirmaann" },
-  { name: "JSL", abbr: "JSL" },
-  { name: "AAI", abbr: "AAI" },
+  { name: "Embassy REIT" },
+  { name: "LTIMindtree" },
+  { name: "Larsen & Toubro" },
+  { name: "Peninsula Land" },
+  { name: "Leela Group" },
+  { name: "Nirmaann" },
+  { name: "JSL" },
+  { name: "AAI" },
 ];
 
 export const ClientsCarousel = () => {
@@ -22,37 +20,32 @@ export const ClientsCarousel = () => {
       <div className="container mx-auto px-4">
         <p
           className={cn(
-            "text-center text-sm text-muted-foreground uppercase tracking-wider mb-10 slide-up",
+            "text-center text-sm font-semibold text-foreground/50 uppercase tracking-[0.2em] mb-10 slide-up",
             isVisible && "visible"
           )}
         >
-          Trusted by Leading Brands
+          Trusted by India's Leading Brands
         </p>
 
         <div className="relative overflow-hidden">
-          {/* Gradient Masks - Warm tones */}
-          <div 
-            className="absolute left-0 top-0 bottom-0 w-24 z-10"
+          {/* Gradient fade masks */}
+          <div
+            className="absolute left-0 top-0 bottom-0 w-20 z-10 pointer-events-none"
             style={{ background: "linear-gradient(to right, hsl(35 20% 92%), transparent)" }}
           />
-          <div 
-            className="absolute right-0 top-0 bottom-0 w-24 z-10"
+          <div
+            className="absolute right-0 top-0 bottom-0 w-20 z-10 pointer-events-none"
             style={{ background: "linear-gradient(to left, hsl(35 20% 92%), transparent)" }}
           />
 
-          {/* Marquee */}
-        <div className="flex animate-marquee">
+          {/* Marquee row */}
+          <div className="flex animate-marquee gap-4">
             {[...clients, ...clients, ...clients].map((client, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 mx-6 flex items-center gap-6 group"
+                className="flex-shrink-0 px-5 py-2.5 rounded-full border border-border bg-card text-foreground/70 hover:text-primary hover:border-primary/40 hover:bg-primary/5 font-semibold text-sm tracking-wide whitespace-nowrap transition-all duration-200 cursor-default shadow-sm"
               >
-                <div className="flex items-center justify-center h-14 min-w-[110px] opacity-60 hover:opacity-100 transition-all duration-300">
-                  <span className="text-foreground font-bold text-sm tracking-widest whitespace-pre-line text-center leading-tight uppercase group-hover:text-primary transition-colors">
-                    {client.abbr}
-                  </span>
-                </div>
-                <div className="h-6 w-px bg-border/60 shrink-0" />
+                {client.name}
               </div>
             ))}
           </div>

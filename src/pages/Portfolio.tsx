@@ -61,22 +61,19 @@ const Portfolio = () => {
       </section>
 
       {/* TABS */}
-      <section className="border-y">
-        <div className="container mx-auto px-4 flex gap-8 py-4">
+      <section className="border-y bg-muted/40">
+        <div className="container mx-auto px-4 flex gap-3 py-4 flex-wrap">
           {tabs.map((t) => (
             <button
               key={t.id}
               onClick={() => setActive(t.id)}
-              className={`relative text-sm font-medium tracking-wide ${
+              className={`px-4 py-1.5 rounded-full text-sm font-semibold tracking-wide transition-all duration-200 ${
                 active === t.id
-                  ? "text-primary"
-                  : "text-muted-foreground hover:text-foreground"
+                  ? "bg-primary text-white shadow-sm"
+                  : "bg-card border border-border text-muted-foreground hover:text-foreground hover:border-primary/30"
               }`}
             >
               {t.label}
-              {active === t.id && (
-                <span className="absolute -bottom-3 left-0 w-full h-[2px] bg-primary" />
-              )}
             </button>
           ))}
         </div>
