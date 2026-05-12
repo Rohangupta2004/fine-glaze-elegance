@@ -221,7 +221,7 @@ export default function CityLanding() {
               <Button size="lg" className="bg-amber-600 hover:bg-amber-700">Get Quote</Button>
             </Link>
             <a href="tel:+918369233566">
-              <Button size="lg" variant="outline" className="text-white border-white/40">Call Expert</Button>
+              <Button size="lg" className="bg-white text-slate-900 hover:bg-white/90 font-bold">Call Expert</Button>
             </a>
           </div>
         </div>
