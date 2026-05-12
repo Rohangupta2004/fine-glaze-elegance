@@ -122,7 +122,6 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
             </div>
 
             <Link to="/portfolio" className={getLinkClass("/portfolio")}>Portfolio</Link>
-            <Link to="/faq" className={getLinkClass("/faq")}>FAQ</Link>
             <Link to="/blog" className={getLinkClass("/blog")}>Blog</Link>
             <Link to="/contact" className={getLinkClass("/contact")}>Contact</Link>
           </nav>
@@ -193,7 +192,6 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
             </div>
 
             <Link to="/portfolio" className="block text-lg font-medium">Portfolio</Link>
-            <Link to="/faq" className="block text-lg font-medium">FAQ</Link>
             <Link to="/blog" className="block text-lg font-medium">Blog</Link>
             <Link to="/contact" className="block text-lg font-medium">Contact</Link>
 
