@@ -479,7 +479,7 @@ export default function Services() {
                       </Button>
                     </Link>
                     <Link to={service.href}>
-                      <Button variant="outline">Learn More</Button>
+                      <Button variant="outline" className="border-amber-600 text-amber-700 bg-transparent hover:bg-amber-50">Learn More</Button>
                     </Link>
                   </div>
                 </div>
