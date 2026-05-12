@@ -84,7 +84,7 @@ export const ServicesSection = () => {
               </div>
 
               {/* Content */}
-              <h3 className="text-xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors">
+              <h3 className="text-xl font-semibold mb-3 text-gradient">
                 {service.title}
               </h3>
               <p className="text-muted-foreground text-sm mb-5 leading-relaxed">

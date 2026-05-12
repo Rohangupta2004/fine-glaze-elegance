@@ -454,7 +454,7 @@ export default function Services() {
                       </h3>
                       <h2
                         id={`${service.id}-heading`}
-                        className="text-3xl md:text-4xl font-bold"
+                        className="text-3xl md:text-4xl font-bold text-gradient"
                       >
                         {service.title}
                       </h2>
