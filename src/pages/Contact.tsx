@@ -374,7 +374,11 @@ team for a free consultation and quote.
                 <p className="text-xs text-muted-foreground text-center">  
                   By submitting this form, you agree to our privacy policy.  
                   We'll never share your information.  
-                </p>  
+                </p>
+
+                <p className="flex items-center justify-center gap-2 text-sm font-semibold text-amber-700">
+                  <span className="text-base">✅</span> Guaranteed callback within 1 hour
+                </p>
               </form>  
             )}  
           </div>  
