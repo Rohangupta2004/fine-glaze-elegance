@@ -17,7 +17,7 @@ const Index = () => {
   };
 
   return (
-    <Layout>
+    <Layout darkHero>
       <SEO
         title="Fine Glaze – Glazed Facade & Glass Curtain Wall Manufacturers in Pune & Mumbai"
         description="Fine Glaze is India's leading glass facade contractor. Curtain wall manufacturers, structural glazing, ACP cladding & glass railings. 10+ projects. ₹350-1200/sq ft. Free quote."

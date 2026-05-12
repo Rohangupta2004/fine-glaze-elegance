@@ -187,7 +187,7 @@ export default function CityLanding() {
   const dynamicKeywords = `${serviceData.label} ${matchedLocation.name}, ${serviceData.label} ${matchedLocation.parentCity}, commercial construction ${matchedLocation.name}, glass facade contractors ${matchedLocation.name}`;
 
   return (
-    <Layout>
+    <Layout darkHero>
       <SEO
         title={dynamicMetaTitle}
         description={dynamicDescription}

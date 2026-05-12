@@ -195,7 +195,7 @@ export default function CityLanding() {
     .slice(0, 10);
 
   return (
-    <Layout>
+    <Layout darkHero>
       <SEO
         title={`${serviceData.label} in ${matchedLocation.name} | Fine Glaze`}
         description={`Expert ${serviceData.label} services in ${matchedLocation.name}, Maharashtra. ${profile.intro}`}

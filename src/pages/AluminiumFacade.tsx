@@ -75,7 +75,7 @@ export default function AluminiumFacade() {
   };
 
   return (
-    <Layout>
+    <Layout darkHero>
       <SEO
         title="Aluminium Facade & Glaze Aluminium Systems | Best Facade Contractor Pune & Mumbai – Fine Glaze"
         description="Leading aluminium facade company in India. Glazed facade systems, aluminium cladding & curtain wall installation for commercial buildings. Free site visit & quote."

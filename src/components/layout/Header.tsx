@@ -14,7 +14,7 @@ const serviceLinks = [
   { href: "/maintenance-services", label: "Facade Maintenance" },
 ];
 
-export const Header = () => {
+export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isServiceOpen, setIsServiceOpen] = useState(false);
@@ -70,7 +70,7 @@ export const Header = () => {
               alt="Fine Glaze Logo"
               className={cn(
                 "h-10 md:h-12 w-auto object-contain transition-all duration-300",
-                !isScrolled && "brightness-0 invert"
+                darkHero && !isScrolled && "brightness-0 invert"
               )}
             />
           </Link>

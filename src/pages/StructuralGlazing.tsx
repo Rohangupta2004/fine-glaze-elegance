@@ -58,7 +58,7 @@ export default function StructuralGlazing() {
   };
 
   return (
-    <Layout>
+    <Layout darkHero>
       <SEO
         title="Structural Glazing & Glazed Facade Systems | Glass Facade Contractors Pune & Mumbai – Fine Glaze"
         description="Top structural glazing company in India. 2-side, 4-side & spider glazed facade systems for showrooms, offices & malls. ₹350-1500/sq ft. 25-year silicone warranty. Free site visit."

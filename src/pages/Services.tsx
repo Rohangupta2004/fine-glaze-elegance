@@ -266,7 +266,7 @@ export default function Services() {
   const whyRef = useScrollAnimation();
 
   return (
-    <Layout>
+    <Layout darkHero>
       <SEO
         title="Facade Systems, Glass Railings, Skylights & Aluminium Solutions | Fine Glaze India"
         description="Fine Glaze offers 8 specialised facade services: curtain walls, structural glazing, ACP cladding, glass railings, skylights, aluminium louvers, glass partitions, shower enclosures & AMC maintenance across Pune & Mumbai."

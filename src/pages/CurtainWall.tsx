@@ -34,7 +34,7 @@ export default function CurtainWall() {
   };
 
   return (
-    <Layout>
+    <Layout darkHero>
       <SEO
         title="Curtain Wall Manufacturers in Pune & Mumbai | Glass Curtain Wall & Glazed Facade – Fine Glaze"
         description="Top curtain wall manufacturers in India. Unitized & stick system glass curtain walls, glazed facades for commercial towers & IT parks. ₹350-1200/sq ft. Free site visit & quote."

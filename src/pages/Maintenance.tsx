@@ -18,7 +18,7 @@ const Maintenance = () => {
   };
 
   return (
-    <Layout>
+    <Layout darkHero>
       <SEO
         title="Facade Maintenance AMC Services Mumbai & Pune | Glass Repair & Waterproofing – Fine Glaze"
         description="Expert facade cleaning, silicon sealant replacement, glass repair & waterproofing services. Protect your building from leakage with our Annual Maintenance Contracts. Serving Mumbai, Pune & Maharashtra."

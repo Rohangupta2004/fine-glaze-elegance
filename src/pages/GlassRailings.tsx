@@ -21,7 +21,7 @@ const GlassRailings = () => {
   };
 
   return (
-    <Layout>
+    <Layout darkHero>
       <SEO
         title="Frameless Glass Railings Mumbai & Pune | Balcony, Staircase & Pool Fencing – Fine Glaze"
         description="Premium frameless glass railing systems for balconies, staircases & pool fencing. 12mm-19mm Toughened Glass with SS 304/316 fittings. Free site visit in Mumbai, Pune & Lonavala."

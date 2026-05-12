@@ -5,12 +5,13 @@ import FloatingCTA from "@/components/FloatingCTA";
 
 interface LayoutProps {
   children: ReactNode;
+  darkHero?: boolean;
 }
 
-export const Layout = ({ children }: LayoutProps) => {
+export const Layout = ({ children, darkHero = false }: LayoutProps) => {
   return (
     <div className="min-h-screen flex flex-col">
-      <Header />
+      <Header darkHero={darkHero} />
       <main className="flex-1">{children}</main>
       <Footer />
       <FloatingCTA />

@@ -21,7 +21,7 @@ const AcpCladding = () => {
   };
 
   return (
-    <Layout>
+    <Layout darkHero>
       <SEO
         title="ACP Cladding Contractor & ACP Tray System Installation | Mumbai & Pune – Fine Glaze"
         description="Expert ACP cladding contractor for commercial & residential buildings. ACP tray system, PVDF panels, fire-retardant FR grade. ₹80-180/sq ft. Serving Mumbai, Pune & Maharashtra."

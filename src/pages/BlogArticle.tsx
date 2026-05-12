@@ -40,7 +40,7 @@ export default function BlogArticle() {
     .slice(0, 2);
 
   return (
-    <Layout>
+    <Layout darkHero>
       <SEO
         title={post.metaTitle}
         description={post.metaDescription}
