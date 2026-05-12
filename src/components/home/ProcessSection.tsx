@@ -8,7 +8,7 @@ const steps = [
     icon: ClipboardList,
     title: "Consultation & Design",
     description:
-      "We start with a free site visit and consultation. Our engineers assess your building, discuss design goals, and provide a detailed scope of work with material specifications.",
+      "We begin with a complimentary site visit. Our engineers assess your building, align on design vision, and prepare a detailed scope with material specifications and budget guidance.",
     color: "bg-amber-600",
     border: "border-amber-600/20",
     glow: "hover:border-amber-600/40",
@@ -18,7 +18,7 @@ const steps = [
     icon: Ruler,
     title: "Precision Engineering",
     description:
-      "Our in-house team creates detailed shop drawings and structural calculations. Every component is engineered to meet IS standards and site-specific load requirements.",
+      "Our in-house team produces detailed shop drawings and structural calculations — every component engineered to IS standards, wind-load requirements, and site-specific constraints.",
     color: "bg-orange-600",
     border: "border-orange-600/20",
     glow: "hover:border-orange-600/40",
@@ -28,7 +28,7 @@ const steps = [
     icon: HardHat,
     title: "Fabrication & Installation",
     description:
-      "Premium aluminium and glass systems are fabricated at our Pune facility and installed by certified site teams following strict safety protocols and quality checkpoints.",
+      "Premium aluminium and glass systems are fabricated at our Pune facility and installed by certified teams following stringent safety protocols and quality checkpoints.",
     color: "bg-yellow-700",
     border: "border-yellow-700/20",
     glow: "hover:border-yellow-700/40",
@@ -38,7 +38,7 @@ const steps = [
     icon: CheckCircle2,
     title: "Handover & AMC Support",
     description:
-      "Post-installation, we conduct a thorough quality inspection and handover. Ongoing AMC contracts ensure your facade remains pristine and structurally sound for years.",
+      "We conduct a thorough quality inspection before handover. Ongoing AMC contracts ensure your facade stays pristine, weatherproof, and structurally sound for years to come.",
     color: "bg-stone-700",
     border: "border-stone-700/20",
     glow: "hover:border-stone-700/40",
@@ -72,10 +72,12 @@ export const ProcessSection = () => {
             How We Work
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-            Our 4-Step Process
+            Our{" "}
+            <span className="text-gradient-subtle">4-Step</span>{" "}
+            Process
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            From first inquiry to final handover — a proven methodology that
+            From your first inquiry to final handover — a proven methodology that
             delivers on time, on budget, and to the highest quality standards.
           </p>
         </div>

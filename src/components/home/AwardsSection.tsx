@@ -66,8 +66,10 @@ export const AwardsSection = () => {
               <span className="text-amber-400 font-medium uppercase tracking-wider text-xs">
                 Industry Recognition
               </span>
-              <h2 className="text-3xl md:text-4xl font-extrabold text-white leading-tight">
-                Best Performance<br />Vendor – 2024
+              <h2 className="text-3xl md:text-4xl font-extrabold leading-tight">
+                <span className="text-gradient-gold">Best Performance</span>
+                <br />
+                <span className="text-white">Vendor – 2024</span>
               </h2>
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 text-white/80 text-sm font-medium border border-white/10">
                 <Award size={16} className="text-amber-400" />
@@ -76,9 +78,9 @@ export const AwardsSection = () => {
             </div>
 
             <p className="text-white/70 leading-relaxed">
-              Awarded for the flawless facade glass replacement of Embassy 247,
-              Vikhroli — recognised for exceptional quality, zero safety incidents,
-              and on-time delivery under critical timelines.
+              Recognised for the flawless facade glass replacement of Embassy 247,
+              Vikhroli — an award for exceptional craftsmanship, zero safety incidents,
+              and on-time delivery under the most demanding project timelines.
             </p>
 
             {/* Mini stats */}

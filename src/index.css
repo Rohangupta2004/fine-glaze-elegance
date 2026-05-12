@@ -182,6 +182,26 @@
     background-image: linear-gradient(135deg, hsl(27 68% 62%), hsl(25 72% 45%));
   }
 
+  .text-gradient-gold {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #f5c842 0%, #e08c1a 50%, #b85c00 100%);
+  }
+
+  .text-gradient-warm {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(35 90% 68%) 0%, hsl(20 85% 52%) 60%, hsl(10 80% 38%) 100%);
+  }
+
+  .text-gradient-light {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #ffffff 0%, hsl(35 90% 80%) 60%, hsl(27 85% 68%) 100%);
+  }
+
+  .text-gradient-subtle {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(27 55% 38%) 0%, hsl(20 65% 28%) 100%);
+  }
+
   .bronze-glow {
     box-shadow: 0 0 40px hsl(28 55% 45% / 0.3);
   }

@@ -49,7 +49,8 @@ export const PortfolioSection = () => {
               Featured Work
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-              Recent Projects
+              Recent{" "}
+              <span className="text-gradient-subtle">Projects</span>
             </h2>
           </div>
           <Link

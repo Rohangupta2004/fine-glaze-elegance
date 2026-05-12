@@ -8,7 +8,7 @@ const services = [
   {
     icon: Building2,
     title: "Facade Systems",
-    description: "Curtain walls, structural glazing & unitized facades for commercial buildings.",
+    description: "Engineering-grade curtain walls, structural glazing & unitized facades that define skylines and withstand decades of weather.",
     highlights: ["Curtain Walls", "Spider Glazing", "ACP Cladding"],
     iconBg: "bg-amber-600",
     accent: "hover:border-amber-600/40",
@@ -16,7 +16,7 @@ const services = [
   {
     icon: Fence,
     title: "Glass Railings",
-    description: "Premium frameless & semi-frameless railing systems for safety and elegance.",
+    description: "Sleek frameless & semi-frameless railing systems — balancing architectural beauty with rigorous structural safety standards.",
     highlights: ["Frameless Glass", "Balustrades", "Handrails"],
     iconBg: "bg-orange-600",
     accent: "hover:border-orange-500/40",
@@ -24,7 +24,7 @@ const services = [
   {
     icon: DoorOpen,
     title: "Doors & Windows",
-    description: "High-performance aluminium systems with thermal break technology.",
+    description: "High-performance aluminium fenestration with thermal break technology — reducing energy costs while elevating aesthetics.",
     highlights: ["Sliding Systems", "Casement", "Auto Doors"],
     iconBg: "bg-yellow-700",
     accent: "hover:border-yellow-600/40",
@@ -32,7 +32,7 @@ const services = [
   {
     icon: Wrench,
     title: "AMC Services",
-    description: "Comprehensive maintenance, cleaning, and repair services for facades.",
+    description: "Proactive facade maintenance, sealant renewal, and glass repair — protecting your investment and preserving curb appeal.",
     highlights: ["Facade Cleaning", "Glass Repair", "Sealant Work"],
     iconBg: "bg-stone-600",
     accent: "hover:border-stone-500/40",
@@ -56,10 +56,11 @@ export const ServicesSection = () => {
             Our Expertise
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-            What We Deliver
+            What We{" "}
+            <span className="text-gradient-subtle">Deliver</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Comprehensive facade solutions crafted with precision and excellence
+            End-to-end facade solutions — from engineering drawings to final handover — crafted with precision and built to last.
           </p>
         </div>
 

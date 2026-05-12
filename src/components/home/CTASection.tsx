@@ -39,14 +39,14 @@ export const CTASection = () => {
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-tight tracking-tight">
             Transform Your Building Into a{" "}
             <br className="hidden sm:block" />
-            <span className="text-white/90">
+            <span className="text-gradient-light">
               Modern Architectural Landmark
             </span>
           </h2>
 
           <p className="text-white/80 text-lg max-w-xl mx-auto leading-relaxed">
-            Premium facade solutions engineered for performance, aesthetics, and
-            long-term value.
+            Award-winning facade solutions engineered for performance, lasting
+            aesthetics, and measurable long-term value.
           </p>
 
           {/* ===== FIXED BUTTONS ===== */}
