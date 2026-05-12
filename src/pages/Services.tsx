@@ -289,12 +289,12 @@ export default function Services() {
       {/* ==================== HERO ==================== */}
       <section className="relative pt-32 pb-24 overflow-hidden" ref={hero.ref}>
         {/* Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#1a0d05] via-[#251208] to-[#1a0d05]" />
         <div
-          className="absolute inset-0 opacity-15 bg-cover bg-center"
+          className="absolute inset-0 opacity-12 bg-cover bg-center"
           style={{ backgroundImage: "url('/Unitized.webp')" }}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#1a0d05] via-transparent to-transparent" />
 
         <div className="container mx-auto px-4 relative z-10">
           <div
@@ -303,7 +303,7 @@ export default function Services() {
               hero.isVisible && "visible"
             )}
           >
-            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-500/20 text-amber-400 text-sm font-bold uppercase tracking-wider border border-amber-500/30">
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/20 text-primary-foreground text-sm font-bold uppercase tracking-wider border border-primary/40">
               <Building2 size={16} />
               End-to-End Facade Solutions
             </span>
@@ -338,11 +338,23 @@ export default function Services() {
               ))}
             </div>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+            {/* Trust Badge */}
+            <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
+              <div className="flex items-center gap-2 px-4 py-2 bg-white/8 border border-white/15 rounded-full backdrop-blur-sm">
+                <ShieldCheck size={15} className="text-[#C8782A]" />
+                <span className="text-xs text-white/80 font-semibold">Best Performance Vendor — Embassy REIT 2024</span>
+              </div>
+              <div className="flex items-center gap-2 px-4 py-2 bg-white/8 border border-white/15 rounded-full backdrop-blur-sm">
+                <Users size={15} className="text-[#C8782A]" />
+                <span className="text-xs text-white/80 font-semibold">Trusted by LTIMindtree · L&T · Leela · AAI</span>
+              </div>
+            </div>
+
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
               <Link to="/contact">
                 <Button
                   size="lg"
-                  className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-6 text-base"
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-base"
                 >
                   Get Free Quote
                   <ArrowRight className="ml-2 h-4 w-4" />
@@ -453,7 +465,7 @@ export default function Services() {
                       <div key={f} className="flex items-center gap-2">
                         <CheckCircle2
                           size={18}
-                          className="text-amber-600 shrink-0"
+                          className="text-primary shrink-0"
                         />
                         <span className="text-sm font-medium">{f}</span>
                       </div>
@@ -461,11 +473,11 @@ export default function Services() {
                   </div>
 
                   {/* Stat Highlight */}
-                  <div className="flex items-center gap-4 p-4 bg-amber-50 border border-amber-200 rounded-xl">
-                    <span className="text-3xl font-black text-amber-600">
+                  <div className="flex items-center gap-4 p-4 bg-primary/8 border border-primary/25 rounded-xl">
+                    <span className="text-3xl font-black text-primary">
                       {service.stats.value}
                     </span>
-                    <span className="text-sm text-amber-800 font-medium">
+                    <span className="text-sm text-primary/80 font-medium">
                       {service.stats.label}
                     </span>
                   </div>
@@ -491,7 +503,8 @@ export default function Services() {
 
       {/* ==================== PROCESS ==================== */}
       <section
-        className="py-24 bg-slate-900 text-white"
+        className="py-24 text-white"
+        style={{ background: "linear-gradient(160deg, #1a0d05 0%, #251208 60%, #1a0d05 100%)" }}
         ref={processRef.ref}
       >
         <div className="container mx-auto px-4">
@@ -501,7 +514,7 @@ export default function Services() {
               processRef.isVisible && "visible"
             )}
           >
-            <span className="text-amber-500 font-bold uppercase tracking-widest text-sm">
+            <span className="text-[#C8782A] font-bold uppercase tracking-widest text-sm">
               How We Work
             </span>
             <h2 className="text-3xl md:text-4xl font-bold mt-3">
@@ -526,12 +539,12 @@ export default function Services() {
                   style={{ transitionDelay: `${i * 0.1}s` }}
                 >
                   {/* Step Number */}
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 bg-amber-600 rounded-full flex items-center justify-center text-sm font-bold">
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-sm font-bold text-primary-foreground">
                     {i + 1}
                   </div>
 
-                  <div className="w-14 h-14 bg-amber-500/20 rounded-xl flex items-center justify-center mx-auto mb-5 mt-2">
-                    <StepIcon size={26} className="text-amber-400" />
+                  <div className="w-14 h-14 bg-primary/20 rounded-xl flex items-center justify-center mx-auto mb-5 mt-2">
+                    <StepIcon size={26} className="text-[#C8782A]" />
                   </div>
                   <h3 className="text-lg font-bold mb-2">{step.title}</h3>
                   <p className="text-sm text-slate-400 leading-relaxed">
@@ -596,7 +609,7 @@ export default function Services() {
         className="py-24 text-white text-center"
         style={{
           background:
-            "linear-gradient(135deg, hsl(25 55% 35%) 0%, hsl(20 50% 25%) 100%)",
+            "linear-gradient(135deg, hsl(27 65% 32%) 0%, hsl(22 72% 18%) 100%)",
         }}
       >
         <div className="container mx-auto px-4 max-w-3xl">

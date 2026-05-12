@@ -8,25 +8,25 @@
 
 @layer base {
   :root {
-    --background: 35 25% 97%;
-    --foreground: 25 20% 15%;
+    --background: 35 20% 97%;
+    --foreground: 22 40% 12%;
 
     --card: 0 0% 100%;
-    --card-foreground: 25 20% 15%;
+    --card-foreground: 22 40% 12%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 25 20% 15%;
+    --popover-foreground: 22 40% 12%;
 
-    --primary: 25 55% 35%;
+    --primary: 27 65% 38%;
     --primary-foreground: 35 25% 97%;
 
-    --secondary: 35 20% 92%;
-    --secondary-foreground: 25 20% 18%;
+    --secondary: 30 15% 91%;
+    --secondary-foreground: 27 35% 20%;
 
-    --muted: 35 18% 90%;
-    --muted-foreground: 25 12% 45%;
+    --muted: 30 15% 90%;
+    --muted-foreground: 27 12% 45%;
 
-    --accent: 30 50% 42%;
+    --accent: 27 60% 44%;
     --accent-foreground: 35 25% 97%;
 
     --destructive: 0 65% 55%;
@@ -149,18 +149,18 @@
 
   .btn-glossy {
     @apply relative overflow-hidden;
-    background: linear-gradient(135deg, hsl(25 55% 40%) 0%, hsl(20 50% 30%) 100%);
-    box-shadow: 0 4px 15px hsl(25 55% 30% / 0.4), inset 0 1px 0 hsl(0 0% 100% / 0.2);
+    background: linear-gradient(135deg, hsl(27 65% 42%) 0%, hsl(22 70% 22%) 100%);
+    box-shadow: 0 4px 15px hsl(25 65% 28% / 0.45), inset 0 1px 0 hsl(0 0% 100% / 0.2);
   }
 
   .btn-glossy::before {
     content: '';
     @apply absolute inset-0;
-    background: linear-gradient(180deg, hsl(0 0% 100% / 0.2) 0%, transparent 50%);
+    background: linear-gradient(180deg, hsl(0 0% 100% / 0.18) 0%, transparent 50%);
   }
 
   .btn-glossy:hover {
-    background: linear-gradient(135deg, hsl(25 55% 45%) 0%, hsl(20 50% 35%) 100%);
+    background: linear-gradient(135deg, hsl(27 65% 47%) 0%, hsl(22 70% 27%) 100%);
   }
 
   .slide-up {
@@ -179,7 +179,7 @@
 
   .text-gradient {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, hsl(30 60% 50%), hsl(38 70% 55%));
+    background-image: linear-gradient(135deg, hsl(27 68% 62%), hsl(25 72% 45%));
   }
 
   .bronze-glow {
