@@ -30,7 +30,7 @@ export const HeroSection = () => {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-black/40 backdrop-blur-md text-sm text-white/75 animate-fade-in border border-white/10">
             <span className="w-2.5 h-2.5 rounded-full bg-amber-500 animate-pulse" />
-            India's Trusted Facade Experts · Est. 2010
+            India's Trusted Facade Experts
           </div>
 
           {/* Headline */}
