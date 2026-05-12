@@ -352,7 +352,7 @@ export default function Services() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-white/30 text-white hover:bg-white/10 hover:text-white px-8 py-6 text-base"
+                  className="px-8 py-6 text-base"
                 >
                   View Our Projects
                 </Button>
