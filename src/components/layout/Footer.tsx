@@ -153,9 +153,11 @@ export const Footer = () => {
       {/* Bottom Bar */}
       <div className="border-t border-white/10">
         <div className="container mx-auto px-4 py-5 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-white/50 text-sm">
-            © {new Date().getFullYear()} Fine Glaze. All rights reserved.
-          </p>
+          <div className="flex flex-col sm:flex-row items-center gap-3 text-sm text-white/50">
+            <p>© {new Date().getFullYear()} Fine Glaze. All rights reserved.</p>
+            <span className="hidden sm:inline text-white/20">|</span>
+            <p>GST No: 27BFJPG1853A1ZU</p>
+          </div>
           <div className="flex gap-6 text-sm">
             <a href="#" className="text-white/50 hover:text-amber-400 transition-colors">
               Privacy Policy
