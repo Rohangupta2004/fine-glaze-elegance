@@ -101,7 +101,14 @@ export const ReviewsSection = () => {
                 <span className="text-[#FF6B00] font-black text-base leading-none">india<span className="text-[#1a56db]">mart</span></span>
               </div>
               <div>
-                <p className="text-sm font-bold text-foreground leading-none mb-0.5">Listed</p>
+                <div className="flex items-center gap-2 mb-0.5">
+                  <span className="text-2xl font-black text-foreground leading-none">4.8</span>
+                  <div className="flex gap-0.5">
+                    {[1,2,3,4,5].map(i => (
+                      <Star key={i} size={12} className={i <= 4 ? "fill-amber-400 text-amber-400" : "fill-amber-400/40 text-amber-400/40"} />
+                    ))}
+                  </div>
+                </div>
                 <p className="text-xs text-muted-foreground">IndiaMART</p>
               </div>
               <ExternalLink size={13} className="text-muted-foreground ml-1" />
@@ -118,7 +125,14 @@ export const ReviewsSection = () => {
                 <span className="text-[#FF5A00] font-black text-base leading-none">Just<span className="text-[#1a56db]">Dial</span></span>
               </div>
               <div>
-                <p className="text-sm font-bold text-foreground leading-none mb-0.5">Listed</p>
+                <div className="flex items-center gap-2 mb-0.5">
+                  <span className="text-2xl font-black text-foreground leading-none">4.7</span>
+                  <div className="flex gap-0.5">
+                    {[1,2,3,4,5].map(i => (
+                      <Star key={i} size={12} className={i <= 4 ? "fill-amber-400 text-amber-400" : "fill-amber-400/40 text-amber-400/40"} />
+                    ))}
+                  </div>
+                </div>
                 <p className="text-xs text-muted-foreground">JustDial</p>
               </div>
               <ExternalLink size={13} className="text-muted-foreground ml-1" />
