@@ -9,7 +9,6 @@ const clients = [
   { name: "Leela Group" },
   { name: "Nirmaann" },
   { name: "JSL" },
-  { name: "AAI" },
 ];
 
 export const ClientsCarousel = () => {
