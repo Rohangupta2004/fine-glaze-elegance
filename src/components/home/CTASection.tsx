@@ -12,7 +12,7 @@ export const CTASection = () => {
       className="relative py-28 overflow-hidden"
       style={{
         background:
-          "linear-gradient(135deg, hsl(220 70% 35%) 0%, hsl(215 75% 25%) 50%, hsl(210 80% 20%) 100%)",
+          "linear-gradient(135deg, hsl(25 80% 25%) 0%, hsl(20 75% 18%) 50%, hsl(15 70% 14%) 100%)",
       }}
     >
       {/* Glow blobs */}

@@ -1,23 +1,17 @@
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { cn } from "@/lib/utils";
 
+// Download these logos to /public/clients/ to replace text display
+// e.g. /public/clients/embassy-reit.svg, /public/clients/ltimindtree.svg etc.
 const clients = [
-  {
-    name: "Peninsula",
-    logo: "https://fineglaze.com/wp-content/uploads/2023/09/logo1-1-1.png",
-  },
-  {
-    name: "Larsen & Toubro",
-    logo: "https://fineglaze.com/wp-content/uploads/2023/12/download-e1702879135621.png",
-  },
-  {
-    name: "JSL",
-    logo: "https://fineglaze.com/wp-content/uploads/2023/12/Logo-Dark.png",
-  },
-  {
-    name: "Nirmaann",
-    logo: "https://fineglaze.com/wp-content/uploads/2023/12/nirmaann_logo_text.png",
-  },
+  { name: "Embassy REIT", abbr: "Embassy\nREIT" },
+  { name: "LTIMindtree", abbr: "LTI\nMindtree" },
+  { name: "Larsen & Toubro", abbr: "L&T" },
+  { name: "Peninsula Land", abbr: "Peninsula" },
+  { name: "Leela Group", abbr: "Leela\nGroup" },
+  { name: "Nirmaann", abbr: "Nirmaann" },
+  { name: "JSL", abbr: "JSL" },
+  { name: "AAI", abbr: "AAI" },
 ];
 
 export const ClientsCarousel = () => {
@@ -51,19 +45,10 @@ export const ClientsCarousel = () => {
             {[...clients, ...clients, ...clients].map((client, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 mx-10 flex items-center justify-center h-14 min-w-[140px] grayscale hover:grayscale-0 transition-all duration-300 opacity-50 hover:opacity-100"
+                className="flex-shrink-0 mx-8 flex items-center justify-center h-14 min-w-[120px] opacity-50 hover:opacity-100 transition-all duration-300"
               >
-                <img
-                  src={client.logo}
-                  alt={client.name}
-                  className="h-10 w-auto object-contain"
-                  onError={(e) => {
-                    e.currentTarget.style.display = 'none';
-                    e.currentTarget.nextElementSibling?.classList.remove('hidden');
-                  }}
-                />
-                <span className="hidden text-foreground font-semibold text-sm">
-                  {client.name}
+                <span className="text-foreground font-bold text-sm tracking-wide whitespace-pre-line text-center leading-tight">
+                  {client.abbr}
                 </span>
               </div>
             ))}
