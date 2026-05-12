@@ -65,11 +65,16 @@ export const Header = () => {
         <div className="container mx-auto px-4 flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex-shrink-0">
-            <img
-              src="/Logofg.webp"
-              alt="Fine Glaze Logo"
-              className="h-10 md:h-12 w-auto object-contain"
-            />
+            <div className={cn(
+              "transition-all duration-300 rounded-lg",
+              !isScrolled && "bg-white/90 backdrop-blur-sm px-3 py-1.5 shadow-sm"
+            )}>
+              <img
+                src="/Logofg.webp"
+                alt="Fine Glaze Logo"
+                className="h-8 md:h-10 w-auto object-contain"
+              />
+            </div>
           </Link>
 
           {/* DESKTOP NAV */}
