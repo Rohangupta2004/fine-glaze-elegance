@@ -274,7 +274,7 @@ team for a free consultation and quote.
                     <Input  
                       id="name"  
                       name="name"  
-                      placeholder="Ramesh"  
+                      placeholder="Ramesh Patel"  
                       required  
                       value={formData.name}  
                       onChange={handleChange}  
@@ -376,9 +376,12 @@ team for a free consultation and quote.
                   We'll never share your information.  
                 </p>
 
-                <p className="flex items-center justify-center gap-2 text-sm font-semibold text-amber-700">
-                  <span className="text-base">✅</span> Guaranteed callback within 1 hour
-                </p>
+                <div className="flex items-center justify-center gap-2 py-2 px-4 rounded-lg bg-slate-50 border border-slate-200">
+                  <Clock size={14} className="text-amber-600 shrink-0" />
+                  <p className="text-xs text-slate-600 font-medium">
+                    Our team typically responds within <span className="text-amber-700 font-semibold">1 business hour</span> during working hours.
+                  </p>
+                </div>
               </form>  
             )}  
           </div>  
