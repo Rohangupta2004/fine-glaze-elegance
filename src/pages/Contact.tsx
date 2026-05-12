@@ -274,7 +274,7 @@ team for a free consultation and quote.
                     <Input  
                       id="name"  
                       name="name"  
-                      placeholder="John Doe"  
+                      placeholder="Rahul Sharma"  
                       required  
                       value={formData.name}  
                       onChange={handleChange}  
@@ -288,7 +288,7 @@ team for a free consultation and quote.
                       id="email"  
                       name="email"  
                       type="email"  
-                      placeholder="john@example.com"  
+                      placeholder="rahul.sharma@gmail.com"  
                       required  
                       value={formData.email}  
                       onChange={handleChange}  
@@ -344,7 +344,7 @@ team for a free consultation and quote.
                   <Textarea  
                     id="message"  
                     name="message"  
-                    placeholder="Tell us about your project, requirements, and any specific questions you have..."  
+                    placeholder="E.g. We need structural glazing for a 5-floor commercial building in Hinjewadi, Pune. Looking for site visit and quotation..."  
                     rows={5}  
                     required  
                     value={formData.message}  
