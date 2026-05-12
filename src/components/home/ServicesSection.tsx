@@ -10,28 +10,32 @@ const services = [
     title: "Facade Systems",
     description: "Curtain walls, structural glazing & unitized facades for commercial buildings.",
     highlights: ["Curtain Walls", "Spider Glazing", "ACP Cladding"],
-    color: "from-amber-600/20 to-amber-700/20",
+    iconBg: "bg-amber-600",
+    accent: "hover:border-amber-600/40",
   },
   {
     icon: Fence,
     title: "Glass Railings",
     description: "Premium frameless & semi-frameless railing systems for safety and elegance.",
     highlights: ["Frameless Glass", "Balustrades", "Handrails"],
-    color: "from-orange-500/20 to-orange-600/20",
+    iconBg: "bg-orange-600",
+    accent: "hover:border-orange-500/40",
   },
   {
     icon: DoorOpen,
     title: "Doors & Windows",
     description: "High-performance aluminium systems with thermal break technology.",
     highlights: ["Sliding Systems", "Casement", "Auto Doors"],
-    color: "from-yellow-600/20 to-yellow-700/20",
+    iconBg: "bg-yellow-700",
+    accent: "hover:border-yellow-600/40",
   },
   {
     icon: Wrench,
     title: "AMC Services",
     description: "Comprehensive maintenance, cleaning, and repair services for facades.",
     highlights: ["Facade Cleaning", "Glass Repair", "Sealant Work"],
-    color: "from-stone-500/20 to-stone-600/20",
+    iconBg: "bg-stone-600",
+    accent: "hover:border-stone-500/40",
   },
 ];
 
@@ -65,17 +69,17 @@ export const ServicesSection = () => {
             <div
               key={service.title}
               className={cn(
-                "group relative bg-card rounded-xl p-6 border border-border hover:border-primary/40 hover:shadow-xl transition-all duration-300 slide-up",
+                `group relative bg-card rounded-xl p-6 border border-border ${service.accent} hover:shadow-xl transition-all duration-300 slide-up`,
                 isVisible && "visible"
               )}
               style={{ transitionDelay: `${index * 0.1}s` }}
             >
               {/* Icon */}
               <div className={cn(
-                "w-14 h-14 rounded-xl bg-gradient-to-br flex items-center justify-center mb-5",
-                service.color
+                "w-14 h-14 rounded-xl flex items-center justify-center mb-5",
+                service.iconBg
               )}>
-                <service.icon size={26} className="text-primary" />
+                <service.icon size={26} className="text-white" />
               </div>
 
               {/* Content */}

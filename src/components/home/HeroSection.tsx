@@ -71,7 +71,7 @@ export const HeroSection = () => {
               <Button
                 size="lg"
                 variant="outline"
-                className="px-8 py-6 text-base group"
+                className="px-8 py-6 text-base group border-white bg-white/15 text-white hover:bg-white hover:text-slate-900 hover:border-white backdrop-blur-sm font-semibold transition-all duration-200 shadow-md"
               >
                 <Play className="mr-2 h-4 w-4" />
                 View Projects

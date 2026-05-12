@@ -16,9 +16,16 @@ export default function FloatingCTA() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat on WhatsApp"
-      className="fixed bottom-6 right-6 z-50 w-14 h-14 bg-green-500 hover:bg-green-600 rounded-full shadow-lg hover:shadow-xl flex items-center justify-center transition-colors duration-200 group"
+      className="fixed bottom-6 right-6 z-50 flex items-center justify-center group"
     >
-      <MessageCircle size={26} className="text-white group-hover:scale-110 transition-transform duration-200" />
+      {/* Pulse rings */}
+      <span className="absolute w-14 h-14 rounded-full bg-green-400 animate-ping opacity-30" />
+      <span className="absolute w-14 h-14 rounded-full bg-green-400 animate-ping opacity-20 animation-delay-300" style={{ animationDelay: "0.4s" }} />
+
+      {/* Button */}
+      <div className="relative w-14 h-14 bg-green-500 hover:bg-green-600 rounded-full shadow-lg hover:shadow-xl flex items-center justify-center transition-colors duration-200">
+        <MessageCircle size={26} className="text-white group-hover:scale-110 transition-transform duration-200" />
+      </div>
 
       {/* Tooltip */}
       <span className="absolute right-full mr-3 px-3 py-1.5 bg-slate-900 text-white text-xs font-medium rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">

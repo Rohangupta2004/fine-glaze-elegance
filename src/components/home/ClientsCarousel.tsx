@@ -41,15 +41,18 @@ export const ClientsCarousel = () => {
           />
 
           {/* Marquee */}
-          <div className="flex animate-marquee">
+        <div className="flex animate-marquee">
             {[...clients, ...clients, ...clients].map((client, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 mx-8 flex items-center justify-center h-14 min-w-[120px] opacity-50 hover:opacity-100 transition-all duration-300"
+                className="flex-shrink-0 mx-6 flex items-center gap-6 group"
               >
-                <span className="text-foreground font-bold text-sm tracking-wide whitespace-pre-line text-center leading-tight">
-                  {client.abbr}
-                </span>
+                <div className="flex items-center justify-center h-14 min-w-[110px] opacity-60 hover:opacity-100 transition-all duration-300">
+                  <span className="text-foreground font-bold text-sm tracking-widest whitespace-pre-line text-center leading-tight uppercase group-hover:text-primary transition-colors">
+                    {client.abbr}
+                  </span>
+                </div>
+                <div className="h-6 w-px bg-border/60 shrink-0" />
               </div>
             ))}
           </div>

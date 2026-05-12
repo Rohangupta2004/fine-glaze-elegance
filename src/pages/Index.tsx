@@ -4,6 +4,7 @@ import { ClientsCarousel } from "@/components/home/ClientsCarousel";
 import { AwardsSection } from "@/components/home/AwardsSection";
 import { PortfolioSection } from "@/components/home/PortfolioSection";
 import { ServicesSection } from "@/components/home/ServicesSection";
+import { ProcessSection } from "@/components/home/ProcessSection";
 import { CTASection } from "@/components/home/CTASection";
 import SEO from "@/components/SEO";
 
@@ -30,6 +31,7 @@ const Index = () => {
       <AwardsSection />
       <PortfolioSection />
       <ServicesSection />
+      <ProcessSection />
       <CTASection />
     </Layout>
   );
