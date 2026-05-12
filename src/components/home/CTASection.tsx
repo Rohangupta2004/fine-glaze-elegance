@@ -72,7 +72,7 @@ export const CTASection = () => {
               asChild
               size="lg"
               variant="outline"
-              className="border-white/60 text-white hover:bg-white/15 px-10 py-6 text-base backdrop-blur-sm active:scale-[0.97] transition-transform"
+              className="bg-white text-slate-900 hover:bg-white/90 border-white px-10 py-6 text-base font-bold active:scale-[0.97] transition-transform"
             >
               <a href="tel:+918369233566">
                 <Phone className="mr-2 h-4 w-4" />
