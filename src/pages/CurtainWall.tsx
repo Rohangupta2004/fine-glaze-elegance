@@ -57,7 +57,7 @@ export default function CurtainWall() {
           </p>
           <div className="flex gap-4">
             <Link to="/contact"><Button size="lg" className="bg-amber-600 hover:bg-amber-700">Request Quote</Button></Link>
-            <Link to="/portfolio"><Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-slate-900">View Projects</Button></Link>
+            <Link to="/portfolio"><Button size="lg" variant="outline">View Projects</Button></Link>
           </div>
         </div>
       </section>

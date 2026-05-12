@@ -50,7 +50,7 @@ const GlassRailings = () => {
               <Button size="lg" className="bg-amber-600 hover:bg-amber-700 text-lg px-10 py-6 h-auto">Get Quote</Button>
             </Link>
             <Link to="/portfolio">
-              <Button variant="outline" size="lg" className="text-white border-white hover:bg-white hover:text-slate-900 text-lg px-10 py-6 h-auto">View Gallery</Button>
+              <Button variant="outline" size="lg" className="text-lg px-10 py-6 h-auto">View Gallery</Button>
             </Link>
           </div>
         </div>

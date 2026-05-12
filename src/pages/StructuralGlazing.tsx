@@ -83,7 +83,7 @@ export default function StructuralGlazing() {
                 <Button size="lg" className="bg-amber-600 hover:bg-amber-700">Get Quote</Button>
               </Link>
               <Link to="/portfolio">
-                <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-slate-900">View Projects</Button>
+                <Button size="lg" variant="outline">View Projects</Button>
               </Link>
             </div>
           </div>

@@ -102,7 +102,7 @@ export default function AluminiumFacade() {
                 </Button>
               </Link>
               <Link to="/portfolio">
-                <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-slate-900">
+                <Button size="lg" variant="outline">
                   View Projects
                 </Button>
               </Link>

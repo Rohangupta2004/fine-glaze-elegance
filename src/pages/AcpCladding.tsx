@@ -50,7 +50,7 @@ const AcpCladding = () => {
               <Button size="lg" className="bg-amber-600 hover:bg-amber-700 text-lg px-8 py-6 h-auto">Get a Quote</Button>
             </Link>
             <Link to="/portfolio">
-              <Button variant="outline" size="lg" className="border-white text-black hover:bg-white hover:text-black text-lg px-8 py-6 h-auto">View Projects</Button>
+              <Button variant="outline" size="lg" className="text-lg px-8 py-6 h-auto">View Projects</Button>
             </Link>
           </div>
         </div>
