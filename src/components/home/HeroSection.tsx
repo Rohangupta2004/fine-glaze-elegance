@@ -5,17 +5,25 @@ import { ArrowRight, Play } from "lucide-react";
 export const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      
-      {/* Hero Background Image — fast-loading LCP element */}
-      <img
-        src="/Embassyoark.webp"
-        alt="Fine Glaze facade project — Embassy 247 Vikhroli"
+
+      {/* Hero Background Video */}
+      <video
         className="absolute inset-0 w-full h-full object-cover"
-        fetchPriority="high"
-        decoding="async"
-        width="1024"
-        height="559"
-      />
+        autoPlay
+        muted
+        loop
+        playsInline
+        poster="/Embassyoark.webp"
+      >
+        <source src="/hero-bg.mp4" type="video/mp4" />
+        <source src="/hero-bg.webm" type="video/webm" />
+        {/* Fallback image if video fails to load */}
+        <img
+          src="/Embassyoark.webp"
+          alt="Fine Glaze facade project — Embassy 247 Vikhroli"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+      </video>
 
       {/* Gradient Overlay */}
       <div className="absolute inset-0 hero-overlay" />
