@@ -274,7 +274,7 @@ team for a free consultation and quote.
                     <Input  
                       id="name"  
                       name="name"  
-                      placeholder="Rahul Sharma"  
+                      placeholder="Ramesh Kumar"  
                       required  
                       value={formData.name}  
                       onChange={handleChange}  
