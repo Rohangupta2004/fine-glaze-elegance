@@ -36,9 +36,9 @@ export const Footer = () => {
               className="h-12 w-auto brightness-0 invert"
             />
             <p className="text-white/70 text-sm leading-relaxed">
-              Precision facade fabrication and installation services. 
-              Transforming architectural visions into stunning glass facades 
-              across India since establishment.
+              Precision facade fabrication and installation across India.
+              Transforming architectural visions into iconic glass & aluminium
+              facades — delivered with award-winning quality since establishment.
             </p>
             {/* Social Links */}
             <div className="flex gap-3 pt-2">

@@ -10,25 +10,25 @@ const values = [
     icon: Target,
     title: "Precision",
     description:
-      "Every measurement, every cut, every installation is executed with meticulous accuracy.",
+      "Every measurement, every cut, every joint — executed with micron-level accuracy that only comes from years of hands-on facade expertise.",
   },
   {
     icon: Shield,
     title: "Quality",
     description:
-      "We use only premium materials and maintain stringent quality control at every stage.",
+      "We source only from trusted global brands — Dow Corning, Sika, Aludecor — and enforce stringent quality checks at every fabrication stage.",
   },
   {
     icon: Clock,
     title: "Timeliness",
     description:
-      "We understand project deadlines and deliver on time, every time.",
+      "Deadlines are non-negotiable. Our parallel workflows and unitized pre-fabrication ensure we meet your construction schedule without compromise.",
   },
   {
     icon: Users,
     title: "Collaboration",
     description:
-      "We work closely with architects, contractors, and clients for seamless execution.",
+      "We embed ourselves within your project team — working hand-in-hand with architects, PMCs, and contractors for seamless, conflict-free execution.",
   },
 ];
 
@@ -106,12 +106,14 @@ const About = () => {
               About Us
             </span>
             <h1 className="text-4xl md:text-5xl font-bold text-foreground">
-              Crafting Excellence in Facade Solutions
+              Crafting{" "}
+              <span className="text-gradient-subtle">Excellence</span>{" "}
+              in Facade Solutions
             </h1>
             <p className="text-muted-foreground text-lg">
-              Fine Glaze is Pune's premier facade fabrication company,
+              Fine Glaze is Pune's premier facade fabrication company —
               delivering precision-engineered glass and aluminium solutions
-              for commercial and residential projects across India.
+              for landmark commercial and residential projects across India.
             </p>
           </div>
         </div>
@@ -155,22 +157,25 @@ const About = () => {
                 Our Story
               </span>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-                Building Trust Through Excellence
+                Building{" "}
+                <span className="text-gradient-subtle">Trust</span>{" "}
+                Through Excellence
               </h2>
               <div className="space-y-4 text-muted-foreground">
                 <p>
                   Founded in Pune, Fine Glaze has grown from a specialized
-                  glass fabrication unit to a comprehensive facade solutions
-                  provider.
+                  glass fabrication unit into a full-service facade solutions
+                  provider — trusted by India's top developers and institutions.
                 </p>
                 <p>
-                  We combine traditional craftsmanship with modern technology
-                  to deliver facade systems that are visually stunning and
-                  structurally sound.
+                  We combine traditional craftsmanship with modern engineering
+                  technology to deliver facade systems that are visually
+                  stunning, structurally sound, and built to last decades.
                 </p>
                 <p>
-                  Our engineers and technicians work closely with architects
-                  and contractors to bring architectural visions to life.
+                  Our in-house engineers and certified technicians collaborate
+                  closely with architects and project management consultants
+                  to bring even the most ambitious architectural visions to life — on time and on budget.
                 </p>
               </div>
             </div>
@@ -192,13 +197,14 @@ const About = () => {
             </span>
 
             <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-              See Fine Glaze in Action
+              See Fine Glaze{" "}
+              <span className="text-gradient-subtle">in Action</span>
             </h2>
 
             <p className="text-muted-foreground max-w-2xl mx-auto">
               Watch how Fine Glaze delivers premium facade systems through
-              precision engineering, skilled execution, and uncompromised
-              quality.
+              precision engineering, skilled site execution, and an uncompromised
+              commitment to quality and safety.
             </p>
 
             <div className="aspect-video rounded-xl overflow-hidden shadow-xl bg-black">
@@ -225,12 +231,12 @@ const About = () => {
                 <Target size={28} className="text-primary" />
               </div>
               <h3 className="text-2xl font-bold text-foreground">
-                Our Mission
+                Our <span className="text-gradient-subtle">Mission</span>
               </h3>
               <p className="text-muted-foreground">
                 To deliver world-class facade solutions that enhance building
-                aesthetics, improve energy efficiency, and provide lasting
-                value to our clients.
+                aesthetics, improve energy efficiency, and create lasting
+                value — for clients, communities, and the skylines we shape.
               </p>
             </div>
 
@@ -239,11 +245,12 @@ const About = () => {
                 <Eye size={28} className="text-primary" />
               </div>
               <h3 className="text-2xl font-bold text-foreground">
-                Our Vision
+                Our <span className="text-gradient-subtle">Vision</span>
               </h3>
               <p className="text-muted-foreground">
-                To be India's most trusted facade partner, known for
-                transforming architectural concepts into iconic structures.
+                To be India's most trusted facade partner — renowned for
+                transforming bold architectural concepts into iconic,
+                enduring structures that stand the test of time.
               </p>
             </div>
           </div>
@@ -263,7 +270,7 @@ const About = () => {
               Our Values
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-              What Drives Us
+              What <span className="text-gradient-subtle">Drives</span> Us
             </h2>
           </div>
 

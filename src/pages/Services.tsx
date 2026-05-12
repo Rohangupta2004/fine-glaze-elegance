@@ -320,13 +320,13 @@ export default function Services() {
 
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white leading-tight">
               Facade, Glazing &{" "}
-              <span className="text-gradient">Aluminium Solutions</span>
+              <span className="text-gradient-gold">Aluminium Solutions</span>
             </h1>
 
             <p className="max-w-2xl mx-auto text-slate-300 text-lg leading-relaxed">
-              8 specialised services — from curtain walls and skylights to glass
-              partitions and shower enclosures. One team for every glass &
-              aluminium need.
+              8 specialised services — from engineering-grade curtain walls and
+              skylights to frameless glass partitions and shower enclosures.
+              One expert team for every glass & aluminium need.
             </p>
 
             {/* Quick Stats */}
@@ -528,7 +528,7 @@ export default function Services() {
               How We Work
             </span>
             <h2 className="text-3xl md:text-4xl font-bold mt-3">
-              Our Execution Process
+              Our <span className="text-gradient-light">Execution</span> Process
             </h2>
             <p className="text-slate-400 mt-4">
               From your first call to project handover — a streamlined,
@@ -580,11 +580,11 @@ export default function Services() {
               Why Fine Glaze
             </span>
             <h2 className="text-3xl md:text-4xl font-bold mt-3">
-              What Sets Us Apart
+              What <span className="text-gradient-subtle">Sets Us</span> Apart
             </h2>
             <p className="text-muted-foreground mt-4">
               We don't just install facades — we engineer building envelopes
-              that stand the test of time.
+              that perform, endure, and stand the test of time.
             </p>
           </div>
 
@@ -624,11 +624,13 @@ export default function Services() {
       >
         <div className="container mx-auto px-4 max-w-3xl">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Ready to Transform Your Building?
+            Ready to{" "}
+            <span className="text-gradient-light">Transform</span>{" "}
+            Your Building?
           </h2>
           <p className="text-white/80 text-lg mb-8">
-            Get a free consultation and customised quote for your facade
-            project. Our team responds within 24 hours.
+            Get a free consultation and custom quote for your facade project.
+            Our engineering team responds within 24 hours.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link to="/contact">

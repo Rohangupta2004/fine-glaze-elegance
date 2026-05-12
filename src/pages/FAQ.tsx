@@ -87,10 +87,10 @@ export default function FAQ() {
           </div>
           <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-slate-900 leading-[1.1] mb-6">
             The Science of <br className="hidden md:block" />
-            <span className="text-blue-600">Perfect Facades.</span>
+            <span className="text-gradient-subtle">Perfect Facades.</span>
           </h1>
           <p className="text-lg md:text-xl text-slate-600 max-w-2xl leading-relaxed">
-            As facade specialists, we answer the complex questions that architects and developers ask. Explore our technical database.
+            As India's facade specialists, we answer the complex engineering, costing, and sustainability questions that architects and developers ask most. Explore our technical knowledge base.
           </p>
         </header>
 

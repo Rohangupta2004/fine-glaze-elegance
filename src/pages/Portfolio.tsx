@@ -48,14 +48,14 @@ const Portfolio = () => {
       <section className="pt-28 pb-14">
         <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-12 items-end">
           <h1 className="text-6xl font-extrabold leading-tight">
-            Built at
+            Built at{" "}
             <br />
-            Landmark Scale
+            <span className="text-gradient-subtle">Landmark Scale</span>
           </h1>
           <p className="text-lg text-muted-foreground max-w-xl">
-            From airports to corporate campuses, our portfolio reflects
-            precision execution, safety-first methodology, and architectural
-            clarity.
+            From international airports to corporate campuses — our portfolio
+            reflects precision execution, safety-first methodology, and
+            uncompromising architectural clarity.
           </p>
         </div>
       </section>

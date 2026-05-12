@@ -24,7 +24,7 @@ export const ClientsCarousel = () => {
             isVisible && "visible"
           )}
         >
-          Trusted by India's Leading Brands
+          Trusted by India's Most Iconic Brands & Developers
         </p>
 
         <div className="relative overflow-hidden">

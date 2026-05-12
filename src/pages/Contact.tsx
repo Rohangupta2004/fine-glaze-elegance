@@ -169,11 +169,11 @@ heroRef.isVisible && "visible"
 Contact Us
 </span>
 <h1 className="text-4xl md:text-5xl font-bold text-foreground">
-Let's Discuss Your Project
+  Let's <span className="text-gradient-subtle">Discuss</span> Your Project
 </h1>
 <p className="text-muted-foreground text-lg">
-Ready to transform your building's facade? Get in touch with our
-team for a free consultation and quote.
+  Ready to transform your building's facade? Our engineering team offers
+  free consultations and detailed quotes — typically within 24 hours.
 </p>
 </div>
 </div>
@@ -192,11 +192,11 @@ team for a free consultation and quote.
         >  
           <div>  
             <h2 className="text-2xl font-bold text-foreground mb-4">  
-              Get in Touch  
+              Get in <span className="text-gradient-subtle">Touch</span>
             </h2>  
             <p className="text-muted-foreground">  
-              Have a project in mind? Reach out to us through any of the  
-              channels below.  
+              Have a project in mind? Reach out through any channel below —
+              we'll get back to you faster than you'd expect.
             </p>  
           </div>  
 
