@@ -610,6 +610,291 @@ export const blogPosts: Record<string, BlogPost> = {
       },
     ],
   },
+
+  // WHITE PAPER 1: Curtain Wall Engineering
+  "curtain-wall-engineering-wind-load-india": {
+    slug: "curtain-wall-engineering-wind-load-india",
+    title: "Curtain Wall Engineering: Wind Load & Structural Design for Indian High-Rises",
+    metaTitle: "Curtain Wall Engineering: Wind Load Calculations & Structural Design India | Fine Glaze",
+    metaDescription: "Technical white paper on curtain wall engineering for Indian high-rises — wind load calculations per IS 875, glass thickness selection, deflection limits, and connection design. Written by facade engineers.",
+    keywords: "curtain wall engineering India, wind load calculation facade, IS 875 wind load, curtain wall structural design, facade engineering India, glass thickness wind load, mullion design curtain wall",
+    date: "2026-05-10",
+    readTime: "14 min read",
+    category: "Technical White Paper",
+    heroImage: "/Business park.webp",
+    excerpt: "A comprehensive technical guide for architects and structural engineers on curtain wall wind load design, IS 875 compliance, glass thickness selection, and connection detailing for Indian high-rise buildings.",
+    content: [
+      {
+        heading: "Introduction: Why Curtain Wall Engineering Demands Rigour",
+        body: "A curtain wall is not a simple glazing system — it is a fully engineered building envelope component that must resist wind pressures, thermal movement, water infiltration, and seismic drift while maintaining its visual integrity over a 25–40 year service life. In India, with high-rises proliferating in cities like Mumbai, Pune, Hyderabad, and Bengaluru, façade engineers face increasingly complex wind environments, seismic zones, and client expectations. This white paper consolidates the key engineering principles that govern curtain wall design for the Indian context.",
+      },
+      {
+        heading: "1. Wind Load Calculations per IS 875 (Part 3)",
+        body: "IS 875 Part 3 (Wind Loads on Buildings and Structures) is the primary design standard for wind pressure calculations in India. For curtain wall design, the critical parameter is the design wind pressure (p) on cladding elements, which differs from the overall structural wind load.",
+        list: [
+          "Basic Wind Speed (Vb): Ranges from 33 m/s (Chennai coastal) to 55 m/s (Cyclone-prone coastal areas). Mumbai: 44 m/s. Pune: 39 m/s.",
+          "Design Wind Speed (Vz): Vz = Vb × k1 × k2 × k3, where k1 = risk factor, k2 = terrain/height factor, k3 = topography factor.",
+          "Design Wind Pressure: p = 0.6 × Vz² (in N/m²). At Vz = 50 m/s, p = 1,500 N/m² (1.5 kPa).",
+          "Local Pressure Coefficients (Cpe): Corners and edges of buildings attract Cpe values of −2.0 to −2.5 due to suction, significantly exceeding face pressures of +0.8 to −1.3.",
+          "Net Design Pressure: p_net = (Cpe − Cpi) × p_d, where Cpi (internal pressure coefficient) = ±0.2 for buildings with normal openings.",
+        ],
+      },
+      {
+        heading: "2. Glass Thickness & Performance Selection",
+        body: "Glass selection for curtain walls must satisfy both structural and thermal/optical requirements. The governing structural criterion is the allowable deflection under wind load — typically L/175 for glass panels per ASTM E1300 (adopted widely by Indian facade engineers).",
+        table: {
+          headers: ["Panel Size (m)", "Design Pressure (kPa)", "Min. Glass Thickness", "System Recommendation"],
+          rows: [
+            ["Up to 1.2 × 1.8", "1.0–1.5", "6mm Tempered", "2-side or 4-side SG"],
+            ["1.2–1.5 × 2.1", "1.0–1.5", "8mm Tempered", "4-side SG / Curtain Wall"],
+            ["1.5 × 2.4", "1.5–2.0", "10mm or 6+6 Lam", "Stick Curtain Wall"],
+            ["1.8 × 2.7 and above", "2.0+", "8+8 DGU Tempered", "Unitized Curtain Wall"],
+            ["Feature / Atrium", "Any", "12mm or laminated", "Point-fixed / Spider"],
+          ],
+        },
+      },
+      {
+        heading: "3. Mullion and Transom Structural Design",
+        body: "Aluminium mullions (vertical) and transoms (horizontal) are the primary load-carrying members in a stick-system curtain wall. They must be designed for both strength and deflection.",
+        list: [
+          "Material: 6063-T6 aluminium alloy is standard. Elastic modulus E = 70 GPa (vs. steel's 200 GPa — mullions must be significantly deeper to achieve equivalent stiffness).",
+          "Deflection Limit: Span/175 for glass-bearing members, per ASTM E330. A 3.0m mullion span limits deflection to 17mm.",
+          "Bending Stress: Allowable bending stress for 6063-T6 = 160 N/mm². Section modulus Z = M/f_allow — drives mullion profile depth selection.",
+          "Thermal Break: Aluminium-to-aluminium contact creates thermal bridges. Polyamide thermal break inserts (25–34mm) reduce Uf from ~8.0 to ~2.0 W/m²K for energy compliance.",
+          "Typical Mullion Depths: 65mm (low-rise, light loads), 100mm (standard commercial), 150–200mm (high-rise or long spans > 4m).",
+        ],
+      },
+      {
+        heading: "4. Anchor and Connection Design",
+        body: "Curtain wall anchors transfer wind loads and self-weight to the building structure. Connection design is critical — failures typically occur at the bracket level, not the glass.",
+        list: [
+          "Anchor Types: Cast-in-channel (preferred), drilled-in anchors (post-installed), weld plates. Cast-in channels offer best tolerance and load capacity.",
+          "Load Cases: Gravity (self-weight downward), wind in (positive pressure, compressive on glass), wind out (suction, tensile on anchors — often governs).",
+          "Stack Joint: Every floor-to-floor height, a stack joint allows vertical thermal movement without transferring gravity load between floors.",
+          "Tolerances: Anchors must accommodate ±25mm in 3D for building structure tolerances. Slotted connections are mandatory.",
+          "Pull-out Capacity: Post-installed anchors in concrete must be tested per IS 1642 / ETAG 001. Minimum 3× factor of safety on characteristic pull-out load.",
+        ],
+      },
+      {
+        heading: "5. Thermal and Acoustic Performance",
+        body: "Modern Indian commercial buildings increasingly require IGBC / LEED compliance, driving curtain wall thermal performance requirements.",
+        list: [
+          "U-Value (Whole Window Uw): ECBC 2017 mandates Uw ≤ 3.3 W/m²K for most climate zones. High-performance systems achieve Uw ≤ 2.0 with thermally-broken profiles and Low-E DGU.",
+          "SHGC (Solar Heat Gain Coefficient): ECBC limits SHGC to 0.25–0.40 for east/west facades in hot-dry climates. Low-E coatings achieve SHGC 0.20–0.35.",
+          "Air Infiltration: Per ASTM E283, Class CW-PG50 curtain walls must not exceed 0.3 L/s/m² at 75 Pa pressure.",
+          "Acoustic Performance: Open-plan offices require facade Rw ≥ 35 dB. DGU with asymmetric glass (e.g., 6+10mm) outperforms equal-thickness units by 3–5 dB.",
+          "Condensation Risk: Internal surface temperature (Ti) must exceed dew point. Thermally-broken frames with Low-E glass prevent condensation at ambient conditions down to 5°C.",
+        ],
+      },
+      {
+        heading: "6. Water Tightness and the Pressure-Equalized Design",
+        body: "Water penetration through curtain walls is the most common long-term failure mode. The pressure-equalized rainscreen (PER) design principle eliminates the primary driving force for water infiltration by equalising air pressure between the chamber behind the glass and the external environment.",
+        list: [
+          "Primary Seal: The glazing compound / EPDM gasket at the glass perimeter. This is the water-shedding surface.",
+          "Secondary Seal: The structural silicone bond between glass and frame. This is the load-bearing seal and must not contact standing water.",
+          "Drainage Channels: Transoms must have drainage slots to drain any water that passes the primary seal out through the mullion drainage path to the exterior.",
+          "Testing: ASTM E547 (cyclic static pressure) or BS EN 12155. Minimum test pressure = 20% of design wind pressure, not less than 300 Pa.",
+          "Sealant Life: Silicone structural sealants from Dow Corning, Sika, or Momentive carry 25-year warranties but require 6-monthly inspection after 10 years.",
+        ],
+      },
+      {
+        heading: "Conclusion: Engineering is the Foundation of Every Facade",
+        body: "Curtain wall failures — water leaks, glass breakage, anchor pull-outs — are almost always the result of inadequate engineering at the design stage, not poor installation. At Fine Glaze, every project begins with a full structural calculation package: wind load analysis, glass sizing, mullion section selection, anchor design, and thermal compliance check. This rigour is what allows us to provide performance guarantees and carry the confidence to work on projects like the Pune Airport terminal and Embassy REIT buildings. If you are an architect or developer working on a high-rise project, we welcome a technical discussion. Contact us at info@fineglaze.com or call +91 8369233566.",
+      },
+    ],
+  },
+
+  // WHITE PAPER 2: Glass Selection Guide
+  "glass-selection-guide-u-value-shgc-is2553": {
+    slug: "glass-selection-guide-u-value-shgc-is2553",
+    title: "Glass Selection Guide for Facades: U-Value, SHGC & IS 2553 Compliance",
+    metaTitle: "Glass Selection Guide: U-Value, SHGC, IS 2553 for Indian Facades | Fine Glaze",
+    metaDescription: "Technical guide for architects on selecting facade glass in India — U-value, SHGC, visible light transmission, IS 2553 compliance, Low-E coatings, DGU specification, and climate zone considerations.",
+    keywords: "glass selection facade India, U value glass facade, SHGC glass India, IS 2553 glass standard, Low-E glass India, DGU specification, facade glass types India, glass specification architects",
+    date: "2026-05-08",
+    readTime: "12 min read",
+    category: "Technical White Paper",
+    heroImage: "/Glazing.webp",
+    excerpt: "A complete technical guide for architects and PMCs on selecting the right facade glass for Indian buildings — covering thermal properties, solar control, IS standards, and climate-specific recommendations.",
+    content: [
+      {
+        heading: "Why Glass Selection Is the Most Consequential Facade Decision",
+        body: "Glass constitutes 60–85% of a modern curtain wall facade's visible area and is responsible for the majority of a building's solar heat gain, cooling load, and occupant thermal comfort. In India's predominantly hot climate, incorrect glass selection can increase a building's HVAC energy consumption by 20–35%, directly impacting operational costs for the building's entire lifespan. This guide is written for architects, PMCs, and developers who want to make informed, technically sound glass specifications.",
+      },
+      {
+        heading: "1. Key Glass Performance Parameters Explained",
+        body: "Four parameters define a glass unit's thermal and optical performance:",
+        list: [
+          "U-Value (W/m²K): Measures heat flow through glass from hot side to cold side. Lower = better insulation. Single glass: ~5.7 W/m²K. Basic DGU: ~2.8 W/m²K. Low-E DGU: ~1.4–1.8 W/m²K.",
+          "SHGC (Solar Heat Gain Coefficient): Fraction of solar radiation admitted through glass (0 to 1). Lower = less solar heat gain. Clear glass: 0.87. Tinted: 0.55–0.65. Reflective: 0.20–0.35. Low-E: 0.20–0.40.",
+          "VLT (Visible Light Transmission %): Percentage of visible light transmitted. Higher = more daylight. Clear glass: 89%. Tinted: 40–65%. Low-E: 50–70%.",
+          "LSG Ratio (Light-to-Solar Gain): VLT ÷ SHGC. Higher is better — means you get daylight without proportional heat. Target > 1.25 for commercial buildings. Low-E glass achieves 1.5–2.0.",
+          "Selectivity Index: Similar concept to LSG. Glass with high selectivity transmits visible light while blocking near-infrared (heat) radiation — the goal of all modern facade glass.",
+        ],
+      },
+      {
+        heading: "2. IS 2553: Indian Standard for Safety Glazing",
+        body: "IS 2553 (Part 1): Safety Glass — Specification is the mandatory Indian standard for all glass used in buildings where breakage could injure occupants. Compliance is required for curtain walls, glass railings, structural glazing, and any glass within 800mm of the floor or in doors.",
+        list: [
+          "Toughened Glass (Tempered): IS 2553 Part 1 Class A. Minimum surface compression: 69 MPa. Must break into small fragments (dicing pattern) with no dangerous shards. Used in: curtain walls, railings, sliding doors.",
+          "Laminated Glass: IS 2553 Part 1 Class B. Two or more glass panes bonded with PVB interlayer. On breakage, fragments remain bonded to PVB. Mandatory for: overhead glazing, glass floors, facades above pedestrian areas.",
+          "Wired Glass: IS 2553 Part 1 Class C. Wire mesh embedded in glass. Holds fragments together on breakage. Used for: fire-rated glazing applications only.",
+          "DGU (Double Glazed Unit): Both panes must be safety glass (tempered or laminated). Spacer must be aluminium or structural spacer. Desiccant to prevent internal condensation. Edge seal: butyl primary + polysulphide/silicone secondary.",
+          "Marking: All IS 2553 compliant glass must carry the BIS mark. Architects should specify and verify BIS marking on delivery — unmarked glass does not meet IS compliance regardless of thickness.",
+        ],
+      },
+      {
+        heading: "3. Glass Types and Their Applications",
+        body: "Here is a technical comparison of the main glass types used in Indian facades:",
+        table: {
+          headers: ["Glass Type", "U-Value", "SHGC", "VLT", "Best Application"],
+          rows: [
+            ["Clear Float (6mm)", "5.7", "0.87", "89%", "Internal partitions only"],
+            ["Tinted (Bronze/Grey)", "5.6", "0.55–0.65", "40–55%", "Low-budget commercial"],
+            ["Reflective (Silver/Blue)", "5.5", "0.20–0.35", "15–30%", "Privacy + solar control"],
+            ["Basic DGU (Clear+Clear)", "2.8", "0.75", "79%", "Cold climates (not India)"],
+            ["Low-E DGU (Hard coat)", "1.8–2.2", "0.35–0.45", "60–70%", "ECBC-compliant offices"],
+            ["Low-E DGU (Soft coat)", "1.2–1.6", "0.25–0.35", "65–72%", "LEED / IGBC certified"],
+            ["Triple Glazed Unit", "0.8–1.2", "0.20–0.30", "55–65%", "Extreme climate zones"],
+          ],
+        },
+      },
+      {
+        heading: "4. Climate Zone Recommendations for India",
+        body: "India's National Building Code and ECBC 2017 define 5 climate zones. Glass specification should be matched to the project's climate zone:",
+        list: [
+          "Hot & Dry (Rajasthan, Gujarat inland): Highest priority — SHGC control. Specify reflective or Low-E with SHGC ≤ 0.25. VLT 30–40% acceptable due to glare from high-intensity sun.",
+          "Hot & Humid (Mumbai, Chennai, Goa): SHGC and U-value both important due to year-round heat. Low-E DGU with SHGC ≤ 0.30, U ≤ 2.0. Anti-condensation spacer recommended.",
+          "Warm & Humid (Bengaluru, Pune): Temperate climate — most forgiving. Low-E DGU SHGC 0.30–0.40 acceptable. Daylight priority — VLT 60–70% preferred for occupant comfort.",
+          "Composite (Delhi, Lucknow): Cold winters + hot summers. Both U-value (cold) and SHGC (hot) matter. Thermally-broken profiles + Low-E soft coat DGU. U ≤ 1.8, SHGC ≤ 0.35.",
+          "Cold / Himalayan: U-value priority. Triple glazing or Low-E argon-filled DGU. U ≤ 1.2. SHGC can be higher (0.4–0.5) to utilise passive solar heating.",
+        ],
+      },
+      {
+        heading: "5. Low-E Coatings: Hard Coat vs. Soft Coat",
+        body: "Low-emissivity (Low-E) coatings are microscopically thin metallic oxide layers deposited on glass that reflect long-wave infrared radiation while transmitting visible light. There are two types:",
+        list: [
+          "Hard Coat (Pyrolytic): Applied during float glass manufacturing. Durable, can be used as single glass or in DGU. U-value: 1.8–2.2 W/m²K. Less selective than soft coat. Less expensive.",
+          "Soft Coat (Magnetron Sputtered): Applied in vacuum after manufacture. Highly selective — excellent SHGC/VLT balance. U-value: 1.0–1.6 W/m²K. Must be used in sealed DGU (coating faces cavity, position 2 or 3). More expensive but higher performance.",
+          "Position 2 vs. Position 3: In a DGU, 'position 2' is the inner face of outer pane (recommended for solar control). 'Position 3' is the outer face of inner pane (better for thermal insulation).",
+          "Indian Market Suppliers: Saint-Gobain (Evo Cool, Cool Lite), Guardian (SunGuard), AGC (Sunergy, Stopray), Pilkington (Optitherm, Suncool). All carry BIS certification.",
+          "Specification Tip: Always specify the glass by product name + coating position + cavity gas + cavity width. E.g., 'Saint-Gobain Evo Cool SKN 154 II in 6/12Ar/6 DGU, position 2' — not simply 'Low-E glass'.",
+        ],
+      },
+      {
+        heading: "6. Common Specification Mistakes to Avoid",
+        body: "Based on our experience across 50+ facade projects in India, here are the most common glass specification errors:",
+        list: [
+          "Specifying only U-value, not SHGC — In India, SHGC almost always governs energy performance, not U-value.",
+          "Using reflective glass for aesthetic reasons without checking SHGC — Some dark reflective glasses have SHGC 0.35–0.45, higher than well-specified Low-E.",
+          "Specifying DGU without cavity width — 12mm cavity (air) gives U ≈ 2.8 W/m²K. 16mm cavity (argon) gives U ≈ 1.5 W/m²K. The cavity matters enormously.",
+          "Ignoring solar orientation — North-facing glass needs daylight (high VLT), not solar control. West-facing glass needs maximum solar control. One glass spec for all orientations is always a compromise.",
+          "Not verifying BIS marking on delivery — Substandard glass without BIS compliance is a legal liability and a safety risk.",
+        ],
+      },
+      {
+        heading: "Getting the Right Glass Specification for Your Project",
+        body: "Glass selection is a multi-variable optimisation problem that must balance energy performance, occupant comfort, aesthetics, and budget. At Fine Glaze, our technical team provides free glass specification consulting as part of our project engagement — we prepare a glass performance brief for every project specifying U-value, SHGC, VLT, IS 2553 compliance requirements, and supplier recommendations. Contact us at info@fineglaze.com or call +91 8369233566 to discuss your project's glass requirements.",
+      },
+    ],
+  },
+
+  // WHITE PAPER 3: ACP vs HPL vs Aluminium
+  "acp-vs-hpl-vs-aluminium-composite-technical-guide": {
+    slug: "acp-vs-hpl-vs-aluminium-composite-technical-guide",
+    title: "ACP vs HPL vs Aluminium Composite: A Technical Comparison for Architects",
+    metaTitle: "ACP vs HPL vs Aluminium Composite Panels: Technical Comparison for Architects | Fine Glaze",
+    metaDescription: "In-depth technical comparison of ACP (Aluminium Composite Panel), HPL (High Pressure Laminate), and aluminium solid panels for building facades — covering fire rating, weight, durability, cost, and IS compliance.",
+    keywords: "ACP vs HPL facade India, aluminium composite panel comparison, HPL cladding vs ACP, facade panel selection India, FR grade ACP India, fire rated facade cladding, A2 grade ACP, facade cladding types architects",
+    date: "2026-05-06",
+    readTime: "11 min read",
+    category: "Technical White Paper",
+    heroImage: "/Nirmann.webp",
+    excerpt: "A comprehensive technical comparison for architects on ACP, HPL, and aluminium solid panels — covering fire performance, structural properties, durability, maintenance, IS compliance, and cost-benefit analysis for Indian building projects.",
+    content: [
+      {
+        heading: "The Cladding Panel Decision: Why It Matters More Than You Think",
+        body: "The choice of cladding panel for a building facade is a decision that affects fire safety, long-term maintenance costs, structural system design, and occupant wellbeing for the life of the building. In India, three materials dominate the non-glazed facade cladding market: Aluminium Composite Panel (ACP), High-Pressure Laminate (HPL), and solid aluminium panels. Each has a distinct technical profile, fire performance, and appropriate application range. This guide provides architects and developers with the technical foundation for an informed specification decision.",
+      },
+      {
+        heading: "1. Material Definitions and Construction",
+        body: "Understanding how each panel is manufactured is essential to understanding its performance characteristics.",
+        list: [
+          "ACP (Aluminium Composite Panel): Two thin aluminium skins (0.3–0.5mm) bonded to a polyethylene (PE) or fire-retardant mineral-filled (FR) core. Total thickness: 3–6mm. Core composition determines fire performance — PE core is combustible; FR core has a mineral fill that reduces flame spread.",
+          "HPL (High-Pressure Laminate): Multiple layers of cellulose paper impregnated with thermosetting resins, compressed under high heat and pressure. Often bonded to an aluminium honeycomb or aluminium sheet backer for rigidity. Total thickness: 6–20mm. Compact HPL (6–8mm) can be used unsupported for shorter spans.",
+          "Solid Aluminium Panel: Single-skin extruded or rolled aluminium sheet, 2–5mm thick. Formed by CNC bending or pressing into panel shapes. No core material. Heaviest of the three but highest durability and fire performance.",
+          "Aluminium Honeycomb Panel: Aluminium skins bonded to an aluminium honeycomb core. Excellent stiffness-to-weight ratio. Used for large panels (>1.5m span) where ACP would deflect excessively. Premium cost.",
+        ],
+      },
+      {
+        heading: "2. Fire Performance: The Critical Differentiator",
+        body: "Fire performance is the most important criterion for facades on buildings with occupied floors. India's National Building Code 2016 and the 2019 amendments (following the Kamala Mills fire in Mumbai) have tightened cladding fire requirements significantly.",
+        table: {
+          headers: ["Panel Type", "Core Material", "Fire Rating", "NBC Compliance", "Suitable For"],
+          rows: [
+            ["ACP – PE Core", "Polyethylene", "Combustible (Class C)", "❌ Not NBC compliant for high-rise", "Low-rise ≤ 15m only"],
+            ["ACP – FR Core", "Mineral-filled", "Flame Retardant (Class B1)", "✅ NBC compliant for most applications", "Commercial, residential ≤ 45m"],
+            ["ACP – A2 Core", "Aluminium hydroxide", "Non-combustible (Class A2)", "✅ Highest compliance", "High-rise, hospitals, public buildings"],
+            ["HPL (Compact)", "Cellulose + resin", "Class B / B1", "✅ Compliant with tested systems", "Commercial, education, healthcare"],
+            ["Solid Aluminium", "None (solid metal)", "Non-combustible (Class A1)", "✅ Fully compliant", "All building types, all heights"],
+            ["Aluminium Honeycomb", "Aluminium core", "Non-combustible (Class A1)", "✅ Fully compliant", "High-rise, premium commercial"],
+          ],
+        },
+      },
+      {
+        heading: "3. Structural and Dimensional Performance",
+        body: "Structural performance affects the subframe system design, panel span capability, and suitability for large-format facades.",
+        list: [
+          "Panel Weight: ACP (3mm) ≈ 5–6 kg/m². HPL (8mm on Al backer) ≈ 10–12 kg/m². Solid Al (3mm) ≈ 8 kg/m². Honeycomb (25mm) ≈ 6–8 kg/m². Lighter panels reduce subframe load and anchor forces.",
+          "Span Capability: ACP can span 600–900mm unsupported between subframe members. HPL compact: 400–600mm. Solid aluminium: depends on thickness and profile. Honeycomb: 1,200–2,000mm — ideal for large-format panels.",
+          "Flatness: ACP achieves excellent flatness due to the composite construction (similar to plywood). HPL can bow in wet conditions if not properly bonded to a stable backer. Solid aluminium can show oil-canning (waviness) if not stiffened with return folds.",
+          "Formability: ACP is the most formable — can be routed and folded on-site or in the workshop to create complex 3D forms, curved facades, and intricate reveals. HPL and solid aluminium are more difficult to form into complex shapes.",
+          "CNC Routing: ACP can be CNC routed to create patterns, ventilation apertures, or reveal lines. This is a common design feature in contemporary Indian facades — particularly visible on IT park and hospitality facades.",
+        ],
+      },
+      {
+        heading: "4. Durability and Surface Finish",
+        body: "Surface finish determines the panel's long-term colour stability, weathering resistance, and maintenance requirements in Indian climatic conditions.",
+        list: [
+          "PVDF Coating (ACP/Solid Al): Polyvinylidene fluoride coating applied by coil-coating. Industry-standard for facades. 20–25 year colour stability warranty from Kynar 500 / Hylar PVDF. Excellent UV, acid rain, and industrial pollutant resistance. Recommended for coastal and urban environments.",
+          "Powder Coating (ACP/Solid Al): Electrostatic polyester powder applied and cured in oven. More economical than PVDF. 10–15 year warranty. Suitable for protected facades (not direct coastal or highly polluted environments).",
+          "HPL Surface: Decorative paper layer protected by melamine overlay or HPL clear finish. Wide range of decors (wood, stone, solid colours). UV-stable grades available for exterior use. Annual maintenance cleaning recommended.",
+          "Anti-graffiti: HPL and solid aluminium can be treated with anti-graffiti coatings more effectively than ACP due to higher surface rigidity.",
+          "Scratch Resistance: HPL has the highest surface hardness of the three (Brinell hardness 60–80). ACP PVDF is softer. Important consideration for ground-floor cladding accessible to the public.",
+        ],
+      },
+      {
+        heading: "5. Cost Comparison for Indian Market (2026)",
+        body: "Cost guidance for supply-and-install in Maharashtra (rates vary by project scale and access):",
+        table: {
+          headers: ["Panel Type", "Supply Rate (₹/sq ft)", "Install Rate (₹/sq ft)", "Total Installed (₹/sq ft)", "Notes"],
+          rows: [
+            ["ACP – FR Grade (Alucobond/Viva)", "₹75–120", "₹60–90", "₹135–210", "Most common, fastest"],
+            ["ACP – A2 Grade", "₹130–200", "₹65–95", "₹195–295", "Required for high-rise"],
+            ["HPL (Trespa / Kingspan)", "₹180–280", "₹80–110", "₹260–390", "Premium, long lifespan"],
+            ["Solid Aluminium (3mm PVDF)", "₹200–350", "₹90–130", "₹290–480", "Top tier, maximum durability"],
+            ["Aluminium Honeycomb", "₹350–600", "₹110–160", "₹460–760", "Large format, architectural"],
+          ],
+        },
+      },
+      {
+        heading: "6. Decision Framework: Which Panel for Which Project?",
+        body: "Use this framework to guide your panel selection:",
+        list: [
+          "Hospital, school, or government building → A2-grade ACP or solid aluminium. Fire compliance is non-negotiable. No PE-core ACP under any circumstances.",
+          "High-rise commercial (>15 floors) in any Indian city → A2-grade ACP or solid aluminium. NBC 2016 amendment effectively prohibits FR-core ACP above 45m in many states.",
+          "Mid-rise IT park / office (5–15 floors) → FR-grade ACP (A2 if budget permits). PVDF finish for coastal locations, powder coat acceptable for inland Pune/Hyderabad.",
+          "Low-rise commercial or retail → FR-grade ACP offers best value. Wide colour range, fast fabrication, cost-effective.",
+          "Premium residential / hospitality → HPL for texture variety (wood and stone looks). Solid aluminium for longevity and contemporary aesthetics.",
+          "Budget is the primary constraint → FR-grade ACP. Ensure reputable brand (Alucobond, Viva, Alucoworld) and verify FR core fire test certificate.",
+        ],
+      },
+      {
+        heading: "Specifying Correctly: What to Include in Your BOQ",
+        body: "Correct specification protects both the architect and the client. When specifying cladding panels, include: (1) Panel brand and product name, (2) Core type (PE/FR/A2), (3) Skin thickness (minimum 0.3mm per skin for ACP), (4) Total panel thickness, (5) Surface finish type (PVDF/powder coat) and coating brand (Kynar 500), (6) Colour reference (RAL code or brand colour chart), (7) Fire test certificate reference (EN 13501-1 or equivalent Indian test), (8) BIS certification number if applicable. Fine Glaze provides complete material test certificates, fire compliance documentation, and BIS certification for all panels on every project. Contact us at info@fineglaze.com or call +91 8369233566 for a project-specific material recommendation.",
+      },
+    ],
+  },
 };
 
 export const blogPostsList = Object.values(blogPosts).sort(

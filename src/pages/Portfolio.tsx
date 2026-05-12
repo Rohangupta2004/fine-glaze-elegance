@@ -4,6 +4,7 @@ import { projectsData } from "@/data/projects";
 import { Link } from "react-router-dom";
 import { MapPin, ArrowRight } from "lucide-react";
 import SEO from "@/components/SEO";
+import { Helmet } from "react-helmet-async";
 
 const projects = Object.entries(projectsData).map(([slug, p]) => ({
   slug,
@@ -16,6 +17,45 @@ const tabs = [
   { id: "residential", label: "Residential" },
   { id: "award", label: "Awards" },
 ];
+
+const portfolioSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Fine Glaze Project Portfolio",
+  "description": "Award-winning facade projects delivered across Maharashtra — curtain walls, structural glazing, ACP cladding, and glass railings.",
+  "url": "https://fineglaze.com/portfolio",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Fine Glaze",
+    "url": "https://fineglaze.com",
+    "telephone": "+91-8369233566",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Shop No. 1 & 2, Ghule Premises, Jagdamb Bhavan Road, Undri",
+      "addressLocality": "Pune",
+      "addressRegion": "Maharashtra",
+      "postalCode": "411060",
+      "addressCountry": "IN"
+    }
+  },
+  "hasPart": projects.map((p) => ({
+    "@type": "CreativeWork",
+    "name": p.title,
+    "description": p.scope,
+    "locationCreated": {
+      "@type": "Place",
+      "name": p.location
+    },
+    "dateCreated": p.year,
+    "creator": {
+      "@type": "Organization",
+      "name": "Fine Glaze"
+    },
+    "url": `https://fineglaze.com/project/${p.slug}`,
+    "image": `https://fineglaze.com${p.image}`,
+    "genre": p.category === "corporate" ? "Commercial Facade" : p.category === "residential" ? "Residential Facade" : "Award-Winning Facade",
+  }))
+};
 
 const Portfolio = () => {
   const [active, setActive] = useState("all");
@@ -36,14 +76,13 @@ const Portfolio = () => {
         description="Explore Fine Glaze's portfolio of 10+ landmark facade projects including LTIMindtree Mensa Campus, Embassy 247, Pune Airport Terminal, Salsette-27 & more. Award-winning execution across Mumbai & Pune."
         canonical="https://fineglaze.com/portfolio"
         keywords="facade projects India, aluminium facade portfolio, curtain wall projects Mumbai, glass facade Pune, building facade case studies, embassy facade work"
-        schema={{
-          "@context": "https://schema.org",
-          "@type": "CollectionPage",
-          "name": "Fine Glaze Project Portfolio",
-          "description": "Landmark facade projects delivered across Maharashtra",
-          "url": "https://fineglaze.com/portfolio"
-        }}
+        schema={portfolioSchema}
       />
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify(portfolioSchema)}
+        </script>
+      </Helmet>
       {/* INTRO */}
       <section className="pt-28 pb-14">
         <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-12 items-end">

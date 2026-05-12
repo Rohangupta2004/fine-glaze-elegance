@@ -5,6 +5,7 @@ import { AwardsSection } from "@/components/home/AwardsSection";
 import { PortfolioSection } from "@/components/home/PortfolioSection";
 import { ServicesSection } from "@/components/home/ServicesSection";
 import { ProcessSection } from "@/components/home/ProcessSection";
+import { ReviewsSection } from "@/components/home/ReviewsSection";
 import { CTASection } from "@/components/home/CTASection";
 import SEO from "@/components/SEO";
 
@@ -32,6 +33,7 @@ const Index = () => {
       <PortfolioSection />
       <ServicesSection />
       <ProcessSection />
+      <ReviewsSection />
       <CTASection />
     </Layout>
   );
