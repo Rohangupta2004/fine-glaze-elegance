@@ -85,6 +85,9 @@ export const PortfolioSection = () => {
                 src={project.image}
                 alt={project.title}
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                loading={index === 0 ? "eager" : "lazy"}
+                width="800"
+                height="600"
               />
 
               {/* Overlay - Warm brown gradient */}

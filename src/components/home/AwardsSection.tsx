@@ -36,6 +36,9 @@ export const AwardsSection = () => {
                   src="/Awards.webp"
                   alt="Best Performance Vendor Award 2024 – Embassy REIT"
                   className="w-full h-auto object-contain"
+                  loading="lazy"
+                  width="256"
+                  height="256"
                 />
               </div>
             </div>

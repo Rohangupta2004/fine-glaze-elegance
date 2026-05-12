@@ -127,7 +127,7 @@ export default function ServiceDetail() {
           </div>
           <div className="relative">
              <div className="absolute inset-0 bg-amber-500 rounded-2xl transform translate-x-4 translate-y-4 opacity-20" />
-             <img src={serviceData.image} alt={serviceData.label} className="relative rounded-2xl shadow-xl w-full h-[600px] object-cover" />
+             <img src={serviceData.image} alt={serviceData.label} className="relative rounded-2xl shadow-xl w-full h-[600px] object-cover" loading="lazy" width="800" height="600" />
           </div>
         </div>
       </section>

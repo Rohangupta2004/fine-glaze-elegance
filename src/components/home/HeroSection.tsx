@@ -6,19 +6,16 @@ export const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       
-      {/* Video Background */}
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
+      {/* Hero Background Image — fast-loading LCP element */}
+      <img
+        src="/Embassyoark.webp"
+        alt="Fine Glaze facade project — Embassy 247 Vikhroli"
         className="absolute inset-0 w-full h-full object-cover"
-      >
-        <source
-          src="https://www.pexels.com/download/video/26737896/"
-          type="video/mp4"
-        />
-      </video>
+        fetchPriority="high"
+        decoding="async"
+        width="1024"
+        height="559"
+      />
 
       {/* Gradient Overlay */}
       <div className="absolute inset-0 hero-overlay" />

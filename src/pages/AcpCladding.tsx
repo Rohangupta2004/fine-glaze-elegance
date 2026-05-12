@@ -124,7 +124,7 @@ const AcpCladding = () => {
       {/* HERO */}
       <section className="relative h-[75vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img src="/Panel.webp" alt="Modern ACP Cladding Facade Design - Fine Glaze" className="w-full h-full object-cover brightness-50" />
+          <img src="/Panel.webp" alt="Modern ACP Cladding Facade Design - Fine Glaze" className="w-full h-full object-cover brightness-50" loading="eager" fetchPriority="high" width="800" height="559" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
         </div>
         <div className="relative z-10 container text-center text-white px-4 max-w-4xl">
