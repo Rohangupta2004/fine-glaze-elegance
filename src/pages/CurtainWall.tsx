@@ -1,6 +1,6 @@
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/home/CTASection";
-import { CheckCircle2, Building2, ShieldCheck, Maximize2, MapPin, Wrench, ArrowRight, Phone, Star } from "lucide-react";
+import { CheckCircle2, Building2, ShieldCheck, Maximize2, MapPin, Wrench, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import SEO from "@/components/SEO";
@@ -139,10 +139,6 @@ export default function CurtainWall() {
           <div className="max-w-3xl">
             <div className="flex items-center gap-2 mb-4">
               <span className="text-amber-400 font-bold tracking-widest uppercase text-sm">Structural Glazing Experts</span>
-              <span className="text-white/40">•</span>
-              <span className="flex items-center gap-1 text-sm text-amber-400">
-                <Star size={13} fill="currentColor" /> 4.9 / 5 · 38 Reviews
-              </span>
             </div>
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
               High-Performance <span className="text-gradient-gold">Curtain Wall Systems</span>
@@ -160,11 +156,6 @@ export default function CurtainWall() {
                   Get Free Quote <ArrowRight size={16} />
                 </Button>
               </Link>
-              <a href="tel:+918369233566">
-                <Button size="lg" variant="outline" className="gap-2">
-                  <Phone size={16} /> Call +91 83692 33566
-                </Button>
-              </a>
               <Link to="/portfolio">
                 <Button size="lg" variant="outline">View Projects</Button>
               </Link>
@@ -180,9 +171,8 @@ export default function CurtainWall() {
             {[
               { value: "10+", label: "Curtain Wall Projects" },
               { value: "5+ yrs", label: "Facade Experience" },
-              { value: "₹350–₹1,200", label: "Per Sq Ft" },
               { value: "IS 875", label: "Wind Load Certified" },
-              { value: "4.9★", label: "Client Satisfaction" },
+              { value: "25 yr", label: "Silicone Warranty" },
             ].map((s) => (
               <div key={s.label} className="text-white">
                 <p className="text-xl font-extrabold text-amber-400">{s.value}</p>
@@ -265,24 +255,7 @@ export default function CurtainWall() {
               </ul>
             </div>
 
-            {/* Pricing */}
-            <div className="bg-amber-50 border border-amber-200 p-6 rounded-2xl">
-              <h3 className="text-lg font-bold text-amber-900 mb-3">Curtain Wall Cost Guide</h3>
-              <ul className="space-y-2 text-sm">
-                {[
-                  { type: "Stick System (Low-Rise)", price: "₹350 – ₹600 / sq ft" },
-                  { type: "Semi-Unitized System", price: "₹550 – ₹850 / sq ft" },
-                  { type: "Unitized System (High-Rise)", price: "₹700 – ₹1,200 / sq ft" },
-                  { type: "Spider Glazing System", price: "₹800 – ₹1,500 / sq ft" },
-                ].map((item) => (
-                  <li key={item.type} className="flex justify-between items-center">
-                    <span className="text-amber-800">{item.type}</span>
-                    <span className="font-bold text-amber-900">{item.price}</span>
-                  </li>
-                ))}
-              </ul>
-              <p className="text-xs text-amber-700 mt-3">* Prices vary based on glass specs, height & project scope. Free site visit + custom quote.</p>
-            </div>
+
           </div>
         </div>
       </section>

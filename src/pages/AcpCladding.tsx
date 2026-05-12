@@ -4,7 +4,7 @@ import { CTASection } from "@/components/home/CTASection";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { CheckCircle2, Building2, ShieldCheck, Paintbrush, MapPin, ArrowRight, Phone, Star } from "lucide-react";
+import { CheckCircle2, Building2, ShieldCheck, Paintbrush, MapPin, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const AcpCladding = () => {
@@ -132,9 +132,6 @@ const AcpCladding = () => {
             <div className="inline-block px-4 py-1.5 border border-white/30 rounded-full bg-white/10 backdrop-blur-md text-sm font-medium tracking-wide">
               ARCHITECTURAL FACADE SOLUTIONS
             </div>
-            <span className="flex items-center gap-1 text-sm text-amber-400">
-              <Star size={13} fill="currentColor" /> 4.8 / 5 · 27 Reviews
-            </span>
           </div>
           <h1 className="text-5xl md:text-7xl font-bold mb-5 tracking-tight">
             Advanced <span className="text-gradient-gold">ACP Cladding</span>
@@ -143,7 +140,7 @@ const AcpCladding = () => {
             Redefining skylines with lightweight, weather-resistant, and fire-rated Aluminium Composite Panels.
           </p>
           <p className="text-slate-400 text-sm mb-8">
-            Brands: <strong className="text-white">Aludecor · Viva · Eurobond · Alstrong</strong> &nbsp;|&nbsp; <strong className="text-amber-400">₹80–₹220/sq ft</strong>
+            Brands: <strong className="text-white">Aludecor · Viva · Eurobond · Alstrong</strong>
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/contact">
@@ -151,11 +148,6 @@ const AcpCladding = () => {
                 Get Free Quote <ArrowRight size={15} />
               </Button>
             </Link>
-            <a href="tel:+918369233566">
-              <Button size="lg" variant="outline" className="text-base px-8 gap-2">
-                <Phone size={15} /> +91 83692 33566
-              </Button>
-            </a>
             <Link to="/portfolio">
               <Button variant="outline" size="lg" className="text-base px-8">View Projects</Button>
             </Link>
@@ -168,11 +160,10 @@ const AcpCladding = () => {
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap justify-center gap-8 text-center">
             {[
-              { value: "₹80–₹220", label: "Per Sq Ft" },
               { value: "PVDF", label: "20-yr Colour Warranty" },
               { value: "FR Grade", label: "Fire Retardant Panels" },
               { value: "ISI Marked", label: "Certified Panels" },
-              { value: "4.8★", label: "Client Rating" },
+              { value: "500+", label: "Colour Options" },
             ].map((s) => (
               <div key={s.label} className="text-white">
                 <p className="text-lg font-extrabold text-amber-400">{s.value}</p>
@@ -237,29 +228,7 @@ const AcpCladding = () => {
         </div>
       </section>
 
-      {/* PRICING */}
-      <section className="py-16 bg-white">
-        <div className="container px-4 max-w-5xl mx-auto">
-          <h2 className="text-2xl font-bold text-slate-900 mb-2 text-center">ACP Cladding Cost Guide</h2>
-          <p className="text-center text-slate-500 text-sm mb-8">Indicative pricing including material, fabrication & installation</p>
-          <div className="grid sm:grid-cols-3 gap-5">
-            {[
-              { type: "PE Core (Standard)", price: "₹80 – ₹130", unit: "per sq ft", desc: "Polyester core, standard PVDF coating. Suitable for interior soffits, low-rise & non-fire-rated zones." },
-              { type: "FR Core (Fire Retardant)", price: "₹120 – ₹180", unit: "per sq ft", desc: "Mineral-filled FR core, NBC-compliant. Mandatory for buildings >15m, malls, hospitals, IT parks.", popular: true },
-              { type: "Premium Finish", price: "₹160 – ₹220", unit: "per sq ft", desc: "PVDF Kynar 500 coating, metallic/wood/mirror finish, 20-yr colour warranty. High-end commercial facades." },
-            ].map((item) => (
-              <div key={item.type} className={`rounded-xl p-5 border-2 ${item.popular ? "border-amber-500 bg-amber-50" : "border-slate-200 bg-slate-50"}`}>
-                {item.popular && <p className="text-xs font-bold text-amber-600 uppercase tracking-wider mb-2">Recommended</p>}
-                <h3 className="font-bold text-slate-900 mb-1">{item.type}</h3>
-                <p className="text-2xl font-extrabold text-amber-700">{item.price}</p>
-                <p className="text-xs text-slate-500 mb-3">{item.unit}</p>
-                <p className="text-xs text-slate-600 leading-relaxed">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-          <p className="text-center text-xs text-slate-400 mt-4">* Prices vary based on height, substructure complexity & panel brand. Free site visit and custom quote available.</p>
-        </div>
-      </section>
+
 
       {/* SPECS + PARTNERS */}
       <section className="py-20 bg-slate-50">

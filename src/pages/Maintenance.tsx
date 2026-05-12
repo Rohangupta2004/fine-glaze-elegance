@@ -1,7 +1,7 @@
 import SEO from "@/components/SEO";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
-import { CheckCircle2, Droplets, Hammer, FileCheck, Phone, ArrowRight, ShieldCheck, MapPin, Star, Wrench } from "lucide-react";
+import { CheckCircle2, Droplets, Hammer, FileCheck, Phone, ArrowRight, ShieldCheck, MapPin, Wrench } from "lucide-react";
 import { Link } from "react-router-dom";
 import { CTASection } from "@/components/home/CTASection";
 
@@ -135,9 +135,6 @@ const Maintenance = () => {
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-medium border border-emerald-500/30">
               <ShieldCheck size={13} /> 100% Safety Compliant
             </div>
-            <span className="flex items-center gap-1 text-sm text-amber-400">
-              <Star size={13} fill="currentColor" /> 4.8 / 5 · 31 Reviews
-            </span>
           </div>
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-5 leading-tight">
             Restore Your Building's <span className="text-gradient-gold">Shine</span>
@@ -154,11 +151,11 @@ const Maintenance = () => {
                 Request Free Inspection <ArrowRight size={15} />
               </Button>
             </Link>
-            <a href="tel:+918369233566">
-              <Button size="lg" className="bg-white text-slate-900 hover:bg-white/90 font-bold gap-2 w-full sm:w-auto">
-                <Phone size={16} /> Emergency Repair
+            <Link to="/portfolio">
+              <Button size="lg" variant="outline" className="w-full sm:w-auto">
+                View Projects
               </Button>
-            </a>
+            </Link>
           </div>
         </div>
       </section>
@@ -170,9 +167,8 @@ const Maintenance = () => {
             {[
               { value: "2×/yr", label: "AMC Cleaning Cycles" },
               { value: "24 hrs", label: "Emergency Response" },
-              { value: "₹120–₹280", label: "Per Rmt Sealant" },
               { value: "Insured", label: "All Technicians" },
-              { value: "4.8★", label: "Client Rating" },
+              { value: "10+", label: "Years Experience" },
             ].map((s) => (
               <div key={s.label} className="text-white">
                 <p className="text-lg font-extrabold text-amber-400">{s.value}</p>

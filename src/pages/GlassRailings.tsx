@@ -3,7 +3,7 @@ import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { Check, ShieldCheck, Zap, Maximize2, ArrowRight, Phone, MapPin, Star } from "lucide-react";
+import { Check, ShieldCheck, Zap, Maximize2, ArrowRight, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
 import { CTASection } from "@/components/home/CTASection";
 
@@ -134,10 +134,6 @@ const GlassRailings = () => {
         <div className="relative z-10 container px-4 max-w-4xl">
           <div className="flex items-center gap-3 mb-4">
             <span className="text-amber-400 font-bold text-sm uppercase tracking-wider">Glass Railing Specialists</span>
-            <span className="text-white/30">•</span>
-            <span className="flex items-center gap-1 text-sm text-amber-400">
-              <Star size={13} fill="currentColor" /> 4.9 / 5 · 42 Reviews
-            </span>
           </div>
           <h1 className="text-5xl lg:text-7xl font-bold text-white mb-5 leading-tight">
             Invisible <span className="text-gradient-gold">Strength</span>
@@ -154,11 +150,6 @@ const GlassRailings = () => {
                 Get Free Quote <ArrowRight size={16} />
               </Button>
             </Link>
-            <a href="tel:+918369233566">
-              <Button size="lg" variant="outline" className="text-base px-8 gap-2">
-                <Phone size={16} /> +91 83692 33566
-              </Button>
-            </a>
             <Link to="/portfolio">
               <Button variant="outline" size="lg" className="text-base px-8">View Gallery</Button>
             </Link>
@@ -173,9 +164,8 @@ const GlassRailings = () => {
             {[
               { value: "12–19mm", label: "Toughened Glass" },
               { value: "SS 304/316", label: "Marine Grade Hardware" },
-              { value: "₹450–₹1,200", label: "Per Running Foot" },
               { value: "2–4 Days", label: "Installation Time" },
-              { value: "4.9★", label: "Client Rating" },
+              { value: "Sentry PVB", label: "Laminated Safety Glass" },
             ].map((s) => (
               <div key={s.label} className="text-white">
                 <p className="text-lg font-extrabold text-amber-400">{s.value}</p>
@@ -266,29 +256,7 @@ const GlassRailings = () => {
         </div>
       </section>
 
-      {/* PRICING */}
-      <section className="py-16 bg-white">
-        <div className="container px-4 max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold text-slate-900 mb-2 text-center">Glass Railing Pricing Guide</h2>
-          <p className="text-center text-slate-500 text-sm mb-8">Transparent pricing — no hidden costs</p>
-          <div className="grid sm:grid-cols-3 gap-5">
-            {[
-              { type: "U-Channel System", price: "₹450 – ₹700", unit: "per running ft", desc: "Aluminium or SS U-channel base, 12mm glass, powder-coated finish" },
-              { type: "SS Spigot System", price: "₹650 – ₹950", unit: "per running ft", desc: "Individual SS 304 spigots, 12–15mm glass, matte/mirror options", popular: true },
-              { type: "Point-Fixed Premium", price: "₹900 – ₹1,200", unit: "per running ft", desc: "SS 316 hardware, 15–19mm laminated glass, architectural handrail" },
-            ].map((item) => (
-              <div key={item.type} className={`rounded-xl p-5 border-2 ${item.popular ? "border-amber-500 bg-amber-50" : "border-slate-200 bg-slate-50"}`}>
-                {item.popular && <p className="text-xs font-bold text-amber-600 uppercase tracking-wider mb-2">Most Popular</p>}
-                <h3 className="font-bold text-slate-900 mb-1">{item.type}</h3>
-                <p className="text-2xl font-extrabold text-amber-700">{item.price}</p>
-                <p className="text-xs text-slate-500 mb-3">{item.unit}</p>
-                <p className="text-xs text-slate-600 leading-relaxed">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-          <p className="text-center text-xs text-slate-400 mt-4">* Indicative pricing. Final quote based on site measurement & specifications. Free site visit available.</p>
-        </div>
-      </section>
+
 
       {/* SPECS TABLE */}
       <section className="py-20 bg-slate-50">
