@@ -1,7 +1,7 @@
 import { useParams, Link, Navigate } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 import { blogPosts, blogPostsList } from "@/data/blog";
-import { ArrowLeft, Clock, Tag, Phone, ArrowRight } from "lucide-react";
+import { ArrowLeft, Clock, Phone, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import SEO from "@/components/SEO";
 
@@ -34,10 +34,28 @@ export default function BlogArticle() {
     },
   };
 
-  // Related posts (exclude current)
   const related = blogPostsList
     .filter((p) => p.slug !== post.slug)
     .slice(0, 2);
+
+  const seoLinks = [
+    {
+      title: 'Structural Glazing Services',
+      href: '/structural-glazing'
+    },
+    {
+      title: 'Curtain Wall Systems',
+      href: '/curtain-wall-systems'
+    },
+    {
+      title: 'ACP Aluminium Cladding',
+      href: '/acp-aluminium-cladding'
+    },
+    {
+      title: 'Facade Contractor in Pune',
+      href: '/facade-contractor/structural-glazing-pune'
+    }
+  ];
 
   return (
     <Layout darkHero>
@@ -51,7 +69,6 @@ export default function BlogArticle() {
         schema={articleSchema}
       />
 
-      {/* HERO IMAGE */}
       <section className="pt-24">
         <div className="w-full h-[300px] md:h-[420px] overflow-hidden relative">
           <img
@@ -64,10 +81,8 @@ export default function BlogArticle() {
         </div>
       </section>
 
-      {/* ARTICLE */}
       <article className="py-12">
         <div className="container mx-auto px-4 max-w-3xl">
-          {/* Breadcrumb */}
           <Link
             to="/blog"
             className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors mb-6"
@@ -75,7 +90,6 @@ export default function BlogArticle() {
             <ArrowLeft size={14} /> Back to Blog
           </Link>
 
-          {/* Meta */}
           <div className="flex flex-wrap items-center gap-3 text-sm text-muted-foreground mb-4">
             <span className="px-3 py-1 rounded-full bg-primary/10 text-primary font-bold text-xs">
               {post.category}
@@ -83,21 +97,12 @@ export default function BlogArticle() {
             <span className="flex items-center gap-1">
               <Clock size={14} /> {post.readTime}
             </span>
-            <span>
-              {new Date(post.date).toLocaleDateString("en-IN", {
-                year: "numeric",
-                month: "long",
-                day: "numeric",
-              })}
-            </span>
           </div>
 
-          {/* Title */}
           <h1 className="text-3xl md:text-4xl font-extrabold leading-tight mb-8">
             {post.title}
           </h1>
 
-          {/* Content Sections */}
           <div className="prose prose-lg max-w-none space-y-10">
             {post.content.map((section, i) => (
               <section key={i}>
@@ -111,44 +116,6 @@ export default function BlogArticle() {
                   </p>
                 )}
 
-                {/* Table */}
-                {section.table && (
-                  <div className="overflow-x-auto mb-4 rounded-xl border">
-                    <table className="w-full text-sm">
-                      <thead>
-                        <tr className="bg-muted">
-                          {section.table.headers.map((h) => (
-                            <th
-                              key={h}
-                              className="text-left px-4 py-3 font-bold text-foreground"
-                            >
-                              {h}
-                            </th>
-                          ))}
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {section.table.rows.map((row, ri) => (
-                          <tr
-                            key={ri}
-                            className="border-t hover:bg-muted/50 transition-colors"
-                          >
-                            {row.map((cell, ci) => (
-                              <td
-                                key={ci}
-                                className={`px-4 py-3 ${ci === 0 ? "font-medium text-foreground" : "text-muted-foreground"}`}
-                              >
-                                {cell}
-                              </td>
-                            ))}
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
-                  </div>
-                )}
-
-                {/* List */}
                 {section.list && (
                   <ul className="space-y-3">
                     {section.list.map((item, li) => (
@@ -168,7 +135,32 @@ export default function BlogArticle() {
             ))}
           </div>
 
-          {/* INLINE CTA */}
+          <div className="mt-14 rounded-2xl border p-6 bg-muted/30">
+            <h3 className="text-2xl font-bold mb-4">
+              Explore More Facade Solutions
+            </h3>
+            <p className="text-muted-foreground mb-6">
+              Browse our premium facade, glazing and aluminium cladding solutions across Pune, Mumbai and Maharashtra.
+            </p>
+
+            <div className="grid sm:grid-cols-2 gap-4">
+              {seoLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  to={link.href}
+                  className="rounded-xl border p-4 hover:border-primary hover:bg-primary/5 transition-all"
+                >
+                  <div className="flex items-center justify-between gap-3">
+                    <span className="font-semibold text-sm md:text-base">
+                      {link.title}
+                    </span>
+                    <ArrowRight size={16} />
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+
           <div className="mt-12 p-8 bg-slate-900 rounded-2xl text-white text-center">
             <h3 className="text-xl font-bold mb-2">
               Need Help With Your Facade Project?
@@ -192,7 +184,6 @@ export default function BlogArticle() {
             </div>
           </div>
 
-          {/* RELATED ARTICLES */}
           {related.length > 0 && (
             <div className="mt-16">
               <h3 className="text-xl font-bold mb-6">Related Articles</h3>
@@ -216,9 +207,6 @@ export default function BlogArticle() {
                       <h4 className="text-sm font-bold leading-snug group-hover:text-primary transition-colors">
                         {r.title}
                       </h4>
-                      <span className="text-xs text-muted-foreground">
-                        {r.readTime}
-                      </span>
                     </div>
                   </Link>
                 ))}
