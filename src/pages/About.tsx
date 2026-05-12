@@ -207,17 +207,17 @@ const About = () => {
               commitment to quality and safety.
             </p>
 
-            <div className="aspect-video rounded-xl overflow-hidden shadow-xl bg-black">
-              <video
-                src="https://osbgcuuehfqxyvooogjy.supabase.co/storage/v1/object/public/Videos/FINE%20GLAZE.mp4"
-                controls
-                playsInline
-                preload="metadata"
-                className="w-full h-full object-contain"
-              >
-                Your browser does not support the video tag.
-              </video>
+            <div className="rounded-xl overflow-hidden shadow-xl" style={{ padding: "75% 0 0 0", position: "relative" }}>
+              <iframe
+                src="https://player.vimeo.com/video/1191408845?badge=0&autopause=0&player_id=0&app_id=58479"
+                frameBorder="0"
+                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}
+                title="FINE GLAZE"
+              />
             </div>
+            <script src="https://player.vimeo.com/api/player.js" />
           </div>
         </div>
       </section>
