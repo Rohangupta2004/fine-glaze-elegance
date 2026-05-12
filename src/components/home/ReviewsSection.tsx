@@ -11,6 +11,20 @@ const GoogleIcon = () => (
   </svg>
 );
 
+const IndiaMartIcon = () => (
+  <svg viewBox="0 0 40 20" className="w-8 h-4" fill="none">
+    <rect width="40" height="20" rx="3" fill="#FF6B00"/>
+    <text x="4" y="14" fill="white" fontSize="9" fontWeight="bold" fontFamily="Arial">indiamart</text>
+  </svg>
+);
+
+const JustDialIcon = () => (
+  <svg viewBox="0 0 40 20" className="w-8 h-4" fill="none">
+    <rect width="40" height="20" rx="3" fill="#FF5A00"/>
+    <text x="3" y="14" fill="white" fontSize="9" fontWeight="bold" fontFamily="Arial">JustDial</text>
+  </svg>
+);
+
 export const ReviewsSection = () => {
   const { ref, isVisible } = useScrollAnimation();
 
@@ -37,57 +51,79 @@ export const ReviewsSection = () => {
           )}
         >
           <span className="text-primary font-semibold uppercase tracking-widest text-xs mb-3 block">
-            Client Reviews
+            Trusted & Verified
           </span>
           <h2 className="text-3xl md:text-4xl font-extrabold mb-3">
             Rated 5.0 on Google
           </h2>
-          <p className="text-muted-foreground text-sm max-w-md mx-auto">
-            Real reviews from our clients on Google Maps.
-          </p>
         </div>
 
-        {/* Google Rating Card */}
+        {/* Platform Badges */}
         <div
           className={cn(
             "flex flex-col items-center gap-6 transition-all duration-700 delay-100",
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
           )}
         >
-          <a
-            href="https://www.google.com/maps/search/Fine+Glaze+Pune"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-5 px-8 py-5 rounded-2xl border border-amber-500/30 bg-gradient-to-br from-amber-500/10 to-yellow-500/5 hover:scale-105 transition-transform duration-200 shadow-sm"
-          >
-            <div className="flex items-center justify-center w-10 h-10">
-              <GoogleIcon />
-            </div>
-            <div>
-              <div className="flex items-center gap-2 mb-1">
-                <span className="text-3xl font-black text-foreground leading-none">5.0</span>
-                <div className="flex gap-0.5">
-                  {[1,2,3,4,5].map(i => (
-                    <Star key={i} size={14} className="fill-amber-400 text-amber-400" />
-                  ))}
-                </div>
-              </div>
-              <p className="text-xs text-muted-foreground">Google Reviews · Fine Glaze</p>
-            </div>
-            <ExternalLink size={14} className="text-muted-foreground ml-2" />
-          </a>
-
-          <p className="text-xs text-muted-foreground text-center">
-            See all reviews on{" "}
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            {/* Google */}
             <a
               href="https://www.google.com/maps/search/Fine+Glaze+Pune"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-primary hover:underline inline-flex items-center gap-1"
+              className="flex items-center gap-4 px-6 py-4 rounded-2xl border border-amber-500/30 bg-gradient-to-br from-amber-500/10 to-yellow-500/5 hover:scale-105 transition-transform duration-200 shadow-sm"
             >
-              Google Maps <ExternalLink size={11} />
+              <div className="flex items-center justify-center w-8 h-8">
+                <GoogleIcon />
+              </div>
+              <div>
+                <div className="flex items-center gap-2 mb-0.5">
+                  <span className="text-2xl font-black text-foreground leading-none">5.0</span>
+                  <div className="flex gap-0.5">
+                    {[1,2,3,4,5].map(i => (
+                      <Star key={i} size={12} className="fill-amber-400 text-amber-400" />
+                    ))}
+                  </div>
+                </div>
+                <p className="text-xs text-muted-foreground">Google Reviews</p>
+              </div>
+              <ExternalLink size={13} className="text-muted-foreground ml-1" />
             </a>
-          </p>
+
+            {/* IndiaMART */}
+            <a
+              href="https://www.indiamart.com/fine-glaze/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-4 px-6 py-4 rounded-2xl border border-orange-500/30 bg-gradient-to-br from-orange-500/10 to-orange-400/5 hover:scale-105 transition-transform duration-200 shadow-sm"
+            >
+              <div className="flex items-center justify-center">
+                <span className="text-[#FF6B00] font-black text-base leading-none">india<span className="text-[#1a56db]">mart</span></span>
+              </div>
+              <div>
+                <p className="text-sm font-bold text-foreground leading-none mb-0.5">Listed</p>
+                <p className="text-xs text-muted-foreground">IndiaMART</p>
+              </div>
+              <ExternalLink size={13} className="text-muted-foreground ml-1" />
+            </a>
+
+            {/* JustDial */}
+            <a
+              href="https://www.justdial.com/Pune/Fine-Glaze"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-4 px-6 py-4 rounded-2xl border border-red-500/30 bg-gradient-to-br from-red-500/10 to-red-400/5 hover:scale-105 transition-transform duration-200 shadow-sm"
+            >
+              <div className="flex items-center justify-center">
+                <span className="text-[#FF5A00] font-black text-base leading-none">Just<span className="text-[#1a56db]">Dial</span></span>
+              </div>
+              <div>
+                <p className="text-sm font-bold text-foreground leading-none mb-0.5">Listed</p>
+                <p className="text-xs text-muted-foreground">JustDial</p>
+              </div>
+              <ExternalLink size={13} className="text-muted-foreground ml-1" />
+            </a>
+          </div>
         </div>
 
       </div>
