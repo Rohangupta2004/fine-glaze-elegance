@@ -293,10 +293,18 @@ export default function Services() {
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: "url('/Unitized.webp')" }}
         />
-        {/* Dark bronze gradient overlay — ensures text is always readable */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#1a0d05]/92 via-[#251208]/85 to-[#1a0d05]/92" />
-        {/* Bottom fade for smooth section transition */}
-        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#1a0d05] to-transparent" />
+        {/* Dark bronze gradient overlay */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background: "linear-gradient(135deg, rgba(26,13,5,0.93) 0%, rgba(37,18,8,0.82) 50%, rgba(26,13,5,0.93) 100%)"
+          }}
+        />
+        {/* Bottom fade */}
+        <div
+          className="absolute inset-x-0 bottom-0 h-32"
+          style={{ background: "linear-gradient(to top, #1a0d05, transparent)" }}
+        />
 
         <div className="container mx-auto px-4 relative z-10">
           <div
