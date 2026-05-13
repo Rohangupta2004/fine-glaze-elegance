@@ -144,7 +144,6 @@ export const projectsData = {
     gallery: [
       "/Railing.webp",
       "/Handle.webp",
-      "/Glazing.webp",
     ],
     description: "Jindal House at Balkeshwar 32 is a luxury residential bungalow project demanding premium quality railing systems across internal staircases and external terrace areas. Fine Glaze supplied and installed structural glass balustrades with brushed SS handrails, providing the open, uninterrupted sight lines the design architect had specified. Every installation point was independently signed off by the structural consultant for load compliance.",
     challenge: "Achieving the architect's frameless glass aesthetic while meeting structural load requirements for both staircase and elevated terrace railing applications.",
@@ -215,11 +214,10 @@ export const projectsData = {
     year: "2024",
     client: "Mittal House",
     scope: "Sliding Shower Cubicles & Mirror Glass Installation",
-    image: "/Embassy.webp",
+    image: "/Tilt.webp",
     gallery: [
-      "/Tilt.webp",
-      "/Glass.webp",
-      "/Railing.webp",
+      "/Glazing.webp",
+      "/Aluminium%20windows.webp",
     ],
     description: "Mittal House is a high-end private residence in Juhu, one of Mumbai's most prestigious neighbourhoods. Fine Glaze was engaged to supply and install premium bathroom glass systems across multiple bathrooms — a scope that demanded luxury-grade finishes, precision fabrication, and a high level of on-site care. Two key scopes were executed: frameless sliding shower cubicles and full-wall mirror glass panels. The sliding shower cubicles were installed with top-hung hardware on polished SS tracks, creating clean frameless enclosures set against the project's marble wall finishes. The large-format mirror glass panels were installed to full wall height using structural adhesive fixing, providing seamless reflective surfaces that visually expand the bathroom spaces.",
     challenge: "Executing precision glass installations inside a luxury private residence — where marble finishes, tight tolerances, and zero on-site damage were non-negotiable requirements for the client.",
