@@ -1,6 +1,5 @@
 import { Layout } from "@/components/layout/Layout";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { useCountUp } from "@/hooks/useCountUp";
 import { cn } from "@/lib/utils";
 import { Target, Eye, Shield, Users, Award, Clock } from "lucide-react";
 import SEO from "@/components/SEO";
@@ -32,46 +31,11 @@ const values = [
   },
 ];
 
-const stats = [
-  { end: 5, suffix: "+", label: "Years Experience" },
-  { end: 10, suffix: "+", label: "Projects Completed" },
-  { end: 50, suffix: "+", label: "Happy Clients" },
-  { end: 25, suffix: "+", label: "Skilled Professionals" },
-];
-
-const StatItem = ({
-  end,
-  suffix,
-  label,
-  delay,
-  isVisible,
-}: {
-  end: number;
-  suffix: string;
-  label: string;
-  delay: number;
-  isVisible: boolean;
-}) => {
-  const count = useCountUp(end, 1800, isVisible);
-  return (
-    <div
-      className={cn("text-center slide-up", isVisible && "visible")}
-      style={{ transitionDelay: `${delay}s` }}
-    >
-      <p className="text-4xl md:text-5xl font-bold text-white mb-2">
-        {count}{suffix}
-      </p>
-      <p className="text-white/70">{label}</p>
-    </div>
-  );
-};
-
 const About = () => {
   const heroRef = useScrollAnimation();
   const storyRef = useScrollAnimation();
   const videoRef = useScrollAnimation();
   const valuesRef = useScrollAnimation();
-  const statsRef = useScrollAnimation();
 
   return (
     <Layout>
@@ -299,30 +263,6 @@ const About = () => {
         </div>
       </section>
 
-      {/* Stats */}
-      <section
-        className="py-24"
-        ref={statsRef.ref}
-        style={{
-          background:
-            "linear-gradient(135deg, hsl(25 55% 35%) 0%, hsl(20 50% 25%) 100%)",
-        }}
-      >
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-            {stats.map((stat, index) => (
-              <StatItem
-                key={stat.label}
-                end={stat.end}
-                suffix={stat.suffix}
-                label={stat.label}
-                delay={index * 0.1}
-                isVisible={statsRef.isVisible}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
     </Layout>
   );
 };
