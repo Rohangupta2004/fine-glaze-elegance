@@ -36,8 +36,8 @@ const contactInfo = [
 {
 icon: MapPin,
 title: "Visit Us",
-content: "Pune, Maharashtra, India",
-link: null,
+content: "Shop No. 1 & 2, Jagdamba Bhawan Marg, Undri, Pune – 411060",
+link: "https://maps.app.goo.gl/JDF3ESXQGHtwKoAr6",
 },
 {
 icon: Phone,
