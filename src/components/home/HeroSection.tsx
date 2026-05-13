@@ -14,7 +14,7 @@ export const HeroSection = () => {
         loop
         playsInline
       >
-        <source src="/hero.mp4" type="video/mp4" />
+        <source src="https://www.pexels.com/download/video/26737896/" type="video/mp4" />
       </video>
 
       {/* Gradient Overlay */}
