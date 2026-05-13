@@ -7,12 +7,12 @@ export const projectsData = {
     year: "2023",
     client: "LTIMindtree Ltd.",
     scope: "ACP & Silicone Facade Work",
-    image: "/ltimindtree-mensa-campus-mahape-navi-mumbai-1 (1)-elementor-io-optimized.webp",
+    image: "/ltimindtree-mensa-campus-mahape-navi-mumbai-1%20(1)-elementor-io-optimized.webp",
     gallery: [
       "/Panel.webp",
       "/Glazing.webp",
       "/Sealent.webp",
-      "/Aluminium windows.webp",
+      "/Aluminium%20windows.webp",
     ],
     description: "The LTIMindtree Mensa Campus in Mahape required a large-scale facade solution that could match the client's premium corporate identity while withstanding Navi Mumbai's humid coastal environment. Fine Glaze executed full ACP cladding and structural silicone glazing across multiple building blocks within a tight construction programme. The project demanded precision coordination with the main contractor to maintain the structural timeline, with all facade panels shop-fabricated for quality control before site installation.",
     challenge: "Coordinating facade installation across multiple building wings simultaneously while working within an active construction zone with strict material delivery schedules.",
@@ -37,7 +37,7 @@ export const projectsData = {
     image: "/Embassy.webp",
     gallery: [
       "/Awards.webp",
-      "/Glass installation.webp",
+      "/Glass%20installation.webp",
       "/Amc1.webp",
       "/Glass.webp",
     ],
@@ -67,7 +67,7 @@ export const projectsData = {
     gallery: [
       "/Handle.webp",
       "/Railing.webp",
-      "/Custom railing.webp",
+      "/Custom%20railing.webp",
     ],
     description: "Salsette-27 is a landmark super-tall residential development in Mumbai's heritage precinct at Byculla East — one of the tallest residential towers in the city. Fine Glaze executed two distinct scopes at this prestigious project: custom aluminium toilet shaft railing systems across multiple floors, and a full architectural canopy installation. The toilet shaft railings were fabricated from 50mm OD aluminium round pipe with powder coating (RAL 7011) and end base plates — a specification chosen for its long-term durability and clean aesthetic in a high-humidity service environment. The canopy, installed in 2024, was fabricated in ACP panels with precise mitred joinery to achieve a sharp, architectural look at the building entrance.",
     challenge: "Fabricating and installing custom aluminium railing systems within the constrained toilet shaft openings across a high-rise building, while coordinating a separate canopy scope during the active fit-out phase.",
@@ -90,10 +90,10 @@ export const projectsData = {
     year: "2022",
     client: "Leela Group",
     scope: "Architectural Aluminium Louvers",
-    image: "/Business park.webp",
+    image: "/Business%20park.webp",
     gallery: [
       "/Unitized.webp",
-      "/Aluminium windows.webp",
+      "/Aluminium%20windows.webp",
     ],
     description: "Leela Business Park required architectural aluminium louvre systems that would improve solar shading across the building's west-facing elevations while maintaining the clean aesthetic of the overall facade design. Fine Glaze engineered and installed custom-pitch louvre banks with powder-coated aluminium blades sized to the building's specific sun angle requirements, significantly reducing direct solar gain to the occupied floors.",
     challenge: "Designing louvre blade angles and depths to achieve effective solar shading at west Mumbai latitudes while integrating visually with the existing facade system.",
@@ -140,7 +140,7 @@ export const projectsData = {
     year: "2022",
     client: "Jindal Group",
     scope: "SS Glass Railing Systems",
-    image: "/Jindal house.webp",
+    image: "/Jindal%20house.webp",
     gallery: [
       "/Railing.webp",
       "/Handle.webp",
@@ -245,7 +245,7 @@ export const projectsData = {
     image: "/Hotel.webp",
     gallery: [
       "/Window.webp",
-      "/Aluminium windows.webp",
+      "/Aluminium%20windows.webp",
       "/Thermal.webp",
     ],
     description: "Fine Glaze executed the replacement and installation of openable aluminium window systems for the Leela Hotel in Andheri — a project that required working within an operational five-star hotel environment with strict noise restrictions and minimal disruption to guests. All window units were pre-fabricated to precise floor-by-floor dimensions, with a room-by-room installation methodology that kept each room offline for no more than one day at a time.",
