@@ -178,28 +178,7 @@ export const projectsData = {
     isAwardWinner: false,
   },
 
-  "mittal-house": {
-    id: 9,
-    title: "Mittal House",
-    location: "Juhu, Mumbai",
-    category: "residential",
-    year: "2024",
-    client: "Mittal House",
-    scope: "Sliding Shower Cubicles & Mirror Glass Installation",
-    image: "/Tilt.webp",
-    gallery: [],
-    description: "Mittal House is a high-end private residence in Juhu, one of Mumbai's most prestigious neighbourhoods. Fine Glaze was engaged to supply and install premium bathroom glass systems across multiple bathrooms — a scope that demanded luxury-grade finishes, precision fabrication, and a high level of on-site care. Two key scopes were executed: frameless sliding shower cubicles and full-wall mirror glass panels. The sliding shower cubicles were installed with top-hung hardware on polished SS tracks, creating clean frameless enclosures set against the project's marble wall finishes. The large-format mirror glass panels were installed to full wall height using structural adhesive fixing, providing seamless reflective surfaces that visually expand the bathroom spaces.",
-    challenge: "Executing precision glass installations inside a luxury private residence — where marble finishes, tight tolerances, and zero on-site damage were non-negotiable requirements for the client.",
-    outcome: "Both scopes — sliding shower cubicles and mirror glass — completed and handed over in 2024. All installations received client sign-off with no rework required. The frameless glass finishes complemented the residence's luxury marble interiors.",
-    features: [
-      "Frameless sliding shower cubicles — toughened glass",
-      "Top-hung SS sliding track hardware",
-      "Full-wall mirror glass panels — structural adhesive fixed",
-      "Large-format glass with polished edges",
-      "Luxury residential finish standards throughout",
-    ],
-    isAwardWinner: false,
-  },
+
 
   "leela-hotel": {
     id: 10,
