@@ -5,23 +5,31 @@ import { ArrowRight, Play } from "lucide-react";
 export const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      
-      {/* Hero Background Image — fast-loading LCP element */}
-      <img
-        src="/Embassyoark.webp"
-        alt="Fine Glaze facade project — Embassy 247 Vikhroli"
+
+      {/* Hero Background Video — plays silently as full-screen background */}
+      <video
         className="absolute inset-0 w-full h-full object-cover"
-        fetchPriority="high"
-        decoding="async"
-        width="1024"
-        height="559"
-      />
+        style={{ zIndex: 0 }}
+        autoPlay
+        muted
+        loop
+        playsInline
+        poster="/Embassyoark.webp"
+      >
+        <source src="/hero-bg.mp4" type="video/mp4" />
+        {/* Fallback image if video fails to load */}
+        <img
+          src="/Embassyoark.webp"
+          alt="Fine Glaze facade project — Embassy 247 Vikhroli"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+      </video>
 
-      {/* Gradient Overlay */}
-      <div className="absolute inset-0 hero-overlay" />
+      {/* Gradient Overlay — sits above video, below content */}
+      <div className="absolute inset-0 hero-overlay" style={{ zIndex: 1 }} />
 
-      {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 text-center">
+      {/* Content — always on top */}
+      <div className="relative container mx-auto px-4 text-center" style={{ zIndex: 2 }}>
         <div className="max-w-4xl mx-auto space-y-8">
 
           {/* Badge */}
@@ -83,7 +91,7 @@ export const HeroSection = () => {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce" style={{ zIndex: 2 }}>
         <div className="w-6 h-10 rounded-full border-2 border-white/30 flex items-start justify-center p-1">
           <div className="w-1.5 h-3 rounded-full bg-amber-500/70 animate-pulse" />
         </div>
