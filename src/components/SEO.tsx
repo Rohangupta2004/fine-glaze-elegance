@@ -38,6 +38,8 @@ export default function SEO({
       <meta property="og:description" content={description} />
       {ogImage && <meta property="og:image" content={ogImage} />}
       <meta property="og:type" content={ogType} />
+      <meta property="og:site_name" content="Fine Glaze" />
+      {canonical && <meta property="og:url" content={canonical} />}
       
       {/* Twitter Card Tags */}
       <meta name="twitter:card" content="summary_large_image" />
