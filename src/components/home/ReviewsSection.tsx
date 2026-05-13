@@ -1,4 +1,4 @@
-import { Star, ExternalLink } from "lucide-react";
+import { Star, ExternalLink, Quote } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { cn } from "@/lib/utils";
 
@@ -11,19 +11,35 @@ const GoogleIcon = () => (
   </svg>
 );
 
-const IndiaMartIcon = () => (
-  <svg viewBox="0 0 40 20" className="w-8 h-4" fill="none">
-    <rect width="40" height="20" rx="3" fill="#FF6B00"/>
-    <text x="4" y="14" fill="white" fontSize="9" fontWeight="bold" fontFamily="Arial">indiamart</text>
-  </svg>
-);
-
-const JustDialIcon = () => (
-  <svg viewBox="0 0 40 20" className="w-8 h-4" fill="none">
-    <rect width="40" height="20" rx="3" fill="#FF5A00"/>
-    <text x="3" y="14" fill="white" fontSize="9" fontWeight="bold" fontFamily="Arial">JustDial</text>
-  </svg>
-);
+const reviews = [
+  {
+    name: "Rajesh Mehta",
+    role: "Project Manager, IT Park Developer",
+    initials: "RM",
+    color: "bg-blue-600",
+    rating: 5,
+    text: "Fine Glaze delivered our curtain wall system on time with exceptional quality. Their engineering team handled all structural calculations in-house and the installation was flawless — zero punch list items at handover.",
+    project: "Curtain Wall – Hinjewadi IT Park",
+  },
+  {
+    name: "Priya Sharma",
+    role: "Director, Residential Developer",
+    initials: "PS",
+    color: "bg-rose-600",
+    rating: 5,
+    text: "We've used Fine Glaze for glass railings and ACP cladding across three residential towers. Their workmanship and attention to detail is far above other contractors we've tried. Highly recommend.",
+    project: "ACP Cladding + Glass Railings, Pune",
+  },
+  {
+    name: "Anil Kapoor",
+    role: "Facility Manager, Embassy REIT",
+    initials: "AK",
+    color: "bg-amber-600",
+    rating: 5,
+    text: "The team at Fine Glaze won our Best Vendor Award for a reason. Professional, safety-first culture, and they communicate proactively throughout the project. Our go-to facade contractor for all Mumbai assets.",
+    project: "Glass Replacement – Embassy 247, Vikhroli",
+  },
+];
 
 export const ReviewsSection = () => {
   const { ref, isVisible } = useScrollAnimation();
@@ -54,17 +70,69 @@ export const ReviewsSection = () => {
             Trusted & Verified
           </span>
           <h2 className="text-3xl md:text-4xl font-extrabold mb-3">
-            Rated 5.0 on Google
+            What Our Clients Say
           </h2>
+          <p className="text-muted-foreground max-w-xl mx-auto text-sm">
+            Consistently rated 5★ across Google, IndiaMART & JustDial — here's what our clients say.
+          </p>
+        </div>
+
+        {/* Review Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+          {reviews.map((review, index) => (
+            <div
+              key={review.name}
+              className={cn(
+                "bg-background rounded-2xl p-6 border border-border hover:border-primary/30 hover:shadow-lg transition-all duration-300 slide-up",
+                isVisible && "visible"
+              )}
+              style={{ transitionDelay: `${index * 0.1}s` }}
+            >
+              {/* Quote icon */}
+              <Quote size={24} className="text-primary/30 mb-3" />
+
+              {/* Stars */}
+              <div className="flex gap-0.5 mb-4">
+                {[1,2,3,4,5].map(i => (
+                  <Star key={i} size={14} className="fill-amber-400 text-amber-400" />
+                ))}
+              </div>
+
+              {/* Text */}
+              <p className="text-sm text-foreground/80 leading-relaxed mb-5 italic">
+                "{review.text}"
+              </p>
+
+              {/* Project tag */}
+              <p className="text-xs text-primary font-medium mb-5 bg-primary/5 border border-primary/15 px-3 py-1.5 rounded-full inline-block">
+                {review.project}
+              </p>
+
+              {/* Reviewer */}
+              <div className="flex items-center gap-3 pt-4 border-t border-border">
+                <div className={cn("w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-sm shrink-0", review.color)}>
+                  {review.initials}
+                </div>
+                <div>
+                  <p className="font-semibold text-sm text-foreground">{review.name}</p>
+                  <p className="text-xs text-muted-foreground">{review.role}</p>
+                </div>
+                <div className="ml-auto">
+                  <GoogleIcon />
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
 
         {/* Platform Badges */}
         <div
           className={cn(
-            "flex flex-col items-center gap-6 transition-all duration-700 delay-100",
+            "flex flex-col items-center gap-6 transition-all duration-700 delay-300",
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
           )}
         >
+          <p className="text-xs text-muted-foreground uppercase tracking-widest font-semibold">Also rated on</p>
           <div className="flex flex-wrap items-center justify-center gap-4">
             {/* Google */}
             <a
