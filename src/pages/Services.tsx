@@ -329,25 +329,6 @@ export default function Services() {
               One expert team for every glass & aluminium need.
             </p>
 
-            {/* Quick Stats */}
-            <div className="flex flex-wrap justify-center gap-8 pt-6">
-              {[
-                { value: "10+", label: "Projects Delivered" },
-                { value: "50+", label: "Happy Clients" },
-                { value: "8", label: "Service Categories" },
-                { value: "5+", label: "Years Experience" },
-              ].map((stat) => (
-                <div key={stat.label} className="text-center">
-                  <p className="text-2xl md:text-3xl font-extrabold text-white">
-                    {stat.value}
-                  </p>
-                  <p className="text-xs text-slate-400 uppercase tracking-wider mt-1">
-                    {stat.label}
-                  </p>
-                </div>
-              ))}
-            </div>
-
             {/* Trust Badge */}
             <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
               <div className="flex items-center gap-2 px-4 py-2 bg-white/8 border border-white/15 rounded-full backdrop-blur-sm">

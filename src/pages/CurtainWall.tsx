@@ -164,25 +164,6 @@ export default function CurtainWall() {
         </div>
       </section>
 
-      {/* TRUST BADGES */}
-      <section className="py-8 bg-slate-800 border-b border-slate-700">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-wrap justify-center gap-8 text-center">
-            {[
-              { value: "10+", label: "Curtain Wall Projects" },
-              { value: "5+ yrs", label: "Facade Experience" },
-              { value: "IS 875", label: "Wind Load Certified" },
-              { value: "25 yr", label: "Silicone Warranty" },
-            ].map((s) => (
-              <div key={s.label} className="text-white">
-                <p className="text-xl font-extrabold text-amber-400">{s.value}</p>
-                <p className="text-xs text-slate-400 mt-0.5">{s.label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* WHAT & WHY */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-start">

@@ -160,25 +160,6 @@ const Maintenance = () => {
         </div>
       </section>
 
-      {/* TRUST STRIP */}
-      <section className="py-6 bg-slate-800">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-wrap justify-center gap-8 text-center">
-            {[
-              { value: "2×/yr", label: "AMC Cleaning Cycles" },
-              { value: "24 hrs", label: "Emergency Response" },
-              { value: "Insured", label: "All Technicians" },
-              { value: "10+", label: "Years Experience" },
-            ].map((s) => (
-              <div key={s.label} className="text-white">
-                <p className="text-lg font-extrabold text-amber-400">{s.value}</p>
-                <p className="text-xs text-slate-400 mt-0.5">{s.label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* SERVICE CARDS */}
       <section className="py-24 bg-slate-50">
         <div className="container px-4 max-w-6xl mx-auto">
