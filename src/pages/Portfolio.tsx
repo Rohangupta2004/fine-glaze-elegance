@@ -73,7 +73,7 @@ const Portfolio = () => {
         );
 
   return (
-    <Layout>
+    <Layout darkHero>
       <SEO
         title="Facade Projects Portfolio – LTIMindtree, Embassy, Pune Airport | Fine Glaze"
         description="Explore Fine Glaze's portfolio of 10+ landmark facade projects including LTIMindtree Mensa Campus, Embassy 247, Pune Airport Terminal, Salsette-27 & more. Award-winning execution across Mumbai & Pune."
@@ -87,14 +87,18 @@ const Portfolio = () => {
         </script>
       </Helmet>
       {/* INTRO */}
-      <section className="pt-28 pb-14">
-        <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-12 items-end">
-          <h1 className="text-6xl font-extrabold leading-tight">
+      <section className="relative pt-32 pb-16 overflow-hidden">
+        <div className="absolute inset-0">
+          <img src="/Unitized.webp" alt="" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-900/80 via-slate-900/70 to-slate-900/90" />
+        </div>
+        <div className="container mx-auto px-4 relative z-10 grid lg:grid-cols-2 gap-12 items-end">
+          <h1 className="text-5xl md:text-6xl font-extrabold leading-tight text-white">
             Built at{" "}
             <br />
-            <span className="text-gradient-subtle">Landmark Scale</span>
+            <span className="text-gradient-gold">Landmark Scale</span>
           </h1>
-          <p className="text-lg text-muted-foreground max-w-xl">
+          <p className="text-lg text-white/80 max-w-xl">
             From international airports to corporate campuses — our portfolio
             reflects precision execution, safety-first methodology, and
             uncompromising architectural clarity.

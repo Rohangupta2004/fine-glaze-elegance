@@ -73,7 +73,7 @@ export default function ServiceDetail() {
   ];
 
   return (
-    <Layout>
+    <Layout darkHero>
       <SEO
         title={`${serviceData.label} Contractors in India | Fine Glaze`}
         description={serviceData.desc}

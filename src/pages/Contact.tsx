@@ -152,7 +152,7 @@ const handleSubmit = async (e: React.FormEvent) => {
   }
 };
   return (
-<Layout>
+<Layout darkHero>
 <SEO
   title="Contact Fine Glaze – Get a Free Facade Quote | Pune & Mumbai"
   description="Contact Fine Glaze for aluminium facade, curtain wall, structural glazing & ACP cladding projects. Call +91 8369233566 or email info@fineglaze.com. Free site consultation in Pune & Mumbai."
@@ -176,21 +176,25 @@ const handleSubmit = async (e: React.FormEvent) => {
   }}
 />
 {/* Hero Section */}
-<section className="pt-32 pb-20 bg-muted" ref={heroRef.ref}>
-<div className="container mx-auto px-4">
+<section className="relative pt-32 pb-20 overflow-hidden" ref={heroRef.ref}>
+<div className="absolute inset-0">
+  <img src="/Glass installation.webp" alt="" className="w-full h-full object-cover" />
+  <div className="absolute inset-0 bg-gradient-to-b from-slate-900/80 via-slate-900/70 to-slate-900/90" />
+</div>
+<div className="container mx-auto px-4 relative z-10">
 <div
 className={cn(
 "max-w-3xl mx-auto text-center space-y-6 slide-up",
 heroRef.isVisible && "visible"
 )}
 >
-<span className="text-primary font-medium uppercase tracking-wider text-sm">
+<span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-500/20 text-amber-400 text-sm font-bold uppercase tracking-wider border border-amber-500/30">
 Contact Us
 </span>
-<h1 className="text-4xl md:text-5xl font-bold text-foreground">
-  Let's <span className="text-gradient-subtle">Discuss</span> Your Project
+<h1 className="text-4xl md:text-5xl font-bold text-white">
+  Let's <span className="text-gradient-gold">Discuss</span> Your Project
 </h1>
-<p className="text-muted-foreground text-lg">
+<p className="text-white/80 text-lg">
   Ready to transform your building's facade? Our engineering team offers
   free consultations and detailed quotes — typically within 24 hours.
 </p>
