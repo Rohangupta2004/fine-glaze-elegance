@@ -23,6 +23,7 @@ CheckCircle2,
 } from "lucide-react";
 import { toast } from "sonner";
 import SEO from "@/components/SEO";
+import { supabase, isSupabaseConfigured } from "@/lib/supabase";
 
 const projectTypes = [
 "Facade Fabrication",
@@ -93,6 +94,7 @@ const handleSubmit = async (e: React.FormEvent) => {
   setIsSubmitting(true);
 
   try {
+    // 1. Send via Web3Forms (email notification)
     const res = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
       headers: {
@@ -112,6 +114,23 @@ const handleSubmit = async (e: React.FormEvent) => {
     });
 
     const data = await res.json();
+
+    // 2. Also save to Supabase (lead capture database)
+    if (isSupabaseConfigured) {
+      try {
+        await supabase.from("contact_leads").insert({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          project_type: formData.projectType,
+          message: formData.message,
+          source: "website",
+        });
+      } catch {
+        // Supabase save is best-effort; don't block form submission
+        console.warn("Supabase lead save failed (non-blocking)");
+      }
+    }
 
     if (data.success) {
       setIsSubmitted(true);
