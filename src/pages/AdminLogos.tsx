@@ -84,7 +84,7 @@ export default function AdminLogos() {
 
     const { error } = await supabase.storage
       .from(BUCKET)
-      .upload(MANIFEST_PATH, blob, { upsert: true });
+      .upload(MANIFEST_PATH, blob, { contentType: "application/json", upsert: true });
 
     if (error) {
       toast.error("Failed to save manifest: " + error.message);
@@ -107,7 +107,7 @@ export default function AdminLogos() {
     // Upload image
     const { error: uploadError } = await supabase.storage
       .from(BUCKET)
-      .upload(path, file);
+      .upload(path, file, { contentType: file.type, upsert: false });
 
     if (uploadError) {
       toast.error("Upload failed: " + uploadError.message);
