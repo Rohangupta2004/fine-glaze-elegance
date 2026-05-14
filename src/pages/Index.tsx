@@ -7,6 +7,7 @@ import { ServicesSection } from "@/components/home/ServicesSection";
 import { ProcessSection } from "@/components/home/ProcessSection";
 import { ReviewsSection } from "@/components/home/ReviewsSection";
 import { CTASection } from "@/components/home/CTASection";
+import { LocalSeoCallSection } from "@/components/home/LocalSeoCallSection";
 import SEO from "@/components/SEO";
 
 const Index = () => {
@@ -80,6 +81,37 @@ const Index = () => {
     ]
   };
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Who is the best facade contractor in Pune for commercial buildings?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Fine Glaze provides facade contracting in Pune for commercial buildings, IT parks, offices, malls, hospitals and hotels, including structural glazing, curtain walls, ACP cladding and aluminium facade systems."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can Fine Glaze provide a free site visit and quotation?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Fine Glaze offers project discussion, site visit support and detailed facade quotations for eligible projects in Pune, Mumbai, Navi Mumbai, Thane and nearby Maharashtra locations."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which facade services does Fine Glaze offer?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Fine Glaze offers structural glazing, curtain wall systems, ACP cladding, aluminium facades, glass railings, facade waterproofing and facade maintenance AMC services."
+        }
+      }
+    ]
+  };
+
   return (
     <Layout darkHero>
       <SEO
@@ -87,13 +119,14 @@ const Index = () => {
         description="Fine Glaze — top-rated facade contractor in Pune & Mumbai. Structural glazing, unitized curtain walls, ACP cladding & aluminium facades for IT parks, offices & malls. Embassy REIT awarded. ₹350–1200/sq ft. Free site visit."
         canonical="https://fineglaze.com/"
         keywords="facade contractor pune, facade contractor mumbai, curtain wall manufacturers india, structural glazing contractor pune, ACP cladding contractor mumbai, aluminium facade company pune, glass railing contractor, glazed facade pune, facade company maharashtra, curtain wall pune"
-        schemas={[organizationSchema, localBusinessSchema, breadcrumbSchema]}
+        schemas={[organizationSchema, localBusinessSchema, breadcrumbSchema, faqSchema]}
       />
       <HeroSection />
       <ClientsCarousel />
       <AwardsSection />
       <PortfolioSection />
       <ServicesSection />
+      <LocalSeoCallSection />
       <ProcessSection />
       <ReviewsSection />
       <CTASection />
