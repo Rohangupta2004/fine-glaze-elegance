@@ -49,8 +49,13 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
         : isScrolled
         ? "text-slate-700 hover:bg-slate-100"
         : darkHero
-        ? "text-white hover:bg-white/20 [text-shadow:_0_1px_4px_rgb(0_0_0_/_60%)]"
-        : "text-slate-700 hover:bg-slate-100"
+        ? "text-white hover:bg-white/20"
+        : "text-slate-800 hover:bg-slate-100/80"
+    );
+        ? "text-slate-700 hover:bg-slate-100"
+        : darkHero
+        ? "text-white hover:bg-white/20"
+        : "text-slate-800 hover:bg-slate-100/80"
     );
 
   return (
@@ -95,7 +100,7 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
                 onClick={() => setIsServiceOpen(!isServiceOpen)}
                 className={cn(
                   "p-1 rounded-md",
-                  isScrolled ? "text-slate-700" : darkHero ? "text-white [text-shadow:_0_1px_4px_rgb(0_0_0_/_60%)]" : "text-slate-700"
+                  isScrolled ? "text-slate-700" : darkHero ? "text-white" : "text-slate-800"
                 )}
               >
                 <ChevronDown size={14} />
@@ -138,9 +143,7 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
                   "gap-2",
                   isScrolled
                     ? "text-slate-700"
-                    : darkHero
-                    ? "text-white hover:bg-white/20 [text-shadow:_0_1px_4px_rgb(0_0_0_/_60%)]"
-                    : "text-slate-700 hover:bg-slate-100"
+                    : "text-white hover:bg-white/20"
                 )}
               >
                 <Phone size={16} />
@@ -149,7 +152,7 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
             </a>
 
             <Link to="/contact">
-              <Button className="bg-amber-600 hover:bg-amber-700 text-white">
+              <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">
                 Get a Quote
               </Button>
             </Link>
@@ -206,7 +209,7 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
                 </Button>
               </a>
               <Link to="/contact">
-                <Button className="w-full bg-amber-600 text-white">
+                <Button className="w-full bg-primary text-primary-foreground">
                   Get Quote
                 </Button>
               </Link>
