@@ -141,8 +141,8 @@ export default function AluminiumFacade() {
           </div>
 
           <img
-            src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c"
-            alt="Modern aluminium facade building in India - Fine Glaze"
+            src="/Aluminium%20windows.webp"
+            alt="Modern aluminium windows and facade by Fine Glaze India"
             className="rounded-xl shadow-2xl object-cover h-[420px] w-full"
             loading="eager"
             width="600"
@@ -180,8 +180,8 @@ export default function AluminiumFacade() {
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-background rounded-xl shadow overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1529429617124-95b109e86bb8"
-                alt="Lightweight aluminium and glass facade system"
+                src="/Unitized.webp"
+                alt="Lightweight unitized aluminium facade system"
                 className="h-48 w-full object-cover"
                 loading="lazy"
                 width="400"
@@ -197,8 +197,8 @@ export default function AluminiumFacade() {
 
             <div className="bg-background rounded-xl shadow overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5"
-                alt="Weather resistant aluminium facade exterior"
+                src="/Thermal.webp"
+                alt="Weather-resistant thermal-break aluminium windows"
                 className="h-48 w-full object-cover"
                 loading="lazy"
                 width="400"
@@ -214,8 +214,8 @@ export default function AluminiumFacade() {
 
             <div className="bg-background rounded-xl shadow overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1503387762-592deb58ef4e"
-                alt="Architectural aluminium facade design freedom"
+                src="/Tilt.webp"
+                alt="Architectural tilt-turn aluminium window with custom finish"
                 className="h-48 w-full object-cover"
                 loading="lazy"
                 width="400"
@@ -241,8 +241,8 @@ export default function AluminiumFacade() {
 
           <div className="grid md:grid-cols-2 gap-8">
             <img
-              src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750"
-              alt="Commercial aluminium facade installation by Fine Glaze"
+              src="/Glazing.webp"
+              alt="Commercial aluminium facade and glazing installation by Fine Glaze"
               className="rounded-xl shadow object-cover h-80 w-full"
               loading="lazy"
               width="600"
