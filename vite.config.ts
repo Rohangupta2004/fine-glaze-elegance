@@ -31,13 +31,37 @@ services.forEach(service => {
   });
 });
 
-// 3. Blog Slugs (From src/data/blog.ts)
-const blogUrls = [
-  "/blog/structural-glazing-cost-india-2026",
-  "/blog/unitized-vs-stick-system-curtain-wall",
-  "/blog/types-of-glass-for-building-facades",
-  "/blog/how-to-choose-facade-contractor-india",
-  "/blog/acp-vs-hpl-cladding-comparison"
+// 3. Blog Slugs — auto-generated from blog data keys
+import { blogPosts } from "./src/data/blog";
+const blogUrls = Object.keys(blogPosts).map(slug => `/blog/${slug}`);
+
+// 4b. Static SEO Pages (service×city, building-type, guides)
+const staticSeoUrls = [
+  "/curtain-wall-pune",
+  "/structural-glazing-pune",
+  "/acp-cladding-pune",
+  "/glass-railing-pune",
+  "/facade-contractor-pune",
+  "/facade-contractor-mumbai",
+  "/facade-contractor-navi-mumbai",
+  "/facade-contractor-thane",
+  "/curtain-wall-mumbai",
+  "/structural-glazing-mumbai",
+  "/aluminium-facade-mumbai",
+  "/curtain-wall-cost-guide",
+  "/aluminium-vs-acp-cladding",
+  "/commercial-building-facade",
+  "/facade-waterproofing",
+  "/pvdf-vs-powder-coating-aluminium",
+  "/facade-design-guide",
+  "/curtain-wall-vs-structural-glazing",
+  "/it-park-facade",
+  "/hospital-facade",
+  "/hotel-facade",
+  "/mall-facade",
+  "/residential-facade",
+  "/industrial-facade",
+  "/facade-amc-guide",
 ];
 
 // 4. Project Slugs (From src/data/projects.ts)
@@ -80,7 +104,8 @@ export default defineConfig(({ mode }) => ({
         // Dynamic Arrays Generated Above
         ...dynamicUrls,
         ...blogUrls,
-        ...projectUrls
+        ...projectUrls,
+        ...staticSeoUrls
       ];
     },
   },

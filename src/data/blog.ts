@@ -989,6 +989,219 @@ export const blogPosts: Record<string, BlogPost> = {
       },
     ],
   },
+
+  "acp-sheet-price-per-sq-ft-india-2026": {
+    slug: "acp-sheet-price-per-sq-ft-india-2026",
+    title: "ACP Sheet Price Per Sq Ft in India (2026 Complete Rate List)",
+    metaTitle: "ACP Sheet Price Per Sq Ft India 2026 | Complete Rate List – Fine Glaze",
+    metaDescription: "Complete 2026 ACP sheet price list in India. ACP cladding rates from ₹65–₹350/sq ft by brand, finish, and core type. FR vs PE core, PVDF vs polyester coating costs explained.",
+    keywords: "acp sheet price per sq ft, acp panel rate India, acp cladding cost, aluminium composite panel price 2026, acp sheet rate list, acp price per square foot India",
+    date: "2026-05-14",
+    readTime: "7 min read",
+    category: "Pricing Guide",
+    heroImage: "/Panel.webp",
+    excerpt: "Complete 2026 ACP sheet pricing for India — covering PE core, FR core, PVDF coating, and nano-coated panels with brand-wise rate comparison.",
+    content: [
+      { heading: "ACP Sheet Prices in India 2026", body: "Aluminium Composite Panels (ACP) are the most widely used facade cladding material in India. Whether you're cladding a showroom, office building, or commercial complex, understanding current pricing helps you budget accurately. This guide covers all ACP variants available in the Indian market with 2026 rates." },
+      { heading: "ACP Sheet Price by Core Type", body: "The core material is the single biggest cost differentiator in ACP panels:", table: { headers: ["ACP Type", "Price Range (₹/sq ft)", "Fire Rating", "Best Application"], rows: [["PE Core (Polyethylene)", "₹65 – ₹120", "Class C (flammable)", "Low-rise, signage, interiors"], ["FR Core (Fire Retardant)", "₹110 – ₹200", "Class B1 (self-extinguishing)", "Mid-rise commercial, hospitals"], ["A2 Grade (Mineral Core)", "₹180 – ₹350", "Class A2 (non-combustible)", "High-rise, fire-sensitive buildings"], ["Honeycomb Core", "₹200 – ₹400", "Class A2", "Premium architectural, large panels"]] } },
+      { heading: "ACP Price by Surface Finish", body: "The coating type affects both aesthetics and long-term durability:", table: { headers: ["Coating Type", "Additional Cost (₹/sq ft)", "Warranty", "UV Resistance"], rows: [["Polyester (PE)", "Base price", "5 years", "Moderate – fades in 5-7 years"], ["PVDF (Kynar 500)", "+₹30 – ₹80", "15-20 years", "Excellent – lasts 20+ years"], ["Nano PVDF", "+₹50 – ₹100", "20-25 years", "Superior – self-cleaning effect"], ["Anodised Look", "+₹40 – ₹90", "15 years", "Very good – metallic finish"], ["Wood/Stone Texture", "+₹20 – ₹60", "10-15 years", "Good – decorative applications"]] } },
+      { heading: "Brand-Wise ACP Price Comparison 2026", body: "Here are approximate rates from major ACP brands available in India:", table: { headers: ["Brand", "PE Core (₹/sq ft)", "FR Core (₹/sq ft)", "Origin"], rows: [["Alucobond", "₹110 – ₹160", "₹180 – ₹300", "Germany"], ["Aludecor", "₹80 – ₹120", "₹130 – ₹200", "India"], ["Vitrabond", "₹90 – ₹130", "₹150 – ₹220", "Australia/India"], ["Eurobond", "₹75 – ₹110", "₹120 – ₹180", "India"], ["Reynobond (Alcoa)", "₹100 – ₹150", "₹170 – ₹280", "USA"], ["Alstrong", "₹70 – ₹100", "₹110 – ₹170", "India"], ["Likebon / Unibond", "₹65 – ₹95", "₹100 – ₹160", "India/China"]] } },
+      { heading: "Total Installed Cost of ACP Cladding", body: "The ACP sheet price is only part of the total cost. Here's the full breakdown:", list: ["ACP Sheet — ₹65 to ₹350/sq ft depending on type, finish, and brand.", "Aluminium Sub-Frame — ₹40 to ₹80/sq ft for the support structure.", "CNC Routing & Fabrication — ₹15 to ₹30/sq ft for panel cutting, grooving, and folding.", "Installation Labour — ₹30 to ₹60/sq ft depending on building height and complexity.", "Sealant & Accessories — ₹10 to ₹20/sq ft for weather sealing, rivets, and trims.", "Total Installed Cost — ₹160 to ₹540/sq ft. Most commercial projects fall in the ₹200 to ₹350/sq ft range."] },
+      { heading: "PE vs FR Core: Which Should You Choose?", body: "The choice between PE and FR core depends on building regulations and safety requirements:", list: ["Buildings above 15m height — FR core is mandatory per NBC 2016.", "Hospitals, schools, hotels — FR or A2 core required regardless of height.", "Low-rise commercial (under 15m) — PE core is legally acceptable and saves 30-40%.", "Signage and interior cladding — PE core is standard and cost-effective.", "High-rise (above 30m) — A2 non-combustible core is increasingly specified.", "Fine Glaze recommendation: Always use FR core minimum for external cladding."] },
+      { heading: "Get ACP Cladding Rates for Your Project", body: "ACP prices fluctuate with aluminium commodity rates and import duties. Fine Glaze provides current-rate BOQ quotations with guaranteed pricing for 30 days. We work with Alucobond, Aludecor, and Vitrabond as preferred suppliers. Call +91 8369233566 for a free site visit and ACP cladding estimate." }
+    ]
+  },
+
+  "curtain-wall-cost-per-sq-ft-india-2026": {
+    slug: "curtain-wall-cost-per-sq-ft-india-2026",
+    title: "Curtain Wall Cost Per Sq Ft in India (2026 Price Guide)",
+    metaTitle: "Curtain Wall Cost Per Sq Ft India 2026 | Complete Price Breakdown – Fine Glaze",
+    metaDescription: "Curtain wall cost in India 2026: Stick system ₹350-550/sq ft, unitized ₹650-1200/sq ft, spider ₹800-1500/sq ft. Detailed breakdown of material, labour, and installation costs.",
+    keywords: "curtain wall cost per sq ft India, curtain wall price, curtain wall installation cost, glass curtain wall rate, unitized curtain wall price India 2026",
+    date: "2026-05-12",
+    readTime: "8 min read",
+    category: "Pricing Guide",
+    heroImage: "/Unitized.webp",
+    excerpt: "Complete 2026 cost breakdown for curtain wall systems in India — stick, unitized, and spider systems with material + installation pricing.",
+    content: [
+      { heading: "Curtain Wall Costs in India: 2026 Market Rates", body: "Curtain wall systems are the gold standard for commercial building facades in India. Understanding the true cost helps developers budget accurately and compare vendor quotations on equal terms. This guide provides current 2026 market rates across all curtain wall system types." },
+      { heading: "Curtain Wall Price by System Type", body: "Rates below include aluminium profiles, glass, hardware, sealants, and installation:", table: { headers: ["System Type", "Material + Install (₹/sq ft)", "Best For"], rows: [["Stick System (Standard)", "₹350 – ₹550", "Buildings up to 8 floors"], ["Stick System (Thermally Broken)", "₹450 – ₹700", "Energy-efficient mid-rise"], ["Unitized Curtain Wall", "₹650 – ₹1,200", "High-rise 10+ floors"], ["Semi-Unitized", "₹500 – ₹900", "Mid-rise with faster install"], ["Spider/Point-Fixed Glazing", "₹800 – ₹1,500", "Feature facades, lobbies"], ["Double Skin Facade", "₹1,200 – ₹2,500", "Premium green buildings"]] } },
+      { heading: "Detailed Cost Breakdown: Stick System Curtain Wall", body: "Here's where your money goes in a typical stick system project:", table: { headers: ["Component", "Cost (₹/sq ft)", "% of Total"], rows: [["Aluminium Profiles (6063-T6)", "₹80 – ₹150", "25-30%"], ["Glass (DGU/Toughened)", "₹120 – ₹250", "30-40%"], ["Structural Silicone & Sealant", "₹15 – ₹30", "5-7%"], ["EPDM Gaskets & Hardware", "₹20 – ₹40", "5-8%"], ["Installation Labour", "₹60 – ₹100", "15-20%"], ["Scaffolding & Safety", "₹20 – ₹40", "5-8%"], ["Engineering & Drawings", "₹10 – ₹25", "3-5%"]] } },
+      { heading: "Glass Specification & Its Impact on Cost", body: "Glass is the single largest cost component:", list: ["6mm Toughened Clear — Base option, ₹80-120/sq ft. Acceptable for low-rise buildings.", "6mm+12mm+6mm DGU Clear — ₹180-280/sq ft. Standard for air-conditioned commercial.", "DGU with Low-E Coating — ₹250-400/sq ft. Required for LEED/IGBC green certification.", "DGU with Argon Fill — +₹30-50/sq ft premium. Better thermal performance.", "Laminated Glass (PVB interlayer) — +₹60-120/sq ft. Required for overhead glazing.", "Triple Glazed Units — ₹400-600/sq ft. Used only in premium LEED Platinum projects."] },
+      { heading: "City-Wise Cost Variation in Maharashtra", body: "Curtain wall costs vary by 10-20% depending on the project city:", table: { headers: ["City", "Cost Premium", "Reason"], rows: [["Pune", "Base rate", "Good labour availability, central location"], ["Mumbai", "+10-15%", "Higher labour costs, traffic logistics"], ["Navi Mumbai", "+5-10%", "Moderate logistics premium"], ["Thane", "+5-8%", "Moderate, improving infrastructure"]] } },
+      { heading: "How to Reduce Curtain Wall Cost Without Cutting Quality", body: "Proven strategies our clients use:", list: ["Choose stick over unitized for buildings under 8 floors — saves 20-35%.", "Standardise glass sizes — custom sizes cost 15-25% more.", "Combine curtain wall with ACP cladding for opaque zones — saves 20-30%.", "Order during off-monsoon season for better rates.", "Avoid frequent design revisions after fabrication starts.", "Use value-engineered profiles — specify minimum required thermal break width."] },
+      { heading: "Get a Curtain Wall Quote for Your Project", body: "Fine Glaze provides detailed BOQ-based quotations with itemised material, labour, and overhead costs. No hidden charges. Call +91 8369233566 for a free site assessment and curtain wall cost estimate within 48 hours." }
+    ]
+  },
+
+  "aluminium-window-cost-per-sq-ft-india-2026": {
+    slug: "aluminium-window-cost-per-sq-ft-india-2026",
+    title: "Aluminium Window Cost Per Sq Ft in India (2026 Price Guide)",
+    metaTitle: "Aluminium Window Cost Per Sq Ft India 2026 | Price Guide – Fine Glaze",
+    metaDescription: "Aluminium window prices in India 2026: sliding ₹200-450/sq ft, casement ₹280-600/sq ft, tilt-turn ₹500-900/sq ft. Complete guide with brand comparison and cost factors.",
+    keywords: "aluminium window cost per sq ft India, aluminium window price, aluminium sliding window rate, aluminium casement window cost, window price per square foot 2026",
+    date: "2026-05-08",
+    readTime: "7 min read",
+    category: "Pricing Guide",
+    heroImage: "/Aluminium windows.webp",
+    excerpt: "Complete 2026 pricing for aluminium windows in India — sliding, casement, tilt-turn, and fixed windows with brand-wise comparison.",
+    content: [
+      { heading: "Aluminium Window Prices in India: 2026 Rates", body: "Aluminium windows have become the preferred choice for commercial and premium residential projects in India. The price depends on window type, profile system, glass specification, and hardware quality. This guide covers all major types with accurate 2026 market rates." },
+      { heading: "Aluminium Window Price by Type", body: "All prices include aluminium profile, glass, hardware, and basic installation:", table: { headers: ["Window Type", "Price Range (₹/sq ft)", "Common Use"], rows: [["Sliding Window (2-Track)", "₹200 – ₹350", "Bedrooms, living rooms"], ["Sliding Window (3-Track)", "₹250 – ₹400", "Large openings, balconies"], ["Casement Window (Outward)", "₹280 – ₹500", "Offices, premium homes"], ["Tilt & Turn Window", "₹500 – ₹900", "High-rise apartments, hospitals"], ["Fixed Glass Window", "₹180 – ₹350", "Facades, feature walls"], ["Awning Window", "₹350 – ₹600", "Ventilation in rain-prone areas"]] } },
+      { heading: "Profile System & Its Impact on Cost", body: "The aluminium profile system determines structural strength and thermal performance:", list: ["Standard Non-Thermal Break — ₹200-400/sq ft. Most common for Indian residential.", "Thermal Break Profile — ₹350-700/sq ft. Polyamide strip reduces heat transfer by 40-60%.", "Slim Profile (Minimalist) — ₹450-900/sq ft. Ultra-narrow sightlines for maximum glass area.", "Heavy-Duty Commercial — ₹400-800/sq ft. Thicker sections for large spans and high wind loads."] },
+      { heading: "Popular Aluminium Profile Brands in India", body: "Brand choice impacts quality, warranty, and cost:", table: { headers: ["Brand", "Price Segment", "Origin", "Warranty"], rows: [["Schuco", "Premium (₹600-1200/sq ft)", "Germany", "10 years"], ["Reynaers", "Premium (₹500-1000/sq ft)", "Belgium", "10 years"], ["Alumil", "Mid-Premium (₹400-800/sq ft)", "Greece/India", "10 years"], ["Tostem (LIXIL)", "Mid (₹350-700/sq ft)", "Japan/India", "7 years"], ["Fenesta (DCM Shriram)", "Mid (₹300-600/sq ft)", "India", "7 years"], ["Jindal/Hindalco", "Economy (₹200-450/sq ft)", "India", "5 years"]] } },
+      { heading: "Get Aluminium Window Rates for Your Project", body: "Fine Glaze provides detailed room-by-room quotations with sample profiles and glass options. We work with Alumil, Tostem, and premium Indian systems. Call +91 8369233566 for a free site measurement and quotation." }
+    ]
+  },
+
+  "double-glazed-window-cost-india-2026": {
+    slug: "double-glazed-window-cost-india-2026",
+    title: "Double Glazed Window Cost in India (2026 DGU Price Guide)",
+    metaTitle: "Double Glazed Window Cost India 2026 | DGU Price Guide – Fine Glaze",
+    metaDescription: "Double glazed (DGU) window costs in India 2026: ₹350-900/sq ft installed. Learn about DGU types, energy savings, noise reduction, and whether DGU is worth the investment.",
+    keywords: "double glazed window cost India, DGU window price, double glazing cost per sq ft, DGU glass rate India, insulated glass unit cost 2026",
+    date: "2026-05-06",
+    readTime: "6 min read",
+    category: "Pricing Guide",
+    heroImage: "/Glass.webp",
+    excerpt: "Is double glazing worth the cost in India? Complete 2026 DGU window price guide with energy savings and noise reduction data.",
+    content: [
+      { heading: "Double Glazed Windows in India: Cost & Value", body: "Double glazed windows (DGU) use two glass panes separated by an air or gas gap to dramatically improve thermal insulation, noise reduction, and energy efficiency. Here's what they cost in 2026." },
+      { heading: "DGU Window Price by Configuration", body: "Prices include aluminium frame, DGU glass, hardware, and installation:", table: { headers: ["DGU Configuration", "Price (₹/sq ft)", "U-Value", "Best For"], rows: [["6mm+12mm Air+6mm Clear", "₹350 – ₹500", "2.8-3.0", "Budget DGU, basic insulation"], ["6mm+12mm Argon+6mm Clear", "₹400 – ₹580", "2.5-2.7", "Better thermal performance"], ["6mm+12mm+6mm Low-E", "₹450 – ₹650", "1.6-1.8", "Energy-efficient buildings"], ["6mm+16mm+6mm Low-E Argon", "₹500 – ₹750", "1.2-1.4", "LEED/IGBC certified projects"], ["8mm+12mm+8mm Laminated", "₹550 – ₹800", "2.6-2.8", "Acoustic + safety priority"]] } },
+      { heading: "Energy Savings with DGU Windows", body: "DGU windows reduce air conditioning costs significantly:", list: ["30-40% reduction in AC electricity for west and south-facing offices.", "Annual savings of ₹15-25/sq ft on electricity bills.", "ROI period: 4-7 years through energy savings alone.", "Additional benefit: reduced AC tonnage requirement saves ₹3,000-5,000 per ton.", "IGBC Green rating: DGU with Low-E glass is practically mandatory for Gold/Platinum."] },
+      { heading: "Noise Reduction Performance", body: "DGU windows provide significantly better sound insulation:", table: { headers: ["Window Type", "Noise Reduction (dB)", "Equivalent To"], rows: [["Single 5mm Glass", "25-28 dB", "Blocks light background noise"], ["DGU 6+12+6mm", "32-35 dB", "Blocks traffic, street noise"], ["DGU with Laminated Inner", "38-42 dB", "Blocks heavy traffic, construction"], ["Asymmetric DGU (6+12+10mm)", "36-40 dB", "Optimal cost-to-noise ratio"]] } },
+      { heading: "Is DGU Worth the Cost in India?", body: "The honest answer depends on your situation:", list: ["YES for: air-conditioned offices, commercial buildings, hospitals, hotels, and buildings facing busy roads.", "YES for: premium apartments where resale value matters and AC costs are significant.", "MAYBE for: ground-floor residential in quiet areas with moderate climate.", "NOT needed for: non-AC warehouses, temporary structures, or interior partitions.", "Fine Glaze recommendation: For any air-conditioned space in Maharashtra, DGU with Low-E coating is the minimum we recommend."] },
+      { heading: "Get DGU Window Pricing for Your Project", body: "Fine Glaze provides free thermal performance analysis to help you choose the optimal DGU configuration. Call +91 8369233566 for a quotation with energy savings projection." }
+    ]
+  },
+
+  "facade-design-trends-india-2026": {
+    slug: "facade-design-trends-india-2026",
+    title: "Top 10 Building Facade Design Trends in India (2026)",
+    metaTitle: "Top 10 Facade Design Trends India 2026 | Architecture Guide – Fine Glaze",
+    metaDescription: "Discover the top 10 building facade design trends shaping Indian architecture in 2026. From parametric facades to biophilic design and AI-optimised envelopes.",
+    keywords: "facade design trends India 2026, building facade trends, modern facade design, parametric facade India, green building facade, biophilic facade design",
+    date: "2026-05-02",
+    readTime: "8 min read",
+    category: "Industry Guide",
+    heroImage: "/Glazing.webp",
+    excerpt: "From parametric facades to net-zero envelopes — the 10 facade design trends defining Indian commercial architecture in 2026.",
+    content: [
+      { heading: "How Facade Design Is Evolving in India", body: "Indian facade design is experiencing a rapid evolution driven by green building mandates, rising energy costs, advanced manufacturing technology, and a new generation of architects pushing boundaries. These 10 trends are shaping how commercial buildings look and perform in 2026." },
+      { heading: "1. Parametric & Algorithmic Facades", body: "Complex, mathematically-derived facade patterns are becoming feasible thanks to CNC manufacturing and 3D modelling. Indian tech parks in Pune and Hyderabad are adopting parametric aluminium screens that provide solar shading while creating distinctive building identities. Cost premium: 20-40% over standard curtain walls." },
+      { heading: "2. Double-Skin Facades for Energy Efficiency", body: "A double-skin facade uses two layers of glass with a ventilated cavity between them. This creates a thermal buffer that reduces AC load by 30-50%. Indian projects like Embassy developments in Bangalore and Pune are now specifying double-skin facades for LEED Platinum targets." },
+      { heading: "3. Biophilic Facade Integration", body: "Living walls, vertical gardens, and planter-integrated facades are trending in Indian commercial projects. These biophilic elements improve air quality, reduce urban heat island effect, and create visually distinctive buildings." },
+      { heading: "4. Terracotta & Ceramic Facade Panels", body: "As an alternative to ACP and glass, terracotta cladding is gaining popularity for its natural aesthetic, fire resistance (A1 non-combustible), and zero-maintenance surface. Indian manufacturers are now producing terracotta panels locally at ₹250-500/sq ft installed." },
+      { heading: "5. Integrated Photovoltaic (BIPV) Facades", body: "Building-Integrated Photovoltaics embed solar cells directly into facade glass panels. A south-facing BIPV facade in Pune can generate 40-80 kWh per sq meter annually. While still expensive (₹1,500-3,000/sq ft), falling costs are making BIPV viable for premium Indian projects." },
+      { heading: "6. Perforated Metal Screen Facades", body: "CNC-cut aluminium or weathering steel screens provide solar shading, privacy, and dramatic light patterns. Indian architects are using perforated screens with traditional jaali patterns reinterpreted in modern geometry. Cost: ₹150-350/sq ft." },
+      { heading: "7. Ultra-Slim Glazing Profiles", body: "Minimalist aluminium profiles with 20-35mm sightlines create near-frameless glass facades. European systems like Schuco and Reynaers now have slim-profile ranges specifically for the Indian market." },
+      { heading: "8. Fire-Rated Glass Facades", body: "Increasing fire safety awareness is driving demand for fire-rated curtain walls. New systems achieve EI-60 to EI-120 fire ratings while maintaining the aesthetic of standard curtain walls. Critical for hospitals, data centres, and high-rise residential." },
+      { heading: "9. Kinetic & Responsive Facades", body: "Facades with movable elements that respond to sun angle, wind, or occupant control. From motorised aluminium louvres to electrochromic glass that tints on demand. Still niche in India but growing in premium corporate projects." },
+      { heading: "10. Hybrid Material Facades", body: "The biggest trend: combining multiple materials on a single building. Glass curtain walls for office floors, terracotta for podium levels, perforated metal screens for car parks, and green walls for common areas. Fine Glaze's multi-material expertise makes us ideal for these complex facades. Contact us at +91 8369233566." }
+    ]
+  },
+
+  "fire-rated-glass-facade-requirements-india": {
+    slug: "fire-rated-glass-facade-requirements-india",
+    title: "Fire-Rated Glass Facade Requirements in India (NBC 2016 & IS Codes)",
+    metaTitle: "Fire-Rated Glass Facade India | NBC 2016 Requirements – Fine Glaze",
+    metaDescription: "Complete guide to fire-rated glass facade requirements in India. NBC 2016 rules, IS code compliance, fire-rated curtain wall systems, and costs.",
+    keywords: "fire rated glass facade India, fire rated curtain wall, NBC 2016 facade fire safety, glass facade fire requirements, fire resistant glass building India",
+    date: "2026-04-20",
+    readTime: "7 min read",
+    category: "Technical Guide",
+    heroImage: "/Glass installation.webp",
+    excerpt: "What Indian building codes require for fire-rated glass facades — NBC 2016 rules, IS standards, fire-rated curtain wall options, and compliance costs.",
+    content: [
+      { heading: "Why Fire-Rated Facades Matter in India", body: "India has seen several high-profile building fires that exposed inadequate facade fire safety. The NBC 2016 and state-level regulations now mandate specific fire resistance requirements for building facades, especially in high-rise commercial and institutional buildings." },
+      { heading: "NBC 2016 Facade Fire Safety Requirements", body: "Key NBC 2016 provisions affecting facade design:", list: ["Clause 4.4.4 — External cladding above 15m must be non-combustible (A1/A2). Bans PE-core ACP above 15m.", "Clause 7.9 — Spandrel panels between floors must provide minimum 1-hour fire resistance.", "Clause 7.11.2 — Openings in external walls near boundary must have fire-rated glazing.", "Part 4, Table 5 — Min fire resistance: 2 hours for high-rise residential, 4 hours for commercial near boundaries.", "IS 16700:2017 covers fire safety for tall buildings and facade fire testing requirements."] },
+      { heading: "Fire-Rated Glass Types for Indian Facades", body: "Different products provide different levels of protection:", table: { headers: ["Glass Type", "Fire Rating", "Application", "Cost (₹/sq ft)"], rows: [["Pyran (Borosilicate)", "E-30 to E-120", "Integrity only — blocks flames/smoke", "₹800 – ₹2,000"], ["Contraflam (Gel-filled)", "EI-30 to EI-120", "Integrity + insulation — blocks heat", "₹2,000 – ₹5,000"], ["Pyrobel (Wired Glass)", "E-30", "Basic fire resistance", "₹400 – ₹800"], ["Fire-Rated Laminated", "EI-30 to EI-60", "Multiple intumescent interlayers", "₹1,200 – ₹3,500"]] } },
+      { heading: "Fire-Rated Curtain Wall Systems", body: "Standard curtain wall aluminium melts at 660°C. Fire-rated systems solve this:", list: ["Steel-Core Profiles — Aluminium with concealed steel reinforcement for structural integrity during fire.", "Intumescent Strips — Expand when heated, creating an insulating barrier. Added at ₹50-100/rft.", "Spandrel Panel Design — Non-vision areas with fire-rated insulation behind opaque glass.", "Shadow Box Spandrels — Glass-fronted with fire-rated backing providing 1-2 hour fire rating.", "Firestop Perimeter Sealant — Fire-rated sealant at the facade-slab junction (mandatory per NBC)."] },
+      { heading: "Compliance Checklist for Indian Projects", body: "Ensure your facade project meets fire safety requirements:", list: ["All external cladding above 15m is non-combustible.", "Floor-to-floor spandrel zones have minimum 1-hour fire-rated construction.", "Perimeter firestop at every floor-slab junction is specified.", "Facade materials have valid NABL-accredited test certificates.", "ACP panels (if used) are FR-core minimum with classification certificates.", "Facade contractor provides material test reports and compliance certificates."] },
+      { heading: "Fine Glaze Fire-Rated Facade Expertise", body: "Fine Glaze designs and installs fire-compliant facades for hospitals, high-rise residential, data centres, and commercial projects across Pune and Mumbai. All our ACP installations above 15m use FR-core or A2 panels only. Call +91 8369233566 for a fire-safety facade consultation." }
+    ]
+  },
+
+  "glass-partition-cost-india-2026": {
+    slug: "glass-partition-cost-india-2026",
+    title: "Glass Partition Cost in India (2026 Office & Commercial Price Guide)",
+    metaTitle: "Glass Partition Cost India 2026 | Office Partition Price Guide – Fine Glaze",
+    metaDescription: "Glass partition costs in India 2026: frameless ₹250-600/sq ft, aluminium framed ₹180-400/sq ft. Office, conference room, and cabin partition costs with installation.",
+    keywords: "glass partition cost India, glass partition price per sq ft, office glass partition cost, frameless glass partition price, glass cabin cost India 2026",
+    date: "2026-04-15",
+    readTime: "6 min read",
+    category: "Pricing Guide",
+    heroImage: "/Glass.webp",
+    excerpt: "Complete 2026 glass partition pricing for Indian offices — frameless, framed, switchable, and acoustic partitions with installation costs.",
+    content: [
+      { heading: "Glass Partition Prices in India 2026", body: "Glass partitions have replaced traditional gypsum walls in modern Indian offices, co-working spaces, hospitals, and retail stores. They create visual transparency, improve natural light distribution, and give spaces a premium feel." },
+      { heading: "Glass Partition Price by System Type", body: "All prices include glass, frame/hardware, and installation:", table: { headers: ["Partition Type", "Price Range (₹/sq ft)", "Best For"], rows: [["Aluminium Framed (Single Glass)", "₹180 – ₹300", "Budget offices, retail"], ["Aluminium Framed (DGU/Acoustic)", "₹350 – ₹550", "Conference rooms, quiet cabins"], ["Frameless Glass (Patch Fitting)", "₹250 – ₹450", "Premium offices, co-working"], ["Frameless with Glass Door", "₹300 – ₹500", "MD cabins, meeting rooms"], ["Demountable Glass Partition", "₹400 – ₹700", "Flexible offices, relocatable"], ["Switchable Glass (PDLC)", "₹1,500 – ₹3,500", "Conference rooms needing privacy"]] } },
+      { heading: "Common Office Partition Cost Estimates", body: "Practical cost estimates for typical Indian office layouts:", table: { headers: ["Office Space", "Partition Area", "Estimated Cost"], rows: [["MD/Director Cabin (10x10)", "200-250 sq ft", "₹50,000 – ₹1,25,000"], ["Conference Room (15x12)", "300-400 sq ft", "₹70,000 – ₹2,00,000"], ["4-Cabin Executive Floor", "600-800 sq ft", "₹1,20,000 – ₹4,00,000"], ["Full Floor Office (3000 sq ft)", "800-1200 sq ft", "₹2,00,000 – ₹6,00,000"]] } },
+      { heading: "Acoustic Performance of Glass Partitions", body: "Sound insulation is critical for office partitions:", list: ["Single 10mm Glass — 32-34 dB. Voices are audible.", "Single 12mm Glass — 34-36 dB. Standard for open offices.", "DGU (6+12+6mm) — 38-42 dB. Good for meeting rooms.", "Laminated Glass (12.38mm PVB) — 38-40 dB. Better than equivalent single glass.", "Double Glass with 100mm Gap — 45-50 dB. Best for boardrooms."] },
+      { heading: "Get Glass Partition Pricing for Your Office", body: "Fine Glaze provides free site surveys and 3D layout proposals for office partition projects in Pune and Mumbai. Call +91 8369233566 for a quotation." }
+    ]
+  },
+
+  "facade-contractor-vs-general-contractor": {
+    slug: "facade-contractor-vs-general-contractor",
+    title: "Facade Contractor vs General Contractor: Why You Need a Specialist",
+    metaTitle: "Facade Contractor vs General Contractor | Why Specialist Matters – Fine Glaze",
+    metaDescription: "Why hiring a specialist facade contractor beats leaving facade work to your general contractor. Quality, cost, and timeline comparison with real examples.",
+    keywords: "facade contractor vs general contractor, specialist facade contractor India, why hire facade expert, facade subcontractor advantages, glazing contractor benefits",
+    date: "2026-04-10",
+    readTime: "5 min read",
+    category: "Industry Guide",
+    heroImage: "/Business park.webp",
+    excerpt: "Should you give facade work to your general contractor or hire a specialist? The right choice can save you lakhs and months.",
+    content: [
+      { heading: "The Common Mistake: Leaving Facade to Your GC", body: "Most developers hand over facade work to their general contractor. This seems convenient but often leads to cost overruns, water leakage, and facades that look dated within 5 years." },
+      { heading: "General Contractor vs Facade Specialist", body: "Key differences:", table: { headers: ["Aspect", "General Contractor", "Specialist Facade Contractor"], rows: [["Design Capability", "Follows architect specs as-is", "Optimises design for cost & performance"], ["Engineering", "Outsourced or basic", "In-house structural & thermal engineering"], ["Fabrication", "Outsourced to local workshops", "Own factory with CNC machines, QC"], ["Installation Crew", "General labour, basic training", "Dedicated facade crew, safety certified"], ["Warranty", "1-2 years (defect liability)", "5-10 years workmanship, 20+ years silicone"], ["After-Sales", "Project over = relationship over", "AMC services, long-term accountability"]] } },
+      { heading: "Real Consequences of the Wrong Choice", body: "Problems we've seen when GCs handle facade work:", list: ["Water Leakage — The #1 complaint. GC-installed facades often leak within 2-3 monsoons.", "Glass Breakage — Wrong glass specification causes spontaneous breakage.", "Aluminium Corrosion — Standard anodising fails in coastal environments.", "Thermal Performance Failure — Standard aluminium instead of thermal-break profiles.", "Delayed Handover — GCs who treat facade as 'just cladding' underestimate lead times."] },
+      { heading: "When a General Contractor Is Acceptable", body: "A GC can handle facade work when:", list: ["Building is low-rise (under 4 floors) with simple windows.", "Facade is basic ACP cladding with no structural glazing.", "GC has a dedicated facade sub-division with engineering team.", "Budget is the absolute primary concern."] },
+      { heading: "Why Fine Glaze as Your Facade Partner", body: "Fine Glaze works as a specialist facade sub-contractor alongside your GC. We coordinate with your architect and structural consultant, manage our own fabrication timeline, and provide independent quality assurance. Call +91 8369233566 to discuss how we can work alongside your project team." }
+    ]
+  },
+
+  "leed-igbc-facade-requirements-india": {
+    slug: "leed-igbc-facade-requirements-india",
+    title: "LEED & IGBC Facade Requirements for Indian Buildings (2026 Guide)",
+    metaTitle: "LEED IGBC Facade Requirements India | Green Building Glass Guide – Fine Glaze",
+    metaDescription: "Complete guide to LEED and IGBC facade requirements for Indian buildings. Glass U-values, SHGC limits, VLT requirements, and energy-compliant facade specifications.",
+    keywords: "LEED facade requirements India, IGBC green building facade, SHGC glass India, U value glass facade, ECBC facade compliance, green building glass specification",
+    date: "2026-04-01",
+    readTime: "8 min read",
+    category: "Technical Guide",
+    heroImage: "/Glazing.webp",
+    excerpt: "What glass and facade specs does your building need for LEED or IGBC certification in India? Complete 2026 compliance guide.",
+    content: [
+      { heading: "Facade Performance & Green Certification", body: "India's commercial real estate market increasingly demands LEED or IGBC certification. The building facade — responsible for 40-60% of a building's thermal load — is the single most impactful element for achieving energy performance credits." },
+      { heading: "ECBC 2017 Facade Requirements", body: "Minimum facade performance for commercial buildings:", table: { headers: ["Parameter", "ECBC Compliant", "ECBC+", "Super ECBC"], rows: [["Wall U-Value (W/m²K)", "≤ 0.40", "≤ 0.34", "≤ 0.22"], ["Glass SHGC (South/West)", "≤ 0.27", "≤ 0.25", "≤ 0.20"], ["Glass U-Value (W/m²K)", "≤ 3.30", "≤ 2.20", "≤ 1.80"], ["Window-Wall Ratio", "≤ 40%", "≤ 40%", "≤ 40%"], ["VLT (Visible Light)", "≥ 0.27", "≥ 0.27", "≥ 0.27"]] } },
+      { heading: "LEED v4.1 Energy Credits: Facade Impact", body: "Facade specifications directly affect LEED energy credits:", list: ["EAp2 Minimum Energy Performance — Facade must meet ECBC or ASHRAE 90.1 minimum.", "EAc1 Optimize Energy Performance — Up to 18 points. Optimised facade contributes 3-6 points.", "IEQc7 Daylight — Glass VLT above 0.40 with appropriate SHGC is key."] },
+      { heading: "Glass Specs for LEED/IGBC by Indian Climate Zone", body: "Recommended specifications:", table: { headers: ["City/Zone", "Recommended Glass", "Target SHGC", "Target U-Value"], rows: [["Pune (Warm Humid)", "DGU Low-E (Solar Control)", "0.22-0.27", "1.6-2.0"], ["Mumbai (Warm Humid)", "DGU Low-E + Laminated", "0.20-0.25", "1.4-1.8"], ["Delhi (Composite)", "DGU Low-E (Triple Silver)", "0.18-0.23", "1.2-1.6"], ["Bangalore (Temperate)", "DGU Low-E (Neutral)", "0.25-0.30", "1.8-2.2"]] } },
+      { heading: "Common LEED Facade Mistakes", body: "Mistakes that cost projects their target LEED rating:", list: ["Specifying dark reflective glass with VLT below 0.20, killing daylight credits.", "Ignoring thermal breaks — standard aluminium creates thermal bridges.", "WWR above 40% without compensation from better glass specs.", "Not testing actual glass performance — catalog values may differ from installed.", "Late facade specification changes requiring energy model resubmission."] },
+      { heading: "Fine Glaze Green Building Facade Expertise", body: "Fine Glaze works with LEED consultants from the early design stage to specify cost-optimised facade systems. We provide glass performance data sheets, thermal simulation support, and LEED documentation. Call +91 8369233566 for a green building facade consultation." }
+    ]
+  },
+
+  "glass-facade-waterproofing-leakage-solutions-india": {
+    slug: "glass-facade-waterproofing-leakage-solutions-india",
+    title: "Glass Facade Waterproofing & Leakage Solutions in India (Complete Guide)",
+    metaTitle: "Glass Facade Waterproofing India | Leakage Solutions Guide – Fine Glaze",
+    metaDescription: "Complete guide to glass facade waterproofing and leakage repair in India. Common causes, repair costs, sealant options, and preventive measures for monsoon-prone buildings.",
+    keywords: "glass facade waterproofing, facade leakage repair India, curtain wall water leakage, facade waterproofing cost, glass facade leak solution Mumbai Pune",
+    date: "2026-03-15",
+    readTime: "7 min read",
+    category: "Maintenance Guide",
+    heroImage: "/Amc1.webp",
+    excerpt: "Why does your glass facade leak? A complete guide to waterproofing, leakage diagnosis, repair methods, and costs for Indian buildings.",
+    content: [
+      { heading: "Why Glass Facades Leak in India", body: "Glass facade leakage is the most common complaint from building owners across Pune and Mumbai. Indian monsoon conditions — heavy rain combined with high wind speeds — create extreme water pressure that can overwhelm poorly designed or deteriorated facade systems." },
+      { heading: "Top 7 Causes of Facade Leakage", body: "In order of frequency:", list: ["Sealant Failure (40%) — Weather sealant degrades after 7-10 years. Sign: visible cracking or separation.", "Drain Hole Blockage (20%) — Blocked weep holes cause water to pool inside mullions. Sign: water at bottom of panels.", "Perimeter Firestop Gap (15%) — Unsealed gap between curtain wall and floor slab. Sign: water at slab junction.", "Gasket Compression Loss (10%) — EPDM gaskets lose elasticity after 8-12 years.", "Anchor Point Leakage (8%) — Improperly sealed anchor bolt holes.", "Design Deficiency (5%) — Inadequate drainage design in original facade engineering.", "Building Movement (2%) — Sway exceeding facade's movement capacity."] },
+      { heading: "Repair Methods & Costs", body: "Common repair methods:", table: { headers: ["Repair Method", "Cost", "Durability", "When to Use"], rows: [["Re-caulking (Sealant)", "₹25 – ₹45/rft", "8-12 years", "Sealant failure, routine maintenance"], ["Drain Hole Clearing", "₹5,000 – ₹15,000/floor", "Repeat every 2-3 years", "Blocked drainage"], ["EPDM Gasket Replacement", "₹30 – ₹60/rft", "10-15 years", "Aged gaskets"], ["Perimeter Firestop Repair", "₹50 – ₹80/rft", "15+ years", "Slab-junction leakage"], ["Structural Silicone Re-bonding", "₹80 – ₹150/rft", "15-20 years", "Structural glazing bond failure"]] } },
+      { heading: "Preventive Waterproofing: Monsoon Checklist", body: "Complete before every monsoon:", list: ["Clear all drain weep holes on every floor.", "Inspect all external sealant joints.", "Check perimeter firestop at slab junctions.", "Test drainage by flooding one bay for 15 minutes.", "Verify all opening windows close flush.", "Check parapet and roof flashing connections.", "Document existing dampness for comparison after monsoon."] },
+      { heading: "Fine Glaze Waterproofing Services", body: "Fine Glaze provides comprehensive facade waterproofing across Pune and Mumbai — diagnosis, testing, repair, and AMC. We use IRATA-certified rope access teams and Dow Corning/Sika structural silicones. Call +91 8369233566 for a free facade leakage inspection." }
+    ]
+  },
 };
 
 export const blogPostsList = Object.values(blogPosts).sort(
