@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, MessageCircle, Phone, Play } from "lucide-react";
+import { ArrowRight, Play } from "lucide-react";
 
 export const HeroSection = () => {
   return (
@@ -27,7 +27,7 @@ export const HeroSection = () => {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-black/40 backdrop-blur-md text-sm text-white/75 animate-fade-in border border-white/10">
             <span className="w-2.5 h-2.5 rounded-full bg-amber-500 animate-pulse" />
-Facade Contractor in Pune & Mumbai
+            India's Trusted Facade Experts
           </div>
 
           {/* Headline */}
@@ -35,9 +35,11 @@ Facade Contractor in Pune & Mumbai
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight animate-fade-in-up"
             style={{ animationDelay: "0.1s" }}
           >
-            Structural Glazing, Curtain Walls
+            Crafting{" "}
+            <span className="text-gradient-gold">Iconic Facades</span>
             <br className="hidden md:block" />
-            <span className="text-gradient-gold">& ACP Facades</span> Built to Last
+            That{" "}
+            <span className="text-gradient-light">Define Skylines</span>
           </h1>
 
           {/* Sub-headline */}
@@ -45,9 +47,10 @@ Facade Contractor in Pune & Mumbai
             className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto animate-fade-in-up leading-relaxed"
             style={{ animationDelay: "0.2s" }}
           >
-            Talk to Fine Glaze for facade fabrication, installation and maintenance across Pune, Mumbai, Navi Mumbai and Thane — with{" "}
-            <span className="text-amber-400 font-medium">free site visit and quotation support</span>{" "}
-            for commercial projects.
+            Premium glass & aluminium facade fabrication, installation, and
+            maintenance — delivered with{" "}
+            <span className="text-amber-400 font-medium">award-winning precision</span>{" "}
+            and zero compromise on quality.
           </p>
 
           {/* CTA Buttons */}
@@ -55,37 +58,21 @@ Facade Contractor in Pune & Mumbai
             className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6 animate-fade-in-up"
             style={{ animationDelay: "0.3s" }}
           >
-            <a href="tel:+918369233566" aria-label="Call Fine Glaze for a free facade site visit">
+            <Link to="/contact">
               <Button
                 size="lg"
-                className="bg-amber-500 hover:bg-amber-600 text-slate-950 border-0 px-8 py-6 text-base group shadow-lg font-extrabold"
+                className="btn-glossy text-white border-0 px-8 py-6 text-base group shadow-lg"
               >
-                <Phone className="mr-2 h-4 w-4" />
-                Call for Free Site Visit
+                Get Free Quote
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
-            </a>
+            </Link>
 
-            <a
-              href="https://wa.me/918369233566?text=Hello%20Fine%20Glaze%2C%20I%20need%20a%20facade%20quotation%20and%20site%20visit."
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <Link to="/portfolio">
               <Button
                 size="lg"
                 variant="outline"
                 className="px-8 py-6 text-base group border-white bg-white/15 text-white hover:bg-white hover:text-slate-900 hover:border-white backdrop-blur-sm font-semibold transition-all duration-200 shadow-md"
-              >
-                <MessageCircle className="mr-2 h-4 w-4" />
-                WhatsApp Quote
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Button>
-            </a>
-
-            <Link to="/portfolio" className="hidden sm:inline-flex">
-              <Button
-                size="lg"
-                variant="outline"
-                className="px-8 py-6 text-base group border-white/60 bg-black/20 text-white hover:bg-white hover:text-slate-900 hover:border-white backdrop-blur-sm font-semibold transition-all duration-200 shadow-md"
               >
                 <Play className="mr-2 h-4 w-4" />
                 View Projects

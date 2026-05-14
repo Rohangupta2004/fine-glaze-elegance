@@ -142,13 +142,13 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
                 )}
               >
                 <Phone size={16} />
-+91 83692 33566
+                Call Now
               </Button>
             </a>
 
             <Link to="/contact">
               <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">
-Free Quote
+                Get a Quote
               </Button>
             </Link>
           </div>
@@ -200,7 +200,7 @@ Free Quote
             <div className="grid grid-cols-2 gap-4 pt-4">
               <a href="tel:+918369233566">
                 <Button variant="outline" className="w-full gap-2">
-                  <Phone size={16} /> Call
+                  <Phone size={16} /> Call Now
                 </Button>
               </a>
               <Link to="/contact">

@@ -1,70 +1,36 @@
-import { MessageCircle, Phone } from "lucide-react";
+import { MessageCircle } from "lucide-react";
 
 const WHATSAPP_NUMBER = "918369233566";
-const PHONE_NUMBER = "+918369233566";
-const WHATSAPP_MESSAGE = "Hello Fine Glaze, I need a facade quotation and site visit.";
+const WHATSAPP_MESSAGE = "Hello Fine Glaze, I'm interested in your facade services. Please share details.";
 
-const trackLeadClick = (label: string) => {
-  const win = window as typeof window & {
-    gtag?: (event: string, action: string, params?: Record<string, string>) => void;
-  };
-
-  win.gtag?.("event", "lead_click", {
-    event_category: "conversion",
-    event_label: label,
-  });
-};
-
+/**
+ * Simple floating WhatsApp button — bottom-right on desktop, bottom-right on mobile.
+ * No state, no toggle, no flickering. Just a static link.
+ */
 export default function FloatingCTA() {
   const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
 
   return (
-    <>
-      {/* Mobile bottom conversion bar */}
-      <div className="fixed bottom-0 left-0 right-0 z-50 grid grid-cols-2 gap-2 bg-white/95 p-3 shadow-[0_-8px_30px_rgba(15,23,42,0.18)] backdrop-blur-md border-t border-slate-200 md:hidden">
-        <a
-          href={`tel:${PHONE_NUMBER}`}
-          onClick={() => trackLeadClick("mobile_sticky_call")}
-          className="flex items-center justify-center gap-2 rounded-xl bg-amber-500 px-4 py-3 text-sm font-extrabold text-slate-950 shadow-lg active:scale-[0.98]"
-          aria-label="Call Fine Glaze now"
-        >
-          <Phone size={18} /> Call Now
-        </a>
-        <a
-          href={whatsappUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          onClick={() => trackLeadClick("mobile_sticky_whatsapp")}
-          className="flex items-center justify-center gap-2 rounded-xl bg-green-500 px-4 py-3 text-sm font-extrabold text-white shadow-lg active:scale-[0.98]"
-          aria-label="WhatsApp Fine Glaze"
-        >
-          <MessageCircle size={18} /> WhatsApp
-        </a>
+    <a
+      href={whatsappUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Chat on WhatsApp"
+      className="fixed bottom-6 right-6 z-50 flex items-center justify-center group"
+    >
+      {/* Pulse rings */}
+      <span className="absolute w-14 h-14 rounded-full bg-green-400 animate-ping opacity-30" />
+      <span className="absolute w-14 h-14 rounded-full bg-green-400 animate-ping opacity-20 animation-delay-300" style={{ animationDelay: "0.4s" }} />
+
+      {/* Button */}
+      <div className="relative w-14 h-14 bg-green-500 hover:bg-green-600 rounded-full shadow-lg hover:shadow-xl flex items-center justify-center transition-colors duration-200">
+        <MessageCircle size={26} className="text-white group-hover:scale-110 transition-transform duration-200" />
       </div>
 
-      {/* Desktop quick action buttons */}
-      <div className="fixed bottom-6 right-6 z-50 hidden md:flex flex-col gap-3">
-        <a
-          href={`tel:${PHONE_NUMBER}`}
-          onClick={() => trackLeadClick("desktop_floating_call")}
-          aria-label="Call Fine Glaze now"
-          className="group flex items-center justify-center gap-3 rounded-full bg-amber-500 px-5 py-4 text-sm font-extrabold text-slate-950 shadow-xl transition-transform hover:-translate-y-0.5 hover:bg-amber-600"
-        >
-          <Phone size={20} className="group-hover:scale-110 transition-transform" />
-          <span>Call +91 83692 33566</span>
-        </a>
-        <a
-          href={whatsappUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          onClick={() => trackLeadClick("desktop_floating_whatsapp")}
-          aria-label="Chat on WhatsApp"
-          className="group flex items-center justify-center gap-3 rounded-full bg-green-500 px-5 py-4 text-sm font-extrabold text-white shadow-xl transition-transform hover:-translate-y-0.5 hover:bg-green-600"
-        >
-          <MessageCircle size={20} className="group-hover:scale-110 transition-transform" />
-          <span>WhatsApp Quote</span>
-        </a>
-      </div>
-    </>
+      {/* Tooltip */}
+      <span className="absolute right-full mr-3 px-3 py-1.5 bg-slate-900 text-white text-xs font-medium rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
+        Chat with us
+      </span>
+    </a>
   );
 }
