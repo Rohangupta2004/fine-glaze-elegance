@@ -1,12 +1,14 @@
 import { useState } from "react";
 import { Layout } from "@/components/layout/Layout";
+import { useProjects } from "@/hooks/useProjects";
 import { projectsData } from "@/data/projects";
 import { Link } from "react-router-dom";
 import { MapPin, ArrowRight } from "lucide-react";
 import SEO from "@/components/SEO";
 import { Helmet } from "react-helmet-async";
 
-const projects = Object.entries(projectsData).map(([slug, p]) => ({
+// Static projects for SSR/SSG schema (always available at build time)
+const staticProjects = Object.entries(projectsData).map(([slug, p]) => ({
   slug,
   ...p,
 }));
@@ -38,7 +40,7 @@ const portfolioSchema = {
       "addressCountry": "IN"
     }
   },
-  "hasPart": projects.map((p) => ({
+  "hasPart": staticProjects.map((p) => ({
     "@type": "CreativeWork",
     "name": p.title,
     "description": p.scope,
@@ -58,6 +60,7 @@ const portfolioSchema = {
 };
 
 const Portfolio = () => {
+  const { projects } = useProjects();
   const [active, setActive] = useState("all");
 
   const filtered =

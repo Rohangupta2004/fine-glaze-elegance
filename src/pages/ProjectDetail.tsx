@@ -1,6 +1,6 @@
 import { useParams, Link, Navigate } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
-import { projectsData } from "@/data/projects";
+import { useProject } from "@/hooks/useProjects";
 import { Helmet } from "react-helmet-async";
 import SEO from "@/components/SEO";
 import { MapPin, Calendar, Building2, ArrowLeft, CheckCircle2, Phone, ArrowRight } from "lucide-react";
@@ -8,7 +8,17 @@ import { Button } from "@/components/ui/button";
 
 const ProjectDetail = () => {
   const { slug } = useParams<{ slug: string }>();
-  const project = slug ? projectsData[slug as keyof typeof projectsData] : null;
+  const { project, loading } = useProject(slug);
+
+  if (loading) {
+    return (
+      <Layout>
+        <div className="min-h-[60vh] flex items-center justify-center">
+          <div className="w-8 h-8 border-4 border-primary/30 border-t-primary rounded-full animate-spin" />
+        </div>
+      </Layout>
+    );
+  }
 
   if (!project) {
     return <Navigate to="/portfolio" replace />;
