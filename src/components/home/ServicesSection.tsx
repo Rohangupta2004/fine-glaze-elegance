@@ -18,8 +18,8 @@ const services = [
   {
     icon: Building2,
     title: "Curtain Wall Systems",
-    desc: "Unitized & stick-built curtain walls for IT parks, offices and high-rises. Wind load tested up to 4.5 kPa.",
-    price: "₹1,200–2,500/sq ft",
+    desc: "Unitized & stick-built curtain walls for IT parks, offices and high-rises. Wind-load tested up to 4.5 kPa.",
+    spec: "Up to 4.5 kPa wind load",
     href: "/curtain-wall-systems",
     iconBg: "bg-amber-600",
   },
@@ -27,15 +27,15 @@ const services = [
     icon: PanelTop,
     title: "Structural Glazing",
     desc: "Frameless silicone-bonded glass facades. Dow Corning / Sika certified. DGU + Low-E ready.",
-    price: "₹900–1,800/sq ft",
+    spec: "Dow Corning · Sika certified",
     href: "/structural-glazing",
     iconBg: "bg-orange-600",
   },
   {
     icon: LayoutGrid,
     title: "ACP Cladding",
-    desc: "Fire-retardant PVDF-coated aluminium composite panels from Aludecor & Alstrong. 20-yr warranty.",
-    price: "₹250–550/sq ft",
+    desc: "Fire-retardant PVDF-coated aluminium composite panels from Aludecor & Alstrong. 20-yr colour warranty.",
+    spec: "20-yr PVDF colour warranty",
     href: "/acp-aluminium-cladding",
     iconBg: "bg-yellow-700",
   },
@@ -43,7 +43,7 @@ const services = [
     icon: DoorOpen,
     title: "Aluminium Doors & Windows",
     desc: "Thermal-break sliding, casement & lift-slide systems. 60% heat reduction, 45dB sound rating.",
-    price: "₹450–1,200/sq ft",
+    spec: "60% heat reduction",
     href: "/aluminium-facade",
     iconBg: "bg-stone-600",
   },
@@ -51,7 +51,7 @@ const services = [
     icon: Fence,
     title: "Glass Railings",
     desc: "Frameless 12–19mm toughened glass railings with marine-grade SS hardware for balconies & staircases.",
-    price: "₹1,800–3,500/rft",
+    spec: "12–19mm toughened glass",
     href: "/glass-railings",
     iconBg: "bg-amber-700",
   },
@@ -59,15 +59,15 @@ const services = [
     icon: Sun,
     title: "Skylights & Canopies",
     desc: "Engineered glass skylights with heat-reflective coatings. Spider canopies & retractable roof systems.",
-    price: "₹2,000–4,500/sq ft",
+    spec: "50% more natural light",
     href: "/structural-glazing",
     iconBg: "bg-orange-700",
   },
   {
     icon: GlassWater,
     title: "Glass Partitions",
-    desc: "Frameless office partitions with optional acoustic DGU (42dB) and switchable smart glass.",
-    price: "₹1,200–2,800/sq ft",
+    desc: "Frameless office partitions with optional acoustic DGU and switchable smart glass.",
+    spec: "Up to 42dB sound insulation",
     href: "/glass-railings",
     iconBg: "bg-yellow-800",
   },
@@ -75,7 +75,7 @@ const services = [
     icon: Wrench,
     title: "Facade AMC & Repairs",
     desc: "Rope-access facade cleaning, silicone resealing, glass replacement & emergency repairs.",
-    price: "Custom AMC",
+    spec: "Bi-annual inspection cycle",
     href: "/maintenance-services",
     iconBg: "bg-stone-700",
   },
@@ -98,12 +98,12 @@ export const ServicesSection = () => {
             Our Expertise
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-            8 Specialised{" "}
+            Full-Range{" "}
             <span className="text-gradient-subtle">Facade Services</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            End-to-end facade solutions — engineered, fabricated and installed by
-            one expert team. Transparent indicative pricing for every service.
+            End-to-end facade solutions — engineered, fabricated and installed
+            by one expert team. Click any service for full specs and project gallery.
           </p>
         </div>
 
@@ -137,14 +137,14 @@ export const ServicesSection = () => {
                 {service.desc}
               </p>
 
-              {/* Price tag */}
-              <div className="flex items-center justify-between pt-3 border-t border-border/60">
-                <span className="text-sm font-bold text-primary">
-                  {service.price}
+              {/* Spec tag + arrow */}
+              <div className="flex items-center justify-between pt-3 border-t border-border/60 gap-2">
+                <span className="text-xs font-semibold text-primary/90 truncate">
+                  {service.spec}
                 </span>
                 <ArrowRight
                   size={16}
-                  className="text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all"
+                  className="text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all shrink-0"
                 />
               </div>
             </Link>

@@ -269,7 +269,7 @@ export default function Services() {
     <Layout darkHero>
       <SEO
         title="Facade Systems, Glass Railings, Skylights & Aluminium Solutions | Fine Glaze India"
-        description="Fine Glaze offers 8 specialised facade services: curtain walls, structural glazing, ACP cladding, glass railings, skylights, aluminium louvers, glass partitions, shower enclosures & AMC maintenance across Pune & Mumbai."
+        description="Fine Glaze offers full-range facade services: curtain walls, structural glazing, ACP cladding, glass railings, skylights, aluminium louvers, glass partitions, shower enclosures, AMC maintenance and more — across Pune & Mumbai."
         canonical="https://fineglaze.com/services"
         keywords="facade services India, curtain wall glazing Pune, structural glazing Mumbai, ACP cladding, glass railings contractor, aluminium louvers, glass canopy, skylight installation, glass partition office, shower enclosure, facade maintenance AMC"
         schema={{
@@ -282,7 +282,7 @@ export default function Services() {
             "areaServed": ["Pune", "Mumbai", "Maharashtra"],
           },
           "description":
-            "8 specialised facade & glazing services including curtain walls, structural glazing, ACP cladding, glass railings, skylights, louvers, partitions, and AMC maintenance.",
+            "Full-range facade & glazing services including curtain walls, structural glazing, ACP cladding, glass railings, skylights, louvers, partitions, and AMC maintenance.",
         }}
       />
 
@@ -324,7 +324,7 @@ export default function Services() {
             </h1>
 
             <p className="max-w-2xl mx-auto text-slate-300 text-lg leading-relaxed">
-              8 specialised services — from engineering-grade curtain walls and
+              Full-range facade solutions — from engineering-grade curtain walls and
               skylights to frameless glass partitions and shower enclosures.
               One expert team for every glass & aluminium need.
             </p>

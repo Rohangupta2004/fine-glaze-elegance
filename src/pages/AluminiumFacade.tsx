@@ -306,7 +306,7 @@ export default function AluminiumFacade() {
               { title: "ACP Cladding", href: "/acp-aluminium-cladding", desc: "Composite panel facades" },
               { title: "Glass Railings", href: "/glass-railings", desc: "Balcony & staircase railings" },
               { title: "Facade Maintenance", href: "/maintenance-services", desc: "AMC, repair & waterproofing" },
-              { title: "All Services", href: "/services", desc: "View all 8 service categories" },
+              { title: "All Services", href: "/services", desc: "Browse our full service range" },
             ].map((link) => (
               <Link key={link.href} to={link.href} className="group flex items-start gap-3 p-4 rounded-xl border border-slate-200 hover:border-amber-300 hover:bg-amber-50 transition-all bg-white">
                 <ArrowRight size={15} className="text-amber-600 shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" />

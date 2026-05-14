@@ -356,7 +356,7 @@ const GlassRailings = () => {
               { title: "Facade AMC & Maintenance", href: "/maintenance-services", desc: "Repair & waterproofing services" },
               { title: "Structural Glazing", href: "/structural-glazing", desc: "Frameless glass facade systems" },
               { title: "ACP Cladding", href: "/acp-aluminium-cladding", desc: "Composite panel cladding" },
-              { title: "All Services", href: "/services", desc: "View all 8 service categories" },
+              { title: "All Services", href: "/services", desc: "Browse our full service range" },
             ].map((link) => (
               <Link key={link.href} to={link.href} className="group flex items-start gap-3 p-4 rounded-xl border border-slate-200 hover:border-amber-300 hover:bg-amber-50 transition-all bg-white">
                 <ArrowRight size={15} className="text-amber-600 shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" />
