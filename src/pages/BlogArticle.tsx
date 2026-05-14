@@ -69,16 +69,14 @@ export default function BlogArticle() {
         schema={articleSchema}
       />
 
-      <section className="pt-24">
-        <div className="w-full overflow-hidden relative bg-slate-900">
-          <img
-            src={post.heroImage}
-            alt={post.title}
-            className="w-full max-h-[550px] object-contain"
-            loading="eager"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/50" />
-        </div>
+      <section className="relative w-full min-h-[400px] md:min-h-[500px] bg-slate-900">
+        <img
+          src={post.heroImage}
+          alt={post.title}
+          className="w-full h-full absolute inset-0 object-cover"
+          loading="eager"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/40" />
       </section>
 
       <article className="py-12">
