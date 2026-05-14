@@ -3,36 +3,14 @@ import { ArrowRight, MapPin, Eye } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { cn } from "@/lib/utils";
-
-const projects = [
-  {
-    id: 1,
-    slug: "ltimindtree-campus",
-    title: "LTIMindtree Campus",
-    location: "Navi Mumbai",
-    category: "Corporate",
-    image: "/ltimindtree-mensa-campus-mahape-navi-mumbai-1 (1).webp",
-  },
-  {
-    id: 2,
-    slug: "embassy-247",
-    title: "Embassy 247",
-    location: "Mumbai",
-    category: "Award Winner",
-    image: "/Embassy.webp",
-  },
-  {
-    id: 3,
-    slug: "salsette-27",
-    title: "Salsette-27",
-    location: "Byculla",
-    category: "Residential",
-    image: "/Salsette27.webp",
-  },
-];
+import { useProjects } from "@/hooks/useProjects";
 
 export const PortfolioSection = () => {
   const { ref, isVisible } = useScrollAnimation();
+  const { projects } = useProjects();
+
+  // Show first 3 projects (sorted by sort_order from Supabase, or static order)
+  const featured = projects.slice(0, 3);
 
   return (
     <section className="py-20 bg-background" ref={ref}>
@@ -70,9 +48,9 @@ export const PortfolioSection = () => {
 
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {projects.map((project, index) => (
+          {featured.map((project, index) => (
             <Link
-              key={project.id}
+              key={project.slug}
               to={`/project/${project.slug}`}
               className={cn(
                 "group relative overflow-hidden rounded-xl aspect-[4/3] slide-up",
