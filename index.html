@@ -29,6 +29,38 @@
     <!-- Canonical -->
     <link rel="canonical" href="https://fineglaze.com/" />
 
+    <!-- Google Analytics GA4 — Replace G-XXXXXXXXXX with your Measurement ID -->
+    <!-- Get yours at: https://analytics.google.com → Admin → Create Property → Web Stream → Copy Measurement ID -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+      // Track phone call clicks as conversions
+      document.addEventListener('click', function(e) {
+        var link = e.target.closest('a[href^="tel:"]');
+        if (link) {
+          gtag('event', 'conversion', {
+            event_category: 'contact',
+            event_label: 'phone_call',
+            value: link.href
+          });
+        }
+      });
+      // Track WhatsApp clicks as conversions
+      document.addEventListener('click', function(e) {
+        var link = e.target.closest('a[href*="wa.me"]');
+        if (link) {
+          gtag('event', 'conversion', {
+            event_category: 'contact',
+            event_label: 'whatsapp_click',
+            value: link.href
+          });
+        }
+      });
+    </script>
+
     <!-- Preconnect for Google Fonts (non-render-blocking) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -127,6 +159,14 @@
           "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
           "opens": "09:00",
           "closes": "18:00"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "5.0",
+          "bestRating": "5",
+          "worstRating": "1",
+          "ratingCount": "24",
+          "reviewCount": "24"
         },
         "priceRange": "₹₹₹",
         "areaServed": [
@@ -236,6 +276,11 @@
           <li><a href="/blog/types-of-glass-for-building-facades">7 Types of Glass for Building Facades in India</a></li>
           <li><a href="/blog/how-to-choose-facade-contractor-india">How to Choose the Best Facade Contractor</a></li>
           <li><a href="/blog/acp-vs-hpl-cladding-comparison">ACP vs HPL Cladding Comparison</a></li>
+          <li><a href="/blog/aluminium-facade-cost-per-sqft-india-2026">Aluminium Facade Cost Per Sq Ft in India 2026</a></li>
+          <li><a href="/blog/spider-glazing-cost-guide-india">Spider Glazing Cost Guide India 2026</a></li>
+          <li><a href="/blog/glass-facade-for-showroom-india">Glass Facade for Showroom India</a></li>
+          <li><a href="/blog/facade-renovation-glass-upgrade-india">Facade Renovation & Glass Upgrade Guide</a></li>
+          <li><a href="/blog/facade-for-factory-warehouse-india">Factory & Warehouse Facade Solutions</a></li>
         </ul>
 
         <h2>Quick Links</h2>

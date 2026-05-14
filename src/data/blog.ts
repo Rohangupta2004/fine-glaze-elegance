@@ -897,6 +897,313 @@ export const blogPosts: Record<string, BlogPost> = {
   },
 };
 
+  /* ──────────────────────────────────────────────────────────────
+     NEW HIGH-INTENT BLOG POSTS — targeting "ready to call" queries
+     ────────────────────────────────────────────────────────────── */
+
+  "aluminium-facade-cost-per-sqft-india-2026": {
+    slug: "aluminium-facade-cost-per-sqft-india-2026",
+    title: "Aluminium Facade Cost Per Sq Ft in India (2026 Complete Price Guide)",
+    metaTitle: "Aluminium Facade Cost Per Sq Ft in India 2026 | Price Breakdown – Fine Glaze",
+    metaDescription: "Detailed aluminium facade pricing guide for India 2026. Stick system: ₹250-450/sq ft, Unitized: ₹650-1200/sq ft. Get accurate rates for your building project in Pune & Mumbai.",
+    keywords: "aluminium facade cost per sq ft, aluminium facade price India, facade cost per square foot, glass facade cost India, building facade price, aluminium cladding rate 2026",
+    date: "2026-05-10",
+    readTime: "9 min read",
+    category: "Pricing Guide",
+    heroImage: "/Embassyoark.webp",
+    excerpt: "A complete pricing breakdown for aluminium facade systems in India 2026 — covering stick systems, unitized curtain walls, and what factors drive your project cost.",
+    content: [
+      {
+        heading: "What Does an Aluminium Facade Cost in India in 2026?",
+        body: "Whether you are a developer planning a new IT park in Hinjewadi or an architect designing a corporate headquarters in BKC Mumbai, the first question is always about cost. Aluminium facade pricing depends on the system type, glass specification, building height, and project location. Here is a transparent breakdown based on our recent project experience across Maharashtra.",
+      },
+      {
+        heading: "Aluminium Facade Price Range by System Type",
+        body: "The table below shows installed rates including material, fabrication, and installation:",
+        table: {
+          headers: ["Facade System", "Price Range (₹/sq ft)", "Ideal Building Height", "Best Application"],
+          rows: [
+            ["Stick System (Standard)", "₹250 – ₹450", "Up to 8 floors", "IT parks, showrooms, low-rise commercial"],
+            ["Semi-Unitized System", "₹400 – ₹700", "8 to 20 floors", "Mid-rise offices, hospitals"],
+            ["Unitized Curtain Wall", "₹650 – ₹1,200", "15+ floors", "High-rise towers, premium projects"],
+            ["ACP Cladding (FR grade)", "₹120 – ₹180", "Any height", "Budget commercial, retail facades"],
+            ["Aluminium Louver Systems", "₹180 – ₹350", "Any height", "Parking facades, ventilation screens"],
+          ],
+        },
+      },
+      {
+        heading: "What Factors Increase Aluminium Facade Cost?",
+        body: "Understanding these cost drivers helps you budget accurately and negotiate effectively with contractors:",
+        list: [
+          "Glass specification — Moving from single 8mm toughened to DGU (Double Glazed Unit) adds ₹100-200/sq ft but saves significantly on AC bills long-term.",
+          "Building height — Above 50 metres, wind load requirements increase significantly, requiring heavier mullions and stronger anchors. Budget 15-25% extra.",
+          "Custom colours — Standard mill-finish or natural anodised aluminium is cheapest. PVDF custom colours (Kynar 500) add ₹30-60/sq ft to profile cost.",
+          "Fire compliance — High-rise buildings in Mumbai and Pune now require fire-rated facades. Compliance adds 10-15% to overall cost.",
+          "Monsoon waterproofing — Projects in high-rainfall zones (Mumbai, Goa) need enhanced drainage design and premium sealants, adding ₹15-30/sq ft.",
+          "Location premium — Mumbai projects cost 10-15% more than Pune due to labour rates, logistics, and site access constraints.",
+        ],
+      },
+      {
+        heading: "How to Reduce Facade Cost Without Cutting Quality",
+        body: "We regularly help clients optimise their facade budget. Here are strategies that work:",
+        list: [
+          "Use value-engineered glass — 6mm+6mm DGU instead of 8mm+8mm where wind loads allow. Saves ₹50-80/sq ft without compromising performance.",
+          "Choose stick system for buildings under 8 floors — unitized is premium and only justified for high-rises. This alone saves 30-40% on the facade.",
+          "Standardise module sizes — Repetitive panel sizes reduce fabrication waste and time, cutting costs by 8-12%.",
+          "Combine material systems — Use curtain wall on the front elevation and ACP cladding on the sides and rear. Many of our projects use this hybrid approach to stay within budget.",
+          "Plan construction sequence — Starting facade work early (as soon as structure reaches 4th floor) avoids idle time and reduces overall project duration.",
+        ],
+      },
+      {
+        heading: "Get a Free Quotation for Your Project",
+        body: "Every building is different — height, location, design complexity, and glass requirements all affect pricing. At Fine Glaze, we provide free site visits, detailed BOQ preparation, and transparent quotations with no hidden costs. We have completed facades for projects ranging from ₹15 lakh showroom glazing to ₹3 crore+ commercial tower curtain walls. Call us at +91 8369233566 or fill in the contact form to get a customised quote within 48 hours.",
+      },
+    ],
+  },
+
+  "spider-glazing-cost-guide-india": {
+    slug: "spider-glazing-cost-guide-india",
+    title: "Spider Glazing Cost in India 2026: Prices, Types & Installation Guide",
+    metaTitle: "Spider Glazing Cost in India 2026 | Price Per Sq Ft & Types – Fine Glaze",
+    metaDescription: "Spider glazing costs ₹800-1800/sq ft in India. Complete guide covering point-fixed spider fitting prices, glass options, installation process, and when to use spider glazing vs structural glazing.",
+    keywords: "spider glazing cost India, spider glazing price per sq ft, point fixed glazing cost, spider fitting glass price, spider glazing installation, spider glazing vs structural glazing",
+    date: "2026-05-08",
+    readTime: "7 min read",
+    category: "Pricing Guide",
+    heroImage: "/Glass.webp",
+    excerpt: "Everything you need to know about spider glazing costs in India — pricing, glass types, fitting options, and when spider glazing is the right choice for your building.",
+    content: [
+      {
+        heading: "What Is Spider Glazing and Why Is It Premium?",
+        body: "Spider glazing (also called point-fixed glazing) uses stainless steel spider fittings to hold glass panels with minimal visible framework. The glass is drilled and bolted through precision-machined stainless steel connectors, creating a seamless, frameless glass facade that appears to float. This system is used for lobbies, atriums, canopies, and feature walls in premium commercial and hospitality projects. It is the most expensive glazing system but delivers unmatched visual transparency.",
+      },
+      {
+        heading: "Spider Glazing Price Breakdown",
+        body: "Current market rates for spider glazing systems in India:",
+        table: {
+          headers: ["Component", "Price Range", "Notes"],
+          rows: [
+            ["Spider fittings (SS 316 grade)", "₹150 – ₹300/sq ft", "2-arm, 4-arm, or single-arm variants"],
+            ["Toughened glass (12mm clear)", "₹200 – ₹300/sq ft", "Standard for ground-level applications"],
+            ["Toughened glass (12mm Low-E DGU)", "₹350 – ₹500/sq ft", "For energy-efficient facades"],
+            ["Support structure (SS tubes/cables)", "₹100 – ₹250/sq ft", "Depends on span and engineering"],
+            ["Installation & sealant", "₹150 – ₹300/sq ft", "Includes scaffolding and labour"],
+            ["Total installed cost", "₹800 – ₹1,800/sq ft", "Varies by complexity and specification"],
+          ],
+        },
+      },
+      {
+        heading: "Spider Glazing vs Structural Glazing: Which to Choose?",
+        body: "This is one of the most common questions we receive. Here is a direct comparison:",
+        table: {
+          headers: ["Parameter", "Spider Glazing", "Structural Glazing"],
+          rows: [
+            ["Cost", "₹800 – ₹1,800/sq ft", "₹350 – ₹800/sq ft"],
+            ["Appearance", "Fully frameless, glass appears floating", "Flush glass surface, thin aluminium reveals visible from inside"],
+            ["Transparency", "Maximum — no mullions or frames visible", "High — but aluminium structure visible from interior"],
+            ["Glass replacement", "Individual panels replaceable", "Requires silicone cutting and re-bonding"],
+            ["Best for", "Lobbies, atriums, feature walls", "Full building facades, commercial exteriors"],
+            ["Wind load capacity", "Moderate (limited by bolt fixing)", "High (distributed across frame)"],
+          ],
+        },
+      },
+      {
+        heading: "When Should You Use Spider Glazing?",
+        body: "Spider glazing is not for every building — it is a premium system best used in specific scenarios:",
+        list: [
+          "Hotel lobbies and reception areas where maximum transparency creates a dramatic first impression.",
+          "Shopping mall atriums and skylights where the frameless look adds premium appeal.",
+          "Corporate headquarters entrance facades that need to make an architectural statement.",
+          "Canopy and awning applications over building entrances.",
+          "Feature walls in showrooms, car dealerships, and luxury retail spaces.",
+          "For full building envelopes, structural glazing or curtain wall is more practical and cost-effective.",
+        ],
+      },
+      {
+        heading: "Get Expert Advice on Your Spider Glazing Project",
+        body: "Fine Glaze has installed spider glazing systems for hotel lobbies and premium commercial projects across Pune and Mumbai. We source fittings from certified manufacturers and use only Dow Corning or Sika sealants. Every spider glazing project includes detailed engineering calculations, mock-up testing, and a comprehensive warranty. Call +91 8369233566 for a free consultation and site assessment.",
+      },
+    ],
+  },
+
+  "glass-facade-for-showroom-india": {
+    slug: "glass-facade-for-showroom-india",
+    title: "Glass Facade for Showroom: Cost, Design Ideas & Installation Guide (India 2026)",
+    metaTitle: "Glass Facade for Showroom India 2026 | Cost, Designs & Installation – Fine Glaze",
+    metaDescription: "Complete guide to glass facades for showrooms in India. Costs from ₹250/sq ft. Best glass types, design ideas, and professional installation for car showrooms, retail, and brand stores.",
+    keywords: "glass facade for showroom, showroom glass front design, showroom facade cost, glass front elevation showroom, car showroom glass facade, retail store glass facade India",
+    date: "2026-05-06",
+    readTime: "8 min read",
+    category: "Design Guide",
+    heroImage: "/Glass installation.webp",
+    excerpt: "Planning a glass facade for your showroom? Complete guide covering design options, costs, glass types, and installation process for retail, car, and brand showrooms in India.",
+    content: [
+      {
+        heading: "Why Glass Facades Are Essential for Modern Showrooms",
+        body: "A glass facade is the single most important investment for any showroom. It provides maximum visibility of your products from the street, attracts foot traffic, and creates a premium brand image. In India, glass-fronted showrooms consistently report 20-40% more walk-ins compared to opaque frontages. Whether you run a car dealership in Pune, a fashion brand in Mumbai, or an electronics store in Navi Mumbai, a professionally installed glass facade pays for itself through increased customer footfall.",
+      },
+      {
+        heading: "Showroom Glass Facade Cost in India",
+        body: "Pricing varies by glass type, size, and system complexity:",
+        table: {
+          headers: ["System Type", "Cost (₹/sq ft)", "Best For"],
+          rows: [
+            ["Frameless toughened glass (12mm)", "₹250 – ₹400", "Small showrooms, retail stores"],
+            ["Structural glazing (patch fitting)", "₹350 – ₹550", "Medium showrooms, brand stores"],
+            ["Spider glazing (point-fixed)", "₹800 – ₹1,500", "Premium car showrooms, luxury retail"],
+            ["Curtain wall system", "₹450 – ₹800", "Multi-story showroom buildings"],
+            ["Glass with aluminium framing", "₹200 – ₹350", "Budget-friendly, good for interiors"],
+          ],
+        },
+      },
+      {
+        heading: "Best Glass Types for Showroom Facades",
+        body: "Choosing the right glass is critical for both aesthetics and energy efficiency:",
+        list: [
+          "Clear toughened glass (10-12mm) — Maximum product visibility. Best for ground-floor showrooms with air conditioning. Most popular choice in India.",
+          "Low-E coated DGU — Blocks heat while maintaining clarity. Essential for west-facing showrooms in Pune and Mumbai summers. Reduces AC cost by 25-35%.",
+          "Tinted grey or green glass — Reduces glare while allowing visibility. Good for showrooms with excessive sun exposure.",
+          "Laminated safety glass — Required by NBC 2016 for glass above 3 metres height. Holds together on impact.",
+          "Back-painted glass — Used as accent panels around the main display glass. Available in any RAL colour to match your brand.",
+        ],
+      },
+      {
+        heading: "Showroom Glass Facade Design Ideas",
+        body: "Modern showroom facade design trends in India that we implement regularly:",
+        list: [
+          "Full-height frameless glass wall with concealed bottom channel — creates a seamless glass-to-floor look.",
+          "Glass facade with branded vinyl graphics — partial frosting or printed branding applied to the glass for brand identity.",
+          "Motorised glass folding system — entire glass front folds open for outdoor display events. Popular with car dealerships.",
+          "Double-height atrium glass with spider fittings — makes a powerful architectural statement for flagship stores.",
+          "LED-lit glass facade — glass panels with integrated LED edge lighting for dramatic evening visibility.",
+        ],
+      },
+      {
+        heading: "Get Your Showroom Glass Facade Installed",
+        body: "Fine Glaze designs and installs showroom glass facades across Pune, Mumbai, and Navi Mumbai. We handle everything from design consultation and structural engineering to glass procurement, fabrication, and installation. Our team has delivered showroom facades for automotive dealerships, premium retail brands, and corporate showrooms. Every project includes safety compliance, weatherproofing, and a 10-year structural warranty. Call +91 8369233566 to schedule a free site visit and receive a detailed quotation within 48 hours.",
+      },
+    ],
+  },
+
+  "facade-renovation-glass-upgrade-india": {
+    slug: "facade-renovation-glass-upgrade-india",
+    title: "Facade Renovation & Glass Upgrade: Cost, Process & Before-After (India 2026)",
+    metaTitle: "Facade Renovation & Glass Upgrade India 2026 | Cost & Process – Fine Glaze",
+    metaDescription: "Planning a facade renovation or glass upgrade for your building? Complete guide covering costs (₹200-800/sq ft), process, timeline, and when to renovate vs replace your building facade.",
+    keywords: "facade renovation India, building glass upgrade, old facade replacement cost, facade refurbishment, glass facade renovation, building exterior renovation Pune Mumbai",
+    date: "2026-05-04",
+    readTime: "8 min read",
+    category: "Renovation Guide",
+    heroImage: "/Business park.webp",
+    excerpt: "Is your building facade outdated, leaking, or losing tenants? Complete guide to facade renovation and glass upgrades in India — costs, process, timeline, and when renovation makes sense.",
+    content: [
+      {
+        heading: "When Does Your Building Need a Facade Renovation?",
+        body: "India's commercial real estate is maturing, and many buildings built in the 2005-2015 era now need facade upgrades. Signs your building needs renovation include: persistent water leaks during monsoon (especially around window frames), visible sealant degradation (cracking, yellowing, or falling out), single-glazed glass causing excessive heat and high AC bills, faded or peeling ACP panels, tenants complaining about comfort, or simply losing tenants to newer buildings with better facades. A facade renovation can increase your building's rental value by 15-25% while reducing energy costs.",
+      },
+      {
+        heading: "Facade Renovation Cost in India 2026",
+        body: "Renovation costs depend on the scope — from simple sealant replacement to full facade replacement:",
+        table: {
+          headers: ["Renovation Type", "Cost (₹/sq ft)", "Duration", "Building Occupancy"],
+          rows: [
+            ["Sealant replacement (re-sealing)", "₹30 – ₹60", "2-4 weeks", "Building stays occupied"],
+            ["Glass upgrade (single to DGU)", "₹200 – ₹400", "6-10 weeks", "Floor-by-floor, partial disruption"],
+            ["ACP panel replacement", "₹120 – ₹200", "4-8 weeks", "Building stays occupied"],
+            ["Partial facade overlay (over-cladding)", "₹300 – ₹500", "8-14 weeks", "Building stays occupied"],
+            ["Full facade replacement", "₹500 – ₹1,000", "12-24 weeks", "May need partial vacancy"],
+          ],
+        },
+      },
+      {
+        heading: "Facade Renovation vs New Facade: Decision Guide",
+        body: "Not every building needs a full replacement. Here is how we advise our clients:",
+        list: [
+          "If the aluminium framework is structurally sound (no corrosion, no deformation) — renovate by replacing glass and sealants. This saves 50-60% vs full replacement.",
+          "If water leaks are the main issue — 80% of the time, comprehensive sealant replacement solves the problem. Cost: just ₹30-60/sq ft.",
+          "If you want to upgrade from single glass to DGU for energy efficiency — glass-only replacement is feasible if the existing mullion sections can handle the extra weight. We assess this during site survey.",
+          "If ACP panels are fading or the core is PE (not fire-rated) — panel replacement is mandatory. Many buildings in Mumbai are upgrading PE-core ACP to FR-grade for fire safety compliance.",
+          "If the building is over 20 years old with significant structural damage to the facade framework — full replacement is usually more cost-effective than patching.",
+        ],
+      },
+      {
+        heading: "Our Facade Renovation Process",
+        body: "Fine Glaze follows a systematic renovation process:",
+        list: [
+          "Step 1: Comprehensive facade audit — We inspect every panel, check sealant condition, test glass integrity, and document all defects with photographs.",
+          "Step 2: Engineering assessment — Structural analysis of existing framework to determine what can be retained and what needs replacement.",
+          "Step 3: Detailed scope and quotation — We present a clear renovation plan with material specifications, timeline, and cost breakdown.",
+          "Step 4: Phased execution — We work floor-by-floor or zone-by-zone to minimise disruption to building occupants.",
+          "Step 5: Quality inspection and handover — Final inspection, waterproofing test during monsoon simulation, and comprehensive warranty.",
+        ],
+      },
+      {
+        heading: "Get a Free Facade Audit",
+        body: "If your building's facade is showing signs of age — leaks, faded panels, excessive heat, or tenant complaints — a professional facade audit is the first step. Fine Glaze provides free facade condition assessments for commercial buildings in Pune, Mumbai, and Navi Mumbai. We will visit your site, document the current condition, and present renovation options with transparent pricing. Call +91 8369233566 or email info@fineglaze.com to schedule your free audit.",
+      },
+    ],
+  },
+
+  "facade-for-factory-warehouse-india": {
+    slug: "facade-for-factory-warehouse-india",
+    title: "Factory & Warehouse Facade Solutions: ACP Cladding, Louvers & Glass (India 2026)",
+    metaTitle: "Factory & Warehouse Facade India 2026 | ACP, Louvers & Glass – Fine Glaze",
+    metaDescription: "Complete guide to factory and warehouse facade solutions in India. ACP cladding from ₹80/sq ft, aluminium louvers, and industrial glass facades. Pune & Mumbai MIDC facade specialists.",
+    keywords: "factory facade India, warehouse cladding cost, industrial building facade, MIDC factory facade, ACP cladding for factory, aluminium louvers for warehouse, industrial facade Pune Mumbai",
+    date: "2026-05-02",
+    readTime: "7 min read",
+    category: "Industry Guide",
+    heroImage: "/Panel.webp",
+    excerpt: "Planning a facade for your factory, warehouse, or MIDC building? Complete guide to industrial facade options — ACP cladding, aluminium louvers, and glass frontages with costs and installation details.",
+    content: [
+      {
+        heading: "Why Industrial Buildings Need Professional Facades",
+        body: "Gone are the days when factories and warehouses had plain cement or sheet metal exteriors. Today's industrial buildings — especially in MIDCs across Pune (Chakan, Ranjangaon, Hinjewadi Phase 3), Mumbai (Mahape, Airoli), and Nashik — need professional facades for several reasons: corporate brand image for client visits, LEED/IGBC certification for export-oriented units, improved thermal performance reducing energy costs, compliance with local building codes, and increased property value. A well-designed industrial facade costs just 3-5% of total construction but creates 80% of the first impression.",
+      },
+      {
+        heading: "Industrial Facade Options and Pricing",
+        body: "Here are the most common facade systems for factories and warehouses in India:",
+        table: {
+          headers: ["System", "Cost (₹/sq ft)", "Durability", "Best Use"],
+          rows: [
+            ["ACP Cladding (FR grade)", "₹80 – ₹180", "15-20 years", "Office block, front elevation"],
+            ["Aluminium Louver System", "₹180 – ₹350", "25+ years", "Ventilation, parking, machine areas"],
+            ["Perforated Metal Screen", "₹150 – ₹300", "20+ years", "Sun screening, aesthetic panels"],
+            ["Glass Curtain Wall", "₹400 – ₹800", "25+ years", "Reception, admin block, showroom"],
+            ["Insulated Metal Panel (PUF)", "₹80 – ₹150", "20+ years", "Cold storage, clean rooms"],
+            ["Composite (ACP + Louver + Glass)", "₹200 – ₹400 avg", "20+ years", "Complete factory elevation"],
+          ],
+        },
+      },
+      {
+        heading: "Design Approach for Industrial Facades",
+        body: "Our approach for factories and warehouses differs from commercial buildings. We focus on:",
+        list: [
+          "Front elevation — ACP cladding with company branding + glass facade for the reception/admin area. This is what visitors see first.",
+          "Side elevations — Aluminium louvers for natural ventilation + rain protection. Critical for machine halls that generate heat.",
+          "Rear and loading areas — Metal cladding or insulated panels for weather protection and thermal management.",
+          "Office block integration — Full glass curtain wall for the admin wing, creating clear visual distinction from the production area.",
+          "Signage integration — Pre-planned cut-outs and lighting for company signage, avoiding retrofitting damage to panels later.",
+        ],
+      },
+      {
+        heading: "MIDC and Industrial Zone Compliance",
+        body: "Building facades in MIDC and SEZ areas must comply with specific regulations:",
+        list: [
+          "Fire safety — FR-grade ACP is mandatory. PE-core panels are prohibited in multi-story industrial buildings per NBC 2016.",
+          "ECBC compliance — Energy Conservation Building Code may require insulated panels or DGU glass for office sections in larger facilities.",
+          "IGBC/LEED — Export-oriented units targeting green certification need facades with documented thermal performance values (U-value, SHGC).",
+          "Height restrictions — MIDC plots often have height restrictions. Facade design must account for setback and FSI rules.",
+        ],
+      },
+      {
+        heading: "Get Your Factory Facade Designed and Installed",
+        body: "Fine Glaze has delivered facade solutions for manufacturing facilities, warehouses, and IT buildings across Pune MIDC (Chakan, Ranjangaon, Hinjewadi), Mumbai (Mahape, Airoli MIDC), and Nashik. We understand industrial construction timelines and work closely with PMC teams to deliver on schedule. From initial design to final installation — we handle everything. Call +91 8369233566 for a free site visit and quotation.",
+      },
+    ],
+  },
+};
+
 export const blogPostsList = Object.values(blogPosts).sort(
   (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
 );
