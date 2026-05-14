@@ -34,7 +34,6 @@ function getPublicUrl(filename: string): string {
 export const ClientsCarousel = () => {
   const { ref, isVisible } = useScrollAnimation();
   const [dynamicLogos, setDynamicLogos] = useState<LogoEntry[]>([]);
-  const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
     const fetchLogos = async () => {
@@ -53,7 +52,6 @@ export const ClientsCarousel = () => {
       } catch {
         // Silently fall back to hardcoded
       }
-      setLoaded(true);
     };
     fetchLogos();
   }, []);
@@ -95,27 +93,20 @@ export const ClientsCarousel = () => {
           />
 
           {/* Marquee row */}
-          <div className="flex animate-marquee gap-6 items-center">
+          <div className="flex animate-marquee gap-12 md:gap-16 items-center">
             {hasDynamic
               ? tripled.map((logo, index) => (
                   <div
                     key={index}
-                    className="flex-shrink-0 group relative"
+                    className="flex-shrink-0 group"
+                    title={(logo as LogoEntry).name}
                   >
-                    {/* Logo card with hover effect */}
-                    <div className="flex items-center gap-3 px-5 py-3 rounded-full border border-border bg-card hover:border-primary/40 hover:bg-primary/5 transition-all duration-300 cursor-default shadow-sm hover:shadow-md">
-                      <div className="w-10 h-10 rounded-full bg-white border border-slate-100 flex items-center justify-center p-1.5 flex-shrink-0 overflow-hidden">
-                        <img
-                          src={getPublicUrl((logo as LogoEntry).filename)}
-                          alt={(logo as LogoEntry).name}
-                          className="max-w-full max-h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-300"
-                          loading="lazy"
-                        />
-                      </div>
-                      <span className="text-foreground/70 group-hover:text-primary font-semibold text-sm tracking-wide whitespace-nowrap transition-colors duration-200">
-                        {(logo as LogoEntry).name}
-                      </span>
-                    </div>
+                    <img
+                      src={getPublicUrl((logo as LogoEntry).filename)}
+                      alt={(logo as LogoEntry).name}
+                      className="h-12 md:h-16 w-auto max-w-[160px] md:max-w-[200px] object-contain grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300"
+                      loading="lazy"
+                    />
                   </div>
                 ))
               : tripled.map((client, index) => (
