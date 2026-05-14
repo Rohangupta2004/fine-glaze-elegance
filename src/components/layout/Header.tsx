@@ -48,9 +48,7 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
         ? "bg-primary text-white"
         : isScrolled
         ? "text-slate-700 hover:bg-slate-100"
-        : darkHero
-        ? "text-white hover:bg-white/20"
-        : "text-slate-700 hover:bg-slate-100"
+        : "text-white hover:bg-white/20 [text-shadow:_0_1px_4px_rgb(0_0_0_/_60%)]"
     );
 
   return (
@@ -61,9 +59,7 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
           "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
           isScrolled
             ? "bg-white/95 backdrop-blur-md py-3 shadow-sm border-b"
-            : darkHero
-            ? "bg-black/30 backdrop-blur-sm py-5"
-            : "bg-white/80 backdrop-blur-sm py-5"
+            : "bg-transparent py-5"
         )}
       >
         <div className="container mx-auto px-4 flex items-center justify-between">
@@ -97,7 +93,7 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
                 onClick={() => setIsServiceOpen(!isServiceOpen)}
                 className={cn(
                   "p-1 rounded-md",
-                  isScrolled ? "text-slate-700" : darkHero ? "text-white" : "text-slate-700"
+                  isScrolled ? "text-slate-700" : "text-white [text-shadow:_0_1px_4px_rgb(0_0_0_/_60%)]"
                 )}
               >
                 <ChevronDown size={14} />
@@ -140,9 +136,7 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
                   "gap-2",
                   isScrolled
                     ? "text-slate-700"
-                    : darkHero
-                    ? "text-white hover:bg-white/20"
-                    : "text-slate-700 hover:bg-slate-100"
+                    : "text-white hover:bg-white/20 [text-shadow:_0_1px_4px_rgb(0_0_0_/_60%)]"
                 )}
               >
                 <Phone size={16} />
@@ -162,7 +156,7 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
             onClick={() => setIsMobileMenuOpen(true)}
             className={cn(
               "lg:hidden p-2 rounded-md",
-              isScrolled ? "text-slate-900" : darkHero ? "text-white" : "text-slate-900"
+              isScrolled ? "text-slate-900" : "text-white"
             )}
           >
             <Menu size={24} />
