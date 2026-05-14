@@ -24,6 +24,7 @@ import Maintenance from "./pages/Maintenance";
 
 import Portal from "./pages/Portal";
 import Admin from "./pages/Admin";
+import AdminImages from "./pages/AdminImages";
 import FAQ from './pages/FAQ';
 
 import Blog from "./pages/Blog";
@@ -91,6 +92,7 @@ export const routes = [
       { path: "maintenance-services", element: <Maintenance /> },
       { path: "portal", element: <Portal /> },
       { path: "admin", element: <Admin /> },
+      { path: "admin/images", element: <AdminImages /> },
       { path: "faq", element: <FAQ /> },
       { path: "blog", element: <Blog /> },
       { path: "blog/:slug", element: <BlogArticle /> },
