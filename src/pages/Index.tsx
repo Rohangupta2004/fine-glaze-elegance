@@ -1,10 +1,8 @@
 import { Layout } from "@/components/layout/Layout";
 import { HeroSection } from "@/components/home/HeroSection";
-import { ClientsCarousel } from "@/components/home/ClientsCarousel";
-import { AwardsSection } from "@/components/home/AwardsSection";
+import { TrustStrip } from "@/components/home/TrustStrip";
 import { PortfolioSection } from "@/components/home/PortfolioSection";
 import { ServicesSection } from "@/components/home/ServicesSection";
-import { ProcessSection } from "@/components/home/ProcessSection";
 import { ReviewsSection } from "@/components/home/ReviewsSection";
 import { CTASection } from "@/components/home/CTASection";
 import SEO from "@/components/SEO";
@@ -90,11 +88,9 @@ const Index = () => {
         schemas={[organizationSchema, localBusinessSchema, breadcrumbSchema]}
       />
       <HeroSection />
-      <ClientsCarousel />
-      <AwardsSection />
-      <PortfolioSection />
+      <TrustStrip />
       <ServicesSection />
-      <ProcessSection />
+      <PortfolioSection />
       <ReviewsSection />
       <CTASection />
     </Layout>

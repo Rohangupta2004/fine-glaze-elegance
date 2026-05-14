@@ -6,6 +6,14 @@ export const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       
+      {/* Fallback image (loads first, video covers it once ready) */}
+      <img
+        src="/Unitized.webp"
+        alt="Fine Glaze facade installation"
+        className="absolute inset-0 w-full h-full object-cover"
+        loading="eager"
+      />
+
       {/* Hero Background Video */}
       <video
         className="absolute inset-0 w-full h-full object-cover"
@@ -13,6 +21,7 @@ export const HeroSection = () => {
         muted
         loop
         playsInline
+        poster="/Unitized.webp"
       >
         <source src="https://www.pexels.com/download/video/26737896/" type="video/mp4" />
       </video>
