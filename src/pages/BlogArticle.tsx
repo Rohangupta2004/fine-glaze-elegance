@@ -70,11 +70,11 @@ export default function BlogArticle() {
       />
 
       <section className="pt-24">
-        <div className="w-full h-[300px] md:h-[420px] overflow-hidden relative">
+        <div className="w-full overflow-hidden relative bg-slate-900">
           <img
             src={post.heroImage}
             alt={post.title}
-            className="w-full h-full object-cover"
+            className="w-full max-h-[550px] object-contain"
             loading="eager"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/50" />
