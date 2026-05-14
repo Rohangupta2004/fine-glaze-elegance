@@ -52,11 +52,6 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
         ? "text-white hover:bg-white/20"
         : "text-slate-800 hover:bg-slate-100/80"
     );
-        ? "text-slate-700 hover:bg-slate-100"
-        : darkHero
-        ? "text-white hover:bg-white/20"
-        : "text-slate-800 hover:bg-slate-100/80"
-    );
 
   return (
     <>

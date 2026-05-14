@@ -38,7 +38,7 @@ const About = () => {
   const valuesRef = useScrollAnimation();
 
   return (
-    <Layout>
+    <Layout darkHero>
       <SEO
         title="About Fine Glaze – Leading Facade Contractor in Pune & Mumbai | Our Story"
         description="Fine Glaze is Pune's premier facade fabrication company with 5+ years of experience, 10+ landmark projects & 50+ clients. We deliver precision-engineered glass & aluminium facade solutions across India."
@@ -58,23 +58,27 @@ const About = () => {
         }}
       />
       {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-muted" ref={heroRef.ref}>
-        <div className="container mx-auto px-4">
+      <section className="relative pt-32 pb-20 overflow-hidden" ref={heroRef.ref}>
+        <div className="absolute inset-0">
+          <img src="/Embassy.webp" alt="" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-900/80 via-slate-900/70 to-slate-900/90" />
+        </div>
+        <div className="container mx-auto px-4 relative z-10">
           <div
             className={cn(
               "max-w-3xl mx-auto text-center space-y-6 slide-up",
               heroRef.isVisible && "visible"
             )}
           >
-            <span className="text-primary font-medium uppercase tracking-wider text-sm">
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-500/20 text-amber-400 text-sm font-bold uppercase tracking-wider border border-amber-500/30">
               About Us
             </span>
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground">
+            <h1 className="text-4xl md:text-5xl font-bold text-white">
               Crafting{" "}
-              <span className="text-gradient-subtle">Excellence</span>{" "}
+              <span className="text-gradient-gold">Excellence</span>{" "}
               in Facade Solutions
             </h1>
-            <p className="text-muted-foreground text-lg">
+            <p className="text-white/80 text-lg">
               Fine Glaze is Pune's premier facade fabrication company —
               delivering precision-engineered glass and aluminium solutions
               for landmark commercial and residential projects across India.

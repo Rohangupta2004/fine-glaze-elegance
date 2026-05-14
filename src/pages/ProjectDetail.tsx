@@ -12,7 +12,7 @@ const ProjectDetail = () => {
 
   if (loading) {
     return (
-      <Layout>
+      <Layout darkHero>
         <div className="min-h-[60vh] flex items-center justify-center">
           <div className="w-8 h-8 border-4 border-primary/30 border-t-primary rounded-full animate-spin" />
         </div>
@@ -81,7 +81,7 @@ const ProjectDetail = () => {
   };
 
   return (
-    <Layout>
+    <Layout darkHero>
       <SEO
         title={`${project.title} – ${project.scope} | Fine Glaze`}
         description={`${project.description.slice(0, 155)}...`}

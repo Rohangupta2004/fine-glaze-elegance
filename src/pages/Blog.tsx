@@ -6,7 +6,7 @@ import SEO from "@/components/SEO";
 
 export default function Blog() {
   return (
-    <Layout>
+    <Layout darkHero>
       <SEO
         title="Facade & Glazing Blog – Pricing Guides, Tips & Industry Insights | Fine Glaze"
         description="Expert articles on facade engineering, structural glazing costs, curtain wall comparisons, glass types, and how to choose the right contractor in India. Free knowledge by Fine Glaze."
