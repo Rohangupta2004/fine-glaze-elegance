@@ -905,7 +905,7 @@ export const blogPosts: Record<string, BlogPost> = {
     date: "2026-05-14",
     readTime: "10 min read",
     category: "Technical Guide",
-    heroImage: "https://images.unsplash.com/photo-1511818966892-d7d671e672a2?w=1200&q=80",
+    heroImage: "https://images.unsplash.com/photo-1641787354718-46774dd8f94a?w=1200&q=80",
     excerpt: "Everything architects and builders need to know about spider glazing systems in India — from types and components to cost, structural design, and finding the right contractor.",
     content: [
       {
