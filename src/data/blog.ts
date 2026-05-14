@@ -895,6 +895,100 @@ export const blogPosts: Record<string, BlogPost> = {
       },
     ],
   },
+
+  "spider-glazing-system-guide-india": {
+    slug: "spider-glazing-system-guide-india",
+    title: "Spider Glazing Systems: Complete Guide for Architects & Builders in India (2026)",
+    metaTitle: "Spider Glazing System Guide India 2026 | Types, Cost & Installation – Fine Glaze",
+    metaDescription: "Complete guide to spider glazing systems in India — covering types, components, cost per sq ft, design considerations, and installation process. From Fine Glaze, Pune & Mumbai's trusted facade experts.",
+    keywords: "spider glazing system India, spider glazing cost per sq ft, point-fixed glazing India, spider fitting glass facade, spider glazing installation, frameless glass facade India, spider glass system price, spider glazing contractor Pune Mumbai",
+    date: "2026-05-14",
+    readTime: "10 min read",
+    category: "Technical Guide",
+    heroImage: "https://images.unsplash.com/photo-1545558014-8692077e9b5c?w=1200&q=80",
+    excerpt: "Everything architects and builders need to know about spider glazing systems in India — from types and components to cost, structural design, and finding the right contractor.",
+    content: [
+      {
+        heading: "What is Spider Glazing?",
+        body: "Spider glazing — also called point-fixed glazing or bolt-fixed glazing — is a frameless structural glass system where individual glass panels are connected to a support structure using stainless steel spider fittings and countersunk bolts. Unlike conventional curtain walls that use aluminium mullions and transoms to frame the glass, spider glazing eliminates visible framing entirely. The result is a seamless, all-glass facade that maximises transparency, natural light, and architectural impact. Spider glazing is increasingly popular in India for hotel lobbies, corporate atriums, retail storefronts, museum facades, and high-end residential entrances where the architect wants an uninterrupted glass plane.",
+      },
+      {
+        heading: "How Spider Glazing Works: The Core Components",
+        body: "A spider glazing system has four key components that work together to transfer wind load and dead load from the glass to the building structure:",
+        list: [
+          "Glass Panels — Toughened (tempered) or heat-strengthened glass, typically 12mm–19mm thick. Laminated glass (two layers bonded with PVB interlayer) is mandatory for overhead and safety-critical applications. DGU (double glazed units) are used when thermal insulation is required.",
+          "Spider Fittings — Precision-machined stainless steel (SS 316 grade) connectors that clamp the glass at drilled bolt holes near the panel corners. Available in 1-arm, 2-arm, 3-arm, and 4-arm configurations depending on the panel layout.",
+          "Countersunk Bolts — High-strength bolts that pass through pre-drilled holes in the glass and connect to the spider arms. The countersunk head sits flush with the glass surface, maintaining the seamless look. Articulating bolt assemblies allow for thermal expansion and structural movement.",
+          "Support Structure — The steel or cable structure behind the glass that carries all loads back to the building frame. Options include tubular steel fins, cable trusses, cantilevered steel arms, or glass fins (for an all-glass aesthetic).",
+        ],
+      },
+      {
+        heading: "Types of Spider Glazing Systems Used in India",
+        body: "There are four main spider glazing configurations, each suited to different architectural applications and budgets:",
+        table: {
+          headers: ["System Type", "Support Structure", "Best For", "Visual Impact", "Cost Level"],
+          rows: [
+            ["Steel Fin Spider Glazing", "Vertical or horizontal steel tubes behind glass", "Atriums, lobbies, curtain facades", "High — minimal visible steel", "₹₹₹"],
+            ["Cable Truss Spider Glazing", "Pre-tensioned stainless steel cables", "Large atriums, feature walls, canopies", "Maximum — near-invisible support", "₹₹₹₹"],
+            ["Cantilevered Spider Glazing", "Steel arms projecting from floor slabs or columns", "Storefronts, entrances, small facades", "High — clean lines", "₹₹"],
+            ["Glass Fin Spider Glazing", "Structural glass fins perpendicular to facade", "Premium lobbies, showrooms", "Ultimate — all-glass appearance", "₹₹₹₹₹"],
+          ],
+        },
+      },
+      {
+        heading: "Spider Glazing Cost in India (2026 Pricing)",
+        body: "Spider glazing is a premium facade system. Costs depend on the support structure type, glass specification, fitting quality, and project scale. Here are current market rates for supply and installation in Maharashtra:",
+        table: {
+          headers: ["Configuration", "Glass Type", "Rate (₹/sq ft)", "Notes"],
+          rows: [
+            ["Cantilevered / Simple Fin", "12mm Toughened Clear", "₹800 – ₹1,100", "Entry-level spider system"],
+            ["Steel Fin System", "12mm Toughened + Low-E", "₹1,000 – ₹1,400", "Most common commercial spec"],
+            ["Steel Fin System", "Laminated DGU (6+6mm)", "₹1,300 – ₹1,800", "Thermal + safety performance"],
+            ["Cable Truss System", "Laminated Toughened", "₹1,500 – ₹2,200", "Premium architectural feature"],
+            ["Glass Fin System", "Laminated Low-Iron", "₹2,000 – ₹3,000+", "Ultra-premium, all-glass look"],
+          ],
+        },
+      },
+      {
+        heading: "Design Considerations for Indian Conditions",
+        body: "Designing spider glazing for Indian projects requires attention to several factors that differ from Western specifications:",
+        list: [
+          "Wind Load — IS 875 Part 3 governs wind load design. High-rise applications in coastal Mumbai require higher design pressures than inland Pune. Spider fittings and glass thickness must be engineered for the specific wind zone.",
+          "Thermal Movement — Indian temperature ranges (5°C to 48°C in some regions) create significant thermal expansion in glass and steel. Articulating bolt connections and slotted fixings must accommodate ±15mm movement.",
+          "Solar Heat Gain — Spider glazing maximises glass area, which means higher solar heat gain. Specify solar control glass (low SHGC) or consider DGU with Low-E coating to manage cooling loads, especially for west-facing facades.",
+          "Seismic Design — India's seismic zones III, IV, and V require the glazing system to accommodate inter-storey drift. The spider fitting connections must allow racking movement without glass breakage.",
+          "Monsoon Water Management — Unlike framed curtain walls, spider glazing relies on silicone weather seals between glass panels. Specify structural-grade silicone (Dow Corning 795 or equivalent) and design adequate drainage paths for monsoon rainfall.",
+          "Safety — IS 2553 mandates the use of safety glass in facades. For spider glazing, heat-strengthened laminated glass is recommended so that if breakage occurs, the interlayer holds fragments in place.",
+        ],
+      },
+      {
+        heading: "Spider Glazing Installation Process",
+        body: "Spider glazing installation requires specialist skills and equipment. Here's the typical process Fine Glaze follows on site:",
+        list: [
+          "Step 1: Structure Survey & Setting Out — Precise survey of the structural steelwork or concrete frame. Spider bracket positions are marked using total station survey equipment to ±2mm accuracy.",
+          "Step 2: Steel / Cable Installation — Support structure (fins, cables, or cantilevers) is installed and aligned. Cable truss systems are pre-tensioned to design loads.",
+          "Step 3: Spider Fitting Installation — Spider arms are bolted to the support structure. Each fitting is adjusted to achieve the exact glass plane position.",
+          "Step 4: Glass Drilling & Preparation — Glass panels are CNC-drilled at the factory with countersunk bolt holes at precise locations. Edges are polished. Each panel is numbered and packed for site installation sequence.",
+          "Step 5: Glass Panel Installation — Panels are lifted into position (typically by vacuum lifter or manual for smaller panels), bolts are inserted through the drilled holes into the spider arms, and secured with articulating bolt assemblies.",
+          "Step 6: Silicone Sealing — Structural silicone weather seals are applied between all glass-to-glass joints. Typical joint width: 15–20mm. Cure time: 7–14 days depending on sealant type.",
+          "Step 7: Final Alignment & Handover — Full facade alignment check, snagging, and cleaning before handover.",
+        ],
+      },
+      {
+        heading: "When to Choose Spider Glazing Over Curtain Wall",
+        body: "Spider glazing is not always the right choice. Use this decision guide:",
+        list: [
+          "Choose spider glazing when: the design intent is maximum transparency with minimal framing, the facade area is a feature element (lobby, entrance, atrium), the budget allows for premium facade investment, and the building has adequate structural capacity for point loads at bolt locations.",
+          "Choose curtain wall when: the facade covers large areas (full building envelope), thermal performance and airtightness are critical, budget is moderate, or the facade requires integrated opening windows and ventilation panels.",
+          "Consider hybrid: Many Indian projects use spider glazing for the ground floor lobby and entrance, transitioning to curtain wall for upper floors — combining visual impact at street level with practical performance above.",
+        ],
+      },
+      {
+        heading: "Why Choose Fine Glaze for Spider Glazing?",
+        body: "Fine Glaze has delivered point-fixed and spider glazing systems across Pune and Mumbai for corporate offices, hotel lobbies, and premium residential projects. Our in-house engineering team handles structural calculations, shop drawing preparation, and coordinates directly with the project's structural consultant to ensure the support structure is designed for actual facade loads — not generic assumptions. We source spider fittings from certified European and Indian manufacturers (SS 316 grade with mill test certificates), use only structural-grade silicone sealants (Dow Corning / Sika), and maintain a dedicated installation crew trained specifically in point-fixed glazing techniques. Contact us at info@fineglaze.com or call +91 8369233566 for a project consultation and budget estimate.",
+      },
+    ],
+  },
 };
 
 export const blogPostsList = Object.values(blogPosts).sort(

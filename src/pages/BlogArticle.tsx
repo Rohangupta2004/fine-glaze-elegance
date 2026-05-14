@@ -16,7 +16,7 @@ export default function BlogArticle() {
     "@type": "Article",
     "headline": post.title,
     "description": post.metaDescription,
-    "image": `https://fineglaze.com${post.heroImage}`,
+    "image": post.heroImage.startsWith("http") ? post.heroImage : `https://fineglaze.com${post.heroImage}`,
     "datePublished": post.date,
     "dateModified": post.date,
     "author": {
@@ -65,7 +65,7 @@ export default function BlogArticle() {
         canonical={`https://fineglaze.com/blog/${post.slug}`}
         keywords={post.keywords}
         ogType="article"
-        ogImage={`https://fineglaze.com${post.heroImage}`}
+        ogImage={post.heroImage.startsWith("http") ? post.heroImage : `https://fineglaze.com${post.heroImage}`}
         schema={articleSchema}
       />
 
