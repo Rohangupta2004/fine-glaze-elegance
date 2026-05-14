@@ -48,7 +48,9 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
         ? "bg-primary text-white"
         : isScrolled
         ? "text-slate-700 hover:bg-slate-100"
-        : "text-white hover:bg-white/20 [text-shadow:_0_1px_4px_rgb(0_0_0_/_60%)]"
+        : darkHero
+        ? "text-white hover:bg-white/20 [text-shadow:_0_1px_4px_rgb(0_0_0_/_60%)]"
+        : "text-slate-700 hover:bg-slate-100"
     );
 
   return (
@@ -93,7 +95,7 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
                 onClick={() => setIsServiceOpen(!isServiceOpen)}
                 className={cn(
                   "p-1 rounded-md",
-                  isScrolled ? "text-slate-700" : "text-white [text-shadow:_0_1px_4px_rgb(0_0_0_/_60%)]"
+                  isScrolled ? "text-slate-700" : darkHero ? "text-white [text-shadow:_0_1px_4px_rgb(0_0_0_/_60%)]" : "text-slate-700"
                 )}
               >
                 <ChevronDown size={14} />
@@ -136,7 +138,9 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
                   "gap-2",
                   isScrolled
                     ? "text-slate-700"
-                    : "text-white hover:bg-white/20 [text-shadow:_0_1px_4px_rgb(0_0_0_/_60%)]"
+                    : darkHero
+                    ? "text-white hover:bg-white/20 [text-shadow:_0_1px_4px_rgb(0_0_0_/_60%)]"
+                    : "text-slate-700 hover:bg-slate-100"
                 )}
               >
                 <Phone size={16} />
@@ -156,7 +160,7 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
             onClick={() => setIsMobileMenuOpen(true)}
             className={cn(
               "lg:hidden p-2 rounded-md",
-              isScrolled ? "text-slate-900" : "text-white"
+              isScrolled ? "text-slate-900" : darkHero ? "text-white" : "text-slate-900"
             )}
           >
             <Menu size={24} />
