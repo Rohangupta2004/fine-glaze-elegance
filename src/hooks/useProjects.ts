@@ -21,6 +21,20 @@ export interface Project {
   award?: string;
 }
 
+/** Safely parse a JSONB field that may arrive as a string or native array */
+function parseJsonArray(value: unknown): string[] {
+  if (Array.isArray(value)) return value;
+  if (typeof value === "string") {
+    try {
+      const parsed = JSON.parse(value);
+      return Array.isArray(parsed) ? parsed : [];
+    } catch {
+      return [];
+    }
+  }
+  return [];
+}
+
 /** Convert static projectsData into the same shape */
 function getStaticProjects(): Project[] {
   return Object.entries(projectsData).map(([slug, p]) => ({
@@ -41,11 +55,11 @@ function mapSupabaseRow(row: any): Project {
     client: row.client,
     scope: row.scope,
     image: row.image,
-    gallery: row.gallery ?? [],
+    gallery: parseJsonArray(row.gallery),
     description: row.description,
     challenge: row.challenge ?? "",
     outcome: row.outcome ?? "",
-    features: row.features ?? [],
+    features: parseJsonArray(row.features),
     isAwardWinner: row.is_award_winner ?? false,
     award: row.award,
   };
