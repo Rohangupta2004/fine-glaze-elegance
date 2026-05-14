@@ -11,6 +11,7 @@ const services = [
     desc: "Unitized & stick-built curtain walls for IT parks, offices and high-rises. Wind-load tested up to 4.5 kPa.",
     spec: "Up to 4.5 kPa wind load",
     href: "/curtain-wall-systems",
+    image: "/Unitized.webp",
   },
   {
     tag: "Glazing",
@@ -18,6 +19,7 @@ const services = [
     desc: "Frameless silicone-bonded glass facades. Dow Corning / Sika certified. DGU + Low-E ready.",
     spec: "Dow Corning · Sika certified",
     href: "/structural-glazing",
+    image: "/Glazing.webp",
   },
   {
     tag: "Cladding",
@@ -25,6 +27,7 @@ const services = [
     desc: "Fire-retardant PVDF-coated aluminium composite panels from Aludecor & Alstrong. 20-yr colour warranty.",
     spec: "20-yr PVDF colour warranty",
     href: "/acp-aluminium-cladding",
+    image: "/Panel.webp",
   },
   {
     tag: "Aluminium",
@@ -32,6 +35,7 @@ const services = [
     desc: "Thermal-break sliding, casement & lift-slide systems. 60% heat reduction, 45dB sound rating.",
     spec: "60% heat reduction",
     href: "/aluminium-facade",
+    image: "/Aluminium%20windows.webp",
   },
   {
     tag: "Railings",
@@ -39,6 +43,7 @@ const services = [
     desc: "Frameless 12–19mm toughened glass railings with marine-grade SS hardware for balconies & staircases.",
     spec: "12–19mm toughened glass",
     href: "/glass-railings",
+    image: "/Railing.webp",
   },
   {
     tag: "Roofing",
@@ -46,6 +51,7 @@ const services = [
     desc: "Engineered glass skylights with heat-reflective coatings. Spider canopies & retractable roof systems.",
     spec: "50% more natural light",
     href: "/structural-glazing",
+    image: "/Hotel.webp",
   },
   {
     tag: "Interior",
@@ -53,6 +59,7 @@ const services = [
     desc: "Frameless office partitions with optional acoustic DGU and switchable smart glass.",
     spec: "Up to 42dB sound insulation",
     href: "/glass-railings",
+    image: "/Glass%20installation.webp",
   },
   {
     tag: "Maintenance",
@@ -60,6 +67,7 @@ const services = [
     desc: "Rope-access facade cleaning, silicone resealing, glass replacement & emergency repairs.",
     spec: "Bi-annual inspection cycle",
     href: "/maintenance-services",
+    image: "/Amc.webp",
   },
 ];
 
@@ -96,33 +104,45 @@ export const ServicesSection = () => {
               to={service.href}
               key={service.title}
               className={cn(
-                "group relative bg-card rounded-xl p-6 border border-border hover:border-primary/40 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 slide-up flex flex-col",
+                "group relative bg-card rounded-xl overflow-hidden border border-border hover:border-primary/40 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 slide-up flex flex-col",
                 isVisible && "visible"
               )}
               style={{ transitionDelay: `${index * 0.05}s` }}
             >
-              {/* Category tag */}
-              <span className="text-[11px] font-bold uppercase tracking-wider text-primary/80 mb-3">
-                {service.tag}
-              </span>
+              {/* Image */}
+              <div className="relative aspect-[4/3] overflow-hidden bg-muted">
+                <img
+                  src={service.image}
+                  alt={service.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                  width="400"
+                  height="300"
+                />
+                <span className="absolute top-3 left-3 bg-white/95 backdrop-blur-sm text-[10px] font-bold uppercase tracking-wider text-primary px-2.5 py-1 rounded-full shadow-sm">
+                  {service.tag}
+                </span>
+              </div>
 
               {/* Content */}
-              <h3 className="text-xl font-bold mb-3 text-foreground group-hover:text-primary transition-colors leading-snug">
-                {service.title}
-              </h3>
-              <p className="text-muted-foreground text-sm mb-4 leading-relaxed flex-1">
-                {service.desc}
-              </p>
+              <div className="p-5 flex flex-col flex-1">
+                <h3 className="text-lg font-bold mb-2 text-foreground group-hover:text-primary transition-colors leading-snug">
+                  {service.title}
+                </h3>
+                <p className="text-muted-foreground text-sm mb-4 leading-relaxed flex-1">
+                  {service.desc}
+                </p>
 
-              {/* Spec tag + arrow */}
-              <div className="flex items-center justify-between pt-3 border-t border-border/60 gap-2">
-                <span className="text-xs font-semibold text-primary/90 truncate">
-                  {service.spec}
-                </span>
-                <ArrowRight
-                  size={16}
-                  className="text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all shrink-0"
-                />
+                {/* Spec tag + arrow */}
+                <div className="flex items-center justify-between pt-3 border-t border-border/60 gap-2">
+                  <span className="text-xs font-semibold text-primary/90 truncate">
+                    {service.spec}
+                  </span>
+                  <ArrowRight
+                    size={16}
+                    className="text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all shrink-0"
+                  />
+                </div>
               </div>
             </Link>
           ))}
