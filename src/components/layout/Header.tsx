@@ -61,7 +61,9 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
           "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
           isScrolled
             ? "bg-white/95 backdrop-blur-md py-3 shadow-sm border-b"
-            : "bg-transparent py-5"
+            : darkHero
+            ? "bg-black/30 backdrop-blur-sm py-5"
+            : "bg-white/80 backdrop-blur-sm py-5"
         )}
       >
         <div className="container mx-auto px-4 flex items-center justify-between">
