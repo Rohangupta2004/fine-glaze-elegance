@@ -1,83 +1,65 @@
 import { Link } from "react-router-dom";
-import {
-  Building2,
-  Fence,
-  DoorOpen,
-  Wrench,
-  ArrowRight,
-  PanelTop,
-  Sun,
-  LayoutGrid,
-  GlassWater,
-} from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { cn } from "@/lib/utils";
 
 const services = [
   {
-    icon: Building2,
+    tag: "Facade System",
     title: "Curtain Wall Systems",
     desc: "Unitized & stick-built curtain walls for IT parks, offices and high-rises. Wind-load tested up to 4.5 kPa.",
     spec: "Up to 4.5 kPa wind load",
     href: "/curtain-wall-systems",
-    iconBg: "bg-amber-600",
   },
   {
-    icon: PanelTop,
+    tag: "Glazing",
     title: "Structural Glazing",
     desc: "Frameless silicone-bonded glass facades. Dow Corning / Sika certified. DGU + Low-E ready.",
     spec: "Dow Corning · Sika certified",
     href: "/structural-glazing",
-    iconBg: "bg-orange-600",
   },
   {
-    icon: LayoutGrid,
+    tag: "Cladding",
     title: "ACP Cladding",
     desc: "Fire-retardant PVDF-coated aluminium composite panels from Aludecor & Alstrong. 20-yr colour warranty.",
     spec: "20-yr PVDF colour warranty",
     href: "/acp-aluminium-cladding",
-    iconBg: "bg-yellow-700",
   },
   {
-    icon: DoorOpen,
+    tag: "Aluminium",
     title: "Aluminium Doors & Windows",
     desc: "Thermal-break sliding, casement & lift-slide systems. 60% heat reduction, 45dB sound rating.",
     spec: "60% heat reduction",
     href: "/aluminium-facade",
-    iconBg: "bg-stone-600",
   },
   {
-    icon: Fence,
+    tag: "Railings",
     title: "Glass Railings",
     desc: "Frameless 12–19mm toughened glass railings with marine-grade SS hardware for balconies & staircases.",
     spec: "12–19mm toughened glass",
     href: "/glass-railings",
-    iconBg: "bg-amber-700",
   },
   {
-    icon: Sun,
+    tag: "Roofing",
     title: "Skylights & Canopies",
     desc: "Engineered glass skylights with heat-reflective coatings. Spider canopies & retractable roof systems.",
     spec: "50% more natural light",
     href: "/structural-glazing",
-    iconBg: "bg-orange-700",
   },
   {
-    icon: GlassWater,
+    tag: "Interior",
     title: "Glass Partitions",
     desc: "Frameless office partitions with optional acoustic DGU and switchable smart glass.",
     spec: "Up to 42dB sound insulation",
     href: "/glass-railings",
-    iconBg: "bg-yellow-800",
   },
   {
-    icon: Wrench,
+    tag: "Maintenance",
     title: "Facade AMC & Repairs",
     desc: "Rope-access facade cleaning, silicone resealing, glass replacement & emergency repairs.",
     spec: "Bi-annual inspection cycle",
     href: "/maintenance-services",
-    iconBg: "bg-stone-700",
   },
 ];
 
@@ -119,18 +101,13 @@ export const ServicesSection = () => {
               )}
               style={{ transitionDelay: `${index * 0.05}s` }}
             >
-              {/* Icon */}
-              <div
-                className={cn(
-                  "w-12 h-12 rounded-xl flex items-center justify-center mb-4",
-                  service.iconBg
-                )}
-              >
-                <service.icon size={22} className="text-white" />
-              </div>
+              {/* Category tag */}
+              <span className="text-[11px] font-bold uppercase tracking-wider text-primary/80 mb-3">
+                {service.tag}
+              </span>
 
               {/* Content */}
-              <h3 className="text-lg font-semibold mb-2 text-foreground group-hover:text-primary transition-colors">
+              <h3 className="text-xl font-bold mb-3 text-foreground group-hover:text-primary transition-colors leading-snug">
                 {service.title}
               </h3>
               <p className="text-muted-foreground text-sm mb-4 leading-relaxed flex-1">

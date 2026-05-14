@@ -425,21 +425,16 @@ export default function Services() {
                   style={{ transitionDelay: "0.1s" }}
                 >
                   {/* Header */}
-                  <div className="flex items-center gap-4">
-                    <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center">
-                      <Icon className="text-primary" size={28} />
-                    </div>
-                    <div>
-                      <h3 className="text-primary uppercase text-xs font-bold tracking-widest">
-                        {service.subtitle}
-                      </h3>
-                      <h2
-                        id={`${service.id}-heading`}
-                        className="text-3xl md:text-4xl font-bold text-gradient"
-                      >
-                        {service.title}
-                      </h2>
-                    </div>
+                  <div>
+                    <h3 className="text-primary uppercase text-xs font-bold tracking-widest mb-2">
+                      {service.subtitle}
+                    </h3>
+                    <h2
+                      id={`${service.id}-heading`}
+                      className="text-3xl md:text-4xl font-bold text-gradient"
+                    >
+                      {service.title}
+                    </h2>
                   </div>
 
                   {/* Description */}
