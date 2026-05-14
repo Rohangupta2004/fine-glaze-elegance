@@ -37,7 +37,12 @@ const blogUrls = [
   "/blog/unitized-vs-stick-system-curtain-wall",
   "/blog/types-of-glass-for-building-facades",
   "/blog/how-to-choose-facade-contractor-india",
-  "/blog/acp-vs-hpl-cladding-comparison"
+  "/blog/acp-vs-hpl-cladding-comparison",
+  "/blog/aluminium-facade-cost-per-sqft-india-2026",
+  "/blog/spider-glazing-cost-guide-india",
+  "/blog/glass-facade-for-showroom-india",
+  "/blog/facade-renovation-glass-upgrade-india",
+  "/blog/facade-for-factory-warehouse-india",
 ];
 
 // 4. Project Slugs (From src/data/projects.ts)
