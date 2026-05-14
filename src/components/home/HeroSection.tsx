@@ -6,16 +6,15 @@ export const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       
-      {/* Hero Background Video — use local file for fast loading */}
+      {/* Hero Background Video */}
       <video
         className="absolute inset-0 w-full h-full object-cover"
         autoPlay
         muted
         loop
         playsInline
-        poster="/ltimindtree-mensa-campus-mahape-navi-mumbai-1 (1)-elementor-io-optimized.webp"
       >
-        <source src="/hero-bg.mp4" type="video/mp4" />
+        <source src="https://www.pexels.com/download/video/26737896/" type="video/mp4" />
       </video>
 
       {/* Gradient Overlay */}

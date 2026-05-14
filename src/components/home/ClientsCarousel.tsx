@@ -2,14 +2,14 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { cn } from "@/lib/utils";
 
 const clients = [
-  { name: "Embassy REIT", image: "/Embassy.webp" },
-  { name: "LTIMindtree", image: "/ltimindtree-mensa-campus-mahape-navi-mumbai-1 (1)-elementor-io-optimized.webp" },
-  { name: "Leela Group", image: "/Hotel.webp" },
-  { name: "Peninsula Land", image: "/Salsette27.webp" },
-  { name: "Nirmaann", image: "/Nirmann.webp" },
-  { name: "Jindal Stainless", image: "/Puneairport.webp" },
-  { name: "SSG Group", image: "/Pan.webp" },
-  { name: "Embassy Techzone", image: "/Embassyoark.webp" },
+  { name: "Embassy REIT", abbr: "E", color: "#1a3c5e" },
+  { name: "LTIMindtree", abbr: "LTI", color: "#0066cc" },
+  { name: "Larsen & Toubro", abbr: "L&T", color: "#e63012" },
+  { name: "Peninsula Land", abbr: "PL", color: "#2e7d32" },
+  { name: "Leela Group", abbr: "L", color: "#8b6914" },
+  { name: "Nirmaann", abbr: "N", color: "#6a1b9a" },
+  { name: "JSL", abbr: "JSL", color: "#c62828" },
+  { name: "Rockfort Estate", abbr: "RE", color: "#37474f" },
 ];
 
 export const ClientsCarousel = () => {
@@ -39,22 +39,18 @@ export const ClientsCarousel = () => {
           />
 
           {/* Marquee row */}
-          <div className="flex animate-marquee gap-5 items-center">
+          <div className="flex animate-marquee gap-4 items-center">
             {[...clients, ...clients, ...clients].map((client, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 flex items-center gap-3 pl-1.5 pr-5 py-1.5 rounded-full border border-border bg-card hover:border-primary/40 hover:bg-primary/5 transition-all duration-200 cursor-default shadow-sm group"
+                className="flex-shrink-0 flex items-center gap-3 px-5 py-3 rounded-full border border-border bg-card hover:border-primary/40 hover:bg-primary/5 transition-all duration-200 cursor-default shadow-sm group"
               >
-                {/* Client project image */}
-                <div className="w-9 h-9 rounded-full overflow-hidden flex-shrink-0 border border-border/50">
-                  <img
-                    src={client.image}
-                    alt={client.name}
-                    className="w-full h-full object-cover"
-                    loading="lazy"
-                    width="36"
-                    height="36"
-                  />
+                {/* Logo badge */}
+                <div
+                  className="w-8 h-8 rounded-full flex items-center justify-center text-white text-xs font-bold flex-shrink-0"
+                  style={{ backgroundColor: client.color }}
+                >
+                  {client.abbr}
                 </div>
                 {/* Client name */}
                 <span className="text-foreground/70 group-hover:text-primary font-semibold text-sm tracking-wide whitespace-nowrap transition-colors duration-200">
