@@ -58,7 +58,7 @@ export default function BlogArticle() {
   ];
 
   return (
-    <Layout darkHero>
+    <Layout>
       <SEO
         title={post.metaTitle}
         description={post.metaDescription}
@@ -69,17 +69,7 @@ export default function BlogArticle() {
         schema={articleSchema}
       />
 
-      <section className="relative w-full min-h-[400px] md:min-h-[500px] bg-slate-900">
-        <img
-          src={post.heroImage}
-          alt={post.title}
-          className="w-full h-full absolute inset-0 object-cover"
-          loading="eager"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/40" />
-      </section>
-
-      <article className="py-12">
+      <article className="py-16 pt-28">
         <div className="container mx-auto px-4 max-w-3xl">
           <Link
             to="/blog"
@@ -97,29 +87,36 @@ export default function BlogArticle() {
             </span>
           </div>
 
-          <h1 className="text-3xl md:text-4xl font-extrabold leading-tight mb-8">
+          <h1 className="text-3xl md:text-4xl font-extrabold leading-tight mb-6">
             {post.title}
           </h1>
 
-          <div className="prose prose-lg max-w-none space-y-10">
+          <img
+            src={post.heroImage}
+            alt={post.title}
+            className="w-full rounded-2xl object-cover max-h-[420px] mb-10"
+            loading="eager"
+          />
+
+          <div className="space-y-10">
             {post.content.map((section, i) => (
               <section key={i}>
-                <h2 className="text-xl md:text-2xl font-bold mb-3 text-foreground">
+                <h2 className="text-xl md:text-2xl font-bold mb-3 text-foreground border-l-4 border-amber-500 pl-3">
                   {section.heading}
                 </h2>
 
                 {section.body && (
-                  <p className="text-muted-foreground leading-relaxed mb-4">
+                  <p className="text-base md:text-lg text-foreground/80 leading-[1.85] mb-4">
                     {section.body}
                   </p>
                 )}
 
                 {section.list && (
-                  <ul className="space-y-3">
+                  <ul className="space-y-3 mt-3">
                     {section.list.map((item, li) => (
                       <li
                         key={li}
-                        className="flex gap-3 text-muted-foreground text-sm leading-relaxed"
+                        className="flex gap-3 text-base text-foreground/80 leading-relaxed"
                       >
                         <span className="text-amber-600 font-bold mt-0.5 shrink-0">
                           {li + 1}.
