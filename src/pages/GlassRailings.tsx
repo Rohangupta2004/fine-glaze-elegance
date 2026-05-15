@@ -3,7 +3,7 @@ import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { Check, ShieldCheck, Zap, Maximize2, ArrowRight, MapPin } from "lucide-react";
+import { Check, CheckCircle2, ShieldCheck, Zap, Maximize2, ArrowRight, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
 import { CTASection } from "@/components/home/CTASection";
 
@@ -302,6 +302,73 @@ const GlassRailings = () => {
             {["Mumbai – Andheri / Bandra / BKC", "Pune – Wakad / Kharadi / Koregaon", "Lonavala & Hill Stations", "Navi Mumbai", "Thane", "Nashik"].map((city) => (
               <div key={city} className="flex items-center gap-2 bg-white/10 px-5 py-2 rounded-full hover:bg-amber-600 transition-colors cursor-default text-sm">
                 <MapPin size={13} /><span>{city}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* TYPES & VARIANTS */}
+      <section className="py-20 bg-muted">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <h2 className="text-3xl font-bold mb-4 text-center">Types & Variants</h2>
+          <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
+            From completely frameless to top-mounted handrails — pick the railing style that matches your space.
+          </p>
+          <div className="grid sm:grid-cols-2 gap-8">
+            {[
+              {
+                name: "Frameless Glass Railing (U-Channel)",
+                tagline: "Glass dropped into a base U-channel — no posts",
+                description:
+                  "12mm–21.5mm toughened/laminated glass dropped into a sleek aluminium or stainless steel U-channel. Zero visible fixings — the cleanest, most architectural railing option.",
+                specs: ["12mm toughened or 13.52mm laminated", "Aluminium / SS 304 base shoe", "No top handrail (optional)", "Load tested to 0.74 kN/m"],
+                bestFor: "Balconies, terraces, staircase, swimming pool",
+                image: "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80",
+              },
+              {
+                name: "Standoff / Pin-Fixed Glass Railing",
+                tagline: "SS standoff buttons fix glass to floor or wall",
+                description:
+                  "Stainless steel standoff buttons (38mm or 50mm) bolt through the glass to the floor or wall. Modern, minimalist look — great for staircases and elevated walkways.",
+                specs: ["SS 316 standoff fittings", "12mm laminated glass", "Side-mount or top-mount fixing", "EPDM gasket isolation"],
+                bestFor: "Staircases, elevated walkways, mezzanines",
+                image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80",
+              },
+              {
+                name: "Spigot-Mounted Glass Railing",
+                tagline: "SS spigots clamp glass at base",
+                description:
+                  "Polished stainless steel spigots clamp the glass at the bottom every 1–1.2m. Faster install than U-channel and very popular for pool decks and outdoor terraces.",
+                specs: ["SS 316 mirror-polished spigots", "12mm toughened glass", "Adjustable for slopes", "Marine-grade for pool decks"],
+                bestFor: "Pool decks, terraces, outdoor balconies",
+                image: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=800&q=80",
+              },
+              {
+                name: "Top-Mounted with Handrail",
+                tagline: "Glass with continuous SS / wood top rail",
+                description:
+                  "Glass panels topped with a continuous stainless steel, wood, or anodised aluminium handrail. Adds tactile comfort and code-compliant grip height for residential & commercial use.",
+                specs: ["Top handrail Ø42–50mm", "10mm–12mm glass infill", "SS / wood / aluminium handrail", "IS 14900 code-compliant"],
+                bestFor: "Residential balconies, hotels, offices",
+                image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80",
+              },
+            ].map((type) => (
+              <div key={type.name} className="bg-background rounded-xl shadow-sm overflow-hidden border border-border">
+                <img src={type.image} alt={`${type.name} - Fine Glaze`} className="h-52 w-full object-cover" loading="lazy" width="600" height="208" />
+                <div className="p-6">
+                  <p className="text-xs font-semibold uppercase tracking-widest text-amber-600 mb-1">{type.tagline}</p>
+                  <h3 className="text-xl font-bold mb-2">{type.name}</h3>
+                  <p className="text-muted-foreground text-sm mb-4">{type.description}</p>
+                  <ul className="space-y-1 mb-4">
+                    {type.specs.map((s) => (
+                      <li key={s} className="flex items-center gap-2 text-sm text-muted-foreground">
+                        <CheckCircle2 size={14} className="text-amber-600 shrink-0" />{s}
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="text-xs text-slate-500"><span className="font-semibold text-slate-700">Best for:</span> {type.bestFor}</p>
+                </div>
               </div>
             ))}
           </div>

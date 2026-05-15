@@ -259,6 +259,73 @@ const Maintenance = () => {
         </div>
       </section>
 
+      {/* TYPES & VARIANTS */}
+      <section className="py-20 bg-muted">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <h2 className="text-3xl font-bold mb-4 text-center">Services & Plans</h2>
+          <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
+            Choose the maintenance plan that protects your facade investment — from annual AMCs to one-off repairs.
+          </p>
+          <div className="grid sm:grid-cols-2 gap-8">
+            {[
+              {
+                name: "Annual Maintenance Contract (AMC)",
+                tagline: "Quarterly visits + priority emergency support",
+                description:
+                  "Comprehensive yearly contract with 4 scheduled inspections, sealant top-ups, drainage checks, and 24/7 emergency response. The most cost-effective way to extend your facade life.",
+                specs: ["4 scheduled visits per year", "Sealant & gasket top-ups", "Drainage & weep hole cleaning", "24/7 emergency call-out"],
+                bestFor: "Corporate offices, malls, hospitals, hotels",
+                image: "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80",
+              },
+              {
+                name: "Facade Cleaning Services",
+                tagline: "Rope-access & BMU glass and panel cleaning",
+                description:
+                  "IRATA-certified rope access cleaners with pH-neutral solutions, deionised water systems, and BMU coordination. Restores facade aesthetics without damaging coatings.",
+                specs: ["IRATA Level 1–3 technicians", "pH-neutral cleaning agents", "Deionised water rinse", "BMU & cradle access supported"],
+                bestFor: "High-rise towers, glass facades, ACP cladding",
+                image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80",
+              },
+              {
+                name: "Sealant & Silicone Repair",
+                tagline: "Re-seal failed joints to stop leaks",
+                description:
+                  "Removal of old/cracked sealant, joint preparation, primer application, and re-application of structural or weather silicone. Critical for waterproofing 8+ year old facades.",
+                specs: ["Dow Corning 791 / 795 silicone", "Backer rod replacement", "Adhesion pull-off testing", "10-year warranty available"],
+                bestFor: "Aged structural glazing, leaking joints",
+                image: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=800&q=80",
+              },
+              {
+                name: "Glass Replacement & Repair",
+                tagline: "Broken or fogged glass swap-out",
+                description:
+                  "Emergency replacement of cracked, broken, or fogged DGU glass panels — matching original spec, coating, and tint. Includes safe removal, hoarding, and re-glazing.",
+                specs: ["Match original glass spec", "Toughened / laminated / DGU", "Safe scaffold or rope access", "24–72 hour turnaround"],
+                bestFor: "Emergency repairs, fogged DGUs, vandalism",
+                image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80",
+              },
+            ].map((type) => (
+              <div key={type.name} className="bg-background rounded-xl shadow-sm overflow-hidden border border-border">
+                <img src={type.image} alt={`${type.name} - Fine Glaze`} className="h-52 w-full object-cover" loading="lazy" width="600" height="208" />
+                <div className="p-6">
+                  <p className="text-xs font-semibold uppercase tracking-widest text-amber-600 mb-1">{type.tagline}</p>
+                  <h3 className="text-xl font-bold mb-2">{type.name}</h3>
+                  <p className="text-muted-foreground text-sm mb-4">{type.description}</p>
+                  <ul className="space-y-1 mb-4">
+                    {type.specs.map((s) => (
+                      <li key={s} className="flex items-center gap-2 text-sm text-muted-foreground">
+                        <CheckCircle2 size={14} className="text-amber-600 shrink-0" />{s}
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="text-xs text-slate-500"><span className="font-semibold text-slate-700">Best for:</span> {type.bestFor}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="py-20 bg-white">
         <div className="container px-4 max-w-5xl mx-auto">

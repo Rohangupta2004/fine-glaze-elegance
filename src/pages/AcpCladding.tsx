@@ -324,6 +324,73 @@ const AcpCladding = () => {
         </div>
       </section>
 
+      {/* TYPES & VARIANTS */}
+      <section className="py-20 bg-muted">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <h2 className="text-3xl font-bold mb-4 text-center">Types & Variants</h2>
+          <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
+            ACP panel grades for every facade requirement — from cost-effective signage to fire-rated high-rise cladding.
+          </p>
+          <div className="grid sm:grid-cols-2 gap-8">
+            {[
+              {
+                name: "PVDF Coated ACP",
+                tagline: "Premium PVDF/Kynar 500 fluoropolymer finish",
+                description:
+                  "Top-tier ACP coating with 70%+ PVDF resin for superior UV resistance, colour retention, and 20-year warranty. Industry standard for exterior facades exposed to sun and weather.",
+                specs: ["4mm panel — 0.3/0.5mm skin", "70% PVDF / Kynar 500 coating", "20-year colour warranty", "200+ colour & finish options"],
+                bestFor: "Exterior facades, corporate buildings, malls",
+                image: "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80",
+              },
+              {
+                name: "PE Coated ACP",
+                tagline: "Polyester-coated, indoor & signage grade",
+                description:
+                  "Polyester (PE) coating offers vibrant colours at a lower price point. Best suited for interior cladding, signage, partitions, and short-term outdoor applications.",
+                specs: ["4mm panel — 0.25/0.5mm skin", "Polyester / PE coating", "5–7 year outdoor life", "Lower cost vs PVDF"],
+                bestFor: "Signage, interiors, partitions, branding",
+                image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80",
+              },
+              {
+                name: "Fire-Rated ACP (FR/A2)",
+                tagline: "Mineral-core, Class A2 fire rating",
+                description:
+                  "Mineral-filled non-combustible core compliant with NBC 2016 fire safety norms. Mandatory for buildings over 15m height and critical infrastructure projects.",
+                specs: ["Class A2 / B1 fire rated", "Mineral-filled core (>70%)", "NBC 2016 compliant", "Smoke density <50"],
+                bestFor: "High-rise towers, hospitals, airports, hotels",
+                image: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=800&q=80",
+              },
+              {
+                name: "Specialty Finish ACP",
+                tagline: "Brushed, mirror, stone, wood & timber-look",
+                description:
+                  "Designer ACP panels in metallic, brushed, stone-look, timber-finish, mirror, and chameleon variants. Lets architects achieve premium aesthetics at ACP economics.",
+                specs: ["Metallic / mirror / brushed", "Stone-look & timber finish", "Custom RAL colour matching", "PVDF base coating"],
+                bestFor: "Luxury showrooms, accent walls, hospitality",
+                image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80",
+              },
+            ].map((type) => (
+              <div key={type.name} className="bg-background rounded-xl shadow-sm overflow-hidden border border-border">
+                <img src={type.image} alt={`${type.name} - Fine Glaze`} className="h-52 w-full object-cover" loading="lazy" width="600" height="208" />
+                <div className="p-6">
+                  <p className="text-xs font-semibold uppercase tracking-widest text-amber-600 mb-1">{type.tagline}</p>
+                  <h3 className="text-xl font-bold mb-2">{type.name}</h3>
+                  <p className="text-muted-foreground text-sm mb-4">{type.description}</p>
+                  <ul className="space-y-1 mb-4">
+                    {type.specs.map((s) => (
+                      <li key={s} className="flex items-center gap-2 text-sm text-muted-foreground">
+                        <CheckCircle2 size={14} className="text-amber-600 shrink-0" />{s}
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="text-xs text-slate-500"><span className="font-semibold text-slate-700">Best for:</span> {type.bestFor}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="py-20 bg-white">
         <div className="container px-4 max-w-4xl mx-auto">

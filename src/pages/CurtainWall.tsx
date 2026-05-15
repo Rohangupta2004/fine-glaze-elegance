@@ -314,6 +314,73 @@ export default function CurtainWall() {
         </div>
       </section>
 
+      {/* TYPES & VARIANTS */}
+      <section className="py-20 bg-muted">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <h2 className="text-3xl font-bold mb-4 text-center">Types & Variants</h2>
+          <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
+            Curtain wall systems engineered for different building heights, wind loads, and design intent.
+          </p>
+          <div className="grid sm:grid-cols-2 gap-8">
+            {[
+              {
+                name: "Unitized Curtain Wall",
+                tagline: "Pre-fabricated, craned into place",
+                description:
+                  "Full storey-height panels assembled in the factory with glass + frame + sealants pre-installed. Hoisted into place from inside the building — fastest install for high-rise.",
+                specs: ["Factory-assembled units", "Storey-height panels (3–4m)", "Watertight to 600 Pa", "Wind load up to 5.0 kPa"],
+                bestFor: "High-rise towers, premium corporate offices",
+                image: "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80",
+              },
+              {
+                name: "Stick Curtain Wall",
+                tagline: "Site-assembled mullion & transom system",
+                description:
+                  "Vertical mullions installed first, then horizontal transoms, then in-filled with glass. Most flexible system — handles complex geometries, angles, and on-site changes.",
+                specs: ["Stick-built on site", "Highly customisable", "Lower transport costs", "Wind load up to 3.0 kPa"],
+                bestFor: "Mid-rise offices, retail, irregular facades",
+                image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80",
+              },
+              {
+                name: "Semi-Unitized Curtain Wall",
+                tagline: "Hybrid of factory + site assembly",
+                description:
+                  "Frame assembled at factory, glass glazed on site. Combines speed of unitized with cost benefits of stick — a balanced choice for mid-rise commercial projects.",
+                specs: ["Frame factory-built", "Glass glazed on site", "Faster than full stick", "Easier glass replacement"],
+                bestFor: "Mid-rise commercial, mixed-use towers",
+                image: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=800&q=80",
+              },
+              {
+                name: "Structural Glazed Curtain Wall",
+                tagline: "Frameless exterior via structural silicone",
+                description:
+                  "Curtain wall variant where glass is bonded with structural silicone to a concealed frame — no visible exterior mullions. Most aesthetically refined curtain wall option.",
+                specs: ["Dow Corning / Sika silicone", "Hidden internal frame", "2-side or 4-side SSG", "Wind load up to 4.5 kPa"],
+                bestFor: "Premium corporate HQs, luxury towers",
+                image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80",
+              },
+            ].map((type) => (
+              <div key={type.name} className="bg-background rounded-xl shadow-sm overflow-hidden border border-border">
+                <img src={type.image} alt={`${type.name} - Fine Glaze`} className="h-52 w-full object-cover" loading="lazy" width="600" height="208" />
+                <div className="p-6">
+                  <p className="text-xs font-semibold uppercase tracking-widest text-amber-600 mb-1">{type.tagline}</p>
+                  <h3 className="text-xl font-bold mb-2">{type.name}</h3>
+                  <p className="text-muted-foreground text-sm mb-4">{type.description}</p>
+                  <ul className="space-y-1 mb-4">
+                    {type.specs.map((s) => (
+                      <li key={s} className="flex items-center gap-2 text-sm text-muted-foreground">
+                        <CheckCircle2 size={14} className="text-amber-600 shrink-0" />{s}
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="text-xs text-slate-500"><span className="font-semibold text-slate-700">Best for:</span> {type.bestFor}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="py-20 bg-slate-50">
         <div className="container mx-auto px-4 max-w-4xl">

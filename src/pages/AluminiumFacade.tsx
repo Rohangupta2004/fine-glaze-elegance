@@ -268,6 +268,73 @@ export default function AluminiumFacade() {
         </div>
       </section>
 
+      {/* TYPES & VARIANTS */}
+      <section className="py-20 bg-muted">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <h2 className="text-3xl font-bold mb-4 text-center">Types & Variants</h2>
+          <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
+            Different aluminium facade systems engineered to match your building&apos;s aesthetic, performance, and budget.
+          </p>
+          <div className="grid sm:grid-cols-2 gap-8">
+            {[
+              {
+                name: "Unitized Aluminium Facade",
+                tagline: "Pre-assembled panels for fast installation",
+                description:
+                  "Factory-assembled aluminium frame + glass units shipped to site and craned into place. Ideal for high-rise projects where speed and quality control matter most.",
+                specs: ["Factory QC-controlled assembly", "20%–30% faster on-site install", "Mullion + transom unit design", "Wind load up to 4.0 kPa"],
+                bestFor: "High-rise towers, IT parks, corporate HQs",
+                image: "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80",
+              },
+              {
+                name: "Stick System Facade",
+                tagline: "Site-assembled mullions and transoms",
+                description:
+                  "Aluminium mullions and transoms erected stick-by-stick on site, then in-filled with glass or panels. Most flexible and cost-effective for low-to-mid rise projects.",
+                specs: ["6063-T6 aluminium extrusions", "On-site weatherproofing", "Easy customisation per floor", "Wind load up to 2.5 kPa"],
+                bestFor: "Showrooms, mid-rise offices, retail facades",
+                image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80",
+              },
+              {
+                name: "ACP / Composite Panel Facade",
+                tagline: "Aluminium composite cladding with PVDF finish",
+                description:
+                  "4mm aluminium composite panels (ACP) fixed to a sub-frame for vibrant colours, sharp edges, and weatherproof cladding. Great for accent walls and signage facades.",
+                specs: ["4mm ACP — 0.3/0.5mm skin", "PVDF / FEVE coating", "20-year colour warranty", "Fire-rated FR-grade available"],
+                bestFor: "Brand facades, podium cladding, signage walls",
+                image: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=800&q=80",
+              },
+              {
+                name: "Solid Aluminium Panel Facade",
+                tagline: "3mm–5mm solid aluminium sheets",
+                description:
+                  "Premium solid aluminium panels with bent edges, cassette fixings, and PVDF coating. Higher rigidity and longer life than ACP — favoured for luxury and government projects.",
+                specs: ["3mm–5mm solid aluminium", "Cassette / hook-on fixing", "30+ year service life", "Class A2 fire rating"],
+                bestFor: "Luxury hotels, government buildings, premium HQs",
+                image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80",
+              },
+            ].map((type) => (
+              <div key={type.name} className="bg-background rounded-xl shadow-sm overflow-hidden border border-border">
+                <img src={type.image} alt={`${type.name} - Fine Glaze`} className="h-52 w-full object-cover" loading="lazy" width="600" height="208" />
+                <div className="p-6">
+                  <p className="text-xs font-semibold uppercase tracking-widest text-amber-600 mb-1">{type.tagline}</p>
+                  <h3 className="text-xl font-bold mb-2">{type.name}</h3>
+                  <p className="text-muted-foreground text-sm mb-4">{type.description}</p>
+                  <ul className="space-y-1 mb-4">
+                    {type.specs.map((s) => (
+                      <li key={s} className="flex items-center gap-2 text-sm text-muted-foreground">
+                        <CheckCircle2 size={14} className="text-amber-600 shrink-0" />{s}
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="text-xs text-slate-500"><span className="font-semibold text-slate-700">Best for:</span> {type.bestFor}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* FAQ SECTION — Matches the schema above for Google Featured Snippets */}
       <section className="py-20 bg-muted">
         <div className="container mx-auto px-4 max-w-4xl">
