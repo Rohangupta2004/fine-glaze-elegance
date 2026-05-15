@@ -13,6 +13,7 @@ interface ServiceType {
   description: string;
   specs: string[];
   bestFor: string;
+  image: string;
 }
 
 interface ServiceData {
@@ -53,6 +54,7 @@ const serviceKeywords: Record<string, ServiceData> = {
           "Wind load up to 3.0 kPa",
         ],
         bestFor: "IT parks, commercial offices, showroom facades",
+        image: "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80",
       },
       {
         name: "4-Side Structural Glazing (SSG)",
@@ -66,6 +68,7 @@ const serviceKeywords: Record<string, ServiceData> = {
           "Wind load up to 4.5 kPa",
         ],
         bestFor: "High-rise towers, luxury hotels, airport terminals",
+        image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80",
       },
       {
         name: "Spider / Point-Fixed Glazing",
@@ -79,6 +82,7 @@ const serviceKeywords: Record<string, ServiceData> = {
           "Expansion joints every 6m",
         ],
         bestFor: "Atrium walls, grand lobbies, feature facades",
+        image: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=800&q=80",
       },
       {
         name: "Frameless Glass Canopies",
@@ -92,6 +96,7 @@ const serviceKeywords: Record<string, ServiceData> = {
           "Live load rated to NBC standards",
         ],
         bestFor: "Building entrances, shopping malls, sky bridges",
+        image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80",
       },
     ],
   },
@@ -121,6 +126,7 @@ const serviceKeywords: Record<string, ServiceData> = {
           "Wind load rated 4.5 kPa",
         ],
         bestFor: "High-rise towers (12+ floors), IT parks, hotels",
+        image: "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80",
       },
       {
         name: "Stick System Curtain Wall",
@@ -134,6 +140,7 @@ const serviceKeywords: Record<string, ServiceData> = {
           "Suitable for up to 12-storey buildings",
         ],
         bestFor: "Mid-rise offices (4–12 floors), complex geometries",
+        image: "https://images.unsplash.com/photo-1554435493-93422e8220c8?w=800&q=80",
       },
       {
         name: "Semi-Unitized Curtain Wall",
@@ -147,6 +154,7 @@ const serviceKeywords: Record<string, ServiceData> = {
           "Reduced crane dependency vs full unitized",
         ],
         bestFor: "Mixed-use buildings, phased construction projects",
+        image: "https://images.unsplash.com/photo-1460472178825-e5240623afd5?w=800&q=80",
       },
       {
         name: "Double-Skin Facade",
@@ -160,6 +168,7 @@ const serviceKeywords: Record<string, ServiceData> = {
           "Energy savings up to 35% vs single skin",
         ],
         bestFor: "Green-certified buildings, LEED/IGBC projects",
+        image: "https://images.unsplash.com/photo-1531834685032-c34bf0d84c77?w=800&q=80",
       },
     ],
   },
@@ -189,6 +198,7 @@ const serviceKeywords: Record<string, ServiceData> = {
           "FR core: Class B1 / A2 (NBC compliant)",
         ],
         bestFor: "Commercial towers, IT campuses, retail facades",
+        image: "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80",
       },
       {
         name: "PE-Coated ACP",
@@ -202,6 +212,7 @@ const serviceKeywords: Record<string, ServiceData> = {
           "Not recommended for coastal / high-rise use",
         ],
         bestFor: "Interior cladding, shopfronts, signage boards",
+        image: "https://images.unsplash.com/photo-1565117099498-30d27b9a81c4?w=800&q=80",
       },
       {
         name: "Wood-Grain & Stone-Finish ACP",
@@ -215,6 +226,7 @@ const serviceKeywords: Record<string, ServiceData> = {
           "FR core standard",
         ],
         bestFor: "Hospitality facades, retail interiors, feature walls",
+        image: "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&q=80",
       },
       {
         name: "Aluminium Solid Panels",
@@ -228,6 +240,7 @@ const serviceKeywords: Record<string, ServiceData> = {
           "Fabricated into cassette or flat-fix systems",
         ],
         bestFor: "Signature facades, soffits, column cladding",
+        image: "https://images.unsplash.com/photo-1509343256512-d77a5cb3791b?w=800&q=80",
       },
     ],
   },
@@ -416,13 +429,24 @@ export default function ServiceDetail() {
                 key={type.name}
                 className="bg-white rounded-2xl border border-slate-200 overflow-hidden hover:shadow-lg hover:border-amber-300 transition-all duration-300 group"
               >
+                {/* Card image */}
+                <div className="relative h-48 overflow-hidden">
+                  <img
+                    src={type.image}
+                    alt={type.name}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent" />
+                  <div className="absolute bottom-3 left-4 text-amber-400 text-xs font-bold uppercase tracking-wider">
+                    Type {String(idx + 1).padStart(2, "0")}
+                  </div>
+                </div>
+
                 {/* Card header */}
                 <div className="bg-gradient-to-r from-slate-800 to-slate-900 px-6 py-5">
                   <div className="flex items-start justify-between gap-3">
                     <div>
-                      <div className="text-amber-400 text-xs font-bold uppercase tracking-wider mb-1">
-                        Type {String(idx + 1).padStart(2, "0")}
-                      </div>
                       <h3 className="text-lg font-bold text-white leading-tight">
                         {type.name}
                       </h3>
