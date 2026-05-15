@@ -59,6 +59,10 @@ import ResidentialFacade from "./pages/ResidentialFacade";
 import IndustrialFacade from "./pages/IndustrialFacade";
 import FacadeMaintenanceAMC from "./pages/FacadeMaintenanceAMC";
 
+import InspectionDashboard from "./pages/InspectionDashboard";
+import InspectionNew from "./pages/InspectionNew";
+import InspectionView from "./pages/InspectionView";
+
 const queryClient = new QueryClient();
 
 const AppWrapper = () => (
@@ -126,6 +130,10 @@ export const routes = [
       { path: "residential-facade", element: <ResidentialFacade /> },
       { path: "industrial-facade", element: <IndustrialFacade /> },
       { path: "facade-amc-guide", element: <FacadeMaintenanceAMC /> },
+      // Site Inspection App
+      { path: "inspection", element: <InspectionDashboard /> },
+      { path: "inspection/new", element: <InspectionNew /> },
+      { path: "inspection/:id", element: <InspectionView /> },
       { path: "*", element: <NotFound /> }
     ]
   }
