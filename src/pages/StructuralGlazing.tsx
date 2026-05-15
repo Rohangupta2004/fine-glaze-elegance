@@ -221,6 +221,103 @@ export default function StructuralGlazing() {
         </div>
       </section>
 
+      {/* TYPES & VARIANTS */}
+      <section className="py-20 bg-muted">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <h2 className="text-3xl font-bold mb-4 text-center">Types & Variants</h2>
+          <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
+            Choose the structural glazing system that fits your building type, budget, and aesthetic goals.
+          </p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-2 gap-8">
+            {[
+              {
+                name: "2-Side Structural Glazing (SSG)",
+                tagline: "Horizontal or vertical silicone-bonded edges",
+                description:
+                  "Two sides of the glass panel are bonded to the frame using structural silicone; the remaining two sides use conventional pressure caps. Ideal for cost-sensitive projects that still want a partially frameless look.",
+                specs: [
+                  "6mm – 12mm toughened glass",
+                  "Dow Corning / Sika structural silicone",
+                  "Aluminium 6063-T6 extrusions",
+                  "Wind load up to 3.0 kPa",
+                ],
+                bestFor: "IT parks, commercial offices, showroom facades",
+                image: "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80",
+              },
+              {
+                name: "4-Side Structural Glazing (SSG)",
+                tagline: "Fully flush, no visible frame on exterior",
+                description:
+                  "All four edges bonded with structural silicone, creating a completely frameless exterior. The most premium structural glazing variant — favoured for high-end corporate towers and luxury hotels.",
+                specs: [
+                  "10mm – 19mm DGU / Low-E glass",
+                  "Dual-component structural silicone",
+                  "Concealed hidden-fix aluminium frames",
+                  "Wind load up to 4.5 kPa",
+                ],
+                bestFor: "High-rise towers, luxury hotels, airport terminals",
+                image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80",
+              },
+              {
+                name: "Spider / Point-Fixed Glazing",
+                tagline: "Glass suspended by stainless steel spider fittings",
+                description:
+                  "Glass panels are held by stainless steel spiders (rosettes) drilled into the glass at precise points. The result is a near-invisible structural connection that maximises transparency — popular for atrium walls and lobbies.",
+                specs: [
+                  "12mm – 19mm laminated safety glass",
+                  "SS 316 marine-grade spider fittings",
+                  "Countersunk bolt fixings",
+                  "Expansion joints every 6m",
+                ],
+                bestFor: "Atrium walls, grand lobbies, feature facades",
+                image: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=800&q=80",
+              },
+              {
+                name: "Frameless Glass Canopies",
+                tagline: "Overhead structural glass for entrances & atriums",
+                description:
+                  "Canopy systems using laminated glass panels supported by structural fins or steel cables. Fully weatherproof with integrated drainage channels. Creates a dramatic, open entrance while protecting from elements.",
+                specs: [
+                  "17.52mm or 21.52mm laminated glass",
+                  "Thermally broken aluminium or steel fins",
+                  "Integrated EPDM weather seals",
+                  "Live load rated to NBC standards",
+                ],
+                bestFor: "Building entrances, shopping malls, sky bridges",
+                image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80",
+              },
+            ].map((type) => (
+              <div key={type.name} className="bg-background rounded-xl shadow-sm overflow-hidden border border-border">
+                <img
+                  src={type.image}
+                  alt={`${type.name} - structural glazing by Fine Glaze`}
+                  className="h-52 w-full object-cover"
+                  loading="lazy"
+                  width="600"
+                  height="208"
+                />
+                <div className="p-6">
+                  <p className="text-xs font-semibold uppercase tracking-widest text-amber-600 mb-1">{type.tagline}</p>
+                  <h3 className="text-xl font-bold mb-2">{type.name}</h3>
+                  <p className="text-muted-foreground text-sm mb-4">{type.description}</p>
+                  <ul className="space-y-1 mb-4">
+                    {type.specs.map((s) => (
+                      <li key={s} className="flex items-center gap-2 text-sm text-muted-foreground">
+                        <CheckCircle2 size={14} className="text-amber-600 shrink-0" />
+                        {s}
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="text-xs text-slate-500">
+                    <span className="font-semibold text-slate-700">Best for:</span> {type.bestFor}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* LOCAL SEO: Areas Served */}
       <section className="py-20 bg-slate-900 text-white">
         <div className="container mx-auto px-4 text-center">
