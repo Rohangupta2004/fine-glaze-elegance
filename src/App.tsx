@@ -62,7 +62,7 @@ import FacadeMaintenanceAMC from "./pages/FacadeMaintenanceAMC";
 import InspectionDashboard from "./pages/InspectionDashboard";
 import InspectionNew from "./pages/InspectionNew";
 import InspectionView from "./pages/InspectionView";
-import AcpSheetPriceGuide from "./pages/AcpSheetPriceGuide";
+
 
 const queryClient = new QueryClient();
 
@@ -131,7 +131,6 @@ export const routes = [
       { path: "residential-facade", element: <ResidentialFacade /> },
       { path: "industrial-facade", element: <IndustrialFacade /> },
       { path: "facade-amc-guide", element: <FacadeMaintenanceAMC /> },
-      { path: "acp-sheet-price-guide-2025", element: <AcpSheetPriceGuide /> },
       // Site Inspection App
       { path: "inspection", element: <InspectionDashboard /> },
       { path: "inspection/new", element: <InspectionNew /> },
