@@ -1352,7 +1352,7 @@ export const blogPosts: Record<string, BlogPost> = {
     date: "2026-05-15",
     readTime: "8 min read",
     category: "Technical Guide",
-    heroImage: "/Panel.webp",
+    heroImage: "/Amc.webp",
     excerpt: "A complete step-by-step breakdown of how ACP cladding is installed in India — from sub-frame to finished facade, with quality checks and realistic timelines.",
     content: [
       {
