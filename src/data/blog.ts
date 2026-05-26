@@ -1418,6 +1418,108 @@ export const blogPosts: Record<string, BlogPost> = {
       },
     ],
   },
+  "aluminium-section-profiles-curtain-wall-india": {
+    "slug": "aluminium-section-profiles-curtain-wall-india",
+    "title": "Aluminium Section Profiles for Curtain Walls: A Technical Guide for India",
+    "metaTitle": "Aluminium Section Profiles for Curtain Walls India | Technical Guide | Fine Glaze",
+    "metaDescription": "Deep dive into aluminium section profiles for curtain walls in India. Learn about 6063-T6 alloy, mullion vs transom sizes, moment of inertia, and wind load engineering.",
+    "keywords": "aluminium section profiles, curtain wall mullion sizes, aluminium extrusion grades India, 6063-T6 aluminium, curtain wall engineering, facade section design, Fine Glaze aluminium profiles",
+    "date": "2026-05-26",
+    "readTime": "9 min read",
+    "category": "Technical Guide",
+    "heroImage": "https://images.unsplash.com/photo-1511818966892-d7d671e672a2?w=1200&q=80",
+    "excerpt": "The backbone of any curtain wall is its aluminium profile. This guide explores the engineering behind mullions and transoms, alloy selection, and how to calculate the right section for Indian wind loads.",
+    "content": [
+      {
+        "heading": "The Skeleton of the Facade: Why Section Profiles Matter",
+        "body": "In the world of high-rise construction, the aluminium section profile is the unsung hero. It's the skeleton that holds the glass, resists the wind, and ensures the building remains watertight. In India, where wind speeds can reach 50m/s in coastal areas like Mumbai or Chennai, choosing the right profile isn't just about aesthetics\u2014it's a critical safety requirement. A mullion that is too thin will deflect under pressure, potentially causing glass breakage or seal failure."
+      },
+      {
+        "heading": "Alloy Selection: Why 6063-T6 is the Industry Standard",
+        "body": "Not all aluminium is created equal. For curtain walls in India, we almost exclusively use 6063-T6 alloy. Here is why:",
+        "list": [
+          "6063 Alloy: Known as the 'architectural alloy,' it provides an excellent balance of strength and surface finish quality for anodizing or powder coating.",
+          "T6 Temper: This indicates the aluminium has been solution heat-treated and artificially aged, providing the high tensile strength needed to support heavy DGU glass panels.",
+          "Corrosion Resistance: Essential for the Indian climate, especially in high-humidity and coastal regions.",
+          "Extrudability: Allows for complex hollow shapes that incorporate thermal breaks and screw ports."
+        ]
+      },
+      {
+        "heading": "Mullions vs. Transoms: Understanding the Roles",
+        "body": "A curtain wall grid consists of vertical members (mullions) and horizontal members (transoms). Mullions are the primary load-bearing elements, transferring the weight of the facade and wind loads to the building's structure via anchors. Transoms support the dead load of the glass and transfer it to the mullions. Typically, mullions have a deeper profile (e.g., 150mm to 250mm) to provide the necessary Moment of Inertia (Ix) against wind pressure."
+      },
+      {
+        "heading": "Standard Profile Dimensions in India",
+        "body": "While custom dies are common for large projects, most commercial buildings in India use standard section depths based on the building height and span:",
+        "table": {
+          "headers": [
+            "Building Height",
+            "Typical Mullion Depth",
+            "Typical Wall Thickness",
+            "Max Span (Floor to Floor)"
+          ],
+          "rows": [
+            [
+              "Low-rise (1-3 floors)",
+              "100mm - 125mm",
+              "2.0mm - 2.5mm",
+              "3.0m - 3.5m"
+            ],
+            [
+              "Mid-rise (4-12 floors)",
+              "150mm - 175mm",
+              "2.5mm - 3.0mm",
+              "3.5m - 4.0m"
+            ],
+            [
+              "High-rise (13-30 floors)",
+              "200mm - 250mm",
+              "3.0mm - 4.0mm",
+              "4.0m - 4.5m"
+            ],
+            [
+              "Super-tall (30+ floors)",
+              "Custom Engineered",
+              "4.0mm+",
+              "Varies"
+            ]
+          ]
+        }
+      },
+      {
+        "heading": "Engineering for Wind Load: The Moment of Inertia",
+        "body": "The most important technical spec for a profile is its Moment of Inertia (Ix). This value determines how much the profile will bend (deflect) under wind pressure. According to Indian Standards (IS 875), the deflection of a mullion should typically not exceed L/175 or 20mm, whichever is less. At Fine Glaze, we use specialized software to calculate the required Ix for every project, ensuring that the aluminium sections are optimized for both safety and cost."
+      },
+      {
+        "heading": "Thermal Breaks: Managing the Indian Heat",
+        "body": "Aluminium is a highly conductive material. In the scorching Indian summer, a standard aluminium profile can act as a 'thermal bridge,' transferring heat from the outside to the air-conditioned interior. High-performance curtain walls use 'thermally broken' profiles, where a reinforced polyamide strip separates the inner and outer aluminium sections. This significantly reduces the U-value of the facade and lowers energy bills."
+      },
+      {
+        "heading": "Surface Finishes: Protection and Aesthetics",
+        "body": "The finish on your aluminium sections determines the facade's longevity. In India, we recommend:",
+        "list": [
+          "Powder Coating: Available in thousands of RAL colors. Ensure a minimum thickness of 60-80 microns.",
+          "Anodizing: Provides a metallic look (Silver, Bronze, Black). 20-25 microns (Grade AA25) is recommended for exterior use.",
+          "PVDF Coating: The gold standard for high-rise buildings. It offers superior resistance to UV radiation and chemical pollutants, lasting 20+ years without fading."
+        ]
+      },
+      {
+        "heading": "Common Mistakes in Profile Selection",
+        "body": "Avoid these pitfalls to ensure a long-lasting facade:",
+        "list": [
+          "Using T5 instead of T6 temper to save costs\u2014this reduces the structural capacity by nearly 20%.",
+          "Underestimating wall thickness\u2014profiles thinner than 2.0mm often struggle with screw pull-out strength.",
+          "Ignoring the alloy certificate\u2014always demand a test report from the extruder (e.g., Hindalco or Jindal) to verify the chemical composition.",
+          "Mixing different suppliers for mullions and transoms, which can lead to fitment and finish mismatch issues."
+        ]
+      },
+      {
+        "heading": "Expert Facade Engineering with Fine Glaze",
+        "body": "Choosing the right aluminium section is a blend of engineering precision and architectural vision. At Fine Glaze, we don't just install facades; we engineer them. Our team provides detailed structural calculations, wind load analysis, and custom profile design to ensure your building stands strong for decades. For a technical consultation or a quote for your next project, contact us at info@fineglaze.com or call +91 8369233566. Visit our office in Pune to see our range of high-performance curtain wall systems."
+      }
+    ]
+  },
+  
 };
 
 export const blogPostsList = Object.values(blogPosts).sort(
