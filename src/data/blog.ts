@@ -1613,6 +1613,108 @@ export const blogPosts: Record<string, BlogPost> = {
   ]
 },
 
+  "curtain-wall-vs-window-wall-comparison-india": {
+  "slug": "curtain-wall-vs-window-wall-comparison-india",
+  "title": "Curtain Wall vs. Window Wall: Which is Right for Your Indian Project?",
+  "metaTitle": "Curtain Wall vs Window Wall Comparison | Fine Glaze India",
+  "metaDescription": "Detailed comparison between curtain wall and window wall systems for Indian construction. Learn about costs, installation, and performance for high-rise buildings.",
+  "keywords": [
+    "curtain wall vs window wall",
+    "facade systems india",
+    "high-rise glazing",
+    "window wall cost india",
+    "curtain wall installation",
+    "fine glaze pune"
+  ],
+  "date": "2026-05-28",
+  "readTime": "7 min read",
+  "category": "Comparison",
+  "heroImage": "https://images.unsplash.com/photo-1511818966892-d7d671e672a2?w=1200&q=80",
+  "excerpt": "Choosing between a curtain wall and a window wall is a critical decision for developers and architects in India. We break down the technical differences, costs, and best use cases for each.",
+  "content": [
+    {
+      "heading": "Understanding the Fundamental Difference",
+      "body": "In the rapidly evolving Indian skyline, the choice of facade system defines not just the building's aesthetics but also its structural integrity and thermal efficiency. The primary difference lies in how the system is supported. A curtain wall is a non-structural outer covering of a building that 'hangs' like a curtain from the floor slabs, covering the entire face of the structure. In contrast, a window wall is sits between the floor slabs, with the slab edges typically left exposed or covered with a separate cladding material."
+    },
+    {
+      "heading": "Structural Integration and Load Bearing",
+      "body": "Curtain walls are designed to resist wind and seismic loads, transferring these forces back to the building's main structure at the floor connections. Because they wrap around the exterior, they provide a continuous thermal and moisture barrier. Window walls, being contained between slabs, rely on the building's primary structure for perimeter support. This makes window walls generally easier to install but introduces more joints that require careful sealing."
+    },
+    {
+      "heading": "Comparison Table: Curtain Wall vs. Window Wall",
+      "table": [
+        [
+          "Feature",
+          "Curtain Wall",
+          "Window Wall"
+        ],
+        [
+          "Placement",
+          "Exterior to the floor slabs",
+          "Between the floor slabs"
+        ],
+        [
+          "Installation",
+          "From the exterior (cranes/BMU)",
+          "From the interior (safer/faster)"
+        ],
+        [
+          "Aesthetics",
+          "Seamless glass look",
+          "Visible slab edges/covers"
+        ],
+        [
+          "Cost",
+          "Higher (Engineering & Material)",
+          "Lower (Standardized units)"
+        ],
+        [
+          "Sound Insulation",
+          "Excellent (Continuous)",
+          "Moderate (Slab bypass)"
+        ],
+        [
+          "Maintenance",
+          "Requires external access",
+          "Easier internal access"
+        ]
+      ]
+    },
+    {
+      "heading": "Cost Implications in the Indian Market (2026)",
+      "body": "For developers in cities like Mumbai, Pune, and Bangalore, cost is often the deciding factor. Window walls are typically 20% to 30% more cost-effective than curtain walls. This is due to reduced engineering complexity, lower material weight, and the ability to install from the inside without expensive scaffolding or heavy cranes. However, for premium Grade-A office spaces, the 'all-glass' look of a curtain wall often justifies the higher investment through higher rental yields."
+    },
+    {
+      "heading": "Installation Process and Timelines",
+      "list": [
+        "Curtain Wall: Requires specialized crews and external lifting equipment. Installation is often on the critical path of the project.",
+        "Window Wall: Can be installed floor-by-floor as the structure progresses, allowing interior trades to start work much earlier.",
+        "Logistics: Window walls are easier to transport and store on-site in congested Indian urban centers.",
+        "Weathering: Curtain walls offer superior protection against heavy monsoon rains due to fewer horizontal joints."
+      ]
+    },
+    {
+      "heading": "Thermal Performance and Energy Efficiency",
+      "body": "With India's focus on green buildings (LEED/IGBC), thermal performance is paramount. Curtain walls provide a continuous thermal break, reducing heat gain significantly when paired with high-performance DGU (Double Glazed Units). Window walls have more potential for 'thermal bridging' at the slab edges, which requires meticulous detailing with insulation and fire-stopping materials to meet modern energy codes."
+    },
+    {
+      "heading": "Aesthetic Considerations",
+      "body": "If your design calls for a sleek, monolithic glass tower, the curtain wall is the clear winner. It hides the structural slabs, creating a uniform reflective surface. Window walls are often preferred for residential high-rises where operable windows are required for every unit. The visible slab edges in window walls can be turned into a design feature using ACP (Aluminium Composite Panel) covers or stone cladding."
+    },
+    {
+      "heading": "Maintenance and Longevity",
+      "body": "Curtain walls require a robust Building Maintenance Unit (BMU) for regular cleaning and glass replacement. Window walls, because they are accessible from the balcony or interior, can sometimes be maintained without specialized external equipment. However, the higher number of sealant joints in window walls means they may require more frequent inspection for water ingress over a 20-year lifecycle."
+    },
+    {
+      "heading": "Which One Should You Choose?",
+      "body": "The choice depends on your building type and budget. For commercial landmarks and corporate headquarters, curtain walls are the industry standard. For residential towers, hotels, and budget-conscious mixed-use developments, window walls offer a pragmatic and efficient solution without sacrificing modern aesthetics."
+    },
+    {
+      "heading": "Expert Facade Consultation by Fine Glaze",
+      "body": "At Fine Glaze, we specialize in both curtain wall and window wall systems. Our engineering team in Pune works closely with architects to determine the most efficient system for your specific project requirements. From wind load analysis to custom profile design, we ensure your facade is both beautiful and high-performing. For a technical consultation or a project quote, contact us at info@fineglaze.com or call +91 8369233566. Let's build the future of Indian architecture together."
+    }
+  ]
+},
 };
 
 export const blogPostsList = Object.values(blogPosts).sort(
