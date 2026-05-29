@@ -1715,6 +1715,112 @@ export const blogPosts: Record<string, BlogPost> = {
     }
   ]
 },
+  'point-fixed-glazing-vs-curtain-wall': {
+    "slug": "point-fixed-glazing-vs-curtain-wall",
+    "title": "Point-Fixed Glazing vs. Curtain Wall: Which is Right for Your Project?",
+    "metaTitle": "Point-Fixed Glazing vs Curtain Wall Comparison | Fine Glaze India",
+    "metaDescription": "Compare Point-Fixed Glazing (Spider Glazing) and Curtain Wall systems. Learn about aesthetics, cost, and performance for Indian commercial buildings.",
+    "keywords": [
+        "point-fixed glazing",
+        "spider glazing india",
+        "curtain wall vs spider glazing",
+        "facade systems india",
+        "structural glazing cost"
+    ],
+    "date": "May 29, 2026",
+    "readTime": "6 min read",
+    "category": "Comparison",
+    "heroImage": "https://images.unsplash.com/photo-1511818966892-d7d671e672a2?w=1200&q=80",
+    "excerpt": "Choosing between point-fixed glazing and traditional curtain walls is a critical decision for modern facades. We break down the technical and aesthetic differences.",
+    "content": [
+        {
+            "heading": "Introduction to Modern Facade Systems",
+            "body": "In the rapidly evolving landscape of Indian architecture, the choice of facade system defines not just the building's appearance but also its structural integrity and thermal performance. Two of the most popular choices for high-end commercial projects are Point-Fixed Glazing (often called Spider Glazing) and Curtain Wall systems. While both offer expansive glass surfaces, they operate on very different engineering principles."
+        },
+        {
+            "heading": "What is Point-Fixed Glazing?",
+            "body": "Point-fixed glazing uses stainless steel attachments (spiders) to support the glass at specific points rather than along the edges. This system typically uses toughened glass and can be supported by glass fins, steel cables, or circular hollow sections. It is prized for its high transparency and minimal visual obstruction."
+        },
+        {
+            "heading": "What is a Curtain Wall System?",
+            "body": "A curtain wall is a non-structural outer covering of a building. It consists of an aluminium frame (mullions and transoms) that carries the glass infill. The load is transferred to the building's main structure at the floor slabs. Curtain walls are the industry standard for high-rise buildings due to their excellent weatherproofing and ease of installation."
+        },
+        {
+            "heading": "Key Differences: Aesthetics and Transparency",
+            "list": [
+                "Point-Fixed: Offers maximum transparency with minimal framing. Ideal for showrooms, lobbies, and feature walls.",
+                "Curtain Wall: Features visible aluminium profiles. While modern slim-line systems exist, they still present a grid-like appearance.",
+                "Visual Impact: Point-fixed systems create a \"floating glass\" effect that is hard to replicate with framed systems."
+            ]
+        },
+        {
+            "heading": "Technical Comparison Table",
+            "table": {
+                "headers": [
+                    "Feature",
+                    "Point-Fixed Glazing",
+                    "Curtain Wall System"
+                ],
+                "rows": [
+                    [
+                        "Support Structure",
+                        "Spiders/Fins/Cables",
+                        "Aluminium Grid (Mullions)"
+                    ],
+                    [
+                        "Transparency",
+                        "Very High",
+                        "Moderate to High"
+                    ],
+                    [
+                        "Weather Sealing",
+                        "Silicone Joints",
+                        "Internal Gaskets & Drainage"
+                    ],
+                    [
+                        "Installation Speed",
+                        "Slower (Precision required)",
+                        "Faster (Modular/Unitized)"
+                    ],
+                    [
+                        "Maintenance",
+                        "Higher (Joint monitoring)",
+                        "Standard"
+                    ],
+                    [
+                        "Cost",
+                        "Premium",
+                        "Standard to High"
+                    ]
+                ]
+            }
+        },
+        {
+            "heading": "Structural Performance and Wind Loads",
+            "body": "In India, facades must be designed to withstand significant wind loads, especially in coastal regions or high-rise urban centers. Curtain walls are engineered to handle these loads through robust aluminium sections. Point-fixed systems require complex engineering to ensure the glass can flex without breaking at the attachment points, often requiring thicker laminated glass."
+        },
+        {
+            "heading": "Waterproofing and Thermal Insulation",
+            "body": "Curtain walls generally offer superior waterproofing because they include internal drainage channels (weep holes) to manage moisture. Point-fixed systems rely entirely on the external silicone sealant. Thermally, curtain walls can easily incorporate thermal breaks in the aluminium, whereas point-fixed systems often have higher thermal bridging through the metal connectors."
+        },
+        {
+            "heading": "Cost Considerations in the Indian Market",
+            "body": "Point-fixed glazing is typically more expensive per square foot than standard stick-system curtain walls. This is due to the cost of high-grade stainless steel hardware (SS 316), the requirement for thicker toughened/laminated glass, and the specialized labor needed for precision installation."
+        },
+        {
+            "heading": "When to Choose Which?",
+            "body": "Choose Point-Fixed Glazing if you want a \"wow\" factor for a building entrance, car showroom, or a low-rise feature wall where transparency is the priority. Choose a Curtain Wall for the main envelope of a high-rise building where performance, speed of construction, and budget efficiency are paramount."
+        },
+        {
+            "heading": "Conclusion",
+            "body": "Both systems have their place in modern Indian construction. Often, the best approach is a hybrid: using curtain walls for the main tower and point-fixed glazing for the grand entrance lobby."
+        },
+        {
+            "heading": "Expert Facade Solutions with Fine Glaze",
+            "body": "At Fine Glaze, we specialize in both high-performance curtain walls and intricate point-fixed glazing systems. Our engineering team ensures that your facade is not only beautiful but also compliant with Indian structural standards. Contact us today for a consultation on your next project.\n\nEmail: info@fineglaze.com\nPhone: +91 8369233566"
+        }
+    ]
+},
 };
 
 export const blogPostsList = Object.values(blogPosts).sort(
