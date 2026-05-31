@@ -1933,6 +1933,66 @@ export const blogPosts: Record<string, BlogPost> = {
         }
     ]
 },
+  {
+    slug: "building-envelope-thermal-performance-india",
+    title: "Optimizing Building Envelope Thermal Performance in Indian Climates",
+    metaTitle: "Building Envelope Thermal Performance Guide India | Fine Glaze",
+    metaDescription: "Learn how to optimize building envelope thermal performance for Indian climates. Explore U-values, SHGC, and energy-efficient glazing solutions with Fine Glaze.",
+    keywords: ["building envelope", "thermal performance", "energy efficiency", "India", "glazing", "U-value", "SHGC", "facade design"],
+    date: "2026-05-31",
+    readTime: "8 min read",
+    category: "Technical Guide",
+    heroImage: "https://images.unsplash.com/photo-1554435493-93422e8220c8?w=1200&q=80",
+    excerpt: "Understanding thermal performance is crucial for sustainable architecture in India. Discover how the right building envelope can reduce energy costs and improve comfort.",
+    content: [
+      {
+        heading: "The Importance of Thermal Performance in India",
+        body: "In India's diverse and often extreme climates, the building envelope acts as the primary barrier between the interior and the harsh external environment. Thermal performance refers to how effectively this envelope\u2014comprising walls, windows, and roofs\u2014manages heat transfer. With rising energy costs and a growing focus on sustainability, optimizing thermal performance is no longer optional; it is a necessity for modern commercial and residential buildings."
+      },
+      {
+        heading: "Key Metrics: U-Value and SHGC",
+        body: "To evaluate the thermal efficiency of a facade, two primary metrics are used: U-Value and Solar Heat Gain Coefficient (SHGC).",
+        list: [
+          "**U-Value (Thermal Transmittance):** Measures the rate of heat transfer through a material. A lower U-value indicates better insulation.",
+          "**SHGC (Solar Heat Gain Coefficient):** Measures the fraction of solar radiation admitted through a window. In hot Indian climates, a lower SHGC is preferred to minimize cooling loads."
+]
+      },
+      {
+        heading: "Comparison of Glazing Types for Thermal Efficiency",
+        body: "Choosing the right glass is critical for achieving optimal thermal performance. Here is a comparison of common glazing solutions used in India:",
+        table: {
+          headers: ["Glazing Type", "Typical U-Value (W/m\u00b2K)", "Typical SHGC", "Best Use Case"],
+          rows: [["Single Clear Glass", "5.8", "0.82", "Low-cost residential"], ["Single Tinted Glass", "5.7", "0.50 - 0.70", "Basic solar control"], ["Double Glazed Unit (DGU)", "2.8", "0.30 - 0.50", "Standard commercial"], ["High-Performance Low-E DGU", "1.4 - 1.8", "0.20 - 0.35", "Premium energy-efficient buildings"]]
+        }
+      },
+      {
+        heading: "The Role of Thermal Breaks in Aluminium Facades",
+        body: "Aluminium is a highly conductive material. Without proper design, aluminium frames can become 'thermal bridges,' allowing heat to bypass the glass. Thermal breaks\u2014non-conductive materials like polyamide strips inserted between the inner and outer aluminium profiles\u2014are essential to prevent this heat transfer and improve the overall U-value of the window or curtain wall system."
+      },
+      {
+        heading: "Impact of Orientation and Shading",
+        body: "Thermal performance isn't just about materials; it's also about design. In India, south and west-facing facades receive the most intense solar radiation. Incorporating external shading devices like fins, louvers, or overhangs can significantly reduce solar heat gain before it even reaches the glazing, allowing for larger glass areas without compromising energy efficiency."
+      },
+      {
+        heading: "Compliance with ECBC and NBC 2016",
+        body: "The Energy Conservation Building Code (ECBC) and the National Building Code (NBC) 2016 set stringent standards for building envelope performance in India. Compliance ensures that buildings are not only environmentally responsible but also cost-effective to operate over their lifecycle. Fine Glaze specializes in designing and installing systems that meet or exceed these regulatory requirements."
+      },
+      {
+        heading: "Benefits of a High-Performance Envelope",
+        body: "Investing in a thermally efficient building envelope offers several long-term advantages:",
+        list: [
+          "Significant reduction in HVAC (cooling) energy consumption.",
+          "Enhanced occupant comfort by maintaining stable indoor temperatures.",
+          "Reduced carbon footprint and contribution to green building certifications (LEED/IGBC).",
+          "Protection of interior finishes from UV degradation."
+]
+      },
+      {
+        heading: "Conclusion and Fine Glaze Expertise",
+        body: "Optimizing the thermal performance of your building envelope is a complex task that requires technical expertise and high-quality materials. At Fine Glaze, we provide end-to-end solutions, from glass selection and thermal analysis to the installation of high-performance curtain walls and windows.\n\nFor expert consultation on your next project, contact Fine Glaze today.\n\n**Contact Information:**\nEmail: info@fineglaze.com\nPhone: +91 8369233566"
+      }
+    ]
+  },
 };
 
 export const blogPostsList = Object.values(blogPosts).sort(
