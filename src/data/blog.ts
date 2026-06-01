@@ -1993,6 +1993,103 @@ export const blogPosts: Record<string, BlogPost> = {
       }
     ]
   },
+  "facade-access-systems-bmu-india": {
+  "slug": "facade-access-systems-bmu-india",
+  "title": "Facade Access Systems & BMU: A Guide for High-Rise Buildings in India",
+  "metaTitle": "Facade Access Systems & BMU Guide India | Fine Glaze",
+  "metaDescription": "Learn about Building Maintenance Units (BMU) and facade access systems for high-rise buildings in India. Essential for maintenance, cleaning, and safety.",
+  "keywords": [
+    "facade access systems",
+    "BMU India",
+    "building maintenance unit",
+    "high-rise maintenance",
+    "facade cleaning equipment",
+    "Fine Glaze"
+  ],
+  "date": "June 1, 2026",
+  "readTime": "7 min read",
+  "category": "Technical Guide",
+  "heroImage": "https://images.unsplash.com/photo-1511818966892-d7d671e672a2?w=1200&q=80",
+  "excerpt": "As buildings in India reach new heights, maintaining their complex glass facades requires specialized access systems. Explore the types of BMUs and safety standards for modern high-rises.",
+  "content": [
+    {
+      "heading": "The Necessity of Facade Access Systems",
+      "body": "Modern architectural marvels in India, characterized by expansive glass curtains and intricate cladding, demand regular maintenance to preserve their aesthetic appeal and structural integrity. Facade access systems, primarily Building Maintenance Units (BMU), provide the necessary infrastructure for cleaning, inspection, and glass replacement at significant heights."
+    },
+    {
+      "heading": "What is a Building Maintenance Unit (BMU)?",
+      "body": "A BMU is a permanent mechanical device installed on the roof of a building that suspends a cradle or platform for workers. These systems are engineered to navigate the building's geometry, allowing access to every square inch of the facade safely and efficiently."
+    },
+    {
+      "heading": "Types of Facade Access Systems",
+      "list": [
+        "Roof-Mounted BMUs: Fixed or track-mounted cranes that can reach over parapets.",
+        "Monorail Systems: Horizontal tracks fixed to the building's soffit or facade.",
+        "Davit Systems: Portable or fixed arms used to suspend cradles, often for lower-rise buildings.",
+        "Abseiling (Rope Access): A manual method for complex geometries where mechanical systems are impractical."
+      ]
+    },
+    {
+      "heading": "Key Components of a BMU",
+      "body": "A standard BMU consists of a base (fixed or on tracks), a slewing mechanism, a telescopic or fixed jib, and a suspended cradle equipped with safety locks and communication systems."
+    },
+    {
+      "heading": "Comparison: BMU vs. Rope Access",
+      "table": [
+        [
+          "Feature",
+          "BMU System",
+          "Rope Access (Abseiling)"
+        ],
+        [
+          "Initial Cost",
+          "High",
+          "Low"
+        ],
+        [
+          "Operational Speed",
+          "Fast",
+          "Moderate"
+        ],
+        [
+          "Safety Level",
+          "Very High (Mechanical)",
+          "High (Skill-dependent)"
+        ],
+        [
+          "Building Height",
+          "Unlimited",
+          "Limited by rope length/fatigue"
+        ],
+        [
+          "Visual Impact",
+          "Permanent fixture on roof",
+          "Minimal/None"
+        ]
+      ]
+    },
+    {
+      "heading": "Safety Standards in India",
+      "body": "In India, facade access systems must comply with IS standards and international safety norms like EN 1808. Regular load testing, wire rope inspections, and operator training are mandatory to prevent accidents in high-rise environments."
+    },
+    {
+      "heading": "Design Considerations for Architects",
+      "body": "Integrating facade access early in the design phase is crucial. Architects must consider roof load-bearing capacity, parapet heights, and 'dead zones' where the BMU jib might not reach due to building setbacks."
+    },
+    {
+      "heading": "Maintenance of the Access System",
+      "body": "A BMU is only as safe as its last service. Quarterly inspections and annual third-party certifications are essential to ensure the system remains operational and safe for the maintenance crew."
+    },
+    {
+      "heading": "Why Choose Fine Glaze for Facade Solutions?",
+      "body": "At Fine Glaze, we don't just build facades; we ensure they are maintainable. We coordinate with BMU experts during the installation of our curtain walls and ACP cladding to ensure seamless integration of access systems."
+    },
+    {
+      "heading": "Contact Fine Glaze Today",
+      "body": "Planning a high-rise project in India? Ensure your facade remains pristine for decades with the right access strategy. Contact Fine Glaze for expert consultancy and execution.\n\nEmail: info@fineglaze.com\nPhone: +91 8369233566"
+    }
+  ]
+},
 };
 
 export const blogPostsList = Object.values(blogPosts).sort(
