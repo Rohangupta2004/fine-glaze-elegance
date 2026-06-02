@@ -2090,6 +2090,78 @@ export const blogPosts: Record<string, BlogPost> = {
     }
   ]
 },
+  "acp-fire-testing-standards-india-nbc2016": {
+    slug: "acp-fire-testing-standards-india-nbc2016",
+    title: "ACP Fire Testing Standards in India: A Guide to NBC 2016 Compliance",
+    metaTitle: "ACP Fire Testing Standards India | NBC 2016 Compliance Guide",
+    metaDescription: "Learn about ACP fire testing standards in India according to NBC 2016. Understand Class A2, B1 ratings, and how to ensure fire safety for your building facade.",
+    keywords: ["ACP fire testing", "NBC 2016 facade", "fire rated ACP India", "Class A2 ACP", "facade fire safety India"],
+    date: "2026-06-02",
+    readTime: "8 min read",
+    category: "Technical Guide",
+    heroImage: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1200&q=80",
+    excerpt: "Fire safety in high-rise buildings is non-negotiable. Discover the critical fire testing standards for Aluminium Composite Panels (ACP) in India as per NBC 2016.",
+    content: [
+      {
+        heading: "Introduction to Facade Fire Safety",
+        body: "As urban landscapes in India reach new heights, the safety of high-rise buildings has become a paramount concern. The facade, often the most visible part of a building, plays a critical role in fire safety. Aluminium Composite Panels (ACP) are widely used for their aesthetic appeal and durability, but choosing the right fire-rated panels is essential to prevent rapid fire spread.",
+
+      },
+      {
+        heading: "Understanding NBC 2016 Requirements",
+        body: "The National Building Code (NBC) 2016 of India provides comprehensive guidelines for fire and life safety. For building facades, it specifies stringent requirements for the combustibility of materials used in cladding. According to NBC 2016, buildings above a certain height must use non-combustible or limited-combustible materials for their exterior walls.",
+
+      },
+      {
+        heading: "Key Fire Testing Standards for ACP",
+        body: "To comply with Indian regulations, ACP sheets must undergo rigorous testing. The most common standards referenced include:",
+,
+        list: [
+          'ASTM E84: Standard Test Method for Surface Burning Characteristics of Building Materials.',
+          'EN 13501-1: European standard for fire classification of construction products.',
+          'BS 476 Part 6 & 7: British standards for fire propagation and surface spread of flame.',
+          'NFPA 285: Standard Fire Test Method for Evaluation of Fire Propagation Characteristics of Exterior Non-Load-Bearing Wall Assemblies.'
+]
+      },
+      {
+        heading: "ACP Fire Ratings Explained",
+        body: "ACP is generally categorized into different fire classes based on the core material's performance during a fire:",
+,
+        table: {
+          headers: ["Class", "Core Material", "Fire Performance", "Suitability"],
+          rows: [["Class A2", "90% Mineral Core", "Non-combustible", "High-rise buildings (>15m)"], ["Class B", "70% Mineral Core", "Fire-retardant", "Mid-rise buildings"], ["Class FR", "Fire Resistant", "Limited combustibility", "General commercial use"], ["Non-FR", "LDPE Core", "Highly combustible", "Not recommended for facades"]]
+        }
+      },
+      {
+        heading: "The Importance of the Mineral Core",
+        body: "The fire performance of an ACP sheet is determined by its core. While standard ACP uses a Low-Density Polyethylene (LDPE) core, fire-rated ACP uses a mineral-filled core. In the event of a fire, the mineral core does not contribute to the flame spread and produces minimal smoke, providing crucial time for evacuation.",
+
+      },
+      {
+        heading: "Installation Best Practices for Fire Safety",
+        body: "Even the best fire-rated ACP can fail if not installed correctly. Key considerations include:",
+,
+        list: [
+          'Fire Stops: Installing horizontal and vertical fire stops within the facade cavity to prevent the 'chimney effect'.',
+          'Approved Sealants: Using fire-rated silicone sealants for joints.',
+          'System Testing: Ensuring the entire wall assembly, not just the panel, is tested for fire performance.'
+]
+      },
+      {
+        heading: "Why Choose Fine Glaze for Your Facade?",
+        body: "At Fine Glaze, we prioritize safety alongside aesthetics. We source only certified fire-rated ACP from leading manufacturers and follow international best practices for installation. Our team of experts ensures that your building facade is not only beautiful but also fully compliant with NBC 2016 standards.",
+
+      },
+      {
+        heading: "Conclusion and Contact Information",
+        body: "Investing in fire-rated facades is an investment in the safety of the building's occupants. Ensure your project meets the latest Indian standards by partnering with a knowledgeable contractor. For expert advice on fire-rated ACP cladding and structural glazing, contact Fine Glaze today.
+
+Email: info@fineglaze.com
+Phone: +91 8369233566",
+
+      }
+    ]
+  },
 };
 
 export const blogPostsList = Object.values(blogPosts).sort(
