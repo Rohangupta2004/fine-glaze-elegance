@@ -2614,6 +2614,132 @@ Phone: +91 8369233566",
       },
     ],
   },
+  'acoustic-glass-facades-noise-reduction-india': {
+  "slug": "acoustic-glass-facades-noise-reduction-india",
+  "title": "Acoustic Glass Facades: The Ultimate Guide to Noise Reduction in Indian Cities",
+  "metaTitle": "Acoustic Glass Facades India | Noise Reduction Glazing Guide 2026",
+  "metaDescription": "Discover how acoustic glass facades can transform your urban workspace or home in India. Learn about STC ratings, DGU vs. Laminated glass, and cost per sq ft.",
+  "keywords": [
+    "acoustic glass facade",
+    "noise reduction glass india",
+    "soundproof windows mumbai",
+    "STC rating glass",
+    "double glazing noise reduction",
+    "Fine Glaze acoustic solutions"
+  ],
+  "date": "2026-06-08",
+  "readTime": "7 min read",
+  "category": "Technical Guide",
+  "heroImage": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80",
+  "excerpt": "In the bustling metros of India, noise pollution is a major challenge. Acoustic glass facades offer a sophisticated solution to create quiet, productive indoor environments without compromising on aesthetics.",
+  "content": [
+    {
+      "heading": "The Growing Need for Acoustic Insulation in India",
+      "body": "As Indian cities like Mumbai, Delhi, and Bangalore continue to grow, noise pollution from traffic, construction, and commercial activity has become a significant concern for building occupants. Modern architecture's preference for large glass facades makes acoustic engineering a critical component of building design to ensure comfort and productivity."
+    },
+    {
+      "heading": "What is Acoustic Glass?",
+      "body": "Acoustic glass is a specialized glazing solution designed to reduce the transmission of sound from the exterior to the interior. Unlike standard glass, it utilizes specific thicknesses, laminates, and air gaps to disrupt sound waves across various frequencies."
+    },
+    {
+      "heading": "Key Technical Metric: Understanding STC Ratings",
+      "body": "The Sound Transmission Class (STC) is an integer rating of how well a building partition attenuates airborne sound. In the context of glass facades:",
+      "list": [
+        "Standard Single Glazing: STC 25-28 (Poor insulation)",
+        "Standard DGU (Double Glazed Unit): STC 32-35 (Moderate insulation)",
+        "Acoustic Laminated Glass: STC 38-42 (High insulation)",
+        "Specialized Acoustic DGU: STC 45+ (Superior insulation for high-noise zones)"
+      ]
+    },
+    {
+      "heading": "How Acoustic Glass Works",
+      "body": "Acoustic performance in glazing is achieved through three primary methods:",
+      "list": [
+        "Mass: Using thicker glass panes to provide more resistance to sound waves.",
+        "Asymmetry: Using two different thicknesses of glass in a DGU (e.g., 6mm + 8mm) to break different sound frequencies.",
+        "Damping: Using a specialized acoustic PVB (Polyvinyl Butyral) interlayer in laminated glass that absorbs sound energy."
+      ]
+    },
+    {
+      "heading": "Comparison: Standard DGU vs. Acoustic Laminated DGU",
+      "body": "Choosing the right configuration depends on the ambient noise levels of your location.",
+      "table": [
+        [
+          "Feature",
+          "Standard DGU (6-12-6)",
+          "Acoustic Laminated DGU"
+        ],
+        [
+          "Sound Reduction",
+          "32-34 dB",
+          "40-45 dB"
+        ],
+        [
+          "Primary Benefit",
+          "Thermal Insulation",
+          "Thermal + Superior Acoustic"
+        ],
+        [
+          "Safety",
+          "Tempered (Standard)",
+          "Laminated (High Security)"
+        ],
+        [
+          "Best For",
+          "Quiet Residential Areas",
+          "Main Roads, Airports, Rail Tracks"
+        ],
+        [
+          "Cost Impact",
+          "Baseline",
+          "+25% to 40%"
+        ]
+      ]
+    },
+    {
+      "heading": "Applications in Modern Indian Architecture",
+      "body": "Acoustic glazing is no longer a luxury but a necessity for several building types in India:",
+      "list": [
+        "Corporate Offices: Enhancing focus and privacy in open-plan layouts.",
+        "Luxury Residential: Providing a sanctuary of peace in noisy urban centers.",
+        "Hotels near Airports: Ensuring guest comfort despite high-decibel surroundings.",
+        "Hospitals: Creating a quiet environment conducive to patient recovery."
+      ]
+    },
+    {
+      "heading": "Installation Best Practices",
+      "body": "The best acoustic glass will fail if the installation is not airtight. Sound, like water, finds the smallest gaps. At Fine Glaze, we emphasize:",
+      "list": [
+        "High-Quality EPDM Gaskets: Ensuring a perfect seal between glass and aluminium profiles.",
+        "Structural Silicone Sealing: Eliminating air gaps in the facade system.",
+        "Profile Selection: Using multi-chambered aluminium sections that further dampen sound."
+      ]
+    },
+    {
+      "heading": "Cost of Acoustic Glass in India (2026)",
+      "body": "The investment in acoustic glazing varies based on the required STC rating and the overall facade system.",
+      "list": [
+        "Acoustic Laminated Single Glazing: \u20b9450 - \u20b9700 per sq. ft.",
+        "Acoustic DGU (with Acoustic PVB): \u20b9900 - \u20b91,600 per sq. ft.",
+        "Premium Triple Glazed Acoustic Units: \u20b92,200+ per sq. ft.",
+        "Note: Prices are indicative and exclude aluminium framing and installation."
+      ]
+    },
+    {
+      "heading": "Why Choose Fine Glaze for Acoustic Solutions?",
+      "body": "Fine Glaze specializes in high-performance building envelopes. We provide end-to-end acoustic consulting and installation services to ensure your building meets international standards for sound insulation.",
+      "list": [
+        "Custom Engineering: Tailored glass configurations based on site noise audits.",
+        "Premium Partnerships: Sourcing world-class acoustic interlayers and glass.",
+        "Expert Execution: Flawless installation to guarantee rated performance."
+      ]
+    },
+    {
+      "heading": "Contact Fine Glaze Today",
+      "body": "Transform your building into a quiet oasis. Contact our expert team for a consultation on acoustic facade design.\n\nEmail: info@fineglaze.com\nPhone: +91 8369233566\nWebsite: www.fineglaze.com"
+    }
+  ]
+},
 };
 
 export const blogPostsList = Object.values(blogPosts).sort(
