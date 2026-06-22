@@ -320,7 +320,7 @@ const Portfolio = () => {
       {/* ════════════════════════════════════════════════════
           HERO — full-bleed cinematic
           ════════════════════════════════════════════════════ */}
-      <section className="relative h-[50vh] md:h-[65vh] min-h-[340px] md:min-h-[480px] overflow-hidden">
+      <section className="relative h-[60vh] md:h-[70vh] min-h-[400px] md:min-h-[520px] overflow-hidden">
         <img
           src="/Unitized.webp"
           alt="Fine Glaze facade portfolio"

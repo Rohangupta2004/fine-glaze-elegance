@@ -170,7 +170,7 @@ const Contact = () => {
       {/* ════════════════════════════════════════════════════
           HERO — full-bleed cinematic
           ════════════════════════════════════════════════════ */}
-      <section className="relative h-[50vh] md:h-[55vh] min-h-[340px] overflow-hidden">
+      <section className="relative h-[55vh] md:h-[60vh] min-h-[380px] overflow-hidden">
         <img
           src="/Glass installation.webp"
           alt="Fine Glaze — Contact us"
