@@ -122,6 +122,8 @@ export const Footer = () => {
                 >
                   Shop No. 1 & 2, Jagdamba Bhawan Marg,
                   <br />
+                  Near Sunshine Hills, Shree Siddhivinayak Meera,
+                  <br />
                   Undri, Pune – 411060
                 </a>
               </li>

@@ -54,7 +54,7 @@ const ProjectDetail = () => {
       "telephone": "+91-8369233566",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Shop No. 1 & 2, Ghule Premises, Jagdamb Bhavan Road, Undri",
+        "streetAddress": "Shop No. 1 & 2, Jagdamba Bhawan Marg, Near Sunshine Hills, Undri",
         "addressLocality": "Pune",
         "addressRegion": "Maharashtra",
         "postalCode": "411060",
