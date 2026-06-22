@@ -157,8 +157,10 @@ const Contact = () => {
             email: "info@fineglaze.com",
             address: {
               "@type": "PostalAddress",
+              streetAddress: "Shop No. 1 & 2, Jagdamba Bhawan Marg, Near Sunshine Hills",
               addressLocality: "Pune",
               addressRegion: "Maharashtra",
+              postalCode: "411060",
               addressCountry: "IN",
             },
           },
@@ -204,80 +206,50 @@ const Contact = () => {
 
 
       {/* ════════════════════════════════════════════════════
-          CONTACT STRIP — dark band with key info
+          FORM + DETAILS — directly after hero
           ════════════════════════════════════════════════════ */}
-      <section className="bg-stone-900 py-6 md:py-8">
+      <section className="py-10 md:py-20 bg-stone-50">
         <div className="container mx-auto px-5 md:px-16">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 md:gap-0 md:divide-x md:divide-stone-700">
-            <a href="tel:+918369233566" className="flex items-center gap-3 sm:flex-col sm:gap-0 sm:text-center px-4 py-2 sm:py-0 group">
-              <div className="w-9 h-9 sm:w-auto sm:h-auto bg-amber-400/10 sm:bg-transparent flex items-center justify-center shrink-0 sm:mb-2">
-                <Phone size={16} className="text-amber-400" />
-              </div>
-              <div className="sm:text-center">
-                <p className="text-white font-semibold text-sm group-hover:text-amber-400 transition-colors">+91 83692 33566</p>
-                <p className="text-stone-500 text-[10px] uppercase tracking-widest mt-0.5 sm:mt-1">Call Us</p>
-              </div>
-            </a>
-            <a href="mailto:info@fineglaze.com" className="flex items-center gap-3 sm:flex-col sm:gap-0 sm:text-center px-4 py-2 sm:py-0 group">
-              <div className="w-9 h-9 sm:w-auto sm:h-auto bg-amber-400/10 sm:bg-transparent flex items-center justify-center shrink-0 sm:mb-2">
-                <Mail size={16} className="text-amber-400" />
-              </div>
-              <div className="sm:text-center">
-                <p className="text-white font-semibold text-sm group-hover:text-amber-400 transition-colors">info@fineglaze.com</p>
-                <p className="text-stone-500 text-[10px] uppercase tracking-widest mt-0.5 sm:mt-1">Email</p>
-              </div>
-            </a>
-            <a href="https://maps.app.goo.gl/JDF3ESXQGHtwKoAr6" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 sm:flex-col sm:gap-0 sm:text-center px-4 py-2 sm:py-0 group">
-              <div className="w-9 h-9 sm:w-auto sm:h-auto bg-amber-400/10 sm:bg-transparent flex items-center justify-center shrink-0 sm:mb-2">
-                <MapPin size={16} className="text-amber-400" />
-              </div>
-              <div className="sm:text-center">
-                <p className="text-white font-semibold text-sm group-hover:text-amber-400 transition-colors">Undri, Pune 411060</p>
-                <p className="text-stone-500 text-[10px] uppercase tracking-widest mt-0.5 sm:mt-1">Office</p>
-              </div>
-            </a>
-            <div className="flex items-center gap-3 sm:flex-col sm:gap-0 sm:text-center px-4 py-2 sm:py-0">
-              <div className="w-9 h-9 sm:w-auto sm:h-auto bg-amber-400/10 sm:bg-transparent flex items-center justify-center shrink-0 sm:mb-2">
-                <Clock size={16} className="text-amber-400" />
-              </div>
-              <div className="sm:text-center">
-                <p className="text-white font-semibold text-sm">Mon – Sat, 9 AM – 6 PM</p>
-                <p className="text-stone-500 text-[10px] uppercase tracking-widest mt-0.5 sm:mt-1">Hours</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+          <div className="grid lg:grid-cols-5 gap-8 md:gap-14">
 
+            {/* Left column — contact details + why reach out */}
+            <FadeIn className="lg:col-span-2 order-2 lg:order-1">
+              {/* Quick contact — inline text, no strip */}
+              <div className="space-y-4 mb-8 pb-8 border-b border-stone-200">
+                <a href="tel:+918369233566" className="flex items-center gap-3 text-stone-700 hover:text-amber-700 transition-colors">
+                  <Phone size={16} className="text-amber-600 shrink-0" />
+                  <span className="text-sm font-semibold">+91 83692 33566</span>
+                </a>
+                <a href="mailto:info@fineglaze.com" className="flex items-center gap-3 text-stone-700 hover:text-amber-700 transition-colors">
+                  <Mail size={16} className="text-amber-600 shrink-0" />
+                  <span className="text-sm font-semibold">info@fineglaze.com</span>
+                </a>
+                <div className="flex items-center gap-3 text-stone-500">
+                  <Clock size={16} className="text-amber-600 shrink-0" />
+                  <span className="text-sm">Mon – Sat, 9:00 AM – 6:00 PM</span>
+                </div>
+              </div>
 
-      {/* ════════════════════════════════════════════════════
-          FORM + DETAILS
-          ════════════════════════════════════════════════════ */}
-      <section className="py-14 md:py-20 bg-stone-50">
-        <div className="container mx-auto px-6 md:px-16">
-          <div className="grid lg:grid-cols-5 gap-10 md:gap-14">
-            {/* Left — why reach out */}
-            <FadeIn className="lg:col-span-2">
               <p className="text-amber-700 text-xs font-bold tracking-[0.3em] uppercase mb-3">
                 Why Reach Out
               </p>
-              <h2 className="text-2xl md:text-3xl font-bold text-stone-900 mb-5">
+              <h2 className="text-xl md:text-2xl font-bold text-stone-900 mb-4">
                 We respond within 1 business hour.
               </h2>
-              <p className="text-stone-500 text-sm leading-relaxed mb-8">
+              <p className="text-stone-500 text-sm leading-relaxed mb-6">
                 Whether you need a quote for a new project, want to schedule a free site visit,
                 or have questions about our facade systems — we're here. No automated replies, you'll
                 speak directly with our engineering team.
               </p>
 
-              <div className="space-y-5">
+              <div className="space-y-4 mb-8">
                 {[
                   { label: "Free site visit & measurement", desc: "Our engineers visit your site at no cost" },
                   { label: "Detailed written proposal", desc: "Transparent scope, specs & pricing within 48 hours" },
                   { label: "No obligation", desc: "Get the information you need to make the right call" },
                 ].map((item) => (
                   <div key={item.label} className="flex gap-3">
-                    <ArrowRight size={14} className="text-amber-600 mt-1 shrink-0" />
+                    <ArrowRight size={14} className="text-amber-600 mt-0.5 shrink-0" />
                     <div>
                       <p className="text-sm font-semibold text-stone-800">{item.label}</p>
                       <p className="text-xs text-stone-400 mt-0.5">{item.desc}</p>
@@ -286,15 +258,18 @@ const Contact = () => {
                 ))}
               </div>
 
-              <div className="mt-10 p-5 bg-white border border-stone-200">
+              <div className="p-5 bg-white border border-stone-200">
                 <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-stone-400 mb-3">
                   Office Address
                 </p>
-                <p className="text-sm text-stone-700 leading-relaxed">
-                  Shop No. 1 & 2, Jagdamba Bhawan Marg,<br />
-                  Near Sunshine Hills, Shree Siddhivinayak Meera,<br />
-                  Undri, Pune – 411060, Maharashtra
-                </p>
+                <div className="flex items-start gap-3">
+                  <MapPin size={16} className="text-amber-600 mt-0.5 shrink-0" />
+                  <p className="text-sm text-stone-700 leading-relaxed">
+                    Shop No. 1 & 2, Jagdamba Bhawan Marg,<br />
+                    Near Sunshine Hills, Shree Siddhivinayak Meera,<br />
+                    Undri, Pune – 411060, Maharashtra
+                  </p>
+                </div>
                 <a
                   href="https://maps.app.goo.gl/JDF3ESXQGHtwKoAr6"
                   target="_blank"
@@ -306,9 +281,9 @@ const Contact = () => {
               </div>
             </FadeIn>
 
-            {/* Right — form */}
-            <FadeIn delay={100} className="lg:col-span-3">
-              <div className="bg-white border border-stone-200 p-6 md:p-8">
+            {/* Right column — form */}
+            <FadeIn delay={100} className="lg:col-span-3 order-1 lg:order-2">
+              <div className="bg-white border border-stone-200 p-5 md:p-8">
                 {isSubmitted ? (
                   <div className="text-center py-14 space-y-4">
                     <div className="w-14 h-14 bg-amber-50 flex items-center justify-center mx-auto">
@@ -338,12 +313,12 @@ const Contact = () => {
                       <p className="text-amber-700 text-xs font-bold tracking-[0.3em] uppercase mb-1">
                         Enquiry Form
                       </p>
-                      <h3 className="text-xl font-bold text-stone-900 mb-5">
+                      <h3 className="text-lg md:text-xl font-bold text-stone-900 mb-5">
                         Tell us about your project
                       </h3>
                     </div>
 
-                    <div className="grid md:grid-cols-2 gap-5">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
                       <div className="space-y-1.5">
                         <Label htmlFor="name" className="text-xs font-semibold text-stone-600 uppercase tracking-wider">
                           Full Name *
@@ -355,7 +330,7 @@ const Contact = () => {
                           required
                           value={formData.name}
                           onChange={handleChange}
-                          className="border-stone-200 focus:border-amber-400 focus:ring-amber-400/20"
+                          className="border-stone-200 focus:border-amber-400 focus:ring-amber-400/20 h-11"
                         />
                       </div>
                       <div className="space-y-1.5">
@@ -370,12 +345,12 @@ const Contact = () => {
                           required
                           value={formData.email}
                           onChange={handleChange}
-                          className="border-stone-200 focus:border-amber-400 focus:ring-amber-400/20"
+                          className="border-stone-200 focus:border-amber-400 focus:ring-amber-400/20 h-11"
                         />
                       </div>
                     </div>
 
-                    <div className="grid md:grid-cols-2 gap-5">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
                       <div className="space-y-1.5">
                         <Label htmlFor="phone" className="text-xs font-semibold text-stone-600 uppercase tracking-wider">
                           Phone *
@@ -388,7 +363,7 @@ const Contact = () => {
                           required
                           value={formData.phone}
                           onChange={handleChange}
-                          className="border-stone-200 focus:border-amber-400 focus:ring-amber-400/20"
+                          className="border-stone-200 focus:border-amber-400 focus:ring-amber-400/20 h-11"
                         />
                       </div>
                       <div className="space-y-1.5">
@@ -402,7 +377,7 @@ const Contact = () => {
                           }
                           required
                         >
-                          <SelectTrigger className="border-stone-200 focus:border-amber-400 focus:ring-amber-400/20">
+                          <SelectTrigger className="border-stone-200 focus:border-amber-400 focus:ring-amber-400/20 h-11">
                             <SelectValue placeholder="Select a service" />
                           </SelectTrigger>
                           <SelectContent>
@@ -424,7 +399,7 @@ const Contact = () => {
                         id="message"
                         name="message"
                         placeholder="E.g. We need structural glazing for a 5-floor commercial building in Hinjewadi, Pune. Looking for site visit and quotation..."
-                        rows={5}
+                        rows={4}
                         required
                         value={formData.message}
                         onChange={handleChange}
@@ -463,12 +438,12 @@ const Contact = () => {
 
 
       {/* ════════════════════════════════════════════════════
-          MAP — full-width embed
+          MAP — full-width Google Maps showing Fine Glaze
           ════════════════════════════════════════════════════ */}
       <FadeIn>
-        <div className="w-full h-[300px] md:h-[380px] bg-stone-200">
+        <div className="w-full h-[250px] md:h-[380px] bg-stone-200">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3784.8447!2d73.9087!3d18.4559!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2eaf5aee3f5e9%3A0x4b5c3e6c7c1e1f0!2sUndri%2C%20Pune%2C%20Maharashtra%20411060!5e0!3m2!1sen!2sin!4v1700000000000"
+            src="https://maps.google.com/maps?q=Fine+Glaze,+Shop+No+1+2+Jagdamba+Bhawan+Marg+Near+Sunshine+Hills+Undri+Pune+411060&output=embed"
             width="100%"
             height="100%"
             style={{ border: 0 }}
