@@ -116,9 +116,9 @@ export default function StructuralGlazing() {
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}
       />
 
-      {/* HERO — full-bleed image + overlaid feature icons */}
+      {/* HERO — LTIMindtree golden-hour campus: best showcase of Fine Glaze's structural glazing work */}
       <ServiceHero
-        image={getMedia("structural_glazing_hero", "/Glazing.webp")}
+        image={getMedia("structural_glazing_hero", "/Embassy.webp")}
         titleLead="Structural "
         titleAccent="Glazing Systems"
         titleTail=" in India"
@@ -132,7 +132,7 @@ export default function StructuralGlazing() {
         ]}
       />
 
-      {/* INTRO — KEYWORD-RICH */}
+      {/* INTRO */}
       <section className="py-20">
         <div className="container mx-auto px-4 max-w-5xl space-y-6">
           <h2 className="text-3xl font-bold">What is Structural Glazing?</h2>
@@ -145,11 +145,12 @@ export default function StructuralGlazing() {
           <p className="text-muted-foreground">
             Fine Glaze offers advanced structural glazing systems across <strong>Pune, Mumbai, Navi Mumbai, and Maharashtra</strong>.
             Our systems are engineered to withstand high wind loads, prevent water infiltration, and maximize natural daylight.
+            Projects like <strong>LTIMindtree Campus, Embassy 247, and Leela Business Park</strong> stand as proof of our precision work.
           </p>
         </div>
       </section>
 
-      {/* FEATURES */}
+      {/* ADVANTAGES — Fine Glaze real project images */}
       <section className="py-20 bg-muted">
         <div className="container mx-auto px-4 max-w-6xl">
           <h2 className="text-3xl font-bold mb-12 text-center">
@@ -159,23 +160,33 @@ export default function StructuralGlazing() {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                img: "https://images.unsplash.com/photo-1503387762-592deb58ef4e",
+                img: "/Embassyoark.webp",
+                alt: "Frameless glazed facade - Fine Glaze project",
                 title: "Frameless Appearance",
-                desc: "Clean glass surfaces with no visible external frames. Creates a stunning modern aesthetic that architects love.",
+                desc: "Clean glass surfaces with no visible external frames. Creates a stunning modern aesthetic that architects love — as seen on our Embassy 247 project.",
               },
               {
-                img: "https://images.unsplash.com/photo-1529429617124-95b109e86bb8",
-                title: "Maximum Daylight",
-                desc: "Maximizes natural lighting and reduces HVAC costs. High-performance Low-E DGU glass options available for LEED certification.",
+                img: "/Glass installation.webp",
+                alt: "Structural glazing installation by Fine Glaze team",
+                title: "Expert Installation",
+                desc: "Our certified glazing crews use vacuum lifters and suspended platforms for precision panel placement. Zero safety incidents across all projects.",
               },
               {
-                img: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750",
+                img: "/ltimindtree-mensa-campus-mahape-navi-mumbai-1 (1).webp",
+                alt: "LTIMindtree campus - structural glazing by Fine Glaze Pune",
                 title: "High Structural Strength",
-                desc: "Engineered to withstand wind loads of 1.5–4.5 kPa using Dow Corning / Sika structural silicone rated for 25+ years.",
+                desc: "Engineered to withstand wind loads of 1.5–4.5 kPa using Dow Corning / Sika structural silicone rated for 25+ years — proven on high-rise campuses like LTIMindtree.",
               },
             ].map((item) => (
               <div key={item.title} className="bg-background rounded-xl shadow overflow-hidden">
-                <img src={item.img} alt={`${item.title} - structural glazing by Fine Glaze`} className="h-48 w-full object-cover" loading="lazy" width="400" height="192" />
+                <img
+                  src={item.img}
+                  alt={item.alt}
+                  className="h-52 w-full object-cover"
+                  loading="lazy"
+                  width="400"
+                  height="208"
+                />
                 <div className="p-6">
                   <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
                   <p className="text-muted-foreground">{item.desc}</p>
@@ -208,7 +219,7 @@ export default function StructuralGlazing() {
         </div>
       </section>
 
-      {/* TYPES & VARIANTS */}
+      {/* TYPES & VARIANTS — using Fine Glaze real images */}
       <section className="py-20 bg-muted">
         <div className="container mx-auto px-4 max-w-6xl">
           <h2 className="text-3xl font-bold mb-4 text-center">Types & Variants</h2>
@@ -229,7 +240,8 @@ export default function StructuralGlazing() {
                   "Wind load up to 3.0 kPa",
                 ],
                 bestFor: "IT parks, commercial offices, showroom facades",
-                image: "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80",
+                image: "/Business park.webp",
+                imageAlt: "2-side structural glazing on commercial office building - Fine Glaze",
               },
               {
                 name: "4-Side Structural Glazing (SSG)",
@@ -243,7 +255,8 @@ export default function StructuralGlazing() {
                   "Wind load up to 4.5 kPa",
                 ],
                 bestFor: "High-rise towers, luxury hotels, airport terminals",
-                image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80",
+                image: "/Embassy.webp",
+                imageAlt: "4-side structural glazing on premium corporate tower - Fine Glaze project",
               },
               {
                 name: "Spider / Point-Fixed Glazing",
@@ -257,7 +270,8 @@ export default function StructuralGlazing() {
                   "Expansion joints every 6m",
                 ],
                 bestFor: "Atrium walls, grand lobbies, feature facades",
-                image: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=800&q=80",
+                image: "/Glazing.webp",
+                imageAlt: "Spider point-fixed glazing with SS316 fittings - Fine Glaze",
               },
               {
                 name: "Frameless Glass Canopies",
@@ -271,13 +285,14 @@ export default function StructuralGlazing() {
                   "Live load rated to NBC standards",
                 ],
                 bestFor: "Building entrances, shopping malls, sky bridges",
-                image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80",
+                image: "/Embassyoark.webp",
+                imageAlt: "Frameless glass canopy entrance - structural glazing by Fine Glaze",
               },
             ].map((type) => (
               <div key={type.name} className="bg-background rounded-xl shadow-sm overflow-hidden border border-border">
                 <img
                   src={type.image}
-                  alt={`${type.name} - structural glazing by Fine Glaze`}
+                  alt={type.imageAlt}
                   className="h-52 w-full object-cover"
                   loading="lazy"
                   width="600"
@@ -305,6 +320,73 @@ export default function StructuralGlazing() {
         </div>
       </section>
 
+      {/* PROJECTS SHOWCASE */}
+      <section className="py-20">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <h2 className="text-3xl font-bold mb-3">Our Structural Glazing Projects</h2>
+          <p className="text-muted-foreground mb-10 max-w-2xl">
+            From corporate campuses to commercial towers — Fine Glaze has delivered precision structural glazing across Maharashtra's most prominent buildings.
+          </p>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="group relative rounded-xl overflow-hidden shadow-md h-72">
+              <img
+                src="/ltimindtree-mensa-campus-mahape-navi-mumbai-1 (1).webp"
+                alt="LTIMindtree Campus Navi Mumbai - structural glazing by Fine Glaze"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+                width="600"
+                height="288"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent" />
+              <div className="absolute bottom-0 left-0 p-5 text-white">
+                <p className="text-xs font-semibold uppercase tracking-widest text-amber-400 mb-1">Navi Mumbai</p>
+                <h3 className="text-lg font-bold">LTIMindtree Campus</h3>
+                <p className="text-xs text-white/70">Full-height structural glazing facade</p>
+              </div>
+            </div>
+            <div className="group relative rounded-xl overflow-hidden shadow-md h-72">
+              <img
+                src="/Embassyoark.webp"
+                alt="Embassy 247 facade glass replacement - Fine Glaze award project"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+                width="600"
+                height="288"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent" />
+              <div className="absolute bottom-0 left-0 p-5 text-white">
+                <p className="text-xs font-semibold uppercase tracking-widest text-amber-400 mb-1">Mumbai · Award-Winning</p>
+                <h3 className="text-lg font-bold">Embassy 247</h3>
+                <p className="text-xs text-white/70">Best Performance Vendor 2024 — Embassy REIT</p>
+              </div>
+            </div>
+            <div className="group relative rounded-xl overflow-hidden shadow-md h-72">
+              <img
+                src="/Embassy.webp"
+                alt="Premium glass facade corporate campus - Fine Glaze structural glazing"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+                width="600"
+                height="288"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent" />
+              <div className="absolute bottom-0 left-0 p-5 text-white">
+                <p className="text-xs font-semibold uppercase tracking-widest text-amber-400 mb-1">Pune</p>
+                <h3 className="text-lg font-bold">Leela Business Park</h3>
+                <p className="text-xs text-white/70">4-side SSG with DGU Low-E glass</p>
+              </div>
+            </div>
+          </div>
+          <div className="mt-8 text-center">
+            <Link to="/portfolio">
+              <Button variant="outline" size="lg" className="gap-2">
+                View All Projects <ArrowRight size={16} />
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* LOCAL SEO: Areas Served */}
       <section className="py-20 bg-slate-900 text-white">
         <div className="container mx-auto px-4 text-center">
@@ -320,7 +402,7 @@ export default function StructuralGlazing() {
         </div>
       </section>
 
-      {/* FAQ — Matches schema for Featured Snippets */}
+      {/* FAQ */}
       <section className="py-20 bg-muted">
         <div className="container mx-auto px-4 max-w-4xl">
           <h2 className="text-3xl font-bold mb-10 text-center">Frequently Asked Questions</h2>
@@ -341,6 +423,12 @@ export default function StructuralGlazing() {
               <h3 className="text-lg font-bold mb-2">Is structural glazing safe for high-rise buildings?</h3>
               <p className="text-muted-foreground">
                 Yes. Structural glazing systems are engineered to IS 875 standards and can withstand wind loads of 1.5 to 4.5 kPa. Fine Glaze uses high-performance structural silicone (Dow Corning / Sika) rated for 25+ years of adhesion strength.
+              </p>
+            </div>
+            <div className="bg-background rounded-xl p-6 shadow-sm">
+              <h3 className="text-lg font-bold mb-2">How long does a structural glazing installation take?</h3>
+              <p className="text-muted-foreground">
+                Typically 2–6 weeks depending on facade area and building height. Fine Glaze works with detailed installation schedules and milestone-based handovers. We have a track record of on-time delivery — Embassy 247 was completed with zero delays and zero safety incidents.
               </p>
             </div>
           </div>
