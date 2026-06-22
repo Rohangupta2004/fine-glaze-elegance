@@ -103,7 +103,7 @@ export default function BlogArticle() {
           />
 
           <div className="space-y-10">
-            {post.content.map((section, i) => (
+            {(post.content ?? []).map((section, i) => (
               <section key={i}>
                 <h2 className="text-xl md:text-2xl font-bold mb-3 text-foreground border-l-4 border-amber-500 pl-3">
                   {section.heading}

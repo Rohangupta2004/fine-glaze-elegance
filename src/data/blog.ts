@@ -1838,7 +1838,7 @@ export const blogPosts: Record<string, BlogPost> = {
     "category": "Technical Guide",
     "heroImage": "https://images.unsplash.com/photo-1511818966892-d7d671e672a2?w=1200&q=80",
     "excerpt": "Maintaining the pristine look and structural integrity of a high-rise facade requires specialized access systems. Learn about BMUs, monorails, and safety standards in India.",
-    "sections": [
+    "content": [
         {
             "heading": "Introduction to Facade Access Systems",
             "body": "As Indian cities reach for the sky with increasingly complex glass and ACP facades, the challenge of maintaining these structures grows. Facade Access Systems (FAS) are permanent or temporary installations designed to allow personnel to safely clean, inspect, and repair the building envelope. Without a well-planned access strategy, even the most beautiful facade can quickly deteriorate due to pollution and environmental wear."
