@@ -138,7 +138,7 @@ export default function StructuralGlazing() {
           HERO — full-bleed photo + gradient text overlay
           ════════════════════════════════════════════════════ */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background image with subtle zoom via CSS */}
+        {/* Background image with slow zoom */}
         <img
           src={IMG.hero}
           alt="Structural glazing glass facade high-rise building — Fine Glaze"
@@ -148,69 +148,72 @@ export default function StructuralGlazing() {
         />
 
         {/* Deep cinematic multi-layer overlay */}
-        <div className="absolute inset-0" style={{ background: "linear-gradient(160deg, rgba(0,0,0,0.55) 0%, rgba(5,3,1,0.75) 60%, rgba(10,5,0,0.92) 100%)" }} />
-        {/* Amber vignette glow from bottom */}
-        <div className="absolute inset-x-0 bottom-0 h-2/3 pointer-events-none" style={{ background: "radial-gradient(ellipse 80% 60% at 50% 110%, rgba(180,80,0,0.25) 0%, transparent 70%)" }} />
-        {/* Subtle top darkening */}
-        <div className="absolute inset-x-0 top-0 h-32 pointer-events-none" style={{ background: "linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, transparent 100%)" }} />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(170deg, rgba(0,0,0,0.50) 0%, rgba(4,2,0,0.78) 55%, rgba(8,4,0,0.95) 100%)" }} />
+        {/* Rich amber glow rising from center-bottom */}
+        <div className="absolute inset-x-0 bottom-0 h-2/3 pointer-events-none" style={{ background: "radial-gradient(ellipse 90% 55% at 50% 115%, rgba(200,90,0,0.30) 0%, transparent 70%)" }} />
+        {/* Hard top fade to black for navbar area */}
+        <div className="absolute inset-x-0 top-0 h-40 pointer-events-none" style={{ background: "linear-gradient(to bottom, rgba(0,0,0,0.65) 0%, transparent 100%)" }} />
 
-        {/* Slow zoom keyframe injected inline */}
-        <style>{`@keyframes slowZoom { from { transform: scale(1.05); } to { transform: scale(1.12); } }`}</style>
+        {/* Slow zoom keyframe */}
+        <style>{`@keyframes slowZoom { from { transform: scale(1.05); } to { transform: scale(1.13); } }`}</style>
 
-        {/* Content */}
-        <div className="relative z-10 container mx-auto px-4 text-center">
+        {/* Content — pt-24 clears the fixed navbar */}
+        <div className="relative z-10 w-full container mx-auto px-4 text-center pt-24 pb-20">
           <div className="max-w-5xl mx-auto space-y-7">
 
-            {/* Badge */}
+            {/* Award badge */}
             <div
-              className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full border border-amber-400/30 bg-amber-500/10 backdrop-blur-md text-sm text-amber-200 font-semibold tracking-wide animate-fade-in uppercase"
+              className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full border border-amber-400/40 bg-amber-500/15 backdrop-blur-md text-sm text-amber-200 font-bold tracking-widest animate-fade-in uppercase"
             >
-              <Trophy size={13} className="text-amber-400" />
-              Embassy REIT Best Performance Vendor 2024
+              <Trophy size={14} className="text-amber-400" />
+              Embassy REIT Best Vendor 2024
               <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
             </div>
 
-            {/* Headline — bigger, more dramatic */}
+            {/* Massive stacked headline */}
             <h1
-              className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold text-white leading-[0.95] tracking-tight animate-fade-in-up"
-              style={{ animationDelay: "0.1s" }}
+              className="font-extrabold text-white leading-[0.9] tracking-tight animate-fade-in-up"
+              style={{ animationDelay: "0.1s", fontSize: "clamp(3.5rem, 10vw, 8rem)" }}
             >
-              <span className="text-gradient-gold">Structural</span>
-              <br />
-              <span className="text-gradient-light">Glazing</span>
-              <br />
-              <span className="text-white/90 text-4xl sm:text-5xl md:text-6xl font-bold">Redefined.</span>
+              <span className="text-gradient-gold block">Structural</span>
+              <span className="text-gradient-light block">Glazing</span>
+              <span
+                className="block text-white/85 font-bold"
+                style={{ fontSize: "clamp(2rem, 5.5vw, 4.5rem)" }}
+              >
+                Redefined.
+              </span>
             </h1>
 
-            {/* Golden divider line */}
+            {/* Glowing amber divider */}
             <div
-              className="flex items-center justify-center gap-4 animate-fade-in-up"
+              className="flex items-center justify-center gap-5 animate-fade-in-up"
               style={{ animationDelay: "0.2s" }}
             >
-              <div className="h-px w-16 bg-gradient-to-r from-transparent to-amber-500" />
-              <span className="text-amber-400/80 text-xs font-bold tracking-[0.3em] uppercase">Pune · Mumbai · Maharashtra</span>
-              <div className="h-px w-16 bg-gradient-to-l from-transparent to-amber-500" />
+              <div className="h-px flex-1 max-w-24" style={{ background: "linear-gradient(to right, transparent, rgba(245,158,11,0.9))" }} />
+              <span className="text-amber-400 text-xs font-bold tracking-[0.35em] uppercase">Pune · Mumbai · Maharashtra</span>
+              <div className="h-px flex-1 max-w-24" style={{ background: "linear-gradient(to left, transparent, rgba(245,158,11,0.9))" }} />
             </div>
 
             {/* Sub-headline */}
             <p
-              className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto animate-fade-in-up leading-relaxed"
+              className="text-lg md:text-xl text-white/65 max-w-2xl mx-auto animate-fade-in-up leading-relaxed"
               style={{ animationDelay: "0.25s" }}
             >
-              Precision-engineered silicone glazing for IT campuses, showrooms & commercial buildings —
-              frameless glass that{" "}
+              Precision-engineered silicone glazing for IT campuses, showrooms & commercial towers.
+              Frameless glass that{" "}
               <span className="text-amber-300 font-semibold">commands attention</span>.
             </p>
 
             {/* CTA Buttons */}
             <div
-              className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4 animate-fade-in-up"
+              className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2 animate-fade-in-up"
               style={{ animationDelay: "0.35s" }}
             >
               <Link to="/contact">
                 <Button
                   size="lg"
-                  className="btn-glossy text-white border-0 px-10 py-7 text-base group shadow-2xl shadow-amber-900/40 hover:shadow-amber-800/60 transition-all"
+                  className="btn-glossy text-white border-0 px-10 py-7 text-base group shadow-2xl shadow-amber-900/50 hover:shadow-amber-800/70 transition-all"
                 >
                   Get Free Quote
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -228,7 +231,7 @@ export default function StructuralGlazing() {
               </a>
             </div>
 
-            {/* Feature pills — sleek row */}
+            {/* Feature pills */}
             <div
               className="flex flex-wrap items-center justify-center gap-3 pt-2 animate-fade-in-up"
               style={{ animationDelay: "0.45s" }}
@@ -242,7 +245,8 @@ export default function StructuralGlazing() {
               ].map(({ icon: Icon, label }) => (
                 <div
                   key={label}
-                  className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/8 border border-white/10 backdrop-blur-sm text-white/70 text-xs font-medium hover:border-amber-400/50 hover:text-amber-300 transition-all"
+                  className="flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 backdrop-blur-sm text-white/70 text-xs font-medium hover:border-amber-400/50 hover:text-amber-300 transition-all"
+                  style={{ background: "rgba(255,255,255,0.06)" }}
                 >
                   <Icon size={13} className="text-amber-400 shrink-0" />
                   {label}
