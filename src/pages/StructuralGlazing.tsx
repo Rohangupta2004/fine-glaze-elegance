@@ -137,7 +137,7 @@ export default function StructuralGlazing() {
       {/* ════════════════════════════════════════════════════
           HERO — full-bleed photo + gradient text overlay
           ════════════════════════════════════════════════════ */}
-      <section className="relative min-h-screen flex items-end overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Background image */}
         <img
           src={IMG.hero}
@@ -146,71 +146,72 @@ export default function StructuralGlazing() {
           loading="eager"
         />
 
-        {/* Multi-stop gradient overlay — dark at bottom for readability, subtle at top */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(to bottom, rgba(0,0,0,0.10) 0%, rgba(0,0,0,0.10) 40%, rgba(5,10,20,0.45) 75%, rgba(5,10,20,0.60) 100%)",
-          }}
-        />
+        {/* Hero overlay — same class as homepage */}
+        <div className="absolute inset-0 hero-overlay" />
 
-        {/* Ambient left-side glow */}
-        <div
-          className="absolute inset-y-0 left-0 w-2/3 pointer-events-none"
-          style={{
-            background:
-              "linear-gradient(to right, rgba(180,100,20,0.12) 0%, transparent 100%)",
-          }}
-        />
+        {/* Content — centered, homepage-style */}
+        <div className="relative z-10 container mx-auto px-4 text-center">
+          <div className="max-w-4xl mx-auto space-y-8">
 
-        {/* Content */}
-        <div className="relative z-10 container mx-auto px-6 md:px-12 pb-24 pt-48">
-          <div className="max-w-3xl rounded-2xl p-8 md:p-10 backdrop-blur-sm"
-            style={{ background: "linear-gradient(135deg, rgba(120,55,0,0.70) 0%, rgba(80,30,0,0.60) 40%, rgba(5,8,18,0.55) 100%)" }}
-          >
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/20 border border-amber-400/40 text-amber-300 text-xs font-bold uppercase tracking-widest mb-6 backdrop-blur-sm">
-              <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
-              Fine Glaze · Structural Glazing
+            <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-black/40 backdrop-blur-md text-sm text-white/75 animate-fade-in border border-white/10">
+              <span className="w-2.5 h-2.5 rounded-full bg-amber-500 animate-pulse" />
+              India's Premier Structural Glazing Specialists
             </div>
 
-            <h1 className="text-5xl md:text-6xl xl:text-7xl font-extrabold text-white leading-[1.05] mb-6">
+            {/* Headline */}
+            <h1
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight animate-fade-in-up"
+              style={{ animationDelay: "0.1s" }}
+            >
               Frameless{" "}
-              <span className="text-gradient-warm">
-                Structural<br />Glazing
-              </span>{" "}
-              Systems
+              <span className="text-gradient-gold">Structural Glazing</span>
+              <br className="hidden md:block" />
+              That{" "}
+              <span className="text-gradient-light">Defines Facades</span>
             </h1>
 
-            <p className="text-lg md:text-xl text-white/75 mb-10 max-w-2xl leading-relaxed">
-              Precision-engineered structural silicone glazing for commercial buildings, IT campuses
-              and showrooms across Pune, Mumbai & Maharashtra. Trusted by Embassy REIT and LTIMindtree.
+            {/* Sub-headline */}
+            <p
+              className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto animate-fade-in-up leading-relaxed"
+              style={{ animationDelay: "0.2s" }}
+            >
+              Precision-engineered silicone glazing for commercial buildings, IT campuses and showrooms
+              across Pune, Mumbai & Maharashtra —{" "}
+              <span className="text-amber-400 font-medium">trusted by Embassy REIT</span>.
             </p>
 
-            {/* CTAs */}
-            <div className="flex flex-wrap gap-4 mb-14">
+            {/* CTA Buttons */}
+            <div
+              className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6 animate-fade-in-up"
+              style={{ animationDelay: "0.3s" }}
+            >
               <Link to="/contact">
                 <Button
                   size="lg"
-                  className="bg-amber-500 hover:bg-amber-600 text-slate-900 font-bold px-8 py-6 text-base shadow-xl shadow-amber-900/30 hover:shadow-amber-900/50 transition-all"
+                  className="btn-glossy text-white border-0 px-8 py-6 text-base group shadow-lg"
                 >
-                  Get Free Quote <ArrowRight className="ml-2 h-4 w-4" />
+                  Get Free Quote
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Button>
               </Link>
               <a href="tel:+918369233566">
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-white/40 text-white bg-white/10 hover:bg-white hover:text-slate-900 px-8 py-6 text-base backdrop-blur-sm transition-all"
+                  className="px-8 py-6 text-base group border-white bg-white/15 text-white hover:bg-white hover:text-slate-900 hover:border-white backdrop-blur-sm font-semibold transition-all duration-200 shadow-md"
                 >
-                  <Phone className="mr-2 h-4 w-4" /> Call Expert
+                  <Phone className="mr-2 h-4 w-4" />
+                  Call Expert
                 </Button>
               </a>
             </div>
 
             {/* Feature icons */}
-            <div className="grid grid-cols-3 sm:grid-cols-5 gap-4 border-t border-white/15 pt-8">
+            <div
+              className="flex flex-wrap items-center justify-center gap-6 pt-4 animate-fade-in-up"
+              style={{ animationDelay: "0.4s" }}
+            >
               {[
                 { icon: Building2, label: "Frameless Look" },
                 { icon: Sun, label: "Max Daylight" },
@@ -229,10 +230,11 @@ export default function StructuralGlazing() {
           </div>
         </div>
 
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 right-8 flex flex-col items-center gap-2 z-10">
-          <span className="text-white/40 text-xs uppercase tracking-[0.2em] rotate-90 origin-center mb-2">Scroll</span>
-          <div className="w-px h-16 bg-gradient-to-b from-white/40 to-transparent" />
+        {/* Scroll Indicator — same as homepage */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+          <div className="w-6 h-10 rounded-full border-2 border-white/30 flex items-start justify-center p-1">
+            <div className="w-1.5 h-3 rounded-full bg-amber-500/70 animate-pulse" />
+          </div>
         </div>
       </section>
 
