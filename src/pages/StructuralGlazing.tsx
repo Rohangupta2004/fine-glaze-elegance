@@ -9,11 +9,6 @@ import {
   CheckCircle2,
   MapPin,
   ArrowRight,
-  Building2,
-  Sun,
-  ShieldCheck,
-  Wrench,
-  Leaf,
   Phone,
   Trophy,
   IndianRupee,
@@ -137,130 +132,81 @@ export default function StructuralGlazing() {
       {/* ════════════════════════════════════════════════════
           HERO — full-bleed photo + gradient text overlay
           ════════════════════════════════════════════════════ */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 md:pt-24">
-        {/* Background image with slow zoom */}
+      {/* ── HERO — pure photo, raw editorial ── */}
+      <section className="relative h-screen overflow-hidden">
+        {/* Background — slow Ken Burns zoom */}
         <img
           src={IMG.hero}
-          alt="Structural glazing glass facade high-rise building — Fine Glaze"
-          className="absolute inset-0 w-full h-full object-cover object-center scale-105"
-          style={{ animation: "slowZoom 18s ease-in-out infinite alternate" }}
+          alt="Structural glazing glass facade — Fine Glaze"
+          className="absolute inset-0 w-full h-full object-cover object-center"
+          style={{ animation: "sgZoom 20s ease-in-out infinite alternate" }}
           loading="eager"
         />
+        <style>{`@keyframes sgZoom { from { transform: scale(1.0); } to { transform: scale(1.08); } }`}</style>
 
-        {/* Deep cinematic multi-layer overlay */}
-        <div className="absolute inset-0" style={{ background: "linear-gradient(170deg, rgba(0,0,0,0.50) 0%, rgba(4,2,0,0.78) 55%, rgba(8,4,0,0.95) 100%)" }} />
-        {/* Rich amber glow rising from center-bottom */}
-        <div className="absolute inset-x-0 bottom-0 h-2/3 pointer-events-none" style={{ background: "radial-gradient(ellipse 90% 55% at 50% 115%, rgba(200,90,0,0.30) 0%, transparent 70%)" }} />
-        {/* Hard top fade to black for navbar area */}
-        <div className="absolute inset-x-0 top-0 h-40 pointer-events-none" style={{ background: "linear-gradient(to bottom, rgba(0,0,0,0.65) 0%, transparent 100%)" }} />
+        {/* Overlay — barely there at top so the photo breathes, deep at bottom for text */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(to bottom, rgba(0,0,0,0.18) 0%, rgba(0,0,0,0.10) 35%, rgba(0,0,0,0.55) 70%, rgba(0,0,0,0.90) 100%)",
+          }}
+        />
 
-        {/* Slow zoom keyframe */}
-        <style>{`@keyframes slowZoom { from { transform: scale(1.05); } to { transform: scale(1.13); } }`}</style>
+        {/* Text — pinned to bottom-left, editorial style */}
+        <div className="absolute inset-x-0 bottom-0 px-8 md:px-16 pb-16 md:pb-20 pt-24">
+          {/* Thin amber overline */}
+          <p
+            className="text-amber-400 text-xs font-bold tracking-[0.4em] uppercase mb-5 animate-fade-in"
+          >
+            Fine Glaze · Pune · Mumbai · Maharashtra
+          </p>
 
-        {/* Content */}
-        <div className="relative z-10 w-full container mx-auto px-4 text-center py-16">
-          <div className="max-w-5xl mx-auto space-y-7">
+          {/* Massive headline — left-aligned like a magazine cover */}
+          <h1
+            className="font-extrabold text-white leading-[0.88] tracking-tight animate-fade-in-up"
+            style={{ fontSize: "clamp(3.8rem, 9vw, 9rem)", animationDelay: "0.1s" }}
+          >
+            Structural<br />
+            <span className="text-gradient-gold">Glazing</span><br />
+            <span style={{ fontSize: "clamp(2rem, 4.5vw, 4.8rem)", fontWeight: 600, color: "rgba(255,255,255,0.78)" }}>
+              Redefined.
+            </span>
+          </h1>
 
-            {/* Award badge */}
-            <div
-              className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full border border-amber-400/40 bg-amber-500/15 backdrop-blur-md text-sm text-amber-200 font-bold tracking-widest animate-fade-in uppercase"
+          {/* One clean line of copy */}
+          <p
+            className="mt-6 text-white/60 text-base md:text-lg max-w-lg leading-relaxed animate-fade-in-up"
+            style={{ animationDelay: "0.2s" }}
+          >
+            Frameless silicone glazing for commercial buildings, IT campuses &amp; showrooms.
+            Trusted by <span className="text-amber-400 font-medium">Embassy REIT</span>.
+          </p>
+
+          {/* Two plain text CTAs — no boxes, no icons */}
+          <div
+            className="mt-8 flex items-center gap-8 animate-fade-in-up"
+            style={{ animationDelay: "0.3s" }}
+          >
+            <Link
+              to="/contact"
+              className="text-white font-semibold text-base border-b border-amber-400 pb-0.5 hover:text-amber-400 transition-colors tracking-wide"
             >
-              <Trophy size={14} className="text-amber-400" />
-              Embassy REIT Best Vendor 2024
-              <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
-            </div>
-
-            {/* Massive stacked headline */}
-            <h1
-              className="font-extrabold text-white leading-[0.9] tracking-tight animate-fade-in-up"
-              style={{ animationDelay: "0.1s", fontSize: "clamp(3.5rem, 10vw, 8rem)" }}
+              Get Free Quote
+            </Link>
+            <a
+              href="tel:+918369233566"
+              className="text-white/55 font-medium text-base hover:text-white transition-colors tracking-wide"
             >
-              <span className="text-gradient-gold block">Structural</span>
-              <span className="text-gradient-light block">Glazing</span>
-              <span
-                className="block text-white/85 font-bold"
-                style={{ fontSize: "clamp(2rem, 5.5vw, 4.5rem)" }}
-              >
-                Redefined.
-              </span>
-            </h1>
-
-            {/* Glowing amber divider */}
-            <div
-              className="flex items-center justify-center gap-5 animate-fade-in-up"
-              style={{ animationDelay: "0.2s" }}
-            >
-              <div className="h-px flex-1 max-w-24" style={{ background: "linear-gradient(to right, transparent, rgba(245,158,11,0.9))" }} />
-              <span className="text-amber-400 text-xs font-bold tracking-[0.35em] uppercase">Pune · Mumbai · Maharashtra</span>
-              <div className="h-px flex-1 max-w-24" style={{ background: "linear-gradient(to left, transparent, rgba(245,158,11,0.9))" }} />
-            </div>
-
-            {/* Sub-headline */}
-            <p
-              className="text-lg md:text-xl text-white/65 max-w-2xl mx-auto animate-fade-in-up leading-relaxed"
-              style={{ animationDelay: "0.25s" }}
-            >
-              Precision-engineered silicone glazing for IT campuses, showrooms & commercial towers.
-              Frameless glass that{" "}
-              <span className="text-amber-300 font-semibold">commands attention</span>.
-            </p>
-
-            {/* CTA Buttons */}
-            <div
-              className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2 animate-fade-in-up"
-              style={{ animationDelay: "0.35s" }}
-            >
-              <Link to="/contact">
-                <Button
-                  size="lg"
-                  className="btn-glossy text-white border-0 px-10 py-7 text-base group shadow-2xl shadow-amber-900/50 hover:shadow-amber-800/70 transition-all"
-                >
-                  Get Free Quote
-                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </Button>
-              </Link>
-              <a href="tel:+918369233566">
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="px-10 py-7 text-base group border-white/40 bg-white/10 text-white hover:bg-white hover:text-slate-900 hover:border-white backdrop-blur-sm font-semibold transition-all duration-200"
-                >
-                  <Phone className="mr-2 h-4 w-4" />
-                  Call Expert
-                </Button>
-              </a>
-            </div>
-
-            {/* Feature pills */}
-            <div
-              className="flex flex-wrap items-center justify-center gap-3 pt-2 animate-fade-in-up"
-              style={{ animationDelay: "0.45s" }}
-            >
-              {[
-                { icon: Building2, label: "Frameless Glass" },
-                { icon: Sun, label: "Max Daylight" },
-                { icon: ShieldCheck, label: "25yr Silicone" },
-                { icon: Wrench, label: "Low Maintenance" },
-                { icon: Leaf, label: "Energy Efficient" },
-              ].map(({ icon: Icon, label }) => (
-                <div
-                  key={label}
-                  className="flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 backdrop-blur-sm text-white/70 text-xs font-medium hover:border-amber-400/50 hover:text-amber-300 transition-all"
-                  style={{ background: "rgba(255,255,255,0.06)" }}
-                >
-                  <Icon size={13} className="text-amber-400 shrink-0" />
-                  {label}
-                </div>
-              ))}
-            </div>
+              +91 83692 33566
+            </a>
           </div>
         </div>
 
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-          <div className="w-6 h-10 rounded-full border-2 border-white/30 flex items-start justify-center p-1">
-            <div className="w-1.5 h-3 rounded-full bg-amber-500/70 animate-pulse" />
-          </div>
+        {/* Subtle scroll indicator — just a line */}
+        <div className="absolute bottom-8 right-8 flex flex-col items-center gap-2 opacity-40">
+          <span className="text-white text-[10px] uppercase tracking-[0.25em] rotate-90 mb-3">Scroll</span>
+          <div className="w-px h-12 bg-gradient-to-b from-white to-transparent" />
         </div>
       </section>
 
