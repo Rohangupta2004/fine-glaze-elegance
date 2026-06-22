@@ -21,6 +21,8 @@ import {
   Send,
   CheckCircle2,
   ArrowRight,
+  MessageCircle,
+  Building2,
 } from "lucide-react";
 import { toast } from "sonner";
 import SEO from "@/components/SEO";
@@ -167,10 +169,10 @@ const Contact = () => {
         }}
       />
 
-      {/* ════════════════════════════════════════════════════
-          HERO — full-bleed cinematic
-          ════════════════════════════════════════════════════ */}
-      <section className="relative h-[55vh] md:h-[60vh] min-h-[380px] overflow-hidden">
+      {/* ═══════════════════════════════════════════
+          HERO — cinematic, short text
+          ═══════════════════════════════════════════ */}
+      <section className="relative h-[55vh] md:h-[65vh] min-h-[380px] overflow-hidden">
         <img
           src="/Glass installation.webp"
           alt="Fine Glaze — Contact us"
@@ -183,7 +185,7 @@ const Contact = () => {
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.20) 35%, rgba(0,0,0,0.50) 65%, rgba(0,0,0,0.90) 100%)",
+              "linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.20) 35%, rgba(0,0,0,0.50) 65%, rgba(0,0,0,0.92) 100%)",
           }}
         />
 
@@ -205,231 +207,306 @@ const Contact = () => {
       </section>
 
 
-      {/* ════════════════════════════════════════════════════
-          FORM + DETAILS — directly after hero
-          ════════════════════════════════════════════════════ */}
-      <section className="py-10 md:py-20 bg-stone-50">
-        <div className="container mx-auto px-5 md:px-16">
-          <div className="grid lg:grid-cols-5 gap-8 md:gap-14">
+      {/* ═══════════════════════════════════════════
+          INSTANT CONTACT — 3 action cards right after hero
+          ═══════════════════════════════════════════ */}
+      <section className="relative z-10 -mt-8 md:-mt-10 px-5 md:px-16">
+        <div className="container mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-4">
+            {/* Call */}
+            <a
+              href="tel:+918369233566"
+              className="group flex items-center gap-4 bg-stone-900 hover:bg-amber-700 transition-all duration-300 p-4 md:p-5"
+            >
+              <div className="w-11 h-11 md:w-12 md:h-12 bg-amber-600 group-hover:bg-white/20 flex items-center justify-center shrink-0 transition-colors">
+                <Phone size={20} className="text-white" />
+              </div>
+              <div>
+                <p className="text-[10px] text-white/50 font-bold tracking-[0.2em] uppercase">Call Us</p>
+                <p className="text-white font-semibold text-sm md:text-base mt-0.5">+91 83692 33566</p>
+              </div>
+            </a>
 
-            {/* Left column — contact details + why reach out */}
-            <FadeIn className="lg:col-span-2 order-2 lg:order-1">
-              {/* Quick contact — inline text, no strip */}
-              <div className="space-y-4 mb-8 pb-8 border-b border-stone-200">
-                <a href="tel:+918369233566" className="flex items-center gap-3 text-stone-700 hover:text-amber-700 transition-colors">
-                  <Phone size={16} className="text-amber-600 shrink-0" />
-                  <span className="text-sm font-semibold">+91 83692 33566</span>
-                </a>
-                <a href="mailto:info@fineglaze.com" className="flex items-center gap-3 text-stone-700 hover:text-amber-700 transition-colors">
-                  <Mail size={16} className="text-amber-600 shrink-0" />
-                  <span className="text-sm font-semibold">info@fineglaze.com</span>
-                </a>
-                <div className="flex items-center gap-3 text-stone-500">
-                  <Clock size={16} className="text-amber-600 shrink-0" />
-                  <span className="text-sm">Mon – Sat, 9:00 AM – 6:00 PM</span>
+            {/* Email */}
+            <a
+              href="mailto:info@fineglaze.com"
+              className="group flex items-center gap-4 bg-stone-900 hover:bg-amber-700 transition-all duration-300 p-4 md:p-5"
+            >
+              <div className="w-11 h-11 md:w-12 md:h-12 bg-amber-600 group-hover:bg-white/20 flex items-center justify-center shrink-0 transition-colors">
+                <Mail size={20} className="text-white" />
+              </div>
+              <div>
+                <p className="text-[10px] text-white/50 font-bold tracking-[0.2em] uppercase">Email</p>
+                <p className="text-white font-semibold text-sm md:text-base mt-0.5">info@fineglaze.com</p>
+              </div>
+            </a>
+
+            {/* WhatsApp */}
+            <a
+              href="https://wa.me/918369233566?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20your%20facade%20services."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center gap-4 bg-stone-900 hover:bg-green-700 transition-all duration-300 p-4 md:p-5"
+            >
+              <div className="w-11 h-11 md:w-12 md:h-12 bg-green-600 group-hover:bg-white/20 flex items-center justify-center shrink-0 transition-colors">
+                <MessageCircle size={20} className="text-white" />
+              </div>
+              <div>
+                <p className="text-[10px] text-white/50 font-bold tracking-[0.2em] uppercase">WhatsApp</p>
+                <p className="text-white font-semibold text-sm md:text-base mt-0.5">Message Us Instantly</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+
+      {/* ═══════════════════════════════════════════
+          MAIN — form (left) + info (right)
+          ═══════════════════════════════════════════ */}
+      <section className="py-12 md:py-20 bg-stone-50">
+        <div className="container mx-auto px-5 md:px-16">
+          <div className="grid lg:grid-cols-12 gap-8 md:gap-12">
+
+            {/* ── Form — takes more space ── */}
+            <FadeIn className="lg:col-span-7 order-1">
+              <div className="bg-white border border-stone-200 shadow-sm">
+                <div className="border-b border-stone-100 px-5 md:px-8 py-5 md:py-6">
+                  <p className="text-amber-700 text-[10px] font-bold tracking-[0.3em] uppercase mb-1">
+                    Start Your Project
+                  </p>
+                  <h2 className="text-xl md:text-2xl font-bold text-stone-900">
+                    Tell us what you need
+                  </h2>
+                </div>
+
+                <div className="px-5 md:px-8 py-5 md:py-7">
+                  {isSubmitted ? (
+                    <div className="text-center py-14 space-y-4">
+                      <div className="w-14 h-14 bg-amber-50 flex items-center justify-center mx-auto">
+                        <CheckCircle2 size={28} className="text-amber-600" />
+                      </div>
+                      <h3 className="text-2xl font-bold text-stone-900">
+                        Message Sent
+                      </h3>
+                      <p className="text-stone-500 text-sm max-w-md mx-auto">
+                        Thank you. Our team will review your inquiry and get back
+                        to you within 1 business hour during working hours.
+                      </p>
+                      <Button
+                        onClick={() => {
+                          setIsSubmitted(false);
+                          setFormData({ name: "", email: "", phone: "", projectType: "", message: "" });
+                        }}
+                        variant="outline"
+                        className="mt-4"
+                      >
+                        Send Another Message
+                      </Button>
+                    </div>
+                  ) : (
+                    <form onSubmit={handleSubmit} className="space-y-5">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
+                        <div className="space-y-1.5">
+                          <Label htmlFor="name" className="text-xs font-semibold text-stone-600 uppercase tracking-wider">
+                            Full Name *
+                          </Label>
+                          <Input
+                            id="name"
+                            name="name"
+                            placeholder="Ramesh Sharma"
+                            required
+                            value={formData.name}
+                            onChange={handleChange}
+                            className="border-stone-200 focus:border-amber-400 focus:ring-amber-400/20 h-11"
+                          />
+                        </div>
+                        <div className="space-y-1.5">
+                          <Label htmlFor="email" className="text-xs font-semibold text-stone-600 uppercase tracking-wider">
+                            Email *
+                          </Label>
+                          <Input
+                            id="email"
+                            name="email"
+                            type="email"
+                            placeholder="ramesh@company.com"
+                            required
+                            value={formData.email}
+                            onChange={handleChange}
+                            className="border-stone-200 focus:border-amber-400 focus:ring-amber-400/20 h-11"
+                          />
+                        </div>
+                      </div>
+
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
+                        <div className="space-y-1.5">
+                          <Label htmlFor="phone" className="text-xs font-semibold text-stone-600 uppercase tracking-wider">
+                            Phone *
+                          </Label>
+                          <Input
+                            id="phone"
+                            name="phone"
+                            type="tel"
+                            placeholder="+91 98765 43210"
+                            required
+                            value={formData.phone}
+                            onChange={handleChange}
+                            className="border-stone-200 focus:border-amber-400 focus:ring-amber-400/20 h-11"
+                          />
+                        </div>
+                        <div className="space-y-1.5">
+                          <Label htmlFor="projectType" className="text-xs font-semibold text-stone-600 uppercase tracking-wider">
+                            Project Type *
+                          </Label>
+                          <Select
+                            value={formData.projectType}
+                            onValueChange={(value) =>
+                              setFormData((prev) => ({ ...prev, projectType: value }))
+                            }
+                            required
+                          >
+                            <SelectTrigger className="border-stone-200 focus:border-amber-400 focus:ring-amber-400/20 h-11">
+                              <SelectValue placeholder="Select a service" />
+                            </SelectTrigger>
+                            <SelectContent>
+                              {projectTypes.map((type) => (
+                                <SelectItem key={type} value={type}>
+                                  {type}
+                                </SelectItem>
+                              ))}
+                            </SelectContent>
+                          </Select>
+                        </div>
+                      </div>
+
+                      <div className="space-y-1.5">
+                        <Label htmlFor="message" className="text-xs font-semibold text-stone-600 uppercase tracking-wider">
+                          Project Details *
+                        </Label>
+                        <Textarea
+                          id="message"
+                          name="message"
+                          placeholder="E.g. We need structural glazing for a 5-floor commercial building in Hinjewadi, Pune. Looking for site visit and quotation..."
+                          rows={4}
+                          required
+                          value={formData.message}
+                          onChange={handleChange}
+                          className="border-stone-200 focus:border-amber-400 focus:ring-amber-400/20 resize-none"
+                        />
+                      </div>
+
+                      <Button
+                        type="submit"
+                        disabled={isSubmitting}
+                        className="w-full bg-stone-900 hover:bg-amber-700 text-white py-5 text-sm font-semibold tracking-wide transition-colors duration-300"
+                      >
+                        {isSubmitting ? (
+                          <>
+                            <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin mr-2" />
+                            Sending...
+                          </>
+                        ) : (
+                          <>
+                            <Send size={16} className="mr-2" />
+                            Send Enquiry
+                          </>
+                        )}
+                      </Button>
+
+                      <p className="text-[11px] text-stone-400 text-center">
+                        We'll never share your information. Expect a reply within 1 business hour.
+                      </p>
+                    </form>
+                  )}
+                </div>
+              </div>
+            </FadeIn>
+
+
+            {/* ── Right column — why + office + hours ── */}
+            <FadeIn delay={120} className="lg:col-span-5 order-2 space-y-5 md:space-y-6">
+
+              {/* Why reach out */}
+              <div className="bg-white border border-stone-200 p-5 md:p-7">
+                <p className="text-amber-700 text-[10px] font-bold tracking-[0.3em] uppercase mb-3">
+                  Why Reach Out
+                </p>
+                <h3 className="text-lg font-bold text-stone-900 mb-4">
+                  We respond within 1 business hour.
+                </h3>
+                <p className="text-stone-500 text-sm leading-relaxed mb-5">
+                  No automated replies — you'll speak directly with our engineering team.
+                </p>
+                <div className="space-y-3">
+                  {[
+                    { text: "Free site visit & measurement", sub: "Our engineers visit at no cost" },
+                    { text: "Written proposal in 48 hours", sub: "Transparent scope, specs & pricing" },
+                    { text: "No obligation", sub: "Get the information you need" },
+                  ].map((item) => (
+                    <div key={item.text} className="flex gap-3 group">
+                      <div className="w-6 h-6 bg-amber-50 flex items-center justify-center shrink-0 mt-0.5">
+                        <ArrowRight size={12} className="text-amber-600" />
+                      </div>
+                      <div>
+                        <p className="text-sm font-semibold text-stone-800">{item.text}</p>
+                        <p className="text-xs text-stone-400 mt-0.5">{item.sub}</p>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
 
-              <p className="text-amber-700 text-xs font-bold tracking-[0.3em] uppercase mb-3">
-                Why Reach Out
-              </p>
-              <h2 className="text-xl md:text-2xl font-bold text-stone-900 mb-4">
-                We respond within 1 business hour.
-              </h2>
-              <p className="text-stone-500 text-sm leading-relaxed mb-6">
-                Whether you need a quote for a new project, want to schedule a free site visit,
-                or have questions about our facade systems — we're here. No automated replies, you'll
-                speak directly with our engineering team.
-              </p>
+              {/* Office address */}
+              <div className="relative overflow-hidden bg-stone-900 text-white p-5 md:p-7">
+                {/* decorative corner */}
+                <div className="absolute top-0 right-0 w-24 h-24 bg-amber-600/10" />
 
-              <div className="space-y-4 mb-8">
-                {[
-                  { label: "Free site visit & measurement", desc: "Our engineers visit your site at no cost" },
-                  { label: "Detailed written proposal", desc: "Transparent scope, specs & pricing within 48 hours" },
-                  { label: "No obligation", desc: "Get the information you need to make the right call" },
-                ].map((item) => (
-                  <div key={item.label} className="flex gap-3">
-                    <ArrowRight size={14} className="text-amber-600 mt-0.5 shrink-0" />
-                    <div>
-                      <p className="text-sm font-semibold text-stone-800">{item.label}</p>
-                      <p className="text-xs text-stone-400 mt-0.5">{item.desc}</p>
-                    </div>
+                <div className="relative">
+                  <div className="flex items-center gap-3 mb-4">
+                    <Building2 size={18} className="text-amber-400" />
+                    <p className="text-[10px] font-bold tracking-[0.3em] uppercase text-white/50">
+                      Head Office
+                    </p>
                   </div>
-                ))}
-              </div>
-
-              <div className="p-5 bg-white border border-stone-200">
-                <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-stone-400 mb-3">
-                  Office Address
-                </p>
-                <div className="flex items-start gap-3">
-                  <MapPin size={16} className="text-amber-600 mt-0.5 shrink-0" />
-                  <p className="text-sm text-stone-700 leading-relaxed">
+                  <p className="text-sm text-white/80 leading-relaxed mb-1 font-medium">
+                    Fine Glaze
+                  </p>
+                  <p className="text-sm text-white/60 leading-relaxed">
                     Shop No. 1 & 2, Jagdamba Bhawan Marg,<br />
                     Near Sunshine Hills, Shree Siddhivinayak Meera,<br />
                     Undri, Pune – 411060, Maharashtra
                   </p>
-                </div>
-                <a
-                  href="https://maps.app.goo.gl/JDF3ESXQGHtwKoAr6"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-amber-700 font-semibold text-xs mt-3 hover:gap-2.5 transition-all"
-                >
-                  Open in Google Maps <ArrowRight size={12} />
-                </a>
-              </div>
-            </FadeIn>
 
-            {/* Right column — form */}
-            <FadeIn delay={100} className="lg:col-span-3 order-1 lg:order-2">
-              <div className="bg-white border border-stone-200 p-5 md:p-8">
-                {isSubmitted ? (
-                  <div className="text-center py-14 space-y-4">
-                    <div className="w-14 h-14 bg-amber-50 flex items-center justify-center mx-auto">
-                      <CheckCircle2 size={28} className="text-amber-600" />
-                    </div>
-                    <h3 className="text-2xl font-bold text-stone-900">
-                      Message Sent
-                    </h3>
-                    <p className="text-stone-500 text-sm max-w-md mx-auto">
-                      Thank you. Our team will review your inquiry and get back to you
-                      within 1 business hour during working hours.
-                    </p>
-                    <Button
-                      onClick={() => {
-                        setIsSubmitted(false);
-                        setFormData({ name: "", email: "", phone: "", projectType: "", message: "" });
-                      }}
-                      variant="outline"
-                      className="mt-4"
-                    >
-                      Send Another Message
-                    </Button>
+                  <div className="mt-5 pt-4 border-t border-white/10 flex items-center gap-3">
+                    <Clock size={14} className="text-amber-400 shrink-0" />
+                    <p className="text-sm text-white/50">Mon – Sat, 9:00 AM – 6:00 PM</p>
                   </div>
-                ) : (
-                  <form onSubmit={handleSubmit} className="space-y-5">
-                    <div>
-                      <p className="text-amber-700 text-xs font-bold tracking-[0.3em] uppercase mb-1">
-                        Enquiry Form
-                      </p>
-                      <h3 className="text-lg md:text-xl font-bold text-stone-900 mb-5">
-                        Tell us about your project
-                      </h3>
-                    </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
-                      <div className="space-y-1.5">
-                        <Label htmlFor="name" className="text-xs font-semibold text-stone-600 uppercase tracking-wider">
-                          Full Name *
-                        </Label>
-                        <Input
-                          id="name"
-                          name="name"
-                          placeholder="Ramesh Sharma"
-                          required
-                          value={formData.name}
-                          onChange={handleChange}
-                          className="border-stone-200 focus:border-amber-400 focus:ring-amber-400/20 h-11"
-                        />
-                      </div>
-                      <div className="space-y-1.5">
-                        <Label htmlFor="email" className="text-xs font-semibold text-stone-600 uppercase tracking-wider">
-                          Email *
-                        </Label>
-                        <Input
-                          id="email"
-                          name="email"
-                          type="email"
-                          placeholder="ramesh@company.com"
-                          required
-                          value={formData.email}
-                          onChange={handleChange}
-                          className="border-stone-200 focus:border-amber-400 focus:ring-amber-400/20 h-11"
-                        />
-                      </div>
-                    </div>
+                  <a
+                    href="https://maps.app.goo.gl/JDF3ESXQGHtwKoAr6"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-amber-400 font-semibold text-xs mt-4 hover:gap-3 transition-all group"
+                  >
+                    <MapPin size={13} />
+                    Open in Google Maps
+                    <ArrowRight size={12} className="group-hover:translate-x-0.5 transition-transform" />
+                  </a>
+                </div>
+              </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
-                      <div className="space-y-1.5">
-                        <Label htmlFor="phone" className="text-xs font-semibold text-stone-600 uppercase tracking-wider">
-                          Phone *
-                        </Label>
-                        <Input
-                          id="phone"
-                          name="phone"
-                          type="tel"
-                          placeholder="+91 98765 43210"
-                          required
-                          value={formData.phone}
-                          onChange={handleChange}
-                          className="border-stone-200 focus:border-amber-400 focus:ring-amber-400/20 h-11"
-                        />
-                      </div>
-                      <div className="space-y-1.5">
-                        <Label htmlFor="projectType" className="text-xs font-semibold text-stone-600 uppercase tracking-wider">
-                          Project Type *
-                        </Label>
-                        <Select
-                          value={formData.projectType}
-                          onValueChange={(value) =>
-                            setFormData((prev) => ({ ...prev, projectType: value }))
-                          }
-                          required
-                        >
-                          <SelectTrigger className="border-stone-200 focus:border-amber-400 focus:ring-amber-400/20 h-11">
-                            <SelectValue placeholder="Select a service" />
-                          </SelectTrigger>
-                          <SelectContent>
-                            {projectTypes.map((type) => (
-                              <SelectItem key={type} value={type}>
-                                {type}
-                              </SelectItem>
-                            ))}
-                          </SelectContent>
-                        </Select>
-                      </div>
-                    </div>
-
-                    <div className="space-y-1.5">
-                      <Label htmlFor="message" className="text-xs font-semibold text-stone-600 uppercase tracking-wider">
-                        Project Details *
-                      </Label>
-                      <Textarea
-                        id="message"
-                        name="message"
-                        placeholder="E.g. We need structural glazing for a 5-floor commercial building in Hinjewadi, Pune. Looking for site visit and quotation..."
-                        rows={4}
-                        required
-                        value={formData.message}
-                        onChange={handleChange}
-                        className="border-stone-200 focus:border-amber-400 focus:ring-amber-400/20 resize-none"
-                      />
-                    </div>
-
-                    <Button
-                      type="submit"
-                      disabled={isSubmitting}
-                      className="w-full bg-stone-900 hover:bg-stone-800 text-white py-5 text-sm font-semibold tracking-wide"
-                    >
-                      {isSubmitting ? (
-                        <>
-                          <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin mr-2" />
-                          Sending...
-                        </>
-                      ) : (
-                        <>
-                          <Send size={16} className="mr-2" />
-                          Send Enquiry
-                        </>
-                      )}
-                    </Button>
-
-                    <p className="text-[11px] text-stone-400 text-center">
-                      We'll never share your information. Expect a reply within 1 business hour.
-                    </p>
-                  </form>
-                )}
+              {/* Quick stat strip */}
+              <div className="grid grid-cols-3 gap-px bg-stone-200">
+                {[
+                  { num: "10+", label: "Projects" },
+                  { num: "5+", label: "Years" },
+                  { num: "<1hr", label: "Response" },
+                ].map((s) => (
+                  <div key={s.label} className="bg-white text-center py-4 md:py-5">
+                    <p className="text-lg md:text-xl font-extrabold text-stone-900">{s.num}</p>
+                    <p className="text-[10px] text-stone-400 font-bold tracking-[0.15em] uppercase mt-1">{s.label}</p>
+                  </div>
+                ))}
               </div>
             </FadeIn>
           </div>
@@ -437,9 +514,43 @@ const Contact = () => {
       </section>
 
 
-      {/* ════════════════════════════════════════════════════
-          MAP — full-width Google Maps showing Fine Glaze
-          ════════════════════════════════════════════════════ */}
+      {/* ═══════════════════════════════════════════
+          PHOTO BREAK — immersive strip
+          ═══════════════════════════════════════════ */}
+      <FadeIn>
+        <section className="relative h-[30vh] md:h-[40vh] min-h-[200px] overflow-hidden">
+          <img
+            src="/Glazing.webp"
+            alt="Fine Glaze facade work"
+            className="absolute inset-0 w-full h-full object-cover"
+            loading="lazy"
+            style={{ objectPosition: "center 40%" }}
+          />
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "linear-gradient(to right, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.30) 50%, rgba(0,0,0,0.75) 100%)",
+            }}
+          />
+          <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-5">
+            <p className="text-amber-400 text-[10px] md:text-xs font-bold tracking-[0.4em] uppercase mb-2">
+              Trusted Across Maharashtra
+            </p>
+            <p
+              className="text-white font-bold leading-snug max-w-xl"
+              style={{ fontSize: "clamp(1.1rem, 2.5vw, 1.75rem)" }}
+            >
+              "From concept to completion — we engineer facades that define skylines."
+            </p>
+          </div>
+        </section>
+      </FadeIn>
+
+
+      {/* ═══════════════════════════════════════════
+          MAP — full-width embed with Fine Glaze search
+          ═══════════════════════════════════════════ */}
       <FadeIn>
         <div className="w-full h-[250px] md:h-[380px] bg-stone-200">
           <iframe
