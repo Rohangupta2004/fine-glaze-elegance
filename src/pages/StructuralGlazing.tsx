@@ -51,18 +51,15 @@ function FadeIn({
 
 /* ── High-quality Unsplash image URLs ── */
 const IMG = {
-  hero: "https://images.unsplash.com/photo-1430417934865-589b63ad5c00?fm=jpg&q=85&w=2400&auto=format&fit=crop",
-  advantages1: "https://images.unsplash.com/photo-1523477593243-78bbf626fd3b?fm=jpg&q=80&w=900&auto=format&fit=crop",
-  advantages2: "https://images.unsplash.com/photo-1589282741585-30ab896335cd?fm=jpg&q=80&w=900&auto=format&fit=crop",
-  advantages3: "https://images.unsplash.com/photo-1556922340-19e175199d3d?fm=jpg&q=80&w=900&auto=format&fit=crop",
-  solutions: "https://images.unsplash.com/photo-1525119488448-d549af0dc221?fm=jpg&q=80&w=900&auto=format&fit=crop",
-  type2side: "https://images.unsplash.com/photo-1469981283837-561b3779462f?fm=jpg&q=80&w=900&auto=format&fit=crop",
-  type4side: "https://images.unsplash.com/photo-1621831337128-35676ca30868?fm=jpg&q=80&w=900&auto=format&fit=crop",
-  typeSpider: "https://images.unsplash.com/photo-1509024368907-57294758cfc5?fm=jpg&q=80&w=900&auto=format&fit=crop",
-  typeCanopy: "https://images.unsplash.com/photo-1486927181919-3ac1fc3a8082?fm=jpg&q=80&w=900&auto=format&fit=crop",
-  project1: "/ltimindtree-mensa-campus-mahape-navi-mumbai-1 (1).webp",
-  project2: "/Embassyoark.webp",
-  project3: "/Embassy.webp",
+  hero: "https://images.unsplash.com/photo-1486927181919-3ac1fc3a8082?fm=jpg&q=90&w=2400&auto=format&fit=crop",
+  advantages1: "https://images.unsplash.com/ZUVTzrTOD4o?fm=jpg&q=80&w=900&auto=format&fit=crop",
+  advantages2: "https://images.unsplash.com/lBfc7CZXySs?fm=jpg&q=80&w=900&auto=format&fit=crop",
+  advantages3: "https://images.unsplash.com/og35X7iYnl8?fm=jpg&q=80&w=900&auto=format&fit=crop",
+  solutions: "https://images.unsplash.com/qW2F8rZGEWw?fm=jpg&q=80&w=900&auto=format&fit=crop",
+  type2side: "https://images.unsplash.com/V5vF94h52r0?fm=jpg&q=80&w=900&auto=format&fit=crop",
+  type4side: "https://images.unsplash.com/RBGoIP6PkqU?fm=jpg&q=80&w=900&auto=format&fit=crop",
+  typeSpider: "https://images.unsplash.com/lMjoyCYuyz0?fm=jpg&q=80&w=900&auto=format&fit=crop",
+  typeCanopy: "https://images.unsplash.com/photo-1525119488448-d549af0dc221?fm=jpg&q=80&w=900&auto=format&fit=crop",
 };
 
 export default function StructuralGlazing() {
@@ -527,87 +524,7 @@ export default function StructuralGlazing() {
       </section>
 
       {/* ── PROJECTS SHOWCASE ── */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 max-w-6xl">
-          <FadeIn>
-            <div className="flex items-end justify-between mb-10">
-              <div>
-                <h2 className="text-3xl font-bold mb-2">Our Structural Glazing Projects</h2>
-                <p className="text-muted-foreground max-w-xl">
-                  Precision structural glazing across Maharashtra's most prominent buildings.
-                </p>
-              </div>
-              <Link to="/portfolio" className="hidden md:flex items-center gap-2 text-amber-600 hover:text-amber-700 font-semibold text-sm transition-colors">
-                All Projects <ArrowRight size={15} />
-              </Link>
-            </div>
-          </FadeIn>
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              {
-                img: IMG.project1,
-                alt: "LTIMindtree Campus Navi Mumbai — Fine Glaze structural glazing",
-                location: "Navi Mumbai",
-                name: "LTIMindtree Campus",
-                desc: "Full-height structural glazing facade",
-                badge: null,
-                delay: 0,
-              },
-              {
-                img: IMG.project2,
-                alt: "Embassy 247 Vikhroli — Fine Glaze award project",
-                location: "Mumbai · Vikhroli",
-                name: "Embassy 247",
-                desc: "Facade glass replacement — Best Performance Vendor 2024",
-                badge: "🏆 Award",
-                delay: 100,
-              },
-              {
-                img: IMG.project3,
-                alt: "Premium glass facade corporate campus — Fine Glaze",
-                location: "Pune",
-                name: "Leela Business Park",
-                desc: "Structural glazing facade system",
-                badge: null,
-                delay: 200,
-              },
-            ].map((project) => (
-              <FadeIn key={project.name} delay={project.delay}>
-                <div className="group relative rounded-2xl overflow-hidden shadow-md h-72 cursor-pointer">
-                  <img
-                    src={project.img}
-                    alt={project.alt}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    loading="lazy"
-                    width="600"
-                    height="288"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent" />
-                  {project.badge && (
-                    <div className="absolute top-4 left-4 bg-amber-600 text-white text-xs font-bold px-3 py-1 rounded-full">
-                      {project.badge}
-                    </div>
-                  )}
-                  <div className="absolute bottom-0 left-0 p-5 text-white">
-                    <p className="text-xs font-semibold uppercase tracking-widest text-amber-400 mb-1">
-                      {project.location}
-                    </p>
-                    <h3 className="text-lg font-bold">{project.name}</h3>
-                    <p className="text-xs text-white/70">{project.desc}</p>
-                  </div>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
-          <div className="mt-8 text-center md:hidden">
-            <Link to="/portfolio">
-              <Button variant="outline" size="lg" className="gap-2">
-                View All Projects <ArrowRight size={16} />
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
+      {/* Projects section removed — portfolio available at /portfolio */}
 
       {/* ── PROCESS SECTION ── */}
       <ProcessSection />
