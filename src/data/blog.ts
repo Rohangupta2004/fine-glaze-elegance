@@ -2115,6 +2115,7 @@ export const blogPosts: Record<string, BlogPost> = {
       {
         heading: "Key Fire Testing Standards for ACP",
         body: "To comply with Indian regulations, ACP sheets must undergo rigorous testing. The most common standards referenced include:",
+,
         list: [
           'ASTM E84: Standard Test Method for Surface Burning Characteristics of Building Materials.',
           'EN 13501-1: European standard for fire classification of construction products.',
@@ -2125,6 +2126,7 @@ export const blogPosts: Record<string, BlogPost> = {
       {
         heading: "ACP Fire Ratings Explained",
         body: "ACP is generally categorized into different fire classes based on the core material's performance during a fire:",
+,
         table: {
           headers: ["Class", "Core Material", "Fire Performance", "Suitability"],
           rows: [["Class A2", "90% Mineral Core", "Non-combustible", "High-rise buildings (>15m)"], ["Class B", "70% Mineral Core", "Fire-retardant", "Mid-rise buildings"], ["Class FR", "Fire Resistant", "Limited combustibility", "General commercial use"], ["Non-FR", "LDPE Core", "Highly combustible", "Not recommended for facades"]]
@@ -2138,6 +2140,7 @@ export const blogPosts: Record<string, BlogPost> = {
       {
         heading: "Installation Best Practices for Fire Safety",
         body: "Even the best fire-rated ACP can fail if not installed correctly. Key considerations include:",
+,
         list: [
           'Fire Stops: Installing horizontal and vertical fire stops within the facade cavity to prevent the 'chimney effect'.',
           'Approved Sealants: Using fire-rated silicone sealants for joints.',
@@ -4068,6 +4071,111 @@ Phone: +91 8369233566",
             "body": "Don't wait for the first leak to think about your building's facade safety. A well-maintained facade not only looks better but also protects the structural integrity of your investment. Contact Fine Glaze today for a professional inspection and monsoon-proofing services.\n\nEmail: info@fineglaze.com\nPhone: +91 8369233566\nWebsite: www.fineglaze.com"
         }
     ]
+},
+  "spider-glazing-systems-benefits-cost-india": {
+  "slug": "spider-glazing-systems-benefits-cost-india",
+  "title": "Spider Glazing Systems: A Complete Guide to Benefits, Design, and Cost in India",
+  "metaTitle": "Spider Glazing Systems Guide India | Benefits, Design & Cost",
+  "metaDescription": "Explore the world of spider glazing systems in India. Learn about structural glass benefits, design possibilities, installation process, and current market pricing.",
+  "keywords": [
+    "spider glazing",
+    "structural glass",
+    "point fixed glazing",
+    "glass facade india",
+    "spider glazing cost",
+    "frameless glass facade"
+  ],
+  "date": "2026-06-22",
+  "readTime": "8 min read",
+  "category": "Technical Guide",
+  "heroImage": "https://images.unsplash.com/photo-1511818966892-d7d671e672a2?w=1200&q=80",
+  "excerpt": "Spider glazing is the pinnacle of modern frameless glass architecture. Discover why this point-fixed system is becoming the preferred choice for premium commercial facades in India.",
+  "content": [
+    {
+      "heading": "Introduction to Spider Glazing",
+      "body": "Spider glazing is a high-tech solution for exterior bolted glass structures. It uses point-fixings to secure the glass panes to a support structure, creating a seamless, flush appearance that maximizes transparency. Named after the stainless steel 'spider' fittings that resemble the legs of an arachnid, this system has revolutionized modern architecture in India, allowing for expansive glass walls without the need for bulky frames."
+    },
+    {
+      "heading": "Key Components of a Spider Glazing System",
+      "body": "A typical spider glazing assembly consists of four main elements: the glass panels (usually toughened or laminated), the spider fittings (stainless steel arms), the routels (the bolts connecting the glass to the spider), and the support structure (which can be steel pipes, glass fins, or tension cables)."
+    },
+    {
+      "heading": "Advantages of Spider Glazing",
+      "list": [
+        "Maximum Transparency: Eliminates the need for vertical and horizontal profiles, providing unobstructed views.",
+        "Design Flexibility: Can be used on flat, curved, or sloped surfaces.",
+        "Durability: High-grade stainless steel (SS 304 or SS 316) ensures long-lasting performance even in coastal Indian climates.",
+        "Safety: Uses high-strength tempered or heat-strengthened glass that meets Indian safety standards.",
+        "Weather Resistance: Advanced sealants ensure the system is completely watertight and airtight."
+      ]
+    },
+    {
+      "heading": "Spider Glazing vs. Conventional Curtain Walls",
+      "body": "While both systems serve as building envelopes, they differ significantly in aesthetics and structural behavior.",
+      "table": {
+        "headers": [
+          "Feature",
+          "Spider Glazing",
+          "Conventional Curtain Wall"
+        ],
+        "rows": [
+          [
+            "Visibility",
+            "Maximum (Frameless)",
+            "Moderate (Visible Profiles)"
+          ],
+          [
+            "Support Structure",
+            "Point-fixed (Fins/Cables)",
+            "Grid-based (Mullions/Transoms)"
+          ],
+          [
+            "Installation Complexity",
+            "High (Precision required)",
+            "Moderate"
+          ],
+          [
+            "Cost",
+            "Premium",
+            "Standard to High"
+          ],
+          [
+            "Maintenance",
+            "Low (Easy glass cleaning)",
+            "Moderate (Profile cleaning)"
+          ]
+        ]
+      }
+    },
+    {
+      "heading": "Design Possibilities with Glass Fins",
+      "body": "One of the most elegant ways to support spider glazing is through glass fins. Instead of steel pipes, vertical glass strips provide the necessary structural support. This 'all-glass' look is highly sought after for luxury showrooms, corporate headquarters, and premium hotel lobbies across major Indian cities like Mumbai, Delhi, and Bangalore."
+    },
+    {
+      "heading": "Technical Specifications and Safety",
+      "body": "In India, spider glazing must adhere to safety standards such as IS 2553. The glass used is typically 12mm to 19mm thick toughened glass, or laminated glass for added safety in high-traffic areas. The stainless steel fittings are usually Grade 316 for superior corrosion resistance, especially in humid or coastal environments."
+    },
+    {
+      "heading": "The Installation Process",
+      "body": "Installation requires extreme precision. The process begins with the erection of the support structure, followed by the marking of point-fixings. Holes are factory-drilled in the glass panes with high accuracy. Once the spider fittings are mounted, the glass is hoisted and secured using routels. Finally, the joints are sealed with high-performance structural silicone."
+    },
+    {
+      "heading": "Maintenance and Longevity",
+      "body": "Spider glazing systems are remarkably low-maintenance. Because there are no horizontal ledges to trap dust and water, the glass stays cleaner for longer. Periodic inspection of the silicone seals and tightening of the routels (if necessary) ensures the system remains robust for decades."
+    },
+    {
+      "heading": "Cost of Spider Glazing in India",
+      "body": "The cost of spider glazing in India typically ranges from \u20b9800 to \u20b91,500 per square foot, depending on the glass thickness, the type of support structure (steel vs. glass fins), and the grade of stainless steel fittings used. Custom designs or curved glass can increase the price further."
+    },
+    {
+      "heading": "Why Choose Fine Glaze for Your Project?",
+      "body": "At Fine Glaze, we specialize in high-performance facade solutions. Our team of engineers and installers ensures that every spider glazing project is executed with surgical precision and meets the highest safety standards. From design conceptualization to final handover, we provide end-to-end services for premium commercial and residential projects."
+    },
+    {
+      "heading": "Contact Fine Glaze Today",
+      "body": "Ready to elevate your building's facade with a stunning spider glazing system? Contact our experts for a consultation and quote.\n\nEmail: info@fineglaze.com\nPhone: +91 8369233566\nWebsite: www.fineglaze.com"
+    }
+  ]
 },
 };
 
