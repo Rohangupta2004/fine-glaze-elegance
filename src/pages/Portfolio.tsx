@@ -89,59 +89,7 @@ const portfolioSchema = {
   })),
 };
 
-/* ── Featured project card — wide layout ── */
-function FeaturedProject({ p }: { p: Project }) {
-  return (
-    <FadeIn>
-      <Link
-        to={`/project/${p.slug}`}
-        className="group block bg-stone-900 overflow-hidden"
-      >
-        <div className="grid md:grid-cols-2">
-          {/* Image */}
-          <div className="relative h-[280px] md:h-[400px] overflow-hidden">
-            <img
-              src={p.image}
-              alt={p.title}
-              className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-700"
-              loading="lazy"
-            />
-            {p.isAwardWinner && (
-              <div className="absolute top-4 left-4 bg-amber-600 text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1.5">
-                Award Winner
-              </div>
-            )}
-          </div>
-
-          {/* Content */}
-          <div className="p-8 md:p-12 flex flex-col justify-center">
-            <p className="text-amber-400 text-[10px] font-bold tracking-[0.3em] uppercase mb-3">
-              Featured Project · {p.year}
-            </p>
-            <h3 className="text-2xl md:text-3xl font-bold text-white mb-3 group-hover:text-amber-400 transition-colors">
-              {p.title}
-            </h3>
-            <div className="flex items-center gap-1.5 text-stone-400 text-sm mb-4">
-              <MapPin size={13} />
-              <span>{p.location}</span>
-            </div>
-            <p className="text-stone-400 text-sm leading-relaxed mb-2">
-              <span className="text-stone-300 font-medium">Scope:</span> {p.scope}
-            </p>
-            <p className="text-stone-500 text-sm leading-relaxed mb-6 line-clamp-3">
-              {p.description}
-            </p>
-            <div className="flex items-center gap-2 text-amber-400 font-semibold text-sm group-hover:gap-3 transition-all">
-              View Full Project <ArrowRight size={14} />
-            </div>
-          </div>
-        </div>
-      </Link>
-    </FadeIn>
-  );
-}
-
-/* ── Standard project card — compact ── */
+/* ── Project card ── */
 function ProjectCard({ p, delay = 0 }: { p: Project; delay?: number }) {
   return (
     <FadeIn delay={delay}>
@@ -211,9 +159,7 @@ const Portfolio = () => {
             (active === "award" && p.isAwardWinner)
         );
 
-  // First project shown as featured
-  const featured = filtered[0];
-  const rest = filtered.slice(1);
+  // All projects in same grid — no featured
 
   return (
     <Layout darkHero>
@@ -327,19 +273,11 @@ const Portfolio = () => {
               No projects in this category yet.
             </p>
           ) : (
-            <>
-              {/* Featured (first project) */}
-              {featured && <FeaturedProject p={featured} />}
-
-              {/* Grid (remaining) */}
-              {rest.length > 0 && (
-                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-10">
-                  {rest.map((p, i) => (
-                    <ProjectCard key={p.id} p={p} delay={i * 60} />
-                  ))}
-                </div>
-              )}
-            </>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              {filtered.map((p, i) => (
+                <ProjectCard key={p.id} p={p} delay={i * 60} />
+              ))}
+            </div>
           )}
         </div>
       </section>
