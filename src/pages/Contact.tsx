@@ -168,7 +168,7 @@ const Contact = () => {
       {/* ════════════════════════════════════════════════════
           HERO — full-bleed cinematic
           ════════════════════════════════════════════════════ */}
-      <section className="relative h-[55vh] min-h-[380px] overflow-hidden">
+      <section className="relative h-[50vh] md:h-[55vh] min-h-[340px] overflow-hidden">
         <img
           src="/Glass installation.webp"
           alt="Fine Glaze — Contact us"
@@ -185,18 +185,18 @@ const Contact = () => {
           }}
         />
 
-        <div className="absolute inset-x-0 bottom-0 px-8 md:px-16 pb-12 md:pb-16">
-          <p className="text-amber-400 text-xs font-bold tracking-[0.4em] uppercase mb-4">
+        <div className="absolute inset-x-0 bottom-0 px-5 md:px-16 pb-8 md:pb-16">
+          <p className="text-amber-400 text-[10px] md:text-xs font-bold tracking-[0.4em] uppercase mb-3 md:mb-4">
             Fine Glaze · Get In Touch
           </p>
           <h1
-            className="font-extrabold text-white leading-[0.90] tracking-tight"
-            style={{ fontSize: "clamp(2.5rem, 6vw, 5.5rem)" }}
+            className="font-extrabold text-white leading-[0.92] tracking-tight"
+            style={{ fontSize: "clamp(2rem, 6vw, 5.5rem)" }}
           >
             Let's Build<br />
             <span className="text-gradient-gold">Together.</span>
           </h1>
-          <p className="mt-4 text-white/60 text-base md:text-lg max-w-md leading-relaxed">
+          <p className="mt-3 md:mt-4 text-white/60 text-sm md:text-lg max-w-md leading-relaxed">
             Free site consultation. Detailed quote within 24 hours.
           </p>
         </div>
@@ -206,28 +206,44 @@ const Contact = () => {
       {/* ════════════════════════════════════════════════════
           CONTACT STRIP — dark band with key info
           ════════════════════════════════════════════════════ */}
-      <section className="bg-stone-900 py-8">
-        <div className="container mx-auto px-6 md:px-16">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-0 md:divide-x md:divide-stone-700">
-            <a href="tel:+918369233566" className="text-center px-4 group">
-              <Phone size={18} className="text-amber-400 mx-auto mb-2" />
-              <p className="text-white font-semibold text-sm group-hover:text-amber-400 transition-colors">+91 83692 33566</p>
-              <p className="text-stone-500 text-[10px] uppercase tracking-widest mt-1">Call Us</p>
+      <section className="bg-stone-900 py-6 md:py-8">
+        <div className="container mx-auto px-5 md:px-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 md:gap-0 md:divide-x md:divide-stone-700">
+            <a href="tel:+918369233566" className="flex items-center gap-3 sm:flex-col sm:gap-0 sm:text-center px-4 py-2 sm:py-0 group">
+              <div className="w-9 h-9 sm:w-auto sm:h-auto bg-amber-400/10 sm:bg-transparent flex items-center justify-center shrink-0 sm:mb-2">
+                <Phone size={16} className="text-amber-400" />
+              </div>
+              <div className="sm:text-center">
+                <p className="text-white font-semibold text-sm group-hover:text-amber-400 transition-colors">+91 83692 33566</p>
+                <p className="text-stone-500 text-[10px] uppercase tracking-widest mt-0.5 sm:mt-1">Call Us</p>
+              </div>
             </a>
-            <a href="mailto:info@fineglaze.com" className="text-center px-4 group">
-              <Mail size={18} className="text-amber-400 mx-auto mb-2" />
-              <p className="text-white font-semibold text-sm group-hover:text-amber-400 transition-colors">info@fineglaze.com</p>
-              <p className="text-stone-500 text-[10px] uppercase tracking-widest mt-1">Email</p>
+            <a href="mailto:info@fineglaze.com" className="flex items-center gap-3 sm:flex-col sm:gap-0 sm:text-center px-4 py-2 sm:py-0 group">
+              <div className="w-9 h-9 sm:w-auto sm:h-auto bg-amber-400/10 sm:bg-transparent flex items-center justify-center shrink-0 sm:mb-2">
+                <Mail size={16} className="text-amber-400" />
+              </div>
+              <div className="sm:text-center">
+                <p className="text-white font-semibold text-sm group-hover:text-amber-400 transition-colors">info@fineglaze.com</p>
+                <p className="text-stone-500 text-[10px] uppercase tracking-widest mt-0.5 sm:mt-1">Email</p>
+              </div>
             </a>
-            <a href="https://maps.app.goo.gl/JDF3ESXQGHtwKoAr6" target="_blank" rel="noopener noreferrer" className="text-center px-4 group">
-              <MapPin size={18} className="text-amber-400 mx-auto mb-2" />
-              <p className="text-white font-semibold text-sm group-hover:text-amber-400 transition-colors">Undri, Pune 411060</p>
-              <p className="text-stone-500 text-[10px] uppercase tracking-widest mt-1">Office</p>
+            <a href="https://maps.app.goo.gl/JDF3ESXQGHtwKoAr6" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 sm:flex-col sm:gap-0 sm:text-center px-4 py-2 sm:py-0 group">
+              <div className="w-9 h-9 sm:w-auto sm:h-auto bg-amber-400/10 sm:bg-transparent flex items-center justify-center shrink-0 sm:mb-2">
+                <MapPin size={16} className="text-amber-400" />
+              </div>
+              <div className="sm:text-center">
+                <p className="text-white font-semibold text-sm group-hover:text-amber-400 transition-colors">Undri, Pune 411060</p>
+                <p className="text-stone-500 text-[10px] uppercase tracking-widest mt-0.5 sm:mt-1">Office</p>
+              </div>
             </a>
-            <div className="text-center px-4">
-              <Clock size={18} className="text-amber-400 mx-auto mb-2" />
-              <p className="text-white font-semibold text-sm">Mon – Sat, 9 AM – 6 PM</p>
-              <p className="text-stone-500 text-[10px] uppercase tracking-widest mt-1">Hours</p>
+            <div className="flex items-center gap-3 sm:flex-col sm:gap-0 sm:text-center px-4 py-2 sm:py-0">
+              <div className="w-9 h-9 sm:w-auto sm:h-auto bg-amber-400/10 sm:bg-transparent flex items-center justify-center shrink-0 sm:mb-2">
+                <Clock size={16} className="text-amber-400" />
+              </div>
+              <div className="sm:text-center">
+                <p className="text-white font-semibold text-sm">Mon – Sat, 9 AM – 6 PM</p>
+                <p className="text-stone-500 text-[10px] uppercase tracking-widest mt-0.5 sm:mt-1">Hours</p>
+              </div>
             </div>
           </div>
         </div>
@@ -275,9 +291,9 @@ const Contact = () => {
                   Office Address
                 </p>
                 <p className="text-sm text-stone-700 leading-relaxed">
-                  Shop No. 1 & 2, Ghule Premises,<br />
-                  Jagdamb Bhavan Road, Undri,<br />
-                  Pune – 411060, Maharashtra
+                  Shop No. 1 & 2, Jagdamba Bhawan Marg,<br />
+                  Near Sunshine Hills, Shree Siddhivinayak Meera,<br />
+                  Undri, Pune – 411060, Maharashtra
                 </p>
                 <a
                   href="https://maps.app.goo.gl/JDF3ESXQGHtwKoAr6"

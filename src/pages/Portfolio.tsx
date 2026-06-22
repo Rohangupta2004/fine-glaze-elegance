@@ -64,7 +64,7 @@ const portfolioSchema = {
     address: {
       "@type": "PostalAddress",
       streetAddress:
-        "Shop No. 1 & 2, Ghule Premises, Jagdamb Bhavan Road, Undri",
+        "Shop No. 1 & 2, Jagdamba Bhawan Marg, Near Sunshine Hills, Undri",
       addressLocality: "Pune",
       addressRegion: "Maharashtra",
       postalCode: "411060",
@@ -108,7 +108,7 @@ function ProjectCard({
         {/* Image */}
         <div className={cn(
           "relative overflow-hidden",
-          tall ? "h-[280px] md:h-[320px]" : "h-[220px] md:h-[260px]"
+          tall ? "h-[200px] sm:h-[280px] md:h-[320px]" : "h-[180px] sm:h-[220px] md:h-[260px]"
         )}>
           <img
             src={p.image}
@@ -196,7 +196,7 @@ const Portfolio = () => {
       {/* ════════════════════════════════════════════════════
           HERO — full-bleed cinematic
           ════════════════════════════════════════════════════ */}
-      <section className="relative h-[70vh] min-h-[480px] overflow-hidden">
+      <section className="relative h-[55vh] md:h-[70vh] min-h-[380px] md:min-h-[480px] overflow-hidden">
         <img
           src="/Unitized.webp"
           alt="Fine Glaze facade portfolio"
@@ -213,7 +213,7 @@ const Portfolio = () => {
           }}
         />
 
-        <div className="absolute inset-x-0 bottom-0 px-8 md:px-16 pb-14 md:pb-18">
+        <div className="absolute inset-x-0 bottom-0 px-5 md:px-16 pb-10 md:pb-18">
           <p className="text-amber-400 text-xs font-bold tracking-[0.4em] uppercase mb-4">
             Fine Glaze · Portfolio
           </p>
