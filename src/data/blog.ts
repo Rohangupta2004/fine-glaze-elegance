@@ -1933,7 +1933,7 @@ export const blogPosts: Record<string, BlogPost> = {
         }
     ]
 },
-  {
+  "building-envelope-thermal-performance-india": {
     slug: "building-envelope-thermal-performance-india",
     title: "Optimizing Building Envelope Thermal Performance in Indian Climates",
     metaTitle: "Building Envelope Thermal Performance Guide India | Fine Glaze",
@@ -2559,7 +2559,7 @@ Phone: +91 8369233566",
     }
   ]
 },
-  {
+  "smart-glass-facade-benefits-cost-india": {
     slug: "smart-glass-facade-benefits-cost-india",
     title: "Smart Glass Facades: The Future of Energy-Efficient Buildings in India",
     metaTitle: "Smart Glass Facade Benefits & Cost in India | Fine Glaze",
@@ -3306,7 +3306,7 @@ Phone: +91 8369233566",
     }
   ]
 },
-  {
+  "frameless-glass-facade-vs-framed-systems-india": {
     slug: "frameless-glass-facade-vs-framed-systems-india",
     title: "Frameless Glass Facades vs. Framed Systems: Which is Right for Your Building?",
     metaTitle: "Frameless vs. Framed Glass Facades: Comparison Guide India",
@@ -3368,7 +3368,7 @@ Phone: +91 8369233566",
       }
     ]
   },
-  {
+  "double-glazing-vs-triple-glazing-india-guide": {
     slug: "double-glazing-vs-triple-glazing-india-guide",
     title: "Double Glazing vs. Triple Glazing: Which is Better for Indian Climates?",
     metaTitle: "Double Glazing vs Triple Glazing India | Cost & Benefits Guide 2026",
