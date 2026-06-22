@@ -1,20 +1,49 @@
 import { useState } from "react";
 import { Layout } from "@/components/layout/Layout";
-import { useProjects } from "@/hooks/useProjects";
+import { CTASection } from "@/components/home/CTASection";
+import { useProjects, type Project } from "@/hooks/useProjects";
 import { projectsData } from "@/data/projects";
 import { Link } from "react-router-dom";
-import { MapPin, ArrowRight, Trophy, Calendar } from "lucide-react";
+import { MapPin, ArrowRight } from "lucide-react";
 import SEO from "@/components/SEO";
 import { Helmet } from "react-helmet-async";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { cn } from "@/lib/utils";
 
-// Static projects for SSR/SSG schema (always available at build time)
+/* ─── Reusable fade-in wrapper ─── */
+function FadeIn({
+  children,
+  className,
+  delay = 0,
+}: {
+  children: React.ReactNode;
+  className?: string;
+  delay?: number;
+}) {
+  const { ref, isVisible } = useScrollAnimation();
+  return (
+    <div
+      ref={ref}
+      className={cn(
+        "transition-all duration-700",
+        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8",
+        className
+      )}
+      style={{ transitionDelay: `${delay}ms` }}
+    >
+      {children}
+    </div>
+  );
+}
+
+// Static projects for schema
 const staticProjects = Object.entries(projectsData).map(([slug, p]) => ({
   slug,
   ...p,
 }));
 
-const tabs = [
-  { id: "all", label: "All Projects" },
+const TABS = [
+  { id: "all", label: "All" },
   { id: "corporate", label: "Corporate" },
   { id: "residential", label: "Residential" },
   { id: "award", label: "Award Winning" },
@@ -23,35 +52,35 @@ const tabs = [
 const portfolioSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "Fine Glaze Project Portfolio",
-  "description":
+  name: "Fine Glaze Project Portfolio",
+  description:
     "Landmark facade projects delivered across Maharashtra — curtain walls, structural glazing, ACP cladding, and glass railings.",
-  "url": "https://fineglaze.com/portfolio",
-  "provider": {
+  url: "https://fineglaze.com/portfolio",
+  provider: {
     "@type": "LocalBusiness",
-    "name": "Fine Glaze",
-    "url": "https://fineglaze.com",
-    "telephone": "+91-8369233566",
-    "address": {
+    name: "Fine Glaze",
+    url: "https://fineglaze.com",
+    telephone: "+91-8369233566",
+    address: {
       "@type": "PostalAddress",
-      "streetAddress":
+      streetAddress:
         "Shop No. 1 & 2, Ghule Premises, Jagdamb Bhavan Road, Undri",
-      "addressLocality": "Pune",
-      "addressRegion": "Maharashtra",
-      "postalCode": "411060",
-      "addressCountry": "IN",
+      addressLocality: "Pune",
+      addressRegion: "Maharashtra",
+      postalCode: "411060",
+      addressCountry: "IN",
     },
   },
-  "hasPart": staticProjects.map((p) => ({
+  hasPart: staticProjects.map((p) => ({
     "@type": "CreativeWork",
-    "name": p.title,
-    "description": p.scope,
-    "locationCreated": { "@type": "Place", "name": p.location },
-    "dateCreated": p.year,
-    "creator": { "@type": "Organization", "name": "Fine Glaze" },
-    "url": `https://fineglaze.com/project/${p.slug}`,
-    "image": `https://fineglaze.com${p.image}`,
-    "genre":
+    name: p.title,
+    description: p.scope,
+    locationCreated: { "@type": "Place", name: p.location },
+    dateCreated: p.year,
+    creator: { "@type": "Organization", name: "Fine Glaze" },
+    url: `https://fineglaze.com/project/${p.slug}`,
+    image: `https://fineglaze.com${p.image}`,
+    genre:
       p.category === "corporate"
         ? "Commercial Facade"
         : p.category === "residential"
@@ -59,6 +88,115 @@ const portfolioSchema = {
         : "Award-Winning Facade",
   })),
 };
+
+/* ── Featured project card — wide layout ── */
+function FeaturedProject({ p }: { p: Project }) {
+  return (
+    <FadeIn>
+      <Link
+        to={`/project/${p.slug}`}
+        className="group block bg-stone-900 overflow-hidden"
+      >
+        <div className="grid md:grid-cols-2">
+          {/* Image */}
+          <div className="relative h-[280px] md:h-[400px] overflow-hidden">
+            <img
+              src={p.image}
+              alt={p.title}
+              className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-700"
+              loading="lazy"
+            />
+            {p.isAwardWinner && (
+              <div className="absolute top-4 left-4 bg-amber-600 text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1.5">
+                Award Winner
+              </div>
+            )}
+          </div>
+
+          {/* Content */}
+          <div className="p-8 md:p-12 flex flex-col justify-center">
+            <p className="text-amber-400 text-[10px] font-bold tracking-[0.3em] uppercase mb-3">
+              Featured Project · {p.year}
+            </p>
+            <h3 className="text-2xl md:text-3xl font-bold text-white mb-3 group-hover:text-amber-400 transition-colors">
+              {p.title}
+            </h3>
+            <div className="flex items-center gap-1.5 text-stone-400 text-sm mb-4">
+              <MapPin size={13} />
+              <span>{p.location}</span>
+            </div>
+            <p className="text-stone-400 text-sm leading-relaxed mb-2">
+              <span className="text-stone-300 font-medium">Scope:</span> {p.scope}
+            </p>
+            <p className="text-stone-500 text-sm leading-relaxed mb-6 line-clamp-3">
+              {p.description}
+            </p>
+            <div className="flex items-center gap-2 text-amber-400 font-semibold text-sm group-hover:gap-3 transition-all">
+              View Full Project <ArrowRight size={14} />
+            </div>
+          </div>
+        </div>
+      </Link>
+    </FadeIn>
+  );
+}
+
+/* ── Standard project card — compact ── */
+function ProjectCard({ p, delay = 0 }: { p: Project; delay?: number }) {
+  return (
+    <FadeIn delay={delay}>
+      <Link
+        to={`/project/${p.slug}`}
+        className="group block overflow-hidden bg-white border border-stone-100 hover:border-stone-300 transition-all duration-300"
+      >
+        {/* Image */}
+        <div className="relative h-[220px] overflow-hidden">
+          <img
+            src={p.image}
+            alt={p.title}
+            className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-700"
+            loading="lazy"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+          {/* Year label */}
+          <div className="absolute bottom-3 left-4 text-white/70 text-[10px] font-bold tracking-widest uppercase">
+            {p.year}
+          </div>
+          {p.isAwardWinner && (
+            <div className="absolute top-3 left-4 bg-amber-600 text-white text-[9px] font-bold uppercase tracking-widest px-2.5 py-1">
+              Award
+            </div>
+          )}
+        </div>
+
+        {/* Content */}
+        <div className="p-5">
+          <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-stone-400 mb-2">
+            {p.category === "award"
+              ? "Award Winner"
+              : p.category === "corporate"
+              ? "Corporate"
+              : "Residential"}{" "}
+            · {p.client}
+          </p>
+          <h3 className="text-base font-bold text-stone-900 mb-1.5 group-hover:text-amber-700 transition-colors leading-snug">
+            {p.title}
+          </h3>
+          <div className="flex items-center gap-1.5 text-stone-400 text-xs mb-3">
+            <MapPin size={11} />
+            <span>{p.location}</span>
+          </div>
+          <p className="text-stone-500 text-xs leading-relaxed line-clamp-2 mb-4">
+            {p.scope}
+          </p>
+          <div className="flex items-center gap-1.5 text-stone-900 font-semibold text-xs group-hover:text-amber-700 group-hover:gap-2.5 transition-all">
+            View Project <ArrowRight size={12} />
+          </div>
+        </div>
+      </Link>
+    </FadeIn>
+  );
+}
 
 const Portfolio = () => {
   const { projects } = useProjects();
@@ -72,6 +210,10 @@ const Portfolio = () => {
             p.category === active ||
             (active === "award" && p.isAwardWinner)
         );
+
+  // First project shown as featured
+  const featured = filtered[0];
+  const rest = filtered.slice(1);
 
   return (
     <Layout darkHero>
@@ -88,150 +230,125 @@ const Portfolio = () => {
         </script>
       </Helmet>
 
-      {/* HERO */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
-        <div className="absolute inset-0">
-          <img
-            src="/Unitized.webp"
-            alt=""
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-slate-900/85 via-slate-900/75 to-slate-900/90" />
+      {/* ════════════════════════════════════════════════════
+          HERO — full-bleed cinematic photo
+          ════════════════════════════════════════════════════ */}
+      <section className="relative h-[70vh] min-h-[480px] overflow-hidden">
+        <img
+          src="/Unitized.webp"
+          alt="Fine Glaze facade portfolio"
+          className="absolute inset-0 w-full h-full object-cover"
+          loading="eager"
+          style={{ animation: "pfZoom 22s ease-in-out infinite alternate" }}
+        />
+        <style>{`@keyframes pfZoom { from { transform: scale(1.0); } to { transform: scale(1.06); } }`}</style>
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.20) 35%, rgba(0,0,0,0.50) 65%, rgba(0,0,0,0.90) 100%)",
+          }}
+        />
+
+        <div className="absolute inset-x-0 bottom-0 px-8 md:px-16 pb-14 md:pb-18">
+          <p className="text-amber-400 text-xs font-bold tracking-[0.4em] uppercase mb-4">
+            Fine Glaze · Portfolio
+          </p>
+          <h1
+            className="font-extrabold text-white leading-[0.90] tracking-tight"
+            style={{ fontSize: "clamp(2.8rem, 7vw, 7rem)" }}
+          >
+            Built at<br />
+            <span className="text-gradient-gold">Landmark</span> Scale.
+          </h1>
+          <p className="mt-5 text-white/65 text-base md:text-lg max-w-lg leading-relaxed">
+            From international airports to corporate campuses — every project reflects
+            precision execution and architectural clarity.
+          </p>
         </div>
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-3xl">
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/15 border border-amber-500/30 text-amber-300 text-xs font-bold uppercase tracking-wider mb-5">
-              <Trophy size={14} />
-              Award-Winning Execution
-            </span>
-            <h1 className="text-4xl md:text-6xl font-extrabold leading-tight text-white mb-5">
-              Built at{" "}
-              <span className="text-gradient-gold">Landmark Scale</span>
-            </h1>
-            <p className="text-lg text-white/80 max-w-2xl leading-relaxed">
-              From international airports to corporate campuses and luxury
-              residences — every project reflects precision execution, safety-first
-              methodology, and uncompromising architectural clarity.
-            </p>
+      </section>
+
+
+      {/* ════════════════════════════════════════════════════
+          STATS — dark horizontal band
+          ════════════════════════════════════════════════════ */}
+      <section className="bg-stone-900 py-8">
+        <div className="container mx-auto px-6 md:px-16">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-0 md:divide-x md:divide-stone-700">
+            {[
+              { number: "10+", label: "Projects Completed" },
+              { number: "5+", label: "Years in Facade" },
+              { number: "3", label: "Cities Covered" },
+              { number: "1", label: "Award Won" },
+            ].map((s) => (
+              <div key={s.label} className="text-center px-4">
+                <p className="text-2xl font-bold text-white">{s.number}</p>
+                <p className="text-stone-500 text-[10px] uppercase tracking-widest mt-1">{s.label}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* FILTER TABS */}
-      <section className="sticky top-16 lg:top-20 z-30 border-y bg-white/95 backdrop-blur-md">
-        <div className="container mx-auto px-4 flex items-center gap-2 py-3 flex-wrap">
-          {tabs.map((t) => (
+
+      {/* ════════════════════════════════════════════════════
+          FILTER — underline text tabs
+          ════════════════════════════════════════════════════ */}
+      <section className="sticky top-16 lg:top-20 z-30 bg-white border-b border-stone-200">
+        <div className="container mx-auto px-6 md:px-16 flex items-center gap-6 md:gap-8">
+          {TABS.map((t) => (
             <button
               key={t.id}
               onClick={() => setActive(t.id)}
-              className={`px-4 py-1.5 rounded-full text-sm font-semibold tracking-wide transition-all duration-200 ${
+              className={cn(
+                "py-4 text-sm font-semibold tracking-wide transition-all duration-200 border-b-2 -mb-px",
                 active === t.id
-                  ? "bg-primary text-white shadow-sm"
-                  : "bg-card border border-border text-muted-foreground hover:text-foreground hover:border-primary/30"
-              }`}
+                  ? "border-stone-900 text-stone-900"
+                  : "border-transparent text-stone-400 hover:text-stone-600"
+              )}
             >
               {t.label}
             </button>
           ))}
-          <span className="ml-auto text-xs text-muted-foreground font-medium">
+          <span className="ml-auto text-xs text-stone-400 font-medium hidden sm:block">
             {filtered.length} {filtered.length === 1 ? "project" : "projects"}
           </span>
         </div>
       </section>
 
-      {/* PROJECT GRID */}
-      <section className="container mx-auto px-4 py-16">
-        {filtered.length === 0 ? (
-          <p className="text-center text-muted-foreground py-20">
-            No projects in this category yet.
-          </p>
-        ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {filtered.map((p) => (
-              <Link
-                key={p.id}
-                to={`/project/${p.slug}`}
-                className="group relative bg-card rounded-2xl overflow-hidden border border-border hover:border-primary/30 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col"
-              >
-                {/* Image */}
-                <div className="relative aspect-[4/3] overflow-hidden bg-muted">
-                  <img
-                    src={p.image}
-                    alt={p.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    loading="lazy"
-                  />
-                  {p.isAwardWinner && (
-                    <span className="absolute top-3 left-3 inline-flex items-center gap-1.5 bg-amber-500 text-white text-[11px] font-bold px-3 py-1 rounded-full shadow-md uppercase tracking-wide">
-                      <Trophy size={12} />
-                      Award
-                    </span>
-                  )}
-                  <span className="absolute top-3 right-3 inline-flex items-center gap-1 bg-black/70 backdrop-blur-sm text-white text-[11px] font-semibold px-2.5 py-1 rounded-full">
-                    <Calendar size={11} />
-                    {p.year}
-                  </span>
+
+      {/* ════════════════════════════════════════════════════
+          PROJECTS
+          ════════════════════════════════════════════════════ */}
+      <section className="py-12 md:py-16 bg-stone-50">
+        <div className="container mx-auto px-6 md:px-16">
+          {filtered.length === 0 ? (
+            <p className="text-center text-stone-400 py-20">
+              No projects in this category yet.
+            </p>
+          ) : (
+            <>
+              {/* Featured (first project) */}
+              {featured && <FeaturedProject p={featured} />}
+
+              {/* Grid (remaining) */}
+              {rest.length > 0 && (
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-10">
+                  {rest.map((p, i) => (
+                    <ProjectCard key={p.id} p={p} delay={i * 60} />
+                  ))}
                 </div>
-
-                {/* Content */}
-                <div className="p-5 flex flex-col flex-1">
-                  <h3 className="text-lg font-bold leading-tight text-foreground group-hover:text-primary transition-colors mb-2 line-clamp-2">
-                    {p.title}
-                  </h3>
-
-                  <div className="flex items-center text-muted-foreground text-sm mb-3">
-                    <MapPin size={14} className="mr-1.5 shrink-0" />
-                    <span className="truncate">{p.location}</span>
-                  </div>
-
-                  <p className="text-sm text-muted-foreground line-clamp-2 mb-4 flex-1">
-                    {p.scope}
-                  </p>
-
-                  <div className="flex items-center justify-between pt-3 border-t border-border/60">
-                    <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground/80">
-                      {p.category === "award"
-                        ? "Award Winner"
-                        : p.category === "corporate"
-                        ? "Corporate"
-                        : p.category === "residential"
-                        ? "Residential"
-                        : "Project"}
-                    </span>
-                    <span className="inline-flex items-center text-primary font-semibold text-sm group-hover:gap-2 gap-1 transition-all">
-                      View
-                      <ArrowRight
-                        size={14}
-                        className="group-hover:translate-x-0.5 transition-transform"
-                      />
-                    </span>
-                  </div>
-                </div>
-              </Link>
-            ))}
-          </div>
-        )}
-      </section>
-
-      {/* CTA */}
-      <section className="bg-muted/40 border-t border-border py-16">
-        <div className="container mx-auto px-4 text-center max-w-2xl">
-          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-3">
-            Have a project in mind?
-          </h2>
-          <p className="text-muted-foreground mb-6">
-            Tell us about your building. Free site visit, transparent scope, and
-            a proper proposal within 48 hours.
-          </p>
-          <Link
-            to="/contact"
-            className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-7 py-3.5 rounded-lg transition-colors"
-          >
-            Start a Conversation
-            <ArrowRight size={16} />
-          </Link>
+              )}
+            </>
+          )}
         </div>
       </section>
+
+
+      {/* ════════════════════════════════════════════════════
+          CTA
+          ════════════════════════════════════════════════════ */}
+      <CTASection />
     </Layout>
   );
 };
