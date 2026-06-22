@@ -18,11 +18,8 @@ import {
   Star,
   Trophy,
   IndianRupee,
-  Clock,
   Layers,
 } from "lucide-react";
-import { ServiceHero } from "@/components/ServiceHero";
-import { useSiteMedia } from "@/hooks/useSiteMedia";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { cn } from "@/lib/utils";
 
@@ -52,9 +49,23 @@ function FadeIn({
   );
 }
 
-export default function StructuralGlazing() {
-  const { getMedia } = useSiteMedia();
+/* ── High-quality Unsplash image URLs ── */
+const IMG = {
+  hero: "https://images.unsplash.com/photo-1430417934865-589b63ad5c00?fm=jpg&q=85&w=2400&auto=format&fit=crop",
+  advantages1: "https://images.unsplash.com/photo-1523477593243-78bbf626fd3b?fm=jpg&q=80&w=900&auto=format&fit=crop",
+  advantages2: "https://images.unsplash.com/photo-1589282741585-30ab896335cd?fm=jpg&q=80&w=900&auto=format&fit=crop",
+  advantages3: "https://images.unsplash.com/photo-1556922340-19e175199d3d?fm=jpg&q=80&w=900&auto=format&fit=crop",
+  solutions: "https://images.unsplash.com/photo-1525119488448-d549af0dc221?fm=jpg&q=80&w=900&auto=format&fit=crop",
+  type2side: "https://images.unsplash.com/photo-1469981283837-561b3779462f?fm=jpg&q=80&w=900&auto=format&fit=crop",
+  type4side: "https://images.unsplash.com/photo-1621831337128-35676ca30868?fm=jpg&q=80&w=900&auto=format&fit=crop",
+  typeSpider: "https://images.unsplash.com/photo-1509024368907-57294758cfc5?fm=jpg&q=80&w=900&auto=format&fit=crop",
+  typeCanopy: "https://images.unsplash.com/photo-1486927181919-3ac1fc3a8082?fm=jpg&q=80&w=900&auto=format&fit=crop",
+  project1: "/ltimindtree-mensa-campus-mahape-navi-mumbai-1 (1).webp",
+  project2: "/Embassyoark.webp",
+  project3: "/Embassy.webp",
+};
 
+export default function StructuralGlazing() {
   /* ─── Schema ─── */
   const serviceSchema = {
     "@context": "https://schema.org",
@@ -74,33 +85,14 @@ export default function StructuralGlazing() {
         addressRegion: "Maharashtra",
         addressCountry: "IN",
       },
-      aggregateRating: {
-        "@type": "AggregateRating",
-        ratingValue: "4.9",
-        reviewCount: "29",
-        bestRating: "5",
-      },
     },
     areaServed: [
       { "@type": "City", name: "Pune" },
       { "@type": "City", name: "Mumbai" },
       { "@type": "City", name: "Navi Mumbai" },
-      { "@type": "City", name: "Nashik" },
-      { "@type": "State", name: "Maharashtra" },
     ],
     description:
       "Frameless structural glazing systems — 2-side, 4-side & spider glazing for commercial buildings, showrooms, and premium architecture across India. ₹350–₹1,500/sq ft.",
-    offers: {
-      "@type": "Offer",
-      priceCurrency: "INR",
-      priceSpecification: {
-        "@type": "PriceSpecification",
-        minPrice: "350",
-        maxPrice: "1500",
-        priceCurrency: "INR",
-        unitText: "per sq ft",
-      },
-    },
   };
 
   const breadcrumbSchema = {
@@ -122,7 +114,7 @@ export default function StructuralGlazing() {
         name: "What is structural glazing and how does it work?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Structural glazing is a method of bonding glass to an aluminium frame using structural silicone sealant instead of mechanical fixings. This creates a seamless, frameless glass appearance on the building exterior while maintaining structural integrity against wind loads and weather.",
+          text: "Structural glazing bonds glass to an aluminium frame using structural silicone sealant instead of mechanical fixings — creating a seamless, frameless glass appearance while maintaining structural integrity.",
         },
       },
       {
@@ -130,23 +122,7 @@ export default function StructuralGlazing() {
         name: "How much does structural glazing cost per sq ft in India in 2026?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Standard 2-side structural glazing ranges from ₹350–₹550 per sq ft. Premium 4-side structural glazing starts at ₹500–₹800 per sq ft. Spider glazing systems range from ₹800–₹1,500 per sq ft depending on glass type and fittings.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "Is structural glazing safe for high-rise buildings?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Yes. Structural glazing systems are engineered to IS 875 standards and can withstand wind loads of 1.5 to 4.5 kPa. Fine Glaze uses high-performance structural silicone (Dow Corning / Sika) rated for 25+ years of adhesion strength.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "How long does a structural glazing installation take?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Typically 2–6 weeks depending on facade area and building height. Fine Glaze works with detailed installation schedules and milestone-based handovers, with a track record of on-time delivery.",
+          text: "Standard 2-side SSG: ₹350–₹550/sq ft. Premium 4-side SSG: ₹500–₹800/sq ft. Spider glazing: ₹800–₹1,500/sq ft.",
         },
       },
     ],
@@ -162,21 +138,106 @@ export default function StructuralGlazing() {
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}
       />
 
-      {/* ── HERO ── */}
-      <ServiceHero
-        image={getMedia("structural_glazing_hero", "/Embassy.webp")}
-        titleLead="Structural "
-        titleAccent="Glazing Systems"
-        titleTail=" in India"
-        subtitle="Frameless structural glazing delivering maximum transparency, elegance, and performance for modern buildings by Fine Glaze."
-        features={[
-          { icon: Building2, title: "Aesthetic Appeal", description: "Sleek, frameless look with unobstructed views." },
-          { icon: Sun, title: "Natural Light", description: "Maximizes daylight, cuts artificial lighting." },
-          { icon: ShieldCheck, title: "Durability", description: "High-grade silicone & fittings that last 25+ years." },
-          { icon: Wrench, title: "Low Maintenance", description: "Easy to clean with minimal hardware." },
-          { icon: Leaf, title: "Energy Efficient", description: "Reduces heat gain, improves insulation." },
-        ]}
-      />
+      {/* ════════════════════════════════════════════════════
+          HERO — full-bleed photo + gradient text overlay
+          ════════════════════════════════════════════════════ */}
+      <section className="relative min-h-screen flex items-end overflow-hidden">
+        {/* Background image */}
+        <img
+          src={IMG.hero}
+          alt="Structural glazing glass facade high-rise building — Fine Glaze"
+          className="absolute inset-0 w-full h-full object-cover object-center"
+          loading="eager"
+        />
+
+        {/* Multi-stop gradient overlay — dark at bottom for readability, subtle at top */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.15) 40%, rgba(5,10,20,0.82) 75%, rgba(5,10,20,0.95) 100%)",
+          }}
+        />
+
+        {/* Ambient left-side glow */}
+        <div
+          className="absolute inset-y-0 left-0 w-2/3 pointer-events-none"
+          style={{
+            background:
+              "linear-gradient(to right, rgba(180,100,20,0.12) 0%, transparent 100%)",
+          }}
+        />
+
+        {/* Content */}
+        <div className="relative z-10 container mx-auto px-6 md:px-12 pb-24 pt-48">
+          <div className="max-w-3xl">
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/20 border border-amber-400/40 text-amber-300 text-xs font-bold uppercase tracking-widest mb-6 backdrop-blur-sm">
+              <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
+              Fine Glaze · Structural Glazing
+            </div>
+
+            <h1 className="text-5xl md:text-6xl xl:text-7xl font-extrabold text-white leading-[1.05] mb-6">
+              Frameless{" "}
+              <span className="text-transparent bg-clip-text"
+                style={{ backgroundImage: "linear-gradient(135deg, #f59e0b 0%, #fbbf24 50%, #fde68a 100%)" }}>
+                Structural<br />Glazing
+              </span>{" "}
+              Systems
+            </h1>
+
+            <p className="text-lg md:text-xl text-white/75 mb-10 max-w-2xl leading-relaxed">
+              Precision-engineered structural silicone glazing for commercial buildings, IT campuses
+              and showrooms across Pune, Mumbai & Maharashtra. Trusted by Embassy REIT and LTIMindtree.
+            </p>
+
+            {/* CTAs */}
+            <div className="flex flex-wrap gap-4 mb-14">
+              <Link to="/contact">
+                <Button
+                  size="lg"
+                  className="bg-amber-500 hover:bg-amber-600 text-slate-900 font-bold px-8 py-6 text-base shadow-xl shadow-amber-900/30 hover:shadow-amber-900/50 transition-all"
+                >
+                  Get Free Quote <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </Link>
+              <a href="tel:+918369233566">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-white/40 text-white bg-white/10 hover:bg-white hover:text-slate-900 px-8 py-6 text-base backdrop-blur-sm transition-all"
+                >
+                  <Phone className="mr-2 h-4 w-4" /> Call Expert
+                </Button>
+              </a>
+            </div>
+
+            {/* Feature icons */}
+            <div className="grid grid-cols-3 sm:grid-cols-5 gap-4 border-t border-white/15 pt-8">
+              {[
+                { icon: Building2, label: "Frameless Look" },
+                { icon: Sun, label: "Max Daylight" },
+                { icon: ShieldCheck, label: "25yr Silicone" },
+                { icon: Wrench, label: "Low Maintenance" },
+                { icon: Leaf, label: "Energy Efficient" },
+              ].map(({ icon: Icon, label }) => (
+                <div key={label} className="flex flex-col items-center gap-2 text-center group">
+                  <div className="w-10 h-10 rounded-xl bg-white/10 border border-white/15 flex items-center justify-center text-amber-400 group-hover:bg-amber-500 group-hover:text-white transition-all backdrop-blur-sm">
+                    <Icon size={18} />
+                  </div>
+                  <span className="text-white/70 text-xs font-medium">{label}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Scroll indicator */}
+        <div className="absolute bottom-8 right-8 flex flex-col items-center gap-2 z-10">
+          <span className="text-white/40 text-xs uppercase tracking-[0.2em] rotate-90 origin-center mb-2">Scroll</span>
+          <div className="w-px h-16 bg-gradient-to-b from-white/40 to-transparent" />
+        </div>
+      </section>
 
       {/* ── STATS BAR ── */}
       <section className="bg-amber-600 text-white py-10">
@@ -233,7 +294,7 @@ export default function StructuralGlazing() {
         </div>
       </section>
 
-      {/* ── ADVANTAGES — 3 real project photos ── */}
+      {/* ── ADVANTAGES — 3 photos ── */}
       <section className="py-20 bg-muted">
         <div className="container mx-auto px-4 max-w-6xl">
           <FadeIn>
@@ -245,24 +306,24 @@ export default function StructuralGlazing() {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                img: "/Embassyoark.webp",
-                alt: "Frameless glazed facade - Fine Glaze project",
+                img: IMG.advantages1,
+                alt: "Architectural glass building facade — structural glazing",
                 title: "Frameless Appearance",
-                desc: "Clean glass surfaces with no visible external frames — a stunning modern aesthetic, as seen on our award-winning Embassy 247 project.",
+                desc: "Clean glass surfaces with no visible external frames — a stunning modern aesthetic for premium office buildings and corporate campuses.",
                 delay: 0,
               },
               {
-                img: "/Glass installation.webp",
-                alt: "Structural glazing installation by Fine Glaze team",
-                title: "Expert Installation",
-                desc: "Certified glazing crews use vacuum lifters and suspended platforms for precision panel placement. Zero safety incidents across all projects.",
+                img: IMG.advantages2,
+                alt: "Glass walled high-rise building under blue sky",
+                title: "Maximum Transparency",
+                desc: "Full floor-to-ceiling glass panels maximise natural daylight penetration while maintaining thermal performance with Low-E coatings.",
                 delay: 100,
               },
               {
-                img: "/ltimindtree-mensa-campus-mahape-navi-mumbai-1 (1).webp",
-                alt: "LTIMindtree campus - structural glazing Navi Mumbai",
+                img: IMG.advantages3,
+                alt: "Grey glass building facade close-up — structural silicone glazing",
                 title: "25-Year Structural Strength",
-                desc: "Engineered to IS 875 standards using Dow Corning / Sika silicone rated for 25+ years — proven on high-rise campuses like LTIMindtree.",
+                desc: "Engineered to IS 875 standards with Dow Corning / Sika silicone rated for 25+ years of adhesion and weather resistance.",
                 delay: 200,
               },
             ].map((item) => (
@@ -319,8 +380,8 @@ export default function StructuralGlazing() {
             <FadeIn delay={150}>
               <div className="relative rounded-2xl overflow-hidden shadow-xl h-[420px]">
                 <img
-                  src="/Glass installation.webp"
-                  alt="Fine Glaze team installing structural glazing panels on high-rise"
+                  src={IMG.solutions}
+                  alt="Curtain wall glass facade building — Fine Glaze structural glazing"
                   className="w-full h-full object-cover"
                   loading="lazy"
                   width="600"
@@ -365,8 +426,8 @@ export default function StructuralGlazing() {
                 ],
                 bestFor: "IT parks, commercial offices, showroom facades",
                 price: "₹350 – ₹550 / sq ft",
-                image: "/Business park.webp",
-                imageAlt: "2-side SSG office building facade — Fine Glaze",
+                image: IMG.type2side,
+                imageAlt: "2-side SSG glass building facade",
                 delay: 0,
               },
               {
@@ -382,15 +443,15 @@ export default function StructuralGlazing() {
                 ],
                 bestFor: "High-rise towers, luxury hotels, airport terminals",
                 price: "₹500 – ₹800 / sq ft",
-                image: "/Embassy.webp",
-                imageAlt: "4-side SSG premium corporate campus — Fine Glaze",
+                image: IMG.type4side,
+                imageAlt: "4-side SSG white and blue glass building",
                 delay: 100,
               },
               {
                 name: "Spider / Point-Fixed Glazing",
                 tagline: "Glass suspended by SS316 spider fittings",
                 description:
-                  "Glass panels held by stainless steel spiders at precise drilled points — a near-invisible structural connection maximising transparency, popular for atrium walls.",
+                  "Glass panels held by stainless steel spiders at precisely drilled points — a near-invisible structural connection maximising transparency, popular for atrium walls.",
                 specs: [
                   "12mm – 19mm laminated safety glass",
                   "SS 316 marine-grade spider fittings",
@@ -399,8 +460,8 @@ export default function StructuralGlazing() {
                 ],
                 bestFor: "Atrium walls, grand lobbies, feature facades",
                 price: "₹800 – ₹1,500 / sq ft",
-                image: "/Glazing.webp",
-                imageAlt: "Spider point-fixed glazing with SS316 fittings — Fine Glaze",
+                image: IMG.typeSpider,
+                imageAlt: "Spider point-fixed glazing metal structure",
                 delay: 0,
               },
               {
@@ -416,8 +477,8 @@ export default function StructuralGlazing() {
                 ],
                 bestFor: "Building entrances, shopping malls, sky bridges",
                 price: "On request",
-                image: "/Embassyoark.webp",
-                imageAlt: "Frameless glass canopy entrance — Fine Glaze structural glazing",
+                image: IMG.typeCanopy,
+                imageAlt: "Frameless glass canopy geometric structure",
                 delay: 100,
               },
             ].map((type) => (
@@ -432,7 +493,6 @@ export default function StructuralGlazing() {
                       width="600"
                       height="208"
                     />
-                    {/* Price badge */}
                     <div className="absolute top-4 right-4 bg-amber-600 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg flex items-center gap-1">
                       <IndianRupee size={11} />
                       {type.price.replace("₹", "")}
@@ -452,7 +512,7 @@ export default function StructuralGlazing() {
                         </li>
                       ))}
                     </ul>
-                    <div className="mt-auto pt-4 border-t border-border flex items-center justify-between">
+                    <div className="mt-auto pt-4 border-t border-border">
                       <p className="text-xs text-slate-500">
                         <span className="font-semibold text-slate-700">Best for:</span> {type.bestFor}
                       </p>
@@ -473,7 +533,7 @@ export default function StructuralGlazing() {
               <div>
                 <h2 className="text-3xl font-bold mb-2">Our Structural Glazing Projects</h2>
                 <p className="text-muted-foreground max-w-xl">
-                  From corporate campuses to commercial towers — precision structural glazing across Maharashtra's most prominent buildings.
+                  Precision structural glazing across Maharashtra's most prominent buildings.
                 </p>
               </div>
               <Link to="/portfolio" className="hidden md:flex items-center gap-2 text-amber-600 hover:text-amber-700 font-semibold text-sm transition-colors">
@@ -484,8 +544,8 @@ export default function StructuralGlazing() {
           <div className="grid md:grid-cols-3 gap-6">
             {[
               {
-                img: "/ltimindtree-mensa-campus-mahape-navi-mumbai-1 (1).webp",
-                alt: "LTIMindtree Campus Navi Mumbai — structural glazing by Fine Glaze",
+                img: IMG.project1,
+                alt: "LTIMindtree Campus Navi Mumbai — Fine Glaze structural glazing",
                 location: "Navi Mumbai",
                 name: "LTIMindtree Campus",
                 desc: "Full-height structural glazing facade",
@@ -493,8 +553,8 @@ export default function StructuralGlazing() {
                 delay: 0,
               },
               {
-                img: "/Embassyoark.webp",
-                alt: "Embassy 247 facade glass replacement — Fine Glaze award project",
+                img: IMG.project2,
+                alt: "Embassy 247 Vikhroli — Fine Glaze award project",
                 location: "Mumbai · Vikhroli",
                 name: "Embassy 247",
                 desc: "Best Performance Vendor 2024 — Embassy REIT",
@@ -502,8 +562,8 @@ export default function StructuralGlazing() {
                 delay: 100,
               },
               {
-                img: "/Embassy.webp",
-                alt: "Premium glass facade corporate campus — Fine Glaze structural glazing",
+                img: IMG.project3,
+                alt: "Premium glass facade corporate campus — Fine Glaze",
                 location: "Pune",
                 name: "Leela Business Park",
                 desc: "4-side SSG with DGU Low-E glass",
@@ -557,7 +617,7 @@ export default function StructuralGlazing() {
           <FadeIn>
             <h2 className="text-3xl font-bold mb-3 text-center">Structural Glazing Cost in India 2026</h2>
             <p className="text-center text-muted-foreground mb-10 max-w-2xl mx-auto">
-              Indicative pricing ranges — final cost depends on building height, glass specification, and project complexity. Get an exact quote with a free site visit.
+              Indicative pricing — final cost depends on building height, glass specification, and project complexity.
             </p>
           </FadeIn>
           <FadeIn delay={100}>
@@ -585,9 +645,11 @@ export default function StructuralGlazing() {
                         "hover:bg-amber-50"
                       )}
                     >
-                      <td className="px-6 py-4 font-semibold text-foreground flex items-center gap-2">
-                        {row.highlight && <Layers size={14} className="text-amber-600 shrink-0" />}
-                        {row.system}
+                      <td className="px-6 py-4 font-semibold text-foreground">
+                        <span className="flex items-center gap-2">
+                          {row.highlight && <Layers size={14} className="text-amber-600 shrink-0" />}
+                          {row.system}
+                        </span>
                       </td>
                       <td className="px-6 py-4 text-muted-foreground">{row.glass}</td>
                       <td className="px-6 py-4 text-right font-bold text-amber-700">{row.price}</td>
@@ -615,7 +677,7 @@ export default function StructuralGlazing() {
         <div className="container mx-auto px-4 text-center">
           <FadeIn>
             <h2 className="text-3xl font-bold mb-3">
-              Structural Glazing Services Across Maharashtra
+              Structural Glazing Across Maharashtra
             </h2>
             <p className="text-white/60 mb-10 max-w-xl mx-auto">
               We deliver on-site across Maharashtra with our own fabrication facility in Pune.
@@ -653,15 +715,13 @@ export default function StructuralGlazing() {
           <div className="grid md:grid-cols-2 gap-6">
             {[
               {
-                quote:
-                  "Fine Glaze delivered a flawless structural glazing facade for our Embassy 247 project in Vikhroli. Zero safety incidents, on time, exceptional quality.",
+                quote: "Fine Glaze delivered a flawless structural glazing facade for our Embassy 247 project in Vikhroli. Zero safety incidents, on time, exceptional quality.",
                 name: "Embassy REIT",
                 role: "Best Performance Vendor 2024",
                 delay: 0,
               },
               {
-                quote:
-                  "Their team handled a complex 4-side SSG system on a tight deadline. The precision of installation and the quality of silicone work was outstanding.",
+                quote: "Their team handled a complex 4-side SSG system on a tight deadline. The precision of installation and the quality of silicone work was outstanding.",
                 name: "LTIMindtree Campus",
                 role: "Navi Mumbai",
                 delay: 100,
