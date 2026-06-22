@@ -89,37 +89,51 @@ const portfolioSchema = {
   })),
 };
 
-/* ── Project card ── */
-function ProjectCard({ p, delay = 0 }: { p: Project; delay?: number }) {
+/* ── Image-overlay project card ── */
+function ProjectCard({
+  p,
+  tall = false,
+  delay = 0,
+}: {
+  p: Project;
+  tall?: boolean;
+  delay?: number;
+}) {
   return (
     <FadeIn delay={delay}>
       <Link
         to={`/project/${p.slug}`}
-        className="group block overflow-hidden bg-white border border-stone-100 hover:border-stone-300 transition-all duration-300"
+        className={cn(
+          "group relative block overflow-hidden",
+          tall ? "h-[420px] md:h-[480px]" : "h-[320px] md:h-[380px]"
+        )}
       >
-        {/* Image */}
-        <div className="relative h-[220px] overflow-hidden">
-          <img
-            src={p.image}
-            alt={p.title}
-            className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-700"
-            loading="lazy"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-          {/* Year label */}
-          <div className="absolute bottom-3 left-4 text-white/70 text-[10px] font-bold tracking-widest uppercase">
-            {p.year}
+        {/* Full-bleed image */}
+        <img
+          src={p.image}
+          alt={p.title}
+          className="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.04] transition-transform duration-700"
+          loading="lazy"
+        />
+
+        {/* Gradient overlay — darker on hover */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent group-hover:from-black/90 group-hover:via-black/40 transition-all duration-500" />
+
+        {/* Award tag */}
+        {p.isAwardWinner && (
+          <div className="absolute top-4 left-4 bg-amber-600 text-white text-[9px] font-bold uppercase tracking-widest px-2.5 py-1 z-10">
+            Award Winner
           </div>
-          {p.isAwardWinner && (
-            <div className="absolute top-3 left-4 bg-amber-600 text-white text-[9px] font-bold uppercase tracking-widest px-2.5 py-1">
-              Award
-            </div>
-          )}
+        )}
+
+        {/* Year + category — top right */}
+        <div className="absolute top-4 right-4 text-white/50 text-[10px] font-bold uppercase tracking-widest z-10">
+          {p.year}
         </div>
 
-        {/* Content */}
-        <div className="p-5">
-          <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-stone-400 mb-2">
+        {/* Content overlay — bottom, slides up on hover */}
+        <div className="absolute inset-x-0 bottom-0 p-5 md:p-6 z-10">
+          <p className="text-amber-400/80 text-[10px] font-bold tracking-[0.2em] uppercase mb-2">
             {p.category === "award"
               ? "Award Winner"
               : p.category === "corporate"
@@ -127,18 +141,24 @@ function ProjectCard({ p, delay = 0 }: { p: Project; delay?: number }) {
               : "Residential"}{" "}
             · {p.client}
           </p>
-          <h3 className="text-base font-bold text-stone-900 mb-1.5 group-hover:text-amber-700 transition-colors leading-snug">
+
+          <h3 className="text-lg md:text-xl font-bold text-white leading-snug mb-2 group-hover:text-amber-100 transition-colors">
             {p.title}
           </h3>
-          <div className="flex items-center gap-1.5 text-stone-400 text-xs mb-3">
+
+          <div className="flex items-center gap-1.5 text-white/50 text-xs mb-3">
             <MapPin size={11} />
             <span>{p.location}</span>
           </div>
-          <p className="text-stone-500 text-xs leading-relaxed line-clamp-2 mb-4">
-            {p.scope}
-          </p>
-          <div className="flex items-center gap-1.5 text-stone-900 font-semibold text-xs group-hover:text-amber-700 group-hover:gap-2.5 transition-all">
-            View Project <ArrowRight size={12} />
+
+          {/* Scope + arrow — hidden by default, revealed on hover */}
+          <div className="max-h-0 group-hover:max-h-24 overflow-hidden transition-all duration-500 ease-out">
+            <p className="text-white/60 text-xs leading-relaxed mb-3">
+              {p.scope}
+            </p>
+            <div className="flex items-center gap-1.5 text-amber-400 font-semibold text-xs group-hover:gap-2.5 transition-all">
+              View Project <ArrowRight size={12} />
+            </div>
           </div>
         </div>
       </Link>
@@ -159,7 +179,9 @@ const Portfolio = () => {
             (active === "award" && p.isAwardWinner)
         );
 
-  // All projects in same grid — no featured
+  // Split into rows: first 2 are large (2-col), rest are 3-col grid
+  const topRow = filtered.slice(0, 2);
+  const restGrid = filtered.slice(2);
 
   return (
     <Layout darkHero>
@@ -177,7 +199,7 @@ const Portfolio = () => {
       </Helmet>
 
       {/* ════════════════════════════════════════════════════
-          HERO — full-bleed cinematic photo
+          HERO — full-bleed cinematic
           ════════════════════════════════════════════════════ */}
       <section className="relative h-[70vh] min-h-[480px] overflow-hidden">
         <img
@@ -216,7 +238,7 @@ const Portfolio = () => {
 
 
       {/* ════════════════════════════════════════════════════
-          STATS — dark horizontal band
+          STATS — dark band
           ════════════════════════════════════════════════════ */}
       <section className="bg-stone-900 py-8">
         <div className="container mx-auto px-6 md:px-16">
@@ -238,7 +260,7 @@ const Portfolio = () => {
 
 
       {/* ════════════════════════════════════════════════════
-          FILTER — underline text tabs
+          FILTER — underline tabs
           ════════════════════════════════════════════════════ */}
       <section className="sticky top-16 lg:top-20 z-30 bg-white border-b border-stone-200">
         <div className="container mx-auto px-6 md:px-16 flex items-center gap-6 md:gap-8">
@@ -264,21 +286,64 @@ const Portfolio = () => {
 
 
       {/* ════════════════════════════════════════════════════
-          PROJECTS
+          PROJECTS — image-overlay cards, mixed grid
           ════════════════════════════════════════════════════ */}
-      <section className="py-12 md:py-16 bg-stone-50">
+      <section className="py-10 md:py-14 bg-stone-100">
         <div className="container mx-auto px-6 md:px-16">
           {filtered.length === 0 ? (
             <p className="text-center text-stone-400 py-20">
               No projects in this category yet.
             </p>
           ) : (
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-              {filtered.map((p, i) => (
-                <ProjectCard key={p.id} p={p} delay={i * 60} />
-              ))}
+            <div className="space-y-4">
+              {/* Top row — 2 large cards */}
+              {topRow.length > 0 && (
+                <div className="grid md:grid-cols-2 gap-4">
+                  {topRow.map((p, i) => (
+                    <ProjectCard key={p.id} p={p} tall delay={i * 80} />
+                  ))}
+                </div>
+              )}
+
+              {/* Remaining — 3 columns */}
+              {restGrid.length > 0 && (
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {restGrid.map((p, i) => (
+                    <ProjectCard key={p.id} p={p} delay={i * 60} />
+                  ))}
+                </div>
+              )}
             </div>
           )}
+        </div>
+      </section>
+
+
+      {/* ════════════════════════════════════════════════════
+          CLIENTS — trust strip
+          ════════════════════════════════════════════════════ */}
+      <section className="py-10 bg-white">
+        <div className="container mx-auto px-6 md:px-16 text-center">
+          <p className="text-stone-400 text-xs font-bold tracking-[0.3em] uppercase mb-6">
+            Trusted By
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-3">
+            {[
+              "Embassy REIT",
+              "LTIMindtree",
+              "Leela Group",
+              "Jindal Stainless",
+              "SSG Group",
+              "Nirmaann Developers",
+            ].map((name) => (
+              <span
+                key={name}
+                className="text-stone-300 text-lg md:text-xl font-bold tracking-wide"
+              >
+                {name}
+              </span>
+            ))}
+          </div>
         </div>
       </section>
 
