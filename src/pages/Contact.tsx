@@ -21,7 +21,6 @@ import {
   Send,
   CheckCircle2,
   ArrowRight,
-  MessageCircle,
   Building2,
 } from "lucide-react";
 import { toast } from "sonner";
@@ -174,7 +173,7 @@ const Contact = () => {
           ═══════════════════════════════════════════ */}
       <section className="relative h-[55vh] md:h-[65vh] min-h-[380px] overflow-hidden">
         <img
-          src="/Glass installation.webp"
+          src="/Embassy.webp"
           alt="Fine Glaze — Contact us"
           className="absolute inset-0 w-full h-full object-cover"
           loading="eager"
@@ -203,60 +202,6 @@ const Contact = () => {
           <p className="mt-3 md:mt-4 text-white/60 text-sm md:text-lg max-w-md leading-relaxed">
             Free site consultation. Detailed quote within 24 hours.
           </p>
-        </div>
-      </section>
-
-
-      {/* ═══════════════════════════════════════════
-          INSTANT CONTACT — 3 action cards right after hero
-          ═══════════════════════════════════════════ */}
-      <section className="relative z-10 -mt-8 md:-mt-10 px-5 md:px-16">
-        <div className="container mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-4">
-            {/* Call */}
-            <a
-              href="tel:+918369233566"
-              className="group flex items-center gap-4 bg-stone-900 hover:bg-amber-700 transition-all duration-300 p-4 md:p-5"
-            >
-              <div className="w-11 h-11 md:w-12 md:h-12 bg-amber-600 group-hover:bg-white/20 flex items-center justify-center shrink-0 transition-colors">
-                <Phone size={20} className="text-white" />
-              </div>
-              <div>
-                <p className="text-[10px] text-white/50 font-bold tracking-[0.2em] uppercase">Call Us</p>
-                <p className="text-white font-semibold text-sm md:text-base mt-0.5">+91 83692 33566</p>
-              </div>
-            </a>
-
-            {/* Email */}
-            <a
-              href="mailto:info@fineglaze.com"
-              className="group flex items-center gap-4 bg-stone-900 hover:bg-amber-700 transition-all duration-300 p-4 md:p-5"
-            >
-              <div className="w-11 h-11 md:w-12 md:h-12 bg-amber-600 group-hover:bg-white/20 flex items-center justify-center shrink-0 transition-colors">
-                <Mail size={20} className="text-white" />
-              </div>
-              <div>
-                <p className="text-[10px] text-white/50 font-bold tracking-[0.2em] uppercase">Email</p>
-                <p className="text-white font-semibold text-sm md:text-base mt-0.5">info@fineglaze.com</p>
-              </div>
-            </a>
-
-            {/* WhatsApp */}
-            <a
-              href="https://wa.me/918369233566?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20your%20facade%20services."
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex items-center gap-4 bg-stone-900 hover:bg-green-700 transition-all duration-300 p-4 md:p-5"
-            >
-              <div className="w-11 h-11 md:w-12 md:h-12 bg-green-600 group-hover:bg-white/20 flex items-center justify-center shrink-0 transition-colors">
-                <MessageCircle size={20} className="text-white" />
-              </div>
-              <div>
-                <p className="text-[10px] text-white/50 font-bold tracking-[0.2em] uppercase">WhatsApp</p>
-                <p className="text-white font-semibold text-sm md:text-base mt-0.5">Message Us Instantly</p>
-              </div>
-            </a>
-          </div>
         </div>
       </section>
 
