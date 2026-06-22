@@ -3,8 +3,8 @@ import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/home/CTASection";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { CheckCircle2, MapPin, ArrowRight, Building2, Sun, ShieldCheck, Wrench, Leaf, Target } from "lucide-react";
-import { ServiceFeatureStrip } from "@/components/ServiceFeatureStrip";
+import { CheckCircle2, MapPin, ArrowRight, Building2, Sun, ShieldCheck, Wrench, Leaf } from "lucide-react";
+import { ServiceHero } from "@/components/ServiceHero";
 
 export default function StructuralGlazing() {
   const serviceSchema = {
@@ -114,53 +114,19 @@ export default function StructuralGlazing() {
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}
       />
 
-      {/* HERO — full-bleed image behind navbar */}
-      <section className="relative min-h-[85vh] flex items-center overflow-hidden text-white">
-        {/* Background image runs to the top edge, behind the transparent navbar */}
-        <img
-          src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5"
-          alt="Structural glazing glass facade building in India"
-          className="absolute inset-0 w-full h-full object-cover"
-          loading="eager"
-        />
-        {/* Slate overlay keeps current color scheme + text legibility */}
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/95 via-slate-900/80 to-slate-900/30" />
-
-        <div className="relative z-10 container mx-auto px-4 max-w-6xl pt-32 pb-20">
-          <div className="max-w-2xl">
-            <h1 className="text-4xl md:text-5xl font-extrabold mb-6 leading-tight">
-              Structural <span className="text-gradient-gold">Glazing Systems</span> in India
-            </h1>
-            <p className="text-lg text-white/80 mb-8">
-              Frameless structural glazing solutions delivering maximum
-              transparency, elegance, and performance for modern buildings by Fine Glaze.
-            </p>
-            <div className="flex gap-4">
-              <Link to="/contact">
-                <Button size="lg" className="bg-amber-600 hover:bg-amber-700">Get Quote</Button>
-              </Link>
-              <Link to="/portfolio">
-                <Button size="lg" variant="outline" className="border-white text-white bg-white/10 hover:bg-white hover:text-slate-900">View Projects</Button>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* FEATURE STRIP — banner-style UI */}
-      <ServiceFeatureStrip
+      {/* HERO — full-bleed image + overlaid feature icons */}
+      <ServiceHero
+        image="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1600&q=80"
+        titleLead="Structural "
+        titleAccent="Glazing Systems"
+        titleTail=" in India"
+        subtitle="Frameless structural glazing delivering maximum transparency, elegance, and performance for modern buildings by Fine Glaze."
         features={[
-          { icon: Building2, title: "Aesthetic Appeal", description: "Sleek, frameless look with unobstructed glass views." },
-          { icon: Sun, title: "Natural Light", description: "Maximizes daylight and reduces artificial lighting." },
-          { icon: ShieldCheck, title: "Durability & Strength", description: "High-grade silicone & fittings for long-lasting performance." },
-          { icon: Wrench, title: "Low Maintenance", description: "Easy to clean and maintain with minimal hardware." },
-          { icon: Leaf, title: "Energy Efficiency", description: "Reduces heat gain and improves building insulation." },
-        ]}
-        bottomBar={[
-          { icon: ShieldCheck, title: "Safe & Reliable", description: "Engineered for safety and structural stability." },
-          { icon: Target, title: "Precision Engineering", description: "Premium aluminium & glass for a perfect fit." },
-          { icon: Building2, title: "All Building Types", description: "Commercial, residential, and institutional projects." },
-          { icon: MapPin, title: "Ideal For India", description: "Built to withstand varied Indian weather conditions." },
+          { icon: Building2, title: "Aesthetic Appeal", description: "Sleek, frameless look with unobstructed views." },
+          { icon: Sun, title: "Natural Light", description: "Maximizes daylight, cuts artificial lighting." },
+          { icon: ShieldCheck, title: "Durability", description: "High-grade silicone & fittings that last." },
+          { icon: Wrench, title: "Low Maintenance", description: "Easy to clean with minimal hardware." },
+          { icon: Leaf, title: "Energy Efficient", description: "Reduces heat gain, improves insulation." },
         ]}
       />
 
