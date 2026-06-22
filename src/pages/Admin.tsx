@@ -159,6 +159,11 @@ export default function Admin() {
           <div>
             <h1 className="text-3xl font-bold">Admin Hub</h1>
             <p className="text-muted-foreground">Manage projects, approvals & financials</p>
+            <div className="flex gap-2 mt-3">
+              <a href="/admin/content" className="text-xs px-3 py-1.5 bg-amber-100 text-amber-700 rounded-full font-medium hover:bg-amber-200 transition-colors">📷 Site Content / Images</a>
+              <a href="/admin/images" className="text-xs px-3 py-1.5 bg-slate-100 text-slate-700 rounded-full font-medium hover:bg-slate-200 transition-colors">🏗 Project Gallery</a>
+              <a href="/admin/logos" className="text-xs px-3 py-1.5 bg-slate-100 text-slate-700 rounded-full font-medium hover:bg-slate-200 transition-colors">🏢 Client Logos</a>
+            </div>
           </div>
           <Dialog open={createOpen} onOpenChange={setCreateOpen}>
             <DialogTrigger asChild><Button><Plus className="mr-2 h-4 w-4"/> New Project</Button></DialogTrigger>

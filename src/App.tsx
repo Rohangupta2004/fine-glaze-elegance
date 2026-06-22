@@ -26,6 +26,7 @@ import Portal from "./pages/Portal";
 import Admin from "./pages/Admin";
 import AdminImages from "./pages/AdminImages";
 import AdminLogos from "./pages/AdminLogos";
+import AdminSiteContent from "./pages/AdminSiteContent";
 import FAQ from './pages/FAQ';
 
 import Blog from "./pages/Blog";
@@ -100,6 +101,7 @@ export const routes = [
       { path: "admin", element: <Admin /> },
       { path: "admin/images", element: <AdminImages /> },
       { path: "admin/logos", element: <AdminLogos /> },
+      { path: "admin/content", element: <AdminSiteContent /> },
       { path: "faq", element: <FAQ /> },
       { path: "blog", element: <Blog /> },
       { path: "blog/:slug", element: <BlogArticle /> },
