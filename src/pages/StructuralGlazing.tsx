@@ -51,15 +51,15 @@ function FadeIn({
 
 /* ── High-quality Unsplash image URLs ── */
 const IMG = {
-  hero: "https://images.unsplash.com/photo-1486927181919-3ac1fc3a8082?fm=jpg&q=90&w=2400&auto=format&fit=crop",
-  advantages1: "https://images.unsplash.com/ZUVTzrTOD4o?fm=jpg&q=80&w=900&auto=format&fit=crop",
-  advantages2: "https://images.unsplash.com/lBfc7CZXySs?fm=jpg&q=80&w=900&auto=format&fit=crop",
-  advantages3: "https://images.unsplash.com/og35X7iYnl8?fm=jpg&q=80&w=900&auto=format&fit=crop",
-  solutions: "https://images.unsplash.com/qW2F8rZGEWw?fm=jpg&q=80&w=900&auto=format&fit=crop",
-  type2side: "https://images.unsplash.com/V5vF94h52r0?fm=jpg&q=80&w=900&auto=format&fit=crop",
-  type4side: "https://images.unsplash.com/RBGoIP6PkqU?fm=jpg&q=80&w=900&auto=format&fit=crop",
-  typeSpider: "https://images.unsplash.com/lMjoyCYuyz0?fm=jpg&q=80&w=900&auto=format&fit=crop",
-  typeCanopy: "https://images.unsplash.com/photo-1525119488448-d549af0dc221?fm=jpg&q=80&w=900&auto=format&fit=crop",
+  hero: "https://images.unsplash.com/photo-1430417934865-589b63ad5c00?fm=jpg&q=85&w=2400&auto=format&fit=crop",
+  advantages1: "https://images.unsplash.com/photo-1523477593243-78bbf626fd3b?fm=jpg&q=80&w=900&auto=format&fit=crop",
+  advantages2: "https://images.unsplash.com/photo-1589282741585-30ab896335cd?fm=jpg&q=80&w=900&auto=format&fit=crop",
+  advantages3: "https://images.unsplash.com/photo-1556922340-19e175199d3d?fm=jpg&q=80&w=900&auto=format&fit=crop",
+  solutions: "https://images.unsplash.com/photo-1525119488448-d549af0dc221?fm=jpg&q=80&w=900&auto=format&fit=crop",
+  type2side: "https://images.unsplash.com/photo-1469981283837-561b3779462f?fm=jpg&q=80&w=900&auto=format&fit=crop",
+  type4side: "https://images.unsplash.com/photo-1621831337128-35676ca30868?fm=jpg&q=80&w=900&auto=format&fit=crop",
+  typeSpider: "https://images.unsplash.com/photo-1509024368907-57294758cfc5?fm=jpg&q=80&w=900&auto=format&fit=crop",
+  typeCanopy: "https://images.unsplash.com/photo-1486927181919-3ac1fc3a8082?fm=jpg&q=80&w=900&auto=format&fit=crop",
 };
 
 export default function StructuralGlazing() {
