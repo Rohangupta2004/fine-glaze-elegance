@@ -155,7 +155,7 @@ export default function StructuralGlazing() {
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.15) 40%, rgba(5,10,20,0.82) 75%, rgba(5,10,20,0.95) 100%)",
+              "linear-gradient(to bottom, rgba(0,0,0,0.10) 0%, rgba(0,0,0,0.10) 40%, rgba(5,10,20,0.45) 75%, rgba(5,10,20,0.60) 100%)",
           }}
         />
 
@@ -171,7 +171,7 @@ export default function StructuralGlazing() {
         {/* Content */}
         <div className="relative z-10 container mx-auto px-6 md:px-12 pb-24 pt-48">
           <div className="max-w-3xl rounded-2xl p-8 md:p-10 backdrop-blur-sm"
-            style={{ background: "linear-gradient(135deg, rgba(5,10,20,0.72) 0%, rgba(10,8,4,0.65) 100%)" }}
+            style={{ background: "linear-gradient(135deg, rgba(120,55,0,0.70) 0%, rgba(80,30,0,0.60) 40%, rgba(5,8,18,0.55) 100%)" }}
           >
             {/* Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/20 border border-amber-400/40 text-amber-300 text-xs font-bold uppercase tracking-widest mb-6 backdrop-blur-sm">
