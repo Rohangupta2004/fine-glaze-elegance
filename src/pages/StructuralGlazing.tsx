@@ -179,8 +179,7 @@ export default function StructuralGlazing() {
 
             <h1 className="text-5xl md:text-6xl xl:text-7xl font-extrabold text-white leading-[1.05] mb-6">
               Frameless{" "}
-              <span className="text-transparent bg-clip-text"
-                style={{ backgroundImage: "linear-gradient(135deg, #f59e0b 0%, #fbbf24 50%, #fde68a 100%)" }}>
+              <span className="text-gradient-warm">
                 Structural<br />Glazing
               </span>{" "}
               Systems
@@ -244,9 +243,9 @@ export default function StructuralGlazing() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             {[
-              { value: "10+", label: "Years Experience" },
+              { value: "5+", label: "Years Experience" },
               { value: "50+", label: "Projects Delivered" },
-              { value: "25yr", label: "Silicone Warranty" },
+              { value: "50+", label: "Happy Clients" },
               { value: "0", label: "Safety Incidents" },
             ].map((stat) => (
               <div key={stat.label} className="space-y-1">
@@ -557,7 +556,7 @@ export default function StructuralGlazing() {
                 alt: "Embassy 247 Vikhroli — Fine Glaze award project",
                 location: "Mumbai · Vikhroli",
                 name: "Embassy 247",
-                desc: "Best Performance Vendor 2024 — Embassy REIT",
+                desc: "Facade glass replacement — Best Performance Vendor 2024",
                 badge: "🏆 Award",
                 delay: 100,
               },
@@ -566,7 +565,7 @@ export default function StructuralGlazing() {
                 alt: "Premium glass facade corporate campus — Fine Glaze",
                 location: "Pune",
                 name: "Leela Business Park",
-                desc: "4-side SSG with DGU Low-E glass",
+                desc: "Structural glazing facade system",
                 badge: null,
                 delay: 200,
               },
@@ -708,8 +707,7 @@ export default function StructuralGlazing() {
               {[1, 2, 3, 4, 5].map((i) => (
                 <Star key={i} size={20} className="fill-amber-500 text-amber-500" />
               ))}
-              <span className="ml-2 font-bold text-foreground">4.9</span>
-              <span className="text-muted-foreground text-sm ml-1">· 29 reviews</span>
+              <span className="ml-2 text-muted-foreground text-sm ml-1">Client Testimonials</span>
             </div>
           </FadeIn>
           <div className="grid md:grid-cols-2 gap-6">
