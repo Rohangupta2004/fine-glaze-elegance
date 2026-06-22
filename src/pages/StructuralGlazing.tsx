@@ -3,9 +3,12 @@ import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/home/CTASection";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { CheckCircle2, MapPin, ArrowRight } from "lucide-react";
+import { CheckCircle2, MapPin, ArrowRight, Building2, Sun, ShieldCheck, Wrench, Leaf } from "lucide-react";
+import { ServiceHero } from "@/components/ServiceHero";
+import { useSiteMedia } from "@/hooks/useSiteMedia";
 
 export default function StructuralGlazing() {
+  const { getMedia } = useSiteMedia();
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -113,37 +116,21 @@ export default function StructuralGlazing() {
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}
       />
 
-      {/* HERO */}
-      <section className="relative py-24 bg-gradient-to-br from-slate-900 to-slate-800 text-white">
-        <div className="container mx-auto px-4 max-w-6xl grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h1 className="text-4xl md:text-5xl font-extrabold mb-6">
-              Structural <span className="text-gradient-gold">Glazing Systems</span> in India
-            </h1>
-            <p className="text-lg text-white/80 mb-8">
-              Frameless structural glazing solutions delivering maximum
-              transparency, elegance, and performance for modern buildings by Fine Glaze.
-            </p>
-            <div className="flex gap-4">
-              <Link to="/contact">
-                <Button size="lg" className="bg-amber-600 hover:bg-amber-700">Get Quote</Button>
-              </Link>
-              <Link to="/portfolio">
-                <Button size="lg" variant="outline">View Projects</Button>
-              </Link>
-            </div>
-          </div>
-
-          <img
-            src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5"
-            alt="Structural glazing glass facade building in India"
-            className="rounded-xl shadow-2xl object-cover h-[420px] w-full"
-            loading="eager"
-            width="600"
-            height="420"
-          />
-        </div>
-      </section>
+      {/* HERO — full-bleed image + overlaid feature icons */}
+      <ServiceHero
+        image={getMedia("structural_glazing_hero", "/Glazing.webp")}
+        titleLead="Structural "
+        titleAccent="Glazing Systems"
+        titleTail=" in India"
+        subtitle="Frameless structural glazing delivering maximum transparency, elegance, and performance for modern buildings by Fine Glaze."
+        features={[
+          { icon: Building2, title: "Aesthetic Appeal", description: "Sleek, frameless look with unobstructed views." },
+          { icon: Sun, title: "Natural Light", description: "Maximizes daylight, cuts artificial lighting." },
+          { icon: ShieldCheck, title: "Durability", description: "High-grade silicone & fittings that last." },
+          { icon: Wrench, title: "Low Maintenance", description: "Easy to clean with minimal hardware." },
+          { icon: Leaf, title: "Energy Efficient", description: "Reduces heat gain, improves insulation." },
+        ]}
+      />
 
       {/* INTRO — KEYWORD-RICH */}
       <section className="py-20">

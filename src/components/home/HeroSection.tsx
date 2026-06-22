@@ -1,14 +1,22 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
+import { useSiteMedia } from "@/hooks/useSiteMedia";
 
 export const HeroSection = () => {
+  const { getMedia } = useSiteMedia();
+  const poster = getMedia("home_hero_poster", "/Unitized.webp");
+  const videoSrc = getMedia(
+    "home_hero_video",
+    "https://www.pexels.com/download/video/26737896/"
+  );
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       
       {/* Fallback image (loads first, video covers it once ready) */}
       <img
-        src="/Unitized.webp"
+        src={poster}
         alt="Fine Glaze facade installation"
         className="absolute inset-0 w-full h-full object-cover"
         loading="eager"
@@ -16,15 +24,15 @@ export const HeroSection = () => {
 
       {/* Hero Background Video */}
       <video
+        key={videoSrc}
         className="absolute inset-0 w-full h-full object-cover"
         autoPlay
         muted
         loop
         playsInline
-        poster="/Unitized.webp"
-      >
-        <source src="https://www.pexels.com/download/video/26737896/" type="video/mp4" />
-      </video>
+        poster={poster}
+        src={videoSrc}
+      />
 
       {/* Gradient Overlay */}
       <div className="absolute inset-0 hero-overlay" />

@@ -4,8 +4,11 @@ import { Button } from "@/components/ui/button";
 import { CheckCircle2, Droplets, Hammer, FileCheck, Phone, ArrowRight, ShieldCheck, MapPin, Wrench } from "lucide-react";
 import { Link } from "react-router-dom";
 import { CTASection } from "@/components/home/CTASection";
+import { useSiteMedia } from "@/hooks/useSiteMedia";
 
 const Maintenance = () => {
+  const { getMedia } = useSiteMedia();
+  const heroImage = getMedia("maintenance_hero", "/Amc1.webp");
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -123,7 +126,7 @@ const Maintenance = () => {
       <section className="relative h-[70vh] flex items-center bg-slate-900 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src="/Amc1.webp"
+            src={heroImage}
             alt="Rope Access Facade Cleaning and Maintenance - Fine Glaze"
             className="w-full h-full object-cover opacity-40"
           />
