@@ -144,20 +144,29 @@ export default function StructuralGlazing() {
         />
         <style>{`@keyframes sgZoom { from { transform: scale(1.0); } to { transform: scale(1.08); } }`}</style>
 
-        {/* Overlay — barely there at top so the photo breathes, deep at bottom for text */}
+        {/* Overlay — dark at top for navbar readability, deep at bottom for text */}
         <div
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(to bottom, rgba(0,0,0,0.18) 0%, rgba(0,0,0,0.10) 35%, rgba(0,0,0,0.55) 70%, rgba(0,0,0,0.90) 100%)",
+              "linear-gradient(to bottom, rgba(0,0,0,0.60) 0%, rgba(0,0,0,0.25) 30%, rgba(0,0,0,0.55) 65%, rgba(0,0,0,0.92) 100%)",
           }}
         />
 
         {/* Text — pinned to bottom-left, editorial style */}
         <div className="absolute inset-x-0 bottom-0 px-8 md:px-16 pb-16 md:pb-20 pt-24">
+          {/* Badge — matches homepage style */}
+          <div
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-black/40 backdrop-blur-md text-sm text-white/75 animate-fade-in border border-white/10 mb-6"
+          >
+            <span className="w-2.5 h-2.5 rounded-full bg-amber-500 animate-pulse" />
+            🏆 Embassy REIT Best Performance Vendor 2024
+          </div>
+
           {/* Thin amber overline */}
           <p
             className="text-amber-400 text-xs font-bold tracking-[0.4em] uppercase mb-5 animate-fade-in"
+            style={{ animationDelay: "0.05s" }}
           >
             Fine Glaze · Pune · Mumbai · Maharashtra
           </p>
@@ -169,18 +178,17 @@ export default function StructuralGlazing() {
           >
             Structural<br />
             <span className="text-gradient-gold">Glazing</span><br />
-            <span style={{ fontSize: "clamp(2rem, 4.5vw, 4.8rem)", fontWeight: 600, color: "rgba(255,255,255,0.78)" }}>
+            <span style={{ fontSize: "clamp(2rem, 4.5vw, 4.8rem)", fontWeight: 600, color: "rgba(255,255,255,0.85)" }}>
               Redefined.
             </span>
           </h1>
 
           {/* One clean line of copy */}
           <p
-            className="mt-6 text-white/60 text-base md:text-lg max-w-lg leading-relaxed animate-fade-in-up"
+            className="mt-6 text-white/70 text-base md:text-lg max-w-lg leading-relaxed animate-fade-in-up"
             style={{ animationDelay: "0.2s" }}
           >
             Frameless silicone glazing for commercial buildings, IT campuses &amp; showrooms.
-            Trusted by <span className="text-amber-400 font-medium">Embassy REIT</span>.
           </p>
 
           {/* Two plain text CTAs — no boxes, no icons */}
@@ -196,7 +204,7 @@ export default function StructuralGlazing() {
             </Link>
             <a
               href="tel:+918369233566"
-              className="text-white/55 font-medium text-base hover:text-white transition-colors tracking-wide"
+              className="text-white/60 font-medium text-base hover:text-white transition-colors tracking-wide"
             >
               +91 83692 33566
             </a>
