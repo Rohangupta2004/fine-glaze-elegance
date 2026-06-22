@@ -15,7 +15,6 @@ import {
   Wrench,
   Leaf,
   Phone,
-  Star,
   Trophy,
   IndianRupee,
   Layers,
@@ -617,56 +616,7 @@ export default function StructuralGlazing() {
         </div>
       </section>
 
-      {/* ── REVIEWS ── */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <FadeIn>
-            <h2 className="text-3xl font-bold mb-3 text-center">What Clients Say</h2>
-            <div className="flex items-center justify-center gap-1 mb-10">
-              {[1, 2, 3, 4, 5].map((i) => (
-                <Star key={i} size={20} className="fill-amber-500 text-amber-500" />
-              ))}
-              <span className="ml-2 text-muted-foreground text-sm ml-1">Client Testimonials</span>
-            </div>
-          </FadeIn>
-          <div className="grid md:grid-cols-2 gap-6">
-            {[
-              {
-                quote: "Fine Glaze delivered a flawless structural glazing facade for our Embassy 247 project in Vikhroli. Zero safety incidents, on time, exceptional quality.",
-                name: "Embassy REIT",
-                role: "Best Performance Vendor 2024",
-                delay: 0,
-              },
-              {
-                quote: "Their team handled a complex 4-side SSG system on a tight deadline. The precision of installation and the quality of silicone work was outstanding.",
-                name: "LTIMindtree Campus",
-                role: "Navi Mumbai",
-                delay: 100,
-              },
-            ].map((review) => (
-              <FadeIn key={review.name} delay={review.delay}>
-                <div className="bg-muted rounded-2xl p-8 border border-border h-full">
-                  <div className="flex gap-1 mb-4">
-                    {[1, 2, 3, 4, 5].map((i) => (
-                      <Star key={i} size={16} className="fill-amber-500 text-amber-500" />
-                    ))}
-                  </div>
-                  <p className="text-foreground mb-6 leading-relaxed italic">"{review.quote}"</p>
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-amber-600 flex items-center justify-center text-white font-bold text-sm">
-                      {review.name[0]}
-                    </div>
-                    <div>
-                      <p className="font-bold text-sm">{review.name}</p>
-                      <p className="text-xs text-muted-foreground">{review.role}</p>
-                    </div>
-                  </div>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Testimonials section removed */}
 
       {/* ── FAQ ── */}
       <section className="py-20 bg-muted">
