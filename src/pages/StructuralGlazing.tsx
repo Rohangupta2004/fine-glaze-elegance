@@ -138,58 +138,79 @@ export default function StructuralGlazing() {
           HERO — full-bleed photo + gradient text overlay
           ════════════════════════════════════════════════════ */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background image */}
+        {/* Background image with subtle zoom via CSS */}
         <img
           src={IMG.hero}
           alt="Structural glazing glass facade high-rise building — Fine Glaze"
-          className="absolute inset-0 w-full h-full object-cover object-center"
+          className="absolute inset-0 w-full h-full object-cover object-center scale-105"
+          style={{ animation: "slowZoom 18s ease-in-out infinite alternate" }}
           loading="eager"
         />
 
-        {/* Hero overlay — same class as homepage */}
-        <div className="absolute inset-0 hero-overlay" />
+        {/* Deep cinematic multi-layer overlay */}
+        <div className="absolute inset-0" style={{ background: "linear-gradient(160deg, rgba(0,0,0,0.55) 0%, rgba(5,3,1,0.75) 60%, rgba(10,5,0,0.92) 100%)" }} />
+        {/* Amber vignette glow from bottom */}
+        <div className="absolute inset-x-0 bottom-0 h-2/3 pointer-events-none" style={{ background: "radial-gradient(ellipse 80% 60% at 50% 110%, rgba(180,80,0,0.25) 0%, transparent 70%)" }} />
+        {/* Subtle top darkening */}
+        <div className="absolute inset-x-0 top-0 h-32 pointer-events-none" style={{ background: "linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, transparent 100%)" }} />
 
-        {/* Content — centered, homepage-style */}
+        {/* Slow zoom keyframe injected inline */}
+        <style>{`@keyframes slowZoom { from { transform: scale(1.05); } to { transform: scale(1.12); } }`}</style>
+
+        {/* Content */}
         <div className="relative z-10 container mx-auto px-4 text-center">
-          <div className="max-w-4xl mx-auto space-y-8">
+          <div className="max-w-5xl mx-auto space-y-7">
 
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-black/40 backdrop-blur-md text-sm text-white/75 animate-fade-in border border-white/10">
-              <span className="w-2.5 h-2.5 rounded-full bg-amber-500 animate-pulse" />
-              India's Premier Structural Glazing Specialists
+            <div
+              className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full border border-amber-400/30 bg-amber-500/10 backdrop-blur-md text-sm text-amber-200 font-semibold tracking-wide animate-fade-in uppercase"
+            >
+              <Trophy size={13} className="text-amber-400" />
+              Embassy REIT Best Performance Vendor 2024
+              <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
             </div>
 
-            {/* Headline */}
+            {/* Headline — bigger, more dramatic */}
             <h1
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight animate-fade-in-up"
+              className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold text-white leading-[0.95] tracking-tight animate-fade-in-up"
               style={{ animationDelay: "0.1s" }}
             >
-              Frameless{" "}
-              <span className="text-gradient-gold">Structural Glazing</span>
-              <br className="hidden md:block" />
-              That{" "}
-              <span className="text-gradient-light">Defines Facades</span>
+              <span className="text-gradient-gold">Structural</span>
+              <br />
+              <span className="text-gradient-light">Glazing</span>
+              <br />
+              <span className="text-white/90 text-4xl sm:text-5xl md:text-6xl font-bold">Redefined.</span>
             </h1>
+
+            {/* Golden divider line */}
+            <div
+              className="flex items-center justify-center gap-4 animate-fade-in-up"
+              style={{ animationDelay: "0.2s" }}
+            >
+              <div className="h-px w-16 bg-gradient-to-r from-transparent to-amber-500" />
+              <span className="text-amber-400/80 text-xs font-bold tracking-[0.3em] uppercase">Pune · Mumbai · Maharashtra</span>
+              <div className="h-px w-16 bg-gradient-to-l from-transparent to-amber-500" />
+            </div>
 
             {/* Sub-headline */}
             <p
-              className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto animate-fade-in-up leading-relaxed"
-              style={{ animationDelay: "0.2s" }}
+              className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto animate-fade-in-up leading-relaxed"
+              style={{ animationDelay: "0.25s" }}
             >
-              Precision-engineered silicone glazing for commercial buildings, IT campuses and showrooms
-              across Pune, Mumbai & Maharashtra —{" "}
-              <span className="text-amber-400 font-medium">trusted by Embassy REIT</span>.
+              Precision-engineered silicone glazing for IT campuses, showrooms & commercial buildings —
+              frameless glass that{" "}
+              <span className="text-amber-300 font-semibold">commands attention</span>.
             </p>
 
             {/* CTA Buttons */}
             <div
-              className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6 animate-fade-in-up"
-              style={{ animationDelay: "0.3s" }}
+              className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4 animate-fade-in-up"
+              style={{ animationDelay: "0.35s" }}
             >
               <Link to="/contact">
                 <Button
                   size="lg"
-                  className="btn-glossy text-white border-0 px-8 py-6 text-base group shadow-lg"
+                  className="btn-glossy text-white border-0 px-10 py-7 text-base group shadow-2xl shadow-amber-900/40 hover:shadow-amber-800/60 transition-all"
                 >
                   Get Free Quote
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -199,7 +220,7 @@ export default function StructuralGlazing() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="px-8 py-6 text-base group border-white bg-white/15 text-white hover:bg-white hover:text-slate-900 hover:border-white backdrop-blur-sm font-semibold transition-all duration-200 shadow-md"
+                  className="px-10 py-7 text-base group border-white/40 bg-white/10 text-white hover:bg-white hover:text-slate-900 hover:border-white backdrop-blur-sm font-semibold transition-all duration-200"
                 >
                   <Phone className="mr-2 h-4 w-4" />
                   Call Expert
@@ -207,30 +228,31 @@ export default function StructuralGlazing() {
               </a>
             </div>
 
-            {/* Feature icons */}
+            {/* Feature pills — sleek row */}
             <div
-              className="flex flex-wrap items-center justify-center gap-6 pt-4 animate-fade-in-up"
-              style={{ animationDelay: "0.4s" }}
+              className="flex flex-wrap items-center justify-center gap-3 pt-2 animate-fade-in-up"
+              style={{ animationDelay: "0.45s" }}
             >
               {[
-                { icon: Building2, label: "Frameless Look" },
+                { icon: Building2, label: "Frameless Glass" },
                 { icon: Sun, label: "Max Daylight" },
                 { icon: ShieldCheck, label: "25yr Silicone" },
                 { icon: Wrench, label: "Low Maintenance" },
                 { icon: Leaf, label: "Energy Efficient" },
               ].map(({ icon: Icon, label }) => (
-                <div key={label} className="flex flex-col items-center gap-2 text-center group">
-                  <div className="w-10 h-10 rounded-xl bg-white/10 border border-white/15 flex items-center justify-center text-amber-400 group-hover:bg-amber-500 group-hover:text-white transition-all backdrop-blur-sm">
-                    <Icon size={18} />
-                  </div>
-                  <span className="text-white/70 text-xs font-medium">{label}</span>
+                <div
+                  key={label}
+                  className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/8 border border-white/10 backdrop-blur-sm text-white/70 text-xs font-medium hover:border-amber-400/50 hover:text-amber-300 transition-all"
+                >
+                  <Icon size={13} className="text-amber-400 shrink-0" />
+                  {label}
                 </div>
               ))}
             </div>
           </div>
         </div>
 
-        {/* Scroll Indicator — same as homepage */}
+        {/* Scroll Indicator */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
           <div className="w-6 h-10 rounded-full border-2 border-white/30 flex items-start justify-center p-1">
             <div className="w-1.5 h-3 rounded-full bg-amber-500/70 animate-pulse" />
