@@ -114,11 +114,21 @@ export default function StructuralGlazing() {
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}
       />
 
-      {/* HERO */}
-      <section className="relative py-24 bg-gradient-to-br from-slate-900 to-slate-800 text-white">
-        <div className="container mx-auto px-4 max-w-6xl grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h1 className="text-4xl md:text-5xl font-extrabold mb-6">
+      {/* HERO — full-bleed image behind navbar */}
+      <section className="relative min-h-[85vh] flex items-center overflow-hidden text-white">
+        {/* Background image runs to the top edge, behind the transparent navbar */}
+        <img
+          src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5"
+          alt="Structural glazing glass facade building in India"
+          className="absolute inset-0 w-full h-full object-cover"
+          loading="eager"
+        />
+        {/* Slate overlay keeps current color scheme + text legibility */}
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/95 via-slate-900/80 to-slate-900/30" />
+
+        <div className="relative z-10 container mx-auto px-4 max-w-6xl pt-32 pb-20">
+          <div className="max-w-2xl">
+            <h1 className="text-4xl md:text-5xl font-extrabold mb-6 leading-tight">
               Structural <span className="text-gradient-gold">Glazing Systems</span> in India
             </h1>
             <p className="text-lg text-white/80 mb-8">
@@ -130,19 +140,10 @@ export default function StructuralGlazing() {
                 <Button size="lg" className="bg-amber-600 hover:bg-amber-700">Get Quote</Button>
               </Link>
               <Link to="/portfolio">
-                <Button size="lg" variant="outline">View Projects</Button>
+                <Button size="lg" variant="outline" className="border-white text-white bg-white/10 hover:bg-white hover:text-slate-900">View Projects</Button>
               </Link>
             </div>
           </div>
-
-          <img
-            src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5"
-            alt="Structural glazing glass facade building in India"
-            className="rounded-xl shadow-2xl object-cover h-[420px] w-full"
-            loading="eager"
-            width="600"
-            height="420"
-          />
         </div>
       </section>
 
