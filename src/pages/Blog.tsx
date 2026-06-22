@@ -2,9 +2,11 @@ import { Layout } from "@/components/layout/Layout";
 import { Link } from "react-router-dom";
 import { ArrowRight, Clock, Tag } from "lucide-react";
 import { blogPostsList } from "@/data/blog";
+import { useBlogImages } from "@/hooks/useBlogImages";
 import SEO from "@/components/SEO";
 
 export default function Blog() {
+  const { getHeroImage } = useBlogImages();
   return (
     <Layout darkHero>
       <SEO
@@ -58,7 +60,7 @@ export default function Blog() {
                 {/* Image */}
                 <div className="aspect-[16/9] overflow-hidden">
                   <img
-                    src={post.heroImage}
+                    src={getHeroImage(post.slug, post.heroImage)}
                     alt={post.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     loading="lazy"

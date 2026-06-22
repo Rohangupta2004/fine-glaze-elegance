@@ -1,22 +1,26 @@
 import { useParams, Link, Navigate } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 import { blogPosts, blogPostsList } from "@/data/blog";
+import { useBlogImages } from "@/hooks/useBlogImages";
 import { ArrowLeft, Clock, Phone, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import SEO from "@/components/SEO";
 
 export default function BlogArticle() {
   const { slug } = useParams<{ slug: string }>();
+  const { getHeroImage } = useBlogImages();
   const post = slug ? blogPosts[slug] : undefined;
 
   if (!post) return <Navigate to="/blog" replace />;
+
+  const heroImg = getHeroImage(post.slug, post.heroImage);
 
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": post.title,
     "description": post.metaDescription,
-    "image": post.heroImage.startsWith("http") ? post.heroImage : `https://fineglaze.com${post.heroImage}`,
+    "image": heroImg.startsWith("http") ? heroImg : `https://fineglaze.com${heroImg}`,
     "datePublished": post.date,
     "dateModified": post.date,
     "author": {
@@ -65,7 +69,7 @@ export default function BlogArticle() {
         canonical={`https://fineglaze.com/blog/${post.slug}`}
         keywords={post.keywords}
         ogType="article"
-        ogImage={post.heroImage.startsWith("http") ? post.heroImage : `https://fineglaze.com${post.heroImage}`}
+        ogImage={heroImg.startsWith("http") ? heroImg : `https://fineglaze.com${heroImg}`}
         schema={articleSchema}
       />
 
@@ -92,7 +96,7 @@ export default function BlogArticle() {
           </h1>
 
           <img
-            src={post.heroImage}
+            src={heroImg}
             alt={post.title}
             className="w-full rounded-2xl object-cover max-h-[420px] mb-10"
             loading="eager"
@@ -190,7 +194,7 @@ export default function BlogArticle() {
                     className="group flex gap-4 p-4 rounded-xl border hover:shadow-md transition-all"
                   >
                     <img
-                      src={r.heroImage}
+                      src={getHeroImage(r.slug, r.heroImage)}
                       alt={r.title}
                       className="w-24 h-24 rounded-lg object-cover shrink-0"
                       loading="lazy"
