@@ -250,7 +250,7 @@ const whyUs = [
   {
     icon: Users,
     title: "Expert Team",
-    desc: "25+ skilled professionals including engineers, fabricators, and certified installation technicians with years of experience.",
+    desc: "Skilled professionals including engineers, fabricators, and certified installation technicians ensuring precision at every stage.",
   },
   {
     icon: Building2,

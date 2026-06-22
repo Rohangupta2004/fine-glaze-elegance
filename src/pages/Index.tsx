@@ -56,6 +56,12 @@ const Index = () => {
       "opens": "09:00",
       "closes": "19:00"
     },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "5",
+      "bestRating": "5"
+    },
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
       "name": "Facade Services",

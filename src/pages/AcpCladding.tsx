@@ -31,8 +31,8 @@ const AcpCladding = () => {
       },
       "aggregateRating": {
         "@type": "AggregateRating",
-        "ratingValue": "4.8",
-        "reviewCount": "27",
+        "ratingValue": "5.0",
+        "reviewCount": "5",
         "bestRating": "5"
       }
     },
