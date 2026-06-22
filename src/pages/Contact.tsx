@@ -173,7 +173,7 @@ const Contact = () => {
           ═══════════════════════════════════════════ */}
       <section className="relative h-[55vh] md:h-[65vh] min-h-[380px] overflow-hidden">
         <img
-          src="/Embassy.webp"
+          src="/contact-hero.webp"
           alt="Fine Glaze — Contact us"
           className="absolute inset-0 w-full h-full object-cover"
           loading="eager"
@@ -368,8 +368,42 @@ const Contact = () => {
             </FadeIn>
 
 
-            {/* ── Right column — why + office + hours ── */}
+            {/* ── Right column — contact + why + office + hours ── */}
             <FadeIn delay={120} className="lg:col-span-5 order-2 space-y-5 md:space-y-6">
+
+              {/* Quick contact links */}
+              <div className="bg-white border border-stone-200 p-5 md:p-7 space-y-4">
+                <p className="text-amber-700 text-[10px] font-bold tracking-[0.3em] uppercase mb-1">
+                  Reach Us Directly
+                </p>
+                <a href="tel:+918369233566" className="flex items-center gap-3 text-stone-700 hover:text-amber-700 transition-colors group">
+                  <div className="w-9 h-9 bg-amber-50 group-hover:bg-amber-100 flex items-center justify-center shrink-0 transition-colors">
+                    <Phone size={16} className="text-amber-600" />
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold">+91 83692 33566</p>
+                    <p className="text-[10px] text-stone-400">Call or WhatsApp</p>
+                  </div>
+                </a>
+                <a href="mailto:info@fineglaze.com" className="flex items-center gap-3 text-stone-700 hover:text-amber-700 transition-colors group">
+                  <div className="w-9 h-9 bg-amber-50 group-hover:bg-amber-100 flex items-center justify-center shrink-0 transition-colors">
+                    <Mail size={16} className="text-amber-600" />
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold">info@fineglaze.com</p>
+                    <p className="text-[10px] text-stone-400">We reply within 1 hour</p>
+                  </div>
+                </a>
+                <div className="flex items-center gap-3 text-stone-500">
+                  <div className="w-9 h-9 bg-amber-50 flex items-center justify-center shrink-0">
+                    <Clock size={16} className="text-amber-600" />
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold text-stone-700">Mon – Sat, 9 AM – 6 PM</p>
+                    <p className="text-[10px] text-stone-400">Office hours</p>
+                  </div>
+                </div>
+              </div>
 
               {/* Why reach out */}
               <div className="bg-white border border-stone-200 p-5 md:p-7">
