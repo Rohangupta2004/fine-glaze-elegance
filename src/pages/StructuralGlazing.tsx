@@ -10,8 +10,6 @@ import {
   MapPin,
   ArrowRight,
   Phone,
-  Trophy,
-  IndianRupee,
   Layers,
 } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
@@ -155,14 +153,6 @@ export default function StructuralGlazing() {
 
         {/* Text — pinned to bottom-left, editorial style */}
         <div className="absolute inset-x-0 bottom-0 px-8 md:px-16 pb-16 md:pb-20 pt-24">
-          {/* Badge — matches homepage style */}
-          <div
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-black/40 backdrop-blur-md text-sm text-white/75 animate-fade-in border border-white/10 mb-6"
-          >
-            <span className="w-2.5 h-2.5 rounded-full bg-amber-500 animate-pulse" />
-            🏆 Embassy REIT Best Performance Vendor 2024
-          </div>
-
           {/* Thin amber overline */}
           <p
             className="text-amber-400 text-xs font-bold tracking-[0.4em] uppercase mb-5 animate-fade-in"
@@ -307,12 +297,12 @@ export default function StructuralGlazing() {
               },
             ].map((item) => (
               <FadeIn key={item.title} delay={item.delay}>
-                <div className="bg-background rounded-2xl shadow-sm overflow-hidden border border-border hover:shadow-md transition-shadow duration-300 h-full">
+                <div className="bg-background rounded-lg shadow-sm overflow-hidden border border-border h-full">
                   <div className="relative overflow-hidden h-52">
                     <img
                       src={item.img}
                       alt={item.alt}
-                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                      className="w-full h-full object-cover"
                       loading="lazy"
                       width="400"
                       height="208"
@@ -357,7 +347,7 @@ export default function StructuralGlazing() {
               </div>
             </FadeIn>
             <FadeIn delay={150}>
-              <div className="relative rounded-2xl overflow-hidden shadow-xl h-[420px]">
+              <div className="relative rounded-lg overflow-hidden shadow-lg h-[420px]">
                 <img
                   src={IMG.solutions}
                   alt="Curtain wall glass facade building — Fine Glaze structural glazing"
@@ -368,11 +358,8 @@ export default function StructuralGlazing() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent" />
                 <div className="absolute bottom-0 left-0 p-6 text-white">
-                  <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-600 text-xs font-bold uppercase tracking-wide mb-2">
-                    <Trophy size={12} /> Award-Winning Team
-                  </div>
                   <p className="text-sm text-white/90 font-medium">
-                    Certified glazing installation — zero safety incidents, every project.
+                    Zero safety incidents across every project we've delivered.
                   </p>
                 </div>
               </div>
@@ -462,7 +449,7 @@ export default function StructuralGlazing() {
               },
             ].map((type) => (
               <FadeIn key={type.name} delay={type.delay}>
-                <div className="bg-background rounded-2xl shadow-sm overflow-hidden border border-border hover:border-amber-300 hover:shadow-md transition-all duration-300 flex flex-col h-full">
+                <div className="bg-background rounded-lg shadow-sm overflow-hidden border border-border flex flex-col h-full">
                   <div className="relative overflow-hidden h-52">
                     <img
                       src={type.image}
@@ -472,9 +459,8 @@ export default function StructuralGlazing() {
                       width="600"
                       height="208"
                     />
-                    <div className="absolute top-4 right-4 bg-amber-600 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg flex items-center gap-1">
-                      <IndianRupee size={11} />
-                      {type.price.replace("₹", "")}
+                    <div className="absolute top-4 right-4 bg-slate-900/80 text-white text-xs font-semibold px-3 py-1.5 backdrop-blur-sm">
+                      {type.price}
                     </div>
                   </div>
                   <div className="p-6 flex flex-col flex-1">
@@ -583,14 +569,14 @@ export default function StructuralGlazing() {
             </p>
           </FadeIn>
           <FadeIn delay={100}>
-            <div className="flex flex-wrap justify-center gap-4">
+            <div className="flex flex-wrap justify-center gap-x-8 gap-y-4">
               {["Pune", "Mumbai BKC", "Navi Mumbai", "Nashik", "Hinjewadi IT Park", "Thane"].map((city) => (
                 <div
                   key={city}
-                  className="flex items-center gap-2 bg-white/10 px-6 py-3 rounded-full hover:bg-amber-600 transition-colors cursor-default"
+                  className="flex items-center gap-2 text-white/80"
                 >
-                  <MapPin size={16} />
-                  <span className="font-medium">{city}</span>
+                  <MapPin size={14} className="text-amber-500" />
+                  <span className="font-medium text-sm tracking-wide">{city}</span>
                 </div>
               ))}
             </div>
@@ -635,7 +621,7 @@ export default function StructuralGlazing() {
               },
             ].map((item) => (
               <FadeIn key={item.q} delay={item.delay}>
-                <div className="bg-background rounded-xl p-6 shadow-sm border border-border hover:border-amber-300 transition-colors">
+                <div className="bg-background rounded-lg p-6 shadow-sm border border-border">
                   <h3 className="text-base font-bold mb-2 flex items-start gap-2">
                     <span className="text-amber-600 mt-0.5 shrink-0">Q.</span>
                     {item.q}
@@ -664,7 +650,7 @@ export default function StructuralGlazing() {
               <Link
                 key={link.href}
                 to={link.href}
-                className="group flex items-start gap-3 p-4 rounded-xl border border-slate-200 hover:border-amber-300 hover:bg-amber-50 transition-all bg-white"
+                className="group flex items-start gap-3 p-4 rounded-lg border border-slate-200 hover:bg-slate-50 transition-colors bg-white"
               >
                 <ArrowRight
                   size={15}
