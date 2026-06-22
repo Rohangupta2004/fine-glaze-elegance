@@ -3,7 +3,8 @@ import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/home/CTASection";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { CheckCircle2, MapPin, ArrowRight } from "lucide-react";
+import { CheckCircle2, MapPin, ArrowRight, Building2, Sun, ShieldCheck, Wrench, Leaf, Target } from "lucide-react";
+import { ServiceFeatureStrip } from "@/components/ServiceFeatureStrip";
 
 export default function StructuralGlazing() {
   const serviceSchema = {
@@ -144,6 +145,23 @@ export default function StructuralGlazing() {
           />
         </div>
       </section>
+
+      {/* FEATURE STRIP — banner-style UI */}
+      <ServiceFeatureStrip
+        features={[
+          { icon: Building2, title: "Aesthetic Appeal", description: "Sleek, frameless look with unobstructed glass views." },
+          { icon: Sun, title: "Natural Light", description: "Maximizes daylight and reduces artificial lighting." },
+          { icon: ShieldCheck, title: "Durability & Strength", description: "High-grade silicone & fittings for long-lasting performance." },
+          { icon: Wrench, title: "Low Maintenance", description: "Easy to clean and maintain with minimal hardware." },
+          { icon: Leaf, title: "Energy Efficiency", description: "Reduces heat gain and improves building insulation." },
+        ]}
+        bottomBar={[
+          { icon: ShieldCheck, title: "Safe & Reliable", description: "Engineered for safety and structural stability." },
+          { icon: Target, title: "Precision Engineering", description: "Premium aluminium & glass for a perfect fit." },
+          { icon: Building2, title: "All Building Types", description: "Commercial, residential, and institutional projects." },
+          { icon: MapPin, title: "Ideal For India", description: "Built to withstand varied Indian weather conditions." },
+        ]}
+      />
 
       {/* INTRO — KEYWORD-RICH */}
       <section className="py-20">
