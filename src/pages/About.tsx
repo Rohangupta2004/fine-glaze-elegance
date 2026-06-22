@@ -3,6 +3,7 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { cn } from "@/lib/utils";
 import { Target, Eye, Shield, Users, Award, Clock } from "lucide-react";
 import SEO from "@/components/SEO";
+import { useSiteMedia } from "@/hooks/useSiteMedia";
 
 const values = [
   {
@@ -36,6 +37,9 @@ const About = () => {
   const storyRef = useScrollAnimation();
   const videoRef = useScrollAnimation();
   const valuesRef = useScrollAnimation();
+  const { getMedia } = useSiteMedia();
+  const aboutHero = getMedia("about_hero", "/Embassy.webp");
+  const aboutStoryPhoto = getMedia("about_story_photo", "/Embassy.webp");
 
   return (
     <Layout darkHero>
@@ -60,7 +64,7 @@ const About = () => {
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 overflow-hidden" ref={heroRef.ref}>
         <div className="absolute inset-0">
-          <img src="/Embassy.webp" alt="" className="w-full h-full object-cover" />
+          <img src={aboutHero} alt="" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-b from-slate-900/80 via-slate-900/70 to-slate-900/90" />
         </div>
         <div className="container mx-auto px-4 relative z-10">
@@ -99,7 +103,7 @@ const About = () => {
             >
               <div className="aspect-[4/3] rounded-xl overflow-hidden">
                 <img
-                  src="Embassy.webp"
+                  src={aboutStoryPhoto}
                   alt="Fine Glaze Project"
                   className="w-full h-full object-cover"
                 />

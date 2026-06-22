@@ -1,412 +1,64 @@
+/**
+ * /admin/content — Unified image & video upload admin for Fine Glaze.
+ *
+ * Uses the same manifest system as AdminMedia so every upload immediately
+ * reflects on the live website. Each slot maps to a `useSiteMedia()` key
+ * that components already read from.
+ */
 import { useCallback, useEffect, useRef, useState } from "react";
 import { supabase } from "@/lib/supabase";
 import { toast } from "sonner";
 import { Toaster } from "@/components/ui/sonner";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Badge } from "@/components/ui/badge";
 import {
   ArrowLeft,
   ImagePlus,
-  Trash2,
+  Film,
   Loader2,
   Lock,
+  RefreshCw,
+  Upload,
+  RotateCcw,
+  Check,
+  Link2,
   X,
-  Home,
-  Wrench,
-  Building2,
-  FileText,
-  Users,
-  Phone,
-  LayoutTemplate,
-  CheckCircle2,
 } from "lucide-react";
+import { MEDIA_SLOTS, MediaSlot, groupSlotsByPage } from "@/data/siteMedia";
+import {
+  SiteMediaMap,
+  fetchSiteMediaMap,
+  SITE_MEDIA_MANIFEST,
+} from "@/hooks/useSiteMedia";
 
-// ─── Constants ────────────────────────────────────────────────────────────────
 const BUCKET = "project-images";
-const BASE_FOLDER = "site-content";
+const FOLDER = "site-media";
 const ADMIN_PASS = "fineglaze2025";
-
-// ─── Site Structure ───────────────────────────────────────────────────────────
-const SITE_PAGES = [
-  {
-    key: "home",
-    label: "Home",
-    icon: Home,
-    color: "text-blue-600",
-    sections: [
-      { key: "hero", label: "Hero Section — Main Banner", maxImages: 5 },
-      { key: "trust-strip", label: "Trust Strip — Client Logos Bar", maxImages: 12 },
-      { key: "services-grid", label: "Services Grid — Homepage Service Cards", maxImages: 8 },
-      { key: "portfolio-preview", label: "Portfolio Preview — Featured Projects", maxImages: 6 },
-      { key: "about-intro", label: "About Intro — Company Overview", maxImages: 3 },
-      { key: "cta-banner", label: "CTA Banner — Call to Action", maxImages: 2 },
-    ],
-  },
-  {
-    key: "services",
-    label: "Services",
-    icon: Wrench,
-    color: "text-green-600",
-    sections: [
-      { key: "services-hero", label: "Services Page Hero", maxImages: 2 },
-      { key: "facade-systems", label: "🏢 Facade Systems — Curtain Walls & Structural Glazing", maxImages: 8 },
-      { key: "glass-railings", label: "🔩 Glass Railings — Frameless & Semi-Frameless", maxImages: 8 },
-      { key: "aluminium-doors", label: "🪟 Aluminium Doors & Windows", maxImages: 8 },
-      { key: "facade-amc", label: "🛠 Facade AMC & Maintenance", maxImages: 6 },
-      { key: "acp-cladding", label: "🧱 ACP & Metal Cladding", maxImages: 8 },
-      { key: "skylights", label: "☀️ Skylights & Glass Canopies", maxImages: 6 },
-      { key: "louvers", label: "🌬 Aluminium Louvers & Sun Shading", maxImages: 6 },
-      { key: "glass-partitions", label: "🚿 Glass Partitions & Shower Enclosures", maxImages: 6 },
-      { key: "curtain-wall-page", label: "Page: /curtain-wall-systems", maxImages: 10 },
-      { key: "structural-glazing-page", label: "Page: /structural-glazing", maxImages: 10 },
-      { key: "glass-railings-page", label: "Page: /glass-railings", maxImages: 10 },
-      { key: "aluminium-facade-page", label: "Page: /aluminium-facade", maxImages: 10 },
-      { key: "acp-cladding-page", label: "Page: /acp-aluminium-cladding", maxImages: 10 },
-      { key: "maintenance-page", label: "Page: /maintenance-services", maxImages: 8 },
-    ],
-  },
-  {
-    key: "projects",
-    label: "Projects",
-    icon: Building2,
-    color: "text-purple-600",
-    sections: [
-      { key: "projects-hero", label: "Projects Page Hero", maxImages: 2 },
-      { key: "ltimindtree-campus", label: "📸 LTIMindtree Mensa Campus — Navi Mumbai", maxImages: 10 },
-      { key: "embassy-247", label: "📸 Embassy 247 — Vikhroli, Mumbai", maxImages: 10 },
-      { key: "salsette-27", label: "📸 Salsette-27 — Byculla, Mumbai", maxImages: 10 },
-      { key: "leela-business-park", label: "📸 Leela Business Park", maxImages: 10 },
-      { key: "pune-airport", label: "📸 Pune International Airport — New Terminal", maxImages: 10 },
-      { key: "jindal-house", label: "📸 Jindal House — Balkeshwar 32", maxImages: 10 },
-      { key: "nirmaann-estrellaa", label: "📸 Nirmaann Estrellaa", maxImages: 10 },
-      { key: "ssg-honesty", label: "📸 SSG Honesty", maxImages: 10 },
-      { key: "leela-hotel", label: "📸 Leela Hotel", maxImages: 10 },
-      { key: "embassy-techzone", label: "📸 Embassy Techzone", maxImages: 10 },
-    ],
-  },
-  {
-    key: "blog",
-    label: "Blog Articles",
-    icon: FileText,
-    color: "text-amber-600",
-    sections: [
-      { key: "structural-glazing-cost-india-2026", label: "Structural Glazing Cost Per Sq Ft in India (2026)", maxImages: 5 },
-      { key: "unitized-vs-stick-system-curtain-wall", label: "Unitized vs Stick System Curtain Wall", maxImages: 5 },
-      { key: "types-of-glass-for-building-facades", label: "7 Types of Glass Used in Building Facades", maxImages: 5 },
-      { key: "how-to-choose-facade-contractor-india", label: "How to Choose the Best Facade Contractor in India", maxImages: 5 },
-      { key: "glass-railing-cost-india-2026", label: "Glass Railing Cost Per Running Foot in India (2026)", maxImages: 5 },
-      { key: "aluminium-facade-vs-upvc-windows", label: "Aluminium Facade vs UPVC Windows", maxImages: 5 },
-      { key: "facade-maintenance-guide-india", label: "Building Facade Maintenance Guide India", maxImages: 5 },
-      { key: "curtain-wall-installation-process-india", label: "Curtain Wall Installation Process in India", maxImages: 5 },
-      { key: "acp-vs-hpl-cladding-comparison", label: "ACP vs HPL Cladding: Which is Better?", maxImages: 5 },
-      { key: "curtain-wall-engineering-wind-load-india", label: "Curtain Wall Engineering: Wind Load & Structural Design", maxImages: 5 },
-      { key: "glass-selection-guide-u-value-shgc-is2553", label: "Glass Selection Guide: U-Value, SHGC & IS 2553", maxImages: 5 },
-      { key: "acp-vs-hpl-vs-aluminium-composite-technical-guide", label: "ACP vs HPL vs Aluminium Composite Technical Guide", maxImages: 5 },
-      { key: "spider-glazing-system-guide-india", label: "Spider Glazing System Guide India", maxImages: 5 },
-      { key: "acp-sheet-price-per-sq-ft-india-2026", label: "ACP Sheet Price Per Sq Ft India (2026)", maxImages: 5 },
-      { key: "curtain-wall-cost-per-sq-ft-india-2026", label: "Curtain Wall Cost Per Sq Ft India (2026)", maxImages: 5 },
-      { key: "aluminium-window-cost-per-sq-ft-india-2026", label: "Aluminium Window Cost Per Sq Ft India (2026)", maxImages: 5 },
-      { key: "double-glazed-window-cost-india-2026", label: "Double Glazed Window Cost India (2026)", maxImages: 5 },
-      { key: "facade-design-trends-india-2026", label: "Top 10 Building Facade Design Trends India (2026)", maxImages: 5 },
-      { key: "fire-rated-glass-facade-requirements-india", label: "Fire-Rated Glass Facade Requirements India", maxImages: 5 },
-      { key: "glass-partition-cost-india-2026", label: "Glass Partition Cost India (2026)", maxImages: 5 },
-      { key: "facade-contractor-vs-general-contractor", label: "Facade Contractor vs General Contractor", maxImages: 5 },
-      { key: "leed-igbc-facade-requirements-india", label: "LEED & IGBC Facade Requirements India", maxImages: 5 },
-      { key: "glass-facade-waterproofing-leakage-solutions-india", label: "Glass Facade Waterproofing & Leakage Solutions India", maxImages: 5 },
-      { key: "acp-cladding-installation-process-india", label: "ACP Cladding Installation Process India", maxImages: 5 },
-    ],
-  },
-  {
-    key: "about",
-    label: "About",
-    icon: Users,
-    color: "text-rose-600",
-    sections: [
-      { key: "about-hero", label: "About Hero Section", maxImages: 2 },
-      { key: "team-photo", label: "Team / Office Photos", maxImages: 6 },
-      { key: "company-story", label: "Company Story Section", maxImages: 4 },
-      { key: "certifications", label: "Certifications & Awards", maxImages: 6 },
-    ],
-  },
-  {
-    key: "contact",
-    label: "Contact",
-    icon: Phone,
-    color: "text-teal-600",
-    sections: [
-      { key: "contact-hero", label: "Contact Page Hero", maxImages: 2 },
-      { key: "office-photos", label: "Office / Location Photos", maxImages: 4 },
-    ],
-  },
-  {
-    key: "footer",
-    label: "Footer",
-    icon: LayoutTemplate,
-    color: "text-slate-600",
-    sections: [
-      { key: "footer-logo", label: "Footer Logo & Brand Images", maxImages: 2 },
-      { key: "footer-bg", label: "Footer Background Image", maxImages: 1 },
-    ],
-  },
-];
-
-// ─── Types ────────────────────────────────────────────────────────────────────
-interface ImageEntry {
-  filename: string;
-  url: string;
-  uploadedAt: string;
-}
-
-// ─── Helpers ──────────────────────────────────────────────────────────────────
-function sectionPath(page: string, section: string) {
-  return `${BASE_FOLDER}/${page}/${section}`;
-}
-
-function manifestPath(page: string, section: string) {
-  return `${sectionPath(page, section)}/manifest.json`;
-}
 
 function getPublicUrl(path: string): string {
   const { data } = supabase.storage.from(BUCKET).getPublicUrl(path);
   return data.publicUrl;
 }
 
-// ─── SectionCard Component ────────────────────────────────────────────────────
-function SectionCard({
-  page,
-  sectionKey,
-  label,
-  maxImages,
-}: {
-  page: string;
-  sectionKey: string;
-  label: string;
-  maxImages: number;
-}) {
-  const [images, setImages] = useState<ImageEntry[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [uploading, setUploading] = useState(false);
-  const [expanded, setExpanded] = useState(false);
-  const fileRef = useRef<HTMLInputElement>(null);
-
-  const loadImages = useCallback(async () => {
-    setLoading(true);
-    try {
-      const { data, error } = await supabase.storage
-        .from(BUCKET)
-        .download(manifestPath(page, sectionKey));
-
-      if (!error && data) {
-        const text = await data.text();
-        const parsed = JSON.parse(text);
-        if (Array.isArray(parsed)) setImages(parsed);
-      } else {
-        setImages([]);
-      }
-    } catch {
-      setImages([]);
-    }
-    setLoading(false);
-  }, [page, sectionKey]);
-
-  const saveManifest = async (entries: ImageEntry[]) => {
-    const blob = new Blob([JSON.stringify(entries, null, 2)], {
-      type: "application/json",
+async function saveManifest(map: SiteMediaMap): Promise<void> {
+  const blob = new Blob([JSON.stringify(map, null, 2)], {
+    type: "application/json",
+  });
+  const { error } = await supabase.storage
+    .from(BUCKET)
+    .upload(SITE_MEDIA_MANIFEST, blob, {
+      contentType: "application/json",
+      upsert: true,
     });
-    const { error } = await supabase.storage
-      .from(BUCKET)
-      .upload(manifestPath(page, sectionKey), blob, {
-        contentType: "application/json",
-        upsert: true,
-      });
-    return !error;
-  };
-
-  const handleUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
-    const files = Array.from(e.target.files || []);
-    if (!files.length) return;
-
-    if (images.length + files.length > maxImages) {
-      toast.error(`Max ${maxImages} images for this section`);
-      return;
-    }
-
-    setUploading(true);
-    const newEntries: ImageEntry[] = [];
-
-    for (const file of files) {
-      const ext = file.name.split(".").pop() || "webp";
-      const filename = `${Date.now()}-${Math.random().toString(36).slice(2, 6)}.${ext}`;
-      const storagePath = `${sectionPath(page, sectionKey)}/${filename}`;
-
-      const { error } = await supabase.storage
-        .from(BUCKET)
-        .upload(storagePath, file, { contentType: file.type, upsert: false });
-
-      if (error) {
-        toast.error(`Failed to upload ${file.name}`);
-        continue;
-      }
-
-      newEntries.push({
-        filename,
-        url: getPublicUrl(storagePath),
-        uploadedAt: new Date().toISOString(),
-      });
-    }
-
-    if (newEntries.length > 0) {
-      const updated = [...images, ...newEntries];
-      const saved = await saveManifest(updated);
-      if (saved) {
-        setImages(updated);
-        toast.success(`${newEntries.length} image(s) uploaded`);
-        if (!expanded) setExpanded(true);
-      }
-    }
-
-    if (fileRef.current) fileRef.current.value = "";
-    setUploading(false);
-  };
-
-  const handleDelete = async (index: number) => {
-    const entry = images[index];
-    const storagePath = `${sectionPath(page, sectionKey)}/${entry.filename}`;
-
-    await supabase.storage.from(BUCKET).remove([storagePath]);
-
-    const updated = images.filter((_, i) => i !== index);
-    await saveManifest(updated);
-    setImages(updated);
-    toast.success("Image deleted");
-  };
-
-  useEffect(() => {
-    loadImages();
-  }, [loadImages]);
-
-  const hasImages = images.length > 0;
-
-  return (
-    <div className="border rounded-xl overflow-hidden bg-white hover:border-slate-300 transition-colors">
-      {/* Header */}
-      <div
-        className="flex items-center justify-between p-4 cursor-pointer select-none"
-        onClick={() => setExpanded((v) => !v)}
-      >
-        <div className="flex items-center gap-3 flex-1 min-w-0">
-          <div className="flex-1 min-w-0">
-            <p className="text-sm font-medium truncate">{label}</p>
-            <p className="text-xs text-muted-foreground mt-0.5">
-              {loading ? (
-                <span className="flex items-center gap-1">
-                  <Loader2 size={10} className="animate-spin" /> Loading…
-                </span>
-              ) : hasImages ? (
-                <span className="text-green-600 flex items-center gap-1">
-                  <CheckCircle2 size={10} />
-                  {images.length} / {maxImages} images uploaded
-                </span>
-              ) : (
-                <span className="text-muted-foreground">
-                  No images — click to upload
-                </span>
-              )}
-            </p>
-          </div>
-        </div>
-        <div className="flex items-center gap-2 ml-2 flex-shrink-0">
-          {hasImages && (
-            <Badge variant="secondary" className="text-xs">
-              {images.length}
-            </Badge>
-          )}
-          <label
-            onClick={(e) => e.stopPropagation()}
-            className="cursor-pointer"
-          >
-            <Button
-              asChild
-              size="sm"
-              variant="outline"
-              className="h-8 text-xs pointer-events-none"
-              disabled={uploading || images.length >= maxImages}
-            >
-              <span>
-                {uploading ? (
-                  <Loader2 size={12} className="animate-spin mr-1" />
-                ) : (
-                  <ImagePlus size={12} className="mr-1" />
-                )}
-                Upload
-              </span>
-            </Button>
-            <input
-              ref={fileRef}
-              type="file"
-              accept="image/*"
-              multiple
-              className="sr-only"
-              onChange={handleUpload}
-            />
-          </label>
-        </div>
-      </div>
-
-      {/* Image grid (expanded) */}
-      {expanded && hasImages && (
-        <div className="border-t px-4 pb-4 pt-3">
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
-            {images.map((img, i) => (
-              <div
-                key={img.filename}
-                className="relative group aspect-video rounded-lg overflow-hidden border bg-slate-50"
-              >
-                <img
-                  src={img.url}
-                  alt={`${label} image ${i + 1}`}
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                />
-                <button
-                  onClick={() => handleDelete(i)}
-                  className="absolute top-1 right-1 w-6 h-6 bg-red-500 text-white rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity shadow-sm"
-                >
-                  <X size={12} />
-                </button>
-                <div className="absolute bottom-0 left-0 right-0 bg-black/50 text-white text-[10px] px-1.5 py-0.5 text-center truncate">
-                  {i + 1}
-                </div>
-              </div>
-            ))}
-
-            {/* Add more slot */}
-            {images.length < maxImages && (
-              <label className="aspect-video rounded-lg border-2 border-dashed border-slate-200 flex flex-col items-center justify-center gap-1 cursor-pointer hover:border-slate-400 hover:bg-slate-50 transition-all">
-                <ImagePlus size={18} className="text-slate-300" />
-                <span className="text-[10px] text-muted-foreground">Add more</span>
-                <input
-                  type="file"
-                  accept="image/*"
-                  multiple
-                  className="sr-only"
-                  onChange={handleUpload}
-                />
-              </label>
-            )}
-          </div>
-        </div>
-      )}
-    </div>
-  );
+  if (error) throw error;
 }
 
-// ─── Main Component ───────────────────────────────────────────────────────────
+// ─── Main ─────────────────────────────────────────────────────────────────────
 export default function AdminSiteContent() {
   const [authed, setAuthed] = useState(false);
   const [pass, setPass] = useState("");
-  const [activePage, setActivePage] = useState("home");
+  const [map, setMap] = useState<SiteMediaMap>({});
+  const [loading, setLoading] = useState(true);
 
   const handleLogin = () => {
     if (pass === ADMIN_PASS) {
@@ -417,126 +69,351 @@ export default function AdminSiteContent() {
     }
   };
 
-  const currentPage = SITE_PAGES.find((p) => p.key === activePage) ?? SITE_PAGES[0];
+  const load = useCallback(async () => {
+    setLoading(true);
+    const m = await fetchSiteMediaMap();
+    setMap(m);
+    setLoading(false);
+  }, []);
 
-  // ─── Login ─────────────────────────────────────────────────────────────────
+  useEffect(() => {
+    if (authed) load();
+  }, [authed, load]);
+
+  const updateSlot = async (slot: MediaSlot, url: string | null) => {
+    const next: SiteMediaMap = { ...map };
+    if (url) {
+      next[slot.key] = { url, type: slot.type };
+    } else {
+      delete next[slot.key];
+    }
+    await saveManifest(next);
+    setMap(next);
+  };
+
+  // ─── Login ──────────────────────────────────────────────────────────────────
   if (!authed) {
     return (
-      <div className="min-h-screen bg-slate-50 flex items-center justify-center">
-        <Toaster richColors />
-        <div className="bg-white p-8 rounded-xl shadow-lg w-full max-w-sm space-y-4">
-          <div className="flex items-center gap-3 mb-2">
-            <div className="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center">
-              <Lock className="w-5 h-5 text-amber-600" />
-            </div>
-            <div>
-              <h1 className="text-lg font-bold">Site Content Admin</h1>
-              <p className="text-xs text-muted-foreground">Fine Glaze — Admin only</p>
-            </div>
+      <div className="min-h-screen bg-slate-50 flex items-center justify-center p-4">
+        <Toaster />
+        <div className="w-full max-w-sm bg-white rounded-2xl shadow-lg border p-8 space-y-5 text-center">
+          <div className="mx-auto w-14 h-14 rounded-full bg-amber-100 flex items-center justify-center">
+            <Lock className="w-6 h-6 text-amber-700" />
           </div>
-          <Input
-            type="password"
-            placeholder="Password"
-            value={pass}
-            onChange={(e) => setPass(e.target.value)}
-            onKeyDown={(e) => e.key === "Enter" && handleLogin()}
-            autoFocus
-          />
-          <Button onClick={handleLogin} className="w-full bg-amber-600 hover:bg-amber-700">
-            Login
-          </Button>
+          <div>
+            <h1 className="text-xl font-bold">Fine Glaze — Image Admin</h1>
+            <p className="text-sm text-muted-foreground mt-1">
+              Upload and replace images across the entire website
+            </p>
+          </div>
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              handleLogin();
+            }}
+            className="space-y-3"
+          >
+            <Input
+              type="password"
+              placeholder="Password"
+              value={pass}
+              onChange={(e) => setPass(e.target.value)}
+              autoFocus
+            />
+            <Button className="w-full bg-amber-600 hover:bg-amber-700" type="submit">
+              <Lock className="w-4 h-4 mr-2" /> Sign In
+            </Button>
+          </form>
         </div>
       </div>
     );
   }
 
-  // ─── Main UI ───────────────────────────────────────────────────────────────
+  const grouped = groupSlotsByPage();
+
+  // ─── Main UI ────────────────────────────────────────────────────────────────
   return (
     <div className="min-h-screen bg-slate-50">
-      <Toaster richColors />
+      <Toaster />
 
       {/* Header */}
-      <div className="bg-white border-b sticky top-0 z-50">
-        <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <header className="sticky top-0 z-10 bg-white border-b shadow-sm">
+        <div className="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <a
-              href="/admin/images"
-              className="text-muted-foreground hover:text-foreground transition-colors p-1"
-            >
-              <ArrowLeft size={18} />
+            <a href="/admin">
+              <Button variant="ghost" size="icon">
+                <ArrowLeft className="w-5 h-5" />
+              </Button>
             </a>
             <div>
-              <h1 className="text-lg font-bold leading-tight">Site Content Manager</h1>
-              <p className="text-xs text-muted-foreground">
-                Upload images for every page & section
+              <h1 className="text-xl font-bold">Website Images</h1>
+              <p className="text-sm text-muted-foreground">
+                Upload a new image — it goes live on the site immediately
               </p>
             </div>
           </div>
-          <div className="flex gap-2">
-            <a href="/admin/images">
+          <div className="flex items-center gap-2">
+            <a href="/admin/blog-images">
               <Button variant="outline" size="sm" className="text-xs">
-                <Building2 size={12} className="mr-1" /> Projects
+                Blog Images
               </Button>
             </a>
             <a href="/admin/logos">
               <Button variant="outline" size="sm" className="text-xs">
-                <Users size={12} className="mr-1" /> Client Logos
+                Client Logos
               </Button>
             </a>
+            <a href="/admin/images">
+              <Button variant="outline" size="sm" className="text-xs">
+                Project Gallery
+              </Button>
+            </a>
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={load}
+              disabled={loading}
+            >
+              <RefreshCw className={`w-4 h-4 ${loading ? "animate-spin" : ""}`} />
+            </Button>
           </div>
         </div>
+      </header>
+
+      <main className="max-w-5xl mx-auto px-4 py-8 space-y-10">
+        {loading ? (
+          <div className="flex items-center justify-center py-24">
+            <Loader2 className="w-8 h-8 animate-spin text-muted-foreground" />
+          </div>
+        ) : (
+          Object.entries(grouped).map(([page, slots]) => (
+            <section key={page} className="space-y-4">
+              <h2 className="text-base font-bold text-slate-800 border-b pb-2">
+                {page}
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                {slots.map((slot) => (
+                  <SlotCard
+                    key={slot.key}
+                    slot={slot}
+                    current={map[slot.key]?.url || null}
+                    onSave={(url) => updateSlot(slot, url)}
+                  />
+                ))}
+              </div>
+            </section>
+          ))
+        )}
+      </main>
+    </div>
+  );
+}
+
+// ─── Slot Card ────────────────────────────────────────────────────────────────
+function SlotCard({
+  slot,
+  current,
+  onSave,
+}: {
+  slot: MediaSlot;
+  current: string | null;
+  onSave: (url: string | null) => Promise<void>;
+}) {
+  const [busy, setBusy] = useState(false);
+  const [urlInput, setUrlInput] = useState("");
+  const [dragOver, setDragOver] = useState(false);
+  const fileRef = useRef<HTMLInputElement>(null);
+
+  const effective = current || slot.fallback;
+  const isCustom = !!current;
+
+  const doSave = async (url: string | null, msg: string) => {
+    setBusy(true);
+    try {
+      await onSave(url);
+      toast.success(msg);
+      setUrlInput("");
+    } catch (e: any) {
+      toast.error(`Save failed: ${e.message || e}`);
+    } finally {
+      setBusy(false);
+    }
+  };
+
+  const handleUpload = async (files: FileList | null) => {
+    if (!files?.length) return;
+    const file = files[0];
+    if (slot.type === "image" && !file.type.startsWith("image/")) {
+      toast.error("Please select an image file");
+      return;
+    }
+    setBusy(true);
+    try {
+      const safe = file.name.replace(/[^a-zA-Z0-9._-]/g, "_");
+      const path = `${FOLDER}/${slot.key}-${Date.now()}-${safe}`;
+      const { error } = await supabase.storage
+        .from(BUCKET)
+        .upload(path, file, { contentType: file.type, upsert: false });
+      if (error) throw error;
+      const url = getPublicUrl(path);
+      await onSave(url);
+      toast.success(`${slot.label} updated!`);
+    } catch (e: any) {
+      const m = String(e?.message || e);
+      if (m.toLowerCase().includes("mime")) {
+        toast.error("File type not allowed — try pasting a URL instead.");
+      } else {
+        toast.error(`Upload failed: ${m}`);
+      }
+    } finally {
+      setBusy(false);
+    }
+  };
+
+  return (
+    <div className="bg-white rounded-xl border shadow-sm p-5 space-y-4">
+      {/* Title row */}
+      <div className="flex items-start justify-between gap-3">
+        <div>
+          <h3 className="font-semibold text-sm flex items-center gap-2">
+            {slot.type === "video" ? (
+              <Film className="w-4 h-4 text-purple-500" />
+            ) : (
+              <ImagePlus className="w-4 h-4 text-amber-600" />
+            )}
+            {slot.label}
+          </h3>
+          {slot.note && (
+            <p className="text-xs text-muted-foreground mt-0.5">{slot.note}</p>
+          )}
+        </div>
+        <span
+          className={`shrink-0 text-[10px] font-semibold px-2 py-0.5 rounded-full ${
+            isCustom
+              ? "bg-green-100 text-green-700"
+              : "bg-slate-100 text-slate-500"
+          }`}
+        >
+          {isCustom ? "Custom ✓" : "Default"}
+        </span>
       </div>
 
-      <div className="max-w-6xl mx-auto px-4 py-6 flex gap-6">
-        {/* Sidebar — page navigation */}
-        <div className="w-44 flex-shrink-0">
-          <nav className="space-y-1 sticky top-20">
-            {SITE_PAGES.map((page) => {
-              const Icon = page.icon;
-              return (
-                <button
-                  key={page.key}
-                  onClick={() => setActivePage(page.key)}
-                  className={`w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-sm font-medium transition-all text-left ${
-                    activePage === page.key
-                      ? "bg-amber-50 text-amber-700 border border-amber-200"
-                      : "text-muted-foreground hover:bg-slate-100 hover:text-foreground"
-                  }`}
-                >
-                  <Icon size={15} className={activePage === page.key ? "text-amber-600" : page.color} />
-                  {page.label}
-                </button>
-              );
-            })}
-          </nav>
-        </div>
-
-        {/* Main area — sections */}
-        <div className="flex-1 min-w-0">
-          <div className="flex items-center gap-2 mb-4">
-            {(() => {
-              const Icon = currentPage.icon;
-              return <Icon size={20} className={currentPage.color} />;
-            })()}
-            <h2 className="text-xl font-bold">{currentPage.label}</h2>
-            <Badge variant="secondary" className="text-xs ml-auto">
-              {currentPage.sections.length} sections
-            </Badge>
-          </div>
-
-          <div className="space-y-2">
-            {currentPage.sections.map((section) => (
-              <SectionCard
-                key={section.key}
-                page={currentPage.key}
-                sectionKey={section.key}
-                label={section.label}
-                maxImages={section.maxImages}
-              />
-            ))}
-          </div>
-        </div>
+      {/* Preview */}
+      <div className="rounded-lg overflow-hidden border bg-slate-100 aspect-video flex items-center justify-center relative">
+        {slot.type === "video" ? (
+          <video
+            key={effective}
+            src={effective}
+            className="w-full h-full object-cover"
+            muted
+            loop
+            playsInline
+            autoPlay
+          />
+        ) : (
+          <img
+            src={effective}
+            alt={slot.label}
+            className="w-full h-full object-cover"
+          />
+        )}
+        {isCustom && (
+          <button
+            onClick={() => doSave(null, "Reset to default")}
+            disabled={busy}
+            title="Remove custom image"
+            className="absolute top-2 right-2 w-7 h-7 rounded-full bg-red-500 text-white flex items-center justify-center shadow hover:bg-red-600 transition-colors"
+          >
+            <X size={14} />
+          </button>
+        )}
       </div>
+
+      {/* Upload drop zone (image slots only) */}
+      {slot.type === "image" && (
+        <>
+          <input
+            ref={fileRef}
+            type="file"
+            accept="image/*"
+            className="hidden"
+            onChange={(e) => handleUpload(e.target.files)}
+          />
+          <div
+            onClick={() => !busy && fileRef.current?.click()}
+            onDragOver={(e) => {
+              e.preventDefault();
+              setDragOver(true);
+            }}
+            onDragLeave={() => setDragOver(false)}
+            onDrop={(e) => {
+              e.preventDefault();
+              setDragOver(false);
+              handleUpload(e.dataTransfer.files);
+            }}
+            className={`rounded-lg border-2 border-dashed cursor-pointer transition-all py-4 flex flex-col items-center gap-1 text-center ${
+              dragOver
+                ? "border-amber-500 bg-amber-50"
+                : "border-slate-200 hover:border-amber-400 hover:bg-slate-50"
+            } ${busy ? "pointer-events-none opacity-60" : ""}`}
+          >
+            {busy ? (
+              <Loader2 className="w-5 h-5 animate-spin text-amber-600" />
+            ) : (
+              <Upload className="w-5 h-5 text-slate-400" />
+            )}
+            <span className="text-xs font-medium">
+              {busy ? "Uploading…" : "Drop image here or click to upload"}
+            </span>
+            <span className="text-[10px] text-muted-foreground">
+              JPG, PNG, WebP — max 10 MB
+            </span>
+          </div>
+        </>
+      )}
+
+      {/* URL paste */}
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          if (urlInput.trim()) doSave(urlInput.trim(), `${slot.label} updated!`);
+        }}
+        className="flex gap-2"
+      >
+        <div className="relative flex-1">
+          <Link2 className="absolute left-2.5 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-slate-400" />
+          <Input
+            value={urlInput}
+            onChange={(e) => setUrlInput(e.target.value)}
+            placeholder={
+              slot.type === "video"
+                ? "Paste video URL (.mp4)"
+                : "Or paste an image URL"
+            }
+            className="pl-8 h-9 text-xs"
+            disabled={busy}
+          />
+        </div>
+        <Button
+          type="submit"
+          size="sm"
+          disabled={busy || !urlInput.trim()}
+          className="h-9 bg-amber-600 hover:bg-amber-700"
+        >
+          <Check className="w-4 h-4" />
+        </Button>
+      </form>
+
+      {/* Reset to default */}
+      {isCustom && (
+        <button
+          onClick={() => doSave(null, "Reset to default")}
+          disabled={busy}
+          className="w-full text-xs text-muted-foreground hover:text-red-500 flex items-center justify-center gap-1.5 transition-colors"
+        >
+          <RotateCcw className="w-3 h-3" /> Reset to default
+        </button>
+      )}
     </div>
   );
 }

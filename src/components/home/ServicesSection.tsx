@@ -3,15 +3,17 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { cn } from "@/lib/utils";
+import { useSiteMedia } from "@/hooks/useSiteMedia";
 
-const services = [
+const SERVICE_DEFS = [
   {
     tag: "Facade System",
     title: "Curtain Wall Systems",
     desc: "Unitized & stick-built curtain walls for IT parks, offices and high-rises. Wind-load tested up to 4.5 kPa.",
     spec: "Up to 4.5 kPa wind load",
     href: "/curtain-wall-systems",
-    image: "/Unitized.webp",
+    mediaKey: "services_card_curtain_wall",
+    fallback: "/Unitized.webp",
   },
   {
     tag: "Glazing",
@@ -19,7 +21,8 @@ const services = [
     desc: "Frameless silicone-bonded glass facades. Dow Corning / Sika certified. DGU + Low-E ready.",
     spec: "Dow Corning · Sika certified",
     href: "/structural-glazing",
-    image: "/Glazing.webp",
+    mediaKey: "services_card_structural_glazing",
+    fallback: "/Glazing.webp",
   },
   {
     tag: "Cladding",
@@ -27,7 +30,8 @@ const services = [
     desc: "Fire-retardant PVDF-coated aluminium composite panels from Aludecor & Alstrong. 20-yr colour warranty.",
     spec: "20-yr PVDF colour warranty",
     href: "/acp-aluminium-cladding",
-    image: "/Panel.webp",
+    mediaKey: "services_card_acp_cladding",
+    fallback: "/Panel.webp",
   },
   {
     tag: "Aluminium",
@@ -35,7 +39,8 @@ const services = [
     desc: "Thermal-break sliding, casement & lift-slide systems. 60% heat reduction, 45dB sound rating.",
     spec: "60% heat reduction",
     href: "/aluminium-facade",
-    image: "/Aluminium%20windows.webp",
+    mediaKey: "services_card_aluminium_windows",
+    fallback: "/Aluminium%20windows.webp",
   },
   {
     tag: "Railings",
@@ -43,7 +48,8 @@ const services = [
     desc: "Frameless 12–19mm toughened glass railings with marine-grade SS hardware for balconies & staircases.",
     spec: "12–19mm toughened glass",
     href: "/glass-railings",
-    image: "/Railing.webp",
+    mediaKey: "services_card_glass_railings",
+    fallback: "/Railing.webp",
   },
   {
     tag: "Roofing",
@@ -51,7 +57,8 @@ const services = [
     desc: "Engineered glass skylights with heat-reflective coatings. Spider canopies & retractable roof systems.",
     spec: "50% more natural light",
     href: "/structural-glazing",
-    image: "/Hotel.webp",
+    mediaKey: "services_card_skylights",
+    fallback: "/Hotel.webp",
   },
   {
     tag: "Interior",
@@ -59,7 +66,8 @@ const services = [
     desc: "Frameless office partitions with optional acoustic DGU and switchable smart glass.",
     spec: "Up to 42dB sound insulation",
     href: "/glass-railings",
-    image: "/Glass%20installation.webp",
+    mediaKey: "services_card_glass_partitions",
+    fallback: "/Glass%20installation.webp",
   },
   {
     tag: "Maintenance",
@@ -67,12 +75,19 @@ const services = [
     desc: "Rope-access facade cleaning, silicone resealing, glass replacement & emergency repairs.",
     spec: "Bi-annual inspection cycle",
     href: "/maintenance-services",
-    image: "/Amc.webp",
+    mediaKey: "services_card_amc",
+    fallback: "/Amc.webp",
   },
 ];
 
 export const ServicesSection = () => {
   const { ref, isVisible } = useScrollAnimation();
+  const { getMedia } = useSiteMedia();
+
+  const services = SERVICE_DEFS.map((s) => ({
+    ...s,
+    image: getMedia(s.mediaKey, s.fallback),
+  }));
 
   return (
     <section className="py-20 bg-muted" ref={ref}>
