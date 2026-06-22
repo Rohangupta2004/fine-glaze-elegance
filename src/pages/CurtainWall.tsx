@@ -4,8 +4,11 @@ import { CheckCircle2, Building2, ShieldCheck, Maximize2, MapPin, Wrench, ArrowR
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import SEO from "@/components/SEO";
+import { useSiteMedia } from "@/hooks/useSiteMedia";
 
 export default function CurtainWall() {
+  const { getMedia } = useSiteMedia();
+  const heroImage = getMedia("curtain_wall_hero", "/Unitized.webp");
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -133,7 +136,10 @@ export default function CurtainWall() {
 
       {/* HERO */}
       <section className="relative pt-32 pb-24 bg-slate-900 text-white overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/Unitized.webp')] bg-cover bg-center opacity-30" />
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-30"
+          style={{ backgroundImage: `url('${heroImage}')` }}
+        />
         <div className="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-900/70 to-transparent" />
         <div className="container mx-auto px-4 relative z-10 max-w-6xl">
           <div className="max-w-3xl">

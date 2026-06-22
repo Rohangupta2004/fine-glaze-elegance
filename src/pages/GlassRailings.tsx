@@ -6,8 +6,11 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { Check, CheckCircle2, ShieldCheck, Zap, Maximize2, ArrowRight, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
 import { CTASection } from "@/components/home/CTASection";
+import { useSiteMedia } from "@/hooks/useSiteMedia";
 
 const GlassRailings = () => {
+  const { getMedia } = useSiteMedia();
+  const heroImage = getMedia("glass_railings_hero", "/Railing.webp");
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -126,7 +129,7 @@ const GlassRailings = () => {
       {/* HERO */}
       <section className="relative h-[80vh] flex items-center justify-center overflow-hidden bg-slate-900">
         <div className="absolute inset-0 z-0">
-          <img src="/Railing.webp" alt="Luxury Frameless Glass Railing Balcony - Fine Glaze" className="w-full h-full object-cover opacity-55" loading="eager" fetchPriority="high" width="800" height="559" />
+          <img src={heroImage} alt="Luxury Frameless Glass Railing Balcony - Fine Glaze" className="w-full h-full object-cover opacity-55" loading="eager" fetchPriority="high" width="800" height="559" />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-r from-slate-950/70 to-transparent" />
         </div>

@@ -4,8 +4,11 @@ import { CTASection } from "@/components/home/CTASection";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { CheckCircle2, ArrowRight } from "lucide-react";
+import { useSiteMedia } from "@/hooks/useSiteMedia";
 
 export default function AluminiumFacade() {
+  const { getMedia } = useSiteMedia();
+  const heroImage = getMedia("aluminium_facade_hero", "/Aluminium%20windows.webp");
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -141,7 +144,7 @@ export default function AluminiumFacade() {
           </div>
 
           <img
-            src="/Aluminium%20windows.webp"
+            src={heroImage}
             alt="Modern aluminium windows and facade by Fine Glaze India"
             className="rounded-xl shadow-2xl object-cover h-[420px] w-full"
             loading="eager"

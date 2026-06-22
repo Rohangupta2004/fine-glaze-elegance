@@ -5,8 +5,10 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { CheckCircle2, MapPin, ArrowRight, Building2, Sun, ShieldCheck, Wrench, Leaf } from "lucide-react";
 import { ServiceHero } from "@/components/ServiceHero";
+import { useSiteMedia } from "@/hooks/useSiteMedia";
 
 export default function StructuralGlazing() {
+  const { getMedia } = useSiteMedia();
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -116,7 +118,10 @@ export default function StructuralGlazing() {
 
       {/* HERO — full-bleed image + overlaid feature icons */}
       <ServiceHero
-        image="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1600&q=80"
+        image={getMedia(
+          "structural_glazing_hero",
+          "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1600&q=80"
+        )}
         titleLead="Structural "
         titleAccent="Glazing Systems"
         titleTail=" in India"
