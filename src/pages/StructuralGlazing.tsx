@@ -137,7 +137,7 @@ export default function StructuralGlazing() {
       {/* ════════════════════════════════════════════════════
           HERO — full-bleed photo + gradient text overlay
           ════════════════════════════════════════════════════ */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 md:pt-24">
         {/* Background image with slow zoom */}
         <img
           src={IMG.hero}
@@ -157,8 +157,8 @@ export default function StructuralGlazing() {
         {/* Slow zoom keyframe */}
         <style>{`@keyframes slowZoom { from { transform: scale(1.05); } to { transform: scale(1.13); } }`}</style>
 
-        {/* Content — pt-24 clears the fixed navbar */}
-        <div className="relative z-10 w-full container mx-auto px-4 text-center pt-24 pb-20">
+        {/* Content */}
+        <div className="relative z-10 w-full container mx-auto px-4 text-center py-16">
           <div className="max-w-5xl mx-auto space-y-7">
 
             {/* Award badge */}
