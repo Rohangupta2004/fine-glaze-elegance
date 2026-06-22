@@ -170,7 +170,9 @@ export default function StructuralGlazing() {
 
         {/* Content */}
         <div className="relative z-10 container mx-auto px-6 md:px-12 pb-24 pt-48">
-          <div className="max-w-3xl">
+          <div className="max-w-3xl rounded-2xl p-8 md:p-10 backdrop-blur-sm"
+            style={{ background: "linear-gradient(135deg, rgba(5,10,20,0.72) 0%, rgba(10,8,4,0.65) 100%)" }}
+          >
             {/* Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/20 border border-amber-400/40 text-amber-300 text-xs font-bold uppercase tracking-widest mb-6 backdrop-blur-sm">
               <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
@@ -244,8 +246,8 @@ export default function StructuralGlazing() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             {[
               { value: "5+", label: "Years Experience" },
-              { value: "50+", label: "Projects Delivered" },
-              { value: "50+", label: "Happy Clients" },
+              { value: "10+", label: "Landmark Projects" },
+              { value: "🏆", label: "Embassy REIT Award" },
               { value: "0", label: "Safety Incidents" },
             ].map((stat) => (
               <div key={stat.label} className="space-y-1">
