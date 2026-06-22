@@ -2139,7 +2139,7 @@ export const blogPosts: Record<string, BlogPost> = {
         heading: "Installation Best Practices for Fire Safety",
         body: "Even the best fire-rated ACP can fail if not installed correctly. Key considerations include:",
         list: [
-          'Fire Stops: Installing horizontal and vertical fire stops within the facade cavity to prevent the 'chimney effect'.',
+          "Fire Stops: Installing horizontal and vertical fire stops within the facade cavity to prevent the 'chimney effect'.",
           'Approved Sealants: Using fire-rated silicone sealants for joints.',
           'System Testing: Ensuring the entire wall assembly, not just the panel, is tested for fire performance.'
 ]
@@ -2151,10 +2151,7 @@ export const blogPosts: Record<string, BlogPost> = {
       },
       {
         heading: "Conclusion and Contact Information",
-        body: "Investing in fire-rated facades is an investment in the safety of the building's occupants. Ensure your project meets the latest Indian standards by partnering with a knowledgeable contractor. For expert advice on fire-rated ACP cladding and structural glazing, contact Fine Glaze today.
-
-Email: info@fineglaze.com
-Phone: +91 8369233566",
+        body: "Investing in fire-rated facades is an investment in the safety of the building's occupants. Ensure your project meets the latest Indian standards by partnering with a knowledgeable contractor. For expert advice on fire-rated ACP cladding and structural glazing, contact Fine Glaze today.\n\nEmail: info@fineglaze.com\nPhone: +91 8369233566",
 
       }
     ]
