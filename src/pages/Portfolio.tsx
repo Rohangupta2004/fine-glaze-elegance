@@ -89,7 +89,7 @@ const portfolioSchema = {
   })),
 };
 
-/* ── Image-overlay project card ── */
+/* ── Project card — image + visible details ── */
 function ProjectCard({
   p,
   tall = false,
@@ -103,37 +103,34 @@ function ProjectCard({
     <FadeIn delay={delay}>
       <Link
         to={`/project/${p.slug}`}
-        className={cn(
-          "group relative block overflow-hidden",
-          tall ? "h-[420px] md:h-[480px]" : "h-[320px] md:h-[380px]"
-        )}
+        className="group block overflow-hidden bg-white border border-stone-200 hover:border-amber-300 transition-all duration-300"
       >
-        {/* Full-bleed image */}
-        <img
-          src={p.image}
-          alt={p.title}
-          className="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.04] transition-transform duration-700"
-          loading="lazy"
-        />
+        {/* Image */}
+        <div className={cn(
+          "relative overflow-hidden",
+          tall ? "h-[280px] md:h-[320px]" : "h-[220px] md:h-[260px]"
+        )}>
+          <img
+            src={p.image}
+            alt={p.title}
+            className="w-full h-full object-cover group-hover:scale-[1.04] transition-transform duration-700"
+            loading="lazy"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
 
-        {/* Gradient overlay — darker on hover */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent group-hover:from-black/90 group-hover:via-black/40 transition-all duration-500" />
-
-        {/* Award tag */}
-        {p.isAwardWinner && (
-          <div className="absolute top-4 left-4 bg-amber-600 text-white text-[9px] font-bold uppercase tracking-widest px-2.5 py-1 z-10">
-            Award Winner
+          {p.isAwardWinner && (
+            <div className="absolute top-3 left-3 bg-amber-600 text-white text-[9px] font-bold uppercase tracking-widest px-2.5 py-1">
+              Award Winner
+            </div>
+          )}
+          <div className="absolute top-3 right-3 text-white/60 text-[10px] font-bold uppercase tracking-widest">
+            {p.year}
           </div>
-        )}
-
-        {/* Year + category — top right */}
-        <div className="absolute top-4 right-4 text-white/50 text-[10px] font-bold uppercase tracking-widest z-10">
-          {p.year}
         </div>
 
-        {/* Content overlay — bottom, slides up on hover */}
-        <div className="absolute inset-x-0 bottom-0 p-5 md:p-6 z-10">
-          <p className="text-amber-400/80 text-[10px] font-bold tracking-[0.2em] uppercase mb-2">
+        {/* Details — always visible */}
+        <div className="p-5">
+          <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-amber-700 mb-2">
             {p.category === "award"
               ? "Award Winner"
               : p.category === "corporate"
@@ -142,23 +139,21 @@ function ProjectCard({
             · {p.client}
           </p>
 
-          <h3 className="text-lg md:text-xl font-bold text-white leading-snug mb-2 group-hover:text-amber-100 transition-colors">
+          <h3 className="text-base md:text-lg font-bold text-stone-900 leading-snug mb-2 group-hover:text-amber-700 transition-colors">
             {p.title}
           </h3>
 
-          <div className="flex items-center gap-1.5 text-white/50 text-xs mb-3">
+          <div className="flex items-center gap-1.5 text-stone-400 text-xs mb-3">
             <MapPin size={11} />
             <span>{p.location}</span>
           </div>
 
-          {/* Scope + arrow — hidden by default, revealed on hover */}
-          <div className="max-h-0 group-hover:max-h-24 overflow-hidden transition-all duration-500 ease-out">
-            <p className="text-white/60 text-xs leading-relaxed mb-3">
-              {p.scope}
-            </p>
-            <div className="flex items-center gap-1.5 text-amber-400 font-semibold text-xs group-hover:gap-2.5 transition-all">
-              View Project <ArrowRight size={12} />
-            </div>
+          <p className="text-stone-500 text-xs leading-relaxed mb-4 line-clamp-2">
+            {p.scope}
+          </p>
+
+          <div className="flex items-center gap-1.5 text-stone-800 font-semibold text-xs group-hover:text-amber-700 group-hover:gap-2.5 transition-all">
+            View Project <ArrowRight size={12} />
           </div>
         </div>
       </Link>
