@@ -49,8 +49,7 @@ export const MEDIA_SLOTS: MediaSlot[] = [
     label: "Hero Background Image",
     page: "Structural Glazing",
     type: "image",
-    fallback:
-      "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1600&q=80",
+    fallback: "/Glazing.webp",
   },
   {
     key: "curtain_wall_hero",
