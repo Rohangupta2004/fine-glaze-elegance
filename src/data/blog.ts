@@ -2115,7 +2115,6 @@ export const blogPosts: Record<string, BlogPost> = {
       {
         heading: "Key Fire Testing Standards for ACP",
         body: "To comply with Indian regulations, ACP sheets must undergo rigorous testing. The most common standards referenced include:",
-,
         list: [
           'ASTM E84: Standard Test Method for Surface Burning Characteristics of Building Materials.',
           'EN 13501-1: European standard for fire classification of construction products.',
@@ -2126,7 +2125,6 @@ export const blogPosts: Record<string, BlogPost> = {
       {
         heading: "ACP Fire Ratings Explained",
         body: "ACP is generally categorized into different fire classes based on the core material's performance during a fire:",
-,
         table: {
           headers: ["Class", "Core Material", "Fire Performance", "Suitability"],
           rows: [["Class A2", "90% Mineral Core", "Non-combustible", "High-rise buildings (>15m)"], ["Class B", "70% Mineral Core", "Fire-retardant", "Mid-rise buildings"], ["Class FR", "Fire Resistant", "Limited combustibility", "General commercial use"], ["Non-FR", "LDPE Core", "Highly combustible", "Not recommended for facades"]]
@@ -2140,7 +2138,6 @@ export const blogPosts: Record<string, BlogPost> = {
       {
         heading: "Installation Best Practices for Fire Safety",
         body: "Even the best fire-rated ACP can fail if not installed correctly. Key considerations include:",
-,
         list: [
           'Fire Stops: Installing horizontal and vertical fire stops within the facade cavity to prevent the 'chimney effect'.',
           'Approved Sealants: Using fire-rated silicone sealants for joints.',
