@@ -2,6 +2,7 @@ import { ReactNode } from "react";
 import { Header } from "./Header";
 import { Footer } from "./Footer";
 import FloatingCTA from "@/components/FloatingCTA";
+import MobileBottomCTA from "@/components/MobileBottomCTA";
 
 interface LayoutProps {
   children: ReactNode;
@@ -17,6 +18,7 @@ export const Layout = ({ children, darkHero = false }: LayoutProps) => {
       <main className="flex-1">{children}</main>
       <Footer />
       <FloatingCTA />
+      <MobileBottomCTA />
     </div>
   );
 };

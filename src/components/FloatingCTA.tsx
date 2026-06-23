@@ -16,7 +16,7 @@ export default function FloatingCTA() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat on WhatsApp"
-      className="fixed bottom-6 right-6 z-50 flex items-center justify-center group"
+      className="fixed bottom-20 right-6 lg:bottom-6 z-50 flex items-center justify-center group"
     >
       {/* Pulse rings */}
       <span className="absolute w-14 h-14 rounded-full bg-green-400 animate-ping opacity-30" />
