@@ -29,8 +29,8 @@ const Maintenance = () => {
       },
       "aggregateRating": {
         "@type": "AggregateRating",
-        "ratingValue": "4.8",
-        "reviewCount": "31",
+        "ratingValue": "5.0",
+        "reviewCount": "5",
         "bestRating": "5"
       }
     },

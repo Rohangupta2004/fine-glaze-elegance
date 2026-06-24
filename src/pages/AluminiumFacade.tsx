@@ -29,8 +29,8 @@ export default function AluminiumFacade() {
       },
       "aggregateRating": {
         "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "35",
+        "ratingValue": "5.0",
+        "reviewCount": "5",
         "bestRating": "5"
       }
     },
@@ -165,7 +165,7 @@ export default function AluminiumFacade() {
             Pune, Mumbai, Navi Mumbai, and Maharashtra.
           </p>
           <p className="text-muted-foreground">
-            With over <strong>5 years of experience</strong> and <strong>10+ landmark projects</strong> including
+            With landmark projects including
             LTIMindtree Mensa Campus, Embassy 247, and Pune International Airport, our team combines
             precision engineering with on-time delivery. We work closely with architects, structural
             consultants, and developers to bring their vision to life.

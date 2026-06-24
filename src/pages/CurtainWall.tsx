@@ -30,8 +30,8 @@ export default function CurtainWall() {
       },
       "aggregateRating": {
         "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "38",
+        "ratingValue": "5.0",
+        "reviewCount": "5",
         "bestRating": "5"
       }
     },

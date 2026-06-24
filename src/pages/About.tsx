@@ -45,7 +45,7 @@ const About = () => {
     <Layout darkHero>
       <SEO
         title="About Fine Glaze – Leading Facade Contractor in Pune & Mumbai | Our Story"
-        description="Fine Glaze is Pune's premier facade fabrication company with 5+ years of experience, 10+ landmark projects & 50+ clients. We deliver precision-engineered glass & aluminium facade solutions across India."
+        description="Fine Glaze is Pune's premier facade fabrication company delivering precision-engineered glass & aluminium facade solutions. Trusted by Embassy REIT, LTIMindtree, L&T and leading developers across India."
         canonical="https://fineglaze.com/about"
         keywords="about Fine Glaze, facade contractor Pune, glass facade company Mumbai, aluminium facade fabrication India, building facade experts Maharashtra"
         schema={{
@@ -56,7 +56,7 @@ const About = () => {
             "name": "Fine Glaze",
             "url": "https://fineglaze.com",
             "foundingLocation": { "@type": "Place", "name": "Pune, Maharashtra" },
-            "numberOfEmployees": { "@type": "QuantitativeValue", "value": 25 },
+            
             "award": "Best Performance Vendor – Embassy REIT 2024"
           }
         }}

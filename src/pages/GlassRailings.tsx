@@ -32,8 +32,8 @@ const GlassRailings = () => {
       },
       "aggregateRating": {
         "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "42",
+        "ratingValue": "5.0",
+        "reviewCount": "5",
         "bestRating": "5"
       }
     },
