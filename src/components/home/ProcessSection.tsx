@@ -10,8 +10,6 @@ const steps = [
     description:
       "We begin with a complimentary site visit. Our engineers assess your building, align on design vision, and prepare a detailed scope with material specifications and budget guidance.",
     color: "bg-amber-600",
-    border: "border-amber-600/20",
-    glow: "hover:border-amber-600/40",
   },
   {
     step: "02",
@@ -20,8 +18,6 @@ const steps = [
     description:
       "Our in-house team produces detailed shop drawings and structural calculations — every component engineered to IS standards, wind-load requirements, and site-specific constraints.",
     color: "bg-orange-600",
-    border: "border-orange-600/20",
-    glow: "hover:border-orange-600/40",
   },
   {
     step: "03",
@@ -30,8 +26,6 @@ const steps = [
     description:
       "Premium aluminium and glass systems are fabricated at our Pune facility and installed by certified teams following stringent safety protocols and quality checkpoints.",
     color: "bg-yellow-700",
-    border: "border-yellow-700/20",
-    glow: "hover:border-yellow-700/40",
   },
   {
     step: "04",
@@ -40,8 +34,6 @@ const steps = [
     description:
       "We conduct a thorough quality inspection before handover. Ongoing AMC contracts ensure your facade stays pristine, weatherproof, and structurally sound for years to come.",
     color: "bg-stone-700",
-    border: "border-stone-700/20",
-    glow: "hover:border-stone-700/40",
   },
 ];
 
@@ -50,50 +42,41 @@ export const ProcessSection = () => {
 
   return (
     <section
-      className="py-24 relative overflow-hidden"
+      className="py-24 relative overflow-hidden bg-stone-50"
       ref={ref}
-      style={{
-        background:
-          "linear-gradient(160deg, hsl(35 25% 96%) 0%, hsl(30 20% 93%) 100%)",
-      }}
     >
       {/* Decorative line */}
-      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-amber-500/40 to-transparent" />
 
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 md:px-16">
         {/* Header */}
         <div
           className={cn(
-            "text-center space-y-4 mb-16 slide-up",
+            "space-y-3 mb-14 slide-up",
             isVisible && "visible"
           )}
         >
-          <span className="text-primary font-medium uppercase tracking-wider text-sm">
+          <span className="text-amber-700 text-xs font-bold tracking-[0.3em] uppercase">
             How We Work
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-            Our{" "}
-            <span className="text-gradient-subtle">4-Step</span>{" "}
-            Process
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-stone-900">
+            Our 4-Step Process
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-stone-500 max-w-2xl text-sm md:text-base leading-relaxed">
             From your first inquiry to final handover — a proven methodology that
             delivers on time, on budget, and to the highest quality standards.
           </p>
         </div>
 
         {/* Steps */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
-          {/* Connector line (desktop) */}
-          <div className="hidden lg:block absolute top-10 left-[12.5%] right-[12.5%] h-[2px] bg-gradient-to-r from-amber-600/30 via-orange-500/30 to-stone-600/30 z-0" />
-
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-stone-200 relative">
           {steps.map((step, index) => {
             const Icon = step.icon;
             return (
               <div
                 key={step.step}
                 className={cn(
-                  `relative z-10 group bg-card rounded-2xl p-7 border ${step.border} ${step.glow} hover:shadow-xl transition-all duration-300 slide-up`,
+                  "relative z-10 group bg-white p-7 hover:bg-stone-50 transition-all duration-300 slide-up",
                   isVisible && "visible"
                 )}
                 style={{ transitionDelay: `${index * 0.12}s` }}
@@ -101,20 +84,20 @@ export const ProcessSection = () => {
                 {/* Step number */}
                 <div className="flex items-start justify-between mb-5">
                   <div
-                    className={`w-12 h-12 rounded-xl ${step.color} flex items-center justify-center`}
+                    className={`w-12 h-12 ${step.color} flex items-center justify-center`}
                   >
                     <Icon size={22} className="text-white" />
                   </div>
-                  <span className="text-5xl font-black text-foreground/5 group-hover:text-foreground/8 transition-colors leading-none select-none">
+                  <span className="text-5xl font-black text-stone-100 group-hover:text-stone-200 transition-colors leading-none select-none">
                     {step.step}
                   </span>
                 </div>
 
                 {/* Content */}
-                <h3 className="text-lg font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
+                <h3 className="text-lg font-bold text-stone-900 mb-3 group-hover:text-amber-700 transition-colors">
                   {step.title}
                 </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
+                <p className="text-sm text-stone-500 leading-relaxed">
                   {step.description}
                 </p>
               </div>
