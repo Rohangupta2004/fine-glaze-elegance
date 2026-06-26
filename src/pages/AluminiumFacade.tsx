@@ -11,6 +11,7 @@ import {
   Clock,
   Award,
   Wrench,
+  Star,
 } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { cn } from "@/lib/utils";
@@ -279,6 +280,21 @@ export default function AluminiumFacade() {
             >
               +91 83692 33566
             </a>
+          </div>
+
+          {/* Trust signal */}
+          <div
+            className="flex items-center gap-1.5 mt-4 animate-fade-in-up"
+            style={{ animationDelay: "0.4s" }}
+          >
+            <div className="flex">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} size={12} className="text-amber-400 fill-amber-400" />
+              ))}
+            </div>
+            <span className="text-white/50 text-xs font-medium ml-0.5">
+              5.0 Google · Embassy REIT Vendor · 10+ Landmark Projects
+            </span>
           </div>
         </div>
 

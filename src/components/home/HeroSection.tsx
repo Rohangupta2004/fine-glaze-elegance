@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Play } from "lucide-react";
+import { ArrowRight, Play, Star } from "lucide-react";
 import { useSiteMedia } from "@/hooks/useSiteMedia";
 
 export const HeroSection = () => {
@@ -95,6 +95,21 @@ export const HeroSection = () => {
                 View Projects
               </Button>
             </Link>
+          </div>
+
+          {/* Trust signal */}
+          <div
+            className="flex items-center justify-center gap-1.5 animate-fade-in-up"
+            style={{ animationDelay: "0.4s" }}
+          >
+            <div className="flex">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} size={13} className="text-amber-400 fill-amber-400" />
+              ))}
+            </div>
+            <span className="text-white/50 text-sm font-medium ml-1">
+              5.0 Google · Embassy REIT Vendor · 10+ Landmark Projects
+            </span>
           </div>
         </div>
       </div>
