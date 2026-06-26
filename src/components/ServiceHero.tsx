@@ -58,7 +58,7 @@ export const ServiceHero = ({
       <div className="relative order-2 lg:order-1 bg-gradient-to-br from-slate-900 to-slate-800 text-white flex items-center">
         <div className="w-full px-6 md:px-12 lg:px-14 xl:px-20 pt-12 lg:pt-32 pb-14">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-amber-500/15 border border-amber-400/30 text-amber-300 text-xs font-semibold uppercase tracking-[0.15em] mb-5">
-            <span className="w-2 h-2 bg-amber-400 animate-pulse" />
+            <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
             Fine Glaze
           </div>
           <h1 className="text-4xl md:text-5xl xl:text-6xl font-extrabold leading-[1.05] mb-5">

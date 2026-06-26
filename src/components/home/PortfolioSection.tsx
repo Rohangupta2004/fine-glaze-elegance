@@ -13,8 +13,8 @@ export const PortfolioSection = () => {
   const featured = projects.slice(0, 3);
 
   return (
-    <section className="py-20 bg-white" ref={ref}>
-      <div className="container mx-auto px-4 md:px-16">
+    <section className="py-20 bg-background" ref={ref}>
+      <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
           <div
@@ -23,11 +23,12 @@ export const PortfolioSection = () => {
               isVisible && "visible"
             )}
           >
-            <span className="text-amber-700 text-xs font-bold tracking-[0.3em] uppercase">
+            <span className="text-primary font-medium uppercase tracking-wider text-sm">
               Featured Work
             </span>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-stone-900">
-              Recent Projects
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+              Recent{" "}
+              <span className="text-gradient-subtle">Projects</span>
             </h2>
           </div>
           <Link
@@ -38,7 +39,7 @@ export const PortfolioSection = () => {
             )}
             style={{ transitionDelay: "0.1s" }}
           >
-            <Button variant="outline" className="group border-stone-300 hover:border-stone-900 hover:bg-stone-900 hover:text-white transition-all">
+            <Button variant="outline" className="group border-primary/30 hover:border-primary hover:bg-primary/5">
               View All Projects
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Button>
@@ -46,7 +47,7 @@ export const PortfolioSection = () => {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-stone-200">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {featured.map((project, index) => (
             <Link
               key={project.slug}
@@ -67,7 +68,7 @@ export const PortfolioSection = () => {
                 height="600"
               />
 
-              {/* Overlay */}
+              {/* Overlay - Warm brown gradient */}
               <div 
                 className="absolute inset-0 opacity-70 group-hover:opacity-85 transition-opacity duration-300"
                 style={{
@@ -76,13 +77,13 @@ export const PortfolioSection = () => {
               />
 
               {/* View Icon */}
-              <div className="absolute top-4 right-4 w-10 h-10 bg-stone-900/80 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+              <div className="absolute top-4 right-4 w-10 h-10 bg-primary/90 text-primary-foreground flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
                 <Eye size={18} />
               </div>
 
               {/* Content */}
               <div className="absolute bottom-0 left-0 right-0 p-6">
-                <span className="inline-block px-3 py-1 text-xs font-bold uppercase tracking-wider bg-amber-500/30 text-white mb-3">
+                <span className="inline-block px-3 py-1 text-xs font-medium bg-primary/40 text-white mb-3">
                   {project.category}
                 </span>
                 <h3 className="text-xl font-semibold text-white mb-2">

@@ -8,9 +8,17 @@ export const AwardsSection = () => {
   return (
     <section
       ref={ref}
-      className="py-24 relative overflow-hidden bg-stone-900"
+      className="py-24 relative overflow-hidden"
+      style={{
+        background:
+          "linear-gradient(135deg, hsl(28 40% 14%) 0%, hsl(22 50% 10%) 100%)",
+      }}
     >
-      <div className="container mx-auto px-4 md:px-16 relative z-10">
+      {/* Decorative blobs */}
+      <div className="absolute -top-20 -left-20 w-72 h-72 bg-amber-600/10 blur-3xl" />
+      <div className="absolute -bottom-20 -right-20 w-80 h-80 bg-amber-500/10 blur-3xl" />
+
+      <div className="container mx-auto px-4 relative z-10">
         <div className="grid lg:grid-cols-2 gap-14 items-center max-w-5xl mx-auto">
 
           {/* Left – Award image + badge */}
@@ -21,7 +29,9 @@ export const AwardsSection = () => {
             )}
           >
             <div className="relative">
-              <div className="relative w-56 md:w-64 overflow-hidden border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
+              {/* Glow ring */}
+              <div className="absolute inset-0 bg-amber-500/20 blur-xl scale-110" />
+              <div className="relative w-56 md:w-64 overflow-hidden border-2 border-amber-500/40 bg-white/5 p-4 backdrop-blur-sm">
                 <img
                   src="/Awards.webp"
                   alt="Best Performance Vendor Award 2024 – Embassy REIT"
@@ -56,7 +66,7 @@ export const AwardsSection = () => {
             </div>
 
             <div className="space-y-2">
-              <span className="text-amber-400 font-bold uppercase tracking-[0.3em] text-xs">
+              <span className="text-amber-400 font-medium uppercase tracking-wider text-xs">
                 Industry Recognition
               </span>
               <h2 className="text-3xl md:text-4xl font-extrabold leading-tight">
@@ -77,7 +87,7 @@ export const AwardsSection = () => {
             </p>
 
             {/* Mini stats */}
-            <div className="grid grid-cols-3 gap-px bg-white/10">
+            <div className="grid grid-cols-3 gap-4 pt-2">
               {[
                 { icon: Shield, label: "Zero Safety Incidents", val: "0" },
                 { icon: Trophy, label: "On-Time Delivery", val: "100%" },
@@ -85,7 +95,7 @@ export const AwardsSection = () => {
               ].map((item) => (
                 <div
                   key={item.label}
-                  className="text-center p-4 bg-stone-900"
+                  className="text-center p-3 bg-white/5 border border-white/10"
                 >
                   <item.icon size={18} className="text-amber-400 mx-auto mb-1" />
                   <p className="text-white font-bold text-lg">{item.val}</p>

@@ -12,7 +12,7 @@ export const HeroSection = () => {
   );
 
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       
       {/* Fallback image (loads first, video covers it once ready) */}
       <img
@@ -35,89 +35,90 @@ export const HeroSection = () => {
       />
 
       {/* Gradient Overlay */}
-      <div
-        className="absolute inset-0"
-        style={{
-          background:
-            "linear-gradient(to bottom, rgba(0,0,0,0.60) 0%, rgba(0,0,0,0.25) 30%, rgba(0,0,0,0.55) 65%, rgba(0,0,0,0.92) 100%)",
-        }}
-      />
+      <div className="absolute inset-0 hero-overlay" />
 
-      {/* Content — bottom-aligned like structural glazing */}
-      <div className="absolute inset-x-0 bottom-0 px-5 md:px-16 pb-10 md:pb-20 pt-24">
-        {/* Tagline */}
-        <p
-          className="text-amber-400 text-xs font-bold tracking-[0.4em] uppercase mb-5 animate-fade-in"
-          style={{ animationDelay: "0.05s" }}
-        >
-          Fine Glaze · Pune · Mumbai · Maharashtra
-        </p>
+      {/* Content */}
+      <div className="relative z-10 container mx-auto px-4 text-center">
+        <div className="max-w-4xl mx-auto space-y-8">
 
-        {/* Headline */}
-        <h1
-          className="font-extrabold text-white leading-[0.88] tracking-tight animate-fade-in-up"
-          style={{ fontSize: "clamp(3.2rem, 8vw, 8rem)", animationDelay: "0.1s" }}
-        >
-          Crafting{" "}
-          <span className="text-gradient-gold">Iconic</span>
-          <br />
-          <span className="text-gradient-gold">Facades</span>
-          <br />
-          <span style={{ fontSize: "clamp(1.8rem, 4vw, 4rem)", fontWeight: 600, color: "rgba(255,255,255,0.85)" }}>
-            That Define Skylines.
-          </span>
-        </h1>
-
-        {/* Sub-headline */}
-        <p
-          className="mt-6 text-white/70 text-base md:text-lg max-w-lg leading-relaxed animate-fade-in-up"
-          style={{ animationDelay: "0.2s" }}
-        >
-          Premium glass & aluminium facade fabrication, installation, and
-          maintenance — delivered with{" "}
-          <span className="text-amber-400 font-medium">award-winning precision</span>.
-        </p>
-
-        {/* CTA Links */}
-        <div
-          className="mt-8 flex items-center gap-8 animate-fade-in-up"
-          style={{ animationDelay: "0.3s" }}
-        >
-          <Link
-            to="/contact"
-            className="text-white font-semibold text-base border-b border-amber-400 pb-0.5 hover:text-amber-400 transition-colors tracking-wide"
-          >
-            Get Free Quote
-          </Link>
-
-          <Link
-            to="/portfolio"
-            className="text-white/60 font-medium text-base hover:text-white transition-colors tracking-wide"
-          >
-            View Projects
-          </Link>
-        </div>
-
-        {/* Trust signal */}
-        <div
-          className="flex items-center gap-1.5 mt-4 animate-fade-in-up"
-          style={{ animationDelay: "0.4s" }}
-        >
-          <div className="flex">
-            {[...Array(5)].map((_, i) => (
-              <Star key={i} size={12} className="text-amber-400 fill-amber-400" />
-            ))}
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-black/40 backdrop-blur-md text-sm text-white/75 animate-fade-in border border-white/10">
+            <span className="w-2.5 h-2.5 rounded-full bg-amber-500 animate-pulse" />
+            India's Trusted Facade Experts
           </div>
-          <span className="text-white/50 text-xs font-medium ml-0.5">
-            5.0 Google · Embassy REIT Vendor · 10+ Landmark Projects
-          </span>
+
+          {/* Headline */}
+          <h1
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight animate-fade-in-up"
+            style={{ animationDelay: "0.1s" }}
+          >
+            Crafting{" "}
+            <span className="text-gradient-gold">Iconic Facades</span>
+            <br className="hidden md:block" />
+            That{" "}
+            <span className="text-gradient-light">Define Skylines</span>
+          </h1>
+
+          {/* Sub-headline */}
+          <p
+            className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto animate-fade-in-up leading-relaxed"
+            style={{ animationDelay: "0.2s" }}
+          >
+            Premium glass & aluminium facade fabrication, installation, and
+            maintenance — delivered with{" "}
+            <span className="text-amber-400 font-medium">award-winning precision</span>{" "}
+            and zero compromise on quality.
+          </p>
+
+          {/* CTA Buttons */}
+          <div
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6 animate-fade-in-up"
+            style={{ animationDelay: "0.3s" }}
+          >
+            <Link to="/contact">
+              <Button
+                size="lg"
+                className="btn-glossy text-white border-0 px-8 py-6 text-base group shadow-lg"
+              >
+                Get Free Quote
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Button>
+            </Link>
+
+            <Link to="/portfolio">
+              <Button
+                size="lg"
+                variant="outline"
+                className="px-8 py-6 text-base group border-white bg-white/15 text-white hover:bg-white hover:text-slate-900 hover:border-white backdrop-blur-sm font-semibold transition-all duration-200 shadow-md"
+              >
+                <Play className="mr-2 h-4 w-4" />
+                View Projects
+              </Button>
+            </Link>
+          </div>
+
+          {/* Trust signal */}
+          <div
+            className="flex items-center justify-center gap-1.5 animate-fade-in-up"
+            style={{ animationDelay: "0.4s" }}
+          >
+            <div className="flex">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} size={13} className="text-amber-400 fill-amber-400" />
+              ))}
+            </div>
+            <span className="text-white/50 text-sm font-medium ml-1">
+              5.0 Google · Embassy REIT Vendor · 10+ Landmark Projects
+            </span>
+          </div>
         </div>
       </div>
 
-      {/* Scroll Indicator — vertical line */}
-      <div className="absolute bottom-8 right-8 flex flex-col items-center gap-2 opacity-40">
-        <span className="text-white text-[10px] uppercase tracking-[0.25em] rotate-90 mb-3">Scroll</span>
-        <div className="w-px h-12 bg-gradient-to-b from-white to-transparent" />
+      {/* Scroll Indicator */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+        <div className="w-6 h-10 rounded-full border-2 border-white/30 flex items-start justify-center p-1">
+          <div className="w-1.5 h-3 rounded-full bg-amber-500/70 animate-pulse" />
+        </div>
       </div>
     </section>
   );
