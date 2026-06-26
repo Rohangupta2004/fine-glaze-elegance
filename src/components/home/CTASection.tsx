@@ -1,14 +1,11 @@
 import { ArrowRight, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { cn } from "@/lib/utils";
+import { motion } from "framer-motion";
+import { fadeUp, stagger, viewport } from "@/hooks/useMotion";
 
 export const CTASection = () => {
-  const { ref, isVisible } = useScrollAnimation();
-
   return (
     <section
-      ref={ref}
       className="relative py-28 overflow-hidden"
       style={{
         background:
@@ -30,27 +27,37 @@ export const CTASection = () => {
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <div
-          className={cn(
-            "max-w-3xl mx-auto text-center space-y-8 transition-all duration-700",
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-          )}
+        <motion.div
+          className="max-w-3xl mx-auto text-center space-y-8"
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewport}
+          variants={stagger(0.12)}
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-tight tracking-tight">
+          <motion.h2
+            variants={fadeUp}
+            className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-tight tracking-tight"
+          >
             Transform Your Building Into a{" "}
             <br className="hidden sm:block" />
             <span className="text-gradient-light">
               Modern Architectural Landmark
             </span>
-          </h2>
+          </motion.h2>
 
-          <p className="text-white/80 text-lg max-w-xl mx-auto leading-relaxed">
+          <motion.p
+            variants={fadeUp}
+            className="text-white/80 text-lg max-w-xl mx-auto leading-relaxed"
+          >
             Award-winning facade solutions engineered for performance, lasting
             aesthetics, and measurable long-term value.
-          </p>
+          </motion.p>
 
-          {/* ===== FIXED BUTTONS ===== */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-5 pt-6">
+          {/* ===== BUTTONS ===== */}
+          <motion.div
+            variants={fadeUp}
+            className="flex flex-col sm:flex-row items-center justify-center gap-5 pt-6"
+          >
             {/* WhatsApp */}
             <Button
               asChild
@@ -79,8 +86,8 @@ export const CTASection = () => {
                 Call Expert
               </a>
             </Button>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );

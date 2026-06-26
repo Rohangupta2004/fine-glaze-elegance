@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Trophy, Star } from "lucide-react";
-import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { cn } from "@/lib/utils";
+import { motion } from "framer-motion";
+import { fadeUp, stagger, viewport } from "@/hooks/useMotion";
 import { supabase } from "@/lib/supabase";
 
 /* ─── Fallback client list (used if supabase manifest missing) ─── */
@@ -37,7 +37,6 @@ function getPublicUrl(filename: string): string {
  * Replaces the separate AwardsSection + ClientsCarousel for a tighter homepage.
  */
 export const TrustStrip = () => {
-  const { ref, isVisible } = useScrollAnimation();
   const [dynamicLogos, setDynamicLogos] = useState<LogoEntry[]>([]);
 
   useEffect(() => {
@@ -67,28 +66,26 @@ export const TrustStrip = () => {
     : [...fallbackClients, ...fallbackClients, ...fallbackClients];
 
   return (
-    <section
-      ref={ref}
-      className="py-12 bg-secondary/40 border-y border-border"
-    >
+    <section className="py-12 bg-secondary/40 border-y border-border">
       <div className="container mx-auto px-4">
         {/* Award + Rating Row */}
-        <div
-          className={cn(
-            "flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 mb-8 slide-up",
-            isVisible && "visible"
-          )}
+        <motion.div
+          className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 mb-8"
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewport}
+          variants={stagger(0.1)}
         >
           {/* Award badge */}
-          <div className="inline-flex items-center gap-2.5 px-5 py-2.5 bg-amber-500/10 border border-amber-500/30 text-amber-700">
+          <motion.div variants={fadeUp} className="inline-flex items-center gap-2.5 px-5 py-2.5 bg-amber-500/10 border border-amber-500/30 text-amber-700">
             <Trophy size={18} className="text-amber-600" />
             <span className="font-semibold text-sm">
               Best Performance Vendor 2024 — Embassy REIT
             </span>
-          </div>
+          </motion.div>
 
           {/* Star rating */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-border">
+          <motion.div variants={fadeUp} className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-border">
             <div className="flex gap-0.5">
               {[1, 2, 3, 4, 5].map((i) => (
                 <Star key={i} size={14} className="fill-amber-500 text-amber-500" />
@@ -97,18 +94,19 @@ export const TrustStrip = () => {
             <span className="text-sm font-semibold text-foreground/80">
               5.0 · Client Reviews
             </span>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
         {/* Tagline */}
-        <p
-          className={cn(
-            "text-center text-xs font-semibold text-foreground/50 uppercase tracking-[0.2em] mb-6 slide-up",
-            isVisible && "visible"
-          )}
+        <motion.p
+          className="text-center text-xs font-semibold text-foreground/50 uppercase tracking-[0.2em] mb-6"
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewport}
+          variants={fadeUp}
         >
           Trusted by India's most iconic brands & developers
-        </p>
+        </motion.p>
 
         {/* Client Logo Marquee */}
         <div className="relative overflow-hidden">

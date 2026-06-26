@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { cn } from "@/lib/utils";
+import { motion } from "framer-motion";
+import { fadeUp, slideLeft, slideRight, stagger, viewport } from "@/hooks/useMotion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -37,8 +37,6 @@ const projectTypes = [
 ];
 
 export const ContactFormSection = () => {
-  const { ref, isVisible } = useScrollAnimation();
-
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [formData, setFormData] = useState({
@@ -107,6 +105,15 @@ export const ContactFormSection = () => {
       if (data.success) {
         setIsSubmitted(true);
         toast.success("Message sent successfully!");
+
+        // GA4 conversion event
+        if (typeof window !== "undefined" && (window as any).gtag) {
+          (window as any).gtag("event", "generate_lead", {
+            event_category: "Contact",
+            event_label: formData.projectType || "General",
+            value: 1,
+          });
+        }
         setFormData({
           name: "",
           email: "",
@@ -127,17 +134,17 @@ export const ContactFormSection = () => {
 
   return (
     <section
-      ref={ref}
       id="contact"
       className="py-16 md:py-24 bg-stone-50"
     >
       <div className="container mx-auto px-5 md:px-16">
         {/* Section header */}
-        <div
-          className={cn(
-            "text-center mb-10 md:mb-14 transition-all duration-700",
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          )}
+        <motion.div
+          className="text-center mb-10 md:mb-14"
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewport}
+          variants={fadeUp}
         >
           <p className="text-amber-700 text-[10px] md:text-xs font-bold tracking-[0.4em] uppercase mb-3">
             Get In Touch
@@ -151,15 +158,19 @@ export const ContactFormSection = () => {
           <p className="mt-3 text-stone-500 text-sm md:text-base max-w-lg mx-auto leading-relaxed">
             Free site consultation. Detailed quote within 24 hours.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid lg:grid-cols-12 gap-8 md:gap-12">
+        <motion.div
+          className="grid lg:grid-cols-12 gap-8 md:gap-12"
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewport}
+          variants={stagger(0.15)}
+        >
           {/* ── Form ── */}
-          <div
-            className={cn(
-              "lg:col-span-7 transition-all duration-700",
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            )}
+          <motion.div
+            className="lg:col-span-7"
+            variants={slideLeft}
           >
             <div className="bg-white border border-stone-200 shadow-sm">
               <div className="border-b border-stone-100 px-5 md:px-8 py-5 md:py-6">
@@ -384,14 +395,12 @@ export const ContactFormSection = () => {
                 )}
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* ── Right column — why reach out + quick contact ── */}
-          <div
-            className={cn(
-              "lg:col-span-5 space-y-5 md:space-y-6 transition-all duration-700 delay-150",
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            )}
+          <motion.div
+            className="lg:col-span-5 space-y-5 md:space-y-6"
+            variants={slideRight}
           >
             {/* Why reach out */}
             <div className="bg-white border border-stone-200 p-5 md:p-7">
@@ -503,8 +512,8 @@ export const ContactFormSection = () => {
                 </div>
               ))}
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );
