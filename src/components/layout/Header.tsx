@@ -99,7 +99,7 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
               <button
                 onClick={() => setIsServiceOpen(!isServiceOpen)}
                 className={cn(
-                  "p-1 rounded-md",
+                  "p-1",
                   isScrolled ? "text-slate-700" : darkHero ? "text-white" : "text-slate-800"
                 )}
               >
@@ -114,12 +114,12 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
                     : "opacity-0 invisible"
                 )}
               >
-                <div className="bg-white rounded-xl shadow-xl border p-2">
+                <div className="bg-white shadow-xl border p-2">
                   {serviceLinks.map((service) => (
                     <Link
                       key={service.href}
                       to={service.href}
-                      className="block px-4 py-3 text-sm text-slate-700 hover:bg-slate-50 rounded-lg"
+                      className="block px-4 py-3 text-sm text-slate-700 hover:bg-slate-50"
                     >
                       {service.label}
                     </Link>
@@ -148,7 +148,7 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
           <button
             onClick={() => setIsMobileMenuOpen(true)}
             className={cn(
-              "lg:hidden p-2 rounded-md",
+              "lg:hidden p-2",
               isScrolled ? "text-slate-900" : darkHero ? "text-white" : "text-slate-900"
             )}
           >

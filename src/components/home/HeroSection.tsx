@@ -1,123 +1,147 @@
 import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
-import { ArrowRight, Play, Star } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { useSiteMedia } from "@/hooks/useSiteMedia";
 
+/**
+ * Home Hero — Architectural grid layout.
+ *
+ * NO full-bleed background image. Clean, white-space-heavy editorial design.
+ *
+ * Desktop:  2-column — large featured project image left + text & secondary images right
+ * Mobile:   Stacked — headline, featured image, stats, secondary images
+ */
 export const HeroSection = () => {
   const { getMedia } = useSiteMedia();
-  const poster = getMedia("home_hero_poster", "/Unitized.webp");
-  const videoSrc = getMedia(
-    "home_hero_video",
-    "https://www.pexels.com/download/video/26737896/"
-  );
+
+  const heroImg = getMedia("home_hero_poster", "/Unitized.webp");
+  const img2 = getMedia("home_hero_img2", "/Glazing.webp");
+  const img3 = getMedia("home_hero_img3", "/Embassy.webp");
 
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden">
-      
-      {/* Fallback image (loads first, video covers it once ready) */}
-      <img
-        src={poster}
-        alt="Fine Glaze facade installation"
-        className="absolute inset-0 w-full h-full object-cover"
-        loading="eager"
-      />
-
-      {/* Hero Background Video */}
-      <video
-        key={videoSrc}
-        className="absolute inset-0 w-full h-full object-cover"
-        autoPlay
-        muted
-        loop
-        playsInline
-        poster={poster}
-        src={videoSrc}
-      />
-
-      {/* Gradient Overlay */}
-      <div
-        className="absolute inset-0"
-        style={{
-          background:
-            "linear-gradient(to bottom, rgba(0,0,0,0.60) 0%, rgba(0,0,0,0.25) 30%, rgba(0,0,0,0.55) 65%, rgba(0,0,0,0.92) 100%)",
-        }}
-      />
-
-      {/* Content — bottom-aligned like structural glazing */}
-      <div className="absolute inset-x-0 bottom-0 px-5 md:px-16 pb-10 md:pb-20 pt-24">
-        {/* Tagline */}
-        <p
-          className="text-amber-400 text-xs font-bold tracking-[0.4em] uppercase mb-5 animate-fade-in"
-          style={{ animationDelay: "0.05s" }}
-        >
-          Fine Glaze · Pune · Mumbai · Maharashtra
-        </p>
-
-        {/* Headline */}
-        <h1
-          className="font-extrabold text-white leading-[0.88] tracking-tight animate-fade-in-up"
-          style={{ fontSize: "clamp(3.2rem, 8vw, 8rem)", animationDelay: "0.1s" }}
-        >
-          Crafting{" "}
-          <span className="text-gradient-gold">Iconic</span>
-          <br />
-          <span className="text-gradient-gold">Facades</span>
-          <br />
-          <span style={{ fontSize: "clamp(1.8rem, 4vw, 4rem)", fontWeight: 600, color: "rgba(255,255,255,0.85)" }}>
-            That Define Skylines.
-          </span>
-        </h1>
-
-        {/* Sub-headline */}
-        <p
-          className="mt-6 text-white/70 text-base md:text-lg max-w-lg leading-relaxed animate-fade-in-up"
-          style={{ animationDelay: "0.2s" }}
-        >
-          Premium glass & aluminium facade fabrication, installation, and
-          maintenance — delivered with{" "}
-          <span className="text-amber-400 font-medium">award-winning precision</span>.
-        </p>
-
-        {/* CTA Links */}
-        <div
-          className="mt-8 flex items-center gap-8 animate-fade-in-up"
-          style={{ animationDelay: "0.3s" }}
-        >
-          <Link
-            to="/contact"
-            className="text-white font-semibold text-base border-b border-amber-400 pb-0.5 hover:text-amber-400 transition-colors tracking-wide"
+    <section className="relative bg-stone-950 pt-28 md:pt-32 pb-0 overflow-hidden">
+      <div className="container mx-auto px-4 md:px-10 lg:px-16">
+        {/* ── Top: Headline + sub ── */}
+        <div className="mb-10 md:mb-14 max-w-4xl">
+          <p className="text-amber-400 text-[10px] md:text-xs font-bold tracking-[0.4em] uppercase mb-4 animate-fade-in">
+            Facade Contractors · Pune · Mumbai
+          </p>
+          <h1
+            className="text-white font-extrabold leading-[0.95] tracking-tight animate-fade-in-up"
+            style={{
+              fontSize: "clamp(2.4rem, 5.5vw, 5rem)",
+              animationDelay: "0.05s",
+            }}
           >
-            Get Free Quote
-          </Link>
-
-          <Link
-            to="/portfolio"
-            className="text-white/60 font-medium text-base hover:text-white transition-colors tracking-wide"
+            We Engineer{" "}
+            <span className="text-gradient-gold">Facades</span>
+            <br className="hidden sm:block" />
+            {" "}That Define Buildings.
+          </h1>
+          <p
+            className="mt-4 text-white/50 text-sm md:text-base max-w-lg leading-relaxed animate-fade-in-up"
+            style={{ animationDelay: "0.15s" }}
           >
-            View Projects
-          </Link>
+            Premium glass &amp; aluminium facade systems — curtain walls,
+            structural glazing, ACP cladding — engineered and installed by one
+            expert team.
+          </p>
+
+          {/* CTA row */}
+          <div
+            className="mt-6 flex items-center gap-6 animate-fade-in-up"
+            style={{ animationDelay: "0.2s" }}
+          >
+            <Link
+              to="/contact"
+              className="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-600 text-stone-950 font-semibold text-sm px-6 py-3 transition-colors"
+            >
+              Get Free Quote
+              <ArrowRight size={16} />
+            </Link>
+            <Link
+              to="/portfolio"
+              className="text-white/60 font-medium text-sm hover:text-white transition-colors"
+            >
+              View Projects →
+            </Link>
+          </div>
         </div>
 
-        {/* Trust signal */}
+        {/* ── Image Grid ── */}
         <div
-          className="flex items-center gap-1.5 mt-4 animate-fade-in-up"
-          style={{ animationDelay: "0.4s" }}
+          className="grid grid-cols-4 md:grid-cols-12 gap-1 animate-fade-in-up"
+          style={{ animationDelay: "0.25s" }}
         >
-          <div className="flex">
-            {[...Array(5)].map((_, i) => (
-              <Star key={i} size={12} className="text-amber-400 fill-amber-400" />
-            ))}
+          {/* Main image — spans 8/12 on desktop, full on mobile */}
+          <div className="col-span-4 md:col-span-8 relative aspect-[16/9] md:aspect-[16/10] overflow-hidden group">
+            <img
+              src={heroImg}
+              alt="Fine Glaze — curtain wall project"
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              loading="eager"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-stone-950/60 via-transparent to-transparent" />
+            <div className="absolute bottom-4 left-4">
+              <span className="text-[10px] font-bold text-white/70 uppercase tracking-widest">
+                Featured Project
+              </span>
+              <p className="text-white font-semibold text-sm mt-0.5">
+                Curtain Wall Systems — Commercial Tower
+              </p>
+            </div>
           </div>
-          <span className="text-white/50 text-xs font-medium ml-0.5">
-            5.0 Google · Embassy REIT Vendor · 10+ Landmark Projects
-          </span>
+
+          {/* Right column — 2 stacked images */}
+          <div className="col-span-4 md:col-span-4 grid grid-cols-2 md:grid-cols-1 gap-1">
+            <div className="relative aspect-[4/3] md:aspect-auto md:h-1/2 overflow-hidden group">
+              <img
+                src={img2}
+                alt="Structural glazing facade"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                loading="eager"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-stone-950/50 via-transparent to-transparent" />
+              <span className="absolute bottom-3 left-3 text-[10px] font-bold text-white/80 uppercase tracking-wider">
+                Structural Glazing
+              </span>
+            </div>
+            <div className="relative aspect-[4/3] md:aspect-auto md:h-1/2 overflow-hidden group">
+              <img
+                src={img3}
+                alt="Embassy REIT project"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                loading="eager"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-stone-950/50 via-transparent to-transparent" />
+              <span className="absolute bottom-3 left-3 text-[10px] font-bold text-white/80 uppercase tracking-wider">
+                Embassy REIT
+              </span>
+            </div>
+          </div>
         </div>
       </div>
 
-      {/* Scroll Indicator — vertical line */}
-      <div className="absolute bottom-8 right-8 flex flex-col items-center gap-2 opacity-40">
-        <span className="text-white text-[10px] uppercase tracking-[0.25em] rotate-90 mb-3">Scroll</span>
-        <div className="w-px h-12 bg-gradient-to-b from-white to-transparent" />
+      {/* Stats bar — sits at the very bottom, edge-to-edge */}
+      <div className="mt-0 bg-stone-900 border-t border-stone-800">
+        <div className="container mx-auto px-4 md:px-10 lg:px-16">
+          <div className="grid grid-cols-2 sm:grid-cols-4 divide-x divide-stone-800">
+            {[
+              { val: "10+", label: "Landmark Projects" },
+              { val: "5+", label: "Years Experience" },
+              { val: "0", label: "Safety Incidents" },
+              { val: "5.0 ★", label: "Google Rating" },
+            ].map((s) => (
+              <div key={s.label} className="py-5 md:py-6 text-center">
+                <p className="text-lg md:text-xl font-bold text-white">
+                  {s.val}
+                </p>
+                <p className="text-[10px] text-stone-500 uppercase tracking-[0.2em] mt-0.5">
+                  {s.label}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );
