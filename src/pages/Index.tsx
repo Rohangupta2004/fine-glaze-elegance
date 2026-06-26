@@ -4,6 +4,7 @@ import { TrustStrip } from "@/components/home/TrustStrip";
 import { PortfolioSection } from "@/components/home/PortfolioSection";
 import { ServicesSection } from "@/components/home/ServicesSection";
 import { ReviewsSection } from "@/components/home/ReviewsSection";
+import { ContactFormSection } from "@/components/home/ContactFormSection";
 import { CTASection } from "@/components/home/CTASection";
 import SEO from "@/components/SEO";
 
@@ -92,6 +93,7 @@ const Index = () => {
       <ServicesSection />
       <PortfolioSection />
       <ReviewsSection />
+      <ContactFormSection />
       <CTASection />
     </Layout>
   );
