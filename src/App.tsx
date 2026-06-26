@@ -7,7 +7,6 @@ import { HelmetProvider } from "react-helmet-async";
 import { lazy, Suspense } from "react";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { PageLoader } from "@/components/PageLoader";
-import { BackToTop } from "@/components/BackToTop";
 
 // Eager-load home page (most visited, LCP critical)
 import Index from "./pages/Index";
@@ -92,7 +91,6 @@ const AppWrapper = () => (
           <Toaster />
           <Sonner />
           <Outlet />
-          <BackToTop />
         </ErrorBoundary>
       </HelmetProvider>
     </TooltipProvider>
