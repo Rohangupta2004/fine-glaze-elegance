@@ -112,10 +112,10 @@ export const ClientsCarousel = () => {
               : tripled.map((client, index) => (
                   <div
                     key={index}
-                    className="flex-shrink-0 flex items-center gap-3 px-5 py-3 rounded-full border border-border bg-card hover:border-primary/40 hover:bg-primary/5 transition-all duration-200 cursor-default shadow-sm group"
+                    className="flex-shrink-0 flex items-center gap-3 px-5 py-3 border border-border bg-card hover:border-primary/40 hover:bg-primary/5 transition-all duration-200 cursor-default shadow-sm group"
                   >
                     <div
-                      className="w-8 h-8 rounded-full flex items-center justify-center text-white text-xs font-bold flex-shrink-0"
+                      className="w-8 h-8 flex items-center justify-center text-white text-xs font-bold flex-shrink-0"
                       style={{
                         backgroundColor: (client as (typeof fallbackClients)[0]).color,
                       }}

@@ -352,7 +352,7 @@ export const ContactFormSection = () => {
                       </Button>
                       <a
                         href="tel:+918369233566"
-                        className="flex-1 inline-flex items-center justify-center gap-2 border-2 border-amber-600 text-amber-700 hover:bg-amber-50 py-3 text-sm font-semibold tracking-wide transition-colors duration-200 rounded-md"
+                        className="flex-1 inline-flex items-center justify-center gap-2 border-2 border-amber-600 text-amber-700 hover:bg-amber-50 py-3 text-sm font-semibold tracking-wide transition-colors duration-200"
                       >
                         <PhoneCall size={16} />
                         Call Now

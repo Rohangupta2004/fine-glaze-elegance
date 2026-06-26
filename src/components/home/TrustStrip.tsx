@@ -34,7 +34,7 @@ function getPublicUrl(filename: string): string {
 
 /**
  * Combined trust strip: award badge + client logos marquee.
- * Replaces the separate AwardsSection + ClientsCarousel for a tighter homepage.
+ * Sharp, architectural styling — no rounded corners.
  */
 export const TrustStrip = () => {
   const { ref, isVisible } = useScrollAnimation();
@@ -80,7 +80,7 @@ export const TrustStrip = () => {
           )}
         >
           {/* Award badge */}
-          <div className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-700">
+          <div className="inline-flex items-center gap-2.5 px-5 py-2.5 bg-amber-500/10 border border-amber-500/30 text-amber-700">
             <Trophy size={18} className="text-amber-600" />
             <span className="font-semibold text-sm">
               Best Performance Vendor 2024 — Embassy REIT
@@ -88,7 +88,7 @@ export const TrustStrip = () => {
           </div>
 
           {/* Star rating */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-border">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-border">
             <div className="flex gap-0.5">
               {[1, 2, 3, 4, 5].map((i) => (
                 <Star key={i} size={14} className="fill-amber-500 text-amber-500" />
@@ -148,10 +148,10 @@ export const TrustStrip = () => {
               : tripled.map((client, index) => (
                   <div
                     key={index}
-                    className="flex-shrink-0 flex items-center gap-3 px-4 py-2 rounded-full border border-border bg-card hover:border-primary/40 hover:bg-primary/5 transition-all duration-200 cursor-default shadow-sm group"
+                    className="flex-shrink-0 flex items-center gap-3 px-4 py-2 border border-border bg-card hover:border-primary/40 hover:bg-primary/5 transition-all duration-200 cursor-default shadow-sm group"
                   >
                     <div
-                      className="w-7 h-7 rounded-full flex items-center justify-center text-white text-[10px] font-bold flex-shrink-0"
+                      className="w-7 h-7 flex items-center justify-center text-white text-[10px] font-bold flex-shrink-0"
                       style={{
                         backgroundColor: (client as (typeof fallbackClients)[0]).color,
                       }}
