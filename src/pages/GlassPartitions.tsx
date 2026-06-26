@@ -76,11 +76,11 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 
 /* ── Images ── */
 const IMG: Record<string, string> = {
-  hero: "https://images.unsplash.com/photo-1545558014-8692077e9b5c?fm=jpg&q=85&w=2400&auto=format&fit=crop",
-  pvdf: "/Panel.webp",
-  pe: "/Glazing.webp",
-  wood: "/Unitized.webp",
-  mirror: "/Glass installation.webp",
+  hero: "https://images.unsplash.com/photo-1497366216548-37526070297c?fm=jpg&q=85&w=2400&auto=format&fit=crop",
+  office: "/Glass.webp",
+  acoustic: "/Railing.webp",
+  smart: "/Handle.webp",
+  shower: "/Custom railing.webp",
   process: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?fm=jpg&q=85&w=1400&auto=format&fit=crop",
 };
 
@@ -88,61 +88,61 @@ const IMG: Record<string, string> = {
 const SYSTEMS = [
   {
     num: "01",
-    title: "PVDF Coated ACP",
-    desc: "Premium fluorocarbon (PVDF) coated panels with superior UV resistance and colour retention. The gold standard for external cladding — maintains appearance for 20+ years without fading or chalking.",
-    glass: "PVDF 70/30",
-    wind: "FR mineral core",
-    bestFor: "Towers, corporate HQs",
-    price: "₹180 – ₹350 /sq ft",
-    img: "pvdf",
+    title: "Frameless Office Partitions",
+    desc: "Floor-to-ceiling toughened glass panels with minimal hardware. Creates transparent, open-plan workspaces while providing separation for meeting rooms, cabins, and focus areas.",
+    glass: "10–12mm toughened",
+    wind: "Frameless patch fittings",
+    bestFor: "Offices, co-working spaces",
+    price: "₹350 – ₹600 /sq ft",
+    img: "office",
   },
   {
     num: "02",
-    title: "PE Coated ACP",
-    desc: "Polyester-coated panels offering excellent value for cost-conscious projects. Available in all standard colours and finishes. Best for interior cladding, signage, and canopy soffits.",
-    glass: "Polyester (PE)",
-    wind: "PE / FR core",
-    bestFor: "Interiors, signage, canopies",
-    price: "₹90 – ₹160 /sq ft",
-    img: "pe",
+    title: "Acoustic Double-Glazed Walls",
+    desc: "Two glass panels with an air gap for superior sound insulation up to 42dB. Ideal for boardrooms, HR offices, and conference rooms where speech privacy is critical.",
+    glass: "6+12+6mm DGU",
+    wind: "Up to 42dB STC rating",
+    bestFor: "Boardrooms, conference rooms",
+    price: "₹600 – ₹1,000 /sq ft",
+    img: "acoustic",
   },
   {
     num: "03",
-    title: "Wood-Grain & Stone Finish",
-    desc: "Digital printing technology creates realistic wood, stone, and marble textures on ACP surfaces. Natural aesthetics without the weight, maintenance, or cost of real materials.",
-    glass: "Digital print + PVDF",
-    wind: "FR mineral core",
-    bestFor: "Hotels, residences, retail",
-    price: "₹220 – ₹400 /sq ft",
-    img: "wood",
+    title: "Switchable Smart Glass",
+    desc: "PDLC glass that switches from transparent to opaque with an electric current. Instant privacy for glass-walled meeting rooms without blinds or curtains. App and switch control available.",
+    glass: "Smart PDLC laminated",
+    wind: "Electric privacy switch",
+    bestFor: "CEO cabins, meeting rooms",
+    price: "₹1,200 – ₹2,500 /sq ft",
+    img: "smart",
   },
   {
     num: "04",
-    title: "Mirror & Metallic ACP",
-    desc: "High-reflectivity aluminium panels with mirror-polish or brushed metallic finishes. Creates striking visual impact for feature walls, fascias, and architectural accents.",
-    glass: "Anodised / mirror",
-    wind: "FR mineral core",
-    bestFor: "Feature walls, retail fronts",
-    price: "₹250 – ₹450 /sq ft",
-    img: "mirror",
+    title: "Shower Enclosures",
+    desc: "Luxury frameless shower enclosures in sliding, hinged, and walk-in designs. 8–12mm toughened glass with anti-limescale nano-coating that keeps glass sparkling clean with minimal effort.",
+    glass: "8–12mm toughened",
+    wind: "Nano anti-limescale coat",
+    bestFor: "Premium homes, hotels",
+    price: "₹15,000 – ₹45,000 /unit",
+    img: "shower",
   },
 ];
 
 const STEPS = [
-  { num: "01", title: "Site Survey", desc: "Measure facade area, assess substrate & plan panel layout" },
-  { num: "02", title: "Shop Drawing", desc: "Panel cutting plan, joint layout & colour/finish approval" },
-  { num: "03", title: "Fabrication", desc: "CNC routing, folding & sub-frame preparation" },
-  { num: "04", title: "Installation", desc: "Sub-frame fixing, panel mounting & joint sealing" },
+  { num: "01", title: "Space Planning", desc: "Understand layout, privacy needs & acoustic requirements" },
+  { num: "02", title: "Design", desc: "Glass type, hardware finish & door configuration approval" },
+  { num: "03", title: "Fabrication", desc: "Glass tempering, hardware sourcing & quality checks" },
+  { num: "04", title: "Installation", desc: "Precision fitting with plumb-level alignment & sealing" },
 ];
 
-export default function AcpCladding() {
+export default function GlassPartitions() {
   const [activeSystem, setActiveSystem] = useState(0);
 
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: "ACP & Metal Cladding Systems",
-    serviceType: "ACP Cladding Installation",
+    name: "Glass Partitions & Shower Enclosures",
+    serviceType: "Glass Partition & Shower Enclosure Installation",
     provider: {
       "@type": "LocalBusiness",
       name: "Fine Glaze",
@@ -162,7 +162,7 @@ export default function AcpCladding() {
       { "@type": "City", name: "Mumbai" },
       { "@type": "City", name: "Navi Mumbai" },
     ],
-    description: "Aluminium Composite Panel cladding — PVDF, PE, wood-grain & mirror finishes. Fire-retardant FR grade panels from Aludecor, Alstrong & Reynobond. 20-year colour warranty.",
+    description: "Frameless glass partitions for offices and luxury shower enclosures for homes. Single-glazed, double-glazed & smart glass options. 8–12mm toughened glass.",
   };
 
   const breadcrumbSchema = {
@@ -171,7 +171,7 @@ export default function AcpCladding() {
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Home", item: "https://fineglaze.com" },
       { "@type": "ListItem", position: 2, name: "Services", item: "https://fineglaze.com/services" },
-      { "@type": "ListItem", position: 3, name: "ACP & Metal Cladding", item: "https://fineglaze.com/acp-aluminium-cladding" },
+      { "@type": "ListItem", position: 3, name: "Glass Partitions & Shower Enclosures", item: "https://fineglaze.com/glass-partitions" },
     ],
   };
 
@@ -181,26 +181,26 @@ export default function AcpCladding() {
     mainEntity: [
       {
         "@type": "Question",
-        name: "What is ACP cladding?",
+        name: "Are glass partitions soundproof?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "ACP (Aluminium Composite Panel) cladding uses panels made of two aluminium sheets bonded to a core material. They are fixed to a sub-frame on the building exterior, creating a flat, modern cladding surface available in hundreds of colours and finishes.",
+          text: "Single-glazed glass partitions provide basic visual separation but limited sound insulation (~28dB). For speech privacy, we recommend double-glazed (DGU) glass walls that achieve up to 42dB STC rating — sufficient for boardrooms and HR offices.",
         },
       },
       {
         "@type": "Question",
-        name: "Is ACP cladding fire safe?",
+        name: "What is switchable smart glass?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "We exclusively use FR (Fire Retardant) grade ACP for external cladding. FR panels have a mineral-filled core that limits flame spread and meets NBC (National Building Code) fire safety requirements. PE core panels are only used for interiors.",
+          text: "Smart glass uses PDLC (Polymer Dispersed Liquid Crystal) technology. When electric current is applied, the glass turns transparent. When switched off, it becomes frosted/opaque — providing instant privacy without blinds. Controlled via wall switch or smartphone app.",
         },
       },
       {
         "@type": "Question",
-        name: "How much does ACP cladding cost per sq ft in India?",
+        name: "How much do glass partitions cost per sq ft?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "PE coated ACP starts at ₹90/sq ft for interiors. PVDF coated panels range from ₹180–₹350/sq ft. Wood-grain and stone finishes cost ₹220–₹400/sq ft. Prices include panel, sub-frame, and installation.",
+          text: "Frameless single-glazed partitions start at ₹350/sq ft. Double-glazed acoustic walls range from ₹600–₹1,000/sq ft. Switchable smart glass costs ₹1,200–₹2,500/sq ft. Shower enclosures are priced per unit at ₹15,000–₹45,000.",
         },
       },
     ],
@@ -211,10 +211,10 @@ export default function AcpCladding() {
   return (
     <Layout darkHero>
       <SEO
-        title="ACP Cladding & Aluminium Composite Panels | ACP Contractors Pune & Mumbai – Fine Glaze"
-        description="Top ACP cladding contractors in India. PVDF & PE aluminium composite panels from Aludecor, Alstrong & Reynobond. Fire-retardant grade. 20-year colour warranty. Free site visit."
-        canonical="https://fineglaze.com/acp-aluminium-cladding"
-        keywords="ACP cladding, aluminium composite panel, ACP contractors Pune Mumbai, PVDF ACP panel, fire retardant ACP, ACP facade, aluminium cladding cost, Aludecor Alstrong Reynobond"
+        title="Glass Partitions & Shower Enclosures | Office & Residential Glass Solutions – Fine Glaze"
+        description="Frameless glass partitions for offices and luxury shower enclosures. Single-glazed, DGU & switchable smart glass. 8-12mm toughened glass. Pune & Mumbai. Free site visit."
+        canonical="https://fineglaze.com/glass-partitions"
+        keywords="glass partitions, frameless glass partition office, shower enclosure glass, glass cabin, smart glass partition, office glass wall, bathroom glass door, toughened glass partition Pune Mumbai"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}
       />
 
@@ -222,7 +222,7 @@ export default function AcpCladding() {
       <section className="relative h-screen overflow-hidden">
         <img
           src={IMG.hero}
-          alt="ACP aluminium cladding facade — Fine Glaze"
+          alt="Frameless glass partition — Fine Glaze"
           className="absolute inset-0 w-full h-full object-cover object-center"
           style={{ animation: "sgZoom 20s ease-in-out infinite alternate" }}
           loading="eager"
@@ -249,10 +249,10 @@ export default function AcpCladding() {
             className="font-extrabold text-white leading-[0.88] tracking-tight animate-fade-in-up"
             style={{ fontSize: "clamp(3.8rem, 9vw, 9rem)", animationDelay: "0.1s" }}
           >
-            ACP &<br />
-            <span className="text-gradient-gold">Metal</span><br />
+            Glass<br />
+            <span className="text-gradient-gold">Partitions</span><br />
             <span style={{ fontSize: "clamp(2rem, 4.5vw, 4.8rem)", fontWeight: 600, color: "rgba(255,255,255,0.85)" }}>
-              Cladding.
+              & Enclosures.
             </span>
           </h1>
 
@@ -260,7 +260,7 @@ export default function AcpCladding() {
             className="mt-6 text-white/70 text-base md:text-lg max-w-lg leading-relaxed animate-fade-in-up"
             style={{ animationDelay: "0.2s" }}
           >
-            Fire-retardant aluminium composite panels for modern building exteriors across India.
+            Frameless glass walls for modern offices and luxury shower enclosures for premium homes.
           </p>
 
           <div
@@ -294,14 +294,14 @@ export default function AcpCladding() {
         <div className="container mx-auto px-6 md:px-16 max-w-3xl text-center">
           <FadeIn>
             <p className="text-amber-700 text-xs font-bold tracking-[0.3em] uppercase mb-4">
-              What is ACP Cladding
+              Why Glass Interiors
             </p>
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-stone-900 leading-snug mb-5">
-              Two aluminium sheets bonded to a mineral core —{"  "}
-              <span className="text-stone-400">lightweight, fire-safe, and available in unlimited finishes.</span>
+              Open, light-filled spaces without losing privacy —{"  "}
+              <span className="text-stone-400">toughened glass that divides space without blocking it.</span>
             </h2>
             <p className="text-stone-500 text-[15px] md:text-base leading-relaxed">
-              Aluminium Composite Panels (ACP) consist of two aluminium sheets bonded to a non-combustible mineral-filled core. They provide a flat, seamless cladding surface that transforms any building exterior. Available in PVDF and PE coatings with solid, metallic, wood-grain, stone, and mirror finishes.
+              Glass partitions create visually open workspaces while providing acoustic separation. Available in single-glazed, double-glazed (for sound insulation up to 42dB), and switchable smart glass that turns opaque at the touch of a button. Our shower enclosures use 8–12mm toughened glass with anti-limescale nano-coating.
             </p>
           </FadeIn>
         </div>
@@ -314,10 +314,10 @@ export default function AcpCladding() {
           <FadeIn>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-0 md:divide-x md:divide-stone-700">
               {[
-                { number: "20yr", label: "Colour Warranty (PVDF)" },
-                { number: "FR", label: "Fire Retardant Grade" },
+                { number: "42dB", label: "Sound Insulation (DGU)" },
                 { number: "5+", label: "Years Experience" },
-                { number: "100+", label: "Finish Options" },
+                { number: "12mm", label: "Max Glass Thickness" },
+                { number: "0", label: "Safety Incidents" },
               ].map((s) => (
                 <div key={s.label} className="text-center px-4">
                   <p className="text-2xl md:text-3xl font-bold text-white">{s.number}</p>
@@ -335,10 +335,10 @@ export default function AcpCladding() {
         <div className="container mx-auto px-6 md:px-16">
           <FadeIn className="mb-10">
             <p className="text-amber-700 text-xs font-bold tracking-[0.3em] uppercase mb-3">
-              Our Panels
+              Our Systems
             </p>
             <h2 className="text-2xl md:text-3xl font-bold text-stone-900">
-              ACP Panel Systems We Install
+              Glass Partition & Enclosure Systems We Install
             </h2>
           </FadeIn>
 
@@ -378,11 +378,11 @@ export default function AcpCladding() {
 
                 <div className="grid grid-cols-2 gap-3 mb-6">
                   <div className="bg-stone-50 p-3">
-                    <p className="text-[10px] uppercase tracking-wider text-stone-400 mb-1">Coating</p>
+                    <p className="text-[10px] uppercase tracking-wider text-stone-400 mb-1">Glass</p>
                     <p className="text-sm font-semibold text-stone-800">{current.glass}</p>
                   </div>
                   <div className="bg-stone-50 p-3">
-                    <p className="text-[10px] uppercase tracking-wider text-stone-400 mb-1">Core</p>
+                    <p className="text-[10px] uppercase tracking-wider text-stone-400 mb-1">Feature</p>
                     <p className="text-sm font-semibold text-stone-800">{current.wind}</p>
                   </div>
                   <div className="bg-stone-50 p-3">
@@ -424,23 +424,23 @@ export default function AcpCladding() {
               {[
                 {
                   icon: Shield,
-                  title: "Fire Safe",
-                  desc: "Only FR (Fire Retardant) grade ACP panels used for external cladding. NBC fire safety compliant.",
+                  title: "Safety Glass",
+                  desc: "All panels are IS 2553 certified toughened glass. Shower glass has anti-shatter lamination options.",
                 },
                 {
                   icon: Clock,
-                  title: "Fast Install",
-                  desc: "Lightweight panels install 3x faster than natural stone. Minimal scaffolding time.",
+                  title: "Quick Install",
+                  desc: "Most office partition projects completed in 5–10 days. Shower enclosures installed in 1–2 days.",
                 },
                 {
                   icon: Award,
-                  title: "Trusted Brands",
-                  desc: "We use panels from Aludecor, Alstrong, and Reynobond — the most trusted ACP manufacturers.",
+                  title: "Premium Hardware",
+                  desc: "European patch fittings and door closers. Brushed SS, matt black & champagne gold finishes.",
                 },
                 {
                   icon: Wrench,
-                  title: "Clean Finish",
-                  desc: "CNC routing for precise folds. Silicone-sealed joints for a seamless, watertight appearance.",
+                  title: "Easy Maintenance",
+                  desc: "Nano-coated shower glass repels water and limescale. Office partitions need just regular glass cleaner.",
                 },
               ].map((item) => (
                 <div key={item.title} className="text-center">
@@ -502,7 +502,7 @@ export default function AcpCladding() {
         <div className="relative h-[35vh] md:h-[40vh] overflow-hidden">
           <img
             src={IMG.process}
-            alt="Fine Glaze ACP cladding installation"
+            alt="Fine Glaze glass partition installation"
             className="w-full h-full object-cover"
             loading="lazy"
           />
@@ -511,7 +511,7 @@ export default function AcpCladding() {
             <div>
               <p className="text-white/60 text-sm uppercase tracking-widest mb-2">Our Promise</p>
               <p className="text-white text-xl md:text-3xl font-bold max-w-xl">
-                From CNC routing to final sealant — every step done in-house for a flawless finish.
+                Modern workspaces and luxury bathrooms — built with precision glass craftsmanship.
               </p>
             </div>
           </div>
@@ -527,7 +527,7 @@ export default function AcpCladding() {
               Pricing
             </p>
             <h2 className="text-2xl md:text-3xl font-bold text-stone-900 mb-2">
-              ACP Cladding Cost — 2026
+              Glass Partition & Enclosure Cost — 2026
             </h2>
             <p className="text-stone-400 text-sm">
               Indicative rates. Final cost depends on specifications & complexity. GST extra.
@@ -540,16 +540,16 @@ export default function AcpCladding() {
                 <thead>
                   <tr className="border-b-2 border-stone-800">
                     <th className="py-3 text-xs font-bold uppercase tracking-wider text-stone-500">System</th>
-                    <th className="py-3 text-xs font-bold uppercase tracking-wider text-stone-500">Coating / Finish</th>
+                    <th className="py-3 text-xs font-bold uppercase tracking-wider text-stone-500">Glass Type</th>
                     <th className="py-3 text-xs font-bold uppercase tracking-wider text-stone-500 text-right">Rate / sq ft</th>
                   </tr>
                 </thead>
                 <tbody className="text-sm">
                   {[
-                    { system: "PVDF Coated ACP", glass: "PVDF 70/30 + FR core", price: "₹180 – ₹350" },
-                    { system: "PE Coated ACP", glass: "Polyester + PE/FR core", price: "₹90 – ₹160" },
-                    { system: "Wood-Grain / Stone", glass: "Digital print + PVDF", price: "₹220 – ₹400" },
-                    { system: "Mirror / Metallic", glass: "Anodised / mirror finish", price: "₹250 – ₹450" },
+                    { system: "Frameless Partition", glass: "10–12mm toughened", price: "₹350 – ₹600 /sq ft" },
+                    { system: "Acoustic DGU Partition", glass: "6+12+6mm DGU", price: "₹600 – ₹1,000 /sq ft" },
+                    { system: "Smart Glass Wall", glass: "PDLC laminated", price: "₹1,200 – ₹2,500 /sq ft" },
+                    { system: "Shower Enclosure", glass: "8–12mm toughened", price: "₹15,000 – ₹45,000 /unit" },
                   ].map((row) => (
                     <tr key={row.system} className="border-b border-stone-100 hover:bg-stone-50 transition-colors">
                       <td className="py-3 font-semibold text-stone-800">{row.system}</td>
@@ -588,24 +588,24 @@ export default function AcpCladding() {
           <FadeIn delay={100}>
             <div>
               <FAQItem
-                q="What is ACP cladding?"
-                a="ACP (Aluminium Composite Panel) cladding uses panels made of two aluminium sheets bonded to a core material. They are fixed to a sub-frame on the building exterior, creating a flat, modern cladding surface available in hundreds of colours and finishes."
+                q="Are glass partitions soundproof?"
+                a="Single-glazed glass partitions provide basic visual separation but limited sound insulation (~28dB). For speech privacy, we recommend double-glazed (DGU) glass walls that achieve up to 42dB STC rating — sufficient for boardrooms and HR offices."
               />
               <FAQItem
-                q="Is ACP cladding fire safe?"
-                a="We exclusively use FR (Fire Retardant) grade ACP for external cladding. FR panels have a mineral-filled core that limits flame spread and meets NBC (National Building Code) fire safety requirements. PE core panels are only used for interiors."
+                q="What is switchable smart glass?"
+                a="Smart glass uses PDLC (Polymer Dispersed Liquid Crystal) technology. When electric current is applied, the glass turns transparent. When switched off, it becomes frosted/opaque — providing instant privacy without blinds. Controlled via wall switch or smartphone app."
               />
               <FAQItem
-                q="How much does ACP cladding cost per sq ft in India?"
-                a="PE coated ACP starts at ₹90/sq ft for interiors. PVDF coated panels range from ₹180–₹350/sq ft. Wood-grain and stone finishes cost ₹220–₹400/sq ft. Prices include panel, sub-frame, and installation."
+                q="How much do glass partitions cost per sq ft?"
+                a="Frameless single-glazed partitions start at ₹350/sq ft. Double-glazed acoustic walls range from ₹600–₹1,000/sq ft. Switchable smart glass costs ₹1,200–₹2,500/sq ft. Shower enclosures are priced per unit at ₹15,000–₹45,000."
               />
               <FAQItem
-                q="How long does PVDF ACP last?"
-                a="PVDF (fluorocarbon) coated ACP panels come with a 20-year colour warranty. They resist UV fading, chalking, and chemical exposure far better than PE coated panels — making them the preferred choice for external facades."
+                q="Can glass partitions have doors?"
+                a="Yes. We install frameless glass swing doors, sliding doors, and even automatic sensor doors within glass partition systems. All doors come with floor springs or patch fittings and soft-close mechanisms."
               />
               <FAQItem
-                q="Can ACP be used for renovation and existing buildings?"
-                a="Yes. ACP is ideal for building renovation because it is lightweight, installs over existing facades, and transforms the appearance quickly. The aluminium sub-frame can be adapted to any building surface."
+                q="Is the nano-coating on shower glass worth it?"
+                a="Yes. Nano-coating creates a hydrophobic surface that repels water and prevents limescale build-up. Shower glass stays cleaner for longer and requires significantly less scrubbing — especially valuable in hard-water areas like Pune and Mumbai."
               />
             </div>
           </FadeIn>
@@ -638,10 +638,10 @@ export default function AcpCladding() {
                 </p>
                 <div className="grid grid-cols-2 gap-x-6 gap-y-1.5">
                   {[
-                    { title: "Curtain Wall Systems", href: "/curtain-wall-systems" },
-                    { title: "Structural Glazing", href: "/structural-glazing" },
-                    { title: "Aluminium Facade", href: "/aluminium-facade" },
                     { title: "Glass Railings", href: "/glass-railings" },
+                    { title: "Structural Glazing", href: "/structural-glazing" },
+                    { title: "Curtain Wall Systems", href: "/curtain-wall-systems" },
+                    { title: "Aluminium Facade", href: "/aluminium-facade" },
                     { title: "Facade AMC", href: "/maintenance-services" },
                     { title: "All Services →", href: "/services" },
                   ].map((link) => (

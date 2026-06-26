@@ -21,6 +21,9 @@ import CurtainWall from "./pages/CurtainWall";
 import AcpCladding from "./pages/AcpCladding";
 import GlassRailings from "./pages/GlassRailings";
 import Maintenance from "./pages/Maintenance";
+import Skylights from "./pages/Skylights";
+import Louvers from "./pages/Louvers";
+import GlassPartitions from "./pages/GlassPartitions";
 
 import Portal from "./pages/Portal";
 import Admin from "./pages/Admin";
@@ -99,6 +102,9 @@ export const routes = [
       { path: "acp-aluminium-cladding", element: <AcpCladding /> },
       { path: "glass-railings", element: <GlassRailings /> },
       { path: "maintenance-services", element: <Maintenance /> },
+      { path: "skylights-canopies", element: <Skylights /> },
+      { path: "aluminium-louvers", element: <Louvers /> },
+      { path: "glass-partitions", element: <GlassPartitions /> },
       { path: "portal", element: <Portal /> },
       { path: "admin", element: <Admin /> },
       { path: "admin/images", element: <AdminImages /> },

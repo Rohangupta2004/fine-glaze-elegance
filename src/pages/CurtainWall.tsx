@@ -1,454 +1,667 @@
+import SEO from "@/components/SEO";
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/home/CTASection";
-import { CheckCircle2, Building2, ShieldCheck, Maximize2, MapPin, Wrench, ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import SEO from "@/components/SEO";
-import { useSiteMedia } from "@/hooks/useSiteMedia";
+import { Button } from "@/components/ui/button";
+import {
+  ArrowRight,
+  MapPin,
+  ChevronDown,
+  Shield,
+  Clock,
+  Award,
+  Wrench,
+} from "lucide-react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { cn } from "@/lib/utils";
+import { useState } from "react";
+
+/* ─── Reusable fade-in wrapper ─── */
+function FadeIn({
+  children,
+  className,
+  delay = 0,
+}: {
+  children: React.ReactNode;
+  className?: string;
+  delay?: number;
+}) {
+  const { ref, isVisible } = useScrollAnimation();
+  return (
+    <div
+      ref={ref}
+      className={cn(
+        "transition-all duration-700",
+        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8",
+        className
+      )}
+      style={{ transitionDelay: `${delay}ms` }}
+    >
+      {children}
+    </div>
+  );
+}
+
+/* ── Accordion FAQ item ── */
+function FAQItem({ q, a }: { q: string; a: string }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <div className="border-b border-stone-200">
+      <button
+        onClick={() => setOpen(!open)}
+        className="w-full flex items-center justify-between py-4 text-left group"
+      >
+        <span className="text-[15px] font-semibold text-stone-800 pr-8 group-hover:text-amber-700 transition-colors">
+          {q}
+        </span>
+        <ChevronDown
+          size={18}
+          className={cn(
+            "text-stone-400 shrink-0 transition-transform duration-300",
+            open && "rotate-180"
+          )}
+        />
+      </button>
+      <div
+        className={cn(
+          "overflow-hidden transition-all duration-300",
+          open ? "max-h-96 pb-4" : "max-h-0"
+        )}
+      >
+        <p className="text-stone-500 leading-relaxed text-sm">{a}</p>
+      </div>
+    </div>
+  );
+}
+
+/* ── Images ── */
+const IMG: Record<string, string> = {
+  hero: "https://images.unsplash.com/photo-1486718448742-163732cd1544?fm=jpg&q=85&w=2400&auto=format&fit=crop",
+  unitized: "/Unitized.webp",
+  stick: "/Glazing.webp",
+  semi: "/Panel.webp",
+  point: "/Glass installation.webp",
+  process: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?fm=jpg&q=85&w=1400&auto=format&fit=crop",
+};
+
+/* ── System data ── */
+const SYSTEMS = [
+  {
+    num: "01",
+    title: "Unitized Curtain Wall",
+    desc: "Factory-assembled panels shipped ready to install. Fastest method — ideal for high-rises. Each panel interlocks with the next for a seamless, watertight envelope.",
+    glass: "6063-T6 aluminium",
+    wind: "Up to 4.5 kPa",
+    bestFor: "High-rises, IT parks",
+    price: "₹600 – ₹1,200 /sq ft",
+    img: "unitized",
+  },
+  {
+    num: "02",
+    title: "Stick System Curtain Wall",
+    desc: "Aluminium mullions and transoms assembled piece-by-piece on site. Cost-effective for low-to-mid rise buildings with varying floor heights.",
+    glass: "6063-T6 aluminium",
+    wind: "Up to 3.5 kPa",
+    bestFor: "Offices, showrooms",
+    price: "₹400 – ₹700 /sq ft",
+    img: "stick",
+  },
+  {
+    num: "03",
+    title: "Semi-Unitized System",
+    desc: "Mullions fixed on-site, pre-glazed panels slotted in. Combines unitized speed with stick-system flexibility — great for renovation projects.",
+    glass: "6063-T6 aluminium",
+    wind: "Up to 4.0 kPa",
+    bestFor: "Renovations, mid-rises",
+    price: "₹500 – ₹900 /sq ft",
+    img: "semi",
+  },
+  {
+    num: "04",
+    title: "Point-Supported Glass Wall",
+    desc: "Minimal structure with stainless-steel point fixings and structural glass fins. Maximum transparency for atriums, lobbies, and feature facades.",
+    glass: "SS 316 fittings",
+    wind: "Structural glass fins",
+    bestFor: "Lobbies, atriums",
+    price: "₹900 – ₹1,500 /sq ft",
+    img: "point",
+  },
+];
+
+const STEPS = [
+  { num: "01", title: "Site Survey", desc: "Engineers assess the structure and design requirements" },
+  { num: "02", title: "Engineering", desc: "Shop drawings, wind-load calculations & thermal analysis" },
+  { num: "03", title: "Fabrication", desc: "Precision CNC cutting & assembly at our Pune facility" },
+  { num: "04", title: "Installation", desc: "Certified crews install with crane-assisted panel placement" },
+];
 
 export default function CurtainWall() {
-  const { getMedia } = useSiteMedia();
-  const heroImage = getMedia("curtain_wall_hero", "/Unitized.webp");
+  const [activeSystem, setActiveSystem] = useState(0);
+
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "Curtain Wall Glazing Systems",
-    "serviceType": "Curtain Wall Installation",
-    "provider": {
+    name: "Curtain Wall Glazing Systems",
+    serviceType: "Curtain Wall Installation",
+    provider: {
       "@type": "LocalBusiness",
-      "name": "Fine Glaze",
+      name: "Fine Glaze",
       "@id": "https://fineglaze.com",
-      "url": "https://fineglaze.com",
-      "telephone": "+91-8369233566",
-      "image": "https://fineglaze.com/default-og.webp",
-      "priceRange": "₹₹₹",
-      "address": {
+      url: "https://fineglaze.com",
+      telephone: "+91-8369233566",
+      priceRange: "₹₹₹",
+      address: {
         "@type": "PostalAddress",
-        "addressLocality": "Pune",
-        "addressRegion": "Maharashtra",
-        "addressCountry": "IN"
+        addressLocality: "Pune",
+        addressRegion: "Maharashtra",
+        addressCountry: "IN",
       },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "38",
-        "bestRating": "5"
-      }
     },
-    "description": "Premium unitized and semi-unitized curtain wall glazing systems for commercial buildings in Pune and Maharashtra. ₹350–₹1,200/sq ft.",
-    "areaServed": [
-      { "@type": "City", "name": "Pune" },
-      { "@type": "City", "name": "Mumbai" },
-      { "@type": "City", "name": "Navi Mumbai" },
-      { "@type": "City", "name": "Nashik" },
-      { "@type": "State", "name": "Maharashtra" }
+    areaServed: [
+      { "@type": "City", name: "Pune" },
+      { "@type": "City", name: "Mumbai" },
+      { "@type": "City", name: "Navi Mumbai" },
     ],
-    "offers": {
-      "@type": "Offer",
-      "priceCurrency": "INR",
-      "priceSpecification": {
-        "@type": "PriceSpecification",
-        "minPrice": "350",
-        "maxPrice": "1200",
-        "priceCurrency": "INR",
-        "unitText": "per sq ft"
-      }
-    },
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Curtain Wall Systems",
-      "itemListElement": [
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Unitized Curtain Wall System" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Semi-Unitized Curtain Wall System" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Stick System Curtain Wall" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Spider Glazing Curtain Wall" } }
-      ]
-    }
-  };
-
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What is the cost of curtain wall glazing per sq ft in India?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Curtain wall glazing systems in India typically range from ₹350 to ₹1,200 per sq ft. Stick system curtain walls cost ₹350–₹600/sq ft, while unitized systems range from ₹700–₹1,200/sq ft depending on glass specifications, wind load requirements, aluminium profile grade, and installation complexity. Fine Glaze provides custom project quotations with free site visits."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What is the difference between unitized and stick system curtain walls?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Stick system curtain walls are assembled piece by piece on-site, making them suitable for low-to-mid-rise buildings and smaller projects. Unitized curtain wall systems are factory-assembled into full-storey panels and craned into position floor by floor. Unitized systems reduce on-site installation time by up to 40%, ensure factory-quality control, and are preferred for large commercial towers and IT campuses."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How long does curtain wall installation take?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Installation time depends on the building size and system type. For a typical 10-storey commercial building with unitized curtain walls, installation takes approximately 4–8 weeks after fabrication. Fabrication lead time is usually 6–10 weeks from shop drawing approval. Fine Glaze uses parallel workflows to compress timelines without compromising quality."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What glass types are used in curtain wall systems?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Fine Glaze curtain wall systems support Single Glazed Units (SGU), Double Glazed Units (DGU), Low-E glass for thermal efficiency, laminated safety glass, and reflective glass. For LEED-certified green buildings, we recommend DGU with Low-E coating and argon gas fill which reduces heat gain by up to 70%."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Which buildings is curtain wall glazing suitable for?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Curtain wall glazing is ideal for commercial office towers, IT parks, hotels, hospitals, shopping malls, airports, and corporate campuses. Fine Glaze has successfully delivered curtain wall projects for Embassy REIT, LTIMindtree, and Pune International Airport across Maharashtra."
-        }
-      }
-    ]
+    description: "Premium unitized and stick curtain wall systems for commercial buildings. Engineered for wind loads up to 4.5 kPa. ₹400–₹1,200/sq ft.",
   };
 
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://fineglaze.com" },
-      { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://fineglaze.com/services" },
-      { "@type": "ListItem", "position": 3, "name": "Curtain Wall Systems", "item": "https://fineglaze.com/curtain-wall-systems" }
-    ]
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://fineglaze.com" },
+      { "@type": "ListItem", position: 2, name: "Services", item: "https://fineglaze.com/services" },
+      { "@type": "ListItem", position: 3, name: "Curtain Wall Systems", item: "https://fineglaze.com/curtain-wall-systems" },
+    ],
   };
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "What is a curtain wall system?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "A curtain wall is a non-load-bearing exterior wall system made of lightweight aluminium frames and glass panels. It hangs from the building structure like a curtain, providing weather protection, thermal insulation, and a sleek modern appearance.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "What is the difference between unitized and stick curtain walls?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Unitized curtain walls are factory-assembled and shipped as complete panels — faster to install and better quality control. Stick systems are assembled piece-by-piece on site — more cost-effective for smaller projects with varying dimensions.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "How much does a curtain wall cost per sq ft in India?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Stick systems range from ₹400–₹700/sq ft. Unitized systems cost ₹600–₹1,200/sq ft. Point-supported glass walls range from ₹900–₹1,500/sq ft depending on glass type and building height.",
+        },
+      },
+    ],
+  };
+
+  const current = SYSTEMS[activeSystem];
 
   return (
     <Layout darkHero>
       <SEO
-        title="Curtain Wall Manufacturers in Pune & Mumbai | Unitized & Stick System Glass Facade – Fine Glaze"
-        description="Top curtain wall manufacturers in India. Unitized & stick system glass curtain walls for commercial towers & IT parks. ₹350–₹1,200/sq ft. 5+ yrs experience. Trusted by Embassy REIT & LTIMindtree. Free site visit."
+        title="Curtain Wall Systems & Glazing | Commercial Facade Contractors Pune & Mumbai – Fine Glaze"
+        description="Top curtain wall contractors in India. Unitized, stick & semi-unitized curtain wall systems for IT parks, towers & commercial buildings. ₹400-1200/sq ft. Free site visit."
         canonical="https://fineglaze.com/curtain-wall-systems"
-        keywords="curtain wall manufacturers India, glass curtain wall manufacturers Pune, unitized curtain wall system, stick system curtain wall, glazed facade Mumbai, curtain wall cost per sq ft India, curtain wall contractors Maharashtra, semi unitized curtain wall, spider glazing facade"
-        ogImage="https://fineglaze.com/Unitized.webp"
+        keywords="curtain wall systems, curtain wall glazing, unitized curtain wall, stick system facade, curtain wall contractors Pune Mumbai, glass curtain wall cost, commercial facade glazing"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}
       />
 
-      {/* HERO */}
-      <section className="relative pt-32 pb-24 bg-slate-900 text-white overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center opacity-30"
-          style={{ backgroundImage: `url('${heroImage}')` }}
+      {/* ════════════ HERO ════════════ */}
+      <section className="relative h-screen overflow-hidden">
+        <img
+          src={IMG.hero}
+          alt="Curtain wall glass facade — Fine Glaze"
+          className="absolute inset-0 w-full h-full object-cover object-center"
+          style={{ animation: "sgZoom 20s ease-in-out infinite alternate" }}
+          loading="eager"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-900/70 to-transparent" />
-        <div className="container mx-auto px-4 relative z-10 max-w-6xl">
-          <div className="max-w-3xl">
-            <div className="flex items-center gap-2 mb-4">
-              <span className="text-amber-400 font-bold tracking-widest uppercase text-sm">Structural Glazing Experts</span>
+        <style>{`@keyframes sgZoom { from { transform: scale(1.0); } to { transform: scale(1.08); } }`}</style>
+
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(to bottom, rgba(0,0,0,0.60) 0%, rgba(0,0,0,0.25) 30%, rgba(0,0,0,0.55) 65%, rgba(0,0,0,0.92) 100%)",
+          }}
+        />
+
+        <div className="absolute inset-x-0 bottom-0 px-5 md:px-16 pb-10 md:pb-20 pt-24">
+          <p
+            className="text-amber-400 text-xs font-bold tracking-[0.4em] uppercase mb-5 animate-fade-in"
+            style={{ animationDelay: "0.05s" }}
+          >
+            Fine Glaze · Pune · Mumbai · Maharashtra
+          </p>
+
+          <h1
+            className="font-extrabold text-white leading-[0.88] tracking-tight animate-fade-in-up"
+            style={{ fontSize: "clamp(3.8rem, 9vw, 9rem)", animationDelay: "0.1s" }}
+          >
+            Curtain<br />
+            <span className="text-gradient-gold">Wall</span><br />
+            <span style={{ fontSize: "clamp(2rem, 4.5vw, 4.8rem)", fontWeight: 600, color: "rgba(255,255,255,0.85)" }}>
+              Systems.
+            </span>
+          </h1>
+
+          <p
+            className="mt-6 text-white/70 text-base md:text-lg max-w-lg leading-relaxed animate-fade-in-up"
+            style={{ animationDelay: "0.2s" }}
+          >
+            Unitized & stick curtain wall systems for commercial towers, IT parks & premium architecture.
+          </p>
+
+          <div
+            className="mt-8 flex items-center gap-8 animate-fade-in-up"
+            style={{ animationDelay: "0.3s" }}
+          >
+            <Link
+              to="/contact"
+              className="text-white font-semibold text-base border-b border-amber-400 pb-0.5 hover:text-amber-400 transition-colors tracking-wide"
+            >
+              Get Free Quote
+            </Link>
+            <a
+              href="tel:+918369233566"
+              className="text-white/60 font-medium text-base hover:text-white transition-colors tracking-wide"
+            >
+              +91 83692 33566
+            </a>
+          </div>
+        </div>
+
+        <div className="absolute bottom-8 right-8 flex flex-col items-center gap-2 opacity-40">
+          <span className="text-white text-[10px] uppercase tracking-[0.25em] rotate-90 mb-3">Scroll</span>
+          <div className="w-px h-12 bg-gradient-to-b from-white to-transparent" />
+        </div>
+      </section>
+
+
+      {/* ════════════ INTRO ════════════ */}
+      <section className="py-16 md:py-20 bg-white">
+        <div className="container mx-auto px-6 md:px-16 max-w-3xl text-center">
+          <FadeIn>
+            <p className="text-amber-700 text-xs font-bold tracking-[0.3em] uppercase mb-4">
+              What are Curtain Walls
+            </p>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-stone-900 leading-snug mb-5">
+              A non-structural glass envelope hung from the building frame —{"  "}
+              <span className="text-stone-400">engineered for weather, wind & thermal performance.</span>
+            </h2>
+            <p className="text-stone-500 text-[15px] md:text-base leading-relaxed">
+              Curtain walls are lightweight aluminium-framed facades that don't carry floor or roof loads. They transfer wind loads to the main structure while providing thermal insulation, weather sealing, and a sleek all-glass appearance for modern commercial buildings.
+            </p>
+          </FadeIn>
+        </div>
+      </section>
+
+
+      {/* ════════════ STATS ════════════ */}
+      <section className="bg-stone-900 py-10">
+        <div className="container mx-auto px-6 md:px-16">
+          <FadeIn>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-0 md:divide-x md:divide-stone-700">
+              {[
+                { number: "5+", label: "Years Experience" },
+                { number: "10+", label: "Projects Delivered" },
+                { number: "4.5 kPa", label: "Max Wind Load" },
+                { number: "40%", label: "Faster (Unitized)" },
+              ].map((s) => (
+                <div key={s.label} className="text-center px-4">
+                  <p className="text-2xl md:text-3xl font-bold text-white">{s.number}</p>
+                  <p className="text-stone-500 text-[11px] uppercase tracking-widest mt-1">{s.label}</p>
+                </div>
+              ))}
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-              High-Performance <span className="text-gradient-gold">Curtain Wall Systems</span>
-            </h1>
-            <p className="text-xl text-slate-300 max-w-2xl mb-4 leading-relaxed">
-              Precision-engineered unitized and semi-unitized glazing solutions for modern commercial towers and IT campuses.
-              Factory-assembled quality that cuts installation time by <strong className="text-white">40%</strong>.
+          </FadeIn>
+        </div>
+      </section>
+
+
+      {/* ════════════ SYSTEMS ════════════ */}
+      <section className="py-16 md:py-20 bg-stone-50">
+        <div className="container mx-auto px-6 md:px-16">
+          <FadeIn className="mb-10">
+            <p className="text-amber-700 text-xs font-bold tracking-[0.3em] uppercase mb-3">
+              Our Systems
             </p>
-            <p className="text-slate-400 text-sm mb-8">
-              Trusted by <strong className="text-white">Embassy REIT · LTIMindtree · Pune International Airport</strong>
+            <h2 className="text-2xl md:text-3xl font-bold text-stone-900">
+              Curtain Wall Systems We Install
+            </h2>
+          </FadeIn>
+
+          <FadeIn delay={100}>
+            <div className="flex flex-wrap gap-2 mb-8">
+              {SYSTEMS.map((sys, i) => (
+                <button
+                  key={sys.num}
+                  onClick={() => setActiveSystem(i)}
+                  className={cn(
+                    "px-4 py-2 text-sm font-medium transition-all duration-200",
+                    activeSystem === i
+                      ? "bg-stone-900 text-white"
+                      : "bg-white text-stone-600 hover:bg-stone-100 border border-stone-200"
+                  )}
+                >
+                  {sys.title}
+                </button>
+              ))}
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-0 bg-white overflow-hidden" key={current.num}>
+              <div className="relative h-[280px] md:h-[360px] overflow-hidden">
+                <img
+                  src={IMG[current.img]}
+                  alt={current.title}
+                  className="w-full h-full object-cover transition-opacity duration-500"
+                  loading="lazy"
+                />
+                <div className="absolute top-4 left-4 bg-stone-900/80 text-white text-xs font-bold px-3 py-1.5 tracking-wider">
+                  {current.num}
+                </div>
+              </div>
+              <div className="p-8 md:p-10 flex flex-col justify-center">
+                <h3 className="text-xl md:text-2xl font-bold text-stone-900 mb-3">{current.title}</h3>
+                <p className="text-stone-500 text-sm leading-relaxed mb-6">{current.desc}</p>
+
+                <div className="grid grid-cols-2 gap-3 mb-6">
+                  <div className="bg-stone-50 p-3">
+                    <p className="text-[10px] uppercase tracking-wider text-stone-400 mb-1">Frame</p>
+                    <p className="text-sm font-semibold text-stone-800">{current.glass}</p>
+                  </div>
+                  <div className="bg-stone-50 p-3">
+                    <p className="text-[10px] uppercase tracking-wider text-stone-400 mb-1">Wind Load</p>
+                    <p className="text-sm font-semibold text-stone-800">{current.wind}</p>
+                  </div>
+                  <div className="bg-stone-50 p-3">
+                    <p className="text-[10px] uppercase tracking-wider text-stone-400 mb-1">Best For</p>
+                    <p className="text-sm font-semibold text-stone-800">{current.bestFor}</p>
+                  </div>
+                  <div className="bg-amber-50 p-3 border border-amber-200">
+                    <p className="text-[10px] uppercase tracking-wider text-amber-600 mb-1">Rate</p>
+                    <p className="text-sm font-bold text-stone-900">{current.price}</p>
+                  </div>
+                </div>
+
+                <Link to="/contact">
+                  <Button size="sm" className="bg-stone-900 hover:bg-stone-800 text-white gap-2">
+                    Get Quote for {current.title.split(" ")[0]} <ArrowRight size={14} />
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+
+      {/* ════════════ WHY FINE GLAZE ════════════ */}
+      <section className="py-16 md:py-20 bg-white">
+        <div className="container mx-auto px-6 md:px-16">
+          <FadeIn className="text-center mb-12">
+            <p className="text-amber-700 text-xs font-bold tracking-[0.3em] uppercase mb-3">
+              Why Fine Glaze
             </p>
-            <div className="flex flex-wrap gap-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-stone-900">
+              Built for performance. Delivered on schedule.
+            </h2>
+          </FadeIn>
+
+          <FadeIn delay={100}>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              {[
+                {
+                  icon: Shield,
+                  title: "Zero Incidents",
+                  desc: "Strict safety protocols on every project. Certified installation crews only.",
+                },
+                {
+                  icon: Clock,
+                  title: "On-Time Delivery",
+                  desc: "Milestone-based handovers. Embassy 247 completed with zero delays.",
+                },
+                {
+                  icon: Award,
+                  title: "In-House Facility",
+                  desc: "We design, fabricate & install from our own Pune facility. No subcontracting.",
+                },
+                {
+                  icon: Wrench,
+                  title: "AMC Support",
+                  desc: "Ongoing maintenance contracts for sealant, glass replacement & cleaning.",
+                },
+              ].map((item) => (
+                <div key={item.title} className="text-center">
+                  <div className="inline-flex items-center justify-center w-12 h-12 bg-amber-50 text-amber-700 mb-4">
+                    <item.icon size={22} />
+                  </div>
+                  <h3 className="text-sm font-bold text-stone-900 mb-2">{item.title}</h3>
+                  <p className="text-stone-500 text-xs leading-relaxed">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </FadeIn>
+
+          <FadeIn delay={200} className="mt-12 text-center">
+            <p className="text-stone-400 text-sm">
+              Trusted by <span className="text-stone-700 font-semibold">Embassy REIT</span> ·{" "}
+              <span className="text-stone-700 font-semibold">LTIMindtree</span> ·{" "}
+              <span className="text-stone-700 font-semibold">Pune International Airport</span>
+            </p>
+          </FadeIn>
+        </div>
+      </section>
+
+
+      {/* ════════════ HOW WE WORK ════════════ */}
+      <section className="py-16 md:py-20 bg-stone-50">
+        <div className="container mx-auto px-6 md:px-16">
+          <FadeIn className="mb-10">
+            <p className="text-amber-700 text-xs font-bold tracking-[0.3em] uppercase mb-3">
+              How We Work
+            </p>
+            <h2 className="text-2xl md:text-3xl font-bold text-stone-900">
+              From first visit to final handover
+            </h2>
+          </FadeIn>
+
+          <FadeIn delay={100}>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              {STEPS.map((step, i) => (
+                <div key={step.num} className="relative">
+                  {i < STEPS.length - 1 && (
+                    <div className="hidden md:block absolute top-5 left-[60%] right-0 h-px bg-stone-300" />
+                  )}
+                  <div className="bg-white p-5 relative">
+                    <span className="text-3xl font-bold text-stone-100 block mb-3">{step.num}</span>
+                    <h3 className="text-sm font-bold text-stone-900 mb-1">{step.title}</h3>
+                    <p className="text-stone-500 text-xs leading-relaxed">{step.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+
+      {/* ════════════ PHOTO BREAK ════════════ */}
+      <FadeIn>
+        <div className="relative h-[35vh] md:h-[40vh] overflow-hidden">
+          <img
+            src={IMG.process}
+            alt="Fine Glaze curtain wall installation"
+            className="w-full h-full object-cover"
+            loading="lazy"
+          />
+          <div className="absolute inset-0 bg-black/40" />
+          <div className="absolute inset-0 flex items-center justify-center text-center px-4">
+            <div>
+              <p className="text-white/60 text-sm uppercase tracking-widest mb-2">Our Promise</p>
+              <p className="text-white text-xl md:text-3xl font-bold max-w-xl">
+                Every curtain wall engineered in-house. Every panel installed by our own teams.
+              </p>
+            </div>
+          </div>
+        </div>
+      </FadeIn>
+
+
+      {/* ════════════ PRICING ════════════ */}
+      <section className="py-16 md:py-20 bg-white">
+        <div className="container mx-auto px-6 md:px-16 max-w-3xl">
+          <FadeIn className="text-center mb-8">
+            <p className="text-amber-700 text-xs font-bold tracking-[0.3em] uppercase mb-3">
+              Pricing
+            </p>
+            <h2 className="text-2xl md:text-3xl font-bold text-stone-900 mb-2">
+              Curtain Wall Cost — 2026
+            </h2>
+            <p className="text-stone-400 text-sm">
+              Indicative rates. Final cost depends on specifications & complexity. GST extra.
+            </p>
+          </FadeIn>
+
+          <FadeIn delay={100}>
+            <div className="overflow-x-auto">
+              <table className="w-full text-left">
+                <thead>
+                  <tr className="border-b-2 border-stone-800">
+                    <th className="py-3 text-xs font-bold uppercase tracking-wider text-stone-500">System</th>
+                    <th className="py-3 text-xs font-bold uppercase tracking-wider text-stone-500">Frame</th>
+                    <th className="py-3 text-xs font-bold uppercase tracking-wider text-stone-500 text-right">Rate / sq ft</th>
+                  </tr>
+                </thead>
+                <tbody className="text-sm">
+                  {[
+                    { system: "Unitized Curtain Wall", glass: "6063-T6 pre-assembled", price: "₹600 – ₹1,200" },
+                    { system: "Stick System", glass: "6063-T6 on-site assembly", price: "₹400 – ₹700" },
+                    { system: "Semi-Unitized", glass: "Hybrid pre-glazed", price: "₹500 – ₹900" },
+                    { system: "Point-Supported", glass: "SS 316 + glass fins", price: "₹900 – ₹1,500" },
+                  ].map((row) => (
+                    <tr key={row.system} className="border-b border-stone-100 hover:bg-stone-50 transition-colors">
+                      <td className="py-3 font-semibold text-stone-800">{row.system}</td>
+                      <td className="py-3 text-stone-500">{row.glass}</td>
+                      <td className="py-3 text-right font-bold text-stone-900">{row.price}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            <div className="mt-8 text-center">
               <Link to="/contact">
-                <Button size="lg" className="bg-amber-600 hover:bg-amber-700 gap-2">
-                  Get Free Quote <ArrowRight size={16} />
+                <Button size="lg" className="bg-stone-900 hover:bg-stone-800 text-white gap-2 px-8">
+                  Get Exact Quote — Free Site Visit <ArrowRight size={16} />
                 </Button>
               </Link>
-              <Link to="/portfolio">
-                <Button size="lg" variant="outline">View Projects</Button>
-              </Link>
             </div>
-          </div>
+          </FadeIn>
         </div>
       </section>
 
-      {/* WHAT & WHY */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-start">
-          <div className="space-y-6">
-            <h2 className="text-3xl font-bold text-slate-900">Advanced Curtain Wall Engineering</h2>
-            <p className="text-slate-600 leading-relaxed">
-              At <strong>Fine Glaze</strong>, we engineer building envelopes — not just install glass. Our <strong>curtain wall systems</strong> are
-              designed to withstand wind loads up to 4.5 kPa, prevent water infiltration, and deliver superior thermal insulation
-              for <strong>commercial office towers, IT parks, hotels, malls, and airports</strong> across India.
+
+      {/* ════════════ FAQ ════════════ */}
+      <section className="py-14 md:py-16 bg-stone-50">
+        <div className="container mx-auto px-6 md:px-16 max-w-3xl">
+          <FadeIn className="mb-8">
+            <p className="text-amber-700 text-xs font-bold tracking-[0.3em] uppercase mb-3">
+              Common Questions
             </p>
-            <p className="text-slate-600 leading-relaxed">
-              Whether you are developing a corporate campus in <strong>Hinjewadi, Pune</strong> or a luxury hotel in <strong>Mumbai BKC</strong>,
-              our systems are engineered to last decades with minimal maintenance. We use <strong>6063-T6 aluminium alloy</strong>,
-              <strong> Dow Corning / Sika structural silicone</strong>, and <strong>DGU / Low-E glass</strong> for energy efficiency.
-            </p>
+            <h2 className="text-2xl md:text-3xl font-bold text-stone-900">
+              FAQ
+            </h2>
+          </FadeIn>
 
-            <div className="grid grid-cols-1 gap-4 mt-6">
-              <div className="flex items-start gap-4 p-4 border rounded-lg bg-slate-50">
-                <Building2 className="text-amber-600 shrink-0 mt-1" size={22} />
-                <div>
-                  <h3 className="font-bold text-slate-900">Unitized Curtain Wall Systems</h3>
-                  <p className="text-sm text-slate-600 mt-1">
-                    Panels fully assembled at factory, craned and hooked floor-by-floor. 40% faster installation. Ideal for
-                    high-rise commercial towers requiring rapid building envelope closure. Best quality control.
-                  </p>
+          <FadeIn delay={100}>
+            <div>
+              <FAQItem
+                q="What is a curtain wall system?"
+                a="A curtain wall is a non-load-bearing exterior wall system made of lightweight aluminium frames and glass panels. It hangs from the building structure like a curtain, providing weather protection, thermal insulation, and a sleek modern appearance."
+              />
+              <FAQItem
+                q="What is the difference between unitized and stick curtain walls?"
+                a="Unitized curtain walls are factory-assembled and shipped as complete panels — faster to install and better quality control. Stick systems are assembled piece-by-piece on site — more cost-effective for smaller projects with varying dimensions."
+              />
+              <FAQItem
+                q="How much does a curtain wall cost per sq ft in India?"
+                a="Stick systems range from ₹400–₹700/sq ft. Unitized systems cost ₹600–₹1,200/sq ft. Point-supported glass walls range from ₹900–₹1,500/sq ft depending on glass type and building height."
+              />
+              <FAQItem
+                q="Are curtain walls energy efficient?"
+                a="Yes. Modern curtain walls use thermally broken aluminium profiles that reduce heat transfer by up to 60%. Combined with Low-E or DGU glass, they significantly reduce HVAC costs and can help achieve green building certifications."
+              />
+              <FAQItem
+                q="How long does curtain wall installation take?"
+                a="Typically 4–12 weeks depending on facade area and building height. Unitized systems are 30–40% faster than stick systems since panels arrive pre-assembled from the factory."
+              />
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+
+      {/* ════════════ AREAS + SERVICES ════════════ */}
+      <section className="bg-stone-900 py-12">
+        <div className="container mx-auto px-6 md:px-16">
+          <FadeIn>
+            <div className="grid md:grid-cols-2 gap-10 md:gap-16">
+              <div>
+                <p className="text-amber-400 text-xs font-bold tracking-[0.3em] uppercase mb-4">
+                  Where We Work
+                </p>
+                <div className="flex flex-wrap gap-x-6 gap-y-2">
+                  {["Pune", "Mumbai BKC", "Navi Mumbai", "Thane", "Nashik", "Hinjewadi", "Pimpri-Chinchwad"].map((city) => (
+                    <div key={city} className="flex items-center gap-1.5">
+                      <MapPin size={11} className="text-amber-500" />
+                      <span className="text-white/60 text-sm">{city}</span>
+                    </div>
+                  ))}
                 </div>
               </div>
-              <div className="flex items-start gap-4 p-4 border rounded-lg bg-slate-50">
-                <Maximize2 className="text-amber-600 shrink-0 mt-1" size={22} />
-                <div>
-                  <h3 className="font-bold text-slate-900">Semi-Unitized / Stick System</h3>
-                  <p className="text-sm text-slate-600 mt-1">
-                    Vertical mullions installed first, glazing panels fitted on-site. Flexible for complex geometries and
-                    lower-rise projects. Cost-effective for buildings under 10 floors.
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-start gap-4 p-4 border rounded-lg bg-slate-50">
-                <ShieldCheck className="text-amber-600 shrink-0 mt-1" size={22} />
-                <div>
-                  <h3 className="font-bold text-slate-900">Spider Glazing Systems</h3>
-                  <p className="text-sm text-slate-600 mt-1">
-                    Structural point-fixed glass with minimal hardware. Creates ultra-transparent facades with stainless steel
-                    spider fittings for showrooms, lobbies, and feature facades.
-                  </p>
+
+              <div>
+                <p className="text-amber-400 text-xs font-bold tracking-[0.3em] uppercase mb-4">
+                  Other Services
+                </p>
+                <div className="grid grid-cols-2 gap-x-6 gap-y-1.5">
+                  {[
+                    { title: "Structural Glazing", href: "/structural-glazing" },
+                    { title: "Aluminium Facade", href: "/aluminium-facade" },
+                    { title: "ACP Cladding", href: "/acp-aluminium-cladding" },
+                    { title: "Glass Railings", href: "/glass-railings" },
+                    { title: "Facade AMC", href: "/maintenance-services" },
+                    { title: "All Services →", href: "/services" },
+                  ].map((link) => (
+                    <Link
+                      key={link.href}
+                      to={link.href}
+                      className="text-white/50 text-sm hover:text-amber-400 transition-colors"
+                    >
+                      {link.title}
+                    </Link>
+                  ))}
                 </div>
               </div>
             </div>
-          </div>
-
-          <div className="space-y-6">
-            <div className="bg-slate-100 p-8 rounded-2xl">
-              <h3 className="text-2xl font-bold mb-6 text-slate-900">Technical Specifications</h3>
-              <ul className="space-y-3">
-                {[
-                  { label: "Glass Type", val: "DGU / SGU / Low-E / Laminated" },
-                  { label: "Aluminium Grade", val: "6063 T6 Alloy" },
-                  { label: "Wind Load Capacity", val: "1.5 kPa to 4.5 kPa" },
-                  { label: "Weather Seal", val: "EPDM Gaskets + Structural Silicone" },
-                  { label: "Finish Options", val: "PVDF / Anodized / Powder Coated" },
-                  { label: "Standards", val: "IS 875 / ASTM / BS EN Compliant" },
-                  { label: "Silicone Brand", val: "Dow Corning / Sika" },
-                  { label: "Warranty", val: "10-year structural, 25-year silicone" },
-                ].map((spec, i) => (
-                  <li key={i} className="flex justify-between items-center border-b border-slate-200 pb-2 text-sm">
-                    <span className="font-medium text-slate-700">{spec.label}</span>
-                    <span className="text-slate-900 font-bold text-right max-w-[55%]">{spec.val}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-
-          </div>
+          </FadeIn>
         </div>
       </section>
 
-      {/* WHAT WE DELIVER */}
-      <section className="py-20 bg-slate-50">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <h2 className="text-3xl font-bold text-center mb-3 text-slate-900">Our Curtain Wall Solutions</h2>
-          <p className="text-center text-slate-500 mb-10">End-to-end design, fabrication & installation across Maharashtra</p>
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
-            {[
-              "Unitized Curtain Wall Systems",
-              "Stick System Curtain Walls",
-              "Semi-Unitized Glazing",
-              "Spider Point-Fixed Glazing",
-              "Double Skin Facade Systems",
-              "ACP & Aluminium Cladding",
-              "DGU Low-E Glass Facades",
-              "LEED Green Building Facades",
-              "Structural Silicone Glazing",
-            ].map((item) => (
-              <div key={item} className="flex items-center gap-3 bg-white rounded-lg p-3 shadow-sm border border-slate-100">
-                <CheckCircle2 size={18} className="text-amber-600 shrink-0" />
-                <span className="text-sm font-medium text-slate-700">{item}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* LOCAL SEO */}
-      <section className="py-16 bg-slate-900 text-white">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-2xl font-bold mb-2">Curtain Wall Installation Across Maharashtra</h2>
-          <p className="text-slate-400 text-sm mb-8">Serving developers, architects, and PMC firms across all major cities</p>
-          <div className="flex flex-wrap justify-center gap-3">
-            {["Pune – Hinjewadi IT Park", "Mumbai – BKC & Andheri", "Navi Mumbai – CBD Belapur", "Nashik", "Nagpur", "Aurangabad", "Thane", "Lonavala"].map((city) => (
-              <div key={city} className="flex items-center gap-2 bg-white/10 px-5 py-2.5 rounded-full hover:bg-amber-600 transition-colors cursor-default text-sm">
-                <MapPin size={14} />
-                <span>{city}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* PROCESS */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-3">Our Curtain Wall Installation Process</h2>
-          <p className="text-center text-slate-500 mb-12">From survey to handover — transparent, on-time delivery</p>
-          <div className="grid md:grid-cols-5 gap-4">
-            {[
-              { title: "Site Survey", desc: "Wind pressure calculation & facade measurements." },
-              { title: "Design & Drawing", desc: "3D modelling & shop drawings signed off by structural engineer." },
-              { title: "Fabrication", desc: "Precision cutting & factory assembly with quality checks." },
-              { title: "Installation", desc: "Crane-assisted panel lifting & fixing with safety protocols." },
-              { title: "Testing & Handover", desc: "Water penetration test, structural audit & final handover." },
-            ].map((step, i) => (
-              <div key={i} className="text-center p-5 bg-slate-50 shadow-sm rounded-xl border border-slate-100 relative">
-                <div className="w-10 h-10 bg-amber-100 text-amber-700 rounded-full flex items-center justify-center mx-auto mb-3 font-bold">
-                  {i + 1}
-                </div>
-                <h3 className="font-bold text-slate-900 mb-1 text-sm">{step.title}</h3>
-                <p className="text-xs text-slate-500">{step.desc}</p>
-              </div>
-            ))}
-          </div>
-          <div className="text-center mt-10">
-            <p className="text-slate-500 mb-3 text-sm">Need maintenance for an existing curtain wall?</p>
-            <Link to="/maintenance-services" className="text-amber-600 font-bold hover:underline inline-flex items-center gap-2 text-sm">
-              <Wrench size={15} /> View our Facade AMC Services
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* TYPES & VARIANTS */}
-      <section className="py-20 bg-muted">
-        <div className="container mx-auto px-4 max-w-6xl">
-          <h2 className="text-3xl font-bold mb-4 text-center">Types & Variants</h2>
-          <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-            Curtain wall systems engineered for different building heights, wind loads, and design intent.
-          </p>
-          <div className="grid sm:grid-cols-2 gap-8">
-            {[
-              {
-                name: "Unitized Curtain Wall",
-                tagline: "Pre-fabricated, craned into place",
-                description:
-                  "Full storey-height panels assembled in the factory with glass + frame + sealants pre-installed. Hoisted into place from inside the building — fastest install for high-rise.",
-                specs: ["Factory-assembled units", "Storey-height panels (3–4m)", "Watertight to 600 Pa", "Wind load up to 5.0 kPa"],
-                bestFor: "High-rise towers, premium corporate offices",
-                image: "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80",
-              },
-              {
-                name: "Stick Curtain Wall",
-                tagline: "Site-assembled mullion & transom system",
-                description:
-                  "Vertical mullions installed first, then horizontal transoms, then in-filled with glass. Most flexible system — handles complex geometries, angles, and on-site changes.",
-                specs: ["Stick-built on site", "Highly customisable", "Lower transport costs", "Wind load up to 3.0 kPa"],
-                bestFor: "Mid-rise offices, retail, irregular facades",
-                image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80",
-              },
-              {
-                name: "Semi-Unitized Curtain Wall",
-                tagline: "Hybrid of factory + site assembly",
-                description:
-                  "Frame assembled at factory, glass glazed on site. Combines speed of unitized with cost benefits of stick — a balanced choice for mid-rise commercial projects.",
-                specs: ["Frame factory-built", "Glass glazed on site", "Faster than full stick", "Easier glass replacement"],
-                bestFor: "Mid-rise commercial, mixed-use towers",
-                image: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=800&q=80",
-              },
-              {
-                name: "Structural Glazed Curtain Wall",
-                tagline: "Frameless exterior via structural silicone",
-                description:
-                  "Curtain wall variant where glass is bonded with structural silicone to a concealed frame — no visible exterior mullions. Most aesthetically refined curtain wall option.",
-                specs: ["Dow Corning / Sika silicone", "Hidden internal frame", "2-side or 4-side SSG", "Wind load up to 4.5 kPa"],
-                bestFor: "Premium corporate HQs, luxury towers",
-                image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80",
-              },
-            ].map((type) => (
-              <div key={type.name} className="bg-background rounded-xl shadow-sm overflow-hidden border border-border">
-                <img src={type.image} alt={`${type.name} - Fine Glaze`} className="h-52 w-full object-cover" loading="lazy" width="600" height="208" />
-                <div className="p-6">
-                  <p className="text-xs font-semibold uppercase tracking-widest text-amber-600 mb-1">{type.tagline}</p>
-                  <h3 className="text-xl font-bold mb-2">{type.name}</h3>
-                  <p className="text-muted-foreground text-sm mb-4">{type.description}</p>
-                  <ul className="space-y-1 mb-4">
-                    {type.specs.map((s) => (
-                      <li key={s} className="flex items-center gap-2 text-sm text-muted-foreground">
-                        <CheckCircle2 size={14} className="text-amber-600 shrink-0" />{s}
-                      </li>
-                    ))}
-                  </ul>
-                  <p className="text-xs text-slate-500"><span className="font-semibold text-slate-700">Best for:</span> {type.bestFor}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <section className="py-20 bg-slate-50">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <h2 className="text-3xl font-bold text-center mb-3">Frequently Asked Questions</h2>
-          <p className="text-center text-slate-500 mb-10">Everything you need to know about curtain wall glazing</p>
-          <div className="space-y-5">
-            {[
-              {
-                q: "What is the cost of curtain wall glazing per sq ft in India?",
-                a: "Curtain wall glazing costs ₹350–₹600/sq ft for stick systems, ₹550–₹850 for semi-unitized, and ₹700–₹1,200 for unitized systems. Spider glazing starts at ₹800/sq ft. Pricing depends on glass specs, wind load, aluminium grade, and project scale. Fine Glaze provides free site visits and custom quotations.",
-              },
-              {
-                q: "What is the difference between unitized and stick system curtain walls?",
-                a: "Stick systems are built on-site piece by piece — economical for low-rise projects. Unitized systems are factory-assembled floor-height panels craned into position — 40% faster, better quality, ideal for high-rises. Semi-unitized offers a middle ground with factory mullions and on-site glazing.",
-              },
-              {
-                q: "How long does curtain wall installation take?",
-                a: "For a 10-storey building, installation typically takes 4–8 weeks on-site after a 6–10 week fabrication period. Fine Glaze uses parallel workflows (concurrent drawing + fabrication + site prep) to minimise total project time.",
-              },
-              {
-                q: "What glass types are used in curtain wall systems?",
-                a: "We offer SGU (Single Glazed Unit), DGU (Double Glazed Unit), Low-E reflective glass, laminated safety glass, and tinted glass. For LEED-certified green buildings, DGU with Low-E coating + argon fill reduces heat gain by 70%.",
-              },
-              {
-                q: "Is curtain wall glazing suitable for Indian climate conditions?",
-                a: "Yes. Our systems use EPDM gaskets and Dow Corning / Sika structural silicone rated for 25+ years of weathering, UV exposure, and monsoon resistance. All systems are tested against IS 875 Part 3 wind load standards applicable to Indian geography.",
-              },
-            ].map((faq, i) => (
-              <div key={i} className="bg-white rounded-xl p-6 shadow-sm border border-slate-100">
-                <h3 className="text-base font-bold text-slate-900 mb-2">{faq.q}</h3>
-                <p className="text-slate-600 text-sm leading-relaxed">{faq.a}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* INTERNAL LINKS */}
-      <section className="py-14 bg-white border-t border-slate-100">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <h2 className="text-xl font-bold text-slate-800 mb-6">Explore Our Other Facade Services</h2>
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
-            {[
-              { title: "Structural Glazing", href: "/structural-glazing", desc: "2-side, 4-side & spider glazed facades" },
-              { title: "ACP & Metal Cladding", href: "/acp-aluminium-cladding", desc: "PVDF & FR-grade composite panels" },
-              { title: "Aluminium Facade", href: "/aluminium-facade", desc: "Stick & unitized aluminium systems" },
-              { title: "Glass Railings", href: "/glass-railings", desc: "Frameless & semi-frameless systems" },
-              { title: "Facade AMC & Maintenance", href: "/maintenance-services", desc: "Waterproofing, glass repair & cleaning" },
-              { title: "All Services", href: "/services", desc: "View all 8 facade service categories" },
-            ].map((link) => (
-              <Link key={link.href} to={link.href} className="group flex items-start gap-3 p-4 rounded-xl border border-slate-100 hover:border-amber-300 hover:bg-amber-50 transition-all">
-                <ArrowRight size={16} className="text-amber-600 shrink-0 mt-1 group-hover:translate-x-1 transition-transform" />
-                <div>
-                  <p className="font-semibold text-slate-800 text-sm">{link.title}</p>
-                  <p className="text-xs text-slate-500">{link.desc}</p>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
+      {/* ════════════ CTA ════════════ */}
       <CTASection />
     </Layout>
   );

@@ -76,11 +76,11 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 
 /* ── Images ── */
 const IMG: Record<string, string> = {
-  hero: "https://images.unsplash.com/photo-1545558014-8692077e9b5c?fm=jpg&q=85&w=2400&auto=format&fit=crop",
-  pvdf: "/Panel.webp",
-  pe: "/Glazing.webp",
-  wood: "/Unitized.webp",
-  mirror: "/Glass installation.webp",
+  hero: "https://images.unsplash.com/photo-1486927181919-3ac1fc3a8082?fm=jpg&q=85&w=2400&auto=format&fit=crop",
+  atrium: "/Glazing.webp",
+  frameless: "/Glass installation.webp",
+  spider: "/Glass.webp",
+  poly: "/Unitized.webp",
   process: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?fm=jpg&q=85&w=1400&auto=format&fit=crop",
 };
 
@@ -88,61 +88,61 @@ const IMG: Record<string, string> = {
 const SYSTEMS = [
   {
     num: "01",
-    title: "PVDF Coated ACP",
-    desc: "Premium fluorocarbon (PVDF) coated panels with superior UV resistance and colour retention. The gold standard for external cladding — maintains appearance for 20+ years without fading or chalking.",
-    glass: "PVDF 70/30",
-    wind: "FR mineral core",
-    bestFor: "Towers, corporate HQs",
-    price: "₹180 – ₹350 /sq ft",
-    img: "pvdf",
+    title: "Atrium Skylight System",
+    desc: "Large-span glazed roof structures for atriums, malls, and commercial lobbies. Aluminium-framed with integrated drainage gutters, thermal expansion joints, and motorised ventilation options.",
+    glass: "Laminated DGU / Low-E",
+    wind: "Aluminium ridge-&-rafter",
+    bestFor: "Atriums, malls, hotels",
+    price: "₹600 – ₹1,200 /sq ft",
+    img: "atrium",
   },
   {
     num: "02",
-    title: "PE Coated ACP",
-    desc: "Polyester-coated panels offering excellent value for cost-conscious projects. Available in all standard colours and finishes. Best for interior cladding, signage, and canopy soffits.",
-    glass: "Polyester (PE)",
-    wind: "PE / FR core",
-    bestFor: "Interiors, signage, canopies",
-    price: "₹90 – ₹160 /sq ft",
-    img: "pe",
+    title: "Frameless Glass Canopy",
+    desc: "Minimal overhead glass structures supported by stainless steel spider fittings or glass fins. Creates a floating-glass effect at building entrances and walkways. Fully waterproof with concealed drainage.",
+    glass: "17.52–21.52mm laminated",
+    wind: "SS spider / glass fins",
+    bestFor: "Entrances, walkways",
+    price: "₹800 – ₹1,500 /sq ft",
+    img: "frameless",
   },
   {
     num: "03",
-    title: "Wood-Grain & Stone Finish",
-    desc: "Digital printing technology creates realistic wood, stone, and marble textures on ACP surfaces. Natural aesthetics without the weight, maintenance, or cost of real materials.",
-    glass: "Digital print + PVDF",
-    wind: "FR mineral core",
-    bestFor: "Hotels, residences, retail",
-    price: "₹220 – ₹400 /sq ft",
-    img: "wood",
+    title: "Spider-Fitting Canopy",
+    desc: "Point-fixed glass canopy using stainless steel spider arms connected to steel or cable structures. Maximum transparency with industrial-grade strength for exposed and wind-prone locations.",
+    glass: "12–19mm laminated",
+    wind: "SS 316 spider arms",
+    bestFor: "Commercial entries, bridges",
+    price: "₹900 – ₹1,800 /sq ft",
+    img: "spider",
   },
   {
     num: "04",
-    title: "Mirror & Metallic ACP",
-    desc: "High-reflectivity aluminium panels with mirror-polish or brushed metallic finishes. Creates striking visual impact for feature walls, fascias, and architectural accents.",
-    glass: "Anodised / mirror",
-    wind: "FR mineral core",
-    bestFor: "Feature walls, retail fronts",
-    price: "₹250 – ₹450 /sq ft",
-    img: "mirror",
+    title: "Polycarbonate Roofing",
+    desc: "Lightweight multiwall polycarbonate sheets on aluminium frames. Excellent light transmission with UV protection and impact resistance — a cost-effective alternative to glass for car parks and warehouses.",
+    glass: "10–25mm multiwall PC",
+    wind: "Aluminium frame",
+    bestFor: "Car parks, factories",
+    price: "₹150 – ₹350 /sq ft",
+    img: "poly",
   },
 ];
 
 const STEPS = [
-  { num: "01", title: "Site Survey", desc: "Measure facade area, assess substrate & plan panel layout" },
-  { num: "02", title: "Shop Drawing", desc: "Panel cutting plan, joint layout & colour/finish approval" },
-  { num: "03", title: "Fabrication", desc: "CNC routing, folding & sub-frame preparation" },
-  { num: "04", title: "Installation", desc: "Sub-frame fixing, panel mounting & joint sealing" },
+  { num: "01", title: "Site Survey", desc: "Assess opening size, structural support & drainage requirements" },
+  { num: "02", title: "Engineering", desc: "Wind-load calculations, thermal analysis & shop drawings" },
+  { num: "03", title: "Fabrication", desc: "Frame fabrication, glass ordering & waterproofing prep" },
+  { num: "04", title: "Installation", desc: "Frame erection, glazing, sealing & drainage testing" },
 ];
 
-export default function AcpCladding() {
+export default function Skylights() {
   const [activeSystem, setActiveSystem] = useState(0);
 
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: "ACP & Metal Cladding Systems",
-    serviceType: "ACP Cladding Installation",
+    name: "Skylights & Glass Canopy Systems",
+    serviceType: "Skylight & Glass Canopy Installation",
     provider: {
       "@type": "LocalBusiness",
       name: "Fine Glaze",
@@ -162,7 +162,7 @@ export default function AcpCladding() {
       { "@type": "City", name: "Mumbai" },
       { "@type": "City", name: "Navi Mumbai" },
     ],
-    description: "Aluminium Composite Panel cladding — PVDF, PE, wood-grain & mirror finishes. Fire-retardant FR grade panels from Aludecor, Alstrong & Reynobond. 20-year colour warranty.",
+    description: "Engineered glass skylight and canopy systems for atriums, lobbies & entrances. Laminated safety glass with heat-reflective coatings. Waterproof & wind-load rated.",
   };
 
   const breadcrumbSchema = {
@@ -171,7 +171,7 @@ export default function AcpCladding() {
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Home", item: "https://fineglaze.com" },
       { "@type": "ListItem", position: 2, name: "Services", item: "https://fineglaze.com/services" },
-      { "@type": "ListItem", position: 3, name: "ACP & Metal Cladding", item: "https://fineglaze.com/acp-aluminium-cladding" },
+      { "@type": "ListItem", position: 3, name: "Skylights & Glass Canopies", item: "https://fineglaze.com/skylights-canopies" },
     ],
   };
 
@@ -181,26 +181,26 @@ export default function AcpCladding() {
     mainEntity: [
       {
         "@type": "Question",
-        name: "What is ACP cladding?",
+        name: "Are glass skylights waterproof?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "ACP (Aluminium Composite Panel) cladding uses panels made of two aluminium sheets bonded to a core material. They are fixed to a sub-frame on the building exterior, creating a flat, modern cladding surface available in hundreds of colours and finishes.",
+          text: "Yes. Our skylight systems use structural silicone sealing, EPDM gaskets, and integrated drainage channels. Every installation is flood-tested before handover to ensure zero leaks under heavy rainfall conditions.",
         },
       },
       {
         "@type": "Question",
-        name: "Is ACP cladding fire safe?",
+        name: "How much does a glass skylight cost per sq ft in India?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "We exclusively use FR (Fire Retardant) grade ACP for external cladding. FR panels have a mineral-filled core that limits flame spread and meets NBC (National Building Code) fire safety requirements. PE core panels are only used for interiors.",
+          text: "Polycarbonate roofing starts at ₹150/sq ft. Aluminium-framed glass skylights range from ₹600–₹1,200/sq ft. Frameless spider-fitting canopies cost ₹900–₹1,800/sq ft depending on glass spec and structure.",
         },
       },
       {
         "@type": "Question",
-        name: "How much does ACP cladding cost per sq ft in India?",
+        name: "Can skylights reduce energy costs?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "PE coated ACP starts at ₹90/sq ft for interiors. PVDF coated panels range from ₹180–₹350/sq ft. Wood-grain and stone finishes cost ₹220–₹400/sq ft. Prices include panel, sub-frame, and installation.",
+          text: "Yes. Skylights can reduce artificial lighting costs by up to 50%. With Low-E or heat-reflective glass coatings, they also limit solar heat gain — reducing air conditioning loads in commercial spaces.",
         },
       },
     ],
@@ -211,10 +211,10 @@ export default function AcpCladding() {
   return (
     <Layout darkHero>
       <SEO
-        title="ACP Cladding & Aluminium Composite Panels | ACP Contractors Pune & Mumbai – Fine Glaze"
-        description="Top ACP cladding contractors in India. PVDF & PE aluminium composite panels from Aludecor, Alstrong & Reynobond. Fire-retardant grade. 20-year colour warranty. Free site visit."
-        canonical="https://fineglaze.com/acp-aluminium-cladding"
-        keywords="ACP cladding, aluminium composite panel, ACP contractors Pune Mumbai, PVDF ACP panel, fire retardant ACP, ACP facade, aluminium cladding cost, Aludecor Alstrong Reynobond"
+        title="Skylights & Glass Canopies | Overhead Glazing Systems Pune & Mumbai – Fine Glaze"
+        description="Top skylight and glass canopy contractors in India. Atrium skylights, frameless canopies, spider-fitting canopies & polycarbonate roofing. Waterproof & engineered. Free site visit."
+        canonical="https://fineglaze.com/skylights-canopies"
+        keywords="glass skylight, glass canopy, skylight installation Pune Mumbai, frameless glass canopy, atrium skylight, spider canopy, overhead glazing, polycarbonate roofing India"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}
       />
 
@@ -222,7 +222,7 @@ export default function AcpCladding() {
       <section className="relative h-screen overflow-hidden">
         <img
           src={IMG.hero}
-          alt="ACP aluminium cladding facade — Fine Glaze"
+          alt="Glass skylight system — Fine Glaze"
           className="absolute inset-0 w-full h-full object-cover object-center"
           style={{ animation: "sgZoom 20s ease-in-out infinite alternate" }}
           loading="eager"
@@ -249,10 +249,10 @@ export default function AcpCladding() {
             className="font-extrabold text-white leading-[0.88] tracking-tight animate-fade-in-up"
             style={{ fontSize: "clamp(3.8rem, 9vw, 9rem)", animationDelay: "0.1s" }}
           >
-            ACP &<br />
-            <span className="text-gradient-gold">Metal</span><br />
+            Skylights &<br />
+            <span className="text-gradient-gold">Glass</span><br />
             <span style={{ fontSize: "clamp(2rem, 4.5vw, 4.8rem)", fontWeight: 600, color: "rgba(255,255,255,0.85)" }}>
-              Cladding.
+              Canopies.
             </span>
           </h1>
 
@@ -260,7 +260,7 @@ export default function AcpCladding() {
             className="mt-6 text-white/70 text-base md:text-lg max-w-lg leading-relaxed animate-fade-in-up"
             style={{ animationDelay: "0.2s" }}
           >
-            Fire-retardant aluminium composite panels for modern building exteriors across India.
+            Engineered overhead glazing for atriums, lobbies, entrances & commercial spaces.
           </p>
 
           <div
@@ -294,14 +294,14 @@ export default function AcpCladding() {
         <div className="container mx-auto px-6 md:px-16 max-w-3xl text-center">
           <FadeIn>
             <p className="text-amber-700 text-xs font-bold tracking-[0.3em] uppercase mb-4">
-              What is ACP Cladding
+              Why Overhead Glazing
             </p>
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-stone-900 leading-snug mb-5">
-              Two aluminium sheets bonded to a mineral core —{"  "}
-              <span className="text-stone-400">lightweight, fire-safe, and available in unlimited finishes.</span>
+              Bring natural light indoors —{"  "}
+              <span className="text-stone-400">engineered for weather, wind loads & thermal comfort.</span>
             </h2>
             <p className="text-stone-500 text-[15px] md:text-base leading-relaxed">
-              Aluminium Composite Panels (ACP) consist of two aluminium sheets bonded to a non-combustible mineral-filled core. They provide a flat, seamless cladding surface that transforms any building exterior. Available in PVDF and PE coatings with solid, metallic, wood-grain, stone, and mirror finishes.
+              Our skylight and canopy systems use laminated safety glass with heat-reflective coatings, supported by structural aluminium or stainless steel frameworks. Every system is waterproofed and engineered for local wind and rain load requirements, with integrated drainage channels.
             </p>
           </FadeIn>
         </div>
@@ -314,10 +314,10 @@ export default function AcpCladding() {
           <FadeIn>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-0 md:divide-x md:divide-stone-700">
               {[
-                { number: "20yr", label: "Colour Warranty (PVDF)" },
-                { number: "FR", label: "Fire Retardant Grade" },
+                { number: "50%", label: "More Natural Light" },
                 { number: "5+", label: "Years Experience" },
-                { number: "100+", label: "Finish Options" },
+                { number: "0", label: "Leak Incidents" },
+                { number: "25yr", label: "Structural Warranty" },
               ].map((s) => (
                 <div key={s.label} className="text-center px-4">
                   <p className="text-2xl md:text-3xl font-bold text-white">{s.number}</p>
@@ -335,10 +335,10 @@ export default function AcpCladding() {
         <div className="container mx-auto px-6 md:px-16">
           <FadeIn className="mb-10">
             <p className="text-amber-700 text-xs font-bold tracking-[0.3em] uppercase mb-3">
-              Our Panels
+              Our Systems
             </p>
             <h2 className="text-2xl md:text-3xl font-bold text-stone-900">
-              ACP Panel Systems We Install
+              Skylight & Canopy Systems We Install
             </h2>
           </FadeIn>
 
@@ -378,11 +378,11 @@ export default function AcpCladding() {
 
                 <div className="grid grid-cols-2 gap-3 mb-6">
                   <div className="bg-stone-50 p-3">
-                    <p className="text-[10px] uppercase tracking-wider text-stone-400 mb-1">Coating</p>
+                    <p className="text-[10px] uppercase tracking-wider text-stone-400 mb-1">Glass</p>
                     <p className="text-sm font-semibold text-stone-800">{current.glass}</p>
                   </div>
                   <div className="bg-stone-50 p-3">
-                    <p className="text-[10px] uppercase tracking-wider text-stone-400 mb-1">Core</p>
+                    <p className="text-[10px] uppercase tracking-wider text-stone-400 mb-1">Structure</p>
                     <p className="text-sm font-semibold text-stone-800">{current.wind}</p>
                   </div>
                   <div className="bg-stone-50 p-3">
@@ -424,23 +424,23 @@ export default function AcpCladding() {
               {[
                 {
                   icon: Shield,
-                  title: "Fire Safe",
-                  desc: "Only FR (Fire Retardant) grade ACP panels used for external cladding. NBC fire safety compliant.",
+                  title: "Zero Leaks",
+                  desc: "Every skylight is water-tested before handover. Integrated drainage channels prevent pooling.",
                 },
                 {
                   icon: Clock,
-                  title: "Fast Install",
-                  desc: "Lightweight panels install 3x faster than natural stone. Minimal scaffolding time.",
+                  title: "On-Time Delivery",
+                  desc: "Pre-engineered frames and scheduled glass deliveries ensure project timelines are met.",
                 },
                 {
                   icon: Award,
-                  title: "Trusted Brands",
-                  desc: "We use panels from Aludecor, Alstrong, and Reynobond — the most trusted ACP manufacturers.",
+                  title: "In-House Engineering",
+                  desc: "Structural calculations and shop drawings done in-house for precise fit and performance.",
                 },
                 {
                   icon: Wrench,
-                  title: "Clean Finish",
-                  desc: "CNC routing for precise folds. Silicone-sealed joints for a seamless, watertight appearance.",
+                  title: "Maintenance Ready",
+                  desc: "Access points and cleaning provisions designed in from day one. AMC available.",
                 },
               ].map((item) => (
                 <div key={item.title} className="text-center">
@@ -502,7 +502,7 @@ export default function AcpCladding() {
         <div className="relative h-[35vh] md:h-[40vh] overflow-hidden">
           <img
             src={IMG.process}
-            alt="Fine Glaze ACP cladding installation"
+            alt="Fine Glaze skylight installation"
             className="w-full h-full object-cover"
             loading="lazy"
           />
@@ -511,7 +511,7 @@ export default function AcpCladding() {
             <div>
               <p className="text-white/60 text-sm uppercase tracking-widest mb-2">Our Promise</p>
               <p className="text-white text-xl md:text-3xl font-bold max-w-xl">
-                From CNC routing to final sealant — every step done in-house for a flawless finish.
+                Every skylight engineered for zero leaks. Every canopy built to last decades.
               </p>
             </div>
           </div>
@@ -527,7 +527,7 @@ export default function AcpCladding() {
               Pricing
             </p>
             <h2 className="text-2xl md:text-3xl font-bold text-stone-900 mb-2">
-              ACP Cladding Cost — 2026
+              Skylight & Canopy Cost — 2026
             </h2>
             <p className="text-stone-400 text-sm">
               Indicative rates. Final cost depends on specifications & complexity. GST extra.
@@ -540,16 +540,16 @@ export default function AcpCladding() {
                 <thead>
                   <tr className="border-b-2 border-stone-800">
                     <th className="py-3 text-xs font-bold uppercase tracking-wider text-stone-500">System</th>
-                    <th className="py-3 text-xs font-bold uppercase tracking-wider text-stone-500">Coating / Finish</th>
+                    <th className="py-3 text-xs font-bold uppercase tracking-wider text-stone-500">Material</th>
                     <th className="py-3 text-xs font-bold uppercase tracking-wider text-stone-500 text-right">Rate / sq ft</th>
                   </tr>
                 </thead>
                 <tbody className="text-sm">
                   {[
-                    { system: "PVDF Coated ACP", glass: "PVDF 70/30 + FR core", price: "₹180 – ₹350" },
-                    { system: "PE Coated ACP", glass: "Polyester + PE/FR core", price: "₹90 – ₹160" },
-                    { system: "Wood-Grain / Stone", glass: "Digital print + PVDF", price: "₹220 – ₹400" },
-                    { system: "Mirror / Metallic", glass: "Anodised / mirror finish", price: "₹250 – ₹450" },
+                    { system: "Atrium Skylight", glass: "Laminated DGU + aluminium", price: "₹600 – ₹1,200" },
+                    { system: "Frameless Canopy", glass: "17.52mm laminated + SS", price: "₹800 – ₹1,500" },
+                    { system: "Spider-Fitting Canopy", glass: "Laminated + SS 316", price: "₹900 – ₹1,800" },
+                    { system: "Polycarbonate Roof", glass: "Multiwall PC + aluminium", price: "₹150 – ₹350" },
                   ].map((row) => (
                     <tr key={row.system} className="border-b border-stone-100 hover:bg-stone-50 transition-colors">
                       <td className="py-3 font-semibold text-stone-800">{row.system}</td>
@@ -588,24 +588,24 @@ export default function AcpCladding() {
           <FadeIn delay={100}>
             <div>
               <FAQItem
-                q="What is ACP cladding?"
-                a="ACP (Aluminium Composite Panel) cladding uses panels made of two aluminium sheets bonded to a core material. They are fixed to a sub-frame on the building exterior, creating a flat, modern cladding surface available in hundreds of colours and finishes."
+                q="Are glass skylights waterproof?"
+                a="Yes. Our skylight systems use structural silicone sealing, EPDM gaskets, and integrated drainage channels. Every installation is flood-tested before handover to ensure zero leaks under heavy rainfall conditions."
               />
               <FAQItem
-                q="Is ACP cladding fire safe?"
-                a="We exclusively use FR (Fire Retardant) grade ACP for external cladding. FR panels have a mineral-filled core that limits flame spread and meets NBC (National Building Code) fire safety requirements. PE core panels are only used for interiors."
+                q="How much does a glass skylight cost per sq ft in India?"
+                a="Polycarbonate roofing starts at ₹150/sq ft. Aluminium-framed glass skylights range from ₹600–₹1,200/sq ft. Frameless spider-fitting canopies cost ₹900–₹1,800/sq ft depending on glass spec and structure."
               />
               <FAQItem
-                q="How much does ACP cladding cost per sq ft in India?"
-                a="PE coated ACP starts at ₹90/sq ft for interiors. PVDF coated panels range from ₹180–₹350/sq ft. Wood-grain and stone finishes cost ₹220–₹400/sq ft. Prices include panel, sub-frame, and installation."
+                q="Can skylights reduce energy costs?"
+                a="Yes. Skylights can reduce artificial lighting costs by up to 50%. With Low-E or heat-reflective glass coatings, they also limit solar heat gain — reducing air conditioning loads in commercial spaces."
               />
               <FAQItem
-                q="How long does PVDF ACP last?"
-                a="PVDF (fluorocarbon) coated ACP panels come with a 20-year colour warranty. They resist UV fading, chalking, and chemical exposure far better than PE coated panels — making them the preferred choice for external facades."
+                q="What type of glass is used in skylights?"
+                a="We use laminated safety glass (two layers bonded with PVB interlayer) for all overhead applications. This ensures that if the glass breaks, fragments stay bonded to the interlayer instead of falling. DGU and Low-E options are available."
               />
               <FAQItem
-                q="Can ACP be used for renovation and existing buildings?"
-                a="Yes. ACP is ideal for building renovation because it is lightweight, installs over existing facades, and transforms the appearance quickly. The aluminium sub-frame can be adapted to any building surface."
+                q="How long does skylight installation take?"
+                a="Small canopy projects take 1–2 weeks. Large atrium skylights typically require 4–8 weeks depending on span size and structural complexity. We work around your construction schedule."
               />
             </div>
           </FadeIn>
@@ -638,9 +638,9 @@ export default function AcpCladding() {
                 </p>
                 <div className="grid grid-cols-2 gap-x-6 gap-y-1.5">
                   {[
-                    { title: "Curtain Wall Systems", href: "/curtain-wall-systems" },
                     { title: "Structural Glazing", href: "/structural-glazing" },
-                    { title: "Aluminium Facade", href: "/aluminium-facade" },
+                    { title: "Curtain Wall Systems", href: "/curtain-wall-systems" },
+                    { title: "ACP Cladding", href: "/acp-aluminium-cladding" },
                     { title: "Glass Railings", href: "/glass-railings" },
                     { title: "Facade AMC", href: "/maintenance-services" },
                     { title: "All Services →", href: "/services" },
