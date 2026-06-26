@@ -16,12 +16,15 @@ import {
 import {
   MapPin,
   Phone,
+  PhoneCall,
   Mail,
   Clock,
   Send,
   CheckCircle2,
   ArrowRight,
   Building2,
+  Star,
+  ShieldCheck,
 } from "lucide-react";
 import { toast } from "sonner";
 import SEO from "@/components/SEO";
@@ -73,6 +76,7 @@ const Contact = () => {
     phone: "",
     projectType: "",
     message: "",
+    preferCallback: false,
   });
 
   const handleChange = (
@@ -104,7 +108,8 @@ const Contact = () => {
           email: formData.email,
           phone: formData.phone,
           project_type: formData.projectType,
-          message: formData.message,
+          message: formData.message || "(No details provided)",
+          prefers_callback: formData.preferCallback ? "Yes" : "No",
           subject: "New Enquiry – Fine Glaze Website",
           from_name: "Fine Glaze Website",
         }),
@@ -119,7 +124,8 @@ const Contact = () => {
             email: formData.email,
             phone: formData.phone,
             project_type: formData.projectType,
-            message: formData.message,
+            message: formData.message || null,
+            prefers_callback: formData.preferCallback,
             source: "website",
           });
         } catch {
@@ -130,7 +136,7 @@ const Contact = () => {
       if (data.success) {
         setIsSubmitted(true);
         toast.success("Message sent successfully!");
-        setFormData({ name: "", email: "", phone: "", projectType: "", message: "" });
+        setFormData({ name: "", email: "", phone: "", projectType: "", message: "", preferCallback: false });
       } else {
         throw new Error("Submission failed");
       }
@@ -207,6 +213,28 @@ const Contact = () => {
 
 
       {/* ═══════════════════════════════════════════
+          TRUST STRIP — quick reassurance before the form
+          ═══════════════════════════════════════════ */}
+      <section className="bg-white border-b border-stone-200">
+        <div className="container mx-auto px-5 md:px-16 py-4 md:py-5">
+          <div className="flex flex-wrap items-center justify-center gap-4 md:gap-8 text-xs md:text-sm text-stone-600">
+            {[
+              { icon: <ShieldCheck size={16} className="text-amber-600" />, text: "No automated replies — real engineers" },
+              { icon: <CheckCircle2 size={16} className="text-amber-600" />, text: "Free site visit & measurement" },
+              { icon: <Clock size={16} className="text-amber-600" />, text: "Written proposal in 48 hours" },
+              { icon: <Star size={16} className="text-amber-600" />, text: "5-Star Rated on Google" },
+            ].map((item) => (
+              <div key={item.text} className="flex items-center gap-2 font-medium">
+                {item.icon}
+                <span>{item.text}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+
+      {/* ═══════════════════════════════════════════
           MAIN — form (left) + info (right)
           ═══════════════════════════════════════════ */}
       <section className="py-12 md:py-20 bg-stone-50">
@@ -241,7 +269,7 @@ const Contact = () => {
                       <Button
                         onClick={() => {
                           setIsSubmitted(false);
-                          setFormData({ name: "", email: "", phone: "", projectType: "", message: "" });
+                          setFormData({ name: "", email: "", phone: "", projectType: "", message: "", preferCallback: false });
                         }}
                         variant="outline"
                         className="mt-4"
@@ -326,37 +354,73 @@ const Contact = () => {
 
                       <div className="space-y-1.5">
                         <Label htmlFor="message" className="text-xs font-semibold text-stone-600 uppercase tracking-wider">
-                          Project Details *
+                          Project Details <span className="text-stone-400 normal-case tracking-normal">(optional)</span>
                         </Label>
                         <Textarea
                           id="message"
                           name="message"
                           placeholder="E.g. We need structural glazing for a 5-floor commercial building in Hinjewadi, Pune. Looking for site visit and quotation..."
-                          rows={4}
-                          required
+                          rows={3}
                           value={formData.message}
                           onChange={handleChange}
                           className="border-stone-200 focus:border-amber-400 focus:ring-amber-400/20 resize-none"
                         />
                       </div>
 
-                      <Button
-                        type="submit"
-                        disabled={isSubmitting}
-                        className="w-full bg-stone-900 hover:bg-amber-700 text-white py-5 text-sm font-semibold tracking-wide transition-colors duration-300"
-                      >
-                        {isSubmitting ? (
-                          <>
-                            <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin mr-2" />
-                            Sending...
-                          </>
-                        ) : (
-                          <>
-                            <Send size={16} className="mr-2" />
-                            Send Enquiry
-                          </>
-                        )}
-                      </Button>
+                      {/* Callback preference */}
+                      <label className="flex items-center gap-2 cursor-pointer group">
+                        <input
+                          type="checkbox"
+                          checked={formData.preferCallback}
+                          onChange={(e) =>
+                            setFormData((prev) => ({ ...prev, preferCallback: e.target.checked }))
+                          }
+                          className="w-4 h-4 rounded border-stone-300 text-amber-600 focus:ring-amber-400/20"
+                        />
+                        <span className="text-sm text-stone-600 group-hover:text-stone-800 transition-colors">
+                          I'd prefer a callback to discuss details
+                        </span>
+                      </label>
+
+                      {/* Dual CTA — Send Enquiry + Call Now */}
+                      <div className="flex flex-col sm:flex-row gap-3">
+                        <Button
+                          type="submit"
+                          disabled={isSubmitting}
+                          className="flex-1 bg-stone-900 hover:bg-amber-700 text-white py-5 text-sm font-semibold tracking-wide transition-colors duration-300"
+                        >
+                          {isSubmitting ? (
+                            <>
+                              <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin mr-2" />
+                              Sending...
+                            </>
+                          ) : (
+                            <>
+                              <Send size={16} className="mr-2" />
+                              Send Enquiry
+                            </>
+                          )}
+                        </Button>
+                        <a
+                          href="tel:+918369233566"
+                          className="flex-1 inline-flex items-center justify-center gap-2 border-2 border-amber-600 text-amber-700 hover:bg-amber-50 py-3 text-sm font-semibold tracking-wide transition-colors duration-200 rounded-md"
+                        >
+                          <PhoneCall size={16} />
+                          Call Now
+                        </a>
+                      </div>
+
+                      {/* Social proof nudge */}
+                      <div className="flex items-center justify-center gap-3 pt-1">
+                        <div className="flex items-center gap-0.5">
+                          {[...Array(5)].map((_, i) => (
+                            <Star key={i} size={12} className="fill-amber-400 text-amber-400" />
+                          ))}
+                        </div>
+                        <p className="text-[11px] text-stone-500">
+                          5-Star Rated on Google · Trusted by Embassy REIT, LTIMindtree & more
+                        </p>
+                      </div>
 
                       <p className="text-[11px] text-stone-400 text-center">
                         We'll never share your information. Expect a reply within 1 business hour.
@@ -368,8 +432,38 @@ const Contact = () => {
             </FadeIn>
 
 
-            {/* ── Right column — contact + why + office + hours ── */}
+            {/* ── Right column — why (first!) + contact + office + hours ── */}
             <FadeIn delay={120} className="lg:col-span-5 order-2 space-y-5 md:space-y-6">
+
+              {/* Why reach out — moved ABOVE contact info for trust-first flow */}
+              <div className="bg-white border border-stone-200 p-5 md:p-7">
+                <p className="text-amber-700 text-[10px] font-bold tracking-[0.3em] uppercase mb-3">
+                  Why Reach Out
+                </p>
+                <h3 className="text-lg font-bold text-stone-900 mb-4">
+                  We respond within 1 business hour.
+                </h3>
+                <p className="text-stone-500 text-sm leading-relaxed mb-5">
+                  No automated replies — you'll speak directly with our engineering team.
+                </p>
+                <div className="space-y-3">
+                  {[
+                    { text: "Free site visit & measurement", sub: "Our engineers visit at no cost" },
+                    { text: "Written proposal in 48 hours", sub: "Transparent scope, specs & pricing" },
+                    { text: "No obligation", sub: "Get the information you need" },
+                  ].map((item) => (
+                    <div key={item.text} className="flex gap-3 group">
+                      <div className="w-6 h-6 bg-amber-50 flex items-center justify-center shrink-0 mt-0.5">
+                        <ArrowRight size={12} className="text-amber-600" />
+                      </div>
+                      <div>
+                        <p className="text-sm font-semibold text-stone-800">{item.text}</p>
+                        <p className="text-xs text-stone-400 mt-0.5">{item.sub}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
 
               {/* Quick contact links */}
               <div className="bg-white border border-stone-200 p-5 md:p-7 space-y-4">
@@ -402,36 +496,6 @@ const Contact = () => {
                     <p className="text-sm font-semibold text-stone-700">Mon – Sat, 9 AM – 6 PM</p>
                     <p className="text-[10px] text-stone-400">Office hours</p>
                   </div>
-                </div>
-              </div>
-
-              {/* Why reach out */}
-              <div className="bg-white border border-stone-200 p-5 md:p-7">
-                <p className="text-amber-700 text-[10px] font-bold tracking-[0.3em] uppercase mb-3">
-                  Why Reach Out
-                </p>
-                <h3 className="text-lg font-bold text-stone-900 mb-4">
-                  We respond within 1 business hour.
-                </h3>
-                <p className="text-stone-500 text-sm leading-relaxed mb-5">
-                  No automated replies — you'll speak directly with our engineering team.
-                </p>
-                <div className="space-y-3">
-                  {[
-                    { text: "Free site visit & measurement", sub: "Our engineers visit at no cost" },
-                    { text: "Written proposal in 48 hours", sub: "Transparent scope, specs & pricing" },
-                    { text: "No obligation", sub: "Get the information you need" },
-                  ].map((item) => (
-                    <div key={item.text} className="flex gap-3 group">
-                      <div className="w-6 h-6 bg-amber-50 flex items-center justify-center shrink-0 mt-0.5">
-                        <ArrowRight size={12} className="text-amber-600" />
-                      </div>
-                      <div>
-                        <p className="text-sm font-semibold text-stone-800">{item.text}</p>
-                        <p className="text-xs text-stone-400 mt-0.5">{item.sub}</p>
-                      </div>
-                    </div>
-                  ))}
                 </div>
               </div>
 
