@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { cn } from "@/lib/utils";
+import { motion } from "framer-motion";
+import { fadeUp, stagger, viewport } from "@/hooks/useMotion";
 import { useSiteMedia } from "@/hooks/useSiteMedia";
 
 const SERVICE_DEFS = [
@@ -81,7 +81,6 @@ const SERVICE_DEFS = [
 ];
 
 export const ServicesSection = () => {
-  const { ref, isVisible } = useScrollAnimation();
   const { getMedia } = useSiteMedia();
 
   const services = SERVICE_DEFS.map((s) => ({
@@ -90,81 +89,91 @@ export const ServicesSection = () => {
   }));
 
   return (
-    <section className="py-20 bg-muted" ref={ref}>
+    <section className="py-20 bg-muted">
       <div className="container mx-auto px-4">
         {/* Section Header */}
-        <div
-          className={cn(
-            "text-center space-y-4 mb-12 slide-up",
-            isVisible && "visible"
-          )}
+        <motion.div
+          className="text-center space-y-4 mb-12"
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewport}
+          variants={stagger(0.1)}
         >
-          <span className="text-primary font-medium uppercase tracking-wider text-sm">
+          <motion.span variants={fadeUp} className="text-primary font-medium uppercase tracking-wider text-sm block">
             Our Expertise
-          </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+          </motion.span>
+          <motion.h2 variants={fadeUp} className="text-3xl md:text-4xl font-bold text-foreground">
             Full-Range{" "}
             <span className="text-gradient-subtle">Facade Services</span>
-          </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          </motion.h2>
+          <motion.p variants={fadeUp} className="text-muted-foreground max-w-2xl mx-auto">
             End-to-end facade solutions — engineered, fabricated and installed
             by one expert team. Click any service for full specs and project gallery.
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {services.map((service, index) => (
-            <Link
-              to={service.href}
-              key={service.title}
-              className={cn(
-                "group relative bg-card overflow-hidden border border-border hover:border-primary/40 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 slide-up flex flex-col",
-                isVisible && "visible"
-              )}
-              style={{ transitionDelay: `${index * 0.05}s` }}
-            >
-              {/* Image */}
-              <div className="relative aspect-[4/3] overflow-hidden bg-muted">
-                <img
-                  src={service.image}
-                  alt={service.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  loading="lazy"
-                  width="400"
-                  height="300"
-                />
-                <span className="absolute top-3 left-3 bg-white/95 backdrop-blur-sm text-[10px] font-bold uppercase tracking-wider text-primary px-2.5 py-1 shadow-sm">
-                  {service.tag}
-                </span>
-              </div>
-
-              {/* Content */}
-              <div className="p-5 flex flex-col flex-1">
-                <h3 className="text-lg font-bold mb-2 text-foreground group-hover:text-primary transition-colors leading-snug">
-                  {service.title}
-                </h3>
-                <p className="text-muted-foreground text-sm mb-4 leading-relaxed flex-1">
-                  {service.desc}
-                </p>
-
-                {/* Spec tag + arrow */}
-                <div className="flex items-center justify-between pt-3 border-t border-border/60 gap-2">
-                  <span className="text-xs font-semibold text-primary/90 truncate">
-                    {service.spec}
-                  </span>
-                  <ArrowRight
-                    size={16}
-                    className="text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all shrink-0"
+        <motion.div
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5"
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewport}
+          variants={stagger(0.06)}
+        >
+          {services.map((service) => (
+            <motion.div key={service.title} variants={fadeUp}>
+              <Link
+                to={service.href}
+                className="group relative bg-card overflow-hidden border border-border hover:border-primary/40 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col h-full"
+              >
+                {/* Image */}
+                <div className="relative aspect-[4/3] overflow-hidden bg-muted">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                    width="400"
+                    height="300"
                   />
+                  <span className="absolute top-3 left-3 bg-white/95 backdrop-blur-sm text-[10px] font-bold uppercase tracking-wider text-primary px-2.5 py-1 shadow-sm">
+                    {service.tag}
+                  </span>
                 </div>
-              </div>
-            </Link>
+
+                {/* Content */}
+                <div className="p-5 flex flex-col flex-1">
+                  <h3 className="text-lg font-bold mb-2 text-foreground group-hover:text-primary transition-colors leading-snug">
+                    {service.title}
+                  </h3>
+                  <p className="text-muted-foreground text-sm mb-4 leading-relaxed flex-1">
+                    {service.desc}
+                  </p>
+
+                  {/* Spec tag + arrow */}
+                  <div className="flex items-center justify-between pt-3 border-t border-border/60 gap-2">
+                    <span className="text-xs font-semibold text-primary/90 truncate">
+                      {service.spec}
+                    </span>
+                    <ArrowRight
+                      size={16}
+                      className="text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all shrink-0"
+                    />
+                  </div>
+                </div>
+              </Link>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* CTAs */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-12">
+        <motion.div
+          className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-12"
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewport}
+          variants={fadeUp}
+        >
           <Link to="/services">
             <Button
               variant="outline"
@@ -180,7 +189,7 @@ export const ServicesSection = () => {
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Button>
           </Link>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

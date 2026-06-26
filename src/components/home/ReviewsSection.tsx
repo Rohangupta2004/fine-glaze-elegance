@@ -1,6 +1,6 @@
 import { Star, ExternalLink } from "lucide-react";
-import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { cn } from "@/lib/utils";
+import { motion } from "framer-motion";
+import { fadeUp, scaleUp, stagger, viewport } from "@/hooks/useMotion";
 
 const GoogleIcon = () => (
   <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
@@ -11,28 +11,9 @@ const GoogleIcon = () => (
   </svg>
 );
 
-const IndiaMartIcon = () => (
-  <svg viewBox="0 0 40 20" className="w-8 h-4" fill="none">
-    <rect width="40" height="20" rx="3" fill="#FF6B00"/>
-    <text x="4" y="14" fill="white" fontSize="9" fontWeight="bold" fontFamily="Arial">indiamart</text>
-  </svg>
-);
-
-const JustDialIcon = () => (
-  <svg viewBox="0 0 40 20" className="w-8 h-4" fill="none">
-    <rect width="40" height="20" rx="3" fill="#FF5A00"/>
-    <text x="3" y="14" fill="white" fontSize="9" fontWeight="bold" fontFamily="Arial">JustDial</text>
-  </svg>
-);
-
 export const ReviewsSection = () => {
-  const { ref, isVisible } = useScrollAnimation();
-
   return (
-    <section
-      ref={ref}
-      className="py-20 bg-card border-y border-border overflow-hidden relative"
-    >
+    <section className="py-20 bg-card border-y border-border overflow-hidden relative">
       {/* Subtle background pattern */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
         style={{
@@ -44,11 +25,12 @@ export const ReviewsSection = () => {
       <div className="container mx-auto px-4 relative z-10">
 
         {/* Section header */}
-        <div
-          className={cn(
-            "text-center mb-12 transition-all duration-700",
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-          )}
+        <motion.div
+          className="text-center mb-12"
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewport}
+          variants={fadeUp}
         >
           <span className="text-primary font-semibold uppercase tracking-widest text-xs mb-3 block">
             Trusted & Verified
@@ -56,18 +38,20 @@ export const ReviewsSection = () => {
           <h2 className="text-3xl md:text-4xl font-extrabold mb-3">
             Rated 5.0 on Google
           </h2>
-        </div>
+        </motion.div>
 
         {/* Platform Badges */}
-        <div
-          className={cn(
-            "flex flex-col items-center gap-6 transition-all duration-700 delay-100",
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-          )}
+        <motion.div
+          className="flex flex-col items-center gap-6"
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewport}
+          variants={stagger(0.1)}
         >
           <div className="flex flex-wrap items-center justify-center gap-4">
             {/* Google */}
-            <a
+            <motion.a
+              variants={scaleUp}
               href="https://www.google.com/maps/search/Fine+Glaze+Pune"
               target="_blank"
               rel="noopener noreferrer"
@@ -88,10 +72,11 @@ export const ReviewsSection = () => {
                 <p className="text-xs text-muted-foreground">Google Reviews</p>
               </div>
               <ExternalLink size={13} className="text-muted-foreground ml-1" />
-            </a>
+            </motion.a>
 
             {/* IndiaMART */}
-            <a
+            <motion.a
+              variants={scaleUp}
               href="https://www.indiamart.com/fine-glaze/"
               target="_blank"
               rel="noopener noreferrer"
@@ -112,10 +97,11 @@ export const ReviewsSection = () => {
                 <p className="text-xs text-muted-foreground">IndiaMART</p>
               </div>
               <ExternalLink size={13} className="text-muted-foreground ml-1" />
-            </a>
+            </motion.a>
 
             {/* JustDial */}
-            <a
+            <motion.a
+              variants={scaleUp}
               href="https://www.justdial.com/Pune/Fine-Glaze"
               target="_blank"
               rel="noopener noreferrer"
@@ -136,9 +122,9 @@ export const ReviewsSection = () => {
                 <p className="text-xs text-muted-foreground">JustDial</p>
               </div>
               <ExternalLink size={13} className="text-muted-foreground ml-1" />
-            </a>
+            </motion.a>
           </div>
-        </div>
+        </motion.div>
 
       </div>
     </section>

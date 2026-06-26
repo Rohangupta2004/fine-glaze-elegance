@@ -136,6 +136,16 @@ const Contact = () => {
       if (data.success) {
         setIsSubmitted(true);
         toast.success("Message sent successfully!");
+
+        // GA4 conversion event
+        if (typeof window !== "undefined" && (window as any).gtag) {
+          (window as any).gtag("event", "generate_lead", {
+            event_category: "Contact",
+            event_label: formData.projectType || "General",
+            value: 1,
+          });
+        }
+
         setFormData({ name: "", email: "", phone: "", projectType: "", message: "", preferCallback: false });
       } else {
         throw new Error("Submission failed");
