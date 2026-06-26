@@ -1,8 +1,12 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, ChevronDown, Phone } from "lucide-react";
+import { Menu, X, ChevronDown, MessageCircle, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { QuoteModal } from "@/components/QuoteModal";
+
+const WHATSAPP_URL =
+  "https://wa.me/918369233566?text=Hi%20Fine%20Glaze%2C%20I'm%20interested%20in%20your%20facade%20services.";
 
 /* ================= SERVICES ================= */
 const serviceLinks = [
@@ -11,6 +15,9 @@ const serviceLinks = [
   { href: "/structural-glazing", label: "Structural Glazing" },
   { href: "/acp-aluminium-cladding", label: "ACP Cladding" },
   { href: "/glass-railings", label: "Glass Railings" },
+  { href: "/skylights-canopies", label: "Skylights & Canopies" },
+  { href: "/aluminium-louvers", label: "Aluminium Louvers" },
+  { href: "/glass-partitions", label: "Glass Partitions" },
   { href: "/maintenance-services", label: "Facade Maintenance" },
 ];
 
@@ -18,6 +25,7 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isServiceOpen, setIsServiceOpen] = useState(false);
+  const [isQuoteOpen, setIsQuoteOpen] = useState(false);
   const location = useLocation();
 
   /* Scroll detect */
@@ -130,27 +138,56 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
 
           {/* DESKTOP ACTIONS */}
           <div className="hidden lg:flex items-center gap-3">
-            <a href="tel:+918369233566">
+            {/* Trust signal */}
+            <div
+              className={cn(
+                "hidden xl:flex items-center gap-1.5 pr-3 border-r mr-1",
+                isScrolled
+                  ? "border-slate-200"
+                  : "border-white/20"
+              )}
+            >
+              <Star
+                size={12}
+                className={cn(
+                  "fill-amber-400",
+                  isScrolled ? "text-amber-400" : "text-amber-400"
+                )}
+              />
+              <span
+                className={cn(
+                  "text-[11px] font-medium whitespace-nowrap",
+                  isScrolled ? "text-slate-500" : "text-white/60"
+                )}
+              >
+                5.0 Google · Embassy REIT Vendor
+              </span>
+            </div>
+
+            {/* WhatsApp CTA */}
+            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
               <Button
                 variant="ghost"
                 size="sm"
                 className={cn(
                   "gap-2",
                   isScrolled
-                    ? "text-slate-700"
+                    ? "text-slate-700 hover:bg-slate-100"
                     : "text-white hover:bg-white/20"
                 )}
               >
-                <Phone size={16} />
-                Call Now
+                <MessageCircle size={16} />
+                WhatsApp Us
               </Button>
             </a>
 
-            <Link to="/contact">
-              <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">
-                Get a Quote
-              </Button>
-            </Link>
+            {/* Get a Quote — opens modal */}
+            <Button
+              onClick={() => setIsQuoteOpen(true)}
+              className="bg-primary hover:bg-primary/90 text-primary-foreground"
+            >
+              Get a Quote
+            </Button>
           </div>
 
           {/* MOBILE TOGGLE */}
@@ -197,21 +234,36 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
             <Link to="/blog" className="block text-lg font-medium">Blog</Link>
             <Link to="/contact" className="block text-lg font-medium">Contact</Link>
 
-            <div className="grid grid-cols-2 gap-4 pt-4">
-              <a href="tel:+918369233566">
-                <Button variant="outline" className="w-full gap-2">
-                  <Phone size={16} /> Call Now
+            {/* Trust signal — mobile */}
+            <div className="flex items-center gap-1.5 pt-2">
+              <Star size={12} className="text-amber-400 fill-amber-400" />
+              <span className="text-slate-500 text-xs font-medium">
+                5.0 Google · Embassy REIT Vendor · 10+ Landmark Projects
+              </span>
+            </div>
+
+            <div className="grid grid-cols-2 gap-4 pt-2">
+              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+                <Button variant="outline" className="w-full gap-2 text-green-700 border-green-200 hover:bg-green-50">
+                  <MessageCircle size={16} /> WhatsApp
                 </Button>
               </a>
-              <Link to="/contact">
-                <Button className="w-full bg-primary text-primary-foreground">
-                  Get Quote
-                </Button>
-              </Link>
+              <Button
+                onClick={() => {
+                  setIsMobileMenuOpen(false);
+                  setTimeout(() => setIsQuoteOpen(true), 200);
+                }}
+                className="w-full bg-primary text-primary-foreground"
+              >
+                Get Quote
+              </Button>
             </div>
           </div>
         </div>
       )}
+
+      {/* QUOTE MODAL */}
+      <QuoteModal open={isQuoteOpen} onOpenChange={setIsQuoteOpen} />
     </>
   );
 };
