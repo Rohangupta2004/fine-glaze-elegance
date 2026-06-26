@@ -77,11 +77,11 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 
 /* ── Images ── */
 const IMG: Record<string, string> = {
-  hero: "https://images.unsplash.com/photo-1497366216548-37526070297c?fm=jpg&q=85&w=2400&auto=format&fit=crop",
-  fixed: "/Unitized.webp",
-  operable: "/Panel.webp",
-  motorised: "/Aluminium windows.webp",
-  fins: "/Glazing.webp",
+  hero: "/Embassyoark.webp",
+  fixed: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?fm=jpg&q=80&w=900&auto=format&fit=crop",
+  operable: "https://images.unsplash.com/photo-1486718448742-163732cd1544?fm=jpg&q=80&w=900&auto=format&fit=crop",
+  motorised: "https://images.unsplash.com/photo-1460574283810-2aab119d8511?fm=jpg&q=80&w=900&auto=format&fit=crop",
+  fins: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?fm=jpg&q=80&w=900&auto=format&fit=crop",
   process: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?fm=jpg&q=85&w=1400&auto=format&fit=crop",
 };
 

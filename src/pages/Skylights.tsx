@@ -78,10 +78,10 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 /* ── Images ── */
 const IMG: Record<string, string> = {
   hero: "https://images.unsplash.com/photo-1486927181919-3ac1fc3a8082?fm=jpg&q=85&w=2400&auto=format&fit=crop",
-  atrium: "/Glazing.webp",
+  atrium: "/Embassy.webp",
   frameless: "/Glass installation.webp",
-  spider: "/Glass.webp",
-  poly: "/Unitized.webp",
+  spider: "/Glazing.webp",
+  poly: "/contact-hero.webp",
   process: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?fm=jpg&q=85&w=1400&auto=format&fit=crop",
 };
 
