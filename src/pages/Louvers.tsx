@@ -76,11 +76,11 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 
 /* ── Images ── */
 const IMG: Record<string, string> = {
-  hero: "https://images.unsplash.com/photo-1545558014-8692077e9b5c?fm=jpg&q=85&w=2400&auto=format&fit=crop",
-  pvdf: "/Panel.webp",
-  pe: "/Glazing.webp",
-  wood: "/Unitized.webp",
-  mirror: "/Glass installation.webp",
+  hero: "https://images.unsplash.com/photo-1497366216548-37526070297c?fm=jpg&q=85&w=2400&auto=format&fit=crop",
+  fixed: "/Unitized.webp",
+  operable: "/Panel.webp",
+  motorised: "/Aluminium windows.webp",
+  fins: "/Glazing.webp",
   process: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?fm=jpg&q=85&w=1400&auto=format&fit=crop",
 };
 
@@ -88,61 +88,61 @@ const IMG: Record<string, string> = {
 const SYSTEMS = [
   {
     num: "01",
-    title: "PVDF Coated ACP",
-    desc: "Premium fluorocarbon (PVDF) coated panels with superior UV resistance and colour retention. The gold standard for external cladding — maintains appearance for 20+ years without fading or chalking.",
-    glass: "PVDF 70/30",
-    wind: "FR mineral core",
-    bestFor: "Towers, corporate HQs",
-    price: "₹180 – ₹350 /sq ft",
-    img: "pvdf",
+    title: "Fixed Aluminium Louvers",
+    desc: "Permanently angled aluminium blades mounted on a frame. The simplest and most cost-effective sun shading solution. Blade angle is optimised for building orientation and sun path at your location.",
+    glass: "Flat / elliptical blade",
+    wind: "Fixed angle",
+    bestFor: "Parking, facades, utilities",
+    price: "₹250 – ₹500 /sq ft",
+    img: "fixed",
   },
   {
     num: "02",
-    title: "PE Coated ACP",
-    desc: "Polyester-coated panels offering excellent value for cost-conscious projects. Available in all standard colours and finishes. Best for interior cladding, signage, and canopy soffits.",
-    glass: "Polyester (PE)",
-    wind: "PE / FR core",
-    bestFor: "Interiors, signage, canopies",
-    price: "₹90 – ₹160 /sq ft",
-    img: "pe",
+    title: "Operable Louvers",
+    desc: "Manually adjustable blades that can be angled to control light and airflow. Linked rod mechanism allows all blades to move together. Ideal for spaces needing variable sun control throughout the day.",
+    glass: "Aerofoil blade",
+    wind: "Manual rod-operated",
+    bestFor: "Offices, residential",
+    price: "₹400 – ₹700 /sq ft",
+    img: "operable",
   },
   {
     num: "03",
-    title: "Wood-Grain & Stone Finish",
-    desc: "Digital printing technology creates realistic wood, stone, and marble textures on ACP surfaces. Natural aesthetics without the weight, maintenance, or cost of real materials.",
-    glass: "Digital print + PVDF",
-    wind: "FR mineral core",
-    bestFor: "Hotels, residences, retail",
-    price: "₹220 – ₹400 /sq ft",
-    img: "wood",
+    title: "Motorised Sun Control",
+    desc: "Automated louver systems with sensor-driven or timer-controlled motors. Blades adjust automatically based on sun position, time, or interior temperature — maximum energy savings with zero manual effort.",
+    glass: "Aerofoil blade",
+    wind: "Motorised + sensor",
+    bestFor: "Green buildings, IT parks",
+    price: "₹700 – ₹1,200 /sq ft",
+    img: "motorised",
   },
   {
     num: "04",
-    title: "Mirror & Metallic ACP",
-    desc: "High-reflectivity aluminium panels with mirror-polish or brushed metallic finishes. Creates striking visual impact for feature walls, fascias, and architectural accents.",
-    glass: "Anodised / mirror",
-    wind: "FR mineral core",
-    bestFor: "Feature walls, retail fronts",
-    price: "₹250 – ₹450 /sq ft",
-    img: "mirror",
+    title: "Vertical Fins & Screens",
+    desc: "Vertical aluminium blades or perforated screens that provide sun shading, privacy, and architectural rhythm. Available in twisted, angled, and perforated profiles for unique facade expression.",
+    glass: "Custom profiles",
+    wind: "Fixed / operable",
+    bestFor: "Feature facades, screens",
+    price: "₹350 – ₹800 /sq ft",
+    img: "fins",
   },
 ];
 
 const STEPS = [
-  { num: "01", title: "Site Survey", desc: "Measure facade area, assess substrate & plan panel layout" },
-  { num: "02", title: "Shop Drawing", desc: "Panel cutting plan, joint layout & colour/finish approval" },
-  { num: "03", title: "Fabrication", desc: "CNC routing, folding & sub-frame preparation" },
-  { num: "04", title: "Installation", desc: "Sub-frame fixing, panel mounting & joint sealing" },
+  { num: "01", title: "Sun Study", desc: "Analyse building orientation, sun path & shading needs" },
+  { num: "02", title: "Design", desc: "Blade profile selection, spacing calculations & 3D preview" },
+  { num: "03", title: "Fabrication", desc: "CNC extrusion, cutting & powder coating at our facility" },
+  { num: "04", title: "Installation", desc: "Bracket fixing, blade mounting & mechanism testing" },
 ];
 
-export default function AcpCladding() {
+export default function Louvers() {
   const [activeSystem, setActiveSystem] = useState(0);
 
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: "ACP & Metal Cladding Systems",
-    serviceType: "ACP Cladding Installation",
+    name: "Aluminium Louver & Sun Shading Systems",
+    serviceType: "Aluminium Louver Installation",
     provider: {
       "@type": "LocalBusiness",
       name: "Fine Glaze",
@@ -162,7 +162,7 @@ export default function AcpCladding() {
       { "@type": "City", name: "Mumbai" },
       { "@type": "City", name: "Navi Mumbai" },
     ],
-    description: "Aluminium Composite Panel cladding — PVDF, PE, wood-grain & mirror finishes. Fire-retardant FR grade panels from Aludecor, Alstrong & Reynobond. 20-year colour warranty.",
+    description: "Architectural aluminium louver and sun shading systems — fixed, operable & motorised. Reduce solar heat gain by up to 70%. Aerofoil & flat blade profiles.",
   };
 
   const breadcrumbSchema = {
@@ -171,7 +171,7 @@ export default function AcpCladding() {
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Home", item: "https://fineglaze.com" },
       { "@type": "ListItem", position: 2, name: "Services", item: "https://fineglaze.com/services" },
-      { "@type": "ListItem", position: 3, name: "ACP & Metal Cladding", item: "https://fineglaze.com/acp-aluminium-cladding" },
+      { "@type": "ListItem", position: 3, name: "Aluminium Louvers", item: "https://fineglaze.com/aluminium-louvers" },
     ],
   };
 
@@ -181,26 +181,26 @@ export default function AcpCladding() {
     mainEntity: [
       {
         "@type": "Question",
-        name: "What is ACP cladding?",
+        name: "How much do aluminium louvers reduce heat?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "ACP (Aluminium Composite Panel) cladding uses panels made of two aluminium sheets bonded to a core material. They are fixed to a sub-frame on the building exterior, creating a flat, modern cladding surface available in hundreds of colours and finishes.",
+          text: "Properly designed aluminium louver systems reduce direct solar heat gain by up to 70%. This translates to significant air-conditioning cost savings — typically 20–30% reduction in HVAC energy consumption for commercial buildings.",
         },
       },
       {
         "@type": "Question",
-        name: "Is ACP cladding fire safe?",
+        name: "What is the difference between fixed and operable louvers?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "We exclusively use FR (Fire Retardant) grade ACP for external cladding. FR panels have a mineral-filled core that limits flame spread and meets NBC (National Building Code) fire safety requirements. PE core panels are only used for interiors.",
+          text: "Fixed louvers have permanently set blade angles — simple and low maintenance. Operable louvers allow manual or motorised angle adjustment throughout the day for optimal light and heat control based on changing sun position.",
         },
       },
       {
         "@type": "Question",
-        name: "How much does ACP cladding cost per sq ft in India?",
+        name: "How much do aluminium louvers cost per sq ft?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "PE coated ACP starts at ₹90/sq ft for interiors. PVDF coated panels range from ₹180–₹350/sq ft. Wood-grain and stone finishes cost ₹220–₹400/sq ft. Prices include panel, sub-frame, and installation.",
+          text: "Fixed louvers start at ₹250/sq ft. Operable systems range from ₹400–₹700/sq ft. Motorised louvers with sensors cost ₹700–₹1,200/sq ft. Vertical fins and screens range from ₹350–₹800/sq ft.",
         },
       },
     ],
@@ -211,10 +211,10 @@ export default function AcpCladding() {
   return (
     <Layout darkHero>
       <SEO
-        title="ACP Cladding & Aluminium Composite Panels | ACP Contractors Pune & Mumbai – Fine Glaze"
-        description="Top ACP cladding contractors in India. PVDF & PE aluminium composite panels from Aludecor, Alstrong & Reynobond. Fire-retardant grade. 20-year colour warranty. Free site visit."
-        canonical="https://fineglaze.com/acp-aluminium-cladding"
-        keywords="ACP cladding, aluminium composite panel, ACP contractors Pune Mumbai, PVDF ACP panel, fire retardant ACP, ACP facade, aluminium cladding cost, Aludecor Alstrong Reynobond"
+        title="Aluminium Louvers & Sun Shading | Solar Control Systems Pune & Mumbai – Fine Glaze"
+        description="Aluminium louver and sun shading systems for commercial buildings. Fixed, operable & motorised louvers. Reduce solar heat by 70%. Aerofoil & flat blade profiles. Free site visit."
+        canonical="https://fineglaze.com/aluminium-louvers"
+        keywords="aluminium louvers, sun shading system, solar control facade, aluminium fins, motorised louvers, operable louvers, facade louvers Pune Mumbai, aerofoil blade louvers"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}
       />
 
@@ -222,7 +222,7 @@ export default function AcpCladding() {
       <section className="relative h-screen overflow-hidden">
         <img
           src={IMG.hero}
-          alt="ACP aluminium cladding facade — Fine Glaze"
+          alt="Aluminium louver sun shading — Fine Glaze"
           className="absolute inset-0 w-full h-full object-cover object-center"
           style={{ animation: "sgZoom 20s ease-in-out infinite alternate" }}
           loading="eager"
@@ -249,10 +249,10 @@ export default function AcpCladding() {
             className="font-extrabold text-white leading-[0.88] tracking-tight animate-fade-in-up"
             style={{ fontSize: "clamp(3.8rem, 9vw, 9rem)", animationDelay: "0.1s" }}
           >
-            ACP &<br />
-            <span className="text-gradient-gold">Metal</span><br />
+            Aluminium<br />
+            <span className="text-gradient-gold">Louvers</span><br />
             <span style={{ fontSize: "clamp(2rem, 4.5vw, 4.8rem)", fontWeight: 600, color: "rgba(255,255,255,0.85)" }}>
-              Cladding.
+              & Sun Shading.
             </span>
           </h1>
 
@@ -260,7 +260,7 @@ export default function AcpCladding() {
             className="mt-6 text-white/70 text-base md:text-lg max-w-lg leading-relaxed animate-fade-in-up"
             style={{ animationDelay: "0.2s" }}
           >
-            Fire-retardant aluminium composite panels for modern building exteriors across India.
+            Architectural solar control systems that cut heat by 70% while adding design character.
           </p>
 
           <div
@@ -294,14 +294,14 @@ export default function AcpCladding() {
         <div className="container mx-auto px-6 md:px-16 max-w-3xl text-center">
           <FadeIn>
             <p className="text-amber-700 text-xs font-bold tracking-[0.3em] uppercase mb-4">
-              What is ACP Cladding
+              Why Louver Systems
             </p>
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-stone-900 leading-snug mb-5">
-              Two aluminium sheets bonded to a mineral core —{"  "}
-              <span className="text-stone-400">lightweight, fire-safe, and available in unlimited finishes.</span>
+              Control sunlight, reduce HVAC costs —{"  "}
+              <span className="text-stone-400">with louvers that double as architectural features.</span>
             </h2>
             <p className="text-stone-500 text-[15px] md:text-base leading-relaxed">
-              Aluminium Composite Panels (ACP) consist of two aluminium sheets bonded to a non-combustible mineral-filled core. They provide a flat, seamless cladding surface that transforms any building exterior. Available in PVDF and PE coatings with solid, metallic, wood-grain, stone, and mirror finishes.
+              Aluminium louver systems block direct solar radiation while maintaining airflow and outward visibility. They reduce solar heat gain by up to 70%, cutting air-conditioning costs significantly. Available in fixed, operable, and motorised configurations with elliptical, aerofoil, and flat blade profiles.
             </p>
           </FadeIn>
         </div>
@@ -314,10 +314,10 @@ export default function AcpCladding() {
           <FadeIn>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-0 md:divide-x md:divide-stone-700">
               {[
-                { number: "20yr", label: "Colour Warranty (PVDF)" },
-                { number: "FR", label: "Fire Retardant Grade" },
+                { number: "70%", label: "Solar Heat Reduction" },
                 { number: "5+", label: "Years Experience" },
-                { number: "100+", label: "Finish Options" },
+                { number: "300mm", label: "Max Blade Width" },
+                { number: "Any RAL", label: "Custom Colours" },
               ].map((s) => (
                 <div key={s.label} className="text-center px-4">
                   <p className="text-2xl md:text-3xl font-bold text-white">{s.number}</p>
@@ -335,10 +335,10 @@ export default function AcpCladding() {
         <div className="container mx-auto px-6 md:px-16">
           <FadeIn className="mb-10">
             <p className="text-amber-700 text-xs font-bold tracking-[0.3em] uppercase mb-3">
-              Our Panels
+              Our Systems
             </p>
             <h2 className="text-2xl md:text-3xl font-bold text-stone-900">
-              ACP Panel Systems We Install
+              Louver Systems We Install
             </h2>
           </FadeIn>
 
@@ -378,11 +378,11 @@ export default function AcpCladding() {
 
                 <div className="grid grid-cols-2 gap-3 mb-6">
                   <div className="bg-stone-50 p-3">
-                    <p className="text-[10px] uppercase tracking-wider text-stone-400 mb-1">Coating</p>
+                    <p className="text-[10px] uppercase tracking-wider text-stone-400 mb-1">Blade Profile</p>
                     <p className="text-sm font-semibold text-stone-800">{current.glass}</p>
                   </div>
                   <div className="bg-stone-50 p-3">
-                    <p className="text-[10px] uppercase tracking-wider text-stone-400 mb-1">Core</p>
+                    <p className="text-[10px] uppercase tracking-wider text-stone-400 mb-1">Operation</p>
                     <p className="text-sm font-semibold text-stone-800">{current.wind}</p>
                   </div>
                   <div className="bg-stone-50 p-3">
@@ -424,23 +424,23 @@ export default function AcpCladding() {
               {[
                 {
                   icon: Shield,
-                  title: "Fire Safe",
-                  desc: "Only FR (Fire Retardant) grade ACP panels used for external cladding. NBC fire safety compliant.",
+                  title: "Sun-Path Optimised",
+                  desc: "Blade angles calculated for your building's orientation. Not guesswork — engineering.",
                 },
                 {
                   icon: Clock,
-                  title: "Fast Install",
-                  desc: "Lightweight panels install 3x faster than natural stone. Minimal scaffolding time.",
+                  title: "Fast Production",
+                  desc: "Standard louver systems delivered in 15–20 days from design approval.",
                 },
                 {
                   icon: Award,
-                  title: "Trusted Brands",
-                  desc: "We use panels from Aludecor, Alstrong, and Reynobond — the most trusted ACP manufacturers.",
+                  title: "Premium Extrusions",
+                  desc: "6063-T6 aluminium extrusions with powder-coat or anodised finishes. 15-year warranty.",
                 },
                 {
                   icon: Wrench,
-                  title: "Clean Finish",
-                  desc: "CNC routing for precise folds. Silicone-sealed joints for a seamless, watertight appearance.",
+                  title: "Motor Warranty",
+                  desc: "Motorised systems backed by 5-year motor warranty. BMS integration available.",
                 },
               ].map((item) => (
                 <div key={item.title} className="text-center">
@@ -502,7 +502,7 @@ export default function AcpCladding() {
         <div className="relative h-[35vh] md:h-[40vh] overflow-hidden">
           <img
             src={IMG.process}
-            alt="Fine Glaze ACP cladding installation"
+            alt="Fine Glaze louver installation"
             className="w-full h-full object-cover"
             loading="lazy"
           />
@@ -511,7 +511,7 @@ export default function AcpCladding() {
             <div>
               <p className="text-white/60 text-sm uppercase tracking-widest mb-2">Our Promise</p>
               <p className="text-white text-xl md:text-3xl font-bold max-w-xl">
-                From CNC routing to final sealant — every step done in-house for a flawless finish.
+                Solar control engineered precisely for your building — not a one-size-fits-all solution.
               </p>
             </div>
           </div>
@@ -527,7 +527,7 @@ export default function AcpCladding() {
               Pricing
             </p>
             <h2 className="text-2xl md:text-3xl font-bold text-stone-900 mb-2">
-              ACP Cladding Cost — 2026
+              Aluminium Louver Cost — 2026
             </h2>
             <p className="text-stone-400 text-sm">
               Indicative rates. Final cost depends on specifications & complexity. GST extra.
@@ -540,16 +540,16 @@ export default function AcpCladding() {
                 <thead>
                   <tr className="border-b-2 border-stone-800">
                     <th className="py-3 text-xs font-bold uppercase tracking-wider text-stone-500">System</th>
-                    <th className="py-3 text-xs font-bold uppercase tracking-wider text-stone-500">Coating / Finish</th>
+                    <th className="py-3 text-xs font-bold uppercase tracking-wider text-stone-500">Blade Type</th>
                     <th className="py-3 text-xs font-bold uppercase tracking-wider text-stone-500 text-right">Rate / sq ft</th>
                   </tr>
                 </thead>
                 <tbody className="text-sm">
                   {[
-                    { system: "PVDF Coated ACP", glass: "PVDF 70/30 + FR core", price: "₹180 – ₹350" },
-                    { system: "PE Coated ACP", glass: "Polyester + PE/FR core", price: "₹90 – ₹160" },
-                    { system: "Wood-Grain / Stone", glass: "Digital print + PVDF", price: "₹220 – ₹400" },
-                    { system: "Mirror / Metallic", glass: "Anodised / mirror finish", price: "₹250 – ₹450" },
+                    { system: "Fixed Louvers", glass: "Flat / elliptical blade", price: "₹250 – ₹500" },
+                    { system: "Operable Louvers", glass: "Aerofoil + rod mechanism", price: "₹400 – ₹700" },
+                    { system: "Motorised System", glass: "Aerofoil + motor + sensor", price: "₹700 – ₹1,200" },
+                    { system: "Vertical Fins / Screens", glass: "Custom profiles", price: "₹350 – ₹800" },
                   ].map((row) => (
                     <tr key={row.system} className="border-b border-stone-100 hover:bg-stone-50 transition-colors">
                       <td className="py-3 font-semibold text-stone-800">{row.system}</td>
@@ -588,24 +588,24 @@ export default function AcpCladding() {
           <FadeIn delay={100}>
             <div>
               <FAQItem
-                q="What is ACP cladding?"
-                a="ACP (Aluminium Composite Panel) cladding uses panels made of two aluminium sheets bonded to a core material. They are fixed to a sub-frame on the building exterior, creating a flat, modern cladding surface available in hundreds of colours and finishes."
+                q="How much do aluminium louvers reduce heat?"
+                a="Properly designed aluminium louver systems reduce direct solar heat gain by up to 70%. This translates to significant air-conditioning cost savings — typically 20–30% reduction in HVAC energy consumption for commercial buildings."
               />
               <FAQItem
-                q="Is ACP cladding fire safe?"
-                a="We exclusively use FR (Fire Retardant) grade ACP for external cladding. FR panels have a mineral-filled core that limits flame spread and meets NBC (National Building Code) fire safety requirements. PE core panels are only used for interiors."
+                q="What is the difference between fixed and operable louvers?"
+                a="Fixed louvers have permanently set blade angles — simple and low maintenance. Operable louvers allow manual or motorised angle adjustment throughout the day for optimal light and heat control based on changing sun position."
               />
               <FAQItem
-                q="How much does ACP cladding cost per sq ft in India?"
-                a="PE coated ACP starts at ₹90/sq ft for interiors. PVDF coated panels range from ₹180–₹350/sq ft. Wood-grain and stone finishes cost ₹220–₹400/sq ft. Prices include panel, sub-frame, and installation."
+                q="How much do aluminium louvers cost per sq ft?"
+                a="Fixed louvers start at ₹250/sq ft. Operable systems range from ₹400–₹700/sq ft. Motorised louvers with sensors cost ₹700–₹1,200/sq ft. Vertical fins and screens range from ₹350–₹800/sq ft."
               />
               <FAQItem
-                q="How long does PVDF ACP last?"
-                a="PVDF (fluorocarbon) coated ACP panels come with a 20-year colour warranty. They resist UV fading, chalking, and chemical exposure far better than PE coated panels — making them the preferred choice for external facades."
+                q="Can motorised louvers be connected to building management systems?"
+                a="Yes. Our motorised louver systems can be integrated with BMS (Building Management Systems) for automated control based on sun sensors, interior temperature, or scheduled timers. This maximises energy savings."
               />
               <FAQItem
-                q="Can ACP be used for renovation and existing buildings?"
-                a="Yes. ACP is ideal for building renovation because it is lightweight, installs over existing facades, and transforms the appearance quickly. The aluminium sub-frame can be adapted to any building surface."
+                q="What finishes are available for aluminium louvers?"
+                a="Louvers are available in any RAL colour via powder coating, or in natural/bronze/black anodised finishes. Wood-grain effect coatings are also available for architectural projects requiring a natural appearance."
               />
             </div>
           </FadeIn>
@@ -638,10 +638,10 @@ export default function AcpCladding() {
                 </p>
                 <div className="grid grid-cols-2 gap-x-6 gap-y-1.5">
                   {[
-                    { title: "Curtain Wall Systems", href: "/curtain-wall-systems" },
-                    { title: "Structural Glazing", href: "/structural-glazing" },
                     { title: "Aluminium Facade", href: "/aluminium-facade" },
-                    { title: "Glass Railings", href: "/glass-railings" },
+                    { title: "Curtain Wall Systems", href: "/curtain-wall-systems" },
+                    { title: "ACP Cladding", href: "/acp-aluminium-cladding" },
+                    { title: "Structural Glazing", href: "/structural-glazing" },
                     { title: "Facade AMC", href: "/maintenance-services" },
                     { title: "All Services →", href: "/services" },
                   ].map((link) => (

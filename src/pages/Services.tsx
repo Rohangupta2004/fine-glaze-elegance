@@ -151,7 +151,7 @@ const services = [
     icon: Sun,
     title: "Skylights & Glass Canopies",
     subtitle: "Overhead Glazing Solutions",
-    href: "/structural-glazing",
+    href: "/skylights-canopies",
     description:
       "Bring natural light indoors with engineered glass skylight systems and canopy structures for atriums, lobbies, and entrances.",
     longDescription:
@@ -172,7 +172,7 @@ const services = [
     icon: LayoutGrid,
     title: "Aluminium Louvers & Sun Shading",
     subtitle: "Solar Control Systems",
-    href: "/aluminium-facade",
+    href: "/aluminium-louvers",
     description:
       "Reduce solar heat gain and glare with architecturally designed aluminium louver and fin systems for commercial buildings.",
     longDescription:
@@ -193,7 +193,7 @@ const services = [
     icon: GlassWater,
     title: "Glass Partitions & Shower Enclosures",
     subtitle: "Interior Glass Solutions",
-    href: "/glass-railings",
+    href: "/glass-partitions",
     description:
       "Modern frameless glass partitions for offices and luxury shower enclosures for residential projects.",
     longDescription:
