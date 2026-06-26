@@ -90,41 +90,42 @@ export const ServicesSection = () => {
   }));
 
   return (
-    <section className="py-20 bg-stone-50" ref={ref}>
-      <div className="container mx-auto px-4 md:px-16">
+    <section className="py-20 bg-muted" ref={ref}>
+      <div className="container mx-auto px-4">
         {/* Section Header */}
         <div
           className={cn(
-            "space-y-3 mb-12 slide-up",
+            "text-center space-y-4 mb-12 slide-up",
             isVisible && "visible"
           )}
         >
-          <span className="text-amber-700 text-xs font-bold tracking-[0.3em] uppercase">
+          <span className="text-primary font-medium uppercase tracking-wider text-sm">
             Our Expertise
           </span>
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-stone-900">
-            Full-Range Facade Services
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+            Full-Range{" "}
+            <span className="text-gradient-subtle">Facade Services</span>
           </h2>
-          <p className="text-stone-500 max-w-2xl text-sm md:text-base leading-relaxed">
+          <p className="text-muted-foreground max-w-2xl mx-auto">
             End-to-end facade solutions — engineered, fabricated and installed
             by one expert team. Click any service for full specs and project gallery.
           </p>
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-stone-200">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {services.map((service, index) => (
             <Link
               to={service.href}
               key={service.title}
               className={cn(
-                "group relative bg-white overflow-hidden hover:bg-stone-50 transition-all duration-300 slide-up flex flex-col",
+                "group relative bg-card overflow-hidden border border-border hover:border-primary/40 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 slide-up flex flex-col",
                 isVisible && "visible"
               )}
               style={{ transitionDelay: `${index * 0.05}s` }}
             >
               {/* Image */}
-              <div className="relative aspect-[4/3] overflow-hidden bg-stone-100">
+              <div className="relative aspect-[4/3] overflow-hidden bg-muted">
                 <img
                   src={service.image}
                   alt={service.title}
@@ -133,28 +134,28 @@ export const ServicesSection = () => {
                   width="400"
                   height="300"
                 />
-                <span className="absolute top-3 left-3 bg-stone-900/80 text-[10px] font-bold uppercase tracking-wider text-white px-2.5 py-1">
+                <span className="absolute top-3 left-3 bg-white/95 backdrop-blur-sm text-[10px] font-bold uppercase tracking-wider text-primary px-2.5 py-1 shadow-sm">
                   {service.tag}
                 </span>
               </div>
 
               {/* Content */}
               <div className="p-5 flex flex-col flex-1">
-                <h3 className="text-base font-bold mb-2 text-stone-900 group-hover:text-amber-700 transition-colors leading-snug">
+                <h3 className="text-lg font-bold mb-2 text-foreground group-hover:text-primary transition-colors leading-snug">
                   {service.title}
                 </h3>
-                <p className="text-stone-500 text-sm mb-4 leading-relaxed flex-1">
+                <p className="text-muted-foreground text-sm mb-4 leading-relaxed flex-1">
                   {service.desc}
                 </p>
 
                 {/* Spec tag + arrow */}
-                <div className="flex items-center justify-between pt-3 border-t border-stone-200 gap-2">
-                  <span className="text-xs font-semibold text-amber-700 truncate">
+                <div className="flex items-center justify-between pt-3 border-t border-border/60 gap-2">
+                  <span className="text-xs font-semibold text-primary/90 truncate">
                     {service.spec}
                   </span>
                   <ArrowRight
                     size={16}
-                    className="text-stone-400 group-hover:text-amber-700 group-hover:translate-x-1 transition-all shrink-0"
+                    className="text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all shrink-0"
                   />
                 </div>
               </div>
@@ -167,14 +168,14 @@ export const ServicesSection = () => {
           <Link to="/services">
             <Button
               variant="outline"
-              className="border-stone-300 text-stone-700 hover:bg-stone-900 hover:text-white hover:border-stone-900 px-8 py-6 group transition-all"
+              className="border-primary text-primary hover:bg-primary hover:text-primary-foreground px-8 py-6 group"
             >
               View All Services in Detail
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Button>
           </Link>
           <Link to="/contact">
-            <Button className="bg-stone-900 hover:bg-amber-700 text-white border-0 group px-8 py-6 transition-colors">
+            <Button className="btn-glossy text-primary-foreground border-0 group px-8 py-6">
               Get a Free Quote
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Button>

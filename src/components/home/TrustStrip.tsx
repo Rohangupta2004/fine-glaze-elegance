@@ -34,7 +34,7 @@ function getPublicUrl(filename: string): string {
 
 /**
  * Combined trust strip: award badge + client logos marquee.
- * Sharp, architectural styling — no rounded corners.
+ * Replaces the separate AwardsSection + ClientsCarousel for a tighter homepage.
  */
 export const TrustStrip = () => {
   const { ref, isVisible } = useScrollAnimation();

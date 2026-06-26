@@ -9,10 +9,18 @@ export const CTASection = () => {
   return (
     <section
       ref={ref}
-      className="relative py-28 overflow-hidden bg-stone-900"
+      className="relative py-28 overflow-hidden"
+      style={{
+        background:
+          "linear-gradient(135deg, hsl(25 80% 25%) 0%, hsl(20 75% 18%) 50%, hsl(15 70% 14%) 100%)",
+      }}
     >
+      {/* Glow blobs */}
+      <div className="absolute -top-24 -left-24 w-96 h-96 bg-white/10 blur-3xl" />
+      <div className="absolute -bottom-32 -right-32 w-[30rem] h-[30rem] bg-white/10 blur-3xl" />
+
       {/* Pattern */}
-      <div className="absolute inset-0 opacity-[0.04]">
+      <div className="absolute inset-0 opacity-[0.07]">
         <div
           className="absolute inset-0"
           style={{
@@ -21,36 +29,33 @@ export const CTASection = () => {
         />
       </div>
 
-      <div className="container mx-auto px-4 md:px-16 relative z-10">
+      <div className="container mx-auto px-4 relative z-10">
         <div
           className={cn(
             "max-w-3xl mx-auto text-center space-y-8 transition-all duration-700",
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
           )}
         >
-          <p className="text-amber-400 text-xs font-bold tracking-[0.4em] uppercase">
-            Start Your Project
-          </p>
-
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-tight tracking-tight">
             Transform Your Building Into a{" "}
             <br className="hidden sm:block" />
-            <span className="text-gradient-gold">
-              Modern Landmark
+            <span className="text-gradient-light">
+              Modern Architectural Landmark
             </span>
           </h2>
 
-          <p className="text-white/60 text-base md:text-lg max-w-xl mx-auto leading-relaxed">
+          <p className="text-white/80 text-lg max-w-xl mx-auto leading-relaxed">
             Award-winning facade solutions engineered for performance, lasting
             aesthetics, and measurable long-term value.
           </p>
 
-          {/* CTA links */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-6">
+          {/* ===== FIXED BUTTONS ===== */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-5 pt-6">
+            {/* WhatsApp */}
             <Button
               asChild
               size="lg"
-              className="bg-white text-stone-900 hover:bg-amber-400 hover:text-stone-900 px-10 py-6 text-base font-semibold group transition-colors"
+              className="bg-white text-primary hover:bg-white/90 px-10 py-6 text-base font-semibold shadow-xl group active:scale-[0.97] transition-transform"
             >
               <a
                 href="https://wa.me/918369233566?text=Hello%20Fine%20Glaze%2C%20I%20would%20like%20to%20discuss%20a%20facade%20project."
@@ -62,13 +67,18 @@ export const CTASection = () => {
               </a>
             </Button>
 
-            <a
-              href="tel:+918369233566"
-              className="inline-flex items-center gap-2 text-white/60 font-medium text-base hover:text-white transition-colors tracking-wide"
+            {/* Call */}
+            <Button
+              asChild
+              size="lg"
+              variant="outline"
+              className="bg-white text-slate-900 hover:bg-white/90 border-white px-10 py-6 text-base font-bold active:scale-[0.97] transition-transform"
             >
-              <Phone className="h-4 w-4" />
-              +91 83692 33566
-            </a>
+              <a href="tel:+918369233566">
+                <Phone className="mr-2 h-4 w-4" />
+                Call Expert
+              </a>
+            </Button>
           </div>
         </div>
       </div>

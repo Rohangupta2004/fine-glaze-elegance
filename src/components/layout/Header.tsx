@@ -65,8 +65,8 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
         className={cn(
           "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
           isScrolled
-            ? "bg-white/95 backdrop-blur-md py-3 shadow-sm border-b"
-            : "bg-transparent py-5"
+            ? "bg-white/95 backdrop-blur-md py-2 md:py-3 shadow-sm border-b"
+            : "bg-transparent py-3 md:py-5"
         )}
       >
         <div className="container mx-auto px-4 flex items-center justify-between">
@@ -99,7 +99,7 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
               <button
                 onClick={() => setIsServiceOpen(!isServiceOpen)}
                 className={cn(
-                  "p-1 rounded-md",
+                  "p-1",
                   isScrolled ? "text-slate-700" : darkHero ? "text-white" : "text-slate-800"
                 )}
               >
@@ -114,12 +114,12 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
                     : "opacity-0 invisible"
                 )}
               >
-                <div className="bg-white rounded-xl shadow-xl border p-2">
+                <div className="bg-white shadow-xl border p-2">
                   {serviceLinks.map((service) => (
                     <Link
                       key={service.href}
                       to={service.href}
-                      className="block px-4 py-3 text-sm text-slate-700 hover:bg-slate-50 rounded-lg"
+                      className="block px-4 py-3 text-sm text-slate-700 hover:bg-slate-50"
                     >
                       {service.label}
                     </Link>
@@ -148,7 +148,7 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
           <button
             onClick={() => setIsMobileMenuOpen(true)}
             className={cn(
-              "lg:hidden p-2 rounded-md",
+              "lg:hidden p-2",
               isScrolled ? "text-slate-900" : darkHero ? "text-white" : "text-slate-900"
             )}
           >
