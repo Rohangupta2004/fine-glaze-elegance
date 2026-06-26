@@ -1,79 +1,60 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { cn } from "@/lib/utils";
 import { useSiteMedia } from "@/hooks/useSiteMedia";
 
-const SERVICE_DEFS = [
+const SERVICES = [
   {
-    tag: "Facade System",
+    num: "01",
     title: "Curtain Wall Systems",
-    desc: "Unitized & stick-built curtain walls for IT parks, offices and high-rises. Wind-load tested up to 4.5 kPa.",
+    desc: "Unitized & stick-built curtain walls for IT parks, offices and high-rises.",
     spec: "Up to 4.5 kPa wind load",
     href: "/curtain-wall-systems",
     mediaKey: "services_card_curtain_wall",
     fallback: "/Unitized.webp",
   },
   {
-    tag: "Glazing",
+    num: "02",
     title: "Structural Glazing",
-    desc: "Frameless silicone-bonded glass facades. Dow Corning / Sika certified. DGU + Low-E ready.",
-    spec: "Dow Corning · Sika certified",
+    desc: "Frameless silicone-bonded glass facades. Dow Corning / Sika certified.",
+    spec: "DGU + Low-E ready",
     href: "/structural-glazing",
     mediaKey: "services_card_structural_glazing",
     fallback: "/Glazing.webp",
   },
   {
-    tag: "Cladding",
+    num: "03",
     title: "ACP Cladding",
-    desc: "Fire-retardant PVDF-coated aluminium composite panels from Aludecor & Alstrong. 20-yr colour warranty.",
-    spec: "20-yr PVDF colour warranty",
+    desc: "Fire-retardant PVDF-coated aluminium composite panels. 20-year colour warranty.",
+    spec: "Aludecor · Alstrong panels",
     href: "/acp-aluminium-cladding",
     mediaKey: "services_card_acp_cladding",
     fallback: "/Panel.webp",
   },
   {
-    tag: "Aluminium",
+    num: "04",
     title: "Aluminium Doors & Windows",
-    desc: "Thermal-break sliding, casement & lift-slide systems. 60% heat reduction, 45dB sound rating.",
-    spec: "60% heat reduction",
+    desc: "Thermal-break sliding, casement & lift-slide systems. 60% heat reduction.",
+    spec: "45dB sound insulation",
     href: "/aluminium-facade",
     mediaKey: "services_card_aluminium_windows",
     fallback: "/Aluminium%20windows.webp",
   },
   {
-    tag: "Railings",
+    num: "05",
     title: "Glass Railings",
-    desc: "Frameless 12–19mm toughened glass railings with marine-grade SS hardware for balconies & staircases.",
-    spec: "12–19mm toughened glass",
+    desc: "Frameless 12–19mm toughened glass railings with marine-grade SS hardware.",
+    spec: "SS 316 marine-grade",
     href: "/glass-railings",
     mediaKey: "services_card_glass_railings",
     fallback: "/Railing.webp",
   },
   {
-    tag: "Roofing",
-    title: "Skylights & Canopies",
-    desc: "Engineered glass skylights with heat-reflective coatings. Spider canopies & retractable roof systems.",
-    spec: "50% more natural light",
-    href: "/structural-glazing",
-    mediaKey: "services_card_skylights",
-    fallback: "/Hotel.webp",
-  },
-  {
-    tag: "Interior",
-    title: "Glass Partitions",
-    desc: "Frameless office partitions with optional acoustic DGU and switchable smart glass.",
-    spec: "Up to 42dB sound insulation",
-    href: "/glass-railings",
-    mediaKey: "services_card_glass_partitions",
-    fallback: "/Glass%20installation.webp",
-  },
-  {
-    tag: "Maintenance",
+    num: "06",
     title: "Facade AMC & Repairs",
-    desc: "Rope-access facade cleaning, silicone resealing, glass replacement & emergency repairs.",
-    spec: "Bi-annual inspection cycle",
+    desc: "Rope-access cleaning, silicone resealing, glass replacement & emergency repairs.",
+    spec: "Bi-annual inspections",
     href: "/maintenance-services",
     mediaKey: "services_card_amc",
     fallback: "/Amc.webp",
@@ -84,77 +65,89 @@ export const ServicesSection = () => {
   const { ref, isVisible } = useScrollAnimation();
   const { getMedia } = useSiteMedia();
 
-  const services = SERVICE_DEFS.map((s) => ({
+  const services = SERVICES.map((s) => ({
     ...s,
     image: getMedia(s.mediaKey, s.fallback),
   }));
 
   return (
-    <section className="py-20 bg-stone-50" ref={ref}>
-      <div className="container mx-auto px-4 md:px-16">
-        {/* Section Header */}
+    <section className="py-20 md:py-28 bg-white" ref={ref}>
+      <div className="container mx-auto px-4 md:px-10 lg:px-16">
+        {/* Header */}
         <div
           className={cn(
-            "space-y-3 mb-12 slide-up",
+            "flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-14 slide-up",
             isVisible && "visible"
           )}
         >
-          <span className="text-amber-700 text-xs font-bold tracking-[0.3em] uppercase">
-            Our Expertise
-          </span>
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-stone-900">
-            Full-Range Facade Services
-          </h2>
-          <p className="text-stone-500 max-w-2xl text-sm md:text-base leading-relaxed">
-            End-to-end facade solutions — engineered, fabricated and installed
-            by one expert team. Click any service for full specs and project gallery.
-          </p>
+          <div>
+            <span className="text-amber-700 text-[10px] font-bold tracking-[0.35em] uppercase">
+              Services
+            </span>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-stone-900 mt-2">
+              What We Build
+            </h2>
+          </div>
+          <Link
+            to="/services"
+            className="text-stone-500 hover:text-stone-900 text-sm font-medium flex items-center gap-1 transition-colors"
+          >
+            All Services <ArrowRight size={14} />
+          </Link>
         </div>
 
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-stone-200">
+        {/* Services — alternating rows */}
+        <div className="space-y-px bg-stone-200">
           {services.map((service, index) => (
             <Link
               to={service.href}
               key={service.title}
               className={cn(
-                "group relative bg-white overflow-hidden hover:bg-stone-50 transition-all duration-300 slide-up flex flex-col",
+                "group grid grid-cols-1 md:grid-cols-12 bg-white hover:bg-stone-50 transition-colors duration-300 slide-up",
                 isVisible && "visible"
               )}
               style={{ transitionDelay: `${index * 0.05}s` }}
             >
-              {/* Image */}
-              <div className="relative aspect-[4/3] overflow-hidden bg-stone-100">
+              {/* Image — alternates left/right on desktop */}
+              <div
+                className={cn(
+                  "relative aspect-[16/9] md:aspect-auto overflow-hidden md:col-span-5",
+                  index % 2 === 0 ? "md:order-1" : "md:order-2"
+                )}
+              >
                 <img
                   src={service.image}
                   alt={service.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   loading="lazy"
-                  width="400"
-                  height="300"
+                  width="600"
+                  height="400"
                 />
-                <span className="absolute top-3 left-3 bg-stone-900/80 text-[10px] font-bold uppercase tracking-wider text-white px-2.5 py-1">
-                  {service.tag}
-                </span>
               </div>
 
               {/* Content */}
-              <div className="p-5 flex flex-col flex-1">
-                <h3 className="text-base font-bold mb-2 text-stone-900 group-hover:text-amber-700 transition-colors leading-snug">
+              <div
+                className={cn(
+                  "flex flex-col justify-center p-6 md:p-10 lg:p-14 md:col-span-7",
+                  index % 2 === 0 ? "md:order-2" : "md:order-1"
+                )}
+              >
+                <span className="text-stone-300 font-bold text-3xl md:text-5xl mb-3">
+                  {service.num}
+                </span>
+                <h3 className="text-xl md:text-2xl font-bold text-stone-900 group-hover:text-amber-700 transition-colors mb-3">
                   {service.title}
                 </h3>
-                <p className="text-stone-500 text-sm mb-4 leading-relaxed flex-1">
+                <p className="text-stone-500 text-sm md:text-base leading-relaxed mb-4 max-w-md">
                   {service.desc}
                 </p>
-
-                {/* Spec tag + arrow */}
-                <div className="flex items-center justify-between pt-3 border-t border-stone-200 gap-2">
-                  <span className="text-xs font-semibold text-amber-700 truncate">
+                <div className="flex items-center justify-between max-w-md">
+                  <span className="text-xs font-semibold text-amber-700 uppercase tracking-wider">
                     {service.spec}
                   </span>
                   <ArrowRight
-                    size={16}
-                    className="text-stone-400 group-hover:text-amber-700 group-hover:translate-x-1 transition-all shrink-0"
+                    size={18}
+                    className="text-stone-300 group-hover:text-amber-700 group-hover:translate-x-1 transition-all"
                   />
                 </div>
               </div>
@@ -162,22 +155,14 @@ export const ServicesSection = () => {
           ))}
         </div>
 
-        {/* CTAs */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-12">
-          <Link to="/services">
-            <Button
-              variant="outline"
-              className="border-stone-300 text-stone-700 hover:bg-stone-900 hover:text-white hover:border-stone-900 px-8 py-6 group transition-all"
-            >
-              View All Services in Detail
-              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Button>
-          </Link>
-          <Link to="/contact">
-            <Button className="bg-stone-900 hover:bg-amber-700 text-white border-0 group px-8 py-6 transition-colors">
-              Get a Free Quote
-              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Button>
+        {/* Bottom CTA */}
+        <div className="mt-14 text-center">
+          <Link
+            to="/contact"
+            className="inline-flex items-center gap-2 bg-stone-900 hover:bg-amber-700 text-white font-semibold text-sm px-8 py-4 transition-colors"
+          >
+            Get a Free Quote
+            <ArrowRight size={16} />
           </Link>
         </div>
       </div>
