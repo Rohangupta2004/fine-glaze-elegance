@@ -52,24 +52,6 @@ const SERVICE_DEFS = [
     fallback: "/Railing.webp",
   },
   {
-    tag: "Roofing",
-    title: "Skylights & Canopies",
-    desc: "Engineered glass skylights with heat-reflective coatings. Spider canopies & retractable roof systems.",
-    spec: "50% more natural light",
-    href: "/structural-glazing",
-    mediaKey: "services_card_skylights",
-    fallback: "/Hotel.webp",
-  },
-  {
-    tag: "Interior",
-    title: "Glass Partitions",
-    desc: "Frameless office partitions with optional acoustic DGU and switchable smart glass.",
-    spec: "Up to 42dB sound insulation",
-    href: "/glass-railings",
-    mediaKey: "services_card_glass_partitions",
-    fallback: "/Glass%20installation.webp",
-  },
-  {
     tag: "Maintenance",
     title: "Facade AMC & Repairs",
     desc: "Rope-access facade cleaning, silicone resealing, glass replacement & emergency repairs.",
@@ -90,12 +72,12 @@ export const ServicesSection = () => {
   }));
 
   return (
-    <section className="py-20 bg-stone-50" ref={ref}>
+    <section className="py-20 bg-white" ref={ref}>
       <div className="container mx-auto px-4 md:px-16">
         {/* Section Header */}
         <div
           className={cn(
-            "space-y-3 mb-12 slide-up",
+            "space-y-3 mb-14 slide-up",
             isVisible && "visible"
           )}
         >
@@ -107,12 +89,12 @@ export const ServicesSection = () => {
           </h2>
           <p className="text-stone-500 max-w-2xl text-sm md:text-base leading-relaxed">
             End-to-end facade solutions — engineered, fabricated and installed
-            by one expert team. Click any service for full specs and project gallery.
+            by one expert team.
           </p>
         </div>
 
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-stone-200">
+        {/* Services Grid — 2 cols on md, 3 on lg */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-stone-200">
           {services.map((service, index) => (
             <Link
               to={service.href}
@@ -121,17 +103,17 @@ export const ServicesSection = () => {
                 "group relative bg-white overflow-hidden hover:bg-stone-50 transition-all duration-300 slide-up flex flex-col",
                 isVisible && "visible"
               )}
-              style={{ transitionDelay: `${index * 0.05}s` }}
+              style={{ transitionDelay: `${index * 0.06}s` }}
             >
               {/* Image */}
-              <div className="relative aspect-[4/3] overflow-hidden bg-stone-100">
+              <div className="relative aspect-[16/10] overflow-hidden bg-stone-100">
                 <img
                   src={service.image}
                   alt={service.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   loading="lazy"
-                  width="400"
-                  height="300"
+                  width="600"
+                  height="375"
                 />
                 <span className="absolute top-3 left-3 bg-stone-900/80 text-[10px] font-bold uppercase tracking-wider text-white px-2.5 py-1">
                   {service.tag}
@@ -139,16 +121,16 @@ export const ServicesSection = () => {
               </div>
 
               {/* Content */}
-              <div className="p-5 flex flex-col flex-1">
-                <h3 className="text-base font-bold mb-2 text-stone-900 group-hover:text-amber-700 transition-colors leading-snug">
+              <div className="p-6 flex flex-col flex-1">
+                <h3 className="text-lg font-bold mb-2 text-stone-900 group-hover:text-amber-700 transition-colors leading-snug">
                   {service.title}
                 </h3>
-                <p className="text-stone-500 text-sm mb-4 leading-relaxed flex-1">
+                <p className="text-stone-500 text-sm mb-5 leading-relaxed flex-1">
                   {service.desc}
                 </p>
 
                 {/* Spec tag + arrow */}
-                <div className="flex items-center justify-between pt-3 border-t border-stone-200 gap-2">
+                <div className="flex items-center justify-between pt-4 border-t border-stone-200 gap-2">
                   <span className="text-xs font-semibold text-amber-700 truncate">
                     {service.spec}
                   </span>
@@ -163,13 +145,13 @@ export const ServicesSection = () => {
         </div>
 
         {/* CTAs */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-12">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-14">
           <Link to="/services">
             <Button
               variant="outline"
               className="border-stone-300 text-stone-700 hover:bg-stone-900 hover:text-white hover:border-stone-900 px-8 py-6 group transition-all"
             >
-              View All Services in Detail
+              View All Services
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Button>
           </Link>
