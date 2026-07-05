@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { MapPin, Phone, Mail, Linkedin, Facebook, Instagram } from "lucide-react";
+import { MapPin, Phone, Mail, Linkedin } from "lucide-react";
 
 const quickLinks = [
   { href: "/", label: "Home" },
@@ -43,25 +43,13 @@ export const Footer = () => {
             {/* Social Links */}
             <div className="flex gap-3 pt-2">
               <a
-                href="#"
+                href="https://www.linkedin.com/company/fine-glaze"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 bg-white/10 flex items-center justify-center hover:bg-amber-600 transition-colors"
                 aria-label="LinkedIn"
               >
                 <Linkedin size={18} />
-              </a>
-              <a
-                href="#"
-                className="w-10 h-10 bg-white/10 flex items-center justify-center hover:bg-amber-600 transition-colors"
-                aria-label="Facebook"
-              >
-                <Facebook size={18} />
-              </a>
-              <a
-                href="#"
-                className="w-10 h-10 bg-white/10 flex items-center justify-center hover:bg-amber-600 transition-colors"
-                aria-label="Instagram"
-              >
-                <Instagram size={18} />
               </a>
             </div>
           </div>
@@ -161,12 +149,12 @@ export const Footer = () => {
             <p>GST No: 27BFJPG1853A1ZU</p>
           </div>
           <div className="flex gap-6 text-sm">
-            <a href="#" className="text-white/50 hover:text-amber-400 transition-colors">
+            <Link to="/privacy-policy" className="text-white/50 hover:text-amber-400 transition-colors">
               Privacy Policy
-            </a>
-            <a href="#" className="text-white/50 hover:text-amber-400 transition-colors">
+            </Link>
+            <Link to="/terms-of-service" className="text-white/50 hover:text-amber-400 transition-colors">
               Terms of Service
-            </a>
+            </Link>
           </div>
         </div>
       </div>

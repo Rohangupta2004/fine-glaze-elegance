@@ -498,12 +498,12 @@ const Contact = () => {
                     <p className="text-[10px] text-stone-400">We reply within 1 hour</p>
                   </div>
                 </a>
-                <div className="flex items-center gap-3 text-stone-500">
-                  <div className="w-9 h-9 bg-amber-50 flex items-center justify-center shrink-0">
-                    <Clock size={16} className="text-amber-600" />
+                <div className="flex items-center gap-3 text-stone-400 opacity-80">
+                  <div className="w-9 h-9 bg-stone-100 flex items-center justify-center shrink-0">
+                    <Clock size={16} className="text-stone-400" />
                   </div>
                   <div>
-                    <p className="text-sm font-semibold text-stone-700">Mon – Sat, 9 AM – 6 PM</p>
+                    <p className="text-sm font-medium text-stone-500">Mon – Sat, 9 AM – 6 PM</p>
                     <p className="text-[10px] text-stone-400">Office hours</p>
                   </div>
                 </div>

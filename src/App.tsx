@@ -70,6 +70,8 @@ const MallFacade = lazy(() => import("./pages/MallFacade"));
 const ResidentialFacade = lazy(() => import("./pages/ResidentialFacade"));
 const IndustrialFacade = lazy(() => import("./pages/IndustrialFacade"));
 const FacadeMaintenanceAMC = lazy(() => import("./pages/FacadeMaintenanceAMC"));
+const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
+const TermsOfService = lazy(() => import("./pages/TermsOfService"));
 
 const InspectionDashboard = lazy(() => import("./pages/InspectionDashboard"));
 const InspectionNew = lazy(() => import("./pages/InspectionNew"));
@@ -156,6 +158,8 @@ export const routes = [
       { path: "residential-facade", element: <L><ResidentialFacade /></L> },
       { path: "industrial-facade", element: <L><IndustrialFacade /></L> },
       { path: "facade-amc-guide", element: <L><FacadeMaintenanceAMC /></L> },
+      { path: "privacy-policy", element: <L><PrivacyPolicy /></L> },
+      { path: "terms-of-service", element: <L><TermsOfService /></L> },
       // Site Inspection App
       { path: "inspection", element: <L><InspectionDashboard /></L> },
       { path: "inspection/new", element: <L><InspectionNew /></L> },
