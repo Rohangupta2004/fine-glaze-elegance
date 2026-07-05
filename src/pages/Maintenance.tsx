@@ -77,7 +77,7 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 
 /* ── Images ── */
 const IMG: Record<string, string> = {
-  hero: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?fm=jpg&q=85&w=2400&auto=format&fit=crop",
+  hero: "/facade-maintenance.webp",
   sealant: "/Sealent.webp",
   glass: "/Glass.webp",
   cleaning: "/Amc.webp",

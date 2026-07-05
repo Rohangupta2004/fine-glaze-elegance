@@ -77,11 +77,11 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 
 /* ── Images ── */
 const IMG: Record<string, string> = {
-  hero: "/Salsette27.webp",
-  pvdf: "/Panel.webp",
-  pe: "/Pan.webp",
-  wood: "/Jindal house.webp",
-  mirror: "/Embassy.webp",
+  hero: "/acp-building.webp",
+  pvdf: "/acp-cladding.webp",
+  pe: "/acp-panels.webp",
+  wood: "/acp-finishes.webp",
+  mirror: "/acp-panels.webp",
   process: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?fm=jpg&q=85&w=1400&auto=format&fit=crop",
 };
 

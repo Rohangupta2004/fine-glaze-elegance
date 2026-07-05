@@ -77,8 +77,8 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 
 /* ── Images ── */
 const IMG: Record<string, string> = {
-  hero: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?fm=jpg&q=85&w=2400&auto=format&fit=crop",
-  sliding: "/Aluminium windows.webp",
+  hero: "/sliding-door.webp",
+  sliding: "/sliding-door.webp",
   casement: "/Window.webp",
   tilt: "/Tilt.webp",
   lift: "/Thermal.webp",
