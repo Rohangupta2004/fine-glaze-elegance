@@ -157,50 +157,58 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
         </div>
       </header>
 
-      {/* MOBILE MENU (FIXED) */}
+      {/* MOBILE MENU (SLIDE-DOWN PANEL) */}
       {isMobileMenuOpen && (
-        <div className="fixed inset-0 z-[60] bg-white overflow-y-auto">
-          <div className="flex items-center justify-between px-4 py-4 border-b">
-            <span className="font-semibold text-lg">Menu</span>
-            <button onClick={() => setIsMobileMenuOpen(false)}>
-              <X size={24} />
-            </button>
-          </div>
+        <>
+          {/* Backdrop */}
+          <div
+            className="fixed inset-0 z-[55] bg-black/40 backdrop-blur-sm lg:hidden"
+            onClick={() => setIsMobileMenuOpen(false)}
+          />
+          {/* Panel */}
+          <div className="fixed top-0 left-0 right-0 z-[60] bg-white shadow-xl max-h-[80vh] overflow-y-auto lg:hidden animate-in slide-in-from-top duration-200">
+            <div className="flex items-center justify-between px-4 py-4 border-b sticky top-0 bg-white z-10">
+              <span className="font-semibold text-lg">Menu</span>
+              <button onClick={() => setIsMobileMenuOpen(false)}>
+                <X size={24} />
+              </button>
+            </div>
 
-          <div className="px-4 py-6 space-y-4">
-            <Link to="/" className="block text-lg font-medium">Home</Link>
-            <Link to="/about" className="block text-lg font-medium">About</Link>
+            <div className="px-4 py-4 space-y-3">
+              <Link to="/" className="block text-base font-medium py-1">Home</Link>
+              <Link to="/about" className="block text-base font-medium py-1">About</Link>
 
-            <div>
-              <p className="text-sm uppercase text-slate-400 mb-2">Services</p>
-              {serviceLinks.map((s) => (
-                <Link
-                  key={s.href}
-                  to={s.href}
-                  className="block py-1 text-slate-700"
+              <div>
+                <p className="text-xs uppercase text-slate-400 mb-1">Services</p>
+                {serviceLinks.map((s) => (
+                  <Link
+                    key={s.href}
+                    to={s.href}
+                    className="block py-1.5 text-sm text-slate-700"
+                  >
+                    {s.label}
+                  </Link>
+                ))}
+              </div>
+
+              <Link to="/portfolio" className="block text-base font-medium py-1">Portfolio</Link>
+              <Link to="/blog" className="block text-base font-medium py-1">Blog</Link>
+              <Link to="/contact" className="block text-base font-medium py-1">Contact</Link>
+
+              <div className="pt-3 pb-2">
+                <Button
+                  onClick={() => {
+                    setIsMobileMenuOpen(false);
+                    setTimeout(() => setIsQuoteOpen(true), 200);
+                  }}
+                  className="w-full bg-primary text-primary-foreground"
                 >
-                  {s.label}
-                </Link>
-              ))}
-            </div>
-
-            <Link to="/portfolio" className="block text-lg font-medium">Portfolio</Link>
-            <Link to="/blog" className="block text-lg font-medium">Blog</Link>
-            <Link to="/contact" className="block text-lg font-medium">Contact</Link>
-
-            <div className="pt-4">
-              <Button
-                onClick={() => {
-                  setIsMobileMenuOpen(false);
-                  setTimeout(() => setIsQuoteOpen(true), 200);
-                }}
-                className="w-full bg-primary text-primary-foreground"
-              >
-                Get a Quote
-              </Button>
+                  Get a Quote
+                </Button>
+              </div>
             </div>
           </div>
-        </div>
+        </>
       )}
 
       {/* QUOTE MODAL */}

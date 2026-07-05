@@ -1,7 +1,8 @@
+import { useState } from "react";
 import { useParams, Navigate, Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, ShieldCheck, CheckCircle2, MapPin, Building2, ChevronRight } from "lucide-react";
+import { ArrowRight, ShieldCheck, CheckCircle2, MapPin, Building2, ChevronRight, ChevronDown } from "lucide-react";
 import SEO from "@/components/SEO";
 
 /* ─────────────────────────────────────────────────────────
@@ -265,6 +266,10 @@ const priorityHubs = [
 ───────────────────────────────────────────────────────── */
 export default function ServiceDetail() {
   const { slug } = useParams<{ slug: string }>();
+  const [expandedSpecs, setExpandedSpecs] = useState<Record<number, boolean>>({});
+
+  const toggleSpec = (idx: number) =>
+    setExpandedSpecs((prev) => ({ ...prev, [idx]: !prev[idx] }));
 
   if (!slug) return <Navigate to="/services" replace />;
 
@@ -321,7 +326,7 @@ export default function ServiceDetail() {
       />
 
       {/* ── HERO ── */}
-      <section className="relative pt-32 pb-24 bg-slate-900 text-white overflow-hidden">
+      <section className="relative pt-20 pb-12 md:pt-32 md:pb-24 bg-slate-900 text-white overflow-hidden">
         <div
           className="absolute inset-0 opacity-20 bg-cover bg-center"
           style={{ backgroundImage: `url('${serviceData.image}')` }}
@@ -340,11 +345,11 @@ export default function ServiceDetail() {
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/20 border border-amber-500/30 text-amber-400 text-sm font-bold mb-6">
             <Building2 size={16} /> Commercial Facade Engineering
           </div>
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+          <h1 className="text-3xl md:text-6xl font-bold mb-4 md:mb-6 leading-tight">
             Advanced{" "}
             <span className="text-amber-500">{serviceData.label}</span>
           </h1>
-          <p className="text-xl text-slate-300 max-w-2xl leading-relaxed mb-10">
+          <p className="text-lg md:text-xl text-slate-300 max-w-2xl leading-relaxed mb-6 md:mb-10">
             {serviceData.desc}
           </p>
           <div className="flex flex-wrap gap-4">
@@ -463,21 +468,41 @@ export default function ServiceDetail() {
                     {type.description}
                   </p>
 
-                  {/* Specs */}
+                  {/* Specs — expandable on click */}
                   <div>
-                    <p className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">
-                      Technical Specs
-                    </p>
-                    <div className="space-y-2">
-                      {type.specs.map((spec) => (
-                        <div
-                          key={spec}
-                          className="flex items-start gap-2 text-sm"
-                        >
-                          <span className="w-1.5 h-1.5 rounded-full bg-amber-500 mt-1.5 shrink-0" />
-                          <span className="text-slate-700">{spec}</span>
-                        </div>
-                      ))}
+                    <button
+                      type="button"
+                      onClick={() => toggleSpec(idx)}
+                      className="flex items-center justify-between w-full text-left cursor-pointer group/spec"
+                    >
+                      <p className="text-xs font-bold text-slate-400 uppercase tracking-wider">
+                        Technical Specs
+                      </p>
+                      <ChevronDown
+                        size={16}
+                        className={`text-slate-400 group-hover/spec:text-amber-500 transition-transform duration-300 ${
+                          expandedSpecs[idx] ? "rotate-180" : ""
+                        }`}
+                      />
+                    </button>
+                    <div
+                      className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                        expandedSpecs[idx]
+                          ? "max-h-60 opacity-100 mt-3"
+                          : "max-h-0 opacity-0"
+                      }`}
+                    >
+                      <div className="space-y-2">
+                        {type.specs.map((spec) => (
+                          <div
+                            key={spec}
+                            className="flex items-start gap-2 text-sm"
+                          >
+                            <span className="w-1.5 h-1.5 rounded-full bg-amber-500 mt-1.5 shrink-0" />
+                            <span className="text-slate-700">{spec}</span>
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   </div>
 
