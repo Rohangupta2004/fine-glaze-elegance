@@ -46,10 +46,10 @@ const services = [
     ],
     stats: { value: "40%", label: "Faster Installation with Unitized" },
     images: [
+      "/structural-glazing.webp",
+      "/spider-glazing.webp",
+      "/curtain-wall.webp",
       "/Glass installation.webp",
-      "/Glazing.webp",
-      "/Panel.webp",
-      "/Unitized.webp",
     ],
   },
   {
@@ -72,10 +72,10 @@ const services = [
     ],
     stats: { value: "19mm", label: "Max Glass Thickness" },
     images: [
-      "/Custom railing.webp",
+      "/railing-spigot.webp",
+      "/railing-standoff.webp",
+      "/railing-semi.webp",
       "/Railing.webp",
-      "/Railing2.webp",
-      "/Handle.webp",
     ],
   },
   {
@@ -98,8 +98,8 @@ const services = [
     ],
     stats: { value: "60%", label: "Heat Reduction with Thermal Break" },
     images: [
+      "/sliding-door.webp",
       "/Aluminium windows.webp",
-      "/Window.webp",
       "/Tilt.webp",
       "/Thermal.webp",
     ],
@@ -123,7 +123,7 @@ const services = [
       "Emergency Repair Services",
     ],
     stats: { value: "2x/yr", label: "Recommended Cleaning Cycle" },
-    images: ["/Amc.webp", "/Sealent.webp", "/Glass.webp", "/Amc1.webp"],
+    images: ["/facade-maintenance.webp", "/Sealent.webp", "/Amc.webp", "/Amc1.webp"],
   },
   {
     id: "acp-cladding",
@@ -144,7 +144,7 @@ const services = [
       "Canopy Cladding",
     ],
     stats: { value: "20yr", label: "Colour Warranty on PVDF" },
-    images: ["/Panel.webp", "/Glazing.webp", "/Unitized.webp", "/Glass installation.webp"],
+    images: ["/acp-building.webp", "/acp-panels.webp", "/acp-finishes.webp", "/acp-cladding.webp"],
   },
   {
     id: "skylights",
@@ -165,7 +165,7 @@ const services = [
       "Heat-Reflective Glass Options",
     ],
     stats: { value: "50%", label: "More Natural Light vs Solid Roofs" },
-    images: ["/Glazing.webp", "/Glass installation.webp", "/Glass.webp", "/Unitized.webp"],
+    images: ["/canopy-spider.webp", "/canopy-detail.webp", "/skylight-atrium.webp"],
   },
   {
     id: "louvers",
@@ -186,7 +186,7 @@ const services = [
       "Acoustic Louver Systems",
     ],
     stats: { value: "70%", label: "Solar Heat Gain Reduction" },
-    images: ["/Unitized.webp", "/Panel.webp", "/Aluminium windows.webp", "/Glazing.webp"],
+    images: ["/louvers-closeup.webp", "/louvers-motorized.webp", "/louvers-vertical.webp"],
   },
   {
     id: "partitions",
@@ -207,7 +207,7 @@ const services = [
       "Anti-Limescale Nano Coating",
     ],
     stats: { value: "42dB", label: "Sound Insulation (DGU)" },
-    images: ["/Glass.webp", "/Railing.webp", "/Handle.webp", "/Custom railing.webp"],
+    images: ["/smart-glass.webp", "/office-partition.webp", "/shower-enclosure.webp"],
   },
 ];
 
