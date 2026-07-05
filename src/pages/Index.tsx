@@ -20,11 +20,16 @@ const Index = () => {
     "email": "info@fineglaze.com",
     "foundingDate": "2018",
     "areaServed": ["Pune", "Mumbai", "Navi Mumbai", "Thane", "Maharashtra"],
-    "sameAs": [],
+    "sameAs": [
+      "https://maps.app.goo.gl/JDF3ESXQGHtwKoAr6",
+      "https://www.linkedin.com/company/fine-glaze"
+    ],
     "address": {
       "@type": "PostalAddress",
-      "addressLocality": "Pune",
+      "streetAddress": "Shop No. 1 & 2, Jagdamba Bhawan Marg, near Sunshine Hills, Shree Siddhivinayak Meera",
+      "addressLocality": "Undri, Pune",
       "addressRegion": "Maharashtra",
+      "postalCode": "411060",
       "addressCountry": "IN"
     }
   };
@@ -39,18 +44,30 @@ const Index = () => {
     "email": "info@fineglaze.com",
     "priceRange": "₹₹₹",
     "description": "Fine Glaze is a premier facade engineering company in Pune and Mumbai, delivering structural glazing, curtain wall, ACP cladding and aluminium facade solutions for commercial buildings.",
+    "sameAs": [
+      "https://maps.app.goo.gl/JDF3ESXQGHtwKoAr6",
+      "https://www.linkedin.com/company/fine-glaze"
+    ],
     "address": {
       "@type": "PostalAddress",
-      "addressLocality": "Pune",
+      "streetAddress": "Shop No. 1 & 2, Jagdamba Bhawan Marg, near Sunshine Hills, Shree Siddhivinayak Meera",
+      "addressLocality": "Undri, Pune",
       "addressRegion": "Maharashtra",
-      "postalCode": "411045",
+      "postalCode": "411060",
       "addressCountry": "IN"
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": 18.5204,
-      "longitude": 73.8567
+      "latitude": 18.4529,
+      "longitude": 73.9072
     },
+    "areaServed": [
+      { "@type": "City", "name": "Pune" },
+      { "@type": "City", "name": "Mumbai" },
+      { "@type": "City", "name": "Navi Mumbai" },
+      { "@type": "City", "name": "Thane" },
+      { "@type": "State", "name": "Maharashtra" }
+    ],
     "openingHoursSpecification": {
       "@type": "OpeningHoursSpecification",
       "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
