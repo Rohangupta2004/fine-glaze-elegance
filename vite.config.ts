@@ -88,12 +88,10 @@ export default defineConfig(({ mode }) => ({
   resolve: {
     alias: { "@": path.resolve(__dirname, "./src") },
   },
-  ssr: {
-    noExternal: ['react-helmet-async'],
-  },
   ssgOptions: {
     script: 'async',
     formatting: 'minify',
+    dirStyle: 'nested',
     includedRoutes(paths) {
       return [
         // Standard Core Pages
