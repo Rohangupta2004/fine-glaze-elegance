@@ -3,7 +3,6 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Outlet } from "react-router-dom";
-import { HelmetProvider } from "react-helmet-async";
 import { lazy, Suspense } from "react";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { PageLoader } from "@/components/PageLoader";
@@ -88,13 +87,11 @@ const L = ({ children }: { children: React.ReactNode }) => (
 const AppWrapper = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
-      <HelmetProvider>
-        <ErrorBoundary>
-          <Toaster />
-          <Sonner />
-          <Outlet />
-        </ErrorBoundary>
-      </HelmetProvider>
+      <ErrorBoundary>
+        <Toaster />
+        <Sonner />
+        <Outlet />
+      </ErrorBoundary>
     </TooltipProvider>
   </QueryClientProvider>
 );
