@@ -1,6 +1,7 @@
 import SEO from "@/components/SEO";
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/home/CTASection";
+import { ServiceQuickOverview } from "@/components/service/ServiceQuickOverview";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import {
@@ -288,8 +289,8 @@ export default function StructuralGlazing() {
                 <Star key={i} size={12} className="text-amber-400 fill-amber-400" />
               ))}
             </div>
-            <span className="text-white/50 text-xs font-medium ml-0.5">
-              5.0 Google · Embassy REIT Vendor · 10+ Landmark Projects
+            <span className="text-amber-400 text-xs font-semibold ml-0.5">
+              Embassy REIT Best Vendor Award 2024 · 10+ Signature Projects
             </span>
           </div>
         </div>
@@ -322,6 +323,26 @@ export default function StructuralGlazing() {
           </FadeIn>
         </div>
       </section>
+
+      {/* ════════════ CONVERSION QUICK OVERVIEW ════════════ */}
+      <ServiceQuickOverview
+        serviceTitle="Structural Glazing Systems"
+        whatWeProvide="Turnkey design, 3D BIM modeling, shop drawings, CNC profile cutting, Dow Corning / Sika structural silicone bonding, on-site hoisting & AAMA 501.2 hose testing."
+        locationsServed={["Pune (Hinjewadi, Kharadi)", "Mumbai (BKC, Andheri, Vikhroli)", "Thane", "Navi Mumbai"]}
+        bestProjectTypes={[
+          "Grade-A Office Towers",
+          "IT Park Buildings",
+          "5-Star Hotel Entrance Canopies",
+          "Commercial Automobile Showrooms"
+        ]}
+        priceBenchmark="₹350 – ₹900 per sq ft (2-Side SSG, 4-Side SSG & Spider Glazing)"
+        relevantProjects={[
+          "Embassy 247 (Vikhroli, Mumbai)",
+          "LTIMindtree Mensa Campus (Navi Mumbai)",
+          "SSG Honesty (Panvel)",
+          "Pune Airport Terminal"
+        ]}
+      />
 
 
       {/* ════════════════════════════════════════════════════

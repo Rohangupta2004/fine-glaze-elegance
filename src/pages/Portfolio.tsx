@@ -109,33 +109,46 @@ function ShowcaseProject({
       <Link
         to={`/project/${p.slug}`}
         className={cn(
-          "group grid grid-cols-1 lg:grid-cols-2 gap-0 bg-white border border-stone-200 hover:border-amber-300 transition-all duration-300 overflow-hidden"
+          "group grid grid-cols-1 lg:grid-cols-2 gap-0 bg-white border border-stone-200 hover:border-amber-400 hover:shadow-lg transition-all duration-300 overflow-hidden rounded-xl"
         )}
       >
         {/* Image side */}
         <div
           className={cn(
-            "relative h-[240px] sm:h-[300px] lg:h-[400px] overflow-hidden",
+            "relative h-[260px] sm:h-[320px] lg:h-[420px] overflow-hidden bg-stone-900",
             reversed && "lg:order-2"
           )}
         >
           <img
             src={p.image}
-            alt={p.title}
+            alt={`Fine Glaze project: ${p.title} (${p.scope}) in ${p.location}`}
             className="w-full h-full object-cover group-hover:scale-[1.04] transition-transform duration-700"
             loading="lazy"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
 
-          {p.isAwardWinner && (
-            <div className="absolute top-4 left-4 bg-amber-600 text-white text-[9px] font-bold uppercase tracking-widest px-2.5 py-1">
-              Award Winner
-            </div>
-          )}
+          {/* Badges */}
+          <div className="absolute top-4 left-4 flex flex-wrap gap-2">
+            {p.status === "Ongoing" ? (
+              <span className="bg-amber-500 text-stone-950 font-extrabold text-[10px] uppercase tracking-wider px-3 py-1 rounded-full shadow-md animate-pulse">
+                Ongoing Work
+              </span>
+            ) : (
+              <span className="bg-stone-900/90 text-stone-200 font-bold text-[10px] uppercase tracking-wider px-3 py-1 rounded-full border border-stone-700 shadow-md">
+                Completed
+              </span>
+            )}
+
+            {p.isAwardWinner && (
+              <span className="bg-emerald-600 text-white text-[10px] font-extrabold uppercase tracking-widest px-3 py-1 rounded-full shadow-md">
+                Award Winner 2024
+              </span>
+            )}
+          </div>
 
           {/* Big number overlay */}
           <div className="absolute bottom-4 right-4 lg:bottom-6 lg:right-6">
-            <span className="text-white/15 text-6xl lg:text-8xl font-black leading-none">
+            <span className="text-white/20 text-6xl lg:text-8xl font-black leading-none select-none">
               {num}
             </span>
           </div>
@@ -144,48 +157,58 @@ function ShowcaseProject({
         {/* Details side */}
         <div
           className={cn(
-            "p-6 sm:p-8 lg:p-10 flex flex-col justify-center",
+            "p-6 sm:p-8 lg:p-10 flex flex-col justify-center bg-stone-50/50",
             reversed && "lg:order-1"
           )}
         >
-          <div className="flex items-center gap-3 mb-4">
+          <div className="flex items-center gap-3 mb-3">
             <span className="text-amber-700 text-xs font-bold tracking-[0.2em] uppercase">
               {p.category === "award"
                 ? "Award Winner"
                 : p.category === "corporate"
-                ? "Corporate"
-                : "Residential"}
+                ? "Commercial Facade"
+                : "Residential Facade"}
             </span>
             <span className="w-8 h-px bg-stone-300" />
             <span className="text-stone-400 text-xs font-bold">{num}</span>
           </div>
 
-          <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-stone-900 leading-tight mb-4 group-hover:text-amber-700 transition-colors">
+          <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-stone-900 leading-tight mb-3 group-hover:text-amber-700 transition-colors">
             {p.title}
           </h3>
 
-          <p className="text-stone-500 text-sm leading-relaxed mb-6 line-clamp-3">
-            {p.scope}
-          </p>
+          <div className="space-y-2 mb-6">
+            <p className="text-stone-700 text-sm font-semibold flex items-start gap-2">
+              <span className="text-amber-700 font-bold shrink-0">Scope:</span>
+              <span>{p.scope}</span>
+            </p>
+            {p.systemUsed && (
+              <p className="text-stone-600 text-xs flex items-start gap-2 bg-stone-100 p-2.5 rounded-md border border-stone-200">
+                <span className="text-stone-900 font-bold shrink-0">Systems &amp; Spec:</span>
+                <span>{p.systemUsed}</span>
+              </p>
+            )}
+          </div>
 
           {/* Meta grid */}
-          <div className="grid grid-cols-2 gap-3 mb-6">
-            <div className="flex items-center gap-2 text-stone-400 text-xs">
-              <MapPin size={13} className="text-amber-600 shrink-0" />
+          <div className="grid grid-cols-2 gap-3 mb-6 border-t border-stone-200 pt-4">
+            <div className="flex items-center gap-2 text-stone-600 text-xs">
+              <MapPin size={14} className="text-amber-600 shrink-0" />
               <span>{p.location}</span>
             </div>
-            <div className="flex items-center gap-2 text-stone-400 text-xs">
-              <Calendar size={13} className="text-amber-600 shrink-0" />
+            <div className="flex items-center gap-2 text-stone-600 text-xs">
+              <Calendar size={14} className="text-amber-600 shrink-0" />
               <span>{p.year}</span>
             </div>
-            <div className="flex items-center gap-2 text-stone-400 text-xs col-span-2">
-              <User size={13} className="text-amber-600 shrink-0" />
-              <span>{p.client}</span>
+            <div className="flex items-center gap-2 text-stone-600 text-xs col-span-2">
+              <User size={14} className="text-amber-600 shrink-0" />
+              <span>Client: {p.client}</span>
             </div>
           </div>
 
-          <div className="flex items-center gap-1.5 text-stone-800 font-semibold text-sm group-hover:text-amber-700 group-hover:gap-3 transition-all">
-            View Project <ArrowRight size={14} />
+          <div className="inline-flex items-center justify-between w-full bg-white group-hover:bg-amber-600 group-hover:text-white border border-stone-300 text-stone-800 font-bold text-sm px-4 py-2.5 rounded-lg transition-all shadow-sm">
+            <span>View Full Case Study</span>
+            <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
           </div>
         </div>
       </Link>

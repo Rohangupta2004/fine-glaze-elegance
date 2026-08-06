@@ -9,6 +9,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
 import {
   Select,
   SelectContent,
@@ -16,22 +17,24 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Send, CheckCircle2, Star } from "lucide-react";
+import { Send, CheckCircle2, Award } from "lucide-react";
 import { toast } from "sonner";
 import { supabase, isSupabaseConfigured } from "@/lib/supabase";
 
 const projectTypes = [
-  "Structural Glazing",
   "Curtain Wall Systems",
+  "Structural Glazing",
   "Aluminium Doors & Windows",
   "ACP Cladding",
   "Glass Railings",
-  "Facade Maintenance",
   "Skylights & Canopies",
   "Aluminium Louvers",
   "Glass Partitions",
+  "Facade Maintenance & AMC",
   "Other",
 ];
+
+const cities = ["Pune", "Mumbai", "Thane", "Navi Mumbai", "Other"];
 
 interface QuoteModalProps {
   open: boolean;
@@ -44,7 +47,10 @@ export function QuoteModal({ open, onOpenChange }: QuoteModalProps) {
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
+    city: "Pune",
     projectType: "",
+    approxArea: "",
+    message: "",
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -65,9 +71,12 @@ export function QuoteModal({ open, onOpenChange }: QuoteModalProps) {
           access_key: "74dce7dc-85a9-4479-ab00-bd002f23409a",
           name: formData.name,
           phone: formData.phone,
+          city: formData.city,
           project_type: formData.projectType,
-          subject: "Quick Quote – Fine Glaze Website (Header)",
-          from_name: "Fine Glaze Website",
+          approx_area: formData.approxArea,
+          message: formData.message,
+          subject: "Project Quote Request — Fine Glaze Website",
+          from_name: "Fine Glaze Quote Form",
         }),
       });
 
@@ -78,8 +87,11 @@ export function QuoteModal({ open, onOpenChange }: QuoteModalProps) {
           await supabase.from("contact_leads").insert({
             name: formData.name,
             phone: formData.phone,
+            city: formData.city,
             project_type: formData.projectType,
-            source: "website_header_quote",
+            approx_area: formData.approxArea,
+            message: formData.message,
+            source: "quote_modal",
           });
         } catch {
           console.warn("Supabase lead save failed (non-blocking)");
@@ -88,12 +100,12 @@ export function QuoteModal({ open, onOpenChange }: QuoteModalProps) {
 
       if (data.success) {
         setIsSubmitted(true);
-        toast.success("We'll call you back within 30 minutes!");
+        toast.success("Quote request submitted! We will contact you within 2 business hours.");
       } else {
         throw new Error("Submission failed");
       }
     } catch {
-      toast.error("Something went wrong. Please try again.");
+      toast.error("Something went wrong. Please try again or WhatsApp +91 8369233566.");
     } finally {
       setIsSubmitting(false);
     }
@@ -101,10 +113,16 @@ export function QuoteModal({ open, onOpenChange }: QuoteModalProps) {
 
   const handleClose = (open: boolean) => {
     if (!open) {
-      // Reset form when closing
       setTimeout(() => {
         setIsSubmitted(false);
-        setFormData({ name: "", phone: "", projectType: "" });
+        setFormData({
+          name: "",
+          phone: "",
+          city: "Pune",
+          projectType: "",
+          approxArea: "",
+          message: "",
+        });
       }, 200);
     }
     onOpenChange(open);
@@ -112,114 +130,162 @@ export function QuoteModal({ open, onOpenChange }: QuoteModalProps) {
 
   return (
     <Dialog open={open} onOpenChange={handleClose}>
-      <DialogContent className="sm:max-w-[420px] p-0 overflow-hidden">
+      <DialogContent className="sm:max-w-[480px] p-0 overflow-hidden rounded-2xl">
         {!isSubmitted ? (
           <>
-            {/* Header strip */}
-            <div className="bg-stone-900 px-6 pt-6 pb-4">
+            {/* Header */}
+            <div className="bg-stone-900 px-6 pt-6 pb-4 border-b border-stone-800">
               <DialogHeader>
-                <DialogTitle className="text-white text-lg font-bold">
-                  Get a Free Quote
+                <DialogTitle className="text-white text-xl font-bold">
+                  Request a Project Quote
                 </DialogTitle>
-                <DialogDescription className="text-stone-400 text-sm">
-                  Tell us what you need — we'll call back within 30 minutes.
+                <DialogDescription className="text-stone-300 text-xs mt-1">
+                  Provide your building details — our facade engineering team will review your specifications and contact you within 2 business hours.
                 </DialogDescription>
               </DialogHeader>
-              <div className="flex items-center gap-2 mt-3">
-                <div className="flex">
-                  {[...Array(5)].map((_, i) => (
-                    <Star
-                      key={i}
-                      size={12}
-                      className="text-amber-400 fill-amber-400"
-                    />
-                  ))}
-                </div>
-                <span className="text-stone-400 text-xs">
-                  5.0 Google · Embassy REIT Vendor
-                </span>
+              <div className="flex items-center gap-2 mt-3 text-amber-400 text-xs font-semibold">
+                <Award size={14} />
+                <span>Embassy REIT Best Performance Vendor 2024</span>
               </div>
             </div>
 
             {/* Form */}
-            <form onSubmit={handleSubmit} className="px-6 pb-6 pt-2 space-y-4">
-              <div className="space-y-2">
-                <Label htmlFor="quote-name" className="text-sm font-medium">
-                  Your Name
+            <form onSubmit={handleSubmit} className="px-6 pb-6 pt-4 space-y-3.5 max-h-[75vh] overflow-y-auto">
+              <div className="grid grid-cols-2 gap-3">
+                <div className="space-y-1">
+                  <Label htmlFor="quote-name" className="text-xs font-bold text-stone-700">
+                    Your Name *
+                  </Label>
+                  <Input
+                    id="quote-name"
+                    name="name"
+                    placeholder="Rajesh Kumar"
+                    value={formData.name}
+                    onChange={(e) =>
+                      setFormData((prev) => ({ ...prev, name: e.target.value }))
+                    }
+                    required
+                    className="h-9 text-sm focus-visible:ring-amber-500"
+                  />
+                </div>
+
+                <div className="space-y-1">
+                  <Label htmlFor="quote-phone" className="text-xs font-bold text-stone-700">
+                    Phone / WhatsApp *
+                  </Label>
+                  <Input
+                    id="quote-phone"
+                    name="phone"
+                    type="tel"
+                    placeholder="+91 98765 43210"
+                    value={formData.phone}
+                    onChange={(e) =>
+                      setFormData((prev) => ({ ...prev, phone: e.target.value }))
+                    }
+                    required
+                    className="h-9 text-sm focus-visible:ring-amber-500"
+                  />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 gap-3">
+                <div className="space-y-1">
+                  <Label className="text-xs font-bold text-stone-700">City *</Label>
+                  <Select
+                    value={formData.city}
+                    onValueChange={(v) =>
+                      setFormData((prev) => ({ ...prev, city: v }))
+                    }
+                  >
+                    <SelectTrigger className="h-9 text-sm focus-visible:ring-amber-500">
+                      <SelectValue placeholder="Select city" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {cities.map((c) => (
+                        <SelectItem key={c} value={c}>
+                          {c}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                </div>
+
+                <div className="space-y-1">
+                  <Label className="text-xs font-bold text-stone-700">Project Type *</Label>
+                  <Select
+                    value={formData.projectType}
+                    onValueChange={(v) =>
+                      setFormData((prev) => ({ ...prev, projectType: v }))
+                    }
+                  >
+                    <SelectTrigger className="h-9 text-sm focus-visible:ring-amber-500">
+                      <SelectValue placeholder="Select service" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {projectTypes.map((type) => (
+                        <SelectItem key={type} value={type}>
+                          {type}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                </div>
+              </div>
+
+              <div className="space-y-1">
+                <Label htmlFor="quote-area" className="text-xs font-bold text-stone-700">
+                  Approximate Area (sq ft)
                 </Label>
                 <Input
-                  id="quote-name"
-                  name="name"
-                  placeholder="Rajesh Kumar"
-                  value={formData.name}
+                  id="quote-area"
+                  name="approxArea"
+                  placeholder="e.g. 5,000 sq ft or 12 floors"
+                  value={formData.approxArea}
                   onChange={(e) =>
-                    setFormData((prev) => ({ ...prev, name: e.target.value }))
+                    setFormData((prev) => ({ ...prev, approxArea: e.target.value }))
                   }
-                  required
-                  className="h-10"
+                  className="h-9 text-sm focus-visible:ring-amber-500"
                 />
               </div>
 
-              <div className="space-y-2">
-                <Label htmlFor="quote-phone" className="text-sm font-medium">
-                  Phone / WhatsApp
+              <div className="space-y-1">
+                <Label htmlFor="quote-message" className="text-xs font-bold text-stone-700">
+                  Message / Specifications
                 </Label>
-                <Input
-                  id="quote-phone"
-                  name="phone"
-                  type="tel"
-                  placeholder="+91 98765 43210"
-                  value={formData.phone}
+                <Textarea
+                  id="quote-message"
+                  name="message"
+                  placeholder="Briefly describe your requirements or drawings link..."
+                  value={formData.message}
                   onChange={(e) =>
-                    setFormData((prev) => ({ ...prev, phone: e.target.value }))
+                    setFormData((prev) => ({ ...prev, message: e.target.value }))
                   }
-                  required
-                  className="h-10"
+                  rows={2}
+                  className="text-sm resize-none focus-visible:ring-amber-500"
                 />
-              </div>
-
-              <div className="space-y-2">
-                <Label className="text-sm font-medium">Project Type</Label>
-                <Select
-                  value={formData.projectType}
-                  onValueChange={(v) =>
-                    setFormData((prev) => ({ ...prev, projectType: v }))
-                  }
-                >
-                  <SelectTrigger className="h-10">
-                    <SelectValue placeholder="Select service..." />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {projectTypes.map((type) => (
-                      <SelectItem key={type} value={type}>
-                        {type}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
               </div>
 
               <Button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-amber-600 hover:bg-amber-700 text-white h-11 font-semibold gap-2"
+                className="w-full bg-amber-600 hover:bg-amber-700 text-white h-11 font-bold gap-2 shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
               >
                 {isSubmitting ? (
-                  "Sending..."
+                  "Submitting Specifications..."
                 ) : (
                   <>
-                    Get Free Quote <Send size={15} />
+                    Submit Quote Request <Send size={15} />
                   </>
                 )}
               </Button>
 
-              <p className="text-center text-stone-400 text-[11px]">
-                Or WhatsApp us directly at{" "}
+              <p className="text-center text-stone-500 text-[11px] pt-1">
+                Direct helpline / WhatsApp:{" "}
                 <a
                   href="https://wa.me/918369233566?text=Hi%20Fine%20Glaze%2C%20I%20need%20a%20quote."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-amber-600 font-medium hover:underline"
+                  className="text-amber-700 font-bold hover:underline"
                 >
                   +91 83692 33566
                 </a>
@@ -227,24 +293,23 @@ export function QuoteModal({ open, onOpenChange }: QuoteModalProps) {
             </form>
           </>
         ) : (
-          /* ── Success state ── */
-          <div className="px-6 py-12 text-center">
-            <div className="inline-flex items-center justify-center w-14 h-14 bg-green-100 rounded-full mb-4">
-              <CheckCircle2 size={28} className="text-green-600" />
+          /* ── Confirmation state ── */
+          <div className="px-6 py-10 text-center space-y-4">
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-emerald-100 rounded-full">
+              <CheckCircle2 size={36} className="text-emerald-600" />
             </div>
-            <h3 className="text-lg font-bold text-stone-900 mb-2">
-              We've got your details!
+            <h3 className="text-xl font-bold text-stone-900">
+              Thank you, {formData.name || "Customer"}!
             </h3>
-            <p className="text-stone-500 text-sm mb-6">
-              Our team will call you back within 30 minutes during business
-              hours (Mon–Sat, 9 AM – 7 PM).
+            <p className="text-stone-600 text-sm max-w-sm mx-auto leading-relaxed">
+              Your quote request for <strong>{formData.projectType}</strong> ({formData.city}) has been received. Our senior facade engineering team will review your specifications and contact you within <strong>2 business hours</strong>.
             </p>
             <Button
               onClick={() => handleClose(false)}
               variant="outline"
-              className="px-8"
+              className="px-8 font-bold border-stone-300"
             >
-              Close
+              Close Window
             </Button>
           </div>
         )}

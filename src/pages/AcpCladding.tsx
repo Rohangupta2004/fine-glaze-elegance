@@ -1,6 +1,7 @@
 import SEO from "@/components/SEO";
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/home/CTASection";
+import { ServiceQuickOverview } from "@/components/service/ServiceQuickOverview";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import {
@@ -322,6 +323,25 @@ export default function AcpCladding() {
           </FadeIn>
         </div>
       </section>
+
+      {/* ════════════ CONVERSION QUICK OVERVIEW ════════════ */}
+      <ServiceQuickOverview
+        serviceTitle="ACP &amp; Metal Cladding Solutions"
+        whatWeProvide="FR-Grade (Fire Retardant NBC 2016 compliant) ACP panel fabrication & erection over MS/aluminium sub-framing. Mitred panel joinery, weather-seal routing & PVDF finish warranties."
+        locationsServed={["Pune (Hinjewadi, Undri, Baner)", "Mumbai", "Thane", "Navi Mumbai (Mahape, MIDC)"]}
+        bestProjectTypes={[
+          "Corporate Campuses & Office Elevations",
+          "Commercial Malls & Retail Frontages",
+          "High-Rise Residential Facade Accents",
+          "Industrial & Warehouse Elevations"
+        ]}
+        priceBenchmark="₹180 – ₹450 per sq ft (FR-Grade PVDF Coated Panels)"
+        relevantProjects={[
+          "LTIMindtree Mensa Campus (Navi Mumbai)",
+          "Salsette-27 (Byculla, Mumbai)",
+          "SSG Honesty (Panvel)"
+        ]}
+      />
 
 
       {/* ════════════ STATS ════════════ */}

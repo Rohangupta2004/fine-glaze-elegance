@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { ServiceQuickOverview } from "@/components/service/ServiceQuickOverview";
 import {
   ArrowRight,
   MapPin,
@@ -330,6 +331,25 @@ export default function CurtainWall() {
           </FadeIn>
         </div>
       </section>
+
+      {/* ════════════ CONVERSION QUICK OVERVIEW ════════════ */}
+      <ServiceQuickOverview
+        serviceTitle="Curtain Wall Glazing Systems"
+        whatWeProvide="Unitized panelized facades, semi-unitized & stick curtain walls. Includes structural wind load calculation, CNC extrusion processing, DGU Low-E glass integration & weather-seal installation."
+        locationsServed={["Pune (Hinjewadi, Baner, Kharadi)", "Mumbai (BKC, Nariman Point, Lower Parel)", "Thane", "Navi Mumbai"]}
+        bestProjectTypes={[
+          "High-Rise Commercial Towers (10+ Storeys)",
+          "Corporate IT Parks & Tech Campuses",
+          "Mixed-Use Retail & Commercial Podiums",
+          "Hospitality & Luxury Hotel Towers"
+        ]}
+        priceBenchmark="₹450 – ₹1,200 per sq ft (Stick, Semi-Unitized & Unitized Systems)"
+        relevantProjects={[
+          "Embassy 247 (Vikhroli, Mumbai)",
+          "SSG Honesty (Panvel)",
+          "LTIMindtree Mensa Campus (Navi Mumbai)"
+        ]}
+      />
 
       {/* ════════════ STATS ════════════ */}
       <section className="bg-stone-900 py-10">

@@ -1,6 +1,7 @@
 import SEO from "@/components/SEO";
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/home/CTASection";
+import { ServiceQuickOverview } from "@/components/service/ServiceQuickOverview";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import {
@@ -322,6 +323,24 @@ export default function Skylights() {
           </FadeIn>
         </div>
       </section>
+
+      {/* ════════════ CONVERSION QUICK OVERVIEW ════════════ */}
+      <ServiceQuickOverview
+        serviceTitle="Glass Skylights &amp; Entrance Canopies"
+        whatWeProvide="Laminated safety glass skylights, atrium overhead glazing, spider glass canopies & MS/SS structural support framing. Includes integrated gutting, flashing & Dow Corning 795 weather sealing."
+        locationsServed={["Pune", "Mumbai (South Mumbai, BKC)", "Thane", "Navi Mumbai"]}
+        bestProjectTypes={[
+          "5-Star Hotel Grand Entrance Canopies",
+          "Shopping Mall Atrium Skylights",
+          "Corporate HQ Entry Porticos",
+          "Luxury Villa Skylights & Courtyards"
+        ]}
+        priceBenchmark="₹600 – ₹1,800 per sq ft (Depending on span, glass thickness & SS fittings)"
+        relevantProjects={[
+          "Salsette-27 Entrance Canopy (Mumbai)",
+          "Pune Airport Terminal Column & Canopy Works"
+        ]}
+      />
 
 
       {/* ════════════ STATS ════════════ */}

@@ -1,6 +1,7 @@
 import SEO from "@/components/SEO";
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/home/CTASection";
+import { ServiceQuickOverview } from "@/components/service/ServiceQuickOverview";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import {
@@ -322,6 +323,25 @@ export default function GlassRailings() {
           </FadeIn>
         </div>
       </section>
+
+      {/* ════════════ CONVERSION QUICK OVERVIEW ════════════ */}
+      <ServiceQuickOverview
+        serviceTitle="Glass Balustrades &amp; Railing Systems"
+        whatWeProvide="Frameless base-channel glass railings, standoff pin balustrades, spigot railings & SS-316 top handrail systems. IS 2553 laminated glass safety compliance & 1.5–3.0 kN/m line load certification."
+        locationsServed={["Pune (Koregaon Park, Kalyani Nagar)", "Mumbai (Byculla, Bandra, Worli)", "Thane", "Navi Mumbai"]}
+        bestProjectTypes={[
+          "High-Rise Residential Balconies & Terraces",
+          "Luxury Villa Staircases & Balconies",
+          "Commercial Mall Atrium Balustrades",
+          "Hotel Pool Decks & Roof Top Bars"
+        ]}
+        priceBenchmark="₹800 – ₹2,200 per running ft (Base Channel, Standoff & Spigot Systems)"
+        relevantProjects={[
+          "Salsette-27 (Byculla, Mumbai)",
+          "Jindal House Balkeshwar 32 (Mumbai)",
+          "Nirmaann Estrellaa (Pune)"
+        ]}
+      />
 
 
       {/* ════════════ STATS ════════════ */}

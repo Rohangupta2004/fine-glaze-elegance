@@ -1,4 +1,24 @@
-export const projectsData = {
+export interface ProjectData {
+  id: number;
+  title: string;
+  location: string;
+  category: string;
+  year: string;
+  client: string;
+  scope: string;
+  status: "Completed" | "Ongoing";
+  systemUsed: string;
+  image: string;
+  gallery: string[];
+  description: string;
+  challenge: string;
+  outcome: string;
+  features: string[];
+  isAwardWinner: boolean;
+  award?: string;
+}
+
+export const projectsData: Record<string, ProjectData> = {
   "ltimindtree-campus": {
     id: 1,
     title: "LTIMindtree Mensa Campus",
@@ -7,6 +27,8 @@ export const projectsData = {
     year: "2023",
     client: "LTIMindtree Ltd.",
     scope: "ACP & Silicone Facade Work",
+    status: "Completed",
+    systemUsed: "FR-Grade PVDF ACP Cladding & Dow Corning Structural Silicone",
     image: "/ltimindtree-mensa-campus-mahape-navi-mumbai-1%20(1)-elementor-io-optimized.webp",
     gallery: [],
     description: "The LTIMindtree Mensa Campus in Mahape required a large-scale facade solution that could match the client's premium corporate identity while withstanding Navi Mumbai's humid coastal environment. Fine Glaze executed full ACP cladding and structural silicone glazing across multiple building blocks within a tight construction programme. The project demanded precision coordination with the main contractor to maintain the structural timeline, with all facade panels shop-fabricated for quality control before site installation.",
@@ -28,7 +50,9 @@ export const projectsData = {
     category: "award",
     year: "2024",
     client: "Embassy REIT",
-    scope: "Facade Glass Replacement (Ongoing)",
+    scope: "Facade Glass Replacement (Live Building)",
+    status: "Ongoing",
+    systemUsed: "Phased Live Glass Replacement with Solar Control Low-E DGU",
     image: "/Embassy.webp",
     gallery: [],
     description: "Embassy 247 at Gandhi Nagar, Vikhroli West is a fully occupied Grade-A commercial building in Mumbai's JVLR corridor. Fine Glaze is currently executing a full facade glass replacement programme for Embassy REIT — one of India's largest REIT operators. The primary challenge is replacing aged facade glass panel by panel without disrupting the building's thousands of daily occupants. Fine Glaze designed and implemented a phased floor-by-floor replacement methodology with internal protective screening and off-hours installation, ensuring continuous occupancy throughout the project duration.",
@@ -53,6 +77,8 @@ export const projectsData = {
     year: "2024",
     client: "Private Developer",
     scope: "Toilet Shaft Railing & Canopy Installation",
+    status: "Completed",
+    systemUsed: "50-OD Aluminium Pipe Railings (RAL 7011) & Mitred ACP Canopy",
     image: "/Salsette27.webp",
     gallery: [],
     description: "Salsette-27 is a landmark super-tall residential development in Mumbai's heritage precinct at Byculla East — one of the tallest residential towers in the city. Fine Glaze executed two distinct scopes at this prestigious project: custom aluminium toilet shaft railing systems across multiple floors, and a full architectural canopy installation. The toilet shaft railings were fabricated from 50mm OD aluminium round pipe with powder coating (RAL 7011) and end base plates — a specification chosen for its long-term durability and clean aesthetic in a high-humidity service environment. The canopy, installed in 2024, was fabricated in ACP panels with precise mitred joinery to achieve a sharp, architectural look at the building entrance.",
@@ -76,6 +102,8 @@ export const projectsData = {
     year: "2022",
     client: "Leela Group",
     scope: "Architectural Aluminium Louvers",
+    status: "Completed",
+    systemUsed: "Custom-Pitch Powder-Coated Aluminium Solar Shading Louvers",
     image: "/Business%20park.webp",
     gallery: [],
     description: "Leela Business Park required architectural aluminium louvre systems that would improve solar shading across the building's west-facing elevations while maintaining the clean aesthetic of the overall facade design. Fine Glaze engineered and installed custom-pitch louvre banks with powder-coated aluminium blades sized to the building's specific sun angle requirements, significantly reducing direct solar gain to the occupied floors.",
@@ -97,6 +125,8 @@ export const projectsData = {
     year: "2023",
     client: "Jindal Stainless Limited",
     scope: "SS Column Cladding with MS Framing",
+    status: "Completed",
+    systemUsed: "Mirror & Brushed Stainless Steel Sheets on Structural MS Sub-frame",
     image: "/Puneairport.webp",
     gallery: [
       "/09fb5354-e9c5-4f43-81b2-ee7989dbf7d2.jpg",
@@ -123,6 +153,8 @@ export const projectsData = {
     year: "2022",
     client: "Jindal Group",
     scope: "SS Glass Railing Systems",
+    status: "Completed",
+    systemUsed: "12mm Clear Toughened Glass Balustrades with SS-316 Handrail",
     image: "/Jindal%20house.webp",
     gallery: [],
     description: "Jindal House at Balkeshwar 32 is a luxury residential bungalow project demanding premium quality railing systems across internal staircases and external terrace areas. Fine Glaze supplied and installed structural glass balustrades with brushed SS handrails, providing the open, uninterrupted sight lines the design architect had specified. Every installation point was independently signed off by the structural consultant for load compliance.",
@@ -144,6 +176,8 @@ export const projectsData = {
     year: "2023",
     client: "Nirmaann Developers",
     scope: "Aluminium Louvers, Windows & SS Railings",
+    status: "Completed",
+    systemUsed: "6063-T6 Aluminium Windows, Louvre Panels & SS-316 Glass Balustrades",
     image: "/Nirmann.webp",
     gallery: [],
     description: "Nirmaann Estrellaa is a mid-rise residential development in Pune where Fine Glaze executed a full-scope facade package covering aluminium windows, architectural louvre panels, and stainless steel glass railings across all towers. The project was awarded on a single-vendor basis to ensure design consistency across all facade elements — a model that allowed faster coordination between the window, louvre, and railing programmes.",
@@ -165,6 +199,8 @@ export const projectsData = {
     year: "2022",
     client: "SSG Group",
     scope: "Structural Glazing, Curtain Wall & ACP",
+    status: "Completed",
+    systemUsed: "Stick-System Curtain Wall & 4-Side SSG Glazing",
     image: "/Pan.webp",
     gallery: [],
     description: "SSG Honesty is a modern mid-rise residential complex in Panvel that required a complete facade envelope covering structural glazing, stick-system curtain wall, and ACP cladding panels. Fine Glaze designed and executed the integrated facade package to deliver a contemporary glass-dominant look with ACP accent banding. The project was completed during post-pandemic material constraints which required active supply chain management to keep the programme on track.",
@@ -178,8 +214,6 @@ export const projectsData = {
     isAwardWinner: false,
   },
 
-
-
   "leela-hotel": {
     id: 10,
     title: "Leela Hotel",
@@ -188,6 +222,8 @@ export const projectsData = {
     year: "2021",
     client: "Leela Group",
     scope: "Openable Windows & Laundry Area Works",
+    status: "Completed",
+    systemUsed: "Acoustic Sealed Aluminium Window Units (5-Star Hotel Spec)",
     image: "/Hotel.webp",
     gallery: [],
     description: "Fine Glaze executed the replacement and installation of openable aluminium window systems for the Leela Hotel in Andheri — a project that required working within an operational five-star hotel environment with strict noise restrictions and minimal disruption to guests. All window units were pre-fabricated to precise floor-by-floor dimensions, with a room-by-room installation methodology that kept each room offline for no more than one day at a time.",
@@ -209,6 +245,8 @@ export const projectsData = {
     year: "2024",
     client: "Embassy Group",
     scope: "Facade Maintenance & Glass Replacement",
+    status: "Completed",
+    systemUsed: "Multi-Tower Facade Audit, Glass Replacement & Dow Corning Re-caulking",
     image: "/Embassyoark.webp",
     gallery: [],
     description: "Embassy Techzone in Hinjewadi is one of Pune's premier IT park destinations. Fine Glaze was engaged for an ongoing facade maintenance scope covering inspection, glass replacement, silicone sealant renewal, and waterproofing of the building envelope across multiple towers. The scope required a systematic inspection methodology with documented findings for each elevation before works commenced — a professional AMC approach that Embassy Group now uses as their standard for other assets.",
