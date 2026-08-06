@@ -65,7 +65,7 @@ export default function CurtainWallCostGuide() {
       <section className="relative py-24 bg-gradient-to-br from-slate-900 to-slate-800 text-white">
         <div className="container mx-auto px-4 max-w-6xl grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <h1 className="text-4xl md:text-5xl font-extrabold mb-6">
+            <h1 className="text-3xl md:text-4xl font-bold mb-4">
               Curtain Wall Cost <span className="text-gradient-gold">Guide India 2024</span>
             </h1>
             <p className="text-lg text-white/80 mb-8">Planning a curtain wall for your commercial building? This comprehensive guide breaks down curtain wall costs in India — covering all system types, glass specifications, installation factors, and real pricing ranges based on Fine Glaze's extensive project experience across Pune, Mumbai, and Maharashtra.</p>

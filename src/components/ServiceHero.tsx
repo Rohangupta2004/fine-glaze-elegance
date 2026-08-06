@@ -61,7 +61,7 @@ export const ServiceHero = ({
             <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
             Fine Glaze
           </div>
-          <h1 className="text-4xl md:text-5xl xl:text-6xl font-extrabold leading-[1.05] mb-5">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight mb-5">
             {titleLead}
             <span className="text-gradient-gold">{titleAccent}</span>
             {titleTail}

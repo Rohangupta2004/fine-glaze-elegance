@@ -210,7 +210,7 @@ export default function CityLanding() {
             <MapPin size={16} /> {matchedLocation.name}, {matchedLocation.parentCity.replace('-', ' ')}
           </div>
 
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-tight capitalize">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-6 leading-tight capitalize">
             Expert <span className="text-amber-500">{serviceData.label}</span> in {matchedLocation.name}
           </h1>
 

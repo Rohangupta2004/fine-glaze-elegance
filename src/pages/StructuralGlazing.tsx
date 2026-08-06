@@ -246,10 +246,10 @@ export default function StructuralGlazing() {
             className="font-extrabold text-white leading-[0.88] tracking-tight animate-fade-in-up"
             style={{ fontSize: "clamp(3.8rem, 9vw, 9rem)", animationDelay: "0.1s" }}
           >
-            Structural<br />
-            <span className="text-gradient-gold">Glazing</span><br />
+            Structural Glazing<br />
+            <span className="text-gradient-gold">Contractors</span><br />
             <span style={{ fontSize: "clamp(2rem, 4.5vw, 4.8rem)", fontWeight: 600, color: "rgba(255,255,255,0.85)" }}>
-              Redefined.
+              Pune · Mumbai.
             </span>
           </h1>
 
@@ -257,7 +257,7 @@ export default function StructuralGlazing() {
             className="mt-6 text-white/70 text-base md:text-lg max-w-lg leading-relaxed animate-fade-in-up"
             style={{ animationDelay: "0.2s" }}
           >
-            Frameless silicone glazing for commercial buildings, IT campuses &amp; showrooms.
+            Frameless 2-side, 4-side and spider glazing systems for commercial buildings, IT campuses and showrooms across Pune and Mumbai.
           </p>
 
           <div

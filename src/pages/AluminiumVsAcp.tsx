@@ -65,7 +65,7 @@ export default function AluminiumVsAcp() {
       <section className="relative py-24 bg-gradient-to-br from-slate-900 to-slate-800 text-white">
         <div className="container mx-auto px-4 max-w-6xl grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <h1 className="text-4xl md:text-5xl font-extrabold mb-6">
+            <h1 className="text-3xl md:text-4xl font-bold mb-4">
               Aluminium Facade vs <span className="text-gradient-gold">ACP Cladding</span>
             </h1>
             <p className="text-lg text-white/80 mb-8">Choosing between an aluminium facade system and ACP (Aluminium Composite Panel) cladding is one of the most common decisions architects and developers face. Both offer excellent aesthetics and weather protection — but they differ significantly in cost, weight, fire safety, flexibility, and long-term performance.</p>

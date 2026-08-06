@@ -250,10 +250,10 @@ export default function GlassRailings() {
             className="font-extrabold text-white leading-[0.88] tracking-tight animate-fade-in-up"
             style={{ fontSize: "clamp(3.8rem, 9vw, 9rem)", animationDelay: "0.1s" }}
           >
-            Glass<br />
-            <span className="text-gradient-gold">Railings</span><br />
+            Glass Railing<br />
+            <span className="text-gradient-gold">Contractors</span><br />
             <span style={{ fontSize: "clamp(2rem, 4.5vw, 4.8rem)", fontWeight: 600, color: "rgba(255,255,255,0.85)" }}>
-              Perfected.
+              Pune · Mumbai.
             </span>
           </h1>
 
@@ -261,7 +261,7 @@ export default function GlassRailings() {
             className="mt-6 text-white/70 text-base md:text-lg max-w-lg leading-relaxed animate-fade-in-up"
             style={{ animationDelay: "0.2s" }}
           >
-            Frameless toughened glass railings for balconies, terraces, staircases & pool areas.
+            Frameless and semi-frameless toughened glass railings for balconies, terraces, staircases and commercial spaces across Pune and Mumbai.
           </p>
 
           <div

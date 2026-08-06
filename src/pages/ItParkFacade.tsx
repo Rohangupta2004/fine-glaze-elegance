@@ -65,7 +65,7 @@ export default function ItParkFacade() {
       <section className="relative py-24 bg-gradient-to-br from-slate-900 to-slate-800 text-white">
         <div className="container mx-auto px-4 max-w-6xl grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <h1 className="text-4xl md:text-5xl font-extrabold mb-6">
+            <h1 className="text-3xl md:text-4xl font-bold mb-4">
               IT Park Facade <span className="text-gradient-gold">Contractor India</span>
             </h1>
             <p className="text-lg text-white/80 mb-8">Fine Glaze is a specialist facade contractor for IT parks, technology campuses, and corporate office complexes across India. Our LEED-compatible curtain wall systems, energy-efficient glazing specifications, and track record of large-scale campus projects make us the preferred choice for India's top IT real estate developers.</p>

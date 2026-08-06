@@ -77,7 +77,7 @@ const About = () => {
             <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-500/20 text-amber-400 text-sm font-bold uppercase tracking-wider border border-amber-500/30">
               About Us
             </span>
-            <h1 className="text-4xl md:text-5xl font-bold text-white">
+            <h1 className="text-3xl md:text-4xl font-bold text-white">
               Crafting{" "}
               <span className="text-gradient-gold">Excellence</span>{" "}
               in Facade Solutions

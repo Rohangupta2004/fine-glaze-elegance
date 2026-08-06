@@ -250,10 +250,10 @@ export default function AcpCladding() {
             className="font-extrabold text-white leading-[0.88] tracking-tight animate-fade-in-up"
             style={{ fontSize: "clamp(3.8rem, 9vw, 9rem)", animationDelay: "0.1s" }}
           >
-            ACP &<br />
-            <span className="text-gradient-gold">Metal</span><br />
+            ACP & Aluminium<br />
+            <span className="text-gradient-gold">Cladding</span><br />
             <span style={{ fontSize: "clamp(2rem, 4.5vw, 4.8rem)", fontWeight: 600, color: "rgba(255,255,255,0.85)" }}>
-              Cladding.
+              Contractors.
             </span>
           </h1>
 
@@ -261,7 +261,7 @@ export default function AcpCladding() {
             className="mt-6 text-white/70 text-base md:text-lg max-w-lg leading-relaxed animate-fade-in-up"
             style={{ animationDelay: "0.2s" }}
           >
-            Fire-retardant aluminium composite panels for modern building exteriors across India.
+            Fire-retardant ACP and aluminium cladding for durable, weather-resistant building exteriors across Pune and Mumbai.
           </p>
 
           <div

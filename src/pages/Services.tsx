@@ -318,7 +318,7 @@ export default function Services() {
               End-to-End Facade Solutions
             </span>
 
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white leading-tight">
               Facade, Glazing &{" "}
               <span className="text-gradient-gold">Aluminium Solutions</span>
             </h1>

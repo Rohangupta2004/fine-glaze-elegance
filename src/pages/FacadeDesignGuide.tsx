@@ -65,7 +65,7 @@ export default function FacadeDesignGuide() {
       <section className="relative py-24 bg-gradient-to-br from-slate-900 to-slate-800 text-white">
         <div className="container mx-auto px-4 max-w-6xl grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <h1 className="text-4xl md:text-5xl font-extrabold mb-6">
+            <h1 className="text-3xl md:text-4xl font-bold mb-4">
               Building Facade <span className="text-gradient-gold">Design Guide India</span>
             </h1>
             <p className="text-lg text-white/80 mb-8">Designing a building facade in India requires balancing architectural vision, structural engineering, energy performance, fire safety regulations, local climate conditions, and construction budget. This comprehensive guide covers all the key principles and best practices for facade design in the Indian context.</p>

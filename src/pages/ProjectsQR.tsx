@@ -170,7 +170,7 @@ const ProjectsQR = () => {
                 <p className="text-xs font-extrabold uppercase tracking-normal text-[#8a541f]">
                   Compact project reference
                 </p>
-                <h1 className="truncate text-3xl font-extrabold leading-none tracking-normal sm:text-5xl">
+                <h1 className="truncate text-2xl font-extrabold leading-none tracking-normal sm:text-3xl">
                   Fine Glaze
                 </h1>
               </div>
@@ -206,7 +206,7 @@ const ProjectsQR = () => {
               <p className="text-xs font-extrabold uppercase tracking-normal text-[#8a541f]">
                 Project owners and new clients
               </p>
-              <h2 className="mt-2 max-w-3xl text-3xl font-extrabold leading-tight tracking-normal sm:text-5xl">
+              <h2 className="mt-2 max-w-3xl text-2xl font-extrabold leading-tight tracking-normal sm:text-4xl">
                 Projects and direct contact in one scan.
               </h2>
               <div className="mt-5 flex flex-wrap gap-2">

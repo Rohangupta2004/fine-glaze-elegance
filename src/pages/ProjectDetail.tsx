@@ -122,7 +122,7 @@ const ProjectDetail = () => {
               🏆 {project.award ?? "Award Winner"}
             </span>
           )}
-          <h1 className="text-3xl md:text-5xl font-extrabold text-white leading-tight mb-3">
+          <h1 className="text-2xl md:text-4xl font-extrabold text-white leading-tight mb-3">
             {project.title}
           </h1>
           <div className="flex flex-wrap gap-4 text-white/80 text-sm">

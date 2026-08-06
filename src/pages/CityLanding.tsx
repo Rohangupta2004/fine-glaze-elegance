@@ -210,7 +210,7 @@ export default function CityLanding() {
           <div className="flex items-center gap-2 text-amber-400 text-sm font-bold mb-4 uppercase">
             <MapPin size={16} /> {matchedLocation.name}
           </div>
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
+          <h1 className="text-3xl md:text-5xl font-bold mb-6">
             {serviceData.label} in <span className="text-amber-500">{matchedLocation.name}</span>
           </h1>
           <p className="text-lg md:text-xl max-w-3xl border-l-4 border-amber-500 pl-4 leading-relaxed">

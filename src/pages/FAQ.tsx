@@ -147,7 +147,7 @@ export default function FAQ() {
             <Building2 className="w-4 h-4" />
             FineGlaze Engineering Lab
           </div>
-          <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-slate-900 leading-[1.1] mb-6">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 leading-[1.1] mb-6">
             The Science of <br className="hidden md:block" />
             <span className="text-gradient-subtle">Perfect Facades.</span>
           </h1>

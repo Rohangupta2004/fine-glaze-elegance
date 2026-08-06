@@ -345,7 +345,7 @@ export default function ServiceDetail() {
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/20 border border-amber-500/30 text-amber-400 text-sm font-bold mb-6">
             <Building2 size={16} /> Commercial Facade Engineering
           </div>
-          <h1 className="text-3xl md:text-6xl font-bold mb-4 md:mb-6 leading-tight">
+          <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 leading-tight">
             Advanced{" "}
             <span className="text-amber-500">{serviceData.label}</span>
           </h1>

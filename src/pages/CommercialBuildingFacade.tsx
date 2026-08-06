@@ -65,7 +65,7 @@ export default function CommercialBuildingFacade() {
       <section className="relative py-24 bg-gradient-to-br from-slate-900 to-slate-800 text-white">
         <div className="container mx-auto px-4 max-w-6xl grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <h1 className="text-4xl md:text-5xl font-extrabold mb-6">
+            <h1 className="text-3xl md:text-4xl font-bold mb-4">
               Commercial Building <span className="text-gradient-gold">Facade Systems India</span>
             </h1>
             <p className="text-lg text-white/80 mb-8">The facade is the most visible — and often the most technically complex — element of any commercial building. This comprehensive guide covers all major commercial facade types, cost benchmarks, design considerations, and regulatory requirements for India, drawn from Fine Glaze's 50+ commercial projects.</p>

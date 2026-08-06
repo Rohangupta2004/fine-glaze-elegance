@@ -65,7 +65,7 @@ export default function ResidentialFacade() {
       <section className="relative py-24 bg-gradient-to-br from-slate-900 to-slate-800 text-white">
         <div className="container mx-auto px-4 max-w-6xl grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <h1 className="text-4xl md:text-5xl font-extrabold mb-6">
+            <h1 className="text-3xl md:text-4xl font-bold mb-4">
               Residential Building <span className="text-gradient-gold">Facade Contractor India</span>
             </h1>
             <p className="text-lg text-white/80 mb-8">Residential buildings are increasingly investing in premium facade systems — not just for aesthetics but for thermal comfort, sound insulation, reduced maintenance, and property value. Fine Glaze provides complete residential facade solutions for apartment towers, villas, gated communities, and row houses across Pune and Mumbai.</p>

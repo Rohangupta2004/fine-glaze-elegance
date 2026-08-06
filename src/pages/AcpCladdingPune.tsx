@@ -65,7 +65,7 @@ export default function AcpCladdingPune() {
       <section className="relative py-24 bg-gradient-to-br from-slate-900 to-slate-800 text-white">
         <div className="container mx-auto px-4 max-w-6xl grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <h1 className="text-4xl md:text-5xl font-extrabold mb-6">
+            <h1 className="text-3xl md:text-4xl font-bold mb-4">
               ACP Cladding <span className="text-gradient-gold">Contractor in Pune</span>
             </h1>
             <p className="text-lg text-white/80 mb-8">Fine Glaze is a leading ACP cladding contractor in Pune, providing fire-retardant aluminium composite panel cladding for commercial buildings, retail showrooms, hospitals, corporate offices, and residential exteriors. We work with premium brands including Aludecor, Viva, Alstone, and Alubond.</p>

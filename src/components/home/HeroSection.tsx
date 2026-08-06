@@ -63,7 +63,7 @@ export const HeroSection = () => {
           {/* Headline */}
           <motion.h1
             variants={fadeUp}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight"
           >
             Crafting{" "}
             <span className="text-gradient-gold">Iconic Facades</span>
