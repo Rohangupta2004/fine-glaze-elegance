@@ -247,12 +247,12 @@ export default function AcpCladding() {
           </p>
 
           <h1
-            className="font-extrabold text-white leading-[0.88] tracking-tight animate-fade-in-up"
-            style={{ fontSize: "clamp(3.8rem, 9vw, 9rem)", animationDelay: "0.1s" }}
+            className="font-extrabold text-white leading-tight tracking-tight animate-fade-in-up"
+            style={{ fontSize: "clamp(2.2rem, 4.5vw, 3.5rem)", animationDelay: "0.1s" }}
           >
             ACP & Aluminium<br />
             <span className="text-gradient-gold">Cladding</span><br />
-            <span style={{ fontSize: "clamp(2rem, 4.5vw, 4.8rem)", fontWeight: 600, color: "rgba(255,255,255,0.85)" }}>
+            <span style={{ fontSize: "clamp(1.25rem, 2.5vw, 2rem)", fontWeight: 600, color: "rgba(255,255,255,0.85)" }}>
               Contractors.
             </span>
           </h1>

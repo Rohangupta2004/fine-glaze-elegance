@@ -209,8 +209,8 @@ const Contact = () => {
             Fine Glaze · Get In Touch
           </p>
           <h1
-            className="font-extrabold text-white leading-[0.92] tracking-tight"
-            style={{ fontSize: "clamp(2rem, 6vw, 5.5rem)" }}
+            className="font-extrabold text-white leading-tight tracking-tight"
+            style={{ fontSize: "clamp(2.2rem, 4.5vw, 3.5rem)" }}
           >
             Let's Build<br />
             <span className="text-gradient-gold">Together.</span>
