@@ -9,6 +9,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { Skeleton } from "@/components/ui/skeleton";
+import SEO from "@/components/SEO";
 
 type ProjectFile = {
   id: string;
@@ -105,6 +106,7 @@ export default function Portal() {
 
   return (
     <div className="min-h-screen bg-slate-50 p-4 md:p-10">
+      <SEO title="Client Portal | Fine Glaze" description="Fine Glaze client project status portal" noindex />
       <div className="max-w-6xl mx-auto space-y-8">
         <div className="flex justify-between items-center">
           <div><h1 className="text-3xl font-bold text-slate-900">Project Dashboard</h1><p className="text-slate-500">Welcome, {session.user.email}</p></div>

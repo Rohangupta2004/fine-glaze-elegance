@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { supabase } from "../lib/supabase";
+import SEO from "@/components/SEO";
 
 type Project = {
   id: string;
@@ -54,6 +55,7 @@ export default function Dev(): JSX.Element {
 
   return (
     <div style={{ padding: 40 }}>
+      <SEO title="Dev Panel" description="Dev panel" noindex />
       <h2>FineGlaze Dev Panel</h2>
 
       {projects.map((p) => (

@@ -13,6 +13,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Plus, Trash2, Upload, History, IndianRupee, Save, FileCheck, User, CheckCircle2, XCircle, MapPin, Building, Phone } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Checkbox } from "@/components/ui/checkbox";
+import SEO from "@/components/SEO";
 
 // ⚠️ CHANGE THIS TO YOUR EMAIL
 const ADMIN_EMAIL = "info@fineglaze.com"; 
@@ -154,6 +155,7 @@ export default function Admin() {
 
   return (
     <div className="min-h-screen bg-slate-50 p-8">
+      <SEO title="Admin Hub | Fine Glaze" description="Fine Glaze admin management hub" noindex />
       <div className="max-w-7xl mx-auto space-y-8">
         <div className="flex justify-between items-center">
           <div>
