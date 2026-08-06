@@ -79,21 +79,7 @@ export const HeroSection = () => {
               Curtain walls, structural glazing, ACP cladding and glass railings for commercial buildings, IT parks, and high-rise developments.
             </motion.p>
 
-            {/* Key Value Points */}
-            <motion.div
-              variants={fadeUp}
-              className="flex flex-wrap items-center justify-center gap-4 text-xs sm:text-sm font-medium text-stone-300 pt-1"
-            >
-              <span className="flex items-center gap-1.5 bg-stone-900/60 px-3 py-1.5 rounded-full border border-stone-700/50">
-                <CheckCircle2 className="w-4 h-4 text-amber-400" /> In-House CNC Fabrication
-              </span>
-              <span className="flex items-center gap-1.5 bg-stone-900/60 px-3 py-1.5 rounded-full border border-stone-700/50">
-                <CheckCircle2 className="w-4 h-4 text-amber-400" /> IS 875 Structural Wind Compliance
-              </span>
-              <span className="flex items-center gap-1.5 bg-stone-900/60 px-3 py-1.5 rounded-full border border-stone-700/50">
-                <CheckCircle2 className="w-4 h-4 text-amber-400" /> 5-Year Workmanship Warranty
-              </span>
-            </motion.div>
+
 
             {/* Clear CTA Buttons */}
             <motion.div
