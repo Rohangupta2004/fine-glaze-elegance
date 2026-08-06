@@ -213,6 +213,7 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
                     <Link
                       key={s.href}
                       to={s.href}
+                      onClick={() => setIsMobileMenuOpen(false)}
                       className="py-1 text-sm text-slate-700 hover:text-amber-700 font-medium"
                     >
                       {s.label}
@@ -228,6 +229,7 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
                     <Link
                       key={ind.href}
                       to={ind.href}
+                      onClick={() => setIsMobileMenuOpen(false)}
                       className="py-1 text-sm text-slate-700 hover:text-amber-700 font-medium"
                     >
                       {ind.label}
@@ -237,9 +239,9 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
               </div>
 
               <div className="pt-2 border-t space-y-2">
-                <Link to="/portfolio" className="block text-base font-semibold py-1">Projects</Link>
-                <Link to="/about" className="block text-base font-semibold py-1">About</Link>
-                <Link to="/contact" className="block text-base font-semibold py-1">Contact</Link>
+                <Link to="/portfolio" onClick={() => setIsMobileMenuOpen(false)} className="block text-base font-semibold py-1">Projects</Link>
+                <Link to="/about" onClick={() => setIsMobileMenuOpen(false)} className="block text-base font-semibold py-1">About</Link>
+                <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)} className="block text-base font-semibold py-1">Contact</Link>
               </div>
 
               <div className="pt-2 pb-4">

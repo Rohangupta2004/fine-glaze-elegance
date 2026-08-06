@@ -18,8 +18,8 @@ const SERVICE_DEFS = [
   {
     tag: "Glazing",
     title: "Structural Glazing",
-    desc: "Frameless silicone-bonded glass facades. Dow Corning / Sika certified. DGU + Low-E ready.",
-    spec: "Dow Corning · Sika certified",
+    desc: "Frameless silicone-bonded glass facades. Dow Corning & Sika structural sealants. DGU + Low-E ready.",
+    spec: "Dow Corning & Sika structural sealants",
     href: "/structural-glazing",
     mediaKey: "services_card_structural_glazing",
     fallback: "/Glazing.webp",

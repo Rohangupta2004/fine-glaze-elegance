@@ -325,7 +325,7 @@ export default function CurtainWall() {
             <div className="flex flex-wrap justify-center gap-4 text-xs font-medium text-stone-500">
               <span className="bg-stone-100 px-3 py-1.5 rounded-full">In-House CNC Fabrication</span>
               <span className="bg-stone-100 px-3 py-1.5 rounded-full">IS 875 Wind Load Compliance</span>
-              <span className="bg-stone-100 px-3 py-1.5 rounded-full">Dow Corning Certified Silicone</span>
+              <span className="bg-stone-100 px-3 py-1.5 rounded-full">Dow Corning Structural Silicone</span>
               <span className="bg-stone-100 px-3 py-1.5 rounded-full">IS 2553 Glass Safety</span>
             </div>
           </FadeIn>
