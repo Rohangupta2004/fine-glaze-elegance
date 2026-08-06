@@ -88,7 +88,7 @@ export const HeroSection = () => {
                 <CheckCircle2 className="w-4 h-4 text-amber-400" /> In-House CNC Fabrication
               </span>
               <span className="flex items-center gap-1.5 bg-stone-900/60 px-3 py-1.5 rounded-full border border-stone-700/50">
-                <CheckCircle2 className="w-4 h-4 text-amber-400" /> Dow Corning / Sika Certified
+                <CheckCircle2 className="w-4 h-4 text-amber-400" /> IS 875 Structural Wind Compliance
               </span>
               <span className="flex items-center gap-1.5 bg-stone-900/60 px-3 py-1.5 rounded-full border border-stone-700/50">
                 <CheckCircle2 className="w-4 h-4 text-amber-400" /> 5-Year Workmanship Warranty
