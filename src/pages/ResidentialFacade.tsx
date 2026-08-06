@@ -53,10 +53,10 @@ export default function ResidentialFacade() {
   return (
     <Layout darkHero>
       <SEO
-        title="Residential Building Facade Contractor India | Glass & ACP – Fine Glaze"
-        description="Residential facade contractor in India. Glass railings, ACP cladding, aluminium windows & structural glazing for apartments and villas. Pune & Mumbai projects. Free site visit."
+        title="Residential Facade Contractor Pune & Mumbai | Apartment & Villa Facades - Fine Glaze"
+        description="Top residential facade contractor in Pune & Mumbai. Glass railings, ACP cladding, aluminium doors & windows for apartment towers & luxury villas."
         canonical="https://fineglaze.com/residential-facade"
-        keywords="residential facade contractor India, apartment facade Pune, glass railing residential India, ACP cladding apartment India, residential building facade Mumbai, aluminium windows residential India"
+        keywords="residential facade contractor, apartment facade, villa facade, residential ACP cladding, residential glass railing, aluminium windows"
         ogImage="https://images.unsplash.com/photo-1600585154340-be6161a56a0c"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}
       />

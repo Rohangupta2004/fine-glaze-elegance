@@ -53,10 +53,10 @@ export default function CurtainWallPune() {
   return (
     <Layout darkHero>
       <SEO
-        title="Curtain Wall Glazing Contractor in Pune | Fine Glaze"
-        description="Expert curtain wall glazing contractor in Pune. Unitized & stick system curtain walls for IT parks, offices & malls. Projects in Hinjewadi, Kharadi, Baner. Free site visit."
+        title="Curtain Wall Contractor Pune | Glass Facades Hinjewadi & Baner - Fine Glaze"
+        description="Expert curtain wall contractor in Pune. Unitized & stick system glass curtain walls for IT parks & commercial towers in Hinjewadi, Kharadi, Baner & Wakad."
         canonical="https://fineglaze.com/curtain-wall-pune"
-        keywords="curtain wall contractor Pune, curtain wall glazing Pune, unitized curtain wall Pune, glass curtain wall Hinjewadi, curtain wall Kharadi, facade contractor Pune"
+        keywords="curtain wall contractor Pune, curtain wall systems Pune, glass facade Pune, unitized curtain wall Pune"
         ogImage="https://images.unsplash.com/photo-1486325212027-8081e485255e"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}
       />

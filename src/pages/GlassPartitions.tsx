@@ -212,10 +212,10 @@ export default function GlassPartitions() {
   return (
     <Layout darkHero>
       <SEO
-        title="Glass Partitions & Shower Enclosures | Office & Residential Glass Solutions – Fine Glaze"
-        description="Frameless glass partitions for offices and luxury shower enclosures. Single-glazed, DGU & switchable smart glass. 8-12mm toughened glass. Pune & Mumbai. Free site visit."
+        title="Glass Partition Contractor Pune & Mumbai | Office Glass Partitions - Fine Glaze"
+        description="Top glass partition contractor in Pune & Mumbai. Frameless office glass partitions, acoustic DGU partitions, smart glass, and luxury shower enclosures."
         canonical="https://fineglaze.com/glass-partitions"
-        keywords="glass partitions, frameless glass partition office, shower enclosure glass, glass cabin, smart glass partition, office glass wall, bathroom glass door, toughened glass partition Pune Mumbai"
+        keywords="glass partition contractor, office glass partitions, frameless glass partition, DGU glass partition, acoustic glass partition"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}
       />
 

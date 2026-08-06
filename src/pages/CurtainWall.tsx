@@ -212,10 +212,10 @@ export default function CurtainWall() {
   return (
     <Layout darkHero>
       <SEO
-        title="Curtain Wall Systems & Glazing | Commercial Facade Contractors Pune & Mumbai – Fine Glaze"
-        description="Top curtain wall contractors in India. Unitized, stick & semi-unitized curtain wall systems for IT parks, towers & commercial buildings. ₹400-1200/sq ft. Free site visit."
+        title="Curtain Wall Contractor Pune & Mumbai | Glass Curtain Wall Systems - Fine Glaze"
+        description="Premier curtain wall contractor in Pune & Mumbai. Unitized, stick & semi-unitized glass curtain wall systems for IT parks, commercial towers & offices."
         canonical="https://fineglaze.com/curtain-wall-systems"
-        keywords="curtain wall systems, curtain wall glazing, unitized curtain wall, stick system facade, curtain wall contractors Pune Mumbai, glass curtain wall cost, commercial facade glazing"
+        keywords="curtain wall contractor, curtain wall systems, glass curtain wall, unitized curtain wall, stick curtain wall, semi-unitized curtain wall"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}
       />
 

@@ -53,10 +53,10 @@ export default function AcpCladdingPune() {
   return (
     <Layout darkHero>
       <SEO
-        title="ACP Cladding Contractor in Pune | FR-Grade Aluminium Composite – Fine Glaze"
-        description="ACP cladding contractor in Pune. Fire-retardant aluminium composite panels, PVDF finishes, CNC routing. NBC 2016 compliant. Free site visit."
+        title="ACP Cladding Contractor Pune | Aluminium Composite Panel Baner & Hinjewadi - Fine Glaze"
+        description="Top ACP cladding contractor in Pune. Fire-retardant aluminium composite panels for commercial facades in Baner, Hinjewadi, Kharadi & Wakad."
         canonical="https://fineglaze.com/acp-cladding-pune"
-        keywords="ACP cladding contractor Pune, aluminium composite panel Pune, ACP cladding price Pune, FR grade ACP Pune, PVDF ACP cladding Maharashtra, ACP contractor Hinjewadi"
+        keywords="ACP cladding contractor Pune, ACP facade Pune, aluminium composite panel Pune, ACP sheet installation Pune"
         ogImage="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}
       />

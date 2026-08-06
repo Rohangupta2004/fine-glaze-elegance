@@ -206,10 +206,10 @@ export default function StructuralGlazing() {
   return (
     <Layout darkHero>
       <SEO
-        title="Structural Glazing & Glazed Facade Systems | Glass Facade Contractors Pune & Mumbai – Fine Glaze"
-        description="Top structural glazing company in India. 2-side, 4-side & spider glazed facade systems for showrooms, offices & malls. ₹350-1500/sq ft. 25-year silicone warranty. Free site visit."
+        title="Structural Glazing Contractor Pune & Mumbai | Frameless Glass Facades - Fine Glaze"
+        description="Leading structural glazing contractor in Pune & Mumbai. 2-side, 4-side & spider glazed facade systems for commercial buildings, IT parks & showrooms."
         canonical="https://fineglaze.com/structural-glazing"
-        keywords="structural glazing, glazed facade, glass facade contractors, structural glazing cost per sq ft, spider glazing, frameless glass facade Pune Mumbai, fasad glass, glass curtain wall manufacturers, silicone glazing system"
+        keywords="structural glazing contractor, structural glazing systems, glass facade contractor, 2-side structural glazing, 4-side structural glazing, frameless glass facade"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}
       />
 

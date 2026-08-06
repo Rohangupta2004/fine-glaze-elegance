@@ -212,10 +212,10 @@ export default function Maintenance() {
   return (
     <Layout darkHero>
       <SEO
-        title="Facade AMC & Maintenance Services | Sealant, Glass & Cleaning – Fine Glaze Pune & Mumbai"
-        description="Professional facade maintenance & AMC services. Sealant replacement, glass panel repair, rope-access cleaning, waterproofing & structural audits. Pune & Mumbai. Free inspection."
+        title="Facade Maintenance Company Pune & Mumbai | Glass Cleaning & Repair - Fine Glaze"
+        description="Leading facade maintenance company in Pune & Mumbai. Facade AMC, structural sealant replacement, glass panel repair, curtain wall restoration & inspections."
         canonical="https://fineglaze.com/maintenance-services"
-        keywords="facade maintenance, facade AMC, sealant replacement, glass panel replacement, facade cleaning, rope access cleaning, facade waterproofing, building maintenance Pune Mumbai"
+        keywords="facade maintenance company, facade maintenance AMC, glass facade cleaning, sealant replacement, curtain wall repair, facade inspection"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}
       />
 

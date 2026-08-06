@@ -212,10 +212,10 @@ export default function Louvers() {
   return (
     <Layout darkHero>
       <SEO
-        title="Aluminium Louvers & Sun Shading | Solar Control Systems Pune & Mumbai – Fine Glaze"
-        description="Aluminium louver and sun shading systems for commercial buildings. Fixed, operable & motorised louvers. Reduce solar heat by 70%. Aerofoil & flat blade profiles. Free site visit."
+        title="Aluminium Louver Contractor Pune & Mumbai | Facade Sun Louvers - Fine Glaze"
+        description="Top aluminium louver contractor in Pune & Mumbai. Fixed, vertical, motorized & architectural aluminium sun louvers for solar heat reduction."
         canonical="https://fineglaze.com/aluminium-louvers"
-        keywords="aluminium louvers, sun shading system, solar control facade, aluminium fins, motorised louvers, operable louvers, facade louvers Pune Mumbai, aerofoil blade louvers"
+        keywords="aluminium louver contractor, aluminium sun louvers, facade louvers, vertical louvers, motorized louvers, architectural louvers"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}
       />
 

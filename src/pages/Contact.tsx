@@ -160,10 +160,10 @@ const Contact = () => {
   return (
     <Layout darkHero>
       <SEO
-        title="Contact Fine Glaze – Get a Free Facade Quote | Pune & Mumbai"
-        description="Contact Fine Glaze for aluminium facade, curtain wall, structural glazing & ACP cladding projects. Call +91 8369233566 or email info@fineglaze.com. Free site consultation in Pune & Mumbai."
+        title="Contact Fine Glaze for a Facade Project Consultation | Fine Glaze"
+        description="Contact Fine Glaze for a facade project consultation in Pune & Mumbai. Request a site visit, quotation, and engineering assessment for aluminium facades, curtain walls, and structural glazing."
         canonical="https://fineglaze.com/contact"
-        keywords="contact facade company, facade quote Pune, glass facade Mumbai contact, aluminium cladding enquiry, facade contractor phone number"
+        keywords="facade contractor consultation Pune, facade site visit, facade quotation, glazing contractor contact, facade project enquiry"
         schema={{
           "@context": "https://schema.org",
           "@type": "ContactPage",

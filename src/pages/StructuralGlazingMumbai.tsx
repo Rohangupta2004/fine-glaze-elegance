@@ -53,10 +53,10 @@ export default function StructuralGlazingMumbai() {
   return (
     <Layout darkHero>
       <SEO
-        title="Structural Glazing Contractor in Mumbai | SSG & Spider Glazing – Fine Glaze"
-        description="Structural glazing contractor in Mumbai. 2-side, 4-side & spider glazing for commercial towers, showrooms & hotels. Cyclone-rated design. Free site visit."
+        title="Structural Glazing Mumbai | Frameless Glass Facade BKC & Worli - Fine Glaze"
+        description="Premier structural glazing contractor in Mumbai. 2-side, 4-side & spider glass facades for commercial towers in BKC, Andheri, Powai, Goregaon & Worli."
         canonical="https://fineglaze.com/structural-glazing-mumbai"
-        keywords="structural glazing contractor Mumbai, SSG glazing Mumbai, spider glazing Mumbai, 4-side structural glazing BKC, glass facade contractor Mumbai, showroom glazing Mumbai"
+        keywords="structural glazing Mumbai, structural glass facade Mumbai, frameless glazing Mumbai, spider glazing Mumbai"
         ogImage="https://images.unsplash.com/photo-1486325212027-8081e485255e"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}
       />

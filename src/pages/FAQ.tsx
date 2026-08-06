@@ -132,10 +132,10 @@ export default function FAQ() {
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900 font-sans selection:bg-blue-200">
       <SEO
-        title="Facade FAQ – Curtain Wall, Glazing, ACP Cladding & Costs 2026 | Fine Glaze"
-        description="11 expert answers on curtain wall installation, structural glazing costs, ACP cladding prices, monsoon waterproofing, facade maintenance, and more. India's facade specialists answer your questions."
+        title="Facade, Glazing, ACP and Curtain Wall FAQs | Fine Glaze"
+        description="Facade contractor FAQ India — 11 expert answers on curtain wall installation, structural glazing costs, ACP cladding prices, waterproofing, and facade maintenance AMC."
         canonical="https://fineglaze.com/faq"
-        keywords="curtain wall FAQ, structural glazing cost India, facade engineering questions, DGU glass LEED, wind load IS 875, glazing cost per sq ft 2026, ACP cladding FAQ, glass railing cost India, facade maintenance AMC"
+        keywords="facade contractor FAQ India, curtain wall FAQ, structural glazing FAQ, ACP cladding FAQ, facade cost, facade maintenance questions"
         schema={jsonLd}
       />
 

@@ -53,10 +53,10 @@ export default function FacadeWaterproofing() {
   return (
     <Layout darkHero>
       <SEO
-        title="Facade Waterproofing & Leak Repair in Pune & Mumbai | Fine Glaze"
-        description="Facade waterproofing and glass facade leak repair in Pune & Mumbai. Sealant replacement, curtain wall leakage diagnosis & remediation. Free inspection."
+        title="Facade Waterproofing Contractor Pune & Mumbai | Leak Repair Solutions - Fine Glaze"
+        description="Top facade waterproofing contractor in Pune & Mumbai. Glass facade leak repair, curtain wall leakage remediation, sealant replacement & building waterproofing."
         canonical="https://fineglaze.com/facade-waterproofing"
-        keywords="facade waterproofing India, curtain wall leak repair Pune, facade sealant replacement Mumbai, glass facade leak diagnosis, facade waterproofing contractor Maharashtra"
+        keywords="facade waterproofing contractor, glass facade leak repair, curtain wall leakage repair, facade sealant replacement, building facade waterproofing"
         ogImage="https://images.unsplash.com/photo-1505765050516-f72dcac9c60e"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}
       />

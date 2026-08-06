@@ -53,10 +53,10 @@ export default function GlassRailingPune() {
   return (
     <Layout darkHero>
       <SEO
-        title="Glass Railing Contractor in Pune | Frameless & Framed Railings – Fine Glaze"
-        description="Frameless toughened glass railing contractor in Pune. Balcony, staircase & terrace railings for residential & commercial buildings. IS:2553 compliant. Free site visit."
+        title="Glass Railing Contractor Pune | Frameless Balcony Railings Baner & Kharadi - Fine Glaze"
+        description="Top glass railing contractor in Pune. Frameless balcony, staircase & terrace glass railings for residential & commercial properties in Baner, Kharadi, Wakad & Viman Nagar."
         canonical="https://fineglaze.com/glass-railing-pune"
-        keywords="glass railing contractor Pune, frameless glass railing Pune, balcony glass railing Pune, toughened glass railing Pune, staircase glass railing Pune, glass railing price Pune"
+        keywords="glass railing contractor Pune, balcony glass railing Pune, staircase glass railing Pune, frameless railing Pune"
         ogImage="https://images.unsplash.com/photo-1600585154340-be6161a56a0c"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}
       />

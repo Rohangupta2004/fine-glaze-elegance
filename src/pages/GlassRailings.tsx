@@ -212,10 +212,10 @@ export default function GlassRailings() {
   return (
     <Layout darkHero>
       <SEO
-        title="Glass Railings & Frameless Balustrades | Glass Railing Contractors Pune & Mumbai – Fine Glaze"
-        description="Top glass railing contractors in India. Frameless, semi-frameless & SS spigot glass railing systems for balconies, staircases & terraces. 12-19mm toughened glass. Free site visit."
+        title="Glass Railing Contractor Pune & Mumbai | Balcony & Staircase Railings - Fine Glaze"
+        description="Premier glass railing contractor in Pune & Mumbai. Frameless, semi-frameless & SS spigot glass railing systems for balconies, staircases & terraces."
         canonical="https://fineglaze.com/glass-railings"
-        keywords="glass railings, frameless glass railing, glass balustrade, glass railing contractors Pune Mumbai, balcony glass railing cost, stainless steel glass railing, toughened glass railing"
+        keywords="glass railing contractor, frameless glass railing, toughened glass railing, glass balustrade, staircase glass railing, balcony glass railing"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}
       />
 

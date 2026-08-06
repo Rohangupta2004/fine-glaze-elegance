@@ -53,10 +53,10 @@ export default function IndustrialFacade() {
   return (
     <Layout darkHero>
       <SEO
-        title="Industrial Building Facade Contractor India | ACP & Metal Cladding – Fine Glaze"
-        description="Industrial building facade contractor in India. ACP cladding, metal composite panels, aluminium windows for factories, warehouses & industrial facilities. Maharashtra projects."
+        title="Industrial Facade Contractor Pune & Mumbai | Factory Cladding Systems - Fine Glaze"
+        description="Industrial facade contractor in Pune & Mumbai. Durable ACP cladding, metal composite panels & industrial curtain walls for factories, warehouses & MIDC industrial parks."
         canonical="https://fineglaze.com/industrial-facade"
-        keywords="industrial building facade contractor India, industrial ACP cladding Maharashtra, factory cladding Pune, warehouse facade India, MIDC facade contractor, industrial facade Navi Mumbai"
+        keywords="industrial facade contractor, factory facade, warehouse facade, industrial cladding, industrial curtain wall"
         ogImage="https://images.unsplash.com/photo-1486325212027-8081e485255e"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}
       />

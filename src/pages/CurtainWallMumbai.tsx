@@ -53,10 +53,10 @@ export default function CurtainWallMumbai() {
   return (
     <Layout darkHero>
       <SEO
-        title="Curtain Wall Glazing Contractor in Mumbai | Fine Glaze"
-        description="Curtain wall contractor in Mumbai. Unitized & stick system glazing for BKC, Andheri, Powai & Lower Parel. Cyclone Zone IV/V engineered. Free site visit."
+        title="Curtain Wall Contractor Mumbai | Glass Curtain Walls BKC & Powai - Fine Glaze"
+        description="Premier curtain wall contractor in Mumbai. Unitized & stick system glass curtain walls for high-rises in BKC, Andheri, Powai, Goregaon & Worli."
         canonical="https://fineglaze.com/curtain-wall-mumbai"
-        keywords="curtain wall contractor Mumbai, unitized curtain wall Mumbai, glass curtain wall BKC, curtain wall glazing Andheri, facade contractor Lower Parel, curtain wall Powai, high-rise curtain wall Mumbai"
+        keywords="curtain wall contractor Mumbai, curtain wall systems Mumbai, glass curtain wall Mumbai, commercial facade Mumbai"
         ogImage="https://images.unsplash.com/photo-1541888946425-d81bb19240f5"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}
       />

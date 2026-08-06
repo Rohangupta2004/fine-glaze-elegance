@@ -53,10 +53,10 @@ export default function CommercialBuildingFacade() {
   return (
     <Layout darkHero>
       <SEO
-        title="Commercial Building Facade Systems India | Design & Installation – Fine Glaze"
-        description="Complete guide to commercial building facade systems in India. Curtain walls, structural glazing, ACP cladding, costs, and regulatory requirements. Expert advice by Fine Glaze."
+        title="Commercial Building Facade Contractor Pune & Mumbai | Office Facades - Fine Glaze"
+        description="Top commercial building facade contractor in Pune & Mumbai. Curtain walls, structural glazing & ACP cladding for corporate office buildings."
         canonical="https://fineglaze.com/commercial-building-facade"
-        keywords="commercial building facade India, glass facade commercial building, office building facade systems, IT park facade India, commercial facade contractor, facade design commercial India"
+        keywords="commercial building facade contractor, commercial facade company, office building facade, glass facade commercial building, facade engineering"
         ogImage="https://images.unsplash.com/photo-1503387762-592deb58ef4e"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}
       />

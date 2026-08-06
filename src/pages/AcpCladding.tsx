@@ -212,10 +212,10 @@ export default function AcpCladding() {
   return (
     <Layout darkHero>
       <SEO
-        title="ACP Cladding & Aluminium Composite Panels | ACP Contractors Pune & Mumbai – Fine Glaze"
-        description="Top ACP cladding contractors in India. PVDF & PE aluminium composite panels from Aludecor, Alstrong & Reynobond. Fire-retardant grade. 20-year colour warranty. Free site visit."
+        title="ACP Cladding Contractor Pune & Mumbai | Aluminium Panel Facades - Fine Glaze"
+        description="Top ACP cladding contractor in Pune & Mumbai. PVDF-coated fire-retardant aluminium composite panels for commercial facades, IT parks & retail buildings."
         canonical="https://fineglaze.com/acp-aluminium-cladding"
-        keywords="ACP cladding, aluminium composite panel, ACP contractors Pune Mumbai, PVDF ACP panel, fire retardant ACP, ACP facade, aluminium cladding cost, Aludecor Alstrong Reynobond"
+        keywords="ACP cladding contractor, aluminium composite panel cladding, ACP facade, aluminium cladding, PVDF ACP, fire-retardant ACP"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}
       />
 

@@ -53,10 +53,10 @@ export default function StructuralGlazingPune() {
   return (
     <Layout darkHero>
       <SEO
-        title="Structural Glazing Contractor in Pune | 2-Side & 4-Side SSG – Fine Glaze"
-        description="Structural glazing contractor in Pune. 2-side, 4-side & spider glazing for showrooms, offices & high-rises. IS:875 compliant. Free site visit."
+        title="Structural Glazing Pune | Frameless Glass Facade Contractor Hinjewadi - Fine Glaze"
+        description="Top structural glazing contractor in Pune. 2-side, 4-side & spider glazing for showrooms & commercial buildings in Hinjewadi, Kharadi, Baner & Wakad."
         canonical="https://fineglaze.com/structural-glazing-pune"
-        keywords="structural glazing contractor Pune, structural glazing Pune cost, 4-side structural glazing Pune, SSG glazing Pune, spider glazing Pune, glass facade Pune"
+        keywords="structural glazing Pune, structural glass facade Pune, frameless glazing Pune, spider glazing Pune"
         ogImage="https://images.unsplash.com/photo-1529429617124-95b109e86bb8"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}
       />

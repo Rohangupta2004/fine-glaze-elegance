@@ -53,10 +53,10 @@ export default function MallFacade() {
   return (
     <Layout darkHero>
       <SEO
-        title="Shopping Mall Facade Contractor India | Glass & ACP Cladding – Fine Glaze"
-        description="Shopping mall facade contractor in India. Structural glazing, ACP cladding, entrance canopies & curtain wall for retail malls. Maharashtra projects. Free site visit."
+        title="Mall Facade Contractor Pune & Mumbai | Shopping Mall Glass Facades - Fine Glaze"
+        description="Top shopping mall facade contractor in Pune & Mumbai. High-impact glass facades, retail ACP cladding, spider glass canopies & curtain wall systems."
         canonical="https://fineglaze.com/mall-facade"
-        keywords="mall facade contractor India, shopping mall glass facade, retail mall ACP cladding, mall entrance structural glazing, shopping centre facade India, mall curtain wall Maharashtra"
+        keywords="mall facade contractor, shopping mall glass facade, retail facade, mall ACP cladding, mall entrance canopy"
         ogImage="https://images.unsplash.com/photo-1600585154340-be6161a56a0c"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}
       />

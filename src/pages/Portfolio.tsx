@@ -305,10 +305,10 @@ const Portfolio = () => {
   return (
     <Layout darkHero>
       <SEO
-        title="Facade Projects Portfolio – LTIMindtree, Embassy, Pune Airport | Fine Glaze"
-        description="Explore Fine Glaze's portfolio of landmark facade projects including LTIMindtree Mensa Campus, Embassy 247, Pune Airport Terminal, Salsette-27 & more. Trusted across Mumbai & Pune."
+        title="Facade Projects Portfolio India | Fine Glaze Completed Projects"
+        description="Explore Fine Glaze's portfolio of landmark glass facade, ACP cladding & curtain wall projects across Pune & Mumbai — including Pune Airport, Embassy 247 & LTIMindtree."
         canonical="https://fineglaze.com/portfolio"
-        keywords="facade projects India, aluminium facade portfolio, curtain wall projects Mumbai, glass facade Pune, building facade case studies, embassy facade work"
+        keywords="facade projects portfolio India, Fine Glaze projects, glass facade projects, ACP cladding projects, Pune facade projects, Mumbai facade projects"
         schema={portfolioSchema}
       />
       <Helmet>

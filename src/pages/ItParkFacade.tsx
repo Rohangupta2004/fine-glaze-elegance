@@ -53,10 +53,10 @@ export default function ItParkFacade() {
   return (
     <Layout darkHero>
       <SEO
-        title="IT Park Facade Contractor India | Curtain Wall for Tech Campuses – Fine Glaze"
-        description="Specialist facade contractor for IT parks and tech campuses in India. LEED-compliant curtain walls, DGU Low-E glass, fast installation for Hinjewadi, Kharadi & Mahape. Free site visit."
+        title="IT Park Facade Contractor Pune & Mumbai | Corporate Curtain Walls - Fine Glaze"
+        description="Specialist IT park facade contractor in Pune & Mumbai. Unitized curtain walls & energy-efficient DGU Low-E glass facades for tech campuses & corporate towers."
         canonical="https://fineglaze.com/it-park-facade"
-        keywords="IT park facade contractor India, curtain wall IT campus India, LEED facade IT park, tech campus facade Pune, IT park glass facade Hinjewadi, Mahape IT campus facade, facade contractor IT park"
+        keywords="IT park facade contractor, office facade contractor, corporate building facade, technology park facade, curtain wall IT park"
         ogImage="https://images.unsplash.com/photo-1486325212027-8081e485255e"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}
       />

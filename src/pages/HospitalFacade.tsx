@@ -53,10 +53,10 @@ export default function HospitalFacade() {
   return (
     <Layout darkHero>
       <SEO
-        title="Hospital & Healthcare Building Facade Contractor India – Fine Glaze"
-        description="Specialist facade contractor for hospitals and healthcare buildings in India. Hygienic ACP cladding, anti-bacterial coatings, curtain wall systems. Pune & Mumbai projects."
+        title="Hospital Facade Contractor Pune & Mumbai | Healthcare Building Facades - Fine Glaze"
+        description="Specialist hospital facade contractor in Pune & Mumbai. Hygienic ACP cladding, acoustic glass facades & curtain wall systems for healthcare facilities."
         canonical="https://fineglaze.com/hospital-facade"
-        keywords="hospital facade contractor India, healthcare building cladding India, hospital ACP cladding Pune, hospital curtain wall India, healthcare facade specialist, hospital glass facade Maharashtra"
+        keywords="hospital facade contractor, hospital glass facade, healthcare building facade, hygienic facade systems, hospital curtain wall"
         ogImage="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}
       />

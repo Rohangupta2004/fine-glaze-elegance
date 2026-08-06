@@ -212,10 +212,10 @@ export default function AluminiumFacade() {
   return (
     <Layout darkHero>
       <SEO
-        title="Aluminium Doors & Windows | Thermal Break Window Systems Pune & Mumbai – Fine Glaze"
-        description="Premium aluminium doors and windows in Pune & Mumbai. Sliding, casement, tilt-turn & lift-slide systems with thermal break profiles. 20-year powder coat warranty. Free site visit."
+        title="Aluminium Facade Contractor Pune & Mumbai | Aluminium Doors & Windows - Fine Glaze"
+        description="Leading aluminium facade contractor in Pune & Mumbai. Sliding, casement, tilt-turn & lift-slide systems with thermal break profiles and 20-year powder coat warranty."
         canonical="https://fineglaze.com/aluminium-facade"
-        keywords="aluminium doors windows, aluminium windows Pune, thermal break windows, sliding windows Mumbai, casement windows India, aluminium door systems, tilt turn windows, lift slide doors"
+        keywords="aluminium facade contractor, aluminium facade systems, aluminium doors and windows, thermal break windows, aluminium facade fabrication"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}
       />
 
