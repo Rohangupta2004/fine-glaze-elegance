@@ -552,7 +552,7 @@ const Contact = () => {
               <div className="grid grid-cols-3 gap-px bg-stone-200">
                 {[
                   { num: "10+", label: "Projects" },
-                  { num: "5+", label: "Years" },
+                  { num: "10+", label: "Years" },
                   { num: "<1hr", label: "Response" },
                 ].map((s) => (
                   <div key={s.label} className="bg-white text-center py-4 md:py-5">

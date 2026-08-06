@@ -95,7 +95,7 @@ export default function CurtainWallCostGuide() {
           
           <h2 className="text-3xl font-bold">Curtain Wall Cost Ranges India 2024</h2>
           <p className="text-muted-foreground">
-            Curtain wall costs in India vary widely depending on system type, glass specification, building height, site complexity, and contractor quality. As a specialist facade contractor with 50+ completed projects, Fine Glaze has compiled this transparent pricing guide.
+            Curtain wall costs in India vary widely depending on system type, glass specification, building height, site complexity, and contractor quality. As a specialist facade contractor with 10+ completed projects, Fine Glaze has compiled this transparent pricing guide.
           </p>
           <div className="overflow-x-auto mt-6">
             <table className="w-full border-collapse text-sm">

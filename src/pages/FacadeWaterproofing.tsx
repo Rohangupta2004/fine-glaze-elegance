@@ -107,7 +107,7 @@ export default function FacadeWaterproofing() {
           </ul>
           <h3 className="text-xl font-bold mt-8 mb-3">Fine Glaze Waterproofing Repair Process</h3>
           <p className="text-muted-foreground">
-            Fine Glaze uses a systematic approach: (1) Hose test diagnosis per AAMA 501.2 to locate all active leak points; (2) Core sampling of sealant joints to assess adhesion; (3) Detailed remediation specification; (4) Sealant removal and surface preparation; (5) New sealant application using Dow Corning, Sika, or Master Builders products; (6) Post-remediation water test to verify 100% water-tightness before sign-off.
+            Fine Glaze uses a systematic approach: (1) Hose test diagnosis per AAMA 501.2 to locate all active leak points; (2) Core sampling of sealant joints to assess adhesion; (3) Detailed remediation specification; (4) Sealant removal and surface preparation; (5) New sealant application using Dow Corning, Sika, or Master Builders products; (6) Post-remediation water test to verify weather-tight performance per AAMA standards before sign-off.
           </p>
           <p className="text-muted-foreground mt-4">
             Fine Glaze offers AMC-based facade waterproofing programmes that include annual inspection of all sealant joints, pre-monsoon repair of any deteriorating sealant, and priority callout response for active leaks during the monsoon season. Proactive AMC programmes significantly reduce the risk of interior water damage and extend facade sealant life.

@@ -364,7 +364,7 @@ const Portfolio = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-0 md:divide-x md:divide-stone-700">
             {[
               { number: "10+", label: "Projects Completed" },
-              { number: "5+", label: "Years in Facade" },
+              { number: "10+", label: "Years in Facade" },
               { number: "3", label: "Cities Covered" },
               { number: "1", label: "Award Won" },
             ].map((s) => (

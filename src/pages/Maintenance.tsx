@@ -331,7 +331,7 @@ export default function Maintenance() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-0 md:divide-x md:divide-stone-700">
               {[
                 { number: "2x/yr", label: "Recommended Checks" },
-                { number: "5+", label: "Years Experience" },
+                { number: "10+", label: "Years Experience" },
                 { number: "0", label: "Safety Incidents" },
                 { number: "48hr", label: "Emergency Response" },
               ].map((s) => (

@@ -21,11 +21,11 @@ const cityProfiles: Record<string, { intro: string; challenges: string; trend: s
   },
   "pune": {
     intro: "Pune’s rapidly expanding IT corridors require high-performance commercial facades. We deliver scalable, energy-efficient glazing solutions designed for sprawling tech campuses and modern corporate parks.",
-    challenges: "With wide-spread campuses and heavy monsoon exposure, waterproofing and thermal management are critical. Our DGU (Double Glazed Unit) systems drastically reduce HVAC cooling costs, while integrated EPDM gaskets guarantee zero water ingress during Pune's heavy rains.",
+    challenges: "With wide-spread campuses and heavy monsoon exposure, waterproofing and thermal management are critical. Our DGU (Double Glazed Unit) systems drastically reduce HVAC cooling costs, while integrated EPDM gaskets provide engineered water resistance during Pune's heavy rains.",
     trend: "Sprawling IT campuses, tech parks, and low-to-mid rise commercial hubs.",
     areas: ["Hinjewadi Phase 1, 2 & 3", "Kharadi IT Park", "Baner", "Viman Nagar", "Magarpatta"],
     faqs: [
-      { q: "What is the best facade system for Pune's heavy monsoon season?", a: "Unitized curtain walls are highly recommended. Because they are factory-assembled, their weather seals are mathematically precise, guaranteeing 100% waterproofing even during severe rain." },
+      { q: "What is the best facade system for Pune's heavy monsoon season?", a: "Unitized curtain walls are highly recommended. Because they are factory-assembled, their weather seals are mathematically precise, ensuring weather-tight sealing even during severe rain." },
       { q: "How do your glass systems help with thermal insulation for IT parks?", a: "We utilize low-E (low-emissivity) glass paired with thermal-break aluminium profiles. This reflects exterior solar heat while keeping the air-conditioned interior cool, massively reducing electricity costs for large IT buildings." }
     ]
   },

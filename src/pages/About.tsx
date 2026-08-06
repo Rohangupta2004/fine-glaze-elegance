@@ -45,7 +45,7 @@ const About = () => {
     <Layout darkHero>
       <SEO
         title="About Fine Glaze: Facade and Glazing Specialists | Fine Glaze"
-        description="About Fine Glaze — premier facade and glazing specialists in Pune & Mumbai with 5+ years of experience, 10+ landmark projects & 50+ corporate clients."
+        description="About Fine Glaze — premier facade and glazing specialists in Pune & Mumbai with 10+ years of experience, 10+ landmark projects & 50+ corporate clients."
         canonical="https://fineglaze.com/about"
         keywords="Fine Glaze facade contractor, Fine Glaze India, Fine Glaze Pune, facade fabrication company, facade installation company"
         schema={{

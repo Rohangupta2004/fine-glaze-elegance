@@ -107,7 +107,7 @@ export default function StructuralGlazingMumbai() {
             Fine Glaze's Mumbai structural glazing projects include installations for 5-star hotel entrance canopies in South Mumbai — where the aesthetic demand is extremely high and the tolerance for any visual defect is near zero. Our installation team includes specialist structural glazing applicators with 10+ years of Mumbai high-rise experience.
           </p>
           <p className="text-muted-foreground mt-4">
-            All Fine Glaze structural glazing projects in Mumbai include pre-construction mock-up panel testing, certified sealant application training records, a hose test (AAMA 501.2) after installation, and a 5-year structural sealant warranty backed by Dow Corning certification.
+            Fine Glaze structural glazing projects in Mumbai include pre-construction mock-up panel testing, certified sealant application training records, a hose test (AAMA 501.2) after installation, and a 5-year customer sealant warranty backed by Dow Corning material performance certification.
           </p>
     
         </div>

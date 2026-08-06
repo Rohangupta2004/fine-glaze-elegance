@@ -296,7 +296,7 @@ export default function CurtainWall() {
               ))}
             </div>
             <span className="text-white/50 text-xs font-medium ml-0.5">
-              5.0 Google Rating · Embassy REIT Vendor · 50+ Projects Delivered
+              5.0 Google Rating · Embassy REIT Vendor · 10+ Projects Delivered
             </span>
           </div>
         </div>
@@ -337,8 +337,8 @@ export default function CurtainWall() {
           <FadeIn>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-0 md:divide-x md:divide-stone-700">
               {[
-                { number: "15+", label: "Years Experience" },
-                { number: "50+", label: "Facade Projects" },
+                { number: "10+", label: "Years Experience" },
+                { number: "10+", label: "Facade Projects" },
                 { number: "4.5 kPa", label: "Max Wind Load" },
                 { number: "40%", label: "Faster (Unitized)" },
               ].map((s) => (
@@ -481,71 +481,7 @@ export default function CurtainWall() {
         </div>
       </section>
 
-      {/* ════════════ PUNE & MUMBAI PROJECTS ════════════ */}
-      <section className="py-16 md:py-20 bg-white">
-        <div className="container mx-auto px-6 md:px-16">
-          <FadeIn className="text-center mb-12">
-            <p className="text-amber-700 text-xs font-bold tracking-[0.3em] uppercase mb-3">
-              Landmark Portfolio
-            </p>
-            <h2 className="text-2xl md:text-4xl font-bold text-stone-900">
-              Pune and Mumbai Curtain Wall Projects
-            </h2>
-            <p className="text-stone-500 text-sm max-w-2xl mx-auto mt-2">
-              From high-rise IT hubs in Pune to commercial headquarters in BKC & Vikhroli, Mumbai — examine our completed projects.
-            </p>
-          </FadeIn>
 
-          <FadeIn delay={100}>
-            <div className="grid md:grid-cols-3 gap-8">
-              {[
-                {
-                  name: "Embassy 247",
-                  location: "Vikhroli, Mumbai",
-                  tech: "Unitized Glass Curtain Wall",
-                  img: IMG.hero,
-                  desc: "Commercial tower facade featuring unitized DGU glass panels and integrated aluminium louvers.",
-                },
-                {
-                  name: "LTIMindtree Mensa Campus",
-                  location: "Mahape, Navi Mumbai",
-                  tech: "Structural Glazing & Curtain Wall",
-                  img: "/ltimindtree-mensa-campus-mahape-navi-mumbai-1 (1)-elementor-io-optimized.webp",
-                  desc: "Corporate campus envelope engineered for acoustic privacy and high solar heat rejection.",
-                },
-                {
-                  name: "Pune International Airport",
-                  location: "Lohegaon, Pune",
-                  tech: "Spider Glazing & Curtain Wall",
-                  img: "/Puneairport.webp",
-                  desc: "High-span terminal entrance curtain wall with point-fixed spider fittings and toughened laminated glass.",
-                },
-              ].map((proj) => (
-                <div key={proj.name} className="group bg-stone-50 rounded-xl overflow-hidden border border-stone-200 hover:shadow-lg transition-all duration-300">
-                  <div className="h-48 overflow-hidden relative">
-                    <img
-                      src={proj.img}
-                      alt={`${proj.name} — Curtain wall manufacturers Pune Mumbai`}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <div className="absolute top-3 left-3 bg-stone-900/80 text-amber-400 text-xs font-bold px-2.5 py-1 rounded">
-                      {proj.location}
-                    </div>
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-lg font-bold text-stone-900 group-hover:text-amber-600 transition-colors">{proj.name}</h3>
-                    <p className="text-xs font-semibold text-amber-700 mt-0.5 mb-2">{proj.tech}</p>
-                    <p className="text-xs text-stone-500 leading-relaxed mb-4">{proj.desc}</p>
-                    <Link to="/portfolio" className="text-xs font-bold text-stone-900 inline-flex items-center gap-1 hover:gap-2 transition-all">
-                      View Project <ArrowRight size={12} />
-                    </Link>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </FadeIn>
-        </div>
-      </section>
 
       {/* ════════════ CURTAIN WALL COST SECTION ════════════ */}
       <section className="py-16 md:py-20 bg-stone-50">

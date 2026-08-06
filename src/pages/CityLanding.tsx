@@ -98,9 +98,9 @@ const cityProfiles: Record<string, {
 }> = {
   "pune": {
     intro: "Pune's expanding IT corridors and corporate parks demand high-performance, energy-efficient facade systems built to handle extreme monsoon conditions.",
-    challenges: "Heavy monsoon exposure across sprawling campuses makes waterproofing critical. Our DGU systems reduce HVAC costs, while integrated EPDM gaskets guarantee zero water ingress during Pune's rainy season.",
+    challenges: "Heavy monsoon exposure across sprawling campuses makes waterproofing critical. Our DGU systems reduce HVAC costs, while integrated EPDM gaskets provide engineered water resistance during Pune's rainy season.",
     faqs: [
-      { q: "What facade system is best for Pune's monsoon season?", a: "Unitized curtain walls are ideal. Factory-assembled seals provide mathematically precise waterproofing, guaranteed for heavy rain regions like Pune." },
+      { q: "What facade system is best for Pune's monsoon season?", a: "Unitized curtain walls are ideal. Factory-assembled seals provide mathematically precise weather-tight performance for heavy rain regions like Pune." },
       { q: "How do your glass systems help with IT park thermal insulation?", a: "We use low-E glass and thermal-break profiles to reflect solar heat, drastically cutting electricity costs for large-scale office towers." }
     ]
   },

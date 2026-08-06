@@ -68,7 +68,7 @@ export default function CurtainWallPune() {
             <h1 className="text-3xl md:text-4xl font-bold mb-4">
               Curtain Wall Glazing <span className="text-gradient-gold">Contractor in Pune</span>
             </h1>
-            <p className="text-lg text-white/80 mb-8">Fine Glaze is Pune's most trusted curtain wall glazing contractor, specialising in unitized, semi-unitized, and stick system installations for IT parks, corporate towers, hospitals, shopping malls, and residential high-rises.</p>
+            <p className="text-lg text-white/80 mb-8">Fine Glaze is a leading curtain wall glazing contractor in Pune, specialising in unitized, semi-unitized, and stick system installations for IT parks, corporate towers, hospitals, shopping malls, and residential high-rises.</p>
             <div className="flex gap-4">
               <Link to="/contact">
                 <Button size="lg" className="bg-amber-600 hover:bg-amber-700">Get Free Quote</Button>

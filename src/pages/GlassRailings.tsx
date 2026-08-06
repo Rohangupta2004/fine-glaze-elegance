@@ -330,7 +330,7 @@ export default function GlassRailings() {
           <FadeIn>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-0 md:divide-x md:divide-stone-700">
               {[
-                { number: "5+", label: "Years Experience" },
+                { number: "10+", label: "Years Experience" },
                 { number: "10+", label: "Projects Delivered" },
                 { number: "19mm", label: "Max Glass Thickness" },
                 { number: "SS 316", label: "Marine-Grade Hardware" },

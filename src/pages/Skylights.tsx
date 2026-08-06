@@ -331,9 +331,9 @@ export default function Skylights() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-0 md:divide-x md:divide-stone-700">
               {[
                 { number: "50%", label: "More Natural Light" },
-                { number: "5+", label: "Years Experience" },
+                { number: "10+", label: "Years Experience" },
                 { number: "0", label: "Leak Incidents" },
-                { number: "25yr", label: "Structural Warranty" },
+                { number: "5yr", label: "Workmanship Warranty" },
               ].map((s) => (
                 <div key={s.label} className="text-center px-4">
                   <p className="text-2xl md:text-3xl font-bold text-white">{s.number}</p>

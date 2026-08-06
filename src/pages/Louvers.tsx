@@ -331,7 +331,7 @@ export default function Louvers() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-0 md:divide-x md:divide-stone-700">
               {[
                 { number: "70%", label: "Solar Heat Reduction" },
-                { number: "5+", label: "Years Experience" },
+                { number: "10+", label: "Years Experience" },
                 { number: "300mm", label: "Max Blade Width" },
                 { number: "Any RAL", label: "Custom Colours" },
               ].map((s) => (

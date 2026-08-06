@@ -57,7 +57,7 @@ export const blogPosts: Record<string, BlogPost> = {
           "Glass Type & Thickness — The biggest single variable. DGU (Double Glazed Unit) costs 40-60% more than single glazing. Low-E coated glass adds ₹80-150/sq ft. For details, compare [structural glazing vs curtain wall](https://fineglaze.com/curtain-wall-vs-structural-glazing).",
           "Wind Load Requirements — High-rise buildings above 50m need thicker mullions and certified structural silicone.",
           "Aluminium Profile Grade — 6063-T6 alloy is standard. Be wary of quotes using thinner extrusions.",
-          "Silicone Brand — Dow Corning 795 or Sika 268 carries a 25-year structural warranty.",
+          "Silicone Brand — Dow Corning 795 or Sika 268 is rated for a 25-year structural silicone service life.",
           "Building Height & Location — Mumbai projects run 10-15% higher than Pune due to access logistics.",
           "Project Size — Above 10,000 sq ft, expect 8-12% volume discounts.",
         ],
@@ -148,7 +148,7 @@ export const blogPosts: Record<string, BlogPost> = {
       },
       {
         heading: "Fine Glaze's Honest Recommendation",
-        body: "For buildings under 8 floors in Maharashtra, stick system with proper engineering and quality silicone delivers excellent performance at 30% lower cost. We've done hundreds of stick system projects that are still performing after 15 years. For anything above 10 floors, or where your programme is tight and the building is premium, unitized pays for itself. Contact us for a recommendation specific to your project.",
+        body: "For buildings under 8 floors in Maharashtra, stick system with proper engineering and quality silicone delivers excellent performance at 30% lower cost. We've done numerous stick system projects that are still performing reliably after 10+ years. For anything above 10 floors, or where your programme is tight and the building is premium, unitized pays for itself. Contact us for a recommendation specific to your project.",
       },
     ],
   },
@@ -218,7 +218,7 @@ export const blogPosts: Record<string, BlogPost> = {
     content: [
       {
         heading: "Why the Facade Contractor Decision Is High Stakes",
-        body: "In 15 years of facade work, we've been called in to fix failures from contractors who underquoted and underdelivered. Water leakage behind a glass curtain wall. ACP cladding delaminating at year 3. Anchors pulling out on a building that's 18 months old. Every one of these was preventable. The facade is not the place to find savings by picking the lowest bidder without due diligence.",
+        body: "In 10+ years of facade work, we've been called in to fix failures from contractors who underquoted and underdelivered. Water leakage behind a glass curtain wall. ACP cladding delaminating at year 3. Anchors pulling out on a building that's 18 months old. Every one of these was preventable. The facade is not the place to find savings by picking the lowest bidder without due diligence.",
       },
       {
         heading: "10-Point Evaluation Checklist",
@@ -229,7 +229,7 @@ export const blogPosts: Record<string, BlogPost> = {
           "Factory Visit — Visit their fabrication workshop. Check CNC machine quality, how finished panels are stored, and whether there's a documented QC process.",
           "Material Sourcing — Ask specifically: which aluminium brand, which silicone brand, which glass manufacturer? Premium means Hindalco/Jindal aluminium, Dow Corning or Sika structural silicone, Saint-Gobain or AGC glass.",
           "Insurance & Safety Record — Verify ESIC coverage for workers and ask for their safety incident record.",
-          "Warranty Terms in Writing — A 5-year workmanship warranty is minimum. Structural silicone should carry 10+ years. Get this in the contract.",
+          "Warranty Terms in Writing — A 5-year contractor workmanship warranty is standard. Structural silicone sealant carries 20–25 year material service ratings. Get this in the contract.",
           "AMC Capability — If they won't maintain their own work post-handover, that tells you something about their confidence in it.",
           "Financial Stability — Check GST registration, company incorporation date. Avoid any contractor demanding 80%+ advance — it often means cash flow problems.",
           "Timeline with Milestones — Ask for a Gantt chart with specific milestones. Vague timelines produce vague results.",
@@ -1098,7 +1098,7 @@ export const blogPosts: Record<string, BlogPost> = {
           rows: [
             ["Schuco", "Premium — ₹600-1200/sq ft", "German engineering. 10-year warranty."],
             ["Alumil", "Mid-Premium — ₹400-800/sq ft", "Greek brand, manufactured in India."],
-            ["Tostem (LIXIL)", "Mid — ₹350-700/sq ft", "Japanese technology, Indian manufacture."],
+            ["Reynaers", "Mid-Premium — ₹500-900/sq ft", "Belgian high-performance systems."],
             ["Fenesta (DCM Shriram)", "Mid — ₹300-600/sq ft", "Good service network."],
             ["Hindalco/Jindal", "Economy — ₹200-450/sq ft", "Good structural quality."],
           ],
@@ -1106,7 +1106,7 @@ export const blogPosts: Record<string, BlogPost> = {
       },
       {
         heading: "Get Aluminium Window Rates for Your Project",
-        body: "Fine Glaze provides detailed room-by-room quotations with sample profiles and glass options. We work with Alumil, Tostem, and premium Indian systems. Call +91 8369233566 for a free site measurement and quotation.",
+        body: "Fine Glaze provides detailed room-by-room quotations with sample profiles and glass options. We work with Alumil, Schuco, Reynaers, and premium Indian systems. Call +91 8369233566 for a free site measurement and quotation.",
       },
     ],
   },
@@ -1207,7 +1207,7 @@ export const blogPosts: Record<string, BlogPost> = {
       { heading: "7. Fire-Rated Curtain Walls", body: "Post-Grenfell fire safety awareness has reached Indian developers, especially for high-rise residential and hospitals. Fire-rated curtain wall systems achieving EI-60 to EI-120 ratings are being specified more often." },
       { heading: "8. Biophilic Integration — Living Walls", body: "Vertical gardens integrated into facade design are moving from novelty to standard for premium Indian office projects. Adds 15-25% to facade cost but improves LEED Indoor Environmental Quality credits significantly." },
       { heading: "9. Electrochromic Smart Glass", body: "Glass that tints on demand is being piloted in Indian data centres and premium boardrooms. Cost is falling — currently ₹2,000-4,500/sq ft. Specify with UPS backup: Indian power quality fluctuations affect the tinting mechanism." },
-      { heading: "10. Multi-Material Facades", body: "The most commercially successful trend: combining glass curtain walls for office floors, terracotta or perforated metal for podium levels, ACP for service areas. Fine Glaze's multi-material experience across 50+ projects makes these combinations straightforward to coordinate. Call +91 8369233566 to discuss your next project." },
+      { heading: "10. Multi-Material Facades", body: "The most commercially successful trend: combining glass curtain walls for office floors, terracotta or perforated metal for podium levels, ACP for service areas. Fine Glaze's multi-material experience across 10+ projects makes these combinations straightforward to coordinate. Call +91 8369233566 to discuss your next project." },
     ],
   },
 
@@ -1356,7 +1356,7 @@ export const blogPosts: Record<string, BlogPost> = {
       { heading: "The 7 Causes — In Order of Frequency", body: "Based on our diagnostic work across 200+ buildings:", list: ["Sealant Failure (40% of cases) — Weather sealant degrades after 7-10 years in Indian UV. First sign: white chalking. Fix before it fails — re-caulking costs ₹25-45/rft. Waiting costs ₹1-3 lakh in interior water damage.", "Drain Hole Blockage (20%) — Construction dust and bird nesting materials block weep holes inside mullions. Water backs up, corrodes the aluminium, and finds its way inside. Clear every 6 months.", "Perimeter Firestop Gap (15%) — The joint between the curtain wall and slab edge is often left unsealed. Water runs in during monsoon and exits at the ceiling inside.", "Gasket Compression Loss (10%) — EPDM gaskets lose elasticity after 8-12 years.", "Anchor Point Leakage (8%) — Improperly sealed anchor bolt penetrations.", "Original Design Deficiency (5%) — Inadequate drainage design.", "Building Structural Movement (2%) — Sway or settlement exceeding the facade's movement capacity."] },
       { heading: "Repair Methods and Realistic Costs", body: "", table: { headers: ["Repair Method", "Cost", "Durability", "When to Use"], rows: [["Re-caulking (Sealant)", "₹25 – ₹45/rft", "8-12 years", "Deteriorated weather sealant — most common fix"], ["Drain Hole Clearing", "₹5,000 – ₹15,000/floor", "Permanent if done regularly", "Blocked weep holes"], ["EPDM Gasket Replacement", "₹30 – ₹60/rft", "10-15 years", "Aged, compressed gaskets"], ["Perimeter Firestop Repair", "₹50 – ₹80/rft", "15+ years", "Slab-to-facade junction leakage"], ["Structural Silicone Re-bonding", "₹80 – ₹150/rft", "15-20 years", "Structural glazing bond failure"]] } },
       { heading: "Pre-Monsoon Waterproofing Checklist", body: "Complete this before June every year:", list: ["Clear all drain weep holes on every floor.", "Inspect all external sealant joints visually — white chalking or gaps mean re-caulking needed.", "Check the perimeter firestop at slab junctions — if missing, emergency fix before monsoon.", "Test drainage by running a hose at each bay for 5 minutes.", "For high-rise buildings: rope access inspection of the full facade by a qualified inspector."] },
-      { heading: "Fine Glaze Waterproofing Services", body: "Fine Glaze provides comprehensive facade waterproofing diagnosis and repair across Pune and Mumbai. Our IRATA-certified rope access teams can reach any height safely. We use Dow Corning and Sika silicones with product warranties, and provide written diagnosis reports before any repair work starts. Call +91 8369233566 for a free facade leakage inspection." }
+      { heading: "Fine Glaze Waterproofing Services", body: "Fine Glaze provides comprehensive facade waterproofing diagnosis and repair across Pune and Mumbai. Our IRATA-trained rope access safety protocols ensure technicians reach any height safely. We use Dow Corning and Sika silicones with product warranties, and provide written diagnosis reports before any repair work starts. Call +91 8369233566 for a free facade leakage inspection." }
     ]
   },
 
@@ -1605,7 +1605,7 @@ export const blogPosts: Record<string, BlogPost> = {
     },
     {
       "heading": "Rope Access: The Flexible Alternative",
-      "body": "Industrial rope access is widely used in India due to its versatility. Technicians use specialized climbing equipment to descend the building. While it appears risky, when performed by IRATA-certified professionals, it is one of the safest and most efficient ways to clean complex architectural shapes that a mechanical cradle cannot reach."
+      "body": "Industrial rope access is widely used in India due to its versatility. Technicians use specialized climbing equipment to descend the building. While it appears risky, when performed by IRATA-trained safety technicians, it is one of the safest and most efficient ways to clean complex architectural shapes that a mechanical cradle cannot reach."
     },
     {
       "heading": "Cleaning Agents and Equipment",
@@ -3289,7 +3289,7 @@ export const blogPosts: Record<string, BlogPost> = {
     },
     {
       "heading": "Waterproofing and Installation Challenges",
-      "body": "The most common concern with skylights is leakage, especially during India's heavy monsoon season. Professional installation is non-negotiable. This involves proper flashing, high-quality structural sealants (like Dow Corning or Sika), and ensuring a minimum slope (usually 5-15 degrees) to prevent water ponding. At Fine Glaze, we use specialized aluminium profiles with integrated drainage channels to ensure 100% watertight performance."
+      "body": "The most common concern with skylights is leakage, especially during India's heavy monsoon season. Professional installation is non-negotiable. This involves proper flashing, high-quality structural sealants (like Dow Corning or Sika), and ensuring a minimum slope (usually 5-15 degrees) to prevent water ponding. At Fine Glaze, we use specialized aluminium profiles with integrated drainage channels to ensure reliable watertight performance."
     },
     {
       "heading": "Maintenance Tips for Longevity",

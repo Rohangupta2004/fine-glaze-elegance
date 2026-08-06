@@ -332,7 +332,7 @@ export default function AcpCladding() {
               {[
                 { number: "20yr", label: "Colour Warranty (PVDF)" },
                 { number: "FR", label: "Fire Retardant Grade" },
-                { number: "5+", label: "Years Experience" },
+                { number: "10+", label: "Years Experience" },
                 { number: "100+", label: "Finish Options" },
               ].map((s) => (
                 <div key={s.label} className="text-center px-4">
