@@ -77,7 +77,7 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 
 /* ── Images ── */
 const IMG: Record<string, string> = {
-  hero: "/smart-glass.webp",
+  hero: "/office-partition.webp",
   office: "/office-partition.webp",
   acoustic: "/smart-glass.webp",
   smart: "/smart-glass.webp",
