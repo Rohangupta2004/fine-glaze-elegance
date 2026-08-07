@@ -20,6 +20,104 @@ interface Section {
 }
 
 export const blogPosts: Record<string, BlogPost> = {
+  "frameless-glass-office-partitions-cost-design-guide-2026": {
+    slug: "frameless-glass-office-partitions-cost-design-guide-2026",
+    title: "Frameless Glass Office Partitions: Cost, Glass Types & Design Guide (2026)",
+    metaTitle: "Frameless Glass Office Partitions Cost & Design Guide (2026) | Fine Glaze",
+    metaDescription: "Complete guide to frameless glass office partitions in India for 2026. Rates per sq ft for 10-12mm toughened glass, acoustic DGU, smart glass, and hardware selection.",
+    keywords: "frameless glass partition cost, glass partition price per sq ft, office glass wall cost India, acoustic glass partition price, smart glass partition cost 2026",
+    date: "2026-08-07",
+    readTime: "6 min read",
+    category: "Design & Cost Guide",
+    heroImage: "/office-partition.webp",
+    excerpt: "Explore 2026 rates, glass specifications, acoustic ratings, and hardware options for frameless glass office partitions and executive cabin enclosures.",
+    content: [
+      {
+        heading: "Modern Office Glass Partitions: Overview & 2026 Pricing",
+        body: "Frameless glass partitions have become the standard for modern commercial offices in IT hubs across Pune and Mumbai. By maximizing natural daylight penetration and maintaining acoustic privacy, glass walls elevate workspace aesthetics while improving employee productivity. Average rates in India range from ₹350 to ₹1,200 per sq ft depending on glass type, track finish, and acoustic engineering.",
+      },
+      {
+        heading: "Glass Partition Cost per Sq Ft by System Type (2026)",
+        body: "Here is a realistic cost guide for commercial glass partition installations including supply, hardware, structural sealing, and site installation:",
+        table: {
+          headers: ["Partition System Type", "Cost per Sq Ft (₹)", "Acoustic Rating (STC)", "Ideal Application"],
+          rows: [
+            ["10mm Toughened Single Glazed", "₹350 – ₹500", "30 – 32 dB", "General office divisions, corridors"],
+            ["12mm Toughened Single Glazed", "₹450 – ₹650", "34 – 36 dB", "Executive cabins, manager rooms"],
+            ["Acoustic Laminated Double Glazed", "₹700 – ₹1,000", "40 – 44 dB", "Conference rooms, boardrooms"],
+            ["Switchable Smart Glass Partition", "₹1,200 – ₹2,200", "38 – 42 dB", "Director suites, high-privacy zones"],
+            ["Black Anodized Slim Profile Wall", "₹550 – ₹850", "35 – 38 dB", "Modern tech parks, co-working hubs"],
+          ],
+        },
+      },
+      {
+        heading: "Glass Selection: 10mm vs 12mm vs Acoustic DGU",
+        body: "Choosing the right glass specification is critical for structural safety and sound control:",
+        list: [
+          "10mm Toughened Glass — Standard for heights up to 2.8m. Lightweight and cost-effective.",
+          "12mm Toughened Glass — Recommended for full-height partitions above 2.8m to prevent flex.",
+          "Acoustic PVB Laminated Glass — Features a special acoustic interlayer that dampens speech frequencies by an extra 4-6dB.",
+          "Double Glazed Units (DGU) — Uses twin glass panes separated by an air/argon gap, preventing sound transmission across confidential rooms.",
+        ],
+      },
+      {
+        heading: "Hardware, Channels & Architectural Finishes",
+        body: "Hardware accounts for 25-35% of total project cost. Premium options include concealed floor springs, hydraulic patch fittings, top aluminum U-channels in matte black, brushed brass, or anodized silver. All patch fittings used by Fine Glaze are tested for 500,000 door operation cycles.",
+      },
+      {
+        heading: "Get an Expert Glass Partition Quote for Your Office",
+        body: "Fine Glaze provides complete end-to-end office glass partition fabrication and installation in Pune, Mumbai, Thane, and Navi Mumbai. Call +91 8369233566 or get a free quote for custom BOQ estimates within 24 hours.",
+      },
+    ],
+  },
+
+  "commercial-facade-inspection-maintenance-checklist-2026": {
+    slug: "commercial-facade-inspection-maintenance-checklist-2026",
+    title: "Commercial Facade Inspection & Maintenance Checklist (2026 Engineering Guide)",
+    metaTitle: "Commercial Facade Inspection & Maintenance Checklist 2026 | Fine Glaze",
+    metaDescription: "Complete commercial facade inspection checklist for structural glazing, curtain walls & ACP cladding. Prevent leaks, silicone degradation, and structural failure. Expert guide by Fine Glaze.",
+    keywords: "facade inspection checklist, building facade maintenance, structural glazing inspection, curtain wall audit, facade safety audit India, facade AMC checklist",
+    date: "2026-08-06",
+    readTime: "7 min read",
+    category: "Maintenance Guide",
+    heroImage: "/Amc.webp",
+    excerpt: "A comprehensive commercial facade inspection and maintenance checklist covering structural silicone integrity, gasket seals, wind anchors, and water leakage prevention.",
+    content: [
+      {
+        heading: "Why Routine Facade Audits Are Crucial for Commercial Buildings",
+        body: "High-rise glass curtain walls and structural glazing in coastal regions like Mumbai and monsoon-heavy areas like Pune endure intense thermal expansion, high wind pressures (up to 4.5 kPa), and UV degradation. Without periodic inspection, minor sealant failures or loose anchor brackets can lead to severe water infiltration, pane detachment, or costly emergency structural repairs.",
+      },
+      {
+        heading: "5-Step Engineering Facade Audit Checklist",
+        body: "Certified facade engineers evaluate five key structural and weatherproofing components during an annual AMC inspection:",
+        list: [
+          "1. Structural Silicone & Sealant Joints — Check for adhesion loss, cracking, or elasticity breakdown in Dow Corning or Sika weatherseal silicone joints.",
+          "2. EPDM Gaskets & Water Drainage Channels — Inspect perimeter gaskets, weep holes, and internal mullion drainage channels for blockage or displacement.",
+          "3. Structural Anchors & Brackets — Verify steel bracket welds, hot-dip galvanizing layer, and expansion bolt tightness at slab connections.",
+          "4. Glass Pane Integrity — Scan for edge chips, nickel-sulfide (NiS) inclusions, delamination in laminated glass, or seal failure in DGUs.",
+          "5. ACP Panel Fasteners & Subframe — Ensure subframe cleats and anti-rattle clips remain securely fastened to prevent panel dislodgement during severe storms.",
+        ],
+      },
+      {
+        heading: "Recommended Maintenance Frequencies",
+        body: "To comply with NBC 2016 safety guidelines and maintain manufacturer warranties:",
+        table: {
+          headers: ["Inspection / Activity", "Frequency", "Responsible Party"],
+          rows: [
+            ["Exterior Glass & ACP Cleaning", "Every 6 Months", "Rope Access / BMU Cleaning Team"],
+            ["Visual Sealant & Gasket Inspection", "Annual", "Certified Facade Contractor"],
+            ["Structural Silicone Adhesion Test", "Every 3 Years", "Facade Testing Laboratory"],
+            ["AAMA 501.2 Hose Water Testing", "Post-Monsoon / Every 2 Years", "Engineering Audit Team"],
+          ],
+        },
+      },
+      {
+        heading: "Partner with Fine Glaze for Facade AMC & Audits",
+        body: "Fine Glaze provides certified facade maintenance contracts, rope-access inspections, silicone sealant restoration, and emergency glass replacement across Maharashtra. Contact our engineers at +91 8369233566 to schedule a comprehensive site audit.",
+      },
+    ],
+  },
+
   "structural-glazing-cost-india-2026": {
     slug: "structural-glazing-cost-india-2026",
     title: "Structural Glazing Cost Per Sq Ft in India (2026 Price Guide)",
