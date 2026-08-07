@@ -56,7 +56,7 @@ export const HeroSection = () => {
             {/* Verified Award Badge */}
             <motion.div
               variants={fadeUp}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-500/20 backdrop-blur-md text-xs sm:text-sm font-semibold text-amber-300 border border-amber-500/30 shadow-lg"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-transparent backdrop-blur-sm text-xs sm:text-sm font-semibold text-amber-300 border border-amber-500/40 shadow-lg"
             >
               <Award className="w-4 h-4 text-amber-400 shrink-0" />
               <span>Embassy REIT Best Performance Vendor Award 2024</span>

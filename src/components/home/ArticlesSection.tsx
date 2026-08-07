@@ -22,7 +22,7 @@ export const ArticlesSection = () => {
           variants={stagger(0.1)}
         >
           <motion.div className="space-y-3 max-w-2xl" variants={slideLeft}>
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/10 text-amber-700 font-semibold uppercase tracking-wider text-xs border border-amber-500/20">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-transparent text-amber-700 dark:text-amber-400 font-semibold uppercase tracking-wider text-xs border border-amber-500/40">
               <BookOpen size={14} className="text-amber-600" /> Knowledge Hub
             </span>
             <h2 className="text-3xl md:text-4xl font-extrabold text-foreground tracking-tight">
@@ -67,7 +67,7 @@ export const ArticlesSection = () => {
                     height="375"
                   />
                   <div className="absolute top-3 left-3">
-                    <span className="px-3 py-1 rounded-full text-xs font-bold bg-amber-600 text-white shadow-md">
+                    <span className="px-3 py-1 rounded-full text-xs font-bold bg-black/60 backdrop-blur-md text-amber-300 border border-amber-400/50 shadow-md">
                       {article.category}
                     </span>
                   </div>

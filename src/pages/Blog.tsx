@@ -34,7 +34,7 @@ export default function Blog() {
           <div className="absolute inset-0 bg-gradient-to-b from-slate-900/85 via-slate-900/75 to-slate-900/90" />
         </div>
         <div className="container mx-auto px-4 text-center max-w-3xl relative z-10">
-          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-500/20 text-amber-400 text-sm font-bold uppercase tracking-wider border border-amber-500/30 mb-6">
+          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-transparent text-amber-400 text-sm font-bold uppercase tracking-wider border border-amber-500/40 mb-6">
             <Tag size={14} /> Knowledge Hub
           </span>
           <h1 className="text-3xl md:text-4xl font-extrabold mb-4">

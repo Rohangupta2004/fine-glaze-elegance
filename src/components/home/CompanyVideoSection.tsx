@@ -5,7 +5,7 @@ export const CompanyVideoSection = () => {
     <section className="py-16 bg-stone-900 text-white border-y border-stone-800">
       <div className="container mx-auto px-4 max-w-5xl">
         <div className="text-center max-w-3xl mx-auto space-y-3 mb-10">
-          <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/20 text-amber-400 text-xs font-bold uppercase tracking-widest border border-amber-500/30">
+          <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-transparent text-amber-400 text-xs font-bold uppercase tracking-widest border border-amber-500/40">
             <Play className="w-3 h-3 fill-current" /> Company Overview Video
           </span>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white">
