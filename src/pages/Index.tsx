@@ -5,6 +5,7 @@ import { CompanyVideoSection } from "@/components/home/CompanyVideoSection";
 import { PortfolioSection } from "@/components/home/PortfolioSection";
 import { ServicesSection } from "@/components/home/ServicesSection";
 import { ReviewsSection } from "@/components/home/ReviewsSection";
+import { ArticlesSection } from "@/components/home/ArticlesSection";
 import { ContactFormSection } from "@/components/home/ContactFormSection";
 import { CTASection } from "@/components/home/CTASection";
 import SEO from "@/components/SEO";
@@ -112,6 +113,7 @@ const Index = () => {
       <ServicesSection />
       <PortfolioSection />
       <ReviewsSection />
+      <ArticlesSection />
       <ContactFormSection />
       <CTASection />
     </Layout>

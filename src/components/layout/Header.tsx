@@ -161,6 +161,7 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
             </div>
 
             <Link to="/portfolio" className={getLinkClass("/portfolio")}>Projects</Link>
+            <Link to="/blog" className={getLinkClass("/blog")}>Articles</Link>
             <Link to="/about" className={getLinkClass("/about")}>About</Link>
             <Link to="/contact" className={getLinkClass("/contact")}>Contact</Link>
           </nav>
@@ -240,6 +241,7 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
 
               <div className="pt-2 border-t space-y-2">
                 <Link to="/portfolio" onClick={() => setIsMobileMenuOpen(false)} className="block text-base font-semibold py-1">Projects</Link>
+                <Link to="/blog" onClick={() => setIsMobileMenuOpen(false)} className="block text-base font-semibold py-1">Articles</Link>
                 <Link to="/about" onClick={() => setIsMobileMenuOpen(false)} className="block text-base font-semibold py-1">About</Link>
                 <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)} className="block text-base font-semibold py-1">Contact</Link>
               </div>
