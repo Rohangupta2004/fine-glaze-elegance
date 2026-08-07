@@ -91,7 +91,7 @@ export const MEDIA_SLOTS: MediaSlot[] = [
     label: "Glass Partitions — Card Image",
     page: "Home Page — Services Cards",
     type: "image",
-    fallback: "/Glass%20installation.webp",
+    fallback: "/office-partition.webp",
   },
   {
     key: "services_card_amc",
