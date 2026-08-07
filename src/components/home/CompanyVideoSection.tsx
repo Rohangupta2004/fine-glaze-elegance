@@ -19,7 +19,7 @@ export const CompanyVideoSection = () => {
         {/* Vimeo Video Embed Container */}
         <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-stone-700 bg-stone-950 aspect-[16/9] max-w-4xl mx-auto">
           <iframe
-            src="https://player.vimeo.com/video/1191408845?title=1&byline=1&portrait=1&controls=1&badge=1&autopause=0&player_id=0&app_id=58479"
+            src="https://player.vimeo.com/video/1191408845?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479"
             frameBorder="0"
             allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
             referrerPolicy="strict-origin-when-cross-origin"
