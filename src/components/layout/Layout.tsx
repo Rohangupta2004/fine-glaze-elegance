@@ -2,7 +2,6 @@ import { ReactNode } from "react";
 import { Header } from "./Header";
 import { Footer } from "./Footer";
 import FloatingCTA from "@/components/FloatingCTA";
-import MobileBottomCTA from "@/components/MobileBottomCTA";
 import ScrollToTop from "@/components/ScrollToTop";
 
 interface LayoutProps {
@@ -17,10 +16,9 @@ export const Layout = ({ children, darkHero = false }: LayoutProps) => {
       <Header darkHero={darkHero} />
       {/* Spacer for fixed navbar on non-hero pages */}
       {!darkHero && <div className="h-16 lg:h-20" />}
-      <main className="flex-1 pb-16 lg:pb-0">{children}</main>
+      <main className="flex-1">{children}</main>
       <Footer />
       <FloatingCTA />
-      <MobileBottomCTA />
     </div>
   );
 };
