@@ -1,4 +1,4 @@
-import { Play, ShieldCheck, CheckCircle2 } from "lucide-react";
+import { Play } from "lucide-react";
 
 export const CompanyVideoSection = () => {
   return (
@@ -19,38 +19,13 @@ export const CompanyVideoSection = () => {
         {/* Vimeo Video Embed Container */}
         <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-stone-700 bg-stone-950 aspect-[16/9] max-w-4xl mx-auto">
           <iframe
-            src="https://player.vimeo.com/video/1191408845?badge=0&autopause=0&player_id=0&app_id=58479"
+            src="https://player.vimeo.com/video/1191408845?title=1&byline=1&portrait=1&controls=1&badge=1&autopause=0&player_id=0&app_id=58479"
             frameBorder="0"
             allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
             referrerPolicy="strict-origin-when-cross-origin"
             className="absolute top-0 left-0 w-full h-full"
             title="Fine Glaze Corporate Facade Video"
           />
-        </div>
-
-        {/* Video Key Highlights */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-4xl mx-auto mt-8 text-center sm:text-left">
-          <div className="flex items-center gap-3 bg-stone-950/60 p-4 rounded-xl border border-stone-800">
-            <ShieldCheck className="w-5 h-5 text-amber-400 shrink-0" />
-            <div>
-              <p className="text-xs font-bold text-stone-200">CNC Profile Fabrication</p>
-              <p className="text-[11px] text-stone-400">Micron-level factory tolerances</p>
-            </div>
-          </div>
-          <div className="flex items-center gap-3 bg-stone-950/60 p-4 rounded-xl border border-stone-800">
-            <CheckCircle2 className="w-5 h-5 text-amber-400 shrink-0" />
-            <div>
-              <p className="text-xs font-bold text-stone-200">High-Rise Safety Protocol</p>
-              <p className="text-[11px] text-stone-400">Zero accident safety standard</p>
-            </div>
-          </div>
-          <div className="flex items-center gap-3 bg-stone-950/60 p-4 rounded-xl border border-stone-800">
-            <CheckCircle2 className="w-5 h-5 text-amber-400 shrink-0" />
-            <div>
-              <p className="text-xs font-bold text-stone-200">AAMA 501.2 Hose Tested</p>
-              <p className="text-[11px] text-stone-400">Verified weather tightness</p>
-            </div>
-          </div>
         </div>
       </div>
     </section>

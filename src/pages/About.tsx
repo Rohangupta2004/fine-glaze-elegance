@@ -181,7 +181,7 @@ const About = () => {
 
             <div className="rounded-xl overflow-hidden shadow-xl" style={{ padding: "75% 0 0 0", position: "relative" }}>
               <iframe
-                src="https://player.vimeo.com/video/1191408845?badge=0&autopause=0&player_id=0&app_id=58479"
+                src="https://player.vimeo.com/video/1191408845?title=1&byline=1&portrait=1&controls=1&badge=1&autopause=0&player_id=0&app_id=58479"
                 frameBorder="0"
                 allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
                 referrerPolicy="strict-origin-when-cross-origin"
