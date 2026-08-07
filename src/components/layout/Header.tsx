@@ -209,7 +209,7 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
             {/* Get a Quote — Always visible */}
             <Button
               onClick={() => setIsQuoteOpen(true)}
-              className="bg-amber-600 hover:bg-amber-700 text-white font-bold px-4 md:px-5 py-2 text-xs md:text-sm shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
+              className="bg-gradient-to-r from-amber-500 via-amber-600 to-amber-500 hover:from-amber-400 hover:to-amber-600 text-white font-bold text-xs md:text-sm tracking-wide uppercase px-4 md:px-6 py-2.5 rounded-full shadow-lg shadow-amber-900/20 hover:shadow-amber-500/30 border border-amber-400/40 transition-all duration-300 active:scale-95 cursor-pointer"
             >
               Get a Quote
             </Button>
@@ -290,7 +290,7 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
                     setIsMobileMenuOpen(false);
                     setTimeout(() => setIsQuoteOpen(true), 200);
                   }}
-                  className="w-full bg-amber-600 hover:bg-amber-700 text-white font-bold py-3"
+                  className="w-full bg-gradient-to-r from-amber-500 via-amber-600 to-amber-500 hover:from-amber-400 hover:to-amber-600 text-white font-bold text-sm tracking-wider uppercase py-3.5 rounded-xl shadow-lg border border-amber-400/30 active:scale-95 transition-all"
                 >
                   Get a Project Quote
                 </Button>

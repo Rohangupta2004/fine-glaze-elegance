@@ -89,7 +89,7 @@ export const HeroSection = () => {
               <Button
                 size="lg"
                 onClick={() => setIsQuoteOpen(true)}
-                className="w-full sm:w-auto bg-amber-600 hover:bg-amber-700 text-white font-bold px-8 py-6 text-base shadow-xl transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
+                className="w-full sm:w-auto bg-gradient-to-r from-amber-500 via-amber-600 to-amber-500 hover:from-amber-400 hover:to-amber-600 text-white font-bold tracking-wide text-base px-8 py-6 rounded-xl shadow-xl shadow-amber-950/40 hover:shadow-amber-500/30 border border-amber-400/40 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
               >
                 Get a Project Quote
                 <ArrowRight className="ml-2 h-5 w-5" />

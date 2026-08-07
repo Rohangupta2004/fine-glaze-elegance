@@ -267,7 +267,7 @@ export function QuoteModal({ open, onOpenChange }: QuoteModalProps) {
               <Button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-amber-600 hover:bg-amber-700 text-white h-11 font-bold gap-2 shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
+                className="w-full bg-gradient-to-r from-amber-500 via-amber-600 to-amber-500 hover:from-amber-400 hover:to-amber-600 text-white h-12 rounded-xl font-bold text-sm tracking-wider uppercase gap-2 shadow-lg shadow-amber-900/20 border border-amber-400/40 transition-all duration-200 active:scale-[0.99] cursor-pointer"
               >
                 {isSubmitting ? (
                   "Submitting Specifications..."
