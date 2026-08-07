@@ -58,17 +58,45 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
     };
   }, [isMobileMenuOpen]);
 
-  const getLinkClass = (path: string) =>
-    cn(
-      "px-3 py-2 text-sm font-semibold rounded-md transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500",
-      location.pathname === path
-        ? "bg-primary text-white"
+  const isPathActive = (path: string) => {
+    if (path === "/services") {
+      return (
+        location.pathname === "/services" ||
+        serviceLinks.some((s) => location.pathname === s.href)
+      );
+    }
+    if (path === "/industries") {
+      return industryLinks.some((ind) => location.pathname === ind.href);
+    }
+    if (path === "/portfolio") {
+      return (
+        location.pathname === "/portfolio" ||
+        location.pathname.startsWith("/project/")
+      );
+    }
+    if (path === "/blog") {
+      return location.pathname.startsWith("/blog");
+    }
+    return location.pathname === path;
+  };
+
+  const getLinkClass = (path: string) => {
+    const active = isPathActive(path);
+    return cn(
+      "px-3 py-2 text-sm font-semibold rounded-md transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500",
+      active
+        ? isScrolled
+          ? "bg-amber-100/80 text-amber-800 font-bold"
+          : darkHero
+          ? "bg-amber-500/20 text-amber-300 border border-amber-500/30 font-bold backdrop-blur-sm shadow-sm"
+          : "bg-amber-100/80 text-amber-800 font-bold"
         : isScrolled
         ? "text-slate-800 hover:bg-slate-100"
         : darkHero
         ? "text-white hover:bg-white/20"
         : "text-slate-800 hover:bg-slate-100/80"
     );
+  };
 
   return (
     <>
@@ -120,7 +148,12 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
                     <Link
                       key={service.href}
                       to={service.href}
-                      className="block px-3 py-2 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-900 rounded-md transition-colors"
+                      className={cn(
+                        "block px-3 py-2 text-sm rounded-md transition-colors",
+                        location.pathname === service.href
+                          ? "bg-amber-50 text-amber-800 font-bold"
+                          : "text-slate-700 hover:bg-amber-50 hover:text-amber-900 font-medium"
+                      )}
                     >
                       {service.label}
                     </Link>
@@ -135,7 +168,7 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
               onMouseEnter={() => setIsIndustryOpen(true)}
               onMouseLeave={() => setIsIndustryOpen(false)}
             >
-              <span className={cn(getLinkClass("/industries"), "cursor-pointer flex items-center gap-1")}>
+              <span className={cn(getLinkClass("/industries"), "cursor-pointer inline-flex items-center gap-1")}>
                 Industries
                 <ChevronDown size={14} className="opacity-75" />
               </span>
@@ -151,7 +184,12 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
                     <Link
                       key={ind.href}
                       to={ind.href}
-                      className="block px-3 py-2 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-900 rounded-md transition-colors"
+                      className={cn(
+                        "block px-3 py-2 text-sm rounded-md transition-colors",
+                        location.pathname === ind.href
+                          ? "bg-amber-50 text-amber-800 font-bold"
+                          : "text-slate-700 hover:bg-amber-50 hover:text-amber-900 font-medium"
+                      )}
                     >
                       {ind.label}
                     </Link>

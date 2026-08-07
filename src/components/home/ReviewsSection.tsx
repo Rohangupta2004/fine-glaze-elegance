@@ -73,56 +73,6 @@ export const ReviewsSection = () => {
               </div>
               <ExternalLink size={13} className="text-muted-foreground ml-1" />
             </motion.a>
-
-            {/* IndiaMART */}
-            <motion.a
-              variants={scaleUp}
-              href="https://www.indiamart.com/fine-glaze/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-4 px-6 py-4 border border-orange-500/30 bg-gradient-to-br from-orange-500/10 to-orange-400/5 hover:scale-105 transition-transform duration-200 shadow-sm"
-            >
-              <div className="flex items-center justify-center">
-                <span className="text-[#FF6B00] font-black text-base leading-none">india<span className="text-[#1a56db]">mart</span></span>
-              </div>
-              <div>
-                <div className="flex items-center gap-2 mb-0.5">
-                  <span className="text-2xl font-black text-foreground leading-none">4.8</span>
-                  <div className="flex gap-0.5">
-                    {[1,2,3,4,5].map(i => (
-                      <Star key={i} size={12} className={i <= 4 ? "fill-amber-400 text-amber-400" : "fill-amber-400/40 text-amber-400/40"} />
-                    ))}
-                  </div>
-                </div>
-                <p className="text-xs text-muted-foreground">IndiaMART</p>
-              </div>
-              <ExternalLink size={13} className="text-muted-foreground ml-1" />
-            </motion.a>
-
-            {/* JustDial */}
-            <motion.a
-              variants={scaleUp}
-              href="https://www.justdial.com/Pune/Fine-Glaze"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-4 px-6 py-4 border border-red-500/30 bg-gradient-to-br from-red-500/10 to-red-400/5 hover:scale-105 transition-transform duration-200 shadow-sm"
-            >
-              <div className="flex items-center justify-center">
-                <span className="text-[#FF5A00] font-black text-base leading-none">Just<span className="text-[#1a56db]">Dial</span></span>
-              </div>
-              <div>
-                <div className="flex items-center gap-2 mb-0.5">
-                  <span className="text-2xl font-black text-foreground leading-none">4.7</span>
-                  <div className="flex gap-0.5">
-                    {[1,2,3,4,5].map(i => (
-                      <Star key={i} size={12} className={i <= 4 ? "fill-amber-400 text-amber-400" : "fill-amber-400/40 text-amber-400/40"} />
-                    ))}
-                  </div>
-                </div>
-                <p className="text-xs text-muted-foreground">JustDial</p>
-              </div>
-              <ExternalLink size={13} className="text-muted-foreground ml-1" />
-            </motion.a>
           </div>
         </motion.div>
 
