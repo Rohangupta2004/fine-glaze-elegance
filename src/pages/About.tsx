@@ -13,7 +13,7 @@ import {
 } from "lucide-react";
 import SEO from "@/components/SEO";
 import { useSiteMedia } from "@/hooks/useSiteMedia";
-import { AnimatedMeterFact } from "@/components/common/AnimatedMeterFact";
+import { AnimatedNumber } from "@/components/common/AnimatedNumber";
 
 const teamMembers = [
   {
@@ -191,7 +191,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* Capability in Numbers — Animated Meter Motion */}
+      {/* Capability in Numbers — Numbers in Count-Up Motion */}
       <section className="py-16 bg-stone-900 border-y border-stone-800">
         <div className="container mx-auto px-4">
           <div className="text-center mb-10">
@@ -206,17 +206,20 @@ const About = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-4 gap-4 md:gap-5">
+          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-4 gap-4 md:gap-6">
             {capabilityStats.map((item, idx) => (
-              <AnimatedMeterFact
-                key={idx}
-                val={item.val}
-                label={item.label}
-                sub={item.desc}
-                percent={item.percent}
-                statusBadge={item.statusBadge}
-                theme="dark"
-              />
+              <div 
+                key={idx} 
+                className="bg-stone-950/60 border border-stone-800 p-5 rounded-xl hover:border-amber-500/40 hover:bg-stone-950/90 transition-all flex flex-col justify-between"
+              >
+                <div>
+                  <div className="text-2xl sm:text-3xl font-black text-amber-400 tracking-tight">
+                    <AnimatedNumber value={item.val} />
+                  </div>
+                  <div className="text-sm font-bold text-white mt-1.5">{item.label}</div>
+                  <div className="text-xs text-stone-400 mt-1">{item.desc}</div>
+                </div>
+              </div>
             ))}
           </div>
         </div>
