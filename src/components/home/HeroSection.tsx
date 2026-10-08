@@ -53,13 +53,13 @@ export const HeroSection = () => {
               visible: { transition: { staggerChildren: 0.15 } },
             }}
           >
-            {/* Verified Award Badge */}
+            {/* Verified Award & Leadership Badge */}
             <motion.div
               variants={fadeUp}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-transparent backdrop-blur-sm text-xs sm:text-sm font-semibold text-amber-300 border border-amber-500/40 shadow-lg"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-stone-900/60 backdrop-blur-md text-xs sm:text-sm font-semibold text-amber-300 border border-amber-500/40 shadow-lg"
             >
               <Award className="w-4 h-4 text-amber-400 shrink-0" />
-              <span>Embassy REIT Best Performance Vendor Award 2024</span>
+              <span>5+ Yrs Industry Track Record · Founder 15+ Yrs Experience (Ex-Al Ghurair) · Embassy REIT Awardee</span>
             </motion.div>
 
             {/* Clear Headline */}
@@ -67,8 +67,8 @@ export const HeroSection = () => {
               variants={fadeUp}
               className="text-3xl sm:text-5xl md:text-6xl font-extrabold text-white leading-tight tracking-tight drop-shadow-md"
             >
-              Facade &amp; Glazing Contractor <br className="hidden sm:block" />
-              <span className="text-amber-400">Pan India</span>
+              Complete Facade Solutions &amp; <br className="hidden sm:block" />
+              Fenestration Expert <span className="text-amber-400">Pan India</span>
             </motion.h1>
 
             {/* Clear Subhead */}
@@ -76,10 +76,8 @@ export const HeroSection = () => {
               variants={fadeUp}
               className="text-base sm:text-xl text-stone-200 max-w-2xl mx-auto leading-relaxed max-w-prose drop-shadow"
             >
-              Curtain walls, structural glazing, ACP cladding and glass railings for commercial buildings, IT parks, and high-rise developments.
+              Turnkey architectural envelope engineering — unitized curtain walls, structural glazing, aluminium doors &amp; windows, ACP cladding, and glass railings for commercial landmarks, IT parks, and high-rise developments.
             </motion.p>
-
-
 
             {/* Clear CTA Buttons */}
             <motion.div
@@ -113,7 +111,7 @@ export const HeroSection = () => {
               className="pt-2 text-stone-400 text-xs sm:text-sm font-medium"
             >
               <p className="tracking-wide">
-                Key Projects: <strong className="text-stone-200 font-semibold">Embassy 247 (Vikhroli)</strong> · <strong className="text-stone-200 font-semibold">Pune Airport Terminal</strong> · <strong className="text-stone-200 font-semibold">LTIMindtree Mensa Campus</strong>
+                Key Landmarks: <strong className="text-stone-200 font-semibold">Embassy 247</strong> · <strong className="text-stone-200 font-semibold">Pune Airport Terminal</strong> · <strong className="text-stone-200 font-semibold">Nanavati Max Hospital (L&T)</strong> · <strong className="text-stone-200 font-semibold">LTIMindtree Mensa Campus</strong> · <strong className="text-stone-200 font-semibold">Salsette-27</strong> · <strong className="text-stone-200 font-semibold">Naman Chambers BKC</strong>
               </p>
             </motion.div>
           </motion.div>

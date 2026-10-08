@@ -97,6 +97,32 @@ export const TrustStrip = () => {
           </motion.div>
         </motion.div>
 
+        {/* Capability in Numbers */}
+        <motion.div
+          className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 md:gap-4 my-8 p-4 md:p-6 bg-card border border-border/80 shadow-sm rounded-xl"
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewport}
+          variants={stagger(0.08)}
+        >
+          {[
+            { val: "5+ Yrs", label: "Company Track Record", sub: "Turnkey Execution" },
+            { val: "15+ Yrs", label: "Founder Experience", sub: "Ex-Al Ghurair Group" },
+            { val: "~20,566", label: "SQM Area Delivered", sub: "Across India" },
+            { val: "16+", label: "Documented Projects", sub: "REITs, Airport & Malls" },
+            { val: "40+", label: "Core Technical Team", sub: "Up to 540 Mobilisation" },
+            { val: "10 Lines", label: "Full Spectrum", sub: "Facade & Fenestration" },
+          ].map((item, idx) => (
+            <motion.div key={idx} variants={fadeUp} className="text-center px-2 py-1">
+              <div className="text-base sm:text-lg md:text-xl font-extrabold text-amber-600 tracking-tight">
+                {item.val}
+              </div>
+              <div className="text-[11px] font-bold text-foreground/80 mt-0.5 leading-snug">{item.label}</div>
+              <div className="text-[9px] text-muted-foreground uppercase tracking-wider mt-0.5">{item.sub}</div>
+            </motion.div>
+          ))}
+        </motion.div>
+
         {/* Tagline */}
         <motion.p
           className="text-center text-xs font-semibold text-foreground/50 uppercase tracking-[0.2em] mb-6"

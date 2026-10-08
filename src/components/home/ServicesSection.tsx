@@ -78,6 +78,24 @@ const SERVICE_DEFS = [
     mediaKey: "services_card_amc",
     fallback: "/Amc.webp",
   },
+  {
+    tag: "Solar Control",
+    title: "Louvers & Sun Control",
+    desc: "Fixed and operable architectural aluminium louvers, motorized sun-shading fins, and aerodynamic screening.",
+    spec: "Custom pitch & motorized",
+    href: "/aluminium-louvers",
+    mediaKey: "services_card_louvers",
+    fallback: "/Business%20park.webp",
+  },
+  {
+    tag: "Architectural",
+    title: "Perforated Screens & Jali",
+    desc: "Laser-cut perforated metal cladding, decorative sun-shading panels, and bespoke architectural jali envelopes.",
+    spec: "Custom CNC patterns",
+    href: "/services",
+    mediaKey: "services_card_screens",
+    fallback: "/Panel.webp",
+  },
 ];
 
 export const ServicesSection = () => {
@@ -100,15 +118,14 @@ export const ServicesSection = () => {
           variants={stagger(0.1)}
         >
           <motion.span variants={fadeUp} className="text-primary font-medium uppercase tracking-wider text-sm block">
-            Our Expertise
+            Complete Facade &amp; Fenestration Solutions
           </motion.span>
           <motion.h2 variants={fadeUp} className="text-3xl md:text-4xl font-bold text-foreground">
-            Full-Range{" "}
-            <span className="text-gradient-subtle">Facade Services</span>
+            10 Specialized{" "}
+            <span className="text-gradient-subtle">Service Lines</span>
           </motion.h2>
           <motion.p variants={fadeUp} className="text-muted-foreground max-w-2xl mx-auto">
-            End-to-end facade solutions — engineered, fabricated and installed
-            by one expert team. Click any service for full specs and project gallery.
+            From unitized curtain walls and frameless glazing to high-performance fenestration and AMC maintenance — 38 sub-services engineered by India's turnkey envelope specialists.
           </motion.p>
         </motion.div>
 

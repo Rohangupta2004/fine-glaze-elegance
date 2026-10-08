@@ -4,6 +4,7 @@ import { TrustStrip } from "@/components/home/TrustStrip";
 import { CompanyVideoSection } from "@/components/home/CompanyVideoSection";
 import { PortfolioSection } from "@/components/home/PortfolioSection";
 import { ServicesSection } from "@/components/home/ServicesSection";
+import { ProcessSection } from "@/components/home/ProcessSection";
 import { ReviewsSection } from "@/components/home/ReviewsSection";
 import { ArticlesSection } from "@/components/home/ArticlesSection";
 import { ContactFormSection } from "@/components/home/ContactFormSection";
@@ -17,19 +18,19 @@ const Index = () => {
     "name": "Fine Glaze",
     "url": "https://fineglaze.com",
     "logo": "https://fineglaze.com/Logofg.webp",
-    "description": "Leading facade contractor Pan India specialising in structural glazing, curtain wall systems, ACP cladding, aluminium facades, and glass railings for commercial buildings.",
+    "description": "Leading facade solutions and fenestration expert Pan India with 5+ years track record and founder with 15+ years multinational facade engineering experience (Ex-Al Ghurair Group). Over 20,566 SQM delivered.",
     "telephone": "+918369233566",
     "email": "info@fineglaze.com",
-    "foundingDate": "2018",
-    "areaServed": ["Pan India", "Pune", "Mumbai", "Navi Mumbai", "Thane", "Maharashtra"],
+    "foundingDate": "2019",
+    "areaServed": ["Pan India", "Pune", "Mumbai", "Navi Mumbai", "Thane", "Delhi NCR", "Bengaluru", "Hyderabad", "Maharashtra"],
     "sameAs": [
       "https://maps.app.goo.gl/JDF3ESXQGHtwKoAr6",
       "https://www.linkedin.com/company/fine-glaze"
     ],
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Shop No. 1 & 2, Jagdamba Bhawan Marg, near Sunshine Hills, Shree Siddhivinayak Meera",
-      "addressLocality": "Undri, Pune",
+      "streetAddress": "A3 LW-13, Pragati Serene Building, Sr.No.2, HDFC Bank Chowk, Mohammed Wadi",
+      "addressLocality": "Pune",
       "addressRegion": "Maharashtra",
       "postalCode": "411060",
       "addressCountry": "IN"
@@ -45,15 +46,15 @@ const Index = () => {
     "telephone": "+918369233566",
     "email": "info@fineglaze.com",
     "priceRange": "₹₹₹",
-    "description": "Fine Glaze is a premier facade engineering company operating Pan India, delivering structural glazing, curtain wall, ACP cladding and aluminium facade solutions for commercial buildings.",
+    "description": "Complete facade solutions and fenestration expert Pan India, delivering structural glazing, curtain wall systems, aluminium doors and windows, and ACP cladding.",
     "sameAs": [
       "https://maps.app.goo.gl/JDF3ESXQGHtwKoAr6",
       "https://www.linkedin.com/company/fine-glaze"
     ],
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Shop No. 1 & 2, Jagdamba Bhawan Marg, near Sunshine Hills, Shree Siddhivinayak Meera",
-      "addressLocality": "Undri, Pune",
+      "streetAddress": "A3 LW-13, Pragati Serene Building, Sr.No.2, HDFC Bank Chowk, Mohammed Wadi",
+      "addressLocality": "Pune",
       "addressRegion": "Maharashtra",
       "postalCode": "411060",
       "addressCountry": "IN"
@@ -79,14 +80,18 @@ const Index = () => {
     },
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
-      "name": "Facade Services",
+      "name": "Facade & Fenestration Services",
       "itemListElement": [
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Structural Glazing" } },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Curtain Wall Systems" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "ACP Cladding" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Aluminium Facade" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Structural Glazing" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Aluminium Windows & Doors" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Louvers & Sun Control" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "ACP / Metal Cladding" } },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Glass Railings" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Facade Maintenance AMC" } }
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Skylights & Canopies" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Glass Partitions" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Perforated Screens" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Facade Maintenance & AMC" } }
       ]
     }
   };
@@ -102,16 +107,17 @@ const Index = () => {
   return (
     <Layout darkHero>
       <SEO
-        title="Facade & Glazing Contractor Pan India | Fine Glaze"
-        description="Fine Glaze — top-rated facade contractor Pan India. Structural glazing, unitized curtain walls, ACP cladding & aluminium facades for IT parks, offices & malls. Embassy REIT awarded. ₹350–1200/sq ft. Free site visit."
+        title="Complete Facade Solutions & Fenestration Expert Pan India | Fine Glaze"
+        description="Fine Glaze — premier facade solutions & fenestration expert Pan India. 5+ years company track record, founder 15+ years multinational facade experience (Ex-Al Ghurair Group). ~20,566+ SQM delivered. Embassy REIT Best Vendor 2024 awardee."
         canonical="https://fineglaze.com/"
-        keywords="facade contractor Pan India, all India facade contractor, Fine Glaze, aluminium facade contractor, glazing contractor, building facade company, facade fabrication company"
+        keywords="complete facade solutions, fenestration expert India, facade contractor Pan India, all India facade contractor, Fine Glaze, Deepak Gupta facade, aluminium windows contractor, unitized curtain wall, structural glazing India"
         schemas={[organizationSchema, localBusinessSchema, breadcrumbSchema]}
       />
       <HeroSection />
       <TrustStrip />
       <CompanyVideoSection />
       <ServicesSection />
+      <ProcessSection />
       <PortfolioSection />
       <ReviewsSection />
       <ArticlesSection />

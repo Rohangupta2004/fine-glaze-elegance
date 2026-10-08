@@ -1,47 +1,72 @@
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { cn } from "@/lib/utils";
-import { ClipboardList, Ruler, HardHat, CheckCircle2 } from "lucide-react";
+import { 
+  ClipboardList, 
+  Ruler, 
+  Calculator, 
+  FileCheck2, 
+  Factory, 
+  HardHat, 
+  Droplets, 
+  ShieldCheck 
+} from "lucide-react";
 
 const steps = [
   {
     step: "01",
     icon: ClipboardList,
-    title: "Consultation & Design",
+    title: "Enquiry & Site Survey",
     description:
-      "We begin with a complimentary site visit. Our engineers assess your building, align on design vision, and prepare a detailed scope with material specifications and budget guidance.",
-    color: "bg-amber-600",
-    border: "border-amber-600/20",
-    glow: "hover:border-amber-600/40",
+      "Comprehensive site measurement, access study, elevation scaffolding assessment, and scope freeze in coordination with client and facade consultant.",
   },
   {
     step: "02",
     icon: Ruler,
-    title: "Precision Engineering",
+    title: "Design & Shop Drawings",
     description:
-      "Our in-house team produces detailed shop drawings and structural calculations — every component engineered to IS standards, wind-load requirements, and site-specific constraints.",
-    color: "bg-orange-600",
-    border: "border-orange-600/20",
-    glow: "hover:border-orange-600/40",
+      "In-house drafting of detailed shop drawings, fabrication cut-lists, and installation details prepared by our dedicated design studio.",
   },
   {
     step: "03",
-    icon: HardHat,
-    title: "Fabrication & Installation",
+    icon: Calculator,
+    title: "Engineering Check",
     description:
-      "Premium aluminium and glass systems are fabricated at our Pune facility and installed by certified teams following stringent safety protocols and quality checkpoints.",
-    color: "bg-yellow-700",
-    border: "border-yellow-700/20",
-    glow: "hover:border-yellow-700/40",
+      "Structural member sizing, bracket anchor calculations, and deflection verification tested against project-specific IS 875 wind-load zones.",
   },
   {
     step: "04",
-    icon: CheckCircle2,
-    title: "Handover & AMC Support",
+    icon: FileCheck2,
+    title: "Approval & GFC",
     description:
-      "We conduct a thorough quality inspection before handover. Ongoing AMC contracts ensure your facade stays pristine, weatherproof, and structurally sound for years to come.",
-    color: "bg-stone-700",
-    border: "border-stone-700/20",
-    glow: "hover:border-stone-700/40",
+      "Drawings routed through architect, PMC, and client structural consultants for coordinated review until final GFC (Good For Construction) release.",
+  },
+  {
+    step: "05",
+    icon: Factory,
+    title: "In-House Fabrication",
+    description:
+      "Precision cutting, grooving, routing, and sub-assembly at our dedicated 2,500 sq ft Pisoli unit, project-batched with stage inspection at source.",
+  },
+  {
+    step: "06",
+    icon: HardHat,
+    title: "Sequenced Installation",
+    description:
+      "Floor-by-floor erection under a nominated site incharge, qualified supervisor, and safety officer following strict work-at-height safety protocols.",
+  },
+  {
+    step: "07",
+    icon: Droplets,
+    title: "Testing & Snagging",
+    description:
+      "Site dynamic water penetration testing on installed glazing, snag register raised and systematically closed prior to consultant walkthrough.",
+  },
+  {
+    step: "08",
+    icon: ShieldCheck,
+    title: "Handover & DLP",
+    description:
+      "As-built documentation handover, maintenance manual delivery, and continuous Defect Liability Period (DLP) warranty support as per contract.",
   },
 ];
 
@@ -69,54 +94,53 @@ export const ProcessSection = () => {
           )}
         >
           <span className="text-primary font-medium uppercase tracking-wider text-sm">
-            How We Work
+            How We Deliver · Enterprise Methodology
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-            Our{" "}
-            <span className="text-gradient-subtle">4-Step</span>{" "}
-            Process
+            From Enquiry to Handover —{" "}
+            <span className="text-gradient-subtle">8 Controlled Stages</span>
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            From your first inquiry to final handover — a proven methodology that
-            delivers on time, on budget, and to the highest quality standards.
+          <p className="text-muted-foreground max-w-3xl mx-auto">
+            Every facade package at Fine Glaze is executed through an eight-stage engineering lifecycle, ensuring zero interface clashes, certified wind-load compliance, and defect-free delivery.
           </p>
         </div>
 
-        {/* Steps */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
-          {/* Connector line (desktop) */}
-          <div className="hidden lg:block absolute top-10 left-[12.5%] right-[12.5%] h-[2px] bg-gradient-to-r from-amber-600/30 via-orange-500/30 to-stone-600/30 z-0" />
-
+        {/* Steps Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative">
           {steps.map((step, index) => {
             const Icon = step.icon;
             return (
               <div
                 key={step.step}
                 className={cn(
-                  `relative z-10 group bg-card p-7 border ${step.border} ${step.glow} hover:shadow-xl transition-all duration-300 slide-up`,
+                  "relative z-10 group bg-card p-6 border border-border/70 hover:border-amber-500/50 hover:shadow-xl transition-all duration-300 rounded-lg flex flex-col justify-between slide-up",
                   isVisible && "visible"
                 )}
-                style={{ transitionDelay: `${index * 0.12}s` }}
+                style={{ transitionDelay: `${index * 0.08}s` }}
               >
-                {/* Step number */}
-                <div className="flex items-start justify-between mb-5">
-                  <div
-                    className={`w-12 h-12 ${step.color} flex items-center justify-center`}
-                  >
-                    <Icon size={22} className="text-white" />
+                <div>
+                  {/* Step number and Icon */}
+                  <div className="flex items-start justify-between mb-4">
+                    <div className="w-12 h-12 bg-amber-600/10 text-amber-600 border border-amber-500/20 rounded-lg flex items-center justify-center group-hover:bg-amber-600 group-hover:text-white transition-colors duration-300">
+                      <Icon size={22} />
+                    </div>
+                    <span className="text-4xl font-black text-foreground/10 group-hover:text-amber-600/20 transition-colors leading-none select-none">
+                      {step.step}
+                    </span>
                   </div>
-                  <span className="text-5xl font-black text-foreground/5 group-hover:text-foreground/8 transition-colors leading-none select-none">
-                    {step.step}
-                  </span>
+
+                  {/* Content */}
+                  <h3 className="text-base font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
+                    {step.title}
+                  </h3>
+                  <p className="text-xs text-muted-foreground leading-relaxed">
+                    {step.description}
+                  </p>
                 </div>
 
-                {/* Content */}
-                <h3 className="text-lg font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
-                  {step.title}
-                </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {step.description}
-                </p>
+                <div className="mt-4 pt-3 border-t border-border/50 text-[10px] font-semibold text-amber-700/80 uppercase tracking-widest">
+                  Stage {step.step} of 08
+                </div>
               </div>
             );
           })}

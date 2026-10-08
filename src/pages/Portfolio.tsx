@@ -384,16 +384,17 @@ const Portfolio = () => {
           ════════════════════════════════════════════════════ */}
       <section className="bg-stone-900 py-6 md:py-8">
         <div className="container mx-auto px-5 md:px-16">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-0 md:divide-x md:divide-stone-700">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-4 md:gap-0 md:divide-x md:divide-stone-700">
             {[
-              { number: "10+", label: "Projects Completed" },
-              { number: "10+", label: "Years in Facade" },
-              { number: "3", label: "Cities Covered" },
-              { number: "1", label: "Award Won" },
+              { number: "~20,566 SQM", label: "Facade Area Delivered" },
+              { number: "16+", label: "Marquee Projects Documented" },
+              { number: "5+ Years", label: "Company Track Record" },
+              { number: "15+ Years", label: "Founder Industry Leadership" },
+              { number: "Award 2024", label: "Embassy REIT Best Vendor" },
             ].map((s) => (
-              <div key={s.label} className="text-center px-4">
-                <p className="text-xl md:text-2xl font-bold text-white">{s.number}</p>
-                <p className="text-stone-500 text-[10px] uppercase tracking-widest mt-1">{s.label}</p>
+              <div key={s.label} className="text-center px-3">
+                <p className="text-lg md:text-xl font-bold text-amber-400">{s.number}</p>
+                <p className="text-stone-400 text-[10px] uppercase tracking-wider mt-1">{s.label}</p>
               </div>
             ))}
           </div>
