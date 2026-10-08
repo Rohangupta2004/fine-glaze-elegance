@@ -53,13 +53,13 @@ export const HeroSection = () => {
               visible: { transition: { staggerChildren: 0.15 } },
             }}
           >
-            {/* Verified Award & Leadership Badge */}
+            {/* Verified Award & Team Leadership Badge */}
             <motion.div
               variants={fadeUp}
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-stone-900/60 backdrop-blur-md text-xs sm:text-sm font-semibold text-amber-300 border border-amber-500/40 shadow-lg"
             >
               <Award className="w-4 h-4 text-amber-400 shrink-0" />
-              <span>5+ Yrs Industry Track Record · Founder 15+ Yrs Experience (Ex-Al Ghurair) · Embassy REIT Awardee</span>
+              <span>5+ Yrs Industry Track Record · 40+ Core Engineering Specialists · Embassy REIT Awardee</span>
             </motion.div>
 
             {/* Clear Headline */}

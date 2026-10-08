@@ -9,6 +9,7 @@ import SEO from "@/components/SEO";
 import { Helmet } from "react-helmet-async";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { cn } from "@/lib/utils";
+import { AnimatedMeterFact } from "@/components/common/AnimatedMeterFact";
 
 /* ─── Reusable fade-in wrapper ─── */
 function FadeIn({
@@ -389,22 +390,26 @@ const Portfolio = () => {
 
 
       {/* ════════════════════════════════════════════════════
-          STATS — dark band
+          STATS — dark band with Meter Motion
           ════════════════════════════════════════════════════ */}
-      <section className="bg-stone-900 py-6 md:py-8">
-        <div className="container mx-auto px-5 md:px-16">
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-4 md:gap-0 md:divide-x md:divide-stone-700">
+      <section className="bg-stone-900 py-8 md:py-12 border-y border-stone-800">
+        <div className="container mx-auto px-4 md:px-12">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-3 md:gap-4">
             {[
-              { number: "~20,566 SQM", label: "Facade Area Delivered" },
-              { number: "16+", label: "Marquee Projects Documented" },
-              { number: "5+ Years", label: "Company Track Record" },
-              { number: "15+ Years", label: "Founder Industry Leadership" },
-              { number: "Award 2024", label: "Embassy REIT Best Vendor" },
-            ].map((s) => (
-              <div key={s.label} className="text-center px-3">
-                <p className="text-lg md:text-xl font-bold text-amber-400">{s.number}</p>
-                <p className="text-stone-400 text-[10px] uppercase tracking-wider mt-1">{s.label}</p>
-              </div>
+              { number: "~20,566 SQM", label: "Facade Area Delivered", percent: 95, statusBadge: "VERIFIED" },
+              { number: "16+", label: "Marquee Projects", percent: 88, statusBadge: "GRADE-A" },
+              { number: "5+ Years", label: "Company Track Record", percent: 90, statusBadge: "PROVEN TRACK" },
+              { number: "45+ Years", label: "Collective Team Leadership", percent: 98, statusBadge: "MNC LEADERSHIP" },
+              { number: "Award 2024", label: "Embassy REIT Best Vendor", percent: 100, statusBadge: "AWARDEE" },
+            ].map((s, idx) => (
+              <AnimatedMeterFact
+                key={idx}
+                val={s.number}
+                label={s.label}
+                percent={s.percent}
+                statusBadge={s.statusBadge}
+                theme="dark"
+              />
             ))}
           </div>
         </div>

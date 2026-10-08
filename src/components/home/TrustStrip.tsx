@@ -3,6 +3,7 @@ import { Trophy, Star } from "lucide-react";
 import { motion } from "framer-motion";
 import { fadeUp, stagger, viewport } from "@/hooks/useMotion";
 import { supabase } from "@/lib/supabase";
+import { AnimatedMeterFact } from "@/components/common/AnimatedMeterFact";
 
 /* ─── Fallback client list (used if supabase manifest missing) ─── */
 const fallbackClients = [
@@ -97,28 +98,67 @@ export const TrustStrip = () => {
           </motion.div>
         </motion.div>
 
-        {/* Capability in Numbers */}
+        {/* Capability in Numbers — Calibrated Meter Motion */}
         <motion.div
-          className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 md:gap-4 my-8 p-4 md:p-6 bg-card border border-border/80 shadow-sm rounded-xl"
+          className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 md:gap-4 my-8 p-3 sm:p-5 bg-card/60 backdrop-blur-sm border border-border/80 shadow-md rounded-2xl"
           initial="hidden"
           whileInView="visible"
           viewport={viewport}
           variants={stagger(0.08)}
         >
           {[
-            { val: "5+ Yrs", label: "Company Track Record", sub: "Turnkey Execution" },
-            { val: "15+ Yrs", label: "Founder Experience", sub: "Ex-Al Ghurair Group" },
-            { val: "~20,566", label: "SQM Area Delivered", sub: "Across India" },
-            { val: "16+", label: "Documented Projects", sub: "REITs, Airport & Malls" },
-            { val: "40+", label: "Core Technical Team", sub: "Up to 540 Mobilisation" },
-            { val: "10 Lines", label: "Full Spectrum", sub: "Facade & Fenestration" },
+            {
+              val: "5+ Yrs",
+              label: "Company Track Record",
+              sub: "Turnkey Execution",
+              percent: 90,
+              statusBadge: "PROVEN TRACK",
+            },
+            {
+              val: "45+ Yrs",
+              label: "Team Engineering Mastery",
+              sub: "MNC & Facade Veterans",
+              percent: 98,
+              statusBadge: "MNC VETERANS",
+            },
+            {
+              val: "~20,566 SQM",
+              label: "Area Delivered",
+              sub: "Pan-India Landmarks",
+              percent: 95,
+              statusBadge: "VERIFIED",
+            },
+            {
+              val: "16+",
+              label: "Documented Projects",
+              sub: "REITs, Airport & Malls",
+              percent: 88,
+              statusBadge: "GRADE-A ASSETS",
+            },
+            {
+              val: "40+",
+              label: "Core Technical Team",
+              sub: "Design & Supervision",
+              percent: 92,
+              statusBadge: "IN-HOUSE TEAM",
+            },
+            {
+              val: "540",
+              label: "Peak Mobilisation",
+              sub: "Site Labour Capacity",
+              percent: 96,
+              statusBadge: "RAPID DEPLOY",
+            },
           ].map((item, idx) => (
-            <motion.div key={idx} variants={fadeUp} className="text-center px-2 py-1">
-              <div className="text-base sm:text-lg md:text-xl font-extrabold text-amber-600 tracking-tight">
-                {item.val}
-              </div>
-              <div className="text-[11px] font-bold text-foreground/80 mt-0.5 leading-snug">{item.label}</div>
-              <div className="text-[9px] text-muted-foreground uppercase tracking-wider mt-0.5">{item.sub}</div>
+            <motion.div key={idx} variants={fadeUp}>
+              <AnimatedMeterFact
+                val={item.val}
+                label={item.label}
+                sub={item.sub}
+                percent={item.percent}
+                statusBadge={item.statusBadge}
+                theme="light"
+              />
             </motion.div>
           ))}
         </motion.div>

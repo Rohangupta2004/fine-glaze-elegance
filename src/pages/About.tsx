@@ -13,14 +13,15 @@ import {
 } from "lucide-react";
 import SEO from "@/components/SEO";
 import { useSiteMedia } from "@/hooks/useSiteMedia";
+import { AnimatedMeterFact } from "@/components/common/AnimatedMeterFact";
 
 const teamMembers = [
   {
     name: "Deepak Gupta",
-    role: "Founder & Director · QHSE & Design Lead",
+    role: "Managing Director · QHSE & Design Direction",
     qualification: "B.E. Civil · 15+ Years Industry Experience",
     experience: "15+ Years",
-    bio: "Civil engineering graduate with over 15+ years of hands-on facade and fenestration industry leadership. Gained prestigious multinational experience with the Al Ghurair Group in the Middle East before founding Fine Glaze. Personally leads design direction, technical innovation, structural compliance, and overall project delivery across India.",
+    bio: "Civil engineering graduate bringing over 15+ years of hands-on facade and fenestration engineering leadership. Gained multinational expertise with the Al Ghurair Group before establishing Fine Glaze. Leads engineering direction, technical innovation, structural compliance, and overall project governance alongside the technical team.",
     tags: ["Ex-Al Ghurair Group", "B.E. Civil", "Design & QHSE Direction"],
   },
   {
@@ -74,56 +75,44 @@ const teamMembers = [
 ];
 
 const capabilityStats = [
-  { val: "~20,566 SQM", label: "Facade Area Delivered", desc: "Commercial, healthcare & high-rises" },
-  { val: "16+", label: "Marquee Project Records", desc: "Documented in corporate profile" },
-  { val: "5+ Years", label: "Company Track Record", desc: "Turnkey delivery & long-term AMC" },
-  { val: "15+ Years", label: "Founder Industry Leadership", desc: "Multinational Al Ghurair alumni" },
-  { val: "~2,500 SQ FT", label: "In-House Fabrication Unit", desc: "Pisoli, Pune dedicated facility" },
-  { val: "40+", label: "Core Technical Team", desc: "Design, supervision & engineering" },
-  { val: "Up to 540", label: "Peak Labour Mobilisation", desc: "Multi-site parallel execution" },
-  { val: "Award 2024", label: "Best Performance Vendor", desc: "Awarded by Embassy REIT" },
+  { val: "~20,566 SQM", label: "Facade Area Delivered", desc: "Commercial & high-rises", percent: 95, statusBadge: "VERIFIED" },
+  { val: "16+", label: "Marquee Project Records", desc: "Grade-A asset portfolio", percent: 88, statusBadge: "PORTFOLIO" },
+  { val: "5+ Years", label: "Company Track Record", desc: "Turnkey delivery & AMC", percent: 90, statusBadge: "PROVEN TRACK" },
+  { val: "45+ Years", label: "Collective Team Leadership", desc: "Multinational & MNC Alumni", percent: 98, statusBadge: "MNC LEADERSHIP" },
+  { val: "~2,500 SQ FT", label: "In-House Fabrication Unit", desc: "Pisoli, Pune dedicated facility", percent: 86, statusBadge: "PISOLI HUB" },
+  { val: "40+", label: "Core Technical Team", desc: "Design, supervision & engineering", percent: 92, statusBadge: "IN-HOUSE TEAM" },
+  { val: "Up to 540", label: "Peak Labour Mobilisation", desc: "Multi-site parallel execution", percent: 96, statusBadge: "RAPID DEPLOY" },
+  { val: "Award 2024", label: "Best Performance Vendor", desc: "Awarded by Embassy REIT", percent: 100, statusBadge: "REIT AWARDEE" },
 ];
 
-const deliveryStages = [
+const deliveryPhases = [
   {
-    num: "01",
-    title: "Enquiry & Site Survey",
-    desc: "Site measurement, access study, scaffolding layout, and scope freeze with client and facade consultant.",
+    phase: "01",
+    phaseLabel: "Phase 01",
+    title: "Pre-Engineering & Architectural Detailing",
+    desc: "Site measurement, total-station survey, 3D laser elevation scanning, and comprehensive shop drawing coordination with lead architects.",
+    milestone: "Shop Drawings Freeze & Consultant Sign-Off",
   },
   {
-    num: "02",
-    title: "Design & Shop Drawings",
-    desc: "Fabrication and installation drawings prepared in-house before cutting for consultant review.",
+    phase: "02",
+    phaseLabel: "Phase 02",
+    title: "Structural Engineering & GFC Approvals",
+    desc: "Member sizing, bracket anchor pull-out calculations, and deflection verification tested against project IS 875 wind loads until final GFC release.",
+    milestone: "GFC Drawing Release & Engineering Certification",
   },
   {
-    num: "03",
-    title: "Engineering Check",
-    desc: "Member sizing, bracket anchor calculations, and deflection verification tested against project wind loads.",
+    phase: "03",
+    phaseLabel: "Phase 03",
+    title: "In-House Precision Fabrication & Factory QC",
+    desc: "Precision cutting, grooving, routing, and cassette pre-assembly at our dedicated 2,500 sq ft Pisoli facility, project-batched with stage QC.",
+    milestone: "Factory Quality Clearance & Batched Site Dispatch",
   },
   {
-    num: "04",
-    title: "Approval & GFC",
-    desc: "Drawings routed through architect, PMC, and client until final GFC (Good For Construction) release.",
-  },
-  {
-    num: "05",
-    title: "In-House Fabrication",
-    desc: "Precision cutting, grooving, routing, and assembly at our Pisoli facility, project-batched with QC.",
-  },
-  {
-    num: "06",
-    title: "Sequenced Installation",
-    desc: "Floor-by-floor erection under dedicated site incharge, safety officer, and qualified supervisors.",
-  },
-  {
-    num: "07",
-    title: "Testing & Snagging",
-    desc: "On-site dynamic water penetration testing; third-party ASTM testing; snag register closure.",
-  },
-  {
-    num: "08",
-    title: "Handover & DLP",
-    desc: "As-built documentation handover, maintenance manuals, and Defect Liability Period (DLP) support.",
+    phase: "04",
+    phaseLabel: "Phase 04",
+    title: "High-Rise Erection, Testing & DLP Handover",
+    desc: "Sequenced floor-by-floor mechanical erection under certified supervisors, AAMA 501.2 dynamic water testing, and continuous DLP warranty support.",
+    milestone: "Snag-Free Handover & Active DLP Support",
   },
 ];
 
@@ -148,7 +137,7 @@ const About = () => {
     <Layout darkHero>
       <SEO
         title="About Fine Glaze: Complete Facade Solutions & Fenestration Expert Pan India"
-        description="Fine Glaze is a premier turnkey facade engineering company Pan India. 5+ years company track record, founder 15+ years multinational experience (Ex-Al Ghurair Group). ~20,566+ SQM delivered. Embassy REIT Best Performance Vendor 2024."
+        description="Fine Glaze is a premier turnkey facade engineering company Pan India. 5+ years company track record, 40+ core engineering specialists, collective 45+ years multinational experience. ~20,566+ SQM delivered. Embassy REIT Best Performance Vendor 2024."
         canonical="https://fineglaze.com/about"
         keywords="Fine Glaze, Deepak Gupta facade, Harishankar Chowdhary, complete facade solutions, fenestration expert India, facade contractor Pan India, aluminium facade fabrication, structural glazing company, curtain wall contractor India"
         schema={{
@@ -161,7 +150,7 @@ const About = () => {
             "founder": {
               "@type": "Person",
               "name": "Deepak Gupta",
-              "jobTitle": "Founder & Director",
+              "jobTitle": "Managing Director",
               "alumniOf": "Al Ghurair Group"
             },
             "foundingLocation": { "@type": "Place", "name": "Pune, Maharashtra" },
@@ -187,7 +176,7 @@ const About = () => {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-500/10 text-amber-300 text-xs sm:text-sm font-semibold border border-amber-500/30">
               <Award className="w-4 h-4 text-amber-400 shrink-0" />
-              <span>5+ Yrs Company Track Record · Founder 15+ Yrs Industry Leadership (Ex-Al Ghurair)</span>
+              <span>5+ Yrs Company Track Record · 40+ Core Engineering Specialists · Embassy REIT Awardee</span>
             </div>
 
             <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold text-white leading-tight tracking-tight">
@@ -202,28 +191,32 @@ const About = () => {
         </div>
       </section>
 
-      {/* Capability in Numbers (Slide 3 & 11) */}
-      <section className="py-14 bg-stone-900 border-y border-stone-800">
+      {/* Capability in Numbers — Animated Meter Motion */}
+      <section className="py-16 bg-stone-900 border-y border-stone-800">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-8">
+          <div className="text-center mb-10">
             <span className="text-amber-400 text-xs font-bold uppercase tracking-[0.25em]">
               02 — Capability in Numbers
             </span>
             <h2 className="text-2xl sm:text-3xl font-extrabold text-white mt-1">
               Delivered Work &amp; Mobilisation Strength
             </h2>
+            <p className="text-stone-400 text-sm mt-2 max-w-2xl mx-auto">
+              Real-time engineering metrics calibrated across commercial landmarks, IT parks, and high-rise developments across India.
+            </p>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-4 gap-4 md:gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-4 gap-4 md:gap-5">
             {capabilityStats.map((item, idx) => (
-              <div 
-                key={idx} 
-                className="bg-stone-950/60 border border-stone-800 p-5 rounded-xl hover:border-amber-500/40 transition-colors"
-              >
-                <div className="text-2xl sm:text-3xl font-black text-amber-400">{item.val}</div>
-                <div className="text-sm font-bold text-white mt-1">{item.label}</div>
-                <div className="text-xs text-stone-400 mt-0.5">{item.desc}</div>
-              </div>
+              <AnimatedMeterFact
+                key={idx}
+                val={item.val}
+                label={item.label}
+                sub={item.desc}
+                percent={item.percent}
+                statusBadge={item.statusBadge}
+                theme="dark"
+              />
             ))}
           </div>
         </div>
@@ -274,7 +267,7 @@ const About = () => {
                   Fine Glaze operates as a specialist facade and fenestration contractor — design, fabrication, installation, and long-term maintenance handled by a dedicated, accountable in-house team.
                 </p>
                 <p>
-                  With more than <strong>5+ years</strong> of dedicated company execution and a founder bringing over <strong>15+ years</strong> of multinational facade engineering leadership (including prestigious work with the Al Ghurair Group), Fine Glaze has established itself as the trusted partner for India's Grade-A asset owners.
+                  With more than <strong>5+ years</strong> of dedicated company execution and a multidisciplinary leadership team bringing over <strong>45+ years</strong> of collective multinational facade engineering mastery (including senior alumni from the Al Ghurair Group and premier Indian infrastructure MNCs), Fine Glaze has established itself as the trusted partner for India's Grade-A asset owners.
                 </p>
                 <p>
                   From large-scale commercial curtain walls at <strong>Embassy 247</strong> and <strong>Embassy Techzone</strong> to landmark public infrastructure at the <strong>New Integrated Terminal of Pune International Airport</strong>, hospital facades with <strong>L&amp;T Construction</strong> at <strong>Nanavati Max Hospital</strong>, and corporate IT campuses like <strong>LTIMindtree</strong> — we engineer envelopes that withstand extreme climate dynamics while delivering pristine architectural elegance.
@@ -285,7 +278,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* Leadership & Management Team (Slides 5, 6, 7, 16, 25) */}
+      {/* Leadership & Management Team */}
       <section className="py-20 bg-muted/60 border-t border-border">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-14">
@@ -293,21 +286,18 @@ const About = () => {
               12 — Leadership &amp; Engineering Team
             </span>
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground mt-2">
-              Driven by <span className="text-gradient-subtle">Proven Facade Leadership</span>
+              Driven by an <span className="text-gradient-subtle">Elite Multidisciplinary Team</span>
             </h2>
             <p className="text-muted-foreground mt-3">
-              An accountable leadership structure combining global multinational standards with over four decades of collective facade engineering mastery.
+              Our multi-tier facade organization brings together veteran operations heads, certified structural engineers, in-house architectural detailers, and QHSE officers with over four decades of collective field mastery.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {teamMembers.map((member, idx) => (
+            {teamMembers.map((member) => (
               <div
                 key={member.name}
-                className={cn(
-                  "bg-card p-6 border border-border/80 rounded-xl hover:border-amber-500/50 hover:shadow-xl transition-all duration-300 flex flex-col justify-between",
-                  idx === 0 && "md:col-span-2 lg:col-span-2 border-amber-500/40 bg-gradient-to-br from-card via-card to-amber-500/5"
-                )}
+                className="bg-card p-6 border border-border/80 rounded-xl hover:border-amber-500/50 hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
               >
                 <div>
                   <div className="flex items-start justify-between gap-4 mb-3">
@@ -362,7 +352,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* 8-Stage Delivery Process (Slide 15) */}
+      {/* 4-Phase Delivery Process */}
       <section className="py-20 bg-background border-t border-border">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-14">
@@ -370,25 +360,31 @@ const About = () => {
               04 — How We Deliver
             </span>
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground mt-2">
-              From Enquiry to Handover — <span className="text-gradient-subtle">8 Controlled Stages</span>
+              Architectural Envelope Execution — <span className="text-gradient-subtle">4 Strategic Phases</span>
             </h2>
             <p className="text-muted-foreground mt-3">
-              Eight structured milestones executed on every facade package to guarantee structural safety, wind-load resistance, and zero interface clashes.
+              Four structured, milestone-governed engineering phases executed on every facade package to guarantee structural safety, wind-load resistance, and zero interface clashes.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {deliveryStages.map((stage) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {deliveryPhases.map((phase) => (
               <div 
-                key={stage.num} 
-                className="bg-card border border-border p-6 rounded-xl hover:border-amber-500/40 hover:shadow-lg transition-all"
+                key={phase.phase} 
+                className="bg-card border border-border/80 p-6 rounded-2xl hover:border-amber-500/50 hover:shadow-xl transition-all flex flex-col justify-between"
               >
-                <div className="flex items-center justify-between mb-3">
-                  <span className="text-2xl font-black text-amber-600">{stage.num}</span>
-                  <span className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest">Stage {stage.num}</span>
+                <div>
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="text-2xl font-black text-amber-600">{phase.phase}</span>
+                    <span className="text-[10px] font-bold text-amber-700 bg-amber-500/10 border border-amber-500/20 px-2 py-0.5 rounded uppercase tracking-widest">{phase.phaseLabel}</span>
+                  </div>
+                  <h3 className="text-base font-bold text-foreground mb-2">{phase.title}</h3>
+                  <p className="text-xs text-muted-foreground leading-relaxed">{phase.desc}</p>
                 </div>
-                <h3 className="text-base font-bold text-foreground mb-2">{stage.title}</h3>
-                <p className="text-xs text-muted-foreground leading-relaxed">{stage.desc}</p>
+                <div className="mt-4 pt-3 border-t border-border/60">
+                  <div className="text-[10px] font-bold text-foreground/50 uppercase tracking-wider mb-1">Phase Milestone</div>
+                  <div className="text-xs font-semibold text-amber-700 line-clamp-1">{phase.milestone}</div>
+                </div>
               </div>
             ))}
           </div>

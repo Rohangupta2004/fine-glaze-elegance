@@ -18,7 +18,7 @@ const Index = () => {
     "name": "Fine Glaze",
     "url": "https://fineglaze.com",
     "logo": "https://fineglaze.com/Logofg.webp",
-    "description": "Leading facade solutions and fenestration expert Pan India with 5+ years track record and founder with 15+ years multinational facade engineering experience (Ex-Al Ghurair Group). Over 20,566 SQM delivered.",
+    "description": "Leading facade solutions and fenestration expert Pan India with 5+ years company track record and multidisciplinary engineering team with 45+ years collective multinational facade experience (Ex-Al Ghurair & MNC veterans). Over 20,566 SQM delivered.",
     "telephone": "+918369233566",
     "email": "info@fineglaze.com",
     "foundingDate": "2019",
@@ -108,7 +108,7 @@ const Index = () => {
     <Layout darkHero>
       <SEO
         title="Complete Facade Solutions & Fenestration Expert Pan India | Fine Glaze"
-        description="Fine Glaze — premier facade solutions & fenestration expert Pan India. 5+ years company track record, founder 15+ years multinational facade experience (Ex-Al Ghurair Group). ~20,566+ SQM delivered. Embassy REIT Best Vendor 2024 awardee."
+        description="Fine Glaze — premier facade solutions & fenestration expert Pan India. 5+ years company track record, 40+ core engineering team, 45+ years collective multinational facade expertise. ~20,566+ SQM delivered. Embassy REIT Best Vendor 2024 awardee."
         canonical="https://fineglaze.com/"
         keywords="complete facade solutions, fenestration expert India, facade contractor Pan India, all India facade contractor, Fine Glaze, Deepak Gupta facade, aluminium windows contractor, unitized curtain wall, structural glazing India"
         schemas={[organizationSchema, localBusinessSchema, breadcrumbSchema]}
