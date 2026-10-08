@@ -93,15 +93,18 @@ const portfolioSchema = {
 /* ════════════════════════════════════════════════════
    SHOWCASE CARD — full-width alternating layout
    ════════════════════════════════════════════════════ */
+interface ShowcaseProjectProps {
+  key?: React.Key;
+  p: Project;
+  index: number;
+  reversed: boolean;
+}
+
 function ShowcaseProject({
   p,
   index,
   reversed,
-}: {
-  p: Project;
-  index: number;
-  reversed: boolean;
-}) {
+}: ShowcaseProjectProps) {
   const num = String(index + 1).padStart(2, "0");
 
   return (
@@ -220,7 +223,13 @@ function ShowcaseProject({
 /* ════════════════════════════════════════════════════
    COMPACT CARD — for grid sections
    ════════════════════════════════════════════════════ */
-function CompactCard({ p, index }: { p: Project; index: number }) {
+interface CompactCardProps {
+  key?: React.Key;
+  p: Project;
+  index: number;
+}
+
+function CompactCard({ p, index }: CompactCardProps) {
   const num = String(index + 1).padStart(2, "0");
 
   return (

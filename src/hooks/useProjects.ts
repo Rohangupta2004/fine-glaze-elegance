@@ -11,6 +11,8 @@ export interface Project {
   year: string;
   client: string;
   scope: string;
+  status?: "Completed" | "Ongoing" | string;
+  systemUsed?: string;
   image: string;
   gallery: string[];
   description: string;
@@ -54,6 +56,8 @@ function mapSupabaseRow(row: any): Project {
     year: row.year,
     client: row.client,
     scope: row.scope,
+    status: row.status ?? "Completed",
+    systemUsed: row.system_used ?? row.systemUsed ?? "",
     image: row.image,
     gallery: parseJsonArray(row.gallery),
     description: row.description,
