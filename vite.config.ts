@@ -3,8 +3,9 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
 
-// 1. All 35 Locations from your Sitemap
+// 1. All Locations (Pan India, National Metros, and Regional Hubs)
 const locations = [
+  "pan-india", "all-india", "india", "delhi-ncr", "bengaluru", "hyderabad", "chennai", "ahmedabad", "kolkata",
   "pune", "hinjewadi", "kharadi", "baner", "wakad", "viman-nagar", "magarpatta",
   "hadapsar", "pimpri", "chinchwad", "kalyani-nagar", "koregaon-park", "aundh",
   "balewadi", "mumbai", "bkc", "andheri", "powai", "lower-parel", "vikhroli",
@@ -23,8 +24,13 @@ const services = [
   "facade-contractor"
 ];
 
-// Generate all 245 dynamic facade URLs
+// Generate all dynamic facade URLs
 const dynamicUrls: string[] = [];
+// Direct city/region URLs
+locations.forEach(location => {
+  dynamicUrls.push(`/facade-contractor/${location}`);
+});
+// Service-location combination URLs
 services.forEach(service => {
   locations.forEach(location => {
     dynamicUrls.push(`/facade-contractor/${service}-${location}`);

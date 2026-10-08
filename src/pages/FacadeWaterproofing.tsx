@@ -9,7 +9,7 @@ export default function FacadeWaterproofing() {
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "Facade Waterproofing & Leak Repair in Pune & Mumbai",
+    "name": "Facade Waterproofing & Leak Repair Pan India",
     "provider": {
       "@type": "LocalBusiness",
       "name": "Fine Glaze",
@@ -28,7 +28,7 @@ export default function FacadeWaterproofing() {
       { "@type": "City", "name": "Mumbai" },
       { "@type": "State", "name": "Maharashtra" }
     ],
-    "description": "Facade waterproofing and glass facade leak repair in Pune & Mumbai. Sealant replacement, curtain wall leakage diagnosis & remediation. Free inspection."
+    "description": "Facade waterproofing and glass facade leak repair Pan India. Sealant replacement, curtain wall leakage diagnosis & remediation. Free inspection."
   };
 
   const faqSchema = {
@@ -46,15 +46,15 @@ export default function FacadeWaterproofing() {
     "@type": "BreadcrumbList",
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://fineglaze.com" },
-      { "@type": "ListItem", "position": 2, "name": "Facade Waterproofing & Leak Repair in Pune & Mumbai", "item": "https://fineglaze.com/facade-waterproofing" }
+      { "@type": "ListItem", "position": 2, "name": "Facade Waterproofing & Leak Repair Pan India", "item": "https://fineglaze.com/facade-waterproofing" }
     ]
   };
 
   return (
     <Layout darkHero>
       <SEO
-        title="Facade Waterproofing Contractor Pune & Mumbai | Leak Repair Solutions - Fine Glaze"
-        description="Top facade waterproofing contractor in Pune & Mumbai. Glass facade leak repair, curtain wall leakage remediation, sealant replacement & building waterproofing."
+        title="Facade Waterproofing Contractor Pan India | Leak Repair Solutions - Fine Glaze"
+        description="Top facade waterproofing contractor Pan India. Glass facade leak repair, curtain wall leakage remediation, sealant replacement & building waterproofing."
         canonical="https://fineglaze.com/facade-waterproofing"
         keywords="facade waterproofing contractor, glass facade leak repair, curtain wall leakage repair, facade sealant replacement, building facade waterproofing"
         ogImage="https://images.unsplash.com/photo-1505765050516-f72dcac9c60e"

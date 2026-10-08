@@ -68,7 +68,7 @@ export default function CurtainWallCostGuide() {
             <h1 className="text-3xl md:text-4xl font-bold mb-4">
               Curtain Wall Cost <span className="text-gradient-gold">Guide India 2024</span>
             </h1>
-            <p className="text-lg text-white/80 mb-8">Planning a curtain wall for your commercial building? This comprehensive guide breaks down curtain wall costs in India — covering all system types, glass specifications, installation factors, and real pricing ranges based on Fine Glaze's extensive project experience across Pune, Mumbai, and Maharashtra.</p>
+            <p className="text-lg text-white/80 mb-8">Planning a curtain wall for your commercial building? This comprehensive guide breaks down curtain wall costs in India — covering all system types, glass specifications, installation factors, and real pricing ranges based on Fine Glaze's extensive project experience Pan India.</p>
             <div className="flex gap-4">
               <Link to="/contact">
                 <Button size="lg" className="bg-amber-600 hover:bg-amber-700">Get Free Quote</Button>

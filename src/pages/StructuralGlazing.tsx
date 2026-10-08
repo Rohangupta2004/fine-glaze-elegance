@@ -207,8 +207,8 @@ export default function StructuralGlazing() {
   return (
     <Layout darkHero>
       <SEO
-        title="Structural Glazing Contractor Pune & Mumbai | Frameless Glass Facades - Fine Glaze"
-        description="Leading structural glazing contractor in Pune & Mumbai. 2-side, 4-side & spider glazed facade systems for commercial buildings, IT parks & showrooms."
+        title="Structural Glazing Contractor Pan India | Frameless Glass Facades - Fine Glaze"
+        description="Leading structural glazing contractor Pan India. 2-side, 4-side & spider glazed facade systems for commercial buildings, IT parks & showrooms."
         canonical="https://fineglaze.com/structural-glazing"
         keywords="structural glazing contractor, structural glazing systems, glass facade contractor, 2-side structural glazing, 4-side structural glazing, frameless glass facade"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}
@@ -240,7 +240,7 @@ export default function StructuralGlazing() {
             className="text-amber-400 text-xs font-bold tracking-[0.4em] uppercase mb-5 animate-fade-in"
             style={{ animationDelay: "0.05s" }}
           >
-            Fine Glaze · Pune · Mumbai · Maharashtra
+            Fine Glaze · Pan India
           </p>
 
           <h1
@@ -250,7 +250,7 @@ export default function StructuralGlazing() {
             Structural Glazing<br />
             <span className="text-gradient-gold">Contractors</span><br />
             <span style={{ fontSize: "clamp(1.25rem, 2.5vw, 2rem)", fontWeight: 600, color: "rgba(255,255,255,0.85)" }}>
-              Pune · Mumbai.
+              Pan India.
             </span>
           </h1>
 
@@ -258,7 +258,7 @@ export default function StructuralGlazing() {
             className="mt-6 text-white/70 text-base md:text-lg max-w-lg leading-relaxed animate-fade-in-up"
             style={{ animationDelay: "0.2s" }}
           >
-            Frameless 2-side, 4-side and spider glazing systems for commercial buildings, IT campuses and showrooms across Pune and Mumbai.
+            Frameless 2-side, 4-side and spider glazing systems for commercial buildings, IT campuses and showrooms Pan India.
           </p>
 
           <div

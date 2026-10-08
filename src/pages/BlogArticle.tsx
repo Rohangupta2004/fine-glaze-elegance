@@ -139,7 +139,7 @@ export default function BlogArticle() {
               Explore More Facade Solutions
             </h3>
             <p className="text-muted-foreground mb-6">
-              Browse our premium facade, glazing and aluminium cladding solutions across Pune, Mumbai and Maharashtra.
+              Browse our premium facade, glazing and aluminium cladding solutions Pan India.
             </p>
 
             <div className="grid sm:grid-cols-2 gap-4">

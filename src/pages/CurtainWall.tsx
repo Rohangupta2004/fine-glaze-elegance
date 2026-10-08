@@ -168,7 +168,7 @@ export default function CurtainWall() {
       { "@type": "City", name: "Mumbai" },
       { "@type": "City", name: "Navi Mumbai" },
     ],
-    description: "Leading curtain wall manufacturers in Pune & Mumbai. Unitized, stick & semi-unitized glass curtain wall systems.",
+    description: "Leading curtain wall manufacturers Pan India. Unitized, stick & semi-unitized glass curtain wall systems.",
   };
 
   const breadcrumbSchema = {
@@ -187,10 +187,10 @@ export default function CurtainWall() {
     mainEntity: [
       {
         "@type": "Question",
-        name: "Who are the leading curtain wall manufacturers in Pune and Mumbai?",
+        name: "Who are the leading curtain wall manufacturers in India?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Fine Glaze is a leading curtain wall manufacturer in Pune and Mumbai, engineering unitized, stick, and semi-unitized curtain wall systems for commercial towers and IT parks.",
+          text: "Fine Glaze is a leading curtain wall manufacturer Pan India, engineering unitized, stick, and semi-unitized curtain wall systems for commercial towers and IT parks.",
         },
       },
       {
@@ -217,8 +217,8 @@ export default function CurtainWall() {
   return (
     <Layout darkHero>
       <SEO
-        title="Curtain Wall Manufacturers & Systems Pune & Mumbai | Fine Glaze"
-        description="Leading curtain wall manufacturers in Pune & Mumbai. Unitized, stick & semi-unitized glass curtain wall systems for IT parks & commercial towers. Get a free quote!"
+        title="Curtain Wall Manufacturers & Systems Pan India | Fine Glaze"
+        description="Leading curtain wall manufacturers Pan India. Unitized, stick & semi-unitized glass curtain wall systems for IT parks & commercial towers. Get a free quote!"
         canonical="https://fineglaze.com/curtain-wall-systems"
         keywords="Curtain wall manufacturers, curtain wall manufacturers Pune, curtain wall manufacturers Mumbai, unitized curtain wall, curtain wall cost, curtain wall systems"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}
@@ -248,7 +248,7 @@ export default function CurtainWall() {
             className="text-amber-400 text-xs font-bold tracking-[0.4em] uppercase mb-5 animate-fade-in"
             style={{ animationDelay: "0.05s" }}
           >
-            Fine Glaze · Pune · Mumbai · Maharashtra
+            Fine Glaze · Pan India
           </p>
 
           <h1
@@ -258,7 +258,7 @@ export default function CurtainWall() {
             Curtain Wall<br />
             <span className="text-gradient-gold">Manufacturers</span><br />
             <span style={{ fontSize: "clamp(1.25rem, 2.5vw, 2rem)", fontWeight: 600, color: "rgba(255,255,255,0.85)" }}>
-              Pune & Mumbai.
+              Pan India.
             </span>
           </h1>
 
@@ -266,7 +266,7 @@ export default function CurtainWall() {
             className="mt-6 text-white/70 text-base md:text-lg max-w-xl leading-relaxed animate-fade-in-up"
             style={{ animationDelay: "0.2s" }}
           >
-            As premier curtain wall manufacturers in Pune and Mumbai, Fine Glaze delivers engineered unitized, stick, and semi-unitized glass curtain wall systems for commercial towers, IT parks, and high-rise office developments.
+            As premier curtain wall manufacturers Pan India, Fine Glaze delivers engineered unitized, stick, and semi-unitized glass curtain wall systems for commercial towers, IT parks, and high-rise office developments.
           </p>
 
           <div
@@ -601,8 +601,8 @@ export default function CurtainWall() {
           <FadeIn delay={100}>
             <div>
               <FAQItem
-                q="Who are the leading curtain wall manufacturers in Pune and Mumbai?"
-                a="Fine Glaze is a premier curtain wall manufacturer in Pune & Mumbai, providing complete in-house design, CNC aluminium fabrication, and certified installation for commercial towers, IT parks, and high-rise developments."
+                q="Who are the leading curtain wall manufacturers in India?"
+                a="Fine Glaze is a premier curtain wall manufacturer Pan India, providing complete in-house design, CNC aluminium fabrication, and certified installation for commercial towers, IT parks, and high-rise developments."
               />
               <FAQItem
                 q="What is the advantage of a unitized curtain wall system?"

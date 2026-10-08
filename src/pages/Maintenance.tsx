@@ -212,8 +212,8 @@ export default function Maintenance() {
   return (
     <Layout darkHero>
       <SEO
-        title="Facade Maintenance Company Pune & Mumbai | Glass Cleaning & Repair - Fine Glaze"
-        description="Leading facade maintenance company in Pune & Mumbai. Facade AMC, structural sealant replacement, glass panel repair, curtain wall restoration & inspections."
+        title="Facade Maintenance Company Pan India | Glass Cleaning & Repair - Fine Glaze"
+        description="Leading facade maintenance company Pan India. Facade AMC, structural sealant replacement, glass panel repair, curtain wall restoration & inspections."
         canonical="https://fineglaze.com/maintenance-services"
         keywords="facade maintenance company, facade maintenance AMC, glass facade cleaning, sealant replacement, curtain wall repair, facade inspection"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}
@@ -243,7 +243,7 @@ export default function Maintenance() {
             className="text-amber-400 text-xs font-bold tracking-[0.4em] uppercase mb-5 animate-fade-in"
             style={{ animationDelay: "0.05s" }}
           >
-            Fine Glaze · Pune · Mumbai · Maharashtra
+            Fine Glaze · Pan India
           </p>
 
           <h1

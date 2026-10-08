@@ -28,7 +28,7 @@ export default function HotelFacade() {
       { "@type": "City", "name": "Mumbai" },
       { "@type": "State", "name": "Maharashtra" }
     ],
-    "description": "Specialist hotel facade contractor in India. Structural glazing, curtain wall & ACP cladding for 3-star to 5-star hotels. Leela Hotel reference project. Pune & Mumbai."
+    "description": "Specialist hotel facade contractor in India. Structural glazing, curtain wall & ACP cladding for 3-star to 5-star hotels. Leela Hotel reference project. Pan India."
   };
 
   const faqSchema = {
@@ -53,8 +53,8 @@ export default function HotelFacade() {
   return (
     <Layout darkHero>
       <SEO
-        title="Hotel Facade Contractor Pune & Mumbai | Hotel Glass Facades & Canopies - Fine Glaze"
-        description="Top hotel facade contractor in Pune & Mumbai. Acoustic glass facades, curtain walls, entrance canopies & ACP cladding for luxury hotels & resorts."
+        title="Hotel Facade Contractor Pan India | Hotel Glass Facades & Canopies - Fine Glaze"
+        description="Top hotel facade contractor Pan India. Acoustic glass facades, curtain walls, entrance canopies & ACP cladding for luxury hotels & resorts."
         canonical="https://fineglaze.com/hotel-facade"
         keywords="hotel facade contractor, hotel glass facade, hotel ACP cladding, hotel curtain wall, hotel entrance canopy"
         ogImage="https://images.unsplash.com/photo-1512917774080-9991f1c4c750"

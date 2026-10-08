@@ -161,9 +161,9 @@ const Contact = () => {
     <Layout darkHero>
       <SEO
         title="Contact Fine Glaze for a Facade Project Consultation | Fine Glaze"
-        description="Contact Fine Glaze for a facade project consultation in Pune & Mumbai. Request a site visit, quotation, and engineering assessment for aluminium facades, curtain walls, and structural glazing."
+        description="Contact Fine Glaze for a facade project consultation Pan India. Request a site visit, quotation, and engineering assessment for aluminium facades, curtain walls, and structural glazing."
         canonical="https://fineglaze.com/contact"
-        keywords="facade contractor consultation Pune, facade site visit, facade quotation, glazing contractor contact, facade project enquiry"
+        keywords="facade contractor consultation Pan India, all India facade contractor, facade site visit, facade quotation, glazing contractor contact, facade project enquiry"
         schema={{
           "@context": "https://schema.org",
           "@type": "ContactPage",

@@ -28,7 +28,7 @@ export default function HospitalFacade() {
       { "@type": "City", "name": "Mumbai" },
       { "@type": "State", "name": "Maharashtra" }
     ],
-    "description": "Specialist facade contractor for hospitals and healthcare buildings in India. Hygienic ACP cladding, anti-bacterial coatings, curtain wall systems. Pune & Mumbai projects."
+    "description": "Specialist facade contractor for hospitals and healthcare buildings in India. Hygienic ACP cladding, anti-bacterial coatings, curtain wall systems. Pan India projects."
   };
 
   const faqSchema = {
@@ -53,8 +53,8 @@ export default function HospitalFacade() {
   return (
     <Layout darkHero>
       <SEO
-        title="Hospital Facade Contractor Pune & Mumbai | Healthcare Building Facades - Fine Glaze"
-        description="Specialist hospital facade contractor in Pune & Mumbai. Hygienic ACP cladding, acoustic glass facades & curtain wall systems for healthcare facilities."
+        title="Hospital Facade Contractor Pan India | Healthcare Building Facades - Fine Glaze"
+        description="Specialist hospital facade contractor Pan India. Hygienic ACP cladding, acoustic glass facades & curtain wall systems for healthcare facilities."
         canonical="https://fineglaze.com/hospital-facade"
         keywords="hospital facade contractor, hospital glass facade, healthcare building facade, hygienic facade systems, hospital curtain wall"
         ogImage="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00"

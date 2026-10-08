@@ -212,8 +212,8 @@ export default function Louvers() {
   return (
     <Layout darkHero>
       <SEO
-        title="Aluminium Louver Contractor Pune & Mumbai | Facade Sun Louvers - Fine Glaze"
-        description="Top aluminium louver contractor in Pune & Mumbai. Fixed, vertical, motorized & architectural aluminium sun louvers for solar heat reduction."
+        title="Aluminium Louver Contractor Pan India | Facade Sun Louvers - Fine Glaze"
+        description="Top aluminium louver contractor Pan India. Fixed, vertical, motorized & architectural aluminium sun louvers for solar heat reduction."
         canonical="https://fineglaze.com/aluminium-louvers"
         keywords="aluminium louver contractor, aluminium sun louvers, facade louvers, vertical louvers, motorized louvers, architectural louvers"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}
@@ -243,7 +243,7 @@ export default function Louvers() {
             className="text-amber-400 text-xs font-bold tracking-[0.4em] uppercase mb-5 animate-fade-in"
             style={{ animationDelay: "0.05s" }}
           >
-            Fine Glaze · Pune · Mumbai · Maharashtra
+            Fine Glaze · Pan India
           </p>
 
           <h1

@@ -53,8 +53,8 @@ export default function ItParkFacade() {
   return (
     <Layout darkHero>
       <SEO
-        title="IT Park Facade Contractor Pune & Mumbai | Corporate Curtain Walls - Fine Glaze"
-        description="Specialist IT park facade contractor in Pune & Mumbai. Unitized curtain walls & energy-efficient DGU Low-E glass facades for tech campuses & corporate towers."
+        title="IT Park Facade Contractor Pan India | Corporate Curtain Walls - Fine Glaze"
+        description="Specialist IT park facade contractor Pan India. Unitized curtain walls & energy-efficient DGU Low-E glass facades for tech campuses & corporate towers."
         canonical="https://fineglaze.com/it-park-facade"
         keywords="IT park facade contractor, office facade contractor, corporate building facade, technology park facade, curtain wall IT park"
         ogImage="https://images.unsplash.com/photo-1486325212027-8081e485255e"

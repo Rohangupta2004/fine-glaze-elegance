@@ -6,8 +6,12 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import SEO from "@/components/SEO";
 
 // ==========================================
-// 1. ALL 35 LOCATIONS
+// 1. ALL LOCATIONS (PAN INDIA & REGIONAL HUBS)
 // ==========================================
+const panIndiaLocations = [
+  "pan-india", "all-india", "india", "delhi-ncr", "delhi", "gurgaon", "noida",
+  "bengaluru", "bangalore", "hyderabad", "chennai", "ahmedabad", "kolkata"
+];
 const puneLocations = [
   "pune", "hinjewadi", "kharadi", "baner", "wakad", "viman-nagar",
   "magarpatta", "hadapsar", "pimpri", "chinchwad", "kalyani-nagar",
@@ -21,6 +25,25 @@ const naviMumbaiLocations = ["navi-mumbai", "vashi", "mahape", "airoli", "belapu
 const thaneLocations = ["thane"];
 
 const allLocations: Record<string, { name: string; parentCity: string; image: string }> = {};
+
+// Register Pan India and National Hubs
+panIndiaLocations.forEach(loc => {
+  allLocations[loc] = {
+    name: loc === "pan-india" ? "Pan India"
+      : loc === "all-india" || loc === "india" ? "All India"
+      : loc === "delhi-ncr" ? "Delhi NCR"
+      : loc.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' '),
+    parentCity: ["pan-india", "all-india", "india"].includes(loc) ? "pan-india"
+      : ["delhi-ncr", "delhi", "gurgaon", "noida"].includes(loc) ? "delhi-ncr"
+      : ["bengaluru", "bangalore"].includes(loc) ? "bengaluru"
+      : loc,
+    image: ["pan-india", "all-india", "india"].includes(loc) ? "/Unitized.webp"
+      : ["delhi-ncr", "delhi", "gurgaon", "noida"].includes(loc) ? "/Business park.webp"
+      : ["bengaluru", "bangalore"].includes(loc) ? "/Business park.webp"
+      : loc === "hyderabad" ? "/Glazing.webp"
+      : "/Panel.webp"
+  };
+});
 
 [...puneLocations, ...mumbaiLocations, ...naviMumbaiLocations, ...thaneLocations].forEach(loc => {
   allLocations[loc] = {
@@ -82,20 +105,53 @@ const serviceKeywords: Record<string, {
   },
   "facade-contractor": {
     label: "Facade Contracting",
-    uniqueParagraph: "Leading architectural glazing and facade engineering specialists for the Maharashtra region. Trusted by developers, architects, and PMCs for complex commercial projects.",
+    uniqueParagraph: "Leading architectural glazing and facade engineering specialists serving clients Pan India. Trusted by developers, architects, and PMCs for complex commercial and residential projects nationwide.",
     features: ["Expert Engineering", "On-Time Delivery", "Premium Quality", "Full Warranty"],
     image: "/Glass installation.webp"
   }
 };
 
 // ==========================================
-// 3. REGIONAL PROFILES (ALL 4 REGIONS)
+// 3. REGIONAL PROFILES (PAN INDIA & CITIES)
 // ==========================================
 const cityProfiles: Record<string, {
   intro: string;
   challenges: string;
   faqs: { q: string; a: string }[];
 }> = {
+  "pan-india": {
+    intro: "Fine Glaze provides turnkey facade engineering, curtain wall systems, structural glazing, and ACP cladding Pan India. We execute landmark commercial towers, tech parks, industrial facilities, and luxury high-rises across all Indian states and metro corridors.",
+    challenges: "Pan India execution requires adaptive facade engineering tailored to diverse Indian climates — from extreme coastal salt air and cyclone wind loads to high-temperature arid heat and seismic zones. Our engineering conforms rigorously to NBC 2016, IS 875 Part 3, and IS 2553 standards.",
+    faqs: [
+      { q: "Does Fine Glaze execute facade and glazing projects Pan India?", a: "Yes. Fine Glaze operates Pan India with dedicated project execution teams, central CNC fabrication facilities, and nationwide supply chains to deliver facade systems on time across all states." },
+      { q: "How do you handle site surveys and mobilization outside Maharashtra?", a: "Our engineering team deploys for on-site 3D laser scanning, structural assessments, and wind-load calculations anywhere in India, followed by full turnkey mobilization with certified site engineers." },
+      { q: "What national and international standards do your facades comply with?", a: "All systems strictly comply with NBC 2016 (National Building Code of India), IS 875 Part 3 (Wind Loads), IS 2553 (Safety Glass), ASTM, and AAMA standards for structural safety and weather tightness." }
+    ]
+  },
+  "delhi-ncr": {
+    intro: "Delhi NCR's booming commercial corridors in Gurgaon, Noida, and New Delhi demand energy-efficient, high-performance facade systems engineered for extreme thermal swings.",
+    challenges: "Extreme temperature variations (-2°C winter to 48°C summer) and severe dust require high thermal-mass profiles, double/triple glazed Low-E units, and precision weather-sealed joints.",
+    faqs: [
+      { q: "Do you supply and install facades in Delhi NCR?", a: "Yes, Fine Glaze executes full-scope curtain walls, structural glazing, and ACP cladding for commercial buildings, tech parks, and luxury villas across Delhi, Gurgaon, and Noida." },
+      { q: "What glass is best for Delhi NCR's severe climate?", a: "High-performance DGU (Double Glazed Units) with soft-coat Low-E on surface #2, providing low U-value (< 1.6 W/m²K) and low SHGC (< 0.25) to drastically reduce cooling costs." }
+    ]
+  },
+  "bengaluru": {
+    intro: "Bengaluru's premier tech campuses, IT corridors, and Grade-A office towers require modern, LEED-compliant architectural facades with maximum daylight and acoustic control.",
+    challenges: "Large-span glass openings and high acoustic requirements in tech hubs demand precision structural silicone glazing, insulated glass, and concealed hardware.",
+    faqs: [
+      { q: "Can Fine Glaze deliver LEED-compliant facades in Bengaluru?", a: "Yes, our DGU and unitized curtain wall systems achieve LEED and IGBC green building compliance with certified thermal and acoustic performance." },
+      { q: "Do you execute projects in Electronic City, Whitefield, and Outer Ring Road?", a: "Yes, we handle complete turnkey execution across all tech zones and commercial centers in Bengaluru." }
+    ]
+  },
+  "hyderabad": {
+    intro: "Hyderabad's rapidly rising IT corridors in HITEC City, Financial District, and Gachibowli require grand, high-performance curtain walls and architectural structural glazing.",
+    challenges: "High solar radiation and tall commercial elevations require solar control glass with SHGC below 0.28 and engineered unitized systems capable of rapid crane erection.",
+    faqs: [
+      { q: "Do you execute facade projects in Hyderabad Financial District & HITEC City?", a: "Yes, we provide turnkey facade engineering, factory fabrication, and certified high-rise installation for commercial towers in Hyderabad." },
+      { q: "What is your project turnaround for commercial buildings in Hyderabad?", a: "Depending on scale, our unitized factory-assembled systems reduce on-site installation time by 40%, delivering typical 15-20 storey towers in record time." }
+    ]
+  },
   "pune": {
     intro: "Pune's expanding IT corridors and corporate parks demand high-performance, energy-efficient facade systems built to handle extreme monsoon conditions.",
     challenges: "Heavy monsoon exposure across sprawling campuses makes waterproofing critical. Our DGU systems reduce HVAC costs, while integrated EPDM gaskets provide engineered water resistance during Pune's rainy season.",
@@ -146,12 +202,23 @@ export default function CityLanding() {
   const matchedLocationKey = sortedLocationKeys.find(key => lowerSlug.endsWith(key)) || "";
   const matchedServiceKey = sortedServiceKeys.find(key => lowerSlug.startsWith(key)) || "facade-contractor";
 
-  const matchedLocation = allLocations[matchedLocationKey];
-  const serviceData = serviceKeywords[matchedServiceKey];
+  const matchedLocation = allLocations[matchedLocationKey] || allLocations["pan-india"];
+  const serviceData = serviceKeywords[matchedServiceKey] || serviceKeywords["facade-contractor"];
 
   if (!matchedLocation) return <Navigate to="/services" replace />;
 
-  const profile = cityProfiles[matchedLocation.parentCity] || cityProfiles["pune"];
+  const profile = cityProfiles[matchedLocation.parentCity] || cityProfiles["pan-india"];
+
+  const getRegionName = () => {
+    if (matchedLocation.parentCity === "pan-india") return "India";
+    if (["delhi-ncr", "delhi", "gurgaon", "noida"].includes(matchedLocationKey)) return "Delhi NCR";
+    if (["bengaluru", "bangalore"].includes(matchedLocationKey)) return "Karnataka";
+    if (matchedLocationKey === "hyderabad") return "Telangana";
+    if (matchedLocationKey === "chennai") return "Tamil Nadu";
+    if (matchedLocationKey === "ahmedabad") return "Gujarat";
+    if (matchedLocationKey === "kolkata") return "West Bengal";
+    return "Maharashtra";
+  };
 
   // JSON-LD Schemas
   const schemas = [
@@ -177,29 +244,32 @@ export default function CityLanding() {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "Fine Glaze",
-      "description": `${serviceData.label} specialists in ${matchedLocation.name}`,
+      "description": `${serviceData.label} specialists serving ${matchedLocation.name} Pan India`,
       "url": `https://fineglaze.com/facade-contractor/${slug}`,
       "telephone": "+918369233566",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": matchedLocation.name,
-        "addressRegion": "Maharashtra",
+        "addressRegion": getRegionName(),
         "addressCountry": "IN"
       }
     }
   ];
 
-  // Related locations (same region, excluding current, max 10)
-  const relatedLocations = Object.keys(allLocations)
-    .filter(k => allLocations[k].parentCity === matchedLocation.parentCity && k !== matchedLocationKey)
-    .slice(0, 10);
+  // Related locations
+  const relatedLocations = matchedLocation.parentCity === "pan-india"
+    ? ["delhi-ncr", "bengaluru", "hyderabad", "mumbai", "pune", "chennai", "ahmedabad", "kolkata"]
+    : Object.keys(allLocations)
+        .filter(k => allLocations[k].parentCity === matchedLocation.parentCity && k !== matchedLocationKey)
+        .slice(0, 10);
 
   return (
     <Layout darkHero>
       <SEO
-        title={`${serviceData.label} in ${matchedLocation.name} | Fine Glaze`}
-        description={`Expert ${serviceData.label} services in ${matchedLocation.name}, Maharashtra. ${profile.intro}`}
+        title={`${serviceData.label} in ${matchedLocation.name} | Pan India Facade Contractor – Fine Glaze`}
+        description={`Expert ${serviceData.label} services in ${matchedLocation.name}. ${profile.intro}`}
         canonical={`https://fineglaze.com/facade-contractor/${slug}`}
+        keywords={`${serviceData.label} in ${matchedLocation.name}, ${serviceData.label} Pan India, ${serviceData.label} all India, facade contractor Pan India, architectural glazing all India, commercial facade India`}
         schemas={schemas}
       />
 
@@ -236,7 +306,7 @@ export default function CityLanding() {
             </h2>
             <div className="bg-slate-50 p-6 rounded-xl border border-slate-100 mb-6">
               <h3 className="flex items-center gap-2 font-bold mb-2">
-                <ShieldCheck className="text-amber-600" /> Regional Challenges
+                <ShieldCheck className="text-amber-600" /> Regional Challenges & Standards
               </h3>
               <p className="text-slate-600 text-sm">{profile.challenges}</p>
             </div>
@@ -251,7 +321,7 @@ export default function CityLanding() {
           </div>
           <img
             src={serviceData.image}
-            alt={`${serviceData.label} in ${matchedLocation.name}`}
+            alt={`${serviceData.label} in ${matchedLocation.name} - Fine Glaze`}
             className="rounded-2xl shadow-xl object-cover h-96 w-full"
           />
         </div>
@@ -262,7 +332,7 @@ export default function CityLanding() {
         <section className="py-16 bg-slate-50 border-t">
           <div className="container mx-auto px-4 text-center">
             <h3 className="text-2xl font-bold mb-8">
-              {serviceData.label} — Other Locations in {allLocations[matchedLocationKey].parentCity.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}
+              {serviceData.label} — Other Locations {matchedLocation.parentCity === "pan-india" ? "Across India" : `in ${allLocations[matchedLocationKey]?.parentCity ? allLocations[matchedLocationKey].parentCity.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ') : 'India'}`}
             </h3>
             <div className="flex flex-wrap justify-center gap-3">
               {relatedLocations.map(key => (
@@ -271,7 +341,7 @@ export default function CityLanding() {
                   to={`/facade-contractor/${matchedServiceKey}-${key}`}
                   className="px-4 py-2 bg-white border rounded-full text-xs font-bold hover:border-amber-500 transition-colors"
                 >
-                  {allLocations[key].name}
+                  {allLocations[key]?.name || key}
                 </Link>
               ))}
             </div>

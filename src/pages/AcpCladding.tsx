@@ -213,8 +213,8 @@ export default function AcpCladding() {
   return (
     <Layout darkHero>
       <SEO
-        title="ACP Cladding Contractor Pune & Mumbai | Aluminium Panel Facades - Fine Glaze"
-        description="Top ACP cladding contractor in Pune & Mumbai. PVDF-coated fire-retardant aluminium composite panels for commercial facades, IT parks & retail buildings."
+        title="ACP Cladding Contractor Pan India | Aluminium Panel Facades - Fine Glaze"
+        description="Top ACP cladding contractor Pan India. PVDF-coated fire-retardant aluminium composite panels for commercial facades, IT parks & retail buildings."
         canonical="https://fineglaze.com/acp-aluminium-cladding"
         keywords="ACP cladding contractor, aluminium composite panel cladding, ACP facade, aluminium cladding, PVDF ACP, fire-retardant ACP"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}
@@ -244,7 +244,7 @@ export default function AcpCladding() {
             className="text-amber-400 text-xs font-bold tracking-[0.4em] uppercase mb-5 animate-fade-in"
             style={{ animationDelay: "0.05s" }}
           >
-            Fine Glaze · Pune · Mumbai · Maharashtra
+            Fine Glaze · Pan India
           </p>
 
           <h1
@@ -262,7 +262,7 @@ export default function AcpCladding() {
             className="mt-6 text-white/70 text-base md:text-lg max-w-lg leading-relaxed animate-fade-in-up"
             style={{ animationDelay: "0.2s" }}
           >
-            Fire-retardant ACP and aluminium cladding for durable, weather-resistant building exteriors across Pune and Mumbai.
+            Fire-retardant ACP and aluminium cladding for durable, weather-resistant building exteriors Pan India.
           </p>
 
           <div

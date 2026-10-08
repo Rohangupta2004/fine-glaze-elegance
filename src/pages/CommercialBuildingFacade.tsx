@@ -53,8 +53,8 @@ export default function CommercialBuildingFacade() {
   return (
     <Layout darkHero>
       <SEO
-        title="Commercial Building Facade Contractor Pune & Mumbai | Office Facades - Fine Glaze"
-        description="Top commercial building facade contractor in Pune & Mumbai. Curtain walls, structural glazing & ACP cladding for corporate office buildings."
+        title="Commercial Building Facade Contractor Pan India | Office Facades - Fine Glaze"
+        description="Top commercial building facade contractor Pan India. Curtain walls, structural glazing & ACP cladding for corporate office buildings."
         canonical="https://fineglaze.com/commercial-building-facade"
         keywords="commercial building facade contractor, commercial facade company, office building facade, glass facade commercial building, facade engineering"
         ogImage="https://images.unsplash.com/photo-1503387762-592deb58ef4e"

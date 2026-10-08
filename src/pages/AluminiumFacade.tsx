@@ -212,8 +212,8 @@ export default function AluminiumFacade() {
   return (
     <Layout darkHero>
       <SEO
-        title="Aluminium Facade Contractor Pune & Mumbai | Aluminium Doors & Windows - Fine Glaze"
-        description="Leading aluminium facade contractor in Pune & Mumbai. Sliding, casement, tilt-turn & lift-slide systems with thermal break profiles and 20-year powder coat warranty."
+        title="Aluminium Facade Contractor Pan India | Aluminium Doors & Windows - Fine Glaze"
+        description="Leading aluminium facade contractor Pan India. Sliding, casement, tilt-turn & lift-slide systems with thermal break profiles and 20-year powder coat warranty."
         canonical="https://fineglaze.com/aluminium-facade"
         keywords="aluminium facade contractor, aluminium facade systems, aluminium doors and windows, thermal break windows, aluminium facade fabrication"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}
@@ -243,7 +243,7 @@ export default function AluminiumFacade() {
             className="text-amber-400 text-xs font-bold tracking-[0.4em] uppercase mb-5 animate-fade-in"
             style={{ animationDelay: "0.05s" }}
           >
-            Fine Glaze · Pune · Mumbai · Maharashtra
+            Fine Glaze · Pan India
           </p>
 
           <h1

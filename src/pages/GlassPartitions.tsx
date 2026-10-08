@@ -212,8 +212,8 @@ export default function GlassPartitions() {
   return (
     <Layout darkHero>
       <SEO
-        title="Glass Partition Contractor Pune & Mumbai | Office Glass Partitions - Fine Glaze"
-        description="Top glass partition contractor in Pune & Mumbai. Frameless office glass partitions, acoustic DGU partitions, smart glass, and luxury shower enclosures."
+        title="Glass Partition Contractor Pan India | Office Glass Partitions - Fine Glaze"
+        description="Top glass partition contractor Pan India. Frameless office glass partitions, acoustic DGU partitions, smart glass, and luxury shower enclosures."
         canonical="https://fineglaze.com/glass-partitions"
         keywords="glass partition contractor, office glass partitions, frameless glass partition, DGU glass partition, acoustic glass partition"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}
@@ -243,7 +243,7 @@ export default function GlassPartitions() {
             className="text-amber-400 text-xs font-bold tracking-[0.4em] uppercase mb-5 animate-fade-in"
             style={{ animationDelay: "0.05s" }}
           >
-            Fine Glaze · Pune · Mumbai · Maharashtra
+            Fine Glaze · Pan India
           </p>
 
           <h1
@@ -253,7 +253,7 @@ export default function GlassPartitions() {
             Glass Partitions<br />
             <span className="text-gradient-gold">& Enclosures</span><br />
             <span style={{ fontSize: "clamp(1.25rem, 2.5vw, 2rem)", fontWeight: 600, color: "rgba(255,255,255,0.85)" }}>
-              Pune · Mumbai.
+              Pan India.
             </span>
           </h1>
 
@@ -261,7 +261,7 @@ export default function GlassPartitions() {
             className="mt-6 text-white/70 text-base md:text-lg max-w-lg leading-relaxed animate-fade-in-up"
             style={{ animationDelay: "0.2s" }}
           >
-            Office glass partitions, acoustic meeting-room walls and toughened-glass shower enclosures designed and installed across Pune and Mumbai.
+            Office glass partitions, acoustic meeting-room walls and toughened-glass shower enclosures designed and installed Pan India.
           </p>
 
           <div
@@ -621,7 +621,7 @@ export default function GlassPartitions() {
               />
               <FAQItem
                 q="Is the nano-coating on shower glass worth it?"
-                a="Yes. Nano-coating creates a hydrophobic surface that repels water and prevents limescale build-up. Shower glass stays cleaner for longer and requires significantly less scrubbing — especially valuable in hard-water areas like Pune and Mumbai."
+                a="Yes. Nano-coating creates a hydrophobic surface that repels water and prevents limescale build-up. Shower glass stays cleaner for longer and requires significantly less scrubbing — especially valuable in hard-water areas across India."
               />
             </div>
           </FadeIn>

@@ -17,11 +17,11 @@ const Index = () => {
     "name": "Fine Glaze",
     "url": "https://fineglaze.com",
     "logo": "https://fineglaze.com/Logofg.webp",
-    "description": "Leading facade contractor in Pune and Mumbai specialising in structural glazing, curtain wall systems, ACP cladding, aluminium facades, and glass railings for commercial buildings.",
+    "description": "Leading facade contractor Pan India specialising in structural glazing, curtain wall systems, ACP cladding, aluminium facades, and glass railings for commercial buildings.",
     "telephone": "+918369233566",
     "email": "info@fineglaze.com",
     "foundingDate": "2018",
-    "areaServed": ["Pune", "Mumbai", "Navi Mumbai", "Thane", "Maharashtra"],
+    "areaServed": ["Pan India", "Pune", "Mumbai", "Navi Mumbai", "Thane", "Maharashtra"],
     "sameAs": [
       "https://maps.app.goo.gl/JDF3ESXQGHtwKoAr6",
       "https://www.linkedin.com/company/fine-glaze"
@@ -45,7 +45,7 @@ const Index = () => {
     "telephone": "+918369233566",
     "email": "info@fineglaze.com",
     "priceRange": "₹₹₹",
-    "description": "Fine Glaze is a premier facade engineering company in Pune and Mumbai, delivering structural glazing, curtain wall, ACP cladding and aluminium facade solutions for commercial buildings.",
+    "description": "Fine Glaze is a premier facade engineering company operating Pan India, delivering structural glazing, curtain wall, ACP cladding and aluminium facade solutions for commercial buildings.",
     "sameAs": [
       "https://maps.app.goo.gl/JDF3ESXQGHtwKoAr6",
       "https://www.linkedin.com/company/fine-glaze"
@@ -64,6 +64,7 @@ const Index = () => {
       "longitude": 73.9072
     },
     "areaServed": [
+      { "@type": "Country", "name": "India" },
       { "@type": "City", "name": "Pune" },
       { "@type": "City", "name": "Mumbai" },
       { "@type": "City", "name": "Navi Mumbai" },
@@ -101,10 +102,10 @@ const Index = () => {
   return (
     <Layout darkHero>
       <SEO
-        title="Facade & Glazing Contractor in Pune and Mumbai | Fine Glaze"
-        description="Fine Glaze — top-rated facade contractor in Pune & Mumbai. Structural glazing, unitized curtain walls, ACP cladding & aluminium facades for IT parks, offices & malls. Embassy REIT awarded. ₹350–1200/sq ft. Free site visit."
+        title="Facade & Glazing Contractor Pan India | Fine Glaze"
+        description="Fine Glaze — top-rated facade contractor Pan India. Structural glazing, unitized curtain walls, ACP cladding & aluminium facades for IT parks, offices & malls. Embassy REIT awarded. ₹350–1200/sq ft. Free site visit."
         canonical="https://fineglaze.com/"
-        keywords="facade contractor Pune Mumbai, Fine Glaze, aluminium facade contractor, glazing contractor, building facade company, facade fabrication company"
+        keywords="facade contractor Pan India, all India facade contractor, Fine Glaze, aluminium facade contractor, glazing contractor, building facade company, facade fabrication company"
         schemas={[organizationSchema, localBusinessSchema, breadcrumbSchema]}
       />
       <HeroSection />

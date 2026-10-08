@@ -53,8 +53,8 @@ export default function IndustrialFacade() {
   return (
     <Layout darkHero>
       <SEO
-        title="Industrial Facade Contractor Pune & Mumbai | Factory Cladding Systems - Fine Glaze"
-        description="Industrial facade contractor in Pune & Mumbai. Durable ACP cladding, metal composite panels & industrial curtain walls for factories, warehouses & MIDC industrial parks."
+        title="Industrial Facade Contractor Pan India | Factory Cladding Systems - Fine Glaze"
+        description="Industrial facade contractor Pan India. Durable ACP cladding, metal composite panels & industrial curtain walls for factories, warehouses & MIDC industrial parks."
         canonical="https://fineglaze.com/industrial-facade"
         keywords="industrial facade contractor, factory facade, warehouse facade, industrial cladding, industrial curtain wall"
         ogImage="https://images.unsplash.com/photo-1486325212027-8081e485255e"
@@ -68,7 +68,7 @@ export default function IndustrialFacade() {
             <h1 className="text-3xl md:text-4xl font-bold mb-4">
               Industrial Building <span className="text-gradient-gold">Facade Contractor India</span>
             </h1>
-            <p className="text-lg text-white/80 mb-8">Industrial buildings — factories, warehouses, pharmaceutical plants, and logistics facilities — require facade systems that prioritise durability, weather resistance, maintenance efficiency, and structural performance over architectural complexity. Fine Glaze provides cost-effective, high-durability facade solutions for industrial buildings across Maharashtra.</p>
+            <p className="text-lg text-white/80 mb-8">Industrial buildings — factories, warehouses, pharmaceutical plants, and logistics facilities — require facade systems that prioritise durability, weather resistance, maintenance efficiency, and structural performance over architectural complexity. Fine Glaze provides cost-effective, high-durability facade solutions for industrial buildings Pan India.</p>
             <div className="flex gap-4">
               <Link to="/contact">
                 <Button size="lg" className="bg-amber-600 hover:bg-amber-700">Get Free Quote</Button>

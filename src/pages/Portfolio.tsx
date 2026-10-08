@@ -329,9 +329,9 @@ const Portfolio = () => {
     <Layout darkHero>
       <SEO
         title="Facade Projects Portfolio India | Fine Glaze Completed Projects"
-        description="Explore Fine Glaze's portfolio of landmark glass facade, ACP cladding & curtain wall projects across Pune & Mumbai — including Pune Airport, Embassy 247 & LTIMindtree."
+        description="Explore Fine Glaze's portfolio of landmark glass facade, ACP cladding & curtain wall projects Pan India — including Pune Airport, Embassy 247 & LTIMindtree."
         canonical="https://fineglaze.com/portfolio"
-        keywords="facade projects portfolio India, Fine Glaze projects, glass facade projects, ACP cladding projects, Pune facade projects, Mumbai facade projects"
+        keywords="facade projects portfolio India, Fine Glaze projects, glass facade projects, ACP cladding projects, Pan India facade projects, facade contractor India"
         schema={portfolioSchema}
       />
       <Helmet>

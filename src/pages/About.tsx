@@ -45,9 +45,9 @@ const About = () => {
     <Layout darkHero>
       <SEO
         title="About Fine Glaze: Facade and Glazing Specialists | Fine Glaze"
-        description="About Fine Glaze — premier facade and glazing specialists in Pune & Mumbai with 10+ years of experience, 10+ landmark projects & 50+ corporate clients."
+        description="About Fine Glaze — premier facade and glazing specialists Pan India with 10+ years of experience, 10+ landmark projects & 50+ corporate clients."
         canonical="https://fineglaze.com/about"
-        keywords="Fine Glaze facade contractor, Fine Glaze India, Fine Glaze Pune, facade fabrication company, facade installation company"
+        keywords="Fine Glaze facade contractor, Fine Glaze India, facade contractor Pan India, all India facade company, facade fabrication company, facade installation company"
         schema={{
           "@context": "https://schema.org",
           "@type": "AboutPage",
@@ -83,7 +83,7 @@ const About = () => {
               in Facade Solutions
             </h1>
             <p className="text-white/80 text-lg">
-              Fine Glaze is Pune's premier facade fabrication company —
+              Fine Glaze is a premier Pan India facade fabrication company —
               delivering precision-engineered glass and aluminium solutions
               for landmark commercial and residential projects across India.
             </p>

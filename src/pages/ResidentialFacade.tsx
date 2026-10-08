@@ -28,7 +28,7 @@ export default function ResidentialFacade() {
       { "@type": "City", "name": "Mumbai" },
       { "@type": "State", "name": "Maharashtra" }
     ],
-    "description": "Residential facade contractor in India. Glass railings, ACP cladding, aluminium windows & structural glazing for apartments and villas. Pune & Mumbai projects. Free site visit."
+    "description": "Residential facade contractor in India. Glass railings, ACP cladding, aluminium windows & structural glazing for apartments and villas. Pan India projects. Free site visit."
   };
 
   const faqSchema = {
@@ -37,7 +37,7 @@ export default function ResidentialFacade() {
     "mainEntity": [
       { "@type": "Question", "name": "What glass railing is best for apartment balconies in India?", "acceptedAnswer": { "@type": "Answer", "text": "Toughened + laminated glass (10mm + 10mm with PVB interlayer) in a frameless base-channel system is the gold standard for apartment balcony railings. It provides a completely unobstructed view, maximum safety (laminated glass holds in place even if broken), and a premium appearance that enhances property value." } },
       { "@type": "Question", "name": "How much does facade renovation cost for an existing residential building in India?", "acceptedAnswer": { "@type": "Answer", "text": "Residential facade renovation costs depend on scope: ACP re-cladding of an existing building Rs 200-400/sq ft; glass railing replacement Rs 800-1500/running ft; aluminium window replacement Rs 400-800/sq ft. Fine Glaze provides detailed BOQ-based quotations for renovation projects after a site survey." } },
-      { "@type": "Question", "name": "What building height requires curtain wall for residential in India?", "acceptedAnswer": { "@type": "Answer", "text": "There is no regulatory height requirement for curtain wall in residential buildings — it is a design and performance choice. For premium residential towers above 15 storeys, curtain wall glazing on the living room bay provides a floor-to-ceiling glass feature that maximises views and natural light. Fine Glaze has installed residential curtain wall elements on towers up to 30 storeys in Pune and Mumbai." } },
+      { "@type": "Question", "name": "What building height requires curtain wall for residential in India?", "acceptedAnswer": { "@type": "Answer", "text": "There is no regulatory height requirement for curtain wall in residential buildings — it is a design and performance choice. For premium residential towers above 15 storeys, curtain wall glazing on the living room bay provides a floor-to-ceiling glass feature that maximises views and natural light. Fine Glaze has installed residential curtain wall elements on towers up to 30 storeys Pan India." } },
     ]
   };
 
@@ -53,8 +53,8 @@ export default function ResidentialFacade() {
   return (
     <Layout darkHero>
       <SEO
-        title="Residential Facade Contractor Pune & Mumbai | Apartment & Villa Facades - Fine Glaze"
-        description="Top residential facade contractor in Pune & Mumbai. Glass railings, ACP cladding, aluminium doors & windows for apartment towers & luxury villas."
+        title="Residential Facade Contractor Pan India | Apartment & Villa Facades - Fine Glaze"
+        description="Top residential facade contractor Pan India. Glass railings, ACP cladding, aluminium doors & windows for apartment towers & luxury villas."
         canonical="https://fineglaze.com/residential-facade"
         keywords="residential facade contractor, apartment facade, villa facade, residential ACP cladding, residential glass railing, aluminium windows"
         ogImage="https://images.unsplash.com/photo-1600585154340-be6161a56a0c"
@@ -68,7 +68,7 @@ export default function ResidentialFacade() {
             <h1 className="text-3xl md:text-4xl font-bold mb-4">
               Residential Building <span className="text-gradient-gold">Facade Contractor India</span>
             </h1>
-            <p className="text-lg text-white/80 mb-8">Residential buildings are increasingly investing in premium facade systems — not just for aesthetics but for thermal comfort, sound insulation, reduced maintenance, and property value. Fine Glaze provides complete residential facade solutions for apartment towers, villas, gated communities, and row houses across Pune and Mumbai.</p>
+            <p className="text-lg text-white/80 mb-8">Residential buildings are increasingly investing in premium facade systems — not just for aesthetics but for thermal comfort, sound insulation, reduced maintenance, and property value. Fine Glaze provides complete residential facade solutions for apartment towers, villas, gated communities, and row houses Pan India.</p>
             <div className="flex gap-4">
               <Link to="/contact">
                 <Button size="lg" className="bg-amber-600 hover:bg-amber-700">Get Free Quote</Button>
@@ -140,7 +140,7 @@ export default function ResidentialFacade() {
             </div>
             <div className="bg-background rounded-xl p-6 shadow-sm">
               <h3 className="text-lg font-bold mb-2">What building height requires curtain wall for residential in India?</h3>
-              <p className="text-muted-foreground">There is no regulatory height requirement for curtain wall in residential buildings — it is a design and performance choice. For premium residential towers above 15 storeys, curtain wall glazing on the living room bay provides a floor-to-ceiling glass feature that maximises views and natural light. Fine Glaze has installed residential curtain wall elements on towers up to 30 storeys in Pune and Mumbai.</p>
+              <p className="text-muted-foreground">There is no regulatory height requirement for curtain wall in residential buildings — it is a design and performance choice. For premium residential towers above 15 storeys, curtain wall glazing on the living room bay provides a floor-to-ceiling glass feature that maximises views and natural light. Fine Glaze has installed residential curtain wall elements on towers up to 30 storeys Pan India.</p>
             </div>
           </div>
         </div>

@@ -15,7 +15,7 @@ export interface ServiceQuickOverviewProps {
 export const ServiceQuickOverview = ({
   serviceTitle,
   whatWeProvide,
-  locationsServed = ["Pune", "Mumbai", "Thane", "Navi Mumbai"],
+  locationsServed = ["Pan India", "Pune", "Mumbai", "Delhi NCR", "Bengaluru"],
   bestProjectTypes,
   priceBenchmark,
   relevantProjects,

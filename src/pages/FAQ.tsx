@@ -29,7 +29,7 @@ const faqDatabase = [
     question: "How do Unitized Curtain Walls reduce high-rise construction timelines?",
     category: "Engineering",
     icon: <Construction className="w-5 h-5 text-blue-600" />,
-    answer: "Unlike stick systems, unitized facades are 80% prefabricated in our factory. This allows us to install panels simultaneously with the building's structural growth. For a typical 20-story project in Mumbai or Pune, this reduces the 'building envelope' completion time by approximately 4-6 weeks.",
+    answer: "Unlike stick systems, unitized facades are 80% prefabricated in our factory. This allows us to install panels simultaneously with the building's structural growth. For a typical 20-story project in India, this reduces the 'building envelope' completion time by approximately 4-6 weeks.",
     stats: { metric: "40%", label: "Faster Installation" }
   },
   {
@@ -69,7 +69,7 @@ const faqDatabase = [
     question: "How long does curtain wall installation take for a commercial building in India?",
     category: "Timeline",
     icon: <Clock className="w-5 h-5 text-blue-600" />,
-    answer: "For a typical 3,000–8,000 sq ft commercial building facade in Mumbai or Pune: Engineering and approvals take 3–5 weeks. Factory fabrication takes 4–6 weeks (runs parallel). Site installation takes 6–10 weeks. Sealant and punch list adds 2–3 weeks. Total project duration: 12–18 weeks from contract signing to handover. High-rise projects above 15 floors add 4–8 weeks for additional safety setup and reduced daily access.",
+    answer: "For a typical 3,000–8,000 sq ft commercial building facade in India: Engineering and approvals take 3–5 weeks. Factory fabrication takes 4–6 weeks (runs parallel). Site installation takes 6–10 weeks. Sealant and punch list adds 2–3 weeks. Total project duration: 12–18 weeks from contract signing to handover. High-rise projects above 15 floors add 4–8 weeks for additional safety setup and reduced daily access.",
     stats: { metric: "12–18 wks", label: "Typical Timeline" }
   },
   {
@@ -90,11 +90,11 @@ const faqDatabase = [
   },
   {
     id: "item-9",
-    question: "Do you work on projects outside Pune and Mumbai?",
+    question: "Do you provide facade and glazing services Pan India?",
     category: "Coverage",
     icon: <MapPin className="w-5 h-5 text-blue-600" />,
-    answer: "Yes. While our base operations are in Pune and Mumbai, Fine Glaze has executed projects across Maharashtra and takes on select projects in Navi Mumbai, Thane, Nashik, Aurangabad, and Nagpur. For large-scale projects above ₹50 lakh in other cities, we mobilize our execution team with site supervision. Contact us at +91 8369233566 to discuss your location and project scope.",
-    stats: { metric: "Pan-MH", label: "Service Area" }
+    answer: "Yes. Fine Glaze executes facade, curtain wall, structural glazing, and ACP cladding projects Pan India. While our fabrication headquarters are in Maharashtra, we mobilize expert site engineers, certified installers, and project managers across all states and major metro regions in India for commercial, institutional, and high-rise residential developments. Contact us at +91 8369233566 to discuss your location and project scope.",
+    stats: { metric: "Pan India", label: "Service Area" }
   },
   {
     id: "item-10",
