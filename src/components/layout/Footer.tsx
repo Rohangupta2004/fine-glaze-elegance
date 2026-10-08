@@ -140,6 +140,43 @@ export const Footer = () => {
         </div>
       </div>
 
+      {/* Pan-India Execution Hubs (Dynamic Routing) */}
+      <div className="border-t border-white/10 py-5">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-3 text-xs text-white/60">
+            <span className="font-semibold text-amber-400 uppercase tracking-wider shrink-0">
+              Pan-India Execution Hubs:
+            </span>
+            <div className="flex flex-wrap gap-x-3 gap-y-1 text-white/70">
+              {[
+                { name: "Delhi NCR", slug: "delhi-ncr" },
+                { name: "Bengaluru", slug: "bengaluru" },
+                { name: "Hyderabad", slug: "hyderabad" },
+                { name: "Mumbai", slug: "mumbai" },
+                { name: "Pune", slug: "pune" },
+                { name: "Chennai", slug: "chennai" },
+                { name: "Ahmedabad", slug: "ahmedabad" },
+                { name: "GIFT City", slug: "gift-city" },
+                { name: "Kolkata", slug: "kolkata" },
+                { name: "Chandigarh", slug: "chandigarh" },
+                { name: "Jaipur", slug: "jaipur" },
+                { name: "Lucknow", slug: "lucknow" },
+                { name: "Indore", slug: "indore" },
+                { name: "Kochi", slug: "kochi" },
+              ].map((loc) => (
+                <Link
+                  key={loc.slug}
+                  to={`/facade-contractor/${loc.slug}`}
+                  className="hover:text-amber-400 transition-colors"
+                >
+                  {loc.name}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Bottom Bar */}
       <div className="border-t border-white/10">
         <div className="container mx-auto px-4 py-5 flex flex-col md:flex-row items-center justify-between gap-4">

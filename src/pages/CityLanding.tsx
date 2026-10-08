@@ -9,8 +9,17 @@ import SEO from "@/components/SEO";
 // 1. ALL LOCATIONS (PAN INDIA & REGIONAL HUBS)
 // ==========================================
 const panIndiaLocations = [
-  "pan-india", "all-india", "india", "delhi-ncr", "delhi", "gurgaon", "noida",
-  "bengaluru", "bangalore", "hyderabad", "chennai", "ahmedabad", "kolkata"
+  "pan-india", "all-india", "india",
+  "delhi-ncr", "delhi", "gurgaon", "noida", "greater-noida", "faridabad",
+  "bengaluru", "bangalore", "whitefield", "electronic-city",
+  "hyderabad", "hitec-city", "gachibowli",
+  "chennai", "coimbatore",
+  "ahmedabad", "gift-city", "surat", "vadodara", "rajkot",
+  "kolkata", "new-town-kolkata", "bhubaneswar",
+  "chandigarh", "mohali", "jaipur", "lucknow", "kanpur", "dehradun",
+  "indore", "bhopal", "nagpur", "raipur",
+  "kochi", "thiruvananthapuram", "visakhapatnam", "vijayawada",
+  "nashik", "aurangabad"
 ];
 const puneLocations = [
   "pune", "hinjewadi", "kharadi", "baner", "wakad", "viman-nagar",
@@ -28,19 +37,41 @@ const allLocations: Record<string, { name: string; parentCity: string; image: st
 
 // Register Pan India and National Hubs
 panIndiaLocations.forEach(loc => {
+  const getParent = () => {
+    if (["pan-india", "all-india", "india"].includes(loc)) return "pan-india";
+    if (["delhi-ncr", "delhi", "gurgaon", "noida", "greater-noida", "faridabad"].includes(loc)) return "delhi-ncr";
+    if (["bengaluru", "bangalore", "whitefield", "electronic-city"].includes(loc)) return "bengaluru";
+    if (["hyderabad", "hitec-city", "gachibowli", "visakhapatnam", "vijayawada"].includes(loc)) return "hyderabad";
+    if (["chennai", "coimbatore"].includes(loc)) return "chennai";
+    if (["ahmedabad", "gift-city", "surat", "vadodara", "rajkot"].includes(loc)) return "ahmedabad";
+    if (["kolkata", "new-town-kolkata", "bhubaneswar"].includes(loc)) return "kolkata";
+    if (["chandigarh", "mohali", "dehradun"].includes(loc)) return "chandigarh";
+    if (["jaipur"].includes(loc)) return "jaipur";
+    if (["lucknow", "kanpur"].includes(loc)) return "lucknow";
+    if (["indore", "bhopal", "nagpur", "raipur"].includes(loc)) return "indore";
+    if (["kochi", "thiruvananthapuram"].includes(loc)) return "kochi";
+    if (["nashik", "aurangabad"].includes(loc)) return "pune";
+    return "pan-india";
+  };
+
+  const getName = () => {
+    if (loc === "pan-india") return "Pan India";
+    if (loc === "all-india" || loc === "india") return "All India";
+    if (loc === "delhi-ncr") return "Delhi NCR";
+    if (loc === "gift-city") return "GIFT City Gujarat";
+    if (loc === "hitec-city") return "HITEC City Hyderabad";
+    if (loc === "electronic-city") return "Electronic City Bengaluru";
+    return loc.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+  };
+
   allLocations[loc] = {
-    name: loc === "pan-india" ? "Pan India"
-      : loc === "all-india" || loc === "india" ? "All India"
-      : loc === "delhi-ncr" ? "Delhi NCR"
-      : loc.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' '),
-    parentCity: ["pan-india", "all-india", "india"].includes(loc) ? "pan-india"
-      : ["delhi-ncr", "delhi", "gurgaon", "noida"].includes(loc) ? "delhi-ncr"
-      : ["bengaluru", "bangalore"].includes(loc) ? "bengaluru"
-      : loc,
+    name: getName(),
+    parentCity: getParent(),
     image: ["pan-india", "all-india", "india"].includes(loc) ? "/Unitized.webp"
       : ["delhi-ncr", "delhi", "gurgaon", "noida"].includes(loc) ? "/Business park.webp"
-      : ["bengaluru", "bangalore"].includes(loc) ? "/Business park.webp"
-      : loc === "hyderabad" ? "/Glazing.webp"
+      : ["bengaluru", "bangalore", "whitefield"].includes(loc) ? "/Business park.webp"
+      : ["hyderabad", "hitec-city"].includes(loc) ? "/Glazing.webp"
+      : ["ahmedabad", "gift-city"].includes(loc) ? "/Unitized.webp"
       : "/Panel.webp"
   };
 });
@@ -183,6 +214,70 @@ const cityProfiles: Record<string, {
       { q: "Do you execute facade projects in Thane?", a: "Yes, we handle full-scope facade projects across Thane including structural glazing, curtain walls, and ACP cladding for commercial developments." },
       { q: "What is your project turnaround for Thane commercial projects?", a: "Depending on scale, most Thane commercial facade projects are completed within 8–16 weeks with dedicated on-site supervision." }
     ]
+  },
+  "chennai": {
+    intro: "Chennai's thriving IT corridors, automotive belts, and port precincts demand coastal-engineered curtain walls and structural glazing resilient to cyclonic storms and heavy maritime humidity.",
+    challenges: "Severe coastal marine exposure and high cyclonic wind pressure require 25-micron anodized extrusions, marine-grade SS-316 hardware, and dynamic water penetration tested seals to withstand Bay of Bengal typhoons.",
+    faqs: [
+      { q: "Do you provide cyclone-resistant curtain wall facades in Chennai?", a: "Yes. Our systems are wind-load engineered up to 4.5 kPa in strict compliance with IS 875 Part 3 cyclone zone requirements, utilizing laminated DGU safety glass." },
+      { q: "Can you deliver turnkey facade execution in OMR and Guindy tech hubs?", a: "Yes, Fine Glaze delivers complete design, factory fabrication, and on-site crane erection across Chennai's commercial hubs." }
+    ]
+  },
+  "ahmedabad": {
+    intro: "Ahmedabad and GIFT City represent India's fastest-growing financial and corporate elevations, demanding futuristic unitized curtain walls and IGBC-certified energy-efficient building envelopes.",
+    challenges: "Arid summer heat exceeding 46°C demands superior thermal-break systems and low-SHGC solar control glass to minimize cooling energy and achieve international green building ratings.",
+    faqs: [
+      { q: "Do you execute high-rise facade projects in GIFT City and Ahmedabad?", a: "Yes, Fine Glaze executes precision unitized curtain walls, ACP cladding, and architectural louvers conforming to GIFT City's high-rise building codes." },
+      { q: "What glass specifications do you recommend for Ahmedabad's climate?", a: "We specify Double Glazed Units with soft-coat Low-E on surface #2, maintaining SHGC below 0.22 and U-value under 1.6 W/m²K to optimize HVAC load." }
+    ]
+  },
+  "kolkata": {
+    intro: "Kolkata's IT parks in Salt Lake Sector V and New Town demand modern corporate architectural glazing engineered for high monsoon rainfall and humid tropical conditions.",
+    challenges: "Prolonged monsoon deluges and seasonal nor'westers require continuous pressure-equalized rain-screen curtain walls and engineered EPDM perimeter gaskets to prevent water ingress.",
+    faqs: [
+      { q: "Do you undertake commercial glazing in New Town and Sector V, Kolkata?", a: "Yes, we provide turnkey facade contracting, unitized curtain wall installation, and ACP cladding across Kolkata's commercial parks." },
+      { q: "How do your facades prevent water leakage during eastern monsoons?", a: "We utilize pressure-equalized rain-screen principles with factory-vulcanized EPDM corner gaskets and Dow Corning weatherproofing sealants." }
+    ]
+  },
+  "chandigarh": {
+    intro: "Chandigarh and Mohali's premier corporate offices, institutional campuses, and healthcare centres require clean architectural lines, thermal insulation, and strict acoustic dampening.",
+    challenges: "Extreme seasonal variations from chilly northern winters to scorching summers demand high-performance thermal break fenestration and acoustic laminated glass.",
+    faqs: [
+      { q: "Do you execute architectural facades in Chandigarh and Mohali?", a: "Yes, Fine Glaze executes structural glazing, system aluminium windows, and composite cladding across the Tricity region." },
+      { q: "Can your system windows cut highway and city noise in Chandigarh?", a: "Yes, our acoustic DGU systems deliver sound insulation up to 42 dB, creating calm, productive office and healthcare interiors." }
+    ]
+  },
+  "jaipur": {
+    intro: "Jaipur's rising commercial hubs, luxury hotels, and IT parks require modern glass envelopes harmonized with desert climate solar protection and architectural screens.",
+    challenges: "High solar radiation and airborne dust require heavy-duty solar control coatings, architectural aerofoil louvers, and dust-impervious multi-point window seals.",
+    faqs: [
+      { q: "Do you execute hotel and commercial facades in Jaipur?", a: "Yes, we deliver structural glazing, spider glass atriums, and CNC perforated sun-shading jali envelopes across Rajasthan." },
+      { q: "How do your facades cut solar heat in Rajasthan?", a: "We integrate external aluminium aerofoil fins and low-E insulated glass units that block over 75% of infrared solar radiation." }
+    ]
+  },
+  "lucknow": {
+    intro: "Lucknow and Kanpur's expanding institutional, healthcare, and IT corridors require energy-efficient facade systems that blend modern corporate grandeur with durable weather protection.",
+    challenges: "Dense seasonal fog, winter temperature drops, and intense summer heat demand balanced thermal-transmittance glass envelopes and weather-tight joinery.",
+    faqs: [
+      { q: "Do you supply and install facades in Lucknow and Kanpur?", a: "Yes, Fine Glaze delivers turnkey facade and fenestration contracts for commercial towers and hospitals across Uttar Pradesh." },
+      { q: "What warranties do you offer on facade installations?", a: "We provide comprehensive Defect Liability Period (DLP) warranties along with 10–20 year manufacturer warranties on glass coatings and PVDF panels." }
+    ]
+  },
+  "indore": {
+    intro: "Indore and Bhopal's commercial centers and Super Corridor IT parks demand high-speed unitized curtain walls and fire-rated ACP cladding for Grade-A corporate offices.",
+    challenges: "High commercial growth demands fast-track construction schedules with zero compromise on structural safety, wind load resistance, and fire-safety standards.",
+    faqs: [
+      { q: "Do you execute projects in Indore Super Corridor and Vijay Nagar?", a: "Yes, we provide end-to-end design, factory prefabrication, and certified on-site erection across Madhya Pradesh." },
+      { q: "Are your ACP cladding systems fire-rated for commercial buildings?", a: "Yes, all composite panels comply with NBC 2016 Part 4 using Class A2/B1 non-combustible mineral cores and certified perimeter cavity barriers." }
+    ]
+  },
+  "kochi": {
+    intro: "Kochi and Thiruvananthapuram's waterfront IT parks and luxury hospitality developments require marine-engineered structural glazing and salt-spray-resistant aluminium envelopes.",
+    challenges: "Intense coastal monsoon rainfall and maritime salt spray demand marine-grade SS-316 fittings, heavy 25-micron anodized aluminium, and multi-barrier waterproofing.",
+    faqs: [
+      { q: "Do you execute coastal facades in Kochi and Kerala?", a: "Yes, Fine Glaze executes specialized marine-grade facade packages for waterfront corporate parks and luxury resorts across Kerala." },
+      { q: "How do your facades resist coastal corrosion in Kerala?", a: "We employ architectural virgin 6063-T6 extrusions with certified marine PVDF coatings, EPDM dry-glazing gaskets, and SS-316 stainless steel fixings." }
+    ]
   }
 };
 
@@ -190,7 +285,8 @@ const cityProfiles: Record<string, {
 // 4. COMPONENT
 // ==========================================
 export default function CityLanding() {
-  const { city: slug } = useParams<{ city: string }>();
+  const { city, service } = useParams<{ city?: string; service?: string }>();
+  const slug = service && city ? `${service}-${city}` : (city || service);
   if (!slug) return <Navigate to="/services" replace />;
 
   const lowerSlug = slug.toLowerCase();
@@ -211,12 +307,21 @@ export default function CityLanding() {
 
   const getRegionName = () => {
     if (matchedLocation.parentCity === "pan-india") return "India";
-    if (["delhi-ncr", "delhi", "gurgaon", "noida"].includes(matchedLocationKey)) return "Delhi NCR";
-    if (["bengaluru", "bangalore"].includes(matchedLocationKey)) return "Karnataka";
-    if (matchedLocationKey === "hyderabad") return "Telangana";
-    if (matchedLocationKey === "chennai") return "Tamil Nadu";
-    if (matchedLocationKey === "ahmedabad") return "Gujarat";
-    if (matchedLocationKey === "kolkata") return "West Bengal";
+    if (["delhi-ncr", "delhi", "gurgaon", "noida", "greater-noida", "faridabad"].includes(matchedLocationKey)) return "Delhi NCR";
+    if (["bengaluru", "bangalore", "whitefield", "electronic-city"].includes(matchedLocationKey)) return "Karnataka";
+    if (["hyderabad", "hitec-city", "gachibowli"].includes(matchedLocationKey)) return "Telangana";
+    if (["visakhapatnam", "vijayawada"].includes(matchedLocationKey)) return "Andhra Pradesh";
+    if (["chennai", "coimbatore"].includes(matchedLocationKey)) return "Tamil Nadu";
+    if (["ahmedabad", "gift-city", "surat", "vadodara", "rajkot"].includes(matchedLocationKey)) return "Gujarat";
+    if (["kolkata", "new-town-kolkata"].includes(matchedLocationKey)) return "West Bengal";
+    if (["bhubaneswar"].includes(matchedLocationKey)) return "Odisha";
+    if (["chandigarh", "mohali"].includes(matchedLocationKey)) return "Punjab / Chandigarh";
+    if (["jaipur"].includes(matchedLocationKey)) return "Rajasthan";
+    if (["lucknow", "kanpur"].includes(matchedLocationKey)) return "Uttar Pradesh";
+    if (["dehradun"].includes(matchedLocationKey)) return "Uttarakhand";
+    if (["indore", "bhopal"].includes(matchedLocationKey)) return "Madhya Pradesh";
+    if (["raipur"].includes(matchedLocationKey)) return "Chhattisgarh";
+    if (["kochi", "thiruvananthapuram"].includes(matchedLocationKey)) return "Kerala";
     return "Maharashtra";
   };
 
@@ -257,11 +362,11 @@ export default function CityLanding() {
   ];
 
   // Related locations
-  const relatedLocations = matchedLocation.parentCity === "pan-india"
-    ? ["delhi-ncr", "bengaluru", "hyderabad", "mumbai", "pune", "chennai", "ahmedabad", "kolkata"]
-    : Object.keys(allLocations)
-        .filter(k => allLocations[k].parentCity === matchedLocation.parentCity && k !== matchedLocationKey)
-        .slice(0, 10);
+  const candidateRelated = Object.keys(allLocations)
+    .filter(k => allLocations[k].parentCity === matchedLocation.parentCity && k !== matchedLocationKey);
+  const relatedLocations = candidateRelated.length >= 3
+    ? candidateRelated.slice(0, 10)
+    : ["pan-india", "delhi-ncr", "bengaluru", "hyderabad", "chennai", "ahmedabad", "kolkata", "chandigarh", "jaipur", "indore", "kochi", "pune", "mumbai"].filter(k => k !== matchedLocationKey).slice(0, 10);
 
   return (
     <Layout darkHero>

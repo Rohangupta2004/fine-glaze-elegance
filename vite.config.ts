@@ -3,12 +3,22 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
 
-// 1. All Locations (Pan India, National Metros, and Regional Hubs)
+// 1. All Locations (Pan India, National Metros, Regional Hubs & Industrial Zones)
 const locations = [
-  "pan-india", "all-india", "india", "delhi-ncr", "bengaluru", "hyderabad", "chennai", "ahmedabad", "kolkata",
+  "pan-india", "all-india", "india",
+  "delhi-ncr", "delhi", "gurgaon", "noida", "greater-noida", "faridabad",
+  "bengaluru", "bangalore", "whitefield", "electronic-city",
+  "hyderabad", "hitec-city", "gachibowli",
+  "chennai", "coimbatore",
+  "ahmedabad", "gift-city", "surat", "vadodara", "rajkot",
+  "kolkata", "new-town-kolkata", "bhubaneswar",
+  "chandigarh", "mohali", "jaipur", "lucknow", "kanpur", "dehradun",
+  "indore", "bhopal", "nagpur", "raipur",
+  "kochi", "thiruvananthapuram", "visakhapatnam", "vijayawada",
   "pune", "hinjewadi", "kharadi", "baner", "wakad", "viman-nagar", "magarpatta",
   "hadapsar", "pimpri", "chinchwad", "kalyani-nagar", "koregaon-park", "aundh",
-  "balewadi", "mumbai", "bkc", "andheri", "powai", "lower-parel", "vikhroli",
+  "balewadi", "nashik", "aurangabad",
+  "mumbai", "bkc", "andheri", "powai", "lower-parel", "vikhroli",
   "goregaon", "worli", "byculla", "malad", "borivali", "dadar", "nariman-point",
   "navi-mumbai", "vashi", "mahape", "airoli", "belapur", "kharghar", "panvel", "thane"
 ];

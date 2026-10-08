@@ -132,6 +132,7 @@ export const routes = [
       { path: "blog", element: <L><Blog /></L> },
       { path: "blog/:slug", element: <L><BlogArticle /></L> },
       { path: "facade-contractor/:city", element: <L><CityLanding /></L> },
+      { path: "services/:service/:city", element: <L><CityLanding /></L> },
       { path: "dev", element: <L><Dev /></L> },
       // 25 SEO pages
       { path: "curtain-wall-pune", element: <L><CurtainWallPune /></L> },
