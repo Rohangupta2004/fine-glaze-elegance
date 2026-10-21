@@ -1,10 +1,18 @@
 import { describe, expect, it } from "vitest";
+import { readFileSync } from "node:fs";
 import { blogPosts, blogPostsList } from "@/data/blog";
 import { projectsData } from "@/data/projects";
 import { articleEnhancements, articleKeywords, articleSectionId, buildArticleSchemas, normalizeArticleSections, normalizeArticleTable, relatedArticles } from "./articleSeo";
 import { buildArticleSitemap } from "./articleSitemap";
 
 describe("article search data", () => {
+  it("keeps generic duplicate page content out of the pre-rendered HTML shell", () => {
+    const shell = readFileSync("index.html", "utf8");
+    expect(shell).toContain('id="root"');
+    expect(shell).not.toMatch(/<h1(?:\s|>)/i);
+    expect(shell).not.toContain("SEO Fallback: Crawlable content");
+  });
+
   it("enhances the same 15 articles as the image update with valid references", () => {
     expect(Object.keys(articleEnhancements).sort()).toEqual(blogPostsList.slice(0, 15).map((post) => post.slug).sort());
     for (const [slug, content] of Object.entries(articleEnhancements)) {
