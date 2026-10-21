@@ -15,6 +15,11 @@
       ],
       "destination": "https://fineglaze.com/:path*",
       "permanent": true
+    },
+    {
+      "source": "/fine-glaze-company-profile.pdf",
+      "destination": "/docs/fine-glaze-company-profile.pdf",
+      "permanent": false
     }
   ],
   "rewrites": [

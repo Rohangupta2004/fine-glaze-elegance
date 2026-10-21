@@ -6,6 +6,8 @@ import { Outlet } from "react-router-dom";
 import { lazy, Suspense } from "react";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { PageLoader } from "@/components/PageLoader";
+import { CompanyProfileProvider } from "@/context/CompanyProfileContext";
+import { CompanyProfileViewerModal } from "@/components/CompanyProfileViewerModal";
 
 // Eager-load home page (most visited, LCP critical)
 import Index from "./pages/Index";
@@ -19,6 +21,7 @@ const Contact = lazy(() => import("./pages/Contact"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const Dev = lazy(() => import("./pages/Dev"));
 const ProjectsQR = lazy(() => import("./pages/ProjectsQR"));
+const CompanyProfile = lazy(() => import("./pages/CompanyProfile"));
 
 const AluminiumFacade = lazy(() => import("./pages/AluminiumFacade"));
 const StructuralGlazing = lazy(() => import("./pages/StructuralGlazing"));
@@ -86,13 +89,16 @@ const L = ({ children }: { children: React.ReactNode }) => (
 
 const AppWrapper = () => (
   <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <ErrorBoundary>
-        <Toaster />
-        <Sonner />
-        <Outlet />
-      </ErrorBoundary>
-    </TooltipProvider>
+    <CompanyProfileProvider>
+      <TooltipProvider>
+        <ErrorBoundary>
+          <Toaster />
+          <Sonner />
+          <CompanyProfileViewerModal />
+          <Outlet />
+        </ErrorBoundary>
+      </TooltipProvider>
+    </CompanyProfileProvider>
   </QueryClientProvider>
 );
 
@@ -102,6 +108,9 @@ export const routes = [
     element: <AppWrapper />,
     children: [
       { index: true, element: <Index /> },
+      { path: "company-profile", element: <L><CompanyProfile /></L> },
+      { path: "brochure", element: <L><CompanyProfile /></L> },
+      { path: "profile", element: <L><CompanyProfile /></L> },
       { path: "about", element: <L><About /></L> },
       { path: "services", element: <L><Services /></L> },
       { path: "portfolio", element: <L><Portfolio /></L> },

@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { QuoteModal } from "@/components/QuoteModal";
+import { useCompanyProfile } from "@/context/CompanyProfileContext";
 
 /* ================= SERVICES & INDUSTRIES ================= */
 const serviceLinks = [
@@ -29,6 +30,7 @@ const industryLinks = [
 ];
 
 export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
+  const { openProfile } = useCompanyProfile();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isServiceOpen, setIsServiceOpen] = useState(false);
@@ -202,6 +204,25 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
             <Link to="/blog" className={getLinkClass("/blog")}>Articles</Link>
             <Link to="/about" className={getLinkClass("/about")}>About</Link>
             <Link to="/contact" className={getLinkClass("/contact")}>Contact</Link>
+
+            {/* 1-Click Inbuilt Company Profile Viewer */}
+            <Link
+              to="/company-profile"
+              onClick={() => openProfile(1, "slides")}
+              className={cn(
+                "px-3 py-1.5 text-xs font-bold rounded-full transition-all duration-200 flex items-center gap-1.5 border shadow-sm cursor-pointer ml-1",
+                isScrolled
+                  ? "bg-amber-500/10 border-amber-500/30 text-amber-900 hover:bg-amber-500 hover:text-white"
+                  : darkHero
+                  ? "bg-amber-400/20 border-amber-400/40 text-amber-300 hover:bg-amber-400 hover:text-stone-950 backdrop-blur-md"
+                  : "bg-amber-500/10 border-amber-500/30 text-amber-900 hover:bg-amber-500 hover:text-white"
+              )}
+              title="View Fine Glaze Official Company Profile (1-Click Viewer)"
+            >
+              <FileText size={14} className="text-amber-500 shrink-0" />
+              <span>Company Profile</span>
+              <span className="text-[10px] uppercase font-black px-1.5 py-0.5 bg-amber-500 text-stone-950 rounded-full">PDF</span>
+            </Link>
           </nav>
 
           {/* DESKTOP & MOBILE ACTIONS */}
@@ -278,6 +299,25 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
               </div>
 
               <div className="pt-2 border-t space-y-2">
+                {/* 1-Click Company Profile in Mobile Menu */}
+                <Link
+                  to="/company-profile"
+                  onClick={() => {
+                    setIsMobileMenuOpen(false);
+                    openProfile(1, "slides");
+                  }}
+                  className="w-full flex items-center justify-between p-3 rounded-xl bg-gradient-to-r from-amber-500/15 via-amber-500/10 to-transparent border border-amber-500/30 text-stone-900 font-bold text-sm text-left hover:bg-amber-500/20 transition-all cursor-pointer mb-2"
+                >
+                  <div className="flex items-center gap-2.5">
+                    <FileText size={18} className="text-amber-600 shrink-0" />
+                    <div>
+                      <div className="font-extrabold text-stone-900">Company Profile (Deck &amp; PDF)</div>
+                      <div className="text-[11px] text-stone-500 font-medium">1-Click instant viewer &amp; download</div>
+                    </div>
+                  </div>
+                  <span className="text-[10px] uppercase font-black px-2 py-0.5 bg-amber-500 text-stone-950 rounded-full">Open</span>
+                </Link>
+
                 <Link to="/portfolio" onClick={() => setIsMobileMenuOpen(false)} className="block text-base font-semibold py-1">Projects</Link>
                 <Link to="/blog" onClick={() => setIsMobileMenuOpen(false)} className="block text-base font-semibold py-1">Articles</Link>
                 <Link to="/about" onClick={() => setIsMobileMenuOpen(false)} className="block text-base font-semibold py-1">About</Link>
