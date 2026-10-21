@@ -391,7 +391,7 @@ export default function CompanyProfilePage() {
         </div>
       </section>
 
-      <QuoteModal isOpen={isQuoteOpen} onClose={() => setIsQuoteOpen(false)} />
+      <QuoteModal open={isQuoteOpen} onOpenChange={setIsQuoteOpen} />
     </Layout>
   );
 }

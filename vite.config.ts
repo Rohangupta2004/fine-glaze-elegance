@@ -133,6 +133,8 @@ export default defineConfig(({ mode }) => ({
       return [
         // Standard Core Pages
         '/', '/about', '/services', '/portfolio', '/contact', '/faq', '/blog',
+        // Profile links must also work on direct visits, refreshes and shared slides.
+        '/company-profile', '/brochure', '/profile',
         // Legacy Service Pages
         '/aluminium-facade', '/structural-glazing', '/curtain-wall-systems',
         '/acp-aluminium-cladding', '/glass-railings', '/maintenance-services',
