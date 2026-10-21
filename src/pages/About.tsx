@@ -131,7 +131,7 @@ const About = () => {
   const videoRef = useScrollAnimation();
   const { getMedia } = useSiteMedia();
   const aboutHero = getMedia("about_hero", "/Embassy.webp");
-  const aboutStoryPhoto = getMedia("about_story_photo", "/Embassy.webp");
+  const aboutStoryPhoto = "/fine-glaze-storefront.webp";
 
   return (
     <Layout darkHero>
@@ -231,19 +231,26 @@ const About = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div
               className={cn(
-                "relative slide-up",
+                "relative mx-auto w-full max-w-md slide-up",
                 storyRef.isVisible && "visible"
               )}
             >
-              <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl border border-border">
+              <figure className="rounded-2xl overflow-hidden shadow-2xl border border-border bg-card">
                 <img
                   src={aboutStoryPhoto}
-                  alt="Fine Glaze Landmark Project"
-                  className="w-full h-full object-cover"
+                  alt="Fine Glaze store frontage in Mohammed Wadi, Pune"
+                  className="w-full h-auto object-contain"
+                  width={1243}
+                  height={1034}
+                  loading="lazy"
+                  decoding="async"
                 />
-              </div>
+                <figcaption className="px-5 py-4 text-sm font-semibold text-foreground">
+                  Our Store · Mohammed Wadi, Pune
+                </figcaption>
+              </figure>
 
-              <div className="absolute -bottom-6 -right-4 sm:-right-6 bg-gradient-to-r from-amber-600 to-amber-700 text-white p-6 rounded-xl shadow-xl border border-amber-400/40 max-w-xs">
+              <div className="mt-5 bg-gradient-to-r from-amber-600 to-amber-700 text-white p-6 rounded-xl shadow-xl border border-amber-400/40">
                 <Award size={32} className="mb-2 text-amber-200" />
                 <p className="font-bold text-base">Best Performance Vendor 2024</p>
                 <p className="text-xs text-amber-100">
