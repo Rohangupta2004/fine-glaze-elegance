@@ -16,7 +16,7 @@ interface CompanyProfileContextType {
   toggleViewMode: () => void;
 }
 
-const TOTAL_SLIDES = 29;
+const TOTAL_SLIDES = 57;
 
 const CompanyProfileContext = createContext<CompanyProfileContextType | undefined>(undefined);
 

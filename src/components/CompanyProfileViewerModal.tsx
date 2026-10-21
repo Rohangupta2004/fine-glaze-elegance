@@ -22,35 +22,63 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 export const PROFILE_SECTIONS = [
-  { title: "Cover Page", slide: 1, tag: "Overview" },
+  { title: "Company Profile (Cover)", slide: 1, tag: "Cover" },
   { title: "Table of Contents", slide: 2, tag: "Index" },
   { title: "Company at a Glance", slide: 3, tag: "01 Who We Are" },
   { title: "Service Index (38 Sub-Services)", slide: 4, tag: "03 Services" },
   { title: "Founder & Director (Deepak Gupta)", slide: 5, tag: "12 Leadership" },
   { title: "Management Team", slide: 6, tag: "12 Leadership" },
   { title: "Finance & 40+ Engineering Team", slide: 7, tag: "12 Team" },
-  { title: "Pune Office & Storefront", slide: 8, tag: "12 Office" },
+  { title: "Our Office & Storefront", slide: 8, tag: "12 Office" },
   { title: "Mission & Vision", slide: 9, tag: "01 Vision" },
   { title: "Our Strategic Goals", slide: 10, tag: "01 Goals" },
-  { title: "Capability in Numbers", slide: 11, tag: "02 Capability" },
+  { title: "Fine Glaze in Numbers", slide: 11, tag: "02 Capability" },
   { title: "Design & Fabrication", slide: 12, tag: "03 Services" },
   { title: "Installation & Maintenance", slide: 13, tag: "03 Services" },
-  { title: "8 Facade Service Lines", slide: 14, tag: "03 Services" },
-  { title: "8-Stage Delivery Process", slide: 15, tag: "04 Delivery" },
-  { title: "In-House Design & Engineering", slide: 16, tag: "04 Engineering" },
-  { title: "Pisoli Fabrication Facility", slide: 17, tag: "04 Workshop" },
-  { title: "Quality Assurance & ASTM Testing", slide: 18, tag: "05 QA & QC" },
+  { title: "Facade Service Lines", slide: 14, tag: "03 Services" },
+  { title: "From Enquiry to Handover", slide: 15, tag: "04 Delivery" },
+  { title: "Design & Engineering", slide: 16, tag: "04 Engineering" },
+  { title: "Fabrication Facility (Pisoli, Pune)", slide: 17, tag: "04 Workshop" },
+  { title: "Quality Assurance & Testing", slide: 18, tag: "05 QA & QC" },
   { title: "Health, Safety & Environment", slide: 19, tag: "05 Safety" },
-  { title: "16 Facade Product Lines", slide: 20, tag: "06 Products" },
+  { title: "Our Products (16 Lines)", slide: 20, tag: "06 Products" },
   { title: "Aluminium & Steel Systems", slide: 21, tag: "06 Products" },
   { title: "Railings, Gates & Glazing", slide: 22, tag: "06 Products" },
   { title: "Curtain Walls & Cladding", slide: 23, tag: "06 Products" },
-  { title: "Partitions, Grills & Panels", slide: 24, tag: "06 Products" },
-  { title: "Organisation Chart & Labour Capacity", slide: 25, tag: "12 Team" },
-  { title: "Material Partners (Saint-Gobain/Dowsil)", slide: 26, tag: "07 Partners" },
-  { title: "Our Clients (Embassy, Jindal, L&T)", slide: 27, tag: "08 Clients" },
-  { title: "Best Vendor Performance Award 2024", slide: 28, tag: "09 Awards" },
-  { title: "Landmark Projects (Mumbai & Pune)", slide: 29, tag: "10 Projects" },
+  { title: "Railings, Partitions & Panels", slide: 24, tag: "06 Products" },
+  { title: "Organisation Chart", slide: 25, tag: "12 Team" },
+  { title: "Material Partners", slide: 26, tag: "07 Partners" },
+  { title: "Our Clients", slide: 27, tag: "08 Clients" },
+  { title: "Awards & Recognition 2024", slide: 28, tag: "09 Awards" },
+  { title: "Delivered Across Mumbai & Pune", slide: 29, tag: "10 Projects" },
+  { title: "SSG Honesty Nimkar Building, Panvel", slide: 30, tag: "Project 01" },
+  { title: "Salsette-27, Byculla East, Mumbai", slide: 31, tag: "Project 02" },
+  { title: "Salsette-27 Ramp Canopy Installation", slide: 32, tag: "Project 02" },
+  { title: "Salsette-27 Ramp Canopy Completed", slide: 33, tag: "Project 02" },
+  { title: "Salsette-27 Shaft Railings Tower A & B", slide: 34, tag: "Project 02" },
+  { title: "Salsette-27 ACP Canopy Ground Floor", slide: 35, tag: "Project 02" },
+  { title: "Nirmaann Estrellaa, Pune", slide: 36, tag: "Project 03" },
+  { title: "Embassy 247, Vikhroli, Mumbai", slide: 37, tag: "Project 04" },
+  { title: "Nanavati Max Hospital, Vile Parle", slide: 38, tag: "Project 05" },
+  { title: "Nanavati Max Hospital ACP Cladding", slide: 39, tag: "Project 05" },
+  { title: "Embassy Techzone Park, Pune", slide: 40, tag: "Project 06" },
+  { title: "Embassy Techzone Spider Glass & ACP", slide: 41, tag: "Project 06" },
+  { title: "Pune International Airport Terminal", slide: 42, tag: "Project 07" },
+  { title: "Pune Airport SS Column Cladding", slide: 43, tag: "Project 07" },
+  { title: "LTIMindtree Mensa Campus, Mahape", slide: 44, tag: "Project 08" },
+  { title: "Jindal House, Balkeshwar 32, Mumbai", slide: 45, tag: "Project 09" },
+  { title: "Jindal House SS Glass Railing Work", slide: 46, tag: "Project 09" },
+  { title: "Leela Business Park, Andheri East", slide: 47, tag: "Project 10" },
+  { title: "Naman Chambers, BKC, Mumbai", slide: 48, tag: "Project 11" },
+  { title: "Mittal House, Juhu, Mumbai", slide: 49, tag: "Project 12" },
+  { title: "Leela Hotel Laundry, Andheri East", slide: 50, tag: "Project 13" },
+  { title: "Terrace Enclosure Samundra Tarang", slide: 51, tag: "Project 14" },
+  { title: "FIFC Tower, BKC, Mumbai", slide: 52, tag: "Project 15" },
+  { title: "Facade Maintenance & AMC Contract", slide: 53, tag: "11 AMC" },
+  { title: "Where We Operate & Expansion", slide: 54, tag: "13 Footprint" },
+  { title: "Compliance & Credentials", slide: 55, tag: "13 Compliance" },
+  { title: "Connect with Us", slide: 56, tag: "14 Contact" },
+  { title: "Thank You", slide: 57, tag: "Conclusion" },
 ];
 
 export const CompanyProfileViewerModal: React.FC = () => {
@@ -274,10 +302,10 @@ export const CompanyProfileViewerModal: React.FC = () => {
             href={pdfUrl}
             download="fine-glaze-company-profile.pdf"
             className="flex items-center gap-1.5 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-stone-950 font-bold px-3 py-1.5 rounded-lg text-xs transition-all shadow-md active:scale-95 cursor-pointer"
-            title="Download Full Profile PDF (34.7 MB)"
+            title="Download Full Profile PDF (7.3 MB)"
           >
             <Download className="w-3.5 h-3.5" />
-            <span className="hidden md:inline">PDF (35MB)</span>
+            <span className="hidden md:inline">PDF (7.3 MB)</span>
             <span className="md:hidden">PDF</span>
           </a>
 

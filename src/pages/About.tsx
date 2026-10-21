@@ -208,7 +208,7 @@ const About = () => {
                 className="inline-flex items-center gap-2 bg-stone-900/80 hover:bg-stone-800 text-white font-semibold px-5 py-3.5 rounded-xl border border-stone-700/80 text-sm transition-all cursor-pointer"
               >
                 <Download className="w-4 h-4 text-amber-400" />
-                <span>Download PDF (35 MB)</span>
+                <span>Download PDF (7.3 MB)</span>
               </a>
             </div>
           </div>

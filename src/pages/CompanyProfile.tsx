@@ -25,7 +25,7 @@ import { PROFILE_SECTIONS } from "@/components/CompanyProfileViewerModal";
 import { useCompanyProfile } from "@/context/CompanyProfileContext";
 import { cn } from "@/lib/utils";
 
-const TOTAL_SLIDES = 29;
+const TOTAL_SLIDES = 57;
 
 export default function CompanyProfilePage() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -139,7 +139,7 @@ export default function CompanyProfilePage() {
                 className="inline-flex items-center gap-2 bg-stone-800 hover:bg-stone-700 text-white font-bold text-xs sm:text-sm px-4 py-2.5 rounded-xl border border-stone-700 shadow-md transition-all active:scale-95 cursor-pointer"
               >
                 <Download className="w-4 h-4 text-amber-400" />
-                Download PDF (35 MB)
+                Download PDF (7.3 MB)
               </a>
 
               <Button
@@ -262,7 +262,7 @@ export default function CompanyProfilePage() {
                       className="px-6 py-3 bg-amber-500 text-stone-950 font-bold rounded-xl"
                       download
                     >
-                      Download PDF (35 MB)
+                      Download PDF (7.3 MB)
                     </a>
                   </div>
                 </object>
