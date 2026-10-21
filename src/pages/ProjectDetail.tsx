@@ -1,10 +1,10 @@
-import { ProjectGallery } from "@/components/ProjectGallery";
+import { projectSummaries } from "@/data/projectPresentation";
 import { useParams, Link, Navigate } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 import { useProject } from "@/hooks/useProjects";
 import { Helmet } from "react-helmet-async";
 import SEO from "@/components/SEO";
-import { MapPin, Calendar, Building2, ArrowLeft, CheckCircle2, Phone, ArrowRight } from "lucide-react";
+import { MapPin, Building2, ArrowLeft, Phone, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const ProjectDetail = () => {
@@ -25,11 +25,13 @@ const ProjectDetail = () => {
     return <Navigate to="/portfolio" replace />;
   }
 
+  const summary = projectSummaries[project.slug] ?? project.scope;
+
   const projectSchema = {
     "@context": "https://schema.org",
     "@type": "CreativeWork",
     "name": project.title,
-    "description": project.description,
+    "description": summary,
     "url": `https://fineglaze.com/project/${slug}`,
     "image": {
       "@type": "ImageObject",
@@ -85,7 +87,7 @@ const ProjectDetail = () => {
     <Layout darkHero>
       <SEO
         title={`${project.title} – ${project.scope} | Fine Glaze`}
-        description={`${project.description.slice(0, 155)}...`}
+        description={summary}
         canonical={`https://fineglaze.com/project/${slug}`}
         keywords={`${project.title}, ${project.scope}, facade contractor ${project.location}, ${project.category} facade India`}
         schema={breadcrumbSchema}
@@ -132,10 +134,6 @@ const ProjectDetail = () => {
               {project.location}
             </span>
             <span className="flex items-center gap-1.5">
-              <Calendar size={14} />
-              {project.year}
-            </span>
-            <span className="flex items-center gap-1.5">
               <Building2 size={14} />
               {project.client}
             </span>
@@ -150,53 +148,20 @@ const ProjectDetail = () => {
           {/* Main content */}
           <div className="lg:col-span-2 space-y-10">
 
-            {/* Scope badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold border border-primary/20">
-              {project.scope}
-            </div>
-
-            <div className="flex flex-wrap gap-3 text-sm"><span className="rounded-full bg-primary/10 text-primary px-3 py-1 font-semibold">{project.status}</span><a href="#project-gallery" className="underline underline-offset-4 text-muted-foreground">View project photos</a></div>
-
-            {/* Description */}
             <div>
-              <h2 className="text-2xl font-bold mb-4">Project Overview</h2>
-              <p className="text-muted-foreground leading-relaxed text-base">
-                {project.description}
-              </p>
+              <p className="text-xs font-semibold tracking-[0.2em] uppercase text-primary mb-4">Our Contribution</p>
+              <h2 className="text-2xl md:text-3xl font-bold leading-tight mb-5">{project.scope}</h2>
+              <p className="text-muted-foreground leading-relaxed text-lg">{summary}</p>
             </div>
 
-            {/* Challenge */}
-            <div className="p-6 rounded-2xl bg-muted/50 border border-border">
-              <h3 className="font-bold text-lg mb-3 text-foreground">The Challenge</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                {project.challenge}
-              </p>
-            </div>
-
-            {/* Outcome */}
-            <div className="p-6 rounded-2xl bg-primary/5 border border-primary/20">
-              <h3 className="font-bold text-lg mb-3 text-primary">Outcome</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                {project.outcome}
-              </p>
-            </div>
-
-            {/* Features */}
-            {project.features && project.features.length > 0 && (
-              <div>
-                <h3 className="font-bold text-xl mb-5">Scope & Features</h3>
-                <ul className="space-y-3">
-                  {project.features.map((f, i) => (
-                    <li key={i} className="flex items-start gap-3">
-                      <CheckCircle2 size={18} className="text-primary mt-0.5 shrink-0" />
-                      <span className="text-muted-foreground">{f}</span>
-                    </li>
-                  ))}
-                </ul>
+            {project.isAwardWinner && project.award && (
+              <div className="border-l-2 border-amber-500 pl-5 py-2">
+                <p className="text-xs uppercase tracking-widest text-muted-foreground mb-2">Client Recognition</p>
+                <p className="text-lg font-semibold">{project.award}</p>
+                <p className="text-sm text-muted-foreground mt-1">Awarded by Embassy REIT</p>
               </div>
             )}
 
-            <div id="project-gallery" className="scroll-mt-24"><ProjectGallery key={project.slug} title={project.title} images={Array.from(new Set([project.image, ...(project.gallery ?? [])]))} /></div>
           </div>
 
           {/* Sidebar */}
@@ -204,7 +169,7 @@ const ProjectDetail = () => {
 
             {/* Project details card */}
             <div className="rounded-2xl border border-border bg-card p-6 space-y-4">
-              <h3 className="font-bold text-base">Project Details</h3>
+              <h3 className="font-bold text-base">At a Glance</h3>
               <div className="space-y-3 text-sm">
                 <div className="flex justify-between items-start gap-4">
                   <span className="text-muted-foreground">Client</span>
@@ -215,12 +180,8 @@ const ProjectDetail = () => {
                   <span className="font-medium text-right">{project.location}</span>
                 </div>
                 <div className="flex justify-between items-start gap-4">
-                  <span className="text-muted-foreground">Year</span>
-                  <span className="font-medium">{project.year}</span>
-                </div>
-                <div className="flex justify-between items-start gap-4">
-                  <span className="text-muted-foreground">Scope</span>
-                  <span className="font-medium text-right">{project.scope}</span>
+                  <span className="text-muted-foreground">Status</span>
+                  <span className="font-medium">{project.status}</span>
                 </div>
                 <div className="flex justify-between items-start gap-4">
                   <span className="text-muted-foreground">Category</span>
@@ -242,9 +203,9 @@ const ProjectDetail = () => {
                 background: "linear-gradient(135deg, hsl(25 80% 25%) 0%, hsl(20 75% 18%) 100%)",
               }}
             >
-              <h3 className="font-bold text-base">Have a similar project?</h3>
+              <h3 className="font-bold text-base">Discuss Your Project</h3>
               <p className="text-white/75 text-sm leading-relaxed">
-                Get a free site visit and detailed quotation for your facade project.
+                Speak with our team about the right facade solution for your building.
               </p>
               <div className="space-y-2">
                 <Button
@@ -257,7 +218,7 @@ const ProjectDetail = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Get Free Quote
+                    Request a Consultation
                     <ArrowRight size={14} className="ml-1.5" />
                   </a>
                 </Button>
@@ -265,7 +226,7 @@ const ProjectDetail = () => {
                   asChild
                   size="sm"
                   variant="outline"
-                  className="w-full border-white/30 text-white hover:bg-white/10"
+                  className="w-full bg-transparent border-white/30 text-white hover:bg-white/10 hover:text-white"
                 >
                   <a href="tel:+918369233566">
                     <Phone size={13} className="mr-1.5" />

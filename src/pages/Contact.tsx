@@ -509,12 +509,6 @@ const Contact = () => {
                 </div>
               </div>
 
-              {/* Visit our office */}
-              <figure className="overflow-hidden border border-stone-200 bg-white rounded-xl">
-                <img src="/fine-glaze-office.webp" alt="Inside Fine Glaze office at Pragati Serene, Mohammed Wadi, Pune" className="w-full aspect-[16/9] object-cover" loading="lazy" decoding="async" />
-                <figcaption className="px-5 py-4"><p className="font-semibold text-stone-900">Visit Fine Glaze</p><p className="text-sm text-stone-500 mt-1">Meet us at our Mohammed Wadi office to discuss your project.</p></figcaption>
-              </figure>
-
               {/* Office address */}
               <div className="relative overflow-hidden bg-stone-900 text-white p-5 md:p-7">
                 {/* decorative corner */}

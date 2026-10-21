@@ -1,3 +1,4 @@
+import { landmarkProjectOrder } from "@/data/projectPresentation";
 import { useState } from "react";
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/home/CTASection";
@@ -134,7 +135,7 @@ function ShowcaseProject({
           {/* Badges */}
           <div className="absolute top-4 left-4 flex flex-wrap gap-2">
             {p.status === "Ongoing" ? (
-              <span className="bg-amber-500 text-stone-950 font-extrabold text-[10px] uppercase tracking-wider px-3 py-1 rounded-full shadow-md animate-pulse">
+              <span className="bg-amber-500 text-stone-950 font-extrabold text-[10px] uppercase tracking-wider px-3 py-1 rounded-full shadow-md">
                 Ongoing Work
               </span>
             ) : (
@@ -186,12 +187,6 @@ function ShowcaseProject({
               <span className="text-amber-700 font-bold shrink-0">Scope:</span>
               <span>{p.scope}</span>
             </p>
-            {p.systemUsed && (
-              <p className="text-stone-600 text-xs flex items-start gap-2 bg-stone-100 p-2.5 rounded-md border border-stone-200">
-                <span className="text-stone-900 font-bold shrink-0">Systems &amp; Spec:</span>
-                <span>{p.systemUsed}</span>
-              </p>
-            )}
           </div>
 
           {/* Meta grid */}
@@ -211,7 +206,7 @@ function ShowcaseProject({
           </div>
 
           <div className="inline-flex items-center justify-between w-full bg-white group-hover:bg-amber-600 group-hover:text-white border border-stone-300 text-stone-800 font-bold text-sm px-4 py-2.5 rounded-lg transition-all shadow-sm">
-            <span>View Full Case Study</span>
+            <span>Explore Project</span>
             <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
           </div>
         </div>
@@ -296,7 +291,11 @@ function CompactCard({ p, index }: CompactCardProps) {
    MAIN PAGE
    ════════════════════════════════════════════════════ */
 const Portfolio = () => {
-  const { projects } = useProjects();
+  const { projects: allProjects } = useProjects();
+  const projects = [...allProjects].sort((a, b) => {
+    const rank = (slug: string) => { const index = landmarkProjectOrder.indexOf(slug); return index < 0 ? landmarkProjectOrder.length : index; };
+    return rank(a.slug) - rank(b.slug);
+  });
   const [active, setActive] = useState("all");
 
   const filtered =

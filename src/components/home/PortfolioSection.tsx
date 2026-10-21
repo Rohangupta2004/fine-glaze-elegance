@@ -1,3 +1,4 @@
+import { landmarkProjectOrder } from "@/data/projectPresentation";
 import { Link } from "react-router-dom";
 import { ArrowRight, MapPin, Eye } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -8,8 +9,8 @@ import { useProjects } from "@/hooks/useProjects";
 export const PortfolioSection = () => {
   const { projects } = useProjects();
 
-  // Show first 3 projects (sorted by sort_order from Supabase, or static order)
-  const featured = projects.slice(0, 3);
+  // Lead with landmark references across infrastructure and corporate work.
+  const featured = landmarkProjectOrder.slice(0, 3).flatMap((slug) => projects.filter((project) => project.slug === slug));
 
   return (
     <section className="py-20 bg-background">
@@ -27,7 +28,7 @@ export const PortfolioSection = () => {
               Featured Work
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-              Recent{" "}
+              Landmark{" "}
               <span className="text-gradient-subtle">Projects</span>
             </h2>
           </motion.div>
