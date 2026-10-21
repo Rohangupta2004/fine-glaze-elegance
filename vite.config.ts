@@ -1,7 +1,28 @@
-import { defineConfig } from "vite";
+import { defineConfig, type Plugin } from "vite";
+import { readFileSync } from "node:fs";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
+import { buildArticleSitemap } from "./src/lib/articleSitemap";
+import articleEnhancements from "./src/data/articleEnhancements.json";
+import articleVisuals from "./src/data/articleVisuals.json";
+
+const articleSitemapPlugin = (): Plugin => {
+  let isServerBuild = false;
+  return {
+    name: "article-sitemap",
+    apply: "build",
+    configResolved(config) { isServerBuild = Boolean(config.build.ssr); },
+    generateBundle() {
+      if (isServerBuild) return;
+      this.emitFile({
+        type: "asset",
+        fileName: "sitemap.xml",
+        source: buildArticleSitemap(readFileSync(path.resolve(__dirname, "public/sitemap.xml"), "utf8"), Object.values(blogPosts), articleEnhancements, articleVisuals),
+      });
+    },
+  };
+};
 
 // 1. All Locations (Pan India, National Metros, Regional Hubs & Industrial Zones)
 const locations = [
@@ -100,7 +121,7 @@ export default defineConfig(({ mode }) => ({
     port: 8080,
     hmr: { overlay: false },
   },
-  plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
+  plugins: [react(), articleSitemapPlugin(), mode === "development" && componentTagger()].filter(Boolean),
   resolve: {
     alias: { "@": path.resolve(__dirname, "./src") },
   },

@@ -6,6 +6,7 @@ import { fadeUp, slideLeft, slideRight, stagger, viewport } from "@/hooks/useMot
 import { blogPostsList } from "@/data/blog";
 import { useBlogImages } from "@/hooks/useBlogImages";
 import { getArticleImageSrcSet } from "@/data/articleVisuals";
+import { getArticleEnhancement } from "@/lib/articleSeo";
 
 export const ArticlesSection = () => {
   const { getHeroImage } = useBlogImages();
@@ -87,11 +88,11 @@ export const ArticlesSection = () => {
                     </div>
 
                     <h3 className="text-lg font-bold text-slate-900 dark:text-white leading-snug group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors line-clamp-2">
-                      {article.title}
+                      {getArticleEnhancement(article.slug)?.title ?? article.title}
                     </h3>
 
                     <p className="text-sm text-slate-600 dark:text-slate-400 line-clamp-2 leading-relaxed">
-                      {article.excerpt}
+                      {getArticleEnhancement(article.slug)?.metaDescription ?? article.excerpt}
                     </p>
                   </div>
 

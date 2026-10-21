@@ -5,6 +5,7 @@ import { blogPostsList } from "@/data/blog";
 import { useBlogImages } from "@/hooks/useBlogImages";
 import SEO from "@/components/SEO";
 import { getArticleImageSrcSet } from "@/data/articleVisuals";
+import { getArticleEnhancement } from "@/lib/articleSeo";
 
 export default function Blog() {
   const { getHeroImage } = useBlogImages();
@@ -84,11 +85,11 @@ export default function Blog() {
                   </div>
 
                   <h2 className="text-lg font-bold leading-snug group-hover:text-primary transition-colors">
-                    {post.title}
+                    {getArticleEnhancement(post.slug)?.title ?? post.title}
                   </h2>
 
                   <p className="text-sm text-muted-foreground line-clamp-2">
-                    {post.excerpt}
+                    {getArticleEnhancement(post.slug)?.metaDescription ?? post.excerpt}
                   </p>
 
                   <div className="flex items-center gap-1 text-sm font-semibold text-primary pt-1">

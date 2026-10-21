@@ -7,6 +7,8 @@ interface SEOProps {
   keywords?: string;
   ogImage?: string;
   ogType?: string;
+  ogImageWidth?: number;
+  ogImageHeight?: number;
   noindex?: boolean;
   schema?: object;     // singular — most pages
   schemas?: object[];  // array — city pages with multiple schemas
@@ -19,6 +21,8 @@ export default function SEO({
   keywords,
   ogImage = "https://fineglaze.com/default-og.webp",
   ogType = "website",
+  ogImageWidth = 1200,
+  ogImageHeight = 630,
   noindex = false,
   schema,
   schemas,
@@ -46,8 +50,8 @@ export default function SEO({
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       {ogImage && <meta property="og:image" content={ogImage} />}
-      {ogImage && <meta property="og:image:width" content="1200" />}
-      {ogImage && <meta property="og:image:height" content="630" />}
+      {ogImage && <meta property="og:image:width" content={String(ogImageWidth)} />}
+      {ogImage && <meta property="og:image:height" content={String(ogImageHeight)} />}
       <meta property="og:type" content={ogType} />
       <meta property="og:site_name" content="Fine Glaze" />
       <meta property="og:locale" content="en_IN" />
@@ -63,7 +67,7 @@ export default function SEO({
 
       {allSchemas.map((s, i) => (
         <script type="application/ld+json" key={i}>
-          {JSON.stringify(s)}
+          {JSON.stringify(s).replace(/</g, "\\u003c")}
         </script>
       ))}
     </Helmet>

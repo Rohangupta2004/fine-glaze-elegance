@@ -1,42 +1,39 @@
 # Fine Glaze
 
-> Fine Glaze is a leading aluminium facade contractor based in Pune, India. We specialise in curtain wall systems, structural glazing, ACP cladding, glass railings, skylights, louvers, and facade maintenance (AMC) for commercial, residential, and institutional buildings Pan India.
+> Facade and fenestration design, fabrication, installation and maintenance for commercial and residential projects.
 
 ## Company
 
-- [About Fine Glaze](https://fineglaze.com/about): Company history, team, certifications, and the Fine Glaze story — established in Pune with 10+ landmark projects delivered.
-- [Contact](https://fineglaze.com/contact): Office address (Undri, Pune 411060), phone (+91 8369233566), email (info@fineglaze.com), and enquiry form.
+- [About Fine Glaze](https://fineglaze.com/about): Company introduction and Pune storefront.
+- [Contact](https://fineglaze.com/contact): A3 LW-13, Pragati Serene Building, Sr.No.2, HDFC Bank Chowk, Plot B, Autadwadi Handewadi, Mahadev Wadi, Mohammed Wadi, Pune, Maharashtra 411060. Phone: +91 8369233566. Email: info@fineglaze.com.
+- [Project portfolio](https://fineglaze.com/portfolio): Documented project scopes, locations and statuses across Pune and Mumbai.
 
 ## Services
 
-- [Aluminium Facade Systems](https://fineglaze.com/aluminium-facade): Unitized and stick-built aluminium curtain wall systems for IT parks, offices, and high-rises — wind-load tested up to 4.5 kPa.
-- [Curtain Wall Systems](https://fineglaze.com/curtain-wall-systems): Unitized and semi-unitized curtain wall design, fabrication, and installation for commercial buildings.
-- [Structural Glazing](https://fineglaze.com/structural-glazing): 2-side, 4-side, and spider glazing solutions for showrooms, offices, and retail facades — frameless silicone-bonded glass systems.
-- [ACP Cladding](https://fineglaze.com/acp-aluminium-cladding): Fire-retardant PVDF-coated aluminium composite panel cladding from Aludecor and Alstrong.
-- [Glass Railings](https://fineglaze.com/glass-railings): Frameless toughened glass railing systems for balconies, staircases, and terraces.
-- [Facade Maintenance & AMC](https://fineglaze.com/maintenance-services): Rope-access facade cleaning, silicone resealing, glass replacement, and bi-annual inspection programmes.
-- [Skylights](https://fineglaze.com/skylights): Structural skylight glazing for atriums, lobbies, and commercial spaces.
-- [Louvers](https://fineglaze.com/louvers): Aluminium louver systems for ventilation and sun shading on building facades.
-- [Glass Partitions](https://fineglaze.com/glass-partitions): Interior frameless glass partition systems for offices and commercial interiors.
+- [Curtain wall systems](https://fineglaze.com/curtain-wall-systems)
+- [Structural glazing](https://fineglaze.com/structural-glazing)
+- [ACP cladding](https://fineglaze.com/acp-aluminium-cladding)
+- [Aluminium facade systems](https://fineglaze.com/aluminium-facade)
+- [Glass railings](https://fineglaze.com/glass-railings)
+- [Glass partitions](https://fineglaze.com/glass-partitions)
+- [Louvers](https://fineglaze.com/louvers)
+- [Facade maintenance](https://fineglaze.com/maintenance-services)
 
-## Portfolio & Projects
+## Article guides
 
-- [Project Portfolio](https://fineglaze.com/portfolio): Completed landmark projects including Embassy 247 (Vikhroli), LTIMindtree Mensa Campus (Mahape), Pune International Airport Terminal, and Salsette-27 (Byculla).
-- [Commercial Building Facades](https://fineglaze.com/commercial-building-facade): Facade solutions for IT parks, corporate offices, malls, and mixed-use developments.
-
-## Service Areas
-
-- [Facade Contractor Pune](https://fineglaze.com/facade-contractor/pune): Serving Hinjewadi, Kharadi, Baner, Wakad, and Undri.
-- [Facade Contractor Mumbai](https://fineglaze.com/facade-contractor/mumbai): Serving BKC, Andheri, Powai, and Vikhroli.
-- [Facade Contractor Navi Mumbai](https://fineglaze.com/facade-contractor/navi-mumbai): Serving Vashi, Mahape, and Airoli.
-- [Facade Contractor Thane](https://fineglaze.com/facade-contractor/thane): Serving Thane and surrounding areas.
-
-## Guides & Blog
-
-- [FAQ](https://fineglaze.com/faq): 11 expert answers on curtain wall costs, structural glazing pricing, ACP cladding, wind-load standards, and facade maintenance in India.
-- [Blog](https://fineglaze.com/blog): Technical guides on facade engineering, cost comparisons, and industry trends in India.
-- [Curtain Wall Cost Guide](https://fineglaze.com/blog/curtain-wall-cost-per-sq-ft-india-2026): Curtain wall pricing per sq ft in India (2026), covering unitized, stick-system, and semi-unitized options.
-- [ACP Sheet Price Guide](https://fineglaze.com/blog/acp-sheet-price-per-sq-ft-india-2026): ACP cladding costs per sq ft in India with PE, FR, and PVDF grade breakdowns.
-- [ACP vs HPL Cladding](https://fineglaze.com/blog/acp-vs-hpl-cladding-comparison): Technical comparison of ACP and HPL cladding materials for Indian projects.
-- [Facade Design Trends 2026](https://fineglaze.com/blog/facade-design-trends-india-2026): Emerging facade design trends for commercial buildings in India.
-- [Facade Maintenance Guide](https://fineglaze.com/blog/facade-maintenance-guide-india): Complete guide to facade AMC, cleaning schedules, and repair protocols for Indian buildings.
+- [All articles](https://fineglaze.com/blog)
+- [Unitized vs Stick Curtain Walls: Selection & Cost](https://fineglaze.com/blog/unitized-vs-stick-curtain-wall-systems-cost-comparison-india-2026): Compare unitized and stick curtain walls by assembly, access, programme and scope. Use our specification checklist to compare facade quotations in India.
+- [DGU vs Triple Glazing: Performance & Selection](https://fineglaze.com/blog/double-glazed-units-dgu-vs-triple-glazing-commercial-facade-india): Understand DGU and triple glazing, U-value, SHGC and acoustic glass. Compare full glazing specifications before selecting a commercial facade system.
+- [Structural Glazing Cost: Compare the Full Scope](https://fineglaze.com/blog/structural-glazing-cost-per-sq-ft-india-2026-price-guide): Compare structural glazing costs, silicone systems, spider fittings and installation scope. Learn which documents to request before accepting a facade quote.
+- [Fire-Rated ACP: Ratings, Documents & Cost Factors](https://fineglaze.com/blog/fire-rated-acp-sheet-cladding-cost-nbc-fire-safety-norms-india): Understand ACP fire ratings, mineral cores and facade assembly documents. Compare cladding specifications and quotation scope without relying on an FR label.
+- [Facade Water Leakage: Diagnosis & Repair Guide](https://fineglaze.com/blog/facade-water-leakage-rectification-monsoon-waterproofing-guide-india): Find the causes of glass facade leaks, sealant failure and blocked drainage. Use a practical investigation and repair checklist before the next monsoon.
+- [System Aluminium Windows & Thermal Breaks](https://fineglaze.com/blog/system-aluminium-windows-vs-conventional-sliding-fenestration-cost): Compare system aluminium and conventional sliding windows. Check thermal breaks, drainage, air leakage, hardware and complete-window performance before buying.
+- [Aluminium Sun Louvers: Design & Cost Factors](https://fineglaze.com/blog/architectural-aluminium-sun-louvers-aerofoil-fins-energy-reduction): Plan aluminium sun louvers and aerofoil fins around orientation, daylight, wind loads and access. Compare fixed and operable shading with a buyer checklist.
+- [Frameless Balcony Railings: Systems & Safety](https://fineglaze.com/blog/frameless-glass-railing-balustrade-cost-hardware-safety-standards-india): Compare base-shoe and spigot glass railings using tested systems, glass build-up, anchors and slab details. Prepare a clear high-rise balcony specification.
+- [Facade AMC: Scope, Checklist & Cost Drivers](https://fineglaze.com/blog/facade-amc-commercial-building-maintenance-checklist-cost-india): Define a commercial facade AMC with inspections, cleaning, sealant repairs and reporting. Compare exclusions, response terms, access and maintenance costs.
+- [Sustainable Facades: ECBC, ECSBC & Design Choices](https://fineglaze.com/blog/sustainable-green-building-facade-design-leed-igbc-ecbc-compliance-india): Coordinate solar control, daylight, glazing and thermal bridges for sustainable facades. Understand ECBC, ECSBC and project-specific green-building requirements.
+- [Office Glass Partitions: Cost & Acoustic Choices](https://fineglaze.com/blog/frameless-glass-office-partitions-cost-design-guide-2026): Choose frameless office glass partitions by privacy, acoustics, doors and hardware. Compare glass build-ups and installed scope using our quote checklist.
+- [Commercial Facade Inspection: A Practical Checklist](https://fineglaze.com/blog/commercial-facade-inspection-maintenance-checklist-2026): Plan a facade inspection covering glass, seals, drainage, anchors and safe access. Learn what a useful condition report should record before repair decisions.
+- [Spider Glazing: Fittings, Glass & Design Guide](https://fineglaze.com/blog/spider-glazing-systems-benefits-cost-india): Understand point-supported spider glazing, glass fins, fittings and movement. Use a project checklist to compare atrium, entrance and canopy proposals.
+- [Monsoon Facade Maintenance: Before & After Rain](https://fineglaze.com/blog/facade-safety-during-monsoon-india): Prepare glass facades for monsoon rain with seal, drainage and access checks. Record leaks safely and plan repairs using a clear building-maintenance scope.
+- [Glass Railing Design: Safety, Supports & Cost](https://fineglaze.com/blog/glass-railing-design-safety-guide-india): Choose residential glass railings using glass build-up, supports, anchors and breakage behaviour. Compare balcony and staircase quotations on a clear scope.

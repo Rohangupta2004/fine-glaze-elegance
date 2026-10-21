@@ -3,20 +3,27 @@ export interface BlogPost {
   title: string;
   metaTitle: string;
   metaDescription: string;
-  keywords: string;
+  keywords: string | string[];
   date: string;
   readTime: string;
   category: string;
   heroImage: string;
   excerpt: string;
-  content: Section[];
+  content: (Section | ArticleBlock)[];
 }
 
-interface Section {
+export interface ArticleBlock {
+  type: "heading" | "body" | "table" | "list";
+  text?: string;
+  data?: string[][];
+  items?: string[];
+}
+
+export interface Section {
   heading: string;
-  body: string;
+  body?: string | string[];
   list?: string[];
-  table?: { headers: string[]; rows: string[][] };
+  table?: { headers: string[]; rows: string[][] } | string[][];
 }
 
 export const blogPosts: Record<string, BlogPost> = {
