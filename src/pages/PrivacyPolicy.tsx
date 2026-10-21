@@ -201,7 +201,7 @@ const PrivacyPolicy = () => {
                 </div>
               </div>
               <p className="text-stone-500 text-xs mt-4">
-                Fine Glaze · Shop No. 1 & 2, Jagdamba Bhawan Marg, Undri, Pune – 411060, Maharashtra, India
+                Fine Glaze · A3 LW-13, Pragati Serene Building, Sr.No.2, HDFC Bank Chowk, Plot B, Autadwadi Handewadi, Mahadev Wadi, Mohammed Wadi, Pune – 411060, Maharashtra, India
               </p>
             </div>
 

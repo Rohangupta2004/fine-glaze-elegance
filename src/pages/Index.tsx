@@ -24,12 +24,12 @@ const Index = () => {
     "foundingDate": "2019",
     "areaServed": ["Pan India", "Pune", "Mumbai", "Navi Mumbai", "Thane", "Delhi NCR", "Bengaluru", "Hyderabad", "Maharashtra"],
     "sameAs": [
-      "https://maps.app.goo.gl/JDF3ESXQGHtwKoAr6",
+      "https://www.google.com/maps/search/?api=1&query=Fine+Glaze+A3+LW-13+Pragati+Serene+Mohammed+Wadi+Pune+411060",
       "https://www.linkedin.com/company/fine-glaze"
     ],
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "A3 LW-13, Pragati Serene Building, Sr.No.2, HDFC Bank Chowk, Mohammed Wadi",
+      "streetAddress": "A3 LW-13, Pragati Serene Building, Sr.No.2, HDFC Bank Chowk, Plot B, Autadwadi Handewadi, Mahadev Wadi, Mohammed Wadi",
       "addressLocality": "Pune",
       "addressRegion": "Maharashtra",
       "postalCode": "411060",
@@ -48,21 +48,16 @@ const Index = () => {
     "priceRange": "₹₹₹",
     "description": "Complete facade solutions and fenestration expert Pan India, delivering structural glazing, curtain wall systems, aluminium doors and windows, and ACP cladding.",
     "sameAs": [
-      "https://maps.app.goo.gl/JDF3ESXQGHtwKoAr6",
+      "https://www.google.com/maps/search/?api=1&query=Fine+Glaze+A3+LW-13+Pragati+Serene+Mohammed+Wadi+Pune+411060",
       "https://www.linkedin.com/company/fine-glaze"
     ],
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "A3 LW-13, Pragati Serene Building, Sr.No.2, HDFC Bank Chowk, Mohammed Wadi",
+      "streetAddress": "A3 LW-13, Pragati Serene Building, Sr.No.2, HDFC Bank Chowk, Plot B, Autadwadi Handewadi, Mahadev Wadi, Mohammed Wadi",
       "addressLocality": "Pune",
       "addressRegion": "Maharashtra",
       "postalCode": "411060",
       "addressCountry": "IN"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 18.4529,
-      "longitude": 73.9072
     },
     "areaServed": [
       { "@type": "Country", "name": "India" },

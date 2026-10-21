@@ -1,3 +1,4 @@
+import { projectsData } from "@/data/projects";
 import { useMemo, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { Download, Mail, MapPin, Phone, Smartphone } from "lucide-react";
@@ -24,91 +25,16 @@ const contact = {
   website: "www.fineglaze.com",
 };
 
-const projects: ProjectReference[] = [
-  {
-    title: "Salsette-27",
-    location: "Byculla East, Mumbai",
-    city: "mumbai",
-    status: "Ongoing",
-    year: "2023",
-    scope: "Toilet shaft railing work",
-    image: "/Salsette27.webp",
-  },
-  {
-    title: "LTIMindtree Mensa Campus",
-    location: "Mahape, Navi Mumbai",
-    city: "mumbai",
-    status: "Ongoing",
-    scope: "ACP and silicone facade work",
-    client: "L&T Construction",
-    image: "/ltimindtree-mensa-campus-mahape-navi-mumbai-1 (1)-elementor-io-optimized.webp",
-  },
-  {
-    title: "Pune International Airport",
-    location: "New Integrated Terminal, Pune",
-    city: "pune",
-    status: "Completed",
-    year: "2023",
-    scope: "SS column cladding with MS framing",
-    client: "Jindal Stainless Limited",
-    image: "/Puneairport.webp",
-  },
-  {
-    title: "Jindal House",
-    location: "Balkeshwar 32, Mumbai",
-    city: "mumbai",
-    status: "Completed",
-    year: "2023",
-    scope: "SS glass railing and SS wire mesh railing",
-    image: "/Jindal house.webp",
-  },
-  {
-    title: "Leela Business Park",
-    location: "Andheri East, Mumbai",
-    city: "mumbai",
-    status: "Completed",
-    year: "2023",
-    scope: "Aluminium louvers installed on all floors",
-    image: "/Business park.webp",
-  },
-  {
-    title: "Leela Hotel",
-    location: "Andheri East, Mumbai",
-    city: "mumbai",
-    status: "Completed",
-    year: "2023",
-    scope: "Laundry area fixed and openable windows",
-    image: "/Hotel.webp",
-  },
-  {
-    title: "Nirmaann Estrellaa",
-    location: "Somji Chowk, Pune",
-    city: "pune",
-    status: "Ongoing",
-    scope: "Windows, louvers, fins, maintenance and SS glass railing",
-    client: "Nirmaann Encon Developer",
-    image: "/Nirmann.webp",
-  },
-  {
-    title: "SSG Honesty",
-    location: "Panvel, Raigad",
-    city: "panvel",
-    status: "Ongoing",
-    scope: "Structural glazing, curtain wall glazing, ACP and openable windows",
-    client: "Hatchway Windoor Pvt. Ltd.",
-    image: "/Pan.webp",
-  },
-  {
-    title: "Embassy 247",
-    location: "Vikhroli, Mumbai",
-    city: "mumbai",
-    status: "Completed",
-    year: "2024",
-    scope: "Facade glass replacement",
-    client: "Embassy REIT",
-    image: "/Embassy.webp",
-  },
-];
+const projects: ProjectReference[] = Object.values(projectsData).map((project) => ({
+  title: project.title,
+  location: project.location,
+  city: /panvel/i.test(project.location) ? "panvel" : /pune/i.test(project.location) ? "pune" : "mumbai",
+  status: project.status,
+  year: project.year,
+  scope: project.scope,
+  client: project.client,
+  image: project.image,
+}));
 
 const filters = [
   { id: "all", label: "All" },

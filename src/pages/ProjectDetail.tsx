@@ -1,3 +1,4 @@
+import { ProjectGallery } from "@/components/ProjectGallery";
 import { useParams, Link, Navigate } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 import { useProject } from "@/hooks/useProjects";
@@ -54,7 +55,7 @@ const ProjectDetail = () => {
       "telephone": "+91-8369233566",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Shop No. 1 & 2, Jagdamba Bhawan Marg, Near Sunshine Hills, Undri",
+        "streetAddress": "A3 LW-13, Pragati Serene Building, Sr.No.2, HDFC Bank Chowk, Plot B, Autadwadi Handewadi, Mahadev Wadi, Mohammed Wadi",
         "addressLocality": "Pune",
         "addressRegion": "Maharashtra",
         "postalCode": "411060",
@@ -154,6 +155,8 @@ const ProjectDetail = () => {
               {project.scope}
             </div>
 
+            <div className="flex flex-wrap gap-3 text-sm"><span className="rounded-full bg-primary/10 text-primary px-3 py-1 font-semibold">{project.status}</span><a href="#project-gallery" className="underline underline-offset-4 text-muted-foreground">View project photos</a></div>
+
             {/* Description */}
             <div>
               <h2 className="text-2xl font-bold mb-4">Project Overview</h2>
@@ -193,31 +196,11 @@ const ProjectDetail = () => {
               </div>
             )}
 
-            {/* Gallery */}
-            {project.gallery && project.gallery.length > 0 && (
-              <div>
-                <h3 className="font-bold text-xl mb-5">Project Gallery</h3>
-                <div className="grid grid-cols-2 gap-3">
-                  {project.gallery.map((img, i) => (
-                    <div
-                      key={i}
-                      className="relative overflow-hidden rounded-xl aspect-[4/3] bg-muted"
-                    >
-                      <img
-                        src={img}
-                        alt={`${project.title} – site photo ${i + 1}`}
-                        className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-                        loading="lazy"
-                      />
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
+            <div id="project-gallery" className="scroll-mt-24"><ProjectGallery key={project.slug} title={project.title} images={Array.from(new Set([project.image, ...(project.gallery ?? [])]))} /></div>
           </div>
 
           {/* Sidebar */}
-          <div className="space-y-6">
+          <div className="space-y-6 lg:sticky lg:top-24 self-start">
 
             {/* Project details card */}
             <div className="rounded-2xl border border-border bg-card p-6 space-y-4">

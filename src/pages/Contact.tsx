@@ -174,7 +174,7 @@ const Contact = () => {
             email: "info@fineglaze.com",
             address: {
               "@type": "PostalAddress",
-              streetAddress: "Shop No. 1 & 2, Jagdamba Bhawan Marg, Near Sunshine Hills",
+              streetAddress: "A3 LW-13, Pragati Serene Building, Sr.No.2, HDFC Bank Chowk, Plot B, Autadwadi Handewadi, Mahadev Wadi, Mohammed Wadi",
               addressLocality: "Pune",
               addressRegion: "Maharashtra",
               postalCode: "411060",
@@ -509,6 +509,12 @@ const Contact = () => {
                 </div>
               </div>
 
+              {/* Visit our office */}
+              <figure className="overflow-hidden border border-stone-200 bg-white rounded-xl">
+                <img src="/fine-glaze-office.webp" alt="Inside Fine Glaze office at Pragati Serene, Mohammed Wadi, Pune" className="w-full aspect-[16/9] object-cover" loading="lazy" decoding="async" />
+                <figcaption className="px-5 py-4"><p className="font-semibold text-stone-900">Visit Fine Glaze</p><p className="text-sm text-stone-500 mt-1">Meet us at our Mohammed Wadi office to discuss your project.</p></figcaption>
+              </figure>
+
               {/* Office address */}
               <div className="relative overflow-hidden bg-stone-900 text-white p-5 md:p-7">
                 {/* decorative corner */}
@@ -525,9 +531,8 @@ const Contact = () => {
                     Fine Glaze
                   </p>
                   <p className="text-sm text-white/60 leading-relaxed">
-                    Shop No. 1 & 2, Jagdamba Bhawan Marg,<br />
-                    Near Sunshine Hills, Shree Siddhivinayak Meera,<br />
-                    Undri, Pune – 411060, Maharashtra
+                    A3 LW-13, Pragati Serene Building, Sr.No.2, HDFC Bank Chowk, Plot B, Autadwadi Handewadi, Mahadev Wadi, Mohammed Wadi,<br />
+                    Pune – 411060, Maharashtra
                   </p>
 
                   <div className="mt-5 pt-4 border-t border-white/10 flex items-center gap-3">
@@ -536,7 +541,7 @@ const Contact = () => {
                   </div>
 
                   <a
-                    href="https://maps.app.goo.gl/JDF3ESXQGHtwKoAr6"
+                    href="https://www.google.com/maps/search/?api=1&query=Fine+Glaze+A3+LW-13+Pragati+Serene+Mohammed+Wadi+Pune+411060"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 text-amber-400 font-semibold text-xs mt-4 hover:gap-3 transition-all group"
@@ -607,7 +612,7 @@ const Contact = () => {
       <FadeIn>
         <div className="w-full h-[250px] md:h-[380px] bg-stone-200">
           <iframe
-            src="https://maps.google.com/maps?q=Fine+Glaze,+Shop+No+1+2+Jagdamba+Bhawan+Marg+Near+Sunshine+Hills+Undri+Pune+411060&output=embed"
+            src="https://maps.google.com/maps?q=Fine+Glaze+A3+LW-13+Pragati+Serene+HDFC+Bank+Chowk+Mohammed+Wadi+Pune+411060&output=embed"
             width="100%"
             height="100%"
             style={{ border: 0 }}

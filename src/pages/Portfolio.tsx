@@ -65,7 +65,7 @@ const portfolioSchema = {
     address: {
       "@type": "PostalAddress",
       streetAddress:
-        "Shop No. 1 & 2, Jagdamba Bhawan Marg, Near Sunshine Hills, Undri",
+        "A3 LW-13, Pragati Serene Building, Sr.No.2, HDFC Bank Chowk, Plot B, Autadwadi Handewadi, Mahadev Wadi, Mohammed Wadi",
       addressLocality: "Pune",
       addressRegion: "Maharashtra",
       postalCode: "411060",

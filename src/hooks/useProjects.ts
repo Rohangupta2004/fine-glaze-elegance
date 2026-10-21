@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import { supabase, isSupabaseConfigured } from "@/lib/supabase";
+import projectProfileDetails from "@/data/projectProfileDetails.json";
+import projectPhotos from "@/data/projectPhotos.json";
 import { projectsData } from "@/data/projects";
 
 export interface Project {
@@ -58,14 +60,15 @@ function mapSupabaseRow(row: any): Project {
     scope: row.scope,
     status: row.status ?? "Completed",
     systemUsed: row.system_used ?? row.systemUsed ?? "",
-    image: row.image,
-    gallery: parseJsonArray(row.gallery),
+    image: projectPhotos[row.slug as keyof typeof projectPhotos]?.[0] ?? row.image,
+    gallery: projectPhotos[row.slug as keyof typeof projectPhotos] ?? parseJsonArray(row.gallery),
     description: row.description,
     challenge: row.challenge ?? "",
     outcome: row.outcome ?? "",
     features: parseJsonArray(row.features),
     isAwardWinner: row.is_award_winner ?? false,
     award: row.award,
+    ...projectProfileDetails[row.slug as keyof typeof projectProfileDetails],
   };
 }
 
@@ -89,7 +92,11 @@ export function useProjects() {
           .order("sort_order", { ascending: true });
 
         if (!cancelled && data && data.length > 0 && !error) {
-          setProjects(data.map(mapSupabaseRow));
+          // Published rows enrich the catalogue without hiding profile projects
+          // that have not yet been added to the CMS.
+          const merged = new Map(getStaticProjects().map((project) => [project.slug, project]));
+          data.map(mapSupabaseRow).forEach((project) => merged.set(project.slug, project));
+          setProjects(Array.from(merged.values()));
           setSource("supabase");
         }
         // If Supabase returns empty or errors, keep static data
@@ -111,5 +118,5 @@ export function useProjects() {
 export function useProject(slug: string | undefined) {
   const { projects, loading } = useProjects();
   const project = slug ? projects.find((p) => p.slug === slug) : undefined;
-  return { project, loading };
+  return { project, loading: loading && !project };
 }

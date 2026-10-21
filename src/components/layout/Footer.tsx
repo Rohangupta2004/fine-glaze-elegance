@@ -115,16 +115,14 @@ export const Footer = () => {
               <li className="flex items-start gap-3">
                 <MapPin size={18} className="text-amber-500 mt-1 shrink-0" />
                 <a
-                  href="https://maps.app.goo.gl/JDF3ESXQGHtwKoAr6"
+                  href="https://www.google.com/maps/search/?api=1&query=Fine+Glaze+A3+LW-13+Pragati+Serene+Mohammed+Wadi+Pune+411060"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-white/70 hover:text-white text-sm transition-colors"
                 >
-                  Shop No. 1 & 2, Jagdamba Bhawan Marg,
+                  A3 LW-13, Pragati Serene Building, Sr.No.2, HDFC Bank Chowk, Plot B, Autadwadi Handewadi, Mahadev Wadi, Mohammed Wadi,
                   <br />
-                  Near Sunshine Hills, Shree Siddhivinayak Meera,
-                  <br />
-                  Undri, Pune – 411060
+                  Pune – 411060
                 </a>
               </li>
               <li className="flex items-center gap-3">
