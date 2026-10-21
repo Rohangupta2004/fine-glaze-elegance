@@ -1,12 +1,11 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Play, Award, CheckCircle2, FileText } from "lucide-react";
+import { ArrowRight, Play, Award, CheckCircle2 } from "lucide-react";
 import { motion } from "framer-motion";
 import { fadeUp } from "@/hooks/useMotion";
 import { useSiteMedia } from "@/hooks/useSiteMedia";
 import { QuoteModal } from "@/components/QuoteModal";
-import { useCompanyProfile } from "@/context/CompanyProfileContext";
 
 export const HeroSection = () => {
   const { getMedia } = useSiteMedia();
@@ -16,7 +15,6 @@ export const HeroSection = () => {
     "https://www.pexels.com/download/video/26737896/"
   );
   const [isQuoteOpen, setIsQuoteOpen] = useState(false);
-  const { openProfile } = useCompanyProfile();
 
   return (
     <>
@@ -103,17 +101,6 @@ export const HeroSection = () => {
                 >
                   <Play className="mr-2 h-4 w-4 fill-current" />
                   View Completed Projects
-                </Button>
-              </Link>
-
-              <Link to="/company-profile" onClick={() => openProfile(1, "slides")}>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="w-full sm:w-auto px-6 py-6 text-base font-bold border-amber-400/40 bg-amber-500/15 text-amber-300 hover:bg-amber-400 hover:text-stone-950 backdrop-blur-md transition-all shadow-lg hover:shadow-amber-500/20 cursor-pointer"
-                >
-                  <FileText className="mr-2 h-5 w-5 text-amber-400" />
-                  Company Profile (PDF)
                 </Button>
               </Link>
             </motion.div>

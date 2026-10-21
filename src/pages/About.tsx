@@ -9,14 +9,11 @@ import {
   Users, 
   Factory, 
   CheckCircle2, 
-  HardHat,
-  FileText,
-  Download
+  HardHat 
 } from "lucide-react";
 import SEO from "@/components/SEO";
 import { useSiteMedia } from "@/hooks/useSiteMedia";
 import { AnimatedNumber } from "@/components/common/AnimatedNumber";
-import { useCompanyProfile } from "@/context/CompanyProfileContext";
 
 const teamMembers = [
   {
@@ -129,7 +126,6 @@ const materialPartners = [
 ];
 
 const About = () => {
-  const { openProfile } = useCompanyProfile();
   const heroRef = useScrollAnimation();
   const storyRef = useScrollAnimation();
   const videoRef = useScrollAnimation();
@@ -191,26 +187,6 @@ const About = () => {
             <p className="text-stone-200 text-base sm:text-xl max-w-3xl mx-auto leading-relaxed">
               Design, in-house fabrication, precision high-rise erection, and lifecycle envelope maintenance — delivered for India's leading developers, REITs, healthcare campuses, and corporate asset owners.
             </p>
-
-            {/* 1-Click Company Profile Presentation & PDF Action */}
-            <div className="pt-4 flex flex-wrap items-center justify-center gap-3">
-              <button
-                onClick={() => openProfile(1, "slides")}
-                className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-stone-950 font-bold px-6 py-3.5 rounded-xl shadow-xl shadow-amber-950/40 border border-amber-400/40 text-sm transition-all active:scale-95 cursor-pointer"
-              >
-                <FileText className="w-4 h-4" />
-                <span>Open Company Profile (Deck &amp; PDF)</span>
-                <span className="text-[10px] uppercase font-black px-2 py-0.5 bg-stone-950 text-amber-400 rounded-full">1-Click</span>
-              </button>
-              <a
-                href="/docs/fine-glaze-company-profile.pdf"
-                download="fine-glaze-company-profile.pdf"
-                className="inline-flex items-center gap-2 bg-stone-900/80 hover:bg-stone-800 text-white font-semibold px-5 py-3.5 rounded-xl border border-stone-700/80 text-sm transition-all cursor-pointer"
-              >
-                <Download className="w-4 h-4 text-amber-400" />
-                <span>Download PDF (7.3 MB)</span>
-              </a>
-            </div>
           </div>
         </div>
       </section>

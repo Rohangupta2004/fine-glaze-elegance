@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
-import { MapPin, Phone, Mail, Linkedin, FileText } from "lucide-react";
-import { useCompanyProfile } from "@/context/CompanyProfileContext";
+import { MapPin, Phone, Mail, Linkedin } from "lucide-react";
 
 const quickLinks = [
   { href: "/", label: "Home" },
@@ -21,7 +20,6 @@ const services = [
 ];
 
 export const Footer = () => {
-  const { openProfile } = useCompanyProfile();
   return (
     <footer 
       className="text-white"
@@ -60,16 +58,6 @@ export const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-6">Quick Links</h4>
             <ul className="space-y-3">
-              <li>
-                <button
-                  onClick={() => openProfile(1, "slides")}
-                  className="text-amber-400 hover:text-amber-300 font-semibold transition-colors text-sm flex items-center gap-1.5 cursor-pointer text-left"
-                >
-                  <FileText size={15} />
-                  <span>Company Profile</span>
-                  <span className="text-[10px] uppercase font-bold px-1.5 py-0.2 bg-amber-500 text-stone-950 rounded-full">PDF</span>
-                </button>
-              </li>
               {quickLinks.map((link) => (
                 <li key={link.href}>
                   <Link
