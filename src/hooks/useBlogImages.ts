@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabase";
+import { getArticleVisual } from "@/data/articleVisuals";
 
 const BUCKET = "project-images";
 const MANIFEST_PATH = "blog/manifest.json";
@@ -45,7 +46,7 @@ export function useBlogImages() {
   }, []);
 
   const getHeroImage = (slug: string, fallback: string): string => {
-    return imageMap[slug] || fallback;
+    return getArticleVisual(slug)?.cover || imageMap[slug] || fallback;
   };
 
   return { imageMap, loading, getHeroImage };

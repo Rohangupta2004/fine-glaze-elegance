@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { fadeUp, slideLeft, slideRight, stagger, viewport } from "@/hooks/useMotion";
 import { blogPostsList } from "@/data/blog";
 import { useBlogImages } from "@/hooks/useBlogImages";
+import { getArticleImageSrcSet } from "@/data/articleVisuals";
 
 export const ArticlesSection = () => {
   const { getHeroImage } = useBlogImages();
@@ -60,6 +61,8 @@ export const ArticlesSection = () => {
                 <div className="aspect-[16/10] overflow-hidden relative bg-slate-100">
                   <img
                     src={getHeroImage(article.slug, article.heroImage)}
+                    srcSet={getArticleImageSrcSet(article.slug)}
+                    sizes="(max-width: 767px) calc(100vw - 2rem), 33vw"
                     alt={article.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     loading={index === 0 ? "eager" : "lazy"}

@@ -5,6 +5,7 @@ import { useBlogImages } from "@/hooks/useBlogImages";
 import { ArrowLeft, Clock, Phone, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import SEO from "@/components/SEO";
+import { getArticleVisual, getArticleImageSrcSet } from "@/data/articleVisuals";
 
 export default function BlogArticle() {
   const { slug } = useParams<{ slug: string }>();
@@ -14,6 +15,7 @@ export default function BlogArticle() {
   if (!post) return <Navigate to="/blog" replace />;
 
   const heroImg = getHeroImage(post.slug, post.heroImage);
+  const visual = getArticleVisual(post.slug);
 
   const articleSchema = {
     "@context": "https://schema.org",
@@ -95,12 +97,21 @@ export default function BlogArticle() {
             {post.title}
           </h1>
 
-          <img
-            src={heroImg}
-            alt={post.title}
-            className="w-full rounded-2xl object-cover max-h-[420px] mb-10"
-            loading="eager"
-          />
+          <figure className="mb-10">
+            <img
+              src={heroImg}
+              srcSet={getArticleImageSrcSet(post.slug)}
+              sizes="(max-width: 768px) calc(100vw - 2rem), 736px"
+              alt={visual?.alt ?? post.title}
+              width={visual?.width}
+              height={visual?.height}
+              className="w-full aspect-video rounded-2xl object-cover bg-muted"
+              loading="eager"
+              decoding="async"
+              fetchPriority="high"
+            />
+            {visual && <figcaption className="mt-3 text-xs text-muted-foreground leading-relaxed">{visual.caption}</figcaption>}
+          </figure>
 
           <div className="space-y-10">
             {(post.content ?? []).map((section, i) => (
@@ -129,6 +140,20 @@ export default function BlogArticle() {
                       </li>
                     ))}
                   </ul>
+                )}
+                {visual && i === visual.inline.afterSection && (
+                  <figure className="mt-8 overflow-hidden rounded-2xl border border-border bg-stone-50">
+                    <img
+                      src={visual.inline.src}
+                      alt={visual.inline.alt}
+                      width={1280}
+                      height={720}
+                      className="w-full h-auto"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                    <figcaption className="px-5 py-4 text-sm text-muted-foreground border-t border-border">{visual.inline.caption}</figcaption>
+                  </figure>
                 )}
               </section>
             ))}
@@ -195,6 +220,8 @@ export default function BlogArticle() {
                   >
                     <img
                       src={getHeroImage(r.slug, r.heroImage)}
+                      srcSet={getArticleImageSrcSet(r.slug)}
+                      sizes="96px"
                       alt={r.title}
                       className="w-24 h-24 rounded-lg object-cover shrink-0"
                       loading="lazy"

@@ -4,6 +4,7 @@ import { ArrowRight, Clock, Tag } from "lucide-react";
 import { blogPostsList } from "@/data/blog";
 import { useBlogImages } from "@/hooks/useBlogImages";
 import SEO from "@/components/SEO";
+import { getArticleImageSrcSet } from "@/data/articleVisuals";
 
 export default function Blog() {
   const { getHeroImage } = useBlogImages();
@@ -61,6 +62,8 @@ export default function Blog() {
                 <div className="aspect-[16/9] overflow-hidden">
                   <img
                     src={getHeroImage(post.slug, post.heroImage)}
+                    srcSet={getArticleImageSrcSet(post.slug)}
+                    sizes="(max-width: 767px) calc(100vw - 2rem), (max-width: 1023px) 50vw, 33vw"
                     alt={post.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     loading="lazy"
