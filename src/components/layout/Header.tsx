@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { QuoteModal } from "@/components/QuoteModal";
@@ -208,9 +208,11 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
             <Link
               to="/company-profile"
               onClick={() => openProfile(1, "slides")}
-              className={getLinkClass("/company-profile")}
+              className={cn(getLinkClass("/company-profile"), "inline-flex items-center gap-1.5")}
             >
-              Company Profile
+              <FileText size={14} className="text-amber-500 shrink-0" />
+              <span>Company Profile</span>
+              <span className="text-[10px] uppercase font-black px-1.5 py-0.5 bg-amber-500 text-stone-950 rounded-full">PDF</span>
             </Link>
           </nav>
 
@@ -295,9 +297,13 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
                     setIsMobileMenuOpen(false);
                     openProfile(1, "slides");
                   }}
-                  className="block text-base font-semibold py-1"
+                  className="flex items-center justify-between text-base font-semibold py-1.5 text-slate-800 hover:text-amber-700"
                 >
-                  Company Profile
+                  <span className="flex items-center gap-2">
+                    <FileText size={18} className="text-amber-600 shrink-0" />
+                    <span>Company Profile</span>
+                  </span>
+                  <span className="text-[10px] uppercase font-black px-2 py-0.5 bg-amber-500 text-stone-950 rounded-full">PDF</span>
                 </Link>
                 <Link to="/blog" onClick={() => setIsMobileMenuOpen(false)} className="block text-base font-semibold py-1">Articles</Link>
                 <Link to="/about" onClick={() => setIsMobileMenuOpen(false)} className="block text-base font-semibold py-1">About</Link>
