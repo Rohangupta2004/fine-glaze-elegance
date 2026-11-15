@@ -62,6 +62,7 @@ const staticSeoUrls = [
   // Trust, conversion and fenestration pages (Nov 2026)
   "/aluminium-windows-doors",
   "/quality-safety",
+  "/service-request",
   "/facade-cost-estimator",
 ];
 

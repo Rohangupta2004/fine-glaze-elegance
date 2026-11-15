@@ -274,6 +274,12 @@ export default function Maintenance() {
             >
               Get Free Quote
             </Link>
+            <Link
+              to="/service-request"
+              className="text-white font-semibold text-base border-b border-white/40 pb-0.5 hover:text-amber-400 transition-colors tracking-wide"
+            >
+              Report an Issue
+            </Link>
             <a
               href="tel:+918369233566"
               className="text-white/60 font-medium text-base hover:text-white transition-colors tracking-wide"
