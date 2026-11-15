@@ -13,7 +13,7 @@ export const ArticlesSection = () => {
   const recentArticles = blogPostsList.slice(0, 3);
 
   return (
-    <section className="py-20 bg-slate-50/70 border-y border-slate-100 dark:bg-slate-900/50">
+    <section className="py-20 bg-slate-50/70 border-y border-slate-100 dark:bg-slate-900/50 overflow-x-clip">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <motion.div

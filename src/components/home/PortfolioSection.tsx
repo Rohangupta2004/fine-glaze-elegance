@@ -13,7 +13,7 @@ export const PortfolioSection = () => {
   const featured = landmarkProjectOrder.slice(0, 3).flatMap((slug) => projects.filter((project) => project.slug === slug));
 
   return (
-    <section className="py-20 bg-background">
+    <section className="py-20 bg-background overflow-x-clip">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <motion.div

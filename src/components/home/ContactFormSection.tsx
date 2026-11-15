@@ -135,7 +135,7 @@ export const ContactFormSection = () => {
   return (
     <section
       id="contact"
-      className="py-16 md:py-24 bg-stone-50"
+      className="py-16 md:py-24 bg-stone-50 overflow-x-clip"
     >
       <div className="container mx-auto px-5 md:px-16">
         {/* Section header */}
@@ -169,7 +169,7 @@ export const ContactFormSection = () => {
         >
           {/* ── Form ── */}
           <motion.div
-            className="lg:col-span-7"
+            className="lg:col-span-7 min-w-0"
             variants={slideLeft}
           >
             <div className="bg-white border border-stone-200 shadow-sm">
@@ -399,7 +399,7 @@ export const ContactFormSection = () => {
 
           {/* ── Right column — why reach out + quick contact ── */}
           <motion.div
-            className="lg:col-span-5 space-y-5 md:space-y-6"
+            className="lg:col-span-5 min-w-0 space-y-5 md:space-y-6"
             variants={slideRight}
           >
             {/* Why reach out */}
