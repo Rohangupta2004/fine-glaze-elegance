@@ -53,7 +53,7 @@ export default function CurtainWallCostGuide() {
   return (
     <Layout darkHero>
       <SEO
-        title="Curtain Wall Cost in India 2024 | Complete Price Guide – Fine Glaze"
+        title="Curtain Wall Cost in India: Price Guide | Fine Glaze"
         description="Complete curtain wall cost guide India 2024. Stick system vs unitized pricing, glass types, installation factors. All prices explained. Get a custom quote from Fine Glaze."
         canonical="https://fineglaze.com/curtain-wall-cost-guide"
         keywords="curtain wall cost India, curtain wall price per sq ft, unitized curtain wall cost, stick system curtain wall price, glass facade cost India, curtain wall budget India 2024"
@@ -78,8 +78,8 @@ export default function CurtainWallCostGuide() {
             </div>
           </div>
           <img
-            src="https://images.unsplash.com/photo-1503387762-592deb58ef4e"
-            alt="Curtain wall cost guide India glass facade pricing Fine Glaze"
+            src="/projects/naman-chambers-48-1.webp"
+            alt="Naman Chambers, Bandra Kurla Complex, Mumbai — glazing and ACP works by Fine Glaze (in progress)"
             className="rounded-xl shadow-2xl object-cover h-[420px] w-full"
             loading="eager"
             width="600"

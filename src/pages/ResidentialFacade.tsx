@@ -1,4 +1,5 @@
 import SEO from "@/components/SEO";
+import { RelatedProjects } from "@/components/RelatedProjects";
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/home/CTASection";
 import { Link } from "react-router-dom";
@@ -53,7 +54,7 @@ export default function ResidentialFacade() {
   return (
     <Layout darkHero>
       <SEO
-        title="Residential Facade Contractor in Pune & Mumbai | Apartment & Villa Facades - Fine Glaze"
+        title="Residential Facade Contractor in Pune & Mumbai | Fine Glaze"
         description="Residential facade contractor in Pune & Mumbai. Glass railings, ACP cladding, aluminium doors & windows for apartment towers & luxury villas."
         canonical="https://fineglaze.com/residential-facade"
         keywords="residential facade contractor, apartment facade, villa facade, residential ACP cladding, residential glass railing, aluminium windows"
@@ -78,8 +79,8 @@ export default function ResidentialFacade() {
             </div>
           </div>
           <img
-            src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c"
-            alt="Residential apartment building facade glass railing ACP India Fine Glaze"
+            src="/projects/jindal-house-45-1.webp"
+            alt="SS glass railings at Jindal House, Mumbai — completed by Fine Glaze in 2023"
             className="rounded-xl shadow-2xl object-cover h-[420px] w-full"
             loading="eager"
             width="600"
@@ -160,6 +161,7 @@ export default function ResidentialFacade() {
         </div>
       </section>
 
+      <RelatedProjects heading="Residential projects" keywords={["Jindal House", "Mittal", "Samundra", "Salsette", "Nirmaann"]} />
       <CTASection />
     </Layout>
   );

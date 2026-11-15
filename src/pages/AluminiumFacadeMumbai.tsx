@@ -1,4 +1,5 @@
 import SEO from "@/components/SEO";
+import { RelatedProjects } from "@/components/RelatedProjects";
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/home/CTASection";
 import { Link } from "react-router-dom";
@@ -53,7 +54,7 @@ export default function AluminiumFacadeMumbai() {
   return (
     <Layout darkHero>
       <SEO
-        title="Aluminium Facade Contractor in Mumbai | Doors, Windows & Cladding – Fine Glaze"
+        title="Aluminium Facade & Windows Contractor, Mumbai | Fine Glaze"
         description="Aluminium facade contractor in Mumbai. Thermal break doors, windows, louvers & ACP cladding for BKC, Andheri, Powai & Vikhroli. Marine-grade quality. Free site visit."
         canonical="https://fineglaze.com/aluminium-facade-mumbai"
         keywords="aluminium facade contractor Mumbai, aluminium windows Mumbai, thermal break windows Mumbai, aluminium cladding BKC, aluminium doors Mumbai, facade contractor Andheri, aluminium facade Worli"
@@ -79,8 +80,8 @@ export default function AluminiumFacadeMumbai() {
             </div>
           </div>
           <img
-            src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c"
-            alt="Aluminium facade contractor Mumbai commercial building - Fine Glaze"
+            src="/projects/samundra-tarang-51-1.webp"
+            alt="Aluminium sliding windows and fixed glazing, terrace enclosure at Samundra Tarang, Dadar, Mumbai — completed by Fine Glaze"
             className="rounded-xl shadow-2xl object-cover h-[420px] w-full"
             loading="eager"
             width="600"
@@ -164,6 +165,7 @@ export default function AluminiumFacadeMumbai() {
         </div>
       </section>
 
+      <RelatedProjects heading="Our aluminium & glazing work in Mumbai" locations={["Mumbai"]} excludeLocations={["Navi Mumbai"]} keywords={["window", "louver", "glass", "ACP"]} />
       <CTASection />
     </Layout>
   );

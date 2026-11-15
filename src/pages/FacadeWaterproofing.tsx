@@ -1,4 +1,5 @@
 import SEO from "@/components/SEO";
+import { RelatedProjects } from "@/components/RelatedProjects";
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/home/CTASection";
 import { Link } from "react-router-dom";
@@ -53,7 +54,7 @@ export default function FacadeWaterproofing() {
   return (
     <Layout darkHero>
       <SEO
-        title="Facade Waterproofing Contractor in Pune & Mumbai | Leak Repair Solutions - Fine Glaze"
+        title="Facade Leak Repair & Waterproofing, Pune & Mumbai | Fine Glaze"
         description="Facade waterproofing contractor in Pune & Mumbai. Glass facade leak repair, curtain wall leakage remediation, sealant replacement & building waterproofing."
         canonical="https://fineglaze.com/facade-waterproofing"
         keywords="facade waterproofing contractor, glass facade leak repair, curtain wall leakage repair, facade sealant replacement, building facade waterproofing"
@@ -79,8 +80,8 @@ export default function FacadeWaterproofing() {
             </div>
           </div>
           <img
-            src="https://images.unsplash.com/photo-1505765050516-f72dcac9c60e"
-            alt="Facade waterproofing sealant repair curtain wall India Fine Glaze"
+            src="/projects/embassy-247-37-1.webp"
+            alt="Embassy 247, Vikhroli, Mumbai — water treatment and facade sealant work (approx. 80,500 RMT) by Fine Glaze"
             className="rounded-xl shadow-2xl object-cover h-[420px] w-full"
             loading="eager"
             width="600"
@@ -167,6 +168,7 @@ export default function FacadeWaterproofing() {
         </div>
       </section>
 
+      <RelatedProjects heading="Leakage & sealant work we have done" keywords={["sealant", "leakage", "water"]} />
       <CTASection />
     </Layout>
   );

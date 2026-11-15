@@ -46,7 +46,7 @@ const About = () => {
   return (
     <Layout darkHero>
       <SEO
-        title="About Fine Glaze | Facade Contractor in Pune & Mumbai — Team & Credentials"
+        title="About Fine Glaze | Facade Contractor, Pune & Mumbai"
         description="Fine Glaze is a Pune-based facade contractor founded by Deepak Gupta (B.E. Civil, 11+ yrs incl. Al Ghurair Group). Own fabrication unit in Pisoli, 40+ core team, ~20,566 sqm delivered."
         canonical="https://fineglaze.com/about"
         keywords="about Fine Glaze, Fine Glaze Pune, Deepak Gupta Fine Glaze, facade contractor Pune team, facade fabrication unit Pune"

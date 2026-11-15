@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { RelatedProjects } from "@/components/RelatedProjects";
 import { Link } from "react-router-dom";
 import { ServiceQuickOverview } from "@/components/service/ServiceQuickOverview";
 import {
@@ -87,7 +88,7 @@ const IMG: Record<string, string> = {
   stick: "/curtain-wall.webp",
   semi: "/spider-glazing.webp",
   point: "/Glass installation.webp",
-  process: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?fm=jpg&q=85&w=1400&auto=format&fit=crop",
+  process: "/projects/embassy-techzone-41-1.webp",
 };
 
 /* ── System data ── */
@@ -217,7 +218,7 @@ export default function CurtainWall() {
   return (
     <Layout darkHero>
       <SEO
-        title="Curtain Wall Manufacturers & Systems in Pune & Mumbai | Fine Glaze"
+        title="Curtain Wall Systems in Pune & Mumbai | Fine Glaze"
         description="Curtain wall manufacturers in Pune & Mumbai. Unitized, stick & semi-unitized glass curtain wall systems for IT parks & commercial towers. Get a free quote!"
         canonical="https://fineglaze.com/curtain-wall-systems"
         keywords="Curtain wall manufacturers, curtain wall manufacturers Pune, curtain wall manufacturers Mumbai, unitized curtain wall, curtain wall cost, curtain wall systems"
@@ -673,6 +674,7 @@ export default function CurtainWall() {
       </section>
 
       {/* ════════════ CTA ════════════ */}
+      <RelatedProjects heading="Curtain wall & glazing projects" keywords={["curtain", "glazing"]} />
       <CTASection />
     </Layout>
   );

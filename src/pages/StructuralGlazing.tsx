@@ -1,4 +1,5 @@
 import SEO from "@/components/SEO";
+import { RelatedProjects } from "@/components/RelatedProjects";
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/home/CTASection";
 import { ServiceQuickOverview } from "@/components/service/ServiceQuickOverview";
@@ -78,12 +79,12 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 
 /* ── Images ── */
 const IMG = {
-  hero: "https://images.unsplash.com/photo-1430417934865-589b63ad5c00?fm=jpg&q=85&w=2400&auto=format&fit=crop",
-  twoSide: "https://images.unsplash.com/photo-1469981283837-561b3779462f?fm=jpg&q=80&w=900&auto=format&fit=crop",
-  fourSide: "https://images.unsplash.com/photo-1621831337128-35676ca30868?fm=jpg&q=80&w=900&auto=format&fit=crop",
-  spider: "https://images.unsplash.com/photo-1509024368907-57294758cfc5?fm=jpg&q=80&w=900&auto=format&fit=crop",
-  canopy: "https://images.unsplash.com/photo-1486927181919-3ac1fc3a8082?fm=jpg&q=80&w=900&auto=format&fit=crop",
-  process: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?fm=jpg&q=85&w=1400&auto=format&fit=crop",
+  hero: "/projects/naman-chambers-48-1.webp",
+  twoSide: "/projects/ssg-honesty-30-1.webp",
+  fourSide: "/projects/nanavati-max-hospital-39-1.webp",
+  spider: "/projects/embassy-techzone-41-2.webp",
+  canopy: "/canopy-spider.webp",
+  process: "/projects/embassy-techzone-41-1.webp",
 };
 
 /* ── System data ── */
@@ -207,7 +208,7 @@ export default function StructuralGlazing() {
   return (
     <Layout darkHero>
       <SEO
-        title="Structural Glazing Contractor in Pune & Mumbai | Frameless Glass Facades - Fine Glaze"
+        title="Structural Glazing Contractor in Pune & Mumbai | Fine Glaze"
         description="Structural glazing contractor in Pune & Mumbai. 2-side, 4-side & spider glazed facade systems for commercial buildings, IT parks & showrooms."
         canonical="https://fineglaze.com/structural-glazing"
         keywords="structural glazing contractor, structural glazing systems, glass facade contractor, 2-side structural glazing, 4-side structural glazing, frameless glass facade"
@@ -220,7 +221,7 @@ export default function StructuralGlazing() {
       <section className="relative h-screen overflow-hidden">
         <img
           src={IMG.hero}
-          alt="Structural glazing glass facade — Fine Glaze"
+          alt="Naman Chambers, Bandra Kurla Complex, Mumbai — glazing and ACP works by Fine Glaze (in progress)"
           className="absolute inset-0 w-full h-full object-cover object-center"
           style={{ animation: "sgZoom 20s ease-in-out infinite alternate" }}
           loading="eager"
@@ -552,7 +553,7 @@ export default function StructuralGlazing() {
         <div className="relative h-[35vh] md:h-[40vh] overflow-hidden">
           <img
             src={IMG.process}
-            alt="Fine Glaze installation crew at work"
+            alt="Spider glass entrance installation in progress at Embassy Techzone, Hinjewadi, Pune — Fine Glaze"
             className="w-full h-full object-cover"
             loading="lazy"
           />
@@ -722,6 +723,7 @@ export default function StructuralGlazing() {
       {/* ════════════════════════════════════════════════════
           CTA
           ════════════════════════════════════════════════════ */}
+      <RelatedProjects heading="Glazing projects we have delivered" keywords={["glazing", "spider", "glass door"]} />
       <CTASection />
     </Layout>
   );

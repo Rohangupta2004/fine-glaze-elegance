@@ -53,7 +53,7 @@ export default function PVDFvsPowderCoating() {
   return (
     <Layout darkHero>
       <SEO
-        title="PVDF vs Powder Coating for Aluminium Facades in India – Fine Glaze"
+        title="PVDF vs Powder Coating for Aluminium Facades"
         description="PVDF vs powder coating for aluminium facades — complete comparison for Indian buildings. Durability, cost, UV resistance, coastal performance. Expert guide by Fine Glaze."
         canonical="https://fineglaze.com/pvdf-vs-powder-coating-aluminium"
         keywords="PVDF vs powder coating aluminium India, PVDF coating facade India, powder coating aluminium facade, aluminium finish guide India, PVDF Kynar aluminium building, facade coating comparison"
@@ -78,8 +78,8 @@ export default function PVDFvsPowderCoating() {
             </div>
           </div>
           <img
-            src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5"
-            alt="PVDF vs powder coating aluminium facade India comparison Fine Glaze"
+            src="/projects/salsette-27-32-1.webp"
+            alt="ACP panels with protective film ready for installation at Salsette-27, Byculla, Mumbai — Fine Glaze"
             className="rounded-xl shadow-2xl object-cover h-[420px] w-full"
             loading="eager"
             width="600"

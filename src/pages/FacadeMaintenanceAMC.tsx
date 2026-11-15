@@ -1,4 +1,5 @@
 import SEO from "@/components/SEO";
+import { RelatedProjects } from "@/components/RelatedProjects";
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/home/CTASection";
 import { Link } from "react-router-dom";
@@ -44,7 +45,7 @@ export default function FacadeMaintenanceAMC() {
   return (
     <Layout darkHero>
       <SEO
-        title="Facade AMC Guide India | What to Expect from Facade Maintenance – Fine Glaze"
+        title="Facade AMC Guide: Scope, Schedule & Cost | Fine Glaze"
         description="Complete guide to facade AMC (Annual Maintenance Contracts) in India. What's included, costs, inspection frequency, and why it matters for your building. By Fine Glaze."
         canonical="https://fineglaze.com/facade-amc-guide"
         keywords="facade AMC India, facade annual maintenance contract, building facade inspection India, glass facade AMC"
@@ -66,7 +67,7 @@ export default function FacadeMaintenanceAMC() {
               <Link to="/maintenance-services"><Button size="lg" variant="outline">Our Services</Button></Link>
             </div>
           </div>
-          <img src="https://images.unsplash.com/photo-1505765050516-f72dcac9c60e" alt="Facade AMC annual maintenance contract India building inspection Fine Glaze" className="rounded-xl shadow-2xl object-cover h-[420px] w-full" loading="eager" width="600" height="420" />
+          <img src="/projects/embassy-247-37-1.webp" alt="Embassy 247, Vikhroli, Mumbai — facade sealant renewal and glass replacement by Fine Glaze for Embassy REIT" className="rounded-xl shadow-2xl object-cover h-[420px] w-full" loading="eager" width="600" height="420" />
         </div>
       </section>
 
@@ -151,6 +152,7 @@ export default function FacadeMaintenanceAMC() {
           </div>
         </div>
       </section>
+      <RelatedProjects heading="Maintenance & repair work we run" keywords={["sealant", "maintenance", "leakage", "replacement", "repair"]} />
       <CTASection />
     </Layout>
   );

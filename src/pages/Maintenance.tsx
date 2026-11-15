@@ -1,4 +1,5 @@
 import SEO from "@/components/SEO";
+import { RelatedProjects } from "@/components/RelatedProjects";
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/home/CTASection";
 import { Link } from "react-router-dom";
@@ -82,7 +83,7 @@ const IMG: Record<string, string> = {
   glass: "/Glass.webp",
   cleaning: "/Amc.webp",
   amc: "/Amc1.webp",
-  process: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?fm=jpg&q=85&w=1400&auto=format&fit=crop",
+  process: "/projects/embassy-247-37-1.webp",
 };
 
 /* ── System data ── */
@@ -212,7 +213,7 @@ export default function Maintenance() {
   return (
     <Layout darkHero>
       <SEO
-        title="Facade Maintenance Company in Pune & Mumbai | Glass Cleaning & Repair - Fine Glaze"
+        title="Facade Maintenance & Repair in Pune & Mumbai | Fine Glaze"
         description="Facade maintenance company in Pune & Mumbai. Facade AMC, structural sealant replacement, glass panel repair, curtain wall restoration & inspections."
         canonical="https://fineglaze.com/maintenance-services"
         keywords="facade maintenance company, facade maintenance AMC, glass facade cleaning, sealant replacement, curtain wall repair, facade inspection"
@@ -524,7 +525,7 @@ export default function Maintenance() {
         <div className="relative h-[35vh] md:h-[40vh] overflow-hidden">
           <img
             src={IMG.process}
-            alt="Fine Glaze maintenance crew at work"
+            alt="Embassy 247, Vikhroli, Mumbai — facade sealant and glass replacement by Fine Glaze for Embassy REIT"
             className="w-full h-full object-cover"
             loading="lazy"
           />
@@ -684,6 +685,7 @@ export default function Maintenance() {
 
 
       {/* ════════════ CTA ════════════ */}
+      <RelatedProjects heading="Maintenance & repair work we run" keywords={["sealant", "maintenance", "leakage", "replacement", "repair"]} />
       <CTASection />
     </Layout>
   );

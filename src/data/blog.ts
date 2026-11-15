@@ -1549,7 +1549,7 @@ export const blogPosts: Record<string, BlogPost> = {
     "date": "2026-05-26",
     "readTime": "9 min read",
     "category": "Technical Guide",
-    "heroImage": "https://images.unsplash.com/photo-1511818966892-d7d671e672a2?w=1200&q=80",
+    "heroImage": "/projects/naman-chambers-48-1.webp",
     "excerpt": "The backbone of any curtain wall is its aluminium profile. This guide explores the engineering behind mullions and transoms, alloy selection, and how to calculate the right section for Indian wind loads.",
     "content": [
       {
@@ -1651,7 +1651,7 @@ export const blogPosts: Record<string, BlogPost> = {
   "date": "2026-05-27",
   "readTime": "7 min read",
   "category": "Maintenance Guide",
-  "heroImage": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80",
+  "heroImage": "/projects/embassy-247-37-1.webp",
   "excerpt": "Maintaining a pristine glass facade in India requires more than just soap and water. Discover the professional methods used to keep high-rise buildings gleaming while ensuring safety and longevity.",
   "content": [
     {
@@ -1751,7 +1751,7 @@ export const blogPosts: Record<string, BlogPost> = {
   "date": "2026-05-28",
   "readTime": "7 min read",
   "category": "Comparison",
-  "heroImage": "https://images.unsplash.com/photo-1511818966892-d7d671e672a2?w=1200&q=80",
+  "heroImage": "/projects/naman-chambers-48-1.webp",
   "excerpt": "Choosing between a curtain wall and a window wall is a critical decision for developers and architects in India. We break down the technical differences, costs, and best use cases for each.",
   "content": [
     {
@@ -1852,7 +1852,7 @@ export const blogPosts: Record<string, BlogPost> = {
     "date": "May 29, 2026",
     "readTime": "6 min read",
     "category": "Comparison",
-    "heroImage": "https://images.unsplash.com/photo-1511818966892-d7d671e672a2?w=1200&q=80",
+    "heroImage": "/projects/embassy-techzone-41-2.webp",
     "excerpt": "Choosing between point-fixed glazing and traditional curtain walls is a critical decision for modern facades. We break down the technical and aesthetic differences.",
     "content": [
         {
@@ -1958,7 +1958,7 @@ export const blogPosts: Record<string, BlogPost> = {
     "date": "2026-05-30",
     "readTime": "8 min read",
     "category": "Technical Guide",
-    "heroImage": "https://images.unsplash.com/photo-1511818966892-d7d671e672a2?w=1200&q=80",
+    "heroImage": "/projects/nanavati-max-hospital-39-2.webp",
     "excerpt": "Maintaining the pristine look and structural integrity of a high-rise facade requires specialized access systems. Learn about BMUs, monorails, and safety standards in India.",
     "content": [
         {
@@ -2064,7 +2064,7 @@ export const blogPosts: Record<string, BlogPost> = {
     date: "2026-05-31",
     readTime: "8 min read",
     category: "Technical Guide",
-    heroImage: "https://images.unsplash.com/photo-1554435493-93422e8220c8?w=1200&q=80",
+    heroImage: "/projects/nanavati-max-hospital-39-1.webp",
     excerpt: "Understanding thermal performance is crucial for sustainable architecture in India. Discover how the right building envelope can reduce energy costs and improve comfort.",
     content: [
       {
@@ -2124,7 +2124,7 @@ export const blogPosts: Record<string, BlogPost> = {
     date: "2026-06-02",
     readTime: "8 min read",
     category: "Technical Guide",
-    heroImage: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1200&q=80",
+    heroImage: "/projects/salsette-27-32-1.webp",
     excerpt: "Fire safety in high-rise buildings is non-negotiable. Discover the critical fire testing standards for Aluminium Composite Panels (ACP) in India as per NBC 2016.",
     content: [
       {
@@ -2196,7 +2196,7 @@ export const blogPosts: Record<string, BlogPost> = {
   "date": "2026-06-03",
   "readTime": "7 min read",
   "category": "Technical Guide",
-  "heroImage": "https://images.unsplash.com/photo-1511818966892-d7d671e672a2?w=1200&q=80",
+  "heroImage": "/projects/nanavati-max-hospital-39-1.webp",
   "excerpt": "With rising temperatures and energy costs in India, energy-efficient glass facades have become a necessity for modern commercial architecture. Learn how to optimize your building's thermal performance.",
   "content": [
     {
@@ -2283,7 +2283,7 @@ export const blogPosts: Record<string, BlogPost> = {
   "date": "2026-06-04",
   "readTime": "8 min read",
   "category": "Technical Guide",
-  "heroImage": "https://images.unsplash.com/photo-1509644851169-2acc08aa25b5?w=1200&q=80",
+  "heroImage": "/projects/samundra-tarang-51-1.webp",
   "excerpt": "Aluminium window systems have become the gold standard for modern Indian homes and commercial buildings. Discover why they are preferred over uPVC and wood, and how to choose the right system for your project.",
   "content": [
     {
@@ -2391,7 +2391,7 @@ export const blogPosts: Record<string, BlogPost> = {
   "date": "2026-06-05",
   "readTime": "8 min read",
   "category": "Comparison",
-  "heroImage": "https://images.unsplash.com/photo-1554435493-93422e8220c8?w=1200&q=80",
+  "heroImage": "/projects/salsette-27-32-1.webp",
   "excerpt": "Choosing the right ACP brand is crucial for the durability and safety of your building's facade. We compare India's leading manufacturers on quality, fire safety, and price.",
   "content": [
     {
@@ -2492,7 +2492,7 @@ export const blogPosts: Record<string, BlogPost> = {
   "date": "2026-06-06",
   "readTime": "7 min read",
   "category": "Comparison",
-  "heroImage": "https://images.unsplash.com/photo-1464938050520-ef2270bb8ce8?w=1200&q=80",
+  "heroImage": "/projects/salsette-27-33-1.webp",
   "excerpt": "Choosing between polycarbonate and glass for your roofing or skylight? We compare durability, heat insulation, and costs to help you decide the best fit for the Indian sun.",
   "content": [
     {
@@ -2587,7 +2587,7 @@ export const blogPosts: Record<string, BlogPost> = {
     date: "2026-06-07",
     readTime: "6 min read",
     category: "Technical Guide",
-    heroImage: "https://images.unsplash.com/photo-1554435493-93422e8220c8?w=1200&q=80",
+    heroImage: "/projects/mittal-house-49-1.webp",
     excerpt: "Smart glass is revolutionizing the Indian architectural landscape by offering dynamic control over light and heat, significantly reducing energy costs for commercial buildings.",
     content: [
       {
@@ -2649,7 +2649,7 @@ export const blogPosts: Record<string, BlogPost> = {
   "date": "2026-06-08",
   "readTime": "7 min read",
   "category": "Technical Guide",
-  "heroImage": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80",
+  "heroImage": "/projects/leela-hotel-50-2.webp",
   "excerpt": "In the bustling metros of India, noise pollution is a major challenge. Acoustic glass facades offer a sophisticated solution to create quiet, productive indoor environments without compromising on aesthetics.",
   "content": [
     {
@@ -2768,7 +2768,7 @@ export const blogPosts: Record<string, BlogPost> = {
   "date": "2026-06-09",
   "readTime": "7 min read",
   "category": "Technical Guide",
-  "heroImage": "https://images.unsplash.com/photo-1511818966892-d7d671e672a2?w=1200&q=80",
+  "heroImage": "/projects/embassy-247-37-1.webp",
   "excerpt": "Facade lighting is more than just illumination; it's a powerful tool for branding and architectural expression. Explore the latest trends and technical requirements for lighting modern Indian facades.",
   "content": [
     {
@@ -2879,7 +2879,7 @@ export const blogPosts: Record<string, BlogPost> = {
   "date": "2026-06-11",
   "readTime": "7 min read",
   "category": "Technical Guide",
-  "heroImage": "https://images.unsplash.com/photo-1554435493-93422e8220c8?w=1200&q=80",
+  "heroImage": "/projects/jindal-house-45-1.webp",
   "excerpt": "Safety is paramount in modern architecture. Discover the critical Indian Standards (IS) and National Building Code (NBC) requirements that govern glass facade design and installation in India.",
   "content": [
     {
@@ -3013,7 +3013,7 @@ export const blogPosts: Record<string, BlogPost> = {
   "date": "2026-06-12",
   "readTime": "6 min read",
   "category": "Technical Guide",
-  "heroImage": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80",
+  "heroImage": "/projects/salsette-27-35-1.webp",
   "excerpt": "Glass canopies are more than just shelter; they are a statement of modern architectural elegance. Discover how they transform building entrances across India.",
   "content": [
     {
@@ -3103,7 +3103,7 @@ export const blogPosts: Record<string, BlogPost> = {
   "date": "2026-06-13",
   "readTime": "6 min read",
   "category": "Technical Guide",
-  "heroImage": "https://images.unsplash.com/photo-1511818966892-d7d671e672a2?w=1200&q=80",
+  "heroImage": "/projects/ltimindtree-campus-44-1.webp",
   "excerpt": "Double skin facades are revolutionizing sustainable architecture in India by providing superior thermal insulation and reducing energy costs for high-rise buildings.",
   "content": [
     {
@@ -3201,7 +3201,7 @@ export const blogPosts: Record<string, BlogPost> = {
     date: "2026-06-14",
     readTime: "7 min read",
     category: "Comparison",
-    heroImage: "https://images.unsplash.com/photo-1518005020951-eccb494ad742?w=1200&q=80",
+    heroImage: "/projects/embassy-techzone-41-2.webp",
     excerpt: "Choosing between a frameless glass facade and a traditional framed system is a critical decision for modern architecture. We break down the differences in aesthetics, cost, and durability.",
     content: [
       {
@@ -3263,7 +3263,7 @@ export const blogPosts: Record<string, BlogPost> = {
     date: "2026-06-15",
     readTime: "8 min read",
     category: "Comparison",
-    heroImage: "https://images.unsplash.com/photo-1554435493-93422e8220c8?w=1200&q=80",
+    heroImage: "/projects/leela-hotel-50-2.webp",
     excerpt: "Choosing between double and triple glazing can be confusing. While triple glazing offers superior insulation, is it worth the extra cost in India's tropical climate? We break down the technical differences, costs, and performance metrics.",
     content: [
       {
@@ -3334,7 +3334,7 @@ export const blogPosts: Record<string, BlogPost> = {
   "date": "June 16, 2026",
   "readTime": "7 min read",
   "category": "Technical Guide",
-  "heroImage": "https://images.unsplash.com/photo-1511818966892-d7d671e672a2?w=1200&q=80",
+  "heroImage": "/projects/salsette-27-32-2.webp",
   "excerpt": "Glass skylights are transforming modern Indian architecture by bringing in natural light and creating a sense of space. Discover the best designs and technical requirements for your next project.",
   "content": [
     {
@@ -3419,7 +3419,7 @@ export const blogPosts: Record<string, BlogPost> = {
     "date": "2026-06-17",
     "readTime": "8 min read",
     "category": "Technical Guide",
-    "heroImage": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80",
+    "heroImage": "/projects/embassy-247-37-1.webp",
     "excerpt": "Is your building's exterior looking dated or showing signs of wear? Facade refurbishment can significantly enhance property value, energy efficiency, and safety. Explore our comprehensive guide for Indian commercial and residential projects.",
     "content": [
         {
@@ -3551,7 +3551,7 @@ export const blogPosts: Record<string, BlogPost> = {
     "date": "2026-06-18",
     "readTime": "6 min read",
     "category": "Technical Guide",
-    "heroImage": "https://images.unsplash.com/photo-1497366216548-j547366216548?w=1200&q=80",
+    "heroImage": "/projects/mittal-house-49-1.webp",
     "excerpt": "Frameless glass partitions are transforming Indian office spaces by combining transparency with sophisticated design. Learn about the technical specifications and benefits of these systems.",
     "content": [
         {
@@ -3647,7 +3647,7 @@ export const blogPosts: Record<string, BlogPost> = {
     "date": "2026-06-19",
     "readTime": "8 min read",
     "category": "Technical Guide",
-    "heroImage": "https://images.unsplash.com/photo-1511818966892-d7d671e672a2?w=1200&q=80",
+    "heroImage": "/projects/salsette-27-31-1.webp",
     "excerpt": "High-rise buildings in India face unique challenges, from extreme wind loads to intense solar heat. Discover how expert facade engineering ensures safety, efficiency, and aesthetics.",
     "content": [
         {
@@ -3752,7 +3752,7 @@ export const blogPosts: Record<string, BlogPost> = {
     "date": "2026-06-20",
     "readTime": "7 min read",
     "category": "Technical Guide",
-    "heroImage": "https://images.unsplash.com/photo-1511818966892-d7d671e672a2?w=1200&q=80",
+    "heroImage": "/projects/jindal-house-46-2.webp",
     "excerpt": "Glass railings offer a modern, unobstructed view while maintaining safety. Discover the technical requirements, glass types, and pricing for glass railings in India.",
     "content": [
         {
@@ -3867,7 +3867,7 @@ export const blogPosts: Record<string, BlogPost> = {
     "date": "2026-06-21",
     "readTime": "6 min read",
     "category": "Technical Guide",
-    "heroImage": "https://images.unsplash.com/photo-1511818966892-d7d671e672a2?w=1200&q=80",
+    "heroImage": "/projects/embassy-247-37-1.webp",
     "excerpt": "The Indian monsoon brings heavy rains and high winds that can challenge even the best-designed facades. Learn how to protect your building with our comprehensive safety and maintenance guide.",
     "content": [
         {
@@ -3974,7 +3974,7 @@ export const blogPosts: Record<string, BlogPost> = {
   "date": "2026-06-22",
   "readTime": "8 min read",
   "category": "Technical Guide",
-  "heroImage": "https://images.unsplash.com/photo-1511818966892-d7d671e672a2?w=1200&q=80",
+  "heroImage": "/projects/embassy-techzone-41-2.webp",
   "excerpt": "Spider glazing is the pinnacle of modern frameless glass architecture. Discover why this point-fixed system is becoming the preferred choice for premium commercial facades in India.",
   "content": [
     {

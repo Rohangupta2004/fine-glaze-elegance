@@ -268,7 +268,7 @@ export default function Services() {
   return (
     <Layout darkHero>
       <SEO
-        title="Facade Systems, Glazing, ACP Cladding & Aluminium Solutions | Fine Glaze"
+        title="Facade, Glazing & ACP Services in Pune & Mumbai | Fine Glaze"
         description="Fine Glaze offers full-range facade services in Pune and Mumbai: curtain walls, structural glazing, ACP cladding, glass railings, skylights, aluminium louvers, glass partitions, AMC maintenance and more."
         canonical="https://fineglaze.com/services"
         keywords="facade services in Pune and Mumbai, facade systems, glass facade services, curtain wall, structural glazing, ACP cladding, glass railings, skylights"

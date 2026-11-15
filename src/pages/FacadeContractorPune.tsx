@@ -1,4 +1,5 @@
 import SEO from "@/components/SEO";
+import { RelatedProjects } from "@/components/RelatedProjects";
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/home/CTASection";
 import { Link } from "react-router-dom";
@@ -53,7 +54,7 @@ export default function FacadeContractorPune() {
   return (
     <Layout darkHero>
       <SEO
-        title="Facade Contractor in Pune | Glass, ACP & Curtain Wall – Fine Glaze"
+        title="Facade Contractor in Pune | Fine Glaze"
         description="Facade contractor in Pune. Curtain walls, structural glazing, ACP cladding, glass railings & facade maintenance. Serving Hinjewadi, Kharadi, Baner. Free site visit."
         canonical="https://fineglaze.com/facade-contractor-pune"
         keywords="facade contractor Pune, building facade Pune, glass facade contractor Pune, curtain wall contractor Pune, ACP cladding Pune, facade company Pune Maharashtra"
@@ -79,8 +80,8 @@ export default function FacadeContractorPune() {
             </div>
           </div>
           <img
-            src="https://images.unsplash.com/photo-1503387762-592deb58ef4e"
-            alt="Facade contractor Pune commercial building Fine Glaze"
+            src="/projects/pune-airport-terminal-42-1.webp"
+            alt="Pune International Airport new terminal — SS column cladding by Fine Glaze for Jindal Stainless (completed 2023)"
             className="rounded-xl shadow-2xl object-cover h-[420px] w-full"
             loading="eager"
             width="600"
@@ -164,6 +165,7 @@ export default function FacadeContractorPune() {
         </div>
       </section>
 
+      <RelatedProjects heading="Our projects in Pune" locations={["Pune"]} />
       <CTASection />
     </Layout>
   );

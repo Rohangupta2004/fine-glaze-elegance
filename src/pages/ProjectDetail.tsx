@@ -4,6 +4,14 @@ import { Layout } from "@/components/layout/Layout";
 import { useProject } from "@/hooks/useProjects";
 import { Helmet } from "react-helmet-async";
 import SEO from "@/components/SEO";
+
+/** "Project – main scope | Fine Glaze", kept short enough to show in search results. */
+const projectTitle = (title: string, scope: string) => {
+  const full = `${title} – ${scope} | Fine Glaze`;
+  if (full.length <= 65) return full;
+  const mainScope = scope.split(/,|&| and | — | – /)[0].trim();
+  return `${title} – ${mainScope} | Fine Glaze`;
+};
 import { MapPin, Building2, ArrowLeft, Phone, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -86,7 +94,7 @@ const ProjectDetail = () => {
   return (
     <Layout darkHero>
       <SEO
-        title={`${project.title} – ${project.scope} | Fine Glaze`}
+        title={projectTitle(project.title, project.scope)}
         description={summary}
         canonical={`https://fineglaze.com/project/${slug}`}
         keywords={`${project.title}, ${project.scope}, facade contractor ${project.location}, ${project.category} facade India`}

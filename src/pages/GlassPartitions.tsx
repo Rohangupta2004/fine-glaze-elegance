@@ -1,4 +1,5 @@
 import SEO from "@/components/SEO";
+import { RelatedProjects } from "@/components/RelatedProjects";
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/home/CTASection";
 import { Link } from "react-router-dom";
@@ -82,7 +83,7 @@ const IMG: Record<string, string> = {
   acoustic: "/smart-glass.webp",
   smart: "/smart-glass.webp",
   shower: "/shower-enclosure.webp",
-  process: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?fm=jpg&q=85&w=1400&auto=format&fit=crop",
+  process: "/projects/mittal-house-49-1.webp",
 };
 
 /* ── System data ── */
@@ -212,7 +213,7 @@ export default function GlassPartitions() {
   return (
     <Layout darkHero>
       <SEO
-        title="Glass Partition Contractor in Pune & Mumbai | Office Glass Partitions - Fine Glaze"
+        title="Glass Partition Contractor in Pune & Mumbai | Fine Glaze"
         description="Glass partition contractor in Pune & Mumbai. Frameless office glass partitions, acoustic DGU partitions, smart glass, and luxury shower enclosures."
         canonical="https://fineglaze.com/glass-partitions"
         keywords="glass partition contractor, office glass partitions, frameless glass partition, DGU glass partition, acoustic glass partition"
@@ -518,7 +519,7 @@ export default function GlassPartitions() {
         <div className="relative h-[35vh] md:h-[40vh] overflow-hidden">
           <img
             src={IMG.process}
-            alt="Fine Glaze glass partition installation"
+            alt="Sliding glass shower cubicle installed by Fine Glaze at Mittal House, Juhu, Mumbai"
             className="w-full h-full object-cover"
             loading="lazy"
           />
@@ -678,6 +679,7 @@ export default function GlassPartitions() {
 
 
       {/* ════════════ CTA ════════════ */}
+      <RelatedProjects heading="Interior glass work" keywords={["shower", "Mittal"]} />
       <CTASection />
     </Layout>
   );

@@ -1,4 +1,5 @@
 import SEO from "@/components/SEO";
+import { RelatedProjects } from "@/components/RelatedProjects";
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/home/CTASection";
 import { ServiceQuickOverview } from "@/components/service/ServiceQuickOverview";
@@ -83,7 +84,7 @@ const IMG: Record<string, string> = {
   semi: "/railing-semi.webp",
   spigot: "/railing-spigot.webp",
   standoff: "/railing-standoff.webp",
-  process: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?fm=jpg&q=85&w=1400&auto=format&fit=crop",
+  process: "/projects/jindal-house-46-4.webp",
 };
 
 /* ── System data ── */
@@ -213,7 +214,7 @@ export default function GlassRailings() {
   return (
     <Layout darkHero>
       <SEO
-        title="Glass Railing Contractor in Pune & Mumbai | Balcony & Staircase Railings - Fine Glaze"
+        title="Glass Railing Contractor in Pune & Mumbai | Fine Glaze"
         description="Glass railing contractor in Pune & Mumbai. Frameless, semi-frameless & SS spigot glass railing systems for balconies, staircases & terraces."
         canonical="https://fineglaze.com/glass-railings"
         keywords="glass railing contractor, frameless glass railing, toughened glass railing, glass balustrade, staircase glass railing, balcony glass railing"
@@ -538,7 +539,7 @@ export default function GlassRailings() {
         <div className="relative h-[35vh] md:h-[40vh] overflow-hidden">
           <img
             src={IMG.process}
-            alt="Fine Glaze glass railing installation"
+            alt="Shop drawing of an SS railing for Jindal House, Mumbai — drawn in-house by Fine Glaze"
             className="w-full h-full object-cover"
             loading="lazy"
           />
@@ -698,6 +699,7 @@ export default function GlassRailings() {
 
 
       {/* ════════════ CTA ════════════ */}
+      <RelatedProjects heading="Glass railing projects" keywords={["railing"]} />
       <CTASection />
     </Layout>
   );

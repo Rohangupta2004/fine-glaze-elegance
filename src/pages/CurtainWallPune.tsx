@@ -1,4 +1,5 @@
 import SEO from "@/components/SEO";
+import { RelatedProjects } from "@/components/RelatedProjects";
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/home/CTASection";
 import { Link } from "react-router-dom";
@@ -53,7 +54,7 @@ export default function CurtainWallPune() {
   return (
     <Layout darkHero>
       <SEO
-        title="Curtain Wall Contractor Pune | Glass Facades Hinjewadi & Baner - Fine Glaze"
+        title="Curtain Wall Contractor in Pune | Fine Glaze"
         description="Expert curtain wall contractor in Pune. Unitized & stick system glass curtain walls for IT parks & commercial towers in Hinjewadi, Kharadi, Baner & Wakad."
         canonical="https://fineglaze.com/curtain-wall-pune"
         keywords="curtain wall contractor Pune, curtain wall systems Pune, glass facade Pune, unitized curtain wall Pune"
@@ -78,8 +79,8 @@ export default function CurtainWallPune() {
             </div>
           </div>
           <img
-            src="https://images.unsplash.com/photo-1486325212027-8081e485255e"
-            alt="Curtain wall glazing project Pune - Fine Glaze contractor"
+            src="/projects/embassy-techzone-40-1.webp"
+            alt="Embassy Techzone, Hinjewadi, Pune — facade works by Fine Glaze for Embassy REIT"
             className="rounded-xl shadow-2xl object-cover h-[420px] w-full"
             loading="eager"
             width="600"
@@ -163,6 +164,7 @@ export default function CurtainWallPune() {
         </div>
       </section>
 
+      <RelatedProjects heading="Our glazing work in Pune" locations={["Pune"]} keywords={["glazing", "glass", "window"]} />
       <CTASection />
     </Layout>
   );

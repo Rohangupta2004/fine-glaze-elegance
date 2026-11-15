@@ -1,4 +1,5 @@
 import SEO from "@/components/SEO";
+import { RelatedProjects } from "@/components/RelatedProjects";
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/home/CTASection";
 import { Link } from "react-router-dom";
@@ -53,7 +54,7 @@ export default function HotelFacade() {
   return (
     <Layout darkHero>
       <SEO
-        title="Hotel Facade Contractor in Pune & Mumbai | Hotel Glass Facades & Canopies - Fine Glaze"
+        title="Hotel Facade Contractor in Pune & Mumbai | Fine Glaze"
         description="Hotel facade contractor in Pune & Mumbai. Acoustic glass facades, curtain walls, entrance canopies & ACP cladding for luxury hotels & resorts."
         canonical="https://fineglaze.com/hotel-facade"
         keywords="hotel facade contractor, hotel glass facade, hotel ACP cladding, hotel curtain wall, hotel entrance canopy"
@@ -78,8 +79,8 @@ export default function HotelFacade() {
             </div>
           </div>
           <img
-            src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750"
-            alt="Hotel hospitality building facade curtain wall India Fine Glaze Leela"
+            src="/projects/leela-hotel-50-1.webp"
+            alt="Fixed glass windows in the laundry area of Leela Hotel, Andheri, Mumbai — completed by Fine Glaze in 2023"
             className="rounded-xl shadow-2xl object-cover h-[420px] w-full"
             loading="eager"
             width="600"
@@ -160,6 +161,7 @@ export default function HotelFacade() {
         </div>
       </section>
 
+      <RelatedProjects heading="Hospitality project" keywords={["hotel"]} />
       <CTASection />
     </Layout>
   );

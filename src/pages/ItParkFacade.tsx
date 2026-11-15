@@ -1,4 +1,5 @@
 import SEO from "@/components/SEO";
+import { RelatedProjects } from "@/components/RelatedProjects";
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/home/CTASection";
 import { Link } from "react-router-dom";
@@ -53,7 +54,7 @@ export default function ItParkFacade() {
   return (
     <Layout darkHero>
       <SEO
-        title="IT Park Facade Contractor in Pune & Mumbai | Corporate Curtain Walls - Fine Glaze"
+        title="IT Park Facade Contractor in Pune & Mumbai | Fine Glaze"
         description="IT park facade contractor in Pune & Mumbai. Unitized curtain walls & energy-efficient DGU Low-E glass facades for tech campuses & corporate towers."
         canonical="https://fineglaze.com/it-park-facade"
         keywords="IT park facade contractor, office facade contractor, corporate building facade, technology park facade, curtain wall IT park"
@@ -79,8 +80,8 @@ export default function ItParkFacade() {
             </div>
           </div>
           <img
-            src="https://images.unsplash.com/photo-1486325212027-8081e485255e"
-            alt="IT park campus curtain wall facade India LEED Fine Glaze"
+            src="/projects/embassy-techzone-40-1.webp"
+            alt="Embassy Techzone IT park, Hinjewadi, Pune — facade works by Fine Glaze for Embassy REIT"
             className="rounded-xl shadow-2xl object-cover h-[420px] w-full"
             loading="eager"
             width="600"
@@ -161,6 +162,7 @@ export default function ItParkFacade() {
         </div>
       </section>
 
+      <RelatedProjects heading="IT park & campus projects" keywords={["Embassy", "LTIMindtree"]} />
       <CTASection />
     </Layout>
   );

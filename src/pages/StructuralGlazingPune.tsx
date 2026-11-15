@@ -1,4 +1,5 @@
 import SEO from "@/components/SEO";
+import { RelatedProjects } from "@/components/RelatedProjects";
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/home/CTASection";
 import { Link } from "react-router-dom";
@@ -53,7 +54,7 @@ export default function StructuralGlazingPune() {
   return (
     <Layout darkHero>
       <SEO
-        title="Structural Glazing Pune | Frameless Glass Facade Contractor Hinjewadi - Fine Glaze"
+        title="Structural Glazing Contractor in Pune | Fine Glaze"
         description="Structural glazing contractor in Pune. 2-side, 4-side & spider glazing for showrooms & commercial buildings in Hinjewadi, Kharadi, Baner & Wakad."
         canonical="https://fineglaze.com/structural-glazing-pune"
         keywords="structural glazing Pune, structural glass facade Pune, frameless glazing Pune, spider glazing Pune"
@@ -79,8 +80,8 @@ export default function StructuralGlazingPune() {
             </div>
           </div>
           <img
-            src="https://images.unsplash.com/photo-1529429617124-95b109e86bb8"
-            alt="Structural glazing facade Pune office building - Fine Glaze"
+            src="/projects/embassy-techzone-41-2.webp"
+            alt="Spider glass entrance at Embassy Techzone, Hinjewadi, Pune — installed by Fine Glaze"
             className="rounded-xl shadow-2xl object-cover h-[420px] w-full"
             loading="eager"
             width="600"
@@ -164,6 +165,7 @@ export default function StructuralGlazingPune() {
         </div>
       </section>
 
+      <RelatedProjects heading="Our glazing work in Pune" locations={["Pune"]} keywords={["glazing", "spider", "glass"]} />
       <CTASection />
     </Layout>
   );

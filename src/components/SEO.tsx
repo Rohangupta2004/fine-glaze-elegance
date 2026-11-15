@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import { fitDescription, fitTitle } from "@/lib/seoText";
 
 interface SEOProps {
   title: string;
@@ -34,8 +35,9 @@ export default function SEO({
   return (
     <Helmet>
       {/* Standard SEO Tags */}
-      <title>{title}</title>
-      <meta name="description" content={description} />
+      {/* Search results show ~60 / ~155 characters; social cards below keep the full text. */}
+      <title>{fitTitle(title)}</title>
+      <meta name="description" content={fitDescription(description)} />
       {keywords && <meta name="keywords" content={keywords} />}
       {canonical && <link rel="canonical" href={canonical} />}
 

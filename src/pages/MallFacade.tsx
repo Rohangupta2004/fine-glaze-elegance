@@ -53,7 +53,7 @@ export default function MallFacade() {
   return (
     <Layout darkHero>
       <SEO
-        title="Mall Facade Contractor in Pune & Mumbai | Shopping Mall Glass Facades - Fine Glaze"
+        title="Mall Facade Contractor in Pune & Mumbai | Fine Glaze"
         description="Shopping mall facade contractor in Pune & Mumbai. High-impact glass facades, retail ACP cladding, spider glass canopies & curtain wall systems."
         canonical="https://fineglaze.com/mall-facade"
         keywords="mall facade contractor, shopping mall glass facade, retail facade, mall ACP cladding, mall entrance canopy"
@@ -78,8 +78,8 @@ export default function MallFacade() {
             </div>
           </div>
           <img
-            src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c"
-            alt="Shopping mall facade glass ACP cladding India Fine Glaze"
+            src="/projects/ssg-honesty-30-1.webp"
+            alt="SSG Honesty Nimkar Building, Panvel — structural glazing, curtain wall and ACP by Fine Glaze (architect's render)"
             className="rounded-xl shadow-2xl object-cover h-[420px] w-full"
             loading="eager"
             width="600"

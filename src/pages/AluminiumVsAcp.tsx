@@ -53,7 +53,7 @@ export default function AluminiumVsAcp() {
   return (
     <Layout darkHero>
       <SEO
-        title="Aluminium Facade vs ACP Cladding: Which is Better for India? – Fine Glaze"
+        title="Aluminium Facade vs ACP Cladding: Which Is Better?"
         description="Aluminium facade vs ACP cladding — detailed comparison of cost, durability, fire safety, aesthetics & maintenance for Indian buildings. Expert guide by Fine Glaze."
         canonical="https://fineglaze.com/aluminium-vs-acp-cladding"
         keywords="aluminium facade vs ACP cladding, ACP vs aluminium comparison India, which is better ACP or aluminium, ACP cladding vs glass facade, facade selection guide India"
@@ -78,8 +78,8 @@ export default function AluminiumVsAcp() {
             </div>
           </div>
           <img
-            src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00"
-            alt="Aluminium facade vs ACP cladding comparison India buildings Fine Glaze"
+            src="/projects/salsette-27-35-1.webp"
+            alt="ACP canopy at ground floor of Salsette-27, Byculla, Mumbai — designed and installed by Fine Glaze"
             className="rounded-xl shadow-2xl object-cover h-[420px] w-full"
             loading="eager"
             width="600"

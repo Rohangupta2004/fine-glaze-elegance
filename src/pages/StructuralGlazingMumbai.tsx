@@ -1,4 +1,5 @@
 import SEO from "@/components/SEO";
+import { RelatedProjects } from "@/components/RelatedProjects";
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/home/CTASection";
 import { Link } from "react-router-dom";
@@ -53,7 +54,7 @@ export default function StructuralGlazingMumbai() {
   return (
     <Layout darkHero>
       <SEO
-        title="Structural Glazing Mumbai | Frameless Glass Facade BKC & Worli - Fine Glaze"
+        title="Structural Glazing Contractor in Mumbai | Fine Glaze"
         description="Structural glazing contractor in Mumbai. 2-side, 4-side & spider glass facades for commercial towers in BKC, Andheri, Powai, Goregaon & Worli."
         canonical="https://fineglaze.com/structural-glazing-mumbai"
         keywords="structural glazing Mumbai, structural glass facade Mumbai, frameless glazing Mumbai, spider glazing Mumbai"
@@ -79,8 +80,8 @@ export default function StructuralGlazingMumbai() {
             </div>
           </div>
           <img
-            src="https://images.unsplash.com/photo-1486325212027-8081e485255e"
-            alt="Structural glazing Mumbai high-rise glass facade - Fine Glaze"
+            src="/projects/naman-chambers-48-1.webp"
+            alt="Naman Chambers, Bandra Kurla Complex, Mumbai — glazing and ACP works by Fine Glaze (in progress)"
             className="rounded-xl shadow-2xl object-cover h-[420px] w-full"
             loading="eager"
             width="600"
@@ -164,6 +165,7 @@ export default function StructuralGlazingMumbai() {
         </div>
       </section>
 
+      <RelatedProjects heading="Our glazing work in Mumbai" locations={["Mumbai"]} excludeLocations={["Navi Mumbai"]} keywords={["glazing", "glass", "sealant", "window"]} />
       <CTASection />
     </Layout>
   );

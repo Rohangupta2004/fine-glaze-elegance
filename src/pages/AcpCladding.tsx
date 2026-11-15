@@ -1,4 +1,5 @@
 import SEO from "@/components/SEO";
+import { RelatedProjects } from "@/components/RelatedProjects";
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/home/CTASection";
 import { ServiceQuickOverview } from "@/components/service/ServiceQuickOverview";
@@ -83,7 +84,7 @@ const IMG: Record<string, string> = {
   pe: "/acp-panels.webp",
   wood: "/acp-finishes.webp",
   mirror: "/acp-panels.webp",
-  process: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?fm=jpg&q=85&w=1400&auto=format&fit=crop",
+  process: "/projects/salsette-27-33-2.webp",
 };
 
 /* ── System data ── */
@@ -213,7 +214,7 @@ export default function AcpCladding() {
   return (
     <Layout darkHero>
       <SEO
-        title="ACP Cladding Contractor in Pune & Mumbai | Aluminium Panel Facades - Fine Glaze"
+        title="ACP Cladding Contractor in Pune & Mumbai | Fine Glaze"
         description="ACP cladding contractor in Pune & Mumbai. PVDF-coated fire-retardant aluminium composite panels for commercial facades, IT parks & retail buildings."
         canonical="https://fineglaze.com/acp-aluminium-cladding"
         keywords="ACP cladding contractor, aluminium composite panel cladding, ACP facade, aluminium cladding, PVDF ACP, fire-retardant ACP"
@@ -538,7 +539,7 @@ export default function AcpCladding() {
         <div className="relative h-[35vh] md:h-[40vh] overflow-hidden">
           <img
             src={IMG.process}
-            alt="Fine Glaze ACP cladding installation"
+            alt="Curved ACP ramp canopy fabricated and installed by Fine Glaze at Salsette-27, Byculla, Mumbai"
             className="w-full h-full object-cover"
             loading="lazy"
           />
@@ -698,6 +699,7 @@ export default function AcpCladding() {
 
 
       {/* ════════════ CTA ════════════ */}
+      <RelatedProjects heading="ACP cladding projects" keywords={["ACP"]} />
       <CTASection />
     </Layout>
   );

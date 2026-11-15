@@ -1,4 +1,5 @@
 import SEO from "@/components/SEO";
+import { RelatedProjects } from "@/components/RelatedProjects";
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/home/CTASection";
 import { Link } from "react-router-dom";
@@ -53,7 +54,7 @@ export default function CurtainWallMumbai() {
   return (
     <Layout darkHero>
       <SEO
-        title="Curtain Wall Contractor Mumbai | Glass Curtain Walls BKC & Powai - Fine Glaze"
+        title="Curtain Wall Contractor in Mumbai | Fine Glaze"
         description="Curtain wall contractor in Mumbai. Unitized & stick system glass curtain walls for high-rises in BKC, Andheri, Powai, Goregaon & Worli."
         canonical="https://fineglaze.com/curtain-wall-mumbai"
         keywords="curtain wall contractor Mumbai, curtain wall systems Mumbai, glass curtain wall Mumbai, commercial facade Mumbai"
@@ -79,8 +80,8 @@ export default function CurtainWallMumbai() {
             </div>
           </div>
           <img
-            src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5"
-            alt="Curtain wall glazing Mumbai high-rise BKC - Fine Glaze contractor"
+            src="/projects/naman-chambers-48-1.webp"
+            alt="Naman Chambers, Bandra Kurla Complex, Mumbai — glazing and ACP works by Fine Glaze (in progress)"
             className="rounded-xl shadow-2xl object-cover h-[420px] w-full"
             loading="eager"
             width="600"
@@ -164,6 +165,7 @@ export default function CurtainWallMumbai() {
         </div>
       </section>
 
+      <RelatedProjects heading="Our glazing work in Mumbai" locations={["Mumbai"]} excludeLocations={["Navi Mumbai"]} keywords={["glazing", "glass", "sealant", "window"]} />
       <CTASection />
     </Layout>
   );

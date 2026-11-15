@@ -132,7 +132,7 @@ export default function ServiceRequest() {
   return (
     <Layout>
       <SEO
-        title="Facade Service Request: Leaks, Broken Glass & Repairs | Fine Glaze"
+        title="Facade Service Request: Leaks & Broken Glass | Fine Glaze"
         description="Report a glass facade leak, broken or foggy glass, sealant failure, window hardware or ACP damage in Pune or Mumbai. We repair facades we didn't install too."
         canonical={PAGE_URL}
         keywords="facade leakage repair Mumbai, glass facade repair Pune, broken glass replacement, foggy double glazing replacement, structural glazing sealant repair, aluminium window repair Pune, facade maintenance service request"

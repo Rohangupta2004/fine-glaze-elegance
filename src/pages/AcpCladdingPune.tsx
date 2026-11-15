@@ -1,4 +1,5 @@
 import SEO from "@/components/SEO";
+import { RelatedProjects } from "@/components/RelatedProjects";
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/home/CTASection";
 import { Link } from "react-router-dom";
@@ -53,7 +54,7 @@ export default function AcpCladdingPune() {
   return (
     <Layout darkHero>
       <SEO
-        title="ACP Cladding Contractor Pune | Aluminium Composite Panel Baner & Hinjewadi - Fine Glaze"
+        title="ACP Cladding Contractor in Pune | Fine Glaze"
         description="Top ACP cladding contractor in Pune. Fire-retardant aluminium composite panels for commercial facades in Baner, Hinjewadi, Kharadi & Wakad."
         canonical="https://fineglaze.com/acp-cladding-pune"
         keywords="ACP cladding contractor Pune, ACP facade Pune, aluminium composite panel Pune, ACP sheet installation Pune"
@@ -79,8 +80,8 @@ export default function AcpCladdingPune() {
             </div>
           </div>
           <img
-            src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00"
-            alt="ACP aluminium composite panel cladding Pune - Fine Glaze"
+            src="/projects/embassy-techzone-41-3.webp"
+            alt="ACP cladding on the dead wall of Block 2, Embassy Techzone, Hinjewadi, Pune — completed by Fine Glaze"
             className="rounded-xl shadow-2xl object-cover h-[420px] w-full"
             loading="eager"
             width="600"
@@ -164,6 +165,7 @@ export default function AcpCladdingPune() {
         </div>
       </section>
 
+      <RelatedProjects heading="Our cladding work in Pune" locations={["Pune"]} keywords={["ACP", "cladding"]} />
       <CTASection />
     </Layout>
   );

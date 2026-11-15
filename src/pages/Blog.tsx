@@ -12,7 +12,7 @@ export default function Blog() {
   return (
     <Layout darkHero>
       <SEO
-        title="Facade & Glazing Blog – Pricing Guides, Tips & Industry Insights | Fine Glaze"
+        title="Facade & Glazing Guides, Costs & Tips | Fine Glaze"
         description="Expert articles on facade engineering, structural glazing costs, curtain wall comparisons, glass types, and how to choose the right contractor in India. Free knowledge by Fine Glaze."
         canonical="https://fineglaze.com/blog"
         keywords="facade blog India, structural glazing cost guide, curtain wall article, glass facade tips, ACP vs HPL, facade contractor guide"

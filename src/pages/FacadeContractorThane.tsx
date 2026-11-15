@@ -1,4 +1,5 @@
 import SEO from "@/components/SEO";
+import { RelatedProjects } from "@/components/RelatedProjects";
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/home/CTASection";
 import { Link } from "react-router-dom";
@@ -49,7 +50,7 @@ export default function FacadeContractorThane() {
   return (
     <Layout darkHero>
       <SEO
-        title="Facade Contractor in Thane | Glass, ACP & Curtain Wall – Fine Glaze"
+        title="Facade Contractor in Thane | Fine Glaze"
         description="Facade contractor in Thane. Curtain walls, ACP cladding, structural glazing & glass railings for Thane's growing commercial and residential market. Free site visit."
         canonical="https://fineglaze.com/facade-contractor-thane"
         keywords="facade contractor Thane, ACP cladding Thane, glass facade Thane, curtain wall Thane, glass railing Thane, building facade Ghodbunder Road"
@@ -70,7 +71,7 @@ export default function FacadeContractorThane() {
               <Link to="/portfolio"><Button size="lg" variant="outline">View Projects</Button></Link>
             </div>
           </div>
-          <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e" alt="Facade contractor Thane commercial building Fine Glaze" className="rounded-xl shadow-2xl object-cover h-[420px] w-full" loading="eager" width="600" height="420" />
+          <img src="/projects/embassy-247-37-1.webp" alt="Embassy 247, Vikhroli, Mumbai — facade sealant and glass replacement by Fine Glaze for Embassy REIT" className="rounded-xl shadow-2xl object-cover h-[420px] w-full" loading="eager" width="600" height="420" />
         </div>
       </section>
 
@@ -137,6 +138,7 @@ export default function FacadeContractorThane() {
           </div>
         </div>
       </section>
+      <RelatedProjects heading="Our nearest projects to Thane" intro="We don't have a documented project inside Thane city yet — these are our closest sites, in Vikhroli, Mahape and Panvel." locations={["Navi Mumbai", "Vikhroli", "Panvel"]} />
       <CTASection />
     </Layout>
   );

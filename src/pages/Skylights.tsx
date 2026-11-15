@@ -1,4 +1,5 @@
 import SEO from "@/components/SEO";
+import { RelatedProjects } from "@/components/RelatedProjects";
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/home/CTASection";
 import { ServiceQuickOverview } from "@/components/service/ServiceQuickOverview";
@@ -83,7 +84,7 @@ const IMG: Record<string, string> = {
   frameless: "/skylight-atrium.webp",
   spider: "/canopy-detail.webp",
   poly: "/canopy-spider.webp",
-  process: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?fm=jpg&q=85&w=1400&auto=format&fit=crop",
+  process: "/projects/salsette-27-32-2.webp",
 };
 
 /* ── System data ── */
@@ -213,7 +214,7 @@ export default function Skylights() {
   return (
     <Layout darkHero>
       <SEO
-        title="Glass Skylight Contractor in Pune & Mumbai | Glass Canopies & Atriums - Fine Glaze"
+        title="Glass Skylights & Canopies in Pune & Mumbai | Fine Glaze"
         description="Glass skylight contractor in Pune & Mumbai. Atrium skylights, entrance glass canopies, spider-supported glass canopies & overhead glazing systems."
         canonical="https://fineglaze.com/skylights-canopies"
         keywords="glass skylight contractor, atrium skylight, glass canopy contractor, frameless glass canopy, spider canopy, overhead glazing"
@@ -537,7 +538,7 @@ export default function Skylights() {
         <div className="relative h-[35vh] md:h-[40vh] overflow-hidden">
           <img
             src={IMG.process}
-            alt="Fine Glaze skylight installation"
+            alt="Steel framing for the podium canopy at Salsette-27, Byculla, Mumbai — Fine Glaze"
             className="w-full h-full object-cover"
             loading="lazy"
           />
@@ -697,6 +698,7 @@ export default function Skylights() {
 
 
       {/* ════════════ CTA ════════════ */}
+      <RelatedProjects heading="Canopy projects" keywords={["canopy", "canopies"]} />
       <CTASection />
     </Layout>
   );
