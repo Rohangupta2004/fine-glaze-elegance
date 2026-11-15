@@ -54,10 +54,10 @@ export default function CurtainWallMumbai() {
     <Layout darkHero>
       <SEO
         title="Curtain Wall Contractor Mumbai | Glass Curtain Walls BKC & Powai - Fine Glaze"
-        description="Premier curtain wall contractor in Mumbai. Unitized & stick system glass curtain walls for high-rises in BKC, Andheri, Powai, Goregaon & Worli."
+        description="Curtain wall contractor in Mumbai. Unitized & stick system glass curtain walls for high-rises in BKC, Andheri, Powai, Goregaon & Worli."
         canonical="https://fineglaze.com/curtain-wall-mumbai"
         keywords="curtain wall contractor Mumbai, curtain wall systems Mumbai, glass curtain wall Mumbai, commercial facade Mumbai"
-        ogImage="https://images.unsplash.com/photo-1541888946425-d81bb19240f5"
+        ogImage="https://fineglaze.com/projects/naman-chambers-48-1.webp"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}
       />
 

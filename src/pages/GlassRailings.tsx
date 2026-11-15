@@ -213,8 +213,8 @@ export default function GlassRailings() {
   return (
     <Layout darkHero>
       <SEO
-        title="Glass Railing Contractor Pan India | Balcony & Staircase Railings - Fine Glaze"
-        description="Premier glass railing contractor Pan India. Frameless, semi-frameless & SS spigot glass railing systems for balconies, staircases & terraces."
+        title="Glass Railing Contractor in Pune & Mumbai | Balcony & Staircase Railings - Fine Glaze"
+        description="Glass railing contractor in Pune & Mumbai. Frameless, semi-frameless & SS spigot glass railing systems for balconies, staircases & terraces."
         canonical="https://fineglaze.com/glass-railings"
         keywords="glass railing contractor, frameless glass railing, toughened glass railing, glass balustrade, staircase glass railing, balcony glass railing"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}
@@ -244,7 +244,7 @@ export default function GlassRailings() {
             className="text-amber-400 text-xs font-bold tracking-[0.4em] uppercase mb-5 animate-fade-in"
             style={{ animationDelay: "0.05s" }}
           >
-            Fine Glaze · Pan India
+            Fine Glaze · Pune & Mumbai
           </p>
 
           <h1
@@ -254,7 +254,7 @@ export default function GlassRailings() {
             Glass Railing<br />
             <span className="text-gradient-gold">Contractors</span><br />
             <span style={{ fontSize: "clamp(1.25rem, 2.5vw, 2rem)", fontWeight: 600, color: "rgba(255,255,255,0.85)" }}>
-              Pan India.
+              Pune &amp; Mumbai.
             </span>
           </h1>
 
@@ -262,7 +262,7 @@ export default function GlassRailings() {
             className="mt-6 text-white/70 text-base md:text-lg max-w-lg leading-relaxed animate-fade-in-up"
             style={{ animationDelay: "0.2s" }}
           >
-            Frameless and semi-frameless toughened glass railings for balconies, terraces, staircases and commercial spaces Pan India.
+            Frameless and semi-frameless toughened glass railings for balconies, terraces, staircases and commercial spaces in Pune and Mumbai.
           </p>
 
           <div
@@ -294,7 +294,7 @@ export default function GlassRailings() {
               ))}
             </div>
             <span className="text-white/50 text-xs font-medium ml-0.5">
-              5.0 Google · Embassy REIT Vendor · 10+ Landmark Projects
+              Embassy REIT Best Vendor 2024 · 16 Documented Projects
             </span>
           </div>
         </div>
@@ -677,7 +677,7 @@ export default function GlassRailings() {
                     { title: "Structural Glazing", href: "/structural-glazing" },
                     { title: "Curtain Wall Systems", href: "/curtain-wall-systems" },
                     { title: "Glass Partitions", href: "/glass-partitions" },
-                    { title: "Aluminium Facade", href: "/aluminium-facade" },
+                    { title: "Aluminium Facade", href: "/aluminium-windows-doors" },
                     { title: "Facade AMC", href: "/maintenance-services" },
                     { title: "All Services →", href: "/services" },
                   ].map((link) => (

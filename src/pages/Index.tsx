@@ -1,5 +1,6 @@
 import { Layout } from "@/components/layout/Layout";
-import { HeroSection } from "@/components/home/HeroSection";
+import { HeroSection, HERO_POSTER } from "@/components/home/HeroSection";
+import { Helmet } from "react-helmet-async";
 import { TrustStrip } from "@/components/home/TrustStrip";
 import { CompanyVideoSection } from "@/components/home/CompanyVideoSection";
 import { PortfolioSection } from "@/components/home/PortfolioSection";
@@ -12,102 +13,31 @@ import { CTASection } from "@/components/home/CTASection";
 import SEO from "@/components/SEO";
 
 const Index = () => {
-  const organizationSchema = {
+  // Organization / LocalBusiness entities live once, sitewide, in index.html.
+  const webPageSchema = {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Fine Glaze",
-    "url": "https://fineglaze.com",
-    "logo": "https://fineglaze.com/Logofg.webp",
-    "description": "Leading facade solutions and fenestration expert Pan India with 5+ years company track record and multidisciplinary engineering team with 45+ years collective multinational facade experience (Ex-Al Ghurair & MNC veterans). Over 20,566 SQM delivered.",
-    "telephone": "+918369233566",
-    "email": "info@fineglaze.com",
-    "foundingDate": "2019",
-    "areaServed": ["Pan India", "Pune", "Mumbai", "Navi Mumbai", "Thane", "Delhi NCR", "Bengaluru", "Hyderabad", "Maharashtra"],
-    "sameAs": [
-      "https://www.google.com/maps/search/?api=1&query=Fine+Glaze+A3+LW-13+Pragati+Serene+Mohammed+Wadi+Pune+411060",
-      "https://www.linkedin.com/company/fine-glaze"
-    ],
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "A3 LW-13, Pragati Serene Building, Sr.No.2, HDFC Bank Chowk, Plot B, Autadwadi Handewadi, Mahadev Wadi, Mohammed Wadi",
-      "addressLocality": "Pune",
-      "addressRegion": "Maharashtra",
-      "postalCode": "411060",
-      "addressCountry": "IN"
-    }
-  };
-
-  const localBusinessSchema = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Fine Glaze",
-    "image": "https://fineglaze.com/Logofg.webp",
-    "url": "https://fineglaze.com",
-    "telephone": "+918369233566",
-    "email": "info@fineglaze.com",
-    "priceRange": "₹₹₹",
-    "description": "Complete facade solutions and fenestration expert Pan India, delivering structural glazing, curtain wall systems, aluminium doors and windows, and ACP cladding.",
-    "sameAs": [
-      "https://www.google.com/maps/search/?api=1&query=Fine+Glaze+A3+LW-13+Pragati+Serene+Mohammed+Wadi+Pune+411060",
-      "https://www.linkedin.com/company/fine-glaze"
-    ],
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "A3 LW-13, Pragati Serene Building, Sr.No.2, HDFC Bank Chowk, Plot B, Autadwadi Handewadi, Mahadev Wadi, Mohammed Wadi",
-      "addressLocality": "Pune",
-      "addressRegion": "Maharashtra",
-      "postalCode": "411060",
-      "addressCountry": "IN"
-    },
-    "areaServed": [
-      { "@type": "Country", "name": "India" },
-      { "@type": "City", "name": "Pune" },
-      { "@type": "City", "name": "Mumbai" },
-      { "@type": "City", "name": "Navi Mumbai" },
-      { "@type": "City", "name": "Thane" },
-      { "@type": "State", "name": "Maharashtra" }
-    ],
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-      "opens": "09:00",
-      "closes": "19:00"
-    },
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Facade & Fenestration Services",
-      "itemListElement": [
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Curtain Wall Systems" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Structural Glazing" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Aluminium Windows & Doors" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Louvers & Sun Control" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "ACP / Metal Cladding" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Glass Railings" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Skylights & Canopies" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Glass Partitions" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Perforated Screens" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Facade Maintenance & AMC" } }
-      ]
-    }
-  };
-
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://fineglaze.com/" }
-    ]
+    "@type": "WebPage",
+    "@id": "https://fineglaze.com/#webpage",
+    "url": "https://fineglaze.com/",
+    "name": "Facade & Glazing Contractor in Pune & Mumbai | Fine Glaze",
+    "isPartOf": { "@id": "https://fineglaze.com/#website" },
+    "about": { "@id": "https://fineglaze.com/#organization" },
+    "primaryImageOfPage": "https://fineglaze.com" + HERO_POSTER,
+    "inLanguage": "en-IN",
   };
 
   return (
     <Layout darkHero>
       <SEO
-        title="Complete Facade Solutions & Fenestration Expert Pan India | Fine Glaze"
-        description="Fine Glaze — premier facade solutions & fenestration expert Pan India. 5+ years company track record, 40+ core engineering team, 45+ years collective multinational facade expertise. ~20,566+ SQM delivered. Embassy REIT Best Vendor 2024 awardee."
+        title="Facade & Glazing Contractor in Pune & Mumbai | Fine Glaze"
+        description="Facade & glazing contractor in Pune & Mumbai: curtain walls, structural glazing, aluminium windows, ACP cladding and facade AMC. Embassy REIT Best Vendor 2024."
         canonical="https://fineglaze.com/"
-        keywords="complete facade solutions, fenestration expert India, facade contractor Pan India, all India facade contractor, Fine Glaze, Deepak Gupta facade, aluminium windows contractor, unitized curtain wall, structural glazing India"
-        schemas={[organizationSchema, localBusinessSchema, breadcrumbSchema]}
+        keywords="facade contractor Pune, facade contractor Mumbai, structural glazing contractor, curtain wall contractor, aluminium windows Pune, ACP cladding contractor, facade maintenance Mumbai, Fine Glaze"
+        schema={webPageSchema}
       />
+      <Helmet>
+        <link rel="preload" as="image" href={HERO_POSTER} {...{ fetchpriority: "high" }} />
+      </Helmet>
       <HeroSection />
       <TrustStrip />
       <CompanyVideoSection />

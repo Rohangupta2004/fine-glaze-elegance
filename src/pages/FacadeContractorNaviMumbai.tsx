@@ -57,7 +57,7 @@ export default function FacadeContractorNaviMumbai() {
         description="Facade contractor in Navi Mumbai. Curtain walls, structural glazing & ACP cladding for Vashi, Mahape, Airoli, Kharghar & Belapur. LTIMindtree campus reference. Free site visit."
         canonical="https://fineglaze.com/facade-contractor-navi-mumbai"
         keywords="facade contractor Navi Mumbai, curtain wall Navi Mumbai, glass facade Mahape, ACP cladding Airoli, structural glazing Vashi, facade company Belapur, IT park facade Navi Mumbai"
-        ogImage="https://images.unsplash.com/photo-1486325212027-8081e485255e"
+        ogImage="https://fineglaze.com/projects/ltimindtree-campus-44-1.webp"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}
       />
 

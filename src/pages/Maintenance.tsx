@@ -212,8 +212,8 @@ export default function Maintenance() {
   return (
     <Layout darkHero>
       <SEO
-        title="Facade Maintenance Company Pan India | Glass Cleaning & Repair - Fine Glaze"
-        description="Leading facade maintenance company Pan India. Facade AMC, structural sealant replacement, glass panel repair, curtain wall restoration & inspections."
+        title="Facade Maintenance Company in Pune & Mumbai | Glass Cleaning & Repair - Fine Glaze"
+        description="Facade maintenance company in Pune & Mumbai. Facade AMC, structural sealant replacement, glass panel repair, curtain wall restoration & inspections."
         canonical="https://fineglaze.com/maintenance-services"
         keywords="facade maintenance company, facade maintenance AMC, glass facade cleaning, sealant replacement, curtain wall repair, facade inspection"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}
@@ -243,7 +243,7 @@ export default function Maintenance() {
             className="text-amber-400 text-xs font-bold tracking-[0.4em] uppercase mb-5 animate-fade-in"
             style={{ animationDelay: "0.05s" }}
           >
-            Fine Glaze · Pan India
+            Fine Glaze · Pune & Mumbai
           </p>
 
           <h1
@@ -293,7 +293,7 @@ export default function Maintenance() {
               ))}
             </div>
             <span className="text-white/50 text-xs font-medium ml-0.5">
-              5.0 Google · Embassy REIT Vendor · 10+ Landmark Projects
+              Embassy REIT Best Vendor 2024 · 16 Documented Projects
             </span>
           </div>
         </div>
@@ -657,7 +657,7 @@ export default function Maintenance() {
                     { title: "Curtain Wall Systems", href: "/curtain-wall-systems" },
                     { title: "Structural Glazing", href: "/structural-glazing" },
                     { title: "ACP Cladding", href: "/acp-aluminium-cladding" },
-                    { title: "Aluminium Facade", href: "/aluminium-facade" },
+                    { title: "Aluminium Facade", href: "/aluminium-windows-doors" },
                     { title: "Glass Railings", href: "/glass-railings" },
                     { title: "All Services →", href: "/services" },
                   ].map((link) => (

@@ -54,10 +54,10 @@ export default function StructuralGlazingPune() {
     <Layout darkHero>
       <SEO
         title="Structural Glazing Pune | Frameless Glass Facade Contractor Hinjewadi - Fine Glaze"
-        description="Top structural glazing contractor in Pune. 2-side, 4-side & spider glazing for showrooms & commercial buildings in Hinjewadi, Kharadi, Baner & Wakad."
+        description="Structural glazing contractor in Pune. 2-side, 4-side & spider glazing for showrooms & commercial buildings in Hinjewadi, Kharadi, Baner & Wakad."
         canonical="https://fineglaze.com/structural-glazing-pune"
         keywords="structural glazing Pune, structural glass facade Pune, frameless glazing Pune, spider glazing Pune"
-        ogImage="https://images.unsplash.com/photo-1529429617124-95b109e86bb8"
+        ogImage="https://fineglaze.com/projects/embassy-techzone-41-1.webp"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}
       />
 
@@ -68,7 +68,7 @@ export default function StructuralGlazingPune() {
             <h1 className="text-3xl md:text-4xl font-bold mb-4">
               Structural Glazing <span className="text-gradient-gold">Contractor in Pune</span>
             </h1>
-            <p className="text-lg text-white/80 mb-8">Fine Glaze is Pune's premier structural glazing contractor, offering 2-side, 4-side, and spider glazing systems for commercial showrooms, corporate offices, IT campuses, and residential towers. Structural glazing creates a seamless, frameless glass exterior that maximises natural light and architectural impact.</p>
+            <p className="text-lg text-white/80 mb-8">Fine Glaze is a Pune-based structural glazing contractor, offering 2-side, 4-side, and spider glazing systems for commercial showrooms, corporate offices, IT campuses, and residential towers. Structural glazing creates a seamless, frameless glass exterior that maximises natural light and architectural impact.</p>
             <div className="flex gap-4">
               <Link to="/contact">
                 <Button size="lg" className="bg-amber-600 hover:bg-amber-700">Get Free Quote</Button>
@@ -156,7 +156,7 @@ export default function StructuralGlazingPune() {
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
             <Link key="/structural-glazing" to="/structural-glazing" className="group flex items-start gap-3 p-4 rounded-xl border border-slate-200 hover:border-amber-300 hover:bg-amber-50 transition-all bg-white"><ArrowRight size={15} className="text-amber-600 shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-slate-800 text-sm">Structural Glazing</p><p className="text-xs text-slate-500">Full structural glazing service</p></div></Link>
             <Link key="/curtain-wall-pune" to="/curtain-wall-pune" className="group flex items-start gap-3 p-4 rounded-xl border border-slate-200 hover:border-amber-300 hover:bg-amber-50 transition-all bg-white"><ArrowRight size={15} className="text-amber-600 shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-slate-800 text-sm">Curtain Wall Pune</p><p className="text-xs text-slate-500">Curtain wall systems Pune</p></div></Link>
-            <Link key="/aluminium-facade" to="/aluminium-facade" className="group flex items-start gap-3 p-4 rounded-xl border border-slate-200 hover:border-amber-300 hover:bg-amber-50 transition-all bg-white"><ArrowRight size={15} className="text-amber-600 shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-slate-800 text-sm">Aluminium Facade</p><p className="text-xs text-slate-500">Aluminium facade systems</p></div></Link>
+            <Link key="/aluminium-windows-doors" to="/aluminium-windows-doors" className="group flex items-start gap-3 p-4 rounded-xl border border-slate-200 hover:border-amber-300 hover:bg-amber-50 transition-all bg-white"><ArrowRight size={15} className="text-amber-600 shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-slate-800 text-sm">Aluminium Facade</p><p className="text-xs text-slate-500">Aluminium facade systems</p></div></Link>
             <Link key="/glass-railings" to="/glass-railings" className="group flex items-start gap-3 p-4 rounded-xl border border-slate-200 hover:border-amber-300 hover:bg-amber-50 transition-all bg-white"><ArrowRight size={15} className="text-amber-600 shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-slate-800 text-sm">Glass Railings</p><p className="text-xs text-slate-500">Frameless glass railings</p></div></Link>
             <Link key="/acp-cladding-pune" to="/acp-cladding-pune" className="group flex items-start gap-3 p-4 rounded-xl border border-slate-200 hover:border-amber-300 hover:bg-amber-50 transition-all bg-white"><ArrowRight size={15} className="text-amber-600 shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-slate-800 text-sm">ACP Cladding Pune</p><p className="text-xs text-slate-500">ACP panel facades Pune</p></div></Link>
             <Link key="/facade-contractor-pune" to="/facade-contractor-pune" className="group flex items-start gap-3 p-4 rounded-xl border border-slate-200 hover:border-amber-300 hover:bg-amber-50 transition-all bg-white"><ArrowRight size={15} className="text-amber-600 shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-slate-800 text-sm">Facade Contractor Pune</p><p className="text-xs text-slate-500">Complete facade solutions</p></div></Link>

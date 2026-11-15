@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet-async"; // (or "react-helmet" depending on your setup)
+import { Helmet } from "react-helmet-async";
 
 interface SEOProps {
   title: string;
@@ -19,7 +19,7 @@ export default function SEO({
   description,
   canonical,
   keywords,
-  ogImage = "https://fineglaze.com/default-og.webp",
+  ogImage = "https://fineglaze.com/og-default.jpg",
   ogType = "website",
   ogImageWidth = 1200,
   ogImageHeight = 630,
@@ -41,7 +41,7 @@ export default function SEO({
 
       {/* Robots Directive */}
       {noindex ? (
-        <meta name="robots" content="noindex, nofollow" />
+        <meta name="robots" content="noindex, follow" />
       ) : (
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
       )}
@@ -59,8 +59,6 @@ export default function SEO({
       
       {/* Twitter Card Tags */}
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:site" content="@FineGlaze" />
-      <meta name="twitter:creator" content="@FineGlaze" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       {ogImage && <meta name="twitter:image" content={ogImage} />}

@@ -54,10 +54,10 @@ export default function StructuralGlazingMumbai() {
     <Layout darkHero>
       <SEO
         title="Structural Glazing Mumbai | Frameless Glass Facade BKC & Worli - Fine Glaze"
-        description="Premier structural glazing contractor in Mumbai. 2-side, 4-side & spider glass facades for commercial towers in BKC, Andheri, Powai, Goregaon & Worli."
+        description="Structural glazing contractor in Mumbai. 2-side, 4-side & spider glass facades for commercial towers in BKC, Andheri, Powai, Goregaon & Worli."
         canonical="https://fineglaze.com/structural-glazing-mumbai"
         keywords="structural glazing Mumbai, structural glass facade Mumbai, frameless glazing Mumbai, spider glazing Mumbai"
-        ogImage="https://images.unsplash.com/photo-1486325212027-8081e485255e"
+        ogImage="https://fineglaze.com/projects/naman-chambers-48-1.webp"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}
       />
 
@@ -104,10 +104,10 @@ export default function StructuralGlazingMumbai() {
             Our Mumbai structural glazing portfolio includes <strong>showroom facades</strong> along Linking Road, Hill Road, and SV Road in the western suburbs; <strong>corporate lobby entrances</strong> in BKC and Nariman Point; and <strong>high-rise residential glass elements</strong> in Lower Parel and Worli. Spider glazing installations for statement entries complete our Mumbai portfolio.
           </p>
           <p className="text-muted-foreground mt-4">
-            Fine Glaze's Mumbai structural glazing projects include installations for 5-star hotel entrance canopies in South Mumbai — where the aesthetic demand is extremely high and the tolerance for any visual defect is near zero. Our installation team includes specialist structural glazing applicators with 10+ years of Mumbai high-rise experience.
+            Fine Glaze's Mumbai structural glazing projects include installations for 5-star hotel entrance canopies in South Mumbai — where the aesthetic demand is extremely high and the tolerance for any visual defect is near zero. Our installation team includes experienced structural glazing applicators who work to the approved shop drawings and sealant manufacturer's guidelines.
           </p>
           <p className="text-muted-foreground mt-4">
-            Fine Glaze structural glazing projects in Mumbai include pre-construction mock-up panel testing, certified sealant application training records, a hose test (AAMA 501.2) after installation, and a 5-year customer sealant warranty backed by Dow Corning material performance certification.
+            Fine Glaze structural glazing projects in Mumbai include pre-construction mock-up panel testing, certified sealant application training records, a hose test (AAMA 501.2) after installation, with the sealant manufacturer's material warranty and defect liability support as per contract.
           </p>
     
         </div>
@@ -123,7 +123,7 @@ export default function StructuralGlazingMumbai() {
               <div key="Redundant Mechanical Retention" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Redundant Mechanical Retention</span></div>
               <div key="Two-Stage Weather Drainage" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Two-Stage Weather Drainage</span></div>
               <div key="Spider Glazing Systems" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Spider Glazing Systems</span></div>
-              <div key="5-Year Sealant Warranty" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">5-Year Sealant Warranty</span></div>
+              <div key="Sealant Manufacturer Warranty" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Sealant Manufacturer Warranty</span></div>
           </div>
         </div>
       </section>

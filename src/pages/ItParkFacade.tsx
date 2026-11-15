@@ -37,7 +37,7 @@ export default function ItParkFacade() {
     "mainEntity": [
       { "@type": "Question", "name": "What facade system is standard for IT parks in India?", "acceptedAnswer": { "@type": "Answer", "text": "Unitized curtain wall with DGU Low-E glass (SHGC 0.25-0.35) is the industry standard for IT parks in India. It delivers LEED energy performance credits, fast installation to meet tight occupier timelines, factory-controlled quality, and the premium glass aesthetic that MNC occupiers expect." } },
       { "@type": "Question", "name": "Does Fine Glaze have experience with LEED facade compliance?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Fine Glaze has completed multiple LEED-targeted IT park projects, providing glass with certified SHGC and U-value test reports, aluminium with low-VOC PVDF coating certification, and facade performance documentation required for LEED EAc1 and IEQc8.1 credits." } },
-      { "@type": "Question", "name": "How does Fine Glaze handle large multi-building IT campus projects?", "acceptedAnswer": { "@type": "Answer", "text": "Fine Glaze assigns a dedicated project director for campus projects, runs parallel fabrication for multiple blocks, maintains a dedicated on-site quality team, and provides weekly progress reporting with Gantt chart tracking. Our largest single project is the LTIMindtree campus in Navi Mumbai covering multiple buildings." } },
+      { "@type": "Question", "name": "How does Fine Glaze handle large multi-building IT campus projects?", "acceptedAnswer": { "@type": "Answer", "text": "Fine Glaze assigns a dedicated project director for campus projects, runs parallel fabrication for multiple blocks, maintains a dedicated on-site quality team, and provides weekly progress reporting with Gantt chart tracking. Our IT-campus references include Embassy Techzone (Hinjewadi, Pune), Embassy 247 (Vikhroli, Mumbai) and ACP and silicone work at the LTIMindtree campus in Mahape for L&T Construction." } },
     ]
   };
 
@@ -53,11 +53,11 @@ export default function ItParkFacade() {
   return (
     <Layout darkHero>
       <SEO
-        title="IT Park Facade Contractor Pan India | Corporate Curtain Walls - Fine Glaze"
-        description="Specialist IT park facade contractor Pan India. Unitized curtain walls & energy-efficient DGU Low-E glass facades for tech campuses & corporate towers."
+        title="IT Park Facade Contractor in Pune & Mumbai | Corporate Curtain Walls - Fine Glaze"
+        description="IT park facade contractor in Pune & Mumbai. Unitized curtain walls & energy-efficient DGU Low-E glass facades for tech campuses & corporate towers."
         canonical="https://fineglaze.com/it-park-facade"
         keywords="IT park facade contractor, office facade contractor, corporate building facade, technology park facade, curtain wall IT park"
-        ogImage="https://images.unsplash.com/photo-1486325212027-8081e485255e"
+        ogImage="https://fineglaze.com/projects/embassy-techzone-41-1.webp"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}
       />
 
@@ -68,7 +68,7 @@ export default function ItParkFacade() {
             <h1 className="text-3xl md:text-4xl font-bold mb-4">
               IT Park Facade <span className="text-gradient-gold">Contractor India</span>
             </h1>
-            <p className="text-lg text-white/80 mb-8">Fine Glaze is a specialist facade contractor for IT parks, technology campuses, and corporate office complexes across India. Our LEED-compatible curtain wall systems, energy-efficient glazing specifications, and track record of large-scale campus projects make us the preferred choice for India's top IT real estate developers.</p>
+            <p className="text-lg text-white/80 mb-8">Fine Glaze is a specialist facade contractor for IT parks, technology campuses, and corporate office complexes in Pune and Mumbai. Our LEED-compatible curtain wall systems, energy-efficient glazing specifications, backed by work on Embassy REIT and L&T Construction campuses.</p>
             <div className="flex gap-4">
               <Link to="/contact">
                 <Button size="lg" className="bg-amber-600 hover:bg-amber-700">Get Free Quote</Button>
@@ -140,7 +140,7 @@ export default function ItParkFacade() {
             </div>
             <div className="bg-background rounded-xl p-6 shadow-sm">
               <h3 className="text-lg font-bold mb-2">How does Fine Glaze handle large multi-building IT campus projects?</h3>
-              <p className="text-muted-foreground">Fine Glaze assigns a dedicated project director for campus projects, runs parallel fabrication for multiple blocks, maintains a dedicated on-site quality team, and provides weekly progress reporting with Gantt chart tracking. Our largest single project is the LTIMindtree campus in Navi Mumbai covering multiple buildings.</p>
+              <p className="text-muted-foreground">Fine Glaze assigns a dedicated project director for campus projects, runs parallel fabrication for multiple blocks, maintains a dedicated on-site quality team, and provides weekly progress reporting with Gantt chart tracking. Our IT-campus references include Embassy Techzone (Hinjewadi, Pune), Embassy 247 (Vikhroli, Mumbai) and ACP and silicone work at the LTIMindtree campus in Mahape for L&T Construction.</p>
             </div>
           </div>
         </div>

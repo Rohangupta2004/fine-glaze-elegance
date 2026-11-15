@@ -161,7 +161,7 @@ export const ContactFormSection = () => {
         </motion.div>
 
         <motion.div
-          className="grid lg:grid-cols-12 gap-8 md:gap-12"
+          className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12"
           initial="hidden"
           whileInView="visible"
           viewport={viewport}
@@ -495,8 +495,8 @@ export const ContactFormSection = () => {
             {/* Quick stat strip */}
             <div className="grid grid-cols-3 gap-px bg-stone-200">
               {[
-                { num: "10+", label: "Projects" },
-                { num: "10+", label: "Years" },
+                { num: "16", label: "Projects" },
+                { num: "11+ yrs", label: "Founder exp." },
                 { num: "<1hr", label: "Response" },
               ].map((s) => (
                 <div

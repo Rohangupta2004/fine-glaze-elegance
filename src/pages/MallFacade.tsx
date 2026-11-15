@@ -53,11 +53,10 @@ export default function MallFacade() {
   return (
     <Layout darkHero>
       <SEO
-        title="Mall Facade Contractor Pan India | Shopping Mall Glass Facades - Fine Glaze"
-        description="Top shopping mall facade contractor Pan India. High-impact glass facades, retail ACP cladding, spider glass canopies & curtain wall systems."
+        title="Mall Facade Contractor in Pune & Mumbai | Shopping Mall Glass Facades - Fine Glaze"
+        description="Shopping mall facade contractor in Pune & Mumbai. High-impact glass facades, retail ACP cladding, spider glass canopies & curtain wall systems."
         canonical="https://fineglaze.com/mall-facade"
         keywords="mall facade contractor, shopping mall glass facade, retail facade, mall ACP cladding, mall entrance canopy"
-        ogImage="https://images.unsplash.com/photo-1600585154340-be6161a56a0c"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}
       />
 
@@ -68,7 +67,7 @@ export default function MallFacade() {
             <h1 className="text-3xl md:text-4xl font-bold mb-4">
               Shopping Mall <span className="text-gradient-gold">Facade Specialist India</span>
             </h1>
-            <p className="text-lg text-white/80 mb-8">Shopping mall facades are high-impact, high-visibility architectural statements that must attract footfall, withstand heavy public use, and require minimal maintenance. Fine Glaze delivers complete mall facade solutions — from grand entrance structural glazing to ACP cladding and aluminium retail fronts — for shopping centres Pan India.</p>
+            <p className="text-lg text-white/80 mb-8">Shopping mall facades are high-impact, high-visibility architectural statements that must attract footfall, withstand heavy public use, and require minimal maintenance. Fine Glaze delivers complete mall facade solutions — from grand entrance structural glazing to ACP cladding and aluminium retail fronts — for shopping centres in Pune and Mumbai.</p>
             <div className="flex gap-4">
               <Link to="/contact">
                 <Button size="lg" className="bg-amber-600 hover:bg-amber-700">Get Free Quote</Button>

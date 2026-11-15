@@ -41,7 +41,7 @@ export default function BlogArticle() {
     },
     {
       title: 'Facade Contractor in Pune',
-      href: '/facade-contractor/structural-glazing-pune'
+      href: '/facade-contractor-pune'
     }
   ];
 
@@ -113,7 +113,7 @@ export default function BlogArticle() {
               className="w-full aspect-video rounded-2xl object-cover bg-muted"
               loading="eager"
               decoding="async"
-              fetchPriority="high"
+              {...{ fetchpriority: "high" }}
             />
             {visual && <figcaption className="mt-3 text-xs text-muted-foreground leading-relaxed">{visual.caption}</figcaption>}
           </figure>

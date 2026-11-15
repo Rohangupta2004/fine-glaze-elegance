@@ -83,7 +83,7 @@ const services = [
     icon: DoorOpen,
     title: "Aluminium Doors & Windows",
     subtitle: "Premium Aluminium Systems",
-    href: "/aluminium-facade",
+    href: "/aluminium-windows-doors",
     description:
       "Precision-engineered aluminium doors and windows offering excellent thermal performance, security, and sleek architectural appeal.",
     longDescription:
@@ -134,7 +134,7 @@ const services = [
     description:
       "Transform building exteriors with fire-retardant, PVDF-coated Aluminium Composite Panels for a sleek modern look.",
     longDescription:
-      "Our ACP cladding solutions use panels from trusted brands like Aludecor, Alstrong, and Reynobond. We offer FR (Fire Retardant) grade panels that meet NBC fire safety norms. Available in solid colours, metallic finishes, wood-grain, stone, and mirror finishes with 20+ year colour warranty.",
+      "Our ACP cladding uses panels from approved brands such as Alubond, or strictly from the project's approved vendor list. We offer FR (Fire Retardant) grade panels that meet NBC fire safety norms. Available in solid colours, metallic finishes, wood-grain, stone, and mirror finishes with 20+ year colour warranty.",
     features: [
       "PVDF & PE Coated Panels",
       "Fire Retardant (FR) Grade ACP",
@@ -240,7 +240,7 @@ const whyUs = [
   {
     icon: ShieldCheck,
     title: "Quality Assurance",
-    desc: "Premium materials from trusted brands — Dow Corning, Sika, Aludecor. Every project passes rigorous water & structural load tests.",
+    desc: "Materials from approved brands — Saint-Gobain glass, Alubond ACP, DOWSIL sealants — with a site water test on installed glazing and third-party ASTM testing arranged on request.",
   },
   {
     icon: Clock,
@@ -255,7 +255,7 @@ const whyUs = [
   {
     icon: Building2,
     title: "Landmark Projects",
-    desc: "Trusted by Embassy REIT, LTIMindtree, Leela Group, and AAI. Award-winning execution across 10+ projects.",
+    desc: "Work for Embassy REIT, L&T Construction, Jindal Stainless and Nirmaann. Embassy REIT Best Vendor 2024.",
   },
 ];
 
@@ -269,9 +269,9 @@ export default function Services() {
     <Layout darkHero>
       <SEO
         title="Facade Systems, Glazing, ACP Cladding & Aluminium Solutions | Fine Glaze"
-        description="Fine Glaze offers full-range facade services Pan India: curtain walls, structural glazing, ACP cladding, glass railings, skylights, aluminium louvers, glass partitions, AMC maintenance and more."
+        description="Fine Glaze offers full-range facade services in Pune and Mumbai: curtain walls, structural glazing, ACP cladding, glass railings, skylights, aluminium louvers, glass partitions, AMC maintenance and more."
         canonical="https://fineglaze.com/services"
-        keywords="facade services Pan India, all India facade contractor, facade systems, glass facade services, curtain wall, structural glazing, ACP cladding, glass railings, skylights"
+        keywords="facade services in Pune and Mumbai, facade systems, glass facade services, curtain wall, structural glazing, ACP cladding, glass railings, skylights"
         schema={{
           "@context": "https://schema.org",
           "@type": "Service",
@@ -279,10 +279,10 @@ export default function Services() {
           "provider": {
             "@type": "LocalBusiness",
             "name": "Fine Glaze",
-            "areaServed": ["Pan India", "Pune", "Mumbai", "Maharashtra"],
+            "areaServed": ["Pune", "Mumbai", "Maharashtra"],
           },
           "description":
-            "Full-range facade & glazing services including curtain walls, structural glazing, ACP cladding, glass railings, skylights, louvers, partitions, and AMC maintenance Pan India.",
+            "Full-range facade & glazing services including curtain walls, structural glazing, ACP cladding, glass railings, skylights, louvers, partitions, and AMC maintenance in Pune & Mumbai.",
         }}
       />
 
@@ -337,7 +337,7 @@ export default function Services() {
               </div>
               <div className="flex items-center gap-2 px-4 py-2 bg-white/8 border border-white/15 rounded-full backdrop-blur-sm">
                 <Users size={15} className="text-[#C8782A]" />
-                <span className="text-xs text-white/80 font-semibold">Trusted by LTIMindtree · L&T · Leela · AAI</span>
+                <span className="text-xs text-white/80 font-semibold">Embassy REIT · L&T Construction · Jindal Stainless</span>
               </div>
             </div>
 

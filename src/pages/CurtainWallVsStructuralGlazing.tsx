@@ -57,7 +57,6 @@ export default function CurtainWallVsStructuralGlazing() {
         description="Curtain wall vs structural glazing — detailed comparison for Indian buildings. Cost, aesthetics, performance, installation & which to choose. Expert guide by Fine Glaze."
         canonical="https://fineglaze.com/curtain-wall-vs-structural-glazing"
         keywords="curtain wall vs structural glazing India, SSG vs curtain wall, structural glazing or curtain wall, glass facade types India, curtain wall vs SSG comparison, facade system selection India"
-        ogImage="https://images.unsplash.com/photo-1529429617124-95b109e86bb8"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}
       />
 

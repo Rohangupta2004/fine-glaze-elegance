@@ -53,7 +53,6 @@ export default function FacadeContractorThane() {
         description="Facade contractor in Thane. Curtain walls, ACP cladding, structural glazing & glass railings for Thane's growing commercial and residential market. Free site visit."
         canonical="https://fineglaze.com/facade-contractor-thane"
         keywords="facade contractor Thane, ACP cladding Thane, glass facade Thane, curtain wall Thane, glass railing Thane, building facade Ghodbunder Road"
-        ogImage="https://images.unsplash.com/photo-1503387762-592deb58ef4e"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}
       />
 
@@ -88,7 +87,7 @@ export default function FacadeContractorThane() {
             For Thane's commercial sector — corporate offices, malls, and mixed-use developments — Fine Glaze provides curtain wall systems, structural glazing, and ACP cladding that meet the standards expected by Grade-A commercial tenants. We are experienced in working within Thane Municipal Corporation (TMC) regulatory requirements and obtaining necessary approvals for facade work.
           </p>
           <p className="text-muted-foreground mt-4">
-            Thane's proximity to Mumbai means our coastal-engineering standards — marine-grade hardware, PVDF coatings, and cyclone zone wind load design — are applied as standard to all Thane projects. Fine Glaze's Thane projects benefit from our established supply chain connecting our manufacturing hubs Pan India, ensuring competitive material pricing and reliable delivery schedules.
+            Thane's proximity to Mumbai means our coastal-engineering standards — marine-grade hardware, PVDF coatings, and cyclone zone wind load design — are applied as standard to all Thane projects. Fine Glaze's Thane projects benefit from our established supply chain from our Pisoli (Pune) fabrication unit and Mumbai site team, ensuring competitive material pricing and reliable delivery schedules.
           </p>
           <p className="text-muted-foreground mt-4">
             Fine Glaze also provides <strong>facade AMC (Annual Maintenance Contract)</strong> services for Thane's existing building stock — an increasingly important service as the buildings constructed during Thane's construction boom of 2005-2015 reach the end of their original sealant warranty period and require professional maintenance programmes.

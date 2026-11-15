@@ -57,7 +57,7 @@ export default function AluminiumFacadeMumbai() {
         description="Aluminium facade contractor in Mumbai. Thermal break doors, windows, louvers & ACP cladding for BKC, Andheri, Powai & Vikhroli. Marine-grade quality. Free site visit."
         canonical="https://fineglaze.com/aluminium-facade-mumbai"
         keywords="aluminium facade contractor Mumbai, aluminium windows Mumbai, thermal break windows Mumbai, aluminium cladding BKC, aluminium doors Mumbai, facade contractor Andheri, aluminium facade Worli"
-        ogImage="https://images.unsplash.com/photo-1600585154340-be6161a56a0c"
+        ogImage="https://fineglaze.com/projects/samundra-tarang-51-1.webp"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}
       />
 
@@ -154,7 +154,7 @@ export default function AluminiumFacadeMumbai() {
         <div className="container mx-auto px-4 max-w-5xl">
           <h2 className="text-xl font-bold text-slate-800 mb-5">Explore Related Services</h2>
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
-            <Link key="/aluminium-facade" to="/aluminium-facade" className="group flex items-start gap-3 p-4 rounded-xl border border-slate-200 hover:border-amber-300 hover:bg-amber-50 transition-all bg-white"><ArrowRight size={15} className="text-amber-600 shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-slate-800 text-sm">Aluminium Facade</p><p className="text-xs text-slate-500">Full aluminium facade service</p></div></Link>
+            <Link key="/aluminium-windows-doors" to="/aluminium-windows-doors" className="group flex items-start gap-3 p-4 rounded-xl border border-slate-200 hover:border-amber-300 hover:bg-amber-50 transition-all bg-white"><ArrowRight size={15} className="text-amber-600 shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-slate-800 text-sm">Aluminium Facade</p><p className="text-xs text-slate-500">Full aluminium facade service</p></div></Link>
             <Link key="/facade-contractor-mumbai" to="/facade-contractor-mumbai" className="group flex items-start gap-3 p-4 rounded-xl border border-slate-200 hover:border-amber-300 hover:bg-amber-50 transition-all bg-white"><ArrowRight size={15} className="text-amber-600 shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-slate-800 text-sm">Facade Contractor Mumbai</p><p className="text-xs text-slate-500">Complete facade services</p></div></Link>
             <Link key="/curtain-wall-mumbai" to="/curtain-wall-mumbai" className="group flex items-start gap-3 p-4 rounded-xl border border-slate-200 hover:border-amber-300 hover:bg-amber-50 transition-all bg-white"><ArrowRight size={15} className="text-amber-600 shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-slate-800 text-sm">Curtain Wall Mumbai</p><p className="text-xs text-slate-500">Curtain wall glazing Mumbai</p></div></Link>
             <Link key="/acp-aluminium-cladding" to="/acp-aluminium-cladding" className="group flex items-start gap-3 p-4 rounded-xl border border-slate-200 hover:border-amber-300 hover:bg-amber-50 transition-all bg-white"><ArrowRight size={15} className="text-amber-600 shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-slate-800 text-sm">ACP Cladding</p><p className="text-xs text-slate-500">ACP composite panels</p></div></Link>

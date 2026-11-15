@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { useInView, motion } from "framer-motion";
+import { useInView } from "framer-motion";
 
 interface AnimatedNumberProps {
   value: string;
@@ -40,53 +40,57 @@ export const AnimatedNumber: React.FC<AnimatedNumberProps> = ({
   const ref = useRef<HTMLSpanElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-30px" });
   const parsed = parseValueString(value);
-  const [currentNum, setCurrentNum] = useState(0);
+  // Start at the FINAL value so pre-rendered HTML (and crawlers that do not run
+  // JavaScript) read the real figure, never "0".
+  const [currentNum, setCurrentNum] = useState<number | null>(parsed.number);
+  const [armed, setArmed] = useState(false);
+
+  // After hydration, only numbers that are still below the fold get reset so
+  // they can count up when scrolled into view.
+  useEffect(() => {
+    if (parsed.number === null || !ref.current) return;
+    const rect = ref.current.getBoundingClientRect();
+    if (rect.top > window.innerHeight) {
+      setCurrentNum(parsed.number > 2000 ? Math.max(0, parsed.number - 100) : 0);
+      setArmed(true);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   useEffect(() => {
-    if (!isInView || parsed.number === null) return;
+    if (!armed || !isInView || parsed.number === null) return;
 
     const endVal = parsed.number;
-    // For large numbers like 2024, start from 2000 for a snappy finish, otherwise from 0
     const startVal = endVal > 2000 ? Math.max(0, endVal - 100) : 0;
     let startTime: number | null = null;
     let animId: number;
 
     const animate = (timestamp: number) => {
       if (!startTime) startTime = timestamp;
-      const elapsed = timestamp - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-      // easeOutCubic: rapid acceleration, smooth deceleration
-      const ease = 1 - Math.pow(1 - progress, 3);
-      const val = Math.floor(startVal + (endVal - startVal) * ease);
-
-      setCurrentNum(val);
-
-      if (progress < 1) {
-        animId = requestAnimationFrame(animate);
-      } else {
-        setCurrentNum(endVal);
-      }
+      const progress = Math.min((timestamp - startTime) / duration, 1);
+      const ease = 1 - Math.pow(1 - progress, 3); // easeOutCubic
+      setCurrentNum(Math.floor(startVal + (endVal - startVal) * ease));
+      if (progress < 1) animId = requestAnimationFrame(animate);
+      else setCurrentNum(endVal);
     };
 
     animId = requestAnimationFrame(animate);
     return () => cancelAnimationFrame(animId);
-  }, [isInView, parsed.number, duration]);
+  }, [armed, isInView, parsed.number, duration]);
 
   if (parsed.number === null) {
     return <span className={className}>{value}</span>;
   }
 
+  const shown = currentNum ?? parsed.number;
+  // Years such as "2024" must not get a thousands separator.
+  const formatted = parsed.number >= 1900 && parsed.number <= 2100 ? String(shown) : shown.toLocaleString("en-IN");
+
   return (
-    <motion.span
-      ref={ref}
-      className={`inline-block tabular-nums tracking-tight ${className}`}
-      initial={{ opacity: 0.4, y: 4 }}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0.4, y: 4 }}
-      transition={{ duration: 0.4, ease: "easeOut" }}
-    >
+    <span ref={ref} className={`inline-block tabular-nums tracking-tight ${className}`}>
       <span>{parsed.prefix}</span>
-      <span>{isInView ? currentNum.toLocaleString() : "0"}</span>
+      <span>{formatted}</span>
       <span>{parsed.suffix}</span>
-    </motion.span>
+    </span>
   );
 };

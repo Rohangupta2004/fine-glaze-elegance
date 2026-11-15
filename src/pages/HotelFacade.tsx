@@ -28,7 +28,7 @@ export default function HotelFacade() {
       { "@type": "City", "name": "Mumbai" },
       { "@type": "State", "name": "Maharashtra" }
     ],
-    "description": "Specialist hotel facade contractor in India. Structural glazing, curtain wall & ACP cladding for 3-star to 5-star hotels. Leela Hotel reference project. Pan India."
+    "description": "Hotel facade contractor in Pune and Mumbai. Structural glazing, curtain wall & ACP cladding for 3-star to 5-star hotels. Leela Hotel reference project."
   };
 
   const faqSchema = {
@@ -53,11 +53,10 @@ export default function HotelFacade() {
   return (
     <Layout darkHero>
       <SEO
-        title="Hotel Facade Contractor Pan India | Hotel Glass Facades & Canopies - Fine Glaze"
-        description="Top hotel facade contractor Pan India. Acoustic glass facades, curtain walls, entrance canopies & ACP cladding for luxury hotels & resorts."
+        title="Hotel Facade Contractor in Pune & Mumbai | Hotel Glass Facades & Canopies - Fine Glaze"
+        description="Hotel facade contractor in Pune & Mumbai. Acoustic glass facades, curtain walls, entrance canopies & ACP cladding for luxury hotels & resorts."
         canonical="https://fineglaze.com/hotel-facade"
         keywords="hotel facade contractor, hotel glass facade, hotel ACP cladding, hotel curtain wall, hotel entrance canopy"
-        ogImage="https://images.unsplash.com/photo-1512917774080-9991f1c4c750"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}
       />
 
@@ -98,7 +97,7 @@ export default function HotelFacade() {
             Hotel and hospitality buildings set the highest standard for facade quality in the construction industry. Every facade element — from the entrance canopy to the room-floor curtain wall — must project luxury, permanence, and architectural distinction. Fine Glaze brings a track record at this level, having completed the Leela Hotel facade project as a reference installation of the highest quality.
           </p>
           <p className="text-muted-foreground mt-4">
-            Hotel facades demand precision in every detail: glass with consistent colour, reflectivity, and flatness across hundreds of panels; aluminium extrusions with tight tolerance on colour matching and surface finish; silicone sealant lines that are perfectly straight with consistent tooling profile; and zero visible defects that would be immediately noticed by design-conscious hotel guests and owners. Fine Glaze's quality management system for hotel projects includes 100% visual inspection of every panel before despatch and mandatory 5-year workmanship warranty.
+            Hotel facades demand precision in every detail: glass with consistent colour, reflectivity, and flatness across hundreds of panels; aluminium extrusions with tight tolerance on colour matching and surface finish; silicone sealant lines that are perfectly straight with consistent tooling profile; and zero visible defects that would be immediately noticed by design-conscious hotel guests and owners. Fine Glaze's quality management system for hotel projects includes 100% visual inspection of every panel before despatch and defect liability support as per contract.
           </p>
           <p className="text-muted-foreground mt-4">
             The most common facade systems for Indian hotels by category: <strong>5-star hotels:</strong> Unitized curtain wall with DGU and specialty glass (frosted, patterned, or ceramic frit); structural glazing for entrance canopies; custom aluminium louvers and screens. <strong>4-star hotels:</strong> Stick system curtain wall with DGU; ACP cladding for service zones; glass railings for balconies. <strong>3-star and business hotels:</strong> ACP cladding with aluminium window systems; feature glass entrance canopy.
@@ -120,7 +119,7 @@ export default function HotelFacade() {
               <div key="Unitized Curtain Wall Systems" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Unitized Curtain Wall Systems</span></div>
               <div key="Specialty Glass Options" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Specialty Glass Options</span></div>
               <div key="Hotel Brand Spec Compliance" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Hotel Brand Spec Compliance</span></div>
-              <div key="5-Year Workmanship Warranty" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">5-Year Workmanship Warranty</span></div>
+              <div key="Defect Liability per Contract" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Defect Liability per Contract</span></div>
           </div>
         </div>
       </section>

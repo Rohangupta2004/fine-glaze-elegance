@@ -28,7 +28,7 @@ export default function FacadeContractorPune() {
       { "@type": "City", "name": "Mumbai" },
       { "@type": "State", "name": "Maharashtra" }
     ],
-    "description": "Top-rated facade contractor in Pune. Curtain walls, structural glazing, ACP cladding, glass railings & facade maintenance. Serving Hinjewadi, Kharadi, Baner. Free site visit."
+    "description": "Facade contractor in Pune. Curtain walls, structural glazing, ACP cladding, glass railings & facade maintenance. Serving Hinjewadi, Kharadi, Baner. Free site visit."
   };
 
   const faqSchema = {
@@ -54,10 +54,10 @@ export default function FacadeContractorPune() {
     <Layout darkHero>
       <SEO
         title="Facade Contractor in Pune | Glass, ACP & Curtain Wall – Fine Glaze"
-        description="Top-rated facade contractor in Pune. Curtain walls, structural glazing, ACP cladding, glass railings & facade maintenance. Serving Hinjewadi, Kharadi, Baner. Free site visit."
+        description="Facade contractor in Pune. Curtain walls, structural glazing, ACP cladding, glass railings & facade maintenance. Serving Hinjewadi, Kharadi, Baner. Free site visit."
         canonical="https://fineglaze.com/facade-contractor-pune"
         keywords="facade contractor Pune, building facade Pune, glass facade contractor Pune, curtain wall contractor Pune, ACP cladding Pune, facade company Pune Maharashtra"
-        ogImage="https://images.unsplash.com/photo-1503387762-592deb58ef4e"
+        ogImage="https://fineglaze.com/projects/embassy-techzone-41-1.webp"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}
       />
 
@@ -68,7 +68,7 @@ export default function FacadeContractorPune() {
             <h1 className="text-3xl md:text-4xl font-bold mb-4">
               Facade Contractor <span className="text-gradient-gold">in Pune</span>
             </h1>
-            <p className="text-lg text-white/80 mb-8">Fine Glaze is a leading facade contractor in Pune, delivering complete building envelope solutions for developers, architects, builders, and corporate clients. From initial design consultation through fabrication, installation, and long-term AMC — we manage every stage of the facade lifecycle.</p>
+            <p className="text-lg text-white/80 mb-8">Fine Glaze is a facade contractor based in Pune, delivering complete building envelope solutions for developers, architects, builders, and corporate clients. From initial design consultation through fabrication, installation, and long-term AMC — we manage every stage of the facade lifecycle.</p>
             <div className="flex gap-4">
               <Link to="/contact">
                 <Button size="lg" className="bg-amber-600 hover:bg-amber-700">Get Free Quote</Button>
@@ -95,7 +95,7 @@ export default function FacadeContractorPune() {
           
           <h2 className="text-3xl font-bold">Complete Facade Solutions for Pune's Buildings</h2>
           <p className="text-muted-foreground">
-            With over <strong>10+ years of specialised facade experience</strong> and <strong>10+ completed projects</strong> across Pune and Maharashtra, Fine Glaze brings contractor-grade reliability with consultant-level technical expertise. Our services span curtain walls, structural glazing, ACP cladding, aluminium windows and doors, glass railings, and facade maintenance and AMC.
+            Led by a founder with <strong>11+ years in the facade industry</strong> and backed by <strong>16 documented projects</strong> across Pune and Mumbai, Fine Glaze brings contractor-grade reliability with consultant-level technical expertise. Our services span curtain walls, structural glazing, ACP cladding, aluminium windows and doors, glass railings, and facade maintenance and AMC.
           </p>
           <p className="text-muted-foreground mt-4">
             Pune's rapid urban expansion — particularly in Hinjewadi (IT), Kharadi (commercial), Wakad (residential), and Undri (mixed-use) — demands facade contractors who can manage complex projects with strict quality, safety, and timeline standards. Fine Glaze operates with an in-house design team, a QHSE-compliant site execution team, and a dedicated procurement desk that sources from certified global suppliers.

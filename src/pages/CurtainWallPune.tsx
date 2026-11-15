@@ -57,7 +57,6 @@ export default function CurtainWallPune() {
         description="Expert curtain wall contractor in Pune. Unitized & stick system glass curtain walls for IT parks & commercial towers in Hinjewadi, Kharadi, Baner & Wakad."
         canonical="https://fineglaze.com/curtain-wall-pune"
         keywords="curtain wall contractor Pune, curtain wall systems Pune, glass facade Pune, unitized curtain wall Pune"
-        ogImage="https://images.unsplash.com/photo-1486325212027-8081e485255e"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}
       />
 
@@ -68,7 +67,7 @@ export default function CurtainWallPune() {
             <h1 className="text-3xl md:text-4xl font-bold mb-4">
               Curtain Wall Glazing <span className="text-gradient-gold">Contractor in Pune</span>
             </h1>
-            <p className="text-lg text-white/80 mb-8">Fine Glaze is a leading curtain wall glazing contractor in Pune, specialising in unitized, semi-unitized, and stick system installations for IT parks, corporate towers, hospitals, shopping malls, and residential high-rises.</p>
+            <p className="text-lg text-white/80 mb-8">Fine Glaze is a curtain wall glazing contractor based in Pune, specialising in unitized, semi-unitized, and stick system installations for IT parks, corporate towers, hospitals, shopping malls, and residential high-rises.</p>
             <div className="flex gap-4">
               <Link to="/contact">
                 <Button size="lg" className="bg-amber-600 hover:bg-amber-700">Get Free Quote</Button>
@@ -93,7 +92,7 @@ export default function CurtainWallPune() {
       <section className="py-20">
         <div className="container mx-auto px-4 max-w-5xl space-y-6">
           
-          <h2 className="text-3xl font-bold">Pune's Leading Curtain Wall Specialist</h2>
+          <h2 className="text-3xl font-bold">Curtain Wall Work in Pune — What We Handle</h2>
           <p className="text-muted-foreground">
             Fine Glaze has been at the centre of Pune's commercial real estate growth, installing curtain wall systems on projects ranging from 5-storey tech parks to 30-storey residential towers. Every project begins with a detailed site survey, wind load analysis, and shop drawing submission — ensuring structural compliance with IS:875 and BIS standards.
           </p>
@@ -156,7 +155,7 @@ export default function CurtainWallPune() {
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
             <Link key="/curtain-wall-systems" to="/curtain-wall-systems" className="group flex items-start gap-3 p-4 rounded-xl border border-slate-200 hover:border-amber-300 hover:bg-amber-50 transition-all bg-white"><ArrowRight size={15} className="text-amber-600 shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-slate-800 text-sm">Curtain Wall Systems</p><p className="text-xs text-slate-500">Full curtain wall overview</p></div></Link>
             <Link key="/structural-glazing-pune" to="/structural-glazing-pune" className="group flex items-start gap-3 p-4 rounded-xl border border-slate-200 hover:border-amber-300 hover:bg-amber-50 transition-all bg-white"><ArrowRight size={15} className="text-amber-600 shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-slate-800 text-sm">Structural Glazing Pune</p><p className="text-xs text-slate-500">Frameless glass facades Pune</p></div></Link>
-            <Link key="/aluminium-facade" to="/aluminium-facade" className="group flex items-start gap-3 p-4 rounded-xl border border-slate-200 hover:border-amber-300 hover:bg-amber-50 transition-all bg-white"><ArrowRight size={15} className="text-amber-600 shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-slate-800 text-sm">Aluminium Facade</p><p className="text-xs text-slate-500">Aluminium cladding systems</p></div></Link>
+            <Link key="/aluminium-windows-doors" to="/aluminium-windows-doors" className="group flex items-start gap-3 p-4 rounded-xl border border-slate-200 hover:border-amber-300 hover:bg-amber-50 transition-all bg-white"><ArrowRight size={15} className="text-amber-600 shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-slate-800 text-sm">Aluminium Facade</p><p className="text-xs text-slate-500">Aluminium cladding systems</p></div></Link>
             <Link key="/acp-cladding-pune" to="/acp-cladding-pune" className="group flex items-start gap-3 p-4 rounded-xl border border-slate-200 hover:border-amber-300 hover:bg-amber-50 transition-all bg-white"><ArrowRight size={15} className="text-amber-600 shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-slate-800 text-sm">ACP Cladding Pune</p><p className="text-xs text-slate-500">Composite panel facades Pune</p></div></Link>
             <Link key="/facade-contractor-pune" to="/facade-contractor-pune" className="group flex items-start gap-3 p-4 rounded-xl border border-slate-200 hover:border-amber-300 hover:bg-amber-50 transition-all bg-white"><ArrowRight size={15} className="text-amber-600 shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-slate-800 text-sm">Facade Contractor Pune</p><p className="text-xs text-slate-500">Complete facade services</p></div></Link>
             <Link key="/glass-railings" to="/glass-railings" className="group flex items-start gap-3 p-4 rounded-xl border border-slate-200 hover:border-amber-300 hover:bg-amber-50 transition-all bg-white"><ArrowRight size={15} className="text-amber-600 shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-slate-800 text-sm">Glass Railings</p><p className="text-xs text-slate-500">Balcony glass railings Pune</p></div></Link>

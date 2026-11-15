@@ -1,7 +1,9 @@
 import { Layout } from "@/components/layout/Layout";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { cn } from "@/lib/utils";
-import { Target, Eye, Shield, Users, Award, Clock } from "lucide-react";
+import { Target, Eye, Shield, Users, Award, Clock, FileCheck2, Factory, MapPin, HardHat } from "lucide-react";
+import { Link } from "react-router-dom";
+import { company, telHref } from "@/data/company";
 import SEO from "@/components/SEO";
 import { useSiteMedia } from "@/hooks/useSiteMedia";
 
@@ -44,21 +46,30 @@ const About = () => {
   return (
     <Layout darkHero>
       <SEO
-        title="About Fine Glaze: Facade and Glazing Specialists | Fine Glaze"
-        description="Meet Fine Glaze, a facade and glazing specialist providing design, fabrication, installation and maintenance for commercial and residential projects."
+        title="About Fine Glaze | Facade Contractor in Pune & Mumbai — Team & Credentials"
+        description="Fine Glaze is a Pune-based facade contractor founded by Deepak Gupta (B.E. Civil, 11+ yrs incl. Al Ghurair Group). Own fabrication unit in Pisoli, 40+ core team, ~20,566 sqm delivered."
         canonical="https://fineglaze.com/about"
-        keywords="Fine Glaze facade contractor, Fine Glaze India, Fine Glaze Pune, facade fabrication company, facade installation company"
+        keywords="about Fine Glaze, Fine Glaze Pune, Deepak Gupta Fine Glaze, facade contractor Pune team, facade fabrication unit Pune"
         schema={{
           "@context": "https://schema.org",
           "@type": "AboutPage",
-          "mainEntity": {
+          "url": "https://fineglaze.com/about",
+          "mainEntity": { "@id": "https://fineglaze.com/#organization" },
+          "about": {
             "@type": "Organization",
+            "@id": "https://fineglaze.com/#organization",
             "name": "Fine Glaze",
-            "url": "https://fineglaze.com",
-            "foundingLocation": { "@type": "Place", "name": "Pune, Maharashtra" },
-            "founder": { "@type": "Person", "name": "Deepak Gupta" },
-            "award": "Best Performance Vendor – Embassy REIT 2024"
-          }
+            "founder": {
+              "@type": "Person",
+              "name": company.founder.name,
+              "jobTitle": "Founder & Proprietor",
+              "description": company.founder.bio,
+            },
+            "employee": company.team.map((m) => ({ "@type": "Person", "name": m.name, "jobTitle": m.role })),
+            "numberOfEmployees": { "@type": "QuantitativeValue", "minValue": 40 },
+            "award": `${company.award.title} — ${company.award.by}`,
+            "taxID": company.gstin,
+          },
         }}
       />
       {/* Hero Section */}
@@ -78,14 +89,14 @@ const About = () => {
               About Us
             </span>
             <h1 className="text-3xl md:text-4xl font-bold text-white">
-              Crafting{" "}
-              <span className="text-gradient-gold">Excellence</span>{" "}
-              in Facade Solutions
+              Facade Specialists in{" "}
+              <span className="text-gradient-gold">Pune &amp; Mumbai</span>
             </h1>
             <p className="text-white/80 text-lg">
-              Fine Glaze is Pune's premier facade fabrication company —
-              delivering precision-engineered glass and aluminium solutions
-              for landmark commercial and residential projects across India.
+              Fine Glaze designs, fabricates, installs and maintains facade
+              systems for developers and building owners in Pune and Mumbai.
+              Everything on this page is taken from our company profile — and
+              we are happy to share the documents behind it.
             </p>
           </div>
         </div>
@@ -118,9 +129,9 @@ const About = () => {
 
               <div className="mt-5 bg-primary text-primary-foreground p-5 rounded-xl shadow-lg">
                 <Award size={32} className="mb-2" />
-                <p className="font-semibold">Best Vendor 2024</p>
+                <p className="font-semibold">{company.award.title}</p>
                 <p className="text-sm text-primary-foreground/70">
-                  Embassy REIT
+                  {company.award.by} — {company.award.citation}
                 </p>
               </div>
             </div>
@@ -142,14 +153,22 @@ const About = () => {
               </h2>
               <div className="space-y-4 text-muted-foreground">
                 <p>
-                  Founded by <strong>Deepak Gupta</strong> in Pune, Fine Glaze
-                  provides facade design, fabrication, installation and
-                  maintenance for commercial and residential buildings.
+                  Founded by <strong>{company.founder.name}</strong> in Pune, Fine Glaze
+                  is a specialist facade contractor — design, fabrication,
+                  installation and long-term maintenance handled by one
+                  accountable team.
                 </p>
                 <p>
-                  We work with architects, developers and project teams to
-                  deliver glass and aluminium systems with careful detailing,
-                  quality workmanship and reliable coordination.
+                  {company.founder.bio}
+                </p>
+                <p>
+                  Drawings and engineering are produced in-house before anything
+                  is cut. Fabrication happens at our own {company.fabricationUnit.areaSqft} unit
+                  in {company.fabricationUnit.location}, and installation is run by our
+                  own site in-charges and supervisors under a dedicated safety officer.
+                  Since starting out we have delivered {company.stats.sqmDelivered} sqm of
+                  facade across Pune and Mumbai, and were named{" "}
+                  <strong>{company.award.title}</strong> by {company.award.by}.
                 </p>
               </div>
             </div>
@@ -191,7 +210,6 @@ const About = () => {
                 title="FINE GLAZE"
               />
             </div>
-            <script src="https://player.vimeo.com/api/player.js" />
           </div>
         </div>
       </section>
@@ -208,9 +226,7 @@ const About = () => {
                 Our <span className="text-gradient-subtle">Mission</span>
               </h3>
               <p className="text-muted-foreground">
-                To deliver world-class facade solutions that enhance building
-                aesthetics, improve energy efficiency, and create lasting
-                value — for clients, communities, and the skylines we shape.
+                {company.mission}
               </p>
             </div>
 
@@ -222,11 +238,89 @@ const About = () => {
                 Our <span className="text-gradient-subtle">Vision</span>
               </h3>
               <p className="text-muted-foreground">
-                To be India's most trusted facade partner — renowned for
-                transforming bold architectural concepts into iconic,
-                enduring structures that stand the test of time.
+                {company.vision}
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Team */}
+      <section className="py-20 bg-muted" aria-labelledby="team-heading">
+        <div className="container mx-auto px-4">
+          <div className="text-center space-y-3 mb-12 max-w-2xl mx-auto">
+            <span className="text-primary font-medium uppercase tracking-wider text-sm">Our Team</span>
+            <h2 id="team-heading" className="text-3xl md:text-4xl font-bold text-foreground">
+              The people who answer for your facade
+            </h2>
+            <p className="text-muted-foreground">
+              A core team of {company.stats.coreTeam} across engineering, supervision and site execution
+              supports the leadership below.
+            </p>
+          </div>
+          <div className="grid lg:grid-cols-3 gap-6">
+            <article className="lg:row-span-2 rounded-xl border border-amber-500/30 bg-amber-500/5 p-6 space-y-3">
+              <p className="text-xs font-bold uppercase tracking-widest text-amber-700">{company.founder.role}</p>
+              <h3 className="text-2xl font-bold text-foreground">{company.founder.name}</h3>
+              <p className="text-muted-foreground">{company.founder.bio}</p>
+            </article>
+            {company.team.map((m) => (
+              <article key={m.name} className="rounded-xl border border-border bg-card p-5">
+                <h3 className="text-lg font-semibold text-foreground">{m.name}</h3>
+                <p className="text-sm font-medium text-primary">{m.role}</p>
+                <p className="text-sm text-muted-foreground mt-1">{m.note}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Credentials */}
+      <section className="py-20 bg-background" aria-labelledby="credentials-heading">
+        <div className="container mx-auto px-4">
+          <div className="text-center space-y-3 mb-12 max-w-2xl mx-auto">
+            <span className="text-primary font-medium uppercase tracking-wider text-sm">Company Facts</span>
+            <h2 id="credentials-heading" className="text-3xl md:text-4xl font-bold text-foreground">
+              Credentials for vendor registration
+            </h2>
+            <p className="text-muted-foreground">
+              The details procurement teams usually ask for. Copies are available on request.
+            </p>
+          </div>
+          <dl className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
+            {[
+              { icon: FileCheck2, k: "Legal status", v: company.legalStatus },
+              { icon: FileCheck2, k: "GSTIN", v: company.gstin },
+              { icon: FileCheck2, k: "Trademark", v: company.trademark },
+              { icon: Shield, k: "Quality, environment & safety", v: company.isoStatus },
+              { icon: Factory, k: "Fabrication unit", v: `${company.fabricationUnit.location} (${company.fabricationUnit.areaSqft})` },
+              { icon: MapPin, k: "Registered office", v: `${company.address.short}` },
+              { icon: HardHat, k: "Work at height", v: "Documentation maintained and available on request" },
+              { icon: Shield, k: "Third-party testing", v: "Air, water and structural testing (ASTM) arranged on request" },
+              { icon: Award, k: "Defect liability", v: "DLP support offered as per contract terms" },
+            ].map(({ icon: Icon, k, v }) => (
+              <div key={k} className="rounded-xl border border-border bg-card p-5 flex gap-3">
+                <Icon size={20} className="text-primary shrink-0 mt-0.5" aria-hidden="true" />
+                <div>
+                  <dt className="text-xs font-bold uppercase tracking-wider text-muted-foreground">{k}</dt>
+                  <dd className="text-sm font-medium text-foreground mt-1">{v}</dd>
+                </div>
+              </div>
+            ))}
+          </dl>
+          <div className="mt-10 flex flex-col sm:flex-row gap-3 justify-center">
+            <Link
+              to="/quality-safety"
+              className="inline-flex items-center justify-center rounded-lg bg-primary text-primary-foreground px-6 py-3 font-semibold hover:opacity-90"
+            >
+              How we control quality &amp; safety
+            </Link>
+            <a
+              href={telHref}
+              className="inline-flex items-center justify-center rounded-lg border border-border bg-card px-6 py-3 font-semibold hover:border-primary"
+            >
+              Call {company.phone.mobileDisplay}
+            </a>
           </div>
         </div>
       </section>

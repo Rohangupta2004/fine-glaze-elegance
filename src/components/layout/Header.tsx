@@ -8,7 +8,7 @@ import { useCompanyProfile } from "@/context/CompanyProfileContext";
 
 /* ================= SERVICES & INDUSTRIES ================= */
 const serviceLinks = [
-  { href: "/aluminium-facade", label: "Aluminium Facade Systems" },
+  { href: "/aluminium-windows-doors", label: "Aluminium Windows & Doors" },
   { href: "/curtain-wall-systems", label: "Curtain Wall Systems" },
   { href: "/structural-glazing", label: "Structural Glazing" },
   { href: "/acp-aluminium-cladding", label: "ACP Cladding" },

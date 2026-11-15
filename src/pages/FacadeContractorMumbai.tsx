@@ -57,7 +57,7 @@ export default function FacadeContractorMumbai() {
         description="Expert facade contractor in Mumbai. Curtain walls, structural glazing, ACP cladding for BKC, Andheri, Powai & Lower Parel. Cyclone-rated systems. Free site visit."
         canonical="https://fineglaze.com/facade-contractor-mumbai"
         keywords="facade contractor Mumbai, glass facade Mumbai, curtain wall Mumbai, ACP cladding Mumbai, structural glazing BKC, facade contractor Andheri, facade company Mumbai"
-        ogImage="https://images.unsplash.com/photo-1512917774080-9991f1c4c750"
+        ogImage="https://fineglaze.com/projects/naman-chambers-48-1.webp"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}
       />
 

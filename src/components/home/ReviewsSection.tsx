@@ -1,6 +1,7 @@
 import { Star, ExternalLink } from "lucide-react";
 import { motion } from "framer-motion";
 import { fadeUp, scaleUp, stagger, viewport } from "@/hooks/useMotion";
+import { company, whatsappHref } from "@/data/company";
 
 const GoogleIcon = () => (
   <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
@@ -14,68 +15,64 @@ const GoogleIcon = () => (
 export const ReviewsSection = () => {
   return (
     <section className="py-20 bg-card border-y border-border overflow-hidden relative">
-      {/* Subtle background pattern */}
-      <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
-        style={{
-          backgroundImage: `radial-gradient(circle, hsl(var(--primary)) 1px, transparent 1px)`,
-          backgroundSize: "32px 32px",
-        }}
-      />
-
       <div className="container mx-auto px-4 relative z-10">
-
-        {/* Section header */}
         <motion.div
-          className="text-center mb-12"
+          className="text-center mb-10 max-w-2xl mx-auto"
           initial="hidden"
           whileInView="visible"
           viewport={viewport}
           variants={fadeUp}
         >
           <span className="text-primary font-semibold uppercase tracking-widest text-xs mb-3 block">
-            Trusted & Verified
+            Reviews &amp; References
           </span>
-          <h2 className="text-3xl md:text-4xl font-extrabold mb-3">
-            Rated 5.0 on Google
-          </h2>
+          <h2 className="text-3xl md:text-4xl font-extrabold mb-3">Don&apos;t take our word for it</h2>
+          <p className="text-muted-foreground">
+            Read what clients say on Google, or ask us for a reference contact from a completed
+            project similar to yours.
+          </p>
         </motion.div>
 
-        {/* Platform Badges */}
         <motion.div
-          className="flex flex-col items-center gap-6"
+          className="flex flex-wrap items-stretch justify-center gap-4"
           initial="hidden"
           whileInView="visible"
           viewport={viewport}
           variants={stagger(0.1)}
         >
-          <div className="flex flex-wrap items-center justify-center gap-4">
-            {/* Google */}
-            <motion.a
-              variants={scaleUp}
-              href="https://www.google.com/maps/search/Fine+Glaze+Pune"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-4 px-6 py-4 border border-amber-500/30 bg-gradient-to-br from-amber-500/10 to-yellow-500/5 hover:scale-105 transition-transform duration-200 shadow-sm"
-            >
-              <div className="flex items-center justify-center w-8 h-8">
-                <GoogleIcon />
+          <motion.a
+            variants={scaleUp}
+            href={company.address.mapsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-4 px-6 py-4 border border-amber-500/30 bg-gradient-to-br from-amber-500/10 to-yellow-500/5 hover:border-amber-500 transition-colors shadow-sm"
+          >
+            <GoogleIcon />
+            <div>
+              <div className="flex gap-0.5 mb-0.5" aria-hidden="true">
+                {[1, 2, 3, 4, 5].map((i) => (
+                  <Star key={i} size={12} className="fill-amber-400 text-amber-400" />
+                ))}
               </div>
-              <div>
-                <div className="flex items-center gap-2 mb-0.5">
-                  <span className="text-2xl font-black text-foreground leading-none">5.0</span>
-                  <div className="flex gap-0.5">
-                    {[1,2,3,4,5].map(i => (
-                      <Star key={i} size={12} className="fill-amber-400 text-amber-400" />
-                    ))}
-                  </div>
-                </div>
-                <p className="text-xs text-muted-foreground">Google Reviews</p>
-              </div>
-              <ExternalLink size={13} className="text-muted-foreground ml-1" />
-            </motion.a>
-          </div>
-        </motion.div>
+              <p className="text-sm font-semibold text-foreground">Read our Google reviews</p>
+            </div>
+            <ExternalLink size={13} className="text-muted-foreground ml-1" />
+          </motion.a>
 
+          <motion.a
+            variants={scaleUp}
+            href={whatsappHref("Hi Fine Glaze, could you share a client reference for a project similar to mine?")}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-4 px-6 py-4 border border-border bg-background hover:border-primary transition-colors shadow-sm"
+          >
+            <div>
+              <p className="text-sm font-semibold text-foreground">Ask for a client reference</p>
+              <p className="text-xs text-muted-foreground">We&apos;ll connect you with a past client, with their permission</p>
+            </div>
+            <ExternalLink size={13} className="text-muted-foreground ml-1" />
+          </motion.a>
+        </motion.div>
       </div>
     </section>
   );

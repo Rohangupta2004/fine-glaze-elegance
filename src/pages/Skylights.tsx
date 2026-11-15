@@ -186,7 +186,7 @@ export default function Skylights() {
         name: "Are glass skylights waterproof?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Yes. Our skylight systems use structural silicone sealing, EPDM gaskets, and integrated drainage channels. Every installation is flood-tested before handover to ensure zero leaks under heavy rainfall conditions.",
+          text: "Yes. Our skylight systems use structural silicone sealing, EPDM gaskets, and integrated drainage channels. Every installation is water-tested on site before handover, and any leak found is traced and closed out on the snag register.",
         },
       },
       {
@@ -213,8 +213,8 @@ export default function Skylights() {
   return (
     <Layout darkHero>
       <SEO
-        title="Glass Skylight Contractor Pan India | Glass Canopies & Atriums - Fine Glaze"
-        description="Leading glass skylight contractor Pan India. Atrium skylights, entrance glass canopies, spider-supported glass canopies & overhead glazing systems."
+        title="Glass Skylight Contractor in Pune & Mumbai | Glass Canopies & Atriums - Fine Glaze"
+        description="Glass skylight contractor in Pune & Mumbai. Atrium skylights, entrance glass canopies, spider-supported glass canopies & overhead glazing systems."
         canonical="https://fineglaze.com/skylights-canopies"
         keywords="glass skylight contractor, atrium skylight, glass canopy contractor, frameless glass canopy, spider canopy, overhead glazing"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}
@@ -244,7 +244,7 @@ export default function Skylights() {
             className="text-amber-400 text-xs font-bold tracking-[0.4em] uppercase mb-5 animate-fade-in"
             style={{ animationDelay: "0.05s" }}
           >
-            Fine Glaze · Pan India
+            Fine Glaze · Pune & Mumbai
           </p>
 
           <h1
@@ -294,7 +294,7 @@ export default function Skylights() {
               ))}
             </div>
             <span className="text-white/50 text-xs font-medium ml-0.5">
-              5.0 Google · Embassy REIT Vendor · 10+ Landmark Projects
+              Embassy REIT Best Vendor 2024 · 16 Documented Projects
             </span>
           </div>
         </div>
@@ -352,7 +352,7 @@ export default function Skylights() {
                 { number: "50%", label: "More Natural Light" },
                 { number: "10+", label: "Years Experience" },
                 { number: "0", label: "Leak Incidents" },
-                { number: "5yr", label: "Workmanship Warranty" },
+                { number: "DLP", label: "Defect Liability per Contract" },
               ].map((s) => (
                 <div key={s.label} className="text-center px-4">
                   <p className="text-2xl md:text-3xl font-bold text-white">{s.number}</p>
@@ -459,7 +459,7 @@ export default function Skylights() {
               {[
                 {
                   icon: Shield,
-                  title: "Zero Leaks",
+                  title: "Water-Tested",
                   desc: "Every skylight is water-tested before handover. Integrated drainage channels prevent pooling.",
                 },
                 {
@@ -546,7 +546,7 @@ export default function Skylights() {
             <div>
               <p className="text-white/60 text-sm uppercase tracking-widest mb-2">Our Promise</p>
               <p className="text-white text-xl md:text-3xl font-bold max-w-xl">
-                Every skylight engineered for zero leaks. Every canopy built to last decades.
+                Every skylight water-tested before handover. Every canopy detailed for drainage and maintenance access.
               </p>
             </div>
           </div>
@@ -624,7 +624,7 @@ export default function Skylights() {
             <div>
               <FAQItem
                 q="Are glass skylights waterproof?"
-                a="Yes. Our skylight systems use structural silicone sealing, EPDM gaskets, and integrated drainage channels. Every installation is flood-tested before handover to ensure zero leaks under heavy rainfall conditions."
+                a="Yes. Our skylight systems use structural silicone sealing, EPDM gaskets, and integrated drainage channels. Every installation is water-tested on site before handover, and any leak found is traced and closed out on the snag register."
               />
               <FAQItem
                 q="How much does a glass skylight cost per sq ft in India?"

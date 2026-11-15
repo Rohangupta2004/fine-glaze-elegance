@@ -57,7 +57,6 @@ export default function FacadeDesignGuide() {
         description="Complete facade design guide for India 2024. Principles, materials, energy performance, regulatory requirements & best practices for commercial and residential buildings."
         canonical="https://fineglaze.com/facade-design-guide"
         keywords="facade design guide India, building facade design principles India, commercial facade design India, window wall ratio India, facade design ECBC India, glass facade design India 2024"
-        ogImage="https://images.unsplash.com/photo-1512917774080-9991f1c4c750"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}
       />
 

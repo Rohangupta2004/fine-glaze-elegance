@@ -139,7 +139,7 @@ export default function CompanyProfilePage() {
                 Fine Glaze <span className="text-amber-400">Company Profile</span>
               </h1>
               <p className="text-stone-300 text-sm sm:text-base mt-2 max-w-2xl">
-                Design, fabrication, installation and maintenance of architectural facade systems across Mumbai, Pune &amp; Pan-India.
+                Design, fabrication, installation and maintenance of architectural facade systems in Pune and Mumbai.
               </p>
             </div>
 

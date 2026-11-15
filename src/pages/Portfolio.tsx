@@ -7,7 +7,6 @@ import { projectsData } from "@/data/projects";
 import { Link } from "react-router-dom";
 import { MapPin, ArrowRight, Calendar, User } from "lucide-react";
 import SEO from "@/components/SEO";
-import { Helmet } from "react-helmet-async";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { cn } from "@/lib/utils";
 import { AnimatedNumber } from "@/components/common/AnimatedNumber";
@@ -337,17 +336,12 @@ const Portfolio = () => {
   return (
     <Layout darkHero>
       <SEO
-        title="Facade Projects Portfolio India | Fine Glaze Completed Projects"
-        description="Explore Fine Glaze's portfolio of landmark glass facade, ACP cladding & curtain wall projects Pan India — including Pune Airport, Embassy 247 & LTIMindtree."
+        title="Facade Projects in Pune & Mumbai | Fine Glaze Portfolio"
+        description="Documented Fine Glaze facade projects with client, scope and status: Embassy 247 (Embassy REIT), Pune Airport SS cladding, LTIMindtree Mahape, Nanavati Max Hospital, Salsette-27 and more."
         canonical="https://fineglaze.com/portfolio"
-        keywords="facade projects portfolio India, Fine Glaze projects, glass facade projects, ACP cladding projects, Pan India facade projects, facade contractor India"
+        keywords="facade projects Pune, facade projects Mumbai, Fine Glaze projects, glass facade projects, ACP cladding projects"
         schema={portfolioSchema}
       />
-      <Helmet>
-        <script type="application/ld+json">
-          {JSON.stringify(portfolioSchema)}
-        </script>
-      </Helmet>
 
       {/* ════════════════════════════════════════════════════
           HERO — full-bleed cinematic
@@ -377,12 +371,12 @@ const Portfolio = () => {
             className="font-extrabold text-white leading-tight tracking-tight"
             style={{ fontSize: "clamp(2.2rem, 4.5vw, 3.5rem)" }}
           >
-            Built at<br />
-            <span className="text-gradient-gold">Landmark</span> Scale.
+            Facade Projects in<br />
+            <span className="text-gradient-gold">Pune &amp; Mumbai</span>
           </h1>
           <p className="mt-3 md:mt-5 text-white/60 text-sm md:text-lg max-w-lg leading-relaxed">
-            From international airports to corporate campuses — precision
-            execution and architectural clarity.
+            Every project below lists the client, our actual scope and its
+            current status — completed or ongoing.
           </p>
         </div>
       </section>
@@ -396,9 +390,9 @@ const Portfolio = () => {
           <div className="grid grid-cols-2 md:grid-cols-5 gap-4 md:gap-0 md:divide-x md:divide-stone-700">
             {[
               { number: "~20,566 SQM", label: "Facade Area Delivered" },
-              { number: "16+", label: "Marquee Projects Documented" },
-              { number: "5+ Years", label: "Company Track Record" },
-              { number: "45+ Years", label: "Collective Team Leadership" },
+              { number: "16", label: "Project Records Documented" },
+              { number: "2 Cities", label: "Pune & Mumbai" },
+              { number: "40+", label: "Core Team" },
               { number: "Award 2024", label: "Embassy REIT Best Vendor" },
             ].map((s) => (
               <div key={s.label} className="text-center px-3 py-1">
@@ -482,16 +476,16 @@ const Portfolio = () => {
       <section className="py-10 bg-white">
         <div className="container mx-auto px-5 md:px-16 text-center">
           <p className="text-stone-400 text-xs font-bold tracking-[0.3em] uppercase mb-6">
-            Trusted By
+            Clients We Have Delivered For
           </p>
           <div className="flex flex-wrap items-center justify-center gap-x-8 md:gap-x-10 gap-y-3">
             {[
               "Embassy REIT",
-              "LTIMindtree",
-              "Leela Group",
+              "L&T Construction",
               "Jindal Stainless",
-              "SSG Group",
-              "Nirmaann Developers",
+              "Nirmaann Encon",
+              "Hatchway Windoor",
+              "Rockfort Estate",
             ].map((name) => (
               <span
                 key={name}

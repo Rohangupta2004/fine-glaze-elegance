@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { trackEvent } from "@/lib/analytics";
 import {
   Dialog,
   DialogContent,
@@ -39,9 +40,23 @@ const cities = ["Pune", "Mumbai", "Thane", "Navi Mumbai", "Other"];
 interface QuoteModalProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
+  /** Pre-select a project type (must match one of projectTypes). */
+  defaultProjectType?: string;
+  /** Pre-fill area / notes, e.g. from the cost estimator. */
+  defaultArea?: string;
+  defaultMessage?: string;
+  /** Where the lead came from, saved with the lead. */
+  source?: string;
 }
 
-export function QuoteModal({ open, onOpenChange }: QuoteModalProps) {
+export function QuoteModal({
+  open,
+  onOpenChange,
+  defaultProjectType,
+  defaultArea,
+  defaultMessage,
+  source = "quote_modal",
+}: QuoteModalProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [formData, setFormData] = useState({
@@ -52,6 +67,17 @@ export function QuoteModal({ open, onOpenChange }: QuoteModalProps) {
     approxArea: "",
     message: "",
   });
+
+  // Apply page-specific defaults each time the modal opens.
+  useEffect(() => {
+    if (!open) return;
+    setFormData((f) => ({
+      ...f,
+      projectType: defaultProjectType ?? (f.projectType || "Curtain Wall Systems"),
+      approxArea: defaultArea ?? f.approxArea,
+      message: defaultMessage ?? f.message,
+    }));
+  }, [open, defaultProjectType, defaultArea, defaultMessage]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -91,7 +117,7 @@ export function QuoteModal({ open, onOpenChange }: QuoteModalProps) {
             project_type: selectedProjectType,
             approx_area: formData.approxArea,
             message: formData.message,
-            source: "quote_modal",
+            source,
           });
         } catch {
           console.warn("Supabase lead save failed (non-blocking)");
@@ -99,6 +125,7 @@ export function QuoteModal({ open, onOpenChange }: QuoteModalProps) {
       }
 
       setIsSubmitted(true);
+      trackEvent("generate_lead", { form: source, project_type: selectedProjectType, city: formData.city });
       toast.success("Quote request submitted! We will contact you within 2 business hours.");
     } catch {
       // Fallback: Redirect to WhatsApp directly so quote is never lost

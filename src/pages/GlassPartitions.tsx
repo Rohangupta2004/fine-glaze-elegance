@@ -212,8 +212,8 @@ export default function GlassPartitions() {
   return (
     <Layout darkHero>
       <SEO
-        title="Glass Partition Contractor Pan India | Office Glass Partitions - Fine Glaze"
-        description="Top glass partition contractor Pan India. Frameless office glass partitions, acoustic DGU partitions, smart glass, and luxury shower enclosures."
+        title="Glass Partition Contractor in Pune & Mumbai | Office Glass Partitions - Fine Glaze"
+        description="Glass partition contractor in Pune & Mumbai. Frameless office glass partitions, acoustic DGU partitions, smart glass, and luxury shower enclosures."
         canonical="https://fineglaze.com/glass-partitions"
         keywords="glass partition contractor, office glass partitions, frameless glass partition, DGU glass partition, acoustic glass partition"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}
@@ -243,7 +243,7 @@ export default function GlassPartitions() {
             className="text-amber-400 text-xs font-bold tracking-[0.4em] uppercase mb-5 animate-fade-in"
             style={{ animationDelay: "0.05s" }}
           >
-            Fine Glaze · Pan India
+            Fine Glaze · Pune & Mumbai
           </p>
 
           <h1
@@ -253,7 +253,7 @@ export default function GlassPartitions() {
             Glass Partitions<br />
             <span className="text-gradient-gold">& Enclosures</span><br />
             <span style={{ fontSize: "clamp(1.25rem, 2.5vw, 2rem)", fontWeight: 600, color: "rgba(255,255,255,0.85)" }}>
-              Pan India.
+              Pune &amp; Mumbai.
             </span>
           </h1>
 
@@ -261,7 +261,7 @@ export default function GlassPartitions() {
             className="mt-6 text-white/70 text-base md:text-lg max-w-lg leading-relaxed animate-fade-in-up"
             style={{ animationDelay: "0.2s" }}
           >
-            Office glass partitions, acoustic meeting-room walls and toughened-glass shower enclosures designed and installed Pan India.
+            Office glass partitions, acoustic meeting-room walls and toughened-glass shower enclosures designed and installed in Pune and Mumbai.
           </p>
 
           <div
@@ -293,7 +293,7 @@ export default function GlassPartitions() {
               ))}
             </div>
             <span className="text-white/50 text-xs font-medium ml-0.5">
-              5.0 Google · Embassy REIT Vendor · 10+ Landmark Projects
+              Embassy REIT Best Vendor 2024 · 16 Documented Projects
             </span>
           </div>
         </div>
@@ -657,7 +657,7 @@ export default function GlassPartitions() {
                     { title: "Glass Railings", href: "/glass-railings" },
                     { title: "Structural Glazing", href: "/structural-glazing" },
                     { title: "Curtain Wall Systems", href: "/curtain-wall-systems" },
-                    { title: "Aluminium Facade", href: "/aluminium-facade" },
+                    { title: "Aluminium Facade", href: "/aluminium-windows-doors" },
                     { title: "Facade AMC", href: "/maintenance-services" },
                     { title: "All Services →", href: "/services" },
                   ].map((link) => (

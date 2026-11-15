@@ -207,8 +207,8 @@ export default function StructuralGlazing() {
   return (
     <Layout darkHero>
       <SEO
-        title="Structural Glazing Contractor Pan India | Frameless Glass Facades - Fine Glaze"
-        description="Leading structural glazing contractor Pan India. 2-side, 4-side & spider glazed facade systems for commercial buildings, IT parks & showrooms."
+        title="Structural Glazing Contractor in Pune & Mumbai | Frameless Glass Facades - Fine Glaze"
+        description="Structural glazing contractor in Pune & Mumbai. 2-side, 4-side & spider glazed facade systems for commercial buildings, IT parks & showrooms."
         canonical="https://fineglaze.com/structural-glazing"
         keywords="structural glazing contractor, structural glazing systems, glass facade contractor, 2-side structural glazing, 4-side structural glazing, frameless glass facade"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}
@@ -240,7 +240,7 @@ export default function StructuralGlazing() {
             className="text-amber-400 text-xs font-bold tracking-[0.4em] uppercase mb-5 animate-fade-in"
             style={{ animationDelay: "0.05s" }}
           >
-            Fine Glaze · Pan India
+            Fine Glaze · Pune & Mumbai
           </p>
 
           <h1
@@ -250,7 +250,7 @@ export default function StructuralGlazing() {
             Structural Glazing<br />
             <span className="text-gradient-gold">Contractors</span><br />
             <span style={{ fontSize: "clamp(1.25rem, 2.5vw, 2rem)", fontWeight: 600, color: "rgba(255,255,255,0.85)" }}>
-              Pan India.
+              Pune &amp; Mumbai.
             </span>
           </h1>
 
@@ -258,7 +258,7 @@ export default function StructuralGlazing() {
             className="mt-6 text-white/70 text-base md:text-lg max-w-lg leading-relaxed animate-fade-in-up"
             style={{ animationDelay: "0.2s" }}
           >
-            Frameless 2-side, 4-side and spider glazing systems for commercial buildings, IT campuses and showrooms Pan India.
+            Frameless 2-side, 4-side and spider glazing systems for commercial buildings, IT campuses and showrooms in Pune and Mumbai.
           </p>
 
           <div
@@ -290,7 +290,7 @@ export default function StructuralGlazing() {
               ))}
             </div>
             <span className="text-amber-400 text-xs font-semibold ml-0.5">
-              Embassy REIT Best Vendor Award 2024 · 10+ Signature Projects
+              Embassy REIT Best Vendor 2024 · 16 Documented Projects
             </span>
           </div>
         </div>
@@ -327,7 +327,7 @@ export default function StructuralGlazing() {
       {/* ════════════ CONVERSION QUICK OVERVIEW ════════════ */}
       <ServiceQuickOverview
         serviceTitle="Structural Glazing Systems"
-        whatWeProvide="Turnkey design, 3D BIM modeling, shop drawings, CNC profile cutting, Dow Corning / Sika structural silicone bonding, on-site hoisting & AAMA 501.2 hose testing."
+        whatWeProvide="In-house shop drawings and engineering checks, fabrication at our Pisoli (Pune) unit, DOWSIL structural silicone bonding (or the approved equivalent), on-site installation & AAMA 501.2 hose testing."
         locationsServed={["Pune (Hinjewadi, Kharadi)", "Mumbai (BKC, Andheri, Vikhroli)", "Thane", "Navi Mumbai"]}
         bestProjectTypes={[
           "Grade-A Office Towers",
@@ -356,7 +356,7 @@ export default function StructuralGlazing() {
                 { number: "10+", label: "Years Experience" },
                 { number: "10+", label: "Projects Delivered" },
                 { number: "0", label: "Safety Incidents" },
-                { number: "5yr", label: "Workmanship Warranty" },
+                { number: "DLP", label: "Defect Liability per Contract" },
               ].map((s) => (
                 <div key={s.label} className="text-center px-4">
                   <p className="text-2xl md:text-3xl font-bold text-white">{s.number}</p>
@@ -697,7 +697,7 @@ export default function StructuralGlazing() {
                 <div className="grid grid-cols-2 gap-x-6 gap-y-1.5">
                   {[
                     { title: "Curtain Wall Systems", href: "/curtain-wall-systems" },
-                    { title: "Aluminium Facade", href: "/aluminium-facade" },
+                    { title: "Aluminium Facade", href: "/aluminium-windows-doors" },
                     { title: "ACP Cladding", href: "/acp-aluminium-cladding" },
                     { title: "Glass Railings", href: "/glass-railings" },
                     { title: "Facade AMC", href: "/maintenance-services" },
