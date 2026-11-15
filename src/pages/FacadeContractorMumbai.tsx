@@ -1,4 +1,5 @@
 import SEO from "@/components/SEO";
+import { RelatedProjects } from "@/components/RelatedProjects";
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/home/CTASection";
 import { Link } from "react-router-dom";
@@ -53,11 +54,11 @@ export default function FacadeContractorMumbai() {
   return (
     <Layout darkHero>
       <SEO
-        title="Facade Contractor in Mumbai | Glass, ACP & Curtain Wall – Fine Glaze"
+        title="Facade Contractor in Mumbai | Fine Glaze"
         description="Expert facade contractor in Mumbai. Curtain walls, structural glazing, ACP cladding for BKC, Andheri, Powai & Lower Parel. Cyclone-rated systems. Free site visit."
         canonical="https://fineglaze.com/facade-contractor-mumbai"
         keywords="facade contractor Mumbai, glass facade Mumbai, curtain wall Mumbai, ACP cladding Mumbai, structural glazing BKC, facade contractor Andheri, facade company Mumbai"
-        ogImage="https://images.unsplash.com/photo-1512917774080-9991f1c4c750"
+        ogImage="https://fineglaze.com/projects/naman-chambers-48-1.webp"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}
       />
 
@@ -79,8 +80,8 @@ export default function FacadeContractorMumbai() {
             </div>
           </div>
           <img
-            src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750"
-            alt="Mumbai facade contractor curtain wall BKC high-rise Fine Glaze"
+            src="/projects/embassy-247-37-1.webp"
+            alt="Embassy 247, Vikhroli, Mumbai — facade maintenance by Fine Glaze for Embassy REIT; Best Vendor Performance 2024"
             className="rounded-xl shadow-2xl object-cover h-[420px] w-full"
             loading="eager"
             width="600"
@@ -164,6 +165,7 @@ export default function FacadeContractorMumbai() {
         </div>
       </section>
 
+      <RelatedProjects heading="Our projects in Mumbai" locations={["Mumbai"]} excludeLocations={["Navi Mumbai"]} />
       <CTASection />
     </Layout>
   );

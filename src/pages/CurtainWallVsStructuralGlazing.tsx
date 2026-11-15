@@ -53,11 +53,10 @@ export default function CurtainWallVsStructuralGlazing() {
   return (
     <Layout darkHero>
       <SEO
-        title="Curtain Wall vs Structural Glazing: Key Differences India – Fine Glaze"
+        title="Curtain Wall vs Structural Glazing: Key Differences"
         description="Curtain wall vs structural glazing — detailed comparison for Indian buildings. Cost, aesthetics, performance, installation & which to choose. Expert guide by Fine Glaze."
         canonical="https://fineglaze.com/curtain-wall-vs-structural-glazing"
         keywords="curtain wall vs structural glazing India, SSG vs curtain wall, structural glazing or curtain wall, glass facade types India, curtain wall vs SSG comparison, facade system selection India"
-        ogImage="https://images.unsplash.com/photo-1529429617124-95b109e86bb8"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}
       />
 
@@ -79,8 +78,8 @@ export default function CurtainWallVsStructuralGlazing() {
             </div>
           </div>
           <img
-            src="https://images.unsplash.com/photo-1529429617124-95b109e86bb8"
-            alt="Curtain wall vs structural glazing comparison India commercial building Fine Glaze"
+            src="/projects/naman-chambers-48-1.webp"
+            alt="Naman Chambers, Bandra Kurla Complex, Mumbai — glazed office towers where Fine Glaze is carrying out glazing and ACP works"
             className="rounded-xl shadow-2xl object-cover h-[420px] w-full"
             loading="eager"
             width="600"

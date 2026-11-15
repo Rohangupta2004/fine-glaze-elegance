@@ -1,4 +1,5 @@
 import SEO from "@/components/SEO";
+import { RelatedProjects } from "@/components/RelatedProjects";
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/home/CTASection";
 import { Link } from "react-router-dom";
@@ -53,11 +54,10 @@ export default function CommercialBuildingFacade() {
   return (
     <Layout darkHero>
       <SEO
-        title="Commercial Building Facade Contractor Pan India | Office Facades - Fine Glaze"
-        description="Top commercial building facade contractor Pan India. Curtain walls, structural glazing & ACP cladding for corporate office buildings."
+        title="Office Building Facade Contractor, Pune & Mumbai | Fine Glaze"
+        description="Commercial building facade contractor in Pune & Mumbai. Curtain walls, structural glazing & ACP cladding for corporate office buildings."
         canonical="https://fineglaze.com/commercial-building-facade"
         keywords="commercial building facade contractor, commercial facade company, office building facade, glass facade commercial building, facade engineering"
-        ogImage="https://images.unsplash.com/photo-1503387762-592deb58ef4e"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}
       />
 
@@ -79,8 +79,8 @@ export default function CommercialBuildingFacade() {
             </div>
           </div>
           <img
-            src="https://images.unsplash.com/photo-1503387762-592deb58ef4e"
-            alt="Commercial building glass facade curtain wall India Fine Glaze"
+            src="/projects/embassy-techzone-40-1.webp"
+            alt="Embassy Techzone, Hinjewadi, Pune — spider glazing and ACP cladding by Fine Glaze for Embassy REIT"
             className="rounded-xl shadow-2xl object-cover h-[420px] w-full"
             loading="eager"
             width="600"
@@ -167,6 +167,7 @@ export default function CommercialBuildingFacade() {
         </div>
       </section>
 
+      <RelatedProjects heading="Commercial building projects" keywords={["Embassy", "Naman", "FIFC", "LTIMindtree"]} />
       <CTASection />
     </Layout>
   );

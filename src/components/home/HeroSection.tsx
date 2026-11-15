@@ -1,46 +1,66 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Play, Award, CheckCircle2 } from "lucide-react";
+import { ArrowRight, Play, Award } from "lucide-react";
 import { motion } from "framer-motion";
 import { fadeUp } from "@/hooks/useMotion";
 import { useSiteMedia } from "@/hooks/useSiteMedia";
 import { QuoteModal } from "@/components/QuoteModal";
+import { company } from "@/data/company";
+
+/** First frame of the hero film — shown instantly, and as the LCP image. */
+export const HERO_POSTER = "/hero/fine-glaze-facade-poster.webp";
+const HERO_VIDEO = "/hero/fine-glaze-facade.mp4";
+const HERO_VIDEO_SD = "/hero/fine-glaze-facade-sd.mp4";
 
 export const HeroSection = () => {
   const { getMedia } = useSiteMedia();
-  const poster = getMedia("home_hero_poster", "/Unitized.webp");
-  const videoSrc = getMedia(
-    "home_hero_video",
-    "https://www.pexels.com/download/video/26737896/"
-  );
+  const poster = getMedia("home_hero_poster", HERO_POSTER);
+  const adminVideo = getMedia("home_hero_video", "");
+  const [videoSrc, setVideoSrc] = useState<string>("");
   const [isQuoteOpen, setIsQuoteOpen] = useState(false);
+
+  // Pick the video on the client: lighter file for phones, none for data-saver
+  // or reduced-motion visitors (they keep the poster frame).
+  useEffect(() => {
+    if (adminVideo) {
+      setVideoSrc(adminVideo);
+      return;
+    }
+    const conn = (navigator as unknown as { connection?: { saveData?: boolean } }).connection;
+    if (conn?.saveData || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    setVideoSrc(window.matchMedia("(max-width: 767px)").matches ? HERO_VIDEO_SD : HERO_VIDEO);
+  }, [adminVideo]);
 
   return (
     <>
       <section className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden bg-stone-950">
-        {/* Fallback poster image */}
+        {/* Poster frame */}
         <img
           src={poster}
-          alt="Fine Glaze high-rise commercial curtain wall installation in Mumbai"
-          className="absolute inset-0 w-full h-full object-cover opacity-60"
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover"
           loading="eager"
+          {...{ fetchpriority: "high" }}
         />
 
-        {/* Hero Background Video */}
-        <video
-          key={videoSrc}
-          className="absolute inset-0 w-full h-full object-cover opacity-50"
-          autoPlay
-          muted
-          loop
-          playsInline
-          poster={poster}
-          src={videoSrc}
-        />
+        {/* Hero film: plays once, then rests on the finished glass tower */}
+        {videoSrc && (
+          <video
+            key={videoSrc}
+            className="absolute inset-0 w-full h-full object-cover"
+            autoPlay
+            muted
+            playsInline
+            preload="auto"
+            poster={poster}
+            src={videoSrc}
+            aria-hidden="true"
+          />
+        )}
 
         {/* Dark Contrast Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-stone-950/80 via-stone-950/70 to-stone-950/95" />
+        <div className="absolute inset-0 bg-gradient-to-b from-stone-950/70 via-stone-950/50 to-stone-950/90" />
 
         {/* Content */}
         <div className="relative z-10 container mx-auto px-4 pt-24 pb-16 text-center">
@@ -53,25 +73,27 @@ export const HeroSection = () => {
               visible: { transition: { staggerChildren: 0.15 } },
             }}
           >
-            {/* Verified Award & Team Leadership Badge */}
+            {/* Award badge */}
             <motion.div
               variants={fadeUp}
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-stone-900/60 backdrop-blur-md text-xs sm:text-sm font-semibold text-amber-300 border border-amber-500/40 shadow-lg"
             >
               <Award className="w-4 h-4 text-amber-400 shrink-0" />
-              <span>5+ Yrs Industry Track Record · 40+ Core Engineering Specialists · Embassy REIT Awardee</span>
+              <span>
+                {company.award.by} · {company.award.title}
+              </span>
             </motion.div>
 
-            {/* Clear Headline */}
+            {/* Headline */}
             <motion.h1
               variants={fadeUp}
               className="text-3xl sm:text-5xl md:text-6xl font-extrabold text-white leading-tight tracking-tight drop-shadow-md"
             >
               Complete Facade Solutions &amp; <br className="hidden sm:block" />
-              Fenestration Expert <span className="text-amber-400">Pan India</span>
+              Fenestration Expert in <span className="text-amber-400">Pune &amp; Mumbai</span>
             </motion.h1>
 
-            {/* Clear Subhead */}
+            {/* Subhead */}
             <motion.p
               variants={fadeUp}
               className="text-base sm:text-xl text-stone-200 max-w-2xl mx-auto leading-relaxed max-w-prose drop-shadow"
@@ -79,7 +101,7 @@ export const HeroSection = () => {
               Turnkey architectural envelope engineering — unitized curtain walls, structural glazing, aluminium doors &amp; windows, ACP cladding, and glass railings for commercial landmarks, IT parks, and high-rise developments.
             </motion.p>
 
-            {/* Clear CTA Buttons */}
+            {/* CTA Buttons */}
             <motion.div
               variants={fadeUp}
               className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4"
@@ -105,17 +127,19 @@ export const HeroSection = () => {
               </Link>
             </motion.div>
 
-            {/* Verified Project Proof */}
-            <motion.div
-              variants={fadeUp}
-              className="pt-2 text-stone-400 text-xs sm:text-sm font-medium"
-            >
+            {/* Project proof */}
+            <motion.div variants={fadeUp} className="pt-2 text-stone-400 text-xs sm:text-sm font-medium">
               <p className="tracking-wide">
-                Key Landmarks: <strong className="text-stone-200 font-semibold">Embassy 247</strong> · <strong className="text-stone-200 font-semibold">Pune Airport Terminal</strong> · <strong className="text-stone-200 font-semibold">Nanavati Max Hospital (L&T)</strong> · <strong className="text-stone-200 font-semibold">LTIMindtree Mensa Campus</strong> · <strong className="text-stone-200 font-semibold">Salsette-27</strong> · <strong className="text-stone-200 font-semibold">Naman Chambers BKC</strong>
+                Key Landmarks: <strong className="text-stone-200 font-semibold">Embassy 247</strong> · <strong className="text-stone-200 font-semibold">Pune Airport Terminal</strong> · <strong className="text-stone-200 font-semibold">Nanavati Max Hospital (L&amp;T)</strong> · <strong className="text-stone-200 font-semibold">LTIMindtree Mensa Campus</strong> · <strong className="text-stone-200 font-semibold">Salsette-27</strong> · <strong className="text-stone-200 font-semibold">Naman Chambers BKC</strong>
               </p>
             </motion.div>
           </motion.div>
         </div>
+
+        {/* Honest label: the film is an illustration, not a project record */}
+        <p className="absolute bottom-3 left-4 z-10 text-[10px] sm:text-xs text-white/50">
+          Illustration · AI-generated video
+        </p>
 
         {/* Scroll Indicator */}
         <div className="absolute bottom-6 left-1/2 -translate-x-1/2 hidden md:block opacity-60">

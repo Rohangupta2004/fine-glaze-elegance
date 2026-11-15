@@ -1,4 +1,5 @@
 import SEO from "@/components/SEO";
+import { RelatedProjects } from "@/components/RelatedProjects";
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/home/CTASection";
 import { Link } from "react-router-dom";
@@ -28,7 +29,7 @@ export default function HospitalFacade() {
       { "@type": "City", "name": "Mumbai" },
       { "@type": "State", "name": "Maharashtra" }
     ],
-    "description": "Specialist facade contractor for hospitals and healthcare buildings in India. Hygienic ACP cladding, anti-bacterial coatings, curtain wall systems. Pan India projects."
+    "description": "Specialist facade contractor for hospitals and healthcare buildings in India. Hygienic ACP cladding, anti-bacterial coatings, curtain wall systems. projects."
   };
 
   const faqSchema = {
@@ -53,11 +54,11 @@ export default function HospitalFacade() {
   return (
     <Layout darkHero>
       <SEO
-        title="Hospital Facade Contractor Pan India | Healthcare Building Facades - Fine Glaze"
-        description="Specialist hospital facade contractor Pan India. Hygienic ACP cladding, acoustic glass facades & curtain wall systems for healthcare facilities."
+        title="Hospital Facade Contractor in Pune & Mumbai | Fine Glaze"
+        description="Hospital facade contractor in Pune & Mumbai. Hygienic ACP cladding, acoustic glass facades & curtain wall systems for healthcare facilities."
         canonical="https://fineglaze.com/hospital-facade"
         keywords="hospital facade contractor, hospital glass facade, healthcare building facade, hygienic facade systems, hospital curtain wall"
-        ogImage="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00"
+        ogImage="https://fineglaze.com/projects/nanavati-max-hospital-38-1.webp"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}
       />
 
@@ -79,8 +80,8 @@ export default function HospitalFacade() {
             </div>
           </div>
           <img
-            src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00"
-            alt="Hospital healthcare building facade cladding India Fine Glaze"
+            src="/projects/nanavati-max-hospital-38-1.webp"
+            alt="Nanavati Max Hospital, Vile Parle, Mumbai — ACP cladding and window leakage rectification by Fine Glaze for L&T (ongoing)"
             className="rounded-xl shadow-2xl object-cover h-[420px] w-full"
             loading="eager"
             width="600"
@@ -161,6 +162,7 @@ export default function HospitalFacade() {
         </div>
       </section>
 
+      <RelatedProjects heading="Healthcare project" keywords={["hospital"]} />
       <CTASection />
     </Layout>
   );

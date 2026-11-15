@@ -2,7 +2,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { Outlet } from "react-router-dom";
+import { Navigate, Outlet } from "react-router-dom";
 import { lazy, Suspense } from "react";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { PageLoader } from "@/components/PageLoader";
@@ -23,7 +23,6 @@ const Dev = lazy(() => import("./pages/Dev"));
 const ProjectsQR = lazy(() => import("./pages/ProjectsQR"));
 const CompanyProfile = lazy(() => import("./pages/CompanyProfile"));
 
-const AluminiumFacade = lazy(() => import("./pages/AluminiumFacade"));
 const StructuralGlazing = lazy(() => import("./pages/StructuralGlazing"));
 const CurtainWall = lazy(() => import("./pages/CurtainWall"));
 const AcpCladding = lazy(() => import("./pages/AcpCladding"));
@@ -44,7 +43,11 @@ const FAQ = lazy(() => import("./pages/FAQ"));
 
 const Blog = lazy(() => import("./pages/Blog"));
 const BlogArticle = lazy(() => import("./pages/BlogArticle"));
-const CityLanding = lazy(() => import("./pages/CityLanding"));
+const LegacyLocationRedirect = lazy(() => import("./pages/LegacyLocationRedirect"));
+const AluminiumWindowsDoors = lazy(() => import("./pages/AluminiumWindowsDoors"));
+const QualitySafety = lazy(() => import("./pages/QualitySafety"));
+const ServiceRequest = lazy(() => import("./pages/ServiceRequest"));
+const FacadeCostEstimator = lazy(() => import("./pages/FacadeCostEstimator"));
 
 // 25 SEO pages
 const CurtainWallPune = lazy(() => import("./pages/CurtainWallPune"));
@@ -117,7 +120,7 @@ export const routes = [
       { path: "projects-qr", element: <L><ProjectsQR /></L> },
       { path: "project/:slug", element: <L><ProjectDetail /></L> },
       { path: "contact", element: <L><Contact /></L> },
-      { path: "aluminium-facade", element: <L><AluminiumFacade /></L> },
+      { path: "aluminium-facade", element: <Navigate to="/aluminium-windows-doors" replace /> },
       { path: "structural-glazing", element: <L><StructuralGlazing /></L> },
       { path: "curtain-wall-systems", element: <L><CurtainWall /></L> },
       { path: "acp-aluminium-cladding", element: <L><AcpCladding /></L> },
@@ -125,11 +128,15 @@ export const routes = [
       { path: "maintenance-services", element: <L><Maintenance /></L> },
       { path: "skylights-canopies", element: <L><Skylights /></L> },
       { path: "aluminium-louvers", element: <L><Louvers /></L> },
-      { path: "louvers", element: <L><Louvers /></L> },
+      { path: "louvers", element: <Navigate to="/aluminium-louvers" replace /> },
       { path: "glass-partitions", element: <L><GlassPartitions /></L> },
-      { path: "services/structural-glazing", element: <L><StructuralGlazing /></L> },
-      { path: "services/curtain-wall", element: <L><CurtainWall /></L> },
-      { path: "services/acp-cladding", element: <L><AcpCladding /></L> },
+      { path: "aluminium-windows-doors", element: <L><AluminiumWindowsDoors /></L> },
+      { path: "quality-safety", element: <L><QualitySafety /></L> },
+      { path: "service-request", element: <L><ServiceRequest /></L> },
+      { path: "facade-cost-estimator", element: <L><FacadeCostEstimator /></L> },
+      { path: "services/structural-glazing", element: <Navigate to="/structural-glazing" replace /> },
+      { path: "services/curtain-wall", element: <Navigate to="/curtain-wall-systems" replace /> },
+      { path: "services/acp-cladding", element: <Navigate to="/acp-aluminium-cladding" replace /> },
       { path: "portal", element: <L><Portal /></L> },
       { path: "admin", element: <L><Admin /></L> },
       { path: "admin/images", element: <L><AdminImages /></L> },
@@ -140,8 +147,9 @@ export const routes = [
       { path: "faq", element: <L><FAQ /></L> },
       { path: "blog", element: <L><Blog /></L> },
       { path: "blog/:slug", element: <L><BlogArticle /></L> },
-      { path: "facade-contractor/:city", element: <L><CityLanding /></L> },
-      { path: "services/:service/:city", element: <L><CityLanding /></L> },
+      // Retired auto-generated location pages → 301 in vercel.json; client fallback here.
+      { path: "facade-contractor/:city", element: <L><LegacyLocationRedirect /></L> },
+      { path: "services/:service/:city", element: <Navigate to="/services" replace /> },
       { path: "dev", element: <L><Dev /></L> },
       // 25 SEO pages
       { path: "curtain-wall-pune", element: <L><CurtainWallPune /></L> },

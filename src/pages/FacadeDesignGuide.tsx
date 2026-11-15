@@ -53,11 +53,10 @@ export default function FacadeDesignGuide() {
   return (
     <Layout darkHero>
       <SEO
-        title="Building Facade Design Guide India 2024 | Principles & Materials – Fine Glaze"
+        title="Building Facade Design Guide: Principles & Materials"
         description="Complete facade design guide for India 2024. Principles, materials, energy performance, regulatory requirements & best practices for commercial and residential buildings."
         canonical="https://fineglaze.com/facade-design-guide"
         keywords="facade design guide India, building facade design principles India, commercial facade design India, window wall ratio India, facade design ECBC India, glass facade design India 2024"
-        ogImage="https://images.unsplash.com/photo-1512917774080-9991f1c4c750"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}
       />
 
@@ -79,8 +78,8 @@ export default function FacadeDesignGuide() {
             </div>
           </div>
           <img
-            src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750"
-            alt="Building facade design guide India commercial architecture Fine Glaze"
+            src="/projects/ssg-honesty-30-1.webp"
+            alt="SSG Honesty Nimkar Building, Panvel — curtain wall and ACP facade design (architect's render)"
             className="rounded-xl shadow-2xl object-cover h-[420px] w-full"
             loading="eager"
             width="600"

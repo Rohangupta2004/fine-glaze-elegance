@@ -6,12 +6,14 @@ const quickLinks = [
   { href: "/about", label: "About Us" },
   { href: "/services", label: "Services" },
   { href: "/portfolio", label: "Portfolio" },
+  { href: "/quality-safety", label: "Quality & Safety" },
+  { href: "/service-request", label: "Service Request" },
   { href: "/blog", label: "Blog" },
   { href: "/contact", label: "Contact" },
 ];
 
 const services = [
-  { label: "Aluminium Facade", href: "/aluminium-facade" },
+  { label: "Aluminium Windows & Doors", href: "/aluminium-windows-doors" },
   { label: "Curtain Wall Systems", href: "/curtain-wall-systems" },
   { label: "Structural Glazing", href: "/structural-glazing" },
   { label: "ACP Cladding", href: "/acp-aluminium-cladding" },
@@ -36,9 +38,8 @@ export const Footer = () => {
               className="h-12 w-auto brightness-0 invert"
             />
             <p className="text-white/70 text-sm leading-relaxed">
-              Precision facade fabrication and installation across India.
-              Transforming architectural visions into iconic glass & aluminium
-              facades — delivered with award-winning quality since establishment.
+              Facade design, fabrication, installation and maintenance — from Pune and Mumbai.
+              Own fabrication unit at Pisoli, Pune. Embassy REIT Best Vendor Performance 2024.
             </p>
             {/* Social Links */}
             <div className="flex gap-3 pt-2">
@@ -138,39 +139,26 @@ export const Footer = () => {
         </div>
       </div>
 
-      {/* Pan-India Execution Hubs (Dynamic Routing) */}
+      {/* Where we work — only places we actually operate */}
       <div className="border-t border-white/10 py-5">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-3 text-xs text-white/60">
             <span className="font-semibold text-amber-400 uppercase tracking-wider shrink-0">
-              Pan-India Execution Hubs:
+              Where we work:
             </span>
-            <div className="flex flex-wrap gap-x-3 gap-y-1 text-white/70">
+            <nav aria-label="Service areas" className="flex flex-wrap gap-x-3 gap-y-1 text-white/70">
               {[
-                { name: "Delhi NCR", slug: "delhi-ncr" },
-                { name: "Bengaluru", slug: "bengaluru" },
-                { name: "Hyderabad", slug: "hyderabad" },
-                { name: "Mumbai", slug: "mumbai" },
-                { name: "Pune", slug: "pune" },
-                { name: "Chennai", slug: "chennai" },
-                { name: "Ahmedabad", slug: "ahmedabad" },
-                { name: "GIFT City", slug: "gift-city" },
-                { name: "Kolkata", slug: "kolkata" },
-                { name: "Chandigarh", slug: "chandigarh" },
-                { name: "Jaipur", slug: "jaipur" },
-                { name: "Lucknow", slug: "lucknow" },
-                { name: "Indore", slug: "indore" },
-                { name: "Kochi", slug: "kochi" },
+                { name: "Facade contractor in Pune", href: "/facade-contractor-pune" },
+                { name: "Mumbai", href: "/facade-contractor-mumbai" },
+                { name: "Navi Mumbai", href: "/facade-contractor-navi-mumbai" },
+                { name: "Thane", href: "/facade-contractor-thane" },
               ].map((loc) => (
-                <Link
-                  key={loc.slug}
-                  to={`/facade-contractor/${loc.slug}`}
-                  className="hover:text-amber-400 transition-colors"
-                >
+                <Link key={loc.href} to={loc.href} className="hover:text-amber-400 transition-colors">
                   {loc.name}
                 </Link>
               ))}
-            </div>
+              <span className="text-white/50">· Other locations considered case by case</span>
+            </nav>
           </div>
         </div>
       </div>

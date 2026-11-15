@@ -54,7 +54,7 @@ const phases = [
     phase: "04",
     phaseLabel: "Phase 04",
     title: "High-Rise Erection, Testing & DLP Handover",
-    subtitle: "Safety-First Installation & Lifecycle Warranty",
+    subtitle: "Safety-First Installation & Defect Liability Support",
     icon: ShieldCheck,
     deliverables: [
       "Sequenced floor-by-floor mechanical erection under certified site incharge and safety officers",

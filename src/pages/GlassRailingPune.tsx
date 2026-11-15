@@ -1,4 +1,5 @@
 import SEO from "@/components/SEO";
+import { RelatedProjects } from "@/components/RelatedProjects";
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/home/CTASection";
 import { Link } from "react-router-dom";
@@ -53,11 +54,10 @@ export default function GlassRailingPune() {
   return (
     <Layout darkHero>
       <SEO
-        title="Glass Railing Contractor Pune | Frameless Balcony Railings Baner & Kharadi - Fine Glaze"
-        description="Top glass railing contractor in Pune. Frameless balcony, staircase & terrace glass railings for residential & commercial properties in Baner, Kharadi, Wakad & Viman Nagar."
+        title="Glass Railing Contractor in Pune | Fine Glaze"
+        description="Glass railing contractor in Pune. Frameless balcony, staircase & terrace glass railings for residential & commercial properties in Baner, Kharadi, Wakad & Viman Nagar."
         canonical="https://fineglaze.com/glass-railing-pune"
         keywords="glass railing contractor Pune, balcony glass railing Pune, staircase glass railing Pune, frameless railing Pune"
-        ogImage="https://images.unsplash.com/photo-1600585154340-be6161a56a0c"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}
       />
 
@@ -79,8 +79,8 @@ export default function GlassRailingPune() {
             </div>
           </div>
           <img
-            src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c"
-            alt="Frameless glass railing balcony Pune apartment - Fine Glaze"
+            src="/projects/jindal-house-46-2.webp"
+            alt="Sea-front terrace glass railing at Jindal House, Mumbai — completed by Fine Glaze in 2023"
             className="rounded-xl shadow-2xl object-cover h-[420px] w-full"
             loading="eager"
             width="600"
@@ -164,6 +164,7 @@ export default function GlassRailingPune() {
         </div>
       </section>
 
+      <RelatedProjects heading="Glass railing work we have delivered" keywords={["railing"]} />
       <CTASection />
     </Layout>
   );

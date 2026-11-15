@@ -1,4 +1,5 @@
 import SEO from "@/components/SEO";
+import { RelatedProjects } from "@/components/RelatedProjects";
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/home/CTASection";
 import { ServiceQuickOverview } from "@/components/service/ServiceQuickOverview";
@@ -83,7 +84,7 @@ const IMG: Record<string, string> = {
   semi: "/railing-semi.webp",
   spigot: "/railing-spigot.webp",
   standoff: "/railing-standoff.webp",
-  process: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?fm=jpg&q=85&w=1400&auto=format&fit=crop",
+  process: "/projects/jindal-house-46-4.webp",
 };
 
 /* ── System data ── */
@@ -213,8 +214,8 @@ export default function GlassRailings() {
   return (
     <Layout darkHero>
       <SEO
-        title="Glass Railing Contractor Pan India | Balcony & Staircase Railings - Fine Glaze"
-        description="Premier glass railing contractor Pan India. Frameless, semi-frameless & SS spigot glass railing systems for balconies, staircases & terraces."
+        title="Glass Railing Contractor in Pune & Mumbai | Fine Glaze"
+        description="Glass railing contractor in Pune & Mumbai. Frameless, semi-frameless & SS spigot glass railing systems for balconies, staircases & terraces."
         canonical="https://fineglaze.com/glass-railings"
         keywords="glass railing contractor, frameless glass railing, toughened glass railing, glass balustrade, staircase glass railing, balcony glass railing"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}
@@ -244,7 +245,7 @@ export default function GlassRailings() {
             className="text-amber-400 text-xs font-bold tracking-[0.4em] uppercase mb-5 animate-fade-in"
             style={{ animationDelay: "0.05s" }}
           >
-            Fine Glaze · Pan India
+            Fine Glaze · Pune & Mumbai
           </p>
 
           <h1
@@ -254,7 +255,7 @@ export default function GlassRailings() {
             Glass Railing<br />
             <span className="text-gradient-gold">Contractors</span><br />
             <span style={{ fontSize: "clamp(1.25rem, 2.5vw, 2rem)", fontWeight: 600, color: "rgba(255,255,255,0.85)" }}>
-              Pan India.
+              Pune &amp; Mumbai.
             </span>
           </h1>
 
@@ -262,7 +263,7 @@ export default function GlassRailings() {
             className="mt-6 text-white/70 text-base md:text-lg max-w-lg leading-relaxed animate-fade-in-up"
             style={{ animationDelay: "0.2s" }}
           >
-            Frameless and semi-frameless toughened glass railings for balconies, terraces, staircases and commercial spaces Pan India.
+            Frameless and semi-frameless toughened glass railings for balconies, terraces, staircases and commercial spaces in Pune and Mumbai.
           </p>
 
           <div
@@ -294,7 +295,7 @@ export default function GlassRailings() {
               ))}
             </div>
             <span className="text-white/50 text-xs font-medium ml-0.5">
-              5.0 Google · Embassy REIT Vendor · 10+ Landmark Projects
+              Embassy REIT Best Vendor 2024 · 16 Documented Projects
             </span>
           </div>
         </div>
@@ -538,7 +539,7 @@ export default function GlassRailings() {
         <div className="relative h-[35vh] md:h-[40vh] overflow-hidden">
           <img
             src={IMG.process}
-            alt="Fine Glaze glass railing installation"
+            alt="Shop drawing of an SS railing for Jindal House, Mumbai — drawn in-house by Fine Glaze"
             className="w-full h-full object-cover"
             loading="lazy"
           />
@@ -677,7 +678,7 @@ export default function GlassRailings() {
                     { title: "Structural Glazing", href: "/structural-glazing" },
                     { title: "Curtain Wall Systems", href: "/curtain-wall-systems" },
                     { title: "Glass Partitions", href: "/glass-partitions" },
-                    { title: "Aluminium Facade", href: "/aluminium-facade" },
+                    { title: "Aluminium Facade", href: "/aluminium-windows-doors" },
                     { title: "Facade AMC", href: "/maintenance-services" },
                     { title: "All Services →", href: "/services" },
                   ].map((link) => (
@@ -698,6 +699,7 @@ export default function GlassRailings() {
 
 
       {/* ════════════ CTA ════════════ */}
+      <RelatedProjects heading="Glass railing projects" keywords={["railing"]} />
       <CTASection />
     </Layout>
   );

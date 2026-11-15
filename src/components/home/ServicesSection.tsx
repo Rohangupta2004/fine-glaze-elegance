@@ -27,8 +27,8 @@ const SERVICE_DEFS = [
   {
     tag: "Cladding",
     title: "ACP Cladding",
-    desc: "Fire-retardant PVDF-coated aluminium composite panels from Aludecor & Alstrong. 20-yr colour warranty.",
-    spec: "20-yr PVDF colour warranty",
+    desc: "Fire-retardant, PVDF-coated aluminium composite panels from approved brands such as Alubond, matched to your consultant's vendor list.",
+    spec: "FR-grade · PVDF finish",
     href: "/acp-aluminium-cladding",
     mediaKey: "services_card_acp_cladding",
     fallback: "/Panel.webp",
@@ -36,9 +36,9 @@ const SERVICE_DEFS = [
   {
     tag: "Aluminium",
     title: "Aluminium Doors & Windows",
-    desc: "Thermal-break sliding, casement & lift-slide systems. 60% heat reduction, 45dB sound rating.",
-    spec: "60% heat reduction",
-    href: "/aluminium-facade",
+    desc: "Sliding, casement, tilt-turn & lift-slide systems, fabricated in Pune. Thermal-break and DGU / acoustic glass options for heat and noise.",
+    spec: "Thermal break · DGU options",
+    href: "/aluminium-windows-doors",
     mediaKey: "services_card_aluminium_windows",
     fallback: "/Aluminium%20windows.webp",
   },

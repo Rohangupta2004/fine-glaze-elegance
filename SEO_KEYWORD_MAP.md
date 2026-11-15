@@ -17,13 +17,15 @@ This document is the working keyword map for Fine Glaze. It targets commercial s
 | Services hub | `/services` | Commercial | facade services Pune Mumbai | facade systems, glass facade services, curtain wall, structural glazing, ACP cladding, glass railings, skylights | Facade Systems, Glazing, ACP Cladding & Aluminium Solutions |
 | About | `/about` | Branded / commercial | Fine Glaze facade contractor | Fine Glaze India, Fine Glaze Pune, facade fabrication company, facade installation company | About Fine Glaze: Facade and Glazing Specialists |
 | Contact | `/contact` | Transactional | facade contractor consultation Pune | facade site visit, facade quotation, glazing contractor contact, facade project enquiry | Contact Fine Glaze for a Facade Project Consultation |
+| Quality & safety | `/quality-safety` | Trust / vendor evaluation | facade contractor quality control | facade water test, facade contractor safety, vendor registration, prequalification | How Fine Glaze controls quality and safety |
+| Cost estimator (hidden until prices approved — docs/PRICING_FOR_APPROVAL.md) | `/facade-cost-estimator` | Commercial investigation | facade cost calculator | curtain wall cost per sq ft, aluminium window cost calculator, ACP cladding cost per sq ft, glass railing cost per rft | Facade & window cost estimator |
 | FAQ | `/faq` | Informational / commercial | facade contractor FAQ India | curtain wall FAQ, structural glazing FAQ, ACP cladding FAQ, facade cost, facade maintenance questions | Facade, Glazing, ACP and Curtain Wall FAQs |
 
 ## 2. Service keyword map
 
 | Service page | URL | Intent | Primary keyword | Secondary keywords | Local variants |
 |---|---|---|---|---|---|
-| Aluminium facade / doors & windows | `/aluminium-facade` | Commercial | aluminium facade contractor | aluminium facade systems, aluminium doors and windows, thermal break windows, aluminium facade fabrication | aluminium facade contractor Pune; aluminium facade contractor Mumbai |
+| Aluminium windows & doors | `/aluminium-windows-doors` (old `/aluminium-facade` 301s here) | Commercial | aluminium windows Pune | aluminium windows Mumbai, aluminium sliding windows, casement windows, tilt and turn windows, thermal break windows, aluminium doors | aluminium windows Pune; aluminium windows Mumbai |
 | Aluminium facade Mumbai | `/aluminium-facade-mumbai` | Local commercial | aluminium facade contractor Mumbai | aluminium facade company Mumbai, aluminium windows Mumbai, aluminium doors Mumbai, facade cladding Mumbai | BKC, Andheri, Powai, Vikhroli |
 | Curtain wall systems | `/curtain-wall-systems` | Commercial | curtain wall contractor | curtain wall systems, glass curtain wall, unitized curtain wall, stick curtain wall, semi-unitized curtain wall | curtain wall contractor Pune; curtain wall contractor Mumbai |
 | Curtain wall Pune | `/curtain-wall-pune` | Local commercial | curtain wall contractor Pune | curtain wall systems Pune, glass facade Pune, unitized curtain wall Pune | Hinjewadi, Kharadi, Baner, Wakad |
@@ -146,3 +148,8 @@ Recommended modifier pattern:
 - [ ] Confirm with Fine Glaze which `Verify` services are actively sold before prioritizing their landing pages.
 - [ ] Validate search volume, competition, and conversion data in Google Search Console/Keyword Planner before assigning publishing priority.
 
+
+
+## Retired location pages (Nov 2026)
+
+The ~616 auto-generated `/facade-contractor/:service-:city` pages were removed because most covered cities with no Fine Glaze operations and differed only by the city name (doorway / scaled-content risk). Every old URL 301-redirects to the closest genuine page; the table lives in `src/data/legacyLocations.json` and `vercel.json` is regenerated with `node scripts/generate-legacy-redirects.mjs`. Add a new location page only with real local project evidence, per the usage rules above.

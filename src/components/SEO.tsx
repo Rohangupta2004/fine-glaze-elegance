@@ -1,4 +1,5 @@
-import { Helmet } from "react-helmet-async"; // (or "react-helmet" depending on your setup)
+import { Helmet } from "react-helmet-async";
+import { fitDescription, fitTitle } from "@/lib/seoText";
 
 interface SEOProps {
   title: string;
@@ -19,7 +20,7 @@ export default function SEO({
   description,
   canonical,
   keywords,
-  ogImage = "https://fineglaze.com/default-og.webp",
+  ogImage = "https://fineglaze.com/og-default.jpg",
   ogType = "website",
   ogImageWidth = 1200,
   ogImageHeight = 630,
@@ -34,14 +35,15 @@ export default function SEO({
   return (
     <Helmet>
       {/* Standard SEO Tags */}
-      <title>{title}</title>
-      <meta name="description" content={description} />
+      {/* Search results show ~60 / ~155 characters; social cards below keep the full text. */}
+      <title>{fitTitle(title)}</title>
+      <meta name="description" content={fitDescription(description)} />
       {keywords && <meta name="keywords" content={keywords} />}
       {canonical && <link rel="canonical" href={canonical} />}
 
       {/* Robots Directive */}
       {noindex ? (
-        <meta name="robots" content="noindex, nofollow" />
+        <meta name="robots" content="noindex, follow" />
       ) : (
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
       )}
@@ -59,8 +61,6 @@ export default function SEO({
       
       {/* Twitter Card Tags */}
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:site" content="@FineGlaze" />
-      <meta name="twitter:creator" content="@FineGlaze" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       {ogImage && <meta name="twitter:image" content={ogImage} />}

@@ -1,4 +1,5 @@
 import SEO from "@/components/SEO";
+import { RelatedProjects } from "@/components/RelatedProjects";
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/home/CTASection";
 import { Link } from "react-router-dom";
@@ -53,11 +54,11 @@ export default function AcpCladdingPune() {
   return (
     <Layout darkHero>
       <SEO
-        title="ACP Cladding Contractor Pune | Aluminium Composite Panel Baner & Hinjewadi - Fine Glaze"
+        title="ACP Cladding Contractor in Pune | Fine Glaze"
         description="Top ACP cladding contractor in Pune. Fire-retardant aluminium composite panels for commercial facades in Baner, Hinjewadi, Kharadi & Wakad."
         canonical="https://fineglaze.com/acp-cladding-pune"
         keywords="ACP cladding contractor Pune, ACP facade Pune, aluminium composite panel Pune, ACP sheet installation Pune"
-        ogImage="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00"
+        ogImage="https://fineglaze.com/projects/embassy-techzone-40-1.webp"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}
       />
 
@@ -68,7 +69,7 @@ export default function AcpCladdingPune() {
             <h1 className="text-3xl md:text-4xl font-bold mb-4">
               ACP Cladding <span className="text-gradient-gold">Contractor in Pune</span>
             </h1>
-            <p className="text-lg text-white/80 mb-8">Fine Glaze is a leading ACP cladding contractor in Pune, providing fire-retardant aluminium composite panel cladding for commercial buildings, retail showrooms, hospitals, corporate offices, and residential exteriors. We work with premium brands including Aludecor, Viva, Alstone, and Alubond.</p>
+            <p className="text-lg text-white/80 mb-8">Fine Glaze is an ACP cladding contractor based in Pune, providing fire-retardant aluminium composite panel cladding for commercial buildings, retail showrooms, hospitals, corporate offices, and residential exteriors. We work with premium brands including Aludecor, Viva, Alstone, and Alubond.</p>
             <div className="flex gap-4">
               <Link to="/contact">
                 <Button size="lg" className="bg-amber-600 hover:bg-amber-700">Get Free Quote</Button>
@@ -79,8 +80,8 @@ export default function AcpCladdingPune() {
             </div>
           </div>
           <img
-            src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00"
-            alt="ACP aluminium composite panel cladding Pune - Fine Glaze"
+            src="/projects/embassy-techzone-41-3.webp"
+            alt="ACP cladding on the dead wall of Block 2, Embassy Techzone, Hinjewadi, Pune — completed by Fine Glaze"
             className="rounded-xl shadow-2xl object-cover h-[420px] w-full"
             loading="eager"
             width="600"
@@ -156,7 +157,7 @@ export default function AcpCladdingPune() {
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
             <Link key="/acp-aluminium-cladding" to="/acp-aluminium-cladding" className="group flex items-start gap-3 p-4 rounded-xl border border-slate-200 hover:border-amber-300 hover:bg-amber-50 transition-all bg-white"><ArrowRight size={15} className="text-amber-600 shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-slate-800 text-sm">ACP Cladding</p><p className="text-xs text-slate-500">Full ACP cladding service</p></div></Link>
             <Link key="/curtain-wall-pune" to="/curtain-wall-pune" className="group flex items-start gap-3 p-4 rounded-xl border border-slate-200 hover:border-amber-300 hover:bg-amber-50 transition-all bg-white"><ArrowRight size={15} className="text-amber-600 shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-slate-800 text-sm">Curtain Wall Pune</p><p className="text-xs text-slate-500">Glass curtain wall Pune</p></div></Link>
-            <Link key="/aluminium-facade" to="/aluminium-facade" className="group flex items-start gap-3 p-4 rounded-xl border border-slate-200 hover:border-amber-300 hover:bg-amber-50 transition-all bg-white"><ArrowRight size={15} className="text-amber-600 shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-slate-800 text-sm">Aluminium Facade</p><p className="text-xs text-slate-500">Aluminium facade systems</p></div></Link>
+            <Link key="/aluminium-windows-doors" to="/aluminium-windows-doors" className="group flex items-start gap-3 p-4 rounded-xl border border-slate-200 hover:border-amber-300 hover:bg-amber-50 transition-all bg-white"><ArrowRight size={15} className="text-amber-600 shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-slate-800 text-sm">Aluminium Facade</p><p className="text-xs text-slate-500">Aluminium facade systems</p></div></Link>
             <Link key="/structural-glazing-pune" to="/structural-glazing-pune" className="group flex items-start gap-3 p-4 rounded-xl border border-slate-200 hover:border-amber-300 hover:bg-amber-50 transition-all bg-white"><ArrowRight size={15} className="text-amber-600 shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-slate-800 text-sm">Structural Glazing Pune</p><p className="text-xs text-slate-500">Structural glazing Pune</p></div></Link>
             <Link key="/facade-contractor-pune" to="/facade-contractor-pune" className="group flex items-start gap-3 p-4 rounded-xl border border-slate-200 hover:border-amber-300 hover:bg-amber-50 transition-all bg-white"><ArrowRight size={15} className="text-amber-600 shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-slate-800 text-sm">Facade Contractor Pune</p><p className="text-xs text-slate-500">Complete facade services</p></div></Link>
             <Link key="/maintenance-services" to="/maintenance-services" className="group flex items-start gap-3 p-4 rounded-xl border border-slate-200 hover:border-amber-300 hover:bg-amber-50 transition-all bg-white"><ArrowRight size={15} className="text-amber-600 shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-slate-800 text-sm">Facade Maintenance</p><p className="text-xs text-slate-500">Cladding maintenance</p></div></Link>
@@ -164,6 +165,7 @@ export default function AcpCladdingPune() {
         </div>
       </section>
 
+      <RelatedProjects heading="Our cladding work in Pune" locations={["Pune"]} keywords={["ACP", "cladding"]} />
       <CTASection />
     </Layout>
   );

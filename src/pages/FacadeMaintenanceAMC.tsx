@@ -1,4 +1,5 @@
 import SEO from "@/components/SEO";
+import { RelatedProjects } from "@/components/RelatedProjects";
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/home/CTASection";
 import { Link } from "react-router-dom";
@@ -19,7 +20,7 @@ export default function FacadeMaintenanceAMC() {
       "address": { "@type": "PostalAddress", "addressLocality": "Pune", "addressRegion": "Maharashtra", "addressCountry": "IN" }
     },
     "areaServed": [{ "@type": "City", "name": "Pune" }, { "@type": "City", "name": "Mumbai" }, { "@type": "State", "name": "Maharashtra" }],
-    "description": "Facade AMC (Annual Maintenance Contract) for curtain walls, structural glazing, ACP cladding and glass railings Pan India. Comprehensive inspection, sealant, glass & hardware services."
+    "description": "Facade AMC (Annual Maintenance Contract) for curtain walls, structural glazing, ACP cladding and glass railings in Pune and Mumbai. Comprehensive inspection, sealant, glass & hardware services."
   };
 
   const faqSchema = {
@@ -44,11 +45,11 @@ export default function FacadeMaintenanceAMC() {
   return (
     <Layout darkHero>
       <SEO
-        title="Facade AMC Guide India | What to Expect from Facade Maintenance – Fine Glaze"
+        title="Facade AMC Guide: Scope, Schedule & Cost | Fine Glaze"
         description="Complete guide to facade AMC (Annual Maintenance Contracts) in India. What's included, costs, inspection frequency, and why it matters for your building. By Fine Glaze."
         canonical="https://fineglaze.com/facade-amc-guide"
-        keywords="facade AMC India, facade annual maintenance contract, curtain wall AMC Pan India, all India facade maintenance contract, building facade inspection India, glass facade AMC"
-        ogImage="https://images.unsplash.com/photo-1505765050516-f72dcac9c60e"
+        keywords="facade AMC India, facade annual maintenance contract, building facade inspection India, glass facade AMC"
+        ogImage="https://fineglaze.com/projects/embassy-247-37-1.webp"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}
       />
 
@@ -59,14 +60,14 @@ export default function FacadeMaintenanceAMC() {
               Facade AMC <span className="text-gradient-gold">Guide India</span>
             </h1>
             <p className="text-lg text-white/80 mb-8">
-              A facade Annual Maintenance Contract (AMC) is the most cost-effective way to protect your building's glass, sealant, and cladding systems — preventing expensive reactive repairs and maintaining property value. Fine Glaze provides comprehensive facade AMC programmes for buildings of all types Pan India.
+              A facade Annual Maintenance Contract (AMC) is the most cost-effective way to protect your building's glass, sealant, and cladding systems — preventing expensive reactive repairs and maintaining property value. Fine Glaze provides comprehensive facade AMC programmes for buildings of all types in Pune and Mumbai.
             </p>
             <div className="flex gap-4">
               <Link to="/contact"><Button size="lg" className="bg-amber-600 hover:bg-amber-700">Get AMC Quote</Button></Link>
               <Link to="/maintenance-services"><Button size="lg" variant="outline">Our Services</Button></Link>
             </div>
           </div>
-          <img src="https://images.unsplash.com/photo-1505765050516-f72dcac9c60e" alt="Facade AMC annual maintenance contract India building inspection Fine Glaze" className="rounded-xl shadow-2xl object-cover h-[420px] w-full" loading="eager" width="600" height="420" />
+          <img src="/projects/embassy-247-37-1.webp" alt="Embassy 247, Vikhroli, Mumbai — facade sealant renewal and glass replacement by Fine Glaze for Embassy REIT" className="rounded-xl shadow-2xl object-cover h-[420px] w-full" loading="eager" width="600" height="420" />
         </div>
       </section>
 
@@ -151,6 +152,7 @@ export default function FacadeMaintenanceAMC() {
           </div>
         </div>
       </section>
+      <RelatedProjects heading="Maintenance & repair work we run" keywords={["sealant", "maintenance", "leakage", "replacement", "repair"]} />
       <CTASection />
     </Layout>
   );

@@ -1,4 +1,5 @@
 import SEO from "@/components/SEO";
+import { RelatedProjects } from "@/components/RelatedProjects";
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/home/CTASection";
 import { Link } from "react-router-dom";
@@ -53,11 +54,11 @@ export default function FacadeContractorNaviMumbai() {
   return (
     <Layout darkHero>
       <SEO
-        title="Facade Contractor in Navi Mumbai | Curtain Wall & Glass Facade – Fine Glaze"
+        title="Facade Contractor in Navi Mumbai | Fine Glaze"
         description="Facade contractor in Navi Mumbai. Curtain walls, structural glazing & ACP cladding for Vashi, Mahape, Airoli, Kharghar & Belapur. LTIMindtree campus reference. Free site visit."
         canonical="https://fineglaze.com/facade-contractor-navi-mumbai"
         keywords="facade contractor Navi Mumbai, curtain wall Navi Mumbai, glass facade Mahape, ACP cladding Airoli, structural glazing Vashi, facade company Belapur, IT park facade Navi Mumbai"
-        ogImage="https://images.unsplash.com/photo-1486325212027-8081e485255e"
+        ogImage="https://fineglaze.com/projects/ltimindtree-campus-44-1.webp"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}
       />
 
@@ -79,8 +80,8 @@ export default function FacadeContractorNaviMumbai() {
             </div>
           </div>
           <img
-            src="https://images.unsplash.com/photo-1486325212027-8081e485255e"
-            alt="Navi Mumbai IT campus facade curtain wall - Fine Glaze LTIMindtree"
+            src="/projects/ltimindtree-campus-44-1.webp"
+            alt="LTIMindtree campus, Mahape, Navi Mumbai — ACP and silicone work by Fine Glaze for L&T Construction (ongoing)"
             className="rounded-xl shadow-2xl object-cover h-[420px] w-full"
             loading="eager"
             width="600"
@@ -164,6 +165,7 @@ export default function FacadeContractorNaviMumbai() {
         </div>
       </section>
 
+      <RelatedProjects heading="Our projects in Navi Mumbai & Panvel" locations={["Navi Mumbai", "Panvel"]} />
       <CTASection />
     </Layout>
   );

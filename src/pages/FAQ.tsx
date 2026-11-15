@@ -90,11 +90,11 @@ const faqDatabase = [
   },
   {
     id: "item-9",
-    question: "Do you provide facade and glazing services Pan India?",
+    question: "Which cities do you work in? Do you take projects outside Pune and Mumbai?",
     category: "Coverage",
     icon: <MapPin className="w-5 h-5 text-blue-600" />,
-    answer: "Yes. Fine Glaze executes facade, curtain wall, structural glazing, and ACP cladding projects Pan India. While our fabrication headquarters are in Maharashtra, we mobilize expert site engineers, certified installers, and project managers across all states and major metro regions in India for commercial, institutional, and high-rise residential developments. Contact us at +91 8369233566 to discuss your location and project scope.",
-    stats: { metric: "Pan India", label: "Service Area" }
+    answer: "We operate from Pune and Mumbai — our office and fabrication unit are in Pune, and most of our sites are in Pune, PCMC, Mumbai, Navi Mumbai, Thane and Panvel. Projects elsewhere in India are considered case by case after a site visit, depending on scope and how we can supervise the work properly. Call +91 83692 33566 to discuss your location.",
+    stats: { metric: "Pune · Mumbai", label: "Operating Cities" }
   },
   {
     id: "item-10",

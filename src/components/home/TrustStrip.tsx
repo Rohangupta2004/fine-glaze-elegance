@@ -4,16 +4,16 @@ import { motion } from "framer-motion";
 import { fadeUp, stagger, viewport } from "@/hooks/useMotion";
 import { supabase } from "@/lib/supabase";
 import { AnimatedNumber } from "@/components/common/AnimatedNumber";
+import { company } from "@/data/company";
 
 /* ─── Fallback client list (used if supabase manifest missing) ─── */
 const fallbackClients = [
+  // Clients exactly as listed in the Company Profile 2026–27.
   { name: "Embassy REIT", abbr: "E", color: "#1a3c5e" },
-  { name: "LTIMindtree", abbr: "LTI", color: "#0066cc" },
-  { name: "Larsen & Toubro", abbr: "L&T", color: "#e63012" },
-  { name: "Peninsula Land", abbr: "PL", color: "#2e7d32" },
-  { name: "Leela Group", abbr: "L", color: "#8b6914" },
-  { name: "Nirmaann", abbr: "N", color: "#6a1b9a" },
-  { name: "JSL", abbr: "JSL", color: "#c62828" },
+  { name: "L&T Construction", abbr: "L&T", color: "#e63012" },
+  { name: "Jindal Stainless", abbr: "JSL", color: "#c62828" },
+  { name: "Nirmaann Encon", abbr: "N", color: "#6a1b9a" },
+  { name: "Hatchway Windoor", abbr: "HW", color: "#2e7d32" },
   { name: "Rockfort Estate", abbr: "RE", color: "#37474f" },
 ];
 
@@ -85,17 +85,17 @@ export const TrustStrip = () => {
             </span>
           </motion.div>
 
-          {/* Star rating */}
-          <motion.div variants={fadeUp} className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-border">
-            <div className="flex gap-0.5">
-              {[1, 2, 3, 4, 5].map((i) => (
-                <Star key={i} size={14} className="fill-amber-500 text-amber-500" />
-              ))}
-            </div>
-            <span className="text-sm font-semibold text-foreground/80">
-              5.0 · Client Reviews
-            </span>
-          </motion.div>
+          {/* Google reviews (link out — rating is not hard-coded) */}
+          <motion.a
+            variants={fadeUp}
+            href={company.address.mapsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-border hover:border-amber-500/50 transition-colors"
+          >
+            <Star size={14} className="fill-amber-500 text-amber-500" />
+            <span className="text-sm font-semibold text-foreground/80">Read our Google reviews</span>
+          </motion.a>
         </motion.div>
 
         {/* Capability in Numbers — Numbers in Count-Up Motion */}
@@ -107,12 +107,12 @@ export const TrustStrip = () => {
           variants={stagger(0.08)}
         >
           {[
-            { val: "5+ Yrs", label: "Company Track Record", sub: "Turnkey Execution" },
-            { val: "45+ Yrs", label: "Team Engineering Mastery", sub: "MNC & Facade Veterans" },
-            { val: "~20,566", label: "SQM Area Delivered", sub: "Across India" },
-            { val: "16+", label: "Documented Projects", sub: "REITs, Airport & Malls" },
-            { val: "40+", label: "Core Technical Team", sub: "Up to 540 Mobilisation" },
-            { val: "540", label: "Peak Mobilisation", sub: "Site Labour Capacity" },
+            { val: company.stats.sqmDelivered, label: "SQM Facade Delivered", sub: "Pune & Mumbai" },
+            { val: company.stats.projectRecords, label: "Documented Projects", sub: "In our company profile" },
+            { val: company.stats.coreTeam, label: "Core Team", sub: "Engineering · supervision · site" },
+            { val: "~2,500", label: "Sq Ft Fabrication Unit", sub: "Pisoli, Pune" },
+            { val: "11+ Yrs", label: "Founder's Facade Experience", sub: "Incl. Al Ghurair Group" },
+            { val: "2024", label: "Best Vendor Award", sub: "Embassy REIT" },
           ].map((item, idx) => (
             <motion.div
               key={idx}
@@ -140,7 +140,7 @@ export const TrustStrip = () => {
           viewport={viewport}
           variants={fadeUp}
         >
-          Trusted by India's most iconic brands & developers
+          Clients we have delivered for
         </motion.p>
 
         {/* Client Logo Marquee */}

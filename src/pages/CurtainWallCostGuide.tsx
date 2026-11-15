@@ -53,11 +53,10 @@ export default function CurtainWallCostGuide() {
   return (
     <Layout darkHero>
       <SEO
-        title="Curtain Wall Cost in India 2024 | Complete Price Guide – Fine Glaze"
+        title="Curtain Wall Cost in India: Price Guide | Fine Glaze"
         description="Complete curtain wall cost guide India 2024. Stick system vs unitized pricing, glass types, installation factors. All prices explained. Get a custom quote from Fine Glaze."
         canonical="https://fineglaze.com/curtain-wall-cost-guide"
         keywords="curtain wall cost India, curtain wall price per sq ft, unitized curtain wall cost, stick system curtain wall price, glass facade cost India, curtain wall budget India 2024"
-        ogImage="https://images.unsplash.com/photo-1503387762-592deb58ef4e"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}
       />
 
@@ -68,7 +67,7 @@ export default function CurtainWallCostGuide() {
             <h1 className="text-3xl md:text-4xl font-bold mb-4">
               Curtain Wall Cost <span className="text-gradient-gold">Guide India 2024</span>
             </h1>
-            <p className="text-lg text-white/80 mb-8">Planning a curtain wall for your commercial building? This comprehensive guide breaks down curtain wall costs in India — covering all system types, glass specifications, installation factors, and real pricing ranges based on Fine Glaze's extensive project experience Pan India.</p>
+            <p className="text-lg text-white/80 mb-8">Planning a curtain wall for your commercial building? This comprehensive guide breaks down curtain wall costs in India — covering all system types, glass specifications, installation factors, and real pricing ranges based on Fine Glaze's extensive project experience in Pune and Mumbai.</p>
             <div className="flex gap-4">
               <Link to="/contact">
                 <Button size="lg" className="bg-amber-600 hover:bg-amber-700">Get Free Quote</Button>
@@ -79,8 +78,8 @@ export default function CurtainWallCostGuide() {
             </div>
           </div>
           <img
-            src="https://images.unsplash.com/photo-1503387762-592deb58ef4e"
-            alt="Curtain wall cost guide India glass facade pricing Fine Glaze"
+            src="/projects/naman-chambers-48-1.webp"
+            alt="Naman Chambers, Bandra Kurla Complex, Mumbai — glazing and ACP works by Fine Glaze (in progress)"
             className="rounded-xl shadow-2xl object-cover h-[420px] w-full"
             loading="eager"
             width="600"

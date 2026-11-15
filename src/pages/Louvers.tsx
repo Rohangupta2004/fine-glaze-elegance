@@ -1,4 +1,5 @@
 import SEO from "@/components/SEO";
+import { RelatedProjects } from "@/components/RelatedProjects";
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/home/CTASection";
 import { Link } from "react-router-dom";
@@ -82,7 +83,7 @@ const IMG: Record<string, string> = {
   operable: "/louvers-closeup.webp",
   motorised: "/louvers-motorized.webp",
   fins: "/louvers-vertical.webp",
-  process: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?fm=jpg&q=85&w=1400&auto=format&fit=crop",
+  process: "/projects/nanavati-max-hospital-39-3.webp",
 };
 
 /* ── System data ── */
@@ -212,8 +213,8 @@ export default function Louvers() {
   return (
     <Layout darkHero>
       <SEO
-        title="Aluminium Louver Contractor Pan India | Facade Sun Louvers - Fine Glaze"
-        description="Top aluminium louver contractor Pan India. Fixed, vertical, motorized & architectural aluminium sun louvers for solar heat reduction."
+        title="Aluminium Louvers Contractor in Pune & Mumbai | Fine Glaze"
+        description="Aluminium louver contractor in Pune & Mumbai. Fixed, vertical, motorized & architectural aluminium sun louvers for solar heat reduction."
         canonical="https://fineglaze.com/aluminium-louvers"
         keywords="aluminium louver contractor, aluminium sun louvers, facade louvers, vertical louvers, motorized louvers, architectural louvers"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}
@@ -243,7 +244,7 @@ export default function Louvers() {
             className="text-amber-400 text-xs font-bold tracking-[0.4em] uppercase mb-5 animate-fade-in"
             style={{ animationDelay: "0.05s" }}
           >
-            Fine Glaze · Pan India
+            Fine Glaze · Pune & Mumbai
           </p>
 
           <h1
@@ -293,7 +294,7 @@ export default function Louvers() {
               ))}
             </div>
             <span className="text-white/50 text-xs font-medium ml-0.5">
-              5.0 Google · Embassy REIT Vendor · 10+ Landmark Projects
+              Embassy REIT Best Vendor 2024 · 16 Documented Projects
             </span>
           </div>
         </div>
@@ -518,7 +519,7 @@ export default function Louvers() {
         <div className="relative h-[35vh] md:h-[40vh] overflow-hidden">
           <img
             src={IMG.process}
-            alt="Fine Glaze louver installation"
+            alt="Fine Glaze team installing facade louvers at Nanavati Max Hospital, Vile Parle, Mumbai"
             className="w-full h-full object-cover"
             loading="lazy"
           />
@@ -654,7 +655,7 @@ export default function Louvers() {
                 </p>
                 <div className="grid grid-cols-2 gap-x-6 gap-y-1.5">
                   {[
-                    { title: "Aluminium Facade", href: "/aluminium-facade" },
+                    { title: "Aluminium Facade", href: "/aluminium-windows-doors" },
                     { title: "Curtain Wall Systems", href: "/curtain-wall-systems" },
                     { title: "ACP Cladding", href: "/acp-aluminium-cladding" },
                     { title: "Structural Glazing", href: "/structural-glazing" },
@@ -678,6 +679,7 @@ export default function Louvers() {
 
 
       {/* ════════════ CTA ════════════ */}
+      <RelatedProjects heading="Louver projects" keywords={["louver", "louvre", "fins"]} />
       <CTASection />
     </Layout>
   );

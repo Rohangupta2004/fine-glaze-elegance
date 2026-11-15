@@ -1,4 +1,5 @@
 import SEO from "@/components/SEO";
+import { RelatedProjects } from "@/components/RelatedProjects";
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/home/CTASection";
 import { ServiceQuickOverview } from "@/components/service/ServiceQuickOverview";
@@ -83,7 +84,7 @@ const IMG: Record<string, string> = {
   pe: "/acp-panels.webp",
   wood: "/acp-finishes.webp",
   mirror: "/acp-panels.webp",
-  process: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?fm=jpg&q=85&w=1400&auto=format&fit=crop",
+  process: "/projects/salsette-27-33-2.webp",
 };
 
 /* ── System data ── */
@@ -164,7 +165,7 @@ export default function AcpCladding() {
       { "@type": "City", name: "Mumbai" },
       { "@type": "City", name: "Navi Mumbai" },
     ],
-    description: "Aluminium Composite Panel cladding — PVDF, PE, wood-grain & mirror finishes. Fire-retardant FR grade panels from Aludecor, Alstrong & Reynobond. 20-year colour warranty.",
+    description: "Aluminium Composite Panel cladding — PVDF, PE, wood-grain & mirror finishes. Fire-retardant FR grade panels from approved brands such as Alubond. Manufacturer colour warranty up to 20 years on PVDF grades.",
   };
 
   const breadcrumbSchema = {
@@ -213,8 +214,8 @@ export default function AcpCladding() {
   return (
     <Layout darkHero>
       <SEO
-        title="ACP Cladding Contractor Pan India | Aluminium Panel Facades - Fine Glaze"
-        description="Top ACP cladding contractor Pan India. PVDF-coated fire-retardant aluminium composite panels for commercial facades, IT parks & retail buildings."
+        title="ACP Cladding Contractor in Pune & Mumbai | Fine Glaze"
+        description="ACP cladding contractor in Pune & Mumbai. PVDF-coated fire-retardant aluminium composite panels for commercial facades, IT parks & retail buildings."
         canonical="https://fineglaze.com/acp-aluminium-cladding"
         keywords="ACP cladding contractor, aluminium composite panel cladding, ACP facade, aluminium cladding, PVDF ACP, fire-retardant ACP"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}
@@ -244,7 +245,7 @@ export default function AcpCladding() {
             className="text-amber-400 text-xs font-bold tracking-[0.4em] uppercase mb-5 animate-fade-in"
             style={{ animationDelay: "0.05s" }}
           >
-            Fine Glaze · Pan India
+            Fine Glaze · Pune & Mumbai
           </p>
 
           <h1
@@ -262,7 +263,7 @@ export default function AcpCladding() {
             className="mt-6 text-white/70 text-base md:text-lg max-w-lg leading-relaxed animate-fade-in-up"
             style={{ animationDelay: "0.2s" }}
           >
-            Fire-retardant ACP and aluminium cladding for durable, weather-resistant building exteriors Pan India.
+            Fire-retardant ACP and aluminium cladding for durable, weather-resistant building exteriors in Pune and Mumbai.
           </p>
 
           <div
@@ -294,7 +295,7 @@ export default function AcpCladding() {
               ))}
             </div>
             <span className="text-white/50 text-xs font-medium ml-0.5">
-              5.0 Google · Embassy REIT Vendor · 10+ Landmark Projects
+              Embassy REIT Best Vendor 2024 · 16 Documented Projects
             </span>
           </div>
         </div>
@@ -350,7 +351,7 @@ export default function AcpCladding() {
           <FadeIn>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-0 md:divide-x md:divide-stone-700">
               {[
-                { number: "20yr", label: "Colour Warranty (PVDF)" },
+                { number: "Up to 20yr", label: "Maker's PVDF Colour Warranty" },
                 { number: "FR", label: "Fire Retardant Grade" },
                 { number: "10+", label: "Years Experience" },
                 { number: "100+", label: "Finish Options" },
@@ -471,7 +472,7 @@ export default function AcpCladding() {
                 {
                   icon: Award,
                   title: "Trusted Brands",
-                  desc: "We use panels from Aludecor, Alstrong, and Reynobond — the most trusted ACP manufacturers.",
+                  desc: "Panels from approved brands such as Alubond — or strictly from your project's approved vendor list, with mill and test certificates.",
                 },
                 {
                   icon: Wrench,
@@ -538,7 +539,7 @@ export default function AcpCladding() {
         <div className="relative h-[35vh] md:h-[40vh] overflow-hidden">
           <img
             src={IMG.process}
-            alt="Fine Glaze ACP cladding installation"
+            alt="Curved ACP ramp canopy fabricated and installed by Fine Glaze at Salsette-27, Byculla, Mumbai"
             className="w-full h-full object-cover"
             loading="lazy"
           />
@@ -637,7 +638,7 @@ export default function AcpCladding() {
               />
               <FAQItem
                 q="How long does PVDF ACP last?"
-                a="PVDF (fluorocarbon) coated ACP panels come with a 20-year colour warranty. They resist UV fading, chalking, and chemical exposure far better than PE coated panels — making them the preferred choice for external facades."
+                a="PVDF (fluorocarbon) coated ACP panels typically carry a manufacturer colour warranty of up to 20 years (check the brand's warranty document for your project). They resist UV fading, chalking, and chemical exposure far better than PE coated panels — making them the preferred choice for external facades."
               />
               <FAQItem
                 q="Can ACP be used for renovation and existing buildings?"
@@ -676,7 +677,7 @@ export default function AcpCladding() {
                   {[
                     { title: "Curtain Wall Systems", href: "/curtain-wall-systems" },
                     { title: "Structural Glazing", href: "/structural-glazing" },
-                    { title: "Aluminium Facade", href: "/aluminium-facade" },
+                    { title: "Aluminium Facade", href: "/aluminium-windows-doors" },
                     { title: "Glass Railings", href: "/glass-railings" },
                     { title: "Facade AMC", href: "/maintenance-services" },
                     { title: "All Services →", href: "/services" },
@@ -698,6 +699,7 @@ export default function AcpCladding() {
 
 
       {/* ════════════ CTA ════════════ */}
+      <RelatedProjects heading="ACP cladding projects" keywords={["ACP"]} />
       <CTASection />
     </Layout>
   );

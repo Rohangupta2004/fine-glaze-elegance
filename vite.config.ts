@@ -24,49 +24,9 @@ const articleSitemapPlugin = (): Plugin => {
   };
 };
 
-// 1. All Locations (Pan India, National Metros, Regional Hubs & Industrial Zones)
-const locations = [
-  "pan-india", "all-india", "india",
-  "delhi-ncr", "delhi", "gurgaon", "noida", "greater-noida", "faridabad",
-  "bengaluru", "bangalore", "whitefield", "electronic-city",
-  "hyderabad", "hitec-city", "gachibowli",
-  "chennai", "coimbatore",
-  "ahmedabad", "gift-city", "surat", "vadodara", "rajkot",
-  "kolkata", "new-town-kolkata", "bhubaneswar",
-  "chandigarh", "mohali", "jaipur", "lucknow", "kanpur", "dehradun",
-  "indore", "bhopal", "nagpur", "raipur",
-  "kochi", "thiruvananthapuram", "visakhapatnam", "vijayawada",
-  "pune", "hinjewadi", "kharadi", "baner", "wakad", "viman-nagar", "magarpatta",
-  "hadapsar", "pimpri", "chinchwad", "kalyani-nagar", "koregaon-park", "aundh",
-  "balewadi", "nashik", "aurangabad",
-  "mumbai", "bkc", "andheri", "powai", "lower-parel", "vikhroli",
-  "goregaon", "worli", "byculla", "malad", "borivali", "dadar", "nariman-point",
-  "navi-mumbai", "vashi", "mahape", "airoli", "belapur", "kharghar", "panvel", "thane"
-];
-
-// 2. All 7 Services from your Sitemap
-const services = [
-  "commercial-construction",
-  "structural-glazing",
-  "curtain-wall",
-  "acp-cladding",
-  "glass-railing",
-  "facade-maintenance",
-  "facade-contractor"
-];
-
-// Generate all dynamic facade URLs
-const dynamicUrls: string[] = [];
-// Direct city/region URLs
-locations.forEach(location => {
-  dynamicUrls.push(`/facade-contractor/${location}`);
-});
-// Service-location combination URLs
-services.forEach(service => {
-  locations.forEach(location => {
-    dynamicUrls.push(`/facade-contractor/${service}-${location}`);
-  });
-});
+// Retired: the ~600 auto-generated /facade-contractor/:city pages are no longer
+// pre-rendered. vercel.json 301-redirects every old URL to a genuine page
+// (see src/lib/legacyLocationRedirects.ts).
 
 // 3. Blog Slugs — auto-generated from blog data keys
 import { blogPosts } from "./src/data/blog";
@@ -99,21 +59,16 @@ const staticSeoUrls = [
   "/residential-facade",
   "/industrial-facade",
   "/facade-amc-guide",
+  // Trust, conversion and fenestration pages (Nov 2026)
+  "/aluminium-windows-doors",
+  "/quality-safety",
+  "/service-request",
+  "/facade-cost-estimator",
 ];
 
-// 4. Project Slugs (From src/data/projects.ts)
-const projectUrls = [
-  "/project/ltimindtree-campus",
-  "/project/embassy-247",
-  "/project/salsette-27",
-  "/project/leela-business-park",
-  "/project/pune-airport-terminal",
-  "/project/jindal-house",
-  "/project/nirmaann-estrellaa",
-  "/project/ssg-honesty",
-  "/project/leela-hotel",
-  "/project/embassy-techzone"
-];
+// 4. Project Slugs — derived from src/data/projects.ts so new projects are always pre-rendered.
+import { projectsData } from "./src/data/projects";
+const projectUrls = Object.keys(projectsData).map((slug) => `/project/${slug}`);
 
 export default defineConfig(({ mode }) => ({
   server: {
@@ -136,10 +91,11 @@ export default defineConfig(({ mode }) => ({
         // Profile links must also work on direct visits, refreshes and shared slides.
         '/company-profile', '/brochure', '/profile',
         // Legacy Service Pages
-        '/aluminium-facade', '/structural-glazing', '/curtain-wall-systems',
+        '/structural-glazing', '/curtain-wall-systems',
         '/acp-aluminium-cladding', '/glass-railings', '/maintenance-services',
-        // Dynamic Arrays Generated Above
-        ...dynamicUrls,
+        '/skylights-canopies', '/aluminium-louvers', '/glass-partitions',
+        '/privacy-policy', '/terms-of-service',
+        // Generated lists
         ...blogUrls,
         ...projectUrls,
         ...staticSeoUrls

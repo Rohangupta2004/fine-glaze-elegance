@@ -135,7 +135,7 @@ export const ContactFormSection = () => {
   return (
     <section
       id="contact"
-      className="py-16 md:py-24 bg-stone-50"
+      className="py-16 md:py-24 bg-stone-50 overflow-x-clip"
     >
       <div className="container mx-auto px-5 md:px-16">
         {/* Section header */}
@@ -161,7 +161,7 @@ export const ContactFormSection = () => {
         </motion.div>
 
         <motion.div
-          className="grid lg:grid-cols-12 gap-8 md:gap-12"
+          className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12"
           initial="hidden"
           whileInView="visible"
           viewport={viewport}
@@ -169,7 +169,7 @@ export const ContactFormSection = () => {
         >
           {/* ── Form ── */}
           <motion.div
-            className="lg:col-span-7"
+            className="lg:col-span-7 min-w-0"
             variants={slideLeft}
           >
             <div className="bg-white border border-stone-200 shadow-sm">
@@ -399,7 +399,7 @@ export const ContactFormSection = () => {
 
           {/* ── Right column — why reach out + quick contact ── */}
           <motion.div
-            className="lg:col-span-5 space-y-5 md:space-y-6"
+            className="lg:col-span-5 min-w-0 space-y-5 md:space-y-6"
             variants={slideRight}
           >
             {/* Why reach out */}
@@ -495,8 +495,8 @@ export const ContactFormSection = () => {
             {/* Quick stat strip */}
             <div className="grid grid-cols-3 gap-px bg-stone-200">
               {[
-                { num: "10+", label: "Projects" },
-                { num: "10+", label: "Years" },
+                { num: "16", label: "Projects" },
+                { num: "11+ yrs", label: "Founder exp." },
                 { num: "<1hr", label: "Response" },
               ].map((s) => (
                 <div

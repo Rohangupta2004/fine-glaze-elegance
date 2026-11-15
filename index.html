@@ -26,8 +26,6 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Lora:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" media="print" onload="this.media='all'" />
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Lora:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" /></noscript>
 
-    <!-- Preload LCP hero image -->
-    <link rel="preload" as="image" href="/Embassyoark.webp" fetchpriority="high" />
 
     <!-- FAVICON -->
     <link rel="icon" type="image/png" sizes="48x48" href="/favicon.png" />
@@ -42,133 +40,90 @@
     <meta name="twitter:card" content="summary_large_image" />
 
     <!-- ============ STRUCTURED DATA (JSON-LD) ============ -->
-
-    <!-- 1. Organization Schema -->
+    <!-- One sitewide entity graph. Facts mirror src/data/company.ts (Company Profile 2026–27). -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Organization",
-        "@id": "https://fineglaze.com/#organization",
-        "name": "Fine Glaze",
-        "alternateName": ["FineGlaze", "Fine Glaze India", "Fine Glaze Pune"],
-        "url": "https://fineglaze.com/",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://fineglaze.com/Logofg.webp",
-          "width": 512,
-          "height": 512
-        },
-        "sameAs": [
-          "https://www.google.com/maps/search/?api=1&query=Fine+Glaze+A3+LW-13+Pragati+Serene+Mohammed+Wadi+Pune+411060",
-          "https://www.linkedin.com/company/fine-glaze"
-        ],
-        "contactPoint": [
+        "@graph": [
           {
-            "@type": "ContactPoint",
+            "@type": "Organization",
+            "@id": "https://fineglaze.com/#organization",
+            "name": "Fine Glaze",
+            "alternateName": "FineGlaze",
+            "url": "https://fineglaze.com/",
+            "logo": { "@type": "ImageObject", "url": "https://fineglaze.com/Logofg.webp", "width": 512, "height": 512 },
+            "image": "https://fineglaze.com/og-default.jpg",
+            "description": "Specialist facade contractor in Pune and Mumbai: design, fabrication, installation and maintenance of curtain walls, structural glazing, aluminium windows and doors, ACP cladding, louvers, glass railings and facade AMC.",
+            "email": "info@fineglaze.com",
             "telephone": "+91-8369233566",
-            "contactType": "sales",
-            "areaServed": "IN",
-            "availableLanguage": ["English", "Hindi", "Marathi"]
+            "taxID": "27BFJPG1853A1ZU",
+            "founder": { "@type": "Person", "name": "Deepak Gupta", "jobTitle": "Founder & Proprietor" },
+            "award": "Best Vendor Performance 2024 — Embassy REIT",
+            "knowsAbout": ["Curtain wall systems", "Structural glazing", "Aluminium windows and doors", "ACP cladding", "Aluminium louvers", "Glass railings", "Skylights and canopies", "Glass partitions", "Facade maintenance and AMC", "Facade leakage rectification"],
+            "sameAs": ["https://www.linkedin.com/company/fine-glaze"],
+            "contactPoint": [
+              { "@type": "ContactPoint", "telephone": "+91-8369233566", "contactType": "sales", "areaServed": "IN", "availableLanguage": ["English", "Hindi", "Marathi"] },
+              { "@type": "ContactPoint", "telephone": "+91-20-68299428", "contactType": "customer service", "areaServed": "IN" }
+            ]
           },
           {
-            "@type": "ContactPoint",
-            "telephone": "+91-02068299428",
-            "contactType": "customer service",
-            "areaServed": "IN"
+            "@type": "GeneralContractor",
+            "@id": "https://fineglaze.com/#localbusiness",
+            "name": "Fine Glaze",
+            "url": "https://fineglaze.com/",
+            "image": "https://fineglaze.com/fine-glaze-storefront.webp",
+            "logo": "https://fineglaze.com/Logofg.webp",
+            "telephone": "+91-8369233566",
+            "email": "info@fineglaze.com",
+            "parentOrganization": { "@id": "https://fineglaze.com/#organization" },
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "A3 LW-13, Pragati Serene Building, Sr.No.2, HDFC Bank Chowk, Plot B, Autadwadi Handewadi, Mahadev Wadi, Mohammed Wadi",
+              "addressLocality": "Pune",
+              "addressRegion": "Maharashtra",
+              "postalCode": "411060",
+              "addressCountry": "IN"
+            },
+            "geo": { "@type": "GeoCoordinates", "latitude": 18.4529, "longitude": 73.9072 },
+            "hasMap": "https://www.google.com/maps/search/?api=1&query=Fine+Glaze+A3+LW-13+Pragati+Serene+Mohammed+Wadi+Pune+411060",
+            "openingHoursSpecification": {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+              "opens": "09:00",
+              "closes": "18:00"
+            },
+            "areaServed": [
+              { "@type": "City", "name": "Pune" },
+              { "@type": "City", "name": "Pimpri-Chinchwad" },
+              { "@type": "City", "name": "Mumbai" },
+              { "@type": "City", "name": "Navi Mumbai" },
+              { "@type": "City", "name": "Thane" },
+              { "@type": "AdministrativeArea", "name": "Maharashtra" }
+            ],
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Facade & fenestration services",
+              "itemListElement": [
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Curtain wall systems", "url": "https://fineglaze.com/curtain-wall-systems" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Structural glazing", "url": "https://fineglaze.com/structural-glazing" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Aluminium windows & doors", "url": "https://fineglaze.com/aluminium-windows-doors" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "ACP cladding", "url": "https://fineglaze.com/acp-aluminium-cladding" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Aluminium louvers", "url": "https://fineglaze.com/aluminium-louvers" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Glass railings", "url": "https://fineglaze.com/glass-railings" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Skylights & canopies", "url": "https://fineglaze.com/skylights-canopies" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Glass partitions", "url": "https://fineglaze.com/glass-partitions" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Facade maintenance & AMC", "url": "https://fineglaze.com/maintenance-services" } }
+              ]
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://fineglaze.com/#website",
+            "name": "Fine Glaze",
+            "url": "https://fineglaze.com/",
+            "inLanguage": "en-IN",
+            "publisher": { "@id": "https://fineglaze.com/#organization" }
           }
-        ]
-      }
-    </script>
-
-    <!-- 2. LocalBusiness Schema — Crucial for "near me" searches -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "@id": "https://fineglaze.com/#localbusiness",
-        "name": "Fine Glaze",
-        "alternateName": "FineGlaze",
-        "image": "https://fineglaze.com/Logofg.webp",
-        "url": "https://fineglaze.com/",
-        "telephone": "+91-8369233566",
-        "email": "info@fineglaze.com",
-        "sameAs": [
-          "https://www.google.com/maps/search/?api=1&query=Fine+Glaze+A3+LW-13+Pragati+Serene+Mohammed+Wadi+Pune+411060",
-          "https://www.linkedin.com/company/fine-glaze"
-        ],
-        "description": "Fine Glaze is a leading aluminium facade contractor Pan India, offering curtain wall systems, structural glazing, ACP cladding, glass railings, and facade maintenance services.",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "A3 LW-13, Pragati Serene Building, Sr.No.2, HDFC Bank Chowk, Plot B, Autadwadi Handewadi, Mahadev Wadi, Mohammed Wadi",
-          "addressLocality": "Pune",
-          "addressRegion": "Maharashtra",
-          "postalCode": "411060",
-          "addressCountry": "IN"
-        },
-        "openingHoursSpecification": {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-          "opens": "09:00",
-          "closes": "18:00"
-        },
-        "priceRange": "₹₹₹",
-        "areaServed": [
-          { "@type": "City", "name": "Pune" },
-          { "@type": "City", "name": "Mumbai" },
-          { "@type": "City", "name": "Navi Mumbai" },
-          { "@type": "City", "name": "Nashik" },
-          { "@type": "State", "name": "Maharashtra" }
-        ],
-        "hasOfferCatalog": {
-          "@type": "OfferCatalog",
-          "name": "Facade Services",
-          "itemListElement": [
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Aluminium Facade Systems" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Curtain Wall Glazing" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Structural Glazing" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "ACP Aluminium Cladding" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Glass Railings" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Facade Maintenance AMC" } }
-          ]
-        }
-      }
-    </script>
-
-    <!-- 3. WebSite Schema with Search Action (for Google Sitelinks Search Box) -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "@id": "https://fineglaze.com/#website",
-        "name": "Fine Glaze",
-        "url": "https://fineglaze.com/",
-        "publisher": { "@id": "https://fineglaze.com/#organization" },
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": "https://fineglaze.com/?q={search_term_string}",
-          "query-input": "required name=search_term_string"
-        }
-      }
-    </script>
-
-    <!-- 4. SiteNavigationElement — Helps Google understand site structure -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "ItemList",
-        "itemListElement": [
-          { "@type": "SiteNavigationElement", "position": 1, "name": "Home", "url": "https://fineglaze.com/" },
-          { "@type": "SiteNavigationElement", "position": 2, "name": "About", "url": "https://fineglaze.com/about" },
-          { "@type": "SiteNavigationElement", "position": 3, "name": "Services", "url": "https://fineglaze.com/services" },
-          { "@type": "SiteNavigationElement", "position": 4, "name": "Aluminium Facade", "url": "https://fineglaze.com/aluminium-facade" },
-          { "@type": "SiteNavigationElement", "position": 5, "name": "Curtain Wall Systems", "url": "https://fineglaze.com/curtain-wall-systems" },
-          { "@type": "SiteNavigationElement", "position": 6, "name": "Structural Glazing", "url": "https://fineglaze.com/structural-glazing" },
-          { "@type": "SiteNavigationElement", "position": 7, "name": "ACP Cladding", "url": "https://fineglaze.com/acp-aluminium-cladding" },
-          { "@type": "SiteNavigationElement", "position": 8, "name": "Glass Railings", "url": "https://fineglaze.com/glass-railings" },
-          { "@type": "SiteNavigationElement", "position": 9, "name": "Maintenance", "url": "https://fineglaze.com/maintenance-services" },
-          { "@type": "SiteNavigationElement", "position": 10, "name": "Portfolio", "url": "https://fineglaze.com/portfolio" },
-          { "@type": "SiteNavigationElement", "position": 11, "name": "Contact", "url": "https://fineglaze.com/contact" },
-          { "@type": "SiteNavigationElement", "position": 12, "name": "FAQ", "url": "https://fineglaze.com/faq" }
         ]
       }
     </script>

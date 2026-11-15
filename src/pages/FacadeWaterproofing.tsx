@@ -1,4 +1,5 @@
 import SEO from "@/components/SEO";
+import { RelatedProjects } from "@/components/RelatedProjects";
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/home/CTASection";
 import { Link } from "react-router-dom";
@@ -9,7 +10,7 @@ export default function FacadeWaterproofing() {
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "Facade Waterproofing & Leak Repair Pan India",
+    "name": "Facade Waterproofing & Leak Repair in Pune and Mumbai",
     "provider": {
       "@type": "LocalBusiness",
       "name": "Fine Glaze",
@@ -28,7 +29,7 @@ export default function FacadeWaterproofing() {
       { "@type": "City", "name": "Mumbai" },
       { "@type": "State", "name": "Maharashtra" }
     ],
-    "description": "Facade waterproofing and glass facade leak repair Pan India. Sealant replacement, curtain wall leakage diagnosis & remediation. Free inspection."
+    "description": "Facade waterproofing and glass facade leak repair in Pune and Mumbai. Sealant replacement, curtain wall leakage diagnosis & remediation. Free inspection."
   };
 
   const faqSchema = {
@@ -46,18 +47,18 @@ export default function FacadeWaterproofing() {
     "@type": "BreadcrumbList",
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://fineglaze.com" },
-      { "@type": "ListItem", "position": 2, "name": "Facade Waterproofing & Leak Repair Pan India", "item": "https://fineglaze.com/facade-waterproofing" }
+      { "@type": "ListItem", "position": 2, "name": "Facade Waterproofing & Leak Repair in Pune and Mumbai", "item": "https://fineglaze.com/facade-waterproofing" }
     ]
   };
 
   return (
     <Layout darkHero>
       <SEO
-        title="Facade Waterproofing Contractor Pan India | Leak Repair Solutions - Fine Glaze"
-        description="Top facade waterproofing contractor Pan India. Glass facade leak repair, curtain wall leakage remediation, sealant replacement & building waterproofing."
+        title="Facade Leak Repair & Waterproofing, Pune & Mumbai | Fine Glaze"
+        description="Facade waterproofing contractor in Pune & Mumbai. Glass facade leak repair, curtain wall leakage remediation, sealant replacement & building waterproofing."
         canonical="https://fineglaze.com/facade-waterproofing"
         keywords="facade waterproofing contractor, glass facade leak repair, curtain wall leakage repair, facade sealant replacement, building facade waterproofing"
-        ogImage="https://images.unsplash.com/photo-1505765050516-f72dcac9c60e"
+        ogImage="https://fineglaze.com/projects/embassy-247-37-1.webp"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}
       />
 
@@ -79,8 +80,8 @@ export default function FacadeWaterproofing() {
             </div>
           </div>
           <img
-            src="https://images.unsplash.com/photo-1505765050516-f72dcac9c60e"
-            alt="Facade waterproofing sealant repair curtain wall India Fine Glaze"
+            src="/projects/embassy-247-37-1.webp"
+            alt="Embassy 247, Vikhroli, Mumbai — water treatment and facade sealant work (approx. 80,500 RMT) by Fine Glaze"
             className="rounded-xl shadow-2xl object-cover h-[420px] w-full"
             loading="eager"
             width="600"
@@ -167,6 +168,7 @@ export default function FacadeWaterproofing() {
         </div>
       </section>
 
+      <RelatedProjects heading="Leakage & sealant work we have done" keywords={["sealant", "leakage", "water"]} />
       <CTASection />
     </Layout>
   );
