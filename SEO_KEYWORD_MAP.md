@@ -18,7 +18,7 @@ This document is the working keyword map for Fine Glaze. It targets commercial s
 | About | `/about` | Branded / commercial | Fine Glaze facade contractor | Fine Glaze India, Fine Glaze Pune, facade fabrication company, facade installation company | About Fine Glaze: Facade and Glazing Specialists |
 | Contact | `/contact` | Transactional | facade contractor consultation Pune | facade site visit, facade quotation, glazing contractor contact, facade project enquiry | Contact Fine Glaze for a Facade Project Consultation |
 | Quality & safety | `/quality-safety` | Trust / vendor evaluation | facade contractor quality control | facade water test, facade contractor safety, vendor registration, prequalification | How Fine Glaze controls quality and safety |
-| Cost estimator | `/facade-cost-estimator` | Commercial investigation | facade cost calculator | curtain wall cost per sq ft, aluminium window cost calculator, ACP cladding cost per sq ft, glass railing cost per rft | Facade & window cost estimator |
+| Cost estimator (hidden until prices approved — docs/PRICING_FOR_APPROVAL.md) | `/facade-cost-estimator` | Commercial investigation | facade cost calculator | curtain wall cost per sq ft, aluminium window cost calculator, ACP cladding cost per sq ft, glass railing cost per rft | Facade & window cost estimator |
 | FAQ | `/faq` | Informational / commercial | facade contractor FAQ India | curtain wall FAQ, structural glazing FAQ, ACP cladding FAQ, facade cost, facade maintenance questions | Facade, Glazing, ACP and Curtain Wall FAQs |
 
 ## 2. Service keyword map

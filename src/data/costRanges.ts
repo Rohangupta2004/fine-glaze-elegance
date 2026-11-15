@@ -3,6 +3,18 @@
  * service page (Nov 2026). The estimator only multiplies these by the
  * quantity entered — it adds no hidden factors. Update both together.
  */
+/**
+ * APPROVAL SWITCH — keep false until the business team (founder / estimation)
+ * has approved every range below in docs/PRICING_FOR_APPROVAL.md.
+ *
+ * While false:
+ *  - the estimator shows a "coming soon" page (reviewers can open it with
+ *    /facade-cost-estimator?preview=1), is noindexed and is not linked,
+ *  - new pages show "priced after site survey" instead of ₹ figures,
+ *  - no price data is emitted in structured data.
+ */
+export const PRICING_APPROVED = false;
+
 export type CostUnit = "sqft" | "rft";
 
 export interface CostSystem {

@@ -37,7 +37,7 @@ const SERVICE_DEFS = [
     tag: "Aluminium",
     title: "Aluminium Doors & Windows",
     desc: "Sliding, casement, tilt-turn & lift-slide systems, fabricated in Pune. Thermal-break and DGU / acoustic glass options for heat and noise.",
-    spec: "From ₹450/sq ft",
+    spec: "Thermal break · DGU options",
     href: "/aluminium-windows-doors",
     mediaKey: "services_card_aluminium_windows",
     fallback: "/Aluminium%20windows.webp",

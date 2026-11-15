@@ -7,7 +7,6 @@ const quickLinks = [
   { href: "/services", label: "Services" },
   { href: "/portfolio", label: "Portfolio" },
   { href: "/quality-safety", label: "Quality & Safety" },
-  { href: "/facade-cost-estimator", label: "Facade Cost Estimator" },
   { href: "/blog", label: "Blog" },
   { href: "/contact", label: "Contact" },
 ];

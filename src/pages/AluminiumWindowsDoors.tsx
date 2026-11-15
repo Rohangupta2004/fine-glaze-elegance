@@ -5,7 +5,7 @@ import SEO from "@/components/SEO";
 import { Layout } from "@/components/layout/Layout";
 import { QuoteModal } from "@/components/QuoteModal";
 import { company, telHref } from "@/data/company";
-import { COST_SYSTEMS } from "@/data/costRanges";
+import { COST_SYSTEMS, PRICING_APPROVED } from "@/data/costRanges";
 
 const PAGE_URL = "https://fineglaze.com/aluminium-windows-doors";
 const HERO = "/projects/samundra-tarang-51-1.webp";
@@ -58,7 +58,9 @@ const PROJECTS = [
 const FAQS = [
   {
     q: "How much do aluminium windows cost per sq ft in Pune and Mumbai?",
-    a: `Indicative installed ranges: sliding ₹450–₹800/sq ft, casement ₹500–₹900/sq ft, tilt-turn ₹700–₹1,200/sq ft and lift-slide doors ₹900–₹1,500/sq ft. The spread comes from profile series, glass build-up and hardware. We give a firm price only after measuring on site.`,
+    a: PRICING_APPROVED
+      ? `Indicative installed ranges: sliding ₹450–₹800/sq ft, casement ₹500–₹900/sq ft, tilt-turn ₹700–₹1,200/sq ft and lift-slide doors ₹900–₹1,500/sq ft. The spread comes from profile series, glass build-up and hardware. We give a firm price only after measuring on site.`
+      : "It depends mainly on the profile series, the glass build-up (single toughened, DGU or laminated) and the hardware brand — the same “sliding window” can vary a lot in price. We measure on site and give a written, itemised quotation so you can compare like for like.",
   },
   {
     q: "Are aluminium windows better than uPVC?",
@@ -98,13 +100,15 @@ export default function AluminiumWindowsDoors() {
         itemListElement: windowSystems.map((s) => ({
           "@type": "Offer",
           itemOffered: { "@type": "Service", name: s.name },
-          priceSpecification: {
-            "@type": "UnitPriceSpecification",
-            priceCurrency: "INR",
-            minPrice: s.min,
-            maxPrice: s.max,
-            unitText: "per sq ft, installed (indicative)",
-          },
+          ...(PRICING_APPROVED && {
+            priceSpecification: {
+              "@type": "UnitPriceSpecification",
+              priceCurrency: "INR",
+              minPrice: s.min,
+              maxPrice: s.max,
+              unitText: "per sq ft, installed (indicative)",
+            },
+          }),
         })),
       },
     },
@@ -128,7 +132,7 @@ export default function AluminiumWindowsDoors() {
     <Layout darkHero>
       <SEO
         title="Aluminium Windows & Doors in Pune & Mumbai | Fine Glaze"
-        description="Sliding, casement, tilt-turn and lift-slide aluminium windows & doors, fabricated in Pune and installed by our own team. Price ranges, glass options and a quote checklist."
+        description="Sliding, casement, tilt-turn and lift-slide aluminium windows & doors, fabricated in Pune and installed by our own team. Glass options, a quote checklist and real projects."
         canonical={PAGE_URL}
         keywords="aluminium windows Pune, aluminium windows Mumbai, aluminium sliding windows, casement windows, tilt and turn windows, thermal break aluminium windows, aluminium doors, window installation Pune"
         ogImage={`https://fineglaze.com${HERO}`}
@@ -181,8 +185,7 @@ export default function AluminiumWindowsDoors() {
           <div className="max-w-2xl mb-10">
             <h2 id="systems" className="text-2xl md:text-4xl font-bold text-foreground">Window &amp; door systems we install</h2>
             <p className="mt-3 text-muted-foreground">
-              Indicative installed prices, per sq ft of window area. The same ranges power our{" "}
-              <Link to="/facade-cost-estimator" className="text-primary underline underline-offset-4">cost estimator</Link>.
+              Every system is priced after a site measurement, with the profile series, glass and hardware written into an itemised quotation.
             </p>
           </div>
           <div className="grid sm:grid-cols-2 gap-5">
@@ -190,9 +193,11 @@ export default function AluminiumWindowsDoors() {
               <article key={s.id} className="rounded-xl border border-border bg-card p-6">
                 <div className="flex items-start justify-between gap-4">
                   <h3 className="text-xl font-semibold text-foreground">{s.name}</h3>
-                  <p className="text-sm font-bold text-amber-700 whitespace-nowrap">
-                    ₹{s.min.toLocaleString("en-IN")}–₹{s.max.toLocaleString("en-IN")}/sq ft
-                  </p>
+                  {PRICING_APPROVED && (
+                    <p className="text-sm font-bold text-amber-700 whitespace-nowrap">
+                      ₹{s.min.toLocaleString("en-IN")}–₹{s.max.toLocaleString("en-IN")}/sq ft
+                    </p>
+                  )}
                 </div>
                 <p className="mt-3 text-sm text-muted-foreground">{SYSTEM_NOTES[s.id]?.what}</p>
                 <p className="mt-3 text-sm"><span className="font-semibold text-foreground">Best for:</span> <span className="text-muted-foreground">{SYSTEM_NOTES[s.id]?.bestFor}</span></p>
@@ -291,9 +296,11 @@ export default function AluminiumWindowsDoors() {
             <Link to="/quality-safety" className="inline-flex items-center rounded-lg border border-border px-5 py-3 font-semibold hover:border-primary">
               <CheckCircle2 className="mr-2 h-4 w-4 text-primary" /> Our quality &amp; safety checks
             </Link>
-            <Link to="/facade-cost-estimator" className="inline-flex items-center rounded-lg border border-border px-5 py-3 font-semibold hover:border-primary">
-              <Calculator className="mr-2 h-4 w-4 text-primary" /> Estimate your window budget
-            </Link>
+            {PRICING_APPROVED && (
+              <Link to="/facade-cost-estimator" className="inline-flex items-center rounded-lg border border-border px-5 py-3 font-semibold hover:border-primary">
+                <Calculator className="mr-2 h-4 w-4 text-primary" /> Estimate your window budget
+              </Link>
+            )}
           </div>
         </div>
       </section>

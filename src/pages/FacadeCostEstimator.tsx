@@ -4,7 +4,7 @@ import { Calculator, Info, MessageCircle, Phone, RotateCcw } from "lucide-react"
 import SEO from "@/components/SEO";
 import { Layout } from "@/components/layout/Layout";
 import { QuoteModal } from "@/components/QuoteModal";
-import { COST_SYSTEMS, UNIT_LABEL, formatINR, type CostSystem } from "@/data/costRanges";
+import { COST_SYSTEMS, PRICING_APPROVED, UNIT_LABEL, formatINR, type CostSystem } from "@/data/costRanges";
 import { company, telHref, whatsappHref } from "@/data/company";
 import { trackEvent } from "@/lib/analytics";
 
@@ -57,10 +57,14 @@ export default function FacadeCostEstimator() {
   const [metric, setMetric] = useState(false);
   const [saved, setSaved] = useState<SavedEstimate | null>(null);
   const [quoteOpen, setQuoteOpen] = useState(false);
+  // Until prices are approved, only reviewers with ?preview=1 see the tool.
+  const [preview, setPreview] = useState(false);
+  const live = PRICING_APPROVED || preview;
 
   // Remember the visitor's last estimate (per browser only).
   useEffect(() => {
     setSaved(readSaved());
+    setPreview(new URLSearchParams(window.location.search).get("preview") === "1");
   }, []);
 
   const systemsForService = COST_SYSTEMS.filter((s) => s.service === service);
@@ -132,18 +136,56 @@ export default function FacadeCostEstimator() {
     },
   ];
 
+  if (!live) {
+    return (
+      <Layout>
+        <SEO
+          title="Facade Cost Estimator — Coming Soon | Fine Glaze"
+          description="Our facade and window cost estimator is being finalised. Until then, call or WhatsApp us for a site-specific quotation in Pune and Mumbai."
+          canonical={PAGE_URL}
+          noindex
+        />
+        <section className="bg-stone-950 text-white">
+          <div className="container mx-auto px-4 py-20 md:py-28 max-w-3xl text-center">
+            <p className="text-amber-400 text-xs font-bold tracking-[0.3em] uppercase mb-4">Coming soon</p>
+            <h1 className="text-3xl sm:text-5xl font-extrabold leading-tight">Facade &amp; window cost estimator</h1>
+            <p className="mt-4 text-stone-300 text-lg">
+              We are finalising the price ranges with our estimation team so the numbers are ones we stand behind.
+              Until then, we will give you a site-specific figure directly.
+            </p>
+            <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
+              <button onClick={() => setQuoteOpen(true)} className="rounded-xl bg-amber-500 hover:bg-amber-400 text-stone-950 font-bold px-7 py-4">
+                Request a quotation
+              </button>
+              <a href={telHref} className="inline-flex items-center justify-center rounded-xl border border-white/40 px-7 py-4 font-bold hover:bg-white hover:text-stone-900">
+                <Phone className="mr-2 h-4 w-4" /> {company.phone.mobileDisplay}
+              </a>
+            </div>
+          </div>
+        </section>
+        <QuoteModal open={quoteOpen} onOpenChange={setQuoteOpen} source="estimator_coming_soon" />
+      </Layout>
+    );
+  }
+
   return (
     <Layout>
       <SEO
         title="Facade Cost Estimator: Windows, Curtain Wall, ACP & Glazing | Fine Glaze"
         description="Estimate an indicative budget for aluminium windows, curtain walls, structural glazing, ACP cladding, railings and more — using the price ranges a Pune & Mumbai facade contractor actually quotes."
         canonical={PAGE_URL}
+        noindex={!PRICING_APPROVED}
         keywords="facade cost calculator, curtain wall cost per sq ft, aluminium window cost calculator, ACP cladding cost per sq ft, structural glazing cost, glass railing cost per running foot"
         schemas={schemas}
       />
 
       <section className="bg-stone-950 text-white">
         <div className="container mx-auto px-4 py-14 md:py-20 max-w-4xl">
+          {!PRICING_APPROVED && (
+            <p className="mb-4 inline-block rounded-md bg-red-500/20 border border-red-400/40 px-3 py-1 text-xs font-semibold text-red-200">
+              Internal preview — prices pending approval (see docs/PRICING_FOR_APPROVAL.md)
+            </p>
+          )}
           <p className="text-amber-400 text-xs font-bold tracking-[0.3em] uppercase mb-4">Free tool</p>
           <h1 className="text-3xl sm:text-5xl font-extrabold leading-tight">Facade &amp; window cost estimator</h1>
           <p className="mt-4 text-stone-300 text-lg">
