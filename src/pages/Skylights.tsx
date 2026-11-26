@@ -1,4 +1,5 @@
 import SEO from "@/components/SEO";
+import PageHero from "@/components/common/PageHero";
 import { RelatedProjects } from "@/components/RelatedProjects";
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/home/CTASection";
@@ -236,85 +237,15 @@ export default function Skylights() {
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}
       />
 
-      {/* ════════════ HERO ════════════ */}
-      <section className="relative h-screen overflow-hidden">
-        <img
-          src={IMG.hero}
-          alt="Glass skylight system — Fine Glaze"
-          className="absolute inset-0 w-full h-full object-cover object-center"
-          style={{ animation: "sgZoom 20s ease-in-out infinite alternate" }}
-          loading="eager"
-        />
-        <style>{`@keyframes sgZoom { from { transform: scale(1.0); } to { transform: scale(1.08); } }`}</style>
-
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(to bottom, rgba(0,0,0,0.60) 0%, rgba(0,0,0,0.25) 30%, rgba(0,0,0,0.55) 65%, rgba(0,0,0,0.92) 100%)",
-          }}
-        />
-
-        <div className="absolute inset-x-0 bottom-0 px-5 md:px-16 pb-10 md:pb-20 pt-24">
-          <p
-            className="text-lamp text-xs font-bold mb-5 animate-fade-in"
-            style={{ animationDelay: "0.05s" }}
-          >
-            Fine Glaze · Pune & Mumbai
-          </p>
-
-          <h1
-            className="font-extrabold text-paper leading-tight tracking-tight animate-fade-in-up"
-            style={{ fontSize: "clamp(2.2rem, 4.5vw, 3.5rem)", animationDelay: "0.1s" }}
-          >
-            Skylights &<br />
-            <span className="text-gradient-gold">Glass</span><br />
-            <span style={{ fontSize: "clamp(1.25rem, 2.5vw, 2rem)", fontWeight: 600, color: "rgba(255,255,255,0.85)" }}>
-              Canopies.
-            </span>
-          </h1>
-
-          <p
-            className="mt-6 text-paper/70 text-base md:text-lg max-w-lg leading-relaxed animate-fade-in-up"
-            style={{ animationDelay: "0.2s" }}
-          >
-            Engineered overhead glazing for atriums, lobbies, entrances & commercial spaces.
-          </p>
-
-          <div
-            className="mt-8 flex items-center gap-8 animate-fade-in-up"
-            style={{ animationDelay: "0.3s" }}
-          >
-            <Link
-              to="/contact"
-              className="text-paper font-semibold text-base border-b border-lamp/40 pb-0.5 hover:text-lamp transition-colors tracking-wide"
-            >
-              Book a call
-            </Link>
-            <a
-              href="tel:+918369233566"
-              className="text-mute font-medium text-base hover:text-paper transition-colors tracking-wide"
-            >
-              +91 83692 33566
-            </a>
-          </div>
-
-          {/* Trust signal */}
-          <div
-            className="flex items-center gap-1.5 mt-4 animate-fade-in-up"
-            style={{ animationDelay: "0.4s" }}
-          >
-            <span className="text-mute text-xs font-medium ml-0.5">
-              Embassy REIT Best Vendor Performance 2024. 16 project records.
-            </span>
-          </div>
-        </div>
-
-        <div className="absolute bottom-8 right-8 flex flex-col items-center gap-2 opacity-40">
-          <span className="text-paper text-[10px] rotate-90 mb-3">Scroll</span>
-          <div className="w-px h-12 bg-gradient-to-b from-night to-transparent" />
-        </div>
-      </section>
+      {/* HERO */}
+      <PageHero
+        crumbs={[{ label: "Skylights & Glass Canopies" }]}
+        title={<>Skylights &<br /> <span className="text-gradient-gold">Glass</span><span className="ph-sub">Canopies.</span></>}
+        intro="Engineered overhead glazing for atriums, lobbies, entrances & commercial spaces."
+        secondary={{ label: "+91 83692 33566", href: "tel:+918369233566" }}
+        image={{ src: IMG.hero, alt: "Glass skylight system — Fine Glaze" }}
+        extra=""
+      />
 
 
       {/* ════════════ INTRO ════════════ */}
