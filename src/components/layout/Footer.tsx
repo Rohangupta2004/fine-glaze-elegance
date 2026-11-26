@@ -174,7 +174,7 @@ export const Footer = () => {
         <div className="fg-wrap py-5 flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex flex-col sm:flex-row items-center gap-3 text-[15px] text-mute">
             <p>© {new Date().getFullYear()} Fine Glaze. All rights reserved.</p>
-            <span className="hidden sm:inline text-line">|</span>
+            <span className="hidden sm:inline text-mute" aria-hidden="true">|</span>
             <p>GST No: 27BFJPG1853A1ZU</p>
           </div>
           <div className="flex gap-6 text-[15px]">
