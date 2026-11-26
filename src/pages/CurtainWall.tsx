@@ -2,19 +2,7 @@ import { useState } from "react";
 import { RelatedProjects } from "@/components/RelatedProjects";
 import { Link } from "react-router-dom";
 import { ServiceQuickOverview } from "@/components/service/ServiceQuickOverview";
-import {
-  ArrowRight,
-  MapPin,
-  ChevronDown,
-  Shield,
-  Clock,
-  Award,
-  Wrench,
-  CheckCircle2,
-  Phone,
-  Mail,
-  FileText,
-} from "lucide-react";
+import { ArrowRight, MapPin, CheckCircle2, Phone, Mail, FileText } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { cn } from "@/lib/utils";
 import SEO from "@/components/SEO";
@@ -236,11 +224,8 @@ export default function CurtainWall() {
       <section className="fg-sec">
         <div className="fg-wrap">
           <FadeIn>
-            <p className="text-lamp text-xs font-bold mb-4">
-              Curtain Wall Fabrication &amp; Installation
-            </p>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-medium text-paper leading-snug mb-5">
-              Curtain Wall Systems for Modern Architecture —{" "}
+            <h2 className="fg-h2 wide">
+              Curtain Wall Systems for Modern Architecture,{" "}
               <span className="text-mute">engineered for wind load, thermal performance & longevity.</span>
             </h2>
             <p className="text-mute text-[15px] md:text-base leading-relaxed mb-6">
@@ -284,7 +269,7 @@ export default function CurtainWall() {
                 { number: "40+", label: "Core Team" },
                 { number: "2024", label: "Embassy REIT Best Vendor Performance" },
               ].map((s) => (
-                <div key={s.label} className="text-center px-4">
+                <div key={s.label} className="px-4 first:pl-0">
                   <p className="text-2xl md:text-3xl font-bold text-paper">{s.number}</p>
                   <p className="text-mute text-[13px] mt-1">{s.label}</p>
                 </div>
@@ -299,10 +284,7 @@ export default function CurtainWall() {
         <div className="fg-wrap">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <FadeIn>
-              <p className="text-lamp text-xs font-bold mb-3">
-                High-Rise Technology
-              </p>
-              <h2 className="text-2xl md:text-4xl font-medium mb-6 leading-tight">
+              <h2 className="fg-h2">
                 Unitized Curtain Wall Systems
               </h2>
               <p className="text-paper/80 text-sm md:text-base leading-relaxed mb-6">
@@ -324,7 +306,7 @@ export default function CurtainWall() {
               </ul>
               <Link to="/contact">
                 <Button className="bg-lamp hover:bg-lamp/90 text-lamp-ink font-bold gap-2">
-                  Request Unitized Quotation <ArrowRight size={16} />
+                  Book a call <ArrowRight size={16} />
                 </Button>
               </Link>
             </FadeIn>
@@ -351,10 +333,7 @@ export default function CurtainWall() {
       <section className="fg-sec">
         <div className="fg-wrap">
           <FadeIn className="mb-10">
-            <p className="text-lamp text-xs font-bold mb-3">
-              Our Product Range
-            </p>
-            <h2 className="text-2xl md:text-3xl font-medium text-paper">
+            <h2 className="fg-h2">
               Curtain Wall Systems We Manufacture & Install
             </h2>
           </FadeIn>
@@ -429,13 +408,10 @@ export default function CurtainWall() {
       <section className="fg-sec">
         <div className="fg-wrap">
           <FadeIn className="mb-10">
-            <p className="text-lamp text-xs font-bold mb-3">
-              Cost & Rate Breakdown
-            </p>
-            <h2 className="text-2xl md:text-3xl font-medium text-paper mb-2">
+            <h2 className="fg-h2">
               Curtain Wall Cost Per Sq Ft in India (2026 Guide)
             </h2>
-            <p className="text-mute text-sm max-w-xl mx-auto">
+            <p className="text-mute text-sm max-w-xl">
               Transparent rate comparison based on project complexity, glass specifications, and installation methods across Maharashtra.
             </p>
           </FadeIn>
@@ -469,7 +445,7 @@ export default function CurtainWall() {
               </div>
             </div>
 
-            <p className="text-center text-xs text-mute">
+            <p className="text-xs text-mute">
               Note: Cost depends on system, glass, height and access. Read our guide on <Link to="/blog/curtain-wall-cost-per-sq-ft-india-2026" className="text-lamp underline font-medium">what drives curtain wall cost</Link>.
             </p>
           </FadeIn>
@@ -478,16 +454,16 @@ export default function CurtainWall() {
 
       {/* ════════════ REQUEST A QUOTATION CTA ════════════ */}
       <section className="fg-sec">
-        <div className="fg-wrap max-w-4xl text-center">
+        <div className="fg-wrap">
           <FadeIn>
-            <h2 className="text-3xl md:text-5xl font-medium mb-6 tracking-[-0.015em]">
+            <h2 className="fg-h2">
               Book a call
             </h2>
-            <p className="text-paper/80 text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
+            <p className="text-paper/80 text-base md:text-lg max-w-2xl mb-10 leading-relaxed">
               Planning a commercial facade, office tower, or IT park in Pune, Mumbai, or Navi Mumbai? Send drawings and we will prepare a BOQ-based quotation with glass specification options. Our office hours are Monday to Saturday, 09:00 to 18:00.
             </p>
 
-            <div className="grid md:grid-cols-3 gap-4 max-w-2xl mx-auto mb-10">
+            <div className="grid md:grid-cols-3 gap-4 max-w-2xl mb-10">
               <a href="tel:+918369233566" className="flex items-center justify-center gap-3 p-4 bg-night-2/80 hover:bg-night-2 border border-line transition-colors">
                 <Phone size={18} className="text-lamp" />
                 <span className="text-sm font-semibold">+91 83692 33566</span>
@@ -498,7 +474,7 @@ export default function CurtainWall() {
               </a>
               <Link to="/contact" className="flex items-center justify-center gap-3 p-4 bg-lamp hover:bg-lamp/90 text-lamp-ink font-bold transition-colors">
                 <FileText size={18} />
-                <span className="text-sm">Submit Project BOQ</span>
+                <span className="text-sm">Book a call</span>
               </Link>
             </div>
           </FadeIn>
@@ -509,10 +485,7 @@ export default function CurtainWall() {
       <section className="fg-sec">
         <div className="fg-wrap">
           <FadeIn className="mb-8">
-            <p className="text-lamp text-xs font-bold mb-3">
-              Frequently Asked Questions
-            </p>
-            <h2 className="text-2xl md:text-3xl font-medium text-paper">
+            <h2 className="fg-h2">
               Curtain Wall Manufacturers FAQ
             </h2>
           </FadeIn>
@@ -550,9 +523,7 @@ export default function CurtainWall() {
           <FadeIn>
             <div className="grid md:grid-cols-2 gap-10 md:gap-16">
               <div>
-                <p className="text-lamp text-xs font-bold mb-4">
-                  Key Service Areas
-                </p>
+                <h3 className="font-display text-2xl font-medium text-paper mb-5">Key service areas</h3>
                 <div className="flex flex-wrap gap-x-6 gap-y-2">
                   {["Pune", "Mumbai BKC", "Navi Mumbai", "Thane", "Hinjewadi", "Kharadi"].map((city) => (
                     <div key={city} className="flex items-center gap-1.5">
@@ -564,9 +535,7 @@ export default function CurtainWall() {
               </div>
 
               <div>
-                <p className="text-lamp text-xs font-bold mb-4">
-                  Explore Related Facade Services
-                </p>
+                <h3 className="font-display text-2xl font-medium text-paper mb-5">Related facade services</h3>
                 <div className="grid grid-cols-2 gap-x-6 gap-y-1.5">
                   {[
                     { title: "Structural Glazing", href: "/structural-glazing" },

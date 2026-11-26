@@ -146,7 +146,7 @@ export default function AluminiumWindowsDoors() {
       <section className="fg-sec" aria-labelledby="systems">
         <div className="fg-wrap">
           <div className="max-w-2xl mb-10">
-            <h2 id="systems" className="text-2xl md:text-4xl font-medium text-foreground">Window &amp; door systems we install</h2>
+            <h2 id="systems" className="fg-h2">Window &amp; door systems we install</h2>
             <p className="mt-3 text-muted-foreground">
               Every system is priced after a site measurement, with the profile series, glass and hardware written into an itemised quotation.
             </p>
@@ -173,7 +173,7 @@ export default function AluminiumWindowsDoors() {
       <section className="fg-sec" aria-labelledby="glass">
         <div className="fg-wrap grid lg:grid-cols-2 gap-10 items-start">
           <div>
-            <h2 id="glass" className="text-2xl md:text-4xl font-medium text-foreground">The glass matters as much as the frame</h2>
+            <h2 id="glass" className="fg-h2">The glass matters as much as the frame</h2>
             <p className="mt-4 text-muted-foreground">
               Heat and noise mostly come through the glass, so we specify the glass build-up window by window — not one type for the whole house.
               Heat-gain and acoustic figures depend on the exact glass and frame, and we share the glass maker's data sheet with every quote.
@@ -196,7 +196,7 @@ export default function AluminiumWindowsDoors() {
       {/* QUOTE CHECKLIST */}
       <section className="fg-sec" aria-labelledby="checklist">
         <div className="fg-wrap">
-          <h2 id="checklist" className="text-2xl md:text-4xl font-medium text-foreground">Comparing window quotes? Check these 7 lines</h2>
+          <h2 id="checklist" className="fg-h2">Comparing window quotes? Check these 7 lines</h2>
           <p className="mt-3 text-muted-foreground">
             Two quotes that both say “aluminium sliding window” can differ a lot — often for good reason. Ask every supplier — including us — to put these in writing.
           </p>
@@ -214,7 +214,7 @@ export default function AluminiumWindowsDoors() {
       {/* PROJECTS */}
       <section className="py-16 md:py-20 bg-night text-paper" aria-labelledby="projects">
         <div className="fg-wrap">
-          <h2 id="projects" className="text-2xl md:text-4xl font-medium">Window work we have done</h2>
+          <h2 id="projects" className="fg-h2">Window work we have done</h2>
           <p className="mt-3 text-paper/80 max-w-2xl">Real projects from our company profile, with our actual scope and status.</p>
           <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {PROJECTS.map((p) => (
@@ -234,7 +234,7 @@ export default function AluminiumWindowsDoors() {
       {/* PROCESS */}
       <section className="fg-sec" aria-labelledby="process">
         <div className="fg-wrap">
-          <h2 id="process" className="text-2xl md:text-4xl font-medium text-foreground">How a window order runs</h2>
+          <h2 id="process" className="fg-h2">How a window order runs</h2>
           <ol className="mt-8 grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
             {[
               ["Site measurement", "Every opening measured and checked for level and plumb."],
@@ -261,7 +261,7 @@ export default function AluminiumWindowsDoors() {
       {/* FAQ */}
       <section className="fg-sec" aria-labelledby="faq">
         <div className="fg-wrap">
-          <h2 id="faq" className="text-2xl md:text-4xl font-medium text-foreground mb-8">Aluminium window FAQs</h2>
+          <h2 id="faq" className="fg-h2">Aluminium window FAQs</h2>
           <div className="space-y-3">
             {FAQS.map((f) => (
               <details key={f.q} className="group border border-border bg-card p-5">
@@ -279,13 +279,13 @@ export default function AluminiumWindowsDoors() {
       {/* CTA */}
       <section className="py-16 bg-lamp">
         <div className="fg-wrap">
-          <h2 className="text-2xl md:text-3xl font-medium text-paper">Get your windows measured and quoted</h2>
-          <p className="mt-2 text-paper/80">Pune, PCMC, Mumbai, Navi Mumbai and Thane.</p>
-          <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
+          <h2 className="fg-h2" style={{ color: "#1a1009", marginBottom: 12 }}>Get your windows measured and quoted</h2>
+          <p className="mt-2 text-lamp-ink">Pune, PCMC, Mumbai, Navi Mumbai and Thane.</p>
+          <div className="mt-6 flex flex-col sm:flex-row gap-3">
             <button onClick={() => setQuoteOpen(true)} className="bg-night text-paper font-bold px-7 py-4 hover:bg-night-2">
               Book a call
             </button>
-            <a href={telHref} className="border-2 border-line text-paper font-bold px-7 py-4 hover:bg-night-2 hover:text-paper">
+            <a href={telHref} className="border-2 border-night text-lamp-ink font-bold px-7 py-4 hover:bg-night hover:text-paper">
               Call {company.phone.mobileDisplay}
             </a>
           </div>

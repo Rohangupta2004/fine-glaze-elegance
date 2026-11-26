@@ -6,16 +6,7 @@ import { CTASection } from "@/components/home/CTASection";
 import { ServiceQuickOverview } from "@/components/service/ServiceQuickOverview";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import {
-  ArrowRight,
-  MapPin,
-  ChevronDown,
-  Shield,
-  Clock,
-  Award,
-  Wrench,
-  Star,
-} from "lucide-react";
+import { ArrowRight, MapPin } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
@@ -234,11 +225,8 @@ export default function Skylights() {
       <section className="fg-sec">
         <div className="fg-wrap">
           <FadeIn>
-            <p className="text-lamp text-xs font-bold mb-4">
-              Why Overhead Glazing
-            </p>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-medium text-paper leading-snug mb-5">
-              Bring natural light indoors —{"  "}
+            <h2 className="fg-h2 wide">
+              Bring natural light indoors,{" "}
               <span className="text-mute">designed for weather, wind loads and thermal comfort.</span>
             </h2>
             <p className="text-mute text-[15px] md:text-base leading-relaxed">
@@ -276,7 +264,7 @@ export default function Skylights() {
                 { number: "40+", label: "Core Team" },
                 { number: "2024", label: "Embassy REIT Best Vendor Performance" },
               ].map((s) => (
-                <div key={s.label} className="text-center px-4">
+                <div key={s.label} className="px-4 first:pl-0">
                   <p className="text-2xl md:text-3xl font-bold text-paper">{s.number}</p>
                   <p className="text-mute text-[13px] mt-1">{s.label}</p>
                 </div>
@@ -291,10 +279,7 @@ export default function Skylights() {
       <section className="fg-sec">
         <div className="fg-wrap">
           <FadeIn className="mb-10">
-            <p className="text-lamp text-xs font-bold mb-3">
-              Our Systems
-            </p>
-            <h2 className="text-2xl md:text-3xl font-medium text-paper">
+            <h2 className="fg-h2">
               Skylight & Canopy Systems We Install
             </h2>
           </FadeIn>
@@ -368,10 +353,7 @@ export default function Skylights() {
       <section className="fg-sec">
         <div className="fg-wrap">
           <FadeIn className="mb-12">
-            <p className="text-lamp text-xs font-bold mb-3">
-              Why Fine Glaze
-            </p>
-            <h2 className="text-2xl md:text-3xl font-medium text-paper">
+            <h2 className="fg-h2">
               Built for performance. Delivered on schedule.
             </h2>
           </FadeIn>
@@ -380,30 +362,23 @@ export default function Skylights() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               {[
                 {
-                  icon: Shield,
                   title: "Water-Tested",
                   desc: "Installed glazing is checked with a site water penetration test before handover, and any leak found is closed out on the snag register.",
                 },
                 {
-                  icon: Clock,
                   title: "Stage Inspections",
                   desc: "Material, fabrication and installation checks, with the snag register closed before handover.",
                 },
                 {
-                  icon: Award,
                   title: "In-House Engineering",
                   desc: "Structural calculations and shop drawings done in-house for precise fit and performance.",
                 },
                 {
-                  icon: Wrench,
                   title: "Maintenance Ready",
                   desc: "Access points and cleaning provisions designed in from day one. AMC available.",
                 },
               ].map((item) => (
-                <div key={item.title} className="text-center">
-                  <div className="inline-flex items-center justify-center w-12 h-12 border border-line text-lamp mb-4">
-                    <item.icon size={22} />
-                  </div>
+                <div key={item.title}>
                   <h3 className="text-sm font-medium text-paper mb-2">{item.title}</h3>
                   <p className="text-mute text-xs leading-relaxed">{item.desc}</p>
                 </div>
@@ -411,7 +386,7 @@ export default function Skylights() {
             </div>
           </FadeIn>
 
-          <FadeIn delay={200} className="mt-12 text-center">
+          <FadeIn delay={200} className="mt-12">
             <p className="text-mute text-sm">
               Clients include <span className="text-paper font-semibold">Embassy REIT</span>,{" "}
               <span className="text-paper font-semibold">L&amp;T Construction</span>,{" "}
@@ -426,10 +401,7 @@ export default function Skylights() {
       <section className="fg-sec">
         <div className="fg-wrap">
           <FadeIn className="mb-10">
-            <p className="text-lamp text-xs font-bold mb-3">
-              How We Work
-            </p>
-            <h2 className="text-2xl md:text-3xl font-medium text-paper">
+            <h2 className="fg-h2">
               From first visit to final handover
             </h2>
           </FadeIn>
@@ -464,8 +436,8 @@ export default function Skylights() {
             loading="lazy"
           />
           <div className="absolute inset-0 bg-night/40" />
-          <div className="absolute inset-0 flex items-center justify-center text-center px-4">
-            <div>
+          <div className="absolute inset-0 flex items-center">
+            <div className="fg-wrap">
               <p className="text-mute text-sm mb-2">Our Promise</p>
               <p className="text-paper text-xl md:text-3xl font-bold max-w-xl">
                 Installed glazing water-tested before handover. Canopies detailed for drainage and maintenance access.
@@ -480,10 +452,7 @@ export default function Skylights() {
       <section className="fg-sec">
         <div className="fg-wrap">
           <FadeIn className="mb-8">
-            <p className="text-lamp text-xs font-bold mb-3">
-              Pricing
-            </p>
-            <h2 className="text-2xl md:text-3xl font-medium text-paper mb-2">
+            <h2 className="fg-h2">
               Skylight & Canopy Cost: How We Quote
             </h2>
             <p className="text-mute text-sm">
@@ -518,7 +487,7 @@ export default function Skylights() {
               </table>
             </div>
 
-            <div className="mt-8 text-center">
+            <div className="mt-8">
               <Link to="/contact">
                 <Button size="lg" className="bg-night-2 hover:bg-night-2 text-paper gap-2 px-8">
                   Book a call <ArrowRight size={16} />
@@ -534,10 +503,7 @@ export default function Skylights() {
       <section className="fg-sec">
         <div className="fg-wrap">
           <FadeIn className="mb-8">
-            <p className="text-lamp text-xs font-bold mb-3">
-              Common Questions
-            </p>
-            <h2 className="text-2xl md:text-3xl font-medium text-paper">
+            <h2 className="fg-h2">
               FAQ
             </h2>
           </FadeIn>
@@ -576,9 +542,7 @@ export default function Skylights() {
           <FadeIn>
             <div className="grid md:grid-cols-2 gap-10 md:gap-16">
               <div>
-                <p className="text-lamp text-xs font-bold mb-4">
-                  Where We Work
-                </p>
+                <h3 className="font-display text-2xl font-medium text-paper mb-5">Where we work</h3>
                 <div className="flex flex-wrap gap-x-6 gap-y-2">
                   {["Pune", "Mumbai BKC", "Navi Mumbai", "Thane", "Hinjewadi", "Pimpri-Chinchwad"].map((city) => (
                     <div key={city} className="flex items-center gap-1.5">
@@ -590,9 +554,7 @@ export default function Skylights() {
               </div>
 
               <div>
-                <p className="text-lamp text-xs font-bold mb-4">
-                  Other Services
-                </p>
+                <h3 className="font-display text-2xl font-medium text-paper mb-5">Other services</h3>
                 <div className="grid grid-cols-2 gap-x-6 gap-y-1.5">
                   {[
                     { title: "Structural Glazing", href: "/structural-glazing" },
