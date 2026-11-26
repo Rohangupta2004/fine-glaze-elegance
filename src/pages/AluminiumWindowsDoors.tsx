@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, CheckCircle2, Phone } from "lucide-react";
 import SEO from "@/components/SEO";
+import PageHero from "@/components/common/PageHero";
 import { Layout } from "@/components/layout/Layout";
 import { QuoteModal } from "@/components/QuoteModal";
 import { company, telHref } from "@/data/company";
@@ -131,42 +132,15 @@ export default function AluminiumWindowsDoors() {
       />
 
       {/* HERO */}
-      <section className="relative min-h-[78vh] flex items-end overflow-hidden bg-night">
-        <img
-          src={HERO}
-          alt="Aluminium sliding and fixed glass terrace enclosure by Fine Glaze at Samundra Tarang, Dadar"
-          className="absolute inset-0 w-full h-full object-cover opacity-70"
-          width={816}
-          height={459}
-          loading="eager"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-night/70 via-night/50 to-night/95" />
-        <div className="relative z-10 fg-wrap pb-14 pt-32">
-          <p className="text-lamp text-xs font-bold mb-4">Fine Glaze, Pune &amp; Mumbai</p>
-          <h1 className="text-3xl sm:text-5xl font-extrabold text-paper leading-tight max-w-3xl">
-            Aluminium Windows &amp; Doors in Pune &amp; Mumbai
-          </h1>
-          <p className="mt-5 text-paper text-base sm:text-lg max-w-2xl">
-            Sliding, casement, tilt-turn and lift-slide systems — measured by us, fabricated at our {company.fabricationUnit.location} unit,
-            installed under a dedicated site in-charge and supervisor, and water-tested before handover.
-          </p>
-          <div className="mt-8 flex flex-col sm:flex-row gap-3">
-            <button
-              onClick={() => setQuoteOpen(true)}
-              className="inline-flex items-center justify-center bg-lamp hover:bg-lamp/90 text-paper font-bold px-7 py-4"
-            >
-              Request a site measurement <ArrowRight className="ml-2 h-5 w-5" />
-            </button>
-            <a
-              href={telHref}
-              className="inline-flex items-center justify-center border border-paper/40 bg-paper/10 text-paper font-bold px-7 py-4 hover:bg-night hover:text-paper"
-            >
-              <Phone className="mr-2 h-4 w-4" /> {company.phone.mobileDisplay}
-            </a>
-          </div>
-          <p className="mt-4 text-xs text-mute">Pictured: terrace enclosure, Samundra Tarang, Dadar (W) — completed by Fine Glaze.</p>
-        </div>
-      </section>
+      <PageHero
+        crumbs={[{ label: "Aluminium windows and doors" }]}
+        title={<>Aluminium Windows &amp; Doors in Pune &amp; Mumbai</>}
+        intro={`Sliding, casement, tilt-turn and lift-slide systems, measured by us, fabricated at our ${company.fabricationUnit.location} unit, installed under a dedicated site in-charge and supervisor, and water-tested before handover.`}
+        secondary={{ label: company.phone.mobileDisplay, href: telHref }}
+        image={{ src: HERO, alt: "Aluminium sliding and fixed glass terrace enclosure by Fine Glaze at Samundra Tarang, Dadar", width: 816, height: 459 }}
+        extra="Pictured: terrace enclosure, Samundra Tarang, Dadar (W), completed by Fine Glaze."
+        source="windows_hero"
+      />
 
       {/* SYSTEMS */}
       <section className="fg-sec" aria-labelledby="systems">

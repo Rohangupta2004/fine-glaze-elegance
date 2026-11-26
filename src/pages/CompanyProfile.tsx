@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import PageHero from "@/components/common/PageHero";
 import { Helmet } from "react-helmet-async";
 import { useSearchParams, Link } from "react-router-dom";
 import {
@@ -109,7 +110,7 @@ export default function CompanyProfilePage() {
   };
 
   return (
-    <Layout>
+    <Layout darkHero>
       <Helmet>
         <title>Fine Glaze Company Profile | Architectural Facade Systems</title>
         <meta
@@ -126,23 +127,17 @@ export default function CompanyProfilePage() {
         <meta property="og:type" content="article" />
       </Helmet>
 
-      {/* Hero Header */}
-      <section className="fg-sec">
-        <div className="fg-wrap">
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 max-w-6xl mx-auto">
-            <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1 bg-lamp/10 border border-lamp/30 text-lamp text-xs font-semibold mb-3">
-                <Building className="w-3.5 h-3.5" />
-                <span>Architecture &amp; Engineering Credentials</span>
-              </div>
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
-                Fine Glaze <span className="text-lamp">Company Profile</span>
-              </h1>
-              <p className="text-paper/80 text-sm sm:text-base mt-2 max-w-2xl">
-                Design, fabrication, installation and maintenance of architectural facade systems in Pune and Mumbai.
-              </p>
-            </div>
+      <PageHero
+        crumbs={[{ label: "Company profile" }]}
+        title={<>Fine Glaze <span className="text-lamp">Company Profile</span></>}
+        intro="Design, fabrication, installation and maintenance of architectural facade systems in Pune and Mumbai."
+        hideAction
+        source="profile_hero"
+      />
 
+      <section className="fg-sec" style={{ paddingBlock: 32 }}>
+        <div className="fg-wrap">
+          <div className="flex flex-wrap items-center justify-between gap-6">
             {/* Action Buttons */}
             <div className="flex flex-wrap items-center gap-2.5">
               <Button
