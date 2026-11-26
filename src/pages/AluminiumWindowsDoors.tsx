@@ -57,7 +57,7 @@ const PROJECTS = [
 
 const FAQS = [
   {
-    q: "How much do aluminium windows cost per sq ft in Pune and Mumbai?",
+    q: "How much do aluminium windows cost in Pune and Mumbai?",
     a: "It depends mainly on the profile series, the glass build-up (single toughened, DGU or laminated) and the hardware brand — the same “sliding window” can vary a lot in price. We measure on site and give a written, itemised quotation so you can compare like for like.",
   },
   {

@@ -330,7 +330,7 @@ export default function Maintenance() {
             </p>
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-stone-900 leading-snug mb-5">
               Protect your building investment —{"  "}
-              <span className="text-stone-400">preventive care that saves lakhs in emergency repairs.</span>
+              <span className="text-stone-400">preventive care that costs less than emergency repairs.</span>
             </h2>
             <p className="text-stone-500 text-[15px] md:text-base leading-relaxed">
               Facade systems need regular maintenance to perform. UV-degraded sealant causes leaks, dirty glass reduces building value, and unchecked corrosion leads to costly structural failures. Our AMC programs catch problems early with scheduled inspections and proactive repairs.

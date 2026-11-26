@@ -142,7 +142,6 @@ export default function BlogArticle() {
                 {(() => {
                   const table = normalizeArticleTable(section.table);
                   if (!table) return null;
-                  const isEstimate = /cost|pric|rate|₹/i.test(section.heading + JSON.stringify(table));
                   return <div className="my-6">
                     <div className="overflow-x-auto rounded-xl border border-border focus-visible:outline-primary" role="region" aria-label={`${section.heading} table`} tabIndex={0}>
                       <table className="w-full min-w-[560px] text-sm text-left">
@@ -151,7 +150,6 @@ export default function BlogArticle() {
                         <tbody>{table.rows.map((row, rowIndex) => <tr key={rowIndex} className="border-t border-border even:bg-muted/30">{row.map((cell, cellIndex) => cellIndex === 0 ? <th key={cellIndex} scope="row" className="p-4 align-top font-medium">{cell}</th> : <td key={cellIndex} className="p-4 align-top text-muted-foreground">{cell}</td>)}</tr>)}</tbody>
                       </table>
                     </div>
-                    {isEstimate && <p className="mt-3 text-xs leading-relaxed text-muted-foreground">Price figures are indicative article estimates, not a current quotation. Compare the same specification, units, access, taxes and installation scope with an itemised project quote.</p>}
                   </div>;
                 })()}
 
