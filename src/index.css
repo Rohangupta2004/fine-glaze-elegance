@@ -340,3 +340,8 @@ main > .fg-sec:nth-of-type(even) {
 .ph h1 .ph-sub { display: block; margin-top: 0.35em; font-size: 0.5em; font-weight: 500; letter-spacing: -0.02em; color: #9aa6b8; }
 .fg-sec p { max-width: 68ch; }
 .fg-sec .text-center p, .fg-sec p.text-center { margin-inline: 0; }
+.fg-faq + .fg-faq { border-top: 0; }
+.fg-pm { flex: none; width: 28px; height: 28px; border: 1px solid #243044; background:
+  linear-gradient(#dd9a5b, #dd9a5b) center / 12px 1.5px no-repeat,
+  linear-gradient(#dd9a5b, #dd9a5b) center / 1.5px 12px no-repeat; }
+[data-state="open"] > .fg-pm { background: linear-gradient(#dd9a5b, #dd9a5b) center / 12px 1.5px no-repeat; }

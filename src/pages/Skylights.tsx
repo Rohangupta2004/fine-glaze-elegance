@@ -48,32 +48,14 @@ function FadeIn({
 
 /* ── Accordion FAQ item ── */
 function FAQItem({ q, a }: { q: string; a: string }) {
-  const [open, setOpen] = useState(false);
   return (
-    <div className="border-b border-line">
-      <button
-        onClick={() => setOpen(!open)}
-        className="w-full flex items-center justify-between py-4 text-left group"
-      >
-        <span className="text-[15px] font-semibold text-paper pr-8 group-hover:text-lamp transition-colors">
-          {q}
-        </span>
-        <ChevronDown
-          size={18}
-          className={cn(
-            "text-mute shrink-0 transition-transform duration-300",
-            open && "rotate-180"
-          )}
-        />
-      </button>
-      <div
-        className={cn(
-          "overflow-hidden transition-all duration-300",
-          open ? "max-h-96 pb-4" : "max-h-0"
-        )}
-      >
-        <p className="text-mute leading-relaxed text-sm">{a}</p>
-      </div>
+    <div className="fg-faq">
+      <details>
+        <summary>
+          <h3>{q}</h3>
+        </summary>
+        <div className="fg-a">{a}</div>
+      </details>
     </div>
   );
 }

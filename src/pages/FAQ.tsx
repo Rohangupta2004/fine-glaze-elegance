@@ -19,7 +19,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Button } from "@/components/ui/button";
+import PageHero from "@/components/common/PageHero";
 import SEO from "@/components/SEO";
 import { Layout } from "@/components/layout/Layout";
 import { useBookCall } from "@/components/booking/BookCallProvider";
@@ -133,8 +133,7 @@ export default function FAQ() {
   };
 
   return (
-    <Layout>
-    <div className="bg-night-2 text-paper font-sans selection:bg-lamp/10">
+    <Layout darkHero>
       <SEO
         title="Facade Contractor FAQ India: Glazing and ACP | Fine Glaze"
         description="Answers to common questions on curtain wall, structural glazing, ACP cladding, facade leakage and maintenance AMC, written as general guidance by Fine Glaze."
@@ -143,70 +142,39 @@ export default function FAQ() {
         schema={jsonLd}
       />
 
-      <main className="relative max-w-4xl mx-auto py-12 md:py-16 px-6 md:px-8">
-        
-        {/* Header Section */}
-        <header className="mb-16 text-center md:text-left">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-lamp/10 text-lamp text-sm font-semibold mb-6">
-            <Building2 className="w-4 h-4" />
-            Fine Glaze engineering
-          </div>
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-paper leading-[1.1] mb-6">
-            Facade questions, answered.
-          </h1>
-          <p className="text-lg md:text-xl text-mute max-w-2xl leading-relaxed">
-            The engineering, cost and maintenance questions architects and developers ask us most.
-          </p>
-        </header>
+      <PageHero
+        crumbs={[{ label: "FAQ" }]}
+        title="Facade questions, answered."
+        intro="The engineering, cost and maintenance questions architects and developers ask us most."
+        source="faq_hero"
+      />
 
-        {/* Shadcn Accordion List */}
-        <div className="bg-night p-4 md:p-8 shadow-slate-200/50 border border-line">
-          <Accordion type="single" collapsible className="w-full space-y-4">
+      <section className="fg-sec">
+        <div className="fg-wrap">
+          <Accordion type="single" collapsible className="w-full border-t border-line">
             {faqDatabase.map((faq) => (
-              <AccordionItem 
-                key={faq.id} 
-                value={faq.id} 
-                className="border px-6 bg-night-2/50 data-[state=open]:bg-night data-[state=open]:border-lamp/40 transition-all duration-300"
-              >
-                <AccordionTrigger className="hover:no-underline py-6">
-                  <div className="flex items-center gap-4 text-left">
-                    <div className="p-3 bg-night border border-line shrink-0">
-                      {faq.icon}
-                    </div>
-                    <div>
-                      <div className="text-xs font-semibold text-lamp mb-1">
-                        {faq.category}
-                      </div>
-                      <span className="text-lg md:text-xl font-bold text-paper leading-snug">
-                        {faq.question}
-                      </span>
-                    </div>
-                  </div>
+              <AccordionItem key={faq.id} value={faq.id} className="border-b border-line">
+                <AccordionTrigger className="hover:no-underline">
+                  <span className="flex flex-col items-start gap-1 text-left">
+                    <span className="text-sm font-normal text-mute">{faq.category}</span>
+                    <span className="text-lg md:text-xl font-medium text-paper leading-snug">{faq.question}</span>
+                  </span>
                 </AccordionTrigger>
-                
-                <AccordionContent className="pb-6 pt-2">
-                  <div className="pl-[4.5rem] pr-4">
-                    <div className="grid md:grid-cols-3 gap-8">
-                      {/* Answer Text */}
-                      <div className="md:col-span-2 space-y-4">
-                        <p className="text-mute leading-relaxed text-base">
-                          {faq.answer}
-                        </p>
-                        <button type="button" onClick={() => openBooking({ source: "faq_drawings", work: "Technical drawings" })} className="flex items-center gap-2 text-sm font-bold text-lamp hover:text-lamp transition-colors group">
-                          <Ruler className="w-4 h-4 group-hover:scale-110 transition-transform" /> 
-                          Book a call about drawings
-                        </button>
-                      </div>
-                      
-                      {/* Highlight Metric */}
-                      <div className="bg-lamp/10 p-6 flex flex-col justify-center items-center text-center border border-lamp/40">
-                        <span className="text-3xl font-black text-lamp tracking-tight">
-                          {faq.stats.metric}
-                        </span>
-                        <span className="text-xs font-semibold text-mute mt-2">
-                          {faq.stats.label}
-                        </span>
-                      </div>
+                <AccordionContent className="pb-8 pt-1">
+                  <div className="grid md:grid-cols-[minmax(0,1fr)_minmax(0,18rem)] gap-8 items-start">
+                    <div className="space-y-4">
+                      <p className="text-mute leading-relaxed text-base max-w-[68ch]">{faq.answer}</p>
+                      <button
+                        type="button"
+                        onClick={() => openBooking({ source: "faq_drawings", work: "Technical drawings" })}
+                        className="fg-lnk"
+                      >
+                        Book a call about drawings
+                      </button>
+                    </div>
+                    <div className="border-l border-line pl-6">
+                      <div className="font-light text-4xl text-paper tracking-tight">{faq.stats.metric}</div>
+                      <div className="text-sm text-mute mt-2">{faq.stats.label}</div>
                     </div>
                   </div>
                 </AccordionContent>
@@ -214,38 +182,7 @@ export default function FAQ() {
             ))}
           </Accordion>
         </div>
-
-        {/* CTO Advisory CTA */}
-        <section className="mt-20 bg-night-2 p-8 md:p-12 relative overflow-hidden">
-          {/* Abstract Grid Background inside CTA */}
-          <div 
-            className="absolute inset-0 opacity-10 pointer-events-none" 
-            style={{ 
-              backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', 
-              backgroundSize: '24px 24px' 
-            }} 
-          />
-          
-          <div className="relative z-10 flex flex-col md:flex-row gap-8 items-center justify-between">
-            <div className="text-center md:text-left">
-              <h2 className="text-2xl md:text-3xl font-bold text-paper leading-tight mb-3">
-                Need a Structural Audit?
-              </h2>
-              <p className="text-mute text-base max-w-md">
-                Direct consultation with our engineering team for facade stability, leakage issues, or value engineering.
-              </p>
-            </div>
-            <div className="flex flex-col sm:flex-row gap-4 w-full md:w-auto shrink-0">
-              <Button size="lg" onClick={() => openBooking({ source: "faq" })} className="bg-lamp hover:bg-lamp/90 text-lamp-ink font-bold h-14 px-8 text-base">
-                <PhoneCall className="w-5 h-5 mr-2" />
-                Book a call
-              </Button>
-            </div>
-          </div>
-        </section>
-
-      </main>
-    </div>
+      </section>
     </Layout>
   );
 }
