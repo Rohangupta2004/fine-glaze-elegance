@@ -93,7 +93,7 @@ const faqDatabase = [
     question: "Which cities do you work in? Do you take projects outside Pune and Mumbai?",
     category: "Coverage",
     icon: <MapPin className="w-5 h-5 text-blue-600" />,
-    answer: "We operate from Pune and Mumbai — our office and fabrication unit are in Pune, and most of our sites are in Pune, PCMC, Mumbai, Navi Mumbai, Thane and Panvel. Projects elsewhere in India are considered case by case after a site visit, depending on scope and how we can supervise the work properly. Call +91 83692 33566 to discuss your location.",
+    answer: "We operate from Pune and Mumbai — our office and fabrication unit are in Pune, and most of our sites are in Pune, PCMC, Mumbai, Navi Mumbai, Thane and Panvel. We take up projects across India after a site visit: design, engineering and fabrication run from Pune, and a site in-charge and installation team are mobilised for the installation period. Call +91 83692 33566 to discuss your location.",
     stats: { metric: "Pune · Mumbai", label: "Operating Cities" }
   },
   {

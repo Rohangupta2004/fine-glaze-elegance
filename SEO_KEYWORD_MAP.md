@@ -1,12 +1,12 @@
 # Fine Glaze SEO Keyword Master List
 
-This document is the working keyword map for Fine Glaze. It targets commercial searches in Pune and Mumbai first, with nearby Maharashtra locations used only where the page offers useful local context.
+This document is the working keyword map for Fine Glaze. It targets commercial searches in Pune and Mumbai first (the hand-written pages below), with Pan-India location pages covering other places (see "Pan-India location pages" at the end).
 
 ## Usage rules
 
 - The **primary keyword** is the one canonical target for a page. Do not assign it to another page.
 - Secondary keywords can appear naturally in the H1 support copy, section headings, FAQs, image alt text, and internal-link anchors.
-- Do not publish a location page unless it includes local project evidence, service-area details, relevant FAQs, and a meaningful contact CTA.
+- Every location page needs service-area details, relevant FAQs, and a meaningful contact CTA, and must state only facts we can check. Claim local project evidence only where a real project exists (see "Pan-India location pages").
 - `Verify` means the capability is represented in the current site/assets but should be confirmed as an active priority service before creating a dedicated commercial landing page.
 
 ## 1. Core commercial keyword map
@@ -106,7 +106,7 @@ Use in body copy, project references, FAQs, and internal links when relevant: Hi
 
 Recommended modifier pattern:
 
-`[service] + [location]` → only create a dedicated page when the location has distinct project proof or service context; otherwise use a strong city page with locally relevant sections.
+`[service] + [location]` → the hand-written Pune/Mumbai pages are the priority targets. Other places are served by the generated Pan-India pages (see the last section), which are honest about where we have projects and where we work from the Pune unit.
 
 ## 6. Portfolio keyword map
 
@@ -131,7 +131,7 @@ Recommended modifier pattern:
 - Keep Pune/Mumbai service pages distinct from the national service pages by adding local project proof, climate/coastal considerations, and service-area context.
 - Link every informational article to one relevant commercial page and link commercial pages back to the strongest supporting guides.
 - Keep `Service`, `LocalBusiness`, `BreadcrumbList`, `FAQPage`, and `Article` schema aligned with the actual page content.
-- Preserve one canonical URL per primary keyword and redirect or consolidate overlapping pages rather than publishing duplicates.
+- Preserve one canonical URL per primary keyword and canonicalise, redirect or consolidate overlapping pages rather than publishing duplicates.
 
 ## 8. Validation checklist
 
@@ -150,6 +150,28 @@ Recommended modifier pattern:
 
 
 
-## Retired location pages (Nov 2026)
+## Pan-India location pages
 
-The ~616 auto-generated `/facade-contractor/:service-:city` pages were removed because most covered cities with no Fine Glaze operations and differed only by the city name (doorway / scaled-content risk). Every old URL 301-redirects to the closest genuine page; the table lives in `src/data/legacyLocations.json` and `vercel.json` is regenerated with `node scripts/generate-legacy-redirects.mjs`. Add a new location page only with real local project evidence, per the usage rules above.
+The business is going Pan India, so the location pages are kept. 77 locations x 8 page types = 616 pre-rendered URLs: `/facade-contractor/<location>` plus `/facade-contractor/<service>-<location>` for commercial-construction, structural-glazing, curtain-wall, acp-cladding, glass-railing and facade-maintenance (and facade-contractor, which is the bare `<location>` page). `/facade-contractor/pan-india` doubles as the index of every location.
+
+**Where things live**
+- `src/data/locations.ts` - routing and per-place facts (state, group, coverage, climate, flags, context line, building types, geo, real `projects`, `sameAs`), `PREFERRED_STATIC`, and the sitemap path list.
+- `src/data/cityContent.ts` - page copy: climate guidance per service, service details, "how we work here", FAQs.
+- `src/pages/CityLanding.tsx` - the page component (Service schema with `areaServed`, no fake local addresses).
+- `src/data/locations.test.ts` - tests for routing, canonicals and data rules.
+
+**Each page is built from parts that differ by place and service:** a factual context line, climate, engineering guidance for that climate and service, typical building types, distance from the Pisoli (Pune) fabrication unit, nearest real projects, "how we work here" copy (outstation pages say plainly that there is no local office) and its own FAQs.
+
+**Canonical rules**
+- Duplicate spellings point to one URL: `all-india` and `india` -> `pan-india`; `bangalore` -> `bengaluru`.
+- `/facade-contractor/facade-contractor-<x>` -> `/facade-contractor/<x>`.
+- Where a hand-written page exists (`PREFERRED_STATIC`, e.g. `/facade-contractor-pune`, `/curtain-wall-mumbai`), the dynamic page canonicals to it.
+- Only self-canonical pages (~508) go into `sitemap.xml`, added at build time by `vite.config.ts` and `src/lib/articleSitemap.ts`. Do not add the rest by hand.
+
+**Rules for editing or adding a location**
+- Every `context` line must be a checkable fact about the place (what gets built there, climate, connectivity). No marketing claims.
+- Never claim an office or a project in a city unless it is in `src/data/company.ts` or `src/data/projects.ts`. Outstation coverage must stay honest ("taken up after a site visit, delivered from Pisoli").
+- Add `projects` to a location only for real projects, matched on the project's location field.
+- A new spelling of an existing place gets `sameAs`, not its own content. If a hand-written page is added, register it in `PREFERRED_STATIC`.
+- After any change run the tests (`npm test`) and `npm run check:city-overlap` (`scripts/check-city-page-overlap.mjs`) to confirm the pages stay distinct from one another.
+- Priority for enrichment: real project photos and case studies on the pages Search Console reports as "Crawled - currently not indexed".

@@ -139,16 +139,16 @@ export const Footer = () => {
         </div>
       </div>
 
-      {/* Where we work — only places we actually operate */}
+      {/* Pan-India locations (dynamic routing — /facade-contractor/:city) */}
       <div className="border-t border-white/10 py-5">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-3 text-xs text-white/60">
+        <div className="container mx-auto px-4 space-y-3 text-xs text-white/60">
+          <div className="flex flex-col md:flex-row items-start md:items-center gap-3">
             <span className="font-semibold text-amber-400 uppercase tracking-wider shrink-0">
-              Where we work:
+              Based in:
             </span>
-            <nav aria-label="Service areas" className="flex flex-wrap gap-x-3 gap-y-1 text-white/70">
+            <nav aria-label="Home markets" className="flex flex-wrap gap-x-3 gap-y-1 text-white/70">
               {[
-                { name: "Facade contractor in Pune", href: "/facade-contractor-pune" },
+                { name: "Pune", href: "/facade-contractor-pune" },
                 { name: "Mumbai", href: "/facade-contractor-mumbai" },
                 { name: "Navi Mumbai", href: "/facade-contractor-navi-mumbai" },
                 { name: "Thane", href: "/facade-contractor-thane" },
@@ -157,7 +157,33 @@ export const Footer = () => {
                   {loc.name}
                 </Link>
               ))}
-              <span className="text-white/50">· Other locations considered case by case</span>
+            </nav>
+          </div>
+          <div className="flex flex-col md:flex-row items-start md:items-center gap-3">
+            <span className="font-semibold text-amber-400 uppercase tracking-wider shrink-0">
+              Pan-India Projects:
+            </span>
+            <nav aria-label="Pan-India locations" className="flex flex-wrap gap-x-3 gap-y-1 text-white/70">
+              {[
+                { name: "Delhi NCR", slug: "delhi-ncr" },
+                { name: "Bengaluru", slug: "bengaluru" },
+                { name: "Hyderabad", slug: "hyderabad" },
+                { name: "Chennai", slug: "chennai" },
+                { name: "Ahmedabad", slug: "ahmedabad" },
+                { name: "GIFT City", slug: "gift-city" },
+                { name: "Kolkata", slug: "kolkata" },
+                { name: "Chandigarh", slug: "chandigarh" },
+                { name: "Jaipur", slug: "jaipur" },
+                { name: "Lucknow", slug: "lucknow" },
+                { name: "Indore", slug: "indore" },
+                { name: "Kochi", slug: "kochi" },
+                { name: "Nashik", slug: "nashik" },
+                { name: "All locations", slug: "pan-india" },
+              ].map((loc) => (
+                <Link key={loc.slug} to={`/facade-contractor/${loc.slug}`} className="hover:text-amber-400 transition-colors">
+                  {loc.name}
+                </Link>
+              ))}
             </nav>
           </div>
         </div>

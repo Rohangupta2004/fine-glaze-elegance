@@ -16,12 +16,16 @@ interface RelatedProjectsProps {
   excludeLocations?: string[];
   /** Keep projects whose scope / system / title mentions any of these. */
   keywords?: string[];
+  /** Sort (without filtering) by how many of these words appear in the headline scope. */
+  rankBy?: string[];
   limit?: number;
+  /** Show exactly these projects, in this order (overrides the filters). */
+  slugs?: string[];
 }
 
 const has = (text: string, words: string[]) => words.some((w) => text.toLowerCase().includes(w.toLowerCase()));
 
-export function matchProjects({ locations, excludeLocations, keywords, limit = 4 }: Omit<RelatedProjectsProps, "heading" | "intro">) {
+export function matchProjects({ locations, excludeLocations, keywords, rankBy, limit = 4 }: Omit<RelatedProjectsProps, "heading" | "intro">) {
   return Object.entries(projectsData)
     .filter(([, p]) => !locations || has(p.location, locations))
     .filter(([, p]) => !excludeLocations || !has(p.location, excludeLocations))
@@ -29,7 +33,8 @@ export function matchProjects({ locations, excludeLocations, keywords, limit = 4
     .map(([slug, p]) => {
       // relevance: keyword hits in the headline scope count most
       const head = `${p.title} ${p.scope} ${p.systemUsed}`;
-      const score = keywords ? keywords.filter((k) => head.toLowerCase().includes(k.toLowerCase())).length : 0;
+      const words = rankBy ?? keywords ?? [];
+      const score = words.filter((k) => head.toLowerCase().includes(k.toLowerCase())).length;
       return { slug, p, score };
     })
     .sort((a, b) => b.score - a.score || Number(b.p.status === "Completed") - Number(a.p.status === "Completed") || Number(b.p.year) - Number(a.p.year))
@@ -37,8 +42,10 @@ export function matchProjects({ locations, excludeLocations, keywords, limit = 4
     .slice(0, limit) as [string, ProjectData][];
 }
 
-export function RelatedProjects({ heading, intro, ...filter }: RelatedProjectsProps) {
-  const items = matchProjects(filter);
+export function RelatedProjects({ heading, intro, slugs, ...filter }: RelatedProjectsProps) {
+  const items = slugs
+    ? slugs.filter((s) => projectsData[s]).map((s) => [s, projectsData[s]] as [string, ProjectData])
+    : matchProjects(filter);
   if (items.length === 0) return null;
   return (
     <section className="py-16 bg-stone-950 text-white" aria-labelledby="related-projects">

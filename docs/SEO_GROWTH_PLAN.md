@@ -1,6 +1,6 @@
 # Fine Glaze — SEO & Growth Plan (Nov 2026)
 
-Goal: when someone in Pune or Mumbai searches for a facade, glazing or window contractor, they find Fine Glaze, trust what they read, and call. No overselling — every claim on the site comes from the company profile (`src/data/company.ts`).
+Goal: when someone in Pune or Mumbai (our two operating cities) searches for a facade, glazing or window contractor, they find Fine Glaze, trust what they read, and call. We are based in Pune with Mumbai as the second operating city, and are going Pan India for projects elsewhere. No overselling — every claim on the site comes from the company profile (`src/data/company.ts`).
 
 ## Fine Glaze vs Fenesta — where we can win
 
@@ -16,8 +16,8 @@ Goal: when someone in Pune or Mumbai searches for a facade, glazing or window co
 | Proof | Reviews, builder/architect pages | Embassy REIT Best Vendor 2024, project records with client/scope/status | Add Google reviews and monthly case studies (below). |
 
 ## Already done on the website (PR #137)
-- Claims aligned to the company profile; "Pan India", inflated numbers, unlisted clients, unverified warranties removed.
-- ~616 thin city pages retired with 301 redirects (Google penalises this pattern sitewide).
+- Claims aligned to the company profile; inflated numbers, unlisted clients, unverified warranties removed. "Pan India" is back in the homepage headline, backed by the location pages below, which say plainly where we have projects and where we do not.
+- ~616 city pages kept for the Pan-India push but rebuilt so they are not copies: each has its own place facts, climate and engineering guidance, building types, distance from the Pisoli unit, nearest real projects, honest "how we work here" copy (no fake local offices) and its own FAQs. Duplicate spellings point canonically to one URL and only ~508 self-canonical pages are in the sitemap. `npm run check:city-overlap` verifies they stay distinct after edits.
 - New pages: aluminium windows & doors, quality & safety, service request; About page with real team and credentials.
 - Clean structured data, real share image, robots.txt fix, missing pages now pre-rendered, `llms.txt` for AI search.
 - GA4 tracking for calls, WhatsApp taps, emails, downloads and form leads.
@@ -32,7 +32,7 @@ Goal: when someone in Pune or Mumbai searches for a facade, glazing or window co
    - Send the profile link to the developer to add to the site's structured data.
 2. **Google reviews.** Ask every client from completed work (Embassy REIT facility team, Nirmaann, Jindal House, Salsette-27, Samundra Tarang, Leela). Reply to every review. Never buy or incentivise reviews. Message to send:
    > Namaste [Name], thank you for trusting Fine Glaze with [project]. If you were happy with our work, could you share a short Google review? It helps other building owners find us: [review link]. — Deepak Gupta, Fine Glaze
-3. **Google Search Console + Bing Webmaster Tools.** Verify the domain, submit `https://fineglaze.com/sitemap.xml`, request indexing for the new pages. "Page with redirect" for old `/facade-contractor/...` URLs is expected.
+3. **Google Search Console + Bing Webmaster Tools.** Verify the domain, submit `https://fineglaze.com/sitemap.xml`, request indexing for the new pages. Duplicate location URLs (e.g. `/facade-contractor/india`) will show "Alternate page with proper canonical tag" — that is expected. Watch "Crawled – currently not indexed" for the `/facade-contractor/...` pages; if many sit there, enrich the weakest first with real project photos and case studies rather than adding more pages.
 4. **GA4.** Mark `contact_call`, `contact_whatsapp` and `generate_lead` as key events; link GA4 to Search Console.
 5. **Real photos.** ~50 stock (Unsplash) images still sit inside service pages. Replace them with site photos. From every site: before / during / after, 10 photos, one short vertical video.
 6. **Citations** with the identical name, address and phone: LinkedIn company page, IndiaMART, Justdial, Sulekha, TradeIndia, Bing Places, Apple Business Connect.

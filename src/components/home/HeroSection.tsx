@@ -90,7 +90,7 @@ export const HeroSection = () => {
               className="text-3xl sm:text-5xl md:text-6xl font-extrabold text-white leading-tight tracking-tight drop-shadow-md"
             >
               Complete Facade Solutions &amp; <br className="hidden sm:block" />
-              Fenestration Expert in <span className="text-amber-400">Pune &amp; Mumbai</span>
+              Fenestration Expert <span className="text-amber-400">Pan India</span>
             </motion.h1>
 
             {/* Subhead */}
