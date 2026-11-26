@@ -1,3 +1,4 @@
+import { ILLUSTRATIONS, illusSrc, illusSrcSet } from "@/lib/illustrations";
 import SEO from "@/components/SEO";
 import { RelatedProjects } from "@/components/RelatedProjects";
 import { Layout } from "@/components/layout/Layout";
@@ -69,7 +70,7 @@ export default function FacadeContractorThane() {
               <Link to="/portfolio"><Button size="lg" variant="outline">View Projects</Button></Link>
             </div>
           </div>
-          <img decoding="async" src="/projects/embassy-247-37-1.webp" alt="Embassy 247, Vikhroli, Mumbai — facade sealant and glass replacement by Fine Glaze for Embassy REIT" className="object-cover h-[420px] w-full" loading="eager" width="600" height="420" />
+          <img decoding="async" src={illusSrc("city-thane")} srcSet={illusSrcSet("city-thane")} sizes="(max-width: 768px) 100vw, 560px" alt={ILLUSTRATIONS["city-thane"]} className="object-cover h-[420px] w-full" loading="eager" width={1376} height={768} />
         </div>
       </section>
 

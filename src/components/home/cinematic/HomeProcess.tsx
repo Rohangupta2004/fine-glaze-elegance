@@ -1,19 +1,29 @@
 import { company } from "@/data/company";
 
-type Photo = { src: string; alt: string; w: number; h: number; caption: string };
+type Photo = { src: string; alt: string; w: number; h: number; caption?: string; srcSet?: string };
 const STEPS: { name: string; line: string; photo?: Photo }[] = [
   {
     name: "Survey and shop drawings",
     line: "We measure on site and prepare the drawings for approval.",
     photo: {
-      src: "/projects/jindal-house-46-4.webp",
-      alt: "Shop drawing of a stainless steel glass railing for Jindal House, Mumbai",
-      w: 879,
-      h: 554,
-      caption: "Shop drawing, SS glass railing, Jindal House",
+      src: "/images/illustrations/process-survey.webp",
+      srcSet: "/images/illustrations/process-survey-800.webp 800w, /images/illustrations/process-survey.webp 1376w",
+      alt: "Gloved hand measuring a concrete column with a laser measure on a building site",
+      w: 1376,
+      h: 768,
     },
   },
-  { name: "Engineering and approvals", line: "Our engineers check members and fixings, and drawings are released once approved." },
+  {
+    name: "Engineering and approvals",
+    line: "Our engineers check members and fixings, and drawings are released once approved.",
+    photo: {
+      src: "/images/illustrations/process-engineering.webp",
+      srcSet: "/images/illustrations/process-engineering-800.webp 800w, /images/illustrations/process-engineering.webp 1376w",
+      alt: "Engineering drawings and an aluminium profile sample on a desk beside a laptop",
+      w: 1376,
+      h: 768,
+    },
+  },
   {
     name: "Fabrication at our Pune unit",
     line: `Aluminium, steel and ACP are cut and assembled at ${company.fabricationUnit.location}, with checks at source.`,
@@ -63,8 +73,8 @@ const HomeProcess = () => (
             <p>{s.line}</p>
             {s.photo && (
               <figure className="pr-f">
-                <img src={s.photo.src} alt={s.photo.alt} width={s.photo.w} height={s.photo.h} sizes="(max-width: 1000px) 260px, 230px" loading="lazy" decoding="async" />
-                <figcaption>{s.photo.caption}</figcaption>
+                <img src={s.photo.src} srcSet={s.photo.srcSet} alt={s.photo.alt} width={s.photo.w} height={s.photo.h} sizes="(max-width: 1000px) 260px, 230px" loading="lazy" decoding="async" />
+                {s.photo.caption && <figcaption>{s.photo.caption}</figcaption>}
               </figure>
             )}
           </li>

@@ -59,7 +59,7 @@ const IMG: Record<string, string> = {
   semi: "/railing-semi.webp",
   spigot: "/railing-spigot.webp",
   standoff: "/railing-standoff.webp",
-  process: "/projects/jindal-house-45-1.webp",
+  process: "/projects/jindal-house-46-4.webp",
 };
 
 /* ── System data ── */
@@ -431,12 +431,12 @@ export default function GlassRailings() {
       {/* ════════════ PHOTO BREAK ════════════ */}
       <FadeIn>
         <div className="fg-wrap">
-        <div className="relative h-[35vh] md:h-[40vh] overflow-hidden">
+        <div className="relative h-[35vh] md:h-[40vh] overflow-hidden" style={{ maxWidth: 879 }}>
           <img
             src={IMG.process}
             sizes="(max-width: 1280px) 100vw, 1152px"
             decoding="async"
-            alt="Stainless steel glass railing on the terrace sea front, Jindal House, Balkeshwar, Mumbai"
+            alt="Shop drawing, SS glass railing, Jindal House, Mumbai"
             className="w-full h-full object-cover"
             loading="lazy"
           />
