@@ -2,6 +2,7 @@ import { ReactNode, useRef } from "react";
 import { Link } from "react-router-dom";
 import { useBookCall } from "@/components/booking/BookCallProvider";
 import { useWipe } from "./useWipe";
+import GlassLightBg from "./GlassLightBg";
 import "./pagehero.css";
 
 export interface Crumb {
@@ -50,7 +51,8 @@ export const PageHero = ({ crumbs = [], title, intro, image, secondary, source =
   const trail: Crumb[] = [{ label: "Home", to: "/" }, ...crumbs];
 
   return (
-    <section className={`ph${compact ? " compact" : ""}`}>
+    <section className={`ph glb-host${compact ? " compact" : ""}`}>
+      <GlassLightBg />
       <div className="fg-wrap" style={{ width: "100%" }}>
         <div className={`ph-g${image ? "" : " solo"}`}>
           <div className="ph-copy">

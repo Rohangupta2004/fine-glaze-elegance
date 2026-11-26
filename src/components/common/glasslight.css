@@ -1,0 +1,22 @@
+.glb-host { position: relative; isolation: isolate; }
+.glb { position: absolute; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; background: linear-gradient(160deg, #f9f7f4 0%, #f6efe6 55%, #f9f7f4 100%); }
+.glb-b { position: absolute; border-radius: 50%; filter: blur(70px); opacity: 0.85; will-change: transform; animation: glb-drift 50s ease-in-out infinite alternate; animation-play-state: paused; }
+.glb-b1 { width: 52vw; height: 52vw; max-width: 760px; max-height: 760px; left: -8%; top: -30%; background: #f1dcc4; }
+.glb-b2 { width: 46vw; height: 46vw; max-width: 680px; max-height: 680px; right: -6%; top: 10%; background: #e9cfb2; opacity: 0.6; animation-duration: 60s; animation-direction: alternate-reverse; }
+.glb-b3 { width: 40vw; height: 40vw; max-width: 600px; max-height: 600px; left: 30%; bottom: -35%; background: #f6ecdf; animation-duration: 42s; }
+.glb-bands { position: absolute; inset: -20% -10%; background: repeating-linear-gradient(115deg, rgba(201, 138, 75, 0.06) 0 46px, rgba(201, 138, 75, 0) 46px 150px); animation: glb-slide 70s linear infinite; animation-play-state: paused; }
+.glb-grain { position: absolute; inset: 0; opacity: 0.05; background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .17 0 0 0 0 .11 0 0 0 0 .07 0 0 0 1 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>"); }
+.glb-on .glb-b, .glb-on .glb-bands { animation-play-state: running; }
+@keyframes glb-drift { from { transform: translate3d(0, 0, 0) scale(1); } to { transform: translate3d(7vw, 5vh, 0) scale(1.12); } }
+@keyframes glb-slide { from { transform: translate3d(-150px, 0, 0); } to { transform: translate3d(150px, 0, 0); } }
+@media (prefers-reduced-motion: reduce) { .glb-b, .glb-bands { animation: none; } }
+
+/* heading mask reveal (set up by useHeadingReveal) */
+html.hd-js main h2.hd-r { transition: clip-path 0.9s cubic-bezier(0.7, 0, 0.15, 1); }
+html.hd-js main h2.hd-r:not(.hd-in) { clip-path: inset(-0.2em 100% -0.2em 0); }
+html.hd-js main h2.hd-r.hd-in { clip-path: inset(-0.2em -2% -0.2em 0); }
+@media (prefers-reduced-motion: reduce) { html.hd-js main h2.hd-r, html.hd-js main h2.hd-r:not(.hd-in) { clip-path: none; transition: none; } }
+
+/* scroll progress */
+.scrollbar-top { position: fixed; top: 0; left: 0; right: 0; height: 1px; z-index: 70; pointer-events: none; }
+.scrollbar-top i { display: block; height: 100%; background: #9b5520; transform-origin: left; transform: scaleX(var(--sp, 0)); }

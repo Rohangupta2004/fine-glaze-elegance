@@ -593,9 +593,7 @@ const StoryHero = () => {
           </div>
           <div className="blk say">
             <span className="lbl">02 / 10</span>
-            <h2>
-              Facade specialists, <span className="text-gradient">start to finish.</span>
-            </h2>
+            <h2 className="gl">{["Facade specialists,", "start to finish."].map((l, i) => (<span className="ln" key={l} style={{ ["--i" as string]: i }}><span className="li">{l}</span></span>))}</h2>
             <p>
               Design, fabrication, installation and maintenance from one accountable team of {company.stats.coreTeam},
               led by Deepak Gupta, B.E. Civil, with 11+ years in facades.
@@ -603,51 +601,37 @@ const StoryHero = () => {
           </div>
           <div className="blk fact">
             <span className="lbl">03 / 10</span>
-            <h2>
-              Every fixing checked against the <span className="text-gradient">wind load.</span>
-            </h2>
+            <h2 className="gl">{["Every fixing checked", "against the wind load."].map((l, i) => (<span className="ln" key={l} style={{ ["--i" as string]: i }}><span className="li">{l}</span></span>))}</h2>
             <p>Member sizing, fixing and anchorage are verified in-house before anything goes on the slab.</p>
           </div>
           <div className="blk fact">
             <span className="lbl">04 / 10</span>
-            <h2>
-              Made at our <span className="text-gradient">Pisoli unit.</span>
-            </h2>
+            <h2 className="gl">{["Made at our", "Pisoli unit."].map((l, i) => (<span className="ln" key={l} style={{ ["--i" as string]: i }}><span className="li">{l}</span></span>))}</h2>
             <p>Aluminium and mild steel are cut, fabricated and assembled in Pune, batched for each project.</p>
           </div>
           <div className="blk fact">
             <span className="lbl">05 / 10</span>
-            <h2>
-              Water-tested <span className="text-gradient">on site.</span>
-            </h2>
+            <h2 className="gl">{["Water-tested", "on site."].map((l, i) => (<span className="ln" key={l} style={{ ["--i" as string]: i }}><span className="li">{l}</span></span>))}</h2>
             <p>Installed glazing gets a site water penetration test, and the snag register is closed before handover.</p>
           </div>
           <div className="blk fact">
             <span className="lbl">06 / 10</span>
-            <h2>
-              Glass checked <span className="text-gradient">on receipt.</span>
-            </h2>
+            <h2 className="gl">{["Glass checked", "on receipt."].map((l, i) => (<span className="ln" key={l} style={{ ["--i" as string]: i }}><span className="li">{l}</span></span>))}</h2>
             <p>Section, glass and panel are checked against the approved specification when material arrives.</p>
           </div>
           <div className="blk fact">
             <span className="lbl">07 / 10</span>
-            <h2>
-              Sealed to the <span className="text-gradient">specification.</span>
-            </h2>
+            <h2 className="gl">{["Sealed to the", "specification."].map((l, i) => (<span className="ln" key={l} style={{ ["--i" as string]: i }}><span className="li">{l}</span></span>))}</h2>
             <p>DOWSIL structural and weather silicone, or approved equivalents.</p>
           </div>
           <div className="blk say">
             <span className="lbl">08 / 10</span>
-            <h2>
-              Drawn in-house, <span className="text-gradient">before anything is cut.</span>
-            </h2>
+            <h2 className="gl">{["Drawn in-house,", "before anything is cut."].map((l, i) => (<span className="ln" key={l} style={{ ["--i" as string]: i }}><span className="li">{l}</span></span>))}</h2>
             <p>Shop drawings and engineering come from our own design team.</p>
           </div>
           <div className="blk say">
             <span className="lbl">09 / 10</span>
-            <h2>
-              Best Vendor Performance <span className="text-gradient">2024.</span>
-            </h2>
+            <h2 className="gl">{["Best Vendor", "Performance 2024."].map((l, i) => (<span className="ln" key={l} style={{ ["--i" as string]: i }}><span className="li">{l}</span></span>))}</h2>
             <figure className="aw">
               <img
                 src="/Awards.webp"
@@ -664,9 +648,7 @@ const StoryHero = () => {
           </div>
           <div className="blk say">
             <span className="lbl">10 / 10</span>
-            <h2>
-              Trusted by Embassy REIT, L&amp;T and <span className="text-gradient">Jindal Stainless.</span>
-            </h2>
+            <h2 className="gl">{["Trusted by Embassy REIT,", "L&T and Jindal Stainless."].map((l, i) => (<span className="ln" key={l} style={{ ["--i" as string]: i }}><span className="li">{l}</span></span>))}</h2>
             <p>Also Nirmaann Encon Developer, Hatchway Windoor and Rockfort Estate Developers.</p>
             <button className="btn" type="button" onClick={() => open({ source: "home_story_end" })}>
               Book a call

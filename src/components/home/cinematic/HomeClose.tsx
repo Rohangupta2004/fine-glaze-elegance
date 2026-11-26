@@ -1,10 +1,12 @@
+import GlassLightBg from "@/components/common/GlassLightBg";
 import { useBookCall } from "@/components/booking/BookCallProvider";
 import { company } from "@/data/company";
 
 const HomeClose = () => {
   const { open } = useBookCall();
   return (
-    <section className="end">
+    <section className="end glb-host">
+      <GlassLightBg />
       <div className="wrap">
         <div className="end-g">
           <div>

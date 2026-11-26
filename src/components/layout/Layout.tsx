@@ -3,6 +3,9 @@ import { Header } from "./Header";
 import { Footer } from "./Footer";
 import FloatingCTA from "@/components/FloatingCTA";
 import ScrollToTop from "@/components/ScrollToTop";
+import ScrollProgress from "@/components/common/ScrollProgress";
+import { useHeadingReveal } from "@/components/common/useHeadingReveal";
+import "@/components/common/glasslight.css";
 
 interface LayoutProps {
   children: ReactNode;
@@ -10,9 +13,11 @@ interface LayoutProps {
 }
 
 export const Layout = ({ children, darkHero = false }: LayoutProps) => {
+  useHeadingReveal();
   return (
     <div className="min-h-screen flex flex-col">
       <ScrollToTop />
+      <ScrollProgress />
       <Header darkHero={darkHero} />
       {/* Spacer for fixed navbar on non-hero pages */}
       {!darkHero && <div className="h-16 lg:h-20" />}
