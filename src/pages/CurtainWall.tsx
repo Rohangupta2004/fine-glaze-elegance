@@ -135,10 +135,10 @@ const SYSTEMS = [
 ];
 
 const STEPS = [
-  { num: "01", title: "Site Survey", desc: "Engineers assess the structure and design requirements" },
-  { num: "02", title: "Engineering", desc: "Shop drawings, wind-load calculations & thermal analysis" },
-  { num: "03", title: "Fabrication", desc: "Precision CNC cutting & assembly at our Pune facility" },
-  { num: "04", title: "Installation", desc: "Site crews install with crane-assisted panel placement" },
+  { num: "01", title: "Site Survey", desc: "Measurement, access study and scope freeze" },
+  { num: "02", title: "Engineering", desc: "In-house shop drawings and wind-load engineering check" },
+  { num: "03", title: "Fabrication", desc: "Cutting, assembly and finishing at our Pisoli, Pune unit" },
+  { num: "04", title: "Installation", desc: "Sequenced erection with line, level and plumb checks" },
 ];
 
 export default function CurtainWall() {
@@ -147,7 +147,7 @@ export default function CurtainWall() {
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: "Curtain Wall Manufacturers & Glazing Systems",
+    name: "Curtain Wall Systems",
     serviceType: "Curtain Wall Manufacturing & Installation",
     provider: {
       "@type": "LocalBusiness",
@@ -167,7 +167,7 @@ export default function CurtainWall() {
       { "@type": "City", name: "Mumbai" },
       { "@type": "City", name: "Navi Mumbai" },
     ],
-    description: "Curtain wall manufacturers in Pune & Mumbai. Unitized, stick & semi-unitized glass curtain wall systems.",
+    description: "Curtain wall contractor in Pune, Mumbai and across India. Unitized, stick and semi-unitized glass curtain wall systems.",
   };
 
   const breadcrumbSchema = {
@@ -186,10 +186,10 @@ export default function CurtainWall() {
     mainEntity: [
       {
         "@type": "Question",
-        name: "Who are the leading curtain wall manufacturers in India?",
+        name: "Who is Fine Glaze as a curtain wall contractor?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Fine Glaze is a curtain wall contractor in Pune and Mumbai, engineering unitized, stick, and semi-unitized curtain wall systems for commercial towers and IT parks.",
+          text: "Fine Glaze is a curtain wall contractor based in Pune and Mumbai, taking projects across India. We prepare shop drawings in-house, fabricate at our own Pisoli unit and install curtain walls for commercial and residential buildings.",
         },
       },
       {
@@ -197,7 +197,7 @@ export default function CurtainWall() {
         name: "What is a unitized curtain wall system?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Unitized curtain walls are factory pre-assembled and pre-glazed glass modules that interlock on site, offering 40% faster erection and superior weather sealing for high-rise buildings.",
+          text: "Unitized curtain walls are factory pre-assembled and pre-glazed glass modules that interlock on site, shortening erection time and giving controlled factory quality. They suit tall buildings.",
         },
       },
       {
@@ -205,7 +205,7 @@ export default function CurtainWall() {
         name: "How much does a curtain wall cost per sq ft in India?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Stick curtain wall systems range from ₹350–₹550/sq ft, unitized curtain wall systems cost ₹650–₹1,200/sq ft, and point-fixed spider glazing costs ₹800–₹1,500/sq ft.",
+          text: "Curtain wall cost depends on the system, glass, height, wind load and access. Fine Glaze prepares BOQ-based quotations against drawings.",
         },
       },
     ],
@@ -310,17 +310,17 @@ export default function CurtainWall() {
               Curtain Wall Fabrication &amp; Installation
             </p>
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-stone-900 leading-snug mb-5">
-              Top-Tier Curtain Wall Manufacturers for Modern Architecture —{" "}
+              Curtain Wall Systems for Modern Architecture —{" "}
               <span className="text-stone-500">engineered for wind load, thermal performance & longevity.</span>
             </h2>
             <p className="text-stone-600 text-[15px] md:text-base leading-relaxed mb-6">
-              As specialized curtain wall manufacturers, Fine Glaze designs, fabricates, and installs high-performance building envelopes. We utilize 6063-T6 grade aluminium extrusions, Dow Corning structural silicone, and double-glazed units (DGU) with Low-E coatings to achieve superior energy efficiency and weather protection across Maharashtra.
+              Fine Glaze designs, fabricates and installs curtain wall building envelopes. We use aluminium extrusions from major Indian mills, DOWSIL structural silicone or approved equivalents, and double-glazed units (DGU) with Low-E coatings where the specification calls for them, in Pune, Mumbai and across India.
             </p>
             <div className="flex flex-wrap justify-center gap-4 text-xs font-medium text-stone-500">
-              <span className="bg-stone-100 px-3 py-1.5 rounded-full">In-House CNC Fabrication</span>
-              <span className="bg-stone-100 px-3 py-1.5 rounded-full">IS 875 Wind Load Compliance</span>
-              <span className="bg-stone-100 px-3 py-1.5 rounded-full">Dow Corning Structural Silicone</span>
-              <span className="bg-stone-100 px-3 py-1.5 rounded-full">IS 2553 Glass Safety</span>
+              <span className="bg-stone-100 px-3 py-1.5 rounded-full">Own Fabrication Unit, Pune</span>
+              <span className="bg-stone-100 px-3 py-1.5 rounded-full">Wind Load Engineering Check</span>
+              <span className="bg-stone-100 px-3 py-1.5 rounded-full">DOWSIL Structural Silicone</span>
+              <span className="bg-stone-100 px-3 py-1.5 rounded-full">Safety Glass Where Required</span>
             </div>
           </FadeIn>
         </div>
@@ -329,7 +329,7 @@ export default function CurtainWall() {
       {/* ════════════ CONVERSION QUICK OVERVIEW ════════════ */}
       <ServiceQuickOverview
         serviceTitle="Curtain Wall Glazing Systems"
-        whatWeProvide="Unitized panelized facades, semi-unitized & stick curtain walls. Includes structural wind load calculation, CNC extrusion processing, DGU Low-E glass integration & weather-seal installation."
+        whatWeProvide="Unitized panelized facades, semi-unitized & stick curtain walls. Includes in-house shop drawings, an engineering check against project wind load, fabrication, DGU Low-E glass integration, weather-seal installation and a site water penetration test."
         locationsServed={["Pune (Hinjewadi, Baner, Kharadi)", "Mumbai (BKC, Nariman Point, Lower Parel)", "Thane", "Navi Mumbai"]}
         bestProjectTypes={[
           "High-Rise Commercial Towers (10+ Storeys)",
@@ -376,12 +376,12 @@ export default function CurtainWall() {
                 Unitized Curtain Wall Systems
               </h2>
               <p className="text-stone-300 text-sm md:text-base leading-relaxed mb-6">
-                Unitized curtain wall systems consist of large pre-assembled, factory-glazed panels that are transported to the construction site and anchored directly to the building floor slab. This system is the preferred solution for high-rise commercial towers and IT parks above 15 floors.
+                Unitized curtain wall systems consist of large pre-assembled, factory-glazed panels that are transported to the construction site and anchored directly to the building floor slab. This system is commonly chosen for tall commercial towers and IT parks.
               </p>
               <ul className="space-y-3 text-sm text-stone-300 mb-8">
                 <li className="flex items-start gap-2">
                   <CheckCircle2 size={18} className="text-amber-400 shrink-0 mt-0.5" />
-                  <span><strong>40% Faster On-Site Installation</strong> — Pre-fabricated modules eliminate scaffolding constraints.</span>
+                  <span><strong>Faster On-Site Erection</strong> — Pre-fabricated modules reduce the work done at height.</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle2 size={18} className="text-amber-400 shrink-0 mt-0.5" />
@@ -593,16 +593,16 @@ export default function CurtainWall() {
           <FadeIn delay={100}>
             <div>
               <FAQItem
-                q="Who are the leading curtain wall manufacturers in India?"
-                a="Fine Glaze is a curtain wall contractor in Pune and Mumbai, providing complete in-house design, CNC aluminium fabrication, and certified installation for commercial towers, IT parks, and high-rise developments."
+                q="Who is Fine Glaze as a curtain wall contractor?"
+                a="Fine Glaze is a curtain wall contractor based in Pune and Mumbai, taking projects across India. We prepare shop drawings in-house, fabricate at our own Pisoli unit and install curtain walls for commercial and residential buildings."
               />
               <FAQItem
                 q="What is the advantage of a unitized curtain wall system?"
-                a="Unitized curtain wall systems are factory-assembled and pre-glazed in controlled indoor conditions. This offers 40% faster on-site erection, superior quality control, and excellent wind load resistance for high-rise buildings."
+                a="Unitized curtain walls are factory-assembled and pre-glazed in controlled conditions, which shortens on-site erection and improves quality control. They suit tall buildings and tight programmes, subject to design and access."
               />
               <FAQItem
                 q="What is the typical curtain wall cost per sq ft in India?"
-                a="Stick curtain wall systems range from ₹350–₹550/sq ft, unitized curtain wall systems range from ₹650–₹1,200/sq ft, and point-fixed spider glazing systems cost ₹800–₹1,500/sq ft based on glass specifications and building height."
+                a="Curtain wall cost depends on the system (stick, semi-unitized, unitized or spider), glass, height, wind load and access, so a reliable figure needs drawings. Fine Glaze prepares BOQ-based quotations."
               />
               <FAQItem
                 q="How do I request a quotation for a commercial curtain wall project?"
