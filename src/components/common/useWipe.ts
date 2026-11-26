@@ -23,7 +23,8 @@ export function useWipe(ref: RefObject<HTMLElement>): [boolean, boolean] {
       },
       { threshold: 0.25 },
     );
-    io.observe(el);
+    // Observe the parent: the element itself is clipped away until it is revealed.
+    io.observe(el.parentElement ?? el);
     return () => io.disconnect();
   }, [ref]);
 

@@ -96,7 +96,7 @@ export default function InspectionDashboard() {
           <Card>
             <CardContent className="pt-4 pb-3 px-4">
               <div className="flex items-center gap-2">
-                <ClipboardList className="h-4 w-4 text-blue-600" />
+                <ClipboardList className="h-4 w-4 text-sky-300" />
                 <div>
                   <p className="text-2xl font-bold">{totalInspections}</p>
                   <p className="text-xs text-muted-foreground">Inspections</p>
@@ -112,7 +112,7 @@ export default function InspectionDashboard() {
                   <p className="text-2xl font-bold">
                     {totalIssues}
                     {criticalIssues > 0 && (
-                      <span className="text-sm text-red-500 ml-1">
+                      <span className="text-sm text-red-400 ml-1">
                         ({criticalIssues}🔴)
                       </span>
                     )}
@@ -125,7 +125,7 @@ export default function InspectionDashboard() {
           <Card>
             <CardContent className="pt-4 pb-3 px-4">
               <div className="flex items-center gap-2">
-                <Users className="h-4 w-4 text-green-600" />
+                <Users className="h-4 w-4 text-emerald-400" />
                 <div>
                   <p className="text-2xl font-bold">{avgWorkers}</p>
                   <p className="text-xs text-muted-foreground">Avg. Workers</p>
@@ -136,7 +136,7 @@ export default function InspectionDashboard() {
           <Card>
             <CardContent className="pt-4 pb-3 px-4">
               <div className="flex items-center gap-2">
-                <TrendingUp className="h-4 w-4 text-purple-600" />
+                <TrendingUp className="h-4 w-4 text-violet-300" />
                 <div>
                   <p className="text-2xl font-bold">{avgProgress}%</p>
                   <p className="text-xs text-muted-foreground">Avg. Progress</p>

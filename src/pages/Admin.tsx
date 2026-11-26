@@ -237,12 +237,12 @@ export default function Admin() {
                             {(files[p.id] || []).map(f => (
                               <div key={f.id} className="flex justify-between items-center border p-2 text-sm">
                                 <div className="flex items-center gap-2">
-                                  <a href={f.url} target="_blank" className="text-blue-600 hover:underline">{f.name}</a>
+                                  <a href={f.url} target="_blank" className="text-sky-300 hover:underline">{f.name}</a>
                                   {f.status === 'Approved' && <CheckCircle2 size={14} className="text-green-500"/>}
-                                  {f.status === 'Rejected' && <XCircle size={14} className="text-red-500"/>}
+                                  {f.status === 'Rejected' && <XCircle size={14} className="text-red-400"/>}
                                   {f.status === 'Pending' && f.requires_approval && <Badge variant="outline">Pending</Badge>}
                                 </div>
-                                <Button variant="ghost" size="icon" onClick={async () => { await supabase.from("ProjectFiles").delete().eq("id", f.id); fetchFiles(p.id); }}><Trash2 size={14} className="text-red-500"/></Button>
+                                <Button variant="ghost" size="icon" onClick={async () => { await supabase.from("ProjectFiles").delete().eq("id", f.id); fetchFiles(p.id); }}><Trash2 size={14} className="text-red-400"/></Button>
                               </div>
                             ))}
                           </div>
@@ -252,7 +252,7 @@ export default function Admin() {
 
                     {/* FINANCIALS */}
                     <Dialog open={financeOpen && selectedProject?.id === p.id} onOpenChange={(o) => { setFinanceOpen(o); if(o) { setSelectedProject(p); setFinanceData({ total: p.total_amount, paid: p.paid_amount }); }}}>
-                      <DialogTrigger asChild><Button variant="outline" size="icon" title="Finance"><IndianRupee size={16} className="text-green-600"/></Button></DialogTrigger>
+                      <DialogTrigger asChild><Button variant="outline" size="icon" title="Finance"><IndianRupee size={16} className="text-emerald-400"/></Button></DialogTrigger>
                       <DialogContent>
                         <DialogHeader><DialogTitle>Financials</DialogTitle></DialogHeader>
                         <div className="space-y-4 py-4">
@@ -265,7 +265,7 @@ export default function Admin() {
 
                     {/* TIMELINE */}
                     <Dialog open={timelineOpen && selectedProject?.id === p.id} onOpenChange={(o) => {setTimelineOpen(o); if(o) setSelectedProject(p); }}>
-                      <DialogTrigger asChild><Button variant="outline" size="icon" title="Timeline"><History size={16} className="text-purple-600"/></Button></DialogTrigger>
+                      <DialogTrigger asChild><Button variant="outline" size="icon" title="Timeline"><History size={16} className="text-violet-300"/></Button></DialogTrigger>
                       <DialogContent>
                         <DialogHeader><DialogTitle>Timeline</DialogTitle></DialogHeader>
                         <div className="space-y-4">

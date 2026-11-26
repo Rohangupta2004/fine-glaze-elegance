@@ -324,7 +324,7 @@ export default function CompanyProfilePage() {
                     : "bg-night-2/80 text-paper/80 border-line hover:border-line hover:text-paper"
                 )}
               >
-                <div className="text-[10px] opacity-75">{sec.tag}</div>
+                <div className="text-[13px] opacity-75">{sec.tag}</div>
                 <div className="truncate max-w-[140px] font-semibold">{sec.title}</div>
               </button>
             ))}

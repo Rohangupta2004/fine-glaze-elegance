@@ -259,7 +259,7 @@ export default function GlassPartitions() {
               ].map((s) => (
                 <div key={s.label} className="text-center px-4">
                   <p className="text-2xl md:text-3xl font-bold text-paper">{s.number}</p>
-                  <p className="text-mute text-[11px] mt-1">{s.label}</p>
+                  <p className="text-mute text-[13px] mt-1">{s.label}</p>
                 </div>
               ))}
             </div>
@@ -316,19 +316,19 @@ export default function GlassPartitions() {
 
                 <div className="grid grid-cols-2 gap-3 mb-6">
                   <div className="bg-night-2 p-3">
-                    <p className="text-[10px] text-mute mb-1">Glass</p>
+                    <p className="text-[13px] text-mute mb-1">Glass</p>
                     <p className="text-sm font-semibold text-paper">{current.glass}</p>
                   </div>
                   <div className="bg-night-2 p-3">
-                    <p className="text-[10px] text-mute mb-1">Feature</p>
+                    <p className="text-[13px] text-mute mb-1">Feature</p>
                     <p className="text-sm font-semibold text-paper">{current.wind}</p>
                   </div>
                   <div className="bg-night-2 p-3">
-                    <p className="text-[10px] text-mute mb-1">Best For</p>
+                    <p className="text-[13px] text-mute mb-1">Best For</p>
                     <p className="text-sm font-semibold text-paper">{current.bestFor}</p>
                   </div>
                   <div className="bg-lamp/10 p-3 border border-lamp/40">
-                    <p className="text-[10px] text-lamp mb-1">Pricing</p>
+                    <p className="text-[13px] text-lamp mb-1">Pricing</p>
                     <p className="text-sm font-bold text-paper">{current.price}</p>
                   </div>
                 </div>
@@ -348,7 +348,7 @@ export default function GlassPartitions() {
       {/* ════════════ WHY FINE GLAZE ════════════ */}
       <section className="fg-sec">
         <div className="fg-wrap">
-          <FadeIn className="text-center mb-12">
+          <FadeIn className="mb-12">
             <p className="text-lamp text-xs font-bold mb-3">
               Why Fine Glaze
             </p>
@@ -460,7 +460,7 @@ export default function GlassPartitions() {
       {/* ════════════ PRICING ════════════ */}
       <section className="fg-sec">
         <div className="fg-wrap">
-          <FadeIn className="text-center mb-8">
+          <FadeIn className="mb-8">
             <p className="text-lamp text-xs font-bold mb-3">
               Pricing
             </p>

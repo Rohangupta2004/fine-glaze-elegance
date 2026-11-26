@@ -93,13 +93,13 @@ export function InspectionCard({ inspection, onDelete }: InspectionCardProps) {
             <span>
               {issues.total} issue{issues.total !== 1 ? "s" : ""}
               {issues.critical > 0 && (
-                <span className="text-red-600 font-medium">
+                <span className="text-red-400 font-medium">
                   {" "}
                   ({issues.critical} critical)
                 </span>
               )}
               {issues.high > 0 && (
-                <span className="text-orange-600 font-medium">
+                <span className="text-orange-400 font-medium">
                   {" "}
                   ({issues.high} high)
                 </span>

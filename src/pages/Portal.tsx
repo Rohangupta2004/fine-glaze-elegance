@@ -146,7 +146,7 @@ export default function Portal() {
 
             {/* MIDDLE: DOCUMENTS */}
             <Card className="md:col-span-2 h-fit">
-              <CardHeader><CardTitle className="flex items-center gap-2"><FileText className="text-blue-600"/> Documents & Approvals</CardTitle></CardHeader>
+              <CardHeader><CardTitle className="flex items-center gap-2"><FileText className="text-sky-300"/> Documents & Approvals</CardTitle></CardHeader>
               <CardContent>
                 <div className="space-y-3">
                   {files.length === 0 && <p className="text-muted-foreground text-sm text-center py-4">No documents shared yet.</p>}
@@ -157,7 +157,7 @@ export default function Portal() {
                            {file.status === 'Approved' ? <CheckCircle2 size={20}/> : file.status === 'Rejected' ? <XCircle size={20}/> : <FileText size={20}/>}
                         </div>
                         <div>
-                          <a href={file.url} target="_blank" className="font-medium hover:underline text-blue-700 block truncate max-w-[180px]">{file.name}</a>
+                          <a href={file.url} target="_blank" className="font-medium hover:underline text-sky-300 block truncate max-w-[180px]">{file.name}</a>
                           <div className="text-xs text-muted-foreground">{new Date(file.created_at).toLocaleDateString()}</div>
                         </div>
                       </div>
@@ -180,7 +180,7 @@ export default function Portal() {
             
             {/* RIGHT: TIMELINE (Full Width on Mobile, Col-span-3) */}
             <Card className="md:col-span-3 flex flex-col max-h-[500px]">
-              <CardHeader><CardTitle className="flex items-center gap-2"><Calendar className="text-purple-600" size={20}/> Project Timeline</CardTitle></CardHeader>
+              <CardHeader><CardTitle className="flex items-center gap-2"><Calendar className="text-violet-300" size={20}/> Project Timeline</CardTitle></CardHeader>
               <CardContent className="overflow-y-auto">
                 {(!project.timeline || project.timeline.length === 0) ? (
                   <div className="text-center py-6 text-sm text-muted-foreground">No updates yet.</div>

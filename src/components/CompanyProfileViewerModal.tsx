@@ -428,7 +428,7 @@ export const CompanyProfileViewerModal: React.FC = () => {
                 className="w-full h-full object-cover"
                 loading="lazy"
               />
-              <span className="absolute bottom-0 inset-x-0 bg-night/80 text-[10px] text-paper/80 px-1 py-0.5 truncate text-center font-bold">
+              <span className="absolute bottom-0 inset-x-0 bg-night/80 text-[13px] text-paper/80 px-1 py-0.5 truncate text-center font-bold">
                 {sec.slide}
               </span>
             </button>
@@ -485,7 +485,7 @@ export const CompanyProfileViewerModal: React.FC = () => {
             <span>info@fineglaze.com</span>
           </a>
 
-          <span className="text-[11px] text-mute hidden lg:inline">
+          <span className="text-[13px] text-mute hidden lg:inline">
             Use ← → arrows or swipe to navigate
           </span>
         </div>

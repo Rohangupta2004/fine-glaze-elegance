@@ -61,7 +61,7 @@ export function RelatedProjects({ heading, intro, ...filter }: RelatedProjectsPr
               >
                 <img src={p.image} alt={`${p.title}, ${p.location} — ${p.scope}`} className="h-44 w-full object-cover" loading="lazy" />
                 <div className="p-4">
-                  <p className="text-[11px] font-semibold text-lamp">
+                  <p className="text-[13px] font-semibold text-lamp">
                     {p.status === "Completed" ? `Completed ${p.year}` : "Ongoing"}, {p.client}
                   </p>
                   <h3 className="mt-1 font-semibold leading-snug group-hover:text-lamp">{p.title}</h3>

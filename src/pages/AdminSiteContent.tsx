@@ -409,7 +409,7 @@ function SlotCard({
         <button
           onClick={() => doSave(null, "Reset to default")}
           disabled={busy}
-          className="w-full text-xs text-muted-foreground hover:text-red-500 flex items-center justify-center gap-1.5 transition-colors"
+          className="w-full text-xs text-muted-foreground hover:text-red-400 flex items-center justify-center gap-1.5 transition-colors"
         >
           <RotateCcw className="w-3 h-3" /> Reset to default
         </button>

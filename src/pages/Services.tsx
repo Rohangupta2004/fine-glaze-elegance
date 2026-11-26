@@ -302,7 +302,7 @@ export default function Services() {
           <section key={service.id} id={service.id} aria-labelledby={`${service.id}-heading`} className="fg-sec">
             <div className="fg-wrap">
               <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
-                <div className={cn("grid grid-cols-2 gap-px bg-line border border-line", !isEven && "lg:order-2")}>
+                <div className={cn("grid grid-cols-2 gap-1 border border-line", !isEven && "lg:order-2")}>
                   {service.images.map((img, i) => (
                     <div key={i} className={cn("overflow-hidden bg-night", i === 0 ? "aspect-[4/3] col-span-2" : "aspect-square")}>
                       <img

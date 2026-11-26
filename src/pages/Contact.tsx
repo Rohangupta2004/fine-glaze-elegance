@@ -160,7 +160,7 @@ const Contact = () => {
           ═══════════════════════════════════════════ */}
       <section className="bg-night border-b border-line">
         <div className="container mx-auto px-5 md:px-16 py-4 md:py-5">
-          <div className="flex flex-wrap items-center justify-center gap-4 md:gap-8 text-xs md:text-sm text-mute">
+          <div className="flex flex-wrap items-center justify-center gap-4 md:gap-8 text-[13px] md:text-sm text-mute">
             {[
               { icon: <ShieldCheck size={16} className="text-lamp" />, text: "Call, WhatsApp or write to our team" },
               { icon: <CheckCircle2 size={16} className="text-lamp" />, text: "Site survey and measurement for your project" },
@@ -187,7 +187,7 @@ const Contact = () => {
             <FadeIn className="lg:col-span-7 order-1">
               <div className="bg-night border border-line">
                 <div className="border-b border-line px-5 md:px-8 py-5 md:py-6">
-                  <p className="text-lamp text-[10px] font-bold mb-1">
+                  <p className="text-lamp text-[13px] font-bold mb-1">
                     Start Your Project
                   </p>
                   <h2 className="text-xl md:text-2xl font-bold text-paper">
@@ -353,12 +353,12 @@ const Contact = () => {
 
                       {/* Social proof nudge */}
                       <div className="flex items-center justify-center gap-3 pt-1">
-                        <p className="text-[11px] text-mute">
+                        <p className="text-[13px] text-mute">
                           Work for Embassy REIT, LTIMindtree and others
                         </p>
                       </div>
 
-                      <p className="text-[11px] text-mute text-center">
+                      <p className="text-[13px] text-mute text-center">
                         We'll never share your information. Office hours are Monday to Saturday, 9am to 6pm.
                       </p>
                     </form>
@@ -373,7 +373,7 @@ const Contact = () => {
 
               {/* Why reach out — moved ABOVE contact info for trust-first flow */}
               <div className="bg-night border border-line p-5 md:p-7">
-                <p className="text-lamp text-[10px] font-bold mb-3">
+                <p className="text-lamp text-[13px] font-bold mb-3">
                   Why Reach Out
                 </p>
                 <h3 className="text-lg font-bold text-paper mb-4">
@@ -393,7 +393,7 @@ const Contact = () => {
                       </div>
                       <div>
                         <p className="text-sm font-semibold text-paper">{item.text}</p>
-                        <p className="text-xs text-mute mt-0.5">{item.sub}</p>
+                        <p className="text-[13px] text-mute mt-0.5">{item.sub}</p>
                       </div>
                     </div>
                   ))}
@@ -402,7 +402,7 @@ const Contact = () => {
 
               {/* Quick contact links */}
               <div className="bg-night border border-line p-5 md:p-7 space-y-4">
-                <p className="text-lamp text-[10px] font-bold mb-1">
+                <p className="text-lamp text-[13px] font-bold mb-1">
                   Reach Us Directly
                 </p>
                 <a href="tel:+918369233566" className="flex items-center gap-3 text-paper hover:text-lamp transition-colors group">
@@ -411,7 +411,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-sm font-semibold">+91 83692 33566</p>
-                    <p className="text-[10px] text-mute">Call or WhatsApp</p>
+                    <p className="text-[13px] text-mute">Call or WhatsApp</p>
                   </div>
                 </a>
                 <a href="mailto:info@fineglaze.com" className="flex items-center gap-3 text-paper hover:text-lamp transition-colors group">
@@ -420,7 +420,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-sm font-semibold">info@fineglaze.com</p>
-                    <p className="text-[10px] text-mute">Mon–Sat, 9am to 6pm</p>
+                    <p className="text-[13px] text-mute">Mon–Sat, 9am to 6pm</p>
                   </div>
                 </a>
                 <div className="flex items-center gap-3 text-mute opacity-80">
@@ -429,7 +429,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-sm font-medium text-mute">Mon – Sat, 9 AM – 6 PM</p>
-                    <p className="text-[10px] text-mute">Office hours</p>
+                    <p className="text-[13px] text-mute">Office hours</p>
                   </div>
                 </div>
               </div>
@@ -442,7 +442,7 @@ const Contact = () => {
                 <div className="relative">
                   <div className="flex items-center gap-3 mb-4">
                     <Building2 size={18} className="text-lamp" />
-                    <p className="text-[10px] font-bold text-mute">
+                    <p className="text-[13px] font-bold text-mute">
                       Head Office
                     </p>
                   </div>
@@ -463,7 +463,7 @@ const Contact = () => {
                     href="https://www.google.com/maps/search/?api=1&query=Fine+Glaze+A3+LW-13+Pragati+Serene+Mohammed+Wadi+Pune+411060"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-lamp font-semibold text-xs mt-4 hover:gap-3 transition-all group"
+                    className="inline-flex items-center gap-2 text-lamp font-semibold text-[13px] mt-4 hover:gap-3 transition-all group"
                   >
                     <MapPin size={13} />
                     Open in Google Maps
@@ -481,7 +481,7 @@ const Contact = () => {
                 ].map((s) => (
                   <div key={s.label} className="bg-night text-center py-4 md:py-5">
                     <p className="text-lg md:text-xl font-extrabold text-paper">{s.num}</p>
-                    <p className="text-[10px] text-mute font-bold mt-1">{s.label}</p>
+                    <p className="text-[13px] text-mute font-bold mt-1">{s.label}</p>
                   </div>
                 ))}
               </div>
@@ -511,7 +511,7 @@ const Contact = () => {
             }}
           />
           <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-5">
-            <p className="text-lamp text-[10px] md:text-xs font-bold mb-2">
+            <p className="text-lamp text-[13px] md:text-[13px] font-bold mb-2">
               Facade Projects in Pune and Mumbai
             </p>
             <p

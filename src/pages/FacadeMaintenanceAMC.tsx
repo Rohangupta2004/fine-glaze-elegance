@@ -94,7 +94,7 @@ export default function FacadeMaintenanceAMC() {
 
       <section className="fg-sec">
         <div className="container mx-auto px-4 max-w-5xl">
-          <h2 className="text-3xl font-bold mb-10 text-center">What Our AMC Covers</h2>
+          <h2 className="text-3xl font-bold mb-10">What Our AMC Covers</h2>
           <div className="grid md:grid-cols-2 gap-4">
             {["Periodic Facade Inspection", "Written Condition Report", "Glass Cleaning and Restoration", "Sealant Re-application and Joint Repair", "Glass Replacement and Breakage Response", "Leakage Investigation and Rectification"].map(f => (
               <div key={f} className="flex items-center gap-3"><CheckCircle2 size={20} className="text-lamp shrink-0" /><span className="text-muted-foreground">{f}</span></div>
@@ -105,7 +105,7 @@ export default function FacadeMaintenanceAMC() {
 
       <section className="fg-sec">
         <div className="container mx-auto px-4 max-w-4xl">
-          <h2 className="text-3xl font-bold mb-10 text-center">Frequently Asked Questions</h2>
+          <h2 className="text-3xl font-bold mb-10">Frequently Asked Questions</h2>
           <div className="space-y-6">
             <div className="bg-background p-6"><h3 className="text-lg font-bold mb-2">What is included in a facade AMC?</h3><p className="text-muted-foreground">A facade AMC covers scheduled inspection of glass, sealants, cladding and drainage, plus repair work agreed in the contract, such as sealant repair, glass replacement and leakage rectification. Fine Glaze also provides a written condition report after periodic inspection.</p></div>
             <div className="bg-background p-6"><h3 className="text-lg font-bold mb-2">How much does a facade AMC cost in India?</h3><p className="text-muted-foreground">Facade AMC cost depends on facade area and type, building height, access method, visit frequency and the repairs included, so there is no single rate. Fine Glaze prepares a quotation after reviewing the building and scope.</p></div>

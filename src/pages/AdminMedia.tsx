@@ -258,7 +258,7 @@ function SlotCard({
         <div>
           <h3 className="font-semibold text-sm flex items-center gap-2">
             {slot.type === "video" ? (
-              <Film className="w-4 h-4 text-purple-600" />
+              <Film className="w-4 h-4 text-violet-300" />
             ) : (
               <ImagePlus className="w-4 h-4 text-lamp" />
             )}
@@ -380,7 +380,7 @@ function SlotCard({
         <button
           onClick={() => doSave(null, "Reset to default")}
           disabled={busy}
-          className="w-full text-xs text-muted-foreground hover:text-red-600 flex items-center justify-center gap-1.5 transition-colors"
+          className="w-full text-xs text-muted-foreground hover:text-red-400 flex items-center justify-center gap-1.5 transition-colors"
         >
           <RotateCcw className="w-3 h-3" /> Reset to default
         </button>

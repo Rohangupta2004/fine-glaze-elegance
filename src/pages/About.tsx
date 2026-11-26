@@ -110,7 +110,7 @@ const About = () => {
               <div className="mt-5 bg-primary text-primary-foreground p-5">
                 <Award size={32} className="mb-2" />
                 <p className="font-semibold">{company.award.title}</p>
-                <p className="text-sm text-primary-foreground/70">
+                <p className="text-sm text-primary-foreground/90">
                   {company.award.by} — {company.award.citation}
                 </p>
               </div>
@@ -228,7 +228,7 @@ const About = () => {
       {/* Team */}
       <section className="fg-sec" aria-labelledby="team-heading">
         <div className="fg-wrap">
-          <div className="text-center space-y-3 mb-12 max-w-2xl mx-auto">
+          <div className="space-y-3 mb-12 max-w-2xl">
             <span className="text-primary font-medium text-sm">Our Team</span>
             <h2 id="team-heading" className="text-3xl md:text-4xl font-bold text-foreground">
               The people who answer for your facade
@@ -258,7 +258,7 @@ const About = () => {
       {/* Credentials */}
       <section className="fg-sec" aria-labelledby="credentials-heading">
         <div className="fg-wrap">
-          <div className="text-center space-y-3 mb-12 max-w-2xl mx-auto">
+          <div className="space-y-3 mb-12 max-w-2xl">
             <span className="text-primary font-medium text-sm">Company Facts</span>
             <h2 id="credentials-heading" className="text-3xl md:text-4xl font-bold text-foreground">
               Credentials for vendor registration

@@ -413,7 +413,7 @@ export default function ServiceDetail() {
       {/* ── TYPES SECTION ── */}
       <section className="py-24 bg-night-2 border-t border-line">
         <div className="container mx-auto px-4 max-w-6xl">
-          <div className="text-center mb-16">
+          <div className="mb-16">
             <span className="inline-block text-lamp font-bold text-xs mb-3">
               All Variants & Types
             </span>
@@ -556,7 +556,7 @@ export default function ServiceDetail() {
 
       {/* ── LOCALIZED EXECUTION ZONES ── */}
       <section className="py-20 bg-night border-t border-line">
-        <div className="container mx-auto px-4 max-w-5xl text-center">
+        <div className="container px-4 max-w-5xl">
           <h2 className="text-3xl font-bold text-paper mb-4">
             Localized Execution Zones
           </h2>

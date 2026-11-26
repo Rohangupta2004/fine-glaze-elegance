@@ -215,7 +215,7 @@ const ProjectsQR = () => {
                   />
                   <div className="min-w-0 p-3">
                     <span
-                      className={`inline-flex px-2 py-1 text-[11px] font-extrabold  ${
+                      className={`inline-flex px-2 py-1 text-[13px] font-extrabold  ${
                         project.status === "Completed"
                           ? "bg-[#17120e] text-[#f6dfb7]"
                           : "bg-[#f0d6ac] text-[#5d3515]"
