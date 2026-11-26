@@ -1,54 +1,21 @@
 import { landmarkProjectOrder } from "@/data/projectPresentation";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/home/CTASection";
 import { useProjects, type Project } from "@/hooks/useProjects";
 import { projectsData } from "@/data/projects";
 import { Link } from "react-router-dom";
-import { MapPin, ArrowRight, Calendar, User } from "lucide-react";
 import SEO from "@/components/SEO";
-import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { cn } from "@/lib/utils";
-import { AnimatedNumber } from "@/components/common/AnimatedNumber";
-
-/* ─── Reusable fade-in wrapper ─── */
-function FadeIn({
-  children,
-  className,
-  delay = 0,
-}: {
-  children: React.ReactNode;
-  className?: string;
-  delay?: number;
-}) {
-  const { ref, isVisible } = useScrollAnimation();
-  return (
-    <div
-      ref={ref}
-      className={cn(
-        "transition-all duration-700",
-        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8",
-        className
-      )}
-      style={{ transitionDelay: `${delay}ms` }}
-    >
-      {children}
-    </div>
-  );
-}
+import PageHero from "@/components/common/PageHero";
+import StatBand from "@/components/common/StatBand";
+import { useWipe } from "@/components/common/useWipe";
+import "./portfolio.css";
 
 // Static projects for schema
 const staticProjects = Object.entries(projectsData).map(([slug, p]) => ({
   slug,
   ...p,
 }));
-
-const TABS = [
-  { id: "all", label: "All" },
-  { id: "corporate", label: "Corporate" },
-  { id: "residential", label: "Residential" },
-  { id: "award", label: "Award Winning" },
-];
 
 const portfolioSchema = {
   "@context": "https://schema.org",
@@ -91,416 +58,159 @@ const portfolioSchema = {
 };
 
 
-/* ════════════════════════════════════════════════════
-   SHOWCASE CARD — full-width alternating layout
-   ════════════════════════════════════════════════════ */
-interface ShowcaseProjectProps {
-  key?: React.Key;
-  p: Project;
-  index: number;
-  reversed: boolean;
+
+const TYPES = [
+  { id: "corporate", label: "Corporate" },
+  { id: "residential", label: "Residential" },
+  { id: "award", label: "Award winning" },
+];
+
+/** City is the last part of the stored location, e.g. "Hinjewadi, Pune" gives "Pune". */
+function cityOf(location: string): string {
+  const last = location.split(",").pop()?.trim() || location;
+  return last === "Raigad" ? "Panvel" : last;
 }
 
-function ShowcaseProject({
-  p,
-  index,
-  reversed,
-}: ShowcaseProjectProps) {
-  const num = String(index + 1).padStart(2, "0");
+/** Up to three short scope tags from the stored scope line. */
+function scopeTags(scope: string): string[] {
+  return scope
+    .split(/,|&| and | - |\u2014/)
+    .map((t) => t.trim())
+    .filter(Boolean)
+    .slice(0, 3);
+}
 
+function ProjectCard({ p }: { p: Project }) {
+  const fig = useRef<HTMLDivElement>(null);
+  const [armed, seen] = useWipe(fig);
+  const tags = scopeTags(p.scope);
   return (
-    <FadeIn>
-      <Link
-        to={`/project/${p.slug}`}
-        className={cn(
-          "group grid grid-cols-1 lg:grid-cols-2 gap-0 bg-night border border-line hover:border-lamp/40  transition-all duration-300 overflow-hidden "
-        )}
-      >
-        {/* Image side */}
-        <div
-          className={cn(
-            "relative h-[260px] sm:h-[320px] lg:h-[420px] overflow-hidden bg-night-2",
-            reversed && "lg:order-2"
-          )}
-        >
+    <li>
+      <Link to={`/project/${p.slug}`} className="pf-card">
+        <div ref={fig} className={`pf-fig${armed ? " armed" : ""}${seen ? " seen" : ""}`}>
           <img
             src={p.image}
             alt={`Fine Glaze project: ${p.title} (${p.scope}) in ${p.location}`}
-            className="w-full h-full object-cover group-hover:scale-[1.04] transition-transform duration-700"
             loading="lazy"
+            width={600}
+            height={450}
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-night/50 via-transparent to-transparent" />
-
-          {/* Badges */}
-          <div className="absolute top-4 left-4 flex flex-wrap gap-2">
-            {p.status === "Ongoing" ? (
-              <span className="bg-lamp text-paper font-extrabold text-[10px] px-3 py-1">
-                Ongoing Work
-              </span>
-            ) : (
-              <span className="bg-night-2/90 text-paper font-bold text-[10px] px-3 py-1 border border-line">
-                Completed
-              </span>
-            )}
-
-            {p.isAwardWinner && (
-              <span className="bg-emerald-600 text-paper text-[10px] font-extrabold px-3 py-1">
-                Award Winner 2024
-              </span>
-            )}
-          </div>
-
-          {/* Big number overlay */}
-          <div className="absolute bottom-4 right-4 lg:bottom-6 lg:right-6">
-            <span className="text-mute text-6xl lg:text-8xl font-black leading-none select-none">
-              {num}
-            </span>
-          </div>
+          <span className="pf-m" aria-hidden="true" />
         </div>
-
-        {/* Details side */}
-        <div
-          className={cn(
-            "p-6 sm:p-8 lg:p-10 flex flex-col justify-center bg-night-2/50",
-            reversed && "lg:order-1"
-          )}
-        >
-          <div className="flex items-center gap-3 mb-3">
-            <span className="text-lamp text-xs font-bold">
-              {p.category === "award"
-                ? "Award Winner"
-                : p.category === "corporate"
-                ? "Commercial Facade"
-                : "Residential Facade"}
-            </span>
-            <span className="w-8 h-px bg-line" />
-            <span className="text-mute text-xs font-bold">{num}</span>
+        <h2 className="pf-t">{p.title}</h2>
+        <p className="pf-p">{p.location}</p>
+        <dl className="pf-d">
+          <div>
+            <dt>Client</dt>
+            <dd>{p.client}</dd>
           </div>
-
-          <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-paper leading-tight mb-3 group-hover:text-lamp transition-colors">
-            {p.title}
-          </h3>
-
-          <div className="space-y-2 mb-6">
-            <p className="text-paper text-sm font-semibold flex items-start gap-2">
-              <span className="text-lamp font-bold shrink-0">Scope:</span>
-              <span>{p.scope}</span>
-            </p>
+          <div>
+            <dt>Status</dt>
+            <dd>{p.status === "Completed" ? `Completed ${p.year}` : p.status || p.year}</dd>
           </div>
-
-          {/* Meta grid */}
-          <div className="grid grid-cols-2 gap-3 mb-6 border-t border-line pt-4">
-            <div className="flex items-center gap-2 text-mute text-xs">
-              <MapPin size={14} className="text-lamp shrink-0" />
-              <span>{p.location}</span>
-            </div>
-            <div className="flex items-center gap-2 text-mute text-xs">
-              <Calendar size={14} className="text-lamp shrink-0" />
-              <span>{p.year}</span>
-            </div>
-            <div className="flex items-center gap-2 text-mute text-xs col-span-2">
-              <User size={14} className="text-lamp shrink-0" />
-              <span>Client: {p.client}</span>
-            </div>
-          </div>
-
-          <div className="inline-flex items-center justify-between w-full bg-night group-hover:bg-lamp/90 group-hover:text-lamp-ink border border-line text-paper font-bold text-sm px-4 py-2.5 transition-all">
-            <span>Explore Project</span>
-            <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-          </div>
-        </div>
+        </dl>
+        {tags.length > 0 && (
+          <ul className="pf-tags">
+            {tags.map((t) => (
+              <li key={t}>{t}</li>
+            ))}
+          </ul>
+        )}
       </Link>
-    </FadeIn>
+    </li>
   );
 }
 
-
-/* ════════════════════════════════════════════════════
-   COMPACT CARD — for grid sections
-   ════════════════════════════════════════════════════ */
-interface CompactCardProps {
-  key?: React.Key;
-  p: Project;
-  index: number;
-}
-
-function CompactCard({ p, index }: CompactCardProps) {
-  const num = String(index + 1).padStart(2, "0");
-
+function Toggle({ on, onClick, children }: { on: boolean; onClick: () => void; children: React.ReactNode }) {
   return (
-    <FadeIn delay={(index % 3) * 80}>
-      <Link
-        to={`/project/${p.slug}`}
-        className="group block bg-night border border-line hover:border-lamp/40 transition-all duration-300 overflow-hidden"
-      >
-        <div className="relative h-[200px] sm:h-[240px] overflow-hidden">
-          <img
-            src={p.image}
-            alt={p.title}
-            className="w-full h-full object-cover group-hover:scale-[1.04] transition-transform duration-700"
-            loading="lazy"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-night/30 to-transparent" />
-
-          {p.isAwardWinner && (
-            <div className="absolute top-3 left-3 bg-lamp text-lamp-ink text-[9px] font-bold px-2 py-0.5">
-              Award
-            </div>
-          )}
-
-          <div className="absolute bottom-3 right-3">
-            <span className="text-mute text-4xl font-black">{num}</span>
-          </div>
-        </div>
-
-        <div className="p-4 sm:p-5">
-          <p className="text-[10px] font-bold text-lamp mb-1.5">
-            {p.category === "award"
-              ? "Award Winner"
-              : p.category === "corporate"
-              ? "Corporate"
-              : "Residential"}{" "}
-            · {p.year}
-          </p>
-
-          <h3 className="text-base font-bold text-paper leading-snug mb-2 group-hover:text-lamp transition-colors">
-            {p.title}
-          </h3>
-
-          <div className="flex items-center gap-1.5 text-mute text-xs mb-2">
-            <MapPin size={11} />
-            <span>{p.location}</span>
-          </div>
-
-          <p className="text-mute text-xs leading-relaxed mb-3 line-clamp-2">
-            {p.scope}
-          </p>
-
-          <div className="flex items-center gap-1.5 text-paper font-semibold text-xs group-hover:text-lamp group-hover:gap-2.5 transition-all">
-            View Project <ArrowRight size={12} />
-          </div>
-        </div>
-      </Link>
-    </FadeIn>
+    <button type="button" className="pf-tg" aria-pressed={on} onClick={onClick}>
+      {children}
+    </button>
   );
 }
 
-
-/* ════════════════════════════════════════════════════
-   MAIN PAGE
-   ════════════════════════════════════════════════════ */
 const Portfolio = () => {
   const { projects: allProjects } = useProjects();
   const projects = [...allProjects].sort((a, b) => {
-    const rank = (slug: string) => { const index = landmarkProjectOrder.indexOf(slug); return index < 0 ? landmarkProjectOrder.length : index; };
+    const rank = (slug: string) => {
+      const index = landmarkProjectOrder.indexOf(slug);
+      return index < 0 ? landmarkProjectOrder.length : index;
+    };
     return rank(a.slug) - rank(b.slug);
   });
-  const [active, setActive] = useState("all");
+  const [type, setType] = useState("all");
+  const [city, setCity] = useState("all");
 
-  const filtered =
-    active === "all"
-      ? projects
-      : projects.filter(
-          (p) =>
-            p.category === active ||
-            (active === "award" && p.isAwardWinner)
-        );
-
-  /*
-    Layout pattern — alternating showcase + grid for visual variety:
-    - Projects 1: Showcase (image left)
-    - Projects 2-4: 3-col compact grid
-    - Project 5: Showcase (image right, reversed)
-    - Projects 6-8: 3-col compact grid
-    - Repeat...
-  */
-  const chunks: Array<{ type: "showcase"; project: Project; reversed: boolean; globalIdx: number } | { type: "grid"; projects: Array<{ p: Project; globalIdx: number }> }> = [];
-
-  filtered.forEach((p, i) => {
-    const patternPos = i % 4; // 0 = showcase, 1-3 = grid group
-    if (patternPos === 0) {
-      // Showcase card — alternate direction every other showcase
-      const showcaseCount = Math.floor(i / 4);
-      chunks.push({ type: "showcase", project: p, reversed: showcaseCount % 2 === 1, globalIdx: i });
-    } else {
-      // Grid card — add to the last grid chunk, or create new one
-      const lastChunk = chunks[chunks.length - 1];
-      if (lastChunk && lastChunk.type === "grid") {
-        lastChunk.projects.push({ p, globalIdx: i });
-      } else {
-        chunks.push({ type: "grid", projects: [{ p, globalIdx: i }] });
-      }
-    }
-  });
+  const cities = Array.from(new Set(projects.map((p) => cityOf(p.location))));
+  const filtered = projects.filter(
+    (p) =>
+      (type === "all" || p.category === type || (type === "award" && p.isAwardWinner)) &&
+      (city === "all" || cityOf(p.location) === city),
+  );
 
   return (
     <Layout darkHero>
       <SEO
-        title="Facade Projects Portfolio in Pune & Mumbai | Fine Glaze"
+        title="Facade Projects in Pune and Mumbai | Fine Glaze"
         description="Fine Glaze facade projects in Pune and Mumbai with client, scope and status: Embassy 247, Pune Airport, LTIMindtree Mahape and Nanavati Max Hospital."
         canonical="https://fineglaze.com/portfolio"
         keywords="facade projects Pune, facade projects Mumbai, Fine Glaze projects, glass facade projects, ACP cladding projects"
         schema={portfolioSchema}
       />
 
-      {/* ════════════════════════════════════════════════════
-          HERO — full-bleed cinematic
-          ════════════════════════════════════════════════════ */}
-      <section className="relative h-[60vh] md:h-[70vh] min-h-[400px] md:min-h-[520px] overflow-hidden">
-        <img
-          src="/Unitized.webp"
-          alt="Fine Glaze facade portfolio"
-          className="absolute inset-0 w-full h-full object-cover"
-          loading="eager"
-          style={{ animation: "pfZoom 22s ease-in-out infinite alternate" }}
-        />
-        <style>{`@keyframes pfZoom { from { transform: scale(1.0); } to { transform: scale(1.06); } }`}</style>
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.20) 35%, rgba(0,0,0,0.50) 65%, rgba(0,0,0,0.90) 100%)",
-          }}
-        />
+      <PageHero
+        crumbs={[{ label: "Projects" }]}
+        title={<>Facade Projects in <span className="text-gradient-gold">Pune &amp; Mumbai</span></>}
+        intro="Every project below lists the client, our actual scope and its current status, completed or ongoing."
+        image={{ src: "/Unitized.webp", alt: "Fine Glaze facade portfolio" }}
+        source="portfolio_hero"
+      />
 
-        <div className="absolute inset-x-0 bottom-0 px-5 md:px-16 pb-8 md:pb-16">
-          <p className="text-lamp text-[10px] md:text-xs font-bold mb-3 md:mb-4">
-            Fine Glaze · Portfolio
-          </p>
-          <h1
-            className="font-extrabold text-paper leading-tight tracking-tight"
-            style={{ fontSize: "clamp(2.2rem, 4.5vw, 3.5rem)" }}
-          >
-            Facade Projects in<br />
-            <span className="text-gradient-gold">Pune &amp; Mumbai</span>
-          </h1>
-          <p className="mt-3 md:mt-5 text-mute text-sm md:text-lg max-w-lg leading-relaxed">
-            Every project below lists the client, our actual scope and its
-            current status — completed or ongoing.
-          </p>
-        </div>
-      </section>
-
-
-      {/* ════════════════════════════════════════════════════
-          STATS — dark band with Numbers in Count-Up Motion
-          ════════════════════════════════════════════════════ */}
-      <section className="bg-night-2 py-6 md:py-8 border-y border-line">
-        <div className="container mx-auto px-5 md:px-16">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-0 md:divide-x md:divide-line">
-            {[
-              { number: "16", label: "Project Records Documented" },
-              { number: "2 Cities", label: "Pune & Mumbai" },
-              { number: "40+", label: "Core Team" },
-              { number: "Award 2024", label: "Embassy REIT Best Vendor" },
-            ].map((s) => (
-              <div key={s.label} className="text-center px-3 py-1">
-                <p className="text-lg md:text-2xl font-bold text-lamp tracking-tight">
-                  <AnimatedNumber value={s.number} />
-                </p>
-                <p className="text-mute text-[10px] mt-1">{s.label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-
-      {/* ════════════════════════════════════════════════════
-          FILTER — underline tabs
-          ════════════════════════════════════════════════════ */}
-      <section className="sticky top-16 lg:top-20 z-30 bg-night border-b border-line">
-        <div className="container mx-auto px-5 md:px-16 flex items-center gap-4 md:gap-8 overflow-x-auto">
-          {TABS.map((t) => (
-            <button
-              key={t.id}
-              onClick={() => setActive(t.id)}
-              className={cn(
-                "py-3 md:py-4 text-xs md:text-sm font-semibold tracking-wide transition-all duration-200 border-b-2 -mb-px whitespace-nowrap",
-                active === t.id
-                  ? "border-line text-paper"
-                  : "border-transparent text-mute hover:text-mute"
-              )}
-            >
-              {t.label}
-            </button>
-          ))}
-          <span className="ml-auto text-xs text-mute font-medium hidden sm:block whitespace-nowrap">
-            {filtered.length} {filtered.length === 1 ? "project" : "projects"}
-          </span>
-        </div>
-      </section>
-
-
-      {/* ════════════════════════════════════════════════════
-          PROJECTS — alternating showcase + grid
-          ════════════════════════════════════════════════════ */}
       <section className="fg-sec">
-        <div className="container mx-auto px-5 md:px-16">
-          {filtered.length === 0 ? (
-            <p className="text-center text-mute py-20">
-              No projects in this category yet.
-            </p>
-          ) : (
-            <div className="space-y-5 md:space-y-6">
-              {chunks.map((chunk, ci) => {
-                if (chunk.type === "showcase") {
-                  return (
-                    <ShowcaseProject
-                      key={`showcase-${ci}`}
-                      p={chunk.project}
-                      index={chunk.globalIdx}
-                      reversed={chunk.reversed}
-                    />
-                  );
-                }
-                // Grid chunk
-                return (
-                  <div key={`grid-${ci}`} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-                    {chunk.projects.map(({ p, globalIdx }) => (
-                      <CompactCard key={p.id} p={p} index={globalIdx} />
-                    ))}
-                  </div>
-                );
-              })}
+        <div className="fg-wrap">
+          <div className="pf-bar" role="group" aria-label="Filter projects">
+            <div className="pf-grp" role="group" aria-label="Type">
+              <Toggle on={type === "all"} onClick={() => setType("all")}>All types</Toggle>
+              {TYPES.map((t) => (
+                <Toggle key={t.id} on={type === t.id} onClick={() => setType(t.id)}>{t.label}</Toggle>
+              ))}
             </div>
+            <div className="pf-grp" role="group" aria-label="City">
+              <Toggle on={city === "all"} onClick={() => setCity("all")}>All cities</Toggle>
+              {cities.map((c) => (
+                <Toggle key={c} on={city === c} onClick={() => setCity(c)}>{c}</Toggle>
+              ))}
+            </div>
+            <p className="pf-n" aria-live="polite">
+              {filtered.length} {filtered.length === 1 ? "project" : "projects"}
+            </p>
+          </div>
+
+          {filtered.length === 0 ? (
+            <p className="text-mute py-16">No projects match these filters yet.</p>
+          ) : (
+            <ul className="fg-grid pf-grid">
+              {filtered.map((p) => (
+                <ProjectCard key={p.id} p={p} />
+              ))}
+            </ul>
           )}
         </div>
       </section>
 
-
-      {/* ════════════════════════════════════════════════════
-          CLIENTS — trust strip
-          ════════════════════════════════════════════════════ */}
       <section className="fg-sec">
-        <div className="container mx-auto px-5 md:px-16 text-center">
-          <p className="text-mute text-xs font-bold mb-6">
-            Clients We Have Delivered For
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-x-8 md:gap-x-10 gap-y-3">
-            {[
-              "Embassy REIT",
-              "L&T Construction",
-              "Jindal Stainless",
-              "Nirmaann Encon",
-              "Hatchway Windoor",
-              "Rockfort Estate",
-            ].map((name) => (
-              <span
-                key={name}
-                className="text-paper/80 text-base md:text-xl font-bold tracking-wide"
-              >
-                {name}
-              </span>
-            ))}
-          </div>
+        <div className="fg-wrap">
+          <StatBand
+            stats={[
+              { value: "16", name: "Project records", line: "documented in our company profile" },
+              { value: "2", name: "Cities", line: "Pune and Mumbai" },
+              { value: "40+", name: "Core team", line: "engineering, supervision and site work" },
+              { value: "2024", name: "Best Vendor Performance", line: "awarded by Embassy REIT" },
+            ]}
+          />
         </div>
       </section>
 
-
-      {/* ════════════════════════════════════════════════════
-          CTA
-          ════════════════════════════════════════════════════ */}
       <CTASection />
     </Layout>
   );
