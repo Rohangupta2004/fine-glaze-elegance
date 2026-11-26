@@ -18,15 +18,22 @@ const articleSitemapPlugin = (): Plugin => {
       this.emitFile({
         type: "asset",
         fileName: "sitemap.xml",
-        source: buildArticleSitemap(readFileSync(path.resolve(__dirname, "public/sitemap.xml"), "utf8"), Object.values(blogPosts), articleEnhancements, articleVisuals),
+        source: buildArticleSitemap(
+          readFileSync(path.resolve(__dirname, "public/sitemap.xml"), "utf8"),
+          Object.values(blogPosts),
+          articleEnhancements,
+          articleVisuals,
+          SITEMAP_CITY_PATHS.map((p) => ({ path: p, lastmod: LOCATION_PAGES_UPDATED, priority: "0.7" })),
+        ),
       });
     },
   };
 };
 
-// Retired: the ~600 auto-generated /facade-contractor/:city pages are no longer
-// pre-rendered. vercel.json 301-redirects every old URL to a genuine page
-// (see src/lib/legacyLocationRedirects.ts).
+// Pan-India location pages: every /facade-contractor/<location> and
+// /facade-contractor/<service>-<location> URL is pre-rendered (src/data/locations.ts).
+// Only self-canonical URLs go in the sitemap.
+import { ALL_CITY_PAGE_PATHS, SITEMAP_CITY_PATHS, LOCATION_PAGES_UPDATED } from "./src/data/locations";
 
 // 3. Blog Slugs — auto-generated from blog data keys
 import { blogPosts } from "./src/data/blog";
@@ -96,6 +103,7 @@ export default defineConfig(({ mode }) => ({
         '/skylights-canopies', '/aluminium-louvers', '/glass-partitions',
         '/privacy-policy', '/terms-of-service',
         // Generated lists
+        ...ALL_CITY_PAGE_PATHS,
         ...blogUrls,
         ...projectUrls,
         ...staticSeoUrls

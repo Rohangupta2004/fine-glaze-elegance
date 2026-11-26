@@ -59,7 +59,7 @@ export const company = {
   operatingRegions: ["Pune", "Mumbai"],
   serviceArea: ["Pune & PCMC", "Mumbai", "Navi Mumbai", "Thane", "Panvel"],
   serviceAreaNote:
-    "We operate from Pune and Mumbai. Projects elsewhere in India are taken up case by case, after a site visit.",
+    "Based in Pune with Mumbai as our second operating city; we take up projects across India after a site visit.",
 
   stats: {
     sqmDelivered: "~20,566",

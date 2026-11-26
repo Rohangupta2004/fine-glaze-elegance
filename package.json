@@ -10,7 +10,8 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "check:city-overlap": "node scripts/check-city-page-overlap.mjs dist"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
