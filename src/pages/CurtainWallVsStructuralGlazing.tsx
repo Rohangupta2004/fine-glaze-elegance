@@ -1,8 +1,8 @@
 import SEO from "@/components/SEO";
+import PageHero from "@/components/common/PageHero";
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/home/CTASection";
 import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
 import { CheckCircle2, ArrowRight } from "lucide-react";
 
 export default function CurtainWallVsStructuralGlazing() {
@@ -61,32 +61,13 @@ export default function CurtainWallVsStructuralGlazing() {
       />
 
       {/* HERO */}
-      <section className="relative py-24 bg-night-2 text-paper">
-        <div className="container mx-auto px-4 max-w-6xl grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h1 className="text-3xl md:text-4xl font-bold mb-4">
-              Curtain Wall vs <span className="text-gradient-gold">Structural Glazing</span>
-            </h1>
-            <p className="text-lg text-paper/80 mb-8">Curtain wall systems and structural glazing are both popular glass facade solutions for commercial buildings in India — but they are fundamentally different systems with different aesthetics, costs, and performance profiles. This guide explains the key differences to help architects and developers make the right choice.</p>
-            <div className="flex gap-4">
-              <Link to="/contact">
-                <Button size="lg" className="bg-lamp hover:bg-lamp/90">Book a call</Button>
-              </Link>
-              <Link to="/portfolio">
-                <Button size="lg" variant="outline">View Projects</Button>
-              </Link>
-            </div>
-          </div>
-          <img
-            src="/projects/naman-chambers-48-1.webp"
-            alt="Naman Chambers, Bandra Kurla Complex, Mumbai — glazed office towers where Fine Glaze is carrying out glazing and ACP works"
-            className="object-cover h-[420px] w-full"
-            loading="eager"
-            width="600"
-            height="420"
-          />
-        </div>
-      </section>
+      <PageHero
+        crumbs={[{ label: "Curtain Wall vs Structural Glazing" }]}
+        title={<>Curtain Wall vs <span className="text-gradient-gold">Structural Glazing</span></>}
+        intro="Curtain wall systems and structural glazing are both popular glass facade solutions for commercial buildings in India — but they are fundamentally different systems with different aesthetics, costs, and performance profiles. This guide explains the key differences to help architects and developers make the right choice."
+        secondary={{ label: "View Projects", to: "/portfolio" }}
+        image={{ src: "/projects/naman-chambers-48-1.webp", alt: "Naman Chambers, Bandra Kurla Complex, Mumbai — glazed office towers where Fine Glaze is carrying out glazing and ACP works", width: 600, height: 420 }}
+      />
 
       {/* RICH CONTENT */}
       <section className="py-20">

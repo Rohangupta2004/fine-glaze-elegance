@@ -1,9 +1,9 @@
 import SEO from "@/components/SEO";
+import PageHero from "@/components/common/PageHero";
 import { RelatedProjects } from "@/components/RelatedProjects";
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/home/CTASection";
 import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
 import { CheckCircle2, ArrowRight } from "lucide-react";
 
 export default function AcpCladdingPune() {
@@ -63,32 +63,13 @@ export default function AcpCladdingPune() {
       />
 
       {/* HERO */}
-      <section className="relative py-24 bg-night-2 text-paper">
-        <div className="container mx-auto px-4 max-w-6xl grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h1 className="text-3xl md:text-4xl font-bold mb-4">
-              ACP Cladding <span className="text-gradient-gold">Contractor in Pune</span>
-            </h1>
-            <p className="text-lg text-paper/80 mb-8">Fine Glaze is an ACP cladding contractor based in Pune, offering aluminium composite panel cladding for commercial buildings, hospitals, offices and residential exteriors. We work with Alubond and other approved panel brands.</p>
-            <div className="flex gap-4">
-              <Link to="/contact">
-                <Button size="lg" className="bg-lamp hover:bg-lamp/90">Book a call</Button>
-              </Link>
-              <Link to="/portfolio">
-                <Button size="lg" variant="outline">View Projects</Button>
-              </Link>
-            </div>
-          </div>
-          <img
-            src="/projects/embassy-techzone-41-3.webp"
-            alt="ACP cladding on the dead wall of Block 2, Embassy Techzone, Hinjewadi, Pune — completed by Fine Glaze"
-            className="object-cover h-[420px] w-full"
-            loading="eager"
-            width="600"
-            height="420"
-          />
-        </div>
-      </section>
+      <PageHero
+        crumbs={[{ label: "ACP Cladding Contractor in Pune" }]}
+        title={<>ACP Cladding <span className="text-gradient-gold">Contractor in Pune</span></>}
+        intro="Fine Glaze is an ACP cladding contractor based in Pune, offering aluminium composite panel cladding for commercial buildings, hospitals, offices and residential exteriors. We work with Alubond and other approved panel brands."
+        secondary={{ label: "View Projects", to: "/portfolio" }}
+        image={{ src: "/projects/embassy-techzone-41-3.webp", alt: "ACP cladding on the dead wall of Block 2, Embassy Techzone, Hinjewadi, Pune — completed by Fine Glaze", width: 600, height: 420 }}
+      />
 
       {/* RICH CONTENT */}
       <section className="py-20">

@@ -1,0 +1,94 @@
+import { ReactNode, useRef } from "react";
+import { Link } from "react-router-dom";
+import { useBookCall } from "@/components/booking/BookCallProvider";
+import { useWipe } from "./useWipe";
+import "./pagehero.css";
+
+export interface Crumb {
+  label: string;
+  to?: string;
+}
+
+export interface PageHeroProps {
+  /** Breadcrumb trail after "Home"; the last item is the current page. */
+  crumbs?: Crumb[];
+  /** The page's h1 content (the only h1 on the page). */
+  title: ReactNode;
+  /** One line of intro. */
+  intro?: ReactNode;
+  /** Optional hero photograph, shown in a square frame revealed with a panel wipe. */
+  image?: { src: string; alt: string; width?: number; height?: number; position?: string };
+  /** Secondary text link next to the primary button. */
+  secondary?: { label: string; to?: string; href?: string };
+  /** Source tag passed to the booking dialog. */
+  source?: string;
+  /** Extra quiet line under the buttons. */
+  extra?: ReactNode;
+}
+
+/** Shared hero for service, city, industry, guide and static pages. Use inside <Layout darkHero>. */
+export const PageHero = ({ crumbs = [], title, intro, image, secondary, source = "page_hero", extra }: PageHeroProps) => {
+  const { open } = useBookCall();
+  const fig = useRef<HTMLElement>(null);
+  const [armed, seen] = useWipe(fig);
+  const trail: Crumb[] = [{ label: "Home", to: "/" }, ...crumbs];
+
+  return (
+    <section className="ph">
+      <div className="fg-wrap" style={{ width: "100%" }}>
+        <div className={`ph-g${image ? "" : " solo"}`}>
+          <div className="ph-copy">
+            <nav className="ph-crumbs" aria-label="Breadcrumb">
+              <ol>
+                {trail.map((c, i) => {
+                  const last = i === trail.length - 1;
+                  return (
+                    <li key={c.label + i}>
+                      {last || !c.to ? (
+                        <span aria-current={last ? "page" : undefined}>{c.label}</span>
+                      ) : (
+                        <Link to={c.to}>{c.label}</Link>
+                      )}
+                    </li>
+                  );
+                })}
+              </ol>
+            </nav>
+            <h1>{title}</h1>
+            {intro && <p className="ph-intro">{intro}</p>}
+            <div className="ph-act">
+              <button type="button" className="fg-btn" onClick={() => open({ source })}>
+                Book a call
+              </button>
+              {secondary &&
+                (secondary.href ? (
+                  <a className="fg-lnk" href={secondary.href}>
+                    {secondary.label}
+                  </a>
+                ) : (
+                  <Link className="fg-lnk" to={secondary.to || "/portfolio"}>
+                    {secondary.label}
+                  </Link>
+                ))}
+            </div>
+            {extra && <div className="ph-extra">{extra}</div>}
+          </div>
+          {image && (
+            <figure ref={fig} className={`ph-fig${armed ? " armed" : ""}${seen ? " seen" : ""}`}>
+              <img
+                src={image.src}
+                alt={image.alt}
+                width={image.width}
+                height={image.height}
+                loading="eager"
+                style={image.position ? { objectPosition: image.position } : undefined}
+              />
+            </figure>
+          )}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default PageHero;

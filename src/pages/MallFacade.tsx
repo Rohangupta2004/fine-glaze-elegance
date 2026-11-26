@@ -1,8 +1,8 @@
 import SEO from "@/components/SEO";
+import PageHero from "@/components/common/PageHero";
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/home/CTASection";
 import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
 import { CheckCircle2, ArrowRight } from "lucide-react";
 
 export default function MallFacade() {
@@ -61,32 +61,13 @@ export default function MallFacade() {
       />
 
       {/* HERO */}
-      <section className="relative py-24 bg-night-2 text-paper">
-        <div className="container mx-auto px-4 max-w-6xl grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h1 className="text-3xl md:text-4xl font-bold mb-4">
-              Shopping Mall <span className="text-gradient-gold">Facade Specialist India</span>
-            </h1>
-            <p className="text-lg text-paper/80 mb-8">Fine Glaze takes mall and retail facade work in Pune and Mumbai: entrance glazing, ACP cladding, aluminium shopfronts, canopies and curtain wall.</p>
-            <div className="flex gap-4">
-              <Link to="/contact">
-                <Button size="lg" className="bg-lamp hover:bg-lamp/90">Book a call</Button>
-              </Link>
-              <Link to="/portfolio">
-                <Button size="lg" variant="outline">View Projects</Button>
-              </Link>
-            </div>
-          </div>
-          <img
-            src="/projects/ssg-honesty-30-1.webp"
-            alt="SSG Honesty Nimkar Building, Panvel — structural glazing, curtain wall and ACP by Fine Glaze (architect's render)"
-            className="object-cover h-[420px] w-full"
-            loading="eager"
-            width="600"
-            height="420"
-          />
-        </div>
-      </section>
+      <PageHero
+        crumbs={[{ label: "Shopping Mall Facade Specialist India" }]}
+        title={<>Shopping Mall <span className="text-gradient-gold">Facade Specialist India</span></>}
+        intro="Fine Glaze takes mall and retail facade work in Pune and Mumbai: entrance glazing, ACP cladding, aluminium shopfronts, canopies and curtain wall."
+        secondary={{ label: "View Projects", to: "/portfolio" }}
+        image={{ src: "/projects/ssg-honesty-30-1.webp", alt: "SSG Honesty Nimkar Building, Panvel — structural glazing, curtain wall and ACP by Fine Glaze (architect's render)", width: 600, height: 420 }}
+      />
 
       {/* RICH CONTENT */}
       <section className="py-20">

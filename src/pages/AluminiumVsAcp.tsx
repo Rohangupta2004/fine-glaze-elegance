@@ -1,8 +1,8 @@
 import SEO from "@/components/SEO";
+import PageHero from "@/components/common/PageHero";
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/home/CTASection";
 import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
 import { CheckCircle2, ArrowRight } from "lucide-react";
 
 export default function AluminiumVsAcp() {
@@ -61,32 +61,13 @@ export default function AluminiumVsAcp() {
       />
 
       {/* HERO */}
-      <section className="relative py-24 bg-night-2 text-paper">
-        <div className="container mx-auto px-4 max-w-6xl grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h1 className="text-3xl md:text-4xl font-bold mb-4">
-              Aluminium Facade vs <span className="text-gradient-gold">ACP Cladding</span>
-            </h1>
-            <p className="text-lg text-paper/80 mb-8">Choosing between an aluminium facade system and ACP (Aluminium Composite Panel) cladding is one of the most common decisions architects and developers face. Both offer excellent aesthetics and weather protection — but they differ significantly in cost, weight, fire safety, flexibility, and long-term performance.</p>
-            <div className="flex gap-4">
-              <Link to="/contact">
-                <Button size="lg" className="bg-lamp hover:bg-lamp/90">Book a call</Button>
-              </Link>
-              <Link to="/portfolio">
-                <Button size="lg" variant="outline">View Projects</Button>
-              </Link>
-            </div>
-          </div>
-          <img
-            src="/projects/salsette-27-35-1.webp"
-            alt="ACP canopy at ground floor of Salsette-27, Byculla, Mumbai — designed and installed by Fine Glaze"
-            className="object-cover h-[420px] w-full"
-            loading="eager"
-            width="600"
-            height="420"
-          />
-        </div>
-      </section>
+      <PageHero
+        crumbs={[{ label: "Aluminium Facade vs ACP Cladding" }]}
+        title={<>Aluminium Facade vs <span className="text-gradient-gold">ACP Cladding</span></>}
+        intro="Choosing between an aluminium facade system and ACP (Aluminium Composite Panel) cladding is one of the most common decisions architects and developers face. Both offer excellent aesthetics and weather protection — but they differ significantly in cost, weight, fire safety, flexibility, and long-term performance."
+        secondary={{ label: "View Projects", to: "/portfolio" }}
+        image={{ src: "/projects/salsette-27-35-1.webp", alt: "ACP canopy at ground floor of Salsette-27, Byculla, Mumbai — designed and installed by Fine Glaze", width: 600, height: 420 }}
+      />
 
       {/* RICH CONTENT */}
       <section className="py-20">

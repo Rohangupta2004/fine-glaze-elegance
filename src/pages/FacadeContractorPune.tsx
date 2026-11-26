@@ -1,9 +1,9 @@
 import SEO from "@/components/SEO";
+import PageHero from "@/components/common/PageHero";
 import { RelatedProjects } from "@/components/RelatedProjects";
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/home/CTASection";
 import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
 import { CheckCircle2, ArrowRight } from "lucide-react";
 
 export default function FacadeContractorPune() {
@@ -63,32 +63,13 @@ export default function FacadeContractorPune() {
       />
 
       {/* HERO */}
-      <section className="relative py-24 bg-night-2 text-paper">
-        <div className="container mx-auto px-4 max-w-6xl grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h1 className="text-3xl md:text-4xl font-bold mb-4">
-              Facade Contractor <span className="text-gradient-gold">in Pune</span>
-            </h1>
-            <p className="text-lg text-paper/80 mb-8">Fine Glaze is a facade contractor based in Pune, working with developers, architects, builders and corporate clients. From design consultation through fabrication, installation and AMC, we handle the facade lifecycle.</p>
-            <div className="flex gap-4">
-              <Link to="/contact">
-                <Button size="lg" className="bg-lamp hover:bg-lamp/90">Book a call</Button>
-              </Link>
-              <Link to="/portfolio">
-                <Button size="lg" variant="outline">View Projects</Button>
-              </Link>
-            </div>
-          </div>
-          <img
-            src="/projects/pune-airport-terminal-42-1.webp"
-            alt="Pune International Airport new terminal — SS column cladding by Fine Glaze for Jindal Stainless (completed 2023)"
-            className="object-cover h-[420px] w-full"
-            loading="eager"
-            width="600"
-            height="420"
-          />
-        </div>
-      </section>
+      <PageHero
+        crumbs={[{ label: "Facade Contractor in Pune" }]}
+        title={<>Facade Contractor <span className="text-gradient-gold">in Pune</span></>}
+        intro="Fine Glaze is a facade contractor based in Pune, working with developers, architects, builders and corporate clients. From design consultation through fabrication, installation and AMC, we handle the facade lifecycle."
+        secondary={{ label: "View Projects", to: "/portfolio" }}
+        image={{ src: "/projects/pune-airport-terminal-42-1.webp", alt: "Pune International Airport new terminal — SS column cladding by Fine Glaze for Jindal Stainless (completed 2023)", width: 600, height: 420 }}
+      />
 
       {/* RICH CONTENT */}
       <section className="py-20">

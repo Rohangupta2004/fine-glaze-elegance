@@ -1,8 +1,8 @@
 import SEO from "@/components/SEO";
+import PageHero from "@/components/common/PageHero";
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/home/CTASection";
 import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
 import { CheckCircle2, ArrowRight } from "lucide-react";
 
 export default function PVDFvsPowderCoating() {
@@ -61,32 +61,13 @@ export default function PVDFvsPowderCoating() {
       />
 
       {/* HERO */}
-      <section className="relative py-24 bg-night-2 text-paper">
-        <div className="container mx-auto px-4 max-w-6xl grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h1 className="text-3xl md:text-4xl font-bold mb-4">
-              PVDF vs Powder Coating <span className="text-gradient-gold">for Aluminium Facades</span>
-            </h1>
-            <p className="text-lg text-paper/80 mb-8">When specifying aluminium facades, curtain walls, or ACP cladding in India, the choice between PVDF (Polyvinylidene Fluoride) and polyester powder coating is one of the most important finish decisions. This guide explains the key differences and helps you make the right choice for your project.</p>
-            <div className="flex gap-4">
-              <Link to="/contact">
-                <Button size="lg" className="bg-lamp hover:bg-lamp/90">Book a call</Button>
-              </Link>
-              <Link to="/portfolio">
-                <Button size="lg" variant="outline">View Projects</Button>
-              </Link>
-            </div>
-          </div>
-          <img
-            src="/projects/salsette-27-32-1.webp"
-            alt="ACP panels with protective film ready for installation at Salsette-27, Byculla, Mumbai — Fine Glaze"
-            className="object-cover h-[420px] w-full"
-            loading="eager"
-            width="600"
-            height="420"
-          />
-        </div>
-      </section>
+      <PageHero
+        crumbs={[{ label: "PVDF vs Powder Coating for Aluminium Facades" }]}
+        title={<>PVDF vs Powder Coating <span className="text-gradient-gold">for Aluminium Facades</span></>}
+        intro="When specifying aluminium facades, curtain walls, or ACP cladding in India, the choice between PVDF (Polyvinylidene Fluoride) and polyester powder coating is one of the most important finish decisions. This guide explains the key differences and helps you make the right choice for your project."
+        secondary={{ label: "View Projects", to: "/portfolio" }}
+        image={{ src: "/projects/salsette-27-32-1.webp", alt: "ACP panels with protective film ready for installation at Salsette-27, Byculla, Mumbai — Fine Glaze", width: 600, height: 420 }}
+      />
 
       {/* RICH CONTENT */}
       <section className="py-20">

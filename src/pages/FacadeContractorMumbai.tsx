@@ -1,9 +1,9 @@
 import SEO from "@/components/SEO";
+import PageHero from "@/components/common/PageHero";
 import { RelatedProjects } from "@/components/RelatedProjects";
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/home/CTASection";
 import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
 import { CheckCircle2, ArrowRight } from "lucide-react";
 
 export default function FacadeContractorMumbai() {
@@ -63,32 +63,13 @@ export default function FacadeContractorMumbai() {
       />
 
       {/* HERO */}
-      <section className="relative py-24 bg-night-2 text-paper">
-        <div className="container mx-auto px-4 max-w-6xl grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h1 className="text-3xl md:text-4xl font-bold mb-4">
-              Facade Contractor <span className="text-gradient-gold">in Mumbai</span>
-            </h1>
-            <p className="text-lg text-paper/80 mb-8">Fine Glaze is a facade contractor working in Mumbai on curtain wall, structural glazing, ACP cladding, railings, louvers and maintenance. Embassy REIT gave us the Best Vendor Performance 2024 award for Embassy 247, Vikhroli.</p>
-            <div className="flex gap-4">
-              <Link to="/contact">
-                <Button size="lg" className="bg-lamp hover:bg-lamp/90">Book a call</Button>
-              </Link>
-              <Link to="/portfolio">
-                <Button size="lg" variant="outline">View Projects</Button>
-              </Link>
-            </div>
-          </div>
-          <img
-            src="/projects/embassy-247-37-1.webp"
-            alt="Embassy 247, Vikhroli, Mumbai — facade maintenance by Fine Glaze for Embassy REIT; Best Vendor Performance 2024"
-            className="object-cover h-[420px] w-full"
-            loading="eager"
-            width="600"
-            height="420"
-          />
-        </div>
-      </section>
+      <PageHero
+        crumbs={[{ label: "Facade Contractor in Mumbai" }]}
+        title={<>Facade Contractor <span className="text-gradient-gold">in Mumbai</span></>}
+        intro="Fine Glaze is a facade contractor working in Mumbai on curtain wall, structural glazing, ACP cladding, railings, louvers and maintenance. Embassy REIT gave us the Best Vendor Performance 2024 award for Embassy 247, Vikhroli."
+        secondary={{ label: "View Projects", to: "/portfolio" }}
+        image={{ src: "/projects/embassy-247-37-1.webp", alt: "Embassy 247, Vikhroli, Mumbai — facade maintenance by Fine Glaze for Embassy REIT; Best Vendor Performance 2024", width: 600, height: 420 }}
+      />
 
       {/* RICH CONTENT */}
       <section className="py-20">

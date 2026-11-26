@@ -1,9 +1,9 @@
 import SEO from "@/components/SEO";
+import PageHero from "@/components/common/PageHero";
 import { RelatedProjects } from "@/components/RelatedProjects";
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/home/CTASection";
 import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
 import { CheckCircle2, ArrowRight } from "lucide-react";
 
 export default function CommercialBuildingFacade() {
@@ -62,32 +62,13 @@ export default function CommercialBuildingFacade() {
       />
 
       {/* HERO */}
-      <section className="relative py-24 bg-night-2 text-paper">
-        <div className="container mx-auto px-4 max-w-6xl grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h1 className="text-3xl md:text-4xl font-bold mb-4">
-              Commercial Building <span className="text-gradient-gold">Facade Systems India</span>
-            </h1>
-            <p className="text-lg text-paper/80 mb-8">The facade is the most visible and often the most technically complex part of a commercial building. This guide covers the main commercial facade systems, design considerations and regulatory points for India, from Fine Glaze, a facade contractor in Pune and Mumbai.</p>
-            <div className="flex gap-4">
-              <Link to="/contact">
-                <Button size="lg" className="bg-lamp hover:bg-lamp/90">Book a call</Button>
-              </Link>
-              <Link to="/portfolio">
-                <Button size="lg" variant="outline">View Projects</Button>
-              </Link>
-            </div>
-          </div>
-          <img
-            src="/projects/embassy-techzone-40-1.webp"
-            alt="Embassy Techzone, Hinjewadi, Pune — spider glazing and ACP cladding by Fine Glaze for Embassy REIT"
-            className="object-cover h-[420px] w-full"
-            loading="eager"
-            width="600"
-            height="420"
-          />
-        </div>
-      </section>
+      <PageHero
+        crumbs={[{ label: "Commercial Building Facade Systems India" }]}
+        title={<>Commercial Building <span className="text-gradient-gold">Facade Systems India</span></>}
+        intro="The facade is the most visible and often the most technically complex part of a commercial building. This guide covers the main commercial facade systems, design considerations and regulatory points for India, from Fine Glaze, a facade contractor in Pune and Mumbai."
+        secondary={{ label: "View Projects", to: "/portfolio" }}
+        image={{ src: "/projects/embassy-techzone-40-1.webp", alt: "Embassy Techzone, Hinjewadi, Pune — spider glazing and ACP cladding by Fine Glaze for Embassy REIT", width: 600, height: 420 }}
+      />
 
       {/* RICH CONTENT */}
       <section className="py-20">

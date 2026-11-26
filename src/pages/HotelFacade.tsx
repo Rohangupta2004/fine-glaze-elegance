@@ -1,9 +1,9 @@
 import SEO from "@/components/SEO";
+import PageHero from "@/components/common/PageHero";
 import { RelatedProjects } from "@/components/RelatedProjects";
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/home/CTASection";
 import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
 import { CheckCircle2, ArrowRight } from "lucide-react";
 
 export default function HotelFacade() {
@@ -62,32 +62,13 @@ export default function HotelFacade() {
       />
 
       {/* HERO */}
-      <section className="relative py-24 bg-night-2 text-paper">
-        <div className="container mx-auto px-4 max-w-6xl grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h1 className="text-3xl md:text-4xl font-bold mb-4">
-              Hotel & Hospitality <span className="text-gradient-gold">Facade Specialist India</span>
-            </h1>
-            <p className="text-lg text-paper/80 mb-8">Fine Glaze takes hotel facade work in Pune and Mumbai: glazing, curtain wall, canopies, louvers and ACP cladding. Our hotel record is the Leela Hotel, Andheri East, Mumbai.</p>
-            <div className="flex gap-4">
-              <Link to="/contact">
-                <Button size="lg" className="bg-lamp hover:bg-lamp/90">Book a call</Button>
-              </Link>
-              <Link to="/portfolio">
-                <Button size="lg" variant="outline">View Projects</Button>
-              </Link>
-            </div>
-          </div>
-          <img
-            src="/projects/leela-hotel-50-1.webp"
-            alt="Fixed glass windows in the laundry area of Leela Hotel, Andheri, Mumbai — completed by Fine Glaze in 2023"
-            className="object-cover h-[420px] w-full"
-            loading="eager"
-            width="600"
-            height="420"
-          />
-        </div>
-      </section>
+      <PageHero
+        crumbs={[{ label: "Hotel & Hospitality Facade Specialist India" }]}
+        title={<>Hotel & Hospitality <span className="text-gradient-gold">Facade Specialist India</span></>}
+        intro="Fine Glaze takes hotel facade work in Pune and Mumbai: glazing, curtain wall, canopies, louvers and ACP cladding. Our hotel record is the Leela Hotel, Andheri East, Mumbai."
+        secondary={{ label: "View Projects", to: "/portfolio" }}
+        image={{ src: "/projects/leela-hotel-50-1.webp", alt: "Fixed glass windows in the laundry area of Leela Hotel, Andheri, Mumbai — completed by Fine Glaze in 2023", width: 600, height: 420 }}
+      />
 
       {/* RICH CONTENT */}
       <section className="py-20">
