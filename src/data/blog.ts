@@ -29,9 +29,9 @@ export interface Section {
 export const blogPosts: Record<string, BlogPost> = {
   "frameless-glass-office-partitions-cost-design-guide-2026": {
     "slug": "frameless-glass-office-partitions-cost-design-guide-2026",
-    "title": "What decides the cost of office glass partitions in India",
-    "metaTitle": "What decides the cost of office glass partitions in India",
-    "metaDescription": "The factors that decide frameless office glass partition cost in India, from glass and hardware to acoustic needs, and what to ask before comparing quotes.",
+    "title": "Office Glass Partition Cost per Sq Ft in India",
+    "metaTitle": "Office Glass Partition Cost per Sq Ft in India | Fine Glaze",
+    "metaDescription": "Office glass partition cost in India: about ₹500 to ₹900 per sq ft for frameless toughened glass installed, ₹800 to ₹1,600 with acoustic glass or doors.",
     "keywords": "frameless glass partition, office glass partition, acoustic glass partition, smart glass partition, glass partition quotation",
     "date": "2026-08-07",
     "readTime": "6 min read",
@@ -39,6 +39,38 @@ export const blogPosts: Record<string, BlogPost> = {
     "heroImage": "/office-partition.webp",
     "excerpt": "Office glass partition cost depends on glass type, hardware, acoustic needs and finishes. Here is what to ask a contractor before you compare any quotations.",
     "content": [
+      {
+        "heading": "Office glass partition cost per sq ft in India, 2026",
+        "body": "In 2026 a frameless office glass partition in 10 to 12 mm toughened glass typically costs about ₹500 to ₹900 per sq ft, supply and installation, and about ₹800 to ₹1,600 per sq ft with premium hardware, laminated or acoustic glass or frameless doors. This is general market information, not a Fine Glaze quotation. Sound control depends on the whole assembly, not on glass thickness alone."
+      },
+      {
+        "heading": "Office glass partition price ranges in India, 2026",
+        "body": "Typical market range in India, 2026, for supply and installation where stated. Prices vary with specification, quantity, height and site. This is general market information, not a Fine Glaze quotation. Most sources quote before 18% GST; confirm whether a quotation includes it.",
+        "table": {
+          "headers": [
+            "Scope",
+            "Typical range (₹)",
+            "Based on"
+          ],
+          "rows": [
+            [
+              "Frameless 10 to 12 mm toughened partition, patch fittings, floor and ceiling channels, supply and installation",
+              "₹500 to ₹900 per sq ft",
+              "Interior Calculator 2026; Vitra Glass cost guide; Fabrockers pricing page"
+            ],
+            [
+              "Premium hardware, laminated or acoustic glass, or frameless doors, supply and installation",
+              "₹800 to ₹1,600 per sq ft",
+              "Airbrick cost guide; Vitra Glass cost guide"
+            ],
+            [
+              "10 to 12 mm clear toughened glass only",
+              "₹165 to ₹200 per sq ft",
+              "Chandralakshmi Glass partition price page; Gupta Glass listing"
+            ]
+          ]
+        }
+      },
       {
         "heading": "What decides the cost of office glass partitions",
         "body": [
@@ -67,8 +99,28 @@ export const blogPosts: Record<string, BlogPost> = {
         ]
       },
       {
-        "heading": "Get a figure for your building",
-        "body": "Book a call and tell us the system, area, city and floors, and we will prepare a figure for your building. We call you back the same business day, Monday to Saturday, 9am to 6pm."
+        "heading": "Common questions",
+        "body": [
+          "What is the office glass partition cost per sq ft in India? In 2026 about ₹500 to ₹900 per sq ft for frameless toughened glass installed, and about ₹800 to ₹1,600 per sq ft with premium hardware, acoustic glass or doors. These are general market ranges, not a Fine Glaze quotation.",
+          "Are frameless partitions soundproof? No system should be described as completely soundproof. Request the documented acoustic performance of the proposed assembly and coordinate the doors, joints and surrounding construction.",
+          "What should an office partition quotation include? Measured glass and framing, safety-glass specification, doors, hardware, seals, access, installation and any required coordination with ceilings or services."
+        ]
+      },
+      {
+        "heading": "Book a call",
+        "body": "Book a call and we will go through your building with you. We call you back the same business day, Monday to Saturday, 9am to 6pm."
+      },
+      {
+        "heading": "Sources",
+        "body": "Market figures above are general ranges taken from the public pages below. Ranges are rounded to where the sources overlap.",
+        "list": [
+          "Interior Calculator, glass partition cost calculator 2026: https://interiorcalculator.com/calculators/glass-partition-cost-calculator (accessed Nov 2026)",
+          "Vitra Glass, glass partition cost guide 2026: https://vitraglass.in/best-glass-partition-home-office-cost-guide/ (accessed Nov 2026)",
+          "Airbrick, office glass partition cost per sq ft: https://blogs.airbrickinfra.com/office-glass-partition-cost-per-sq-ft-india/ (accessed Nov 2026)",
+          "Fabrockers, glass partition cost: https://fabrockers.com/pricing/glass-partition-cost (accessed Nov 2026)",
+          "Chandralakshmi Glass, toughened glass partition price: https://chandralakshmiglass.com/toughened-glass-partition/ (accessed Nov 2026)",
+          "Gupta Glass Enterprises, toughened glass partition listing: https://www.guptaglassenterprises.com/toughened-glass-partition.html (accessed Nov 2026)"
+        ]
       }
     ]
   },
@@ -140,9 +192,9 @@ export const blogPosts: Record<string, BlogPost> = {
   },
   "structural-glazing-cost-india-2026": {
     "slug": "structural-glazing-cost-india-2026",
-    "title": "What decides the cost of structural glazing in India",
-    "metaTitle": "What decides the cost of structural glazing in India",
-    "metaDescription": "The factors that decide structural glazing cost in India, what to ask a contractor before comparing quotes, and how to book a call for your building.",
+    "title": "Structural Glazing Cost per Sq Ft in India 2026",
+    "metaTitle": "Structural Glazing Cost per Sq Ft in India 2026 | Fine Glaze",
+    "metaDescription": "Structural glazing cost in India: about ₹350 to ₹800 per sq ft for basic 4-side work, ₹800 to ₹1,500 for facade-grade DGU systems. Factors and sources.",
     "keywords": "structural glazing cost India, structural silicone glazing, 2-side glazing, 4-side glazing, glass facade quotation",
     "date": "2026-04-14",
     "readTime": "8 min read",
@@ -150,6 +202,33 @@ export const blogPosts: Record<string, BlogPost> = {
     "heroImage": "/Glazing.webp",
     "excerpt": "Structural glazing cost depends on the system, glass build-up, silicone design, height and access. See what to ask before you compare any two quotations.",
     "content": [
+      {
+        "heading": "Structural glazing cost per sq ft in India, 2026",
+        "body": "In 2026 structural glazing typically costs about ₹350 to ₹800 per sq ft for basic aluminium-framed 4-side work with 6 mm toughened glass, and about ₹800 to ₹1,500 per sq ft for facade-grade systems with DGU or Low-E glass, engineered for height and wind, for supply and installation. This is general market information, not a Fine Glaze quotation. Glass build-up, silicone design, height and access move a figure within or beyond these bands."
+      },
+      {
+        "heading": "Structural glazing price ranges in India, 2026",
+        "body": "Typical market range in India, 2026, for supply and installation. Prices vary with specification, quantity, height and site. This is general market information, not a Fine Glaze quotation. Most sources quote before 18% GST; confirm whether a quotation includes it.",
+        "table": {
+          "headers": [
+            "Scope",
+            "Typical range (₹)",
+            "Based on"
+          ],
+          "rows": [
+            [
+              "Basic aluminium-framed 4-side structural glazing, 6 mm toughened glass, low-rise, supply and fixing",
+              "₹350 to ₹800 per sq ft",
+              "IndiaMART fabricator listings; glassy.in 2026 price guide"
+            ],
+            [
+              "Facade-grade 2-side or 4-side structural glazing with DGU or Low-E glass, engineered for height and wind",
+              "₹800 to ₹1,500 per sq ft",
+              "WoodenMax glass elevation guide; glassy.in 2026 price guide; Soga Design Studio 2026 guide"
+            ]
+          ]
+        }
+      },
       {
         "heading": "What decides the cost of structural glazing",
         "body": [
@@ -179,8 +258,27 @@ export const blogPosts: Record<string, BlogPost> = {
         ]
       },
       {
-        "heading": "Get a figure for your building",
-        "body": "Book a call and tell us the system, area, city and floors, and we will prepare a figure for your building. We call you back the same business day, Monday to Saturday, 9am to 6pm."
+        "heading": "Common questions",
+        "body": [
+          "What is the structural glazing cost per sq ft in India? In 2026 about ₹350 to ₹800 per sq ft for basic 4-side work with 6 mm toughened glass and about ₹800 to ₹1,500 per sq ft for facade-grade DGU systems, supply and installation. These are general market ranges, not a Fine Glaze quotation.",
+          "Why do structural glazing rates vary so much? Quotes differ in glass build-up, aluminium profile, silicone system, building height, access method and whether the sub-frame and testing are included. Ask each supplier to price the same specification.",
+          "Is a per sq ft rate enough to budget a glass facade? It is a starting point only. A firm figure needs the approved specification, measured area, access conditions and exclusions."
+        ]
+      },
+      {
+        "heading": "Book a call",
+        "body": "Book a call and we will go through your building with you. We call you back the same business day, Monday to Saturday, 9am to 6pm."
+      },
+      {
+        "heading": "Sources",
+        "body": "Market figures above are general ranges taken from the public pages below. Ranges are rounded to where the sources overlap.",
+        "list": [
+          "glassy.in, glass price guide 2026: https://glassy.in/glass-price-guide/ (accessed Nov 2026)",
+          "WoodenMax, glass elevation (structural glazing) price: https://woodenmax.in/products/glass-elevation (accessed Nov 2026)",
+          "Soga Design Studio, glass facade design for commercial buildings in India 2026: https://sogadesignstudio.com/glass-facade-design-commercial-buildings-india/ (accessed Nov 2026)",
+          "IndiaMART, structural glass glazing listings: https://dir.indiamart.com/impcat/structural-glass-glazing.html (accessed Nov 2026)",
+          "IndiaMART, structural glazing system listings: https://dir.indiamart.com/impcat/structural-glazing-system.html (accessed Nov 2026)"
+        ]
       }
     ]
   },
@@ -372,9 +470,9 @@ export const blogPosts: Record<string, BlogPost> = {
   },
   "glass-railing-cost-india-2026": {
     "slug": "glass-railing-cost-india-2026",
-    "title": "What decides the cost of glass railings in India",
-    "metaTitle": "What decides the cost of glass railings in India",
-    "metaDescription": "The factors that decide glass railing cost in India, what to ask a contractor before comparing quotes, and how to book a call for a figure for your building.",
+    "title": "Glass Railing Price per Running Feet in India",
+    "metaTitle": "Glass Railing Price per Running Feet in India | Fine Glaze",
+    "metaDescription": "Glass railing price in India 2026: about ₹2,000 to ₹3,400 per running foot for a complete frameless or spigot railing, installed. Sources included.",
     "keywords": "glass railing cost India, frameless glass railing, spigot glass railing, balcony glass railing, glass balustrade quotation",
     "date": "2026-05-10",
     "readTime": "7 min read",
@@ -382,6 +480,38 @@ export const blogPosts: Record<string, BlogPost> = {
     "heroImage": "/Railing.webp",
     "excerpt": "Glass railing cost depends on the system, glass build-up, hardware grade, anchoring and access. Here is what to ask before you compare any two quotations.",
     "content": [
+      {
+        "heading": "Glass railing price per running foot in India, 2026",
+        "body": "In 2026 a complete frameless or spigot glass railing with 12 mm toughened or laminated glass and SS 304 fittings typically costs about ₹2,000 to ₹3,400 per running foot, supply and installation. The spigot or channel hardware alone is typically about ₹1,400 to ₹2,500 per running foot. This is general market information, not a Fine Glaze quotation, and the figure depends on panel height, handrail, glass build-up and slab edge."
+      },
+      {
+        "heading": "Glass railing price ranges in India, 2026",
+        "body": "Typical market range in India, 2026, for supply and installation where stated. Prices vary with specification, quantity, height and site. This is general market information, not a Fine Glaze quotation. Most sources quote before 18% GST; confirm whether a quotation includes it.",
+        "table": {
+          "headers": [
+            "Scope",
+            "Typical range (₹)",
+            "Based on"
+          ],
+          "rows": [
+            [
+              "Complete frameless or spigot glass railing, 12 mm glass, SS 304 fittings, supply and installation",
+              "₹2,000 to ₹3,400 per running foot",
+              "WoodenMax railing pages; Jivial Railings guide; trader listing"
+            ],
+            [
+              "Spigot or channel system hardware only, without glass",
+              "₹1,400 to ₹2,500 per running foot",
+              "Jivial Railings guide; Prince Railing 2026 guide"
+            ],
+            [
+              "12 mm toughened glass only",
+              "₹180 to ₹250 per sq ft",
+              "Jivial Railings guide; Chandralakshmi Glass rate list"
+            ]
+          ]
+        }
+      },
       {
         "heading": "What decides the cost of glass railings",
         "body": [
@@ -411,8 +541,28 @@ export const blogPosts: Record<string, BlogPost> = {
         ]
       },
       {
-        "heading": "Get a figure for your building",
-        "body": "Book a call and tell us the system, area, city and floors, and we will prepare a figure for your building. We call you back the same business day, Monday to Saturday, 9am to 6pm."
+        "heading": "Common questions",
+        "body": [
+          "What is the glass railing price per running foot in India? In 2026 about ₹2,000 to ₹3,400 per running foot for a complete frameless or spigot railing, supply and installation. These are general market ranges, not a Fine Glaze quotation.",
+          "What is the glass railing rate per running feet without glass? The spigot or channel hardware alone is typically about ₹1,400 to ₹2,500 per running foot. 12 mm toughened glass is typically about ₹180 to ₹250 per sq ft on top of that.",
+          "Why do glass railing quotes differ so much? Quotes differ in glass build-up (toughened or laminated), fitting grade, handrail, anchoring and the floor level where work is done. Ask each supplier to quote the same specification."
+        ]
+      },
+      {
+        "heading": "Book a call",
+        "body": "Book a call and we will go through your building with you. We call you back the same business day, Monday to Saturday, 9am to 6pm."
+      },
+      {
+        "heading": "Sources",
+        "body": "Market figures above are general ranges taken from the public pages below. Ranges are rounded to where the sources overlap.",
+        "list": [
+          "WoodenMax, frameless glass railing systems: https://woodenmax.in/products/glass-railing (accessed Nov 2026)",
+          "WoodenMax, staircase frameless glass railing: https://woodenmax.in/products/glass-railing/staircase-glass-railing (accessed Nov 2026)",
+          "Jivial Railings, steel railing with glass design: https://www.jivialrailings.com/blog/steel-railing-with-glass-design (accessed Nov 2026)",
+          "Prince Railing, SS railing price per running foot 2026: https://princerailing.com/blog/stainless-steel-railing-price-per-foot-india (accessed Nov 2026)",
+          "JMB Metals, stainless steel glass railing listing: https://www.jmbmetals.com/stainless-steel-glass-railing.html (accessed Nov 2026)",
+          "Chandralakshmi Glass, toughened glass price: https://chandralakshmiglass.com/toughened-glass-price/ (accessed Nov 2026)"
+        ]
       }
     ]
   },
@@ -1135,9 +1285,9 @@ export const blogPosts: Record<string, BlogPost> = {
   },
   "acp-sheet-price-per-sq-ft-india-2026": {
     "slug": "acp-sheet-price-per-sq-ft-india-2026",
-    "title": "What decides the cost of ACP sheets in India",
-    "metaTitle": "What decides the cost of ACP sheets in India | Fine Glaze",
-    "metaDescription": "The factors that decide ACP cladding cost in India, from core type and coating to sub-frame and access, and what to ask a contractor before comparing quotes.",
+    "title": "ACP Sheet Price per Sq Ft in India (2026)",
+    "metaTitle": "ACP Sheet Price per Sq Ft in India (2026) | Fine Glaze",
+    "metaDescription": "ACP sheet price in India: about ₹120 to ₹260 per sq ft for 4 mm standard, ₹150 to ₹320 for fire-rated. Installed cladding ₹175 to ₹300. Sources and factors.",
     "keywords": "ACP sheet cost India, ACP cladding cost, fire-rated ACP, PVDF ACP, aluminium composite panel quotation",
     "date": "2026-05-14",
     "readTime": "7 min read",
@@ -1145,6 +1295,38 @@ export const blogPosts: Record<string, BlogPost> = {
     "heroImage": "/Panel.webp",
     "excerpt": "ACP cladding cost depends on the core, brand, coating, sub-frame and height. Here is what to ask a contractor before you compare any two quotations.",
     "content": [
+      {
+        "heading": "ACP sheet price per sq ft in India, 2026",
+        "body": "In 2026 a 4 mm ACP sheet typically costs about ₹120 to ₹260 per sq ft for standard exterior grades and about ₹150 to ₹320 per sq ft for fire-rated (FR B1 to A2) grades, for the sheet only. ACP cladding supplied and installed on an aluminium sub-frame typically runs about ₹175 to ₹300 per sq ft. This is general market information, not a Fine Glaze quotation, and the final figure depends on the brand, core, finish, sub-frame, height and city."
+      },
+      {
+        "heading": "ACP price ranges in India, 2026",
+        "body": "Typical market range in India, 2026, for sheet supply and for supplied and installed cladding. Prices vary with specification, quantity, height and site. This is general market information, not a Fine Glaze quotation. Most sources quote before 18% GST; confirm whether a quotation includes it.",
+        "table": {
+          "headers": [
+            "Scope",
+            "Typical range (₹)",
+            "Based on"
+          ],
+          "rows": [
+            [
+              "4 mm standard exterior ACP, sheet only (supply)",
+              "₹120 to ₹260 per sq ft",
+              "Aludecor 2026 price guide; third-party brand guide"
+            ],
+            [
+              "4 mm fire-rated ACP (FR B1 to A2), sheet only (supply)",
+              "₹150 to ₹320 per sq ft; A2 sits at the upper end",
+              "VIVA fire-rated price page; Aludecor 2026 price guide"
+            ],
+            [
+              "ACP cladding on aluminium sub-frame, supply and installation",
+              "₹175 to ₹300 per sq ft",
+              "Infralens rate analysis; IndiaMART service listings; VIVA installed-cost page"
+            ]
+          ]
+        }
+      },
       {
         "heading": "What decides the cost of ACP sheets",
         "body": [
@@ -1174,16 +1356,36 @@ export const blogPosts: Record<string, BlogPost> = {
         ]
       },
       {
-        "heading": "Get a figure for your building",
-        "body": "Book a call and tell us the system, area, city and floors, and we will prepare a figure for your building. We call you back the same business day, Monday to Saturday, 9am to 6pm."
+        "heading": "Common questions",
+        "body": [
+          "What is the ACP sheet price per sq ft in India? In 2026 a 4 mm standard exterior ACP sheet is typically about ₹120 to ₹260 per sq ft and a fire-rated sheet about ₹150 to ₹320 per sq ft, before GST and for the sheet only. These are general market ranges, not a Fine Glaze quotation.",
+          "What is the ACP cladding work rate per sq ft with installation? ACP cladding supplied and fixed on an aluminium sub-frame typically runs about ₹175 to ₹300 per sq ft. Confirm whether the quote includes the sub-frame, sealants, flashing, access equipment and GST.",
+          "Is fire-rated ACP more expensive than standard ACP? Yes. Fire-rated sheets are typically priced higher than standard sheets, and A2 mineral-core grades sit at the top of the range. The building height and NBC 2016 fire requirements decide which core is permitted."
+        ]
+      },
+      {
+        "heading": "Book a call",
+        "body": "Book a call and we will go through your building with you. We call you back the same business day, Monday to Saturday, 9am to 6pm."
+      },
+      {
+        "heading": "Sources",
+        "body": "Market figures above are general ranges taken from the public pages below. Ranges are rounded to where the sources overlap.",
+        "list": [
+          "Aludecor, ACP sheet price guide: https://www.aludecor.com/acp-sheet-price (accessed Nov 2026)",
+          "VIVA, fire-rated ACP price: https://vivaacp.com/acp-sheet-price/fire-rated (accessed Nov 2026)",
+          "VIVA, ACP cladding cost with installation: https://vivaacp.com/answers/cost-of-acp-cladding-per-square-foot-with-installation (accessed Nov 2026)",
+          "Infralens, ACP cladding rate analysis: https://www.infralens.in/rate-analysis/acp-cladding (accessed Nov 2026)",
+          "IndiaMART, ACP wall cladding service listings: https://m.indiamart.com/impcat/acp-wall-cladding-service.html (accessed Nov 2026)",
+          "Building and Interiors, ACP price guide: https://buildingandinteriors.com/acp-sheet-price-per-square-feet-in-india-brand-wise-guide/ (accessed Nov 2026)"
+        ]
       }
     ]
   },
   "curtain-wall-cost-per-sq-ft-india-2026": {
     "slug": "curtain-wall-cost-per-sq-ft-india-2026",
-    "title": "What decides the cost of curtain wall in India",
-    "metaTitle": "What decides the cost of curtain wall in India | Fine Glaze",
-    "metaDescription": "The factors that decide curtain wall cost in India, what to ask a contractor before comparing quotes, and how to book a call for a figure for your building.",
+    "title": "Curtain Wall Cost per Sq Ft in India (2026)",
+    "metaTitle": "Curtain Wall Cost per Sq Ft in India (2026) | Fine Glaze",
+    "metaDescription": "Curtain wall cost in India is typically ₹900 to ₹1,800 per sq ft for a standard aluminium-glass DGU system, installed. What moves the rate, with sources.",
     "keywords": "curtain wall cost India, unitized curtain wall, stick curtain wall, glass curtain wall quotation, facade contractor",
     "date": "2026-05-12",
     "readTime": "8 min read",
@@ -1191,6 +1393,33 @@ export const blogPosts: Record<string, BlogPost> = {
     "heroImage": "/Unitized.webp",
     "excerpt": "Curtain wall cost depends on the system, glass, profiles, wind load, height and testing. Here is what to ask before you compare any two quotations.",
     "content": [
+      {
+        "heading": "Curtain wall cost per sq ft in India, 2026",
+        "body": "In 2026 a standard aluminium and glass curtain wall with DGU typically costs about ₹900 to ₹1,800 per sq ft in India, supply and installation. Lower figures of about ₹400 to ₹800 per sq ft seen in supplier listings usually cover the supply or part of the scope. Unitized systems generally cost more up front than stick systems but install faster; we could not find two credible public sources for separate stick and unitized rates, so none is shown. This is general market information, not a Fine Glaze quotation."
+      },
+      {
+        "heading": "Curtain wall price ranges in India, 2026",
+        "body": "Typical market range in India, 2026, for supply and installation where stated. Prices vary with specification, quantity, height and site. This is general market information, not a Fine Glaze quotation. Most sources quote before 18% GST; confirm whether a quotation includes it.",
+        "table": {
+          "headers": [
+            "Scope",
+            "Typical range (₹)",
+            "Based on"
+          ],
+          "rows": [
+            [
+              "Standard aluminium-glass curtain wall with DGU, supply and installation",
+              "₹900 to ₹1,800 per sq ft",
+              "Soga Design Studio 2026 guide; WoodenMax glass elevation guide; StudioMatrx facade cost guide"
+            ],
+            [
+              "Supplier listings for aluminium curtain wall, often supply or partial scope",
+              "₹400 to ₹800 per sq ft",
+              "IndiaMART curtain wall listings; TradeIndia curtain wall listings"
+            ]
+          ]
+        }
+      },
       {
         "heading": "What decides the cost of curtain wall",
         "body": [
@@ -1220,16 +1449,35 @@ export const blogPosts: Record<string, BlogPost> = {
         ]
       },
       {
-        "heading": "Get a figure for your building",
-        "body": "Book a call and tell us the system, area, city and floors, and we will prepare a figure for your building. We call you back the same business day, Monday to Saturday, 9am to 6pm."
+        "heading": "Common questions",
+        "body": [
+          "What is the curtain wall cost per sq ft in India? In 2026 about ₹900 to ₹1,800 per sq ft for a standard aluminium-glass DGU curtain wall, supply and installation. These are general market ranges, not a Fine Glaze quotation.",
+          "What is the glass curtain wall price in a supplier listing? Marketplace listings are often about ₹400 to ₹800 per sq ft but usually cover supply or part of the scope. Check whether glass, framing, anchors, sealants, scaffolding and testing are included.",
+          "Is unitized curtain wall more expensive than stick? Unitized systems generally cost more up front because of factory assembly, but they install faster on large repetitive elevations. The right choice depends on elevation size, access and programme."
+        ]
+      },
+      {
+        "heading": "Book a call",
+        "body": "Book a call and we will go through your building with you. We call you back the same business day, Monday to Saturday, 9am to 6pm."
+      },
+      {
+        "heading": "Sources",
+        "body": "Market figures above are general ranges taken from the public pages below. Ranges are rounded to where the sources overlap.",
+        "list": [
+          "Soga Design Studio, glass facade design for commercial buildings in India 2026: https://sogadesignstudio.com/glass-facade-design-commercial-buildings-india/ (accessed Nov 2026)",
+          "WoodenMax, glass elevation and curtain wall price: https://woodenmax.in/products/glass-elevation (accessed Nov 2026)",
+          "StudioMatrx, facade cost guide India: https://www.studiomatrx.org/guides/facade-cost-guide-india (accessed Nov 2026)",
+          "IndiaMART, curtain walls listings: https://dir.indiamart.com/impcat/curtain-walls.html (accessed Nov 2026)",
+          "TradeIndia, glass curtain wall listings: https://www.tradeindia.com/manufacturers/glass-curtain-wall.html (accessed Nov 2026)"
+        ]
       }
     ]
   },
   "aluminium-window-cost-per-sq-ft-india-2026": {
     "slug": "aluminium-window-cost-per-sq-ft-india-2026",
-    "title": "What decides the cost of aluminium windows in India",
-    "metaTitle": "What decides the cost of aluminium windows in India",
-    "metaDescription": "The factors that decide aluminium window cost in India, from profile series and glass to hardware, and what to ask a contractor before comparing quotes.",
+    "title": "Aluminium Window Cost per Sq Ft in India (2026)",
+    "metaTitle": "Aluminium Window Cost per Sq Ft in India (2026) | Fine Glaze",
+    "metaDescription": "Aluminium window cost in India: about ₹500 to ₹1,200 per sq ft for standard sliding or casement, ₹1,200 to ₹2,900 for thermal-break system windows. Sources.",
     "keywords": "aluminium window cost India, sliding window, casement window, thermal break window, aluminium window quotation",
     "date": "2026-05-08",
     "readTime": "7 min read",
@@ -1237,6 +1485,33 @@ export const blogPosts: Record<string, BlogPost> = {
     "heroImage": "/Aluminium windows.webp",
     "excerpt": "Aluminium window cost depends on the profile series, thermal break, glass build-up and hardware. Here is what to ask before you compare any two quotations.",
     "content": [
+      {
+        "heading": "Aluminium window cost per sq ft in India, 2026",
+        "body": "In 2026 a standard powder-coated aluminium sliding or casement window typically costs about ₹500 to ₹1,200 per sq ft, and a premium thermal-break system window with double glazing about ₹1,200 to ₹2,900 per sq ft, supply and installation. This is general market information, not a Fine Glaze quotation, and the figure depends on profile series, glass, hardware and city."
+      },
+      {
+        "heading": "Aluminium window price ranges in India, 2026",
+        "body": "Typical market range in India, 2026, for supply and installation where stated. Prices vary with specification, quantity, height and site. This is general market information, not a Fine Glaze quotation. Most sources quote before 18% GST; confirm whether a quotation includes it.",
+        "table": {
+          "headers": [
+            "Scope",
+            "Typical range (₹)",
+            "Based on"
+          ],
+          "rows": [
+            [
+              "Standard powder-coated sliding or casement window, supply and installation",
+              "₹500 to ₹1,200 per sq ft",
+              "AECORD 2026 guide; StudioMatrx aluminium window guide; Building and Interiors guide"
+            ],
+            [
+              "Premium thermal-break system window with DGU, supply and installation",
+              "₹1,200 to ₹2,900 per sq ft",
+              "WoodenMax system window price page; Innovative Globetek 2026 guide"
+            ]
+          ]
+        }
+      },
       {
         "heading": "What decides the cost of aluminium windows",
         "body": [
@@ -1266,16 +1541,35 @@ export const blogPosts: Record<string, BlogPost> = {
         ]
       },
       {
-        "heading": "Get a figure for your building",
-        "body": "Book a call and tell us the system, area, city and floors, and we will prepare a figure for your building. We call you back the same business day, Monday to Saturday, 9am to 6pm."
+        "heading": "Common questions",
+        "body": [
+          "What is the aluminium window cost per sq ft in India? In 2026 about ₹500 to ₹1,200 per sq ft for a standard sliding or casement window, and about ₹1,200 to ₹2,900 per sq ft for a premium system window with DGU. These are general market ranges, not a Fine Glaze quotation.",
+          "What is the aluminium window price per sq ft for sliding windows? Standard sliding windows typically fall in the lower band of about ₹500 to ₹1,200 per sq ft. Glass build-up, profile thickness, hardware and mesh shutters move the figure.",
+          "Is GST included in aluminium window rates? Many published rates are before 18% GST. Confirm whether a quotation includes GST, installation and glass."
+        ]
+      },
+      {
+        "heading": "Book a call",
+        "body": "Book a call and we will go through your building with you. We call you back the same business day, Monday to Saturday, 9am to 6pm."
+      },
+      {
+        "heading": "Sources",
+        "body": "Market figures above are general ranges taken from the public pages below. Ranges are rounded to where the sources overlap.",
+        "list": [
+          "AECORD, window cost per sq ft India 2026: https://aecord.com/blog/window-cost-per-sq-ft-india-2026 (accessed Nov 2026)",
+          "StudioMatrx, aluminium window cost in India 2026: https://www.studiomatrx.org/guides/aluminium-window-cost-india (accessed Nov 2026)",
+          "Building and Interiors, aluminium window price per sq ft 2026: https://buildingandinteriors.com/aluminium-window-price-per-sq-ft-2026/ (accessed Nov 2026)",
+          "WoodenMax, system window glass options and price: https://woodenmax.in/products/aluminium-windows/system-window-glass-options (accessed Nov 2026)",
+          "Innovative Globetek, aluminium window price per sq ft 2026: https://innovativeglobetek.com/aluminium-window-price-per-sq-ft/ (accessed Nov 2026)"
+        ]
       }
     ]
   },
   "double-glazed-window-cost-india-2026": {
     "slug": "double-glazed-window-cost-india-2026",
-    "title": "What decides the cost of double glazed windows in India",
-    "metaTitle": "What decides the cost of double glazed windows in India",
-    "metaDescription": "The factors that decide double glazed window cost in India, from glass build-up and coating to the frame, and what to ask before comparing quotes.",
+    "title": "Double Glazed Window Cost in India (2026)",
+    "metaTitle": "Double Glazed Window Cost in India (2026) | Fine Glaze",
+    "metaDescription": "Double glazed window cost in India: about ₹800 to ₹1,500 per sq ft for a mid-range aluminium DGU window, installed. DGU glass alone ₹250 to ₹600.",
     "keywords": "double glazed window cost India, DGU window, Low-E glass window, acoustic window, double glazing quotation",
     "date": "2026-05-06",
     "readTime": "6 min read",
@@ -1283,6 +1577,43 @@ export const blogPosts: Record<string, BlogPost> = {
     "heroImage": "/Glass.webp",
     "excerpt": "Double glazed window cost depends on the glass build-up, coating, frame and hardware. Here is what to ask before you compare any two quotations.",
     "content": [
+      {
+        "heading": "Double glazed window cost per sq ft in India, 2026",
+        "body": "In 2026 a mid-range aluminium sliding window with double glazed glass typically costs about ₹800 to ₹1,500 per sq ft, supply and installation, and premium thermal-break system windows with DGU cost about ₹1,200 to ₹2,900 per sq ft. The DGU glass alone is typically about ₹250 to ₹600 per sq ft. This is general market information, not a Fine Glaze quotation."
+      },
+      {
+        "heading": "Double glazed window price ranges in India, 2026",
+        "body": "Typical market range in India, 2026, for the item described in each row. Prices vary with specification, quantity, height and site. This is general market information, not a Fine Glaze quotation. Most sources quote before 18% GST; confirm whether a quotation includes it.",
+        "table": {
+          "headers": [
+            "Scope",
+            "Typical range (₹)",
+            "Based on"
+          ],
+          "rows": [
+            [
+              "DGU glass unit only (for example 5 + 12 + 5 mm), supply",
+              "₹250 to ₹600 per sq ft; Low-E, laminated or tinted build-ups cost more",
+              "Infralens DGU price pages; WoodenMax window glass price breakdown"
+            ],
+            [
+              "Extra cost of DGU over a single 6 mm glass in the same window",
+              "₹150 to ₹400 per sq ft",
+              "Aluminium window price guides (WoodenMax, Innovative Globetek)"
+            ],
+            [
+              "Mid-range aluminium sliding window with DGU, supply and installation",
+              "₹800 to ₹1,500 per sq ft",
+              "WoodenMax sliding window pricing; Innovative Globetek worked cost example; StudioMatrx aluminium window guide"
+            ],
+            [
+              "Premium thermal-break system window with DGU, supply and installation",
+              "₹1,200 to ₹2,900 per sq ft",
+              "WoodenMax system window price page; Innovative Globetek 2026 guide"
+            ]
+          ]
+        }
+      },
       {
         "heading": "What decides the cost of double glazed windows",
         "body": [
@@ -1311,8 +1642,28 @@ export const blogPosts: Record<string, BlogPost> = {
         ]
       },
       {
-        "heading": "Get a figure for your building",
-        "body": "Book a call and tell us the system, area, city and floors, and we will prepare a figure for your building. We call you back the same business day, Monday to Saturday, 9am to 6pm."
+        "heading": "Common questions",
+        "body": [
+          "What is the double glazed window cost per sq ft in India? In 2026 a mid-range aluminium window with DGU typically costs about ₹800 to ₹1,500 per sq ft installed, and premium system windows about ₹1,200 to ₹2,900. These are general market ranges, not a Fine Glaze quotation.",
+          "What is the double glazed glass price in India? The DGU glass unit alone is typically about ₹250 to ₹600 per sq ft, depending on glass thickness, coating and gas fill. Upgrading from a single 6 mm glass typically adds about ₹150 to ₹400 per sq ft.",
+          "Is a double glazed window worth the extra cost? DGU reduces heat transfer and noise compared with single glass. The benefit depends on orientation, glass coating, frame and installation, so compare complete window specifications rather than glass alone."
+        ]
+      },
+      {
+        "heading": "Book a call",
+        "body": "Book a call and we will go through your building with you. We call you back the same business day, Monday to Saturday, 9am to 6pm."
+      },
+      {
+        "heading": "Sources",
+        "body": "Market figures above are general ranges taken from the public pages below. Ranges are rounded to where the sources overlap.",
+        "list": [
+          "WoodenMax, system window glass options and price: https://woodenmax.in/products/aluminium-windows/system-window-glass-options (accessed Nov 2026)",
+          "WoodenMax, aluminium window glass price breakdown: https://woodenmax.in/products/aluminium-windows/aluminium-window-glass-price-breakdown (accessed Nov 2026)",
+          "Innovative Globetek, aluminium window price per sq ft 2026: https://innovativeglobetek.com/aluminium-window-price-per-sq-ft/ (accessed Nov 2026)",
+          "StudioMatrx, aluminium window cost in India 2026: https://www.studiomatrx.org/guides/aluminium-window-cost-india (accessed Nov 2026)",
+          "Infralens, interiors and glass prices, Mumbai: https://infralens.in/prices/interiors/mumbai (accessed Nov 2026)",
+          "IndiaMART, double glazed windows listings: https://m.indiamart.com/impcat/double-glazed-windows.html (accessed Nov 2026)"
+        ]
       }
     ]
   },
@@ -1463,9 +1814,9 @@ export const blogPosts: Record<string, BlogPost> = {
   },
   "glass-partition-cost-india-2026": {
     "slug": "glass-partition-cost-india-2026",
-    "title": "What decides the cost of glass partitions in India",
-    "metaTitle": "What decides the cost of glass partitions in India",
-    "metaDescription": "The factors that decide glass partition cost in India, from glass thickness and acoustic needs to hardware, and what to ask before comparing quotes.",
+    "title": "Glass Partition Cost per Sq Ft in India (2026)",
+    "metaTitle": "Glass Partition Cost per Sq Ft in India (2026) | Fine Glaze",
+    "metaDescription": "Glass partition cost in India: about ₹500 to ₹900 per sq ft for frameless 10 to 12 mm toughened glass, installed. Premium and acoustic cost more.",
     "keywords": "glass partition cost India, office glass partition, frameless glass partition, acoustic glass partition, glass partition quotation",
     "date": "2026-04-15",
     "readTime": "6 min read",
@@ -1473,6 +1824,38 @@ export const blogPosts: Record<string, BlogPost> = {
     "heroImage": "/Glass.webp",
     "excerpt": "Glass partition cost depends on glass thickness, acoustic needs, doors and hardware. Here is what to ask before you compare any two quotations.",
     "content": [
+      {
+        "heading": "Glass partition cost per sq ft in India, 2026",
+        "body": "In 2026 a frameless partition in 10 to 12 mm toughened glass with patch fittings typically costs about ₹500 to ₹900 per sq ft, supply and installation. Premium hardware, laminated or acoustic glass and frameless doors typically move it to about ₹800 to ₹1,600 per sq ft. This is general market information, not a Fine Glaze quotation."
+      },
+      {
+        "heading": "Glass partition price ranges in India, 2026",
+        "body": "Typical market range in India, 2026, for supply and installation where stated. Prices vary with specification, quantity, height and site. This is general market information, not a Fine Glaze quotation. Most sources quote before 18% GST; confirm whether a quotation includes it.",
+        "table": {
+          "headers": [
+            "Scope",
+            "Typical range (₹)",
+            "Based on"
+          ],
+          "rows": [
+            [
+              "Frameless 10 to 12 mm toughened partition, patch fittings, floor and ceiling channels, supply and installation",
+              "₹500 to ₹900 per sq ft",
+              "Interior Calculator 2026; Vitra Glass cost guide; Fabrockers pricing page"
+            ],
+            [
+              "Premium hardware, laminated or acoustic glass, or frameless doors, supply and installation",
+              "₹800 to ₹1,600 per sq ft",
+              "Airbrick cost guide; Vitra Glass cost guide"
+            ],
+            [
+              "10 to 12 mm clear toughened glass only",
+              "₹165 to ₹200 per sq ft",
+              "Chandralakshmi Glass partition price page; Gupta Glass listing"
+            ]
+          ]
+        }
+      },
       {
         "heading": "What decides the cost of glass partitions",
         "body": [
@@ -1502,8 +1885,28 @@ export const blogPosts: Record<string, BlogPost> = {
         ]
       },
       {
-        "heading": "Get a figure for your building",
-        "body": "Book a call and tell us the system, area, city and floors, and we will prepare a figure for your building. We call you back the same business day, Monday to Saturday, 9am to 6pm."
+        "heading": "Common questions",
+        "body": [
+          "What is the glass partition cost per sq ft in India? In 2026 about ₹500 to ₹900 per sq ft for a frameless 10 to 12 mm toughened partition installed, and about ₹800 to ₹1,600 per sq ft with premium hardware, laminated or acoustic glass or doors. These are general market ranges, not a Fine Glaze quotation.",
+          "What is the toughened glass price for a partition? Clear 10 to 12 mm toughened glass alone is typically about ₹165 to ₹200 per sq ft before fittings, doors and installation.",
+          "Does an office glass partition rate include doors? Not always. Frameless doors, hardware, seals and installation are often priced separately, so confirm what each quotation includes."
+        ]
+      },
+      {
+        "heading": "Book a call",
+        "body": "Book a call and we will go through your building with you. We call you back the same business day, Monday to Saturday, 9am to 6pm."
+      },
+      {
+        "heading": "Sources",
+        "body": "Market figures above are general ranges taken from the public pages below. Ranges are rounded to where the sources overlap.",
+        "list": [
+          "Interior Calculator, glass partition cost calculator 2026: https://interiorcalculator.com/calculators/glass-partition-cost-calculator (accessed Nov 2026)",
+          "Vitra Glass, glass partition cost guide 2026: https://vitraglass.in/best-glass-partition-home-office-cost-guide/ (accessed Nov 2026)",
+          "Airbrick, office glass partition cost per sq ft: https://blogs.airbrickinfra.com/office-glass-partition-cost-per-sq-ft-india/ (accessed Nov 2026)",
+          "Fabrockers, glass partition cost: https://fabrockers.com/pricing/glass-partition-cost (accessed Nov 2026)",
+          "Chandralakshmi Glass, toughened glass partition price: https://chandralakshmiglass.com/toughened-glass-partition/ (accessed Nov 2026)",
+          "Gupta Glass Enterprises, toughened glass partition listing: https://www.guptaglassenterprises.com/toughened-glass-partition.html (accessed Nov 2026)"
+        ]
       }
     ]
   },
@@ -4585,9 +4988,9 @@ export const blogPosts: Record<string, BlogPost> = {
   },
   "structural-glazing-cost-per-sq-ft-india-2026-price-guide": {
     "slug": "structural-glazing-cost-per-sq-ft-india-2026-price-guide",
-    "title": "What decides the cost of 2-side and 4-side glazing in India",
-    "metaTitle": "What decides the cost of 2-side and 4-side glazing in India",
-    "metaDescription": "The factors that decide 2-side, 4-side and spider glazing cost in India, and what to ask a contractor before you compare any two facade quotations.",
+    "title": "Structural Glazing Rate per Sq Ft India 2026",
+    "metaTitle": "Structural Glazing Rate per Sq Ft India 2026 | Fine Glaze",
+    "metaDescription": "Structural glazing rate in India: about ₹350 to ₹800 per sq ft basic 4-side, ₹800 to ₹1,500 facade-grade with DGU. What changes the rate and how to compare.",
     "keywords": "2-side glazing, 4-side glazing, spider glazing, structural silicone, glass facade cost India",
     "date": "2026-10-04",
     "readTime": "7 min read",
@@ -4595,6 +4998,33 @@ export const blogPosts: Record<string, BlogPost> = {
     "heroImage": "/Glazing.webp",
     "excerpt": "Cost differs between 2-side, 4-side and spider glazing because the silicone, hardware and engineering differ. Here is what to ask before comparing quotes.",
     "content": [
+      {
+        "heading": "Structural glazing rate per sq ft in India, 2026",
+        "body": "In 2026 the structural glazing rate in India is typically about ₹350 to ₹800 per sq ft for basic aluminium-framed 4-side work and about ₹800 to ₹1,500 per sq ft for facade-grade 2-side or 4-side systems with DGU or Low-E glass, supply and installation. This is general market information, not a Fine Glaze quotation. We could not find two credible public sources for a separate spider glazing rate, so none is shown."
+      },
+      {
+        "heading": "Structural glazing rate ranges in India, 2026",
+        "body": "Typical market range in India, 2026, for supply and installation. Prices vary with specification, quantity, height and site. This is general market information, not a Fine Glaze quotation. Most sources quote before 18% GST; confirm whether a quotation includes it.",
+        "table": {
+          "headers": [
+            "Scope",
+            "Typical range (₹)",
+            "Based on"
+          ],
+          "rows": [
+            [
+              "Basic aluminium-framed 4-side structural glazing, 6 mm toughened glass, low-rise, supply and fixing",
+              "₹350 to ₹800 per sq ft",
+              "IndiaMART fabricator listings; glassy.in 2026 price guide"
+            ],
+            [
+              "Facade-grade 2-side or 4-side structural glazing with DGU or Low-E glass, engineered for height and wind",
+              "₹800 to ₹1,500 per sq ft",
+              "WoodenMax glass elevation guide; glassy.in 2026 price guide; Soga Design Studio 2026 guide"
+            ]
+          ]
+        }
+      },
       {
         "heading": "What decides the cost of 2-side and 4-side glazing",
         "body": [
@@ -4624,8 +5054,27 @@ export const blogPosts: Record<string, BlogPost> = {
         ]
       },
       {
-        "heading": "Get a figure for your building",
-        "body": "Book a call and tell us the system, area, city and floors, and we will prepare a figure for your building. We call you back the same business day, Monday to Saturday, 9am to 6pm."
+        "heading": "Common questions",
+        "body": [
+          "Is structural silicone the same as weather sealant? No. Structural silicone transfers design loads between the glass and its support. Weather seals manage environmental exposure and movement. Products must be selected for their intended role and compatibility.",
+          "What is the structural glazing rate per sq ft in India? About ₹350 to ₹800 per sq ft for basic 4-side work and about ₹800 to ₹1,500 per sq ft for facade-grade systems in 2026, supply and installation. These are general market ranges, not a Fine Glaze quotation.",
+          "Does 4-side glazing need engineering checks? Yes. Glass support, structural bite, joint thickness, movement and substrate compatibility must be assessed for the particular system and loads."
+        ]
+      },
+      {
+        "heading": "Book a call",
+        "body": "Book a call and we will go through your building with you. We call you back the same business day, Monday to Saturday, 9am to 6pm."
+      },
+      {
+        "heading": "Sources",
+        "body": "Market figures above are general ranges taken from the public pages below. Ranges are rounded to where the sources overlap.",
+        "list": [
+          "glassy.in, glass price guide 2026: https://glassy.in/glass-price-guide/ (accessed Nov 2026)",
+          "WoodenMax, glass elevation (structural glazing) price: https://woodenmax.in/products/glass-elevation (accessed Nov 2026)",
+          "Soga Design Studio, glass facade design for commercial buildings in India 2026: https://sogadesignstudio.com/glass-facade-design-commercial-buildings-india/ (accessed Nov 2026)",
+          "IndiaMART, structural glass glazing listings: https://dir.indiamart.com/impcat/structural-glass-glazing.html (accessed Nov 2026)",
+          "IndiaMART, structural glazing system listings: https://dir.indiamart.com/impcat/structural-glazing-system.html (accessed Nov 2026)"
+        ]
       }
     ]
   },
