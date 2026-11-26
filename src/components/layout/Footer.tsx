@@ -30,9 +30,7 @@ export const Footer = () => {
         <div className="fg-foot-g">
           {/* Brand */}
           <div className="space-y-5 fg-foot-c">
-            <div className="inline-block bg-paper p-4">
-              <img src="/Logofg.webp" alt="Fine Glaze" width={1920} height={603} className="h-11 w-auto" />
-            </div>
+            <img src="/Logofg.webp" alt="Fine Glaze" width={1920} height={603} className="h-11 w-auto" style={{ filter: "brightness(0) invert(1)", opacity: 0.95 }} />
             <p className="text-mute text-[15px] leading-relaxed">
               Facade design, fabrication, installation and maintenance from Pune and Mumbai.
               Our own fabrication unit is at {company.fabricationUnit.location}. Embassy REIT Best Vendor Performance 2024.

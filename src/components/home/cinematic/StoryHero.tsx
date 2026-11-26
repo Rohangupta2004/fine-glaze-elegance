@@ -288,7 +288,7 @@ const StoryHero = () => {
         top: "#e3cfa6",
         side: "#8a7448",
         front: (a, b) =>
-          grad(a, b, [[0, "rgba(52,30,36,.86)"], [0.42, "rgba(112,66,62,.76)"], [0.76, "rgba(214,128,70,.72)"], [1, "rgba(246,190,112,.68)"]]),
+          grad(a, b, [[0, "rgba(96,140,205,.9)"], [0.42, "rgba(150,186,226,.84)"], [0.76, "rgba(226,214,206,.8)"], [1, "rgba(252,226,192,.76)"]]),
       },
       spandrel: { top: "#c9b48a", side: "#6f5b38", face: "rgba(37,29,23,.96)" },
       sil: { top: "#fbf9f2", side: "#bdb8a9", face: "#f5f2ee" },
@@ -451,7 +451,7 @@ const StoryHero = () => {
       gl!.uniform1f(U.uSun, 0.42 + mx * 0.5);
       gl!.uniform1f(U.uN, L.n);
       gl!.uniform1f(U.uAsp, L.asp);
-      gl!.uniform1f(U.uNi, c.e2 * 0.72);
+      gl!.uniform1f(U.uNi, 0);
       gl!.uniform3fv(U.uRo, c.ro);
       gl!.uniform3fv(U.uF, c.f);
       gl!.uniform3fv(U.uR, c.r);

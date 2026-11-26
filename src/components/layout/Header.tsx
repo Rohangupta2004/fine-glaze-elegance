@@ -136,7 +136,8 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
               alt="Fine Glaze"
               width={1920}
               height={603}
-              className="h-10 lg:h-12 w-auto brightness-0 invert"
+              className="h-[38px] lg:h-11 w-auto"
+              style={{ filter: "brightness(0) invert(1)", opacity: 0.95 }}
             />
           </Link>
 
