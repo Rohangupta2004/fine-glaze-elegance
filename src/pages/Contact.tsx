@@ -215,14 +215,14 @@ const Contact = () => {
                         variant="outline"
                         className="mt-4"
                       >
-                        Send Another Message
+                        Send another message
                       </Button>
                     </div>
                   ) : (
                     <form onSubmit={handleSubmit} className="space-y-5">
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
                         <div className="space-y-1.5">
-                          <Label htmlFor="name" className="text-xs font-semibold text-mute">
+                          <Label htmlFor="name" className="text-[15px] font-medium text-paper">
                             Full Name *
                           </Label>
                           <Input
@@ -236,7 +236,7 @@ const Contact = () => {
                           />
                         </div>
                         <div className="space-y-1.5">
-                          <Label htmlFor="email" className="text-xs font-semibold text-mute">
+                          <Label htmlFor="email" className="text-[15px] font-medium text-paper">
                             Email *
                           </Label>
                           <Input
@@ -254,7 +254,7 @@ const Contact = () => {
 
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
                         <div className="space-y-1.5">
-                          <Label htmlFor="phone" className="text-xs font-semibold text-mute">
+                          <Label htmlFor="phone" className="text-[15px] font-medium text-paper">
                             Phone *
                           </Label>
                           <Input
@@ -269,7 +269,7 @@ const Contact = () => {
                           />
                         </div>
                         <div className="space-y-1.5">
-                          <Label htmlFor="projectType" className="text-xs font-semibold text-mute">
+                          <Label htmlFor="projectType" className="text-[15px] font-medium text-paper">
                             Project Type *
                           </Label>
                           <Select
@@ -294,7 +294,7 @@ const Contact = () => {
                       </div>
 
                       <div className="space-y-1.5">
-                        <Label htmlFor="message" className="text-xs font-semibold text-mute">
+                        <Label htmlFor="message" className="text-[15px] font-medium text-paper">
                           Project Details <span className="text-mute normal-case tracking-normal">(optional)</span>
                         </Label>
                         <Textarea
@@ -328,7 +328,7 @@ const Contact = () => {
                         <Button
                           type="submit"
                           disabled={isSubmitting}
-                          className="flex-1 bg-night-2 hover:bg-lamp/90 text-lamp-ink py-5 text-sm font-semibold tracking-wide transition-colors duration-300"
+                          className="flex-1 bg-lamp hover:bg-lamp/90 text-lamp-ink py-5 text-sm font-semibold tracking-wide transition-colors duration-300"
                         >
                           {isSubmitting ? (
                             <>
@@ -338,16 +338,16 @@ const Contact = () => {
                           ) : (
                             <>
                               <Send size={16} className="mr-2" />
-                              Send Enquiry
+                              Book a call
                             </>
                           )}
                         </Button>
                         <a
                           href="tel:+918369233566"
-                          className="flex-1 inline-flex items-center justify-center gap-2 border-2 border-lamp/40 text-lamp hover:bg-lamp/10 py-3 text-sm font-semibold tracking-wide transition-colors duration-200"
+                          className="flex-1 inline-flex items-center justify-center gap-2 border border-lamp/40 text-lamp hover:bg-lamp/10 py-3 text-sm font-semibold tracking-wide transition-colors duration-200"
                         >
                           <PhoneCall size={16} />
-                          Call Now
+                          Call us
                         </a>
                       </div>
 

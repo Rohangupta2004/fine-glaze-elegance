@@ -283,7 +283,7 @@ export default function AluminiumWindowsDoors() {
           <p className="mt-2 text-paper/80">Pune, PCMC, Mumbai, Navi Mumbai and Thane.</p>
           <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
             <button onClick={() => setQuoteOpen(true)} className="bg-night text-paper font-bold px-7 py-4 hover:bg-night-2">
-              Request a site measurement
+              Book a call
             </button>
             <a href={telHref} className="border-2 border-line text-paper font-bold px-7 py-4 hover:bg-night-2 hover:text-paper">
               Call {company.phone.mobileDisplay}

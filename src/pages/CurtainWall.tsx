@@ -480,11 +480,8 @@ export default function CurtainWall() {
       <section className="fg-sec">
         <div className="fg-wrap max-w-4xl text-center">
           <FadeIn>
-            <span className="inline-block bg-lamp/20 text-lamp text-xs font-bold px-4 py-1.5 mb-6">
-              Request a BOQ-Based Quotation
-            </span>
             <h2 className="text-3xl md:text-5xl font-extrabold mb-6 tracking-tight">
-              Request a Curtain Wall Quotation
+              Book a call
             </h2>
             <p className="text-paper/80 text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
               Planning a commercial facade, office tower, or IT park in Pune, Mumbai, or Navi Mumbai? Send drawings and we will prepare a BOQ-based quotation with glass specification options. Our office hours are Monday to Saturday, 09:00 to 18:00.
