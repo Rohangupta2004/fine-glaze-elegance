@@ -27,6 +27,7 @@ import {
 } from "lucide-react";
 import { toast } from "sonner";
 import SEO from "@/components/SEO";
+import PageHero from "@/components/common/PageHero";
 import { submitLead } from "@/lib/leads";
 
 /* ─── Reusable fade-in wrapper ─── */
@@ -145,42 +146,13 @@ const Contact = () => {
         }}
       />
 
-      {/* ═══════════════════════════════════════════
-          HERO — cinematic, short text
-          ═══════════════════════════════════════════ */}
-      <section className="relative h-[55vh] md:h-[65vh] min-h-[380px] overflow-hidden">
-        <img
-          src="/contact-hero.webp"
-          alt="Fine Glaze — Contact us"
-          className="absolute inset-0 w-full h-full object-cover"
-          loading="eager"
-          style={{ animation: "ctZoom 22s ease-in-out infinite alternate" }}
-        />
-        <style>{`@keyframes ctZoom { from { transform: scale(1.0); } to { transform: scale(1.06); } }`}</style>
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.20) 35%, rgba(0,0,0,0.50) 65%, rgba(0,0,0,0.92) 100%)",
-          }}
-        />
-
-        <div className="absolute inset-x-0 bottom-0 px-5 md:px-16 pb-8 md:pb-16">
-          <p className="text-lamp text-[10px] md:text-xs font-bold mb-3 md:mb-4">
-            Fine Glaze · Get In Touch
-          </p>
-          <h1
-            className="font-extrabold text-paper leading-tight tracking-tight"
-            style={{ fontSize: "clamp(2.2rem, 4.5vw, 3.5rem)" }}
-          >
-            Let's Build<br />
-            <span className="text-gradient-gold">Together.</span>
-          </h1>
-          <p className="mt-3 md:mt-4 text-mute text-sm md:text-lg max-w-md leading-relaxed">
-            Office hours are Monday to Saturday, 9am to 6pm.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        crumbs={[{ label: "Contact" }]}
+        title={<>Let&apos;s Build <span className="text-gradient-gold">Together.</span></>}
+        intro="Office hours are Monday to Saturday, 9am to 6pm."
+        image={{ src: "/contact-hero.webp", alt: "Fine Glaze, contact us" }}
+        source="contact_hero"
+      />
 
 
       {/* ═══════════════════════════════════════════

@@ -4,6 +4,8 @@ import { ArrowRight, Clock, Tag } from "lucide-react";
 import { blogPostsList } from "@/data/blog";
 import { useBlogImages } from "@/hooks/useBlogImages";
 import SEO from "@/components/SEO";
+import { CTASection } from "@/components/home/CTASection";
+import PageHero from "@/components/common/PageHero";
 import { getArticleImageSrcSet } from "@/data/articleVisuals";
 import { getArticleEnhancement } from "@/lib/articleSeo";
 
@@ -29,97 +31,50 @@ export default function Blog() {
         }}
       />
 
-      {/* HERO */}
-      <section className="relative pt-32 pb-16 text-paper overflow-hidden">
-        <div className="absolute inset-0">
-          <img src="/Glazing.webp" alt="" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-night-2" />
-        </div>
-        <div className="container mx-auto px-4 text-center max-w-3xl relative z-10">
-          <span className="inline-flex items-center gap-2 px-4 py-2 bg-transparent text-lamp text-sm font-bold border border-lamp/40 mb-6">
-            <Tag size={14} /> Knowledge Hub
-          </span>
-          <h1 className="text-3xl md:text-4xl font-extrabold mb-4">
-            Facade & Glazing <span className="text-gradient">Insights</span>
-          </h1>
-          <p className="text-paper/80 text-lg">
-            Pricing guides, technical comparisons, and expert tips to help you
-            make smarter facade decisions.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        crumbs={[{ label: "Articles" }]}
+        title={<>Facade &amp; Glazing <span className="text-gradient">Insights</span></>}
+        intro="Pricing guides, technical comparisons, and expert tips to help you make smarter facade decisions."
+        image={{ src: "/Glazing.webp", alt: "Glazing work by Fine Glaze" }}
+        source="blog_hero"
+      />
 
-      {/* BLOG GRID */}
       <section className="fg-sec">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="fg-wrap">
+          <ul className="fg-grid">
             {blogPostsList.map((post) => (
-              <Link
-                key={post.slug}
-                to={`/blog/${post.slug}`}
-                className="group bg-background overflow-hidden border hover:-translate-y-1 transition-all duration-300"
-              >
-                {/* Image */}
-                <div className="aspect-[16/9] overflow-hidden">
-                  <img
-                    src={getHeroImage(post.slug, post.heroImage)}
-                    srcSet={getArticleImageSrcSet(post.slug)}
-                    sizes="(max-width: 767px) calc(100vw - 2rem), (max-width: 1023px) 50vw, 33vw"
-                    alt={post.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    loading="lazy"
-                    width="600"
-                    height="338"
-                  />
-                </div>
-
-                {/* Content */}
-                <div className="p-6 space-y-3">
-                  <div className="flex items-center gap-3 text-xs text-muted-foreground">
-                    <span className="px-2.5 py-1 bg-primary/10 text-primary font-bold">
-                      {post.category}
-                    </span>
-                    <span className="flex items-center gap-1">
-                      <Clock size={12} /> {post.readTime}
-                    </span>
-                  </div>
-
-                  <h2 className="text-lg font-bold leading-snug group-hover:text-primary transition-colors">
-                    {getArticleEnhancement(post.slug)?.title ?? post.title}
-                  </h2>
-
-                  <p className="text-sm text-muted-foreground line-clamp-2">
-                    {getArticleEnhancement(post.slug)?.metaDescription ?? post.excerpt}
-                  </p>
-
-                  <div className="flex items-center gap-1 text-sm font-semibold text-primary pt-1">
-                    Read Article
-                    <ArrowRight
-                      size={14}
-                      className="group-hover:translate-x-1 transition-transform"
+              <li key={post.slug}>
+                <Link to={`/blog/${post.slug}`} className="group">
+                  <div className="aspect-[16/10] overflow-hidden bg-night-2">
+                    <img
+                      src={getHeroImage(post.slug, post.heroImage)}
+                      srcSet={getArticleImageSrcSet(post.slug)}
+                      sizes="(max-width: 767px) calc(100vw - 2rem), (max-width: 1023px) 50vw, 33vw"
+                      alt={post.title}
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                      width="600"
+                      height="338"
                     />
                   </div>
-                </div>
-              </Link>
+                  <p className="text-[15px] text-mute">
+                    {post.category}, {post.readTime}
+                  </p>
+                  <h2 className="font-semibold text-[clamp(18px,1.5vw,22px)] leading-snug tracking-[-0.015em] text-paper">
+                    {getArticleEnhancement(post.slug)?.title ?? post.title}
+                  </h2>
+                  <p className="text-[15.5px] text-mute line-clamp-2">
+                    {getArticleEnhancement(post.slug)?.metaDescription ?? post.excerpt}
+                  </p>
+                  <span className="mt-auto pt-2 text-[15px] text-lamp group-hover:underline underline-offset-4">Read article</span>
+                </Link>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-16 bg-night-2 text-paper text-center">
-        <div className="container mx-auto px-4">
-          <h2 className="text-2xl font-bold mb-3">Have a Facade Question?</h2>
-          <p className="text-mute mb-6">
-            Our team is happy to help. Get in touch to discuss your project.
-          </p>
-          <Link to="/contact">
-            <button className="bg-lamp hover:bg-lamp/90 text-lamp-ink px-8 py-3 font-semibold transition-colors">
-              Ask Our Experts
-            </button>
-          </Link>
-        </div>
-      </section>
+      <CTASection />
     </Layout>
   );
 }
