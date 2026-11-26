@@ -1,28 +1,28 @@
 /* Portfolio: dense ruled grid of rectangular project cards. */
 .pf-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 32px; margin-bottom: clamp(24px, 3vw, 40px); }
 .pf-grp { display: flex; flex-wrap: wrap; gap: 8px; }
-.pf-tg { appearance: none; cursor: pointer; font: inherit; font-size: 15px; font-weight: 500; min-height: 44px; padding: 0 16px; background: transparent; color: #aea597; border: 1px solid #3a2f26; transition: background 0.2s, color 0.2s; }
-.pf-tg:hover { color: #f5f2ee; border-color: #aea597; }
-.pf-tg[aria-pressed="true"] { background: #c6803a; color: #1a1009; border-color: #c6803a; }
-.pf-n { margin: 0 0 0 auto; font-size: 15px; color: #aea597; }
+.pf-tg { appearance: none; cursor: pointer; font: inherit; font-size: 15px; font-weight: 500; min-height: 44px; padding: 0 16px; background: transparent; color: #6f6152; border: 1px solid #ddd5ca; transition: background 0.2s, color 0.2s; }
+.pf-tg:hover { color: #2b1d12; border-color: #6f6152; }
+.pf-tg[aria-pressed="true"] { background: #9b5520; color: #fbf8f4; border-color: #9b5520; }
+.pf-n { margin: 0 0 0 auto; font-size: 15px; color: #6f6152; }
 .pf-grid > li > a.pf-card { padding: clamp(14px, 1.6vw, 22px); gap: 0; }
-.pf-fig { position: relative; aspect-ratio: 4 / 3; overflow: hidden; background: #251d17; margin-bottom: 16px; clip-path: inset(0); transition: clip-path 1s cubic-bezier(0.7, 0, 0.15, 1); }
+.pf-fig { position: relative; aspect-ratio: 4 / 3; overflow: hidden; background: #efebe5; margin-bottom: 16px; clip-path: inset(0); transition: clip-path 1s cubic-bezier(0.7, 0, 0.15, 1); }
 .pf-fig.armed:not(.seen) { clip-path: inset(0 100% 0 0); }
 .pf-fig img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
 /* Mullion cross: thin night lines fade in over the photo, dividing it into a 2x2 pane grid */
 .pf-m { position: absolute; inset: 0; pointer-events: none; opacity: 0; transition: opacity 0.35s ease; }
-.pf-m::before, .pf-m::after { content: ""; position: absolute; background: #18130f; }
+.pf-m::before, .pf-m::after { content: ""; position: absolute; background: #f9f7f4; }
 .pf-m::before { left: calc(50% - 2px); top: 0; bottom: 0; width: 4px; }
 .pf-m::after { top: calc(50% - 2px); left: 0; right: 0; height: 4px; }
 .pf-card:hover .pf-m, .pf-card:focus-visible .pf-m { opacity: 1; }
-.pf-t { margin: 0; font-family: 'Lora', ui-serif, Georgia, 'Times New Roman', serif; font-weight: 500; font-size: clamp(18px, 1.5vw, 21px); line-height: 1.25; letter-spacing: -0.01em; color: #f5f2ee; }
-.pf-p { margin: 4px 0 0; font-size: 15px; color: #aea597; }
+.pf-t { margin: 0; font-family: 'Lora', ui-serif, Georgia, 'Times New Roman', serif; font-weight: 500; font-size: clamp(18px, 1.5vw, 21px); line-height: 1.25; letter-spacing: -0.01em; color: #2b1d12; }
+.pf-p { margin: 4px 0 0; font-size: 15px; color: #6f6152; }
 .pf-d { margin: 14px 0 0; display: grid; gap: 4px; font-size: 15px; }
 .pf-d > div { display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 12px; }
-.pf-d dt { color: #aea597; font-family: 'Space Mono', ui-monospace, Menlo, monospace; font-size: 12px; letter-spacing: 0.02em; padding-top: 2px; }
-.pf-d dd { margin: 0; color: #f5f2ee; }
+.pf-d dt { color: #6f6152; font-family: 'Space Mono', ui-monospace, Menlo, monospace; font-size: 12px; letter-spacing: 0.02em; padding-top: 2px; }
+.pf-d dd { margin: 0; color: #2b1d12; }
 .pf-tags { list-style: none; margin: 14px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
-.pf-tags li { font-family: 'Space Mono', ui-monospace, Menlo, monospace; font-size: 12px; letter-spacing: 0.02em; line-height: 1; padding: 8px 10px; border: 1px solid #3a2f26; color: #f5f2ee; background: transparent; }
+.pf-tags li { font-family: 'Space Mono', ui-monospace, Menlo, monospace; font-size: 12px; letter-spacing: 0.02em; line-height: 1; padding: 8px 10px; border: 1px solid #ddd5ca; color: #2b1d12; background: transparent; }
 @media (prefers-reduced-motion: reduce) {
   .pf-fig, .pf-fig.armed:not(.seen) { clip-path: none; transition: none; }
   .pf-m { transition: none; }

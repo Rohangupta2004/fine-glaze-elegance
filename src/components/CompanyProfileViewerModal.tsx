@@ -214,7 +214,7 @@ export const CompanyProfileViewerModal: React.FC = () => {
         {/* Brand & Jump Dropdown */}
         <div className="flex items-center gap-2 sm:gap-3 min-w-0">
           <div className="flex items-center gap-2 shrink-0">
-            <span className="fg-logo"><img decoding="async" src="/Logofg.webp" alt="Fine Glaze" width={1920} height={603} /></span>
+            <img decoding="async" src="/Logofg.webp" alt="Fine Glaze" width={1920} height={603} className="fg-logo-img" />
             <span className="hidden md:inline-block text-xs text-lamp font-bold border-l border-line pl-3">
               Company Profile
             </span>
@@ -429,7 +429,7 @@ export const CompanyProfileViewerModal: React.FC = () => {
                 className="w-full h-full object-cover"
                 loading="lazy"
               />
-              <span className="absolute bottom-0 inset-x-0 bg-night/80 text-[13px] text-paper/80 px-1 py-0.5 truncate text-center font-bold">
+              <span className="absolute bottom-0 inset-x-0 bg-[rgba(24,19,15,0.8)] text-[13px] text-[#f5f2ee] px-1 py-0.5 truncate text-center font-bold">
                 {sec.slide}
               </span>
             </button>

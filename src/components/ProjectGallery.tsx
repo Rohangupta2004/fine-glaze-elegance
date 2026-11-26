@@ -20,7 +20,7 @@ export function ProjectGallery({ title, images }: { title: string; images: strin
         {images.map((src, index) => (
           <button key={src} type="button" onClick={() => setActive(index)} aria-label={`View ${title} photo ${index + 1} full size`} className="group relative overflow-hidden bg-night-2 border border-border focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-4">
             <img src={src} alt={`${title} — project photograph ${index + 1}`} loading="lazy" decoding="async" className="w-full h-64 object-contain transition-transform duration-300 motion-safe:group-hover:scale-105" />
-            <span className="absolute bottom-3 right-3 flex items-center gap-2 bg-night/75 text-paper text-xs px-3 py-2"><Expand size={14} /> View photo</span>
+            <span className="absolute bottom-3 right-3 flex items-center gap-2 bg-[rgba(24,19,15,0.78)] text-[#f5f2ee] text-xs px-3 py-2"><Expand size={14} /> View photo</span>
           </button>
         ))}
       </div>

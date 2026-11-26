@@ -131,9 +131,7 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
             aria-label="Fine Glaze, home"
             className="flex-shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-glass"
           >
-            <span className="fg-logo">
-              <img decoding="async" src="/Logofg.webp" alt="Fine Glaze" width={1920} height={603} />
-            </span>
+            <img decoding="async" src="/Logofg.webp" alt="Fine Glaze" width={1920} height={603} className="fg-logo-img" />
           </Link>
 
           {/* DESKTOP NAV */}
@@ -237,7 +235,7 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
             <button
               type="button"
               onClick={book}
-              className="h-11 px-[18px] text-[15px] font-medium text-paper bg-transparent shadow-[inset_0_0_0_1px_rgba(245,242,238,0.45)] transition-[filter,box-shadow] hover:shadow-[inset_0_0_0_1px_#c6803a] hover:text-lamp focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-glass"
+              className="h-11 px-[18px] text-[15px] font-medium text-paper bg-transparent shadow-[inset_0_0_0_1px_rgba(43,29,18,0.45)] transition-[filter,box-shadow] hover:shadow-[inset_0_0_0_1px_#9b5520] hover:text-lamp focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-glass"
             >
               Book a call
             </button>
@@ -259,12 +257,12 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
       {isMobileMenuOpen && (
         <>
           <div
-            className="fixed inset-0 z-[55] bg-night/70 lg:hidden"
+            className="fixed inset-0 z-[55] bg-[rgba(24,19,15,0.55)] lg:hidden"
             onClick={() => setIsMobileMenuOpen(false)}
           />
           <div className="fixed top-0 left-0 right-0 z-[60] fg-menu-m text-paper max-h-[90vh] overflow-y-auto lg:hidden animate-in slide-in-from-top duration-200">
             <div className="flex items-center justify-between px-5 h-16 border-b border-line sticky top-0 z-10">
-              <span className="fg-logo"><img decoding="async" src="/Logofg.webp" alt="Fine Glaze" width={1920} height={603} /></span>
+              <img decoding="async" src="/Logofg.webp" alt="Fine Glaze" width={1920} height={603} className="fg-logo-img" />
               <button type="button" onClick={() => setIsMobileMenuOpen(false)} aria-label="Close menu" className="p-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-glass">
                 <X size={24} />
               </button>

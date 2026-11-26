@@ -379,8 +379,8 @@ export const blogPosts: Record<string, BlogPost> = {
   "types-of-glass-for-building-facades": {
     "slug": "types-of-glass-for-building-facades",
     "title": "7 Types of Glass Used in Building Facades in India",
-    "metaTitle": "7 Types of Glass for Building Facades India | Complete Guide – Fine Glaze",
-    "metaDescription": "Learn about the 7 types of glass used in Indian building facades: toughened, laminated, DGU, Low-E, reflective, frosted & smart glass. Pros, cons, and costs explained.",
+    "metaTitle": "Types of Glass for Building Facades in India | Fine Glaze",
+    "metaDescription": "Seven facade glass types used in India: toughened, laminated, DGU, Low-E, reflective, frosted and smart glass. See what each does and where it fits.",
     "keywords": "types of glass for facades, toughened glass building, DGU glass facade, Low-E glass India, laminated glass facade, reflective glass building, smart glass",
     "date": "2026-02-19",
     "readTime": "7 min read",
@@ -806,44 +806,72 @@ export const blogPosts: Record<string, BlogPost> = {
   },
   "acp-vs-hpl-cladding-comparison": {
     "slug": "acp-vs-hpl-cladding-comparison",
-    "title": "ACP vs HPL Cladding: Comparison Guide (2026)",
-    "metaTitle": "ACP vs HPL Cladding: Comparison Guide (2026) | Fine Glaze",
-    "metaDescription": "Comprehensive ACP vs HPL cladding comparison guide. Fire safety compliance under NBC 2016, durability, weight and selection guidance by Fine Glaze.",
+    "title": "ACP vs HPL Cladding: Differences Explained",
+    "metaTitle": "ACP vs HPL Cladding: Differences Explained | Fine Glaze",
+    "metaDescription": "ACP vs HPL: ACP is two aluminium skins on a core, light and bendable; HPL is a rigid resin-bonded board. Compare fire, weight, shape and use in one table.",
     "keywords": "ACP vs HPL, ACP vs HPL cladding, aluminium composite panel vs HPL, ACP cladding India, HPL facade, building cladding comparison",
     "date": "2026-05-11",
     "readTime": "6 min read",
     "category": "Comparison Guide",
     "heroImage": "/Panel.webp",
-    "excerpt": "ACP vs HPL — a detailed comparison covering fire safety compliance, flexibility, weight and longevity for Indian building facades.",
+    "excerpt": "ACP vs HPL in one table: make-up, weight, bending, fire behaviour, finish and where each fits on an Indian building.",
     "content": [
       {
-        "heading": "ACP vs HPL: Key Differences Explained",
-        "body": "When comparing ACP vs HPL cladding for commercial or residential buildings in India, the choice impacts fire safety compliance, cost, and long-term weathering. From 10 metres away, high-quality HPL panels and PVDF-coated ACP panels look similar, but their structural behaviour and cost differ significantly. Learn more about our specialized [ACP aluminium cladding contractor](https://fineglaze.com/acp-aluminium-cladding) solutions."
+        "heading": "ACP vs HPL: the difference in short",
+        "body": [
+          "ACP (aluminium composite panel) is two thin aluminium skins bonded to a core. It is light and can be routed and folded into curves and folded edges. HPL (high pressure laminate) is a rigid board of resin-bonded paper or wood fibre. It is stiffer and heavier, and is used as flat panels.",
+          "Choose by building height and fire requirement first, then by shape, weight on the sub-frame and budget."
+        ]
       },
       {
-        "heading": "ACP vs HPL Performance Comparison",
-        "body": "A side-by-side comparison across technical parameters and material costs:",
+        "heading": "ACP vs HPL comparison table",
+        "body": "Typical features of each material for external cladding:",
         "table": {
           "headers": [
             "Parameter",
-            "ACP (Aluminium Composite)",
-            "HPL (High Pressure Laminate)"
+            "ACP (aluminium composite panel)",
+            "HPL (high pressure laminate)"
           ],
           "rows": [
             [
-              "Material",
-              "Two aluminium sheets + PE/FR core",
-              "Compressed paper + phenolic resin"
+              "Make-up",
+              "Two aluminium skins with a PE, FR or mineral core",
+              "Compressed paper or wood fibre with phenolic resin, with a decorative surface"
             ],
             [
-              "Fire Rating (FR grade)",
-              "Class B1 — self-extinguishing",
-              "Class B-s1-d0 — higher rating"
+              "Typical thickness",
+              "3 to 6 mm",
+              "6 to 12 mm"
             ],
             [
-              "Bending/Curves",
-              "Excellent — shapes easily",
-              "Rigid — flat panels only"
+              "Weight",
+              "About 5 to 7 kg per sq m at 4 mm",
+              "About 11 kg per sq m at 8 mm"
+            ],
+            [
+              "Bending and shaping",
+              "Routed and folded; can form curves and bullnoses",
+              "Rigid; flat panels only"
+            ],
+            [
+              "Fire behaviour",
+              "PE core is combustible; FR and A2 mineral cores are available",
+              "Fire-retardant grades are available; ask for the test certificate"
+            ],
+            [
+              "Finish",
+              "PVDF or polyester coil coating, wood-grain and stone prints",
+              "Decorative resin surface in solid, wood and stone looks"
+            ],
+            [
+              "Sheet price",
+              "About ₹120 to ₹260 per sq ft for 4 mm standard sheet, 2026 market range",
+              "No two credible public price sources found, so none is shown"
+            ],
+            [
+              "Usually chosen for",
+              "Low and mid-rise commercial buildings, curved or folded details",
+              "Hospitals, schools, hotels and high-rise residential"
             ]
           ]
         }
@@ -876,15 +904,15 @@ export const blogPosts: Record<string, BlogPost> = {
       },
       {
         "heading": "Expert Recommendation",
-        "body": "For commercial buildings in India under 15m, FR-grade ACP with PVDF coating offers the best balance of cost, compliance, and design flexibility. For high-rises and hospitals, A2 non-combustible ACP or HPL is recommended. Discover our full range of [ACP cladding systems](https://fineglaze.com/acp-aluminium-cladding) or Book a call to consult with Fine Glaze."
+        "body": "For commercial buildings in India under 15 m, FR-grade ACP with PVDF coating often gives a good balance of cost, compliance and design flexibility. For high-rises and hospitals, A2 non-combustible ACP or HPL is recommended. Book a call and we will go through your building with you."
       }
     ]
   },
   "curtain-wall-engineering-wind-load-india": {
     "slug": "curtain-wall-engineering-wind-load-india",
     "title": "Curtain Wall Engineering: Wind Load & Structural Design for Indian High-Rises",
-    "metaTitle": "Curtain Wall Engineering: Wind Load Calculations & Structural Design India | Fine Glaze",
-    "metaDescription": "Technical guide on curtain wall engineering for Indian high-rises — wind load calculations per IS 875, glass thickness selection, deflection limits, and connection design.",
+    "metaTitle": "Curtain Wall Wind Load Calculation per IS 875 | Fine Glaze",
+    "metaDescription": "Curtain wall wind load calculation per IS 875 Part 3: design pressure, glass thickness and deflection limits, mullion and anchor design for Indian high-rises.",
     "keywords": "curtain wall engineering India, wind load calculation facade, IS 875 wind load, curtain wall structural design, facade engineering India, glass thickness wind load, mullion design curtain wall",
     "date": "2026-05-10",
     "readTime": "14 min read",
@@ -990,8 +1018,8 @@ export const blogPosts: Record<string, BlogPost> = {
   "glass-selection-guide-u-value-shgc-is2553": {
     "slug": "glass-selection-guide-u-value-shgc-is2553",
     "title": "Glass Selection Guide for Facades: U-Value, SHGC & IS 2553 Compliance",
-    "metaTitle": "Glass Selection Guide: U-Value, SHGC, IS 2553 for Indian Facades | Fine Glaze",
-    "metaDescription": "Technical guide for architects on selecting facade glass in India — U-value, SHGC, visible light transmission, IS 2553 compliance, Low-E coatings, DGU specification.",
+    "metaTitle": "Glass Selection Guide: U-Value, SHGC, IS 2553 | Fine Glaze",
+    "metaDescription": "How to choose facade glass in India: U-value, SHGC and visible light transmission, IS 2553 safety glass, Low-E coatings and DGU specification by orientation.",
     "keywords": "glass selection facade India, U value glass facade, SHGC glass India, IS 2553 glass standard, Low-E glass India, DGU specification, facade glass types India",
     "date": "2026-05-08",
     "readTime": "12 min read",
@@ -1203,9 +1231,9 @@ export const blogPosts: Record<string, BlogPost> = {
   },
   "spider-glazing-system-guide-india": {
     "slug": "spider-glazing-system-guide-india",
-    "title": "Spider Glazing System Guide: Cost & Benefits India",
-    "metaTitle": "Spider Glazing System Guide: Cost & Benefits India | Fine Glaze",
-    "metaDescription": "Comprehensive spider glazing system guide in India. Fitting types, glass thickness, and structural design by Fine Glaze.",
+    "title": "Spider Glazing System: Types, Details and Uses",
+    "metaTitle": "Spider Glazing System: Types, Details and Uses | Fine Glaze",
+    "metaDescription": "Spider glazing system explained: components, 1 to 4 arm fitting types, typical 10 to 12 mm toughened glass, support options and details to check on drawings.",
     "keywords": "Spider glazing system, spider glazing India, point fixed glazing, spider fitting glass facade, spider glazing cost India, structural glazing point fixed",
     "date": "2026-04-25",
     "readTime": "9 min read",
@@ -1214,8 +1242,23 @@ export const blogPosts: Record<string, BlogPost> = {
     "excerpt": "Everything you need to know about specifying a spider glazing system in India — fittings, structural support, glass specs, and pricing.",
     "content": [
       {
-        "heading": "Overview of Spider Glazing System Technology",
-        "body": "A spider glazing system uses stainless steel point fittings — 'spiders' — bolted directly through glass at four points per panel. Unlike framed structural glazing, the glass appears to float seamlessly with minimal visible framework. This creates dramatic entrance atriums and showroom facades. To explore integrated frameless solutions, visit our [structural glazing contractor](https://fineglaze.com/structural-glazing) page."
+        "heading": "Spider glazing details in short",
+        "body": [
+          "A spider glazing system holds glass panels at their corners with stainless steel spider fittings. Each fitting is bolted through a hole drilled in the glass, so the glass is supported at points instead of along its edges. The loads pass from the glass to the spider arms, then to a support structure such as tension rods, a steel truss or glass fins.",
+          "It is used for entrance atriums, lobbies, showroom fronts and canopies where a clear, frameless look is wanted. Industry norms below are general; the final thickness, hole position and fixing detail come from the project engineer's calculation."
+        ]
+      },
+      {
+        "heading": "Spider glazing components",
+        "body": "A typical spider glazing assembly has these parts:",
+        "list": [
+          "Glass panel: toughened and heat-soaked, or laminated, with drilled holes (usually four per panel).",
+          "Spider fitting: a stainless steel body with one, two or four arms, commonly SS 304, or SS 316 near the coast.",
+          "Bolt: a countersunk or button-head bolt through the glass, with a bush or gasket so glass never touches metal.",
+          "Articulated joint: lets the glass rotate slightly under wind and movement without loading the holes.",
+          "Support structure: tension rods, steel trusses, glass fins or cables, fixed back to the building.",
+          "Weather joint: a silicone seal between panels that keeps out water; it does not carry the load."
+        ]
       },
       {
         "heading": "Spider Glazing System Fitting Types & Applications",
@@ -1256,12 +1299,14 @@ export const blogPosts: Record<string, BlogPost> = {
         }
       },
       {
-        "heading": "Glass Specification for Spider Glazing System",
-        "body": "Because panel loads concentrate at bolt holes, precise glass engineering is essential:",
+        "heading": "Glass specification for spider glazing",
+        "body": "Panel loads concentrate at the bolt holes, so glass engineering matters. Typical industry practice:",
         "list": [
-          "Minimum thickness: 10mm or 12mm fully toughened glass.",
-          "Heat-soaking (IS 14900) is mandatory to eliminate spontaneous nickel sulphide breakage.",
-          "Laminated glass is required for overhead canopies — explore our [glass skylights & canopies](https://fineglaze.com/skylights-canopies)."
+          "Thickness: commonly 10 mm or 12 mm fully toughened glass for smaller panels; thicker glass, or laminated glass, for larger panels, high wind or overhead use.",
+          "Thermal control: DGU (double glazed unit) panels are used where heat and sound need controlling.",
+          "Heat-soaking (IS 14900) is recommended to reduce the risk of spontaneous nickel sulphide breakage.",
+          "Laminated glass is used for overhead canopies.",
+          "Hole position, hole diameter and edge distance follow the glass supplier's limits and the engineer's calculation."
         ]
       },
       {
@@ -1278,8 +1323,8 @@ export const blogPosts: Record<string, BlogPost> = {
         "body": "The cost depends on the support system (rod-supported spider, glass fin, or steel truss with spider fittings), the glass thickness and specification, the grade of fittings, the support structure, and the height and access."
       },
       {
-        "heading": "Expert Guidance & Site Consultation",
-        "body": "Fine Glaze specializes in engineering and installing spider glazing systems for corporate headquarters, 5-star hotels, and airport terminals. Book a call to discuss your project."
+        "heading": "Book a call",
+        "body": "Book a call and we will go through your building with you. We call you back the same business day, Monday to Saturday, 9am to 6pm."
       }
     ]
   },
