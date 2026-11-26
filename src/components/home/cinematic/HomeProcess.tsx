@@ -6,7 +6,7 @@ const STEPS: { name: string; line: string; photo?: Photo }[] = [
     name: "Survey and shop drawings",
     line: "We measure on site and prepare the drawings for approval.",
     photo: {
-      src: "/images/profile/ss-glass-railing-shop-drawing-jindal-house.webp",
+      src: "/projects/jindal-house-46-4.webp",
       alt: "Shop drawing of a stainless steel glass railing for Jindal House, Mumbai",
       w: 879,
       h: 554,
@@ -18,7 +18,7 @@ const STEPS: { name: string; line: string; photo?: Photo }[] = [
     name: "Fabrication at our Pune unit",
     line: `Aluminium, steel and ACP are cut and assembled at ${company.fabricationUnit.location}, with checks at source.`,
     photo: {
-      src: "/images/profile/acp-sheets-on-site-salsette-27.webp",
+      src: "/projects/salsette-27-32-1.webp",
       alt: "Aluminium composite panel sheets stacked on site at Salsette-27, Byculla East, Mumbai",
       w: 761,
       h: 720,
@@ -40,7 +40,7 @@ const STEPS: { name: string; line: string; photo?: Photo }[] = [
     name: "Checks and handover",
     line: "We clear the snag list with you and hand over drawings and maintenance information.",
     photo: {
-      src: "/images/profile/glass-entrance-embassy-techzone.webp",
+      src: "/projects/embassy-techzone-41-2.webp",
       alt: "New glass entrance at Embassy TechZone, Hinjewadi, Pune",
       w: 1280,
       h: 606,

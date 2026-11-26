@@ -109,24 +109,19 @@ const About = () => {
 
               <figure className="mt-5 overflow-hidden border border-border bg-card">
                 <img
-                  src="/fine-glaze-office.webp"
-                  alt="Fine Glaze office"
+                  src="/images/profile/award-best-vendor-performance-2024.webp"
+                  alt="Best Vendor Performance 2024 trophy and certificate of appreciation from Embassy REIT"
                   className="w-full h-auto"
-                  width={1600}
-                  height={737}
+                  width={1523}
+                  height={941}
+                  sizes="(max-width: 1024px) 100vw, 448px"
                   loading="lazy"
                   decoding="async"
                 />
-                <figcaption className="px-5 py-3 text-sm">Our office, Pune</figcaption>
+                <figcaption className="px-5 py-3 text-sm">
+                  {company.award.title}, awarded by {company.award.by}. {company.award.citation}
+                </figcaption>
               </figure>
-
-              <div className="mt-5 bg-primary text-primary-foreground p-5">
-                <Award size={32} className="mb-2" />
-                <p className="font-semibold">{company.award.title}</p>
-                <p className="text-sm text-primary-foreground/90">
-                  {company.award.by} — {company.award.citation}
-                </p>
-              </div>
             </div>
 
             <div
@@ -265,6 +260,40 @@ const About = () => {
               </article>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Our office */}
+      <section className="fg-sec" aria-labelledby="office-heading">
+        <div className="fg-wrap">
+          <h2 id="office-heading" className="fg-h2">Our office</h2>
+          <div className="grid gap-4 md:grid-cols-3">
+            {[
+              { src: "/images/profile/office-director-room.webp", caption: "Director's Office", alt: "Director's office at the Fine Glaze head office in Pune" },
+              { src: "/images/profile/office-design-project-room.webp", caption: "Design & Project Office", alt: "Design and project office at the Fine Glaze head office in Pune" },
+              { src: "/images/profile/office-client-meeting-room.webp", caption: "Client Meeting Room", alt: "Client meeting room at the Fine Glaze head office in Pune" },
+            ].map((r) => (
+              <figure key={r.src} className="border border-line bg-night-2">
+                <img src={r.src} alt={r.alt} width={1600} height={493} sizes="(max-width: 768px) 100vw, 33vw" loading="lazy" decoding="async" className="w-full h-auto" />
+                <figcaption className="px-4 py-3 text-sm text-mute">{r.caption}</figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Where we work */}
+      <section className="fg-sec" aria-labelledby="where-heading">
+        <div className="fg-wrap grid gap-10 md:grid-cols-2 items-center">
+          <div>
+            <h2 id="where-heading" className="fg-h2">Where we work</h2>
+            <p className="text-mute max-w-prose">
+              Based in Pune and Mumbai, taking projects across India.
+            </p>
+          </div>
+          <figure className="border border-line" style={{ background: "#f5f2ee" }}>
+            <img src="/images/profile/india-map-pune-mumbai.webp" alt="Map of India with Pune and Mumbai marked in Maharashtra" width={1516} height={1024} sizes="(max-width: 768px) 100vw, 40vw" loading="lazy" decoding="async" className="w-full h-auto max-h-[420px] object-contain" />
+          </figure>
         </div>
       </section>
 

@@ -237,6 +237,25 @@ export default function QualitySafety() {
         </div>
       </section>
 
+      {/* SITE PHOTOS */}
+      <section className="fg-sec" aria-labelledby="site-photos">
+        <div className="fg-wrap">
+          <h2 id="site-photos" className="fg-h2">On site</h2>
+          <div className="grid gap-4 md:grid-cols-3">
+            {[
+              { src: "/projects/nanavati-max-hospital-39-2.webp", w: 1073, h: 900, alt: "Site crew installing ACP panels from a scaffold at Nanavati Max Hospital, Vile Parle, Mumbai", cap: "ACP panel installation, Nanavati Max Hospital, Vile Parle" },
+              { src: "/projects/nanavati-max-hospital-39-3.webp", w: 1071, h: 899, alt: "Site crew in safety gear at facade shutter louvers, Nanavati Max Hospital, Vile Parle, Mumbai", cap: "Site crew, Nanavati Max Hospital, Vile Parle" },
+              { src: "/images/profile/award-best-vendor-performance-2024.webp", w: 1523, h: 941, alt: "Best Vendor Performance 2024 trophy and certificate of appreciation from Embassy REIT", cap: "Best Vendor Performance 2024, awarded by Embassy REIT" },
+            ].map((f) => (
+              <figure key={f.src} className="border border-line bg-night-2">
+                <img src={f.src} alt={f.alt} width={f.w} height={f.h} sizes="(max-width: 768px) 100vw, 33vw" loading="lazy" decoding="async" className="w-full aspect-[4/3] object-cover" />
+                <figcaption className="px-4 py-3 text-sm text-mute">{f.cap}</figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* PREQUALIFICATION */}
       <section className="py-16 bg-night-2 border-t border-line">
         <div className="fg-wrap grid lg:grid-cols-[1.5fr_1fr] gap-8 items-center">

@@ -441,10 +441,11 @@ const Contact = () => {
 
                 <div className="relative">
                   <img
-                    src="/fine-glaze-office.webp"
-                    alt="Fine Glaze office"
-                    width={1600}
-                    height={737}
+                    src="/fine-glaze-storefront.webp"
+                    alt="Fine Glaze office frontage with signage listing the full range of services"
+                    width={1243}
+                    height={1034}
+                    sizes="(max-width: 1024px) 100vw, 440px"
                     loading="lazy"
                     decoding="async"
                     className="w-full h-auto mb-5 border border-line"
