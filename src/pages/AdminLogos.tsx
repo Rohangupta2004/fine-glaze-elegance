@@ -186,7 +186,7 @@ export default function AdminLogos() {
               <Lock className="w-5 h-5 text-lamp" />
             </div>
             <div>
-              <h1 className="text-lg font-bold">Client Logos</h1>
+              <h1 className="text-lg font-medium">Client Logos</h1>
               <p className="text-xs text-muted-foreground">Admin access</p>
             </div>
           </div>
@@ -220,7 +220,7 @@ export default function AdminLogos() {
             <ArrowLeft size={20} />
           </a>
           <div>
-            <h1 className="text-xl font-bold">Client Logos</h1>
+            <h1 className="text-xl font-medium">Client Logos</h1>
             <p className="text-xs text-muted-foreground">
               Upload logos for the homepage carousel
             </p>
@@ -231,7 +231,7 @@ export default function AdminLogos() {
       <div className="max-w-4xl mx-auto px-4 py-8 space-y-8">
         {/* Upload Section */}
         <div className="bg-night border p-6 space-y-4">
-          <h2 className="text-lg font-semibold flex items-center gap-2">
+          <h2 className="text-lg font-medium flex items-center gap-2">
             <ImagePlus size={20} className="text-lamp" />
             Add Client Logo
           </h2>
@@ -280,7 +280,7 @@ export default function AdminLogos() {
         {/* Logos List */}
         <div className="bg-night border">
           <div className="p-4 border-b">
-            <h2 className="font-semibold">
+            <h2 className="font-medium">
               Uploaded Logos ({logos.length})
             </h2>
             <p className="text-xs text-muted-foreground mt-1">

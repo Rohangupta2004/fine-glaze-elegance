@@ -345,7 +345,7 @@ export default function ServiceDetail() {
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-lamp/20 border border-lamp/30 text-lamp text-sm font-bold mb-6">
             <Building2 size={16} /> Commercial Facade Engineering
           </div>
-          <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 leading-tight">
+          <h1 className="text-2xl md:text-4xl lg:text-5xl font-medium mb-4 md:mb-6 leading-tight">
             Advanced{" "}
             <span className="text-lamp">{serviceData.label}</span>
           </h1>
@@ -369,14 +369,14 @@ export default function ServiceDetail() {
       <section className="fg-sec">
         <div className="container mx-auto px-4 max-w-6xl grid lg:grid-cols-2 gap-16 items-center">
           <div>
-            <h2 className="text-3xl font-bold text-paper mb-6">
+            <h2 className="text-3xl font-medium text-paper mb-6">
               Precision Engineering & Execution
             </h2>
             <p className="text-lg text-mute leading-relaxed mb-8">
               {serviceData.extendedDesc}
             </p>
 
-            <h3 className="text-xl font-bold text-paper mb-6 flex items-center gap-2">
+            <h3 className="text-xl font-medium text-paper mb-6 flex items-center gap-2">
               <ShieldCheck className="text-lamp" /> Core Advantages
             </h3>
             <div className="space-y-4">
@@ -417,7 +417,7 @@ export default function ServiceDetail() {
             <span className="inline-block text-lamp font-bold text-xs mb-3">
               All Variants & Types
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-paper mb-4">
+            <h2 className="text-3xl md:text-4xl font-medium text-paper mb-4">
               {serviceData.label}:{" "}
               <span className="text-lamp">Which Type Suits You?</span>
             </h2>
@@ -452,7 +452,7 @@ export default function ServiceDetail() {
                 <div className="bg-night-2 px-6 py-5">
                   <div className="flex items-start justify-between gap-3">
                     <div>
-                      <h3 className="text-lg font-bold text-paper leading-tight">
+                      <h3 className="text-lg font-medium text-paper leading-tight">
                         {type.name}
                       </h3>
                       <p className="text-mute text-sm mt-1">
@@ -536,7 +536,7 @@ export default function ServiceDetail() {
 
           {/* Comparison CTA */}
           <div className="mt-12 text-center p-8 bg-night border border-line">
-            <h3 className="text-xl font-bold text-paper mb-2">
+            <h3 className="text-xl font-medium text-paper mb-2">
               Not sure which type you need?
             </h3>
             <p className="text-mute mb-6">
@@ -557,7 +557,7 @@ export default function ServiceDetail() {
       {/* ── LOCALIZED EXECUTION ZONES ── */}
       <section className="py-20 bg-night border-t border-line">
         <div className="container px-4 max-w-5xl">
-          <h2 className="text-3xl font-bold text-paper mb-4">
+          <h2 className="text-3xl font-medium text-paper mb-4">
             Localized Execution Zones
           </h2>
           <p className="text-mute mb-10 max-w-2xl mx-auto">

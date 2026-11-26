@@ -160,7 +160,7 @@ export default function AdminBlogImages() {
         <Toaster richColors position="top-center" />
         <div className="w-full max-w-sm space-y-4 text-center">
           <Lock className="mx-auto text-lamp" size={40} />
-          <h1 className="text-2xl font-bold text-paper">Blog Images Admin</h1>
+          <h1 className="text-2xl font-medium text-paper">Blog Images Admin</h1>
           <p className="text-mute text-sm">
             Upload hero images for blog articles
           </p>
@@ -213,7 +213,7 @@ export default function AdminBlogImages() {
               <ArrowLeft size={20} />
             </a>
             <div>
-              <h1 className="text-lg font-bold">Blog Images</h1>
+              <h1 className="text-lg font-medium">Blog Images</h1>
               <p className="text-xs text-mute">
                 {uploadedCount}/{totalCount} articles have custom images
               </p>
@@ -282,7 +282,7 @@ export default function AdminBlogImages() {
                           className="text-mute shrink-0"
                         />
                       )}
-                      <h3 className="text-sm font-semibold truncate">
+                      <h3 className="text-sm font-medium truncate">
                         {post.title}
                       </h3>
                     </div>

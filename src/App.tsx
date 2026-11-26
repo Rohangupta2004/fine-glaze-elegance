@@ -48,7 +48,6 @@ const LegacyLocationRedirect = lazy(() => import("./pages/LegacyLocationRedirect
 const AluminiumWindowsDoors = lazy(() => import("./pages/AluminiumWindowsDoors"));
 const QualitySafety = lazy(() => import("./pages/QualitySafety"));
 const ServiceRequest = lazy(() => import("./pages/ServiceRequest"));
-const FacadeCostEstimator = lazy(() => import("./pages/FacadeCostEstimator"));
 
 // 25 SEO pages
 const CurtainWallPune = lazy(() => import("./pages/CurtainWallPune"));
@@ -136,7 +135,7 @@ export const routes = [
       { path: "aluminium-windows-doors", element: <L><AluminiumWindowsDoors /></L> },
       { path: "quality-safety", element: <L><QualitySafety /></L> },
       { path: "service-request", element: <L><ServiceRequest /></L> },
-      { path: "facade-cost-estimator", element: <L><FacadeCostEstimator /></L> },
+      { path: "facade-cost-estimator", element: <Navigate to="/contact" replace /> },
       { path: "services/structural-glazing", element: <Navigate to="/structural-glazing" replace /> },
       { path: "services/curtain-wall", element: <Navigate to="/curtain-wall-systems" replace /> },
       { path: "services/acp-cladding", element: <Navigate to="/acp-aluminium-cladding" replace /> },

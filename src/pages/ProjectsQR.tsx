@@ -96,7 +96,7 @@ const ProjectsQR = () => {
                 <p className="text-xs font-extrabold tracking-normal text-[#8a541f]">
                   Compact project reference
                 </p>
-                <h1 className="truncate text-2xl font-extrabold leading-none tracking-normal sm:text-3xl">
+                <h1 className="truncate text-2xl font-medium leading-none tracking-normal sm:text-3xl">
                   Fine Glaze
                 </h1>
               </div>
@@ -132,7 +132,7 @@ const ProjectsQR = () => {
               <p className="text-xs font-extrabold tracking-normal text-[#8a541f]">
                 Project owners and new clients
               </p>
-              <h2 className="mt-2 max-w-3xl text-2xl font-extrabold leading-tight tracking-normal sm:text-4xl">
+              <h2 className="mt-2 max-w-3xl text-2xl font-medium leading-tight tracking-normal sm:text-4xl">
                 Projects and direct contact in one scan.
               </h2>
               <div className="mt-5 flex flex-wrap gap-2">
@@ -179,7 +179,7 @@ const ProjectsQR = () => {
                 <p className="text-xs font-extrabold tracking-normal text-[#8a541f]">
                   Project references
                 </p>
-                <h2 className="mt-1 text-2xl font-extrabold leading-tight tracking-normal sm:text-4xl">
+                <h2 className="mt-1 text-2xl font-medium leading-tight tracking-normal sm:text-4xl">
                   Selected work from Fine Glaze
                 </h2>
               </div>
@@ -224,7 +224,7 @@ const ProjectsQR = () => {
                       {project.status}
                       {project.year ? ` ${project.year}` : ""}
                     </span>
-                    <h3 className="mt-2 text-lg font-extrabold leading-snug">{project.title}</h3>
+                    <h3 className="mt-2 text-lg font-medium leading-snug">{project.title}</h3>
                     <p className="mt-1 flex items-start gap-1 text-sm text-[#735332]">
                       <MapPin size={15} className="mt-0.5 flex-none" />
                       {project.location}

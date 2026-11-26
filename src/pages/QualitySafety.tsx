@@ -84,12 +84,12 @@ export default function QualitySafety() {
       {/* 8 STAGES */}
       <section className="fg-sec" aria-labelledby="stages">
         <div className="fg-wrap">
-          <h2 id="stages" className="text-2xl md:text-4xl font-bold text-foreground">Eight controlled stages on every package</h2>
+          <h2 id="stages" className="text-2xl md:text-4xl font-medium text-foreground">Eight controlled stages on every package</h2>
           <ol className="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {company.deliveryStages.map((s, i) => (
               <li key={s.title} className="border border-border bg-card p-5">
                 <p className="text-xs font-bold text-lamp">{String(i + 1).padStart(2, "0")}</p>
-                <h3 className="mt-1 font-semibold text-foreground">{s.title}</h3>
+                <h3 className="mt-1 font-medium text-foreground">{s.title}</h3>
                 <p className="mt-2 text-sm text-muted-foreground">{s.desc}</p>
               </li>
             ))}
@@ -102,7 +102,7 @@ export default function QualitySafety() {
         <div className="fg-wrap grid lg:grid-cols-2 gap-8">
           <article className="bg-card border border-border p-7">
             <PenTool className="h-7 w-7 text-primary" aria-hidden="true" />
-            <h2 id="design" className="mt-3 text-2xl font-bold text-foreground">Design &amp; engineering, in-house</h2>
+            <h2 id="design" className="mt-3 text-2xl font-medium text-foreground">Design &amp; engineering, in-house</h2>
             <p className="mt-3 text-muted-foreground">
               Every package is drawn in-house before anything is cut, so the workshop and the site work from one approved set.
             </p>
@@ -115,7 +115,7 @@ export default function QualitySafety() {
           </article>
           <article className="bg-card border border-border p-7">
             <Factory className="h-7 w-7 text-primary" aria-hidden="true" />
-            <h2 className="mt-3 text-2xl font-bold text-foreground">Our fabrication unit — {company.fabricationUnit.location}</h2>
+            <h2 className="mt-3 text-2xl font-medium text-foreground">Our fabrication unit — {company.fabricationUnit.location}</h2>
             <p className="mt-3 text-muted-foreground">
               Our own unit, feeding both Pune and Mumbai sites.
             </p>
@@ -134,12 +134,12 @@ export default function QualitySafety() {
         <div className="fg-wrap">
           <div className="flex items-center gap-3">
             <ClipboardCheck className="h-7 w-7 text-primary" aria-hidden="true" />
-            <h2 id="qa" className="text-2xl md:text-4xl font-bold text-foreground">Checked at source, at site, and before handover</h2>
+            <h2 id="qa" className="text-2xl md:text-4xl font-medium text-foreground">Checked at source, at site, and before handover</h2>
           </div>
           <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {company.qualityStages.map((q) => (
               <div key={q.title} className="border border-border bg-card p-5">
-                <h3 className="font-semibold text-foreground">{q.title}</h3>
+                <h3 className="font-medium text-foreground">{q.title}</h3>
                 <p className="mt-2 text-sm text-muted-foreground">{q.desc}</p>
               </div>
             ))}
@@ -161,17 +161,17 @@ export default function QualitySafety() {
         <div className="fg-wrap">
           <div className="flex items-center gap-3">
             <HardHat className="h-7 w-7 text-lamp" aria-hidden="true" />
-            <h2 id="safety" className="text-2xl md:text-4xl font-bold">Facade work is height work — we manage it that way</h2>
+            <h2 id="safety" className="text-2xl md:text-4xl font-medium">Facade work is height work — we manage it that way</h2>
           </div>
           <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {company.safety.map((s) => (
               <div key={s.title} className="border border-line bg-night-2 p-5">
-                <h3 className="font-semibold">{s.title}</h3>
+                <h3 className="font-medium">{s.title}</h3>
                 <p className="mt-2 text-sm text-mute">{s.desc}</p>
               </div>
             ))}
             <div className="border border-line bg-night-2 p-5">
-              <h3 className="font-semibold">Certification status</h3>
+              <h3 className="font-medium">Certification status</h3>
               <p className="mt-2 text-sm text-mute">{company.isoStatus}. We will say so plainly until it is granted.</p>
             </div>
           </div>
@@ -184,7 +184,7 @@ export default function QualitySafety() {
         <div className="fg-wrap">
           <div className="flex items-center gap-3">
             <Layers className="h-7 w-7 text-primary" aria-hidden="true" />
-            <h2 id="materials" className="text-2xl md:text-4xl font-bold text-foreground">Material partners</h2>
+            <h2 id="materials" className="text-2xl md:text-4xl font-medium text-foreground">Material partners</h2>
           </div>
           <p className="mt-3 text-muted-foreground max-w-2xl">Brands are matched to the project specification and the consultant's approved list.</p>
           <dl className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -204,7 +204,7 @@ export default function QualitySafety() {
         <div className="fg-wrap grid lg:grid-cols-2 gap-10 items-start">
           <div>
             <ShieldCheck className="h-7 w-7 text-primary" aria-hidden="true" />
-            <h2 id="after" className="mt-3 text-2xl md:text-4xl font-bold text-foreground">After handover, we are still your facade team</h2>
+            <h2 id="after" className="mt-3 text-2xl md:text-4xl font-medium text-foreground">After handover, we are still your facade team</h2>
             <p className="mt-3 text-muted-foreground">
               Maintenance is a core service line for us, run with the same drawing control, safety protocol and snag discipline as new work —
               for example our running contract at Embassy Techzone, Hinjewadi for Embassy REIT.
@@ -224,7 +224,7 @@ export default function QualitySafety() {
       {/* HOW TO VERIFY */}
       <section className="fg-sec" aria-labelledby="verify">
         <div className="fg-wrap">
-          <h2 id="verify" className="text-2xl md:text-4xl font-bold text-foreground">How to check any facade contractor — including us</h2>
+          <h2 id="verify" className="text-2xl md:text-4xl font-medium text-foreground">How to check any facade contractor — including us</h2>
           <p className="mt-3 text-muted-foreground">Seven questions that separate a capable contractor from a good brochure.</p>
           <ol className="mt-8 space-y-3">
             {VERIFY_CHECKLIST.map((v, i) => (
@@ -241,7 +241,7 @@ export default function QualitySafety() {
       <section className="py-16 bg-lamp">
         <div className="fg-wrap grid lg:grid-cols-[1.5fr_1fr] gap-8 items-center">
           <div>
-            <h2 className="text-2xl md:text-3xl font-extrabold text-paper">Registering us as a vendor?</h2>
+            <h2 className="text-2xl md:text-3xl font-medium text-paper">Registering us as a vendor?</h2>
             <p className="mt-2 text-paper/80">
               We can send our company profile, GST registration ({company.gstin}), trademark details, project references and
               work-at-height documentation for prequalification.

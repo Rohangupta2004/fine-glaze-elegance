@@ -14,16 +14,16 @@ export default {
   	},
   	extend: {
   		colors: {
-  			night: '#060a13',
-  			'night-2': '#0d1422',
-  			paper: '#ece8df',
-  			mute: '#9aa6b8',
-  			line: '#243044',
-  			glass: '#86c2ae',
-  			lamp: '#dd9a5b',
-  			'lamp-ink': '#1a0e04',
-  			stone: {50:'#f4f5f7',100:'#e9ecf0',200:'#d5dae2',300:'#b4bcc9',400:'#8a94a6',500:'#667085',600:'#4a5468',700:'#343d50',800:'#1c2434',900:'#0d1422',950:'#060a13'},
-  			amber: {50:'#fbf3ea',100:'#f6e3cf',200:'#eecba6',300:'#e6b380',400:'#dd9a5b',500:'#c98243',600:'#a96831',700:'#865126',800:'#663e1f',900:'#4a2d18',950:'#2a190c'},
+  			night: '#18130f',
+  			'night-2': '#251d17',
+  			paper: '#f5f2ee',
+  			mute: '#aea597',
+  			line: '#3a2f26',
+  			glass: '#c9b48a',
+  			lamp: '#c6803a',
+  			'lamp-ink': '#1a1009',
+  			stone: {50:'#f7f5f2',100:'#ece8e2',200:'#d9d3ca',300:'#bdb5a8',400:'#9a9181',500:'#776e61',600:'#564e44',700:'#3d362e',800:'#2a231c',900:'#251d17',950:'#18130f'},
+  			amber: {50:'#fbf3ea',100:'#f6e3cf',200:'#eecba6',300:'#e6b380',400:'#d9975a',500:'#c6803a',600:'#a96831',700:'#865126',800:'#663e1f',900:'#4a2d18',950:'#2a190c'},
   			border: 'hsl(var(--border))',
   			input: 'hsl(var(--input))',
   			ring: 'hsl(var(--ring))',
@@ -93,10 +93,13 @@ export default {
   				'sans-serif'
   			],
   			display: [
-  				'Inter',
-  				'Impact',
-  				'Arial Narrow',
-  				'sans-serif'
+  				'Lora',
+  				'ui-serif',
+  				'Georgia',
+  				'Cambria',
+  				'Times New Roman',
+  				'Times',
+  				'serif'
   			],
   			serif: [
   				'Lora',

@@ -126,7 +126,7 @@ const About = () => {
               <span className="text-primary font-medium text-sm">
                 Our Story
               </span>
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+              <h2 className="text-3xl md:text-4xl font-medium text-foreground">
                 Building{" "}
                 <span className="text-gradient-subtle">Trust</span>{" "}
                 Through Excellence
@@ -169,7 +169,7 @@ const About = () => {
               Company Overview
             </span>
 
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+            <h2 className="text-3xl md:text-4xl font-medium text-foreground">
               See Fine Glaze{" "}
               <span className="text-gradient-subtle">in Action</span>
             </h2>
@@ -202,7 +202,7 @@ const About = () => {
               <div className="w-14 h-14 border border-line flex items-center justify-center">
                 <Target size={28} className="text-primary" />
               </div>
-              <h3 className="text-2xl font-bold text-foreground">
+              <h3 className="text-2xl font-medium text-foreground">
                 Our <span className="text-gradient-subtle">Mission</span>
               </h3>
               <p className="text-muted-foreground">
@@ -214,7 +214,7 @@ const About = () => {
               <div className="w-14 h-14 border border-line flex items-center justify-center">
                 <Eye size={28} className="text-primary" />
               </div>
-              <h3 className="text-2xl font-bold text-foreground">
+              <h3 className="text-2xl font-medium text-foreground">
                 Our <span className="text-gradient-subtle">Vision</span>
               </h3>
               <p className="text-muted-foreground">
@@ -230,7 +230,7 @@ const About = () => {
         <div className="fg-wrap">
           <div className="space-y-3 mb-12 max-w-2xl">
             <span className="text-primary font-medium text-sm">Our Team</span>
-            <h2 id="team-heading" className="text-3xl md:text-4xl font-bold text-foreground">
+            <h2 id="team-heading" className="text-3xl md:text-4xl font-medium text-foreground">
               The people who answer for your facade
             </h2>
             <p className="text-muted-foreground">
@@ -241,12 +241,12 @@ const About = () => {
           <div className="grid lg:grid-cols-3 gap-6">
             <article className="lg:row-span-2 border border-lamp/30 bg-lamp/5 p-6 space-y-3">
               <p className="text-xs font-bold text-lamp">{company.founder.role}</p>
-              <h3 className="text-2xl font-bold text-foreground">{company.founder.name}</h3>
+              <h3 className="text-2xl font-medium text-foreground">{company.founder.name}</h3>
               <p className="text-muted-foreground">{company.founder.bio}</p>
             </article>
             {company.team.map((m) => (
               <article key={m.name} className="border border-border bg-card p-5">
-                <h3 className="text-lg font-semibold text-foreground">{m.name}</h3>
+                <h3 className="text-lg font-medium text-foreground">{m.name}</h3>
                 <p className="text-sm font-medium text-primary">{m.role}</p>
                 <p className="text-sm text-muted-foreground mt-1">{m.note}</p>
               </article>
@@ -260,7 +260,7 @@ const About = () => {
         <div className="fg-wrap">
           <div className="space-y-3 mb-12 max-w-2xl">
             <span className="text-primary font-medium text-sm">Company Facts</span>
-            <h2 id="credentials-heading" className="text-3xl md:text-4xl font-bold text-foreground">
+            <h2 id="credentials-heading" className="text-3xl md:text-4xl font-medium text-foreground">
               Credentials for vendor registration
             </h2>
             <p className="text-muted-foreground">
@@ -317,7 +317,7 @@ const About = () => {
             <span className="text-primary font-medium text-sm">
               Our Values
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+            <h2 className="text-3xl md:text-4xl font-medium text-foreground">
               What <span className="text-gradient-subtle">Drives</span> Us
             </h2>
           </div>
@@ -335,7 +335,7 @@ const About = () => {
                 <div className="w-16 h-16 border border-line flex items-center justify-center mx-auto">
                   <value.icon size={32} className="text-primary" />
                 </div>
-                <h3 className="text-xl font-semibold text-foreground">
+                <h3 className="text-xl font-medium text-foreground">
                   {value.title}
                 </h3>
                 <p className="text-muted-foreground text-sm">

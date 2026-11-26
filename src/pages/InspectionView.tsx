@@ -20,7 +20,7 @@ export default function InspectionView() {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
-          <h2 className="text-lg font-semibold">Inspection not found</h2>
+          <h2 className="text-lg font-medium">Inspection not found</h2>
           <p className="text-muted-foreground text-sm mt-1">
             This report may have been deleted.
           </p>
@@ -71,7 +71,7 @@ export default function InspectionView() {
               </Button>
               <div>
                 <div className="flex items-center gap-2">
-                  <h1 className="text-lg font-bold">Inspection Report</h1>
+                  <h1 className="text-lg font-medium">Inspection Report</h1>
                   <Badge
                     variant="outline"
                     className={statusColors[inspection.status]}

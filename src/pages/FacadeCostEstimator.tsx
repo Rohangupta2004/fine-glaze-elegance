@@ -219,7 +219,7 @@ export default function FacadeCostEstimator() {
 
       <section className="fg-sec">
         <div className="fg-wrap">
-          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">Common questions</h2>
+          <h2 className="text-2xl md:text-3xl font-medium text-foreground mb-6">Common questions</h2>
           <div className="space-y-3">
             {FAQS.map((f) => (
               <details key={f.q} className="group border border-border bg-card p-5">

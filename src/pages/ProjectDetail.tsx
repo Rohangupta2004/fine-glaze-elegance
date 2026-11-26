@@ -123,7 +123,7 @@ const ProjectDetail = () => {
             <div className="lg:pr-16 space-y-10">
               <div>
                 <p className="text-[15px] text-mute mb-4">Our contribution</p>
-                <h2 className="font-display font-semibold text-3xl md:text-5xl leading-[1.05] tracking-[-0.032em] mb-6">{project.scope}</h2>
+                <h2 className="font-display font-medium text-3xl md:text-5xl leading-[1.05] tracking-[-0.015em] mb-6">{project.scope}</h2>
                 <p className="text-mute leading-relaxed text-lg max-w-[68ch]">{summary}</p>
               </div>
 
@@ -138,7 +138,7 @@ const ProjectDetail = () => {
 
             <aside className="lg:border-l border-line lg:pl-10 space-y-10 lg:sticky lg:top-28 self-start">
               <div>
-                <h3 className="text-xl font-semibold tracking-tight mb-4">At a glance</h3>
+                <h3 className="text-xl font-medium tracking-[-0.015em] mb-4">At a glance</h3>
                 <dl className="border-t border-line text-[15.5px]">
                   {[
                     ["Client", project.client],
@@ -156,7 +156,7 @@ const ProjectDetail = () => {
               </div>
 
               <div>
-                <h3 className="text-xl font-semibold tracking-tight mb-3">Discuss your project</h3>
+                <h3 className="text-xl font-medium tracking-[-0.015em] mb-3">Discuss your project</h3>
                 <p className="text-[15.5px] text-mute leading-relaxed mb-5">
                   Speak with our team about the right facade solution for your building.
                 </p>

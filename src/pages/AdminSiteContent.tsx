@@ -101,7 +101,7 @@ export default function AdminSiteContent() {
             <Lock className="w-6 h-6 text-lamp" />
           </div>
           <div>
-            <h1 className="text-xl font-bold">Fine Glaze — Image Admin</h1>
+            <h1 className="text-xl font-medium">Fine Glaze — Image Admin</h1>
             <p className="text-sm text-muted-foreground mt-1">
               Upload and replace images across the entire website
             </p>
@@ -146,7 +146,7 @@ export default function AdminSiteContent() {
               </Button>
             </a>
             <div>
-              <h1 className="text-xl font-bold">Website Images</h1>
+              <h1 className="text-xl font-medium">Website Images</h1>
               <p className="text-sm text-muted-foreground">
                 Upload a new image — it goes live on the site immediately
               </p>
@@ -188,7 +188,7 @@ export default function AdminSiteContent() {
         ) : (
           Object.entries(grouped).map(([page, slots]) => (
             <section key={page} className="space-y-4">
-              <h2 className="text-base font-bold text-paper border-b pb-2">
+              <h2 className="text-base font-medium text-paper border-b pb-2">
                 {page}
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -275,7 +275,7 @@ function SlotCard({
       {/* Title row */}
       <div className="flex items-start justify-between gap-3">
         <div>
-          <h3 className="font-semibold text-sm flex items-center gap-2">
+          <h3 className="font-medium text-sm flex items-center gap-2">
             {slot.type === "video" ? (
               <Film className="w-4 h-4 text-purple-500" />
             ) : (

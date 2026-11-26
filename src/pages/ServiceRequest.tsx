@@ -134,7 +134,7 @@ export default function ServiceRequest() {
           {sent ? (
             <div className="border border-emerald-500/40 bg-emerald-500/5 p-8">
               <CheckCircle2 className="h-10 w-10 text-emerald-600" />
-              <h2 className="mt-3 text-2xl font-bold text-foreground">Request received</h2>
+              <h2 className="mt-3 text-2xl font-medium text-foreground">Request received</h2>
               <p className="mt-2 text-muted-foreground">
                 We'll call you on {form.phone || "the number you gave"} to arrange a visit. Photos help us bring the right
                 material — you can send them on WhatsApp now.
@@ -150,7 +150,7 @@ export default function ServiceRequest() {
             </div>
           ) : (
             <form onSubmit={submit} className="border border-border bg-card p-6 space-y-4" aria-labelledby="sr-form">
-              <h2 id="sr-form" className="text-xl font-bold text-foreground">Tell us about the issue</h2>
+              <h2 id="sr-form" className="text-xl font-medium text-foreground">Tell us about the issue</h2>
               <div className="grid sm:grid-cols-2 gap-4">
                 <label className="block text-sm font-medium text-foreground">
                   Your name *
@@ -249,7 +249,7 @@ export default function ServiceRequest() {
 
       <section className="fg-sec">
         <div className="fg-wrap">
-          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">Service FAQs</h2>
+          <h2 className="text-2xl md:text-3xl font-medium text-foreground mb-6">Service FAQs</h2>
           <div className="space-y-3">
             {FAQS.map((f) => (
               <details key={f.q} className="group border border-border bg-card p-5">

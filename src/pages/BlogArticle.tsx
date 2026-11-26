@@ -87,7 +87,7 @@ export default function BlogArticle() {
 
           {enhancement && (
             <section aria-labelledby="quick-answer" className="mb-10 border border-line bg-night-2 p-5 sm:p-7">
-              <h2 id="quick-answer" className="text-xl font-semibold tracking-tight leading-snug mb-3">{enhancement.question}</h2>
+              <h2 id="quick-answer" className="text-xl font-medium tracking-[-0.015em] leading-snug mb-3">{enhancement.question}</h2>
               <p className="leading-relaxed text-paper/90">{enhancement.answer}</p>
               <ul className="mt-4 space-y-2 text-[15.5px] text-mute list-[square] pl-5">
                 {enhancement.takeaways.map((takeaway) => <li key={takeaway}>{takeaway}</li>)}
@@ -166,7 +166,7 @@ export default function BlogArticle() {
           {enhancement && (
             <>
               <section id="quote-checklist" className="scroll-mt-28 mt-12 border border-primary/20 bg-primary/5 p-6">
-                <h2 className="text-xl font-bold mb-4">Before You Ask for a Quote</h2>
+                <h2 className="text-xl font-medium mb-4">Before You Ask for a Quote</h2>
                 <ol className="list-decimal pl-5 space-y-3 text-foreground/80 leading-relaxed">{enhancement.quoteChecklist.map((item) => <li key={item}>{item}</li>)}</ol>
                 <button type="button" className="fg-btn mt-5" onClick={() => openBooking({ source: "article_checklist" })}>Book a call</button>
               </section>
@@ -178,7 +178,7 @@ export default function BlogArticle() {
               </aside>}
 
               <section id="article-questions" className="scroll-mt-28 mt-12">
-                <h2 className="text-2xl font-bold mb-5">Common Questions</h2>
+                <h2 className="text-2xl font-medium mb-5">Common Questions</h2>
                 <div className="divide-y divide-border border-y border-border">{enhancement.faqs.map((faq) => <details key={faq.question} className="py-5 group">
                   <summary className="cursor-pointer font-semibold leading-snug pr-4">{faq.question}</summary>
                   <p className="mt-3 text-muted-foreground leading-relaxed">{faq.answer}</p>
@@ -186,7 +186,7 @@ export default function BlogArticle() {
               </section>
 
               <section id="references" className="scroll-mt-28 mt-12">
-                <h2 className="text-xl font-bold mb-4">Technical References</h2>
+                <h2 className="text-xl font-medium mb-4">Technical References</h2>
                 <ul className="space-y-4">{enhancement.sources.map((source) => <li key={source.url}>
                   <a href={source.url} target="_blank" rel="noopener noreferrer" className="text-primary underline underline-offset-4 text-sm font-medium">{source.title}</a>
                   <p className="text-xs text-muted-foreground leading-relaxed mt-1">{source.note}</p>
@@ -196,7 +196,7 @@ export default function BlogArticle() {
           )}
 
           <div className="mt-14 border border-line p-6">
-            <h3 className="text-2xl font-bold mb-4">
+            <h3 className="text-2xl font-medium mb-4">
               Explore More Facade Solutions
             </h3>
             <p className="text-muted-foreground mb-6">
@@ -222,7 +222,7 @@ export default function BlogArticle() {
           </div>
 
           <div className="mt-12 p-8 bg-night-2 border border-line text-paper">
-            <h3 className="text-xl font-bold mb-2">
+            <h3 className="text-xl font-medium mb-2">
               Need Help With Your Facade Project?
             </h3>
             <p className="text-mute mb-5 text-sm">
@@ -236,7 +236,7 @@ export default function BlogArticle() {
 
           {related.length > 0 && (
             <div className="mt-16">
-              <h3 className="text-xl font-bold mb-6">Related Articles</h3>
+              <h3 className="text-xl font-medium mb-6">Related Articles</h3>
               <div className="grid md:grid-cols-2 gap-6">
                 {related.map((r) => (
                   <Link

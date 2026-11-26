@@ -382,7 +382,7 @@ export const CompanyProfileViewerModal: React.FC = () => {
             >
               <div className="w-full h-full flex flex-col items-center justify-center p-6 text-center space-y-4">
                 <FileText className="w-16 h-16 text-lamp" />
-                <h3 className="text-xl font-bold">PDF Ready to Open</h3>
+                <h3 className="text-xl font-medium">PDF Ready to Open</h3>
                 <p className="text-mute text-sm max-w-md">
                   Your browser does not support embedded PDF rendering directly. You can view via our interactive deck or open/download the file below.
                 </p>

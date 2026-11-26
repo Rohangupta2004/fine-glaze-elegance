@@ -146,7 +146,7 @@ export default function AluminiumWindowsDoors() {
       <section className="fg-sec" aria-labelledby="systems">
         <div className="fg-wrap">
           <div className="max-w-2xl mb-10">
-            <h2 id="systems" className="text-2xl md:text-4xl font-bold text-foreground">Window &amp; door systems we install</h2>
+            <h2 id="systems" className="text-2xl md:text-4xl font-medium text-foreground">Window &amp; door systems we install</h2>
             <p className="mt-3 text-muted-foreground">
               Every system is priced after a site measurement, with the profile series, glass and hardware written into an itemised quotation.
             </p>
@@ -155,7 +155,7 @@ export default function AluminiumWindowsDoors() {
             {windowSystems.map((s) => (
               <article key={s.id} className="border border-border bg-card p-6">
                 <div className="flex items-start justify-between gap-4">
-                  <h3 className="text-xl font-semibold text-foreground">{s.name}</h3>
+                  <h3 className="text-xl font-medium text-foreground">{s.name}</h3>
                 </div>
                 <p className="mt-3 text-sm text-muted-foreground">{SYSTEM_NOTES[s.id]?.what}</p>
                 <p className="mt-3 text-sm"><span className="font-semibold text-foreground">Best for:</span> <span className="text-muted-foreground">{SYSTEM_NOTES[s.id]?.bestFor}</span></p>
@@ -173,7 +173,7 @@ export default function AluminiumWindowsDoors() {
       <section className="fg-sec" aria-labelledby="glass">
         <div className="fg-wrap grid lg:grid-cols-2 gap-10 items-start">
           <div>
-            <h2 id="glass" className="text-2xl md:text-4xl font-bold text-foreground">The glass matters as much as the frame</h2>
+            <h2 id="glass" className="text-2xl md:text-4xl font-medium text-foreground">The glass matters as much as the frame</h2>
             <p className="mt-4 text-muted-foreground">
               Heat and noise mostly come through the glass, so we specify the glass build-up window by window — not one type for the whole house.
               Heat-gain and acoustic figures depend on the exact glass and frame, and we share the glass maker's data sheet with every quote.
@@ -196,7 +196,7 @@ export default function AluminiumWindowsDoors() {
       {/* QUOTE CHECKLIST */}
       <section className="fg-sec" aria-labelledby="checklist">
         <div className="fg-wrap">
-          <h2 id="checklist" className="text-2xl md:text-4xl font-bold text-foreground">Comparing window quotes? Check these 7 lines</h2>
+          <h2 id="checklist" className="text-2xl md:text-4xl font-medium text-foreground">Comparing window quotes? Check these 7 lines</h2>
           <p className="mt-3 text-muted-foreground">
             Two quotes that both say “aluminium sliding window” can differ a lot — often for good reason. Ask every supplier — including us — to put these in writing.
           </p>
@@ -214,7 +214,7 @@ export default function AluminiumWindowsDoors() {
       {/* PROJECTS */}
       <section className="py-16 md:py-20 bg-night text-paper" aria-labelledby="projects">
         <div className="fg-wrap">
-          <h2 id="projects" className="text-2xl md:text-4xl font-bold">Window work we have done</h2>
+          <h2 id="projects" className="text-2xl md:text-4xl font-medium">Window work we have done</h2>
           <p className="mt-3 text-paper/80 max-w-2xl">Real projects from our company profile, with our actual scope and status.</p>
           <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {PROJECTS.map((p) => (
@@ -222,7 +222,7 @@ export default function AluminiumWindowsDoors() {
                 <img src={p.img} alt={p.title} className="h-44 w-full object-cover" loading="lazy" />
                 <div className="p-4">
                   <p className="text-xs font-semibold text-lamp">{p.status}</p>
-                  <h3 className="mt-1 font-semibold leading-snug group-hover:text-lamp">{p.title}</h3>
+                  <h3 className="mt-1 font-medium leading-snug group-hover:text-lamp">{p.title}</h3>
                   <p className="mt-2 text-sm text-mute">{p.scope}</p>
                 </div>
               </Link>
@@ -234,7 +234,7 @@ export default function AluminiumWindowsDoors() {
       {/* PROCESS */}
       <section className="fg-sec" aria-labelledby="process">
         <div className="fg-wrap">
-          <h2 id="process" className="text-2xl md:text-4xl font-bold text-foreground">How a window order runs</h2>
+          <h2 id="process" className="text-2xl md:text-4xl font-medium text-foreground">How a window order runs</h2>
           <ol className="mt-8 grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
             {[
               ["Site measurement", "Every opening measured and checked for level and plumb."],
@@ -261,7 +261,7 @@ export default function AluminiumWindowsDoors() {
       {/* FAQ */}
       <section className="fg-sec" aria-labelledby="faq">
         <div className="fg-wrap">
-          <h2 id="faq" className="text-2xl md:text-4xl font-bold text-foreground mb-8">Aluminium window FAQs</h2>
+          <h2 id="faq" className="text-2xl md:text-4xl font-medium text-foreground mb-8">Aluminium window FAQs</h2>
           <div className="space-y-3">
             {FAQS.map((f) => (
               <details key={f.q} className="group border border-border bg-card p-5">
@@ -279,7 +279,7 @@ export default function AluminiumWindowsDoors() {
       {/* CTA */}
       <section className="py-16 bg-lamp">
         <div className="fg-wrap">
-          <h2 className="text-2xl md:text-3xl font-extrabold text-paper">Get your windows measured and quoted</h2>
+          <h2 className="text-2xl md:text-3xl font-medium text-paper">Get your windows measured and quoted</h2>
           <p className="mt-2 text-paper/80">Pune, PCMC, Mumbai, Navi Mumbai and Thane.</p>
           <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
             <button onClick={() => setQuoteOpen(true)} className="bg-night text-paper font-bold px-7 py-4 hover:bg-night-2">

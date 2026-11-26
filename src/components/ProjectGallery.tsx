@@ -11,7 +11,7 @@ export function ProjectGallery({ title, images }: { title: string; images: strin
     <section aria-label={`${title} photographs`}>
       <div className="flex items-end justify-between gap-4 mb-5">
         <div>
-          <h2 className="font-bold text-2xl">Project Gallery</h2>
+          <h2 className="font-medium text-2xl">Project Gallery</h2>
           <p className="text-sm text-muted-foreground mt-1">Explore the site, workmanship and finishing details.</p>
         </div>
         <span className="text-sm text-muted-foreground shrink-0">{images.length} photos</span>

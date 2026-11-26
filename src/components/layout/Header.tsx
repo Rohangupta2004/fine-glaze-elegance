@@ -241,7 +241,7 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
             <button
               type="button"
               onClick={book}
-              className="h-11 px-[18px] text-[15px] font-medium text-paper bg-transparent shadow-[inset_0_0_0_1px_rgba(236,232,223,0.45)] transition-[filter,box-shadow] hover:shadow-[inset_0_0_0_1px_#dd9a5b] hover:text-lamp focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-glass"
+              className="h-11 px-[18px] text-[15px] font-medium text-paper bg-transparent shadow-[inset_0_0_0_1px_rgba(245,242,238,0.45)] transition-[filter,box-shadow] hover:shadow-[inset_0_0_0_1px_#c6803a] hover:text-lamp focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-glass"
             >
               Book a call
             </button>

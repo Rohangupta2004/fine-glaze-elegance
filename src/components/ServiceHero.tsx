@@ -61,7 +61,7 @@ export const ServiceHero = ({
             <span className="w-2 h-2 bg-lamp animate-pulse" />
             Fine Glaze
           </div>
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight mb-5">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium leading-tight mb-5">
             {titleLead}
             <span className="text-gradient-gold">{titleAccent}</span>
             {titleTail}
@@ -94,7 +94,7 @@ export const ServiceHero = ({
                     <Icon size={20} />
                   </div>
                   <div>
-                    <h3 className="font-bold text-xs tracking-wide mb-0.5 leading-tight">
+                    <h3 className="font-medium text-xs tracking-wide mb-0.5 leading-tight">
                       {f.title}
                     </h3>
                     <p className="text-xs text-mute leading-snug">

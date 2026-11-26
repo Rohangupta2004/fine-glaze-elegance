@@ -22,6 +22,11 @@
       "permanent": false
     },
     {
+      "source": "/facade-cost-estimator",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
       "source": "/louvers",
       "destination": "/aluminium-louvers",
       "permanent": true

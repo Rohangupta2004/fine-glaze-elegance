@@ -22,7 +22,7 @@ const TermsOfService = () => {
           <div className="prose prose-stone prose-sm max-w-none space-y-8">
 
             <div>
-              <h2 className="text-lg font-bold text-paper mb-3">1. Agreement to Terms</h2>
+              <h2 className="text-lg font-medium text-paper mb-3">1. Agreement to Terms</h2>
               <p className="text-mute text-sm leading-relaxed">
                 By accessing and using the Fine Glaze website (
                 <a href="https://fineglaze.com" className="text-lamp hover:underline">
@@ -34,7 +34,7 @@ const TermsOfService = () => {
             </div>
 
             <div>
-              <h2 className="text-lg font-bold text-paper mb-3">2. Our Services</h2>
+              <h2 className="text-lg font-medium text-paper mb-3">2. Our Services</h2>
               <p className="text-mute text-sm leading-relaxed">
                 Fine Glaze specializes in facade design, fabrication, and installation services
                 including curtain wall systems, structural glazing, ACP cladding, glass railings,
@@ -45,7 +45,7 @@ const TermsOfService = () => {
             </div>
 
             <div>
-              <h2 className="text-lg font-bold text-paper mb-3">3. Enquiries & Quotations</h2>
+              <h2 className="text-lg font-medium text-paper mb-3">3. Enquiries & Quotations</h2>
               <p className="text-mute text-sm leading-relaxed">
                 Information provided on this website — including project images, service
                 descriptions, and indicative pricing — is for general informational purposes only.
@@ -56,7 +56,7 @@ const TermsOfService = () => {
             </div>
 
             <div>
-              <h2 className="text-lg font-bold text-paper mb-3">4. Intellectual Property</h2>
+              <h2 className="text-lg font-medium text-paper mb-3">4. Intellectual Property</h2>
               <p className="text-mute text-sm leading-relaxed">
                 All content on this website — including text, images, project photographs, logos,
                 designs, and graphics — is the property of Fine Glaze or used with permission.
@@ -66,7 +66,7 @@ const TermsOfService = () => {
             </div>
 
             <div>
-              <h2 className="text-lg font-bold text-paper mb-3">5. Accuracy of Information</h2>
+              <h2 className="text-lg font-medium text-paper mb-3">5. Accuracy of Information</h2>
               <p className="text-mute text-sm leading-relaxed">
                 We make reasonable efforts to ensure the accuracy of information on our website.
                 However, specifications, pricing, and availability of services may change without
@@ -76,7 +76,7 @@ const TermsOfService = () => {
             </div>
 
             <div>
-              <h2 className="text-lg font-bold text-paper mb-3">6. Third-Party Links</h2>
+              <h2 className="text-lg font-medium text-paper mb-3">6. Third-Party Links</h2>
               <p className="text-mute text-sm leading-relaxed">
                 Our website may contain links to third-party websites (such as Google Maps,
                 WhatsApp, and social media platforms). These links are provided for convenience
@@ -86,7 +86,7 @@ const TermsOfService = () => {
             </div>
 
             <div>
-              <h2 className="text-lg font-bold text-paper mb-3">7. Limitation of Liability</h2>
+              <h2 className="text-lg font-medium text-paper mb-3">7. Limitation of Liability</h2>
               <p className="text-mute text-sm leading-relaxed">
                 Fine Glaze shall not be liable for any direct, indirect, incidental, or
                 consequential damages arising from the use of or inability to use this website.
@@ -96,7 +96,7 @@ const TermsOfService = () => {
             </div>
 
             <div>
-              <h2 className="text-lg font-bold text-paper mb-3">8. Governing Law</h2>
+              <h2 className="text-lg font-medium text-paper mb-3">8. Governing Law</h2>
               <p className="text-mute text-sm leading-relaxed">
                 These Terms of Service are governed by and construed in accordance with the laws
                 of India. Any disputes arising from the use of this website shall be subject to
@@ -105,7 +105,7 @@ const TermsOfService = () => {
             </div>
 
             <div>
-              <h2 className="text-lg font-bold text-paper mb-3">9. Changes to Terms</h2>
+              <h2 className="text-lg font-medium text-paper mb-3">9. Changes to Terms</h2>
               <p className="text-mute text-sm leading-relaxed">
                 We reserve the right to update these Terms of Service at any time. Changes will
                 be posted on this page with an updated revision date. Continued use of the
@@ -115,7 +115,7 @@ const TermsOfService = () => {
 
             {/* Contact box */}
             <div className="bg-night-2 border border-line p-5 md:p-7 mt-8">
-              <h2 className="text-lg font-bold text-paper mb-4">10. Contact</h2>
+              <h2 className="text-lg font-medium text-paper mb-4">10. Contact</h2>
               <p className="text-mute text-sm leading-relaxed mb-4">
                 For questions about these Terms of Service, contact us:
               </p>

@@ -42,7 +42,7 @@ export const InspectionReport = forwardRef<HTMLDivElement, InspectionReportProps
         <div className="border-b-4 border-blue-800 pb-4 mb-6">
           <div className="flex justify-between items-start">
             <div>
-              <h1 className="text-2xl font-bold text-sky-300">
+              <h1 className="text-2xl font-medium text-lamp">
                 FINE GLAZE
               </h1>
               <p className="text-sm text-mute">
@@ -50,7 +50,7 @@ export const InspectionReport = forwardRef<HTMLDivElement, InspectionReportProps
               </p>
             </div>
             <div className="text-right">
-              <h2 className="text-lg font-bold text-sky-300">
+              <h2 className="text-lg font-medium text-lamp">
                 DAILY SITE INSPECTION REPORT
               </h2>
               <p className="text-sm text-mute">
@@ -106,7 +106,7 @@ export const InspectionReport = forwardRef<HTMLDivElement, InspectionReportProps
 
         {/* Progress */}
         <div className="mb-6">
-          <h3 className="text-sm font-bold text-sky-300 border-b mb-2 pb-1">
+          <h3 className="text-sm font-medium text-lamp border-b mb-2 pb-1">
             Overall Progress
           </h3>
           <div className="flex items-center gap-4">
@@ -124,7 +124,7 @@ export const InspectionReport = forwardRef<HTMLDivElement, InspectionReportProps
 
         {/* Work Completed */}
         <div className="mb-6">
-          <h3 className="text-sm font-bold text-sky-300 border-b mb-2 pb-1">
+          <h3 className="text-sm font-medium text-lamp border-b mb-2 pb-1">
             Work Completed Today
           </h3>
           <p className="whitespace-pre-wrap text-sm">
@@ -135,7 +135,7 @@ export const InspectionReport = forwardRef<HTMLDivElement, InspectionReportProps
         {/* Work Planned */}
         {inspection.work_planned_tomorrow && (
           <div className="mb-6">
-            <h3 className="text-sm font-bold text-sky-300 border-b mb-2 pb-1">
+            <h3 className="text-sm font-medium text-lamp border-b mb-2 pb-1">
               Work Planned for Tomorrow
             </h3>
             <p className="whitespace-pre-wrap text-sm">
@@ -147,7 +147,7 @@ export const InspectionReport = forwardRef<HTMLDivElement, InspectionReportProps
         {/* Issues */}
         {inspection.issues.length > 0 && (
           <div className="mb-6">
-            <h3 className="text-sm font-bold text-sky-300 border-b mb-2 pb-1">
+            <h3 className="text-sm font-medium text-lamp border-b mb-2 pb-1">
               Issues & Observations ({inspection.issues.length})
             </h3>
             <table className="w-full text-sm">
@@ -176,7 +176,7 @@ export const InspectionReport = forwardRef<HTMLDivElement, InspectionReportProps
         {/* Materials Used */}
         {inspection.materials_used.length > 0 && (
           <div className="mb-6">
-            <h3 className="text-sm font-bold text-sky-300 border-b mb-2 pb-1">
+            <h3 className="text-sm font-medium text-lamp border-b mb-2 pb-1">
               Materials Used ({inspection.materials_used.length})
             </h3>
             <table className="w-full text-sm">
@@ -204,7 +204,7 @@ export const InspectionReport = forwardRef<HTMLDivElement, InspectionReportProps
 
         {/* Safety Checklist */}
         <div className="mb-6">
-          <h3 className="text-sm font-bold text-sky-300 border-b mb-2 pb-1">
+          <h3 className="text-sm font-medium text-lamp border-b mb-2 pb-1">
             Safety Checklist ({safetyPassed}/{safetyTotal})
           </h3>
           <div className="grid grid-cols-2 gap-2 text-sm">
@@ -224,7 +224,7 @@ export const InspectionReport = forwardRef<HTMLDivElement, InspectionReportProps
         {/* Notes */}
         {inspection.notes && (
           <div className="mb-6">
-            <h3 className="text-sm font-bold text-sky-300 border-b mb-2 pb-1">
+            <h3 className="text-sm font-medium text-lamp border-b mb-2 pb-1">
               Additional Notes
             </h3>
             <p className="whitespace-pre-wrap text-sm">{inspection.notes}</p>

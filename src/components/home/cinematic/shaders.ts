@@ -14,9 +14,9 @@ float fbm(vec2 p){float a=.5,s=0.;for(int i=0;i<5;i++){s+=a*vn(p);p=mat2(1.6,1.2
 vec3 sky(vec3 rd){
   float y=rd.y; vec2 hz=normalize(rd.xz+1e-5);
   float sd=max(dot(hz,vec2(sin(uSun),cos(uSun))),0.), glow=pow(sd,2.2);
-  vec3 zen=mix(vec3(.045,.1,.26),vec3(.01,.022,.065),uNi);
-  vec3 mid=mix(vec3(.25,.3,.54),vec3(.06,.09,.23),uNi);
-  vec3 horC=mix(vec3(.6,.42,.52),vec3(.2,.19,.36),uNi);
+  vec3 zen=mix(vec3(.1,.055,.07),vec3(.026,.016,.018),uNi);
+  vec3 mid=mix(vec3(.32,.18,.2),vec3(.09,.055,.07),uNi);
+  vec3 horC=mix(vec3(.66,.4,.3),vec3(.26,.16,.15),uNi);
   vec3 horW=mix(vec3(1.55,.74,.27),vec3(.9,.38,.2),uNi);
   vec3 hor=mix(horC,horW,glow);
   float t=max(y,0.);
@@ -26,11 +26,11 @@ vec3 sky(vec3 rd){
     vec2 q=rd.xz/(y+.16)*1.05+vec2(uT*.013,uT*.005);
     float w=fbm(q*.45+3.), d=fbm(q+w*1.3);
     float cl=sst(.33,.63,d)*sst(0.,.1,y);
-    vec3 lit=mix(vec3(.95,.52,.52),vec3(1.7,.84,.42),glow)*(1.-.55*uNi);
-    vec3 shd=mix(vec3(.33,.3,.48),vec3(.16,.17,.32),uNi);
+    vec3 lit=mix(vec3(.95,.5,.38),vec3(1.7,.84,.42),glow)*(1.-.55*uNi);
+    vec3 shd=mix(vec3(.32,.2,.24),vec3(.15,.1,.12),uNi);
     vec3 cc=mix(lit,shd,clamp(sst(.45,.8,d)*.75+t*.35-glow*.3+.1,0.,1.));
     c=mix(c,cc,cl*.9);
-  } else c=mix(hor*.8,vec3(.07,.055,.1),sst(0.,-.32,y));
+  } else c=mix(hor*.8,vec3(.06,.042,.04),sst(0.,-.32,y));
   return c;
 }
 float pint(float x,float w){return floor(x)*w+min(fract(x),w);}
@@ -80,15 +80,15 @@ vec3 facade(vec2 uv,vec3 n,vec3 tx,vec3 rd,bool front){
   float isB=front?step(abs(id.x-uBay.x),.5)*step(abs(id.y-uBay.y),.5):0.;
   prob*=front?1.-step(abs(id.x-uBay.x),3.5)*step(abs(id.y-uBay.y),1.5):1.;
   float lit=max(step(r3,prob)*(.6+.4*r2),isB*uLit);
-  vec3 inside=mix(rm*(.03*vec3(.5,.7,1.)+lit*1.15)+warm*fx*2.3*lit*exp(-tt*.07),warm*prob*.36,lod);
+  vec3 inside=mix(rm*(.03*vec3(1.,.7,.5)+lit*1.15)+warm*fx*2.3*lit*exp(-tt*.07),warm*prob*.36,lod);
   inside+=vec3(1.,.9,.72)*(tm*2.8+glow*.6);
   float ao=mix(.86+.14*sst(0.,.07,min(min(f.x,1.-f.x),min(f.y,1.-f.y)*2.4)),1.,lod);
-  vec3 glass=mix(inside*vec3(.84,.97,.93),refl*ao,fr*(1.-.4*tm));
-  vec3 sp=mix(vec3(.018,.03,.042),refl*ao,fr*.62+.05);
+  vec3 glass=mix(inside*vec3(.98,.9,.78),refl*ao,fr*(1.-.4*tm));
+  vec3 sp=mix(vec3(.032,.025,.02),refl*ao,fr*.62+.05);
   vec3 c=mix(glass,sp,spand);
-  vec3 mc=vec3(.028,.033,.04)+refl*.05+vec3(.06,.07,.08)*sst(.03,.0,abs(fract(g.x+.5)-.5-.012))*(1.-lod);
+  vec3 mc=vec3(.036,.031,.026)+refl*.05+vec3(.08,.07,.06)*sst(.03,.0,abs(fract(g.x+.5)-.5-.012))*(1.-lod);
   c=mix(c,mc,mull);
-  if(isB>.5){vec3 oc=rm*.2+vec3(.01,.012,.018)+warm*fx*.5*exp(-tt*.07);oc=mix(oc,vec3(.2,.2,.21)*(.55+.45*f.x),step(f.y,.085));c=mix(c,oc,uOpen);}
+  if(isB>.5){vec3 oc=rm*.2+vec3(.018,.014,.01)+warm*fx*.5*exp(-tt*.07);oc=mix(oc,vec3(.22,.2,.18)*(.55+.45*f.x),step(f.y,.085));c=mix(c,oc,uOpen);}
   return c;
 }
 void main(){
@@ -101,7 +101,7 @@ void main(){
   vec3 c;
   if(tN<tF&&tN>0.){
     vec3 q=ro+rd*tN;
-    if(tn.y>tn.x&&tn.y>tn.z) c=vec3(.02,.025,.035);
+    if(tn.y>tn.x&&tn.y>tn.z) c=vec3(.03,.025,.02);
     else if(tn.z>=tn.x) c=facade(vec2(q.x+W*.5,q.y),vec3(0,0,-sign(rd.z)),vec3(1,0,0),rd,rd.z<0.);
     else c=facade(vec2(-q.z,q.y),vec3(-sign(rd.x),0,0),vec3(0,0,1),rd,false)*.82;
     c*=sst(H+.01,H-.5,q.y)*.4+.6;

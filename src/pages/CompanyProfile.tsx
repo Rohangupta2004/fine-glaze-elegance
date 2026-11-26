@@ -354,7 +354,7 @@ export default function CompanyProfilePage() {
           {/* Bottom CTA Banner */}
           <div className="mt-12 bg-night-2 border border-lamp/30 p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-between gap-6">
             <div className="space-y-2 text-center sm:text-left">
-              <h3 className="text-xl sm:text-2xl font-bold text-paper">
+              <h3 className="text-xl sm:text-2xl font-medium text-paper">
                 Planning a Commercial or High-Rise Facade Package?
               </h3>
               <p className="text-sm text-paper/80 max-w-xl">

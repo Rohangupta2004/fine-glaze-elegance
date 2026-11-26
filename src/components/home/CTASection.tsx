@@ -10,7 +10,7 @@ export const CTASection = () => {
       <div className="container mx-auto px-4 py-20 md:py-28">
         <div className="grid gap-10 md:grid-cols-[7fr_5fr] md:items-end">
           <div>
-            <h2 className="font-display font-semibold leading-[1.04] tracking-[-0.032em] text-4xl md:text-6xl max-w-[11ch]">
+            <h2 className="font-display font-medium leading-[1.04] tracking-[-0.015em] text-4xl md:text-6xl max-w-[11ch]">
               Tell us about your facade.
             </h2>
             <button

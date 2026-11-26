@@ -28,7 +28,7 @@ export default function InspectionNew() {
               <ArrowLeft className="h-5 w-5" />
             </Button>
             <div>
-              <h1 className="text-lg font-bold">New Inspection</h1>
+              <h1 className="text-lg font-medium">New Inspection</h1>
               <p className="text-xs text-muted-foreground">
                 Fill in the daily site report
               </p>

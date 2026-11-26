@@ -109,7 +109,7 @@ export default function AdminImages() {
             <Lock className="w-6 h-6 text-lamp" />
           </div>
           <div>
-            <h1 className="text-xl font-bold">Fine Glaze Admin</h1>
+            <h1 className="text-xl font-medium">Fine Glaze Admin</h1>
             <p className="text-sm text-muted-foreground mt-1">
               Enter password to manage project images
             </p>
@@ -157,7 +157,7 @@ export default function AdminImages() {
       <header className="sticky top-0 z-10 bg-night border-b">
         <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
           <div>
-            <h1 className="text-xl font-bold">Project Images</h1>
+            <h1 className="text-xl font-medium">Project Images</h1>
             <p className="text-sm text-muted-foreground">
               Upload & manage project photos
             </p>
@@ -232,7 +232,7 @@ export default function AdminImages() {
 
                   {/* Info */}
                   <div className="p-4 space-y-1">
-                    <h3 className="font-bold text-sm truncate">{p.title}</h3>
+                    <h3 className="font-medium text-sm truncate">{p.title}</h3>
                     <p className="text-xs text-muted-foreground">
                       {p.location} · {p.year}
                     </p>
@@ -377,7 +377,7 @@ function ProjectEditor({
             <ArrowLeft className="w-5 h-5" />
           </Button>
           <div className="flex-1 min-w-0">
-            <h1 className="text-lg font-bold truncate">{project.title}</h1>
+            <h1 className="text-lg font-medium truncate">{project.title}</h1>
             <p className="text-xs text-muted-foreground">
               {project.location} · {project.year} · {project.client}
             </p>
@@ -401,7 +401,7 @@ function ProjectEditor({
         {/* ── Main Image ─────────────────────────────────────── */}
         <section className="bg-night border p-6 space-y-4">
           <div>
-            <h2 className="text-lg font-bold">Main Image</h2>
+            <h2 className="text-lg font-medium">Main Image</h2>
             <p className="text-sm text-muted-foreground">
               Hero/cover image for the project. Drag & drop or click to upload.
             </p>
@@ -476,7 +476,7 @@ function ProjectEditor({
         {/* ── Gallery ─────────────────────────────────────────── */}
         <section className="bg-night border p-6 space-y-4">
           <div>
-            <h2 className="text-lg font-bold">Gallery Images</h2>
+            <h2 className="text-lg font-medium">Gallery Images</h2>
             <p className="text-sm text-muted-foreground">
               Additional images for the project detail page. Select multiple at
               once.

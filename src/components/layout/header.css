@@ -1,31 +1,31 @@
 /* Sitewide glass header. Not scoped to .fg-home: the header appears on every page. */
 .fg-hdr{
-  background:rgba(6,10,19,.55);
+  background:rgba(24,19,15,.55);
   -webkit-backdrop-filter:blur(16px) saturate(1.2);
   backdrop-filter:blur(16px) saturate(1.2);
-  border-bottom:1px solid rgba(236,232,223,.12);
+  border-bottom:1px solid rgba(245,242,238,.12);
   transition:background-color .3s ease,border-color .3s ease;
 }
 .fg-hdr[data-clear="true"]{
-  background:rgba(6,10,19,.18);
+  background:rgba(24,19,15,.18);
   -webkit-backdrop-filter:blur(10px) saturate(1.2);
   backdrop-filter:blur(10px) saturate(1.2);
   border-bottom-color:transparent;
 }
 /* Dropdowns sit inside the header's own backdrop root, so they stay fairly opaque to remain legible. */
 .fg-menu{
-  background:rgba(6,10,19,.9);
+  background:rgba(24,19,15,.9);
   -webkit-backdrop-filter:blur(16px) saturate(1.2);
   backdrop-filter:blur(16px) saturate(1.2);
-  border:1px solid rgba(236,232,223,.12);
+  border:1px solid rgba(245,242,238,.12);
 }
 .fg-menu-m{
-  background:rgba(6,10,19,.92);
+  background:rgba(24,19,15,.92);
   -webkit-backdrop-filter:blur(16px) saturate(1.2);
   backdrop-filter:blur(16px) saturate(1.2);
-  border-bottom:1px solid rgba(236,232,223,.12);
+  border-bottom:1px solid rgba(245,242,238,.12);
 }
 @supports not (backdrop-filter:blur(1px)){
-  .fg-hdr,.fg-hdr[data-clear="true"],.fg-menu,.fg-menu-m{background:rgba(6,10,19,.92)}
+  .fg-hdr,.fg-hdr[data-clear="true"],.fg-menu,.fg-menu-m{background:rgba(24,19,15,.92)}
 }
 @media (prefers-reduced-motion:reduce){.fg-hdr{transition:none}}

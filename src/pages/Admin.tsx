@@ -159,7 +159,7 @@ export default function Admin() {
       <div className="max-w-7xl mx-auto space-y-8">
         <div className="flex justify-between items-center">
           <div>
-            <h1 className="text-3xl font-bold">Admin Hub</h1>
+            <h1 className="text-3xl font-medium">Admin Hub</h1>
             <p className="text-muted-foreground">Manage projects, approvals & financials</p>
             <div className="flex flex-wrap gap-2 mt-3">
               <a href="/admin/content" className="text-xs px-3 py-1.5 bg-lamp/10 text-lamp font-medium hover:bg-lamp/10 transition-colors">🖼 Website Images</a>
@@ -237,7 +237,7 @@ export default function Admin() {
                             {(files[p.id] || []).map(f => (
                               <div key={f.id} className="flex justify-between items-center border p-2 text-sm">
                                 <div className="flex items-center gap-2">
-                                  <a href={f.url} target="_blank" className="text-sky-300 hover:underline">{f.name}</a>
+                                  <a href={f.url} target="_blank" className="text-lamp hover:underline">{f.name}</a>
                                   {f.status === 'Approved' && <CheckCircle2 size={14} className="text-green-500"/>}
                                   {f.status === 'Rejected' && <XCircle size={14} className="text-red-400"/>}
                                   {f.status === 'Pending' && f.requires_approval && <Badge variant="outline">Pending</Badge>}

@@ -41,7 +41,7 @@ export default function FloatingCTA() {
       <a
         href={telHref}
         aria-label={`Call ${company.phone.mobileDisplay}`}
-        className="h-12 px-5 inline-flex items-center text-paper font-medium text-base shadow-[inset_0_0_0_1px_rgba(236,232,223,0.45)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-glass"
+        className="h-12 px-5 inline-flex items-center text-paper font-medium text-base shadow-[inset_0_0_0_1px_rgba(245,242,238,0.45)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-glass"
       >
         Call
       </a>

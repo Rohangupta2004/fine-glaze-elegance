@@ -235,7 +235,7 @@ export default function Maintenance() {
             <p className="text-lamp text-xs font-bold mb-4">
               Why Facade Maintenance
             </p>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-paper leading-snug mb-5">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-medium text-paper leading-snug mb-5">
               Protect your building investment —{"  "}
               <span className="text-mute">preventive care that costs less than emergency repairs.</span>
             </h2>
@@ -275,7 +275,7 @@ export default function Maintenance() {
             <p className="text-lamp text-xs font-bold mb-3">
               Our Services
             </p>
-            <h2 className="text-2xl md:text-3xl font-bold text-paper">
+            <h2 className="text-2xl md:text-3xl font-medium text-paper">
               Facade Maintenance Services We Offer
             </h2>
           </FadeIn>
@@ -311,7 +311,7 @@ export default function Maintenance() {
                 </div>
               </div>
               <div className="p-8 md:p-10 flex flex-col justify-center">
-                <h3 className="text-xl md:text-2xl font-bold text-paper mb-3">{current.title}</h3>
+                <h3 className="text-xl md:text-2xl font-medium text-paper mb-3">{current.title}</h3>
                 <p className="text-mute text-sm leading-relaxed mb-6">{current.desc}</p>
 
                 <div className="grid grid-cols-2 gap-3 mb-6">
@@ -352,7 +352,7 @@ export default function Maintenance() {
             <p className="text-lamp text-xs font-bold mb-3">
               Why Fine Glaze
             </p>
-            <h2 className="text-2xl md:text-3xl font-bold text-paper">
+            <h2 className="text-2xl md:text-3xl font-medium text-paper">
               Built for performance. Delivered on schedule.
             </h2>
           </FadeIn>
@@ -385,7 +385,7 @@ export default function Maintenance() {
                   <div className="inline-flex items-center justify-center w-12 h-12 border border-line text-lamp mb-4">
                     <item.icon size={22} />
                   </div>
-                  <h3 className="text-sm font-bold text-paper mb-2">{item.title}</h3>
+                  <h3 className="text-sm font-medium text-paper mb-2">{item.title}</h3>
                   <p className="text-mute text-xs leading-relaxed">{item.desc}</p>
                 </div>
               ))}
@@ -410,7 +410,7 @@ export default function Maintenance() {
             <p className="text-lamp text-xs font-bold mb-3">
               How We Work
             </p>
-            <h2 className="text-2xl md:text-3xl font-bold text-paper">
+            <h2 className="text-2xl md:text-3xl font-medium text-paper">
               From first visit to final handover
             </h2>
           </FadeIn>
@@ -424,7 +424,7 @@ export default function Maintenance() {
                   )}
                   <div className="bg-night p-5 relative">
                     <span className="text-3xl font-bold text-paper block mb-3">{step.num}</span>
-                    <h3 className="text-sm font-bold text-paper mb-1">{step.title}</h3>
+                    <h3 className="text-sm font-medium text-paper mb-1">{step.title}</h3>
                     <p className="text-mute text-xs leading-relaxed">{step.desc}</p>
                   </div>
                 </div>
@@ -464,7 +464,7 @@ export default function Maintenance() {
             <p className="text-lamp text-xs font-bold mb-3">
               Pricing
             </p>
-            <h2 className="text-2xl md:text-3xl font-bold text-paper mb-2">
+            <h2 className="text-2xl md:text-3xl font-medium text-paper mb-2">
               Facade Maintenance Cost: How We Quote
             </h2>
             <p className="text-mute text-sm">
@@ -518,7 +518,7 @@ export default function Maintenance() {
             <p className="text-lamp text-xs font-bold mb-3">
               Common Questions
             </p>
-            <h2 className="text-2xl md:text-3xl font-bold text-paper">
+            <h2 className="text-2xl md:text-3xl font-medium text-paper">
               FAQ
             </h2>
           </FadeIn>

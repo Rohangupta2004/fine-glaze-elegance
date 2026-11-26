@@ -321,7 +321,7 @@ export default function Services() {
                 <div className="space-y-6">
                   <div>
                     <p className="text-mute text-[15px] mb-3">{service.subtitle}</p>
-                    <h2 id={`${service.id}-heading`} className="font-display font-semibold text-3xl md:text-5xl leading-[1.05] tracking-[-0.032em] text-paper">
+                    <h2 id={`${service.id}-heading`} className="font-display font-medium text-3xl md:text-5xl leading-[1.05] tracking-[-0.015em] text-paper">
                       {service.title}
                     </h2>
                   </div>
@@ -366,7 +366,7 @@ export default function Services() {
               <li key={step.title}>
                 <div className="fg-cell">
                   <span className="text-mute text-sm tabular-nums">{String(i + 1).padStart(2, "0")}</span>
-                  <h3 className="text-xl font-semibold tracking-tight text-paper">{step.title}</h3>
+                  <h3 className="text-xl font-medium tracking-[-0.015em] text-paper">{step.title}</h3>
                   <p className="text-[15.5px] text-mute leading-relaxed">{step.desc}</p>
                 </div>
               </li>
@@ -382,7 +382,7 @@ export default function Services() {
             {whyUs.map((item) => (
               <li key={item.title}>
                 <div className="fg-cell">
-                  <h3 className="text-xl font-semibold tracking-tight text-paper">{item.title}</h3>
+                  <h3 className="text-xl font-medium tracking-[-0.015em] text-paper">{item.title}</h3>
                   <p className="text-[15.5px] text-mute leading-relaxed">{item.desc}</p>
                 </div>
               </li>

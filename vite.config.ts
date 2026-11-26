@@ -63,7 +63,6 @@ const staticSeoUrls = [
   "/aluminium-windows-doors",
   "/quality-safety",
   "/service-request",
-  "/facade-cost-estimator",
 ];
 
 // 4. Project Slugs — derived from src/data/projects.ts so new projects are always pre-rendered.

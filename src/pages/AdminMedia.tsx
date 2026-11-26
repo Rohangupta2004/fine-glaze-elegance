@@ -98,7 +98,7 @@ export default function AdminMedia() {
             <Lock className="w-6 h-6 text-lamp" />
           </div>
           <div>
-            <h1 className="text-xl font-bold">Fine Glaze Admin</h1>
+            <h1 className="text-xl font-medium">Fine Glaze Admin</h1>
             <p className="text-sm text-muted-foreground mt-1">
               Enter password to manage website media
             </p>
@@ -140,7 +140,7 @@ export default function AdminMedia() {
               </Button>
             </a>
             <div>
-              <h1 className="text-xl font-bold">Website Media</h1>
+              <h1 className="text-xl font-medium">Website Media</h1>
               <p className="text-sm text-muted-foreground">
                 Replace hero images & videos across all pages
               </p>
@@ -168,7 +168,7 @@ export default function AdminMedia() {
         ) : (
           Object.entries(grouped).map(([page, slots]) => (
             <section key={page} className="space-y-4">
-              <h2 className="text-lg font-bold text-paper border-b pb-2">
+              <h2 className="text-lg font-medium text-paper border-b pb-2">
                 {page}
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -256,7 +256,7 @@ function SlotCard({
     <div className="bg-night border p-5 space-y-4">
       <div className="flex items-start justify-between gap-3">
         <div>
-          <h3 className="font-semibold text-sm flex items-center gap-2">
+          <h3 className="font-medium text-sm flex items-center gap-2">
             {slot.type === "video" ? (
               <Film className="w-4 h-4 text-violet-300" />
             ) : (

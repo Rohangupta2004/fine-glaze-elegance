@@ -56,7 +56,7 @@ export default function FacadeMaintenanceAMC() {
       <section className="relative py-24 bg-night-2 text-paper">
         <div className="container mx-auto px-4 max-w-6xl grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <h1 className="text-3xl md:text-4xl font-bold mb-4">
+            <h1 className="text-3xl md:text-4xl font-medium mb-4">
               Facade AMC <span className="text-gradient-gold">Guide India</span>
             </h1>
             <p className="text-lg text-paper/80 mb-8">
@@ -73,11 +73,11 @@ export default function FacadeMaintenanceAMC() {
 
       <section className="fg-sec">
         <div className="container mx-auto px-4 max-w-5xl space-y-6">
-          <h2 className="text-3xl font-bold">Why Every Building Needs a Facade AMC</h2>
+          <h2 className="text-3xl font-medium">Why Every Building Needs a Facade AMC</h2>
           <p className="text-muted-foreground">Building facades are engineered systems that age gradually. Without regular inspection, small issues such as a cracked sealant joint, a loose gasket or a blocked drainage path can grow into water ingress that damages interiors and disrupts tenants. A facade AMC schedules inspection and repair so these issues are found early.</p>
           <p className="text-muted-foreground mt-4">India's climate makes facade upkeep important. Heavy monsoon rain and salty coastal air in Mumbai, and large daily and seasonal temperature swings in Pune, all stress sealants and joints. As general guidance, a pre-monsoon inspection and repair is the most valuable single maintenance activity for most Indian buildings.</p>
 
-          <h2 className="text-3xl font-bold mt-10">Fine Glaze Facade AMC Scope</h2>
+          <h2 className="text-3xl font-medium mt-10">Fine Glaze Facade AMC Scope</h2>
           <p className="text-muted-foreground">Fine Glaze offers annual maintenance contracts for glazing, glass and cladding. The scope and visit frequency are agreed per building, and typically cover:</p>
           <ul className="list-disc list-inside text-muted-foreground space-y-2 mt-4">
             <li><strong>Periodic facade inspection</strong> with a written condition report</li>
@@ -87,14 +87,14 @@ export default function FacadeMaintenanceAMC() {
             <li><strong>Leakage investigation and rectification</strong></li>
           </ul>
 
-          <h2 className="text-3xl font-bold mt-10">What Affects Facade AMC Cost</h2>
+          <h2 className="text-3xl font-medium mt-10">What Affects Facade AMC Cost</h2>
           <p className="text-muted-foreground">AMC cost depends on the facade area and type (curtain wall, structural glazing, ACP or aluminium windows), building height, the access method needed, visit frequency and the scope of repairs included. Fine Glaze prepares a quotation after reviewing the building and the scope you want covered.</p>
         </div>
       </section>
 
       <section className="fg-sec">
         <div className="container mx-auto px-4 max-w-5xl">
-          <h2 className="text-3xl font-bold mb-10">What Our AMC Covers</h2>
+          <h2 className="text-3xl font-medium mb-10">What Our AMC Covers</h2>
           <div className="grid md:grid-cols-2 gap-4">
             {["Periodic Facade Inspection", "Written Condition Report", "Glass Cleaning and Restoration", "Sealant Re-application and Joint Repair", "Glass Replacement and Breakage Response", "Leakage Investigation and Rectification"].map(f => (
               <div key={f} className="flex items-center gap-3"><CheckCircle2 size={20} className="text-lamp shrink-0" /><span className="text-muted-foreground">{f}</span></div>
@@ -105,18 +105,18 @@ export default function FacadeMaintenanceAMC() {
 
       <section className="fg-sec">
         <div className="container mx-auto px-4 max-w-4xl">
-          <h2 className="text-3xl font-bold mb-10">Frequently Asked Questions</h2>
+          <h2 className="text-3xl font-medium mb-10">Frequently Asked Questions</h2>
           <div className="space-y-6">
-            <div className="bg-background p-6"><h3 className="text-lg font-bold mb-2">What is included in a facade AMC?</h3><p className="text-muted-foreground">A facade AMC covers scheduled inspection of glass, sealants, cladding and drainage, plus repair work agreed in the contract, such as sealant repair, glass replacement and leakage rectification. Fine Glaze also provides a written condition report after periodic inspection.</p></div>
-            <div className="bg-background p-6"><h3 className="text-lg font-bold mb-2">How much does a facade AMC cost in India?</h3><p className="text-muted-foreground">Facade AMC cost depends on facade area and type, building height, access method, visit frequency and the repairs included, so there is no single rate. Fine Glaze prepares a quotation after reviewing the building and scope.</p></div>
-            <div className="bg-background p-6"><h3 className="text-lg font-bold mb-2">How often should a building facade be professionally inspected?</h3><p className="text-muted-foreground">A building facade should be professionally inspected at least once a year, and twice a year, before and after the monsoon, for coastal buildings and structural glazing facades. This is general guidance. Fine Glaze reports findings in writing.</p></div>
+            <div className="bg-background p-6"><h3 className="text-lg font-medium mb-2">What is included in a facade AMC?</h3><p className="text-muted-foreground">A facade AMC covers scheduled inspection of glass, sealants, cladding and drainage, plus repair work agreed in the contract, such as sealant repair, glass replacement and leakage rectification. Fine Glaze also provides a written condition report after periodic inspection.</p></div>
+            <div className="bg-background p-6"><h3 className="text-lg font-medium mb-2">How much does a facade AMC cost in India?</h3><p className="text-muted-foreground">Facade AMC cost depends on facade area and type, building height, access method, visit frequency and the repairs included, so there is no single rate. Fine Glaze prepares a quotation after reviewing the building and scope.</p></div>
+            <div className="bg-background p-6"><h3 className="text-lg font-medium mb-2">How often should a building facade be professionally inspected?</h3><p className="text-muted-foreground">A building facade should be professionally inspected at least once a year, and twice a year, before and after the monsoon, for coastal buildings and structural glazing facades. This is general guidance. Fine Glaze reports findings in writing.</p></div>
           </div>
         </div>
       </section>
 
       <section className="py-12 bg-night-2 border-t border-line">
         <div className="container mx-auto px-4 max-w-5xl">
-          <h2 className="text-xl font-bold text-paper mb-5">Related Services</h2>
+          <h2 className="text-xl font-medium text-paper mb-5">Related Services</h2>
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
             {[
               { title: "Facade Maintenance", href: "/maintenance-services", desc: "Full maintenance service" },

@@ -190,7 +190,7 @@ const Contact = () => {
                   <p className="text-lamp text-[13px] font-bold mb-1">
                     Start Your Project
                   </p>
-                  <h2 className="text-xl md:text-2xl font-bold text-paper">
+                  <h2 className="text-xl md:text-2xl font-medium text-paper">
                     Tell us what you need
                   </h2>
                 </div>
@@ -201,7 +201,7 @@ const Contact = () => {
                       <div className="w-14 h-14 border border-line flex items-center justify-center mx-auto">
                         <CheckCircle2 size={28} className="text-lamp" />
                       </div>
-                      <h3 className="text-2xl font-bold text-paper">
+                      <h3 className="text-2xl font-medium text-paper">
                         Message Sent
                       </h3>
                       <p className="text-mute text-sm max-w-md mx-auto">
@@ -376,7 +376,7 @@ const Contact = () => {
                 <p className="text-lamp text-[13px] font-bold mb-3">
                   Why Reach Out
                 </p>
-                <h3 className="text-lg font-bold text-paper mb-4">
+                <h3 className="text-lg font-medium text-paper mb-4">
                   Office hours are Monday to Saturday, 9am to 6pm.
                 </h3>
                 <p className="text-mute text-sm leading-relaxed mb-5">

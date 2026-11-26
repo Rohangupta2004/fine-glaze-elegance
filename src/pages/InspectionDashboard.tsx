@@ -76,7 +76,7 @@ export default function InspectionDashboard() {
                 <span className="text-paper font-bold text-xs">FG</span>
               </div>
               <div>
-                <h1 className="text-lg font-bold">Site Inspections</h1>
+                <h1 className="text-lg font-medium">Site Inspections</h1>
                 <p className="text-xs text-muted-foreground">
                   Fine Glaze Daily Reports
                 </p>
@@ -178,7 +178,7 @@ export default function InspectionDashboard() {
         ) : filtered.length === 0 ? (
           <div className="text-center py-12">
             <ClipboardList className="h-12 w-12 text-muted-foreground mx-auto mb-3" />
-            <h3 className="font-semibold text-lg">No inspections yet</h3>
+            <h3 className="font-medium text-lg">No inspections yet</h3>
             <p className="text-muted-foreground text-sm mt-1">
               {inspections.length === 0
                 ? "Start by creating your first site inspection report."

@@ -77,15 +77,15 @@ export default function FacadeDesignGuide() {
           <p className="text-muted-foreground">
             A well-designed facade is a multi-performance system. In India it must address solar heat gain, monsoon weather resistance (wind-driven rain and humidity), seismic and wind loads, fire safety under the National Building Code, and durability across climates from coastal to semi-arid.
           </p>
-          <h3 className="text-xl font-bold mt-8 mb-3">Glass-to-Wall Ratio (Window-to-Wall Ratio)</h3>
+          <h3 className="text-xl font-medium mt-8 mb-3">Glass-to-Wall Ratio (Window-to-Wall Ratio)</h3>
           <p className="text-muted-foreground">
             The window-to-wall ratio (WWR) is one of the most important facade design parameters. The Energy Conservation Building Code sets limits and performance requirements for commercial buildings by climate zone. Check the current code and your consultant's energy model, since higher WWR calls for glass with better solar control.
           </p>
-          <h3 className="text-xl font-bold mt-8 mb-3">Solar Shading — Reducing Cooling Load</h3>
+          <h3 className="text-xl font-medium mt-8 mb-3">Solar Shading — Reducing Cooling Load</h3>
           <p className="text-muted-foreground mt-4">
             Shading is a major lever. Fixed horizontal shading on sun-facing windows, vertical fins on east and west faces and integrated aluminium louvers all cut direct sun. Fine Glaze fabricates aluminium louvers and can supply shading as part of a facade package.
           </p>
-          <h3 className="text-xl font-bold mt-8 mb-3">Facade Modularity and Buildability</h3>
+          <h3 className="text-xl font-medium mt-8 mb-3">Facade Modularity and Buildability</h3>
           <p className="text-muted-foreground mt-4">
             Commercial facades work best when modular, based on a regular structural bay grid. Modular design reduces waste, simplifies installation and eases later panel replacement. Fine Glaze reviews bay dimensions during design development when asked.
           </p>

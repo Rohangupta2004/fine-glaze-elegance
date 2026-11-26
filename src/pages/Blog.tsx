@@ -60,7 +60,7 @@ export default function Blog() {
                   <p className="text-[15px] text-mute">
                     {post.category}, {post.readTime}
                   </p>
-                  <h2 className="font-semibold text-[clamp(18px,1.5vw,22px)] leading-snug tracking-[-0.015em] text-paper">
+                  <h2 className="font-medium text-[clamp(18px,1.5vw,22px)] leading-snug tracking-[-0.015em] text-paper">
                     {getArticleEnhancement(post.slug)?.title ?? post.title}
                   </h2>
                   <p className="text-[15.5px] text-mute line-clamp-2">

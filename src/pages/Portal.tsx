@@ -109,7 +109,7 @@ export default function Portal() {
       <SEO title="Client Portal | Fine Glaze" description="Fine Glaze client project status portal" noindex />
       <div className="max-w-6xl mx-auto space-y-8">
         <div className="flex justify-between items-center">
-          <div><h1 className="text-3xl font-bold text-paper">Project Dashboard</h1><p className="text-mute">Welcome, {session.user.email}</p></div>
+          <div><h1 className="text-3xl font-medium text-paper">Project Dashboard</h1><p className="text-mute">Welcome, {session.user.email}</p></div>
           <Button variant="outline" onClick={() => supabase.auth.signOut()}>Sign Out</Button>
         </div>
 

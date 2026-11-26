@@ -144,7 +144,7 @@ const StoryHero = () => {
     function makeText(lines: string[], fsz: number) {
       const c = document.createElement("canvas");
       const x = c.getContext("2d")!;
-      const font = "700 " + fsz + 'px "Inter","Helvetica Neue",Arial,sans-serif';
+      const font = "600 " + fsz + 'px "Lora",Georgia,"Times New Roman",serif';
       x.font = font;
       const cap = x.measureText("H").actualBoundingBoxAscent || fsz * 0.7;
       const lh = Math.round(cap / 0.58);
@@ -268,7 +268,7 @@ const StoryHero = () => {
     function box(x: number, y: number, z: number, w: number, h: number, d: number, m: Material, ox: number, oy: number, oz: number) {
       const c = C!;
       const x0 = L.X0 + x + ox, y0 = L.Y0 + y + oy, z0 = z + oz, x1 = x0 + w, y1 = y0 + h, z1 = z0 + d;
-      const ln = m.ln || "rgba(6,10,19,.8)";
+      const ln = m.ln || "rgba(24,19,15,.8)";
       if (c.ro[1] > y1) quad(pj(x0, y1, z0), pj(x1, y1, z0), pj(x1, y1, z1), pj(x0, y1, z1), m.top, ln);
       else if (c.ro[1] < y0) quad(pj(x0, y0, z0), pj(x1, y0, z0), pj(x1, y0, z1), pj(x0, y0, z1), m.side, ln);
       if (c.ro[0] < x0) quad(pj(x0, y0, z0), pj(x0, y1, z0), pj(x0, y1, z1), pj(x0, y0, z1), m.side, ln);
@@ -277,21 +277,21 @@ const StoryHero = () => {
       quad(a, b, cc, e, m.front ? m.front([(a[0] + b[0]) / 2, (a[1] + b[1]) / 2], [(e[0] + cc[0]) / 2, (e[1] + cc[1]) / 2]) : m.face!, ln);
     }
     const M: Record<string, Material> = {
-      steel: { top: "#eef1f6", side: "#6c7688", face: "#aab3c2" },
+      steel: { top: "#f0ebe4", side: "#7a6d5f", face: "#b3a897" },
       alu: {
-        top: "#f4f6fa",
-        side: "#7c8799",
-        front: (a, b) => grad(a, b, [[0, "#d9dee7"], [0.5, "#b1bac8"], [1, "#909bad"]]),
+        top: "#f3eee7",
+        side: "#8a7c6b",
+        front: (a, b) => grad(a, b, [[0, "#ddd5c8"], [0.5, "#b8ac99"], [1, "#968976"]]),
       },
-      rubber: { top: "#2a3345", side: "#070b14", face: "#141b29", ln: "rgba(130,142,162,.45)" },
+      rubber: { top: "#33281f", side: "#0e0a07", face: "#1e1712", ln: "rgba(174,165,151,.45)" },
       glass: {
-        top: "#a7dcc8",
-        side: "#4f8f7b",
+        top: "#e3cfa6",
+        side: "#8a7448",
         front: (a, b) =>
-          grad(a, b, [[0, "rgba(24,44,92,.86)"], [0.42, "rgba(93,84,136,.76)"], [0.76, "rgba(217,135,88,.72)"], [1, "rgba(248,189,110,.68)"]]),
+          grad(a, b, [[0, "rgba(52,30,36,.86)"], [0.42, "rgba(112,66,62,.76)"], [0.76, "rgba(214,128,70,.72)"], [1, "rgba(246,190,112,.68)"]]),
       },
-      spandrel: { top: "#86c2ae", side: "#3f7d69", face: "rgba(13,20,34,.96)" },
-      sil: { top: "#fbf9f2", side: "#bdb8a9", face: "#ece8df" },
+      spandrel: { top: "#c9b48a", side: "#6f5b38", face: "rgba(37,29,23,.96)" },
+      sil: { top: "#fbf9f2", side: "#bdb8a9", face: "#f5f2ee" },
     };
     const PARTS: PartBox[][] = [
       [["steel", 0.5, 0.3, -0.74, 0.5, 0.06, 0.66], ["steel", 0.5, 0.3, -0.14, 0.5, 0.36, 0.06]],
@@ -366,29 +366,29 @@ const StoryHero = () => {
         ctx.globalAlpha = al * (on ? 1 : 0.75);
         ctx.beginPath();
         ctx.arc(d[0], d[1], rr, 0, 6.283);
-        ctx.fillStyle = on ? "#dd9a5b" : "#0d1422";
+        ctx.fillStyle = on ? "#c6803a" : "#251d17";
         ctx.fill();
-        ctx.strokeStyle = "#dd9a5b";
+        ctx.strokeStyle = "#c6803a";
         ctx.lineWidth = 1.4;
         ctx.stroke();
         ctx.lineWidth = 0.8;
-        ctx.fillStyle = on ? "#1a0e04" : "#dd9a5b";
-        ctx.font = "700 " + (on ? 15 : 12) + 'px "Inter",Arial,sans-serif';
+        ctx.fillStyle = on ? "#1a1009" : "#c6803a";
+        ctx.font = "700 " + (on ? 15 : 12) + 'px "Space Mono",ui-monospace,Menlo,monospace';
         ctx.textAlign = "center";
         ctx.textBaseline = "middle";
         ctx.fillText(String(i + 1), d[0], d[1] + 1);
         // the part's name, to the right of its number
-        const fsz = on ? (L.port ? 15 : 17) : L.port ? 12 : 13;
-        ctx.font = "600 " + fsz + 'px "Inter",Arial,sans-serif';
+        const fsz = on ? (L.port ? 13 : 14) : L.port ? 11 : 12;
+        ctx.font = "400 " + fsz + 'px "Space Mono",ui-monospace,Menlo,monospace';
         ctx.textAlign = "left";
         const tw = ctx.measureText(NAMES[i]).width, ly = d[1];
         let lx = d[0] + rr + 8;
         if (lx + tw + 14 > VW - 8) lx = d[0] - rr - 8 - tw - 14;
         ctx.globalAlpha = al * (on ? 0.92 : 0.5);
-        ctx.fillStyle = "rgba(6,10,19,.78)";
+        ctx.fillStyle = "rgba(24,19,15,.78)";
         ctx.fillRect(lx, ly - fsz * 0.72, tw + 14, fsz * 1.44);
         ctx.globalAlpha = al * (on ? 1 : 0.7);
-        ctx.fillStyle = on ? "#dd9a5b" : "#ece8df";
+        ctx.fillStyle = on ? "#c6803a" : "#f5f2ee";
         ctx.fillText(NAMES[i], lx + 7, ly + 1);
       }
       ctx.globalAlpha = 1;
@@ -522,7 +522,7 @@ const StoryHero = () => {
     const ready =
       document.fonts && document.fonts.load
         ? Promise.race([
-            document.fonts.load('700 100px "Inter"'),
+            document.fonts.load('600 100px "Lora"'),
             new Promise((r) => {
               fontTimer = window.setTimeout(r, 2200);
             }),
@@ -533,7 +533,7 @@ const StoryHero = () => {
     // The font stylesheet loads without blocking, so the face can arrive after the first draw.
     // Redraw the lit headline once it is really there.
     const onFonts = () => {
-      if (document.fonts.check('700 100px "Inter"')) {
+      if (document.fonts.check('600 100px "Lora"')) {
         size();
         kick();
       }

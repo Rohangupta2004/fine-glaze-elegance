@@ -79,7 +79,7 @@ export default function FacadeWaterproofing() {
           <p className="text-muted-foreground">
             Water entering through a facade can damage interiors, false ceilings and building services. Heavy monsoon rain in Mumbai and Pune makes sealant, gasket and drainage condition important to check before every rainy season. This is general guidance.
           </p>
-          <h3 className="text-xl font-bold mt-8 mb-3">Common Causes of Facade Leakage in India</h3>
+          <h3 className="text-xl font-medium mt-8 mb-3">Common Causes of Facade Leakage in India</h3>
           <ul className="list-disc list-inside text-muted-foreground space-y-2">
             <li><strong>Failed silicone sealant joints:</strong> Silicone sealant degrades over time with UV exposure, thermal cycling and building movement. Cracked or debonded sealant is a common cause of facade leakage.</li>
             <li><strong>Improper original installation:</strong> Inadequate joint depth, wrong sealant type, or contaminated surfaces at installation lead to premature sealant failure.</li>
@@ -87,7 +87,7 @@ export default function FacadeWaterproofing() {
             <li><strong>Missing or failed drainage channels:</strong> Curtain wall systems rely on internal pressure-equalisation drainage. Blocked drainage directs water inward.</li>
             <li><strong>Glass seal failure:</strong> DGU units lose their edge seal allowing inter-pane condensation.</li>
           </ul>
-          <h3 className="text-xl font-bold mt-8 mb-3">Fine Glaze Waterproofing Repair Process</h3>
+          <h3 className="text-xl font-medium mt-8 mb-3">Fine Glaze Waterproofing Repair Process</h3>
           <p className="text-muted-foreground">
             Our approach to a leak is: (1) trace the leak points on site, including a water test where needed; (2) inspect sealant adhesion and joint condition; (3) agree a repair scope; (4) remove failed sealant and prepare the surfaces; (5) apply new sealant from approved manufacturers such as DOWSIL or equivalents; (6) re-test the repaired area before sign-off.
           </p>

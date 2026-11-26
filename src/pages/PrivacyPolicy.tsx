@@ -22,7 +22,7 @@ const PrivacyPolicy = () => {
           <div className="prose prose-stone prose-sm max-w-none space-y-8">
 
             <div>
-              <h2 className="text-lg font-bold text-paper mb-3">1. Introduction</h2>
+              <h2 className="text-lg font-medium text-paper mb-3">1. Introduction</h2>
               <p className="text-mute text-sm leading-relaxed">
                 Fine Glaze ("we", "our", or "us") is committed to protecting the privacy of our
                 website visitors and clients. This Privacy Policy explains how we collect, use,
@@ -35,7 +35,7 @@ const PrivacyPolicy = () => {
             </div>
 
             <div>
-              <h2 className="text-lg font-bold text-paper mb-3">2. Information We Collect</h2>
+              <h2 className="text-lg font-medium text-paper mb-3">2. Information We Collect</h2>
               <p className="text-mute text-sm leading-relaxed mb-3">
                 We collect information that you voluntarily provide to us when you:
               </p>
@@ -62,7 +62,7 @@ const PrivacyPolicy = () => {
             </div>
 
             <div>
-              <h2 className="text-lg font-bold text-paper mb-3">3. How We Use Your Information</h2>
+              <h2 className="text-lg font-medium text-paper mb-3">3. How We Use Your Information</h2>
               <p className="text-mute text-sm leading-relaxed mb-3">
                 Your information is used exclusively for:
               </p>
@@ -91,7 +91,7 @@ const PrivacyPolicy = () => {
             </div>
 
             <div>
-              <h2 className="text-lg font-bold text-paper mb-3">4. Third-Party Services</h2>
+              <h2 className="text-lg font-medium text-paper mb-3">4. Third-Party Services</h2>
               <p className="text-mute text-sm leading-relaxed">
                 Our website uses the following third-party services to process data:
               </p>
@@ -119,7 +119,7 @@ const PrivacyPolicy = () => {
             </div>
 
             <div>
-              <h2 className="text-lg font-bold text-paper mb-3">5. Cookies</h2>
+              <h2 className="text-lg font-medium text-paper mb-3">5. Cookies</h2>
               <p className="text-mute text-sm leading-relaxed">
                 Our website uses cookies and similar technologies for analytics and to ensure
                 proper functionality. You can control cookie preferences through your browser
@@ -128,7 +128,7 @@ const PrivacyPolicy = () => {
             </div>
 
             <div>
-              <h2 className="text-lg font-bold text-paper mb-3">6. Data Security</h2>
+              <h2 className="text-lg font-medium text-paper mb-3">6. Data Security</h2>
               <p className="text-mute text-sm leading-relaxed">
                 We implement reasonable security measures to protect your personal information
                 from unauthorized access, alteration, or disclosure. Our website uses HTTPS
@@ -138,7 +138,7 @@ const PrivacyPolicy = () => {
             </div>
 
             <div>
-              <h2 className="text-lg font-bold text-paper mb-3">7. Data Retention</h2>
+              <h2 className="text-lg font-medium text-paper mb-3">7. Data Retention</h2>
               <p className="text-mute text-sm leading-relaxed">
                 We retain your contact information for as long as necessary to respond to your
                 enquiry and provide our services. Project-related records are retained in
@@ -147,7 +147,7 @@ const PrivacyPolicy = () => {
             </div>
 
             <div>
-              <h2 className="text-lg font-bold text-paper mb-3">8. Your Rights</h2>
+              <h2 className="text-lg font-medium text-paper mb-3">8. Your Rights</h2>
               <p className="text-mute text-sm leading-relaxed">
                 You have the right to request access to, correction of, or deletion of your
                 personal information at any time. To exercise these rights, please contact us
@@ -156,7 +156,7 @@ const PrivacyPolicy = () => {
             </div>
 
             <div>
-              <h2 className="text-lg font-bold text-paper mb-3">9. Changes to This Policy</h2>
+              <h2 className="text-lg font-medium text-paper mb-3">9. Changes to This Policy</h2>
               <p className="text-mute text-sm leading-relaxed">
                 We may update this Privacy Policy from time to time. Any changes will be posted
                 on this page with an updated revision date.
@@ -165,7 +165,7 @@ const PrivacyPolicy = () => {
 
             {/* Contact box */}
             <div className="bg-night-2 border border-line p-5 md:p-7 mt-8">
-              <h2 className="text-lg font-bold text-paper mb-4">10. Contact Us</h2>
+              <h2 className="text-lg font-medium text-paper mb-4">10. Contact Us</h2>
               <p className="text-mute text-sm leading-relaxed mb-4">
                 If you have questions about this Privacy Policy or how we handle your data,
                 please reach out:
