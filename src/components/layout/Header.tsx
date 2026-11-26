@@ -130,9 +130,9 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
           <Link
             to="/"
             aria-label="Fine Glaze, home"
-            className="flex-shrink-0 font-display font-extrabold text-[26px] tracking-[0.02em] text-paper focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-glass"
+            className="flex-shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-glass"
           >
-            FINE GLAZE
+            <img src="/Logofg.webp" alt="Fine Glaze" width={1920} height={603} className="h-10 lg:h-12 w-auto brightness-150" />
           </Link>
 
           {/* DESKTOP NAV */}
@@ -263,7 +263,7 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
           />
           <div className="fixed top-0 left-0 right-0 z-[60] bg-night-2 text-paper border-b border-line max-h-[90vh] overflow-y-auto lg:hidden animate-in slide-in-from-top duration-200">
             <div className="flex items-center justify-between px-5 h-16 border-b border-line sticky top-0 bg-night-2 z-10">
-              <span className="font-display font-extrabold text-[26px] tracking-[0.02em]">FINE GLAZE</span>
+              <img src="/Logofg.webp" alt="Fine Glaze" width={1920} height={603} className="h-10 w-auto brightness-150" />
               <button type="button" onClick={() => setIsMobileMenuOpen(false)} aria-label="Close menu" className="p-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-glass">
                 <X size={24} />
               </button>

@@ -75,7 +75,7 @@ export default {
   		},
   		fontFamily: {
   			sans: [
-  				'Schibsted Grotesk',
+  				'Inter',
   				'ui-sans-serif',
   				'system-ui',
   				'-apple-system',
@@ -87,7 +87,7 @@ export default {
   				'sans-serif'
   			],
   			display: [
-  				'Big Shoulders Display',
+  				'Inter',
   				'Impact',
   				'Arial Narrow',
   				'sans-serif'

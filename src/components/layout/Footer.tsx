@@ -32,8 +32,8 @@ export const Footer = () => {
           <div className="space-y-5">
             <img
               src="/Logofg.webp"
-              alt="Fine Glaze Logo"
-              className="h-12 w-auto brightness-0 invert"
+              alt="Fine Glaze"
+              className="h-12 w-auto brightness-150"
             />
             <p className="text-paper/70 text-sm leading-relaxed">
               Facade design, fabrication, installation and maintenance — from Pune and Mumbai.
@@ -55,7 +55,7 @@ export const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-display font-extrabold text-2xl mb-6">Quick Links</h4>
+            <h4 className="font-display font-semibold text-lg tracking-tight mb-5">Quick Links</h4>
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.href}>
@@ -80,7 +80,7 @@ export const Footer = () => {
 
           {/* Services — Now with internal links */}
           <div>
-            <h4 className="font-display font-extrabold text-2xl mb-6">Our Services</h4>
+            <h4 className="font-display font-semibold text-lg tracking-tight mb-5">Our Services</h4>
             <ul className="space-y-3">
               {services.map((service) => (
                 <li key={service.href}>
@@ -97,7 +97,7 @@ export const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h4 className="font-display font-extrabold text-2xl mb-6">Contact Us</h4>
+            <h4 className="font-display font-semibold text-lg tracking-tight mb-5">Contact Us</h4>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <MapPin size={18} className="text-lamp mt-1 shrink-0" />
