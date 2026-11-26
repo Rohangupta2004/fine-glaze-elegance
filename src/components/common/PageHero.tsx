@@ -87,7 +87,7 @@ export const PageHero = ({ crumbs = [], title, intro, image, secondary, source =
                 width={image.width}
                 height={image.height}
                 loading="eager"
-                fetchPriority="high"
+                {...({ fetchpriority: "high" } as Record<string, string>)}
                 style={image.position ? { objectPosition: image.position } : undefined}
               />
             </figure>
