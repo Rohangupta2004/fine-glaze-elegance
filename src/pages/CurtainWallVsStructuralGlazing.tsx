@@ -35,9 +35,9 @@ export default function CurtainWallVsStructuralGlazing() {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      { "@type": "Question", "name": "Which is cheaper — curtain wall or structural glazing?", "acceptedAnswer": { "@type": "Answer", "text": "Structural glazing (2-side SSG) can be slightly cheaper than curtain wall for simple, low-rise facades (Rs 300-500/sq ft vs Rs 350-650/sq ft for stick system). However, 4-side SSG is comparable in cost to mid-range curtain wall. For high-rise buildings, unitized curtain wall is typically the more practical and cost-competitive solution." } },
-      { "@type": "Question", "name": "Can curtain wall and structural glazing be combined on one building?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — this is very common. Many buildings use structural glazing for the ground floor showroom or lobby entrance, transitioning to curtain wall for upper floors. Fine Glaze regularly designs and installs hybrid facade systems that combine both approaches within a unified aesthetic language." } },
-      { "@type": "Question", "name": "Which is better for a showroom facade in India?", "acceptedAnswer": { "@type": "Answer", "text": "For showroom facades where maximum glass visibility and a premium frameless appearance is the priority, structural glazing (4-side SSG or spider glazing) is the preferred choice. The frameless glass look is a signature aesthetic for automotive showrooms, retail flagships, and luxury hotel entries." } },
+      { "@type": "Question", "name": "Which is cheaper — curtain wall or structural glazing?", "acceptedAnswer": { "@type": "Answer", "text": "Neither is always cheaper. Cost depends on height, glass, system and configuration: 2-side structural glazing can suit simple low-rise facades, while unitized curtain wall is often more practical on tall buildings. Compare quotations on the same scope." } },
+      { "@type": "Question", "name": "Can curtain wall and structural glazing be combined on one building?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, this is common. Many buildings use structural glazing at a ground-floor lobby or showroom and curtain wall on the upper floors. The two systems need coordinated drawings so joints, drainage and movement line up." } },
+      { "@type": "Question", "name": "Which is better for a showroom facade in India?", "acceptedAnswer": { "@type": "Answer", "text": "For showrooms, structural glazing such as 4-side SSG or spider glazing is usually preferred, because it gives the frameless, transparent look that retail frontages want. Curtain wall remains an option where framing is acceptable." } },
     ]
   };
 
@@ -97,14 +97,14 @@ export default function CurtainWallVsStructuralGlazing() {
             A curtain wall is a non-load-bearing facade system comprising aluminium framing members (mullions and transoms) with glass or opaque panel infill. The aluminium frame is visible from the exterior as a grid pattern. Curtain walls can be stick systems (assembled on-site) or unitized (factory-assembled panels).
           </p>
           <p className="text-muted-foreground mt-4">
-            Curtain walls excel in: high-rise applications where structural rigidity is critical; large areas requiring efficient weather-tight installation; projects requiring opaque spandrel panels integrated with glazed vision panels; and buildings where future glass replacement accessibility is important. The visible aluminium grid provides positive visual framing and can be used as an architectural design element.
+            Curtain walls suit: tall buildings; large areas needing efficient weather-tight installation; projects with opaque spandrel panels beside vision glass; and buildings where future glass replacement access matters. The visible aluminium grid can also be used as a design element.
           </p>
           <h2 className="text-3xl font-bold mt-10">What is Structural Glazing?</h2>
           <p className="text-muted-foreground mt-4">
             Structural glazing (SSG — Structural Silicone Glazing) bonds glass panels directly to an aluminium frame using high-strength structural silicone sealant, eliminating visible exterior fixings. The result is a clean, flush glass surface with no protruding frames or caps.
           </p>
           <p className="text-muted-foreground mt-4">
-            Structural glazing excels in: showrooms, retail facades, and hospitality buildings where maximum glass transparency and premium aesthetics are priorities; lower-rise buildings and landmark entries; projects where minimal visual interruption of the glass plane is desired; and situations where the facade must appear as a continuous reflective surface.
+            Structural glazing suits: showrooms, retail frontages and hospitality buildings where transparency is the priority; lower-rise buildings and landmark entries; and facades meant to read as a continuous glass plane.
           </p>
           <div className="overflow-x-auto mt-6">
             <table className="w-full border-collapse text-sm">
@@ -117,8 +117,8 @@ export default function CurtainWallVsStructuralGlazing() {
               </thead>
               <tbody>
                 <tr><td className="border border-border p-3">Visible Frame</td><td className="border border-border p-3">Yes (aluminium grid)</td><td className="border border-border p-3">No (flush glass)</td></tr>
-                <tr className="bg-muted/30"><td className="border border-border p-3">Typical Height</td><td className="border border-border p-3">Any — 2 to 60+ storeys</td><td className="border border-border p-3">Ideal up to 20 storeys</td></tr>
-                <tr><td className="border border-border p-3">Cost</td><td className="border border-border p-3">Rs 350–1,200/sq ft</td><td className="border border-border p-3">Rs 300–900/sq ft</td></tr>
+                <tr className="bg-muted/30"><td className="border border-border p-3">Typical Height</td><td className="border border-border p-3">Low-rise to high-rise</td><td className="border border-border p-3">Often low and mid-rise; taller needs engineering review</td></tr>
+                <tr><td className="border border-border p-3">Cost</td><td className="border border-border p-3">Depends on system, glass and height</td><td className="border border-border p-3">Depends on configuration, glass and sealant</td></tr>
                 <tr className="bg-muted/30"><td className="border border-border p-3">Glass Replacement</td><td className="border border-border p-3">Easier (mechanical fix)</td><td className="border border-border p-3">Requires sealant cutting</td></tr>
                 <tr><td className="border border-border p-3">Opaque Panels</td><td className="border border-border p-3">Yes (spandrels)</td><td className="border border-border p-3">Opaque backing only</td></tr>
                 <tr className="bg-muted/30"><td className="border border-border p-3">Aesthetic</td><td className="border border-border p-3">Classic framed look</td><td className="border border-border p-3">Seamless glass plane</td></tr>
@@ -135,11 +135,11 @@ export default function CurtainWallVsStructuralGlazing() {
           <h2 className="text-3xl font-bold mb-10 text-center">What We Offer</h2>
           <div className="grid md:grid-cols-2 gap-4">
               <div key="Side-by-Side System Comparison" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Side-by-Side System Comparison</span></div>
-              <div key="Cost Analysis Both Systems" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Cost Analysis Both Systems</span></div>
+              <div key="Cost Factors for Both Systems" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Cost Factors for Both Systems</span></div>
               <div key="Height Suitability Guide" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Height Suitability Guide</span></div>
               <div key="Maintenance Considerations" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Maintenance Considerations</span></div>
               <div key="Aesthetic Difference Explained" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Aesthetic Difference Explained</span></div>
-              <div key="Fine Glaze Expert Recommendation" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Fine Glaze Expert Recommendation</span></div>
+              <div key="Choosing With Fine Glaze" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Choosing With Fine Glaze</span></div>
           </div>
         </div>
       </section>
@@ -151,15 +151,15 @@ export default function CurtainWallVsStructuralGlazing() {
           <div className="space-y-6">
             <div className="bg-background rounded-xl p-6 shadow-sm">
               <h3 className="text-lg font-bold mb-2">Which is cheaper — curtain wall or structural glazing?</h3>
-              <p className="text-muted-foreground">Structural glazing (2-side SSG) can be slightly cheaper than curtain wall for simple, low-rise facades (Rs 300-500/sq ft vs Rs 350-650/sq ft for stick system). However, 4-side SSG is comparable in cost to mid-range curtain wall. For high-rise buildings, unitized curtain wall is typically the more practical and cost-competitive solution.</p>
+              <p className="text-muted-foreground">Neither is always cheaper. Cost depends on height, glass, system and configuration: 2-side structural glazing can suit simple low-rise facades, while unitized curtain wall is often more practical on tall buildings. Compare quotations on the same scope.</p>
             </div>
             <div className="bg-background rounded-xl p-6 shadow-sm">
               <h3 className="text-lg font-bold mb-2">Can curtain wall and structural glazing be combined on one building?</h3>
-              <p className="text-muted-foreground">Yes — this is very common. Many buildings use structural glazing for the ground floor showroom or lobby entrance, transitioning to curtain wall for upper floors. Fine Glaze regularly designs and installs hybrid facade systems that combine both approaches within a unified aesthetic language.</p>
+              <p className="text-muted-foreground">Yes, this is common. Many buildings use structural glazing at a ground-floor lobby or showroom and curtain wall on the upper floors. The two systems need coordinated drawings so joints, drainage and movement line up.</p>
             </div>
             <div className="bg-background rounded-xl p-6 shadow-sm">
               <h3 className="text-lg font-bold mb-2">Which is better for a showroom facade in India?</h3>
-              <p className="text-muted-foreground">For showroom facades where maximum glass visibility and a premium frameless appearance is the priority, structural glazing (4-side SSG or spider glazing) is the preferred choice. The frameless glass look is a signature aesthetic for automotive showrooms, retail flagships, and luxury hotel entries.</p>
+              <p className="text-muted-foreground">For showrooms, structural glazing such as 4-side SSG or spider glazing is usually preferred, because it gives the frameless, transparent look that retail frontages want. Curtain wall remains an option where framing is acceptable.</p>
             </div>
           </div>
         </div>

@@ -35,9 +35,9 @@ export default function AluminiumVsAcp() {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      { "@type": "Question", "name": "Is ACP cladding banned in India?", "acceptedAnswer": { "@type": "Answer", "text": "PE-core ACP is not banned but is restricted to buildings below 15m height under NBC 2016 and state fire regulations. For buildings above 15m, only FR-grade ACP with A2 or B1 mineral core is permitted. Fine Glaze exclusively uses FR-grade ACP for external facades." } },
-      { "@type": "Question", "name": "Can ACP cladding be combined with glass on a building?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. The most common combination is ACP spandrel panels combined with glass windows or curtain wall glazing. This creates a cost-effective facade with mixed opacity. Fine Glaze regularly designs and installs combination systems." } },
-      { "@type": "Question", "name": "Which lasts longer — aluminium facade or ACP?", "acceptedAnswer": { "@type": "Answer", "text": "Pure aluminium facade systems can last 30-40+ years with minimal maintenance. PVDF-coated ACP panels last 20-25 years before colour degradation. In coastal environments, aluminium extrusions typically outperform ACP in the very long term." } },
+      { "@type": "Question", "name": "Is ACP cladding banned in India?", "acceptedAnswer": { "@type": "Answer", "text": "ACP cladding is not banned in India, but combustible polyethylene-core panels are restricted on taller buildings under the National Building Code and state fire rules. Fire-retardant mineral-core panels are the usual choice. Confirm limits with your consultant." } },
+      { "@type": "Question", "name": "Can ACP cladding be combined with glass on a building?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. ACP panels are often combined with glass windows or curtain wall, for example as spandrel infill, which gives a facade mixing opaque and glazed areas. The details must be coordinated between the cladding and glazing scopes." } },
+      { "@type": "Question", "name": "Which lasts longer — aluminium facade or ACP?", "acceptedAnswer": { "@type": "Answer", "text": "Aluminium framing and extrusions generally outlast ACP panels, because coated ACP depends on its coating and panel bond. Actual life depends on finish, exposure, detailing and upkeep, so check the manufacturer's warranty terms." } },
     ]
   };
 
@@ -103,10 +103,10 @@ export default function AluminiumVsAcp() {
                 </tr>
               </thead>
               <tbody>
-                <tr><td className="border border-border p-3 font-medium">Cost</td><td className="border border-border p-3">Rs 350–1,200/sq ft</td><td className="border border-border p-3">Rs 180–450/sq ft</td></tr>
-                <tr className="bg-muted/30"><td className="border border-border p-3 font-medium">Fire Safety</td><td className="border border-border p-3">Non-combustible (Class A)</td><td className="border border-border p-3">PE core combustible; FR-core required above G+2</td></tr>
-                <tr><td className="border border-border p-3 font-medium">Weight</td><td className="border border-border p-3">Higher (extrusions + glass)</td><td className="border border-border p-3">Very lightweight (3–4 kg/sq m)</td></tr>
-                <tr className="bg-muted/30"><td className="border border-border p-3 font-medium">Durability</td><td className="border border-border p-3">25–40 years</td><td className="border border-border p-3">15–25 years (PVDF)</td></tr>
+                <tr><td className="border border-border p-3 font-medium">Cost</td><td className="border border-border p-3">Usually higher: more material, glass and labour</td><td className="border border-border p-3">Usually lower for opaque areas</td></tr>
+                <tr className="bg-muted/30"><td className="border border-border p-3 font-medium">Fire Safety</td><td className="border border-border p-3">Non-combustible (Class A)</td><td className="border border-border p-3">PE core is combustible; fire-retardant core is usually required on taller buildings</td></tr>
+                <tr><td className="border border-border p-3 font-medium">Weight</td><td className="border border-border p-3">Higher (extrusions + glass)</td><td className="border border-border p-3">Very lightweight</td></tr>
+                <tr className="bg-muted/30"><td className="border border-border p-3 font-medium">Durability</td><td className="border border-border p-3">Long, with suitable finish and upkeep</td><td className="border border-border p-3">Depends on coating and exposure; see maker warranty</td></tr>
                 <tr><td className="border border-border p-3 font-medium">Design Flexibility</td><td className="border border-border p-3">Moderate</td><td className="border border-border p-3">Very high (CNC routing, 3D)</td></tr>
                 <tr className="bg-muted/30"><td className="border border-border p-3 font-medium">Glass Integration</td><td className="border border-border p-3">Yes (windows, curtain walls)</td><td className="border border-border p-3">Opaque panels only</td></tr>
                 <tr><td className="border border-border p-3 font-medium">Maintenance</td><td className="border border-border p-3">Low</td><td className="border border-border p-3">Low</td></tr>
@@ -115,15 +115,15 @@ export default function AluminiumVsAcp() {
           </div>
           <h2 className="text-3xl font-bold mt-10">When to Choose ACP Cladding</h2>
           <p className="text-muted-foreground mt-4">
-            ACP cladding is ideal when: (1) Budget is a primary constraint; (2) The project is low-rise (below 15m) or requires FR panels for mid-rise; (3) Complex 3D forms or curved cladding are required; (4) Fast installation is critical; (5) Large opaque facade areas need coverage without glass elements.
+            ACP cladding suits projects where: (1) budget is a primary constraint; (2) the building is low-rise or a fire-retardant core is specified for mid-rise; (3) complex 3D forms or curved cladding are needed; (4) fast installation matters; (5) large opaque areas need covering without glass.
           </p>
           <h2 className="text-3xl font-bold mt-10">When to Choose Aluminium Facade</h2>
           <p className="text-muted-foreground mt-4">
-            Aluminium facade systems are the right choice when: (1) Glass integration (curtain wall, windows) is required; (2) Building is high-rise (10+ storeys) requiring structural performance; (3) Long-term durability (30+ years) is prioritised; (4) The building is in a coastal zone requiring marine-grade performance; (5) Thermal performance and energy efficiency (LEED) are targets.
+            Aluminium facade systems suit projects where: (1) glass integration (curtain wall, windows) is required; (2) the building is tall and needs structural performance; (3) long-term durability is a priority; (4) the site is coastal and corrosion-resistant systems are needed; (5) thermal performance and energy efficiency are targets.
           </p>
-          <h2 className="text-3xl font-bold mt-10">Fire Safety in India — The Critical Difference</h2>
+          <h2 className="text-3xl font-bold mt-10">Fire Safety in India: The Critical Difference</h2>
           <p className="text-muted-foreground mt-4">
-            Fire safety regulations in India are increasingly strict following incidents with combustible ACP cladding globally. NBC 2016 mandates FR-grade ACP (A2 or B1 mineral core) for all buildings above 15 metres. PE-core ACP, which is combustible, must not be used on buildings above 3 floors. Aluminium extrusions, by contrast, are inherently non-combustible (Class A) and have no height restriction. Fine Glaze always uses FR-grade ACP for external applications and provides material certification on request.
+            Fire safety rules for external cladding in India are strict, and the National Building Code and state regulations set limits on combustible cladding on taller buildings. Fire-retardant mineral-core ACP is the usual choice for external use. Aluminium extrusions are non-combustible. Always confirm the core type and test documents with your consultant and the fire authority.
           </p>
     
         </div>
@@ -134,12 +134,12 @@ export default function AluminiumVsAcp() {
         <div className="container mx-auto px-4 max-w-5xl">
           <h2 className="text-3xl font-bold mb-10 text-center">What We Offer</h2>
           <div className="grid md:grid-cols-2 gap-4">
-              <div key="Detailed Cost Comparison" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Detailed Cost Comparison</span></div>
+              <div key="Cost Comparison Factors" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Cost Comparison Factors</span></div>
               <div key="Fire Safety Analysis India" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Fire Safety Analysis India</span></div>
-              <div key="Durability Benchmarking" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Durability Benchmarking</span></div>
+              <div key="Durability Factors" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Durability Factors</span></div>
               <div key="Design Flexibility Guide" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Design Flexibility Guide</span></div>
-              <div key="NBC 2016 Compliance" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">NBC 2016 Compliance</span></div>
-              <div key="Expert Selection Framework" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Expert Selection Framework</span></div>
+              <div key="Building Code Pointers" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Building Code Pointers</span></div>
+              <div key="Selection Checklist" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Selection Checklist</span></div>
           </div>
         </div>
       </section>
@@ -151,15 +151,15 @@ export default function AluminiumVsAcp() {
           <div className="space-y-6">
             <div className="bg-background rounded-xl p-6 shadow-sm">
               <h3 className="text-lg font-bold mb-2">Is ACP cladding banned in India?</h3>
-              <p className="text-muted-foreground">PE-core ACP is not banned but is restricted to buildings below 15m height under NBC 2016 and state fire regulations. For buildings above 15m, only FR-grade ACP with A2 or B1 mineral core is permitted. Fine Glaze exclusively uses FR-grade ACP for external facades.</p>
+              <p className="text-muted-foreground">ACP cladding is not banned in India, but combustible polyethylene-core panels are restricted on taller buildings under the National Building Code and state fire rules. Fire-retardant mineral-core panels are the usual choice. Confirm limits with your consultant.</p>
             </div>
             <div className="bg-background rounded-xl p-6 shadow-sm">
               <h3 className="text-lg font-bold mb-2">Can ACP cladding be combined with glass on a building?</h3>
-              <p className="text-muted-foreground">Yes. The most common combination is ACP spandrel panels combined with glass windows or curtain wall glazing. This creates a cost-effective facade with mixed opacity. Fine Glaze regularly designs and installs combination systems.</p>
+              <p className="text-muted-foreground">Yes. ACP panels are often combined with glass windows or curtain wall, for example as spandrel infill, which gives a facade mixing opaque and glazed areas. The details must be coordinated between the cladding and glazing scopes.</p>
             </div>
             <div className="bg-background rounded-xl p-6 shadow-sm">
               <h3 className="text-lg font-bold mb-2">Which lasts longer — aluminium facade or ACP?</h3>
-              <p className="text-muted-foreground">Pure aluminium facade systems can last 30-40+ years with minimal maintenance. PVDF-coated ACP panels last 20-25 years before colour degradation. In coastal environments, aluminium extrusions typically outperform ACP in the very long term.</p>
+              <p className="text-muted-foreground">Aluminium framing and extrusions generally outlast ACP panels, because coated ACP depends on its coating and panel bond. Actual life depends on finish, exposure, detailing and upkeep, so check the manufacturer's warranty terms.</p>
             </div>
           </div>
         </div>
