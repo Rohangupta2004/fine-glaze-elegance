@@ -17,9 +17,26 @@ export function useHeadingReveal() {
         }),
       { threshold: 0.2 },
     );
+    // run the section background animation only while a section is on screen
+    const bgIo = new IntersectionObserver((en) => en.forEach((e) => e.target.classList.toggle("glb-on", e.isIntersecting)), { rootMargin: "120px" });
+    document
+      .querySelectorAll(".fg-sec, .fg-home .cli, .fg-home .svc, .fg-home .prc, .fg-home .rvw, .fg-home .art, .fg-home .vid, .fg-home .wk")
+      .forEach((el) => bgIo.observe(el));
     const t = window.setTimeout(() => {
       document.querySelectorAll<HTMLElement>("main h2").forEach((h) => {
         // headings with their own reveal (home story, .wipe) are left alone
+        // accent the last word of plain-text headings in the bronze gradient
+        if (h.childNodes.length === 1 && h.firstChild?.nodeType === 3 && !h.closest(".story")) {
+          const txt = (h.textContent || "").trimEnd();
+          const i = txt.lastIndexOf(" ");
+          if (i > 0 && txt.length - i < 18) {
+            const sp = document.createElement("span");
+            sp.className = "text-gradient";
+            sp.textContent = txt.slice(i + 1);
+            h.firstChild.textContent = txt.slice(0, i + 1);
+            h.appendChild(sp);
+          }
+        }
         if (h.closest(".story") || h.classList.contains("wipe") || h.closest(".fg-home")) return;
         const r = h.getBoundingClientRect();
         if (r.top < innerHeight * 0.9 && r.bottom > 0) return; // already on screen: no reveal
@@ -31,6 +48,7 @@ export function useHeadingReveal() {
     return () => {
       clearTimeout(t);
       io.disconnect();
+      bgIo.disconnect();
       html.classList.remove("hd-js");
       document.querySelectorAll(".hd-r").forEach((h) => h.classList.remove("hd-r", "hd-in"));
     };
