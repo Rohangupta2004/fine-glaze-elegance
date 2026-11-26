@@ -52,6 +52,23 @@ const HomeNumbers = () => {
             <dd className="nm">Best Vendor Performance</dd>
             <dd className="ex">awarded by {company.award.by}</dd>
           </div>
+          <div className="ng-f">
+            <dt className="sr">Award photograph</dt>
+            <dd>
+            <figure>
+            <img
+              src="/images/profile/award-best-vendor-performance-2024.webp"
+              alt="Best Vendor Performance 2024 trophy and certificate of appreciation from Embassy REIT"
+              width={1523}
+              height={941}
+              sizes="(max-width: 820px) 100vw, 30vw"
+              loading="lazy"
+              decoding="async"
+            />
+            <figcaption>Best Vendor Performance 2024, awarded by {company.award.by}</figcaption>
+          </figure>
+            </dd>
+          </div>
         </dl>
       </div>
     </section>

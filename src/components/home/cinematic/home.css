@@ -103,6 +103,10 @@
 .fg-home .ng>div{grid-column:span 2;min-width:0;padding:0 clamp(16px,2.2vw,40px);border-left:1px solid var(--line)}
 .fg-home .ng>div:nth-child(1),.fg-home .ng>div:nth-child(4){border-left:0;padding-left:0}
 .fg-home .ng dt{font-family:var(--display);font-weight:400;font-size:clamp(64px,9vw,128px);line-height:1;letter-spacing:-.02em;color:var(--paper);font-variant-numeric:lining-nums tabular-nums}
+.fg-home .ng>.ng-f{grid-column:span 2;margin:0;padding:0 0 0 clamp(16px,2.2vw,40px);border-left:1px solid var(--line);align-self:end}
+.fg-home .ng-f dd,.fg-home .ng-f figure{margin:0}
+.fg-home .ng-f img{display:block;width:100%;height:auto}
+.fg-home .ng-f figcaption{margin-top:10px;color:var(--mute);font-family:var(--mono);font-size:12px;letter-spacing:.02em;line-height:1.4}
 .fg-home .ng .plus{color:var(--lamp);font-weight:400;font-size:.4em;letter-spacing:0;vertical-align:top;margin-left:.08em;line-height:1.1}
 .fg-home .ng .nm{margin:22px 0 0;font-weight:500;font-size:clamp(18px,1.5vw,22px);line-height:1.25;color:var(--paper)}
 .fg-home .ng .ex{margin:6px 0 0;color:var(--mute);font-size:15.5px;line-height:1.4;max-width:18rem}
@@ -226,6 +230,7 @@
 }
 @media (max-width:820px){
 .fg-home .ng{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:34px}
+.fg-home .ng>.ng-f{grid-column:1/-1;padding:0;border-left:0}
 .fg-home .ng>div,.fg-home .ng>div:nth-child(4){grid-column:span 1;padding:0 0 0 16px;border-left:1px solid var(--line)}
 .fg-home .ng>div:nth-child(odd){padding-left:0;border-left:0}
 .fg-home .ng dt{font-size:clamp(52px,15vw,64px)}
