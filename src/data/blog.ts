@@ -199,7 +199,7 @@ export const blogPosts: Record<string, BlogPost> = {
     "date": "2026-04-14",
     "readTime": "8 min read",
     "category": "Cost Guide",
-    "heroImage": "/Glazing.webp",
+    "heroImage": "/images/illustrations/blog-cost.webp",
     "excerpt": "Structural glazing cost depends on the system, glass build-up, silicone design, height and access. See what to ask before you compare any two quotations.",
     "content": [
       {
@@ -291,7 +291,7 @@ export const blogPosts: Record<string, BlogPost> = {
     "date": "2026-03-08",
     "readTime": "6 min read",
     "category": "Technical Guide",
-    "heroImage": "/Unitized.webp",
+    "heroImage": "/images/illustrations/blog-comparison.webp",
     "excerpt": "Should you choose unitized or stick system for your building? A detailed comparison covering cost, speed, quality, weather resistance, and suitability.",
     "content": [
       {
@@ -385,7 +385,7 @@ export const blogPosts: Record<string, BlogPost> = {
     "date": "2026-02-19",
     "readTime": "7 min read",
     "category": "Knowledge Base",
-    "heroImage": "/Glass.webp",
+    "heroImage": "/images/illustrations/blog-glass.webp",
     "excerpt": "From toughened glass to smart switchable glass — a complete guide to the 7 types of glass used in modern Indian building facades.",
     "content": [
       {
@@ -435,7 +435,7 @@ export const blogPosts: Record<string, BlogPost> = {
     "date": "2026-01-27",
     "readTime": "5 min read",
     "category": "Industry Guide",
-    "heroImage": "/Glass installation.webp",
+    "heroImage": "/images/illustrations/blog-design.webp",
     "excerpt": "Hiring the wrong facade contractor can mean costly rework. Here's a 10-point checklist to evaluate any facade company before signing the contract.",
     "content": [
       {
@@ -477,7 +477,7 @@ export const blogPosts: Record<string, BlogPost> = {
     "date": "2026-05-10",
     "readTime": "7 min read",
     "category": "Cost Guide",
-    "heroImage": "/Railing.webp",
+    "heroImage": "/images/illustrations/blog-cost.webp",
     "excerpt": "Glass railing cost depends on the system, glass build-up, hardware grade, anchoring and access. Here is what to ask before you compare any two quotations.",
     "content": [
       {
@@ -575,7 +575,7 @@ export const blogPosts: Record<string, BlogPost> = {
     "date": "2026-04-28",
     "readTime": "6 min read",
     "category": "Comparison Guide",
-    "heroImage": "/Aluminium windows.webp",
+    "heroImage": "/images/illustrations/blog-comparison.webp",
     "excerpt": "Aluminium or UPVC — which window and facade system suits your building in India? A detailed 2026 comparison covering cost, durability, thermal performance and maintenance.",
     "content": [
       {
@@ -655,7 +655,7 @@ export const blogPosts: Record<string, BlogPost> = {
     "date": "2026-04-05",
     "readTime": "8 min read",
     "category": "Maintenance Guide",
-    "heroImage": "/Amc1.webp",
+    "heroImage": "/images/illustrations/blog-maintenance.webp",
     "excerpt": "A complete guide to maintaining your building facade in India — covering AMC packages, cleaning schedules, common failure points, and cost benchmarks for 2026.",
     "content": [
       {
@@ -730,7 +730,7 @@ export const blogPosts: Record<string, BlogPost> = {
     "date": "2026-03-22",
     "readTime": "9 min read",
     "category": "Technical Guide",
-    "heroImage": "/Glass installation.webp",
+    "heroImage": "/images/illustrations/blog-design.webp",
     "excerpt": "A complete step-by-step breakdown of how curtain walls are designed, fabricated, and installed in India — with timelines, quality checks, and what every developer should know.",
     "content": [
       {
@@ -813,7 +813,7 @@ export const blogPosts: Record<string, BlogPost> = {
     "date": "2026-05-11",
     "readTime": "6 min read",
     "category": "Comparison Guide",
-    "heroImage": "/Panel.webp",
+    "heroImage": "/images/illustrations/blog-comparison.webp",
     "excerpt": "ACP vs HPL in one table: make-up, weight, bending, fire behaviour, finish and where each fits on an Indian building.",
     "content": [
       {
@@ -1024,7 +1024,7 @@ export const blogPosts: Record<string, BlogPost> = {
     "date": "2026-05-08",
     "readTime": "12 min read",
     "category": "Technical White Paper",
-    "heroImage": "/Glazing.webp",
+    "heroImage": "/images/illustrations/blog-glass.webp",
     "excerpt": "A complete technical guide for architects on selecting the right facade glass for Indian buildings — covering thermal properties, solar control, IS standards, and climate-specific recommendations.",
     "content": [
       {
@@ -1121,7 +1121,7 @@ export const blogPosts: Record<string, BlogPost> = {
     "date": "2026-05-05",
     "readTime": "10 min read",
     "category": "Technical White Paper",
-    "heroImage": "/Panel.webp",
+    "heroImage": "/images/illustrations/blog-comparison.webp",
     "excerpt": "A technical deep-dive for architects and PMCs on specifying ACP, HPL, and solid aluminium composite — covering fire performance, structural properties, weathering data, and selection criteria.",
     "content": [
       {
@@ -1238,7 +1238,7 @@ export const blogPosts: Record<string, BlogPost> = {
     "date": "2026-04-25",
     "readTime": "9 min read",
     "category": "Technical Guide",
-    "heroImage": "/Glazing.webp",
+    "heroImage": "/images/illustrations/blog-glass.webp",
     "excerpt": "Everything you need to know about specifying a spider glazing system in India — fittings, structural support, glass specs, and pricing.",
     "content": [
       {
@@ -1337,7 +1337,7 @@ export const blogPosts: Record<string, BlogPost> = {
     "date": "2026-05-14",
     "readTime": "7 min read",
     "category": "Cost Guide",
-    "heroImage": "/Panel.webp",
+    "heroImage": "/images/illustrations/blog-cost.webp",
     "excerpt": "ACP cladding cost depends on the core, brand, coating, sub-frame and height. Here is what to ask a contractor before you compare any two quotations.",
     "content": [
       {
@@ -1435,7 +1435,7 @@ export const blogPosts: Record<string, BlogPost> = {
     "date": "2026-05-12",
     "readTime": "8 min read",
     "category": "Cost Guide",
-    "heroImage": "/Unitized.webp",
+    "heroImage": "/images/illustrations/blog-cost.webp",
     "excerpt": "Curtain wall cost depends on the system, glass, profiles, wind load, height and testing. Here is what to ask before you compare any two quotations.",
     "content": [
       {
@@ -1527,7 +1527,7 @@ export const blogPosts: Record<string, BlogPost> = {
     "date": "2026-05-08",
     "readTime": "7 min read",
     "category": "Cost Guide",
-    "heroImage": "/Aluminium windows.webp",
+    "heroImage": "/images/illustrations/blog-cost.webp",
     "excerpt": "Aluminium window cost depends on the profile series, thermal break, glass build-up and hardware. Here is what to ask before you compare any two quotations.",
     "content": [
       {
@@ -1619,7 +1619,7 @@ export const blogPosts: Record<string, BlogPost> = {
     "date": "2026-05-06",
     "readTime": "6 min read",
     "category": "Cost Guide",
-    "heroImage": "/Glass.webp",
+    "heroImage": "/images/illustrations/blog-cost.webp",
     "excerpt": "Double glazed window cost depends on the glass build-up, coating, frame and hardware. Here is what to ask before you compare any two quotations.",
     "content": [
       {
@@ -1721,7 +1721,7 @@ export const blogPosts: Record<string, BlogPost> = {
     "date": "2026-05-02",
     "readTime": "8 min read",
     "category": "Industry Guide",
-    "heroImage": "/Glazing.webp",
+    "heroImage": "/images/illustrations/blog-design.webp",
     "excerpt": "From parametric facades to net-zero envelopes — the 10 facade design trends defining Indian commercial architecture in 2026.",
     "content": [
       {
@@ -1779,7 +1779,7 @@ export const blogPosts: Record<string, BlogPost> = {
     "date": "2026-04-20",
     "readTime": "7 min read",
     "category": "Technical Guide",
-    "heroImage": "/Glass installation.webp",
+    "heroImage": "/images/illustrations/blog-glass.webp",
     "excerpt": "What Indian building codes require for fire-rated glass facades — NBC 2016 rules, IS standards, fire-rated curtain wall options, and compliance costs.",
     "content": [
       {
@@ -1866,7 +1866,7 @@ export const blogPosts: Record<string, BlogPost> = {
     "date": "2026-04-15",
     "readTime": "6 min read",
     "category": "Cost Guide",
-    "heroImage": "/Glass.webp",
+    "heroImage": "/images/illustrations/blog-cost.webp",
     "excerpt": "Glass partition cost depends on glass thickness, acoustic needs, doors and hardware. Here is what to ask before you compare any two quotations.",
     "content": [
       {
@@ -1964,7 +1964,7 @@ export const blogPosts: Record<string, BlogPost> = {
     "date": "2026-04-10",
     "readTime": "5 min read",
     "category": "Industry Guide",
-    "heroImage": "/Business park.webp",
+    "heroImage": "/images/illustrations/blog-comparison.webp",
     "excerpt": "Should you give facade work to your general contractor or hire a specialist? The right choice can save you costly rework and months.",
     "content": [
       {
@@ -2123,7 +2123,7 @@ export const blogPosts: Record<string, BlogPost> = {
     "date": "2026-03-15",
     "readTime": "7 min read",
     "category": "Maintenance Guide",
-    "heroImage": "/Amc1.webp",
+    "heroImage": "/images/illustrations/blog-waterproofing.webp",
     "excerpt": "Why does your glass facade leak? A complete guide to waterproofing, leakage diagnosis, repair methods, and costs for Indian buildings.",
     "content": [
       {
@@ -2201,7 +2201,7 @@ export const blogPosts: Record<string, BlogPost> = {
     "date": "2026-05-15",
     "readTime": "8 min read",
     "category": "Technical Guide",
-    "heroImage": "/Amc.webp",
+    "heroImage": "/images/illustrations/blog-design.webp",
     "excerpt": "A complete step-by-step breakdown of how ACP cladding is installed in India — from sub-frame to finished facade, with quality checks and realistic timelines.",
     "content": [
       {

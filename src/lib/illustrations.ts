@@ -35,3 +35,9 @@ export type IllustrationName = keyof typeof ILLUSTRATIONS;
 export const illusSrc = (n: IllustrationName) => `/images/illustrations/${n}.webp`;
 export const illusSrcSet = (n: IllustrationName) =>
   `/images/illustrations/${n}-800.webp 800w, /images/illustrations/${n}.webp 1376w`;
+
+/** srcset for any /images/illustrations/<name>.webp path (800w and 1376w), otherwise undefined. */
+export const illusSrcSetFor = (src: string): string | undefined => {
+  const m = src.match(/^\/images\/illustrations\/([a-z0-9-]+)\.webp$/);
+  return m ? `/images/illustrations/${m[1]}-800.webp 800w, ${src} 1376w` : undefined;
+};

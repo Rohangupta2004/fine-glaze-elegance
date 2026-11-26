@@ -4,6 +4,7 @@ import { blogPosts, blogPostsList } from "@/data/blog";
 import { useBlogImages } from "@/hooks/useBlogImages";
 import { Clock, Phone, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { illusSrcSetFor } from "@/lib/illustrations";
 import SEO from "@/components/SEO";
 import PageHero from "@/components/common/PageHero";
 import { useBookCall } from "@/components/booking/BookCallProvider";
@@ -246,7 +247,7 @@ export default function BlogArticle() {
                   >
                     <img decoding="async"
                       src={getHeroImage(r.slug, r.heroImage)}
-                      srcSet={getArticleImageSrcSet(r.slug)}
+                      srcSet={getArticleImageSrcSet(r.slug) ?? illusSrcSetFor(getHeroImage(r.slug, r.heroImage))}
                       sizes="96px"
                       alt={r.title}
                       className="w-24 h-24 object-cover shrink-0"

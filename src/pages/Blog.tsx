@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Clock, Tag } from "lucide-react";
 import { blogPostsList } from "@/data/blog";
 import { useBlogImages } from "@/hooks/useBlogImages";
+import { illusSrcSetFor } from "@/lib/illustrations";
 import SEO from "@/components/SEO";
 import { CTASection } from "@/components/home/CTASection";
 import PageHero from "@/components/common/PageHero";
@@ -48,7 +49,7 @@ export default function Blog() {
                   <div className="aspect-[16/10] overflow-hidden bg-night-2">
                     <img decoding="async"
                       src={getHeroImage(post.slug, post.heroImage)}
-                      srcSet={getArticleImageSrcSet(post.slug)}
+                      srcSet={getArticleImageSrcSet(post.slug) ?? illusSrcSetFor(getHeroImage(post.slug, post.heroImage))}
                       sizes="(max-width: 767px) calc(100vw - 2rem), (max-width: 1023px) 50vw, 33vw"
                       alt={post.title}
                       className="w-full h-full object-cover"
