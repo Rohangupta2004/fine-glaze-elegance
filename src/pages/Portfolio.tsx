@@ -68,7 +68,7 @@ const TYPES = [
 /** City is the last part of the stored location, e.g. "Hinjewadi, Pune" gives "Pune". */
 function cityOf(location: string): string {
   const last = location.split(",").pop()?.trim() || location;
-  return last === "Raigad" ? "Panvel" : last;
+  return /raigad/i.test(last) ? "Panvel" : last;
 }
 
 /** Up to three short scope tags from the stored scope line. */
@@ -80,13 +80,18 @@ function scopeTags(scope: string): string[] {
     .slice(0, 3);
 }
 
-function ProjectCard({ p }: { p: Project }) {
+/** Pastel spectrum, one thin top bar per card. */
+const TINTS = ["#a9cfe8", "#c3b4e6", "#f3c1a4", "#e9b27a"];
+
+function ProjectCard({ p, n }: { p: Project; n: number }) {
   const fig = useRef<HTMLDivElement>(null);
   const [armed, seen] = useWipe(fig);
   const tags = scopeTags(p.scope);
   return (
     <li>
-      <Link to={`/project/${p.slug}`} className="pf-card">
+      <Link to={`/project/${p.slug}`} className="pf-card" style={{ ["--tint" as string]: TINTS[(n - 1) % TINTS.length] }}>
+        <span className="pf-bar-t" aria-hidden="true" />
+        <p className="pf-no">N&ordm; {String(n).padStart(2, "0")}</p>
         <div ref={fig} className={`pf-fig${armed ? " armed" : ""}${seen ? " seen" : ""}`}>
           <img decoding="async"
             src={p.image}
@@ -106,10 +111,12 @@ function ProjectCard({ p }: { p: Project }) {
               <dd>{p.client}</dd>
             </div>
           )}
-          <div>
-            <dt>Status</dt>
-            <dd>{p.status === "Completed" ? `Completed${p.year ? ` ${p.year}` : ""}` : p.status || p.year}</dd>
-          </div>
+          {(p.status || p.year) && (
+            <div>
+              <dt>Status</dt>
+              <dd>{p.status === "Completed" ? `Completed${p.year ? ` ${p.year}` : ""}` : p.status || p.year}</dd>
+            </div>
+          )}
         </dl>
         {tags.length > 0 && (
           <ul className="pf-tags">
@@ -144,11 +151,10 @@ const Portfolio = () => {
   const [city, setCity] = useState("all");
 
   const cities = Array.from(new Set(projects.map((p) => cityOf(p.location))));
-  const filtered = projects.filter(
-    (p) =>
-      (type === "all" || p.category === type || (type === "award" && p.isAwardWinner)) &&
-      (city === "all" || cityOf(p.location) === city),
-  );
+  const matches = (p: Project, t: string, c: string) =>
+    (t === "all" || p.category === t || (t === "award" && p.isAwardWinner)) && (c === "all" || cityOf(p.location) === c);
+  const filtered = projects.filter((p) => matches(p, type, city));
+  const countFor = (t: string, c: string) => projects.filter((p) => matches(p, t, c)).length;
 
   return (
     <Layout darkHero>
@@ -172,15 +178,15 @@ const Portfolio = () => {
         <div className="fg-wrap">
           <div className="pf-bar" role="group" aria-label="Filter projects">
             <div className="pf-grp" role="group" aria-label="Type">
-              <Toggle on={type === "all"} onClick={() => setType("all")}>All types</Toggle>
+              <Toggle on={type === "all"} onClick={() => setType("all")}>All types ({countFor("all", city)})</Toggle>
               {TYPES.map((t) => (
-                <Toggle key={t.id} on={type === t.id} onClick={() => setType(t.id)}>{t.label}</Toggle>
+                <Toggle key={t.id} on={type === t.id} onClick={() => setType(t.id)}>{t.label} ({countFor(t.id, city)})</Toggle>
               ))}
             </div>
             <div className="pf-grp" role="group" aria-label="City">
-              <Toggle on={city === "all"} onClick={() => setCity("all")}>All cities</Toggle>
+              <Toggle on={city === "all"} onClick={() => setCity("all")}>All cities ({countFor(type, "all")})</Toggle>
               {cities.map((c) => (
-                <Toggle key={c} on={city === c} onClick={() => setCity(c)}>{c}</Toggle>
+                <Toggle key={c} on={city === c} onClick={() => setCity(c)}>{c} ({countFor(type, c)})</Toggle>
               ))}
             </div>
             <p className="pf-n" aria-live="polite">
@@ -193,7 +199,7 @@ const Portfolio = () => {
           ) : (
             <ul className="fg-grid pf-grid">
               {filtered.map((p) => (
-                <ProjectCard key={p.id} p={p} />
+                <ProjectCard key={p.slug} p={p} n={projects.indexOf(p) + 1} />
               ))}
             </ul>
           )}
@@ -204,7 +210,7 @@ const Portfolio = () => {
         <div className="fg-wrap">
           <StatBand
             stats={[
-              { value: "16", name: "Project records", line: "documented in our company profile" },
+              { value: String(Object.keys(projectsData).length), name: "Project records", line: "documented in our company profile" },
               { value: "2", name: "Cities", line: "Pune and Mumbai" },
               { value: "40+", name: "Core team", line: "engineering, supervision and site work" },
               { value: "2024", name: "Best Vendor Performance", line: "awarded by Embassy REIT" },

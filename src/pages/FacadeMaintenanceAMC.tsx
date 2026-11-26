@@ -1,10 +1,11 @@
 import SEO from "@/components/SEO";
+import { telHref } from "@/data/company";
 import { RelatedProjects } from "@/components/RelatedProjects";
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/home/CTASection";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { CheckCircle2, ArrowRight } from "lucide-react";
+import { CheckCircle2, ArrowRight, Phone } from "lucide-react";
 
 export default function FacadeMaintenanceAMC() {
   const serviceSchema = {
@@ -63,7 +64,7 @@ export default function FacadeMaintenanceAMC() {
               A facade Annual Maintenance Contract (AMC) schedules inspection, cleaning and repair of a building's glass, sealant and cladding systems so problems are found before they cause leaks. Fine Glaze offers facade AMC for buildings in Pune and Mumbai.
             </p>
             <div className="flex gap-4">
-              <Link to="/contact"><Button size="lg" className="bg-lamp hover:bg-lamp/90">Book a call</Button></Link>
+              <Button asChild size="lg" className="bg-lamp hover:bg-lamp/90"><a href={telHref} data-call-now><Phone size={16} aria-hidden="true" /> Call now</a></Button>
               <Link to="/maintenance-services"><Button size="lg" variant="outline">Our Services</Button></Link>
             </div>
           </div>

@@ -4,7 +4,8 @@ export const FS = `#version 300 es
 precision highp float;
 out vec4 o;
 uniform vec2 uRes; uniform float uT,uP,uIn,uSun,uN,uAsp,uNi;
-uniform vec3 uRo,uF,uR,uU; uniform vec4 uTR; uniform sampler2D uTx; uniform vec2 uBay; uniform float uOpen,uLit,uSg;
+uniform vec3 uRo,uF,uR,uU; uniform vec4 uTR; uniform sampler2D uTx; uniform vec2 uBay; uniform float uOpen,uLit,uSg,uScr;
+float gTm=0.; vec3 gTc=vec3(.984,.973,.957);
 const float W=42.,H=162.,D=30.,PW=1.5,FH=3.6,SP=.2;
 float sst(float a,float b,float x){float t=clamp((x-a)/(b-a),0.,1.);return t*t*(3.-2.*t);}
 float h21(vec2 p){p=fract(p*vec2(123.34,456.21));p+=dot(p,p+45.32);return fract(p.x*p.y);}
@@ -73,14 +74,13 @@ vec3 facade(vec2 uv,vec3 n,vec3 tx,vec3 rd,bool front){
     if(t.x>0.&&t.x<1.&&t.y>0.&&t.y<1.){
       float li=floor((1.-t.y)*uN);
       float on=clamp(uIn*(uN+1.6)-li,0.,1.); on*=on*(3.-2.*on);
-      tm=texture(uTx,vec2(t.x,1.-t.y)).r*on*uSg;
-      glow=textureLod(uTx,vec2(t.x,1.-t.y),5.).r*on*uSg;
-    }
-    vec2 ts=(tp-vec2(.05,-.08)-uTR.xy)/uTR.zw;
-    if(ts.x>0.&&ts.x<1.&&ts.y>0.&&ts.y<1.){
-      float li2=floor((1.-ts.y)*uN);
-      float on2=clamp(uIn*(uN+1.6)-li2,0.,1.); on2*=on2*(3.-2.*on2);
-      shd=textureLod(uTx,vec2(ts.x,1.-ts.y),1.5).r*on2*uSg;
+      gTm=texture(uTx,vec2(t.x,1.-t.y)).r*on*uSg;
+      if(li>uN-1.5){
+        // last line: the light aurora spectrum, left to right
+        float ax=clamp(t.x*1.12,0.,1.)*3.;
+        vec3 a0=vec3(.663,.812,.910), a1=vec3(.765,.706,.902), a2=vec3(.953,.757,.643), a3=vec3(.914,.698,.478);
+        gTc=ax<1.?mix(a0,a1,ax):(ax<2.?mix(a1,a2,ax-1.):mix(a2,a3,ax-2.));
+      }
     }
   }
   prob*=1.-inr;
@@ -89,13 +89,11 @@ vec3 facade(vec2 uv,vec3 n,vec3 tx,vec3 rd,bool front){
   float lit=max(step(r3,prob)*(.6+.4*r2)*.35,isB*uLit);
   vec3 inside=mix(rm*(.03*vec3(1.,.7,.5)+lit*.34)+warm*fx*.7*lit*exp(-tt*.07),warm*prob*.1,lod);
     float ao=mix(.86+.14*sst(0.,.07,min(min(f.x,1.-f.x),min(f.y,1.-f.y)*2.4)),1.,lod);
-  vec3 glass=mix(inside*vec3(.98,.9,.78),refl*ao,fr*(1.-.4*tm));
+  vec3 glass=mix(inside*vec3(.98,.9,.78),refl*ao,fr);
   vec3 sp=mix(vec3(.05,.045,.04),refl*ao,fr*.5+.04);
   vec3 c=mix(glass,sp,spand);
   vec3 mc=vec3(.02,.018,.016)+refl*.03+vec3(.08,.07,.06)*sst(.03,.0,abs(fract(g.x+.5)-.5-.012))*(1.-lod);
   c=mix(c,mc,mull);
-  c*=1.-.42*glow-.5*shd*(1.-tm);
-  c=mix(c,vec3(1.,.97,.93),tm);
   if(isB>.5){vec3 oc=rm*.2+vec3(.018,.014,.01)+warm*fx*.5*exp(-tt*.07);oc=mix(oc,vec3(.22,.2,.18)*(.55+.45*f.x),step(f.y,.085));c=mix(c,oc,uOpen);}
   return c;
 }
@@ -121,6 +119,11 @@ void main(){
   c=mix(c,c*c*(3.-2.*c),.35);
   c*=1.-.2*dot(p*.7,p*.7);
   c*=sst(0.,.3,uIn);
+  // soft dark scrim under the headline: left side on wide screens, bottom on phones
+  vec2 sp2=gl_FragCoord.xy/uRes;
+  float scr=uAsp<.85?1.-sst(.55,1.,sp2.y):1.-sst(.12,.55,sp2.x);
+  c=mix(c,vec3(.078,.055,.035),.62*scr*uScr);
+  c=mix(c,gTc,gTm);
   c+=(h21(gl_FragCoord.xy+fract(uT)*91.)-.5)/150.;
   o=vec4(c,1.);
 }`;

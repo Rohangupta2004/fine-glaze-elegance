@@ -1,6 +1,7 @@
-import { useRef, useState, type KeyboardEvent } from "react";
+import { useCallback, useEffect, useRef, useState, type KeyboardEvent } from "react";
 import { Link } from "react-router-dom";
-import { company } from "@/data/company";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { projectsData } from "@/data/projects";
 
 const PROJECTS = [
   {
@@ -50,6 +51,9 @@ const PROJECTS = [
   },
 ];
 
+// The real number of project records on the site, so the line below never drifts from the data.
+const PROJECT_COUNT = Object.keys(projectsData).length;
+
 const COLS = 4;
 const ROWS = 3;
 const PANES = Array.from({ length: COLS * ROWS }, (_, i) => ({ c: i % COLS, r: Math.floor(i / COLS) }));
@@ -62,6 +66,49 @@ const HomeWork = () => {
   const [swaps, setSwaps] = useState(0);
   const warmed = useRef(false);
   const items = useRef<Array<HTMLButtonElement | null>>([]);
+  const rail = useRef<HTMLUListElement>(null);
+  const [slide, setSlide] = useState(0);
+  const busy = useRef<number | undefined>();
+
+  // Phone carousel: which slide is in view, from the scroll position.
+  const onRail = useCallback(() => {
+    const el = rail.current;
+    if (!el || busy.current !== undefined) return;
+    const kids = Array.from(el.children) as HTMLElement[];
+    const x = el.scrollLeft + (kids[0]?.offsetLeft ?? 0);
+    let best = 0;
+    kids.forEach((k, i) => {
+      if (Math.abs(k.offsetLeft - x) < Math.abs(kids[best].offsetLeft - x)) best = i;
+    });
+    setSlide(best);
+  }, []);
+
+  const goSlide = (i: number) => {
+    const el = rail.current;
+    if (!el) return;
+    const n = Math.min(PROJECTS.length - 1, Math.max(0, i));
+    const kids = Array.from(el.children) as HTMLElement[];
+    const reduce = typeof matchMedia === "function" && matchMedia("(prefers-reduced-motion: reduce)").matches;
+    window.clearTimeout(busy.current);
+    busy.current = window.setTimeout(() => {
+      busy.current = undefined;
+      onRail();
+    }, reduce ? 50 : 750);
+    el.scrollTo({ left: kids[n].offsetLeft - kids[0].offsetLeft, behavior: reduce ? "auto" : "smooth" });
+    setSlide(n);
+  };
+
+  const onRailKey = (e: KeyboardEvent<HTMLUListElement>) => {
+    if (e.key === "ArrowRight") { e.preventDefault(); goSlide(slide + 1); }
+    if (e.key === "ArrowLeft") { e.preventDefault(); goSlide(slide - 1); }
+  };
+
+  useEffect(() => {
+    const el = rail.current;
+    if (!el) return;
+    el.addEventListener("scrollend", onRail);
+    return () => el.removeEventListener("scrollend", onRail);
+  }, [onRail]);
 
   // Preload every photograph on first interaction.
   const warm = () => {
@@ -107,7 +154,7 @@ const HomeWork = () => {
           <div className="sec-h">
             <div>
               <h2 className="wipe">Recent <span className="text-gradient">work.</span></h2>
-              <p className="wk-n">Five of the {company.stats.projectRecords} project records in our company profile.</p>
+              <p className="wk-n">Five of the {PROJECT_COUNT} projects in our company profile.</p>
             </div>
             <Link className="lnk" to="/portfolio">
               See all projects
@@ -152,13 +199,12 @@ const HomeWork = () => {
                       const fit = { left: `${-100 * c}%`, top: `${-100 * r}%`, width: `${100 * COLS}%`, height: `${100 * ROWS}%` };
                       return (
                         <div className="pane" style={place} key={`${c}-${r}`}>
-                          {swaps > 0 && <img src={old.img} alt="" style={fit} loading="lazy" decoding="async" />}
+                          {swaps > 0 && <img src={old.img} alt="" style={fit} decoding="async" />}
                           <img
                             key={active}
                             className={swaps > 0 ? "swap" : undefined}
                             src={cur.img}
                             alt=""
-                            loading="lazy"
                             decoding="async"
                             style={{ ...fit, animationDelay: `${(c * ROWS + r) * 40}ms` }}
                           />
@@ -180,10 +226,11 @@ const HomeWork = () => {
               </ul>
             </div>
 
-            <ul className="wk-s" tabIndex={0} aria-label="Projects, scroll sideways">
-              {PROJECTS.map((p) => (
-                <li key={p.name}>
-                  <img src={p.img} alt={p.alt} loading="lazy" decoding="async" />
+            <div className="wk-m" role="region" aria-roledescription="carousel" aria-label="Recent projects">
+            <ul className="wk-s" ref={rail} onScroll={onRail} onKeyDown={onRailKey} tabIndex={0} aria-label="Projects, swipe sideways">
+              {PROJECTS.map((p, i) => (
+                <li key={p.name} role="group" aria-roledescription="slide" aria-label={`${i + 1} of ${PROJECTS.length}`}>
+                  <img src={p.img} alt={p.alt} loading="eager" decoding="async" />
                   <b>{p.name}</b>
                   <span>{facts(p)}</span>
                   <em>{p.status}</em>
@@ -195,6 +242,23 @@ const HomeWork = () => {
                 </li>
               ))}
             </ul>
+            <div className="wk-c">
+              <button type="button" aria-label="Previous project" onClick={() => goSlide(slide - 1)} disabled={slide === 0}>
+                <ChevronLeft size={20} aria-hidden="true" />
+              </button>
+              <span className="wk-cn" aria-live="polite">
+                {String(slide + 1).padStart(2, "0")} / {String(PROJECTS.length).padStart(2, "0")}
+              </span>
+              <span className="wk-dots" aria-hidden="true">
+                {PROJECTS.map((p, i) => (
+                  <i key={p.name} className={i === slide ? "on" : undefined} />
+                ))}
+              </span>
+              <button type="button" aria-label="Next project" onClick={() => goSlide(slide + 1)} disabled={slide === PROJECTS.length - 1}>
+                <ChevronRight size={20} aria-hidden="true" />
+              </button>
+            </div>
+            </div>
           </div>
         </div>
       </section>

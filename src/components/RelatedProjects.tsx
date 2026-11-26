@@ -17,19 +17,24 @@ interface RelatedProjectsProps {
   /** Keep projects whose scope / system / title mentions any of these. */
   keywords?: string[];
   limit?: number;
+  /** Never list these project slugs (e.g. the page being viewed). */
+  excludeSlugs?: string[];
+  /** Rank projects of this category first. */
+  preferCategory?: string;
 }
 
 const has = (text: string, words: string[]) => words.some((w) => text.toLowerCase().includes(w.toLowerCase()));
 
-export function matchProjects({ locations, excludeLocations, keywords, limit = 4 }: Omit<RelatedProjectsProps, "heading" | "intro">) {
+export function matchProjects({ locations, excludeLocations, keywords, limit = 4, excludeSlugs, preferCategory }: Omit<RelatedProjectsProps, "heading" | "intro">) {
   return Object.entries(projectsData)
+    .filter(([slug]) => !excludeSlugs || !excludeSlugs.includes(slug))
     .filter(([, p]) => !locations || has(p.location, locations))
     .filter(([, p]) => !excludeLocations || !has(p.location, excludeLocations))
     .filter(([, p]) => !keywords || has(`${p.title} ${p.scope} ${p.systemUsed} ${p.features.join(" ")}`, keywords))
     .map(([slug, p]) => {
       // relevance: keyword hits in the headline scope count most
       const head = `${p.title} ${p.scope} ${p.systemUsed}`;
-      const score = keywords ? keywords.filter((k) => head.toLowerCase().includes(k.toLowerCase())).length : 0;
+      const score = (keywords ? keywords.filter((k) => head.toLowerCase().includes(k.toLowerCase())).length : 0) + (preferCategory && p.category === preferCategory ? 10 : 0);
       return { slug, p, score };
     })
     .sort((a, b) => b.score - a.score || Number(b.p.status === "Completed") - Number(a.p.status === "Completed") || Number(b.p.year) - Number(a.p.year))

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import CallNow from "@/components/common/CallNow";
 import { Link } from "react-router-dom";
 import { ArrowRight, CheckCircle2, Phone } from "lucide-react";
 import SEO from "@/components/SEO";
@@ -282,11 +283,9 @@ export default function AluminiumWindowsDoors() {
           <h2 className="fg-h2" style={{ color: "#fbf8f4", marginBottom: 12 }}>Get your windows measured and quoted</h2>
           <p className="mt-2 text-lamp-ink">Pune, PCMC, Mumbai, Navi Mumbai and Thane.</p>
           <div className="mt-6 flex flex-col sm:flex-row gap-3">
-            <button onClick={() => setQuoteOpen(true)} className="bg-night text-paper font-bold px-7 py-4 hover:bg-night-2">
-              Book a call
-            </button>
+            <CallNow className="bg-night text-paper font-bold px-7 py-4 hover:bg-night-2 inline-flex items-center justify-center" />
             <a href={telHref} className="border-2 border-night text-lamp-ink font-bold px-7 py-4 hover:bg-night hover:text-paper">
-              Call {company.phone.mobileDisplay}
+              {company.phone.mobileDisplay}
             </a>
           </div>
         </div>

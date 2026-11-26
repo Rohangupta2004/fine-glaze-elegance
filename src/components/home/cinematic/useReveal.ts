@@ -21,17 +21,24 @@ export function useReveal(ref: RefObject<HTMLElement>) {
     if (!reduce) counters.forEach((el) => (el.textContent = el.dataset.from || "0"));
 
     const count = (el: HTMLElement) => {
+      // one run per counter, even when the element sits inside two observed sections
+      if (el.dataset.counted) return;
+      el.dataset.counted = "1";
       const to = +(el.dataset.count || 0), from = +(el.dataset.from || 0), dur = 1400;
       if (reduce) {
         el.textContent = String(to);
         return;
       }
+      // guarantee the final figure even if animation frames are throttled
+      const done = window.setTimeout(() => (el.textContent = String(to)), dur + 300);
+      cleanups.push(() => clearTimeout(done));
       let t0 = 0;
       const step = (ts: number) => {
         if (!t0) t0 = ts;
         const k = Math.min(1, (ts - t0) / dur), e = 1 - Math.pow(1 - k, 3);
         el.textContent = String(Math.round(from + (to - from) * e));
         if (k < 1) frames.add(requestAnimationFrame(step));
+        else el.textContent = String(to);
       };
       el.textContent = String(from);
       frames.add(requestAnimationFrame(step));
@@ -80,6 +87,7 @@ export function useReveal(ref: RefObject<HTMLElement>) {
     }
 
     return () => {
+      counters.forEach((el) => delete el.dataset.counted);
       frames.forEach((f) => cancelAnimationFrame(f));
       cleanups.forEach((fn) => fn());
     };

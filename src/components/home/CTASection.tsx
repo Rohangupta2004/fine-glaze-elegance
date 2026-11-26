@@ -1,25 +1,21 @@
-import { useBookCall } from "@/components/booking/BookCallProvider";
+import CallNow from "@/components/common/CallNow";
+import { Link } from "react-router-dom";
 import { company, telHref, whatsappHref } from "@/data/company";
 
 /** Closing band used at the foot of the service, city and guide pages. */
 export const CTASection = () => {
-  const { open } = useBookCall();
-
   return (
-    <section className="bg-night-2 text-paper">
+    <section className="bg-night-2 text-paper aurora-glow">
       <div className="container mx-auto px-4 py-20 md:py-28">
         <div className="grid gap-10 md:grid-cols-[7fr_5fr] md:items-end">
           <div>
             <h2 className="font-display font-medium leading-[1.04] tracking-[-0.015em] text-4xl md:text-6xl max-w-[11ch]">
               Tell us about your facade.
             </h2>
-            <button
-              type="button"
-              onClick={() => open({ source: "page_close" })}
-              className="mt-8 h-[52px] px-7 bg-lamp text-lamp-ink font-semibold transition-transform active:scale-[0.98] hover:brightness-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-glass"
-            >
-              Book a call
-            </button>
+            <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-4">
+              <CallNow className="fg-btn" number />
+              <Link to="/contact" className="fg-lnk">Send an enquiry</Link>
+            </div>
             <p className="mt-5 max-w-sm text-[15.5px] text-mute">
               We call you back the same business day, Monday to Saturday, 9am to 6pm.
             </p>

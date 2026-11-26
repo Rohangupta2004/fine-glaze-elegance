@@ -2,6 +2,7 @@ import "./header.css";
 import { Link } from "react-router-dom";
 import { MapPin, Phone, Mail, Linkedin } from "lucide-react";
 import { company, telHref, officeTelHref } from "@/data/company";
+import CallNow from "@/components/common/CallNow";
 
 const quickLinks = [
   { href: "/", label: "Home" },
@@ -25,7 +26,7 @@ const services = [
 
 export const Footer = () => {
   return (
-    <footer className="bg-night text-paper border-t border-line pb-[calc(4.5rem+env(safe-area-inset-bottom))] md:pb-0">
+    <footer className="bg-night text-paper border-t border-line aurora-glow aurora-top pb-[calc(4.5rem+env(safe-area-inset-bottom))] md:pb-0">
       {/* Main Footer */}
       <div className="fg-wrap py-16">
         <div className="fg-foot-g">
@@ -140,6 +141,9 @@ export const Footer = () => {
                 </a>
               </li>
             </ul>
+            <div className="mt-6">
+              <CallNow className="fg-btn" />
+            </div>
           </div>
         </div>
       </div>

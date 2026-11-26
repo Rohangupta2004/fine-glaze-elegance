@@ -1,11 +1,12 @@
 import { ILLUSTRATIONS, illusSrc, illusSrcSet } from "@/lib/illustrations";
+import { telHref } from "@/data/company";
 import SEO from "@/components/SEO";
 import { RelatedProjects } from "@/components/RelatedProjects";
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/home/CTASection";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { CheckCircle2, ArrowRight } from "lucide-react";
+import { CheckCircle2, ArrowRight, Phone } from "lucide-react";
 
 export default function FacadeContractorThane() {
   const serviceSchema = {
@@ -66,7 +67,7 @@ export default function FacadeContractorThane() {
             </h1>
             <p className="text-lg text-paper/80 mb-8">Fine Glaze takes facade projects in Thane: ACP cladding, curtain walls, glass railings, structural glazing and facade AMC. We are based in Pune and Mumbai and fabricate at our own unit in Pisoli, Pune.</p>
             <div className="flex gap-4">
-              <Link to="/contact"><Button size="lg" className="bg-lamp hover:bg-lamp/90">Book a call</Button></Link>
+              <Button asChild size="lg" className="bg-lamp hover:bg-lamp/90"><a href={telHref} data-call-now><Phone size={16} aria-hidden="true" /> Call now</a></Button>
               <Link to="/portfolio"><Button size="lg" variant="outline">View Projects</Button></Link>
             </div>
           </div>

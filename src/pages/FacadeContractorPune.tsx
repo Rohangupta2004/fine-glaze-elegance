@@ -78,7 +78,7 @@ export default function FacadeContractorPune() {
           
           <h2>Facade Solutions for Pune's Buildings</h2>
           <p className="text-muted-foreground">
-            Fine Glaze is led by a founder with <strong>11+ years in the facade industry</strong>, and our company profile documents <strong>16 projects</strong> across Pune and Mumbai. Our services span curtain walls, structural glazing, ACP cladding, aluminium windows and doors, glass railings, and facade maintenance and AMC.
+            Fine Glaze is led by a founder with <strong>11+ years in the facade industry</strong>, and our company profile documents <strong>15 projects</strong> across Pune and Mumbai. Our services span curtain walls, structural glazing, ACP cladding, aluminium windows and doors, glass railings, and facade maintenance and AMC.
           </p>
           <p className="text-muted-foreground mt-4">
             Pune's growth in areas such as Hinjewadi, Kharadi, Wakad and Undri creates steady demand for facade work. Fine Glaze prepares shop and fabrication drawings in-house, checks member sizing, fixing and anchorage against project wind load, and runs a dedicated safety officer across active sites.

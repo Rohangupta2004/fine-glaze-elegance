@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { telHref } from "@/data/company";
 import { RelatedProjects } from "@/components/RelatedProjects";
 import { Link } from "react-router-dom";
 import { ServiceQuickOverview } from "@/components/service/ServiceQuickOverview";
@@ -305,11 +306,7 @@ export default function CurtainWall() {
                   <span><strong>Superior Weather Tightness</strong> — Interlocking stack joints accommodate building movement and thermal expansion naturally.</span>
                 </li>
               </ul>
-              <Link to="/contact">
-                <Button className="bg-lamp hover:bg-lamp/90 text-lamp-ink font-bold gap-2">
-                  Book a call <ArrowRight size={16} />
-                </Button>
-              </Link>
+              <Button asChild className="bg-lamp hover:bg-lamp/90 text-lamp-ink font-bold gap-2"><a href={telHref} data-call-now><Phone size={16} aria-hidden="true" /> Call now</a></Button>
             </FadeIn>
 
             <FadeIn delay={150}>
@@ -392,11 +389,7 @@ export default function CurtainWall() {
                   </div>
                 </div>
 
-                <Link to="/contact">
-                  <Button size="sm" className="bg-night-2 hover:bg-night-2 text-paper gap-2">
-                    Book a call <ArrowRight size={14} />
-                  </Button>
-                </Link>
+                <Button asChild size="sm" className="bg-night-2 hover:bg-night-2 text-paper gap-2"><a href={telHref} data-call-now><Phone size={14} aria-hidden="true" /> Call now</a></Button>
               </div>
             </div>
           </FadeIn>
@@ -458,7 +451,7 @@ export default function CurtainWall() {
         <div className="fg-wrap">
           <FadeIn>
             <h2 className="fg-h2">
-              Book a call
+              Call us
             </h2>
             <p className="text-paper/80 text-base md:text-lg max-w-2xl mb-10 leading-relaxed">
               Planning a commercial facade, office tower, or IT park in Pune, Mumbai, or Navi Mumbai? Send drawings and we will prepare a BOQ-based quotation with glass specification options. Our office hours are Monday to Saturday, 09:00 to 18:00.
@@ -473,10 +466,7 @@ export default function CurtainWall() {
                 <Mail size={18} className="text-lamp" />
                 <span className="text-sm font-semibold">info@fineglaze.com</span>
               </a>
-              <Link to="/contact" className="flex items-center justify-center gap-3 p-4 bg-lamp hover:bg-lamp/90 text-lamp-ink font-bold transition-colors">
-                <FileText size={18} />
-                <span className="text-sm">Book a call</span>
-              </Link>
+              <a href={telHref} data-call-now className="flex items-center justify-center gap-3 p-4 bg-lamp hover:bg-lamp/90 text-lamp-ink font-bold transition-colors"><Phone size={18} aria-hidden="true" /><span className="text-sm">Call now</span></a>
             </div>
           </FadeIn>
         </div>

@@ -1,11 +1,14 @@
 import { projectSummaries } from "@/data/projectPresentation";
+import CallNow from "@/components/common/CallNow";
 import { useParams, Link, Navigate } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 import { useProject } from "@/hooks/useProjects";
 import { Helmet } from "react-helmet-async";
 import SEO from "@/components/SEO";
 import PageHero from "@/components/common/PageHero";
-import { useBookCall } from "@/components/booking/BookCallProvider";
+import { ProjectCarousel } from "@/components/ProjectCarousel";
+import { RelatedProjects } from "@/components/RelatedProjects";
+import projectPhotos from "@/data/projectPhotos.json";
 
 /** "Project – main scope | Fine Glaze", kept short enough to show in search results. */
 const projectTitle = (title: string, scope: string) => {
@@ -18,7 +21,6 @@ const projectTitle = (title: string, scope: string) => {
 const ProjectDetail = () => {
   const { slug } = useParams<{ slug: string }>();
   const { project, loading } = useProject(slug);
-  const { open: openBooking } = useBookCall();
 
   if (loading) {
     return (
@@ -35,6 +37,9 @@ const ProjectDetail = () => {
   }
 
   const summary = projectSummaries[project.slug] ?? project.scope;
+  // every photograph of this project, once each; the curated list first, then anything only the record has
+  const curated = (projectPhotos as Record<string, string[]>)[project.slug] ?? [];
+  const photos = Array.from(new Set([...curated, project.image, ...project.gallery].filter(Boolean)));
 
   const projectSchema = {
     "@context": "https://schema.org",
@@ -117,6 +122,14 @@ const ProjectDetail = () => {
         source="project_hero"
       />
 
+      {photos.length > 1 && (
+        <section className="fg-sec">
+          <div className="fg-wrap">
+            <ProjectCarousel title={project.title} location={project.location} images={photos} />
+          </div>
+        </section>
+      )}
+
       <section className="fg-sec">
         <div className="fg-wrap">
           <div className="grid lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)] gap-12 lg:gap-0 items-start">
@@ -160,14 +173,14 @@ const ProjectDetail = () => {
                 <p className="text-[15.5px] text-mute leading-relaxed mb-5">
                   Speak with our team about the right facade solution for your building.
                 </p>
-                <button type="button" className="fg-btn" onClick={() => openBooking({ source: "project_detail", work: project.title })}>
-                  Book a call
-                </button>
+                <CallNow className="fg-btn" number />
               </div>
             </aside>
           </div>
         </div>
       </section>
+
+      <RelatedProjects heading="More Fine Glaze projects" excludeSlugs={[project.slug]} preferCategory={project.category} limit={4} />
     </Layout>
   );
 };

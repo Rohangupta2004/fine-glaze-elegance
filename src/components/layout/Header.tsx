@@ -2,7 +2,8 @@ import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown, FileText } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { useBookCall } from "@/components/booking/BookCallProvider";
+import CallNow from "@/components/common/CallNow";
+import { company } from "@/data/company";
 import { useCompanyProfile } from "@/context/CompanyProfileContext";
 import "./header.css";
 
@@ -31,7 +32,6 @@ const industryLinks = [
 
 export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
   const { openProfile } = useCompanyProfile();
-  const { open: openBooking } = useBookCall();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isServiceOpen, setIsServiceOpen] = useState(false);
@@ -115,7 +115,6 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
     );
 
   const transparent = darkHero && !isScrolled;
-  const book = () => openBooking({ source: "header" });
 
   return (
     <>
@@ -232,13 +231,13 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
 
           {/* ACTIONS */}
           <div className="flex items-center gap-3">
-            <button
-              type="button"
-              onClick={book}
-              className="h-11 px-[18px] text-[15px] font-medium text-paper bg-transparent shadow-[inset_0_0_0_1px_rgba(43,29,18,0.45)] transition-[filter,box-shadow] hover:shadow-[inset_0_0_0_1px_#9b5520] hover:text-lamp focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-glass"
-            >
-              Book a call
-            </button>
+            <span className="hdr-call inline-flex items-center gap-3">
+              <CallNow
+                className="inline-flex items-center justify-center h-11 px-[18px] text-[15px] font-medium text-paper bg-transparent shadow-[inset_0_0_0_1px_rgba(43,29,18,0.45)] transition-[filter,box-shadow] hover:shadow-[inset_0_0_0_1px_#9b5520] hover:text-lamp focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-glass"
+                iconSize={15}
+              />
+              <span className="cn-num-hdr">{company.phone.mobileDisplay}</span>
+            </span>
 
             {/* MOBILE TOGGLE */}
             <button
@@ -323,16 +322,10 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
               </div>
 
               <div className="pt-2 pb-4">
-                <button
-                  type="button"
-                  onClick={() => {
-                    setIsMobileMenuOpen(false);
-                    setTimeout(book, 200);
-                  }}
-                  className="w-full h-12 bg-lamp text-lamp-ink font-semibold text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-glass"
-                >
-                  Book a call
-                </button>
+                <CallNow
+                  className="w-full h-12 inline-flex items-center justify-center bg-lamp text-lamp-ink font-semibold text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-glass"
+                  iconSize={18}
+                />
               </div>
             </div>
           </div>

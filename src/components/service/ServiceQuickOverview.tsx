@@ -1,4 +1,4 @@
-import { useBookCall } from "@/components/booking/BookCallProvider";
+import CallNow from "@/components/common/CallNow";
 
 export interface ServiceQuickOverviewProps {
   serviceTitle: string;
@@ -17,8 +17,6 @@ export const ServiceQuickOverview = ({
   bestProjectTypes,
   relevantProjects,
 }: ServiceQuickOverviewProps) => {
-  const { open } = useBookCall();
-
   return (
     <section className="bg-night-2 border-y border-line py-12 md:py-16">
       <div className="fg-wrap">
@@ -26,9 +24,7 @@ export const ServiceQuickOverview = ({
           <h2 className="font-display font-medium text-3xl md:text-4xl tracking-[-0.015em] text-paper">
             {serviceTitle} overview
           </h2>
-          <button type="button" className="fg-btn" onClick={() => open({ source: "service_overview", work: serviceTitle })}>
-            Book a call
-          </button>
+          <CallNow className="fg-btn" number />
         </div>
 
         <div className="fg-grid">

@@ -1,4 +1,3 @@
-import GlassLightBg from "@/components/common/GlassLightBg";
 import { company } from "@/data/company";
 
 // Founder's years in facades: "11+ years" per the founder entry in company.ts.
@@ -8,8 +7,7 @@ const FOUNDER_YEARS = 11;
 const HomeNumbers = () => {
   const team = parseInt(company.stats.coreTeam, 10);
   return (
-    <section className="nums full rv glb-host" aria-label="Fine Glaze in numbers">
-      <GlassLightBg />
+    <section className="nums full rv aurora-glow" aria-label="Fine Glaze in numbers">
       <div className="wrap">
         <h2 className="wipe">On the <span className="text-gradient">record.</span></h2>
         <dl className="ng">

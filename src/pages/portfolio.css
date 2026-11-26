@@ -21,8 +21,11 @@
 .pf-d > div { display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 12px; }
 .pf-d dt { color: #6f6152; font-family: 'Space Mono', ui-monospace, Menlo, monospace; font-size: 12px; letter-spacing: 0.02em; padding-top: 2px; }
 .pf-d dd { margin: 0; color: #2b1d12; }
-.pf-tags { list-style: none; margin: 14px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
-.pf-tags li { font-family: 'Space Mono', ui-monospace, Menlo, monospace; font-size: 12px; letter-spacing: 0.02em; line-height: 1; padding: 8px 10px; border: 1px solid #ddd5ca; color: #2b1d12; background: transparent; }
+.pf-tags { list-style: none; margin: 14px 0 0; padding: 0; line-height: 1.7; }
+.pf-tags li { display: inline; font-family: 'Space Mono', ui-monospace, Menlo, monospace; font-size: 12px; letter-spacing: 0.02em; color: #2b1d12; }
+.pf-tags li:not(:last-child)::after { content: ""; display: inline-block; width: 1px; height: 0.95em; background: #ddd5ca; margin: 0 0.8em; vertical-align: -0.12em; }
+.pf-bar-t { position: absolute; left: 0; right: 0; top: 0; height: 3px; background: var(--tint, #e9b27a); }
+.pf-no { margin: 0 0 10px; font-family: 'Space Mono', ui-monospace, Menlo, monospace; font-size: 12px; letter-spacing: 0.04em; color: #6f6152; font-variant-numeric: tabular-nums; }
 @media (prefers-reduced-motion: reduce) {
   .pf-fig, .pf-fig.armed:not(.seen) { clip-path: none; transition: none; }
   .pf-m { transition: none; }

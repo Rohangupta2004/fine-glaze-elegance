@@ -1,4 +1,5 @@
 import { ILLUSTRATIONS, illusSrc, illusSrcSet } from "@/lib/illustrations";
+import { telHref } from "@/data/company";
 import SEO from "@/components/SEO";
 import PageHero from "@/components/common/PageHero";
 import { RelatedProjects } from "@/components/RelatedProjects";
@@ -7,7 +8,7 @@ import { CTASection } from "@/components/home/CTASection";
 import { ServiceQuickOverview } from "@/components/service/ServiceQuickOverview";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, MapPin } from "lucide-react";
+import { ArrowRight, MapPin, Phone } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
@@ -339,11 +340,7 @@ export default function GlassRailings() {
                   </div>
                 </div>
 
-                <Link to="/contact">
-                  <Button size="sm" className="bg-night-2 hover:bg-night-2 text-paper gap-2">
-                    Book a call <ArrowRight size={14} />
-                  </Button>
-                </Link>
+                <Button asChild size="sm" className="bg-night-2 hover:bg-night-2 text-paper gap-2"><a href={telHref} data-call-now><Phone size={14} aria-hidden="true" /> Call now</a></Button>
               </div>
             </div>
           </FadeIn>
@@ -494,11 +491,7 @@ export default function GlassRailings() {
             </div>
 
             <div className="mt-8">
-              <Link to="/contact">
-                <Button size="lg" className="bg-night-2 hover:bg-night-2 text-paper gap-2 px-8">
-                  Book a call <ArrowRight size={16} />
-                </Button>
-              </Link>
+              <Button asChild size="lg" className="bg-night-2 hover:bg-night-2 text-paper gap-2 px-8"><a href={telHref} data-call-now><Phone size={16} aria-hidden="true" /> Call now</a></Button>
             </div>
           </FadeIn>
         </div>

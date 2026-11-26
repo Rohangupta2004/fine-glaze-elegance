@@ -1,19 +1,14 @@
-import GlassLightBg from "@/components/common/GlassLightBg";
-import { useBookCall } from "@/components/booking/BookCallProvider";
+import CallNow from "@/components/common/CallNow";
 import { company } from "@/data/company";
 
 const HomeClose = () => {
-  const { open } = useBookCall();
   return (
-    <section className="end glb-host">
-      <GlassLightBg />
+    <section className="end aurora-glow">
       <div className="wrap">
         <div className="end-g">
           <div>
             <h2>Tell us about your <span className="text-gradient">facade.</span></h2>
-            <button className="btn" type="button" onClick={() => open({ source: "home_close" })}>
-              Book a call
-            </button>
+            <CallNow className="btn" number="under" />
             <p className="promise">We call you back the same business day, Monday to Saturday, 9am to 6pm.</p>
           </div>
           <dl>

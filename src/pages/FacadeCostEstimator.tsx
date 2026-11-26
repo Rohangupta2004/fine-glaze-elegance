@@ -1,10 +1,10 @@
 import { useState } from "react";
+import CallNow from "@/components/common/CallNow";
 import { Link } from "react-router-dom";
 import { Info, Phone } from "lucide-react";
 import SEO from "@/components/SEO";
 import PageHero from "@/components/common/PageHero";
 import { Layout } from "@/components/layout/Layout";
-import { useBookCall } from "@/components/booking/BookCallProvider";
 import { COST_SYSTEMS, UNIT_LABEL, type CostSystem } from "@/data/costRanges";
 import { company, telHref } from "@/data/company";
 
@@ -27,13 +27,12 @@ const FAQS = [
     a: "The system type, the glass specification, the height and access conditions, the finish, the quantity and the testing and handover requirements. Our service pages list what moves the cost for each system.",
   },
   {
-    q: "What happens after I book a call?",
+    q: "What happens after I call?",
     a: "We call you back the same business day, Monday to Saturday, 9am to 6pm. We confirm the scope, ask for drawings or a site visit if needed, and then give you a written, itemised figure.",
   },
 ];
 
 export default function FacadeCostEstimator() {
-  const book = useBookCall();
   const [service, setService] = useState(services[0]);
   const [systemId, setSystemId] = useState(COST_SYSTEMS[0].id);
   const [areaText, setAreaText] = useState("");
@@ -74,7 +73,7 @@ export default function FacadeCostEstimator() {
     <Layout darkHero>
       <SEO
         title="Facade Project Cost Request | Fine Glaze"
-        description="Tell us the system, area, city and floors for your facade, windows or glazing project and book a call. We come back with a figure for your building."
+        description="Tell us the system, area, city and floors for your facade, windows or glazing project and call us. We come back with a figure for your building."
         canonical={PAGE_URL}
         keywords="facade cost, curtain wall cost, aluminium window cost, ACP cladding cost, structural glazing cost, glass railing cost"
         schemas={schemas}
@@ -184,8 +183,8 @@ export default function FacadeCostEstimator() {
               <p className="text-lamp text-sm font-semibold">Your project</p>
               <p className="mt-3 text-xl font-bold">{summary}</p>
               <p className="mt-3 text-sm text-paper/80">
-                The cost depends on these inputs, the glass specification and the access conditions. Book a call and we
-                call you back with a figure for your building.
+                The cost depends on these inputs, the glass specification and the access conditions. Call us and we
+                will go through a figure for your building.
               </p>
               <div className="mt-5 bg-night-2 border border-line p-4">
                 <p className="text-xs font-semibold text-mute">What moves the cost</p>
@@ -194,13 +193,8 @@ export default function FacadeCostEstimator() {
                 </ul>
               </div>
               <div className="mt-auto pt-6 grid gap-2">
-                <button
-                  type="button"
-                  onClick={() => book.open({ work: summary, source: "estimator" })}
-                  className="bg-lamp hover:bg-lamp/90 text-lamp-ink font-bold px-5 py-3"
-                >
-                  Book a call
-                </button>
+                <CallNow className="inline-flex items-center justify-center bg-lamp hover:bg-lamp/90 text-lamp-ink font-bold px-5 py-3" />
+                <Link to="/contact" className="fg-lnk justify-self-center">Send an enquiry</Link>
                 <p className="text-xs text-mute text-center">We call you back the same business day, Monday to Saturday, 9am to 6pm.</p>
               </div>
             </div>

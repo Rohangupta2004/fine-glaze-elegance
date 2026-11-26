@@ -1,4 +1,5 @@
 import React from "react";
+import CallNow from "@/components/common/CallNow";
 import { 
   Building2, 
   ShieldCheck, 
@@ -16,7 +17,6 @@ import {
 import PageHero from "@/components/common/PageHero";
 import SEO from "@/components/SEO";
 import { Layout } from "@/components/layout/Layout";
-import { useBookCall } from "@/components/booking/BookCallProvider";
 
 // --- DATA & SCHEMA ---
 const faqDatabase = [
@@ -111,7 +111,6 @@ const faqDatabase = [
 ];
 
 export default function FAQ() {
-  const { open: openBooking } = useBookCall();
   // Generate SEO Schema
   const jsonLd = {
     "@context": "https://schema.org",
@@ -160,13 +159,7 @@ export default function FAQ() {
                   <div className="grid md:grid-cols-[minmax(0,1fr)_minmax(0,18rem)] gap-8 items-start">
                     <div className="space-y-4">
                       <p className="text-mute leading-relaxed text-base max-w-[68ch]">{faq.answer}</p>
-                      <button
-                        type="button"
-                        onClick={() => openBooking({ source: "faq_drawings", work: "Technical drawings" })}
-                        className="fg-lnk"
-                      >
-                        Book a call
-                      </button>
+                      <CallNow className="fg-lnk" iconSize={14} />
                     </div>
                     <div className="border-l border-line pl-6">
                       <div className="font-light text-3xl text-paper tracking-tight">{faq.stats.metric}</div>

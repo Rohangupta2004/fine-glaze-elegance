@@ -1,4 +1,5 @@
 import { useState } from "react";
+import CallNow from "@/components/common/CallNow";
 import { Link } from "react-router-dom";
 import { ClipboardCheck, Factory, HardHat, Layers, PenTool, ShieldCheck, Droplets, FileText, Phone } from "lucide-react";
 import SEO from "@/components/SEO";
@@ -267,9 +268,7 @@ export default function QualitySafety() {
             </p>
           </div>
           <div className="flex flex-col sm:flex-row lg:flex-col gap-3">
-            <button onClick={() => setQuoteOpen(true)} className="bg-lamp text-lamp-ink font-bold px-6 py-4 hover:brightness-110 inline-flex items-center justify-center">
-              <FileText className="mr-2 h-4 w-4" /> Book a call
-            </button>
+            <CallNow className="bg-lamp text-lamp-ink font-bold px-6 py-4 hover:brightness-110 inline-flex items-center justify-center" />
             <Link
               to="/company-profile"
               onClick={() => openProfile(1, "slides")}

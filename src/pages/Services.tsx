@@ -1,4 +1,5 @@
 import { Layout } from "@/components/layout/Layout";
+import CallNow from "@/components/common/CallNow";
 import { Link } from "react-router-dom";
 import {
   Building2,
@@ -25,7 +26,6 @@ import { cn } from "@/lib/utils";
 import SEO from "@/components/SEO";
 import PageHero from "@/components/common/PageHero";
 import { CTASection } from "@/components/home/CTASection";
-import { useBookCall } from "@/components/booking/BookCallProvider";
 
 /* ================= SERVICES DATA ================= */
 const services = [
@@ -264,7 +264,6 @@ const whyUs = [
 
 /* ================= PAGE ================= */
 export default function Services() {
-  const { open: openBooking } = useBookCall();
   return (
     <Layout darkHero>
       <SEO
@@ -344,9 +343,7 @@ export default function Services() {
                   </div>
 
                   <div className="flex flex-wrap items-center gap-x-8 gap-y-4 pt-2">
-                    <button type="button" className="fg-btn" onClick={() => openBooking({ source: `services_${service.id}` })}>
-                      Book a call
-                    </button>
+                    <CallNow className="fg-btn" number />
                     <Link className="fg-lnk" to={service.href}>
                       Learn more
                     </Link>

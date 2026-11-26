@@ -5,7 +5,6 @@ import FloatingCTA from "@/components/FloatingCTA";
 import ScrollToTop from "@/components/ScrollToTop";
 import ScrollProgress from "@/components/common/ScrollProgress";
 import { useHeadingReveal } from "@/components/common/useHeadingReveal";
-import "@/components/common/glasslight.css";
 
 interface LayoutProps {
   children: ReactNode;

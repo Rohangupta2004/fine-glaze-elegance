@@ -1,11 +1,12 @@
-import { Phone, MessageSquare, FileText } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Phone, MessageSquare } from "lucide-react";
+import { telHref } from "@/data/company";
 
 interface MobileBottomBarProps {
-  onOpenQuote: () => void;
+  /** Kept for existing callers; the primary action is now a phone call. */
+  onOpenQuote?: () => void;
 }
 
-export const MobileBottomBar = ({ onOpenQuote }: MobileBottomBarProps) => {
+export const MobileBottomBar = (_props: MobileBottomBarProps) => {
   return (
     <aside
       aria-label="Quick Contact Options"
@@ -13,7 +14,7 @@ export const MobileBottomBar = ({ onOpenQuote }: MobileBottomBarProps) => {
     >
       <div className="flex items-center justify-between gap-2 max-w-md mx-auto">
         <a
-          href="tel:+918369233566"
+          href={telHref}
           className="flex-1 flex flex-col items-center justify-center py-1.5 px-2 bg-night-2 hover:bg-line text-paper text-xs font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lamp"
           aria-label="Call Fine Glaze"
         >
@@ -32,14 +33,14 @@ export const MobileBottomBar = ({ onOpenQuote }: MobileBottomBarProps) => {
           <span>WhatsApp</span>
         </a>
 
-        <Button
-          onClick={onOpenQuote}
-          size="sm"
-          className="flex-1 bg-lamp hover:bg-lamp/90 text-lamp-ink text-xs font-bold py-3 h-auto focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lamp"
+        <a
+          href={telHref}
+          data-call-now
+          className="flex-1 flex items-center justify-center gap-1 bg-lamp text-lamp-ink text-xs font-bold py-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lamp"
         >
-          <FileText className="h-4 w-4 mr-1" />
-          <span>Book a call</span>
-        </Button>
+          <Phone className="h-4 w-4 mr-1" />
+          <span>Call now</span>
+        </a>
       </div>
     </aside>
   );

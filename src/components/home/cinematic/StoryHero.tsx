@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
-import { useBookCall } from "@/components/booking/BookCallProvider";
-import { company } from "@/data/company";
+import { Phone } from "lucide-react";
+import { company, telHref } from "@/data/company";
 import { VS, FS } from "./shaders";
 
 type Pt = number[];
@@ -23,7 +23,6 @@ const LDY = [-26, -30, 12, -8, 30];
  * State classes (gl, nogl, still) go on the .fg-home wrapper.
  */
 const StoryHero = () => {
-  const { open } = useBookCall();
   const storyRef = useRef<HTMLElement>(null);
   const viewRef = useRef<HTMLDivElement>(null);
   const noteRef = useRef<HTMLParagraphElement>(null);
@@ -119,7 +118,7 @@ const StoryHero = () => {
     gl.enableVertexAttribArray(la);
     gl.vertexAttribPointer(la, 2, gl.FLOAT, false, 0, 0);
     const U: Record<string, WebGLUniformLocation | null> = {};
-    ["uRes", "uT", "uP", "uIn", "uSun", "uN", "uAsp", "uNi", "uRo", "uF", "uR", "uU", "uTR", "uTx", "uBay", "uOpen", "uLit", "uSg"].forEach((k) => {
+    ["uRes", "uT", "uP", "uIn", "uSun", "uN", "uAsp", "uNi", "uRo", "uF", "uR", "uU", "uTR", "uTx", "uBay", "uOpen", "uLit", "uSg", "uScr"].forEach((k) => {
       U[k] = gl.getUniformLocation(pr, k);
     });
     const tex = gl.createTexture();
@@ -480,6 +479,7 @@ const StoryHero = () => {
       gl!.uniform2f(U.uBay, L.bay[0], L.bay[1]);
       gl!.uniform1f(U.uOpen, 1 - ease((p - 0.715) / 0.04));
       gl!.uniform1f(U.uLit, ease((p - 0.74) / 0.05));
+      gl!.uniform1f(U.uScr, 1 - ease((p - 0.07) / 0.08));
       gl!.uniform1f(U.uSg, 1 - 0.96 * ease((p - 0.08) / 0.08) + 0.96 * ease((p - 0.88) / 0.08));
       gl!.activeTexture(gl!.TEXTURE0);
       gl!.bindTexture(gl!.TEXTURE_2D, tex);
@@ -576,7 +576,7 @@ const StoryHero = () => {
           <div className="shade" />
           <div className="shade-l" ref={shadeLRef} />
           <p className="h1v" aria-hidden="true">
-            We build the face of your building
+            We build the face of your <span className="hgl">building</span>
           </p>
         </div>
         <div className="tell">
@@ -587,9 +587,12 @@ const StoryHero = () => {
               Fine Glaze designs, fabricates, installs and maintains facade systems for developers and asset owners,
               from Pune and Mumbai across India.
             </p>
-            <button className="btn" type="button" onClick={() => open({ source: "home_hero" })}>
-              Book a call
-            </button>
+            <div className="cta">
+              <a className="btn" href={telHref} data-call-now>
+                <Phone size={17} aria-hidden="true" /> Call now
+              </a>
+              <span className="cn-num-dark">{company.phone.mobileDisplay}</span>
+            </div>
           </div>
           <div className="blk say">
             <span className="lbl">02 / 10</span>
@@ -650,9 +653,12 @@ const StoryHero = () => {
             <span className="lbl">10 / 10</span>
             <h2 className="gl">{["Trusted by Embassy REIT,", "L&T and Jindal Stainless."].map((l, i) => (<span className="ln" key={l} style={{ ["--i" as string]: i }}><span className="li">{l}</span></span>))}</h2>
             <p>Also Nirmaann Encon Developer, Hatchway Windoor and Rockfort Estate Developers.</p>
-            <button className="btn" type="button" onClick={() => open({ source: "home_story_end" })}>
-              Book a call
-            </button>
+            <div className="cta">
+              <a className="btn" href={telHref} data-call-now>
+                <Phone size={17} aria-hidden="true" /> Call now
+              </a>
+              <span className="cn-num-dark">{company.phone.mobileDisplay}</span>
+            </div>
           </div>
         </div>
         <div className="rail" aria-hidden="true" ref={railRef}>

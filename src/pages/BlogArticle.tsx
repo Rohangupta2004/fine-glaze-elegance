@@ -1,4 +1,5 @@
 import { useParams, Link, Navigate } from "react-router-dom";
+import CallNow from "@/components/common/CallNow";
 import { Layout } from "@/components/layout/Layout";
 import { blogPosts, blogPostsList } from "@/data/blog";
 import { useBlogImages } from "@/hooks/useBlogImages";
@@ -7,14 +8,12 @@ import { Button } from "@/components/ui/button";
 import { illusSrcSetFor } from "@/lib/illustrations";
 import SEO from "@/components/SEO";
 import PageHero from "@/components/common/PageHero";
-import { useBookCall } from "@/components/booking/BookCallProvider";
 import { articleKeywords, articleSectionId, buildArticleSchemas, getArticleEnhancement, normalizeArticleSections, normalizeArticleTable, relatedArticles } from "@/lib/articleSeo";
 import { getArticleVisual, getArticleImageSrcSet } from "@/data/articleVisuals";
 
 export default function BlogArticle() {
   const { slug } = useParams<{ slug: string }>();
   const { getHeroImage } = useBlogImages();
-  const { open: openBooking } = useBookCall();
   const post = slug ? blogPosts[slug] : undefined;
 
   if (!post) return <Navigate to="/blog" replace />;
@@ -172,7 +171,7 @@ export default function BlogArticle() {
               <section id="quote-checklist" className="scroll-mt-28 mt-12 border border-primary/20 bg-primary/5 p-6">
                 <h2 className="text-xl font-medium mb-4">Before You Ask for a Quote</h2>
                 <ol className="list-decimal pl-5 space-y-3 text-foreground/80 leading-relaxed">{enhancement.quoteChecklist.map((item) => <li key={item}>{item}</li>)}</ol>
-                <button type="button" className="fg-btn mt-5" onClick={() => openBooking({ source: "article_checklist" })}>Book a call</button>
+                <div className="mt-5"><CallNow className="fg-btn" number /></div>
               </section>
 
               {enhancement.project && <aside className="mt-8 border-l-2 border-primary pl-5 py-2" aria-label="Fine Glaze project reference">
@@ -233,8 +232,8 @@ export default function BlogArticle() {
               We call you back the same business day, Monday to Saturday, 9am to 6pm.
             </p>
             <div className="flex flex-col sm:flex-row items-center gap-6">
-              <button type="button" className="fg-btn" onClick={() => openBooking({ source: "article_close" })}>Book a call</button>
-              <a href="tel:+918369233566" className="fg-lnk">+91 83692 33566</a>
+              <CallNow className="fg-btn" number />
+              <Link to="/contact" className="fg-lnk">Send an enquiry</Link>
             </div>
           </div>
 

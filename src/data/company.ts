@@ -71,7 +71,7 @@ export const company = {
     "We are based in Pune and Mumbai and take facade projects across India.",
 
   stats: {
-    projectRecords: "16",
+    projectRecords: "15", // equals the number of records in src/data/projects.ts (checked by a test)
     projectRecordsLabel: "project records documented in our company profile",
     coreTeam: "40+",
     coreTeamLabel: "core engineering, supervision and site team",

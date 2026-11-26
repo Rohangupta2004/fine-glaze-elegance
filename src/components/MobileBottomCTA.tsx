@@ -1,10 +1,7 @@
-import { useState } from "react";
-import { Phone, MessageSquare, FileText } from "lucide-react";
-import { QuoteModal } from "@/components/QuoteModal";
+import { Phone, MessageSquare } from "lucide-react";
+import { telHref } from "@/data/company";
 
 export default function MobileBottomCTA() {
-  const [isQuoteOpen, setIsQuoteOpen] = useState(false);
-
   return (
     <>
       <aside
@@ -13,7 +10,7 @@ export default function MobileBottomCTA() {
       >
         <div className="grid grid-cols-3 gap-2 max-w-md mx-auto text-center">
           <a
-            href="tel:+918369233566"
+            href={telHref}
             className="flex flex-col items-center justify-center py-2 px-2 bg-night-2 hover:bg-line text-paper text-xs font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lamp"
             aria-label="Call Fine Glaze"
           >
@@ -32,18 +29,18 @@ export default function MobileBottomCTA() {
             <span>WhatsApp</span>
           </a>
 
-          <button
-            onClick={() => setIsQuoteOpen(true)}
-            className="flex flex-col items-center justify-center py-2 px-2 bg-night-2 text-paper text-xs font-bold tracking-wide transition-all active:scale-95 cursor-pointer"
-            aria-label="Book a call"
+          <a
+            href={telHref}
+            data-call-now
+            className="flex flex-col items-center justify-center py-2 px-2 bg-lamp text-lamp-ink text-xs font-bold tracking-wide transition-all active:scale-95"
+            aria-label="Call now"
           >
-            <FileText className="h-4 w-4 text-paper mb-0.5" />
-            <span>Book a call</span>
-          </button>
+            <Phone className="h-4 w-4 mb-0.5" />
+            <span>Call now</span>
+          </a>
         </div>
       </aside>
 
-      <QuoteModal open={isQuoteOpen} onOpenChange={setIsQuoteOpen} />
     </>
   );
 }

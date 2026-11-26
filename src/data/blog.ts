@@ -107,8 +107,8 @@ export const blogPosts: Record<string, BlogPost> = {
         ]
       },
       {
-        "heading": "Book a call",
-        "body": "Book a call and we will go through your building with you. We call you back the same business day, Monday to Saturday, 9am to 6pm."
+        "heading": "Call us",
+        "body": "Call us and we will go through your building with you. We call you back the same business day, Monday to Saturday, 9am to 6pm."
       },
       {
         "heading": "Sources",
@@ -266,8 +266,8 @@ export const blogPosts: Record<string, BlogPost> = {
         ]
       },
       {
-        "heading": "Book a call",
-        "body": "Book a call and we will go through your building with you. We call you back the same business day, Monday to Saturday, 9am to 6pm."
+        "heading": "Call us",
+        "body": "Call us and we will go through your building with you. We call you back the same business day, Monday to Saturday, 9am to 6pm."
       },
       {
         "heading": "Sources",
@@ -372,7 +372,7 @@ export const blogPosts: Record<string, BlogPost> = {
       },
       {
         "heading": "Fine Glaze's Honest Recommendation",
-        "body": "For lower-rise buildings in Maharashtra, a stick system with proper engineering and quality silicone can deliver excellent performance at a lower cost. For taller buildings, or where your programme is tight and the building is premium, unitized often pays for itself. Book a call for a recommendation specific to your project."
+        "body": "For lower-rise buildings in Maharashtra, a stick system with proper engineering and quality silicone can deliver excellent performance at a lower cost. For taller buildings, or where your programme is tight and the building is premium, unitized often pays for itself. Call us for a recommendation specific to your project."
       }
     ]
   },
@@ -464,7 +464,7 @@ export const blogPosts: Record<string, BlogPost> = {
       },
       {
         "heading": "Why Fine Glaze Passes This Checklist",
-        "body": "We score on every parameter: landmark projects, in-house engineering team, dedicated fabrication facility, premium material partnerships (Dow Corning, Hindalco), full safety compliance, comprehensive warranties, and a dedicated AMC division. We welcome factory visits and provide regular progress reports on every project. Book a call to discuss your project."
+        "body": "We score on every parameter: landmark projects, in-house engineering team, dedicated fabrication facility, premium material partnerships (Dow Corning, Hindalco), full safety compliance, comprehensive warranties, and a dedicated AMC division. We welcome factory visits and provide regular progress reports on every project. Call us to discuss your project."
       }
     ]
   },
@@ -549,8 +549,8 @@ export const blogPosts: Record<string, BlogPost> = {
         ]
       },
       {
-        "heading": "Book a call",
-        "body": "Book a call and we will go through your building with you. We call you back the same business day, Monday to Saturday, 9am to 6pm."
+        "heading": "Call us",
+        "body": "Call us and we will go through your building with you. We call you back the same business day, Monday to Saturday, 9am to 6pm."
       },
       {
         "heading": "Sources",
@@ -717,7 +717,7 @@ export const blogPosts: Record<string, BlogPost> = {
       },
       {
         "heading": "Fine Glaze AMC Services",
-        "body": "Fine Glaze provides facade AMC packages in Pune and Mumbai, including full cleaning cycles, sealant inspection, minor repairs and a dedicated project manager, scoped to what your building needs. We work on our own installations and third-party facades. Book a call for a facade inspection and AMC proposal."
+        "body": "Fine Glaze provides facade AMC packages in Pune and Mumbai, including full cleaning cycles, sealant inspection, minor repairs and a dedicated project manager, scoped to what your building needs. We work on our own installations and third-party facades. Call us for a facade inspection and AMC proposal."
       }
     ]
   },
@@ -800,7 +800,7 @@ export const blogPosts: Record<string, BlogPost> = {
       },
       {
         "heading": "Realistic Timeline",
-        "body": "For a medium commercial building, the programme runs through engineering and approvals, fabrication (in parallel), site installation, and sealant and handover. Anyone promising a very short programme for a mid-size project is planning to cut quality stages. Fine Glaze provides a detailed Gantt chart with milestones at project start. Book a call to discuss your project."
+        "body": "For a medium commercial building, the programme runs through engineering and approvals, fabrication (in parallel), site installation, and sealant and handover. Anyone promising a very short programme for a mid-size project is planning to cut quality stages. Fine Glaze provides a detailed Gantt chart with milestones at project start. Call us to discuss your project."
       }
     ]
   },
@@ -904,7 +904,7 @@ export const blogPosts: Record<string, BlogPost> = {
       },
       {
         "heading": "Expert Recommendation",
-        "body": "For commercial buildings in India under 15 m, FR-grade ACP with PVDF coating often gives a good balance of cost, compliance and design flexibility. For high-rises and hospitals, A2 non-combustible ACP or HPL is recommended. Book a call and we will go through your building with you."
+        "body": "For commercial buildings in India under 15 m, FR-grade ACP with PVDF coating often gives a good balance of cost, compliance and design flexibility. For high-rises and hospitals, A2 non-combustible ACP or HPL is recommended. Call us and we will go through your building with you."
       }
     ]
   },
@@ -1011,7 +1011,7 @@ export const blogPosts: Record<string, BlogPost> = {
       },
       {
         "heading": "Conclusion: Engineering is the Foundation",
-        "body": "Curtain wall failures — water leaks, glass breakage, anchor pull-outs — are almost always the result of inadequate engineering at the design stage, not poor installation. At Fine Glaze, every project begins with a full structural calculation package. Book a call and we will go through your building with you."
+        "body": "Curtain wall failures — water leaks, glass breakage, anchor pull-outs — are almost always the result of inadequate engineering at the design stage, not poor installation. At Fine Glaze, every project begins with a full structural calculation package. Call us and we will go through your building with you."
       }
     ]
   },
@@ -1108,7 +1108,7 @@ export const blogPosts: Record<string, BlogPost> = {
       },
       {
         "heading": "Practical Recommendation for Pune/Mumbai Commercial",
-        "body": "The glass specification that provides the best cost-to-performance balance for typical Maharashtra commercial buildings: 6mm toughened outer + 12mm argon + 6mm toughened inner with solar-control Low-E soft coating on surface #2. It is designed to meet ECBC 2017 and qualify for LEED credits. Book a call for project-specific specifications."
+        "body": "The glass specification that provides the best cost-to-performance balance for typical Maharashtra commercial buildings: 6mm toughened outer + 12mm argon + 6mm toughened inner with solar-control Low-E soft coating on surface #2. It is designed to meet ECBC 2017 and qualify for LEED credits. Call us for project-specific specifications."
       }
     ]
   },
@@ -1323,8 +1323,8 @@ export const blogPosts: Record<string, BlogPost> = {
         "body": "The cost depends on the support system (rod-supported spider, glass fin, or steel truss with spider fittings), the glass thickness and specification, the grade of fittings, the support structure, and the height and access."
       },
       {
-        "heading": "Book a call",
-        "body": "Book a call and we will go through your building with you. We call you back the same business day, Monday to Saturday, 9am to 6pm."
+        "heading": "Call us",
+        "body": "Call us and we will go through your building with you. We call you back the same business day, Monday to Saturday, 9am to 6pm."
       }
     ]
   },
@@ -1409,8 +1409,8 @@ export const blogPosts: Record<string, BlogPost> = {
         ]
       },
       {
-        "heading": "Book a call",
-        "body": "Book a call and we will go through your building with you. We call you back the same business day, Monday to Saturday, 9am to 6pm."
+        "heading": "Call us",
+        "body": "Call us and we will go through your building with you. We call you back the same business day, Monday to Saturday, 9am to 6pm."
       },
       {
         "heading": "Sources",
@@ -1502,8 +1502,8 @@ export const blogPosts: Record<string, BlogPost> = {
         ]
       },
       {
-        "heading": "Book a call",
-        "body": "Book a call and we will go through your building with you. We call you back the same business day, Monday to Saturday, 9am to 6pm."
+        "heading": "Call us",
+        "body": "Call us and we will go through your building with you. We call you back the same business day, Monday to Saturday, 9am to 6pm."
       },
       {
         "heading": "Sources",
@@ -1594,8 +1594,8 @@ export const blogPosts: Record<string, BlogPost> = {
         ]
       },
       {
-        "heading": "Book a call",
-        "body": "Book a call and we will go through your building with you. We call you back the same business day, Monday to Saturday, 9am to 6pm."
+        "heading": "Call us",
+        "body": "Call us and we will go through your building with you. We call you back the same business day, Monday to Saturday, 9am to 6pm."
       },
       {
         "heading": "Sources",
@@ -1695,8 +1695,8 @@ export const blogPosts: Record<string, BlogPost> = {
         ]
       },
       {
-        "heading": "Book a call",
-        "body": "Book a call and we will go through your building with you. We call you back the same business day, Monday to Saturday, 9am to 6pm."
+        "heading": "Call us",
+        "body": "Call us and we will go through your building with you. We call you back the same business day, Monday to Saturday, 9am to 6pm."
       },
       {
         "heading": "Sources",
@@ -1766,7 +1766,7 @@ export const blogPosts: Record<string, BlogPost> = {
       },
       {
         "heading": "10. Multi-Material Facades",
-        "body": "The most commercially successful trend: combining glass curtain walls for office floors, terracotta or perforated metal for podium levels, ACP for service areas. Fine Glaze's multi-material experience makes these combinations straightforward to coordinate. Book a call to discuss your next project."
+        "body": "The most commercially successful trend: combining glass curtain walls for office floors, terracotta or perforated metal for podium levels, ACP for service areas. Fine Glaze's multi-material experience makes these combinations straightforward to coordinate. Call us to discuss your next project."
       }
     ]
   },
@@ -1853,7 +1853,7 @@ export const blogPosts: Record<string, BlogPost> = {
       },
       {
         "heading": "Fine Glaze Fire-Rated Facade Expertise",
-        "body": "Fine Glaze designs and installs fire-compliant facades for hospitals, high-rise residential, data centres, and commercial projects. All ACP installations above 15m use FR-core or A2 panels only — we provide test certificates for every project. Book a call for a fire-safety facade consultation."
+        "body": "Fine Glaze designs and installs fire-compliant facades for hospitals, high-rise residential, data centres, and commercial projects. All ACP installations above 15m use FR-core or A2 panels only — we provide test certificates for every project. Call us for a fire-safety facade consultation."
       }
     ]
   },
@@ -1938,8 +1938,8 @@ export const blogPosts: Record<string, BlogPost> = {
         ]
       },
       {
-        "heading": "Book a call",
-        "body": "Book a call and we will go through your building with you. We call you back the same business day, Monday to Saturday, 9am to 6pm."
+        "heading": "Call us",
+        "body": "Call us and we will go through your building with you. We call you back the same business day, Monday to Saturday, 9am to 6pm."
       },
       {
         "heading": "Sources",
@@ -2035,7 +2035,7 @@ export const blogPosts: Record<string, BlogPost> = {
       },
       {
         "heading": "How Fine Glaze Works With Your GC",
-        "body": "We don't compete with general contractors — we work alongside them as the specialist facade subcontractor. We coordinate with the architect for shop drawings, manage our own fabrication timeline, and provide independent testing and certification at handover. Book a call to discuss how we can integrate with your project team."
+        "body": "We don't compete with general contractors — we work alongside them as the specialist facade subcontractor. We coordinate with the architect for shop drawings, manage our own fabrication timeline, and provide independent testing and certification at handover. Call us to discuss how we can integrate with your project team."
       }
     ]
   },
@@ -2110,7 +2110,7 @@ export const blogPosts: Record<string, BlogPost> = {
       },
       {
         "heading": "Fine Glaze Green Building Experience",
-        "body": "Fine Glaze works with LEED consultants from early design stage. We provide glass manufacturer's performance data, participate in energy modelling reviews, and supply LEED documentation package at handover. We've worked on LEED Gold and Platinum projects for Embassy REIT and IT park developers. Book a call for a green building facade consultation."
+        "body": "Fine Glaze works with LEED consultants from early design stage. We provide glass manufacturer's performance data, participate in energy modelling reviews, and supply LEED documentation package at handover. We've worked on LEED Gold and Platinum projects for Embassy REIT and IT park developers. Call us for a green building facade consultation."
       }
     ]
   },
@@ -2188,7 +2188,7 @@ export const blogPosts: Record<string, BlogPost> = {
       },
       {
         "heading": "Fine Glaze Waterproofing Services",
-        "body": "Fine Glaze provides facade waterproofing diagnosis and repair in Pune and Mumbai. Work at height is supervised by our safety officer with harness, lifeline and anchorage on every elevation. We use DOWSIL silicones (or the approved equivalent) with the manufacturer's product warranty, and provide written diagnosis reports before any repair work starts. Book a call for a facade leakage inspection."
+        "body": "Fine Glaze provides facade waterproofing diagnosis and repair in Pune and Mumbai. Work at height is supervised by our safety officer with harness, lifeline and anchorage on every elevation. We use DOWSIL silicones (or the approved equivalent) with the manufacturer's product warranty, and provide written diagnosis reports before any repair work starts. Call us for a facade leakage inspection."
       }
     ]
   },
@@ -2263,7 +2263,7 @@ export const blogPosts: Record<string, BlogPost> = {
       },
       {
         "heading": "Realistic Installation Timeline",
-        "body": "For a mid-size commercial building, the programme runs through sub-frame installation, panel fabrication (in parallel), panel installation, silicone sealing, and testing and punch list. Fine Glaze provides a Gantt chart with milestones at project start. Book a call to discuss your project."
+        "body": "For a mid-size commercial building, the programme runs through sub-frame installation, panel fabrication (in parallel), panel installation, silicone sealing, and testing and punch list. Fine Glaze provides a Gantt chart with milestones at project start. Call us to discuss your project."
       }
     ]
   },
@@ -2359,7 +2359,7 @@ export const blogPosts: Record<string, BlogPost> = {
       },
       {
         "heading": "Expert Facade Engineering with Fine Glaze",
-        "body": "Choosing the right aluminium section is a blend of engineering precision and architectural vision. At Fine Glaze, we don't just install facades; we engineer them. Our team provides detailed structural calculations, wind load analysis, and custom profile design to ensure your building stands strong for decades. Book a call and we will go through your building with you. Visit our office in Pune to see our range of high-performance curtain wall systems."
+        "body": "Choosing the right aluminium section is a blend of engineering precision and architectural vision. At Fine Glaze, we don't just install facades; we engineer them. Our team provides detailed structural calculations, wind load analysis, and custom profile design to ensure your building stands strong for decades. Call us and we will go through your building with you. Visit our office in Pune to see our range of high-performance curtain wall systems."
       }
     ]
   },
@@ -2446,7 +2446,7 @@ export const blogPosts: Record<string, BlogPost> = {
       },
       {
         "heading": "Professional Facade Solutions by Fine Glaze",
-        "body": "At Fine Glaze, we understand that a building's facade is its face to the world. Beyond installation, we provide expert consultation on facade maintenance and can help design integrated BMU systems for new projects. Our engineering team ensures that your facade remains as stunning as the day it was installed. Book a call and we will go through your building with you. Visit our Pune office to discuss your building envelope needs."
+        "body": "At Fine Glaze, we understand that a building's facade is its face to the world. Beyond installation, we provide expert consultation on facade maintenance and can help design integrated BMU systems for new projects. Our engineering team ensures that your facade remains as stunning as the day it was installed. Call us and we will go through your building with you. Visit our Pune office to discuss your building envelope needs."
       }
     ]
   },
@@ -2548,7 +2548,7 @@ export const blogPosts: Record<string, BlogPost> = {
       },
       {
         "heading": "Expert Facade Consultation by Fine Glaze",
-        "body": "At Fine Glaze, we specialize in both curtain wall and window wall systems. Our engineering team in Pune works closely with architects to determine the most efficient system for your specific project requirements. From wind load analysis to custom profile design, we ensure your facade is both beautiful and high-performing. Book a call and we will go through your building with you. Let's build the future of Indian architecture together."
+        "body": "At Fine Glaze, we specialize in both curtain wall and window wall systems. Our engineering team in Pune works closely with architects to determine the most efficient system for your specific project requirements. From wind load analysis to custom profile design, we ensure your facade is both beautiful and high-performing. Call us and we will go through your building with you. Let's build the future of Indian architecture together."
       }
     ]
   },
@@ -2654,7 +2654,7 @@ export const blogPosts: Record<string, BlogPost> = {
       },
       {
         "heading": "Expert Facade Solutions with Fine Glaze",
-        "body": "At Fine Glaze, we specialize in both high-performance curtain walls and intricate point-fixed glazing systems. Our engineering team ensures that your facade is not only beautiful but also compliant with Indian structural standards. Book a call and we will go through your building with you."
+        "body": "At Fine Glaze, we specialize in both high-performance curtain walls and intricate point-fixed glazing systems. Our engineering team ensures that your facade is not only beautiful but also compliant with Indian structural standards. Call us and we will go through your building with you."
       }
     ]
   },
@@ -2766,7 +2766,7 @@ export const blogPosts: Record<string, BlogPost> = {
       },
       {
         "heading": "Expert Facade Engineering with Fine Glaze",
-        "body": "At Fine Glaze, we don't just build facades; we ensure they are sustainable and maintainable. Our engineering team provides comprehensive advice on facade access strategy, from initial design to system selection. Book a call and we will go through your building with you."
+        "body": "At Fine Glaze, we don't just build facades; we ensure they are sustainable and maintainable. Our engineering team provides comprehensive advice on facade access strategy, from initial design to system selection. Call us and we will go through your building with you."
       }
     ]
   },
@@ -3141,7 +3141,7 @@ export const blogPosts: Record<string, BlogPost> = {
       },
       {
         "heading": "Expert Facade Solutions by Fine Glaze",
-        "body": "Fine Glaze is a leading provider of premium glazing and facade solutions in India. From high-performance aluminium windows to complex curtain wall systems, we bring engineering excellence to every project.\n\nBook a call and we will go through your building with you."
+        "body": "Fine Glaze is a leading provider of premium glazing and facade solutions in India. From high-performance aluminium windows to complex curtain wall systems, we bring engineering excellence to every project.\n\nCall us and we will go through your building with you."
       }
     ]
   },
@@ -3236,7 +3236,7 @@ export const blogPosts: Record<string, BlogPost> = {
       },
       {
         "heading": "Expert Facade Solutions by Fine Glaze",
-        "body": "Fine Glaze is a leading provider of premium glazing and facade solutions in India. We partner with top ACP brands to deliver world-class cladding for commercial and residential projects.\n\nBook a call and we will go through your building with you."
+        "body": "Fine Glaze is a leading provider of premium glazing and facade solutions in India. We partner with top ACP brands to deliver world-class cladding for commercial and residential projects.\n\nCall us and we will go through your building with you."
       }
     ]
   },
@@ -3333,7 +3333,7 @@ export const blogPosts: Record<string, BlogPost> = {
       },
       {
         "heading": "Expert Installation by Fine Glaze",
-        "body": "At Fine Glaze, we specialize in both high-performance glass roofing and premium polycarbonate installations. Our engineering team ensures that the support structure is wind-load compliant and the glazing is perfectly sealed against the Indian monsoon.\n\nBook a call and we will go through your building with you."
+        "body": "At Fine Glaze, we specialize in both high-performance glass roofing and premium polycarbonate installations. Our engineering team ensures that the support structure is wind-load compliant and the glazing is perfectly sealed against the Indian monsoon.\n\nCall us and we will go through your building with you."
       }
     ]
   },
@@ -4091,7 +4091,7 @@ export const blogPosts: Record<string, BlogPost> = {
       },
       {
         "heading": "Expert Facade Solutions by Fine Glaze",
-        "body": "At Fine Glaze, we specialize in both frameless spider glazing and advanced framed curtain wall systems. Our team of engineers ensures that every installation meets international safety standards while delivering the aesthetic vision of the architect.\n\nBook a call and we will go through your building with you."
+        "body": "At Fine Glaze, we specialize in both frameless spider glazing and advanced framed curtain wall systems. Our team of engineers ensures that every installation meets international safety standards while delivering the aesthetic vision of the architect.\n\nCall us and we will go through your building with you."
       }
     ]
   },
@@ -4187,7 +4187,7 @@ export const blogPosts: Record<string, BlogPost> = {
       },
       {
         "heading": "Expert Facade Solutions by Fine Glaze",
-        "body": "At Fine Glaze, we specialize in designing and installing high-performance glazing systems tailored to the Indian climate. Whether you need standard DGUs for an office complex or specialized acoustic triple glazing for a luxury residence, our team provides end-to-end support from engineering to installation.\n\nBook a call and we will go through your building with you."
+        "body": "At Fine Glaze, we specialize in designing and installing high-performance glazing systems tailored to the Indian climate. Whether you need standard DGUs for an office complex or specialized acoustic triple glazing for a luxury residence, our team provides end-to-end support from engineering to installation.\n\nCall us and we will go through your building with you."
       }
     ]
   },
@@ -4378,7 +4378,7 @@ export const blogPosts: Record<string, BlogPost> = {
       },
       {
         "heading": "Partner with Fine Glaze for Your Facade Needs",
-        "body": "At Fine Glaze, we specialize in high-quality facade solutions, from new installations to complex refurbishments. Our team of experts ensures that your building's exterior is safe, efficient, and visually stunning.\n\nBook a call and we will go through your building with you."
+        "body": "At Fine Glaze, we specialize in high-quality facade solutions, from new installations to complex refurbishments. Our team of experts ensures that your building's exterior is safe, efficient, and visually stunning.\n\nCall us and we will go through your building with you."
       }
     ]
   },
@@ -4474,7 +4474,7 @@ export const blogPosts: Record<string, BlogPost> = {
       },
       {
         "heading": "Transform Your Office with Fine Glaze",
-        "body": "Fine Glaze specializes in premium interior glazing solutions across India. From design to expert installation, we ensure your office partitions meet the highest standards of safety and aesthetics.\\n\\nBook a call and we will go through your building with you."
+        "body": "Fine Glaze specializes in premium interior glazing solutions across India. From design to expert installation, we ensure your office partitions meet the highest standards of safety and aesthetics.\\n\\nCall us and we will go through your building with you."
       }
     ]
   },
@@ -5107,8 +5107,8 @@ export const blogPosts: Record<string, BlogPost> = {
         ]
       },
       {
-        "heading": "Book a call",
-        "body": "Book a call and we will go through your building with you. We call you back the same business day, Monday to Saturday, 9am to 6pm."
+        "heading": "Call us",
+        "body": "Call us and we will go through your building with you. We call you back the same business day, Monday to Saturday, 9am to 6pm."
       },
       {
         "heading": "Sources",

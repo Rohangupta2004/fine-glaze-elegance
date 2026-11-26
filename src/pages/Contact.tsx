@@ -338,7 +338,7 @@ const Contact = () => {
                           ) : (
                             <>
                               <Send size={16} className="mr-2" />
-                              Book a call
+                              Send enquiry
                             </>
                           )}
                         </Button>
