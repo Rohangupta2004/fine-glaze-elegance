@@ -346,7 +346,8 @@ export default function AcpCladding() {
                 { number: "16", label: "Project Records Documented" },
                 { number: "~20,566", label: "Sqm Facade Delivered" },
                 { number: "40+", label: "Core Team" },
-                { number: "2024", label: "Embassy REIT Best Vendor Performance" },].map((s) => (
+                { number: "2024", label: "Embassy REIT Best Vendor Performance" },
+              ].map((s) => (
                 <div key={s.label} className="text-center px-4">
                   <p className="text-2xl md:text-3xl font-bold text-white">{s.number}</p>
                   <p className="text-stone-500 text-[11px] uppercase tracking-widest mt-1">{s.label}</p>

@@ -185,7 +185,7 @@ export default function GlassRailings() {
         name: "Is toughened glass safe for railings?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Yes. Toughened glass is 4–5 times stronger than regular glass. If it breaks, it shatters into small harmless granules instead of sharp shards. We use 12–19mm IS 2553 certified toughened glass for all railing projects.",
+          text: "Toughened glass is safe for railings when the glass build-up, supports and anchorage are designed for the load. It is stronger than ordinary glass and breaks into small granules, and laminated glass adds a layer that holds pieces in place.",
         },
       },
       {
@@ -201,7 +201,7 @@ export default function GlassRailings() {
         name: "How much do glass railings cost per running foot in India?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Standoff systems start at ₹500/rft. Frameless railings range from ₹800–₹1,400/rft depending on glass thickness and hardware quality. Spigot systems fall in between at ₹700–₹1,200/rft.",
+          text: "Glass railing cost depends on the system (frameless, semi-frameless, spigot or standoff), glass thickness, hardware finish and site conditions. It is priced per running foot against drawings. Fine Glaze prepares BOQ-based quotations.",
         },
       },
     ],
@@ -321,7 +321,7 @@ export default function GlassRailings() {
       {/* ════════════ CONVERSION QUICK OVERVIEW ════════════ */}
       <ServiceQuickOverview
         serviceTitle="Glass Balustrades &amp; Railing Systems"
-        whatWeProvide="Frameless base-channel glass railings, standoff pin balustrades, spigot railings & SS-316 top handrail systems. IS 2553 laminated glass safety compliance & 1.5–3.0 kN/m line load certification."
+        whatWeProvide="Frameless base-channel glass railings, standoff pin balustrades, spigot railings & SS-316 top handrail systems. Toughened and laminated glass specified against IS 2553 and the project load requirements, with a structural check before fabrication."
         locationsServed={["Pune (Koregaon Park, Kalyani Nagar)", "Mumbai (Byculla, Bandra, Worli)", "Thane", "Navi Mumbai"]}
         bestProjectTypes={[
           "High-Rise Residential Balconies & Terraces",
@@ -346,7 +346,8 @@ export default function GlassRailings() {
                 { number: "16", label: "Project Records Documented" },
                 { number: "~20,566", label: "Sqm Facade Delivered" },
                 { number: "40+", label: "Core Team" },
-                { number: "2024", label: "Embassy REIT Best Vendor Performance" },].map((s) => (
+                { number: "2024", label: "Embassy REIT Best Vendor Performance" },
+              ].map((s) => (
                 <div key={s.label} className="text-center px-4">
                   <p className="text-2xl md:text-3xl font-bold text-white">{s.number}</p>
                   <p className="text-stone-500 text-[11px] uppercase tracking-widest mt-1">{s.label}</p>
@@ -452,23 +453,23 @@ export default function GlassRailings() {
               {[
                 {
                   icon: Shield,
-                  title: "Safety Tested",
-                  desc: "All glass is IS 2553 certified toughened. Every railing passes load testing before handover.",
+                  title: "Safety Glass",
+                  desc: "Toughened or laminated glass specified to IS 2553 and the project's load requirements. Confirm the build-up with your consultant.",
                 },
                 {
                   icon: Clock,
-                  title: "Quick Turnaround",
-                  desc: "Most residential railing projects completed within 5–7 working days from measurement.",
+                  title: "Measured and Fabricated to Order",
+                  desc: "Each railing is measured on site, drawn in-house and fabricated to size. Programme is confirmed per project.",
                 },
                 {
                   icon: Award,
-                  title: "Premium Hardware",
-                  desc: "Marine-grade SS 304/316 hardware — rust-proof even in Mumbai's coastal climate.",
+                  title: "Stainless Steel Hardware",
+                  desc: "Stainless steel hardware in finishes chosen to the specification. Coastal sites need particular attention to grade.",
                 },
                 {
                   icon: Wrench,
-                  title: "After-Sales Care",
-                  desc: "Free alignment check at 6 months.",
+                  title: "AMC Support",
+                  desc: "Maintenance contracts available for glazing, glass and cladding.",
                 },
               ].map((item) => (
                 <div key={item.title} className="text-center">
@@ -539,7 +540,7 @@ export default function GlassRailings() {
             <div>
               <p className="text-white/60 text-sm uppercase tracking-widest mb-2">Our Promise</p>
               <p className="text-white text-xl md:text-3xl font-bold max-w-xl">
-                Every railing measured, fabricated & installed by our own expert teams.
+                Shop drawings prepared in-house. Installation run by a dedicated site in-charge and supervisor.
               </p>
             </div>
           </div>
@@ -617,7 +618,7 @@ export default function GlassRailings() {
             <div>
               <FAQItem
                 q="Is toughened glass safe for railings?"
-                a="Yes. Toughened glass is 4–5 times stronger than regular glass. If it breaks, it shatters into small harmless granules instead of sharp shards. We use 12–19mm IS 2553 certified toughened glass for all railing projects."
+                a="Toughened glass is safe for railings when the glass build-up, supports and anchorage are designed for the load. It is stronger than ordinary glass and breaks into small granules, and laminated glass adds a layer that holds pieces in place."
               />
               <FAQItem
                 q="What is the difference between frameless and semi-frameless glass railings?"
@@ -625,15 +626,15 @@ export default function GlassRailings() {
               />
               <FAQItem
                 q="How much do glass railings cost per running foot in India?"
-                a="Standoff systems start at ₹500/rft. Frameless railings range from ₹800–₹1,400/rft depending on glass thickness and hardware quality. Spigot systems fall in between at ₹700–₹1,200/rft."
+                a="Glass railing cost depends on the system (frameless, semi-frameless, spigot or standoff), glass thickness, hardware finish and site conditions. It is priced per running foot against drawings. Fine Glaze prepares BOQ-based quotations."
               />
               <FAQItem
                 q="Can glass railings be used outdoors and in coastal areas?"
-                a="Yes. We use SS 316 marine-grade hardware for coastal and outdoor installations. The toughened glass itself is weather-resistant. We also offer nano-coated glass for easy cleaning and water-spot resistance."
+                a="Yes. Toughened glass is weather-resistant, and outdoor and coastal installations need stainless steel hardware of a suitable grade. Fine Glaze selects the grade per project, and nano-coated glass is an option for easier cleaning."
               />
               <FAQItem
                 q="How long does glass railing installation take?"
-                a="Most residential projects are completed in 5–7 working days from measurement. Commercial projects with longer runs typically take 2–4 weeks depending on the scope."
+                a="Installation time depends on railing length, number of floors, site access and glass lead time, so we confirm the programme per project after measurement. Glass is cut and toughened to size before installation."
               />
             </div>
           </FadeIn>

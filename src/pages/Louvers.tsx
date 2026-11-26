@@ -132,7 +132,7 @@ const SYSTEMS = [
 const STEPS = [
   { num: "01", title: "Sun Study", desc: "Analyse building orientation, sun path & shading needs" },
   { num: "02", title: "Design", desc: "Blade profile selection, spacing calculations & 3D preview" },
-  { num: "03", title: "Fabrication", desc: "CNC extrusion, cutting & powder coating at our facility" },
+  { num: "03", title: "Fabrication", desc: "Cutting, sub-assembly and finishing preparation at our Pisoli, Pune unit" },
   { num: "04", title: "Installation", desc: "Bracket fixing, blade mounting & mechanism testing" },
 ];
 
@@ -162,7 +162,7 @@ export default function Louvers() {
       { "@type": "City", name: "Mumbai" },
       { "@type": "City", name: "Navi Mumbai" },
     ],
-    description: "Architectural aluminium louver and sun shading systems — fixed, operable & motorised. Reduce solar heat gain by up to 70%. Aerofoil & flat blade profiles.",
+    description: "Architectural aluminium louver and sun shading systems: fixed, operable and motorised, with aerofoil and flat blade profiles.",
   };
 
   const breadcrumbSchema = {
@@ -184,7 +184,7 @@ export default function Louvers() {
         name: "How much do aluminium louvers reduce heat?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Properly designed aluminium louver systems reduce direct solar heat gain by up to 70%. This translates to significant air-conditioning cost savings — typically 20–30% reduction in HVAC energy consumption for commercial buildings.",
+          text: "Well-designed aluminium louvers cut direct solar heat on the glass line, and the effect depends on orientation, blade angle, glass and building use. We do not quote a fixed percentage; ask for an energy model if you need numbers.",
         },
       },
       {
@@ -200,7 +200,7 @@ export default function Louvers() {
         name: "How much do aluminium louvers cost per sq ft?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Fixed louvers start at ₹250/sq ft. Operable systems range from ₹400–₹700/sq ft. Motorised louvers with sensors cost ₹700–₹1,200/sq ft. Vertical fins and screens range from ₹350–₹800/sq ft.",
+          text: "Louver cost depends on blade profile, fixed or operable or motorised type, size, finish and access, so a reliable figure needs drawings. Fine Glaze prepares BOQ-based quotations.",
         },
       },
     ],
@@ -260,7 +260,7 @@ export default function Louvers() {
             className="mt-6 text-white/70 text-base md:text-lg max-w-lg leading-relaxed animate-fade-in-up"
             style={{ animationDelay: "0.2s" }}
           >
-            Architectural solar control systems that cut heat by 70% while adding design character.
+            Architectural solar control systems that cut direct sun on the glass line while adding design character.
           </p>
 
           <div
@@ -307,11 +307,11 @@ export default function Louvers() {
               Why Louver Systems
             </p>
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-stone-900 leading-snug mb-5">
-              Control sunlight, reduce HVAC costs —{"  "}
+              Control direct sunlight —{"  "}
               <span className="text-stone-400">with louvers that double as architectural features.</span>
             </h2>
             <p className="text-stone-500 text-[15px] md:text-base leading-relaxed">
-              Aluminium louver systems block direct solar radiation while maintaining airflow and outward visibility. They reduce solar heat gain by up to 70%, cutting air-conditioning costs significantly. Available in fixed, operable, and motorised configurations with elliptical, aerofoil, and flat blade profiles.
+              Aluminium louver systems block direct solar radiation while maintaining airflow and outward visibility. They cut direct sun on the glass and can lower cooling demand, depending on orientation and design. Available in fixed, operable, and motorised configurations with elliptical, aerofoil, and flat blade profiles.
             </p>
           </FadeIn>
         </div>
@@ -327,7 +327,8 @@ export default function Louvers() {
                 { number: "16", label: "Project Records Documented" },
                 { number: "~20,566", label: "Sqm Facade Delivered" },
                 { number: "40+", label: "Core Team" },
-                { number: "2024", label: "Embassy REIT Best Vendor Performance" },].map((s) => (
+                { number: "2024", label: "Embassy REIT Best Vendor Performance" },
+              ].map((s) => (
                 <div key={s.label} className="text-center px-4">
                   <p className="text-2xl md:text-3xl font-bold text-white">{s.number}</p>
                   <p className="text-stone-500 text-[11px] uppercase tracking-widest mt-1">{s.label}</p>
@@ -434,22 +435,22 @@ export default function Louvers() {
                 {
                   icon: Shield,
                   title: "Sun-Path Optimised",
-                  desc: "Blade angles calculated for your building's orientation. Not guesswork — engineering.",
+                  desc: "Blade angles calculated for your building's orientation. Orientation and sun path are part of the design brief.",
                 },
                 {
                   icon: Clock,
-                  title: "Fast Production",
-                  desc: "Standard louver systems delivered in 15–20 days from design approval.",
+                  title: "Own Fabrication Unit",
+                  desc: "Sub-assembly and framing at our Pisoli, Pune unit, with shop drawings prepared in-house.",
                 },
                 {
                   icon: Award,
-                  title: "Premium Extrusions",
-                  desc: "6063-T6 aluminium extrusions with powder-coat or anodised finishes. 15-year warranty.",
+                  title: "Aluminium Extrusions",
+                  desc: "Extrusions from major Indian mills with powder-coat or anodised finishes, as specified.",
                 },
                 {
                   icon: Wrench,
-                  title: "Motor Warranty",
-                  desc: "Motorised systems backed by 5-year motor warranty. BMS integration available.",
+                  title: "Motorised Options",
+                  desc: "Motorised systems can be quoted with controls; BMS integration depends on the project.",
                 },
               ].map((item) => (
                 <div key={item.title} className="text-center">
@@ -520,7 +521,7 @@ export default function Louvers() {
             <div>
               <p className="text-white/60 text-sm uppercase tracking-widest mb-2">Our Promise</p>
               <p className="text-white text-xl md:text-3xl font-bold max-w-xl">
-                Solar control engineered precisely for your building — not a one-size-fits-all solution.
+                Solar control detailed for your building and orientation.
               </p>
             </div>
           </div>
@@ -598,7 +599,7 @@ export default function Louvers() {
             <div>
               <FAQItem
                 q="How much do aluminium louvers reduce heat?"
-                a="Properly designed aluminium louver systems reduce direct solar heat gain by up to 70%. This translates to significant air-conditioning cost savings — typically 20–30% reduction in HVAC energy consumption for commercial buildings."
+                a="Well-designed aluminium louvers cut direct solar heat on the glass line, and the effect depends on orientation, blade angle, glass and building use. We do not quote a fixed percentage; ask for an energy model if you need numbers."
               />
               <FAQItem
                 q="What is the difference between fixed and operable louvers?"
@@ -606,11 +607,11 @@ export default function Louvers() {
               />
               <FAQItem
                 q="How much do aluminium louvers cost per sq ft?"
-                a="Fixed louvers start at ₹250/sq ft. Operable systems range from ₹400–₹700/sq ft. Motorised louvers with sensors cost ₹700–₹1,200/sq ft. Vertical fins and screens range from ₹350–₹800/sq ft."
+                a="Louver cost depends on blade profile, fixed or operable or motorised type, size, finish and access, so a reliable figure needs drawings. Fine Glaze prepares BOQ-based quotations."
               />
               <FAQItem
                 q="Can motorised louvers be connected to building management systems?"
-                a="Yes. Our motorised louver systems can be integrated with BMS (Building Management Systems) for automated control based on sun sensors, interior temperature, or scheduled timers. This maximises energy savings."
+                a="Motorised louvers can often be linked to a building management system with sun sensors, temperature input or timers, depending on the motor and control system chosen. Confirm integration needs at design stage."
               />
               <FAQItem
                 q="What finishes are available for aluminium louvers?"

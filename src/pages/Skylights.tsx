@@ -102,7 +102,7 @@ const SYSTEMS = [
   {
     num: "02",
     title: "Frameless Glass Canopy",
-    desc: "Minimal overhead glass structures supported by stainless steel spider fittings or glass fins. Creates a floating-glass effect at building entrances and walkways. Fully waterproof with concealed drainage.",
+    desc: "Minimal overhead glass structures supported by stainless steel spider fittings or glass fins. Creates a floating-glass effect at building entrances and walkways. Designed with concealed drainage.",
     glass: "17.52–21.52mm laminated",
     wind: "SS spider / glass fins",
     bestFor: "Entrances, walkways",
@@ -112,7 +112,7 @@ const SYSTEMS = [
   {
     num: "03",
     title: "Spider-Fitting Canopy",
-    desc: "Point-fixed glass canopy using stainless steel spider arms connected to steel or cable structures. Maximum transparency with industrial-grade strength for exposed and wind-prone locations.",
+    desc: "Point-fixed glass canopy using stainless steel spider arms connected to steel or cable structures. Maximum transparency, with the structure sized to the project wind load.",
     glass: "12–19mm laminated",
     wind: "SS 316 spider arms",
     bestFor: "Commercial entries, bridges",
@@ -122,7 +122,7 @@ const SYSTEMS = [
   {
     num: "04",
     title: "Polycarbonate Roofing",
-    desc: "Lightweight multiwall polycarbonate sheets on aluminium frames. Excellent light transmission with UV protection and impact resistance — a cost-effective alternative to glass for car parks and warehouses.",
+    desc: "Lightweight multiwall polycarbonate sheets on aluminium frames. Excellent light transmission with UV protection and impact resistance, an alternative to glass for car parks and warehouses.",
     glass: "10–25mm multiwall PC",
     wind: "Aluminium frame",
     bestFor: "Car parks, factories",
@@ -133,7 +133,7 @@ const SYSTEMS = [
 
 const STEPS = [
   { num: "01", title: "Site Survey", desc: "Assess opening size, structural support & drainage requirements" },
-  { num: "02", title: "Engineering", desc: "Wind-load calculations, thermal analysis & shop drawings" },
+  { num: "02", title: "Engineering", desc: "In-house shop drawings and an engineering check against project wind load" },
   { num: "03", title: "Fabrication", desc: "Frame fabrication, glass ordering & waterproofing prep" },
   { num: "04", title: "Installation", desc: "Frame erection, glazing, sealing & drainage testing" },
 ];
@@ -186,7 +186,7 @@ export default function Skylights() {
         name: "Are glass skylights waterproof?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Yes. Our skylight systems use structural silicone sealing, EPDM gaskets, and integrated drainage channels. Every installation is water-tested on site before handover, and any leak found is traced and closed out on the snag register.",
+          text: "A well-designed glass skylight is waterproof when sealants, gaskets and drainage are detailed properly and installed well. Fine Glaze checks installed glazing with a site water penetration test before handover and closes any leak on the snag register.",
         },
       },
       {
@@ -194,7 +194,7 @@ export default function Skylights() {
         name: "How much does a glass skylight cost per sq ft in India?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Polycarbonate roofing starts at ₹150/sq ft. Aluminium-framed glass skylights range from ₹600–₹1,200/sq ft. Frameless spider-fitting canopies cost ₹900–₹1,800/sq ft depending on glass spec and structure.",
+          text: "Skylight and canopy cost depends on the span, glass, framing, structure and access, so a reliable figure needs drawings. Fine Glaze prepares BOQ-based quotations.",
         },
       },
       {
@@ -202,7 +202,7 @@ export default function Skylights() {
         name: "Can skylights reduce energy costs?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Yes. Skylights can reduce artificial lighting costs by up to 50%. With Low-E or heat-reflective glass coatings, they also limit solar heat gain — reducing air conditioning loads in commercial spaces.",
+          text: "Skylights can cut daytime lighting use by bringing in daylight, and low-E or solar-control glass limits heat gain. Net energy effect depends on size, orientation and glass, so check it with the project's energy model.",
         },
       },
     ],
@@ -310,10 +310,10 @@ export default function Skylights() {
             </p>
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-stone-900 leading-snug mb-5">
               Bring natural light indoors —{"  "}
-              <span className="text-stone-400">engineered for weather, wind loads & thermal comfort.</span>
+              <span className="text-stone-400">designed for weather, wind loads and thermal comfort.</span>
             </h2>
             <p className="text-stone-500 text-[15px] md:text-base leading-relaxed">
-              Our skylight and canopy systems use laminated safety glass with heat-reflective coatings, supported by structural aluminium or stainless steel frameworks. Every system is waterproofed and engineered for local wind and rain load requirements, with integrated drainage channels.
+              Our skylight and canopy systems use laminated safety glass with heat-reflective coatings, supported by structural aluminium or stainless steel frameworks. Each system is detailed for weatherproofing and drainage and checked against the project wind load.
             </p>
           </FadeIn>
         </div>
@@ -322,7 +322,7 @@ export default function Skylights() {
       {/* ════════════ CONVERSION QUICK OVERVIEW ════════════ */}
       <ServiceQuickOverview
         serviceTitle="Glass Skylights &amp; Entrance Canopies"
-        whatWeProvide="Laminated safety glass skylights, atrium overhead glazing, spider glass canopies & MS/SS structural support framing. Includes integrated gutting, flashing & Dow Corning 795 weather sealing."
+        whatWeProvide="Laminated safety glass skylights, atrium overhead glazing, spider glass canopies & MS/SS structural support framing. Includes integrated gutters, flashing and structural and weather silicone from approved manufacturers."
         locationsServed={["Pune", "Mumbai (South Mumbai, BKC)", "Thane", "Navi Mumbai"]}
         bestProjectTypes={[
           "Hotel Entrance Canopies",
@@ -346,7 +346,8 @@ export default function Skylights() {
                 { number: "16", label: "Project Records Documented" },
                 { number: "~20,566", label: "Sqm Facade Delivered" },
                 { number: "40+", label: "Core Team" },
-                { number: "2024", label: "Embassy REIT Best Vendor Performance" },].map((s) => (
+                { number: "2024", label: "Embassy REIT Best Vendor Performance" },
+              ].map((s) => (
                 <div key={s.label} className="text-center px-4">
                   <p className="text-2xl md:text-3xl font-bold text-white">{s.number}</p>
                   <p className="text-stone-500 text-[11px] uppercase tracking-widest mt-1">{s.label}</p>
@@ -453,12 +454,12 @@ export default function Skylights() {
                 {
                   icon: Shield,
                   title: "Water-Tested",
-                  desc: "Every skylight is water-tested before handover. Integrated drainage channels prevent pooling.",
+                  desc: "Installed glazing is checked with a site water penetration test before handover, and any leak found is closed out on the snag register.",
                 },
                 {
                   icon: Clock,
-                  title: "On-Time Delivery",
-                  desc: "Pre-engineered frames and scheduled glass deliveries ensure project timelines are met.",
+                  title: "Stage Inspections",
+                  desc: "Material, fabrication and installation checks, with the snag register closed before handover.",
                 },
                 {
                   icon: Award,
@@ -539,7 +540,7 @@ export default function Skylights() {
             <div>
               <p className="text-white/60 text-sm uppercase tracking-widest mb-2">Our Promise</p>
               <p className="text-white text-xl md:text-3xl font-bold max-w-xl">
-                Every skylight water-tested before handover. Every canopy detailed for drainage and maintenance access.
+                Installed glazing water-tested before handover. Canopies detailed for drainage and maintenance access.
               </p>
             </div>
           </div>
@@ -617,23 +618,23 @@ export default function Skylights() {
             <div>
               <FAQItem
                 q="Are glass skylights waterproof?"
-                a="Yes. Our skylight systems use structural silicone sealing, EPDM gaskets, and integrated drainage channels. Every installation is water-tested on site before handover, and any leak found is traced and closed out on the snag register."
+                a="A well-designed glass skylight is waterproof when sealants, gaskets and drainage are detailed properly and installed well. Fine Glaze checks installed glazing with a site water penetration test before handover and closes any leak on the snag register."
               />
               <FAQItem
                 q="How much does a glass skylight cost per sq ft in India?"
-                a="Polycarbonate roofing starts at ₹150/sq ft. Aluminium-framed glass skylights range from ₹600–₹1,200/sq ft. Frameless spider-fitting canopies cost ₹900–₹1,800/sq ft depending on glass spec and structure."
+                a="Skylight and canopy cost depends on the span, glass, framing, structure and access, so a reliable figure needs drawings. Fine Glaze prepares BOQ-based quotations."
               />
               <FAQItem
                 q="Can skylights reduce energy costs?"
-                a="Yes. Skylights can reduce artificial lighting costs by up to 50%. With Low-E or heat-reflective glass coatings, they also limit solar heat gain — reducing air conditioning loads in commercial spaces."
+                a="Skylights can cut daytime lighting use by bringing in daylight, and low-E or solar-control glass limits heat gain. Net energy effect depends on size, orientation and glass, so check it with the project's energy model."
               />
               <FAQItem
                 q="What type of glass is used in skylights?"
-                a="We use laminated safety glass (two layers bonded with PVB interlayer) for all overhead applications. This ensures that if the glass breaks, fragments stay bonded to the interlayer instead of falling. DGU and Low-E options are available."
+                a="Overhead glazing is normally laminated safety glass, where two layers are bonded with an interlayer so broken pieces stay in place. Double glazed and low-E options are available, and the build-up follows the structural check."
               />
               <FAQItem
                 q="How long does skylight installation take?"
-                a="Small canopy projects take 1–2 weeks. Large atrium skylights typically require 4–8 weeks depending on span size and structural complexity. We work around your construction schedule."
+                a="Installation time depends on span, structure, glass lead time and site access, so we confirm the programme per project after survey and design approval. We work around your construction schedule."
               />
             </div>
           </FadeIn>

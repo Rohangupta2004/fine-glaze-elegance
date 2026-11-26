@@ -100,9 +100,9 @@ const SYSTEMS = [
   {
     num: "02",
     title: "Acoustic Double-Glazed Walls",
-    desc: "Two glass panels with an air gap for superior sound insulation up to 42dB. Ideal for boardrooms, HR offices, and conference rooms where speech privacy is critical.",
+    desc: "Two glass panels with an air gap for better sound insulation than single glass. Ideal for boardrooms, HR offices, and conference rooms where speech privacy is critical.",
     glass: "6+12+6mm DGU",
-    wind: "Up to 42dB STC rating",
+    wind: "Better sound insulation than single glass",
     bestFor: "Boardrooms, conference rooms",
     price: "Quoted on drawings",
     img: "acoustic",
@@ -184,7 +184,7 @@ export default function GlassPartitions() {
         name: "Are glass partitions soundproof?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Single-glazed glass partitions provide basic visual separation but limited sound insulation (~28dB). For speech privacy, we recommend double-glazed (DGU) glass walls that achieve up to 42dB STC rating — sufficient for boardrooms and HR offices.",
+          text: "Glass partitions are not soundproof, but double glazed or laminated glass reduces noise far more than single glass. Door gaps and perimeter seals decide the result, so state your privacy need at design stage.",
         },
       },
       {
@@ -200,7 +200,7 @@ export default function GlassPartitions() {
         name: "How much do glass partitions cost per sq ft?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Frameless single-glazed partitions start at ₹350/sq ft. Double-glazed acoustic walls range from ₹600–₹1,000/sq ft. Switchable smart glass costs ₹1,200–₹2,500/sq ft. Shower enclosures are priced per unit at ₹15,000–₹45,000.",
+          text: "Glass partition cost depends on glass type (single, double glazed or smart glass), hardware, doors and floor-to-ceiling height, so it is priced against drawings. Fine Glaze prepares BOQ-based quotations.",
         },
       },
     ],
@@ -311,7 +311,7 @@ export default function GlassPartitions() {
               <span className="text-stone-400">toughened glass that divides space without blocking it.</span>
             </h2>
             <p className="text-stone-500 text-[15px] md:text-base leading-relaxed">
-              Glass partitions create visually open workspaces while providing acoustic separation. Available in single-glazed, double-glazed (for sound insulation up to 42dB), and switchable smart glass that turns opaque at the touch of a button. Our shower enclosures use 8–12mm toughened glass with anti-limescale nano-coating.
+              Glass partitions create visually open workspaces while providing acoustic separation. Available in single-glazed, double-glazed (for better sound insulation), and switchable smart glass that turns opaque at the touch of a button. Our shower enclosures use 8–12mm toughened glass with anti-limescale nano-coating.
             </p>
           </FadeIn>
         </div>
@@ -327,7 +327,8 @@ export default function GlassPartitions() {
                 { number: "16", label: "Project Records Documented" },
                 { number: "~20,566", label: "Sqm Facade Delivered" },
                 { number: "40+", label: "Core Team" },
-                { number: "2024", label: "Embassy REIT Best Vendor Performance" },].map((s) => (
+                { number: "2024", label: "Embassy REIT Best Vendor Performance" },
+              ].map((s) => (
                 <div key={s.label} className="text-center px-4">
                   <p className="text-2xl md:text-3xl font-bold text-white">{s.number}</p>
                   <p className="text-stone-500 text-[11px] uppercase tracking-widest mt-1">{s.label}</p>
@@ -434,17 +435,17 @@ export default function GlassPartitions() {
                 {
                   icon: Shield,
                   title: "Safety Glass",
-                  desc: "All panels are IS 2553 certified toughened glass. Shower glass has anti-shatter lamination options.",
+                  desc: "Toughened glass specified to IS 2553. Laminated options are available where the specification needs them.",
                 },
                 {
                   icon: Clock,
-                  title: "Quick Install",
-                  desc: "Most office partition projects completed in 5–10 days. Shower enclosures installed in 1–2 days.",
+                  title: "Measured and Made to Size",
+                  desc: "Glass is measured, toughened to size and installed to the approved drawings. Programme is confirmed per project.",
                 },
                 {
                   icon: Award,
-                  title: "Premium Hardware",
-                  desc: "European patch fittings and door closers. Brushed SS, matt black & champagne gold finishes.",
+                  title: "Hardware Options",
+                  desc: "Patch fittings and door closers in finishes chosen to the specification.",
                 },
                 {
                   icon: Wrench,
@@ -520,7 +521,7 @@ export default function GlassPartitions() {
             <div>
               <p className="text-white/60 text-sm uppercase tracking-widest mb-2">Our Promise</p>
               <p className="text-white text-xl md:text-3xl font-bold max-w-xl">
-                Modern workspaces and luxury bathrooms — built with precision glass craftsmanship.
+                Shop drawings prepared in-house. Glass measured and made to size for each space.
               </p>
             </div>
           </div>
@@ -598,7 +599,7 @@ export default function GlassPartitions() {
             <div>
               <FAQItem
                 q="Are glass partitions soundproof?"
-                a="Single-glazed glass partitions provide basic visual separation but limited sound insulation (~28dB). For speech privacy, we recommend double-glazed (DGU) glass walls that achieve up to 42dB STC rating — sufficient for boardrooms and HR offices."
+                a="Glass partitions are not soundproof, but double glazed or laminated glass reduces noise far more than single glass. Door gaps and perimeter seals decide the result, so state your privacy need at design stage."
               />
               <FAQItem
                 q="What is switchable smart glass?"
@@ -606,7 +607,7 @@ export default function GlassPartitions() {
               />
               <FAQItem
                 q="How much do glass partitions cost per sq ft?"
-                a="Frameless single-glazed partitions start at ₹350/sq ft. Double-glazed acoustic walls range from ₹600–₹1,000/sq ft. Switchable smart glass costs ₹1,200–₹2,500/sq ft. Shower enclosures are priced per unit at ₹15,000–₹45,000."
+                a="Glass partition cost depends on glass type (single, double glazed or smart glass), hardware, doors and floor-to-ceiling height, so it is priced against drawings. Fine Glaze prepares BOQ-based quotations."
               />
               <FAQItem
                 q="Can glass partitions have doors?"

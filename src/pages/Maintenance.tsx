@@ -90,9 +90,9 @@ const SYSTEMS = [
   {
     num: "01",
     title: "Sealant Renewal & Waterproofing",
-    desc: "Complete removal and replacement of degraded structural silicone and weather sealants. We use Dow Corning and Sika sealants rated for 25+ years. Includes joint preparation, priming, and quality-tested application.",
+    desc: "Complete removal and replacement of degraded structural silicone and weather sealants. We use approved sealants from major manufacturers. Includes joint preparation, priming, and quality-tested application.",
     glass: "Dow Corning / Sika",
-    wind: "Every 8–12 years",
+    wind: "Per condition report",
     bestFor: "Leaking facades, old buildings",
     price: "Quoted on drawings",
     img: "sealant",
@@ -132,8 +132,8 @@ const SYSTEMS = [
 const STEPS = [
   { num: "01", title: "Inspection", desc: "Full facade audit with photo documentation of all issues" },
   { num: "02", title: "Report", desc: "Detailed condition report with prioritised repair recommendations" },
-  { num: "03", title: "Execution", desc: "Scheduled repairs by trained rope-access technicians" },
-  { num: "04", title: "Handover", desc: "Completion report with before/after photos & warranty" },
+  { num: "03", title: "Execution", desc: "Scheduled repairs with safe access for the site" },
+  { num: "04", title: "Handover", desc: "Completion report with before and after photos; defect liability support as per contract" },
 ];
 
 export default function Maintenance() {
@@ -184,7 +184,7 @@ export default function Maintenance() {
         name: "How often should a facade be maintained?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "We recommend bi-annual inspections — once before monsoon and once after. Cleaning should be done 2x per year for commercial buildings. Sealant replacement is typically needed every 8–12 years depending on exposure and quality.",
+          text: "A facade should be inspected at least once a year, and twice a year (before and after the monsoon) for coastal or structural glazing facades. Cleaning frequency depends on the building. Sealant life depends on product, exposure and workmanship.",
         },
       },
       {
@@ -192,7 +192,7 @@ export default function Maintenance() {
         name: "What does a facade AMC include?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Our AMC covers bi-annual inspections, sealant integrity checks, hardware lubrication, drainage clearing, minor repairs, and detailed condition reports with photo documentation. Emergency repairs get priority.",
+          text: "A facade AMC covers scheduled inspection and repair agreed in the contract. Fine Glaze's scope includes periodic inspection with a written condition report, cleaning, sealant re-application, glass replacement and leakage investigation.",
         },
       },
       {
@@ -200,7 +200,7 @@ export default function Maintenance() {
         name: "How much does facade cleaning cost?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Professional rope-access facade cleaning costs ₹8–₹25 per sq ft depending on building height, accessibility, and contamination level. BMU-based cleaning for very tall buildings is quoted per project.",
+          text: "Facade cleaning cost depends on building height, access method (rope access, cradle or BMU), glass area and how soiled the glass is. Fine Glaze quotes per project after reviewing the building.",
         },
       },
     ],
@@ -333,7 +333,8 @@ export default function Maintenance() {
                 { number: "16", label: "Project Records Documented" },
                 { number: "~20,566", label: "Sqm Facade Delivered" },
                 { number: "40+", label: "Core Team" },
-                { number: "2024", label: "Embassy REIT Best Vendor Performance" },].map((s) => (
+                { number: "2024", label: "Embassy REIT Best Vendor Performance" },
+              ].map((s) => (
                 <div key={s.label} className="text-center px-4">
                   <p className="text-2xl md:text-3xl font-bold text-white">{s.number}</p>
                   <p className="text-stone-500 text-[11px] uppercase tracking-widest mt-1">{s.label}</p>
@@ -439,8 +440,8 @@ export default function Maintenance() {
               {[
                 {
                   icon: Shield,
-                  title: "Certified Crews",
-                  desc: "All technicians are IRATA-trained for rope-access work. Full safety compliance on every project.",
+                  title: "Safety on Site",
+                  desc: "A nominated safety officer oversees work at height across our sites, with harness, lifeline and anchorage on every elevation activity.",
                 },
                 {
                   icon: Clock,
@@ -449,13 +450,13 @@ export default function Maintenance() {
                 },
                 {
                   icon: Award,
-                  title: "Original Installer",
-                  desc: "As facade installers ourselves, we understand every system inside-out — faster, better repairs.",
+                  title: "Facade Installers",
+                  desc: "As a facade contractor, we understand how these systems are built, which helps diagnose and repair them.",
                 },
                 {
                   icon: Wrench,
-                  title: "Quality Materials",
-                  desc: "Only Dow Corning & Sika sealants. OEM-spec glass and hardware. No shortcuts, no substitutes.",
+                  title: "Approved Materials",
+                  desc: "Sealants from approved manufacturers, with glass and hardware matched to the existing specification where possible.",
                 },
               ].map((item) => (
                 <div key={item.title} className="text-center">
@@ -526,7 +527,7 @@ export default function Maintenance() {
             <div>
               <p className="text-white/60 text-sm uppercase tracking-widest mb-2">Our Promise</p>
               <p className="text-white text-xl md:text-3xl font-bold max-w-xl">
-                Every repair done right — because we built these facades in the first place.
+                Inspection first, a written condition report next, then repair. We service facades we did not install too.
               </p>
             </div>
           </div>
@@ -604,19 +605,19 @@ export default function Maintenance() {
             <div>
               <FAQItem
                 q="How often should a facade be maintained?"
-                a="We recommend bi-annual inspections — once before monsoon and once after. Cleaning should be done 2x per year for commercial buildings. Sealant replacement is typically needed every 8–12 years depending on exposure and quality."
+                a="A facade should be inspected at least once a year, and twice a year (before and after the monsoon) for coastal or structural glazing facades. Cleaning frequency depends on the building. Sealant life depends on product, exposure and workmanship."
               />
               <FAQItem
                 q="What does a facade AMC include?"
-                a="Our AMC covers bi-annual inspections, sealant integrity checks, hardware lubrication, drainage clearing, minor repairs, and detailed condition reports with photo documentation. Emergency repairs get priority."
+                a="A facade AMC covers scheduled inspection and repair agreed in the contract. Fine Glaze's scope includes periodic inspection with a written condition report, cleaning, sealant re-application, glass replacement and leakage investigation."
               />
               <FAQItem
                 q="How much does facade cleaning cost?"
-                a="Professional rope-access facade cleaning costs ₹8–₹25 per sq ft depending on building height, accessibility, and contamination level. BMU-based cleaning for very tall buildings is quoted per project."
+                a="Facade cleaning cost depends on building height, access method (rope access, cradle or BMU), glass area and how soiled the glass is. Fine Glaze quotes per project after reviewing the building."
               />
               <FAQItem
                 q="Can you replace glass panels on occupied buildings?"
-                a="Yes. Our rope-access teams work safely on occupied buildings without disrupting tenants. We schedule work during low-traffic hours and use safety nets and debris protection throughout the process."
+                a="Yes. Glass replacement on an occupied building is planned with the building management, with agreed access, timing, edge protection and debris control. Fine Glaze plans the sequence per site."
               />
               <FAQItem
                 q="Do you service facades installed by other companies?"
