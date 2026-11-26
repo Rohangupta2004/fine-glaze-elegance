@@ -1,3 +1,4 @@
+import Illustration from "@/components/common/Illustration";
 import SEO from "@/components/SEO";
 import PageHero from "@/components/common/PageHero";
 import { RelatedProjects } from "@/components/RelatedProjects";
@@ -238,6 +239,7 @@ export default function StructuralGlazing() {
               structural silicone sealant, creating completely seamless, frameless facades
               for modern commercial buildings across India.
             </p>
+            <Illustration name="svc-structural-glazing" />
           </FadeIn>
         </div>
       </section>

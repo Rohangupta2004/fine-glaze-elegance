@@ -1,3 +1,4 @@
+import Illustration from "@/components/common/Illustration";
 import SEO from "@/components/SEO";
 import PageHero from "@/components/common/PageHero";
 import { RelatedProjects } from "@/components/RelatedProjects";
@@ -92,6 +93,7 @@ export default function CurtainWallMumbai() {
             Fine Glaze handles curtain wall scope from survey and shop drawings through fabrication, installation, site water penetration testing, snagging and handover, with AMC available afterwards.
           </p>
     
+          <Illustration name="city-mumbai" />
         </div>
       </section>
 

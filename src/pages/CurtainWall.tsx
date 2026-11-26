@@ -5,6 +5,7 @@ import { ServiceQuickOverview } from "@/components/service/ServiceQuickOverview"
 import { ArrowRight, MapPin, CheckCircle2, Phone, Mail, FileText } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { cn } from "@/lib/utils";
+import { ILLUSTRATIONS, illusSrc, illusSrcSet } from "@/lib/illustrations";
 import SEO from "@/components/SEO";
 import PageHero from "@/components/common/PageHero";
 import { Layout } from "@/components/layout/Layout";
@@ -53,7 +54,7 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 
 /* ── Images ── */
 const IMG: Record<string, string> = {
-  hero: "/curtain-wall.webp",
+  hero: illusSrc("svc-curtain-wall"),
   unitized: "/structural-glazing.webp",
   stick: "/curtain-wall.webp",
   semi: "/spider-glazing.webp",
@@ -216,7 +217,7 @@ export default function CurtainWall() {
         title={<>Curtain Wall<br /> <span className="text-gradient-gold">Manufacturers</span><span className="ph-sub">Pune &amp; Mumbai.</span></>}
         intro="As curtain wall contractors based in Pune and Mumbai, Fine Glaze delivers engineered unitized, stick, and semi-unitized glass curtain wall systems for commercial towers, IT parks, and high-rise office developments."
         secondary={{ label: "+91 83692 33566", href: "tel:+918369233566" }}
-        image={{ src: IMG.hero, alt: "Curtain wall manufacturers glass facade — Fine Glaze" }}
+        image={{ src: IMG.hero, srcSet: illusSrcSet("svc-curtain-wall"), sizes: "(max-width: 1024px) 100vw, 640px", alt: ILLUSTRATIONS["svc-curtain-wall"], width: 1376, height: 768 }}
         extra=""
       />
 
@@ -315,7 +316,7 @@ export default function CurtainWall() {
               <div className="relative overflow-hidden border border-line">
                 <img decoding="async"
                   src={IMG.hero}
-                  alt="Unitized curtain wall manufacturers — Fine Glaze"
+                  alt={ILLUSTRATIONS["svc-curtain-wall"]}
                   className="w-full h-[400px] object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-night via-transparent to-transparent" />

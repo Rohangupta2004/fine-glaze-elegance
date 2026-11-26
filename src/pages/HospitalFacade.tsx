@@ -1,3 +1,4 @@
+import Illustration from "@/components/common/Illustration";
 import SEO from "@/components/SEO";
 import PageHero from "@/components/common/PageHero";
 import { RelatedProjects } from "@/components/RelatedProjects";
@@ -89,6 +90,7 @@ export default function HospitalFacade() {
             For critical infrastructure considerations, Fine Glaze can provide <strong>blast-resistant or hurricane-rated facade systems</strong> for healthcare buildings requiring continuity of operations in extreme weather events — increasingly relevant for coastal hospitals in Maharashtra and Gujarat.
           </p>
     
+          <Illustration name="ind-hospital" />
         </div>
       </section>
 

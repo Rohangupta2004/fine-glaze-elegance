@@ -1,3 +1,4 @@
+import Illustration from "@/components/common/Illustration";
 import SEO from "@/components/SEO";
 import PageHero from "@/components/common/PageHero";
 import { Layout } from "@/components/layout/Layout";
@@ -87,6 +88,7 @@ export default function IndustrialFacade() {
             Facilities that follow GMP or similar rules, such as pharmaceutical plants, usually have exterior requirements set by their consultants. Share the specification and we will review scope against it.
           </p>
     
+          <Illustration name="ind-industrial" />
         </div>
       </section>
 

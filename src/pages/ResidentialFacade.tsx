@@ -1,3 +1,4 @@
+import Illustration from "@/components/common/Illustration";
 import SEO from "@/components/SEO";
 import PageHero from "@/components/common/PageHero";
 import { RelatedProjects } from "@/components/RelatedProjects";
@@ -88,6 +89,7 @@ export default function ResidentialFacade() {
             For energy comfort, thermally broken aluminium windows with low-E double glazing are a common choice. Savings depend on the whole building and use, so treat any figure with caution and ask for the specification behind it.
           </p>
     
+          <Illustration name="ind-residential" />
         </div>
       </section>
 

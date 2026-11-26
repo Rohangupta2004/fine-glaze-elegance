@@ -1,3 +1,4 @@
+import Illustration from "@/components/common/Illustration";
 import SEO from "@/components/SEO";
 import PageHero from "@/components/common/PageHero";
 import { RelatedProjects } from "@/components/RelatedProjects";
@@ -92,6 +93,7 @@ export default function FacadeContractorMumbai() {
             Our documented Mumbai work covers commercial towers in BKC, a hospital (Nanavati Max, Vile Parle), hotel glazing (Leela Hotel, Andheri East), private residences and corporate campuses. Ask us for references that match your project.
           </p>
     
+          <Illustration name="city-mumbai" />
         </div>
       </section>
 

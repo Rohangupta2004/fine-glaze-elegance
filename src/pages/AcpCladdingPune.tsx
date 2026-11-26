@@ -1,3 +1,4 @@
+import Illustration from "@/components/common/Illustration";
 import SEO from "@/components/SEO";
 import PageHero from "@/components/common/PageHero";
 import { RelatedProjects } from "@/components/RelatedProjects";
@@ -92,6 +93,7 @@ export default function AcpCladdingPune() {
             We take ACP cladding across Pune and PCMC, including Hinjewadi, Kharadi, Undri and Pimpri-Chinchwad. Contact Fine Glaze with drawings for a BOQ-based quotation and brand comparison.
           </p>
     
+          <Illustration name="city-pune" />
         </div>
       </section>
 

@@ -1,3 +1,4 @@
+import Illustration from "@/components/common/Illustration";
 import SEO from "@/components/SEO";
 import PageHero from "@/components/common/PageHero";
 import { RelatedProjects } from "@/components/RelatedProjects";
@@ -94,6 +95,7 @@ export default function CommercialBuildingFacade() {
             Climate drives glass and shading choices. As general guidance, hot-humid and hot-dry sites benefit from solar-control glass and external shading, while cooler or composite climates allow more latitude. Orientation and glass-to-wall ratio matter as much as glass type, and an energy modeller can test options against the project brief.
           </p>
     
+          <Illustration name="ind-commercial" />
         </div>
       </section>
 

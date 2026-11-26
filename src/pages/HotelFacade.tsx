@@ -1,3 +1,4 @@
+import Illustration from "@/components/common/Illustration";
 import SEO from "@/components/SEO";
 import PageHero from "@/components/common/PageHero";
 import { RelatedProjects } from "@/components/RelatedProjects";
@@ -88,6 +89,7 @@ export default function HotelFacade() {
             We work with hotel architects and consultants, and follow the project specification and any brand design guidelines supplied to us.
           </p>
     
+          <Illustration name="ind-hotel" />
         </div>
       </section>
 

@@ -1,3 +1,4 @@
+import Illustration from "@/components/common/Illustration";
 import SEO from "@/components/SEO";
 import PageHero from "@/components/common/PageHero";
 import { RelatedProjects } from "@/components/RelatedProjects";
@@ -92,6 +93,7 @@ export default function FacadeContractorPune() {
             Ask us for project references that match your building type and scope, and we will share what we are able to disclose.
           </p>
     
+          <Illustration name="city-pune" />
         </div>
       </section>
 

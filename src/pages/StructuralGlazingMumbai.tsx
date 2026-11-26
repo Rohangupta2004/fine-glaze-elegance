@@ -1,3 +1,4 @@
+import Illustration from "@/components/common/Illustration";
 import SEO from "@/components/SEO";
 import PageHero from "@/components/common/PageHero";
 import { RelatedProjects } from "@/components/RelatedProjects";
@@ -92,6 +93,7 @@ export default function StructuralGlazingMumbai() {
             Defect liability support applies as per contract terms. Third-party testing to ASTM can be arranged on request through an accredited laboratory.
           </p>
     
+          <Illustration name="city-mumbai" />
         </div>
       </section>
 

@@ -1,3 +1,4 @@
+import Illustration from "@/components/common/Illustration";
 import SEO from "@/components/SEO";
 import PageHero from "@/components/common/PageHero";
 import { RelatedProjects } from "@/components/RelatedProjects";
@@ -92,6 +93,7 @@ export default function StructuralGlazingPune() {
             For residential balcony and bay-window glazing, we set glass thickness and joint sizing with the structural check and the architect's brief.
           </p>
     
+          <Illustration name="city-pune" />
         </div>
       </section>
 

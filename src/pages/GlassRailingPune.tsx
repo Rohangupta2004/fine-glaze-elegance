@@ -1,3 +1,4 @@
+import Illustration from "@/components/common/Illustration";
 import SEO from "@/components/SEO";
 import PageHero from "@/components/common/PageHero";
 import { RelatedProjects } from "@/components/RelatedProjects";
@@ -91,6 +92,7 @@ export default function GlassRailingPune() {
             For developers with multiple floors or buildings, we can quote a bulk package. Send drawings and quantities for a BOQ-based quotation.
           </p>
     
+          <Illustration name="city-pune" />
         </div>
       </section>
 

@@ -1,3 +1,4 @@
+import { ILLUSTRATIONS, illusSrc, illusSrcSet } from "@/lib/illustrations";
 import SEO from "@/components/SEO";
 import PageHero from "@/components/common/PageHero";
 import { RelatedProjects } from "@/components/RelatedProjects";
@@ -52,7 +53,7 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 
 /* ── Images ── */
 const IMG: Record<string, string> = {
-  hero: "/office-partition.webp",
+  hero: illusSrc("svc-glass-partitions"),
   office: "/office-partition.webp",
   acoustic: "/smart-glass.webp",
   smart: "/smart-glass.webp",
@@ -215,7 +216,7 @@ export default function GlassPartitions() {
         title={<>Glass Partitions<br /> <span className="text-gradient-gold">& Enclosures</span><span className="ph-sub">Pune &amp; Mumbai.</span></>}
         intro="Office glass partitions, acoustic meeting-room walls and toughened-glass shower enclosures designed and installed in Pune and Mumbai."
         secondary={{ label: "+91 83692 33566", href: "tel:+918369233566" }}
-        image={{ src: IMG.hero, alt: "Frameless glass partition — Fine Glaze" }}
+        image={{ src: IMG.hero, srcSet: illusSrcSet("svc-glass-partitions"), sizes: "(max-width: 1024px) 100vw, 640px", alt: ILLUSTRATIONS["svc-glass-partitions"], width: 1376, height: 768 }}
         extra=""
       />
 

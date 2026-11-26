@@ -17,7 +17,7 @@ export interface PageHeroProps {
   /** One line of intro. */
   intro?: ReactNode;
   /** Optional hero photograph, shown in a square frame revealed with a panel wipe. */
-  image?: { src: string; alt: string; width?: number; height?: number; position?: string };
+  image?: { src: string; alt: string; width?: number; height?: number; position?: string; srcSet?: string; sizes?: string };
   /** Secondary text link next to the primary button. */
   secondary?: { label: string; to?: string; href?: string };
   /** Source tag passed to the booking dialog. */
@@ -95,6 +95,8 @@ export const PageHero = ({ crumbs = [], title, intro, image, secondary, source =
             <figure ref={fig} className={`ph-fig${armed ? " armed" : ""}${seen ? " seen" : ""}`}>
               <img decoding="async"
                 src={image.src}
+                srcSet={image.srcSet}
+                sizes={image.sizes}
                 alt={image.alt}
                 width={image.width}
                 height={image.height}

@@ -1,3 +1,4 @@
+import { ILLUSTRATIONS, illusSrc, illusSrcSet } from "@/lib/illustrations";
 import SEO from "@/components/SEO";
 import PageHero from "@/components/common/PageHero";
 import { RelatedProjects } from "@/components/RelatedProjects";
@@ -53,7 +54,7 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 
 /* ── Images ── */
 const IMG: Record<string, string> = {
-  hero: "/skylight-atrium.webp",
+  hero: illusSrc("svc-skylights"),
   atrium: "/canopy-spider.webp",
   frameless: "/skylight-atrium.webp",
   spider: "/canopy-detail.webp",
@@ -216,7 +217,7 @@ export default function Skylights() {
         title={<>Skylights &<br /> <span className="text-gradient-gold">Glass</span><span className="ph-sub">Canopies.</span></>}
         intro="Engineered overhead glazing for atriums, lobbies, entrances & commercial spaces."
         secondary={{ label: "+91 83692 33566", href: "tel:+918369233566" }}
-        image={{ src: IMG.hero, alt: "Glass skylight system — Fine Glaze" }}
+        image={{ src: IMG.hero, srcSet: illusSrcSet("svc-skylights"), sizes: "(max-width: 1024px) 100vw, 640px", alt: ILLUSTRATIONS["svc-skylights"], width: 1376, height: 768 }}
         extra=""
       />
 

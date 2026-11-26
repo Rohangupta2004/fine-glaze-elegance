@@ -1,3 +1,4 @@
+import { ILLUSTRATIONS, illusSrc, illusSrcSet } from "@/lib/illustrations";
 import SEO from "@/components/SEO";
 import PageHero from "@/components/common/PageHero";
 import { RelatedProjects } from "@/components/RelatedProjects";
@@ -53,7 +54,7 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 
 /* ── Images ── */
 const IMG: Record<string, string> = {
-  hero: "/acp-building.webp",
+  hero: illusSrc("svc-acp-cladding"),
   pvdf: "/acp-cladding.webp",
   pe: "/acp-panels.webp",
   wood: "/acp-finishes.webp",
@@ -216,7 +217,7 @@ export default function AcpCladding() {
         title={<>ACP & Aluminium<br /> <span className="text-gradient-gold">Cladding</span><span className="ph-sub">Contractors.</span></>}
         intro="Fire-retardant ACP and aluminium cladding for durable, weather-resistant building exteriors in Pune and Mumbai."
         secondary={{ label: "+91 83692 33566", href: "tel:+918369233566" }}
-        image={{ src: IMG.hero, alt: "ACP aluminium cladding facade — Fine Glaze" }}
+        image={{ src: IMG.hero, srcSet: illusSrcSet("svc-acp-cladding"), sizes: "(max-width: 1024px) 100vw, 640px", alt: ILLUSTRATIONS["svc-acp-cladding"], width: 1376, height: 768 }}
         extra=""
       />
 

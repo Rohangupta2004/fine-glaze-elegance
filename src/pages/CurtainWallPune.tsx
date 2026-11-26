@@ -1,3 +1,4 @@
+import Illustration from "@/components/common/Illustration";
 import SEO from "@/components/SEO";
 import PageHero from "@/components/common/PageHero";
 import { RelatedProjects } from "@/components/RelatedProjects";
@@ -91,6 +92,7 @@ export default function CurtainWallPune() {
             Installed glazing is checked with a site water penetration test, and snags are logged and closed before handover. Defect liability support follows the contract terms, and an AMC can be quoted separately.
           </p>
     
+          <Illustration name="city-pune" />
         </div>
       </section>
 

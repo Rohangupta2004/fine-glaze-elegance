@@ -1,3 +1,4 @@
+import { ILLUSTRATIONS, illusSrc, illusSrcSet } from "@/lib/illustrations";
 import SEO from "@/components/SEO";
 import PageHero from "@/components/common/PageHero";
 import { RelatedProjects } from "@/components/RelatedProjects";
@@ -52,7 +53,7 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 
 /* ── Images ── */
 const IMG: Record<string, string> = {
-  hero: "/louvers-closeup.webp",
+  hero: illusSrc("svc-louvers"),
   fixed: "/louvers-vertical.webp",
   operable: "/louvers-closeup.webp",
   motorised: "/louvers-motorized.webp",
@@ -215,7 +216,7 @@ export default function Louvers() {
         title={<>Aluminium<br /> <span className="text-gradient-gold">Louvers</span><span className="ph-sub">& Sun Shading.</span></>}
         intro="Architectural solar control systems that cut direct sun on the glass line while adding design character."
         secondary={{ label: "+91 83692 33566", href: "tel:+918369233566" }}
-        image={{ src: IMG.hero, alt: "Aluminium louver sun shading — Fine Glaze" }}
+        image={{ src: IMG.hero, srcSet: illusSrcSet("svc-louvers"), sizes: "(max-width: 1024px) 100vw, 640px", alt: ILLUSTRATIONS["svc-louvers"], width: 1376, height: 768 }}
         extra=""
       />
 

@@ -1,3 +1,4 @@
+import Illustration from "@/components/common/Illustration";
 import SEO from "@/components/SEO";
 import PageHero from "@/components/common/PageHero";
 import { RelatedProjects } from "@/components/RelatedProjects";
@@ -88,6 +89,7 @@ export default function ItParkFacade() {
             We take IT park and campus projects in Pune and Mumbai, and elsewhere in India on request. Our documented IT campus records are in Hinjewadi, Pune and Mahape, Navi Mumbai.
           </p>
     
+          <Illustration name="ind-it-park" />
         </div>
       </section>
 

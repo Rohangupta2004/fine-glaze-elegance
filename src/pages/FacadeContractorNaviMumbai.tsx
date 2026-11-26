@@ -1,3 +1,4 @@
+import Illustration from "@/components/common/Illustration";
 import SEO from "@/components/SEO";
 import PageHero from "@/components/common/PageHero";
 import { RelatedProjects } from "@/components/RelatedProjects";
@@ -92,6 +93,7 @@ export default function FacadeContractorNaviMumbai() {
             For residential developments in Kharghar and Panvel, we can quote glass railing and ACP cladding scope. Contact us with drawings for a project-specific quotation and programme.
           </p>
     
+          <Illustration name="city-navi-mumbai" />
         </div>
       </section>
 

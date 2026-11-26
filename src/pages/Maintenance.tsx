@@ -1,3 +1,4 @@
+import { ILLUSTRATIONS, illusSrc, illusSrcSet } from "@/lib/illustrations";
 import SEO from "@/components/SEO";
 import PageHero from "@/components/common/PageHero";
 import { RelatedProjects } from "@/components/RelatedProjects";
@@ -52,7 +53,7 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 
 /* ── Images ── */
 const IMG: Record<string, string> = {
-  hero: "/facade-maintenance.webp",
+  hero: illusSrc("svc-maintenance"),
   sealant: "/Sealent.webp",
   glass: "/Glass.webp",
   cleaning: "/Amc.webp",
@@ -215,7 +216,7 @@ export default function Maintenance() {
         title={<>Facade<br /> <span className="text-gradient-gold">Maintenance</span><span className="ph-sub">& AMC.</span></>}
         intro="Sealant renewal, glass replacement, cleaning & annual maintenance contracts for commercial buildings."
         secondary={{ label: "+91 83692 33566", href: "tel:+918369233566" }}
-        image={{ src: IMG.hero, alt: "Facade maintenance work — Fine Glaze" }}
+        image={{ src: IMG.hero, srcSet: illusSrcSet("svc-maintenance"), sizes: "(max-width: 1024px) 100vw, 640px", alt: ILLUSTRATIONS["svc-maintenance"], width: 1376, height: 768 }}
         extra=""
       />
 

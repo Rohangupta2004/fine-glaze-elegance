@@ -1,3 +1,4 @@
+import Illustration from "@/components/common/Illustration";
 import SEO from "@/components/SEO";
 import PageHero from "@/components/common/PageHero";
 import { RelatedProjects } from "@/components/RelatedProjects";
@@ -92,6 +93,7 @@ export default function AluminiumFacadeMumbai() {
             Material movement on tight Mumbai sites is planned per project, covering access, hoisting and delivery windows agreed with the site team.
           </p>
     
+          <Illustration name="city-mumbai" />
         </div>
       </section>
 

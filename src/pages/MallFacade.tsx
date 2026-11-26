@@ -1,3 +1,4 @@
+import Illustration from "@/components/common/Illustration";
 import SEO from "@/components/SEO";
 import PageHero from "@/components/common/PageHero";
 import { Layout } from "@/components/layout/Layout";
@@ -87,6 +88,7 @@ export default function MallFacade() {
             For energy, solar control glass, shading on sun-facing elevations and thermally broken aluminium frames are the usual levers. The right mix depends on the climate, orientation and the project's energy brief.
           </p>
     
+          <Illustration name="ind-mall" />
         </div>
       </section>
 
