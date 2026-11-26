@@ -100,13 +100,15 @@ function ProjectCard({ p }: { p: Project }) {
         <h2 className="pf-t">{p.title}</h2>
         <p className="pf-p">{p.location}</p>
         <dl className="pf-d">
-          <div>
-            <dt>Client</dt>
-            <dd>{p.client}</dd>
-          </div>
+          {p.client && (
+            <div>
+              <dt>Client</dt>
+              <dd>{p.client}</dd>
+            </div>
+          )}
           <div>
             <dt>Status</dt>
-            <dd>{p.status === "Completed" ? `Completed ${p.year}` : p.status || p.year}</dd>
+            <dd>{p.status === "Completed" ? `Completed${p.year ? ` ${p.year}` : ""}` : p.status || p.year}</dd>
           </div>
         </dl>
         {tags.length > 0 && (

@@ -48,7 +48,7 @@ const About = () => {
     <Layout darkHero>
       <SEO
         title="Facade Contractor in Pune & Mumbai: About Fine Glaze"
-        description="Fine Glaze is a facade contractor in Pune and Mumbai, founded by Deepak Gupta. Own fabrication unit in Pune, 40+ core team, Embassy REIT Best Vendor 2024."
+        description="Fine Glaze is a facade contractor in Pune and Mumbai, founded by Deepak Gupta. Fabrication unit in Pisoli, Pune, 40+ core team, Embassy REIT Best Vendor Performance 2024."
         canonical="https://fineglaze.com/about"
         keywords="about Fine Glaze, Fine Glaze Pune, Deepak Gupta Fine Glaze, facade contractor Pune team, facade fabrication unit Pune"
         schema={{
@@ -76,7 +76,7 @@ const About = () => {
       <PageHero
         crumbs={[{ label: "About" }]}
         title={<>Facade Specialists in <span className="text-gradient-gold">Pune &amp; Mumbai</span></>}
-        intro="Fine Glaze designs, fabricates, installs and maintains facade systems for developers and building owners in Pune and Mumbai. Everything on this page is taken from our company profile, and we are happy to share the documents behind it."
+        intro="Fine Glaze designs, fabricates, installs and maintains facade systems for developers and asset owners from Pune and Mumbai, across India. Everything on this page is taken from our company profile, and we are happy to share the documents behind it."
         image={{ src: aboutHero, alt: "Facade by Fine Glaze" }}
         secondary={{ label: "View Projects", to: "/portfolio" }}
         source="about_hero"
@@ -151,9 +151,9 @@ const About = () => {
                 </p>
                 <p>
                   Drawings and engineering are produced in-house before anything
-                  is cut. Fabrication happens at our own unit
-                  in {company.fabricationUnit.location}, and installation is run by our
-                  own site in-charges and supervisors under a dedicated safety officer.
+                  is cut. Fabrication happens at our interim unit
+                  in {company.fabricationUnit.location}, and installation is run under a
+                  dedicated site incharge and supervisor, with a nominated safety officer.
                   Since starting out we have delivered facade projects across Pune and
                   Mumbai, and were named{" "}
                   <strong>{company.award.title}</strong> by {company.award.by}.
@@ -183,9 +183,8 @@ const About = () => {
             </h2>
 
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Watch how Fine Glaze delivers premium facade systems through
-              precision engineering, skilled site execution, and an uncompromised
-              commitment to quality and safety.
+              Watch how Fine Glaze delivers facade systems, from design and
+              fabrication to installation and maintenance.
             </p>
 
             <div className="overflow-hidden" style={{ padding: "56.25% 0 0 0", position: "relative" }}>
@@ -315,8 +314,8 @@ const About = () => {
               { icon: FileCheck2, k: "GSTIN", v: company.gstin },
               { icon: FileCheck2, k: "Trademark", v: company.trademark },
               { icon: Shield, k: "Quality, environment & safety", v: company.isoStatus },
-              { icon: Factory, k: "Fabrication unit", v: company.fabricationUnit.location },
-              { icon: MapPin, k: "Registered office", v: `${company.address.short}` },
+              { icon: Factory, k: "Fabrication unit", v: `${company.fabricationUnit.location} (interim unit, about 2,500 sq ft)` },
+              { icon: MapPin, k: "Registered office", v: company.registeredOffice },
               { icon: HardHat, k: "Work at height", v: "Documentation maintained and available on request" },
               { icon: Shield, k: "Third-party testing", v: "Air, water and structural testing (ASTM) arranged on request" },
               { icon: Award, k: "Defect liability", v: "DLP support offered as per contract terms" },

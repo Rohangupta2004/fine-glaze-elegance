@@ -1,69 +1,51 @@
 import { company } from "@/data/company";
 
 type Photo = { src: string; alt: string; w: number; h: number; caption?: string; srcSet?: string };
-const STEPS: { name: string; line: string; photo?: Photo }[] = [
-  {
-    name: "Survey and shop drawings",
-    line: "We measure on site and prepare the drawings for approval.",
-    photo: {
+const PHOTOS: Record<number, Photo> = {
+  0: {
       src: "/images/illustrations/process-survey.webp",
       srcSet: "/images/illustrations/process-survey-800.webp 800w, /images/illustrations/process-survey.webp 1376w",
       alt: "Gloved hand measuring a concrete column with a laser measure on a building site",
       w: 1376,
       h: 768,
     },
-  },
-  {
-    name: "Engineering and approvals",
-    line: "Our engineers check members and fixings, and drawings are released once approved.",
-    photo: {
+  2: {
       src: "/images/illustrations/process-engineering.webp",
       srcSet: "/images/illustrations/process-engineering-800.webp 800w, /images/illustrations/process-engineering.webp 1376w",
       alt: "Engineering drawings and an aluminium profile sample on a desk beside a laptop",
       w: 1376,
       h: 768,
     },
-  },
-  {
-    name: "Fabrication at our Pune unit",
-    line: `Aluminium, steel and ACP are cut and assembled at ${company.fabricationUnit.location}, with checks at source.`,
-    photo: {
+  4: {
       src: "/projects/salsette-27-32-1.webp",
       alt: "Aluminium composite panel sheets stacked on site at Salsette-27, Byculla East, Mumbai",
       w: 761,
       h: 720,
       caption: "ACP sheets, Salsette-27, Byculla East",
     },
-  },
-  {
-    name: "Installation",
-    line: "Our crews install floor by floor, with a safety officer on site.",
-    photo: {
+  5: {
       src: "/98ad845b-f086-4ad5-8739-57a5d0a8c436.jpg",
       alt: "Stainless steel column cladding being installed under scaffolding at Pune International Airport",
       w: 963,
       h: 1280,
       caption: "Column cladding on site, Pune International Airport",
     },
-  },
-  {
-    name: "Checks and handover",
-    line: "We clear the snag list with you and hand over drawings and maintenance information.",
-    photo: {
+  7: {
       src: "/projects/embassy-techzone-41-2.webp",
       alt: "New glass entrance at Embassy TechZone, Hinjewadi, Pune",
       w: 1280,
       h: 606,
       caption: "Glass entrance, Embassy TechZone, Hinjewadi",
     },
-  },
-];
+};
+
+const STEPS: { name: string; line: string; photo?: Photo }[] = company.deliveryStages.map((st, i) => ({ name: st.title, line: st.desc, photo: PHOTOS[i] }));
 
 /** How we work: five rectangles joined by a hairline that draws across on reveal. */
 const HomeProcess = () => (
-  <section className="prc full rv" aria-label="How we work">
+  <section className="prc full rv" aria-label="How we deliver">
     <div className="wrap">
-      <h2 className="wipe">How we <span className="text-gradient">work.</span></h2>
+      <h2 className="wipe">From enquiry to <span className="text-gradient">handover.</span></h2>
       <ol className="pr">
         <li className="pr-line" aria-hidden="true" />
         {STEPS.map((s, i) => (

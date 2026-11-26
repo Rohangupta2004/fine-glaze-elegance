@@ -48,7 +48,7 @@ const ProjectDetail = () => {
       "name": project.title,
       "description": `${project.scope} — ${project.location}`,
     },
-    "dateCreated": project.year,
+    "dateCreated": project.year || undefined,
     "genre": project.category === "corporate" ? "Commercial Facade" : "Residential Facade",
     "locationCreated": {
       "@type": "Place",
@@ -73,7 +73,7 @@ const ProjectDetail = () => {
         "addressCountry": "IN",
       },
     },
-    "client": project.client,
+    "client": project.client || undefined,
     "about": project.scope,
     ...(project.isAwardWinner && project.award
       ? {
@@ -110,7 +110,7 @@ const ProjectDetail = () => {
       <PageHero
         crumbs={[{ label: "Projects", to: "/portfolio" }, { label: project.title }]}
         title={project.title}
-        intro={`${project.location}. ${project.client}.`}
+        intro={project.client ? `${project.location}. ${project.client}.` : `${project.location}.`}
         image={{ src: project.image, alt: `${project.title} – ${project.scope}` }}
         secondary={{ label: "All projects", to: "/portfolio" }}
         extra={project.isAwardWinner ? project.award ?? "Award winner" : undefined}
@@ -141,7 +141,7 @@ const ProjectDetail = () => {
                 <h3 className="text-xl font-medium tracking-[-0.015em] mb-4">At a glance</h3>
                 <dl className="border-t border-line text-[15.5px]">
                   {[
-                    ["Client", project.client],
+                    ...(project.client ? [["Client", project.client]] : []),
                     ["Location", project.location],
                     ["Status", project.status],
                     ["Category", project.category],

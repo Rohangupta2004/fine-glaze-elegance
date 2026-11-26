@@ -14,6 +14,8 @@ interface Material {
 type PartBox = [string, number, number, number, number, number, number];
 
 const NAMES = ["Anchor bracket", "Aluminium frame", "Gaskets", "Glass", "Silicone"];
+// vertical offsets of the label boxes, so neighbouring labels do not collide
+const LDY = [-26, -30, 12, -8, 30];
 
 /**
  * Pinned story: the headline lit on a WebGL tower at dusk, the camera goes to one open bay and a
@@ -26,12 +28,14 @@ const StoryHero = () => {
   const viewRef = useRef<HTMLDivElement>(null);
   const noteRef = useRef<HTMLParagraphElement>(null);
   const shadeLRef = useRef<HTMLDivElement>(null);
+  const railRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const stage = storyRef.current;
     const view = viewRef.current;
     const note = noteRef.current;
     const shl = shadeLRef.current;
+    const rail = railRef.current;
     if (!stage || !view || !note || !shl) return;
     const root = (stage.closest(".fg-home") as HTMLElement | null) ?? document.documentElement;
     const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -377,19 +381,31 @@ const StoryHero = () => {
         ctx.textAlign = "center";
         ctx.textBaseline = "middle";
         ctx.fillText(String(i + 1), d[0], d[1] + 1);
-        // the part's name, to the right of its number
-        const fsz = on ? (L.port ? 13 : 14) : L.port ? 11 : 12;
+        // the part's name on a small cream label, joined to its dot by a bronze leader line
+        const fsz = L.port ? 12 : 13;
         ctx.font = "400 " + fsz + 'px "Space Mono",ui-monospace,Menlo,monospace';
         ctx.textAlign = "left";
-        const tw = ctx.measureText(NAMES[i]).width, ly = d[1];
-        let lx = d[0] + rr + 8;
-        if (lx + tw + 14 > VW - 8) lx = d[0] - rr - 8 - tw - 14;
-        ctx.globalAlpha = al * (on ? 0.92 : 0.5);
-        ctx.fillStyle = "rgba(24,19,15,.78)";
-        ctx.fillRect(lx, ly - fsz * 0.72, tw + 14, fsz * 1.44);
-        ctx.globalAlpha = al * (on ? 1 : 0.7);
-        ctx.fillStyle = on ? "#c6803a" : "#f5f2ee";
-        ctx.fillText(NAMES[i], lx + 7, ly + 1);
+        ctx.textBaseline = "middle";
+        const tw = ctx.measureText(NAMES[i]).width, bw = tw + 16, bh = fsz + 12, gap = L.port ? 22 : 34;
+        let lx = d[0] + rr + gap;
+        if (lx + bw > VW - 8) lx = d[0] - rr - gap - bw;
+        const ly = d[1] + LDY[i] * (L.port ? 0.7 : 1), by0 = ly - bh / 2;
+        const toRight = lx > d[0];
+        ctx.globalAlpha = al;
+        ctx.strokeStyle = "#9b5520";
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.moveTo(d[0] + (toRight ? rr : -rr) * 0.8, d[1] + (ly > d[1] ? rr * 0.6 : ly < d[1] ? -rr * 0.6 : 0));
+        ctx.lineTo(toRight ? lx : lx + bw, ly);
+        ctx.stroke();
+        ctx.fillStyle = "#f9f7f4";
+        ctx.fillRect(lx, by0, bw, bh);
+        ctx.strokeStyle = on ? "#9b5520" : "rgba(43,29,18,.35)";
+        ctx.lineWidth = on ? 1.5 : 1;
+        ctx.strokeRect(lx + 0.5, by0 + 0.5, bw - 1, bh - 1);
+        ctx.lineWidth = 0.8;
+        ctx.fillStyle = "#2b1d12";
+        ctx.fillText(NAMES[i], lx + 8, ly + 1);
       }
       ctx.globalAlpha = 1;
     }
@@ -418,8 +434,12 @@ const StoryHero = () => {
       for (let i = 0; i < T.length; i++) if (p >= T[i]) idx = i;
       if (idx !== cur) {
         cur = idx;
-        blocks.forEach((b, i) => b.classList.toggle("on", i === idx));
+        blocks.forEach((b, i) => {
+          b.classList.toggle("on", i === idx);
+          b.classList.toggle("past", i < idx);
+        });
       }
+      rail?.style.setProperty("--prog", p.toFixed(4));
       note!.style.opacity = String(Math.max(0, 1 - p / 0.06));
       shl!.style.setProperty("--sl", ease((p - 0.07) / 0.08).toFixed(3));
     }
@@ -561,50 +581,73 @@ const StoryHero = () => {
         </div>
         <div className="tell">
           <div className="blk hero on">
+            <span className="lbl">01 / 10</span>
             <h1 className="sr">We build the face of your building.</h1>
             <p>
-              Fine Glaze designs, fabricates, installs and maintains facade systems across India, from Pune and
-              Mumbai.
+              Fine Glaze designs, fabricates, installs and maintains facade systems for developers and asset owners,
+              from Pune and Mumbai across India.
             </p>
             <button className="btn" type="button" onClick={() => open({ source: "home_hero" })}>
               Book a call
             </button>
           </div>
           <div className="blk say">
-            <h2>Facade specialists, start to finish.</h2>
+            <span className="lbl">02 / 10</span>
+            <h2>
+              Facade specialists, <span className="text-gradient">start to finish.</span>
+            </h2>
             <p>
-              Design, fabrication, installation and maintenance from one team of {company.stats.coreTeam}, led by
-              Deepak Gupta, B.E. Civil, with 11+ years in facades.
+              Design, fabrication, installation and maintenance from one accountable team of {company.stats.coreTeam},
+              led by Deepak Gupta, B.E. Civil, with 11+ years in facades.
             </p>
           </div>
           <div className="blk fact">
-            <h2>We check every fixing against the wind load.</h2>
-            <p>Member sizing, fixing and anchorage are verified before anything goes on the slab.</p>
+            <span className="lbl">03 / 10</span>
+            <h2>
+              Every fixing checked against the <span className="text-gradient">wind load.</span>
+            </h2>
+            <p>Member sizing, fixing and anchorage are verified in-house before anything goes on the slab.</p>
           </div>
           <div className="blk fact">
-            <h2>We make it in our own unit.</h2>
-            <p>Aluminium is cut and assembled at Pisoli, Pune, batched for each project.</p>
+            <span className="lbl">04 / 10</span>
+            <h2>
+              Made at our <span className="text-gradient">Pisoli unit.</span>
+            </h2>
+            <p>Aluminium and mild steel are cut, fabricated and assembled in Pune, batched for each project.</p>
           </div>
           <div className="blk fact">
-            <h2>We water-test what we install.</h2>
-            <p>Installed glazing gets a site water penetration test.</p>
+            <span className="lbl">05 / 10</span>
+            <h2>
+              Water-tested <span className="text-gradient">on site.</span>
+            </h2>
+            <p>Installed glazing gets a site water penetration test, and the snag register is closed before handover.</p>
           </div>
           <div className="blk fact">
-            <h2>We check every sheet of glass.</h2>
-            <p>
-              Saint-Gobain and other major Indian brands, inspected against the approved specification on receipt.
-            </p>
+            <span className="lbl">06 / 10</span>
+            <h2>
+              Glass checked <span className="text-gradient">on receipt.</span>
+            </h2>
+            <p>Section, glass and panel are checked against the approved specification when material arrives.</p>
           </div>
           <div className="blk fact">
-            <h2>We seal it to the specification.</h2>
+            <span className="lbl">07 / 10</span>
+            <h2>
+              Sealed to the <span className="text-gradient">specification.</span>
+            </h2>
             <p>DOWSIL structural and weather silicone, or approved equivalents.</p>
           </div>
           <div className="blk say">
-            <h2>Drawn in-house, before anything is cut.</h2>
-            <p>Shop drawings and engineering come from our own team.</p>
+            <span className="lbl">08 / 10</span>
+            <h2>
+              Drawn in-house, <span className="text-gradient">before anything is cut.</span>
+            </h2>
+            <p>Shop drawings and engineering come from our own design team.</p>
           </div>
           <div className="blk say">
-            <h2>Best Vendor Performance 2024.</h2>
+            <span className="lbl">09 / 10</span>
+            <h2>
+              Best Vendor Performance <span className="text-gradient">2024.</span>
+            </h2>
             <figure className="aw">
               <img
                 src="/Awards.webp"
@@ -620,16 +663,26 @@ const StoryHero = () => {
             </figure>
           </div>
           <div className="blk say">
-            <h2>Trusted by Embassy REIT, L&amp;T and Jindal Stainless.</h2>
+            <span className="lbl">10 / 10</span>
+            <h2>
+              Trusted by Embassy REIT, L&amp;T and <span className="text-gradient">Jindal Stainless.</span>
+            </h2>
             <p>Also Nirmaann Encon Developer, Hatchway Windoor and Rockfort Estate Developers.</p>
             <button className="btn" type="button" onClick={() => open({ source: "home_story_end" })}>
               Book a call
             </button>
           </div>
         </div>
+        <div className="rail" aria-hidden="true" ref={railRef}>
+          <i className="rail-f" />
+          {Array.from({ length: 10 }, (_, i) => (
+            <b key={i} style={{ ["--t" as string]: i / 9 }} />
+          ))}
+        </div>
         <p className="note" ref={noteRef}>
           <b>Illustration, drawn live in your browser.</b>
           <span className="scrollhint">Scroll to see a unit go in.</span>
+          <i className="cue" aria-hidden="true" />
         </p>
       </div>
     </section>

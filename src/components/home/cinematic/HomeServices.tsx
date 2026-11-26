@@ -3,18 +3,18 @@ import { useSiteMedia } from "@/hooks/useSiteMedia";
 
 // Hrefs match the services menu in Header.tsx.
 const SERVICES = [
-  { href: "/curtain-wall-systems", name: "Curtain Wall Systems", line: "Unitized and stick-built curtain walls for offices, IT parks and high-rises.", mediaKey: "services_card_curtain_wall", fallback: "/images/illustrations/svc-curtain-wall.webp", alt: "Curtain wall system on a commercial building" },
-  { href: "/structural-glazing", name: "Structural Glazing", line: "Frameless, silicone-bonded glass facades, from drawings to installation.", mediaKey: "services_card_structural_glazing", fallback: "/images/illustrations/svc-structural-glazing.webp", alt: "Structural glazing on a glass facade" },
-  { href: "/acp-aluminium-cladding", name: "ACP Cladding", line: "Aluminium composite panel cladding, routed and prepared at our own unit.", mediaKey: "services_card_acp_cladding", fallback: "/images/illustrations/svc-acp-cladding.webp", alt: "ACP cladding panels on a building facade" },
-  { href: "/aluminium-windows-doors", name: "Aluminium Windows and Doors", line: "Sliding, casement, tilt-turn and lift-slide systems, fabricated in Pune.", mediaKey: "services_card_aluminium_windows", fallback: "/images/illustrations/svc-aluminium-windows.webp", alt: "Aluminium windows and sliding doors" },
-  { href: "/glass-railings", name: "Glass Railings", line: "Frameless toughened glass railings with stainless steel hardware for balconies and staircases.", mediaKey: "services_card_glass_railings", fallback: "/images/illustrations/svc-glass-railings.webp", alt: "Frameless glass railing with stainless steel hardware" },
-  { href: "/skylights-canopies", name: "Skylights and Canopies", line: "Glass skylights, spider canopies and retractable roof systems.", mediaKey: "services_card_skylights", fallback: "/images/illustrations/svc-skylights.webp", alt: "Glass canopy on spider fittings" },
-  { href: "/aluminium-louvers", name: "Aluminium Louvers", line: "Fixed and operable louvers and sun-shading fins.", mediaKey: "services_card_louvers", fallback: "/images/illustrations/svc-louvers.webp", alt: "Aluminium louvers on a building facade" },
-  { href: "/glass-partitions", name: "Glass Partitions", line: "Frameless office partitions, with acoustic and switchable glass options.", mediaKey: "services_card_glass_partitions", fallback: "/images/illustrations/svc-glass-partitions.webp", alt: "Frameless glass office partition" },
-  { href: "/maintenance-services", name: "Facade Maintenance", line: "Rope-access cleaning, resealing, glass replacement and emergency repairs.", mediaKey: "services_card_amc", fallback: "/images/illustrations/svc-maintenance.webp", alt: "Facade maintenance and cleaning work" },
+  { href: "/curtain-wall-systems", name: "Curtain Wall Systems", line: "Unitized, stick system, semi-unitized and point-supported glass wall.", mediaKey: "services_card_curtain_wall", fallback: "/images/illustrations/svc-curtain-wall.webp", alt: "Curtain wall system on a commercial building" },
+  { href: "/structural-glazing", name: "Structural Glazing", line: "2-side, 4-side, spider / point-fixed and frameless glass canopies.", mediaKey: "services_card_structural_glazing", fallback: "/images/illustrations/svc-structural-glazing.webp", alt: "Structural glazing on a glass facade" },
+  { href: "/acp-aluminium-cladding", name: "ACP / Metal Cladding", line: "PVDF and PE coated panels, wood-grain, stone, mirror and metallic finishes.", mediaKey: "services_card_acp_cladding", fallback: "/images/illustrations/svc-acp-cladding.webp", alt: "ACP cladding panels on a building facade" },
+  { href: "/aluminium-windows-doors", name: "Windows & Doors", line: "Sliding and tilt-turn windows, casement and awning, thermal break, sliding and folding doors.", mediaKey: "services_card_aluminium_windows", fallback: "/images/illustrations/svc-aluminium-windows.webp", alt: "Aluminium windows and sliding doors" },
+  { href: "/glass-railings", name: "Glass Railings", line: "Frameless and semi-frameless systems with standoff and spigot fittings.", mediaKey: "services_card_glass_railings", fallback: "/images/illustrations/svc-glass-railings.webp", alt: "Frameless glass railing with stainless steel hardware" },
+  { href: "/skylights-canopies", name: "Skylights & Canopies", line: "Engineered glass skylights, spider canopies, structural glass roofs and retractable systems.", mediaKey: "services_card_skylights", fallback: "/images/illustrations/svc-skylights.webp", alt: "Glass canopy on spider fittings" },
+  { href: "/aluminium-louvers", name: "Louvers & Sun Control", line: "Fixed and operable louvers, motorised sun control, vertical fins and screens.", mediaKey: "services_card_louvers", fallback: "/images/illustrations/svc-louvers.webp", alt: "Aluminium louvers on a building facade" },
+  { href: "/glass-partitions", name: "Glass Partitions", line: "Frameless office partitions, acoustic glass, switchable smart glass and shower enclosures.", mediaKey: "services_card_glass_partitions", fallback: "/images/illustrations/svc-glass-partitions.webp", alt: "Frameless glass office partition" },
+  { href: "/maintenance-services", name: "Maintenance & AMC", line: "Sealant renewal and waterproofing, glass panel replacement, facade cleaning and annual maintenance contracts.", mediaKey: "services_card_amc", fallback: "/images/illustrations/svc-maintenance.webp", alt: "Facade maintenance and cleaning work" },
 ];
 
-/** Nine services laid out like a curtain-wall elevation; each panel lights from the bottom on hover. */
+/** Services laid out like a curtain-wall elevation; each panel lights from the bottom on hover. */
 const HomeServices = () => {
   const { getMedia } = useSiteMedia();
   return (
