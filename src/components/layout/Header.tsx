@@ -40,7 +40,12 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
 
   /* Scroll detect */
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 50);
+    // A page can mark a tall dark hero with data-header-clear: the bar stays
+    // transparent until that section has scrolled past, so it never sits over the scene.
+    const handleScroll = () => {
+      const hero = document.querySelector<HTMLElement>("[data-header-clear]");
+      setIsScrolled(hero ? hero.getBoundingClientRect().bottom < 96 : window.scrollY > 50);
+    };
     handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);

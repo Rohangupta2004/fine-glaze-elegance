@@ -1,8 +1,7 @@
 import { Layout } from "@/components/layout/Layout";
 import { Helmet } from "react-helmet-async";
 import SEO from "@/components/SEO";
-import FacadeScene from "@/components/home/cinematic/FacadeScene";
-import AssemblySequence from "@/components/home/cinematic/AssemblySequence";
+import StoryHero from "@/components/home/cinematic/StoryHero";
 import HomeWork from "@/components/home/cinematic/HomeWork";
 import HomeClose from "@/components/home/cinematic/HomeClose";
 import "@/components/home/cinematic/home.css";
@@ -36,8 +35,7 @@ const Index = () => {
         <link rel="preload" as="image" href={HERO_IMAGE} {...{ fetchpriority: "high" }} />
       </Helmet>
       <div className="fg-home">
-        <FacadeScene />
-        <AssemblySequence />
+        <StoryHero />
         <HomeWork />
         <HomeClose />
       </div>
