@@ -144,7 +144,7 @@ const StoryHero = () => {
     function makeText(lines: string[], fsz: number) {
       const c = document.createElement("canvas");
       const x = c.getContext("2d")!;
-      const font = "600 " + fsz + 'px "Lora",Georgia,"Times New Roman",serif';
+      const font = "500 " + fsz + 'px "Lora",Georgia,"Times New Roman",serif';
       x.font = font;
       const cap = x.measureText("H").actualBoundingBoxAscent || fsz * 0.7;
       const lh = Math.round(cap / 0.58);
@@ -168,8 +168,8 @@ const StoryHero = () => {
 
     function layout() {
       const w = cv.clientWidth, h = cv.clientHeight, asp = w / h, port = asp < 0.85;
-      const lines = ["WE BUILD", "THE FACE OF", "YOUR BUILDING"];
-      const c = makeText(lines, port ? 190 : 240);
+      const lines = ["We build", "the face of", "your building."];
+      const c = makeText(lines, port ? 170 : 210);
       gl!.bindTexture(gl!.TEXTURE_2D, tex);
       gl!.pixelStorei(gl!.UNPACK_ALIGNMENT, 1);
       gl!.texImage2D(gl!.TEXTURE_2D, 0, gl!.R8, gl!.RED, gl!.UNSIGNED_BYTE, c);
@@ -522,7 +522,7 @@ const StoryHero = () => {
     const ready =
       document.fonts && document.fonts.load
         ? Promise.race([
-            document.fonts.load('600 100px "Lora"'),
+            document.fonts.load('500 100px "Lora"'),
             new Promise((r) => {
               fontTimer = window.setTimeout(r, 2200);
             }),
@@ -533,7 +533,7 @@ const StoryHero = () => {
     // The font stylesheet loads without blocking, so the face can arrive after the first draw.
     // Redraw the lit headline once it is really there.
     const onFonts = () => {
-      if (document.fonts.check('600 100px "Lora"')) {
+      if (document.fonts.check('500 100px "Lora"')) {
         size();
         kick();
       }
