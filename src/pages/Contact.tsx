@@ -506,9 +506,9 @@ const Contact = () => {
           ═══════════════════════════════════════════ */}
       <FadeIn>
         <section className="relative h-[30vh] md:h-[40vh] min-h-[200px] overflow-hidden">
-          <img
-            src="/Glazing.webp"
-            alt="Fine Glaze facade work"
+          <img decoding="async"
+            src="/projects/embassy-techzone-41-1.webp"
+            alt="Glass entrance work under scaffolding at Embassy TechZone, Hinjewadi, Pune"
             className="absolute inset-0 w-full h-full object-cover"
             loading="lazy"
             style={{ objectPosition: "center 40%" }}

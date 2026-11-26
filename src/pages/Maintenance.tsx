@@ -286,7 +286,7 @@ export default function Maintenance() {
 
             <div className="grid md:grid-cols-2 gap-0 bg-night overflow-hidden" key={current.num}>
               <div className="relative h-[280px] md:h-[360px] overflow-hidden">
-                <img
+                <img decoding="async"
                   src={IMG[current.img]}
                   alt={current.title}
                   className="w-full h-full object-cover transition-opacity duration-500"
@@ -410,22 +410,26 @@ export default function Maintenance() {
 
       {/* ════════════ PHOTO BREAK ════════════ */}
       <FadeIn>
-        <div className="relative h-[35vh] md:h-[40vh] overflow-hidden">
+        <div className="fg-wrap">
+        <div className="relative h-[35vh] md:h-[40vh] overflow-hidden" style={{ maxWidth: 775 }}>
           <img
             src={IMG.process}
+            sizes="(max-width: 1280px) 100vw, 1152px"
+            decoding="async"
             alt="Embassy 247, Vikhroli, Mumbai — facade sealant and glass replacement by Fine Glaze for Embassy REIT"
             className="w-full h-full object-cover"
             loading="lazy"
           />
           <div className="absolute inset-0 bg-night/40" />
           <div className="absolute inset-0 flex items-center">
-            <div className="fg-wrap">
+            <div className="px-6 md:px-10">
               <p className="text-mute text-sm mb-2">Our Promise</p>
               <p className="text-paper text-xl md:text-3xl font-bold max-w-xl">
                 Inspection first, a written condition report next, then repair. We service facades we did not install too.
               </p>
             </div>
           </div>
+        </div>
         </div>
       </FadeIn>
 

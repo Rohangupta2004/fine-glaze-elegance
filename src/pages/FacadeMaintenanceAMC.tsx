@@ -67,7 +67,7 @@ export default function FacadeMaintenanceAMC() {
               <Link to="/maintenance-services"><Button size="lg" variant="outline">Our Services</Button></Link>
             </div>
           </div>
-          <img src="/projects/embassy-247-37-1.webp" alt="Embassy 247, Vikhroli, Mumbai — facade sealant renewal and glass replacement by Fine Glaze for Embassy REIT" className="object-cover h-[420px] w-full" loading="eager" width="600" height="420" />
+          <img decoding="async" src="/projects/embassy-247-37-1.webp" alt="Embassy 247, Vikhroli, Mumbai — facade sealant renewal and glass replacement by Fine Glaze for Embassy REIT" className="object-cover h-[420px] w-full" loading="eager" width="600" height="420" />
         </div>
       </section>
 

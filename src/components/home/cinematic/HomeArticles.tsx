@@ -21,7 +21,7 @@ const HomeArticles = () => {
             <li key={a.slug}>
               <Link to={`/blog/${a.slug}`}>
                 <span className="ag-i">
-                  <img
+                  <img decoding="async"
                     src={getHeroImage(a.slug, a.heroImage)}
                     srcSet={getArticleImageSrcSet(a.slug)}
                     sizes="(max-width: 767px) 100vw, 33vw"

@@ -58,7 +58,7 @@ const IMG = {
   fourSide: "/projects/nanavati-max-hospital-39-1.webp",
   spider: "/projects/embassy-techzone-41-2.webp",
   canopy: "/canopy-spider.webp",
-  process: "/projects/embassy-techzone-41-1.webp",
+  process: "/projects/embassy-techzone-41-2.webp",
 };
 
 /* ── System data ── */
@@ -318,7 +318,7 @@ export default function StructuralGlazing() {
             {/* Active system content */}
             <div className="grid md:grid-cols-2 gap-0 bg-night overflow-hidden" key={current.num}>
               <div className="relative h-[280px] md:h-[360px] overflow-hidden">
-                <img
+                <img decoding="async"
                   src={IMG[current.img]}
                   alt={current.title}
                   className="w-full h-full object-cover transition-opacity duration-500"
@@ -449,22 +449,26 @@ export default function StructuralGlazing() {
           FULL-WIDTH PHOTO BREAK
           ════════════════════════════════════════════════════ */}
       <FadeIn>
+        <div className="fg-wrap">
         <div className="relative h-[35vh] md:h-[40vh] overflow-hidden">
           <img
             src={IMG.process}
-            alt="Spider glass entrance installation in progress at Embassy Techzone, Hinjewadi, Pune — Fine Glaze"
+            sizes="(max-width: 1280px) 100vw, 1152px"
+            decoding="async"
+            alt="Glass entrance, Embassy TechZone, Hinjewadi, Pune"
             className="w-full h-full object-cover"
             loading="lazy"
           />
           <div className="absolute inset-0 bg-night/40" />
           <div className="absolute inset-0 flex items-center">
-            <div className="fg-wrap">
+            <div className="px-6 md:px-10">
               <p className="text-mute text-sm mb-2">Our Promise</p>
               <p className="text-paper text-xl md:text-3xl font-bold max-w-xl">
                 Shop drawings prepared in-house. Installation run by a dedicated site in-charge and supervisor.
               </p>
             </div>
           </div>
+        </div>
         </div>
       </FadeIn>
 

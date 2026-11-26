@@ -261,7 +261,7 @@ export default function CompanyProfilePage() {
           >
             {viewMode === "slides" ? (
               <div className="relative w-full flex items-center justify-center">
-                <img
+                <img decoding="async"
                   key={currentSlide}
                   src={`/profile-slides/slide-${currentSlide}.webp`}
                   alt={`Fine Glaze Company Profile - Slide ${currentSlide}`}

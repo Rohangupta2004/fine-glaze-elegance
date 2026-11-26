@@ -244,7 +244,7 @@ export default function BlogArticle() {
                     to={`/blog/${r.slug}`}
                     className="group flex gap-4 p-4 border transition-all"
                   >
-                    <img
+                    <img decoding="async"
                       src={getHeroImage(r.slug, r.heroImage)}
                       srcSet={getArticleImageSrcSet(r.slug)}
                       sizes="96px"

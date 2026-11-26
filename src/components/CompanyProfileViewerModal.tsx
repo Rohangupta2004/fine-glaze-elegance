@@ -1,3 +1,4 @@
+import "@/components/layout/header.css";
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import {
   X,
@@ -213,7 +214,7 @@ export const CompanyProfileViewerModal: React.FC = () => {
         {/* Brand & Jump Dropdown */}
         <div className="flex items-center gap-2 sm:gap-3 min-w-0">
           <div className="flex items-center gap-2 shrink-0">
-            <img src="/Logofg.webp" alt="Fine Glaze" className="h-6 sm:h-8 w-auto brightness-0 invert" />
+            <span className="fg-logo"><img decoding="async" src="/Logofg.webp" alt="Fine Glaze" width={1920} height={603} /></span>
             <span className="hidden md:inline-block text-xs text-lamp font-bold border-l border-line pl-3">
               Company Profile
             </span>
@@ -343,7 +344,7 @@ export const CompanyProfileViewerModal: React.FC = () => {
           <div className="relative w-full h-full flex items-center justify-center min-h-0">
             {/* Slide Image */}
             <div className="relative w-full h-full flex items-center justify-center">
-              <img
+              <img decoding="async"
                 key={currentSlide}
                 src={`/profile-slides/slide-${currentSlide}.webp`}
                 alt={`Fine Glaze Company Profile - Slide ${currentSlide}: ${currentSection.title}`}
@@ -422,7 +423,7 @@ export const CompanyProfileViewerModal: React.FC = () => {
                   : "border-line opacity-60 hover:opacity-100"
               )}
             >
-              <img
+              <img decoding="async"
                 src={`/profile-slides/thumb-${sec.slide}.webp`}
                 alt={sec.title}
                 className="w-full h-full object-cover"

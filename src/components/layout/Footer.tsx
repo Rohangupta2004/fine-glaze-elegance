@@ -1,3 +1,4 @@
+import "./header.css";
 import { Link } from "react-router-dom";
 import { MapPin, Phone, Mail, Linkedin } from "lucide-react";
 import { company, telHref, officeTelHref } from "@/data/company";
@@ -30,7 +31,9 @@ export const Footer = () => {
         <div className="fg-foot-g">
           {/* Brand */}
           <div className="space-y-5 fg-foot-c">
-            <img src="/Logofg.webp" alt="Fine Glaze" width={1920} height={603} className="h-11 w-auto" style={{ filter: "brightness(0) invert(1)", opacity: 0.95 }} />
+            <span className="fg-logo">
+              <img decoding="async" src="/Logofg.webp" alt="Fine Glaze" width={1920} height={603} />
+            </span>
             <p className="text-mute text-[15px] leading-relaxed">
               Facade design, fabrication, installation and maintenance from Pune and Mumbai.
               Our own fabrication unit is at {company.fabricationUnit.location}. Embassy REIT Best Vendor Performance 2024.

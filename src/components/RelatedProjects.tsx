@@ -59,7 +59,7 @@ export function RelatedProjects({ heading, intro, ...filter }: RelatedProjectsPr
                 to={`/project/${slug}`}
                 className="group block h-full overflow-hidden border border-line bg-night-2 hover:border-lamp/60 transition-colors"
               >
-                <img src={p.image} alt={`${p.title}, ${p.location} — ${p.scope}`} className="h-44 w-full object-cover" loading="lazy" />
+                <img decoding="async" src={p.image} alt={`${p.title}, ${p.location} — ${p.scope}`} className="h-44 w-full object-cover" loading="lazy" />
                 <div className="p-4">
                   <p className="text-[13px] font-semibold text-lamp">
                     {p.status === "Completed" ? `Completed ${p.year}` : "Ongoing"}, {p.client}

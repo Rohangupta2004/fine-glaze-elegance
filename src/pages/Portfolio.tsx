@@ -88,7 +88,7 @@ function ProjectCard({ p }: { p: Project }) {
     <li>
       <Link to={`/project/${p.slug}`} className="pf-card">
         <div ref={fig} className={`pf-fig${armed ? " armed" : ""}${seen ? " seen" : ""}`}>
-          <img
+          <img decoding="async"
             src={p.image}
             alt={`Fine Glaze project: ${p.title} (${p.scope}) in ${p.location}`}
             loading="lazy"

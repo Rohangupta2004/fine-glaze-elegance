@@ -46,7 +46,7 @@ export default function Blog() {
               <li key={post.slug}>
                 <Link to={`/blog/${post.slug}`} className="group">
                   <div className="aspect-[16/10] overflow-hidden bg-night-2">
-                    <img
+                    <img decoding="async"
                       src={getHeroImage(post.slug, post.heroImage)}
                       srcSet={getArticleImageSrcSet(post.slug)}
                       sizes="(max-width: 767px) calc(100vw - 2rem), (max-width: 1023px) 50vw, 33vw"

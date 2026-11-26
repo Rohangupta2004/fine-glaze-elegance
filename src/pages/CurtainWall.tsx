@@ -313,7 +313,7 @@ export default function CurtainWall() {
 
             <FadeIn delay={150}>
               <div className="relative overflow-hidden border border-line">
-                <img
+                <img decoding="async"
                   src={IMG.hero}
                   alt="Unitized curtain wall manufacturers — Fine Glaze"
                   className="w-full h-[400px] object-cover"
@@ -358,7 +358,7 @@ export default function CurtainWall() {
 
             <div className="grid md:grid-cols-2 gap-0 bg-night overflow-hidden" key={current.num}>
               <div className="relative h-[280px] md:h-[360px] overflow-hidden">
-                <img
+                <img decoding="async"
                   src={IMG[current.img]}
                   alt={`${current.title} — Curtain wall manufacturers Fine Glaze`}
                   className="w-full h-full object-cover transition-opacity duration-500"

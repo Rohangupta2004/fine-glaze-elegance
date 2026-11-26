@@ -39,7 +39,7 @@ const HomeVideo = () => {
           </p>
         </div>
         <div className="vid-f" ref={frame}>
-          {!playing && <img className="vid-po" src={POSTER} alt="" loading="lazy" width={1024} height={1024} />}
+          {!playing && <img decoding="async" className="vid-po" src={POSTER} alt="" loading="lazy" width={1024} height={1024} />}
           {near && (
             <iframe
               src={playing ? `${SRC}&autoplay=1` : SRC}

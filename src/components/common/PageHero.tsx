@@ -81,12 +81,13 @@ export const PageHero = ({ crumbs = [], title, intro, image, secondary, source =
           </div>
           {image && (
             <figure ref={fig} className={`ph-fig${armed ? " armed" : ""}${seen ? " seen" : ""}`}>
-              <img
+              <img decoding="async"
                 src={image.src}
                 alt={image.alt}
                 width={image.width}
                 height={image.height}
                 loading="eager"
+                fetchPriority="high"
                 style={image.position ? { objectPosition: image.position } : undefined}
               />
             </figure>

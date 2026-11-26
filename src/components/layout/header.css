@@ -29,3 +29,8 @@
   .fg-hdr,.fg-hdr[data-clear="true"],.fg-menu,.fg-menu-m{background:rgba(24,19,15,.92)}
 }
 @media (prefers-reduced-motion:reduce){.fg-hdr{transition:none}}
+
+/* Logo plate: the bronze mark is drawn for light grounds, so it sits on a paper rectangle. */
+.fg-logo{display:inline-flex;align-items:center;background:#f5f2ee;padding:8px 14px;line-height:0}
+.fg-logo img{height:32px;width:auto;display:block}
+@media (min-width:1024px){.fg-logo img{height:38px}}

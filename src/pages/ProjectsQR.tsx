@@ -85,7 +85,7 @@ const ProjectsQR = () => {
           <header className="sticky top-3 z-20 flex items-center justify-between gap-3 border border-[#d5bea0] bg-[#fffaf3]/95 p-3 shadow-[0_14px_40px_rgba(45,28,14,0.14)] sm:p-4">
             <div className="flex min-w-0 items-center gap-3">
               <span className="grid h-12 w-12 flex-none place-items-center border border-[#c49a5f] bg-night">
-                <img
+                <img decoding="async"
                   src="/favicon.png"
                   alt=""
                   className="h-9 w-9 object-contain"
@@ -207,7 +207,7 @@ const ProjectsQR = () => {
                   key={`${project.title}-${project.location}`}
                   className="grid min-h-40 grid-cols-[104px_minmax(0,1fr)] overflow-hidden border border-[#d8c2a5] bg-night shadow-[0_8px_22px_rgba(45,28,14,0.06)]"
                 >
-                  <img
+                  <img decoding="async"
                     src={project.image}
                     alt={project.title}
                     className="h-full w-full object-cover"

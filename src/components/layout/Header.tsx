@@ -131,14 +131,9 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
             aria-label="Fine Glaze, home"
             className="flex-shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-glass"
           >
-            <img
-              src="/Logofg.webp"
-              alt="Fine Glaze"
-              width={1920}
-              height={603}
-              className="h-[38px] lg:h-11 w-auto"
-              style={{ filter: "brightness(0) invert(1)", opacity: 0.95 }}
-            />
+            <span className="fg-logo">
+              <img decoding="async" src="/Logofg.webp" alt="Fine Glaze" width={1920} height={603} />
+            </span>
           </Link>
 
           {/* DESKTOP NAV */}
@@ -269,7 +264,7 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
           />
           <div className="fixed top-0 left-0 right-0 z-[60] fg-menu-m text-paper max-h-[90vh] overflow-y-auto lg:hidden animate-in slide-in-from-top duration-200">
             <div className="flex items-center justify-between px-5 h-16 border-b border-line sticky top-0 z-10">
-              <img src="/Logofg.webp" alt="Fine Glaze" width={1920} height={603} className="h-10 w-auto brightness-0 invert" />
+              <span className="fg-logo"><img decoding="async" src="/Logofg.webp" alt="Fine Glaze" width={1920} height={603} /></span>
               <button type="button" onClick={() => setIsMobileMenuOpen(false)} aria-label="Close menu" className="p-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-glass">
                 <X size={24} />
               </button>

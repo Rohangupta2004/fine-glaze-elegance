@@ -31,7 +31,7 @@ export function ProjectGallery({ title, images }: { title: string; images: strin
         }}>
           <DialogTitle className="pr-8">{title}</DialogTitle>
           <DialogDescription>Photo {(active ?? 0) + 1} of {images.length}. Use the arrows to browse, or Escape to close.</DialogDescription>
-          {active !== null && <img src={images[active]} alt={`${title} — project photograph ${active + 1}`} className="w-full h-[65vh] object-contain bg-night-2" />}
+          {active !== null && <img decoding="async" src={images[active]} alt={`${title} — project photograph ${active + 1}`} className="w-full h-[65vh] object-contain bg-night-2" />}
           <div className="flex items-center justify-between">
             <Button variant="outline" onClick={() => move(-1)} disabled={images.length < 2}><ChevronLeft size={18} /> Previous</Button>
             <span className="text-sm text-muted-foreground">{(active ?? 0) + 1} / {images.length}</span>

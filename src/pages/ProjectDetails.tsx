@@ -7,8 +7,8 @@ const ProjectDetails: React.FC = () => {
             <h1>Project Title</h1>
             <div className="gallery">
                 <h2>Gallery</h2>
-                <img src="path/to/image1.jpg" alt="Project Image 1" />
-                <img src="path/to/image2.jpg" alt="Project Image 2" />
+                <img decoding="async" src="path/to/image1.jpg" alt="Project Image 1" />
+                <img decoding="async" src="path/to/image2.jpg" alt="Project Image 2" />
                 {/* Add more images as needed */}
             </div>
             <div className="specifications">

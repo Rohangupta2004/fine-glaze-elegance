@@ -58,7 +58,7 @@ const IMG: Record<string, string> = {
   semi: "/railing-semi.webp",
   spigot: "/railing-spigot.webp",
   standoff: "/railing-standoff.webp",
-  process: "/projects/jindal-house-46-4.webp",
+  process: "/projects/jindal-house-45-1.webp",
 };
 
 /* ── System data ── */
@@ -305,7 +305,7 @@ export default function GlassRailings() {
 
             <div className="grid md:grid-cols-2 gap-0 bg-night overflow-hidden" key={current.num}>
               <div className="relative h-[280px] md:h-[360px] overflow-hidden">
-                <img
+                <img decoding="async"
                   src={IMG[current.img]}
                   alt={current.title}
                   className="w-full h-full object-cover transition-opacity duration-500"
@@ -429,22 +429,26 @@ export default function GlassRailings() {
 
       {/* ════════════ PHOTO BREAK ════════════ */}
       <FadeIn>
+        <div className="fg-wrap">
         <div className="relative h-[35vh] md:h-[40vh] overflow-hidden">
           <img
             src={IMG.process}
-            alt="Shop drawing of an SS railing for Jindal House, Mumbai — drawn in-house by Fine Glaze"
+            sizes="(max-width: 1280px) 100vw, 1152px"
+            decoding="async"
+            alt="Stainless steel glass railing on the terrace sea front, Jindal House, Balkeshwar, Mumbai"
             className="w-full h-full object-cover"
             loading="lazy"
           />
           <div className="absolute inset-0 bg-night/40" />
           <div className="absolute inset-0 flex items-center">
-            <div className="fg-wrap">
+            <div className="px-6 md:px-10">
               <p className="text-mute text-sm mb-2">Our Promise</p>
               <p className="text-paper text-xl md:text-3xl font-bold max-w-xl">
                 Shop drawings prepared in-house. Installation run by a dedicated site in-charge and supervisor.
               </p>
             </div>
           </div>
+        </div>
         </div>
       </FadeIn>
 
