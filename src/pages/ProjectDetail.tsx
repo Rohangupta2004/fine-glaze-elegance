@@ -4,6 +4,8 @@ import { Layout } from "@/components/layout/Layout";
 import { useProject } from "@/hooks/useProjects";
 import { Helmet } from "react-helmet-async";
 import SEO from "@/components/SEO";
+import PageHero from "@/components/common/PageHero";
+import { useBookCall } from "@/components/booking/BookCallProvider";
 
 /** "Project – main scope | Fine Glaze", kept short enough to show in search results. */
 const projectTitle = (title: string, scope: string) => {
@@ -12,12 +14,11 @@ const projectTitle = (title: string, scope: string) => {
   const mainScope = scope.split(/,|&| and | — | – /)[0].trim();
   return `${title} – ${mainScope} | Fine Glaze`;
 };
-import { MapPin, Building2, ArrowLeft, Phone, ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
 
 const ProjectDetail = () => {
   const { slug } = useParams<{ slug: string }>();
   const { project, loading } = useProject(slug);
+  const { open: openBooking } = useBookCall();
 
   if (loading) {
     return (
@@ -106,152 +107,64 @@ const ProjectDetail = () => {
         </script>
       </Helmet>
 
-      {/* HERO IMAGE */}
-      <section className="relative h-[55vh] min-h-[400px] overflow-hidden">
-        <img
-          src={project.image}
-          alt={`${project.title} – ${project.scope}`}
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-night/80 via-night/40 to-night/20" />
+      <PageHero
+        crumbs={[{ label: "Projects", to: "/portfolio" }, { label: project.title }]}
+        title={project.title}
+        intro={`${project.location}. ${project.client}.`}
+        image={{ src: project.image, alt: `${project.title} – ${project.scope}` }}
+        secondary={{ label: "All projects", to: "/portfolio" }}
+        extra={project.isAwardWinner ? project.award ?? "Award winner" : undefined}
+        source="project_hero"
+      />
 
-        {/* Back button */}
-        <div className="absolute top-8 left-0 right-0 container mx-auto px-4">
-          <Link
-            to="/portfolio"
-            className="inline-flex items-center gap-2 text-paper/80 hover:text-paper text-sm font-medium transition-colors"
-          >
-            <ArrowLeft size={16} />
-            All Projects
-          </Link>
-        </div>
+      <section className="fg-sec">
+        <div className="fg-wrap">
+          <div className="grid lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)] gap-12 lg:gap-0 items-start">
+            <div className="lg:pr-16 space-y-10">
+              <div>
+                <p className="text-[15px] text-mute mb-4">Our contribution</p>
+                <h2 className="font-display font-semibold text-3xl md:text-5xl leading-[1.05] tracking-[-0.032em] mb-6">{project.scope}</h2>
+                <p className="text-mute leading-relaxed text-lg max-w-[68ch]">{summary}</p>
+              </div>
 
-        {/* Hero content */}
-        <div className="absolute bottom-0 left-0 right-0 container mx-auto px-4 pb-10">
-          {project.isAwardWinner && (
-            <span className="inline-block mb-3 text-xs px-3 py-1 bg-lamp text-paper font-semibold">
-              🏆 {project.award ?? "Award Winner"}
-            </span>
-          )}
-          <h1 className="text-2xl md:text-4xl font-extrabold text-paper leading-tight mb-3">
-            {project.title}
-          </h1>
-          <div className="flex flex-wrap gap-4 text-paper/80 text-sm">
-            <span className="flex items-center gap-1.5">
-              <MapPin size={14} />
-              {project.location}
-            </span>
-            <span className="flex items-center gap-1.5">
-              <Building2 size={14} />
-              {project.client}
-            </span>
-          </div>
-        </div>
-      </section>
-
-      {/* CONTENT */}
-      <section className="container mx-auto px-4 py-16 max-w-5xl">
-        <div className="grid lg:grid-cols-3 gap-12">
-
-          {/* Main content */}
-          <div className="lg:col-span-2 space-y-10">
-
-            <div>
-              <p className="text-xs font-semibold text-primary mb-4">Our Contribution</p>
-              <h2 className="text-2xl md:text-3xl font-bold leading-tight mb-5">{project.scope}</h2>
-              <p className="text-muted-foreground leading-relaxed text-lg">{summary}</p>
+              {project.isAwardWinner && project.award && (
+                <div className="border-l border-line pl-6 py-1">
+                  <p className="text-[15px] text-mute mb-2">Client recognition</p>
+                  <p className="text-xl font-semibold">{project.award}</p>
+                  <p className="text-[15px] text-mute mt-1">Awarded by Embassy REIT</p>
+                </div>
+              )}
             </div>
 
-            {project.isAwardWinner && project.award && (
-              <div className="border-l-2 border-lamp/40 pl-5 py-2">
-                <p className="text-xs text-muted-foreground mb-2">Client Recognition</p>
-                <p className="text-lg font-semibold">{project.award}</p>
-                <p className="text-sm text-muted-foreground mt-1">Awarded by Embassy REIT</p>
+            <aside className="lg:border-l border-line lg:pl-10 space-y-10 lg:sticky lg:top-28 self-start">
+              <div>
+                <h3 className="text-xl font-semibold tracking-tight mb-4">At a glance</h3>
+                <dl className="border-t border-line text-[15.5px]">
+                  {[
+                    ["Client", project.client],
+                    ["Location", project.location],
+                    ["Status", project.status],
+                    ["Category", project.category],
+                    ...(project.isAwardWinner ? [["Award", project.award]] : []),
+                  ].map(([k, v]) => (
+                    <div key={k} className="grid grid-cols-[96px_minmax(0,1fr)] gap-4 py-3 border-b border-line">
+                      <dt className="text-mute">{k}</dt>
+                      <dd className="capitalize-first">{v}</dd>
+                    </div>
+                  ))}
+                </dl>
               </div>
-            )}
 
-          </div>
-
-          {/* Sidebar */}
-          <div className="space-y-6 lg:sticky lg:top-24 self-start">
-
-            {/* Project details card */}
-            <div className="border border-border bg-card p-6 space-y-4">
-              <h3 className="font-bold text-base">At a Glance</h3>
-              <div className="space-y-3 text-sm">
-                <div className="flex justify-between items-start gap-4">
-                  <span className="text-muted-foreground">Client</span>
-                  <span className="font-medium text-right">{project.client}</span>
-                </div>
-                <div className="flex justify-between items-start gap-4">
-                  <span className="text-muted-foreground">Location</span>
-                  <span className="font-medium text-right">{project.location}</span>
-                </div>
-                <div className="flex justify-between items-start gap-4">
-                  <span className="text-muted-foreground">Status</span>
-                  <span className="font-medium">{project.status}</span>
-                </div>
-                <div className="flex justify-between items-start gap-4">
-                  <span className="text-muted-foreground">Category</span>
-                  <span className="font-medium capitalize">{project.category}</span>
-                </div>
-                {project.isAwardWinner && (
-                  <div className="flex justify-between items-start gap-4 pt-2 border-t border-border">
-                    <span className="text-muted-foreground">Award</span>
-                    <span className="font-medium text-lamp text-right text-xs">{project.award}</span>
-                  </div>
-                )}
+              <div>
+                <h3 className="text-xl font-semibold tracking-tight mb-3">Discuss your project</h3>
+                <p className="text-[15.5px] text-mute leading-relaxed mb-5">
+                  Speak with our team about the right facade solution for your building.
+                </p>
+                <button type="button" className="fg-btn" onClick={() => openBooking({ source: "project_detail", work: project.title })}>
+                  Book a call
+                </button>
               </div>
-            </div>
-
-            {/* CTA card */}
-            <div
-              className="p-6 space-y-4 text-paper"
-              style={{
-                background: "linear-gradient(135deg, hsl(25 80% 25%) 0%, hsl(20 75% 18%) 100%)",
-              }}
-            >
-              <h3 className="font-bold text-base">Discuss Your Project</h3>
-              <p className="text-paper/75 text-sm leading-relaxed">
-                Speak with our team about the right facade solution for your building.
-              </p>
-              <div className="space-y-2">
-                <Button
-                  asChild
-                  size="sm"
-                  className="w-full bg-night text-primary hover:bg-night/90 font-semibold"
-                >
-                  <a
-                    href="https://wa.me/918369233566?text=Hello%20Fine%20Glaze%2C%20I%20saw%20your%20project%20portfolio%20and%20would%20like%20to%20discuss%20a%20similar%20facade%20project."
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Book a call
-                    <ArrowRight size={14} className="ml-1.5" />
-                  </a>
-                </Button>
-                <Button
-                  asChild
-                  size="sm"
-                  variant="outline"
-                  className="w-full bg-transparent border-paper/30 text-paper hover:bg-paper/10 hover:text-paper"
-                >
-                  <a href="tel:+918369233566">
-                    <Phone size={13} className="mr-1.5" />
-                    +91 8369 233 566
-                  </a>
-                </Button>
-              </div>
-            </div>
-
-            {/* Back to portfolio */}
-            <Link
-              to="/portfolio"
-              className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
-            >
-              <ArrowLeft size={14} />
-              Back to all projects
-            </Link>
+            </aside>
           </div>
         </div>
       </section>
