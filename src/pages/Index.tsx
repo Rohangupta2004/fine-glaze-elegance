@@ -35,7 +35,7 @@ const Index = () => {
         title="Facade Contractor in Pune, Mumbai & India | Fine Glaze"
         description="Facade contractor based in Pune and Mumbai, taking projects across India: curtain wall, glazing, ACP and AMC. Embassy REIT Best Vendor Performance 2024."
         canonical="https://fineglaze.com/"
-        keywords="facade contractor Pune, facade contractor Mumbai, structural glazing contractor, curtain wall contractor, aluminium windows Pune, ACP cladding contractor, facade maintenance Mumbai, Fine Glaze"
+        keywords="facade contractor Pune Mumbai, facade contractor India, structural glazing contractor, curtain wall contractor, aluminium windows Pune, ACP cladding contractor, facade maintenance Mumbai, Fine Glaze"
         schema={webPageSchema}
       />
       <Helmet>
