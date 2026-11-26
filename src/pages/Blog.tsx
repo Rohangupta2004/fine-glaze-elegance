@@ -64,8 +64,11 @@ export default function Blog() {
                   <h2 className="font-medium text-[clamp(18px,1.5vw,22px)] leading-snug tracking-[-0.015em] text-paper">
                     {getArticleEnhancement(post.slug)?.title ?? post.title}
                   </h2>
-                  <p className="text-[15.5px] text-mute line-clamp-2">
-                    {getArticleEnhancement(post.slug)?.metaDescription ?? post.excerpt}
+                  <p className="text-[15.5px] text-mute line-clamp-4">
+                    {(() => {
+                      const t = getArticleEnhancement(post.slug)?.metaDescription ?? post.excerpt;
+                      return t.includes("₹") ? `${t} Market range, not a Fine Glaze quotation.` : t;
+                    })()}
                   </p>
                   <span className="mt-auto pt-2 text-[15px] text-lamp group-hover:underline underline-offset-4">Read article</span>
                 </Link>

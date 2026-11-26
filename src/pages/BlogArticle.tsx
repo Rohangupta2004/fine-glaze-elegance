@@ -85,6 +85,9 @@ export default function BlogArticle() {
       <article className="fg-sec">
         <div className="fg-wrap fg-art">
           {visual && <p className="text-sm text-mute leading-relaxed mb-8">{visual.caption}</p>}
+          {!enhancement && JSON.stringify(post).includes("₹") && (
+            <p className="text-sm text-mute leading-relaxed mb-8">Rupee figures are general market ranges, not a Fine Glaze quotation.</p>
+          )}
 
           {enhancement && (
             <section aria-labelledby="quick-answer" className="mb-10 border border-line bg-night-2 p-5 sm:p-7">

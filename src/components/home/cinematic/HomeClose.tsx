@@ -26,7 +26,7 @@ const HomeClose = () => {
             <dt>Address</dt>
             <dd>{company.address.short}</dd>
             <dt>Fabrication</dt>
-            <dd>Our own unit at {company.fabricationUnit.location}</dd>
+            <dd>Interim unit at {company.fabricationUnit.location}</dd>
           </dl>
         </div>
       </div>
