@@ -35,7 +35,7 @@ const services = [
     description:
       "Advanced facade engineering solutions designed for performance, durability, and architectural elegance in commercial and high-rise buildings.",
     longDescription:
-      "From unitized curtain walls for IT parks to structural glazing for showrooms, we engineer building envelopes that withstand wind loads up to 4.5 kPa while delivering stunning visual clarity. Our systems use 6063-T6 aluminium alloy, structural silicone by Dow Corning/Sika, and DGU/Low-E glass options for energy efficiency.",
+      "From unitized curtain walls for IT parks to structural glazing for showrooms, we prepare shop drawings in-house and check member sizing, fixing and anchorage against the project wind load. Systems use aluminium extrusions from major Indian mills, DOWSIL structural silicone or approved equivalents, and DGU or Low-E glass where the specification calls for it.",
     features: [
       "Unitized Curtain Walls",
       "Structural & Spider Glazing",
@@ -44,7 +44,7 @@ const services = [
       "Stick System Facades",
       "Point-Fixed Glass Systems",
     ],
-    stats: { value: "40%", label: "Faster Installation with Unitized" },
+    stats: { value: "16", label: "Project Records Documented" },
     images: [
       "/structural-glazing.webp",
       "/spider-glazing.webp",
@@ -61,7 +61,7 @@ const services = [
     description:
       "High-quality glass railing solutions that ensure safety while maintaining unobstructed views and modern aesthetics.",
     longDescription:
-      "We install frameless toughened glass railings using 12mm to 19mm glass with Sentry lamination for maximum safety. All hardware is marine-grade SS 304/316 — rust-proof even in Mumbai's coastal climate. Available with aluminium U-channels, SS spigots, or standoff fittings.",
+      "We install frameless toughened glass railings using toughened or laminated glass with thickness set by the structural check. Stainless steel hardware is graded to the site, with extra care at coastal locations. Available with aluminium U-channels, SS spigots, or standoff fittings.",
     features: [
       "Frameless Glass Railings",
       "Balcony & Terrace Railings",
@@ -70,7 +70,7 @@ const services = [
       "Pool Fencing Systems",
       "Staircase Glass Panels",
     ],
-    stats: { value: "19mm", label: "Max Glass Thickness" },
+    stats: { value: "~20,566", label: "Sqm Facade Delivered, Pune and Mumbai" },
     images: [
       "/railing-spigot.webp",
       "/railing-standoff.webp",
@@ -87,16 +87,16 @@ const services = [
     description:
       "Precision-engineered aluminium doors and windows offering excellent thermal performance, security, and sleek architectural appeal.",
     longDescription:
-      "Our aluminium door and window systems feature thermal break profiles that reduce heat transfer by up to 60%. Available in sliding, casement, tilt-turn, and lift-slide configurations. Powder-coated in any RAL colour with 20+ year finish warranty.",
+      "Our aluminium door and window systems are available with thermal break profiles that slow heat transfer through the frame. Available in sliding, casement, tilt-turn, and lift-slide configurations, powder-coated or anodised to specification.",
     features: [
       "Sliding & Lift-Slide Systems",
       "Casement & Tilt-Turn Windows",
       "Thermal Break Profiles",
       "Automatic & Entry Doors",
-      "Sound Insulation Up to 45dB",
+      "Acoustic Glass Options",
       "Multi-Point Locking Systems",
     ],
-    stats: { value: "60%", label: "Heat Reduction with Thermal Break" },
+    stats: { value: "40+", label: "Core Engineering and Site Team" },
     images: [
       "/sliding-door.webp",
       "/Aluminium windows.webp",
@@ -113,16 +113,16 @@ const services = [
     description:
       "Comprehensive facade maintenance services to preserve aesthetics, safety, and performance throughout the building lifecycle.",
     longDescription:
-      "Don't let leaking silicone or broken glass panels degrade your building's value. Our trained technicians perform rope-access facade cleaning, silicon sealant replacement, glass panel replacement, and structural audits. We offer Annual Maintenance Contracts (AMC) with scheduled bi-annual inspections.",
+      "Don't let leaking silicone or broken glass panels degrade your building's value. We handle facade glass cleaning, sealant replacement, glass panel replacement and leakage investigation, and we offer Annual Maintenance Contracts (AMC) with periodic inspection and a written condition report.",
     features: [
       "Facade & Glass Cleaning",
       "Sealant Renewal & Waterproofing",
       "Glass Panel Replacement",
       "Preventive Maintenance AMC",
-      "Structural Facade Audits",
+      "Periodic Facade Inspection",
       "Emergency Repair Services",
     ],
-    stats: { value: "2x/yr", label: "Recommended Cleaning Cycle" },
+    stats: { value: "AMC", label: "With Written Condition Report" },
     images: ["/facade-maintenance.webp", "/Sealent.webp", "/Amc.webp", "/Amc1.webp"],
   },
   {
@@ -134,7 +134,7 @@ const services = [
     description:
       "Transform building exteriors with fire-retardant, PVDF-coated Aluminium Composite Panels for a sleek modern look.",
     longDescription:
-      "Our ACP cladding uses panels from approved brands such as Alubond, or strictly from the project's approved vendor list. We offer FR (Fire Retardant) grade panels that meet NBC fire safety norms. Available in solid colours, metallic finishes, wood-grain, stone, and mirror finishes with 20+ year colour warranty.",
+      "Our ACP cladding uses panels from approved brands such as Alubond, or strictly from the project's approved vendor list. We offer fire-retardant (FR) core panels, with the core confirmed against your project's fire requirements. Available in solid colours, metallic finishes, wood-grain, stone, and mirror finishes; colour warranty terms come from the panel maker.",
     features: [
       "PVDF & PE Coated Panels",
       "Fire Retardant (FR) Grade ACP",
@@ -143,7 +143,7 @@ const services = [
       "Signage & Fascia Panels",
       "Canopy Cladding",
     ],
-    stats: { value: "20yr", label: "Colour Warranty on PVDF" },
+    stats: { value: "Pisoli", label: "Panel Routing at Our Own Unit" },
     images: ["/acp-building.webp", "/acp-panels.webp", "/acp-finishes.webp", "/acp-cladding.webp"],
   },
   {
@@ -155,7 +155,7 @@ const services = [
     description:
       "Bring natural light indoors with engineered glass skylight systems and canopy structures for atriums, lobbies, and entrances.",
     longDescription:
-      "We design and install structural skylight systems using laminated safety glass with heat-reflective coatings. Our canopy solutions include frameless glass canopies with SS spider fittings, aluminium-framed pergola canopies, and retractable roof systems. All systems are waterproofed and engineered for wind & rain loads.",
+      "We design and install structural skylight systems using laminated safety glass with heat-reflective coatings. Our canopy solutions include frameless glass canopies with SS spider fittings, aluminium-framed pergola canopies, and retractable roof systems. Each system is detailed for drainage and checked against the project wind load.",
     features: [
       "Atrium Skylight Systems",
       "Frameless Glass Canopies",
@@ -164,7 +164,7 @@ const services = [
       "Retractable Roof Systems",
       "Heat-Reflective Glass Options",
     ],
-    stats: { value: "50%", label: "More Natural Light vs Solid Roofs" },
+    stats: { value: "Site Test", label: "Water Penetration Test on Installed Glazing" },
     images: ["/canopy-spider.webp", "/canopy-detail.webp", "/skylight-atrium.webp"],
   },
   {
@@ -176,7 +176,7 @@ const services = [
     description:
       "Reduce solar heat gain and glare with architecturally designed aluminium louver and fin systems for commercial buildings.",
     longDescription:
-      "Our aluminium louver systems are available in fixed, operable, and motorised configurations. They reduce direct solar heat gain by up to 70% while maintaining airflow and visibility. Available in elliptical, aerofoil, and flat blade profiles with powder-coated or anodised finishes in any custom colour.",
+      "Our aluminium louver systems are available in fixed, operable, and motorised configurations. They cut direct sun on the glass while maintaining airflow and visibility. Available in elliptical, aerofoil, and flat blade profiles with powder-coated or anodised finishes in any custom colour.",
     features: [
       "Fixed & Operable Louvers",
       "Motorised Sun Control",
@@ -185,7 +185,7 @@ const services = [
       "Parking Ventilation Louvers",
       "Acoustic Louver Systems",
     ],
-    stats: { value: "70%", label: "Solar Heat Gain Reduction" },
+    stats: { value: "Pisoli", label: "Louver Sub-Assembly at Our Own Unit" },
     images: ["/louvers-closeup.webp", "/louvers-motorized.webp", "/louvers-vertical.webp"],
   },
   {
@@ -206,7 +206,7 @@ const services = [
       "Walk-In Shower Panels",
       "Anti-Limescale Nano Coating",
     ],
-    stats: { value: "42dB", label: "Sound Insulation (DGU)" },
+    stats: { value: "DGU", label: "Acoustic Glass Option" },
     images: ["/smart-glass.webp", "/office-partition.webp", "/shower-enclosure.webp"],
   },
 ];
@@ -216,22 +216,22 @@ const processSteps = [
   {
     icon: Phone,
     title: "Consultation",
-    desc: "Free site visit & requirement discussion with our engineering team.",
+    desc: "Site survey and requirement discussion with our team.",
   },
   {
     icon: Ruler,
     title: "Survey & Design",
-    desc: "Precise measurements, 3D modelling & shop drawing approvals.",
+    desc: "Measurements and in-house shop drawings for approval.",
   },
   {
     icon: Layers,
     title: "Fabrication",
-    desc: "Precision cutting, assembly & quality checks at our factory.",
+    desc: "Cutting, assembly and quality checks at our Pisoli, Pune unit.",
   },
   {
     icon: Sparkles,
     title: "Installation",
-    desc: "Professional on-site execution with safety-first methodology.",
+    desc: "Sequenced on-site erection with a dedicated site in-charge, supervisor and safety officer.",
   },
 ];
 
@@ -244,13 +244,13 @@ const whyUs = [
   },
   {
     icon: Clock,
-    title: "On-Time Delivery",
-    desc: "We understand project timelines. Our unitized systems and parallel workflows ensure we meet your construction schedule.",
+    title: "Programme Planning",
+    desc: "We plan fabrication in project batches and sequence erection to the main contractor's programme. Programmes are confirmed per project.",
   },
   {
     icon: Users,
     title: "Expert Team",
-    desc: "25+ skilled professionals including engineers, fabricators, and certified installation technicians with years of experience.",
+    desc: "A core engineering, supervision and site team of 40+, led by a founder with 11+ years in the facade industry.",
   },
   {
     icon: Building2,
@@ -279,10 +279,10 @@ export default function Services() {
           "provider": {
             "@type": "LocalBusiness",
             "name": "Fine Glaze",
-            "areaServed": ["Pune", "Mumbai", "Maharashtra"],
+            "areaServed": ["Pune", "Mumbai", "India"],
           },
           "description":
-            "Full-range facade & glazing services including curtain walls, structural glazing, ACP cladding, glass railings, skylights, louvers, partitions, and AMC maintenance in Pune & Mumbai.",
+            "Facade and glazing services including curtain walls, structural glazing, ACP cladding, glass railings, skylights, louvers, partitions and AMC maintenance in Pune, Mumbai and across India.",
         }}
       />
 

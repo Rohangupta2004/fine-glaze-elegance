@@ -36,8 +36,8 @@ export default function PVDFvsPowderCoating() {
     "@type": "FAQPage",
     "mainEntity": [
       { "@type": "Question", "name": "Is PVDF coating worth the extra cost in India?", "acceptedAnswer": { "@type": "Answer", "text": "PVDF often pays off on buildings meant to last many years, especially coastal or hard-to-reach facades, because it holds colour and gloss longer and delays recoating. Compare full life cost, not first cost alone." } },
-      { "@type": "Question", "name": "Can I repaint powder-coated aluminium facade in India?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, but it needs professional preparation: stripping or abrading the old coating, primer and re-coating. That is feasible on accessible low-rise facades and costly and disruptive on high-rise buildings, which is one reason to choose the finish carefully." } },
-      { "@type": "Question", "name": "Is anodising better than PVDF for aluminium facades?", "acceptedAnswer": { "@type": "Answer", "text": "Neither is better in every case. Anodising forms an integral oxide layer that cannot peel but offers a narrower colour range, while PVDF offers more colour choice and strong UV durability. Choose from the project specification and exposure." } },
+      { "@type": "Question", "name": "Can I repaint powder-coated aluminium facade in India?", "acceptedAnswer": { "@type": "Answer", "text": "Powder-coated aluminium can be recoated, but only after professional preparation: stripping or abrading the old coating, priming and recoating, which is feasible on accessible low-rise facades. High-rise recoating is costly and disruptive, so choose the finish carefully." } },
+      { "@type": "Question", "name": "Is anodising better than PVDF for aluminium facades?", "acceptedAnswer": { "@type": "Answer", "text": "Neither finish is better in every case: anodising forms an integral oxide layer that cannot peel but offers a narrower colour range, while PVDF offers more colour choice and strong UV durability. Choose from the project specification and exposure." } },
     ]
   };
 
@@ -159,11 +159,11 @@ export default function PVDFvsPowderCoating() {
             </div>
             <div className="bg-background rounded-xl p-6 shadow-sm">
               <h3 className="text-lg font-bold mb-2">Can I repaint powder-coated aluminium facade in India?</h3>
-              <p className="text-muted-foreground">Yes, but it needs professional preparation: stripping or abrading the old coating, primer and re-coating. That is feasible on accessible low-rise facades and costly and disruptive on high-rise buildings, which is one reason to choose the finish carefully.</p>
+              <p className="text-muted-foreground">Powder-coated aluminium can be recoated, but only after professional preparation: stripping or abrading the old coating, priming and recoating, which is feasible on accessible low-rise facades. High-rise recoating is costly and disruptive, so choose the finish carefully.</p>
             </div>
             <div className="bg-background rounded-xl p-6 shadow-sm">
               <h3 className="text-lg font-bold mb-2">Is anodising better than PVDF for aluminium facades?</h3>
-              <p className="text-muted-foreground">Neither is better in every case. Anodising forms an integral oxide layer that cannot peel but offers a narrower colour range, while PVDF offers more colour choice and strong UV durability. Choose from the project specification and exposure.</p>
+              <p className="text-muted-foreground">Neither finish is better in every case: anodising forms an integral oxide layer that cannot peel but offers a narrower colour range, while PVDF offers more colour choice and strong UV durability. Choose from the project specification and exposure.</p>
             </div>
           </div>
         </div>

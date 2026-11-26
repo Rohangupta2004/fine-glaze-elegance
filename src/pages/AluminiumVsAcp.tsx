@@ -36,8 +36,8 @@ export default function AluminiumVsAcp() {
     "@type": "FAQPage",
     "mainEntity": [
       { "@type": "Question", "name": "Is ACP cladding banned in India?", "acceptedAnswer": { "@type": "Answer", "text": "ACP cladding is not banned in India, but combustible polyethylene-core panels are restricted on taller buildings under the National Building Code and state fire rules. Fire-retardant mineral-core panels are the usual choice. Confirm limits with your consultant." } },
-      { "@type": "Question", "name": "Can ACP cladding be combined with glass on a building?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. ACP panels are often combined with glass windows or curtain wall, for example as spandrel infill, which gives a facade mixing opaque and glazed areas. The details must be coordinated between the cladding and glazing scopes." } },
-      { "@type": "Question", "name": "Which lasts longer — aluminium facade or ACP?", "acceptedAnswer": { "@type": "Answer", "text": "Aluminium framing and extrusions generally outlast ACP panels, because coated ACP depends on its coating and panel bond. Actual life depends on finish, exposure, detailing and upkeep, so check the manufacturer's warranty terms." } },
+      { "@type": "Question", "name": "Can ACP cladding be combined with glass on a building?", "acceptedAnswer": { "@type": "Answer", "text": "ACP cladding can be combined with glass on the same building, most often as spandrel panels or opaque infill beside windows or curtain wall glazing, which mixes solid and glazed areas. The cladding and glazing details must be coordinated." } },
+      { "@type": "Question", "name": "Which lasts longer — aluminium facade or ACP?", "acceptedAnswer": { "@type": "Answer", "text": "Aluminium framing and extrusions generally outlast ACP panels over the long term, because coated ACP depends on its coating and panel bond. Actual life depends on finish, exposure, detailing and upkeep, so check the manufacturer's warranty terms." } },
     ]
   };
 
@@ -155,11 +155,11 @@ export default function AluminiumVsAcp() {
             </div>
             <div className="bg-background rounded-xl p-6 shadow-sm">
               <h3 className="text-lg font-bold mb-2">Can ACP cladding be combined with glass on a building?</h3>
-              <p className="text-muted-foreground">Yes. ACP panels are often combined with glass windows or curtain wall, for example as spandrel infill, which gives a facade mixing opaque and glazed areas. The details must be coordinated between the cladding and glazing scopes.</p>
+              <p className="text-muted-foreground">ACP cladding can be combined with glass on the same building, most often as spandrel panels or opaque infill beside windows or curtain wall glazing, which mixes solid and glazed areas. The cladding and glazing details must be coordinated.</p>
             </div>
             <div className="bg-background rounded-xl p-6 shadow-sm">
               <h3 className="text-lg font-bold mb-2">Which lasts longer — aluminium facade or ACP?</h3>
-              <p className="text-muted-foreground">Aluminium framing and extrusions generally outlast ACP panels, because coated ACP depends on its coating and panel bond. Actual life depends on finish, exposure, detailing and upkeep, so check the manufacturer's warranty terms.</p>
+              <p className="text-muted-foreground">Aluminium framing and extrusions generally outlast ACP panels over the long term, because coated ACP depends on its coating and panel bond. Actual life depends on finish, exposure, detailing and upkeep, so check the manufacturer's warranty terms.</p>
             </div>
           </div>
         </div>

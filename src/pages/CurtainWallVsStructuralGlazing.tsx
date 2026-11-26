@@ -35,8 +35,8 @@ export default function CurtainWallVsStructuralGlazing() {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      { "@type": "Question", "name": "Which is cheaper — curtain wall or structural glazing?", "acceptedAnswer": { "@type": "Answer", "text": "Neither is always cheaper. Cost depends on height, glass, system and configuration: 2-side structural glazing can suit simple low-rise facades, while unitized curtain wall is often more practical on tall buildings. Compare quotations on the same scope." } },
-      { "@type": "Question", "name": "Can curtain wall and structural glazing be combined on one building?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, this is common. Many buildings use structural glazing at a ground-floor lobby or showroom and curtain wall on the upper floors. The two systems need coordinated drawings so joints, drainage and movement line up." } },
+      { "@type": "Question", "name": "Which is cheaper — curtain wall or structural glazing?", "acceptedAnswer": { "@type": "Answer", "text": "Neither system is always cheaper, because cost depends on height, glass, configuration and access. 2-side structural glazing can suit simple low-rise facades, while unitized curtain wall is often more practical on tall buildings. Compare quotations on the same scope." } },
+      { "@type": "Question", "name": "Can curtain wall and structural glazing be combined on one building?", "acceptedAnswer": { "@type": "Answer", "text": "Curtain wall and structural glazing can be combined on one building, and this is common: structural glazing at a ground-floor lobby or showroom, with curtain wall above. The two systems need coordinated drawings so joints, drainage and movement line up." } },
       { "@type": "Question", "name": "Which is better for a showroom facade in India?", "acceptedAnswer": { "@type": "Answer", "text": "For showrooms, structural glazing such as 4-side SSG or spider glazing is usually preferred, because it gives the frameless, transparent look that retail frontages want. Curtain wall remains an option where framing is acceptable." } },
     ]
   };
@@ -151,11 +151,11 @@ export default function CurtainWallVsStructuralGlazing() {
           <div className="space-y-6">
             <div className="bg-background rounded-xl p-6 shadow-sm">
               <h3 className="text-lg font-bold mb-2">Which is cheaper — curtain wall or structural glazing?</h3>
-              <p className="text-muted-foreground">Neither is always cheaper. Cost depends on height, glass, system and configuration: 2-side structural glazing can suit simple low-rise facades, while unitized curtain wall is often more practical on tall buildings. Compare quotations on the same scope.</p>
+              <p className="text-muted-foreground">Neither system is always cheaper, because cost depends on height, glass, configuration and access. 2-side structural glazing can suit simple low-rise facades, while unitized curtain wall is often more practical on tall buildings. Compare quotations on the same scope.</p>
             </div>
             <div className="bg-background rounded-xl p-6 shadow-sm">
               <h3 className="text-lg font-bold mb-2">Can curtain wall and structural glazing be combined on one building?</h3>
-              <p className="text-muted-foreground">Yes, this is common. Many buildings use structural glazing at a ground-floor lobby or showroom and curtain wall on the upper floors. The two systems need coordinated drawings so joints, drainage and movement line up.</p>
+              <p className="text-muted-foreground">Curtain wall and structural glazing can be combined on one building, and this is common: structural glazing at a ground-floor lobby or showroom, with curtain wall above. The two systems need coordinated drawings so joints, drainage and movement line up.</p>
             </div>
             <div className="bg-background rounded-xl p-6 shadow-sm">
               <h3 className="text-lg font-bold mb-2">Which is better for a showroom facade in India?</h3>

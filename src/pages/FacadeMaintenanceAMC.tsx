@@ -27,9 +27,9 @@ export default function FacadeMaintenanceAMC() {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      { "@type": "Question", "name": "What is included in a facade AMC?", "acceptedAnswer": { "@type": "Answer", "text": "A facade AMC covers scheduled inspection of glass, sealants, cladding and drainage, with repair work agreed in the contract. Fine Glaze's scope covers periodic inspection with a written condition report, cleaning, sealant repair, glass replacement and leakage rectification." } },
+      { "@type": "Question", "name": "What is included in a facade AMC?", "acceptedAnswer": { "@type": "Answer", "text": "A facade AMC covers scheduled inspection of glass, sealants, cladding and drainage, plus repair work agreed in the contract, such as sealant repair, glass replacement and leakage rectification. Fine Glaze also provides a written condition report after periodic inspection." } },
       { "@type": "Question", "name": "How much does a facade AMC cost in India?", "acceptedAnswer": { "@type": "Answer", "text": "Facade AMC cost depends on facade area and type, building height, access method, visit frequency and the repairs included, so there is no single rate. Fine Glaze prepares a quotation after reviewing the building and scope." } },
-      { "@type": "Question", "name": "How often should a building facade be professionally inspected?", "acceptedAnswer": { "@type": "Answer", "text": "A building facade should be inspected at least once a year. Coastal buildings and structural glazing facades benefit from two inspections a year, before and after the monsoon. This is general guidance, and Fine Glaze reports findings in writing." } },
+      { "@type": "Question", "name": "How often should a building facade be professionally inspected?", "acceptedAnswer": { "@type": "Answer", "text": "A building facade should be professionally inspected at least once a year, and twice a year, before and after the monsoon, for coastal buildings and structural glazing facades. This is general guidance. Fine Glaze reports findings in writing." } },
     ]
   };
 
@@ -107,9 +107,9 @@ export default function FacadeMaintenanceAMC() {
         <div className="container mx-auto px-4 max-w-4xl">
           <h2 className="text-3xl font-bold mb-10 text-center">Frequently Asked Questions</h2>
           <div className="space-y-6">
-            <div className="bg-background rounded-xl p-6 shadow-sm"><h3 className="text-lg font-bold mb-2">What is included in a facade AMC?</h3><p className="text-muted-foreground">A facade AMC covers scheduled inspection of glass, sealants, cladding and drainage, with repair work agreed in the contract. Fine Glaze's scope covers periodic inspection with a written condition report, cleaning, sealant repair, glass replacement and leakage rectification.</p></div>
+            <div className="bg-background rounded-xl p-6 shadow-sm"><h3 className="text-lg font-bold mb-2">What is included in a facade AMC?</h3><p className="text-muted-foreground">A facade AMC covers scheduled inspection of glass, sealants, cladding and drainage, plus repair work agreed in the contract, such as sealant repair, glass replacement and leakage rectification. Fine Glaze also provides a written condition report after periodic inspection.</p></div>
             <div className="bg-background rounded-xl p-6 shadow-sm"><h3 className="text-lg font-bold mb-2">How much does a facade AMC cost in India?</h3><p className="text-muted-foreground">Facade AMC cost depends on facade area and type, building height, access method, visit frequency and the repairs included, so there is no single rate. Fine Glaze prepares a quotation after reviewing the building and scope.</p></div>
-            <div className="bg-background rounded-xl p-6 shadow-sm"><h3 className="text-lg font-bold mb-2">How often should a building facade be professionally inspected?</h3><p className="text-muted-foreground">A building facade should be inspected at least once a year. Coastal buildings and structural glazing facades benefit from two inspections a year, before and after the monsoon. This is general guidance, and Fine Glaze reports findings in writing.</p></div>
+            <div className="bg-background rounded-xl p-6 shadow-sm"><h3 className="text-lg font-bold mb-2">How often should a building facade be professionally inspected?</h3><p className="text-muted-foreground">A building facade should be professionally inspected at least once a year, and twice a year, before and after the monsoon, for coastal buildings and structural glazing facades. This is general guidance. Fine Glaze reports findings in writing.</p></div>
           </div>
         </div>
       </section>

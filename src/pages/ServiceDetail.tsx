@@ -32,13 +32,13 @@ interface ServiceData {
 const serviceKeywords: Record<string, ServiceData> = {
   "structural-glazing": {
     label: "Structural Glazing Systems",
-    desc: "Premium 2-side and 4-side structural glazing solutions for modern corporate towers.",
+    desc: "2-side and 4-side structural glazing for commercial buildings and corporate towers.",
     extendedDesc:
-      "Structural glazing is the pinnacle of modern architectural design. By utilizing high-tensile structural silicone to bond glass directly to the concealed aluminium framing, we eliminate the need for exterior pressure plates or caps. The result is a seamless, flush glass facade that offers superior thermal performance and a striking, uninterrupted aesthetic.",
+      "Structural glazing bonds glass to the frame without exterior fixings. By using high-strength structural silicone to bond glass directly to the concealed aluminium framing, we eliminate the need for exterior pressure plates or caps. The result is a seamless, flush glass facade with an uninterrupted appearance.",
     benefits: [
       "Seamless Flush Exterior",
-      "Superior Wind-Load Resistance",
-      "Enhanced Thermal & Acoustic Insulation",
+      "Wind-Load Engineering Check",
+      "Thermal and Acoustic Glass Options",
       "Maximum Natural Light Transmission",
     ],
     image: "/Glazing.webp",
@@ -52,7 +52,7 @@ const serviceKeywords: Record<string, ServiceData> = {
           "6mm – 12mm toughened glass",
           "Dow Corning / Sika structural silicone",
           "Aluminium 6063-T6 extrusions",
-          "Wind load up to 3.0 kPa",
+          "Sized to project wind load",
         ],
         bestFor: "IT parks, commercial offices, showroom facades",
         image: "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80",
@@ -61,12 +61,12 @@ const serviceKeywords: Record<string, ServiceData> = {
         name: "4-Side Structural Glazing (SSG)",
         tagline: "Fully flush, no visible frame on exterior",
         description:
-          "All four edges bonded with structural silicone, creating a completely frameless exterior. The most premium structural glazing variant — favoured for high-end corporate towers and luxury hotels.",
+          "All four edges bonded with structural silicone, creating a completely frameless exterior. The fully frameless structural glazing variant, used on corporate towers and hotels.",
         specs: [
           "10mm – 19mm DGU / Low-E glass",
           "Dual-component structural silicone",
           "Concealed hidden-fix aluminium frames",
-          "Wind load up to 4.5 kPa",
+          "Sized to project wind load",
         ],
         bestFor: "High-rise towers, luxury hotels, airport terminals",
         image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80",
@@ -78,7 +78,7 @@ const serviceKeywords: Record<string, ServiceData> = {
           "Glass panels are held by stainless steel spiders (rosettes) drilled into the glass at precise points. The result is a near-invisible structural connection that maximises transparency — popular for atrium walls and lobbies.",
         specs: [
           "12mm – 19mm laminated safety glass",
-          "SS 316 marine-grade spider fittings",
+          "Stainless steel spider fittings",
           "Countersunk bolt fixings",
           "Expansion joints every 6m",
         ],
@@ -89,12 +89,12 @@ const serviceKeywords: Record<string, ServiceData> = {
         name: "Frameless Glass Canopies",
         tagline: "Overhead structural glass for entrances & atriums",
         description:
-          "Canopy systems using laminated glass panels supported by structural fins or steel cables. Fully weatherproof with integrated drainage channels. Creates a dramatic, open entrance while protecting from elements.",
+          "Canopy systems using laminated glass panels supported by structural fins or steel cables. Detailed with integrated drainage channels. Creates a dramatic, open entrance while protecting from elements.",
         specs: [
           "17.52mm or 21.52mm laminated glass",
           "Thermally broken aluminium or steel fins",
           "Integrated EPDM weather seals",
-          "Live load rated to NBC standards",
+          "Loads checked to the project design basis",
         ],
         bestFor: "Building entrances, shopping malls, sky bridges",
         image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80",
@@ -106,12 +106,12 @@ const serviceKeywords: Record<string, ServiceData> = {
     label: "Curtain Wall Engineering",
     desc: "Unitized and semi-unitized glass curtain walls engineered for aggressive wind loads.",
     extendedDesc:
-      "Our curtain wall systems are designed to protect mid-to-high-rise buildings from the harshest environmental elements. Whether utilizing factory-assembled unitized panels for rapid crane-installation or traditional stick-built systems for complex geometries, our engineering ensures total weatherproofing and structural integrity.",
+      "Our curtain wall systems are designed to protect mid-to-high-rise buildings from wind and rain. Whether using factory-assembled unitized panels or stick-built systems for complex geometries, our engineering check covers member sizing, fixing and anchorage against the project wind load.",
     benefits: [
       "Rapid Factory-Assembled Deployment",
       "Integrated EPDM Weather Sealing",
       "Thermal-Break Technology",
-      "Accommodates Building Sway & Seismic Shifts",
+      "Movement Allowance in Joint Design",
     ],
     image: "/Unitized.webp",
     types: [
@@ -124,7 +124,7 @@ const serviceKeywords: Record<string, ServiceData> = {
           "Floor-to-floor module sizes up to 1.8m × 4.2m",
           "DGU / Low-E / solar control glass options",
           "Inter-lock stack joint with EPDM triple seal",
-          "Wind load rated 4.5 kPa",
+          "Sized to project wind load",
         ],
         bestFor: "High-rise towers (12+ floors), IT parks, hotels",
         image: "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80",
@@ -161,14 +161,14 @@ const serviceKeywords: Record<string, ServiceData> = {
         name: "Double-Skin Facade",
         tagline: "Two glass layers with ventilated air cavity",
         description:
-          "An outer weather skin and an inner insulating skin create a ventilated cavity that dramatically reduces solar heat gain and improves acoustic performance. Also enables natural ventilation in intermediate seasons.",
+          "An outer weather skin and an inner insulating skin create a ventilated cavity that reduces solar heat gain and improves acoustic performance. Also enables natural ventilation in intermediate seasons.",
         specs: [
           "Cavity width: 200mm – 1200mm",
           "Outer skin: 6mm or 8mm toughened glass",
           "Inner skin: DGU with Low-E coating",
-          "Energy savings up to 35% vs single skin",
+          "Energy effect depends on design and climate",
         ],
-        bestFor: "Green-certified buildings, LEED/IGBC projects",
+        bestFor: "Buildings with a strong energy or acoustic brief",
         image: "https://images.unsplash.com/photo-1531834685032-c34bf0d84c77?w=800&q=80",
       },
     ],
@@ -178,10 +178,10 @@ const serviceKeywords: Record<string, ServiceData> = {
     label: "ACP & Aluminium Cladding",
     desc: "Fire-retardant Aluminium Composite Panel cladding for exterior building elevations.",
     extendedDesc:
-      "Aluminium Composite Panels (ACP) offer the perfect balance of durability, weight, and aesthetic flexibility. We strictly utilize Fire Retardant (FR) grade cores combined with anti-fading PVDF coatings, ensuring your commercial facade not only looks exceptional but complies with all modern fire and safety codes.",
+      "Aluminium Composite Panels (ACP) offer the perfect balance of durability, weight, and aesthetic flexibility. We offer fire-retardant (FR) grade cores and PVDF coatings, with the core and assembly confirmed against your project's fire requirements.",
     benefits: [
-      "Class B1/A2 Fire Retardant Cores",
-      "25-Year PVDF Coating Guarantee",
+      "Fire-Retardant Core Options",
+      "PVDF Coating (Maker Warranty Terms)",
       "High Strength-to-Weight Ratio",
       "Precision CNC Routing",
     ],
@@ -189,14 +189,14 @@ const serviceKeywords: Record<string, ServiceData> = {
     types: [
       {
         name: "PVDF-Coated ACP",
-        tagline: "Premium fluoropolymer finish, 20-year colour warranty",
+        tagline: "Premium fluoropolymer finish, maker warranty terms apply",
         description:
-          "Polyvinylidene fluoride (PVDF) coating provides exceptional UV resistance, chalk resistance, and colour stability. The industry-standard choice for commercial facades where long-term aesthetics are critical.",
+          "Polyvinylidene fluoride (PVDF) coating provides exceptional UV resistance, chalk resistance, and colour stability. A common choice for commercial facades where long-term appearance matters.",
         specs: [
           "Panel thickness: 3mm or 4mm",
           "PVDF 70% coating per AAMA 2605",
           "Available in 200+ RAL/NCS colours",
-          "FR core: Class B1 / A2 (NBC compliant)",
+          "Fire-retardant core options, confirmed to project requirements",
         ],
         bestFor: "Commercial towers, IT campuses, retail facades",
         image: "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80",
@@ -210,7 +210,7 @@ const serviceKeywords: Record<string, ServiceData> = {
           "Panel thickness: 3mm",
           "PE coating per AAMA 2603",
           "Lower UV resistance than PVDF",
-          "Not recommended for coastal / high-rise use",
+          "Check suitability for coastal or tall buildings",
         ],
         bestFor: "Interior cladding, shopfronts, signage boards",
         image: "https://images.unsplash.com/photo-1565117099498-30d27b9a81c4?w=800&q=80",
@@ -219,7 +219,7 @@ const serviceKeywords: Record<string, ServiceData> = {
         name: "Wood-Grain & Stone-Finish ACP",
         tagline: "Natural texture, aluminium durability",
         description:
-          "High-resolution digitally printed or embossed wood-grain and stone-texture ACP panels. Achieve the warmth of timber or granite at a fraction of the cost and weight, with zero maintenance.",
+          "High-resolution digitally printed or embossed wood-grain and stone-texture ACP panels. Achieve the warmth of timber or granite at a fraction of the cost and weight, with low maintenance.",
         specs: [
           "Digital print with PVDF topcoat",
           "Teak, Walnut, Wenge wood finishes",

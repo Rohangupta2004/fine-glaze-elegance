@@ -28,42 +28,42 @@ import { useBookCall } from "@/components/booking/BookCallProvider";
 const faqDatabase = [
   {
     id: "item-1",
-    question: "How do Unitized Curtain Walls reduce high-rise construction timelines?",
+    question: "How do unitized curtain walls reduce high-rise construction timelines?",
     category: "Engineering",
     icon: <Construction className="w-5 h-5 text-amber-700" />,
-    answer: "Unlike stick systems, unitized facades are 80% prefabricated in our factory. This allows us to install panels simultaneously with the building's structural growth. For a typical 20-story project in India, this reduces the 'building envelope' completion time by approximately 4-6 weeks.",
-    stats: { metric: "40%", label: "Faster Installation" }
+    answer: "Unitized curtain walls shorten high-rise timelines because panels are built and glazed in a factory while the structure rises, so less work is done at height on site. The saving depends on the project's design, programme and site access.",
+    stats: { metric: "Factory-built", label: "Panels" }
   },
   {
     id: "item-2",
-    question: "What wind load standards does FineGlaze follow for skyscrapers?",
+    question: "What wind load standards does Fine Glaze follow for tall buildings?",
     category: "Safety",
     icon: <ShieldCheck className="w-5 h-5 text-amber-700" />,
-    answer: "We design according to IS 875 (Part 3). We typically engineer for basic wind speeds of 39m/s to 44m/s, but for high-rises (above 50m), we conduct comprehensive pressure coefficient analysis to ensure the structural silicone and brackets can withstand local gust factors.",
-    stats: { metric: "1.5-4.5 kPa", label: "Pressure Tolerance" }
+    answer: "Facade wind loads in India are normally taken from IS 875 Part 3 using the project's basic wind speed, building height and terrain. Fine Glaze's engineering check verifies member sizing, fixing and anchorage against the wind load in the project design basis.",
+    stats: { metric: "IS 875", label: "Design Standard" }
   },
   {
     id: "item-3",
-    question: "Can DGU Glass (Double Glazing) achieve a 'Platinum' LEED rating?",
+    question: "Does double glazed (DGU) glass help a project earn a green-building rating?",
     category: "Sustainability",
     icon: <ThermometerSnowflake className="w-5 h-5 text-amber-700" />,
-    answer: "Yes. By using High-Performance Low-E coatings in a 12mm air-gap DGU, we significantly lower the Solar Heat Gain Coefficient (SHGC). This minimizes heat ingress, drastically reducing AC power consumption and helping projects earn vital LEED/IGBC points.",
-    stats: { metric: "35%", label: "Energy Saving" }
+    answer: "Double glazed low-E glass can help a project earn green-building credits, but a rating is awarded to the whole building, not to the glass. The glass supports the energy model by lowering solar heat gain and cooling load.",
+    stats: { metric: "Whole-Building", label: "Rating" }
   },
   {
     id: "item-4",
-    question: "How much does structural glazing cost per sq ft in India in 2026?",
+    question: "How much does structural glazing cost per sq ft in India?",
     category: "Costing",
     icon: <Building2 className="w-5 h-5 text-amber-700" />,
-    answer: "Standard stick-system glazing ranges from ₹350–₹550 per sq ft. Premium unitized systems for high-rises start at ₹650–₹1,200 per sq ft. Prices vary based on glass thickness, wind load requirements, and specialized coatings.",
-    stats: { metric: "Custom", label: "Value Engineered" }
+    answer: "Structural glazing cost per sq ft in India depends on the configuration, glass, sealant, height and access, so a reliable figure needs drawings. Fine Glaze prepares BOQ-based quotations rather than publishing a rate.",
+    stats: { metric: "Quoted", label: "On Drawings" }
   },
   {
     id: "item-5",
     question: "What is the difference between structural glazing and curtain wall?",
     category: "Engineering",
     icon: <Layers className="w-5 h-5 text-amber-700" />,
-    answer: "Structural glazing uses silicone adhesive to bond glass directly to the aluminium frame — creating a seamless, frameless glass surface from outside. A curtain wall is the broader system (including mullions, transoms, drainage, and thermal breaks) that the glass sits within. Structural glazing is a type of curtain wall finish, but not all curtain walls use structural glazing — some use pressure plate covers (mechanically fixed).",
+    answer: "Structural glazing bonds glass to the aluminium frame with structural silicone, giving a frameless look from outside, while a curtain wall is the whole non-load-bearing system of mullions, transoms and glass. Structural glazing is one way to finish a curtain wall.",
     stats: { metric: "Frameless", label: "Glass Appearance" }
   },
   {
@@ -71,48 +71,48 @@ const faqDatabase = [
     question: "How long does curtain wall installation take for a commercial building in India?",
     category: "Timeline",
     icon: <Clock className="w-5 h-5 text-amber-700" />,
-    answer: "For a typical 3,000–8,000 sq ft commercial building facade in India: Engineering and approvals take 3–5 weeks. Factory fabrication takes 4–6 weeks (runs parallel). Site installation takes 6–10 weeks. Sealant and punch list adds 2–3 weeks. Total project duration: 12–18 weeks from contract signing to handover. High-rise projects above 15 floors add 4–8 weeks for additional safety setup and reduced daily access.",
-    stats: { metric: "12–18 wks", label: "Typical Timeline" }
+    answer: "Curtain wall installation time depends on the building's size, system, glass lead time and site access, so contractors confirm a programme after survey and design approval. Stages are engineering and approvals, fabrication, installation, testing and snagging.",
+    stats: { metric: "Per Project", label: "Programme" }
   },
   {
     id: "item-7",
     question: "How much does ACP cladding cost per sq ft in India?",
     category: "Costing",
     icon: <DollarSign className="w-5 h-5 text-amber-700" />,
-    answer: "ACP (Aluminium Composite Panel) cladding in India costs ₹80–₹220 per sq ft installed, depending on grade and finish. PE (polyethylene) core ACP: ₹80–₹130/sq ft. FR (fire retardant) grade ACP: ₹120–₹180/sq ft. PVDF-coated premium ACP (Aludecor, Viva): ₹150–₹220/sq ft. Prices include fabrication, tray system, and installation. Structural framing is additional and varies by building complexity.",
-    stats: { metric: "₹80–220", label: "Per Sq Ft" }
+    answer: "ACP cladding cost per sq ft in India depends on the panel brand, core type (PE or fire-retardant), finish, sub-frame, height and access, so a fair figure needs drawings. Fine Glaze prepares BOQ-based quotations with the brand and finish stated.",
+    stats: { metric: "Quoted", label: "On Drawings" }
   },
   {
     id: "item-8",
     question: "How do you waterproof a glass facade against India's monsoon?",
     category: "Safety",
     icon: <ShieldCheck className="w-5 h-5 text-amber-700" />,
-    answer: "Monsoon waterproofing in Indian facade systems relies on a 3-layer defence: First, factory-fitted EPDM gaskets create the primary weather seal inside the aluminium frames. Second, a continuous bead of structural silicone (Dow Corning 795 or Sika-228) forms the secondary weatherproof bond between glass and frame. Third, all perimeter joints and slab interfaces are sealed with weather-grade polysulfide or silicone. Unitized systems are superior in monsoon conditions as all seals are factory-applied under controlled conditions.",
-    stats: { metric: "3-Layer", label: "Weather Seal" }
+    answer: "A glass facade is made monsoon-proof by layered seals: gaskets forming the primary weather seal, structural or weather silicone at the glass-to-frame and perimeter joints, and drainage paths that carry water out. Installation quality decides the result, so installed glazing should be water-tested.",
+    stats: { metric: "Layered", label: "Weather Seals" }
   },
   {
     id: "item-9",
     question: "Which cities do you work in? Do you take projects outside Pune and Mumbai?",
     category: "Coverage",
     icon: <MapPin className="w-5 h-5 text-amber-700" />,
-    answer: "We operate from Pune and Mumbai — our office and fabrication unit are in Pune, and most of our sites are in Pune, PCMC, Mumbai, Navi Mumbai, Thane and Panvel. Projects elsewhere in India are considered case by case after a site visit, depending on scope and how we can supervise the work properly. Call +91 83692 33566 to discuss your location.",
-    stats: { metric: "Pune · Mumbai", label: "Operating Cities" }
+    answer: "Fine Glaze is based in Pune and Mumbai and takes facade projects across India, with our office and fabrication unit in Pune. All our project records to date are in Pune, PCMC, Mumbai, Navi Mumbai, Thane and Panvel. Call +91 83692 33566 to discuss your location.",
+    stats: { metric: "Pune · Mumbai", label: "Offices" }
   },
   {
     id: "item-10",
     question: "What maintenance does an aluminium glass facade need annually?",
     category: "Maintenance",
     icon: <Wrench className="w-5 h-5 text-amber-700" />,
-    answer: "An aluminium glass facade requires: Bi-annual full glass cleaning (interior and exterior). Annual sealant joint inspection and re-caulking of any compromised joints. Quarterly drain hole check to prevent water accumulation inside mullions. Every 3–5 years: structural silicone audit by an engineer. Every 5–7 years: aluminium touch-up or re-coating on exposed surfaces. Fine Glaze offers Annual Maintenance Contracts (AMC) that cover all of the above, starting from ₹15,000/year for small commercial properties.",
-    stats: { metric: "2×/year", label: "Glass Cleaning" }
+    answer: "An aluminium glass facade needs regular cleaning, an annual inspection of sealant joints and drainage, and prompt repair of cracked joints or loose gaskets. Coastal buildings benefit from inspection before and after each monsoon. Fine Glaze offers AMC covering inspection, cleaning, sealant repair, glass replacement and leakage investigation.",
+    stats: { metric: "Annual", label: "Inspection" }
   },
   {
     id: "item-11",
     question: "What glass thickness is required for high-rise facade in India?",
     category: "Engineering",
     icon: <Wind className="w-5 h-5 text-amber-700" />,
-    answer: "Glass thickness for high-rise facades in India is determined by wind load analysis per IS 875 (Part 3) and glass stress calculations per IS 2553. As a general guide: Up to 5 floors: 6mm toughened glass is often sufficient. 5–15 floors: 8mm toughened or 6+6mm DGU is standard. 15–30 floors: 10mm toughened or 8+8mm DGU with Low-E coating is typical. 30+ floors: 12mm toughened, often in DGU configuration, with structural silicone glazing for wind resistance. All glass specifications are confirmed by structural calculation — Fine Glaze provides certified engineering documents with every project.",
-    stats: { metric: "IS 875", label: "Design Standard" }
+    answer: "Glass thickness for a high-rise facade is set by wind load analysis to IS 875 Part 3 and glass stress calculations to IS 2553, not by a fixed rule. It depends on panel size, height, support and whether the unit is double glazed. The structural engineer confirms the specification.",
+    stats: { metric: "Calculated", label: "Per Project" }
   }
 ];
 
