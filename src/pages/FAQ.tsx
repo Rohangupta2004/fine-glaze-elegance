@@ -96,7 +96,7 @@ const faqDatabase = [
     category: "Coverage",
     icon: <MapPin className="w-5 h-5 text-lamp" />,
     answer: "Fine Glaze is based in Pune and Mumbai and takes facade projects across India, with our office and fabrication unit in Pune. All our project records to date are in Pune, PCMC, Mumbai, Navi Mumbai, Thane and Panvel. Call +91 83692 33566 to discuss your location.",
-    stats: { metric: "Pune · Mumbai", label: "Offices" }
+    stats: { metric: "Pune and Mumbai", label: "Offices" }
   },
   {
     id: "item-10",
@@ -173,7 +173,7 @@ export default function FAQ() {
                       </button>
                     </div>
                     <div className="border-l border-line pl-6">
-                      <div className="font-light text-4xl text-paper tracking-tight">{faq.stats.metric}</div>
+                      <div className="font-light text-3xl text-paper tracking-tight">{faq.stats.metric}</div>
                       <div className="text-sm text-mute mt-2">{faq.stats.label}</div>
                     </div>
                   </div>

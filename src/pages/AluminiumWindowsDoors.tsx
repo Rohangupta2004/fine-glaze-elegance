@@ -142,7 +142,7 @@ export default function AluminiumWindowsDoors() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-night/70 via-night/50 to-night/95" />
         <div className="relative z-10 fg-wrap pb-14 pt-32">
-          <p className="text-lamp text-xs font-bold mb-4">Fine Glaze · Pune &amp; Mumbai</p>
+          <p className="text-lamp text-xs font-bold mb-4">Fine Glaze, Pune &amp; Mumbai</p>
           <h1 className="text-3xl sm:text-5xl font-extrabold text-paper leading-tight max-w-3xl">
             Aluminium Windows &amp; Doors in Pune &amp; Mumbai
           </h1>
@@ -185,7 +185,7 @@ export default function AluminiumWindowsDoors() {
                 </div>
                 <p className="mt-3 text-sm text-muted-foreground">{SYSTEM_NOTES[s.id]?.what}</p>
                 <p className="mt-3 text-sm"><span className="font-semibold text-foreground">Best for:</span> <span className="text-muted-foreground">{SYSTEM_NOTES[s.id]?.bestFor}</span></p>
-                <p className="mt-2 text-xs text-muted-foreground">Price moves with: {s.drivers.join(" · ")}</p>
+                <p className="mt-2 text-xs text-muted-foreground">Price moves with: {s.drivers.join(", ")}</p>
               </article>
             ))}
           </div>

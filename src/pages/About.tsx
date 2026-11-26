@@ -123,7 +123,7 @@ const About = () => {
                   decoding="async"
                 />
                 <figcaption className="px-5 py-4 text-sm font-semibold">
-                  Our Store · Mohammed Wadi, Pune
+                  Our Store, Mohammed Wadi, Pune
                 </figcaption>
               </figure>
 

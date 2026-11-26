@@ -26,14 +26,14 @@ export const Footer = () => {
   return (
     <footer className="bg-night text-paper border-t border-line pb-[calc(4.5rem+env(safe-area-inset-bottom))] md:pb-0">
       {/* Main Footer */}
-      <div className="container mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+      <div className="fg-wrap py-16">
+        <div className="fg-foot-g">
           {/* Brand */}
-          <div className="space-y-5">
+          <div className="space-y-5 fg-foot-c">
             <div className="inline-block bg-paper p-4">
               <img src="/Logofg.webp" alt="Fine Glaze" width={1920} height={603} className="h-11 w-auto" />
             </div>
-            <p className="text-paper/70 text-sm leading-relaxed">
+            <p className="text-mute text-[15px] leading-relaxed">
               Facade design, fabrication, installation and maintenance from Pune and Mumbai.
               Our own fabrication unit is at {company.fabricationUnit.location}. Embassy REIT Best Vendor Performance 2024.
             </p>
@@ -52,14 +52,14 @@ export const Footer = () => {
           </div>
 
           {/* Quick Links */}
-          <div>
-            <h4 className="font-semibold text-base tracking-tight mb-5">Quick Links</h4>
+          <div className="fg-foot-c">
+            <h4 className="font-semibold text-lg tracking-tight mb-5 text-paper">Quick Links</h4>
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     to={link.href}
-                    className="text-paper/70 hover:text-lamp transition-colors text-sm"
+                    className="text-mute hover:text-lamp transition-colors text-[15px]"
                   >
                     {link.label}
                   </Link>
@@ -68,7 +68,7 @@ export const Footer = () => {
               <li>
                 <Link
                   to="/faq"
-                  className="text-paper/70 hover:text-lamp transition-colors text-sm"
+                  className="text-mute hover:text-lamp transition-colors text-[15px]"
                 >
                   FAQ
                 </Link>
@@ -77,14 +77,14 @@ export const Footer = () => {
           </div>
 
           {/* Services */}
-          <div>
-            <h4 className="font-semibold text-base tracking-tight mb-5">Our Services</h4>
+          <div className="fg-foot-c">
+            <h4 className="font-semibold text-lg tracking-tight mb-5 text-paper">Our Services</h4>
             <ul className="space-y-3">
               {services.map((service) => (
                 <li key={service.href}>
                   <Link
                     to={service.href}
-                    className="text-paper/70 hover:text-lamp transition-colors text-sm"
+                    className="text-mute hover:text-lamp transition-colors text-[15px]"
                   >
                     {service.label}
                   </Link>
@@ -94,8 +94,8 @@ export const Footer = () => {
           </div>
 
           {/* Contact Info */}
-          <div>
-            <h4 className="font-semibold text-base tracking-tight mb-5">Contact Us</h4>
+          <div className="fg-foot-c">
+            <h4 className="font-semibold text-lg tracking-tight mb-5 text-paper">Contact Us</h4>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <MapPin size={18} className="text-lamp mt-1 shrink-0" />
@@ -103,7 +103,7 @@ export const Footer = () => {
                   href="https://www.google.com/maps/search/?api=1&query=Fine+Glaze+A3+LW-13+Pragati+Serene+Mohammed+Wadi+Pune+411060"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-paper/70 hover:text-paper text-sm transition-colors"
+                  className="text-mute hover:text-paper text-[15px] transition-colors"
                 >
                   A3 LW-13, Pragati Serene Building, Sr.No.2, HDFC Bank Chowk, Plot B, Autadwadi Handewadi, Mahadev Wadi, Mohammed Wadi,
                   <br />
@@ -112,12 +112,12 @@ export const Footer = () => {
               </li>
               <li className="flex items-center gap-3">
                 <Phone size={18} className="text-lamp shrink-0" />
-                <span className="text-sm">
-                  <a href={telHref} className="text-paper/70 hover:text-paper transition-colors">
+                <span className="text-[15px]">
+                  <a href={telHref} className="text-mute hover:text-paper transition-colors">
                     {company.phone.mobileDisplay}
                   </a>
                   <br />
-                  <a href={officeTelHref} className="text-paper/70 hover:text-paper transition-colors">
+                  <a href={officeTelHref} className="text-mute hover:text-paper transition-colors">
                     {company.phone.officeDisplay}
                   </a>
                   <br />
@@ -125,7 +125,7 @@ export const Footer = () => {
                     href={`https://wa.me/${company.whatsapp}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-paper/70 hover:text-paper transition-colors"
+                    className="text-mute hover:text-paper transition-colors"
                   >
                     WhatsApp
                   </a>
@@ -135,7 +135,7 @@ export const Footer = () => {
                 <Mail size={18} className="text-lamp shrink-0" />
                 <a
                   href={`mailto:${company.email}`}
-                  className="text-paper/70 hover:text-paper text-sm transition-colors"
+                  className="text-mute hover:text-paper text-[15px] transition-colors"
                 >
                   {company.email}
                 </a>
@@ -147,12 +147,12 @@ export const Footer = () => {
 
       {/* Where we work: only places we actually operate */}
       <div className="border-t border-line py-5">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-3 text-xs text-mute">
+        <div className="fg-wrap">
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-3 text-[15px] text-mute">
             <span className="font-medium text-lamp shrink-0">
               Where we work
             </span>
-            <nav aria-label="Service areas" className="flex flex-wrap gap-x-3 gap-y-1 text-paper/70">
+            <nav aria-label="Service areas" className="flex flex-wrap gap-x-3 gap-y-1 text-mute">
               {[
                 { name: "Facade contractor in Pune", href: "/facade-contractor-pune" },
                 { name: "Mumbai", href: "/facade-contractor-mumbai" },
@@ -171,13 +171,13 @@ export const Footer = () => {
 
       {/* Bottom Bar */}
       <div className="border-t border-line">
-        <div className="container mx-auto px-4 py-5 flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="flex flex-col sm:flex-row items-center gap-3 text-sm text-mute">
+        <div className="fg-wrap py-5 flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="flex flex-col sm:flex-row items-center gap-3 text-[15px] text-mute">
             <p>© {new Date().getFullYear()} Fine Glaze. All rights reserved.</p>
             <span className="hidden sm:inline text-line">|</span>
             <p>GST No: 27BFJPG1853A1ZU</p>
           </div>
-          <div className="flex gap-6 text-sm">
+          <div className="flex gap-6 text-[15px]">
             <Link to="/privacy-policy" className="text-mute hover:text-lamp transition-colors">
               Privacy Policy
             </Link>

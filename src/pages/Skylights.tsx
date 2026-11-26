@@ -413,8 +413,8 @@ export default function Skylights() {
 
           <FadeIn delay={200} className="mt-12 text-center">
             <p className="text-mute text-sm">
-              Clients include <span className="text-paper font-semibold">Embassy REIT</span> ·{" "}
-              <span className="text-paper font-semibold">L&amp;T Construction</span> ·{" "}
+              Clients include <span className="text-paper font-semibold">Embassy REIT</span>,{" "}
+              <span className="text-paper font-semibold">L&amp;T Construction</span>,{" "}
               <span className="text-paper font-semibold">Jindal Stainless Limited</span>
             </p>
           </FadeIn>

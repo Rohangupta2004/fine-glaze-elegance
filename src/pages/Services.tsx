@@ -337,7 +337,7 @@ export default function Services() {
               </div>
               <div className="flex items-center gap-2 px-4 py-2 bg-paper/8 border border-line">
                 <Users size={15} className="text-[#C8782A]" />
-                <span className="text-xs text-paper/80 font-semibold">Embassy REIT · L&T Construction · Jindal Stainless</span>
+                <span className="text-xs text-paper/80 font-semibold">Embassy REIT, L&T Construction, Jindal Stainless</span>
               </div>
             </div>
 

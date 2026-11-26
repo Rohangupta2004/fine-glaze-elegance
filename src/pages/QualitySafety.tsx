@@ -183,7 +183,7 @@ export default function QualitySafety() {
               <p className="mt-2 text-sm text-mute">{company.isoStatus}. We will say so plainly until it is granted.</p>
             </div>
           </div>
-          <p className="mt-6 text-sm text-mute">Safety officer: Akash · oversees elevation work across all active sites.</p>
+          <p className="mt-6 text-sm text-mute">Safety officer: Akash, oversees elevation work across all active sites.</p>
         </div>
       </section>
 

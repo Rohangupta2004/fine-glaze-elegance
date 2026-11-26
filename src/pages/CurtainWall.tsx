@@ -339,7 +339,7 @@ export default function CurtainWall() {
                 <div className="absolute inset-0 bg-gradient-to-t from-night via-transparent to-transparent" />
                 <div className="absolute bottom-6 left-6 right-6 p-4 bg-night-2/90 border border-line">
                   <p className="text-lamp text-xs font-bold">Unitized Curtain Wall Specs</p>
-                  <p className="text-paper text-sm mt-1">6063-T6 Extrusions · 6mm + 12mm Argon + 6mm Low-E DGU · EPDM Gasket Seal</p>
+                  <p className="text-paper text-sm mt-1">6063-T6 Extrusions, 6mm + 12mm Argon + 6mm Low-E DGU, EPDM Gasket Seal</p>
                 </div>
               </div>
             </FadeIn>
