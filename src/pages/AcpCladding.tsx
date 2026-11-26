@@ -91,7 +91,7 @@ const SYSTEMS = [
   {
     num: "01",
     title: "PVDF Coated ACP",
-    desc: "Premium fluorocarbon (PVDF) coated panels with superior UV resistance and colour retention. The gold standard for external cladding — maintains appearance for 20+ years without fading or chalking.",
+    desc: "Premium fluorocarbon (PVDF) coated panels with superior UV resistance and colour retention. A common choice for external cladding, good colour retention outdoors; warranty terms come from the panel maker.",
     glass: "PVDF 70/30",
     wind: "FR mineral core",
     bestFor: "Towers, corporate HQs",
@@ -163,7 +163,7 @@ export default function AcpCladding() {
       { "@type": "City", name: "Mumbai" },
       { "@type": "City", name: "Navi Mumbai" },
     ],
-    description: "Aluminium Composite Panel cladding — PVDF, PE, wood-grain & mirror finishes. Fire-retardant FR grade panels from approved brands such as Alubond. Manufacturer colour warranty up to 20 years on PVDF grades.",
+    description: "Aluminium Composite Panel cladding — PVDF, PE, wood-grain & mirror finishes. Fire-retardant FR grade panels from approved brands such as Alubond. PVDF grades carry the panel maker's colour warranty.",
   };
 
   const breadcrumbSchema = {
@@ -193,7 +193,7 @@ export default function AcpCladding() {
         name: "Is ACP cladding fire safe?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "We exclusively use FR (Fire Retardant) grade ACP for external cladding. FR panels have a mineral-filled core that limits flame spread and meets NBC (National Building Code) fire safety requirements. PE core panels are only used for interiors.",
+          text: "ACP cladding is fire safe only when the core and assembly suit the building. Fire-retardant mineral-core panels are the usual choice for external cladding, and Fine Glaze procures them from approved brands. Confirm the core and test documents with your consultant.",
         },
       },
       {
@@ -201,7 +201,7 @@ export default function AcpCladding() {
         name: "How much does ACP cladding cost per sq ft in India?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "PE coated ACP starts at ₹90/sq ft for interiors. PVDF coated panels range from ₹180–₹350/sq ft. Wood-grain and stone finishes cost ₹220–₹400/sq ft. Prices include panel, sub-frame, and installation.",
+          text: "ACP cladding cost depends on panel brand, core, finish, sub-frame, height and access, so a fair figure needs drawings. Fine Glaze prepares BOQ-based quotations with the brand and finish specification stated.",
         },
       },
     ],
@@ -321,7 +321,7 @@ export default function AcpCladding() {
       {/* ════════════ CONVERSION QUICK OVERVIEW ════════════ */}
       <ServiceQuickOverview
         serviceTitle="ACP &amp; Metal Cladding Solutions"
-        whatWeProvide="FR-Grade (Fire Retardant NBC 2016 compliant) ACP panel fabrication & erection over MS/aluminium sub-framing. Mitred panel joinery, weather-seal routing & PVDF finish warranties."
+        whatWeProvide="ACP panel preparation (routing, grooving) at our Pisoli, Pune unit and erection over MS or aluminium sub-framing, with weather-sealed joints. Fire-retardant core options from approved brands."
         locationsServed={["Pune (Hinjewadi, Undri, Baner)", "Mumbai", "Thane", "Navi Mumbai (Mahape, MIDC)"]}
         bestProjectTypes={[
           "Corporate Campuses & Office Elevations",
@@ -452,17 +452,17 @@ export default function AcpCladding() {
               {[
                 {
                   icon: Shield,
-                  title: "Fire Safe",
-                  desc: "Only FR (Fire Retardant) grade ACP panels used for external cladding. NBC fire safety compliant.",
+                  title: "Fire-Retardant Options",
+                  desc: "FR-core ACP from approved brands for external cladding, confirmed against the project's fire requirements and consultant.",
                 },
                 {
                   icon: Clock,
-                  title: "Fast Install",
-                  desc: "Lightweight panels install 3x faster than natural stone. Minimal scaffolding time.",
+                  title: "Lightweight Panels",
+                  desc: "Lightweight panels mean lighter sub-frames and a shorter installation sequence than heavy cladding.",
                 },
                 {
                   icon: Award,
-                  title: "Trusted Brands",
+                  title: "Approved Brands",
                   desc: "Panels from approved brands such as Alubond — or strictly from your project's approved vendor list, with mill and test certificates.",
                 },
                 {
@@ -539,7 +539,7 @@ export default function AcpCladding() {
             <div>
               <p className="text-white/60 text-sm uppercase tracking-widest mb-2">Our Promise</p>
               <p className="text-white text-xl md:text-3xl font-bold max-w-xl">
-                From CNC routing to final sealant — every step done in-house for a flawless finish.
+                Panel routing at our own unit in Pisoli, Pune, shop drawings prepared in-house, and silicone-sealed joints on site.
               </p>
             </div>
           </div>
@@ -621,11 +621,11 @@ export default function AcpCladding() {
               />
               <FAQItem
                 q="Is ACP cladding fire safe?"
-                a="We exclusively use FR (Fire Retardant) grade ACP for external cladding. FR panels have a mineral-filled core that limits flame spread and meets NBC (National Building Code) fire safety requirements. PE core panels are only used for interiors."
+                a="ACP cladding is fire safe only when the core and assembly suit the building. Fire-retardant mineral-core panels are the usual choice for external cladding, and Fine Glaze procures them from approved brands. Confirm the core and test documents with your consultant."
               />
               <FAQItem
                 q="How much does ACP cladding cost per sq ft in India?"
-                a="PE coated ACP starts at ₹90/sq ft for interiors. PVDF coated panels range from ₹180–₹350/sq ft. Wood-grain and stone finishes cost ₹220–₹400/sq ft. Prices include panel, sub-frame, and installation."
+                a="ACP cladding cost depends on panel brand, core, finish, sub-frame, height and access, so a fair figure needs drawings. Fine Glaze prepares BOQ-based quotations with the brand and finish specification stated."
               />
               <FAQItem
                 q="How long does PVDF ACP last?"
