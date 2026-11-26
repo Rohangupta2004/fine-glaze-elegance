@@ -36,9 +36,9 @@ export default function AluminiumFacadeMumbai() {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      { "@type": "Question", "name": "What aluminium coating is best for Mumbai coastal environment?", "acceptedAnswer": { "@type": "Answer", "text": "PVDF coating at 25+ microns is the standard for coastal Mumbai. For buildings within 1 km of the seafront, Fine Glaze additionally recommends marine-grade anodising (AA25 class) as a base treatment before PVDF coating." } },
-      { "@type": "Question", "name": "What is thermal break aluminium and why is it important in Mumbai?", "acceptedAnswer": { "@type": "Answer", "text": "Thermal break aluminium uses a polyamide barrier between inner and outer sections, reducing heat transfer by up to 75%. In Mumbai, thermally broken windows reduce AC load by 20-30%, yielding significant long-term energy savings." } },
-      { "@type": "Question", "name": "Does Fine Glaze supply and install aluminium windows in Mumbai?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Fine Glaze provides full supply and installation for aluminium windows, doors, and louvres in Mumbai. We handle glass supply, hardware, and weather sealing as part of a complete package." } },
+      { "@type": "Question", "name": "What aluminium coating is best for Mumbai coastal environment?", "acceptedAnswer": { "@type": "Answer", "text": "For coastal Mumbai, designers usually choose anodising or a high-performance coating such as PVDF, because salty air and moisture wear ordinary finishes faster. The class and thickness should come from the project specification and supplier data." } },
+      { "@type": "Question", "name": "What is thermal break aluminium and why is it important in Mumbai?", "acceptedAnswer": { "@type": "Answer", "text": "Thermal break aluminium has a polyamide barrier between the inner and outer sections of the frame, which slows heat transfer through the frame. It can help comfort and cooling load, with the benefit depending on the full window and glass." } },
+      { "@type": "Question", "name": "Does Fine Glaze supply and install aluminium windows in Mumbai?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Fine Glaze takes supply and installation of aluminium windows, doors and louvers in Mumbai, covering glass, hardware and weather sealing as part of one scope. Our Mumbai records include Leela Hotel and Leela Business Park." } },
     ]
   };
 
@@ -69,7 +69,7 @@ export default function AluminiumFacadeMumbai() {
             <h1 className="text-3xl md:text-4xl font-bold mb-4">
               Aluminium Facade <span className="text-gradient-gold">Contractor in Mumbai</span>
             </h1>
-            <p className="text-lg text-white/80 mb-8">Fine Glaze provides marine-grade aluminium facade systems in Mumbai, including thermally broken aluminium windows and doors, sun louvres, spandrel cladding, and aluminium composite panel systems. Every Mumbai aluminium facade installation is engineered for high humidity, saline air, and extreme monsoon rainfall.</p>
+            <p className="text-lg text-white/80 mb-8">Fine Glaze supplies and installs aluminium facade elements in Mumbai: windows and doors, sun louvers and ACP cladding. Drawings are prepared in-house before fabrication.</p>
             <div className="flex gap-4">
               <Link to="/contact">
                 <Button size="lg" className="bg-amber-600 hover:bg-amber-700">Book a call</Button>
@@ -94,21 +94,21 @@ export default function AluminiumFacadeMumbai() {
       <section className="py-20">
         <div className="container mx-auto px-4 max-w-5xl space-y-6">
           
-          <h2 className="text-3xl font-bold">Marine-Grade Aluminium Facades for Mumbai</h2>
+          <h2 className="text-3xl font-bold">Aluminium Facades for Mumbai</h2>
           <p className="text-muted-foreground">
-            Aluminium is the material of choice for Mumbai's coastal facade environment — lightweight, naturally corrosion-resistant, and highly recyclable. However, standard aluminium systems are not sufficient for Mumbai's saline coastal air. Fine Glaze uses <strong>anodized or PVDF-coated aluminium extrusions</strong> with minimum 25-micron coating thickness for all Mumbai coastal projects, providing 25+ year service life even 100 metres from the seafront.
+            Aluminium is widely used on coastal facades because it is light and resists corrosion better than many metals. In salty coastal air, finish matters: as general guidance, designers there specify anodised or high-performance powder or PVDF-coated extrusions and corrosion-resistant hardware, with the coating class set by the project specification.
           </p>
           <p className="text-muted-foreground mt-4">
-            Our Mumbai aluminium facade services include: <strong>thermally broken casement and sliding windows</strong> for energy-efficient residential and commercial buildings; <strong>aluminium louvre systems</strong> for natural ventilation and solar shading; <strong>aluminium spandrel panels</strong> for seamless curtain wall integration; and <strong>aluminium soffit and fascia systems</strong> for retail and hospitality interiors.
+            Our aluminium facade services in Mumbai include <strong>casement and sliding windows</strong> for residential and commercial buildings, <strong>aluminium louver systems</strong> for ventilation and solar shading, <strong>aluminium cladding and ACP</strong> for elevations, and <strong>canopies and fascia</strong> for retail and hospitality entrances.
           </p>
           <p className="text-muted-foreground mt-4">
-            Notable Mumbai aluminium facade projects by Fine Glaze include the Leela Hotel facade programme, Embassy 247 curtain wall with aluminium spandrel panels, and multiple premium residential towers in Worli and Lower Parel. We work with systems from YKK AP, Schuco, Aluprof, and Technal for international brand specifications.
+            Our documented Mumbai aluminium work includes aluminium louvers across all floors at Leela Business Park, Andheri East, fixed glass and openable windows at Leela Hotel, Andheri East, and multi-track sliding windows at the Samundra Tarang terrace enclosure, Dadar West.
           </p>
           <p className="text-muted-foreground mt-4">
-            For Mumbai residential developers, Fine Glaze offers competitive aluminium window and door packages with full supply and installation. Our standard Mumbai residential specification uses aluminium sliding windows with EPDM pile seals and stainless steel hardware, sized to resist Mumbai's monsoon-driven wind-driven rain at 50 mm/hour rainfall intensity.
+            For residential developers and owners, we quote aluminium windows and doors on a supply-and-install basis against the project specification. Extrusions come from major Indian mills, finished to spec, and hardware comes from major approved brands.
           </p>
           <p className="text-muted-foreground mt-4">
-            Fine Glaze's aluminium facade team is experienced in working within Mumbai's challenging logistics environment — managing material movements in narrow streets, crane restrictions, and tight site access in the central business districts of Andheri, BKC, Lower Parel, and Nariman Point.
+            Material movement on tight Mumbai sites is planned per project, covering access, hoisting and delivery windows agreed with the site team.
           </p>
     
         </div>
@@ -119,12 +119,12 @@ export default function AluminiumFacadeMumbai() {
         <div className="container mx-auto px-4 max-w-5xl">
           <h2 className="text-3xl font-bold mb-10 text-center">What We Offer</h2>
           <div className="grid md:grid-cols-2 gap-4">
-              <div key="PVDF-Coated Extrusions 25+ micron" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">PVDF-Coated Extrusions 25+ micron</span></div>
-              <div key="Thermal Break Technology" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Thermal Break Technology</span></div>
-              <div key="Marine Grade Anodising" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Marine Grade Anodising</span></div>
-              <div key="Schuco & YKK AP Systems" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Schuco & YKK AP Systems</span></div>
-              <div key="Monsoon-Tested Weatherseals" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Monsoon-Tested Weatherseals</span></div>
-              <div key="Leela Hotel Reference" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Leela Hotel Reference</span></div>
+              <div key="Anodised or Coated Extrusions" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Anodised or Coated Extrusions</span></div>
+              <div key="Thermal Break Options" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Thermal Break Options</span></div>
+              <div key="Finish to Project Spec" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Finish to Project Spec</span></div>
+              <div key="System Options to Specification" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">System Options to Specification</span></div>
+              <div key="Weatherseals and Drainage Detailing" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Weatherseals and Drainage Detailing</span></div>
+              <div key="Leela Hotel and Leela Business Park Records" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Leela Hotel and Leela Business Park Records</span></div>
           </div>
         </div>
       </section>
@@ -136,15 +136,15 @@ export default function AluminiumFacadeMumbai() {
           <div className="space-y-6">
             <div className="bg-background rounded-xl p-6 shadow-sm">
               <h3 className="text-lg font-bold mb-2">What aluminium coating is best for Mumbai coastal environment?</h3>
-              <p className="text-muted-foreground">PVDF coating at 25+ microns is the standard for coastal Mumbai. For buildings within 1 km of the seafront, Fine Glaze additionally recommends marine-grade anodising (AA25 class) as a base treatment before PVDF coating.</p>
+              <p className="text-muted-foreground">For coastal Mumbai, designers usually choose anodising or a high-performance coating such as PVDF, because salty air and moisture wear ordinary finishes faster. The class and thickness should come from the project specification and supplier data.</p>
             </div>
             <div className="bg-background rounded-xl p-6 shadow-sm">
               <h3 className="text-lg font-bold mb-2">What is thermal break aluminium and why is it important in Mumbai?</h3>
-              <p className="text-muted-foreground">Thermal break aluminium uses a polyamide barrier between inner and outer sections, reducing heat transfer by up to 75%. In Mumbai, thermally broken windows reduce AC load by 20-30%, yielding significant long-term energy savings.</p>
+              <p className="text-muted-foreground">Thermal break aluminium has a polyamide barrier between the inner and outer sections of the frame, which slows heat transfer through the frame. It can help comfort and cooling load, with the benefit depending on the full window and glass.</p>
             </div>
             <div className="bg-background rounded-xl p-6 shadow-sm">
               <h3 className="text-lg font-bold mb-2">Does Fine Glaze supply and install aluminium windows in Mumbai?</h3>
-              <p className="text-muted-foreground">Yes. Fine Glaze provides full supply and installation for aluminium windows, doors, and louvres in Mumbai. We handle glass supply, hardware, and weather sealing as part of a complete package.</p>
+              <p className="text-muted-foreground">Yes. Fine Glaze takes supply and installation of aluminium windows, doors and louvers in Mumbai, covering glass, hardware and weather sealing as part of one scope. Our Mumbai records include Leela Hotel and Leela Business Park.</p>
             </div>
           </div>
         </div>

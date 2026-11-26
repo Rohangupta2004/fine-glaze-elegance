@@ -36,9 +36,9 @@ export default function GlassRailingPune() {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      { "@type": "Question", "name": "What is the cost of glass railing in Pune?", "acceptedAnswer": { "@type": "Answer", "text": "Glass railing in Pune costs Rs 800-2500 per running foot depending on system type (frameless vs post system), glass thickness, hardware finish, and site conditions. Frameless systems start from Rs 1200/running ft installed." } },
-      { "@type": "Question", "name": "Is toughened glass railing safe for balconies in Pune?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, when properly specified. Fine Glaze uses toughened + laminated glass compliant with IS:2553 Part 1. Even if broken, the PVB interlayer holds glass in place, preventing shard fall risk — critical for elevated balconies." } },
-      { "@type": "Question", "name": "Do glass railings need maintenance in Pune?", "acceptedAnswer": { "@type": "Answer", "text": "Glass railings are low-maintenance. Regular cleaning with mild detergent is sufficient. Stainless steel hardware should be checked annually. Sealant joints at the base channel should be re-done every 7-10 years as preventive maintenance." } },
+      { "@type": "Question", "name": "What is the cost of glass railing in Pune?", "acceptedAnswer": { "@type": "Answer", "text": "Glass railing cost in Pune depends on the system (frameless or post), glass thickness, hardware finish and site conditions, so it is priced per running foot against drawings. Fine Glaze prepares BOQ-based quotations." } },
+      { "@type": "Question", "name": "Is toughened glass railing safe for balconies in Pune?", "acceptedAnswer": { "@type": "Answer", "text": "Toughened glass railing is widely used on balconies when the glass build-up, supports and anchorage are designed for the load. Laminated glass adds a layer that helps hold broken pieces in place. We confirm the specification per project." } },
+      { "@type": "Question", "name": "Do glass railings need maintenance in Pune?", "acceptedAnswer": { "@type": "Answer", "text": "Glass railings need little upkeep: regular cleaning with mild detergent, plus periodic checks of fittings, anchors and sealant joints at the base channel. Replace worn sealant as part of routine maintenance." } },
     ]
   };
 
@@ -68,7 +68,7 @@ export default function GlassRailingPune() {
             <h1 className="text-3xl md:text-4xl font-bold mb-4">
               Glass Railing <span className="text-gradient-gold">Contractor in Pune</span>
             </h1>
-            <p className="text-lg text-white/80 mb-8">Fine Glaze installs premium frameless and semi-frameless glass railing systems across Pune for residential apartments, commercial offices, hotels, shopping centres, and public spaces. Our glass railings combine toughened safety glass with precision-engineered stainless steel fittings.</p>
+            <p className="text-lg text-white/80 mb-8">Fine Glaze installs frameless and semi-frameless glass railing systems in Pune for apartments, offices, hotels and commercial buildings, using toughened glass and stainless steel fittings.</p>
             <div className="flex gap-4">
               <Link to="/contact">
                 <Button size="lg" className="bg-amber-600 hover:bg-amber-700">Book a call</Button>
@@ -93,21 +93,21 @@ export default function GlassRailingPune() {
       <section className="py-20">
         <div className="container mx-auto px-4 max-w-5xl space-y-6">
           
-          <h2 className="text-3xl font-bold">Premium Glass Railings for Pune's Best Buildings</h2>
+          <h2 className="text-3xl font-bold">Glass Railings in Pune</h2>
           <p className="text-muted-foreground">
-            Glass railings are the defining feature of premium apartments, penthouses, and commercial lobbies across Pune's upscale developments. Fine Glaze offers multiple system types: fully frameless glass railings with concealed base channels, handrail-top-fix systems for balconies, stainless steel post systems with glass infill, and structural glass balustrades.
+            Glass railings are common on apartment balconies, staircases, terraces and commercial lobbies. Fine Glaze offers frameless railings with base channels, post systems with glass infill, and handrail-supported systems, and we choose the system with you against the drawings and the load requirements.
           </p>
           <p className="text-muted-foreground mt-4">
-            Safety is paramount. All our glass railing installations use <strong>toughened + laminated glass (10mm toughened + 10mm toughened with PVB interlayer)</strong> or 12mm heat-soaked toughened glass, compliant with IS:2553 and NBC 2016 fall protection requirements. Every installation is load-tested to 0.74 kN/m horizontal thrust.
+            Railing glass is normally toughened or toughened laminated, and its thickness, supports and anchorage come from the structural check for the project. Confirm the glass specification against IS 2553 and the consultant's requirements before ordering.
           </p>
           <p className="text-muted-foreground mt-4">
-            We serve <strong>residential projects</strong> in Wakad, Baner, Kharadi, Viman Nagar, Koregaon Park, and Undri, as well as <strong>commercial projects</strong> in Hinjewadi IT Park, Magarpatta Cybercity, and Pune's hospitality sector. Our stainless steel fittings are available in mirror polish, satin finish, and PVD gold/black coating.
+            We take residential and commercial railing projects across Pune and PCMC. Our documented railing work includes SS glass railings at Nirmaann Estrellaa in Pune and shaft railings at Salsette-27 and Jindal House in Mumbai. Stainless steel fittings are available in common finishes.
           </p>
           <p className="text-muted-foreground mt-4">
-            Fine Glaze handles complete glass railing project execution — from site measurement and structural check, glass procurement (toughened/laminated to exact sizes), hardware supply and fabrication, installation, and silicone joint finishing. Our Pune team can typically complete a standard apartment balcony railing installation in 1-2 days per floor.
+            Fine Glaze handles the full railing scope: site measurement and structural check, glass procurement to exact sizes, hardware supply and fabrication, installation and silicone joint finishing.
           </p>
           <p className="text-muted-foreground mt-4">
-            For Pune developers and builders, we offer competitive rates for bulk glass railing contracts across multiple floors or multiple buildings in a project. Our team has completed glass railing installations on Pune projects of up to 30 floors with consistent quality and finish standards across all levels.
+            For developers with multiple floors or buildings, we can quote a bulk package. Send drawings and quantities for a BOQ-based quotation.
           </p>
     
         </div>
@@ -120,10 +120,10 @@ export default function GlassRailingPune() {
           <div className="grid md:grid-cols-2 gap-4">
               <div key="Frameless Glass Railings" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Frameless Glass Railings</span></div>
               <div key="Toughened + Laminated Glass" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Toughened + Laminated Glass</span></div>
-              <div key="SS 316 Marine Grade Fittings" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">SS 316 Marine Grade Fittings</span></div>
+              <div key="Stainless Steel Fittings" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Stainless Steel Fittings</span></div>
               <div key="Balcony & Staircase Systems" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Balcony & Staircase Systems</span></div>
-              <div key="IS:2553 Compliant" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">IS:2553 Compliant</span></div>
-              <div key="PVD Coated Hardware Options" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">PVD Coated Hardware Options</span></div>
+              <div key="Glass Specified to IS 2553" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Glass Specified to IS 2553</span></div>
+              <div key="Hardware Finish Options" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Hardware Finish Options</span></div>
           </div>
         </div>
       </section>
@@ -135,15 +135,15 @@ export default function GlassRailingPune() {
           <div className="space-y-6">
             <div className="bg-background rounded-xl p-6 shadow-sm">
               <h3 className="text-lg font-bold mb-2">What is the cost of glass railing in Pune?</h3>
-              <p className="text-muted-foreground">Glass railing in Pune costs Rs 800-2500 per running foot depending on system type (frameless vs post system), glass thickness, hardware finish, and site conditions. Frameless systems start from Rs 1200/running ft installed.</p>
+              <p className="text-muted-foreground">Glass railing cost in Pune depends on the system (frameless or post), glass thickness, hardware finish and site conditions, so it is priced per running foot against drawings. Fine Glaze prepares BOQ-based quotations.</p>
             </div>
             <div className="bg-background rounded-xl p-6 shadow-sm">
               <h3 className="text-lg font-bold mb-2">Is toughened glass railing safe for balconies in Pune?</h3>
-              <p className="text-muted-foreground">Yes, when properly specified. Fine Glaze uses toughened + laminated glass compliant with IS:2553 Part 1. Even if broken, the PVB interlayer holds glass in place, preventing shard fall risk — critical for elevated balconies.</p>
+              <p className="text-muted-foreground">Toughened glass railing is widely used on balconies when the glass build-up, supports and anchorage are designed for the load. Laminated glass adds a layer that helps hold broken pieces in place. We confirm the specification per project.</p>
             </div>
             <div className="bg-background rounded-xl p-6 shadow-sm">
               <h3 className="text-lg font-bold mb-2">Do glass railings need maintenance in Pune?</h3>
-              <p className="text-muted-foreground">Glass railings are low-maintenance. Regular cleaning with mild detergent is sufficient. Stainless steel hardware should be checked annually. Sealant joints at the base channel should be re-done every 7-10 years as preventive maintenance.</p>
+              <p className="text-muted-foreground">Glass railings need little upkeep: regular cleaning with mild detergent, plus periodic checks of fittings, anchors and sealant joints at the base channel. Replace worn sealant as part of routine maintenance.</p>
             </div>
           </div>
         </div>

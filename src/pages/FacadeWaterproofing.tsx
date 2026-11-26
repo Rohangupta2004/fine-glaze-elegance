@@ -36,9 +36,9 @@ export default function FacadeWaterproofing() {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      { "@type": "Question", "name": "How much does facade leak repair cost in India?", "acceptedAnswer": { "@type": "Answer", "text": "Facade sealant remediation costs Rs 150-400 per running metre for standard joint re-sealing, depending on joint depth, access difficulty, and sealant specification. A comprehensive waterproofing programme for a 10-storey building typically costs Rs 5-20 lakh." } },
-      { "@type": "Question", "name": "How often should facade sealant be replaced in India?", "acceptedAnswer": { "@type": "Answer", "text": "Silicone facade sealants typically last 15-20 years under normal conditions. In coastal Mumbai, 10-12 years is more realistic. For Pune buildings, a full sealant inspection every 7-10 years with replacement as needed is recommended." } },
-      { "@type": "Question", "name": "Can Fine Glaze repair leaking curtain wall in an occupied building?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Fine Glaze regularly performs curtain wall sealant repair in occupied buildings. Our team uses low-odour, fast-curing sealants, works in section-by-section sequence to minimise disruption, and can schedule critical work in evenings or weekends to avoid business disruption." } },
+      { "@type": "Question", "name": "How much does facade leak repair cost in India?", "acceptedAnswer": { "@type": "Answer", "text": "Facade leak repair cost depends on joint length, access method, sealant specification and how much glass or gasket work is needed, so it needs an inspection first. Fine Glaze quotes after investigating the leak." } },
+      { "@type": "Question", "name": "How often should facade sealant be replaced in India?", "acceptedAnswer": { "@type": "Answer", "text": "Facade sealant life depends on the product, exposure and workmanship, so there is no single replacement date. Inspect joints at least annually and before each monsoon, and replace sealant that has cracked, hardened or lost adhesion." } },
+      { "@type": "Question", "name": "Can Fine Glaze repair leaking curtain wall in an occupied building?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Curtain wall sealant repair can be done in an occupied building by working section by section and agreeing access and timing with the building management. We plan the sequence per site." } },
     ]
   };
 
@@ -69,7 +69,7 @@ export default function FacadeWaterproofing() {
             <h1 className="text-3xl md:text-4xl font-bold mb-4">
               Facade Waterproofing <span className="text-gradient-gold">& Leak Repair</span>
             </h1>
-            <p className="text-lg text-white/80 mb-8">Facade leakage is the most common complaint reported by building owners and facility managers in India. Fine Glaze specialises in facade waterproofing, leak diagnosis, and sealant remediation for curtain walls, structural glazing, ACP cladding, and aluminium window systems.</p>
+            <p className="text-lg text-white/80 mb-8">Facade leakage is a common complaint from building owners and facility managers. Fine Glaze handles leak investigation, sealant replacement and joint repair on curtain walls, structural glazing, ACP cladding and aluminium window systems.</p>
             <div className="flex gap-4">
               <Link to="/contact">
                 <Button size="lg" className="bg-amber-600 hover:bg-amber-700">Book a call</Button>
@@ -94,9 +94,9 @@ export default function FacadeWaterproofing() {
       <section className="py-20">
         <div className="container mx-auto px-4 max-w-5xl space-y-6">
           
-          <h2 className="text-3xl font-bold">Why Facade Leakage Happens — and How to Fix It</h2>
+          <h2 className="text-3xl font-bold">Why Facade Leakage Happens and How to Fix It</h2>
           <p className="text-muted-foreground">
-            Water ingress through building facades causes significant damage to interiors, false ceilings, MEP installations, and even structural steel. In India's high-rainfall climate — particularly in Mumbai (2,400mm/year) and Pune (700mm/year) — facade waterproofing is essential.
+            Water entering through a facade can damage interiors, false ceilings and building services. Heavy monsoon rain in Mumbai and Pune makes sealant, gasket and drainage condition important to check before every rainy season. This is general guidance.
           </p>
           <h3 className="text-xl font-bold mt-8 mb-3">Common Causes of Facade Leakage in India</h3>
           <ul className="list-disc list-inside text-muted-foreground space-y-2">
@@ -108,10 +108,10 @@ export default function FacadeWaterproofing() {
           </ul>
           <h3 className="text-xl font-bold mt-8 mb-3">Fine Glaze Waterproofing Repair Process</h3>
           <p className="text-muted-foreground">
-            Fine Glaze uses a systematic approach: (1) Hose test diagnosis per AAMA 501.2 to locate all active leak points; (2) Core sampling of sealant joints to assess adhesion; (3) Detailed remediation specification; (4) Sealant removal and surface preparation; (5) New sealant application using Dow Corning, Sika, or Master Builders products; (6) Post-remediation water test to verify weather-tight performance per AAMA standards before sign-off.
+            Our approach to a leak is: (1) trace the leak points on site, including a water test where needed; (2) inspect sealant adhesion and joint condition; (3) agree a repair scope; (4) remove failed sealant and prepare the surfaces; (5) apply new sealant from approved manufacturers such as DOWSIL or equivalents; (6) re-test the repaired area before sign-off.
           </p>
           <p className="text-muted-foreground mt-4">
-            Fine Glaze offers AMC-based facade waterproofing programmes that include annual inspection of all sealant joints, pre-monsoon repair of any deteriorating sealant, and priority callout response for active leaks during the monsoon season. Proactive AMC programmes significantly reduce the risk of interior water damage and extend facade sealant life.
+            Fine Glaze also offers AMC-based programmes with periodic inspection of sealant joints and drainage, repair of deteriorating joints before the monsoon, and a written condition report. We also handle facades we did not install.
           </p>
     
         </div>
@@ -122,12 +122,12 @@ export default function FacadeWaterproofing() {
         <div className="container mx-auto px-4 max-w-5xl">
           <h2 className="text-3xl font-bold mb-10 text-center">What We Offer</h2>
           <div className="grid md:grid-cols-2 gap-4">
-              <div key="Hose Test Leak Diagnosis" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Hose Test Leak Diagnosis</span></div>
-              <div key="Sealant Core Sampling" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Sealant Core Sampling</span></div>
+              <div key="Water Test Leak Tracing" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Water Test Leak Tracing</span></div>
+              <div key="Sealant Adhesion Check" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Sealant Adhesion Check</span></div>
               <div key="Joint-by-Joint Remediation" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Joint-by-Joint Remediation</span></div>
-              <div key="Dow Corning & Sika Sealants" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Dow Corning & Sika Sealants</span></div>
+              <div key="Approved Sealant Brands" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Approved Sealant Brands</span></div>
               <div key="Post-Repair Water Testing" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Post-Repair Water Testing</span></div>
-              <div key="Annual AMC Programmes" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Annual AMC Programmes</span></div>
+              <div key="AMC Programmes" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">AMC Programmes</span></div>
           </div>
         </div>
       </section>
@@ -139,15 +139,15 @@ export default function FacadeWaterproofing() {
           <div className="space-y-6">
             <div className="bg-background rounded-xl p-6 shadow-sm">
               <h3 className="text-lg font-bold mb-2">How much does facade leak repair cost in India?</h3>
-              <p className="text-muted-foreground">Facade sealant remediation costs Rs 150-400 per running metre for standard joint re-sealing, depending on joint depth, access difficulty, and sealant specification. A comprehensive waterproofing programme for a 10-storey building typically costs Rs 5-20 lakh.</p>
+              <p className="text-muted-foreground">Facade leak repair cost depends on joint length, access method, sealant specification and how much glass or gasket work is needed, so it needs an inspection first. Fine Glaze quotes after investigating the leak.</p>
             </div>
             <div className="bg-background rounded-xl p-6 shadow-sm">
               <h3 className="text-lg font-bold mb-2">How often should facade sealant be replaced in India?</h3>
-              <p className="text-muted-foreground">Silicone facade sealants typically last 15-20 years under normal conditions. In coastal Mumbai, 10-12 years is more realistic. For Pune buildings, a full sealant inspection every 7-10 years with replacement as needed is recommended.</p>
+              <p className="text-muted-foreground">Facade sealant life depends on the product, exposure and workmanship, so there is no single replacement date. Inspect joints at least annually and before each monsoon, and replace sealant that has cracked, hardened or lost adhesion.</p>
             </div>
             <div className="bg-background rounded-xl p-6 shadow-sm">
               <h3 className="text-lg font-bold mb-2">Can Fine Glaze repair leaking curtain wall in an occupied building?</h3>
-              <p className="text-muted-foreground">Yes. Fine Glaze regularly performs curtain wall sealant repair in occupied buildings. Our team uses low-odour, fast-curing sealants, works in section-by-section sequence to minimise disruption, and can schedule critical work in evenings or weekends to avoid business disruption.</p>
+              <p className="text-muted-foreground">Yes. Curtain wall sealant repair can be done in an occupied building by working section by section and agreeing access and timing with the building management. We plan the sequence per site.</p>
             </div>
           </div>
         </div>

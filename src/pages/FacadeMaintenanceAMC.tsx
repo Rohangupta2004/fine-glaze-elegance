@@ -27,9 +27,9 @@ export default function FacadeMaintenanceAMC() {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      { "@type": "Question", "name": "What is included in a facade AMC?", "acceptedAnswer": { "@type": "Answer", "text": "A Fine Glaze facade AMC typically includes: annual inspection of all glass, sealant joints, hardware, and drainage channels; pre-monsoon sealant repair and touch-up; glass cleaning (exterior); hardware lubrication and adjustment; minor repair of damaged or loose gaskets; and priority emergency callout response (24-48 hours) for monsoon-season leaks." } },
-      { "@type": "Question", "name": "How much does a facade AMC cost in India?", "acceptedAnswer": { "@type": "Answer", "text": "Facade AMC costs depend on building size, facade type, and access equipment requirements. Typical rates are Rs 15-40 per sq ft per year for curtain wall and structural glazing facades, and Rs 8-20 per sq ft per year for ACP and aluminium window facades. A detailed scope and pricing is provided after a free site assessment." } },
-      { "@type": "Question", "name": "How often should a building facade be professionally inspected?", "acceptedAnswer": { "@type": "Answer", "text": "Minimum annual inspection is recommended for all commercial building facades. For coastal buildings (Mumbai, Navi Mumbai) or buildings with structural glazing, bi-annual inspection (pre-monsoon and post-monsoon) is strongly recommended. Fine Glaze's AMC programme includes a written inspection report with photographic evidence after every visit." } },
+      { "@type": "Question", "name": "What is included in a facade AMC?", "acceptedAnswer": { "@type": "Answer", "text": "A facade AMC covers scheduled inspection of glass, sealants, cladding and drainage, with repair work agreed in the contract. Fine Glaze's scope covers periodic inspection with a written condition report, cleaning, sealant repair, glass replacement and leakage rectification." } },
+      { "@type": "Question", "name": "How much does a facade AMC cost in India?", "acceptedAnswer": { "@type": "Answer", "text": "Facade AMC cost depends on facade area and type, building height, access method, visit frequency and the repairs included, so there is no single rate. Fine Glaze prepares a quotation after reviewing the building and scope." } },
+      { "@type": "Question", "name": "How often should a building facade be professionally inspected?", "acceptedAnswer": { "@type": "Answer", "text": "A building facade should be inspected at least once a year. Coastal buildings and structural glazing facades benefit from two inspections a year, before and after the monsoon. This is general guidance, and Fine Glaze reports findings in writing." } },
     ]
   };
 
@@ -60,7 +60,7 @@ export default function FacadeMaintenanceAMC() {
               Facade AMC <span className="text-gradient-gold">Guide India</span>
             </h1>
             <p className="text-lg text-white/80 mb-8">
-              A facade Annual Maintenance Contract (AMC) is the most cost-effective way to protect your building's glass, sealant, and cladding systems — preventing expensive reactive repairs and maintaining property value. Fine Glaze provides comprehensive facade AMC programmes for buildings of all types in Pune and Mumbai.
+              A facade Annual Maintenance Contract (AMC) schedules inspection, cleaning and repair of a building's glass, sealant and cladding systems so problems are found before they cause leaks. Fine Glaze offers facade AMC for buildings in Pune and Mumbai.
             </p>
             <div className="flex gap-4">
               <Link to="/contact"><Button size="lg" className="bg-amber-600 hover:bg-amber-700">Book a call</Button></Link>
@@ -74,39 +74,21 @@ export default function FacadeMaintenanceAMC() {
       <section className="py-20">
         <div className="container mx-auto px-4 max-w-5xl space-y-6">
           <h2 className="text-3xl font-bold">Why Every Building Needs a Facade AMC</h2>
-          <p className="text-muted-foreground">Building facades are complex engineered systems that deteriorate gradually over time. Without regular professional inspection and maintenance, minor issues — a hairline sealant crack, a loose gasket, a blocked drainage channel — escalate into major water ingress events that damage interiors, disrupt tenants, and require expensive emergency repairs. A facade AMC prevents this cycle.</p>
-          <p className="text-muted-foreground mt-4">India's climate makes facade maintenance particularly critical. Mumbai's 2,400mm annual rainfall and saline coastal air accelerate sealant deterioration. Pune's thermal cycling (from 8°C winter nights to 42°C summer afternoons) stresses facade joints with constant expansion and contraction. Pre-monsoon inspection and repair is the single most important facade maintenance activity for any Indian building.</p>
+          <p className="text-muted-foreground">Building facades are engineered systems that age gradually. Without regular inspection, small issues such as a cracked sealant joint, a loose gasket or a blocked drainage path can grow into water ingress that damages interiors and disrupts tenants. A facade AMC schedules inspection and repair so these issues are found early.</p>
+          <p className="text-muted-foreground mt-4">India's climate makes facade upkeep important. Heavy monsoon rain and salty coastal air in Mumbai, and large daily and seasonal temperature swings in Pune, all stress sealants and joints. As general guidance, a pre-monsoon inspection and repair is the most valuable single maintenance activity for most Indian buildings.</p>
 
           <h2 className="text-3xl font-bold mt-10">Fine Glaze Facade AMC Scope</h2>
-          <p className="text-muted-foreground">A standard Fine Glaze facade AMC includes two annual visits (pre-monsoon April-May and post-monsoon November) covering:</p>
+          <p className="text-muted-foreground">Fine Glaze offers annual maintenance contracts for glazing, glass and cladding. The scope and visit frequency are agreed per building, and typically cover:</p>
           <ul className="list-disc list-inside text-muted-foreground space-y-2 mt-4">
-            <li><strong>Full facade visual inspection</strong> — all glass panels, sealant joints, capping, gaskets, drainage weep holes, anchor fixings, and hardware</li>
-            <li><strong>Written inspection report</strong> with photographic evidence, condition ratings, and recommended repairs prioritised by urgency</li>
-            <li><strong>Sealant repair</strong> — re-sealing of any deteriorating, cracked, or debonded sealant joints identified during inspection (up to a defined area per visit)</li>
-            <li><strong>Hardware inspection and lubrication</strong> — all operable windows, louvres, and doors checked for operation, adjusted, and lubricated</li>
-            <li><strong>Gasket and weatherseal check</strong> — replacement of any failed EPDM or TPE gaskets</li>
-            <li><strong>Drainage channel clearance</strong> — pressure-flush of all weep holes and drainage slots to maintain free drainage</li>
-            <li><strong>Priority emergency response</strong> — priority response for active leaks during monsoon season outside scheduled visits</li>
+            <li><strong>Periodic facade inspection</strong> with a written condition report</li>
+            <li><strong>Facade glass cleaning and restoration</strong></li>
+            <li><strong>Sealant re-application and joint repair</strong> where joints have cracked or lost adhesion</li>
+            <li><strong>Glass replacement and breakage response</strong></li>
+            <li><strong>Leakage investigation and rectification</strong></li>
           </ul>
 
-          <h2 className="text-3xl font-bold mt-10">Facade AMC Cost Benchmarks India</h2>
-          <div className="overflow-x-auto mt-4">
-            <table className="w-full border-collapse text-sm">
-              <thead>
-                <tr className="bg-muted">
-                  <th className="border border-border p-3 text-left font-semibold">Facade Type</th>
-                  <th className="border border-border p-3 text-left font-semibold">AMC Rate (per sq ft / year)</th>
-                  <th className="border border-border p-3 text-left font-semibold">Typical Annual Cost (1000 sq m)</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr><td className="border border-border p-3">Curtain Wall Glazing</td><td className="border border-border p-3">Rs 20–40</td><td className="border border-border p-3">Rs 2.1–4.3 lakh</td></tr>
-                <tr className="bg-muted/30"><td className="border border-border p-3">Structural Glazing (SSG)</td><td className="border border-border p-3">Rs 25–45</td><td className="border border-border p-3">Rs 2.7–4.8 lakh</td></tr>
-                <tr><td className="border border-border p-3">ACP Cladding</td><td className="border border-border p-3">Rs 8–18</td><td className="border border-border p-3">Rs 0.9–1.9 lakh</td></tr>
-                <tr className="bg-muted/30"><td className="border border-border p-3">Aluminium Windows</td><td className="border border-border p-3">Rs 10–20</td><td className="border border-border p-3">Rs 1.1–2.1 lakh</td></tr>
-              </tbody>
-            </table>
-          </div>
+          <h2 className="text-3xl font-bold mt-10">What Affects Facade AMC Cost</h2>
+          <p className="text-muted-foreground">AMC cost depends on the facade area and type (curtain wall, structural glazing, ACP or aluminium windows), building height, the access method needed, visit frequency and the scope of repairs included. Fine Glaze prepares a quotation after reviewing the building and the scope you want covered.</p>
         </div>
       </section>
 
@@ -114,7 +96,7 @@ export default function FacadeMaintenanceAMC() {
         <div className="container mx-auto px-4 max-w-5xl">
           <h2 className="text-3xl font-bold mb-10 text-center">What Our AMC Covers</h2>
           <div className="grid md:grid-cols-2 gap-4">
-            {["Bi-Annual Professional Inspection", "Pre-Monsoon Sealant Repair", "Hardware Lubrication & Adjustment", "Drainage Channel Clearance", "Gasket & Weatherseal Replacement", "Priority Monsoon Emergency Response"].map(f => (
+            {["Periodic Facade Inspection", "Written Condition Report", "Glass Cleaning and Restoration", "Sealant Re-application and Joint Repair", "Glass Replacement and Breakage Response", "Leakage Investigation and Rectification"].map(f => (
               <div key={f} className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">{f}</span></div>
             ))}
           </div>
@@ -125,9 +107,9 @@ export default function FacadeMaintenanceAMC() {
         <div className="container mx-auto px-4 max-w-4xl">
           <h2 className="text-3xl font-bold mb-10 text-center">Frequently Asked Questions</h2>
           <div className="space-y-6">
-            <div className="bg-background rounded-xl p-6 shadow-sm"><h3 className="text-lg font-bold mb-2">What is included in a facade AMC?</h3><p className="text-muted-foreground">A Fine Glaze facade AMC includes: annual inspection of all glass, sealant joints, hardware, and drainage; pre-monsoon sealant repair; glass cleaning; hardware lubrication and adjustment; minor gasket repairs; and priority emergency callout response (24-48 hours) for monsoon-season leaks.</p></div>
-            <div className="bg-background rounded-xl p-6 shadow-sm"><h3 className="text-lg font-bold mb-2">How much does a facade AMC cost in India?</h3><p className="text-muted-foreground">Facade AMC rates are Rs 15-40 per sq ft per year for curtain wall and structural glazing, and Rs 8-20 per sq ft per year for ACP and aluminium window facades. Detailed pricing is provided after a free site assessment.</p></div>
-            <div className="bg-background rounded-xl p-6 shadow-sm"><h3 className="text-lg font-bold mb-2">How often should a building facade be professionally inspected?</h3><p className="text-muted-foreground">Minimum annual inspection is recommended. For coastal buildings (Mumbai, Navi Mumbai) or structural glazing facades, bi-annual inspection (pre-monsoon and post-monsoon) is strongly recommended. Fine Glaze's AMC includes a written report with photographic evidence after every visit.</p></div>
+            <div className="bg-background rounded-xl p-6 shadow-sm"><h3 className="text-lg font-bold mb-2">What is included in a facade AMC?</h3><p className="text-muted-foreground">A facade AMC covers scheduled inspection of glass, sealants, cladding and drainage, with repair work agreed in the contract. Fine Glaze's scope covers periodic inspection with a written condition report, cleaning, sealant repair, glass replacement and leakage rectification.</p></div>
+            <div className="bg-background rounded-xl p-6 shadow-sm"><h3 className="text-lg font-bold mb-2">How much does a facade AMC cost in India?</h3><p className="text-muted-foreground">Facade AMC cost depends on facade area and type, building height, access method, visit frequency and the repairs included, so there is no single rate. Fine Glaze prepares a quotation after reviewing the building and scope.</p></div>
+            <div className="bg-background rounded-xl p-6 shadow-sm"><h3 className="text-lg font-bold mb-2">How often should a building facade be professionally inspected?</h3><p className="text-muted-foreground">A building facade should be inspected at least once a year. Coastal buildings and structural glazing facades benefit from two inspections a year, before and after the monsoon. This is general guidance, and Fine Glaze reports findings in writing.</p></div>
           </div>
         </div>
       </section>

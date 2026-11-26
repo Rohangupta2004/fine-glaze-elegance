@@ -36,9 +36,9 @@ export default function AcpCladdingPune() {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      { "@type": "Question", "name": "What is the cost of ACP cladding in Pune?", "acceptedAnswer": { "@type": "Answer", "text": "ACP cladding in Pune costs Rs 180-450 per sq ft installed, depending on panel brand, core type (PE vs FR), finish quality (polyester vs PVDF), and sub-frame complexity. Fine Glaze provides detailed BOQ-based quotations with brand specifications." } },
-      { "@type": "Question", "name": "Is FR-grade ACP mandatory in Pune buildings?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. As per NBC 2016 and Maharashtra Fire Safety regulations, buildings above 15 metres or G+2 floors must use FR ACP panels with A2 or B1 core classification for external cladding. Fine Glaze uses only certified FR panels." } },
-      { "@type": "Question", "name": "How long does ACP cladding installation take in Pune?", "acceptedAnswer": { "@type": "Answer", "text": "For a typical 3-4 storey commercial building (300-500 sq m), ACP cladding takes 2-3 weeks. Larger projects of 1000+ sq m take 4-6 weeks. Fabrication and site preparation run in parallel for faster completion." } },
+      { "@type": "Question", "name": "What is the cost of ACP cladding in Pune?", "acceptedAnswer": { "@type": "Answer", "text": "ACP cladding cost in Pune depends on panel brand, core type (PE or fire-retardant), finish, sub-frame complexity and access. Fine Glaze prepares BOQ-based quotations with brand specifications after reviewing drawings." } },
+      { "@type": "Question", "name": "Is FR-grade ACP mandatory in Pune buildings?", "acceptedAnswer": { "@type": "Answer", "text": "Fire-retardant ACP is commonly required for external cladding on taller buildings, but the rule depends on building height, use and local fire regulations. Confirm the requirement with your consultant and fire authority before specifying the core." } },
+      { "@type": "Question", "name": "How long does ACP cladding installation take in Pune?", "acceptedAnswer": { "@type": "Answer", "text": "ACP installation time depends on the elevation area, sub-frame complexity, access and weather, so we confirm the programme per project after survey. Panel preparation at our Pisoli unit runs alongside site preparation." } },
     ]
   };
 
@@ -69,7 +69,7 @@ export default function AcpCladdingPune() {
             <h1 className="text-3xl md:text-4xl font-bold mb-4">
               ACP Cladding <span className="text-gradient-gold">Contractor in Pune</span>
             </h1>
-            <p className="text-lg text-white/80 mb-8">Fine Glaze is an ACP cladding contractor based in Pune, providing fire-retardant aluminium composite panel cladding for commercial buildings, retail showrooms, hospitals, corporate offices, and residential exteriors. We work with premium brands including Aludecor, Viva, Alstone, and Alubond.</p>
+            <p className="text-lg text-white/80 mb-8">Fine Glaze is an ACP cladding contractor based in Pune, offering aluminium composite panel cladding for commercial buildings, hospitals, offices and residential exteriors. We work with Alubond and other approved panel brands.</p>
             <div className="flex gap-4">
               <Link to="/contact">
                 <Button size="lg" className="bg-amber-600 hover:bg-amber-700">Book a call</Button>
@@ -94,21 +94,21 @@ export default function AcpCladdingPune() {
       <section className="py-20">
         <div className="container mx-auto px-4 max-w-5xl space-y-6">
           
-          <h2 className="text-3xl font-bold">ACP Cladding Expertise Across Pune</h2>
+          <h2 className="text-3xl font-bold">ACP Cladding in Pune</h2>
           <p className="text-muted-foreground">
-            ACP (Aluminium Composite Panels) are 3-layer sandwich panels — two thin aluminium sheets bonded to a polyethylene or fire-retardant (FR) mineral core. For buildings above 15 metres, NBC 2016 mandates FR-grade cores (A2 or B1 classification). Fine Glaze exclusively uses FR-grade panels for all external cladding on buildings above ground + 2 floors.
+            ACP (aluminium composite panel) is a sandwich panel with two thin aluminium sheets bonded to a polyethylene or fire-retardant mineral core. For external cladding, the core type and the fire requirements of the building should be confirmed against the National Building Code, local fire rules and the consultant's specification.
           </p>
           <p className="text-muted-foreground mt-4">
-            Our Pune ACP projects span brand showrooms on MG Road and Baner Road, corporate office parks in Hinjewadi and Kharadi, hospital exteriors, and residential compound walls. We handle complete turnkey execution from surface preparation, sub-frame fabrication, panel routing, folding, and final weather-sealed installation.
+            Our documented ACP work includes ACP cladding at the Nanavati Max Hospital and FIFC Tower in Mumbai, ACP and silicone work at the LTIMindtree Mensa Campus, and spider glazing with ACP cladding at Embassy Techzone, Hinjewadi. In Pune we handle surface preparation, sub-frame fabrication, panel routing and folding, and weather-sealed installation.
           </p>
           <p className="text-muted-foreground mt-4">
-            PVDF (Polyvinylidene Fluoride) coated ACP panels are strongly recommended for Pune's climate — the PVDF coating resists UV fading, acid rain, and humidity, maintaining colour vibrancy for <strong>20+ years without repainting</strong>. We offer 300+ colour options including metallic, brushed, mirror, and wood-grain finishes.
+            PVDF-coated panels are commonly chosen for external use because the coating resists UV fading and weathering better than polyester finishes. Colour and warranty terms come from the panel manufacturer, so we confirm them from the brand's documents for your project.
           </p>
           <p className="text-muted-foreground mt-4">
-            Fine Glaze's Pune ACP cladding projects include complete building elevation cladding, canopy and entrance feature cladding, signage fascia systems, parapet and sunshade cladding, and ACP spandrel infill panels within curtain wall systems. Our experienced Pune fabrication team ensures precise CNC-routed panel edges and consistent joint widths for a professional finish.
+            Our scope includes full elevation cladding, canopy and entrance feature cladding, parapet and sunshade cladding, and ACP infill within curtain wall systems. Panel routing and grooving are prepared at our own unit in Pisoli, Pune.
           </p>
           <p className="text-muted-foreground mt-4">
-            We serve all Pune zones for ACP cladding — from <strong>Hinjewadi's tech parks</strong> and <strong>Kharadi's commercial corridor</strong> to <strong>Undri's residential developments</strong> and <strong>Pimpri-Chinchwad's industrial sector</strong>. Contact Fine Glaze for a detailed BOQ and brand comparison before making your ACP panel selection.
+            We take ACP cladding across Pune and PCMC, including Hinjewadi, Kharadi, Undri and Pimpri-Chinchwad. Contact Fine Glaze with drawings for a BOQ-based quotation and brand comparison.
           </p>
     
         </div>
@@ -119,12 +119,12 @@ export default function AcpCladdingPune() {
         <div className="container mx-auto px-4 max-w-5xl">
           <h2 className="text-3xl font-bold mb-10 text-center">What We Offer</h2>
           <div className="grid md:grid-cols-2 gap-4">
-              <div key="FR-Grade A2/B1 Panels" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">FR-Grade A2/B1 Panels</span></div>
+              <div key="FR-Grade Panel Options" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">FR-Grade Panel Options</span></div>
               <div key="PVDF Coating" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">PVDF Coating</span></div>
               <div key="CNC Routed Designs" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">CNC Routed Designs</span></div>
-              <div key="Aludecor / Alubond / Viva" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Aludecor / Alubond / Viva</span></div>
+              <div key="Alubond and Approved Brands" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Alubond and Approved Brands</span></div>
               <div key="Lightweight Sub-Frame System" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Lightweight Sub-Frame System</span></div>
-              <div key="300+ Colour Options" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">300+ Colour Options</span></div>
+              <div key="Finish and Colour Options" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Finish and Colour Options</span></div>
           </div>
         </div>
       </section>
@@ -136,15 +136,15 @@ export default function AcpCladdingPune() {
           <div className="space-y-6">
             <div className="bg-background rounded-xl p-6 shadow-sm">
               <h3 className="text-lg font-bold mb-2">What is the cost of ACP cladding in Pune?</h3>
-              <p className="text-muted-foreground">ACP cladding in Pune costs Rs 180-450 per sq ft installed, depending on panel brand, core type (PE vs FR), finish quality (polyester vs PVDF), and sub-frame complexity. Fine Glaze provides detailed BOQ-based quotations with brand specifications.</p>
+              <p className="text-muted-foreground">ACP cladding cost in Pune depends on panel brand, core type (PE or fire-retardant), finish, sub-frame complexity and access. Fine Glaze prepares BOQ-based quotations with brand specifications after reviewing drawings.</p>
             </div>
             <div className="bg-background rounded-xl p-6 shadow-sm">
               <h3 className="text-lg font-bold mb-2">Is FR-grade ACP mandatory in Pune buildings?</h3>
-              <p className="text-muted-foreground">Yes. As per NBC 2016 and Maharashtra Fire Safety regulations, buildings above 15 metres or G+2 floors must use FR ACP panels with A2 or B1 core classification for external cladding. Fine Glaze uses only certified FR panels.</p>
+              <p className="text-muted-foreground">Fire-retardant ACP is commonly required for external cladding on taller buildings, but the rule depends on building height, use and local fire regulations. Confirm the requirement with your consultant and fire authority before specifying the core.</p>
             </div>
             <div className="bg-background rounded-xl p-6 shadow-sm">
               <h3 className="text-lg font-bold mb-2">How long does ACP cladding installation take in Pune?</h3>
-              <p className="text-muted-foreground">For a typical 3-4 storey commercial building (300-500 sq m), ACP cladding takes 2-3 weeks. Larger projects of 1000+ sq m take 4-6 weeks. Fabrication and site preparation run in parallel for faster completion.</p>
+              <p className="text-muted-foreground">ACP installation time depends on the elevation area, sub-frame complexity, access and weather, so we confirm the programme per project after survey. Panel preparation at our Pisoli unit runs alongside site preparation.</p>
             </div>
           </div>
         </div>
