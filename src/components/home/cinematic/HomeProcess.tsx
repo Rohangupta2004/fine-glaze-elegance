@@ -53,7 +53,7 @@ const STEPS: { name: string; line: string; photo?: Photo }[] = [
 const HomeProcess = () => (
   <section className="prc full rv" aria-label="How we work">
     <div className="wrap">
-      <h2 className="wipe">How we work.</h2>
+      <h2 className="wipe">How we <span className="text-gradient">work.</span></h2>
       <ol className="pr">
         <li className="pr-line" aria-hidden="true" />
         {STEPS.map((s, i) => (

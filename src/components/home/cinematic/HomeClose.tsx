@@ -8,7 +8,7 @@ const HomeClose = () => {
       <div className="wrap">
         <div className="end-g">
           <div>
-            <h2>Tell us about your facade.</h2>
+            <h2>Tell us about your <span className="text-gradient">facade.</span></h2>
             <button className="btn" type="button" onClick={() => open({ source: "home_close" })}>
               Book a call
             </button>

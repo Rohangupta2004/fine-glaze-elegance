@@ -134,7 +134,7 @@ export default function AluminiumWindowsDoors() {
       {/* HERO */}
       <PageHero
         crumbs={[{ label: "Aluminium windows and doors" }]}
-        title={<>Aluminium Windows &amp; Doors in Pune &amp; Mumbai</>}
+        title={<>Aluminium Windows &amp; Doors in <span className="text-gradient-gold">Pune &amp; Mumbai</span></>}
         intro={`Sliding, casement, tilt-turn and lift-slide systems, measured by us, fabricated at our ${company.fabricationUnit.location} unit, installed under a dedicated site in-charge and supervisor, and water-tested before handover.`}
         secondary={{ label: company.phone.mobileDisplay, href: telHref }}
         image={{ src: HERO, alt: "Aluminium sliding and fixed glass terrace enclosure by Fine Glaze at Samundra Tarang, Dadar", width: 816, height: 459 }}

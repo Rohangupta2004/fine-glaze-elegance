@@ -62,7 +62,7 @@ const HomeClients = () => {
   return (
     <section className="cli rv" aria-label="Clients">
       <div className="wrap">
-        <h2 className="wipe">Who we have built for.</h2>
+        <h2 className="wipe">Who we have <span className="text-gradient">built for.</span></h2>
       </div>
       <div className="mq">
         <div className="mq-t">

@@ -129,7 +129,7 @@ export default function CompanyProfilePage() {
 
       <PageHero
         crumbs={[{ label: "Company profile" }]}
-        title={<>Fine Glaze <span className="text-lamp">Company Profile</span></>}
+        title={<>Fine Glaze <span className="text-gradient-gold">Company Profile</span></>}
         intro="Design, fabrication, installation and maintenance of architectural facade systems in Pune and Mumbai."
         hideAction
         source="profile_hero"

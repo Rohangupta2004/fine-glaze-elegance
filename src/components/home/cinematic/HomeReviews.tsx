@@ -5,7 +5,7 @@ import { company, whatsappHref } from "@/data/company";
 const HomeReviews = () => (
   <section className="rvw rv" aria-label="Reviews and references">
     <div className="wrap">
-      <h2 className="wipe">Don&apos;t take our word for it.</h2>
+      <h2 className="wipe">Don&apos;t take our <span className="text-gradient">word for it.</span></h2>
       <p className="rvw-p">
         Read what clients say on Google, or ask us for a reference contact from a completed project similar to yours.
       </p>

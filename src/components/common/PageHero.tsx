@@ -31,6 +31,18 @@ export interface PageHeroProps {
 }
 
 /** Shared hero for service, city, industry, guide and static pages. Use inside <Layout darkHero>. */
+/** Plain-string titles get the bronze gradient on their last word, as the JSX titles do. */
+const accentLast = (t: string) => {
+  const i = t.trimEnd().lastIndexOf(" ");
+  if (i < 0) return <span className="text-gradient">{t}</span>;
+  return (
+    <>
+      {t.slice(0, i + 1)}
+      <span className="text-gradient">{t.slice(i + 1)}</span>
+    </>
+  );
+};
+
 export const PageHero = ({ crumbs = [], title, intro, image, secondary, source = "page_hero", extra, hideAction, compact }: PageHeroProps) => {
   const { open } = useBookCall();
   const fig = useRef<HTMLElement>(null);
@@ -58,7 +70,7 @@ export const PageHero = ({ crumbs = [], title, intro, image, secondary, source =
                 })}
               </ol>
             </nav>
-            <h1>{title}</h1>
+            <h1>{typeof title === "string" ? accentLast(title) : title}</h1>
             {intro && <p className="ph-intro">{intro}</p>}
             <div className="ph-act" hidden={hideAction && !secondary ? true : undefined}>
               {!hideAction && (

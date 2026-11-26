@@ -9,7 +9,7 @@ const HomeNumbers = () => {
   return (
     <section className="nums full rv" aria-label="Fine Glaze in numbers">
       <div className="wrap">
-        <h2 className="wipe">On the record.</h2>
+        <h2 className="wipe">On the <span className="text-gradient">record.</span></h2>
         <dl className="ng">
           <div>
             <dt>

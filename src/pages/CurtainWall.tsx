@@ -270,7 +270,7 @@ export default function CurtainWall() {
                 { number: "2024", label: "Embassy REIT Best Vendor Performance" },
               ].map((s) => (
                 <div key={s.label} className="px-4 first:pl-0">
-                  <p className="text-2xl md:text-3xl font-bold text-paper">{s.number}</p>
+                  <p className="text-2xl md:text-3xl font-bold text-gradient">{s.number}</p>
                   <p className="text-mute text-[13px] mt-1">{s.label}</p>
                 </div>
               ))}

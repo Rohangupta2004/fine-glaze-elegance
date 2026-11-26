@@ -21,7 +21,7 @@ const HomeServices = () => {
   <section className="svc full rv" aria-label="Services">
     <div className="wrap">
       <div className="sec-h">
-        <h2 className="wipe">What we build.</h2>
+        <h2 className="wipe">What we <span className="text-gradient">build.</span></h2>
         <Link className="lnk" to="/services">
           All services
         </Link>

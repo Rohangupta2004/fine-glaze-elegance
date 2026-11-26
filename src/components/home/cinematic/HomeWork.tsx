@@ -106,7 +106,7 @@ const HomeWork = () => {
         <div className="wrap">
           <div className="sec-h">
             <div>
-              <h2 className="wipe">Recent work.</h2>
+              <h2 className="wipe">Recent <span className="text-gradient">work.</span></h2>
               <p className="wk-n">Five of the {company.stats.projectRecords} project records in our company profile.</p>
             </div>
             <Link className="lnk" to="/portfolio">

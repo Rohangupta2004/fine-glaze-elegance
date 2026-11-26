@@ -33,7 +33,7 @@ const HomeVideo = () => {
     <section className="vid full rv" aria-label="Company film">
       <div className="wrap vid-g">
         <div>
-          <h2 className="wipe">Our work, on film.</h2>
+          <h2 className="wipe">Our work, <span className="text-gradient">on film.</span></h2>
           <p>
             A short film on how we deliver curtain walls, structural glazing and cladding, from drawings to installation on site.
           </p>

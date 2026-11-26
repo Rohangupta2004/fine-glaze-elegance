@@ -329,3 +329,15 @@ input[type="radio"], input[type="checkbox"] {
 }
 input[type="radio"]:checked, input[type="checkbox"]:checked { background: #9b5520; box-shadow: inset 0 0 0 4px #efebe5; border-color: #9b5520; }
 .fg-art .fg-h2 { font-size: clamp(24px, 2.4vw, 34px); margin-bottom: 16px; max-width: none; }
+
+/* Big figures in stat bands take the bronze gradient too. */
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+  .fg-stats dt, .fg-home .ng dt {
+    background-image: linear-gradient(135deg, hsl(27 62% 40%) 0%, hsl(21 68% 27%) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding-bottom: 0.06em;
+  }
+  .fg-home .ng dt .plus { -webkit-text-fill-color: #9b5520; }
+}

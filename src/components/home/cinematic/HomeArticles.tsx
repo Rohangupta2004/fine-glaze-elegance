@@ -11,7 +11,7 @@ const HomeArticles = () => {
     <section className="art full rv" aria-label="Guides">
       <div className="wrap">
         <div className="sec-h">
-          <h2 className="wipe">Guides from our team.</h2>
+          <h2 className="wipe">Guides from our <span className="text-gradient">team.</span></h2>
           <Link className="lnk" to="/blog">
             All guides
           </Link>
