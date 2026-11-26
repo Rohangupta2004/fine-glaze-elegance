@@ -50,8 +50,8 @@ const QUOTE_CHECKLIST = [
 ];
 
 const PROJECTS = [
-  { title: "Terrace enclosure — Samundra Tarang, Dadar (W)", scope: "Four-track sliding windows, fixed glazing and internal GS structure.", status: "Completed", href: "/project/samundra-tarang", img: "/projects/samundra-tarang-51-1.webp" },
-  { title: "Leela Hotel — laundry area, Andheri (E)", scope: "Fixed glass windows and openable aluminium window units.", status: "Completed 2023", href: "/project/leela-hotel", img: "/projects/leela-hotel-50-1.webp" },
+  { title: "Terrace enclosure, Samundra Tarang, Dadar (W)", scope: "Four-track sliding windows, fixed glazing and internal GS structure.", status: "Completed", href: "/project/samundra-tarang", img: "/projects/samundra-tarang-51-1.webp" },
+  { title: "Leela Hotel, laundry area, Andheri (E)", scope: "Fixed glass windows and openable aluminium window units.", status: "Completed 2023", href: "/project/leela-hotel", img: "/projects/leela-hotel-50-1.webp" },
   { title: "Nirmaann Estrellaa, Pune", scope: "25 mm Series 3-track sliding windows, fixed glass windows, louvers and fins.", status: "Ongoing", href: "/project/nirmaann-estrellaa", img: "/projects/nirmaann-estrellaa-36-1.webp" },
   { title: "Nanavati Max Hospital, Vile Parle", scope: "Window leakage rectification and consultation for L&T Construction.", status: "Ongoing", href: "/project/nanavati-max-hospital", img: "/projects/nanavati-max-hospital-39-4.webp" },
 ];

@@ -115,7 +115,7 @@ export default function QualitySafety() {
           </article>
           <article className="bg-card border border-border p-7">
             <Factory className="h-7 w-7 text-primary" aria-hidden="true" />
-            <h2 className="mt-3 text-2xl font-medium text-foreground">Our fabrication unit — {company.fabricationUnit.location}</h2>
+            <h2 className="mt-3 text-2xl font-medium text-foreground">Our fabrication unit, {company.fabricationUnit.location}</h2>
             <p className="mt-3 text-muted-foreground">
               Our own unit, feeding both Pune and Mumbai sites.
             </p>
@@ -161,7 +161,7 @@ export default function QualitySafety() {
         <div className="fg-wrap">
           <div className="flex items-center gap-3">
             <HardHat className="h-7 w-7 text-lamp" aria-hidden="true" />
-            <h2 id="safety" className="text-2xl md:text-4xl font-medium">Facade work is height work — we manage it that way</h2>
+            <h2 id="safety" className="text-2xl md:text-4xl font-medium">Facade work is height work, and we manage it that way</h2>
           </div>
           <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {company.safety.map((s) => (
@@ -224,7 +224,7 @@ export default function QualitySafety() {
       {/* HOW TO VERIFY */}
       <section className="fg-sec" aria-labelledby="verify">
         <div className="fg-wrap">
-          <h2 id="verify" className="text-2xl md:text-4xl font-medium text-foreground">How to check any facade contractor — including us</h2>
+          <h2 id="verify" className="text-2xl md:text-4xl font-medium text-foreground">How to check any facade contractor, including us</h2>
           <p className="mt-3 text-muted-foreground">Seven questions that separate a capable contractor from a good brochure.</p>
           <ol className="mt-8 space-y-3">
             {VERIFY_CHECKLIST.map((v, i) => (
