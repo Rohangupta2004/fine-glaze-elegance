@@ -114,8 +114,8 @@ export default function ServiceRequest() {
         schemas={schemas}
       />
 
-      <section className="bg-night text-paper">
-        <div className="container mx-auto px-4 py-14 md:py-20 max-w-5xl">
+      <section className="fg-sec">
+        <div className="fg-wrap max-w-5xl">
           <p className="text-lamp text-xs font-bold mb-4">After-sales &amp; repairs</p>
           <h1 className="text-3xl sm:text-5xl font-extrabold leading-tight">Facade service request</h1>
           <p className="mt-4 text-paper/80 text-lg max-w-2xl">
@@ -138,8 +138,8 @@ export default function ServiceRequest() {
         </div>
       </section>
 
-      <section className="py-12 md:py-16 bg-background">
-        <div className="container mx-auto px-4 max-w-5xl grid lg:grid-cols-[1.3fr_1fr] gap-8">
+      <section className="fg-sec">
+        <div className="fg-wrap grid lg:grid-cols-[1.3fr_1fr] gap-8">
           {sent ? (
             <div className="border border-emerald-500/40 bg-emerald-500/5 p-8">
               <CheckCircle2 className="h-10 w-10 text-emerald-600" />
@@ -256,8 +256,8 @@ export default function ServiceRequest() {
         </div>
       </section>
 
-      <section className="py-12 md:py-16 bg-muted">
-        <div className="container mx-auto px-4 max-w-3xl">
+      <section className="fg-sec">
+        <div className="fg-wrap">
           <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">Service FAQs</h2>
           <div className="space-y-3">
             {FAQS.map((f) => (

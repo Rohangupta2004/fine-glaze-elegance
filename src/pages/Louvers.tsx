@@ -247,8 +247,8 @@ export default function Louvers() {
 
 
       {/* ════════════ INTRO ════════════ */}
-      <section className="py-16 md:py-20 bg-night">
-        <div className="container mx-auto px-6 md:px-16 max-w-3xl text-center">
+      <section className="fg-sec">
+        <div className="fg-wrap">
           <FadeIn>
             <p className="text-lamp text-xs font-bold mb-4">
               Why Louver Systems
@@ -266,8 +266,8 @@ export default function Louvers() {
 
 
       {/* ════════════ STATS ════════════ */}
-      <section className="bg-night-2 py-10">
-        <div className="container mx-auto px-6 md:px-16">
+      <section className="fg-sec">
+        <div className="fg-wrap">
           <FadeIn>
             <div className="grid grid-cols-3 gap-6 md:gap-0 md:divide-x md:divide-line">
               {[
@@ -287,8 +287,8 @@ export default function Louvers() {
 
 
       {/* ════════════ SYSTEMS ════════════ */}
-      <section className="py-16 md:py-20 bg-night-2">
-        <div className="container mx-auto px-6 md:px-16">
+      <section className="fg-sec">
+        <div className="fg-wrap">
           <FadeIn className="mb-10">
             <p className="text-lamp text-xs font-bold mb-3">
               Our Systems
@@ -364,8 +364,8 @@ export default function Louvers() {
 
 
       {/* ════════════ WHY FINE GLAZE ════════════ */}
-      <section className="py-16 md:py-20 bg-night">
-        <div className="container mx-auto px-6 md:px-16">
+      <section className="fg-sec">
+        <div className="fg-wrap">
           <FadeIn className="text-center mb-12">
             <p className="text-lamp text-xs font-bold mb-3">
               Why Fine Glaze
@@ -422,8 +422,8 @@ export default function Louvers() {
 
 
       {/* ════════════ HOW WE WORK ════════════ */}
-      <section className="py-16 md:py-20 bg-night-2">
-        <div className="container mx-auto px-6 md:px-16">
+      <section className="fg-sec">
+        <div className="fg-wrap">
           <FadeIn className="mb-10">
             <p className="text-lamp text-xs font-bold mb-3">
               How We Work
@@ -476,8 +476,8 @@ export default function Louvers() {
 
 
       {/* ════════════ PRICING ════════════ */}
-      <section className="py-16 md:py-20 bg-night">
-        <div className="container mx-auto px-6 md:px-16 max-w-3xl">
+      <section className="fg-sec">
+        <div className="fg-wrap">
           <FadeIn className="text-center mb-8">
             <p className="text-lamp text-xs font-bold mb-3">
               Pricing
@@ -530,8 +530,8 @@ export default function Louvers() {
 
 
       {/* ════════════ FAQ ════════════ */}
-      <section className="py-14 md:py-16 bg-night-2">
-        <div className="container mx-auto px-6 md:px-16 max-w-3xl">
+      <section className="fg-sec">
+        <div className="fg-wrap">
           <FadeIn className="mb-8">
             <p className="text-lamp text-xs font-bold mb-3">
               Common Questions
@@ -570,8 +570,8 @@ export default function Louvers() {
 
 
       {/* ════════════ AREAS + SERVICES ════════════ */}
-      <section className="bg-night-2 py-12">
-        <div className="container mx-auto px-6 md:px-16">
+      <section className="fg-sec">
+        <div className="fg-wrap">
           <FadeIn>
             <div className="grid md:grid-cols-2 gap-10 md:gap-16">
               <div>

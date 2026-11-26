@@ -78,7 +78,7 @@ const About = () => {
           <img src={aboutHero} alt="" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-night-2" />
         </div>
-        <div className="container mx-auto px-4 relative z-10">
+        <div className="fg-wrap">
           <div
             className={cn(
               "max-w-3xl mx-auto text-center space-y-6 slide-up",
@@ -104,7 +104,7 @@ const About = () => {
 
       {/* Story Section */}
       <section className="py-20 bg-background" ref={storyRef.ref}>
-        <div className="container mx-auto px-4">
+        <div className="fg-wrap">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div
               className={cn(
@@ -178,7 +178,7 @@ const About = () => {
 
       {/* 🎥 Video Section */}
       <section className="py-20 bg-muted" ref={videoRef.ref}>
-        <div className="container mx-auto px-4">
+        <div className="fg-wrap">
           <div
             className={cn(
               "max-w-5xl mx-auto text-center space-y-6 slide-up",
@@ -215,8 +215,8 @@ const About = () => {
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4">
+      <section className="fg-sec">
+        <div className="fg-wrap">
           <div className="grid md:grid-cols-2 gap-8">
             <div className="glass-card metallic-border p-8 space-y-4">
               <div className="w-14 h-14 bg-primary/10 flex items-center justify-center">
@@ -247,7 +247,7 @@ const About = () => {
 
       {/* Team */}
       <section className="py-20 bg-muted" aria-labelledby="team-heading">
-        <div className="container mx-auto px-4">
+        <div className="fg-wrap">
           <div className="text-center space-y-3 mb-12 max-w-2xl mx-auto">
             <span className="text-primary font-medium text-sm">Our Team</span>
             <h2 id="team-heading" className="text-3xl md:text-4xl font-bold text-foreground">
@@ -277,7 +277,7 @@ const About = () => {
 
       {/* Credentials */}
       <section className="py-20 bg-background" aria-labelledby="credentials-heading">
-        <div className="container mx-auto px-4">
+        <div className="fg-wrap">
           <div className="text-center space-y-3 mb-12 max-w-2xl mx-auto">
             <span className="text-primary font-medium text-sm">Company Facts</span>
             <h2 id="credentials-heading" className="text-3xl md:text-4xl font-bold text-foreground">
@@ -327,7 +327,7 @@ const About = () => {
 
       {/* Values */}
       <section className="py-20 bg-muted" ref={valuesRef.ref}>
-        <div className="container mx-auto px-4">
+        <div className="fg-wrap">
           <div
             className={cn(
               "text-center space-y-4 mb-12 slide-up",

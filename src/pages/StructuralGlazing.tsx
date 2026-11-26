@@ -253,8 +253,8 @@ export default function StructuralGlazing() {
       {/* ════════════════════════════════════════════════════
           INTRO — centered bold text, no image
           ════════════════════════════════════════════════════ */}
-      <section className="py-16 md:py-20 bg-night">
-        <div className="container mx-auto px-6 md:px-16 max-w-3xl text-center">
+      <section className="fg-sec">
+        <div className="fg-wrap">
           <FadeIn>
             <p className="text-lamp text-xs font-bold mb-4">
               What is Structural Glazing
@@ -295,8 +295,8 @@ export default function StructuralGlazing() {
       {/* ════════════════════════════════════════════════════
           STATS — dark horizontal band
           ════════════════════════════════════════════════════ */}
-      <section className="bg-night-2 py-10">
-        <div className="container mx-auto px-6 md:px-16">
+      <section className="fg-sec">
+        <div className="fg-wrap">
           <FadeIn>
             <div className="grid grid-cols-3 gap-6 md:gap-0 md:divide-x md:divide-line">
               {[
@@ -318,8 +318,8 @@ export default function StructuralGlazing() {
       {/* ════════════════════════════════════════════════════
           SYSTEMS — tabbed selector with image + details
           ════════════════════════════════════════════════════ */}
-      <section className="py-16 md:py-20 bg-night-2">
-        <div className="container mx-auto px-6 md:px-16">
+      <section className="fg-sec">
+        <div className="fg-wrap">
           <FadeIn className="mb-10">
             <p className="text-lamp text-xs font-bold mb-3">
               Our Systems
@@ -399,8 +399,8 @@ export default function StructuralGlazing() {
       {/* ════════════════════════════════════════════════════
           WHY FINE GLAZE — 4-column feature strip
           ════════════════════════════════════════════════════ */}
-      <section className="py-16 md:py-20 bg-night">
-        <div className="container mx-auto px-6 md:px-16">
+      <section className="fg-sec">
+        <div className="fg-wrap">
           <FadeIn className="text-center mb-12">
             <p className="text-lamp text-xs font-bold mb-3">
               Why Fine Glaze
@@ -459,8 +459,8 @@ export default function StructuralGlazing() {
       {/* ════════════════════════════════════════════════════
           HOW WE WORK — horizontal 4-step timeline
           ════════════════════════════════════════════════════ */}
-      <section className="py-16 md:py-20 bg-night-2">
-        <div className="container mx-auto px-6 md:px-16">
+      <section className="fg-sec">
+        <div className="fg-wrap">
           <FadeIn className="mb-10">
             <p className="text-lamp text-xs font-bold mb-3">
               How We Work
@@ -518,8 +518,8 @@ export default function StructuralGlazing() {
       {/* ════════════════════════════════════════════════════
           PRICING — compact table
           ════════════════════════════════════════════════════ */}
-      <section className="py-16 md:py-20 bg-night">
-        <div className="container mx-auto px-6 md:px-16 max-w-3xl">
+      <section className="fg-sec">
+        <div className="fg-wrap">
           <FadeIn className="text-center mb-8">
             <p className="text-lamp text-xs font-bold mb-3">
               Pricing
@@ -574,8 +574,8 @@ export default function StructuralGlazing() {
       {/* ════════════════════════════════════════════════════
           FAQ
           ════════════════════════════════════════════════════ */}
-      <section className="py-14 md:py-16 bg-night-2">
-        <div className="container mx-auto px-6 md:px-16 max-w-3xl">
+      <section className="fg-sec">
+        <div className="fg-wrap">
           <FadeIn className="mb-8">
             <p className="text-lamp text-xs font-bold mb-3">
               Common Questions
@@ -616,8 +616,8 @@ export default function StructuralGlazing() {
       {/* ════════════════════════════════════════════════════
           AREAS + SERVICES — combined dark footer band
           ════════════════════════════════════════════════════ */}
-      <section className="bg-night-2 py-12">
-        <div className="container mx-auto px-6 md:px-16">
+      <section className="fg-sec">
+        <div className="fg-wrap">
           <FadeIn>
             <div className="grid md:grid-cols-2 gap-10 md:gap-16">
               {/* Areas */}

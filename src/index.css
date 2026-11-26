@@ -338,3 +338,5 @@ main > .fg-sec:nth-of-type(even) {
 .fg-grid a.fg-row { flex-direction: row; align-items: flex-start; gap: 12px; }
 .fg-grid a.fg-row p { margin: 0; }
 .ph h1 .ph-sub { display: block; margin-top: 0.35em; font-size: 0.5em; font-weight: 500; letter-spacing: -0.02em; color: #9aa6b8; }
+.fg-sec p { max-width: 68ch; }
+.fg-sec .text-center p, .fg-sec p.text-center { margin-inline: 0; }

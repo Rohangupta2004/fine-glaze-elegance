@@ -251,8 +251,8 @@ export default function CurtainWall() {
       />
 
       {/* ════════════ MANUFACTURERS OVERVIEW ════════════ */}
-      <section className="py-16 md:py-20 bg-night">
-        <div className="container mx-auto px-6 md:px-16 max-w-4xl text-center">
+      <section className="fg-sec">
+        <div className="fg-wrap">
           <FadeIn>
             <p className="text-lamp text-xs font-bold mb-4">
               Curtain Wall Fabrication &amp; Installation
@@ -293,8 +293,8 @@ export default function CurtainWall() {
       />
 
       {/* ════════════ STATS ════════════ */}
-      <section className="bg-night-2 py-10">
-        <div className="container mx-auto px-6 md:px-16">
+      <section className="fg-sec">
+        <div className="fg-wrap">
           <FadeIn>
             <div className="grid grid-cols-3 gap-6 md:gap-0 md:divide-x md:divide-line">
               {[
@@ -313,8 +313,8 @@ export default function CurtainWall() {
       </section>
 
       {/* ════════════ UNITIZED CURTAIN WALL DEEP-DIVE ════════════ */}
-      <section className="py-16 md:py-20 bg-night-2 text-paper">
-        <div className="container mx-auto px-6 md:px-16">
+      <section className="fg-sec">
+        <div className="fg-wrap">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <FadeIn>
               <p className="text-lamp text-xs font-bold mb-3">
@@ -366,8 +366,8 @@ export default function CurtainWall() {
       </section>
 
       {/* ════════════ SYSTEMS TABBED ════════════ */}
-      <section className="py-16 md:py-20 bg-night-2">
-        <div className="container mx-auto px-6 md:px-16">
+      <section className="fg-sec">
+        <div className="fg-wrap">
           <FadeIn className="mb-10">
             <p className="text-lamp text-xs font-bold mb-3">
               Our Product Range
@@ -444,8 +444,8 @@ export default function CurtainWall() {
 
 
       {/* ════════════ CURTAIN WALL COST SECTION ════════════ */}
-      <section className="py-16 md:py-20 bg-night-2">
-        <div className="container mx-auto px-6 md:px-16 max-w-4xl">
+      <section className="fg-sec">
+        <div className="fg-wrap">
           <FadeIn className="text-center mb-10">
             <p className="text-lamp text-xs font-bold mb-3">
               Cost & Rate Breakdown
@@ -495,8 +495,8 @@ export default function CurtainWall() {
       </section>
 
       {/* ════════════ REQUEST A QUOTATION CTA ════════════ */}
-      <section className="py-16 md:py-24 bg-night-2 text-paper relative overflow-hidden">
-        <div className="container mx-auto px-6 md:px-16 relative z-10 max-w-4xl text-center">
+      <section className="fg-sec">
+        <div className="fg-wrap max-w-4xl text-center">
           <FadeIn>
             <span className="inline-block bg-lamp/20 text-lamp text-xs font-bold px-4 py-1.5 mb-6">
               Request a BOQ-Based Quotation
@@ -527,8 +527,8 @@ export default function CurtainWall() {
       </section>
 
       {/* ════════════ FAQ SECTION ════════════ */}
-      <section className="py-16 md:py-20 bg-night-2">
-        <div className="container mx-auto px-6 md:px-16 max-w-3xl">
+      <section className="fg-sec">
+        <div className="fg-wrap">
           <FadeIn className="mb-8">
             <p className="text-lamp text-xs font-bold mb-3">
               Frequently Asked Questions
@@ -566,8 +566,8 @@ export default function CurtainWall() {
       </section>
 
       {/* ════════════ INTERNAL LINKS / SERVICE MESH ════════════ */}
-      <section className="bg-night-2 py-12">
-        <div className="container mx-auto px-6 md:px-16">
+      <section className="fg-sec">
+        <div className="fg-wrap">
           <FadeIn>
             <div className="grid md:grid-cols-2 gap-10 md:gap-16">
               <div>

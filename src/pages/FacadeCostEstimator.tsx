@@ -79,8 +79,8 @@ export default function FacadeCostEstimator() {
         schemas={schemas}
       />
 
-      <section className="bg-night text-paper">
-        <div className="container mx-auto px-4 py-14 md:py-20 max-w-4xl">
+      <section className="fg-sec">
+        <div className="fg-wrap max-w-4xl">
           <p className="text-lamp text-xs font-bold mb-4">Facade and window cost</p>
           <h1 className="text-3xl sm:text-5xl font-extrabold leading-tight">Get a figure for your building</h1>
           <p className="mt-4 text-paper/80 text-lg">
@@ -90,8 +90,8 @@ export default function FacadeCostEstimator() {
         </div>
       </section>
 
-      <section className="py-12 md:py-16 bg-background">
-        <div className="container mx-auto px-4 max-w-4xl">
+      <section className="fg-sec">
+        <div className="fg-wrap">
           <div className="grid lg:grid-cols-[1.1fr_1fr] gap-6">
             <form className="border border-border bg-card p-6 space-y-5" onSubmit={(e) => e.preventDefault()}>
               <div>
@@ -218,8 +218,8 @@ export default function FacadeCostEstimator() {
         </div>
       </section>
 
-      <section className="py-14 bg-muted">
-        <div className="container mx-auto px-4 max-w-3xl">
+      <section className="fg-sec">
+        <div className="fg-wrap">
           <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">Common questions</h2>
           <div className="space-y-3">
             {FAQS.map((f) => (

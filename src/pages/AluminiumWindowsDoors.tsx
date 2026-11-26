@@ -141,7 +141,7 @@ export default function AluminiumWindowsDoors() {
           loading="eager"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-night/70 via-night/50 to-night/95" />
-        <div className="relative z-10 container mx-auto px-4 pb-14 pt-32">
+        <div className="relative z-10 fg-wrap pb-14 pt-32">
           <p className="text-lamp text-xs font-bold mb-4">Fine Glaze · Pune &amp; Mumbai</p>
           <h1 className="text-3xl sm:text-5xl font-extrabold text-paper leading-tight max-w-3xl">
             Aluminium Windows &amp; Doors in Pune &amp; Mumbai
@@ -170,7 +170,7 @@ export default function AluminiumWindowsDoors() {
 
       {/* SYSTEMS */}
       <section className="py-16 md:py-20 bg-background" aria-labelledby="systems">
-        <div className="container mx-auto px-4">
+        <div className="fg-wrap">
           <div className="max-w-2xl mb-10">
             <h2 id="systems" className="text-2xl md:text-4xl font-bold text-foreground">Window &amp; door systems we install</h2>
             <p className="mt-3 text-muted-foreground">
@@ -197,7 +197,7 @@ export default function AluminiumWindowsDoors() {
 
       {/* GLASS */}
       <section className="py-16 md:py-20 bg-muted" aria-labelledby="glass">
-        <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-10 items-start">
+        <div className="fg-wrap grid lg:grid-cols-2 gap-10 items-start">
           <div>
             <h2 id="glass" className="text-2xl md:text-4xl font-bold text-foreground">The glass matters as much as the frame</h2>
             <p className="mt-4 text-muted-foreground">
@@ -221,7 +221,7 @@ export default function AluminiumWindowsDoors() {
 
       {/* QUOTE CHECKLIST */}
       <section className="py-16 md:py-20 bg-background" aria-labelledby="checklist">
-        <div className="container mx-auto px-4 max-w-4xl">
+        <div className="fg-wrap">
           <h2 id="checklist" className="text-2xl md:text-4xl font-bold text-foreground">Comparing window quotes? Check these 7 lines</h2>
           <p className="mt-3 text-muted-foreground">
             Two quotes that both say “aluminium sliding window” can differ a lot — often for good reason. Ask every supplier — including us — to put these in writing.
@@ -239,7 +239,7 @@ export default function AluminiumWindowsDoors() {
 
       {/* PROJECTS */}
       <section className="py-16 md:py-20 bg-night text-paper" aria-labelledby="projects">
-        <div className="container mx-auto px-4">
+        <div className="fg-wrap">
           <h2 id="projects" className="text-2xl md:text-4xl font-bold">Window work we have done</h2>
           <p className="mt-3 text-paper/80 max-w-2xl">Real projects from our company profile, with our actual scope and status.</p>
           <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -259,7 +259,7 @@ export default function AluminiumWindowsDoors() {
 
       {/* PROCESS */}
       <section className="py-16 md:py-20 bg-background" aria-labelledby="process">
-        <div className="container mx-auto px-4">
+        <div className="fg-wrap">
           <h2 id="process" className="text-2xl md:text-4xl font-bold text-foreground">How a window order runs</h2>
           <ol className="mt-8 grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
             {[
@@ -286,7 +286,7 @@ export default function AluminiumWindowsDoors() {
 
       {/* FAQ */}
       <section className="py-16 md:py-20 bg-muted" aria-labelledby="faq">
-        <div className="container mx-auto px-4 max-w-3xl">
+        <div className="fg-wrap">
           <h2 id="faq" className="text-2xl md:text-4xl font-bold text-foreground mb-8">Aluminium window FAQs</h2>
           <div className="space-y-3">
             {FAQS.map((f) => (
@@ -304,7 +304,7 @@ export default function AluminiumWindowsDoors() {
 
       {/* CTA */}
       <section className="py-16 bg-lamp">
-        <div className="container mx-auto px-4 text-center">
+        <div className="fg-wrap">
           <h2 className="text-2xl md:text-3xl font-extrabold text-paper">Get your windows measured and quoted</h2>
           <p className="mt-2 text-paper/80">Pune, PCMC, Mumbai, Navi Mumbai and Thane.</p>
           <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center">

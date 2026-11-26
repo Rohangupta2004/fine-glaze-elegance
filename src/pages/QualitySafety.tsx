@@ -60,8 +60,8 @@ export default function QualitySafety() {
       />
 
       {/* INTRO */}
-      <section className="bg-night text-paper">
-        <div className="container mx-auto px-4 py-16 md:py-24 grid lg:grid-cols-[1.4fr_1fr] gap-10 items-center">
+      <section className="fg-sec">
+        <div className="fg-wrap grid lg:grid-cols-[1.4fr_1fr] gap-10 items-center">
           <div>
             <p className="text-lamp text-xs font-bold mb-4">How we work</p>
             <h1 className="text-3xl sm:text-5xl font-extrabold leading-tight">
@@ -91,7 +91,7 @@ export default function QualitySafety() {
 
       {/* 8 STAGES */}
       <section className="py-16 md:py-20 bg-background" aria-labelledby="stages">
-        <div className="container mx-auto px-4">
+        <div className="fg-wrap">
           <h2 id="stages" className="text-2xl md:text-4xl font-bold text-foreground">Eight controlled stages on every package</h2>
           <ol className="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {company.deliveryStages.map((s, i) => (
@@ -107,7 +107,7 @@ export default function QualitySafety() {
 
       {/* DESIGN + FABRICATION */}
       <section className="py-16 md:py-20 bg-muted" aria-labelledby="design">
-        <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-8">
+        <div className="fg-wrap grid lg:grid-cols-2 gap-8">
           <article className="bg-card border border-border p-7">
             <PenTool className="h-7 w-7 text-primary" aria-hidden="true" />
             <h2 id="design" className="mt-3 text-2xl font-bold text-foreground">Design &amp; engineering, in-house</h2>
@@ -139,7 +139,7 @@ export default function QualitySafety() {
 
       {/* QA + TESTING */}
       <section className="py-16 md:py-20 bg-background" aria-labelledby="qa">
-        <div className="container mx-auto px-4">
+        <div className="fg-wrap">
           <div className="flex items-center gap-3">
             <ClipboardCheck className="h-7 w-7 text-primary" aria-hidden="true" />
             <h2 id="qa" className="text-2xl md:text-4xl font-bold text-foreground">Checked at source, at site, and before handover</h2>
@@ -166,7 +166,7 @@ export default function QualitySafety() {
 
       {/* SAFETY */}
       <section className="py-16 md:py-20 bg-night text-paper" aria-labelledby="safety">
-        <div className="container mx-auto px-4">
+        <div className="fg-wrap">
           <div className="flex items-center gap-3">
             <HardHat className="h-7 w-7 text-lamp" aria-hidden="true" />
             <h2 id="safety" className="text-2xl md:text-4xl font-bold">Facade work is height work — we manage it that way</h2>
@@ -189,7 +189,7 @@ export default function QualitySafety() {
 
       {/* MATERIALS */}
       <section className="py-16 md:py-20 bg-background" aria-labelledby="materials">
-        <div className="container mx-auto px-4">
+        <div className="fg-wrap">
           <div className="flex items-center gap-3">
             <Layers className="h-7 w-7 text-primary" aria-hidden="true" />
             <h2 id="materials" className="text-2xl md:text-4xl font-bold text-foreground">Material partners</h2>
@@ -209,7 +209,7 @@ export default function QualitySafety() {
 
       {/* AFTER HANDOVER */}
       <section className="py-16 md:py-20 bg-muted" aria-labelledby="after">
-        <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-10 items-start">
+        <div className="fg-wrap grid lg:grid-cols-2 gap-10 items-start">
           <div>
             <ShieldCheck className="h-7 w-7 text-primary" aria-hidden="true" />
             <h2 id="after" className="mt-3 text-2xl md:text-4xl font-bold text-foreground">After handover, we are still your facade team</h2>
@@ -231,7 +231,7 @@ export default function QualitySafety() {
 
       {/* HOW TO VERIFY */}
       <section className="py-16 md:py-20 bg-background" aria-labelledby="verify">
-        <div className="container mx-auto px-4 max-w-4xl">
+        <div className="fg-wrap">
           <h2 id="verify" className="text-2xl md:text-4xl font-bold text-foreground">How to check any facade contractor — including us</h2>
           <p className="mt-3 text-muted-foreground">Seven questions that separate a capable contractor from a good brochure.</p>
           <ol className="mt-8 space-y-3">
@@ -247,7 +247,7 @@ export default function QualitySafety() {
 
       {/* PREQUALIFICATION */}
       <section className="py-16 bg-lamp">
-        <div className="container mx-auto px-4 grid lg:grid-cols-[1.5fr_1fr] gap-8 items-center">
+        <div className="fg-wrap grid lg:grid-cols-[1.5fr_1fr] gap-8 items-center">
           <div>
             <h2 className="text-2xl md:text-3xl font-extrabold text-paper">Registering us as a vendor?</h2>
             <p className="mt-2 text-paper/80">

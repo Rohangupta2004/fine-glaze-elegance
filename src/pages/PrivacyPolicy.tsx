@@ -13,8 +13,8 @@ const PrivacyPolicy = () => {
       />
 
       {/* Header */}
-      <section className="bg-night-2 border-b border-line">
-        <div className="container mx-auto px-5 md:px-16 py-12 md:py-16">
+      <section className="fg-sec">
+        <div className="fg-wrap">
           <div className="flex items-center gap-3 mb-4">
             <div className="w-10 h-10 bg-lamp/10 flex items-center justify-center">
               <Shield size={20} className="text-lamp" />
@@ -33,8 +33,8 @@ const PrivacyPolicy = () => {
       </section>
 
       {/* Content */}
-      <section className="py-12 md:py-16">
-        <div className="container mx-auto px-5 md:px-16 max-w-3xl">
+      <section className="fg-sec">
+        <div className="fg-wrap">
           <div className="prose prose-stone prose-sm max-w-none space-y-8">
 
             <div>

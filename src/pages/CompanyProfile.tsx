@@ -127,8 +127,8 @@ export default function CompanyProfilePage() {
       </Helmet>
 
       {/* Hero Header */}
-      <section className="bg-night text-paper pt-28 pb-10 border-b border-line">
-        <div className="container mx-auto px-4">
+      <section className="fg-sec">
+        <div className="fg-wrap">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 max-w-6xl mx-auto">
             <div>
               <div className="inline-flex items-center gap-2 px-3 py-1 bg-lamp/10 border border-lamp/30 text-lamp text-xs font-semibold mb-3">
@@ -177,7 +177,7 @@ export default function CompanyProfilePage() {
 
       {/* Embedded Viewer Container */}
       <section className="bg-night-2 py-8 min-h-[70vh]">
-        <div className="container mx-auto px-4 max-w-6xl">
+        <div className="fg-wrap">
           {/* Viewer Toolbar */}
           <div className="bg-night border border-line p-2.5 sm:p-4 flex flex-wrap items-center justify-between gap-2.5">
             <div className="flex items-center gap-1.5 sm:gap-2">

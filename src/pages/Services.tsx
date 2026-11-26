@@ -306,7 +306,7 @@ export default function Services() {
           style={{ background: "linear-gradient(to top, #1a0d05, transparent)" }}
         />
 
-        <div className="container mx-auto px-4 relative z-10">
+        <div className="fg-wrap">
           <div
             className={cn(
               "max-w-4xl mx-auto text-center space-y-6 slide-up",
@@ -379,7 +379,7 @@ export default function Services() {
             ref={section.ref}
             className={cn("py-24", isEven ? "bg-background" : "bg-muted")}
           >
-            <div className="container mx-auto px-4">
+            <div className="fg-wrap">
               <div
                 className={cn(
                   "grid lg:grid-cols-2 gap-16 items-center",
@@ -493,7 +493,7 @@ export default function Services() {
         style={{ background: "linear-gradient(160deg, #1a0d05 0%, #251208 60%, #1a0d05 100%)" }}
         ref={processRef.ref}
       >
-        <div className="container mx-auto px-4">
+        <div className="fg-wrap">
           <div
             className={cn(
               "text-center max-w-2xl mx-auto mb-16 slide-up",
@@ -545,7 +545,7 @@ export default function Services() {
 
       {/* ==================== WHY CHOOSE US ==================== */}
       <section className="py-24 bg-background" ref={whyRef.ref}>
-        <div className="container mx-auto px-4">
+        <div className="fg-wrap">
           <div
             className={cn(
               "text-center max-w-2xl mx-auto mb-16 slide-up",
@@ -598,7 +598,7 @@ export default function Services() {
             "linear-gradient(135deg, hsl(27 65% 32%) 0%, hsl(22 72% 18%) 100%)",
         }}
       >
-        <div className="container mx-auto px-4 max-w-3xl">
+        <div className="fg-wrap">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Ready to{" "}
             <span className="text-gradient-light">Transform</span>{" "}
