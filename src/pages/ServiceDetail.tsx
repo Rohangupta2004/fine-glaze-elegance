@@ -366,7 +366,7 @@ export default function ServiceDetail() {
       </section>
 
       {/* ── OVERVIEW ── */}
-      <section className="py-24 bg-night">
+      <section className="fg-sec">
         <div className="container mx-auto px-4 max-w-6xl grid lg:grid-cols-2 gap-16 items-center">
           <div>
             <h2 className="text-3xl font-bold text-paper mb-6">

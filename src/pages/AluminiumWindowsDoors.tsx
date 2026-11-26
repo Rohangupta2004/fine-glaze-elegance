@@ -169,7 +169,7 @@ export default function AluminiumWindowsDoors() {
       </section>
 
       {/* SYSTEMS */}
-      <section className="py-16 md:py-20 bg-background" aria-labelledby="systems">
+      <section className="fg-sec" aria-labelledby="systems">
         <div className="fg-wrap">
           <div className="max-w-2xl mb-10">
             <h2 id="systems" className="text-2xl md:text-4xl font-bold text-foreground">Window &amp; door systems we install</h2>
@@ -196,7 +196,7 @@ export default function AluminiumWindowsDoors() {
       </section>
 
       {/* GLASS */}
-      <section className="py-16 md:py-20 bg-muted" aria-labelledby="glass">
+      <section className="fg-sec" aria-labelledby="glass">
         <div className="fg-wrap grid lg:grid-cols-2 gap-10 items-start">
           <div>
             <h2 id="glass" className="text-2xl md:text-4xl font-bold text-foreground">The glass matters as much as the frame</h2>
@@ -220,7 +220,7 @@ export default function AluminiumWindowsDoors() {
       </section>
 
       {/* QUOTE CHECKLIST */}
-      <section className="py-16 md:py-20 bg-background" aria-labelledby="checklist">
+      <section className="fg-sec" aria-labelledby="checklist">
         <div className="fg-wrap">
           <h2 id="checklist" className="text-2xl md:text-4xl font-bold text-foreground">Comparing window quotes? Check these 7 lines</h2>
           <p className="mt-3 text-muted-foreground">
@@ -258,7 +258,7 @@ export default function AluminiumWindowsDoors() {
       </section>
 
       {/* PROCESS */}
-      <section className="py-16 md:py-20 bg-background" aria-labelledby="process">
+      <section className="fg-sec" aria-labelledby="process">
         <div className="fg-wrap">
           <h2 id="process" className="text-2xl md:text-4xl font-bold text-foreground">How a window order runs</h2>
           <ol className="mt-8 grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
@@ -285,7 +285,7 @@ export default function AluminiumWindowsDoors() {
       </section>
 
       {/* FAQ */}
-      <section className="py-16 md:py-20 bg-muted" aria-labelledby="faq">
+      <section className="fg-sec" aria-labelledby="faq">
         <div className="fg-wrap">
           <h2 id="faq" className="text-2xl md:text-4xl font-bold text-foreground mb-8">Aluminium window FAQs</h2>
           <div className="space-y-3">

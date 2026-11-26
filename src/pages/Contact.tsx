@@ -207,7 +207,7 @@ const Contact = () => {
       {/* ═══════════════════════════════════════════
           MAIN — form (left) + info (right)
           ═══════════════════════════════════════════ */}
-      <section className="py-12 md:py-20 bg-night-2">
+      <section className="fg-sec">
         <div className="container mx-auto px-5 md:px-16">
           <div className="grid lg:grid-cols-12 gap-8 md:gap-12">
 
@@ -226,7 +226,7 @@ const Contact = () => {
                 <div className="px-5 md:px-8 py-5 md:py-7">
                   {isSubmitted ? (
                     <div className="text-center py-14 space-y-4">
-                      <div className="w-14 h-14 bg-lamp/10 flex items-center justify-center mx-auto">
+                      <div className="w-14 h-14 border border-line flex items-center justify-center mx-auto">
                         <CheckCircle2 size={28} className="text-lamp" />
                       </div>
                       <h3 className="text-2xl font-bold text-paper">
@@ -416,7 +416,7 @@ const Contact = () => {
                     { text: "No obligation", sub: "Get the information you need" },
                   ].map((item) => (
                     <div key={item.text} className="flex gap-3 group">
-                      <div className="w-6 h-6 bg-lamp/10 flex items-center justify-center shrink-0 mt-0.5">
+                      <div className="w-6 h-6 border border-line flex items-center justify-center shrink-0 mt-0.5">
                         <ArrowRight size={12} className="text-lamp" />
                       </div>
                       <div>
@@ -434,7 +434,7 @@ const Contact = () => {
                   Reach Us Directly
                 </p>
                 <a href="tel:+918369233566" className="flex items-center gap-3 text-paper hover:text-lamp transition-colors group">
-                  <div className="w-9 h-9 bg-lamp/10 group-hover:bg-lamp/10 flex items-center justify-center shrink-0 transition-colors">
+                  <div className="w-9 h-9 border border-line group-hover:bg-lamp/10 flex items-center justify-center shrink-0 transition-colors">
                     <Phone size={16} className="text-lamp" />
                   </div>
                   <div>
@@ -443,7 +443,7 @@ const Contact = () => {
                   </div>
                 </a>
                 <a href="mailto:info@fineglaze.com" className="flex items-center gap-3 text-paper hover:text-lamp transition-colors group">
-                  <div className="w-9 h-9 bg-lamp/10 group-hover:bg-lamp/10 flex items-center justify-center shrink-0 transition-colors">
+                  <div className="w-9 h-9 border border-line group-hover:bg-lamp/10 flex items-center justify-center shrink-0 transition-colors">
                     <Mail size={16} className="text-lamp" />
                   </div>
                   <div>
@@ -465,7 +465,7 @@ const Contact = () => {
               {/* Office address */}
               <div className="relative overflow-hidden bg-night-2 text-paper p-5 md:p-7">
                 {/* decorative corner */}
-                <div className="absolute top-0 right-0 w-24 h-24 bg-lamp/10" />
+                <div className="absolute top-0 right-0 w-24 h-24 border border-line" />
 
                 <div className="relative">
                   <div className="flex items-center gap-3 mb-4">

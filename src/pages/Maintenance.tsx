@@ -382,7 +382,7 @@ export default function Maintenance() {
                 },
               ].map((item) => (
                 <div key={item.title} className="text-center">
-                  <div className="inline-flex items-center justify-center w-12 h-12 bg-lamp/10 text-lamp mb-4">
+                  <div className="inline-flex items-center justify-center w-12 h-12 border border-line text-lamp mb-4">
                     <item.icon size={22} />
                   </div>
                   <h3 className="text-sm font-bold text-paper mb-2">{item.title}</h3>

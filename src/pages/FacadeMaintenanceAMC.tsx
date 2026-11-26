@@ -71,7 +71,7 @@ export default function FacadeMaintenanceAMC() {
         </div>
       </section>
 
-      <section className="py-20">
+      <section className="fg-sec">
         <div className="container mx-auto px-4 max-w-5xl space-y-6">
           <h2 className="text-3xl font-bold">Why Every Building Needs a Facade AMC</h2>
           <p className="text-muted-foreground">Building facades are engineered systems that age gradually. Without regular inspection, small issues such as a cracked sealant joint, a loose gasket or a blocked drainage path can grow into water ingress that damages interiors and disrupts tenants. A facade AMC schedules inspection and repair so these issues are found early.</p>
@@ -92,7 +92,7 @@ export default function FacadeMaintenanceAMC() {
         </div>
       </section>
 
-      <section className="py-20 bg-muted">
+      <section className="fg-sec">
         <div className="container mx-auto px-4 max-w-5xl">
           <h2 className="text-3xl font-bold mb-10 text-center">What Our AMC Covers</h2>
           <div className="grid md:grid-cols-2 gap-4">
@@ -103,7 +103,7 @@ export default function FacadeMaintenanceAMC() {
         </div>
       </section>
 
-      <section className="py-20">
+      <section className="fg-sec">
         <div className="container mx-auto px-4 max-w-4xl">
           <h2 className="text-3xl font-bold mb-10 text-center">Frequently Asked Questions</h2>
           <div className="space-y-6">

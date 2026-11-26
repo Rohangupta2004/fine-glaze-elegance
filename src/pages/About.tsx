@@ -5,6 +5,7 @@ import { Target, Eye, Shield, Users, Award, Clock, FileCheck2, Factory, MapPin, 
 import { Link } from "react-router-dom";
 import { company, telHref } from "@/data/company";
 import SEO from "@/components/SEO";
+import PageHero from "@/components/common/PageHero";
 import { useSiteMedia } from "@/hooks/useSiteMedia";
 
 const values = [
@@ -72,38 +73,17 @@ const About = () => {
           },
         }}
       />
-      {/* Hero Section */}
-      <section className="relative pt-32 pb-20 overflow-hidden" ref={heroRef.ref}>
-        <div className="absolute inset-0">
-          <img src={aboutHero} alt="" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-night-2" />
-        </div>
-        <div className="fg-wrap">
-          <div
-            className={cn(
-              "max-w-3xl mx-auto text-center space-y-6 slide-up",
-              heroRef.isVisible && "visible"
-            )}
-          >
-            <span className="inline-flex items-center gap-2 px-4 py-2 bg-lamp/20 text-lamp text-sm font-bold border border-lamp/30">
-              About Us
-            </span>
-            <h1 className="text-3xl md:text-4xl font-bold text-paper">
-              Facade Specialists in{" "}
-              <span className="text-gradient-gold">Pune &amp; Mumbai</span>
-            </h1>
-            <p className="text-paper/80 text-lg">
-              Fine Glaze designs, fabricates, installs and maintains facade
-              systems for developers and building owners in Pune and Mumbai.
-              Everything on this page is taken from our company profile — and
-              we are happy to share the documents behind it.
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        crumbs={[{ label: "About" }]}
+        title={<>Facade Specialists in <span className="text-gradient-gold">Pune &amp; Mumbai</span></>}
+        intro="Fine Glaze designs, fabricates, installs and maintains facade systems for developers and building owners in Pune and Mumbai. Everything on this page is taken from our company profile, and we are happy to share the documents behind it."
+        image={{ src: aboutHero, alt: "Facade by Fine Glaze" }}
+        secondary={{ label: "View Projects", to: "/portfolio" }}
+        source="about_hero"
+      />
 
       {/* Story Section */}
-      <section className="py-20 bg-background" ref={storyRef.ref}>
+      <section className="fg-sec" ref={storyRef.ref}>
         <div className="fg-wrap">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div
@@ -177,7 +157,7 @@ const About = () => {
       </section>
 
       {/* 🎥 Video Section */}
-      <section className="py-20 bg-muted" ref={videoRef.ref}>
+      <section className="fg-sec" ref={videoRef.ref}>
         <div className="fg-wrap">
           <div
             className={cn(
@@ -219,7 +199,7 @@ const About = () => {
         <div className="fg-wrap">
           <div className="grid md:grid-cols-2 gap-8">
             <div className="glass-card metallic-border p-8 space-y-4">
-              <div className="w-14 h-14 bg-primary/10 flex items-center justify-center">
+              <div className="w-14 h-14 border border-line flex items-center justify-center">
                 <Target size={28} className="text-primary" />
               </div>
               <h3 className="text-2xl font-bold text-foreground">
@@ -231,7 +211,7 @@ const About = () => {
             </div>
 
             <div className="glass-card metallic-border p-8 space-y-4">
-              <div className="w-14 h-14 bg-primary/10 flex items-center justify-center">
+              <div className="w-14 h-14 border border-line flex items-center justify-center">
                 <Eye size={28} className="text-primary" />
               </div>
               <h3 className="text-2xl font-bold text-foreground">
@@ -246,7 +226,7 @@ const About = () => {
       </section>
 
       {/* Team */}
-      <section className="py-20 bg-muted" aria-labelledby="team-heading">
+      <section className="fg-sec" aria-labelledby="team-heading">
         <div className="fg-wrap">
           <div className="text-center space-y-3 mb-12 max-w-2xl mx-auto">
             <span className="text-primary font-medium text-sm">Our Team</span>
@@ -276,7 +256,7 @@ const About = () => {
       </section>
 
       {/* Credentials */}
-      <section className="py-20 bg-background" aria-labelledby="credentials-heading">
+      <section className="fg-sec" aria-labelledby="credentials-heading">
         <div className="fg-wrap">
           <div className="text-center space-y-3 mb-12 max-w-2xl mx-auto">
             <span className="text-primary font-medium text-sm">Company Facts</span>
@@ -326,7 +306,7 @@ const About = () => {
       </section>
 
       {/* Values */}
-      <section className="py-20 bg-muted" ref={valuesRef.ref}>
+      <section className="fg-sec" ref={valuesRef.ref}>
         <div className="fg-wrap">
           <div
             className={cn(
@@ -352,7 +332,7 @@ const About = () => {
                 )}
                 style={{ transitionDelay: `${index * 0.1}s` }}
               >
-                <div className="w-16 h-16 bg-primary/10 flex items-center justify-center mx-auto">
+                <div className="w-16 h-16 border border-line flex items-center justify-center mx-auto">
                   <value.icon size={32} className="text-primary" />
                 </div>
                 <h3 className="text-xl font-semibold text-foreground">

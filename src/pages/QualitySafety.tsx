@@ -90,7 +90,7 @@ export default function QualitySafety() {
       </section>
 
       {/* 8 STAGES */}
-      <section className="py-16 md:py-20 bg-background" aria-labelledby="stages">
+      <section className="fg-sec" aria-labelledby="stages">
         <div className="fg-wrap">
           <h2 id="stages" className="text-2xl md:text-4xl font-bold text-foreground">Eight controlled stages on every package</h2>
           <ol className="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -106,7 +106,7 @@ export default function QualitySafety() {
       </section>
 
       {/* DESIGN + FABRICATION */}
-      <section className="py-16 md:py-20 bg-muted" aria-labelledby="design">
+      <section className="fg-sec" aria-labelledby="design">
         <div className="fg-wrap grid lg:grid-cols-2 gap-8">
           <article className="bg-card border border-border p-7">
             <PenTool className="h-7 w-7 text-primary" aria-hidden="true" />
@@ -138,7 +138,7 @@ export default function QualitySafety() {
       </section>
 
       {/* QA + TESTING */}
-      <section className="py-16 md:py-20 bg-background" aria-labelledby="qa">
+      <section className="fg-sec" aria-labelledby="qa">
         <div className="fg-wrap">
           <div className="flex items-center gap-3">
             <ClipboardCheck className="h-7 w-7 text-primary" aria-hidden="true" />
@@ -188,7 +188,7 @@ export default function QualitySafety() {
       </section>
 
       {/* MATERIALS */}
-      <section className="py-16 md:py-20 bg-background" aria-labelledby="materials">
+      <section className="fg-sec" aria-labelledby="materials">
         <div className="fg-wrap">
           <div className="flex items-center gap-3">
             <Layers className="h-7 w-7 text-primary" aria-hidden="true" />
@@ -208,7 +208,7 @@ export default function QualitySafety() {
       </section>
 
       {/* AFTER HANDOVER */}
-      <section className="py-16 md:py-20 bg-muted" aria-labelledby="after">
+      <section className="fg-sec" aria-labelledby="after">
         <div className="fg-wrap grid lg:grid-cols-2 gap-10 items-start">
           <div>
             <ShieldCheck className="h-7 w-7 text-primary" aria-hidden="true" />
@@ -230,7 +230,7 @@ export default function QualitySafety() {
       </section>
 
       {/* HOW TO VERIFY */}
-      <section className="py-16 md:py-20 bg-background" aria-labelledby="verify">
+      <section className="fg-sec" aria-labelledby="verify">
         <div className="fg-wrap">
           <h2 id="verify" className="text-2xl md:text-4xl font-bold text-foreground">How to check any facade contractor — including us</h2>
           <p className="mt-3 text-muted-foreground">Seven questions that separate a capable contractor from a good brochure.</p>

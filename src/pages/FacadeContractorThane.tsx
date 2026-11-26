@@ -73,7 +73,7 @@ export default function FacadeContractorThane() {
         </div>
       </section>
 
-      <section className="py-20">
+      <section className="fg-sec">
         <div className="container mx-auto px-4 max-w-5xl space-y-6">
           <h2 className="text-3xl font-bold">Serving Thane's Fast-Growing Real Estate Market</h2>
           <p className="text-muted-foreground">
@@ -94,7 +94,7 @@ export default function FacadeContractorThane() {
         </div>
       </section>
 
-      <section className="py-20 bg-muted">
+      <section className="fg-sec">
         <div className="container mx-auto px-4 max-w-5xl">
           <h2 className="text-3xl font-bold mb-10 text-center">What We Offer in Thane</h2>
           <div className="grid md:grid-cols-2 gap-4">
@@ -105,7 +105,7 @@ export default function FacadeContractorThane() {
         </div>
       </section>
 
-      <section className="py-20">
+      <section className="fg-sec">
         <div className="container mx-auto px-4 max-w-4xl">
           <h2 className="text-3xl font-bold mb-10 text-center">Frequently Asked Questions</h2>
           <div className="space-y-6">

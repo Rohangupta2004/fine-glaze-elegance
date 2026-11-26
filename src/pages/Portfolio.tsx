@@ -435,7 +435,7 @@ const Portfolio = () => {
       {/* ════════════════════════════════════════════════════
           PROJECTS — alternating showcase + grid
           ════════════════════════════════════════════════════ */}
-      <section className="py-8 md:py-14 bg-night-2">
+      <section className="fg-sec">
         <div className="container mx-auto px-5 md:px-16">
           {filtered.length === 0 ? (
             <p className="text-center text-mute py-20">
@@ -472,7 +472,7 @@ const Portfolio = () => {
       {/* ════════════════════════════════════════════════════
           CLIENTS — trust strip
           ════════════════════════════════════════════════════ */}
-      <section className="py-10 bg-night">
+      <section className="fg-sec">
         <div className="container mx-auto px-5 md:px-16 text-center">
           <p className="text-mute text-xs font-bold mb-6">
             Clients We Have Delivered For
