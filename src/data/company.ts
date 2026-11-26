@@ -61,8 +61,6 @@ export const company = {
     "We are based in Pune and Mumbai and take facade projects across India.",
 
   stats: {
-    sqmDelivered: "~20,566",
-    sqmDeliveredLabel: "sqm of facade delivered across Pune and Mumbai",
     projectRecords: "16",
     projectRecordsLabel: "project records documented in our company profile",
     coreTeam: "40+",

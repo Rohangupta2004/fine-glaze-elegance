@@ -166,8 +166,8 @@ const About = () => {
                   is cut. Fabrication happens at our own unit
                   in {company.fabricationUnit.location}, and installation is run by our
                   own site in-charges and supervisors under a dedicated safety officer.
-                  Since starting out we have delivered {company.stats.sqmDelivered} sqm of
-                  facade across Pune and Mumbai, and were named{" "}
+                  Since starting out we have delivered facade projects across Pune and
+                  Mumbai, and were named{" "}
                   <strong>{company.award.title}</strong> by {company.award.by}.
                 </p>
               </div>

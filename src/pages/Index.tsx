@@ -5,6 +5,11 @@ import SEO from "@/components/SEO";
 import StoryHero from "@/components/home/cinematic/StoryHero";
 import HomeNumbers from "@/components/home/cinematic/HomeNumbers";
 import HomeClients from "@/components/home/cinematic/HomeClients";
+import HomeServices from "@/components/home/cinematic/HomeServices";
+import HomeProcess from "@/components/home/cinematic/HomeProcess";
+import HomeVideo from "@/components/home/cinematic/HomeVideo";
+import HomeReviews from "@/components/home/cinematic/HomeReviews";
+import HomeArticles from "@/components/home/cinematic/HomeArticles";
 import HomeWork from "@/components/home/cinematic/HomeWork";
 import HomeClose from "@/components/home/cinematic/HomeClose";
 import { useReveal } from "@/components/home/cinematic/useReveal";
@@ -45,7 +50,12 @@ const Index = () => {
         <StoryHero />
         <HomeNumbers />
         <HomeClients />
+        <HomeServices />
+        <HomeProcess />
+        <HomeVideo />
         <HomeWork />
+        <HomeReviews />
+        <HomeArticles />
         <HomeClose />
       </div>
     </Layout>

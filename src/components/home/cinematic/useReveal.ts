@@ -2,7 +2,7 @@ import { RefObject, useEffect } from "react";
 
 /**
  * Page-level reveal for the home page. Adds the "js" flag to the .fg-home wrapper, marks .pl and
- * .rv elements "in" when 25% visible, runs the number counters, and tilts the gallery plates
+ * .rv elements "in" when 25% visible, runs the number counters, and tilts the project frame (.tilt)
  * under a fine hover pointer. Without JS everything stays visible.
  */
 export function useReveal(ref: RefObject<HTMLElement>) {
@@ -60,7 +60,7 @@ export function useReveal(ref: RefObject<HTMLElement>) {
     }
 
     if (!reduce && matchMedia("(hover:hover) and (pointer:fine)").matches) {
-      root.querySelectorAll<HTMLElement>(".pl").forEach((pl) => {
+      root.querySelectorAll<HTMLElement>(".pl, .tilt").forEach((pl) => {
         const move = (e: PointerEvent) => {
           const r = pl.getBoundingClientRect();
           pl.style.setProperty("--ry", ((e.clientX - r.left) / r.width - 0.5) * 3 + "deg");

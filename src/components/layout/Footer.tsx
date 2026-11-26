@@ -30,14 +30,12 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="space-y-5">
-            <img
-              src="/Logofg.webp"
-              alt="Fine Glaze"
-              className="h-12 w-auto brightness-150"
-            />
+            <div className="inline-block bg-paper p-4">
+              <img src="/Logofg.webp" alt="Fine Glaze" width={1920} height={603} className="h-11 w-auto" />
+            </div>
             <p className="text-paper/70 text-sm leading-relaxed">
-              Facade design, fabrication, installation and maintenance — from Pune and Mumbai.
-              Own fabrication unit at Pisoli, Pune. Embassy REIT Best Vendor Performance 2024.
+              Facade design, fabrication, installation and maintenance from Pune and Mumbai.
+              Our own fabrication unit is at {company.fabricationUnit.location}. Embassy REIT Best Vendor Performance 2024.
             </p>
             {/* Social Links */}
             <div className="flex gap-3 pt-2">
@@ -55,7 +53,7 @@ export const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-display font-semibold text-lg tracking-tight mb-5">Quick Links</h4>
+            <h4 className="font-semibold text-base tracking-tight mb-5">Quick Links</h4>
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.href}>
@@ -78,9 +76,9 @@ export const Footer = () => {
             </ul>
           </div>
 
-          {/* Services — Now with internal links */}
+          {/* Services */}
           <div>
-            <h4 className="font-display font-semibold text-lg tracking-tight mb-5">Our Services</h4>
+            <h4 className="font-semibold text-base tracking-tight mb-5">Our Services</h4>
             <ul className="space-y-3">
               {services.map((service) => (
                 <li key={service.href}>
@@ -97,7 +95,7 @@ export const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h4 className="font-display font-semibold text-lg tracking-tight mb-5">Contact Us</h4>
+            <h4 className="font-semibold text-base tracking-tight mb-5">Contact Us</h4>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <MapPin size={18} className="text-lamp mt-1 shrink-0" />
@@ -109,7 +107,7 @@ export const Footer = () => {
                 >
                   A3 LW-13, Pragati Serene Building, Sr.No.2, HDFC Bank Chowk, Plot B, Autadwadi Handewadi, Mahadev Wadi, Mohammed Wadi,
                   <br />
-                  Pune – 411060
+                  Pune 411060
                 </a>
               </li>
               <li className="flex items-center gap-3">
@@ -147,11 +145,11 @@ export const Footer = () => {
         </div>
       </div>
 
-      {/* Where we work — only places we actually operate */}
+      {/* Where we work: only places we actually operate */}
       <div className="border-t border-line py-5">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-3 text-xs text-mute">
-            <span className="font-semibold text-lamp shrink-0">
+            <span className="font-medium text-lamp shrink-0">
               Where we work
             </span>
             <nav aria-label="Service areas" className="flex flex-wrap gap-x-3 gap-y-1 text-paper/70">

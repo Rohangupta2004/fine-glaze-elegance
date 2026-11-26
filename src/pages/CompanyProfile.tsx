@@ -114,7 +114,7 @@ export default function CompanyProfilePage() {
         <title>Fine Glaze Company Profile | Architectural Facade Systems</title>
         <meta
           name="description"
-          content="Fine Glaze Company Profile. 20,566+ SQM delivered, unitized curtain wall, structural glazing, ACP cladding, leadership team, and landmark projects."
+          content="Fine Glaze Company Profile. unitized curtain wall, structural glazing, ACP cladding, leadership team, and landmark projects."
         />
         <link rel="canonical" href="https://fineglaze.com/company-profile" />
         <meta property="og:title" content="Fine Glaze Company Profile — Facade Specialists Mumbai & Pune" />
@@ -336,13 +336,7 @@ export default function CompanyProfilePage() {
           </div>
 
           {/* Key Facts Summary Cards */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10">
-            <div className="bg-stone-950/80 border border-stone-800 p-5 rounded-2xl">
-              <div className="text-2xl font-black text-amber-400">20,566+</div>
-              <div className="text-xs text-stone-400 mt-1 uppercase tracking-wider font-semibold">SQM Delivered</div>
-              <p className="text-xs text-stone-300 mt-2">Facade installations across Pune and Mumbai commercial hubs.</p>
-            </div>
-
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-10">
             <div className="bg-stone-950/80 border border-stone-800 p-5 rounded-2xl">
               <div className="text-2xl font-black text-amber-400">40+ Team</div>
               <div className="text-xs text-stone-400 mt-1 uppercase tracking-wider font-semibold">Core Engineering</div>

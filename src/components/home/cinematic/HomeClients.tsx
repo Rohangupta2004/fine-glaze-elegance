@@ -44,22 +44,31 @@ const HomeClients = () => {
     return logos.find((l) => l && typeof l.name === "string" && l.filename && firstWord(l.name) === w);
   };
 
+  const cells = (hidden: boolean) =>
+    company.clients.map((c) => {
+      const logo = logoFor(c.name);
+      return (
+        <li key={c.name}>
+          {logo ? (
+            <img src={getPublicUrl(logo.filename)} alt={hidden ? "" : c.name} loading="lazy" decoding="async" />
+          ) : (
+            <b>{c.name}</b>
+          )}
+          <span>{c.work.split(" · ").join(". ")}.</span>
+        </li>
+      );
+    });
+
   return (
-    <section className="cli full rv" aria-label="Clients">
+    <section className="cli rv" aria-label="Clients">
       <div className="wrap">
         <h2 className="wipe">Who we have built for.</h2>
-        <ul className="cg">
-          {company.clients.map((c) => {
-            const logo = logoFor(c.name);
-            return (
-              <li key={c.name}>
-                {logo && <img src={getPublicUrl(logo.filename)} alt="" loading="lazy" decoding="async" />}
-                <b>{c.name}</b>
-                <span>{c.work.split(" · ").join(". ")}.</span>
-              </li>
-            );
-          })}
-        </ul>
+      </div>
+      <div className="mq">
+        <div className="mq-t">
+          <ul>{cells(false)}</ul>
+          <ul aria-hidden="true">{cells(true)}</ul>
+        </div>
       </div>
     </section>
   );

@@ -15,25 +15,33 @@ const HomeNumbers = () => {
             <dt>
               <span data-count={company.stats.projectRecords}>{company.stats.projectRecords}</span>
             </dt>
-            <dd>project records in our company profile</dd>
+            <dd className="nm">Projects on record</dd>
+            <dd className="ex">documented in our company profile</dd>
           </div>
           <div>
             <dt>
               <span data-count={company.clients.length}>{company.clients.length}</span>
             </dt>
-            <dd>clients we have delivered for</dd>
+            <dd className="nm">Clients served</dd>
+            <dd className="ex">developers, contractors and owners</dd>
           </div>
           <div>
             <dt>
-              <span data-count={team}>{team}</span>+
+              <span data-count={team}>{team}</span>
+              <span className="plus" aria-hidden="true">+</span>
+              <span className="sr">or more</span>
             </dt>
-            <dd>people in engineering, supervision and site work</dd>
+            <dd className="nm">Core team</dd>
+            <dd className="ex">engineering, supervision and site work</dd>
           </div>
           <div>
             <dt>
-              <span data-count={FOUNDER_YEARS}>{FOUNDER_YEARS}</span>+
+              <span data-count={FOUNDER_YEARS}>{FOUNDER_YEARS}</span>
+              <span className="plus" aria-hidden="true">+</span>
+              <span className="sr">or more</span>
             </dt>
-            <dd>years our founder has worked in facades</dd>
+            <dd className="nm">Years in facades</dd>
+            <dd className="ex">our founder&apos;s experience in the trade</dd>
           </div>
           <div>
             <dt>
@@ -41,7 +49,8 @@ const HomeNumbers = () => {
                 {company.award.year}
               </span>
             </dt>
-            <dd>Best Vendor Performance, awarded by Embassy REIT</dd>
+            <dd className="nm">Best Vendor Performance</dd>
+            <dd className="ex">awarded by {company.award.by}</dd>
           </div>
         </dl>
       </div>

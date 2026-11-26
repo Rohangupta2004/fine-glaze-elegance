@@ -387,9 +387,8 @@ const Portfolio = () => {
           ════════════════════════════════════════════════════ */}
       <section className="bg-stone-900 py-6 md:py-8 border-y border-stone-800">
         <div className="container mx-auto px-5 md:px-16">
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-4 md:gap-0 md:divide-x md:divide-stone-700">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-0 md:divide-x md:divide-stone-700">
             {[
-              { number: "~20,566 SQM", label: "Facade Area Delivered" },
               { number: "16", label: "Project Records Documented" },
               { number: "2 Cities", label: "Pune & Mumbai" },
               { number: "40+", label: "Core Team" },

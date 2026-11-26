@@ -344,10 +344,9 @@ export default function Maintenance() {
       <section className="bg-stone-900 py-10">
         <div className="container mx-auto px-6 md:px-16">
           <FadeIn>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-0 md:divide-x md:divide-stone-700">
+            <div className="grid grid-cols-3 gap-6 md:gap-0 md:divide-x md:divide-stone-700">
               {[
                 { number: "16", label: "Project Records Documented" },
-                { number: "~20,566", label: "Sqm Facade Delivered" },
                 { number: "40+", label: "Core Team" },
                 { number: "2024", label: "Embassy REIT Best Vendor Performance" },
               ].map((s) => (

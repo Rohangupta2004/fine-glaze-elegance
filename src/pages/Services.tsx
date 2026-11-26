@@ -70,7 +70,7 @@ const services = [
       "Pool Fencing Systems",
       "Staircase Glass Panels",
     ],
-    stats: { value: "~20,566", label: "Sqm Facade Delivered, Pune and Mumbai" },
+    stats: { value: "Frameless", label: "Spigot, Standoff and Semi-Frameless Systems" },
     images: [
       "/railing-spigot.webp",
       "/railing-standoff.webp",

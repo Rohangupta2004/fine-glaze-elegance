@@ -4,6 +4,7 @@ import { Menu, X, ChevronDown, FileText } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useBookCall } from "@/components/booking/BookCallProvider";
 import { useCompanyProfile } from "@/context/CompanyProfileContext";
+import "./header.css";
 
 /* ================= SERVICES & INDUSTRIES ================= */
 const serviceLinks = [
@@ -120,10 +121,8 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
     <>
       {/* HEADER */}
       <header
-        className={cn(
-          "fixed top-0 left-0 right-0 z-50 transition-colors duration-300 text-paper",
-          transparent ? "bg-transparent" : "bg-night-2 border-b border-line"
-        )}
+        data-clear={transparent ? "true" : "false"}
+        className="fg-hdr fixed top-0 left-0 right-0 z-50 text-paper"
       >
         <div className="container mx-auto px-4 h-16 lg:h-20 flex items-center justify-between">
           {/* Wordmark */}
@@ -137,7 +136,7 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
               alt="Fine Glaze"
               width={1920}
               height={603}
-              className={cn("h-10 lg:h-12 w-auto transition-[filter] duration-300", transparent ? "brightness-0 invert opacity-95" : "brightness-125")}
+              className="h-10 lg:h-12 w-auto brightness-0 invert"
             />
           </Link>
 
@@ -162,7 +161,7 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
                   isServiceOpen ? "opacity-100 visible" : "opacity-0 invisible"
                 )}
               >
-                <div className="bg-night-2 border border-line p-2">
+                <div className="fg-menu p-2">
                   {serviceLinks.map((service) => (
                     <Link
                       key={service.href}
@@ -204,7 +203,7 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
                   isIndustryOpen ? "opacity-100 visible" : "opacity-0 invisible"
                 )}
               >
-                <div className="bg-night-2 border border-line p-2">
+                <div className="fg-menu p-2">
                   {industryLinks.map((ind) => (
                     <Link
                       key={ind.href}
@@ -233,7 +232,7 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
             >
               <FileText size={14} className="text-lamp shrink-0" />
               <span>Company Profile</span>
-              <span className="text-[11px] font-semibold px-1.5 py-0.5 bg-lamp text-lamp-ink rounded-sm">PDF</span>
+              <span className="text-[11px] font-semibold px-1.5 py-0.5 bg-lamp text-lamp-ink">PDF</span>
             </Link>
           </nav>
 
@@ -242,7 +241,7 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
             <button
               type="button"
               onClick={book}
-              className="h-11 px-[18px] text-[15px] font-medium text-paper bg-transparent shadow-[inset_0_0_0_1px_rgba(236,232,223,0.45)] rounded-sm transition-[filter,box-shadow] hover:shadow-[inset_0_0_0_1px_#ffb866] hover:text-lamp focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-glass"
+              className="h-11 px-[18px] text-[15px] font-medium text-paper bg-transparent shadow-[inset_0_0_0_1px_rgba(236,232,223,0.45)] transition-[filter,box-shadow] hover:shadow-[inset_0_0_0_1px_#dd9a5b] hover:text-lamp focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-glass"
             >
               Book a call
             </button>
@@ -267,9 +266,9 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
             className="fixed inset-0 z-[55] bg-night/70 lg:hidden"
             onClick={() => setIsMobileMenuOpen(false)}
           />
-          <div className="fixed top-0 left-0 right-0 z-[60] bg-night-2 text-paper border-b border-line max-h-[90vh] overflow-y-auto lg:hidden animate-in slide-in-from-top duration-200">
-            <div className="flex items-center justify-between px-5 h-16 border-b border-line sticky top-0 bg-night-2 z-10">
-              <img src="/Logofg.webp" alt="Fine Glaze" width={1920} height={603} className="h-10 w-auto brightness-150" />
+          <div className="fixed top-0 left-0 right-0 z-[60] fg-menu-m text-paper max-h-[90vh] overflow-y-auto lg:hidden animate-in slide-in-from-top duration-200">
+            <div className="flex items-center justify-between px-5 h-16 border-b border-line sticky top-0 z-10">
+              <img src="/Logofg.webp" alt="Fine Glaze" width={1920} height={603} className="h-10 w-auto brightness-0 invert" />
               <button type="button" onClick={() => setIsMobileMenuOpen(false)} aria-label="Close menu" className="p-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-glass">
                 <X size={24} />
               </button>
@@ -322,7 +321,7 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
                     <FileText size={18} className="text-lamp shrink-0" />
                     <span>Company Profile</span>
                   </span>
-                  <span className="text-[11px] font-semibold px-2 py-0.5 bg-lamp text-lamp-ink rounded-sm">PDF</span>
+                  <span className="text-[11px] font-semibold px-2 py-0.5 bg-lamp text-lamp-ink">PDF</span>
                 </Link>
                 <Link to="/blog" onClick={() => setIsMobileMenuOpen(false)} className="block text-base font-medium py-1">Articles</Link>
                 <Link to="/about" onClick={() => setIsMobileMenuOpen(false)} className="block text-base font-medium py-1">About</Link>
@@ -336,7 +335,7 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
                     setIsMobileMenuOpen(false);
                     setTimeout(book, 200);
                   }}
-                  className="w-full h-12 bg-lamp text-lamp-ink font-semibold text-base rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-glass"
+                  className="w-full h-12 bg-lamp text-lamp-ink font-semibold text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-glass"
                 >
                   Book a call
                 </button>

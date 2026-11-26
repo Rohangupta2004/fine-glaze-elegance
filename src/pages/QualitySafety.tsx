@@ -73,9 +73,8 @@ export default function QualitySafety() {
               promise we don't already practise.
             </p>
           </div>
-          <dl className="grid grid-cols-2 gap-3">
+          <dl className="grid grid-cols-3 gap-3">
             {[
-              [company.stats.sqmDelivered, "sqm delivered"],
               [company.stats.projectRecords, "documented projects"],
               [company.stats.coreTeam, "core team"],
               ["2024", `${company.award.by} Best Vendor`],
