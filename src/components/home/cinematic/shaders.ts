@@ -4,7 +4,7 @@ export const FS = `#version 300 es
 precision highp float;
 out vec4 o;
 uniform vec2 uRes; uniform float uT,uP,uIn,uSun,uN,uAsp,uNi;
-uniform vec3 uRo,uF,uR,uU; uniform vec4 uTR; uniform sampler2D uTx;
+uniform vec3 uRo,uF,uR,uU; uniform vec4 uTR; uniform sampler2D uTx; uniform vec2 uBay; uniform float uOpen,uLit,uSg;
 const float W=42.,H=162.,D=30.,PW=1.5,FH=3.6,SP=.2;
 float sst(float a,float b,float x){float t=clamp((x-a)/(b-a),0.,1.);return t*t*(3.-2.*t);}
 float h21(vec2 p){p=fract(p*vec2(123.34,456.21));p+=dot(p,p+45.32);return fract(p.x*p.y);}
@@ -72,12 +72,14 @@ vec3 facade(vec2 uv,vec3 n,vec3 tx,vec3 rd,bool front){
     if(t.x>0.&&t.x<1.&&t.y>0.&&t.y<1.){
       float li=floor((1.-t.y)*uN);
       float on=clamp(uIn*(uN+1.6)-li,0.,1.); on*=on*(3.-2.*on);
-      tm=texture(uTx,vec2(t.x,1.-t.y)).r*on;
-      glow=textureLod(uTx,vec2(t.x,1.-t.y),5.).r*on;
+      tm=texture(uTx,vec2(t.x,1.-t.y)).r*on*uSg;
+      glow=textureLod(uTx,vec2(t.x,1.-t.y),5.).r*on*uSg;
     }
   }
   prob*=1.-inr;
-  float lit=step(r3,prob)*(.6+.4*r2);
+  float isB=front?step(abs(id.x-uBay.x),.5)*step(abs(id.y-uBay.y),.5):0.;
+  prob*=front?1.-step(abs(id.x-uBay.x),3.5)*step(abs(id.y-uBay.y),1.5):1.;
+  float lit=max(step(r3,prob)*(.6+.4*r2),isB*uLit);
   vec3 inside=mix(rm*(.03*vec3(.5,.7,1.)+lit*1.15)+warm*fx*2.3*lit*exp(-tt*.07),warm*prob*.36,lod);
   inside+=vec3(1.,.9,.72)*(tm*2.8+glow*.6);
   float ao=mix(.86+.14*sst(0.,.07,min(min(f.x,1.-f.x),min(f.y,1.-f.y)*2.4)),1.,lod);
@@ -86,6 +88,7 @@ vec3 facade(vec2 uv,vec3 n,vec3 tx,vec3 rd,bool front){
   vec3 c=mix(glass,sp,spand);
   vec3 mc=vec3(.028,.033,.04)+refl*.05+vec3(.06,.07,.08)*sst(.03,.0,abs(fract(g.x+.5)-.5-.012))*(1.-lod);
   c=mix(c,mc,mull);
+  if(isB>.5){vec3 oc=rm*.2+vec3(.01,.012,.018)+warm*fx*.5*exp(-tt*.07);oc=mix(oc,vec3(.2,.2,.21)*(.55+.45*f.x),step(f.y,.085));c=mix(c,oc,uOpen);}
   return c;
 }
 void main(){
