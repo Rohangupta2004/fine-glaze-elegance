@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Info, Phone } from "lucide-react";
 import SEO from "@/components/SEO";
+import PageHero from "@/components/common/PageHero";
 import { Layout } from "@/components/layout/Layout";
 import { useBookCall } from "@/components/booking/BookCallProvider";
 import { COST_SYSTEMS, UNIT_LABEL, type CostSystem } from "@/data/costRanges";
@@ -70,7 +71,7 @@ export default function FacadeCostEstimator() {
   ];
 
   return (
-    <Layout>
+    <Layout darkHero>
       <SEO
         title="Facade Project Cost Request | Fine Glaze"
         description="Tell us the system, area, city and floors for your facade, windows or glazing project and book a call. We come back with a figure for your building."
@@ -79,16 +80,14 @@ export default function FacadeCostEstimator() {
         schemas={schemas}
       />
 
-      <section className="fg-sec">
-        <div className="fg-wrap max-w-4xl">
-          <p className="text-lamp text-xs font-bold mb-4">Facade and window cost</p>
-          <h1 className="text-3xl sm:text-5xl font-extrabold leading-tight">Get a figure for your building</h1>
-          <p className="mt-4 text-paper/80 text-lg">
-            Pick a system and tell us the area, city and floors. The cost depends on these inputs and on the
-            specification, so we call you back with a figure for your building.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        crumbs={[{ label: "Facade cost request" }]}
+        title="Get a figure for your building"
+        intro="Pick a system and tell us the area, city and floors. The cost depends on these inputs and on the specification, so we call you back with a figure for your building."
+        source="estimator_hero"
+        hideAction
+      />
+
 
       <section className="fg-sec">
         <div className="fg-wrap">

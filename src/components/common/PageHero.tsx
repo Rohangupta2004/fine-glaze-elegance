@@ -24,10 +24,12 @@ export interface PageHeroProps {
   source?: string;
   /** Extra quiet line under the buttons. */
   extra?: ReactNode;
+  /** Hide the Book a call button (legal pages). */
+  hideAction?: boolean;
 }
 
 /** Shared hero for service, city, industry, guide and static pages. Use inside <Layout darkHero>. */
-export const PageHero = ({ crumbs = [], title, intro, image, secondary, source = "page_hero", extra }: PageHeroProps) => {
+export const PageHero = ({ crumbs = [], title, intro, image, secondary, source = "page_hero", extra, hideAction }: PageHeroProps) => {
   const { open } = useBookCall();
   const fig = useRef<HTMLElement>(null);
   const [armed, seen] = useWipe(fig);
@@ -56,10 +58,12 @@ export const PageHero = ({ crumbs = [], title, intro, image, secondary, source =
             </nav>
             <h1>{title}</h1>
             {intro && <p className="ph-intro">{intro}</p>}
-            <div className="ph-act">
-              <button type="button" className="fg-btn" onClick={() => open({ source })}>
-                Book a call
-              </button>
+            <div className="ph-act" hidden={hideAction && !secondary ? true : undefined}>
+              {!hideAction && (
+                <button type="button" className="fg-btn" onClick={() => open({ source })}>
+                  Book a call
+                </button>
+              )}
               {secondary &&
                 (secondary.href ? (
                   <a className="fg-lnk" href={secondary.href}>

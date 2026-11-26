@@ -2,35 +2,19 @@ import { Layout } from "@/components/layout/Layout";
 import { Link } from "react-router-dom";
 import { Shield, Mail, Phone } from "lucide-react";
 import SEO from "@/components/SEO";
+import PageHero from "@/components/common/PageHero";
 
 const PrivacyPolicy = () => {
   return (
-    <Layout>
+    <Layout darkHero>
       <SEO
         title="Privacy Policy – Fine Glaze"
         description="Fine Glaze privacy policy. Learn how we collect, use, and protect your personal information when you use our website or contact us for facade services."
         canonical="https://fineglaze.com/privacy-policy"
       />
 
-      {/* Header */}
-      <section className="fg-sec">
-        <div className="fg-wrap">
-          <div className="flex items-center gap-3 mb-4">
-            <div className="w-10 h-10 border border-line flex items-center justify-center">
-              <Shield size={20} className="text-lamp" />
-            </div>
-            <p className="text-lamp text-[10px] font-bold">
-              Legal
-            </p>
-          </div>
-          <h1 className="text-3xl md:text-4xl font-extrabold text-paper mb-2">
-            Privacy Policy
-          </h1>
-          <p className="text-mute text-sm">
-            Last updated: July 2026
-          </p>
-        </div>
-      </section>
+      <PageHero crumbs={[{ label: "Privacy Policy" }]} title="Privacy Policy" intro="Last updated: July 2026" hideAction />
+
 
       {/* Content */}
       <section className="fg-sec">

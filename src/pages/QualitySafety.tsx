@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ClipboardCheck, Factory, HardHat, Layers, PenTool, ShieldCheck, Droplets, FileText, Phone } from "lucide-react";
 import SEO from "@/components/SEO";
+import PageHero from "@/components/common/PageHero";
+import StatBand from "@/components/common/StatBand";
 import { Layout } from "@/components/layout/Layout";
 import { QuoteModal } from "@/components/QuoteModal";
 import { useCompanyProfile } from "@/context/CompanyProfileContext";
@@ -50,7 +52,7 @@ export default function QualitySafety() {
   ];
 
   return (
-    <Layout>
+    <Layout darkHero>
       <SEO
         title="Facade Contractor Quality Control and Safety | Fine Glaze"
         description="How Fine Glaze controls facade quality and safety: in-house shop drawings, stage inspections, a site water penetration test and a dedicated safety officer."
@@ -59,35 +61,25 @@ export default function QualitySafety() {
         schemas={schemas}
       />
 
-      {/* INTRO */}
+      <PageHero
+        crumbs={[{ label: "Quality and safety" }]}
+        title="One accountable team, from drawing to defect liability"
+        intro="Large brands sell a product. On a facade, what decides the result is who draws it, who checks it, who builds it and who answers when it rains. Here is exactly how we do each step."
+        source="quality_hero"
+      />
+
       <section className="fg-sec">
-        <div className="fg-wrap grid lg:grid-cols-[1.4fr_1fr] gap-10 items-center">
-          <div>
-            <p className="text-lamp text-xs font-bold mb-4">How we work</p>
-            <h1 className="text-3xl sm:text-5xl font-extrabold leading-tight">
-              One accountable team, from drawing to defect liability
-            </h1>
-            <p className="mt-5 text-paper/80 text-lg max-w-2xl">
-              Large brands sell a product. On a facade, what decides the result is who draws it, who checks it, who
-              builds it and who answers when it rains. Here is exactly how we do each step — nothing on this page is a
-              promise we don't already practise.
-            </p>
-          </div>
-          <dl className="grid grid-cols-3 gap-3">
-            {[
-              [company.stats.projectRecords, "documented projects"],
-              [company.stats.coreTeam, "core team"],
-              ["2024", `${company.award.by} Best Vendor`],
-            ].map(([v, l]) => (
-              <div key={l} className="border border-line bg-night-2 p-4">
-                <dt className="sr-only">{l}</dt>
-                <dd className="text-2xl font-extrabold text-lamp">{v}</dd>
-                <dd className="text-xs text-mute mt-1">{l}</dd>
-              </div>
-            ))}
-          </dl>
+        <div className="fg-wrap">
+          <StatBand
+            stats={[
+              { value: String(company.stats.projectRecords), name: "Documented projects" },
+              { value: String(company.stats.coreTeam), name: "Core team" },
+              { value: "2024", name: `${company.award.by} Best Vendor` },
+            ]}
+          />
         </div>
       </section>
+
 
       {/* 8 STAGES */}
       <section className="fg-sec" aria-labelledby="stages">

@@ -2,35 +2,19 @@ import { Layout } from "@/components/layout/Layout";
 import { Link } from "react-router-dom";
 import { FileText, Mail, Phone } from "lucide-react";
 import SEO from "@/components/SEO";
+import PageHero from "@/components/common/PageHero";
 
 const TermsOfService = () => {
   return (
-    <Layout>
+    <Layout darkHero>
       <SEO
         title="Terms of Service – Fine Glaze"
         description="Fine Glaze terms of service. Read the terms and conditions governing use of our website and facade services."
         canonical="https://fineglaze.com/terms-of-service"
       />
 
-      {/* Header */}
-      <section className="fg-sec">
-        <div className="fg-wrap">
-          <div className="flex items-center gap-3 mb-4">
-            <div className="w-10 h-10 border border-line flex items-center justify-center">
-              <FileText size={20} className="text-lamp" />
-            </div>
-            <p className="text-lamp text-[10px] font-bold">
-              Legal
-            </p>
-          </div>
-          <h1 className="text-3xl md:text-4xl font-extrabold text-paper mb-2">
-            Terms of Service
-          </h1>
-          <p className="text-mute text-sm">
-            Last updated: July 2026
-          </p>
-        </div>
-      </section>
+      <PageHero crumbs={[{ label: "Terms of Service" }]} title="Terms of Service" intro="Last updated: July 2026" hideAction />
+
 
       {/* Content */}
       <section className="fg-sec">

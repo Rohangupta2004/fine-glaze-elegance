@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { AlertTriangle, CheckCircle2, MessageCircle, Phone, Send, Wrench } from "lucide-react";
 import SEO from "@/components/SEO";
+import PageHero from "@/components/common/PageHero";
 import { Layout } from "@/components/layout/Layout";
 import { company, telHref, whatsappHref } from "@/data/company";
 import { submitLead } from "@/lib/leads";
@@ -105,7 +106,7 @@ export default function ServiceRequest() {
   const field = "w-full  border border-input bg-background px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-lamp";
 
   return (
-    <Layout>
+    <Layout darkHero>
       <SEO
         title="Facade Service Request: Leaks & Broken Glass | Fine Glaze"
         description="Report a glass facade leak, broken or foggy glass, sealant failure, window hardware or ACP damage in Pune or Mumbai. We repair facades we didn't install too."
@@ -114,29 +115,19 @@ export default function ServiceRequest() {
         schemas={schemas}
       />
 
-      <section className="fg-sec">
-        <div className="fg-wrap max-w-5xl">
-          <p className="text-lamp text-xs font-bold mb-4">After-sales &amp; repairs</p>
-          <h1 className="text-3xl sm:text-5xl font-extrabold leading-tight">Facade service request</h1>
-          <p className="mt-4 text-paper/80 text-lg max-w-2xl">
-            Leaking glazing, broken or foggy glass, failed sealant, windows that won't close, loose cladding — tell us what's
-            happening at your building in Pune or Mumbai. We work on facades we didn't install, too.
-          </p>
-          <div className="mt-6 flex flex-col sm:flex-row gap-3">
-            <a href={telHref} className="inline-flex items-center justify-center bg-lamp hover:bg-lamp/90 text-paper font-bold px-6 py-3.5">
-              <Phone className="mr-2 h-4 w-4" /> Urgent? Call {company.phone.mobileDisplay}
-            </a>
-            <a
-              href={whatsappHref("Hi Fine Glaze, I'd like to report a facade issue. Sending photos:")}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center border border-paper/30 px-6 py-3.5 font-bold hover:bg-night hover:text-paper"
-            >
-              <MessageCircle className="mr-2 h-4 w-4" /> Send photos on WhatsApp
-            </a>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        crumbs={[{ label: "Service request" }]}
+        title="Facade service request"
+        intro="Leaking glazing, broken or foggy glass, failed sealant, windows that won't close, loose cladding. Tell us what's happening at your building in Pune or Mumbai. We work on facades we didn't install, too."
+        source="service_request_hero"
+        secondary={{ label: `Urgent? Call ${company.phone.mobileDisplay}`, href: telHref }}
+        extra={
+          <a href={whatsappHref("Hi Fine Glaze, I'd like to report a facade issue. Sending photos:")} target="_blank" rel="noopener noreferrer" className="fg-lnk">
+            Send photos on WhatsApp
+          </a>
+        }
+      />
+
 
       <section className="fg-sec">
         <div className="fg-wrap grid lg:grid-cols-[1.3fr_1fr] gap-8">
