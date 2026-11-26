@@ -35,9 +35,9 @@ export default function FacadeDesignGuide() {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      { "@type": "Question", "name": "What WWR (Window-to-Wall Ratio) is recommended for Indian commercial buildings?", "acceptedAnswer": { "@type": "Answer", "text": "ECBC 2017 recommends maximum 40% WWR for composite climate zones (Pune, Delhi, Hyderabad) and 35% for hot-humid coastal zones (Mumbai, Chennai, Kochi). Higher WWR requires Low-E glass with SHGC below 0.25 to meet energy compliance targets." } },
-      { "@type": "Question", "name": "How do I choose the right glass for a facade in India?", "acceptedAnswer": { "@type": "Answer", "text": "Key parameters: Solar Heat Gain Coefficient (SHGC) — below 0.35 for most Indian climates; Visible Light Transmittance (VLT) — above 40% for daylighting quality; U-value — below 2.0 W/m2K for DGU. Fine Glaze works with facade consultants to select glass that balances energy performance, glare control, and aesthetic requirements." } },
-      { "@type": "Question", "name": "What is a facade consultant and do I need one for my project?", "acceptedAnswer": { "@type": "Answer", "text": "A facade consultant (or facade engineer) specialises in the technical design of building envelopes, including structural analysis, thermal modelling, and specification. For buildings above 6 storeys or with complex geometry, engaging a facade consultant is strongly recommended. Fine Glaze regularly collaborates with India's leading facade consultants on large projects." } },
+      { "@type": "Question", "name": "What WWR (Window-to-Wall Ratio) is recommended for Indian commercial buildings?", "acceptedAnswer": { "@type": "Answer", "text": "The recommended window-to-wall ratio for Indian commercial buildings is set by the Energy Conservation Building Code for the climate zone, along with glass performance. Check the current ECBC and your energy modeller's results for the project." } },
+      { "@type": "Question", "name": "How do I choose the right glass for a facade in India?", "acceptedAnswer": { "@type": "Answer", "text": "Choose facade glass by balancing solar heat gain, visible light transmittance, thermal performance, glare control and appearance for the building's orientation and climate. Your facade consultant or energy modeller should set the target values." } },
+      { "@type": "Question", "name": "What is a facade consultant and do I need one for my project?", "acceptedAnswer": { "@type": "Answer", "text": "A facade consultant is a specialist who designs and specifies the building envelope, including structural analysis, thermal modelling and performance requirements. Large or complex buildings usually benefit from one. Fine Glaze works with consultants on project drawings." } },
     ]
   };
 
@@ -94,19 +94,19 @@ export default function FacadeDesignGuide() {
           
           <h2 className="text-3xl font-bold">Facade Design Principles for Indian Buildings</h2>
           <p className="text-muted-foreground">
-            A well-designed facade is more than an aesthetic choice — it is a multi-performance system. In the Indian context, facade design must address: solar heat gain (India receives 4–6 kWh/sq m/day of solar radiation); monsoon weather resistance (wind-driven rain, high humidity); seismic resilience (Zones II–V across India); fire safety (NBC 2016); and long-term durability in a range of climate zones from coastal to semi-arid.
+            A well-designed facade is a multi-performance system. In India it must address solar heat gain, monsoon weather resistance (wind-driven rain and humidity), seismic and wind loads, fire safety under the National Building Code, and durability across climates from coastal to semi-arid.
           </p>
           <h3 className="text-xl font-bold mt-8 mb-3">Glass-to-Wall Ratio (Window-to-Wall Ratio)</h3>
           <p className="text-muted-foreground">
-            The Window-to-Wall Ratio (WWR) is one of the most important facade design parameters. ECBC (Energy Conservation Building Code) 2017 mandates maximum WWR values by climate zone for commercial buildings. For composite climate (Pune, Delhi): maximum 40% WWR. For hot-humid climate (Mumbai, Chennai): maximum 35% WWR. Higher WWR requires compensating Low-E glass with lower SHGC values.
+            The window-to-wall ratio (WWR) is one of the most important facade design parameters. The Energy Conservation Building Code sets limits and performance requirements for commercial buildings by climate zone. Check the current code and your consultant's energy model, since higher WWR calls for glass with better solar control.
           </p>
           <h3 className="text-xl font-bold mt-8 mb-3">Solar Shading — Reducing Cooling Load</h3>
           <p className="text-muted-foreground mt-4">
-            Fixed horizontal shading (chajjas) over south-facing windows can reduce solar heat gain by 30-50%. Vertical fins on east and west facades control low-angle morning and evening sun. Integrated aluminium louvres and brise-soleils combine shading with architectural character. Fine Glaze designs and installs custom aluminium shading systems as part of integrated facade packages.
+            Shading is a major lever. Fixed horizontal shading on sun-facing windows, vertical fins on east and west faces and integrated aluminium louvers all cut direct sun. Fine Glaze fabricates aluminium louvers and can supply shading as part of a facade package.
           </p>
           <h3 className="text-xl font-bold mt-8 mb-3">Facade Modularity and Buildability</h3>
           <p className="text-muted-foreground mt-4">
-            Commercial facades should be modular — based on a regular structural bay grid (typically 1.2m or 1.5m module for stick systems; 1.2m x 3.0m to 1.5m x 3.6m for unitized panels). Modular design reduces fabrication waste, simplifies installation, and enables efficient future maintenance and panel replacement. Fine Glaze advises architects on optimising bay dimensions during the design development stage to reduce overall facade cost.
+            Commercial facades work best when modular, based on a regular structural bay grid. Modular design reduces waste, simplifies installation and eases later panel replacement. Fine Glaze reviews bay dimensions during design development when asked.
           </p>
     
         </div>
@@ -119,10 +119,10 @@ export default function FacadeDesignGuide() {
           <div className="grid md:grid-cols-2 gap-4">
               <div key="Window-to-Wall Ratio Guidance" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Window-to-Wall Ratio Guidance</span></div>
               <div key="Solar Shading Design" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Solar Shading Design</span></div>
-              <div key="ECBC 2017 Compliance" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">ECBC 2017 Compliance</span></div>
+              <div key="ECBC Pointers" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">ECBC Pointers</span></div>
               <div key="Modular Facade Planning" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Modular Facade Planning</span></div>
-              <div key="Climate Zone Optimisation" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Climate Zone Optimisation</span></div>
-              <div key="Material Selection Framework" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Material Selection Framework</span></div>
+              <div key="Climate Zone Considerations" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Climate Zone Considerations</span></div>
+              <div key="Material Selection Checklist" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Material Selection Checklist</span></div>
           </div>
         </div>
       </section>
@@ -134,15 +134,15 @@ export default function FacadeDesignGuide() {
           <div className="space-y-6">
             <div className="bg-background rounded-xl p-6 shadow-sm">
               <h3 className="text-lg font-bold mb-2">What WWR (Window-to-Wall Ratio) is recommended for Indian commercial buildings?</h3>
-              <p className="text-muted-foreground">ECBC 2017 recommends maximum 40% WWR for composite climate zones (Pune, Delhi, Hyderabad) and 35% for hot-humid coastal zones (Mumbai, Chennai, Kochi). Higher WWR requires Low-E glass with SHGC below 0.25 to meet energy compliance targets.</p>
+              <p className="text-muted-foreground">The recommended window-to-wall ratio for Indian commercial buildings is set by the Energy Conservation Building Code for the climate zone, along with glass performance. Check the current ECBC and your energy modeller's results for the project.</p>
             </div>
             <div className="bg-background rounded-xl p-6 shadow-sm">
               <h3 className="text-lg font-bold mb-2">How do I choose the right glass for a facade in India?</h3>
-              <p className="text-muted-foreground">Key parameters: Solar Heat Gain Coefficient (SHGC) — below 0.35 for most Indian climates; Visible Light Transmittance (VLT) — above 40% for daylighting quality; U-value — below 2.0 W/m2K for DGU. Fine Glaze works with facade consultants to select glass that balances energy performance, glare control, and aesthetic requirements.</p>
+              <p className="text-muted-foreground">Choose facade glass by balancing solar heat gain, visible light transmittance, thermal performance, glare control and appearance for the building's orientation and climate. Your facade consultant or energy modeller should set the target values.</p>
             </div>
             <div className="bg-background rounded-xl p-6 shadow-sm">
               <h3 className="text-lg font-bold mb-2">What is a facade consultant and do I need one for my project?</h3>
-              <p className="text-muted-foreground">A facade consultant (or facade engineer) specialises in the technical design of building envelopes, including structural analysis, thermal modelling, and specification. For buildings above 6 storeys or with complex geometry, engaging a facade consultant is strongly recommended. Fine Glaze regularly collaborates with India's leading facade consultants on large projects.</p>
+              <p className="text-muted-foreground">A facade consultant is a specialist who designs and specifies the building envelope, including structural analysis, thermal modelling and performance requirements. Large or complex buildings usually benefit from one. Fine Glaze works with consultants on project drawings.</p>
             </div>
           </div>
         </div>

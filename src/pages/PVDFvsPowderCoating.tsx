@@ -35,9 +35,9 @@ export default function PVDFvsPowderCoating() {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      { "@type": "Question", "name": "Is PVDF coating worth the extra cost in India?", "acceptedAnswer": { "@type": "Answer", "text": "For any commercial building intended to last 15+ years, PVDF coating's lower lifecycle cost almost always justifies the premium. A PVDF-coated facade maintained for 25 years costs less in total than a powder-coated facade that needs full recoating or replacement at 10-12 years." } },
-      { "@type": "Question", "name": "Can I repaint powder-coated aluminium facade in India?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, but it requires professional preparation — abrasive blasting or chemical stripping of the old coating, primer application, and re-coating. This is feasible for accessible low-rise facades but very expensive and disruptive for high-rise buildings. PVDF coating's longevity avoids this cost entirely." } },
-      { "@type": "Question", "name": "Is anodising better than PVDF for aluminium facades?", "acceptedAnswer": { "@type": "Answer", "text": "Both are high-performance finishes for aluminium. Anodising creates an integral oxide layer (not a paint film) that cannot peel and is highly corrosion-resistant. However, anodising has a limited colour range (clear, bronze, gold, champagne, black) and is less resistant to alkaline cleaning agents. PVDF offers more colour options and equivalent or better UV durability." } },
+      { "@type": "Question", "name": "Is PVDF coating worth the extra cost in India?", "acceptedAnswer": { "@type": "Answer", "text": "PVDF often pays off on buildings meant to last many years, especially coastal or hard-to-reach facades, because it holds colour and gloss longer and delays recoating. Compare full life cost, not first cost alone." } },
+      { "@type": "Question", "name": "Can I repaint powder-coated aluminium facade in India?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, but it needs professional preparation: stripping or abrading the old coating, primer and re-coating. That is feasible on accessible low-rise facades and costly and disruptive on high-rise buildings, which is one reason to choose the finish carefully." } },
+      { "@type": "Question", "name": "Is anodising better than PVDF for aluminium facades?", "acceptedAnswer": { "@type": "Answer", "text": "Neither is better in every case. Anodising forms an integral oxide layer that cannot peel but offers a narrower colour range, while PVDF offers more colour choice and strong UV durability. Choose from the project specification and exposure." } },
     ]
   };
 
@@ -94,17 +94,17 @@ export default function PVDFvsPowderCoating() {
           
           <h2 className="text-3xl font-bold">What is PVDF Coating?</h2>
           <p className="text-muted-foreground">
-            PVDF (Polyvinylidene Fluoride), also known as Kynar 500 or Hylar 5000, is a high-performance fluoropolymer coating applied to aluminium extrusions and ACP panels. It is the gold standard for architectural aluminium facade finishes globally, specified by almost all premium commercial projects, LEED-rated buildings, and coastal installations.
+            PVDF (polyvinylidene fluoride) is a high-performance fluoropolymer coating applied to aluminium extrusions and ACP panels. It is widely specified on premium commercial and coastal projects, and is known for good resistance to UV, pollution and weathering.
           </p>
           <p className="text-muted-foreground mt-4">
-            PVDF coatings achieve their superior performance from the chemical inertness of the fluoropolymer molecule — essentially impervious to UV radiation, acid rain, industrial pollution, saline air, and temperature extremes. A proper 70% PVDF coating (minimum film thickness 25 microns) can retain 90%+ of original colour and gloss after 20+ years of outdoor exposure in India.
+            PVDF coatings get their durability from the chemical stability of the fluoropolymer. Coating thickness, the percentage of PVDF resin and the pre-treatment affect performance, and the manufacturer's warranty states what is covered. Confirm these details in writing for your project.
           </p>
           <h2 className="text-3xl font-bold mt-10">What is Powder Coating for Aluminium?</h2>
           <p className="text-muted-foreground mt-4">
-            Polyester powder coating is the most widely used architectural coating for aluminium in India — lower cost, available in thousands of colours, and adequate performance for moderate environments. Powder coating involves electrostatically applying dry powder to pre-treated aluminium and curing in an oven, creating a smooth or textured finish.
+            Polyester powder coating is the most widely used architectural coating for aluminium in India. It costs less, comes in a very wide colour range and performs adequately in moderate environments. Dry powder is applied electrostatically to pre-treated aluminium and cured in an oven.
           </p>
           <p className="text-muted-foreground mt-4">
-            Standard polyester powder coating on aluminium retains acceptable appearance for 7-12 years in inland Indian cities. In coastal environments like Mumbai, this degrades to 5-8 years before fading and chalking become visible. Premium super-durable polyester powder coatings offer better UV resistance, extending life to 12-15 years.
+            Powder coating life depends on the grade, colour and exposure. Coastal or high-UV sites usually wear ordinary polyester faster, and super-durable polyester grades improve on this. Ask the applicator for the grade and the warranty terms.
           </p>
           <div className="overflow-x-auto mt-6">
             <table className="w-full border-collapse text-sm">
@@ -116,18 +116,18 @@ export default function PVDFvsPowderCoating() {
                 </tr>
               </thead>
               <tbody>
-                <tr><td className="border border-border p-3">Service Life (inland)</td><td className="border border-border p-3">20–25+ years</td><td className="border border-border p-3">8–12 years</td></tr>
-                <tr className="bg-muted/30"><td className="border border-border p-3">Service Life (coastal)</td><td className="border border-border p-3">15–20+ years</td><td className="border border-border p-3">5–8 years</td></tr>
+                <tr><td className="border border-border p-3">Service Life (inland)</td><td className="border border-border p-3">Longer</td><td className="border border-border p-3">Shorter</td></tr>
+                <tr className="bg-muted/30"><td className="border border-border p-3">Service Life (coastal)</td><td className="border border-border p-3">Longer; coastal exposure still shortens life</td><td className="border border-border p-3">Shorter; wears faster near the sea</td></tr>
                 <tr><td className="border border-border p-3">UV Resistance</td><td className="border border-border p-3">Excellent</td><td className="border border-border p-3">Good to moderate</td></tr>
                 <tr className="bg-muted/30"><td className="border border-border p-3">Colour Range</td><td className="border border-border p-3">Limited (standard range)</td><td className="border border-border p-3">Unlimited (RAL, custom)</td></tr>
-                <tr><td className="border border-border p-3">Cost Premium</td><td className="border border-border p-3">30–60% over powder</td><td className="border border-border p-3">Base price</td></tr>
-                <tr className="bg-muted/30"><td className="border border-border p-3">LEED Compliance</td><td className="border border-border p-3">Yes (low-emission)</td><td className="border border-border p-3">Depends on product</td></tr>
+                <tr><td className="border border-border p-3">Cost Premium</td><td className="border border-border p-3">Higher than powder</td><td className="border border-border p-3">Base price</td></tr>
+                <tr className="bg-muted/30"><td className="border border-border p-3">Green building documents</td><td className="border border-border p-3">Ask the applicator for product data</td><td className="border border-border p-3">Ask the applicator for product data</td></tr>
               </tbody>
             </table>
           </div>
           <h2 className="text-3xl font-bold mt-10">Fine Glaze Recommendation</h2>
           <p className="text-muted-foreground mt-4">
-            Fine Glaze recommends PVDF coating for: all coastal projects (Mumbai, Navi Mumbai, Goa); buildings with 15+ year design life and low maintenance access; LEED certified projects; and premium commercial or institutional buildings where long-term appearance is critical. Powder coating is appropriate for: inland projects on lower-rise buildings with accessible maintenance; projects with strict budget constraints; and temporary or short-term-use structures.
+            As general guidance, PVDF is often chosen for coastal sites, buildings with long design lives and low maintenance access, and premium or institutional buildings. Powder coating suits inland projects on lower-rise buildings with accessible maintenance and tighter budgets. Fine Glaze applies the finish stated in the project specification.
           </p>
     
         </div>
@@ -138,12 +138,12 @@ export default function PVDFvsPowderCoating() {
         <div className="container mx-auto px-4 max-w-5xl">
           <h2 className="text-3xl font-bold mb-10 text-center">What We Offer</h2>
           <div className="grid md:grid-cols-2 gap-4">
-              <div key="Detailed PVDF vs Powder Analysis" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Detailed PVDF vs Powder Analysis</span></div>
-              <div key="Cost vs Lifespan Comparison" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Cost vs Lifespan Comparison</span></div>
+              <div key="PVDF vs Powder Comparison" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">PVDF vs Powder Comparison</span></div>
+              <div key="Cost and Lifespan Factors" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Cost and Lifespan Factors</span></div>
               <div key="Coastal Climate Guidance" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Coastal Climate Guidance</span></div>
-              <div key="LEED Compliance Info" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">LEED Compliance Info</span></div>
+              <div key="Green Building Notes" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Green Building Notes</span></div>
               <div key="Colour Range Assessment" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Colour Range Assessment</span></div>
-              <div key="Fine Glaze Specification Advice" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Fine Glaze Specification Advice</span></div>
+              <div key="Specification Pointers" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Specification Pointers</span></div>
           </div>
         </div>
       </section>
@@ -155,15 +155,15 @@ export default function PVDFvsPowderCoating() {
           <div className="space-y-6">
             <div className="bg-background rounded-xl p-6 shadow-sm">
               <h3 className="text-lg font-bold mb-2">Is PVDF coating worth the extra cost in India?</h3>
-              <p className="text-muted-foreground">For any commercial building intended to last 15+ years, PVDF coating's lower lifecycle cost almost always justifies the premium. A PVDF-coated facade maintained for 25 years costs less in total than a powder-coated facade that needs full recoating or replacement at 10-12 years.</p>
+              <p className="text-muted-foreground">PVDF often pays off on buildings meant to last many years, especially coastal or hard-to-reach facades, because it holds colour and gloss longer and delays recoating. Compare full life cost, not first cost alone.</p>
             </div>
             <div className="bg-background rounded-xl p-6 shadow-sm">
               <h3 className="text-lg font-bold mb-2">Can I repaint powder-coated aluminium facade in India?</h3>
-              <p className="text-muted-foreground">Yes, but it requires professional preparation — abrasive blasting or chemical stripping of the old coating, primer application, and re-coating. This is feasible for accessible low-rise facades but very expensive and disruptive for high-rise buildings. PVDF coating's longevity avoids this cost entirely.</p>
+              <p className="text-muted-foreground">Yes, but it needs professional preparation: stripping or abrading the old coating, primer and re-coating. That is feasible on accessible low-rise facades and costly and disruptive on high-rise buildings, which is one reason to choose the finish carefully.</p>
             </div>
             <div className="bg-background rounded-xl p-6 shadow-sm">
               <h3 className="text-lg font-bold mb-2">Is anodising better than PVDF for aluminium facades?</h3>
-              <p className="text-muted-foreground">Both are high-performance finishes for aluminium. Anodising creates an integral oxide layer (not a paint film) that cannot peel and is highly corrosion-resistant. However, anodising has a limited colour range (clear, bronze, gold, champagne, black) and is less resistant to alkaline cleaning agents. PVDF offers more colour options and equivalent or better UV durability.</p>
+              <p className="text-muted-foreground">Neither is better in every case. Anodising forms an integral oxide layer that cannot peel but offers a narrower colour range, while PVDF offers more colour choice and strong UV durability. Choose from the project specification and exposure.</p>
             </div>
           </div>
         </div>

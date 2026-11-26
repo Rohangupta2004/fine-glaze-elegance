@@ -35,9 +35,9 @@ export default function CurtainWallCostGuide() {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      { "@type": "Question", "name": "What is the cheapest curtain wall system in India?", "acceptedAnswer": { "@type": "Answer", "text": "The most cost-effective option is a basic stick system with 6mm SGU clear float glass, starting from Rs 350/sq ft supplied and installed. However, for LEED certification, thermal performance, or high-rise safety compliance, DGU or laminated options are necessary and add Rs 100-300/sq ft." } },
-      { "@type": "Question", "name": "Should I choose unitized or stick system for my building in India?", "acceptedAnswer": { "@type": "Answer", "text": "Use stick system for: buildings under 8 storeys; irregular bay sizes; refurbishment projects; or budget-constrained projects. Use unitized for: buildings above 10 storeys; tight installation timelines; LEED certification; and coastal or high-wind zones." } },
-      { "@type": "Question", "name": "How much does curtain wall cost for a typical 10-storey office building?", "acceptedAnswer": { "@type": "Answer", "text": "For a 10-storey building with 300 sq m of curtain wall per floor (3000 sq m total), at Rs 600/sq ft stick DGU = approximately Rs 1.67 crore total; at Rs 900/sq ft unitized = approximately Rs 2.5 crore total, before interface and contingency." } },
+      { "@type": "Question", "name": "What is the cheapest curtain wall system in India?", "acceptedAnswer": { "@type": "Answer", "text": "A basic stick system with single clear glass is usually the lowest-cost curtain wall, but it may not meet thermal, safety or height requirements. Double glazed or laminated glass adds cost. Compare quotations on the same specification." } },
+      { "@type": "Question", "name": "Should I choose unitized or stick system for my building in India?", "acceptedAnswer": { "@type": "Answer", "text": "Stick systems suit lower buildings, irregular bay sizes and refurbishment, while unitized systems suit tall buildings, tight programmes and high wind exposure. Height, access, programme and budget decide the final choice." } },
+      { "@type": "Question", "name": "How much does curtain wall cost for a typical 10-storey office building?", "acceptedAnswer": { "@type": "Answer", "text": "Cost for a 10-storey office depends on facade area, system, glass, wind load and access, so no single figure applies. Send drawings to Fine Glaze for a BOQ-based quotation." } },
     ]
   };
 
@@ -65,9 +65,9 @@ export default function CurtainWallCostGuide() {
         <div className="container mx-auto px-4 max-w-6xl grid md:grid-cols-2 gap-12 items-center">
           <div>
             <h1 className="text-3xl md:text-4xl font-bold mb-4">
-              Curtain Wall Cost <span className="text-gradient-gold">Guide India 2024</span>
+              Curtain Wall Cost <span className="text-gradient-gold">Guide India</span>
             </h1>
-            <p className="text-lg text-white/80 mb-8">Planning a curtain wall for your commercial building? This comprehensive guide breaks down curtain wall costs in India — covering all system types, glass specifications, installation factors, and real pricing ranges based on Fine Glaze's extensive project experience in Pune and Mumbai.</p>
+            <p className="text-lg text-white/80 mb-8">Planning a curtain wall for a commercial building? This guide explains what drives curtain wall cost in India: system type, glass specification, building height and site conditions. It is general guidance from Fine Glaze, a facade contractor in Pune and Mumbai.</p>
             <div className="flex gap-4">
               <Link to="/contact">
                 <Button size="lg" className="bg-amber-600 hover:bg-amber-700">Book a call</Button>
@@ -92,40 +92,38 @@ export default function CurtainWallCostGuide() {
       <section className="py-20">
         <div className="container mx-auto px-4 max-w-5xl space-y-6">
           
-          <h2 className="text-3xl font-bold">Curtain Wall Cost Ranges India 2024</h2>
+          <h2 className="text-3xl font-bold">What Curtain Wall Cost Depends On</h2>
           <p className="text-muted-foreground">
-            Curtain wall costs in India vary widely depending on system type, glass specification, building height, site complexity, and contractor quality. As a specialist facade contractor with 10+ completed projects, Fine Glaze has compiled this transparent pricing guide.
+            Curtain wall cost in India varies with the system type, glass specification, building height, site complexity and scope. Fine Glaze does not publish price ranges on this page, because a reliable figure needs drawings, a glass and finish specification and an access plan. The table below shows how the main system types compare in use, not in price.
           </p>
           <div className="overflow-x-auto mt-6">
             <table className="w-full border-collapse text-sm">
               <thead>
                 <tr className="bg-muted">
                   <th className="border border-border p-3 text-left font-semibold">System Type</th>
-                  <th className="border border-border p-3 text-left font-semibold">Price Range (per sq ft)</th>
-                  <th className="border border-border p-3 text-left font-semibold">Best For</th>
+                  <th className="border border-border p-3 text-left font-semibold">Assembly</th>
+                  <th className="border border-border p-3 text-left font-semibold">Often Used For</th>
                 </tr>
               </thead>
               <tbody>
-                <tr><td className="border border-border p-3">Stick System (SGU)</td><td className="border border-border p-3">Rs 350–550</td><td className="border border-border p-3">Low-rise, smaller projects</td></tr>
-                <tr className="bg-muted/30"><td className="border border-border p-3">Stick System (DGU)</td><td className="border border-border p-3">Rs 450–650</td><td className="border border-border p-3">Energy-efficient low-rise</td></tr>
-                <tr><td className="border border-border p-3">Semi-Unitized System</td><td className="border border-border p-3">Rs 550–850</td><td className="border border-border p-3">Mid-rise 8–20 storeys</td></tr>
-                <tr className="bg-muted/30"><td className="border border-border p-3">Unitized System (SGU)</td><td className="border border-border p-3">Rs 700–950</td><td className="border border-border p-3">High-rise 20+ storeys</td></tr>
-                <tr><td className="border border-border p-3">Unitized System (DGU Low-E)</td><td className="border border-border p-3">Rs 900–1,200</td><td className="border border-border p-3">LEED / premium high-rise</td></tr>
+                <tr><td className="border border-border p-3">Stick system</td><td className="border border-border p-3">Frame and glass assembled on site</td><td className="border border-border p-3">Low and mid-rise, irregular bays, refurbishment</td></tr>
+                <tr className="bg-muted/30"><td className="border border-border p-3">Semi-unitized system</td><td className="border border-border p-3">Part factory, part site assembly</td><td className="border border-border p-3">Mid-rise buildings with repeating floors</td></tr>
+                <tr><td className="border border-border p-3">Unitized system</td><td className="border border-border p-3">Factory-assembled panels hung on site</td><td className="border border-border p-3">Taller buildings and tight programmes</td></tr>
               </tbody>
             </table>
           </div>
           <h2 className="text-3xl font-bold mt-10">Key Factors That Affect Curtain Wall Cost</h2>
           <ul className="list-disc list-inside text-muted-foreground space-y-3 mt-4">
-            <li><strong>Building height:</strong> Every additional floor adds scaffold and gondola complexity. Above 15 storeys, installation costs increase by approximately Rs 25-50/sq ft per floor band.</li>
-            <li><strong>Wind zone:</strong> Coastal Mumbai (Zone IV/V) requires heavier sections and more sealant, adding Rs 50-100/sq ft compared to inland Pune (Zone II).</li>
-            <li><strong>Glass specification:</strong> DGU Low-E adds Rs 100-200/sq ft over SGU. Laminated safety glass adds Rs 80-150/sq ft. Acoustic glass for airport proximity adds Rs 100-200/sq ft.</li>
-            <li><strong>Panel size:</strong> Large format panels (2m x 3.5m+) require specialist handling equipment and safety glass specifications, increasing material cost by 15-25%.</li>
-            <li><strong>Corner and jamb conditions:</strong> Complex geometry — corner mullions, sloped glazing, curved sections — can add 20-40% to system cost.</li>
-            <li><strong>Spandrel treatment:</strong> Insulated spandrel panels with aluminium face add Rs 150-300/sq ft to areas requiring opaque treatment between floors.</li>
+            <li><strong>Building height:</strong> taller buildings need more access equipment, such as gondolas and cranes, and more rigorous anchorage design.</li>
+            <li><strong>Wind load:</strong> higher wind loads need heavier sections and more fixings.</li>
+            <li><strong>Glass specification:</strong> double glazed low-E, laminated and acoustic glass cost more than single clear glass.</li>
+            <li><strong>Panel size:</strong> large panels need special handling equipment and stricter glass specifications.</li>
+            <li><strong>Geometry:</strong> corners, sloped glazing and curved sections add fabrication and installation effort.</li>
+            <li><strong>Spandrel treatment:</strong> insulated opaque panels between floors add to the scope.</li>
           </ul>
           <h2 className="text-3xl font-bold mt-10">Curtain Wall Budget Planning Tips</h2>
           <p className="text-muted-foreground mt-4">
-            For early-stage project budgeting, use Rs 600-800/sq ft as a standard DGU stick system curtain wall benchmark for Pune and other inland Maharashtra cities. Add 15% for Mumbai coastal requirements. Add 20% for unitized systems. Add 10-15% contingency for interface work with the structural frame. Always obtain a detailed BOQ-based quotation before finalising your facade budget — preliminary estimates can vary by 30-40% from actual tender prices.
+            For early budgeting, ask two or three contractors to price the same drawings and the same glass and finish specification so the quotations compare like for like. Always get a BOQ-based quotation before fixing the facade budget, and keep a contingency for interfaces with the structure. Fine Glaze prepares quotations after reviewing drawings.
           </p>
     
         </div>
@@ -136,12 +134,12 @@ export default function CurtainWallCostGuide() {
         <div className="container mx-auto px-4 max-w-5xl">
           <h2 className="text-3xl font-bold mb-10 text-center">What We Offer</h2>
           <div className="grid md:grid-cols-2 gap-4">
-              <div key="Transparent Price Ranges" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Transparent Price Ranges</span></div>
+              <div key="Cost Drivers Explained" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Cost Drivers Explained</span></div>
               <div key="All System Types Covered" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">All System Types Covered</span></div>
-              <div key="Glass Spec Cost Impact" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Glass Spec Cost Impact</span></div>
-              <div key="Regional Cost Variations" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Regional Cost Variations</span></div>
-              <div key="LEED Cost Analysis" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">LEED Cost Analysis</span></div>
-              <div key="Free Custom Quotation" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Free Custom Quotation</span></div>
+              <div key="Glass Specification Effects" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Glass Specification Effects</span></div>
+              <div key="Site and Wind Load Effects" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Site and Wind Load Effects</span></div>
+              <div key="Glass and Energy Brief" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Glass and Energy Brief</span></div>
+              <div key="Quotation on Drawings" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Quotation on Drawings</span></div>
           </div>
         </div>
       </section>
@@ -153,15 +151,15 @@ export default function CurtainWallCostGuide() {
           <div className="space-y-6">
             <div className="bg-background rounded-xl p-6 shadow-sm">
               <h3 className="text-lg font-bold mb-2">What is the cheapest curtain wall system in India?</h3>
-              <p className="text-muted-foreground">The most cost-effective option is a basic stick system with 6mm SGU clear float glass, starting from Rs 350/sq ft supplied and installed. However, for LEED certification, thermal performance, or high-rise safety compliance, DGU or laminated options are necessary and add Rs 100-300/sq ft.</p>
+              <p className="text-muted-foreground">A basic stick system with single clear glass is usually the lowest-cost curtain wall, but it may not meet thermal, safety or height requirements. Double glazed or laminated glass adds cost. Compare quotations on the same specification.</p>
             </div>
             <div className="bg-background rounded-xl p-6 shadow-sm">
               <h3 className="text-lg font-bold mb-2">Should I choose unitized or stick system for my building in India?</h3>
-              <p className="text-muted-foreground">Use stick system for: buildings under 8 storeys; irregular bay sizes; refurbishment projects; or budget-constrained projects. Use unitized for: buildings above 10 storeys; tight installation timelines; LEED certification; and coastal or high-wind zones.</p>
+              <p className="text-muted-foreground">Stick systems suit lower buildings, irregular bay sizes and refurbishment, while unitized systems suit tall buildings, tight programmes and high wind exposure. Height, access, programme and budget decide the final choice.</p>
             </div>
             <div className="bg-background rounded-xl p-6 shadow-sm">
               <h3 className="text-lg font-bold mb-2">How much does curtain wall cost for a typical 10-storey office building?</h3>
-              <p className="text-muted-foreground">For a 10-storey building with 300 sq m of curtain wall per floor (3000 sq m total), at Rs 600/sq ft stick DGU = approximately Rs 1.67 crore total; at Rs 900/sq ft unitized = approximately Rs 2.5 crore total, before interface and contingency.</p>
+              <p className="text-muted-foreground">Cost for a 10-storey office depends on facade area, system, glass, wind load and access, so no single figure applies. Send drawings to Fine Glaze for a BOQ-based quotation.</p>
             </div>
           </div>
         </div>
