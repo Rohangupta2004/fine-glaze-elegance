@@ -34,14 +34,14 @@ export default function FloatingCTA() {
       <button
         type="button"
         onClick={() => open({ source: "mobile_bar" })}
-        className="flex-1 h-12 bg-lamp text-lamp-ink font-semibold text-base rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-glass"
+        className="flex-1 h-12 bg-lamp text-lamp-ink font-semibold text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-glass"
       >
         Book a call
       </button>
       <a
         href={telHref}
         aria-label={`Call ${company.phone.mobileDisplay}`}
-        className="h-12 px-5 inline-flex items-center text-paper font-medium text-base rounded-sm shadow-[inset_0_0_0_1px_rgba(236,232,223,0.45)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-glass"
+        className="h-12 px-5 inline-flex items-center text-paper font-medium text-base shadow-[inset_0_0_0_1px_rgba(236,232,223,0.45)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-glass"
       >
         Call
       </a>

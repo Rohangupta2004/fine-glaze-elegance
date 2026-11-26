@@ -127,18 +127,18 @@ export default function CompanyProfilePage() {
       </Helmet>
 
       {/* Hero Header */}
-      <section className="bg-stone-950 text-white pt-28 pb-10 border-b border-stone-800">
+      <section className="bg-night text-paper pt-28 pb-10 border-b border-line">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 max-w-6xl mx-auto">
             <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-semibold mb-3">
+              <div className="inline-flex items-center gap-2 px-3 py-1 bg-lamp/10 border border-lamp/30 text-lamp text-xs font-semibold mb-3">
                 <Building className="w-3.5 h-3.5" />
                 <span>Architecture &amp; Engineering Credentials</span>
               </div>
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
-                Fine Glaze <span className="text-amber-400">Company Profile</span>
+                Fine Glaze <span className="text-lamp">Company Profile</span>
               </h1>
-              <p className="text-stone-300 text-sm sm:text-base mt-2 max-w-2xl">
+              <p className="text-paper/80 text-sm sm:text-base mt-2 max-w-2xl">
                 Design, fabrication, installation and maintenance of architectural facade systems in Pune and Mumbai.
               </p>
             </div>
@@ -147,7 +147,7 @@ export default function CompanyProfilePage() {
             <div className="flex flex-wrap items-center gap-2.5">
               <Button
                 onClick={() => openProfile(currentSlide, viewMode)}
-                className="bg-amber-500 hover:bg-amber-400 text-stone-950 font-bold text-xs sm:text-sm px-4 py-2.5 rounded-xl shadow-lg shadow-amber-500/20 gap-2 cursor-pointer"
+                className="bg-lamp hover:bg-lamp/90 text-paper font-bold text-xs sm:text-sm px-4 py-2.5 shadow-amber-500/20 gap-2 cursor-pointer"
               >
                 <Maximize2 className="w-4 h-4" />
                 Fullscreen View
@@ -156,16 +156,16 @@ export default function CompanyProfilePage() {
               <a
                 href={pdfUrl}
                 download="fine-glaze-company-profile.pdf"
-                className="inline-flex items-center gap-2 bg-stone-800 hover:bg-stone-700 text-white font-bold text-xs sm:text-sm px-4 py-2.5 rounded-xl border border-stone-700 shadow-md transition-all active:scale-95 cursor-pointer"
+                className="inline-flex items-center gap-2 bg-night-2 hover:bg-line text-paper font-bold text-xs sm:text-sm px-4 py-2.5 border border-line transition-all active:scale-95 cursor-pointer"
               >
-                <Download className="w-4 h-4 text-amber-400" />
+                <Download className="w-4 h-4 text-lamp" />
                 Download PDF (7.3 MB)
               </a>
 
               <Button
                 variant="outline"
                 onClick={handleShare}
-                className="border-stone-700 bg-stone-900 text-stone-200 hover:bg-stone-800 text-xs sm:text-sm px-3.5 py-2.5 rounded-xl gap-2 cursor-pointer"
+                className="border-line bg-night-2 text-paper hover:bg-night-2 text-xs sm:text-sm px-3.5 py-2.5 gap-2 cursor-pointer"
               >
                 {copied ? <Check className="w-4 h-4 text-emerald-400" /> : <Share2 className="w-4 h-4" />}
                 {copied ? "Link Copied!" : "Share"}
@@ -176,22 +176,22 @@ export default function CompanyProfilePage() {
       </section>
 
       {/* Embedded Viewer Container */}
-      <section className="bg-stone-900 py-8 min-h-[70vh]">
+      <section className="bg-night-2 py-8 min-h-[70vh]">
         <div className="container mx-auto px-4 max-w-6xl">
           {/* Viewer Toolbar */}
-          <div className="bg-stone-950 rounded-t-2xl border border-stone-800 p-2.5 sm:p-4 flex flex-wrap items-center justify-between gap-2.5 shadow-xl">
+          <div className="bg-night border border-line p-2.5 sm:p-4 flex flex-wrap items-center justify-between gap-2.5">
             <div className="flex items-center gap-1.5 sm:gap-2">
               {/* Mobile Prev Thumb Button */}
               <button
                 onClick={prevSlide}
                 disabled={currentSlide === 1}
-                className="sm:hidden p-1.5 rounded-lg bg-stone-800 text-stone-200 hover:bg-stone-700 disabled:opacity-30 disabled:pointer-events-none transition-colors border border-stone-700/80 active:scale-95"
+                className="sm:hidden p-1.5 bg-night-2 text-paper hover:bg-line disabled:opacity-30 disabled:pointer-events-none transition-colors border border-line active:scale-95"
                 aria-label="Previous Slide"
               >
                 <ChevronLeft className="w-4 h-4" />
               </button>
 
-              <span className="text-xs font-bold text-amber-400 bg-amber-500/10 border border-amber-500/20 px-2 sm:px-2.5 py-1 rounded-md">
+              <span className="text-xs font-bold text-lamp bg-lamp/10 border border-lamp/20 px-2 sm:px-2.5 py-1">
                 {currentSlide} / {TOTAL_SLIDES}
               </span>
 
@@ -199,13 +199,13 @@ export default function CompanyProfilePage() {
               <button
                 onClick={nextSlide}
                 disabled={currentSlide === TOTAL_SLIDES}
-                className="sm:hidden p-1.5 rounded-lg bg-stone-800 text-stone-200 hover:bg-stone-700 disabled:opacity-30 disabled:pointer-events-none transition-colors border border-stone-700/80 active:scale-95"
+                className="sm:hidden p-1.5 bg-night-2 text-paper hover:bg-line disabled:opacity-30 disabled:pointer-events-none transition-colors border border-line active:scale-95"
                 aria-label="Next Slide"
               >
                 <ChevronRight className="w-4 h-4" />
               </button>
 
-              <span className="hidden sm:inline-block text-xs sm:text-sm text-stone-300 font-medium truncate max-w-[200px] sm:max-w-md ml-1">
+              <span className="hidden sm:inline-block text-xs sm:text-sm text-paper/80 font-medium truncate max-w-[200px] sm:max-w-md ml-1">
                 {currentSection.title}
               </span>
             </div>
@@ -216,7 +216,7 @@ export default function CompanyProfilePage() {
               <select
                 value={currentSlide}
                 onChange={(e) => goToSlide(Number(e.target.value))}
-                className="bg-stone-800 text-stone-200 text-xs rounded-lg px-2 sm:px-2.5 py-1.5 border border-stone-700 focus:outline-none focus:ring-1 focus:ring-amber-400 cursor-pointer max-w-[130px] xs:max-w-[170px] truncate"
+                className="bg-night-2 text-paper text-xs px-2 sm:px-2.5 py-1.5 border border-line focus:outline-none focus:ring-1 focus:ring-lamp cursor-pointer max-w-[130px] xs:max-w-[170px] truncate"
               >
                 {PROFILE_SECTIONS.map((sec) => (
                   <option key={sec.slide} value={sec.slide}>
@@ -226,12 +226,12 @@ export default function CompanyProfilePage() {
               </select>
 
               {/* View Mode Toggle */}
-              <div className="bg-stone-800 p-0.5 rounded-lg border border-stone-700 hidden sm:flex">
+              <div className="bg-night-2 p-0.5 border border-line hidden sm:flex">
                 <button
                   onClick={() => setViewMode("slides")}
                   className={cn(
-                    "px-2.5 py-1 text-xs font-semibold rounded-md transition-all",
-                    viewMode === "slides" ? "bg-amber-500 text-stone-950 font-bold" : "text-stone-300"
+                    "px-2.5 py-1 text-xs font-semibold  transition-all",
+                    viewMode === "slides" ? "bg-lamp text-paper font-bold" : "text-paper/80"
                   )}
                 >
                   Deck View
@@ -239,8 +239,8 @@ export default function CompanyProfilePage() {
                 <button
                   onClick={() => setViewMode("pdf")}
                   className={cn(
-                    "px-2.5 py-1 text-xs font-semibold rounded-md transition-all",
-                    viewMode === "pdf" ? "bg-amber-500 text-stone-950 font-bold" : "text-stone-300"
+                    "px-2.5 py-1 text-xs font-semibold  transition-all",
+                    viewMode === "pdf" ? "bg-lamp text-paper font-bold" : "text-paper/80"
                   )}
                 >
                   Native PDF
@@ -250,7 +250,7 @@ export default function CompanyProfilePage() {
               {/* Expand Fullscreen */}
               <button
                 onClick={() => openProfile(currentSlide, viewMode)}
-                className="p-1.5 bg-stone-800 hover:bg-stone-700 text-stone-300 rounded-lg border border-stone-700 transition-colors"
+                className="p-1.5 bg-night-2 hover:bg-line text-paper/80 border border-line transition-colors"
                 title="Fullscreen View"
               >
                 <Maximize2 className="w-4 h-4" />
@@ -260,7 +260,7 @@ export default function CompanyProfilePage() {
 
           {/* Viewer Body */}
           <div
-            className="bg-stone-950 border-x border-b border-stone-800 rounded-b-2xl overflow-hidden shadow-2xl relative min-h-[220px] sm:min-h-[500px] flex items-center justify-center p-1 sm:p-6"
+            className="bg-night border-x border-b border-line overflow-hidden relative min-h-[220px] sm:min-h-[500px] flex items-center justify-center p-1 sm:p-6"
             onTouchStart={handleTouchStart}
             onTouchEnd={handleTouchEnd}
           >
@@ -270,7 +270,7 @@ export default function CompanyProfilePage() {
                   key={currentSlide}
                   src={`/profile-slides/slide-${currentSlide}.webp`}
                   alt={`Fine Glaze Company Profile - Slide ${currentSlide}`}
-                  className="w-full max-h-[75vh] object-contain rounded-lg border border-stone-800/80 shadow-2xl"
+                  className="w-full max-h-[75vh] object-contain border border-line"
                   loading="eager"
                 />
 
@@ -278,7 +278,7 @@ export default function CompanyProfilePage() {
                 <button
                   onClick={prevSlide}
                   disabled={currentSlide === 1}
-                  className="hidden sm:flex absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-stone-900/80 hover:bg-amber-500 text-white hover:text-stone-950 backdrop-blur-md border border-stone-700/80 transition-all disabled:opacity-20 disabled:pointer-events-none shadow-xl cursor-pointer"
+                  className="hidden sm:flex absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 p-3 bg-night-2/80 hover:bg-lamp/90 text-lamp-ink hover:text-paper border border-line transition-all disabled:opacity-20 disabled:pointer-events-none cursor-pointer"
                   aria-label="Previous Slide"
                 >
                   <ChevronLeft className="w-6 h-6" />
@@ -287,7 +287,7 @@ export default function CompanyProfilePage() {
                 <button
                   onClick={nextSlide}
                   disabled={currentSlide === TOTAL_SLIDES}
-                  className="hidden sm:flex absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-stone-900/80 hover:bg-amber-500 text-white hover:text-stone-950 backdrop-blur-md border border-stone-700/80 transition-all disabled:opacity-20 disabled:pointer-events-none shadow-xl cursor-pointer"
+                  className="hidden sm:flex absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 p-3 bg-night-2/80 hover:bg-lamp/90 text-lamp-ink hover:text-paper border border-line transition-all disabled:opacity-20 disabled:pointer-events-none cursor-pointer"
                   aria-label="Next Slide"
                 >
                   <ChevronRight className="w-6 h-6" />
@@ -298,14 +298,14 @@ export default function CompanyProfilePage() {
                 <object
                   data={`${pdfUrl}#page=${currentSlide}&toolbar=1`}
                   type="application/pdf"
-                  className="w-full h-full rounded-lg"
+                  className="w-full h-full"
                 >
                   <div className="w-full h-full flex flex-col items-center justify-center text-center p-6 space-y-4">
-                    <FileText className="w-16 h-16 text-amber-500" />
-                    <p className="text-stone-300">PDF document is ready for download or interactive preview.</p>
+                    <FileText className="w-16 h-16 text-lamp" />
+                    <p className="text-paper/80">PDF document is ready for download or interactive preview.</p>
                     <a
                       href={pdfUrl}
-                      className="px-6 py-3 bg-amber-500 text-stone-950 font-bold rounded-xl"
+                      className="px-6 py-3 bg-lamp text-paper font-bold"
                       download
                     >
                       Download PDF (7.3 MB)
@@ -323,13 +323,13 @@ export default function CompanyProfilePage() {
                 key={sec.slide}
                 onClick={() => goToSlide(sec.slide)}
                 className={cn(
-                  "flex-none text-left px-3 py-2 rounded-xl border text-xs font-medium transition-all cursor-pointer",
+                  "flex-none text-left px-3 py-2  border text-xs font-medium transition-all cursor-pointer",
                   currentSlide === sec.slide
-                    ? "bg-amber-500 text-stone-950 font-bold border-amber-400 shadow-md"
-                    : "bg-stone-900/80 text-stone-300 border-stone-800 hover:border-stone-700 hover:text-white"
+                    ? "bg-lamp text-paper font-bold border-lamp/40 "
+                    : "bg-night-2/80 text-paper/80 border-line hover:border-line hover:text-paper"
                 )}
               >
-                <div className="text-[10px] uppercase tracking-wider opacity-75">{sec.tag}</div>
+                <div className="text-[10px] opacity-75">{sec.tag}</div>
                 <div className="truncate max-w-[140px] font-semibold">{sec.title}</div>
               </button>
             ))}
@@ -337,47 +337,47 @@ export default function CompanyProfilePage() {
 
           {/* Key Facts Summary Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-10">
-            <div className="bg-stone-950/80 border border-stone-800 p-5 rounded-2xl">
-              <div className="text-2xl font-black text-amber-400">40+ Team</div>
-              <div className="text-xs text-stone-400 mt-1 uppercase tracking-wider font-semibold">Core Engineering</div>
-              <p className="text-xs text-stone-300 mt-2">In-house design, structural engineering, and site supervision.</p>
+            <div className="bg-night/80 border border-line p-5">
+              <div className="text-2xl font-black text-lamp">40+ Team</div>
+              <div className="text-xs text-mute mt-1 font-semibold">Core Engineering</div>
+              <p className="text-xs text-paper/80 mt-2">In-house design, structural engineering, and site supervision.</p>
             </div>
 
-            <div className="bg-stone-950/80 border border-stone-800 p-5 rounded-2xl">
-              <div className="text-2xl font-black text-amber-400">PISOLI, PUNE</div>
-              <div className="text-xs text-stone-400 mt-1 uppercase tracking-wider font-semibold">Fabrication Unit</div>
-              <p className="text-xs text-stone-300 mt-2">Our own unit for cutting, fabrication and assembly, with inspection at source.</p>
+            <div className="bg-night/80 border border-line p-5">
+              <div className="text-2xl font-black text-lamp">PISOLI, PUNE</div>
+              <div className="text-xs text-mute mt-1 font-semibold">Fabrication Unit</div>
+              <p className="text-xs text-paper/80 mt-2">Our own unit for cutting, fabrication and assembly, with inspection at source.</p>
             </div>
 
-            <div className="bg-stone-950/80 border border-stone-800 p-5 rounded-2xl">
-              <div className="text-2xl font-black text-amber-400">Award 2024</div>
-              <div className="text-xs text-stone-400 mt-1 uppercase tracking-wider font-semibold">Best Vendor</div>
-              <p className="text-xs text-stone-300 mt-2">Honored by Embassy REIT for Embassy 247 Vikhroli execution.</p>
+            <div className="bg-night/80 border border-line p-5">
+              <div className="text-2xl font-black text-lamp">Award 2024</div>
+              <div className="text-xs text-mute mt-1 font-semibold">Best Vendor</div>
+              <p className="text-xs text-paper/80 mt-2">Honored by Embassy REIT for Embassy 247 Vikhroli execution.</p>
             </div>
           </div>
 
           {/* Bottom CTA Banner */}
-          <div className="mt-12 bg-gradient-to-r from-amber-950/40 via-stone-900 to-amber-950/40 border border-amber-500/30 rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xl">
+          <div className="mt-12 bg-night-2 border border-lamp/30 p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-between gap-6">
             <div className="space-y-2 text-center sm:text-left">
-              <h3 className="text-xl sm:text-2xl font-bold text-white">
+              <h3 className="text-xl sm:text-2xl font-bold text-paper">
                 Planning a Commercial or High-Rise Facade Package?
               </h3>
-              <p className="text-sm text-stone-300 max-w-xl">
+              <p className="text-sm text-paper/80 max-w-xl">
                 Get an engineered estimate, design consultation, or technical proposal tailored to your architectural specifications.
               </p>
             </div>
             <div className="flex flex-wrap items-center gap-3">
               <Button
                 onClick={() => setIsQuoteOpen(true)}
-                className="bg-amber-500 hover:bg-amber-400 text-stone-950 font-bold px-6 py-6 rounded-xl shadow-lg shadow-amber-500/20 text-sm cursor-pointer"
+                className="bg-lamp hover:bg-lamp/90 text-paper font-bold px-6 py-6 shadow-amber-500/20 text-sm cursor-pointer"
               >
                 Request Proposal <ArrowRight className="w-4 h-4 ml-1" />
               </Button>
               <a
                 href="tel:+918369233566"
-                className="inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-stone-700 hover:bg-stone-800 text-white font-semibold text-sm transition-colors"
+                className="inline-flex items-center gap-2 px-5 py-3 border border-line hover:bg-night-2 text-paper font-semibold text-sm transition-colors"
               >
-                <PhoneCall className="w-4 h-4 text-amber-400" />
+                <PhoneCall className="w-4 h-4 text-lamp" />
                 +91 8369233566
               </a>
             </div>

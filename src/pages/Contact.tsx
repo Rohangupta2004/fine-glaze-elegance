@@ -166,17 +166,17 @@ const Contact = () => {
         />
 
         <div className="absolute inset-x-0 bottom-0 px-5 md:px-16 pb-8 md:pb-16">
-          <p className="text-amber-400 text-[10px] md:text-xs font-bold tracking-[0.4em] uppercase mb-3 md:mb-4">
+          <p className="text-lamp text-[10px] md:text-xs font-bold mb-3 md:mb-4">
             Fine Glaze · Get In Touch
           </p>
           <h1
-            className="font-extrabold text-white leading-tight tracking-tight"
+            className="font-extrabold text-paper leading-tight tracking-tight"
             style={{ fontSize: "clamp(2.2rem, 4.5vw, 3.5rem)" }}
           >
             Let's Build<br />
             <span className="text-gradient-gold">Together.</span>
           </h1>
-          <p className="mt-3 md:mt-4 text-white/60 text-sm md:text-lg max-w-md leading-relaxed">
+          <p className="mt-3 md:mt-4 text-mute text-sm md:text-lg max-w-md leading-relaxed">
             Office hours are Monday to Saturday, 9am to 6pm.
           </p>
         </div>
@@ -186,13 +186,13 @@ const Contact = () => {
       {/* ═══════════════════════════════════════════
           TRUST STRIP — quick reassurance before the form
           ═══════════════════════════════════════════ */}
-      <section className="bg-white border-b border-stone-200">
+      <section className="bg-night border-b border-line">
         <div className="container mx-auto px-5 md:px-16 py-4 md:py-5">
-          <div className="flex flex-wrap items-center justify-center gap-4 md:gap-8 text-xs md:text-sm text-stone-600">
+          <div className="flex flex-wrap items-center justify-center gap-4 md:gap-8 text-xs md:text-sm text-mute">
             {[
-              { icon: <ShieldCheck size={16} className="text-amber-600" />, text: "Call, WhatsApp or write to our team" },
-              { icon: <CheckCircle2 size={16} className="text-amber-600" />, text: "Site survey and measurement for your project" },
-              { icon: <Clock size={16} className="text-amber-600" />, text: "Office hours Monday to Saturday, 9am to 6pm" },
+              { icon: <ShieldCheck size={16} className="text-lamp" />, text: "Call, WhatsApp or write to our team" },
+              { icon: <CheckCircle2 size={16} className="text-lamp" />, text: "Site survey and measurement for your project" },
+              { icon: <Clock size={16} className="text-lamp" />, text: "Office hours Monday to Saturday, 9am to 6pm" },
             ].map((item) => (
               <div key={item.text} className="flex items-center gap-2 font-medium">
                 {item.icon}
@@ -207,18 +207,18 @@ const Contact = () => {
       {/* ═══════════════════════════════════════════
           MAIN — form (left) + info (right)
           ═══════════════════════════════════════════ */}
-      <section className="py-12 md:py-20 bg-stone-50">
+      <section className="py-12 md:py-20 bg-night-2">
         <div className="container mx-auto px-5 md:px-16">
           <div className="grid lg:grid-cols-12 gap-8 md:gap-12">
 
             {/* ── Form — takes more space ── */}
             <FadeIn className="lg:col-span-7 order-1">
-              <div className="bg-white border border-stone-200 shadow-sm">
-                <div className="border-b border-stone-100 px-5 md:px-8 py-5 md:py-6">
-                  <p className="text-amber-700 text-[10px] font-bold tracking-[0.3em] uppercase mb-1">
+              <div className="bg-night border border-line">
+                <div className="border-b border-line px-5 md:px-8 py-5 md:py-6">
+                  <p className="text-lamp text-[10px] font-bold mb-1">
                     Start Your Project
                   </p>
-                  <h2 className="text-xl md:text-2xl font-bold text-stone-900">
+                  <h2 className="text-xl md:text-2xl font-bold text-paper">
                     Tell us what you need
                   </h2>
                 </div>
@@ -226,13 +226,13 @@ const Contact = () => {
                 <div className="px-5 md:px-8 py-5 md:py-7">
                   {isSubmitted ? (
                     <div className="text-center py-14 space-y-4">
-                      <div className="w-14 h-14 bg-amber-50 flex items-center justify-center mx-auto">
-                        <CheckCircle2 size={28} className="text-amber-600" />
+                      <div className="w-14 h-14 bg-lamp/10 flex items-center justify-center mx-auto">
+                        <CheckCircle2 size={28} className="text-lamp" />
                       </div>
-                      <h3 className="text-2xl font-bold text-stone-900">
+                      <h3 className="text-2xl font-bold text-paper">
                         Message Sent
                       </h3>
-                      <p className="text-stone-500 text-sm max-w-md mx-auto">
+                      <p className="text-mute text-sm max-w-md mx-auto">
                         Thank you. Office hours are Monday to Saturday, 9am to 6pm.
                       </p>
                       <Button
@@ -250,7 +250,7 @@ const Contact = () => {
                     <form onSubmit={handleSubmit} className="space-y-5">
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
                         <div className="space-y-1.5">
-                          <Label htmlFor="name" className="text-xs font-semibold text-stone-600 uppercase tracking-wider">
+                          <Label htmlFor="name" className="text-xs font-semibold text-mute">
                             Full Name *
                           </Label>
                           <Input
@@ -260,11 +260,11 @@ const Contact = () => {
                             required
                             value={formData.name}
                             onChange={handleChange}
-                            className="border-stone-200 focus:border-amber-400 focus:ring-amber-400/20 h-11"
+                            className="border-line focus:border-lamp/40 focus:ring-lamp/20 h-11"
                           />
                         </div>
                         <div className="space-y-1.5">
-                          <Label htmlFor="email" className="text-xs font-semibold text-stone-600 uppercase tracking-wider">
+                          <Label htmlFor="email" className="text-xs font-semibold text-mute">
                             Email *
                           </Label>
                           <Input
@@ -275,14 +275,14 @@ const Contact = () => {
                             required
                             value={formData.email}
                             onChange={handleChange}
-                            className="border-stone-200 focus:border-amber-400 focus:ring-amber-400/20 h-11"
+                            className="border-line focus:border-lamp/40 focus:ring-lamp/20 h-11"
                           />
                         </div>
                       </div>
 
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
                         <div className="space-y-1.5">
-                          <Label htmlFor="phone" className="text-xs font-semibold text-stone-600 uppercase tracking-wider">
+                          <Label htmlFor="phone" className="text-xs font-semibold text-mute">
                             Phone *
                           </Label>
                           <Input
@@ -293,11 +293,11 @@ const Contact = () => {
                             required
                             value={formData.phone}
                             onChange={handleChange}
-                            className="border-stone-200 focus:border-amber-400 focus:ring-amber-400/20 h-11"
+                            className="border-line focus:border-lamp/40 focus:ring-lamp/20 h-11"
                           />
                         </div>
                         <div className="space-y-1.5">
-                          <Label htmlFor="projectType" className="text-xs font-semibold text-stone-600 uppercase tracking-wider">
+                          <Label htmlFor="projectType" className="text-xs font-semibold text-mute">
                             Project Type *
                           </Label>
                           <Select
@@ -307,7 +307,7 @@ const Contact = () => {
                             }
                             required
                           >
-                            <SelectTrigger className="border-stone-200 focus:border-amber-400 focus:ring-amber-400/20 h-11">
+                            <SelectTrigger className="border-line focus:border-lamp/40 focus:ring-lamp/20 h-11">
                               <SelectValue placeholder="Select a service" />
                             </SelectTrigger>
                             <SelectContent>
@@ -322,8 +322,8 @@ const Contact = () => {
                       </div>
 
                       <div className="space-y-1.5">
-                        <Label htmlFor="message" className="text-xs font-semibold text-stone-600 uppercase tracking-wider">
-                          Project Details <span className="text-stone-400 normal-case tracking-normal">(optional)</span>
+                        <Label htmlFor="message" className="text-xs font-semibold text-mute">
+                          Project Details <span className="text-mute normal-case tracking-normal">(optional)</span>
                         </Label>
                         <Textarea
                           id="message"
@@ -332,7 +332,7 @@ const Contact = () => {
                           rows={3}
                           value={formData.message}
                           onChange={handleChange}
-                          className="border-stone-200 focus:border-amber-400 focus:ring-amber-400/20 resize-none"
+                          className="border-line focus:border-lamp/40 focus:ring-lamp/20 resize-none"
                         />
                       </div>
 
@@ -344,9 +344,9 @@ const Contact = () => {
                           onChange={(e) =>
                             setFormData((prev) => ({ ...prev, preferCallback: e.target.checked }))
                           }
-                          className="w-4 h-4 rounded border-stone-300 text-amber-600 focus:ring-amber-400/20"
+                          className="w-4 h-4 border-line text-lamp focus:ring-lamp/20"
                         />
-                        <span className="text-sm text-stone-600 group-hover:text-stone-800 transition-colors">
+                        <span className="text-sm text-mute group-hover:text-paper transition-colors">
                           I'd prefer a callback to discuss details
                         </span>
                       </label>
@@ -356,11 +356,11 @@ const Contact = () => {
                         <Button
                           type="submit"
                           disabled={isSubmitting}
-                          className="flex-1 bg-stone-900 hover:bg-amber-700 text-white py-5 text-sm font-semibold tracking-wide transition-colors duration-300"
+                          className="flex-1 bg-night-2 hover:bg-lamp/90 text-lamp-ink py-5 text-sm font-semibold tracking-wide transition-colors duration-300"
                         >
                           {isSubmitting ? (
                             <>
-                              <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin mr-2" />
+                              <div className="w-4 h-4 border-2 border-paper/30 border-t-line animate-spin mr-2" />
                               Sending...
                             </>
                           ) : (
@@ -372,7 +372,7 @@ const Contact = () => {
                         </Button>
                         <a
                           href="tel:+918369233566"
-                          className="flex-1 inline-flex items-center justify-center gap-2 border-2 border-amber-600 text-amber-700 hover:bg-amber-50 py-3 text-sm font-semibold tracking-wide transition-colors duration-200 rounded-md"
+                          className="flex-1 inline-flex items-center justify-center gap-2 border-2 border-lamp/40 text-lamp hover:bg-lamp/10 py-3 text-sm font-semibold tracking-wide transition-colors duration-200"
                         >
                           <PhoneCall size={16} />
                           Call Now
@@ -381,12 +381,12 @@ const Contact = () => {
 
                       {/* Social proof nudge */}
                       <div className="flex items-center justify-center gap-3 pt-1">
-                        <p className="text-[11px] text-stone-500">
+                        <p className="text-[11px] text-mute">
                           Work for Embassy REIT, LTIMindtree and others
                         </p>
                       </div>
 
-                      <p className="text-[11px] text-stone-400 text-center">
+                      <p className="text-[11px] text-mute text-center">
                         We'll never share your information. Office hours are Monday to Saturday, 9am to 6pm.
                       </p>
                     </form>
@@ -400,14 +400,14 @@ const Contact = () => {
             <FadeIn delay={120} className="lg:col-span-5 order-2 space-y-5 md:space-y-6">
 
               {/* Why reach out — moved ABOVE contact info for trust-first flow */}
-              <div className="bg-white border border-stone-200 p-5 md:p-7">
-                <p className="text-amber-700 text-[10px] font-bold tracking-[0.3em] uppercase mb-3">
+              <div className="bg-night border border-line p-5 md:p-7">
+                <p className="text-lamp text-[10px] font-bold mb-3">
                   Why Reach Out
                 </p>
-                <h3 className="text-lg font-bold text-stone-900 mb-4">
+                <h3 className="text-lg font-bold text-paper mb-4">
                   Office hours are Monday to Saturday, 9am to 6pm.
                 </h3>
-                <p className="text-stone-500 text-sm leading-relaxed mb-5">
+                <p className="text-mute text-sm leading-relaxed mb-5">
                   Call or message us and we will take it from there.
                 </p>
                 <div className="space-y-3">
@@ -416,12 +416,12 @@ const Contact = () => {
                     { text: "No obligation", sub: "Get the information you need" },
                   ].map((item) => (
                     <div key={item.text} className="flex gap-3 group">
-                      <div className="w-6 h-6 bg-amber-50 flex items-center justify-center shrink-0 mt-0.5">
-                        <ArrowRight size={12} className="text-amber-600" />
+                      <div className="w-6 h-6 bg-lamp/10 flex items-center justify-center shrink-0 mt-0.5">
+                        <ArrowRight size={12} className="text-lamp" />
                       </div>
                       <div>
-                        <p className="text-sm font-semibold text-stone-800">{item.text}</p>
-                        <p className="text-xs text-stone-400 mt-0.5">{item.sub}</p>
+                        <p className="text-sm font-semibold text-paper">{item.text}</p>
+                        <p className="text-xs text-mute mt-0.5">{item.sub}</p>
                       </div>
                     </div>
                   ))}
@@ -429,69 +429,69 @@ const Contact = () => {
               </div>
 
               {/* Quick contact links */}
-              <div className="bg-white border border-stone-200 p-5 md:p-7 space-y-4">
-                <p className="text-amber-700 text-[10px] font-bold tracking-[0.3em] uppercase mb-1">
+              <div className="bg-night border border-line p-5 md:p-7 space-y-4">
+                <p className="text-lamp text-[10px] font-bold mb-1">
                   Reach Us Directly
                 </p>
-                <a href="tel:+918369233566" className="flex items-center gap-3 text-stone-700 hover:text-amber-700 transition-colors group">
-                  <div className="w-9 h-9 bg-amber-50 group-hover:bg-amber-100 flex items-center justify-center shrink-0 transition-colors">
-                    <Phone size={16} className="text-amber-600" />
+                <a href="tel:+918369233566" className="flex items-center gap-3 text-paper hover:text-lamp transition-colors group">
+                  <div className="w-9 h-9 bg-lamp/10 group-hover:bg-lamp/10 flex items-center justify-center shrink-0 transition-colors">
+                    <Phone size={16} className="text-lamp" />
                   </div>
                   <div>
                     <p className="text-sm font-semibold">+91 83692 33566</p>
-                    <p className="text-[10px] text-stone-400">Call or WhatsApp</p>
+                    <p className="text-[10px] text-mute">Call or WhatsApp</p>
                   </div>
                 </a>
-                <a href="mailto:info@fineglaze.com" className="flex items-center gap-3 text-stone-700 hover:text-amber-700 transition-colors group">
-                  <div className="w-9 h-9 bg-amber-50 group-hover:bg-amber-100 flex items-center justify-center shrink-0 transition-colors">
-                    <Mail size={16} className="text-amber-600" />
+                <a href="mailto:info@fineglaze.com" className="flex items-center gap-3 text-paper hover:text-lamp transition-colors group">
+                  <div className="w-9 h-9 bg-lamp/10 group-hover:bg-lamp/10 flex items-center justify-center shrink-0 transition-colors">
+                    <Mail size={16} className="text-lamp" />
                   </div>
                   <div>
                     <p className="text-sm font-semibold">info@fineglaze.com</p>
-                    <p className="text-[10px] text-stone-400">Mon–Sat, 9am to 6pm</p>
+                    <p className="text-[10px] text-mute">Mon–Sat, 9am to 6pm</p>
                   </div>
                 </a>
-                <div className="flex items-center gap-3 text-stone-400 opacity-80">
-                  <div className="w-9 h-9 bg-stone-100 flex items-center justify-center shrink-0">
-                    <Clock size={16} className="text-stone-400" />
+                <div className="flex items-center gap-3 text-mute opacity-80">
+                  <div className="w-9 h-9 bg-night-2 flex items-center justify-center shrink-0">
+                    <Clock size={16} className="text-mute" />
                   </div>
                   <div>
-                    <p className="text-sm font-medium text-stone-500">Mon – Sat, 9 AM – 6 PM</p>
-                    <p className="text-[10px] text-stone-400">Office hours</p>
+                    <p className="text-sm font-medium text-mute">Mon – Sat, 9 AM – 6 PM</p>
+                    <p className="text-[10px] text-mute">Office hours</p>
                   </div>
                 </div>
               </div>
 
               {/* Office address */}
-              <div className="relative overflow-hidden bg-stone-900 text-white p-5 md:p-7">
+              <div className="relative overflow-hidden bg-night-2 text-paper p-5 md:p-7">
                 {/* decorative corner */}
-                <div className="absolute top-0 right-0 w-24 h-24 bg-amber-600/10" />
+                <div className="absolute top-0 right-0 w-24 h-24 bg-lamp/10" />
 
                 <div className="relative">
                   <div className="flex items-center gap-3 mb-4">
-                    <Building2 size={18} className="text-amber-400" />
-                    <p className="text-[10px] font-bold tracking-[0.3em] uppercase text-white/50">
+                    <Building2 size={18} className="text-lamp" />
+                    <p className="text-[10px] font-bold text-mute">
                       Head Office
                     </p>
                   </div>
-                  <p className="text-sm text-white/80 leading-relaxed mb-1 font-medium">
+                  <p className="text-sm text-paper/80 leading-relaxed mb-1 font-medium">
                     Fine Glaze
                   </p>
-                  <p className="text-sm text-white/60 leading-relaxed">
+                  <p className="text-sm text-mute leading-relaxed">
                     A3 LW-13, Pragati Serene Building, Sr.No.2, HDFC Bank Chowk, Plot B, Autadwadi Handewadi, Mahadev Wadi, Mohammed Wadi,<br />
                     Pune – 411060, Maharashtra
                   </p>
 
-                  <div className="mt-5 pt-4 border-t border-white/10 flex items-center gap-3">
-                    <Clock size={14} className="text-amber-400 shrink-0" />
-                    <p className="text-sm text-white/50">Mon – Sat, 9:00 AM – 6:00 PM</p>
+                  <div className="mt-5 pt-4 border-t border-line flex items-center gap-3">
+                    <Clock size={14} className="text-lamp shrink-0" />
+                    <p className="text-sm text-mute">Mon – Sat, 9:00 AM – 6:00 PM</p>
                   </div>
 
                   <a
                     href="https://www.google.com/maps/search/?api=1&query=Fine+Glaze+A3+LW-13+Pragati+Serene+Mohammed+Wadi+Pune+411060"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-amber-400 font-semibold text-xs mt-4 hover:gap-3 transition-all group"
+                    className="inline-flex items-center gap-2 text-lamp font-semibold text-xs mt-4 hover:gap-3 transition-all group"
                   >
                     <MapPin size={13} />
                     Open in Google Maps
@@ -501,15 +501,15 @@ const Contact = () => {
               </div>
 
               {/* Quick stat strip */}
-              <div className="grid grid-cols-3 gap-px bg-stone-200">
+              <div className="grid grid-cols-3 gap-px bg-line">
                 {[
                   { num: "16", label: "Project Records" },
                   { num: "40+", label: "Core Team" },
                   { num: "Mon–Sat", label: "9am to 6pm" },
                 ].map((s) => (
-                  <div key={s.label} className="bg-white text-center py-4 md:py-5">
-                    <p className="text-lg md:text-xl font-extrabold text-stone-900">{s.num}</p>
-                    <p className="text-[10px] text-stone-400 font-bold tracking-[0.15em] uppercase mt-1">{s.label}</p>
+                  <div key={s.label} className="bg-night text-center py-4 md:py-5">
+                    <p className="text-lg md:text-xl font-extrabold text-paper">{s.num}</p>
+                    <p className="text-[10px] text-mute font-bold mt-1">{s.label}</p>
                   </div>
                 ))}
               </div>
@@ -539,11 +539,11 @@ const Contact = () => {
             }}
           />
           <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-5">
-            <p className="text-amber-400 text-[10px] md:text-xs font-bold tracking-[0.4em] uppercase mb-2">
+            <p className="text-lamp text-[10px] md:text-xs font-bold mb-2">
               Facade Projects in Pune and Mumbai
             </p>
             <p
-              className="text-white font-bold leading-snug max-w-xl"
+              className="text-paper font-bold leading-snug max-w-xl"
               style={{ fontSize: "clamp(1.1rem, 2.5vw, 1.75rem)" }}
             >
               "From concept to completion — we engineer facades that define skylines."
@@ -557,7 +557,7 @@ const Contact = () => {
           MAP — full-width embed with Fine Glaze search
           ═══════════════════════════════════════════ */}
       <FadeIn>
-        <div className="w-full h-[250px] md:h-[380px] bg-stone-200">
+        <div className="w-full h-[250px] md:h-[380px] bg-line">
           <iframe
             src="https://maps.google.com/maps?q=Fine+Glaze+A3+LW-13+Pragati+Serene+HDFC+Bank+Chowk+Mohammed+Wadi+Pune+411060&output=embed"
             width="100%"

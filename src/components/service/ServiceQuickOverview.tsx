@@ -23,20 +23,20 @@ export const ServiceQuickOverview = ({
 
   return (
     <>
-      <section className="bg-stone-900 border-y border-stone-800 text-stone-200 py-10 my-8">
+      <section className="bg-night-2 border-y border-line text-paper py-10 my-8">
         <div className="container mx-auto px-4 max-w-5xl">
-          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-8 border-b border-stone-800 pb-4">
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-8 border-b border-line pb-4">
             <div>
-              <span className="text-amber-400 text-xs font-bold uppercase tracking-widest">
+              <span className="text-lamp text-xs font-bold">
                 Service Specification
               </span>
-              <h2 className="text-2xl md:text-3xl font-bold text-white mt-1">
+              <h2 className="text-2xl md:text-3xl font-bold text-paper mt-1">
                 {serviceTitle} Overview
               </h2>
             </div>
             <Button
               onClick={() => setIsQuoteOpen(true)}
-              className="bg-amber-600 hover:bg-amber-700 text-white font-bold px-6 py-2.5 shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
+              className="bg-lamp hover:bg-lamp/90 text-lamp-ink font-bold px-6 py-2.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lamp"
             >
               <FileText className="w-4 h-4 mr-2" />
               Book a call
@@ -45,19 +45,19 @@ export const ServiceQuickOverview = ({
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* What Fine Glaze Provides */}
-            <div className="bg-stone-950/70 rounded-xl p-5 border border-stone-800">
-              <div className="flex items-center gap-2 text-amber-400 font-semibold mb-3 text-sm">
+            <div className="bg-night/70 p-5 border border-line">
+              <div className="flex items-center gap-2 text-lamp font-semibold mb-3 text-sm">
                 <CheckCircle2 className="w-4 h-4" />
                 <span>What Fine Glaze Provides</span>
               </div>
-              <p className="text-xs sm:text-sm text-stone-300 leading-relaxed">
+              <p className="text-xs sm:text-sm text-paper/80 leading-relaxed">
                 {whatWeProvide}
               </p>
             </div>
 
             {/* Locations Served */}
-            <div className="bg-stone-950/70 rounded-xl p-5 border border-stone-800">
-              <div className="flex items-center gap-2 text-amber-400 font-semibold mb-3 text-sm">
+            <div className="bg-night/70 p-5 border border-line">
+              <div className="flex items-center gap-2 text-lamp font-semibold mb-3 text-sm">
                 <MapPin className="w-4 h-4" />
                 <span>Service Locations</span>
               </div>
@@ -65,7 +65,7 @@ export const ServiceQuickOverview = ({
                 {locationsServed.map((loc) => (
                   <span
                     key={loc}
-                    className="bg-stone-800 text-stone-300 text-xs font-medium px-2.5 py-1 rounded-md"
+                    className="bg-night-2 text-paper/80 text-xs font-medium px-2.5 py-1"
                   >
                     {loc}
                   </span>
@@ -74,15 +74,15 @@ export const ServiceQuickOverview = ({
             </div>
 
             {/* Best Project Types */}
-            <div className="bg-stone-950/70 rounded-xl p-5 border border-stone-800">
-              <div className="flex items-center gap-2 text-amber-400 font-semibold mb-3 text-sm">
+            <div className="bg-night/70 p-5 border border-line">
+              <div className="flex items-center gap-2 text-lamp font-semibold mb-3 text-sm">
                 <Building2 className="w-4 h-4" />
                 <span>Ideal Building Types</span>
               </div>
-              <ul className="space-y-1.5 text-xs sm:text-sm text-stone-300">
+              <ul className="space-y-1.5 text-xs sm:text-sm text-paper/80">
                 {bestProjectTypes.map((type) => (
                   <li key={type} className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
+                    <span className="w-1.5 h-1.5 bg-lamp" />
                     <span>{type}</span>
                   </li>
                 ))}
@@ -90,16 +90,16 @@ export const ServiceQuickOverview = ({
             </div>
 
             {/* Relevant Projects */}
-            <div className="bg-stone-950/70 rounded-xl p-5 border border-stone-800 md:col-span-2 lg:col-span-2">
-              <div className="flex items-center gap-2 text-amber-400 font-semibold mb-3 text-sm">
+            <div className="bg-night/70 p-5 border border-line md:col-span-2 lg:col-span-2">
+              <div className="flex items-center gap-2 text-lamp font-semibold mb-3 text-sm">
                 <Briefcase className="w-4 h-4" />
                 <span>Verified Project References</span>
               </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-stone-300">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-paper/80">
                 {relevantProjects.map((proj) => (
-                  <div key={proj} className="flex items-center gap-2 bg-stone-900 px-3 py-2 rounded-md">
-                    <span className="w-2 h-2 rounded-full bg-emerald-500" />
-                    <span className="font-medium text-stone-200">{proj}</span>
+                  <div key={proj} className="flex items-center gap-2 bg-night-2 px-3 py-2">
+                    <span className="w-2 h-2 bg-emerald-500" />
+                    <span className="font-medium text-paper">{proj}</span>
                   </div>
                 ))}
               </div>

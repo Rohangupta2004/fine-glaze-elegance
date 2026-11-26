@@ -91,11 +91,11 @@ export default function AdminMedia() {
 
   if (!authed) {
     return (
-      <div className="min-h-screen bg-slate-50 flex items-center justify-center p-4">
+      <div className="min-h-screen bg-night-2 flex items-center justify-center p-4">
         <Toaster />
-        <div className="w-full max-w-sm bg-white rounded-2xl shadow-lg border p-8 space-y-6 text-center">
-          <div className="mx-auto w-14 h-14 rounded-full bg-amber-100 flex items-center justify-center">
-            <Lock className="w-6 h-6 text-amber-700" />
+        <div className="w-full max-w-sm bg-night border p-8 space-y-6 text-center">
+          <div className="mx-auto w-14 h-14 bg-lamp/10 flex items-center justify-center">
+            <Lock className="w-6 h-6 text-lamp" />
           </div>
           <div>
             <h1 className="text-xl font-bold">Fine Glaze Admin</h1>
@@ -129,9 +129,9 @@ export default function AdminMedia() {
   const grouped = groupSlotsByPage();
 
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="min-h-screen bg-night-2">
       <Toaster />
-      <header className="sticky top-0 z-10 bg-white border-b shadow-sm">
+      <header className="sticky top-0 z-10 bg-night border-b">
         <div className="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <a href="/admin" title="Admin home">
@@ -168,7 +168,7 @@ export default function AdminMedia() {
         ) : (
           Object.entries(grouped).map(([page, slots]) => (
             <section key={page} className="space-y-4">
-              <h2 className="text-lg font-bold text-slate-800 border-b pb-2">
+              <h2 className="text-lg font-bold text-paper border-b pb-2">
                 {page}
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -253,14 +253,14 @@ function SlotCard({
   };
 
   return (
-    <div className="bg-white rounded-xl border shadow-sm p-5 space-y-4">
+    <div className="bg-night border p-5 space-y-4">
       <div className="flex items-start justify-between gap-3">
         <div>
           <h3 className="font-semibold text-sm flex items-center gap-2">
             {slot.type === "video" ? (
               <Film className="w-4 h-4 text-purple-600" />
             ) : (
-              <ImagePlus className="w-4 h-4 text-amber-600" />
+              <ImagePlus className="w-4 h-4 text-lamp" />
             )}
             {slot.label}
           </h3>
@@ -269,10 +269,10 @@ function SlotCard({
           )}
         </div>
         <span
-          className={`shrink-0 text-[10px] font-semibold px-2 py-0.5 rounded-full ${
+          className={`shrink-0 text-[10px] font-semibold px-2 py-0.5  ${
             isSet
               ? "bg-green-100 text-green-700"
-              : "bg-slate-100 text-slate-500"
+              : "bg-night-2 text-mute"
           }`}
         >
           {isSet ? "Custom" : "Default"}
@@ -280,7 +280,7 @@ function SlotCard({
       </div>
 
       {/* Preview */}
-      <div className="rounded-lg overflow-hidden border bg-slate-100 aspect-[16/9] flex items-center justify-center">
+      <div className="overflow-hidden border bg-night-2 aspect-[16/9] flex items-center justify-center">
         {slot.type === "video" ? (
           <video
             key={effective}
@@ -322,16 +322,16 @@ function SlotCard({
               setDragOver(false);
               handleUpload(e.dataTransfer.files);
             }}
-            className={`rounded-lg border-2 border-dashed cursor-pointer transition-all py-5 flex flex-col items-center gap-1 text-center ${
+            className={` border-2 border-dashed cursor-pointer transition-all py-5 flex flex-col items-center gap-1 text-center ${
               dragOver
-                ? "border-amber-500 bg-amber-50"
-                : "border-slate-200 hover:border-amber-400 hover:bg-slate-50"
+                ? "border-lamp/40 bg-lamp/10"
+                : "border-line hover:border-lamp/40 hover:bg-night-2"
             } ${busy ? "pointer-events-none opacity-60" : ""}`}
           >
             {busy ? (
-              <Loader2 className="w-6 h-6 animate-spin text-amber-600" />
+              <Loader2 className="w-6 h-6 animate-spin text-lamp" />
             ) : (
-              <Upload className="w-6 h-6 text-slate-400" />
+              <Upload className="w-6 h-6 text-mute" />
             )}
             <span className="text-xs font-medium">
               {busy ? "Uploading…" : "Drop image or click to upload"}
@@ -352,7 +352,7 @@ function SlotCard({
         className="flex gap-2"
       >
         <div className="relative flex-1">
-          <Link2 className="absolute left-2.5 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-slate-400" />
+          <Link2 className="absolute left-2.5 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-mute" />
           <Input
             value={urlInput}
             onChange={(e) => setUrlInput(e.target.value)}

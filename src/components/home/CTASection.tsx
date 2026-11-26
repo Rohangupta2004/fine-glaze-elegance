@@ -16,7 +16,7 @@ export const CTASection = () => {
             <button
               type="button"
               onClick={() => open({ source: "page_close" })}
-              className="mt-8 h-[52px] px-7 rounded-sm bg-lamp text-lamp-ink font-semibold transition-transform active:scale-[0.98] hover:brightness-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-glass"
+              className="mt-8 h-[52px] px-7 bg-lamp text-lamp-ink font-semibold transition-transform active:scale-[0.98] hover:brightness-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-glass"
             >
               Book a call
             </button>

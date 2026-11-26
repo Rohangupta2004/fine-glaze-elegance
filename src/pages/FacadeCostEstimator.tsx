@@ -79,11 +79,11 @@ export default function FacadeCostEstimator() {
         schemas={schemas}
       />
 
-      <section className="bg-stone-950 text-white">
+      <section className="bg-night text-paper">
         <div className="container mx-auto px-4 py-14 md:py-20 max-w-4xl">
-          <p className="text-amber-400 text-xs font-bold tracking-[0.3em] uppercase mb-4">Facade and window cost</p>
+          <p className="text-lamp text-xs font-bold mb-4">Facade and window cost</p>
           <h1 className="text-3xl sm:text-5xl font-extrabold leading-tight">Get a figure for your building</h1>
-          <p className="mt-4 text-stone-300 text-lg">
+          <p className="mt-4 text-paper/80 text-lg">
             Pick a system and tell us the area, city and floors. The cost depends on these inputs and on the
             specification, so we call you back with a figure for your building.
           </p>
@@ -93,7 +93,7 @@ export default function FacadeCostEstimator() {
       <section className="py-12 md:py-16 bg-background">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="grid lg:grid-cols-[1.1fr_1fr] gap-6">
-            <form className="rounded-2xl border border-border bg-card p-6 space-y-5" onSubmit={(e) => e.preventDefault()}>
+            <form className="border border-border bg-card p-6 space-y-5" onSubmit={(e) => e.preventDefault()}>
               <div>
                 <label htmlFor="est-service" className="block text-sm font-semibold text-foreground mb-2">1. What are you planning?</label>
                 <select
@@ -103,7 +103,7 @@ export default function FacadeCostEstimator() {
                     setService(e.target.value);
                     setSystemId(COST_SYSTEMS.find((s) => s.service === e.target.value)!.id);
                   }}
-                  className="w-full rounded-lg border border-input bg-background px-3 py-3 text-base"
+                  className="w-full border border-input bg-background px-3 py-3 text-base"
                 >
                   {services.map((s) => <option key={s} value={s}>{s}</option>)}
                 </select>
@@ -115,7 +115,7 @@ export default function FacadeCostEstimator() {
                   {systemsForService.map((s) => (
                     <label
                       key={s.id}
-                      className={`flex items-center gap-2 rounded-lg border px-3 py-3 cursor-pointer ${s.id === system.id ? "border-amber-500 bg-amber-500/5" : "border-border"}`}
+                      className={`flex items-center gap-2 border px-3 py-3 cursor-pointer ${s.id === system.id ? "border-lamp/40 bg-lamp/5" : "border-border"}`}
                     >
                       <input type="radio" name="system" value={s.id} checked={s.id === system.id} onChange={() => setSystemId(s.id)} />
                       <span className="text-sm text-foreground">{s.name}</span>
@@ -129,11 +129,11 @@ export default function FacadeCostEstimator() {
                   <label htmlFor="est-qty" className="block text-sm font-semibold text-foreground">
                     3. Approximate area ({unitLabel})
                   </label>
-                  <div className="inline-flex rounded-lg border border-border p-0.5 text-xs" role="group" aria-label="Units">
-                    <button type="button" onClick={() => setMetric(false)} className={`px-2 py-1 rounded-md ${!metric ? "bg-stone-900 text-white" : ""}`} aria-pressed={!metric}>
+                  <div className="inline-flex border border-border p-0.5 text-xs" role="group" aria-label="Units">
+                    <button type="button" onClick={() => setMetric(false)} className={`px-2 py-1 ${!metric ? "bg-night-2 text-paper" : ""}`} aria-pressed={!metric}>
                       {system.unit === "sqft" ? "sq ft" : "ft"}
                     </button>
-                    <button type="button" onClick={() => setMetric(true)} className={`px-2 py-1 rounded-md ${metric ? "bg-stone-900 text-white" : ""}`} aria-pressed={metric}>
+                    <button type="button" onClick={() => setMetric(true)} className={`px-2 py-1 ${metric ? "bg-night-2 text-paper" : ""}`} aria-pressed={metric}>
                       {system.unit === "sqft" ? "sqm" : "m"}
                     </button>
                   </div>
@@ -145,7 +145,7 @@ export default function FacadeCostEstimator() {
                   placeholder="If you know it"
                   value={areaText}
                   onChange={(e) => setAreaText(e.target.value)}
-                  className="w-full rounded-lg border border-input bg-background px-3 py-3 text-base"
+                  className="w-full border border-input bg-background px-3 py-3 text-base"
                 />
                 <p className="mt-2 text-xs text-muted-foreground">
                   {system.unit === "sqft"
@@ -161,7 +161,7 @@ export default function FacadeCostEstimator() {
                     id="est-city"
                     value={city}
                     onChange={(e) => setCity(e.target.value)}
-                    className="w-full rounded-lg border border-input bg-background px-3 py-3 text-base"
+                    className="w-full border border-input bg-background px-3 py-3 text-base"
                   >
                     {CITIES.map((c) => <option key={c} value={c}>{c}</option>)}
                   </select>
@@ -175,22 +175,22 @@ export default function FacadeCostEstimator() {
                     placeholder="If you know it"
                     value={floors}
                     onChange={(e) => setFloors(e.target.value.replace(/[^0-9]/g, ""))}
-                    className="w-full rounded-lg border border-input bg-background px-3 py-3 text-base"
+                    className="w-full border border-input bg-background px-3 py-3 text-base"
                   />
                 </div>
               </div>
             </form>
 
-            <div className="rounded-2xl border border-border bg-stone-950 text-white p-6 flex flex-col" aria-live="polite">
-              <p className="text-amber-400 text-sm font-semibold">Your project</p>
+            <div className="border border-border bg-night text-paper p-6 flex flex-col" aria-live="polite">
+              <p className="text-lamp text-sm font-semibold">Your project</p>
               <p className="mt-3 text-xl font-bold">{summary}</p>
-              <p className="mt-3 text-sm text-stone-300">
+              <p className="mt-3 text-sm text-paper/80">
                 The cost depends on these inputs, the glass specification and the access conditions. Book a call and we
                 call you back with a figure for your building.
               </p>
-              <div className="mt-5 rounded-lg bg-stone-900 border border-stone-800 p-4">
-                <p className="text-xs font-semibold uppercase tracking-wider text-stone-400">What moves the cost</p>
-                <ul className="mt-2 space-y-1 text-sm text-stone-300 list-disc pl-5">
+              <div className="mt-5 bg-night-2 border border-line p-4">
+                <p className="text-xs font-semibold text-mute">What moves the cost</p>
+                <ul className="mt-2 space-y-1 text-sm text-paper/80 list-disc pl-5">
                   {system.drivers.map((d) => <li key={d}>{d}</li>)}
                 </ul>
               </div>
@@ -198,16 +198,16 @@ export default function FacadeCostEstimator() {
                 <button
                   type="button"
                   onClick={() => book.open({ work: summary, source: "estimator" })}
-                  className="rounded-xl bg-amber-500 hover:bg-amber-400 text-stone-950 font-bold px-5 py-3"
+                  className="bg-lamp hover:bg-lamp/90 text-paper font-bold px-5 py-3"
                 >
                   Book a call
                 </button>
-                <p className="text-xs text-stone-400 text-center">We call you back the same business day, Monday to Saturday, 9am to 6pm.</p>
+                <p className="text-xs text-mute text-center">We call you back the same business day, Monday to Saturday, 9am to 6pm.</p>
               </div>
             </div>
           </div>
 
-          <div className="mt-6 flex gap-3 rounded-xl border border-border bg-muted p-4 text-sm text-muted-foreground">
+          <div className="mt-6 flex gap-3 border border-border bg-muted p-4 text-sm text-muted-foreground">
             <Info className="h-5 w-5 shrink-0 text-primary" aria-hidden="true" />
             <p>
               Read how the{" "}
@@ -223,7 +223,7 @@ export default function FacadeCostEstimator() {
           <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">Common questions</h2>
           <div className="space-y-3">
             {FAQS.map((f) => (
-              <details key={f.q} className="group rounded-xl border border-border bg-card p-5">
+              <details key={f.q} className="group border border-border bg-card p-5">
                 <summary className="cursor-pointer font-semibold text-foreground list-none flex justify-between gap-4">
                   {f.q}
                   <span className="text-primary group-open:rotate-45 transition-transform" aria-hidden="true">+</span>

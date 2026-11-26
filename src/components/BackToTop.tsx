@@ -20,7 +20,7 @@ export const BackToTop = () => {
     <button
       onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
       aria-label="Back to top"
-      className="fixed bottom-28 right-5 z-40 w-11 h-11 flex items-center justify-center bg-stone-900/80 hover:bg-stone-900 text-white backdrop-blur-sm shadow-lg transition-all duration-300 hover:scale-110"
+      className="fixed bottom-28 right-5 z-40 w-11 h-11 flex items-center justify-center bg-night-2/80 hover:bg-night-2 text-paper transition-all duration-300 hover:scale-110"
     >
       <ArrowUp size={20} />
     </button>

@@ -102,7 +102,7 @@ export default function ServiceRequest() {
     },
   ];
 
-  const field = "w-full rounded-lg border border-input bg-background px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500";
+  const field = "w-full  border border-input bg-background px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-lamp";
 
   return (
     <Layout>
@@ -114,23 +114,23 @@ export default function ServiceRequest() {
         schemas={schemas}
       />
 
-      <section className="bg-stone-950 text-white">
+      <section className="bg-night text-paper">
         <div className="container mx-auto px-4 py-14 md:py-20 max-w-5xl">
-          <p className="text-amber-400 text-xs font-bold tracking-[0.3em] uppercase mb-4">After-sales &amp; repairs</p>
+          <p className="text-lamp text-xs font-bold mb-4">After-sales &amp; repairs</p>
           <h1 className="text-3xl sm:text-5xl font-extrabold leading-tight">Facade service request</h1>
-          <p className="mt-4 text-stone-300 text-lg max-w-2xl">
+          <p className="mt-4 text-paper/80 text-lg max-w-2xl">
             Leaking glazing, broken or foggy glass, failed sealant, windows that won't close, loose cladding — tell us what's
             happening at your building in Pune or Mumbai. We work on facades we didn't install, too.
           </p>
           <div className="mt-6 flex flex-col sm:flex-row gap-3">
-            <a href={telHref} className="inline-flex items-center justify-center rounded-xl bg-amber-500 hover:bg-amber-400 text-stone-950 font-bold px-6 py-3.5">
+            <a href={telHref} className="inline-flex items-center justify-center bg-lamp hover:bg-lamp/90 text-paper font-bold px-6 py-3.5">
               <Phone className="mr-2 h-4 w-4" /> Urgent? Call {company.phone.mobileDisplay}
             </a>
             <a
               href={whatsappHref("Hi Fine Glaze, I'd like to report a facade issue. Sending photos:")}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-xl border border-white/30 px-6 py-3.5 font-bold hover:bg-white hover:text-stone-900"
+              className="inline-flex items-center justify-center border border-paper/30 px-6 py-3.5 font-bold hover:bg-night hover:text-paper"
             >
               <MessageCircle className="mr-2 h-4 w-4" /> Send photos on WhatsApp
             </a>
@@ -141,7 +141,7 @@ export default function ServiceRequest() {
       <section className="py-12 md:py-16 bg-background">
         <div className="container mx-auto px-4 max-w-5xl grid lg:grid-cols-[1.3fr_1fr] gap-8">
           {sent ? (
-            <div className="rounded-2xl border border-emerald-500/40 bg-emerald-500/5 p-8">
+            <div className="border border-emerald-500/40 bg-emerald-500/5 p-8">
               <CheckCircle2 className="h-10 w-10 text-emerald-600" />
               <h2 className="mt-3 text-2xl font-bold text-foreground">Request received</h2>
               <p className="mt-2 text-muted-foreground">
@@ -152,13 +152,13 @@ export default function ServiceRequest() {
                 href={whatsappHref(`${summary}\n\nPhotos:`)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-5 inline-flex items-center rounded-xl bg-emerald-600 text-white font-bold px-5 py-3 hover:bg-emerald-500"
+                className="mt-5 inline-flex items-center bg-emerald-600 text-paper font-bold px-5 py-3 hover:bg-emerald-500"
               >
                 <MessageCircle className="mr-2 h-4 w-4" /> Send photos on WhatsApp
               </a>
             </div>
           ) : (
-            <form onSubmit={submit} className="rounded-2xl border border-border bg-card p-6 space-y-4" aria-labelledby="sr-form">
+            <form onSubmit={submit} className="border border-border bg-card p-6 space-y-4" aria-labelledby="sr-form">
               <h2 id="sr-form" className="text-xl font-bold text-foreground">Tell us about the issue</h2>
               <div className="grid sm:grid-cols-2 gap-4">
                 <label className="block text-sm font-medium text-foreground">
@@ -192,7 +192,7 @@ export default function ServiceRequest() {
                 <legend className="text-sm font-medium text-foreground">How urgent is it?</legend>
                 <div className="mt-2 grid gap-2">
                   {URGENCY.map((u) => (
-                    <label key={u} className={`flex items-center gap-2 rounded-lg border px-3 py-2 text-sm cursor-pointer ${form.urgency === u ? "border-amber-500 bg-amber-500/5" : "border-border"}`}>
+                    <label key={u} className={`flex items-center gap-2 border px-3 py-2 text-sm cursor-pointer ${form.urgency === u ? "border-lamp/40 bg-lamp/5" : "border-border"}`}>
                       <input type="radio" name="urgency" value={u} checked={form.urgency === u} onChange={set("urgency")} />
                       {u}
                     </label>
@@ -212,7 +212,7 @@ export default function ServiceRequest() {
               <button
                 type="submit"
                 disabled={sending}
-                className="w-full inline-flex items-center justify-center rounded-xl bg-stone-950 text-white font-bold px-6 py-3.5 hover:bg-stone-800 disabled:opacity-60"
+                className="w-full inline-flex items-center justify-center bg-night text-paper font-bold px-6 py-3.5 hover:bg-night-2 disabled:opacity-60"
               >
                 <Send className="mr-2 h-4 w-4" /> {sending ? "Sending…" : "Send service request"}
               </button>
@@ -224,7 +224,7 @@ export default function ServiceRequest() {
           )}
 
           <aside className="space-y-4">
-            <div className="rounded-2xl border border-border bg-muted p-6">
+            <div className="border border-border bg-muted p-6">
               <div className="flex items-center gap-2 font-semibold text-foreground">
                 <Wrench className="h-5 w-5 text-primary" aria-hidden="true" /> What we handle
               </div>
@@ -236,15 +236,15 @@ export default function ServiceRequest() {
                 ))}
               </ul>
             </div>
-            <div className="rounded-2xl border border-amber-500/30 bg-amber-500/5 p-6 text-sm">
+            <div className="border border-lamp/30 bg-lamp/5 p-6 text-sm">
               <div className="flex items-center gap-2 font-semibold text-foreground">
-                <AlertTriangle className="h-5 w-5 text-amber-700" aria-hidden="true" /> Broken glass at height?
+                <AlertTriangle className="h-5 w-5 text-lamp" aria-hidden="true" /> Broken glass at height?
               </div>
               <p className="mt-2 text-muted-foreground">
                 Keep people away from the area below and call us. Don't try to remove loose glass yourself.
               </p>
             </div>
-            <div className="rounded-2xl border border-border bg-card p-6 text-sm text-muted-foreground">
+            <div className="border border-border bg-card p-6 text-sm text-muted-foreground">
               <p className="font-semibold text-foreground">Maintenance we run today</p>
               <p className="mt-1">Running facade contract at Embassy Techzone, Hinjewadi (Embassy REIT), and sealant and glass work at Embassy 247, Vikhroli.</p>
               <div className="mt-3 flex flex-wrap gap-3">
@@ -261,7 +261,7 @@ export default function ServiceRequest() {
           <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">Service FAQs</h2>
           <div className="space-y-3">
             {FAQS.map((f) => (
-              <details key={f.q} className="group rounded-xl border border-border bg-card p-5">
+              <details key={f.q} className="group border border-border bg-card p-5">
                 <summary className="cursor-pointer font-semibold text-foreground list-none flex justify-between gap-4">
                   {f.q}
                   <span className="text-primary group-open:rotate-45 transition-transform" aria-hidden="true">+</span>

@@ -57,19 +57,19 @@ export default function FacadeContractorThane() {
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}
       />
 
-      <section className="relative py-24 bg-gradient-to-br from-slate-900 to-slate-800 text-white">
+      <section className="relative py-24 bg-night-2 text-paper">
         <div className="container mx-auto px-4 max-w-6xl grid md:grid-cols-2 gap-12 items-center">
           <div>
             <h1 className="text-3xl md:text-4xl font-bold mb-4">
               Facade Contractor <span className="text-gradient-gold">in Thane</span>
             </h1>
-            <p className="text-lg text-white/80 mb-8">Fine Glaze takes facade projects in Thane: ACP cladding, curtain walls, glass railings, structural glazing and facade AMC. We are based in Pune and Mumbai and fabricate at our own unit in Pisoli, Pune.</p>
+            <p className="text-lg text-paper/80 mb-8">Fine Glaze takes facade projects in Thane: ACP cladding, curtain walls, glass railings, structural glazing and facade AMC. We are based in Pune and Mumbai and fabricate at our own unit in Pisoli, Pune.</p>
             <div className="flex gap-4">
-              <Link to="/contact"><Button size="lg" className="bg-amber-600 hover:bg-amber-700">Book a call</Button></Link>
+              <Link to="/contact"><Button size="lg" className="bg-lamp hover:bg-lamp/90">Book a call</Button></Link>
               <Link to="/portfolio"><Button size="lg" variant="outline">View Projects</Button></Link>
             </div>
           </div>
-          <img src="/projects/embassy-247-37-1.webp" alt="Embassy 247, Vikhroli, Mumbai — facade sealant and glass replacement by Fine Glaze for Embassy REIT" className="rounded-xl shadow-2xl object-cover h-[420px] w-full" loading="eager" width="600" height="420" />
+          <img src="/projects/embassy-247-37-1.webp" alt="Embassy 247, Vikhroli, Mumbai — facade sealant and glass replacement by Fine Glaze for Embassy REIT" className="object-cover h-[420px] w-full" loading="eager" width="600" height="420" />
         </div>
       </section>
 
@@ -99,7 +99,7 @@ export default function FacadeContractorThane() {
           <h2 className="text-3xl font-bold mb-10 text-center">What We Offer in Thane</h2>
           <div className="grid md:grid-cols-2 gap-4">
             {["ACP Cladding for Residential & Commercial", "Curtain Wall Systems", "Frameless Glass Railings", "Structural Glazing", "Aluminium Windows & Doors", "Facade AMC & Waterproofing"].map(f => (
-              <div key={f} className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">{f}</span></div>
+              <div key={f} className="flex items-center gap-3"><CheckCircle2 size={20} className="text-lamp shrink-0" /><span className="text-muted-foreground">{f}</span></div>
             ))}
           </div>
         </div>
@@ -109,16 +109,16 @@ export default function FacadeContractorThane() {
         <div className="container mx-auto px-4 max-w-4xl">
           <h2 className="text-3xl font-bold mb-10 text-center">Frequently Asked Questions</h2>
           <div className="space-y-6">
-            <div className="bg-background rounded-xl p-6 shadow-sm"><h3 className="text-lg font-bold mb-2">Does Fine Glaze serve Thane for facade work?</h3><p className="text-muted-foreground">Yes. Fine Glaze takes facade projects in Thane, including Ghodbunder Road, Majiwada and Wagle Estate. We provide curtain walls, ACP cladding, structural glazing, glass railings, aluminium windows and facade AMC.</p></div>
-            <div className="bg-background rounded-xl p-6 shadow-sm"><h3 className="text-lg font-bold mb-2">What facade systems are popular in Thane?</h3><p className="text-muted-foreground">Glass balcony railings and ACP cladding are common on residential towers, while offices along Ghodbunder Road often use curtain wall or structural glazing. This is general market guidance rather than a Fine Glaze project claim.</p></div>
-            <div className="bg-background rounded-xl p-6 shadow-sm"><h3 className="text-lg font-bold mb-2">What is the cost of ACP cladding in Thane?</h3><p className="text-muted-foreground">ACP cladding cost in Thane depends on panel brand, fire-retardant grade, finish, sub-frame complexity and access. Send drawings to Fine Glaze for a BOQ-based quotation.</p></div>
+            <div className="bg-background p-6"><h3 className="text-lg font-bold mb-2">Does Fine Glaze serve Thane for facade work?</h3><p className="text-muted-foreground">Yes. Fine Glaze takes facade projects in Thane, including Ghodbunder Road, Majiwada and Wagle Estate. We provide curtain walls, ACP cladding, structural glazing, glass railings, aluminium windows and facade AMC.</p></div>
+            <div className="bg-background p-6"><h3 className="text-lg font-bold mb-2">What facade systems are popular in Thane?</h3><p className="text-muted-foreground">Glass balcony railings and ACP cladding are common on residential towers, while offices along Ghodbunder Road often use curtain wall or structural glazing. This is general market guidance rather than a Fine Glaze project claim.</p></div>
+            <div className="bg-background p-6"><h3 className="text-lg font-bold mb-2">What is the cost of ACP cladding in Thane?</h3><p className="text-muted-foreground">ACP cladding cost in Thane depends on panel brand, fire-retardant grade, finish, sub-frame complexity and access. Send drawings to Fine Glaze for a BOQ-based quotation.</p></div>
           </div>
         </div>
       </section>
 
-      <section className="py-12 bg-slate-50 border-t border-slate-100">
+      <section className="py-12 bg-night-2 border-t border-line">
         <div className="container mx-auto px-4 max-w-5xl">
-          <h2 className="text-xl font-bold text-slate-800 mb-5">Explore Related Services</h2>
+          <h2 className="text-xl font-bold text-paper mb-5">Explore Related Services</h2>
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
             {[
               { title: "Facade Contractor Mumbai", href: "/facade-contractor-mumbai", desc: "Mumbai facade services" },
@@ -128,9 +128,9 @@ export default function FacadeContractorThane() {
               { title: "Curtain Wall Systems", href: "/curtain-wall-systems", desc: "Curtain wall glazing" },
               { title: "Facade Maintenance", href: "/maintenance-services", desc: "AMC & repair services" },
             ].map(r => (
-              <Link key={r.href} to={r.href} className="group flex items-start gap-3 p-4 rounded-xl border border-slate-200 hover:border-amber-300 hover:bg-amber-50 transition-all bg-white">
-                <ArrowRight size={15} className="text-amber-600 shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" />
-                <div><p className="font-semibold text-slate-800 text-sm">{r.title}</p><p className="text-xs text-slate-500">{r.desc}</p></div>
+              <Link key={r.href} to={r.href} className="group flex items-start gap-3 p-4 border border-line hover:border-lamp/40 hover:bg-lamp/10 transition-all bg-night">
+                <ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" />
+                <div><p className="font-semibold text-paper text-sm">{r.title}</p><p className="text-xs text-mute">{r.desc}</p></div>
               </Link>
             ))}
           </div>

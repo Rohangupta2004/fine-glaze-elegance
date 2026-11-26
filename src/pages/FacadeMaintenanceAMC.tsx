@@ -53,21 +53,21 @@ export default function FacadeMaintenanceAMC() {
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}
       />
 
-      <section className="relative py-24 bg-gradient-to-br from-slate-900 to-slate-800 text-white">
+      <section className="relative py-24 bg-night-2 text-paper">
         <div className="container mx-auto px-4 max-w-6xl grid md:grid-cols-2 gap-12 items-center">
           <div>
             <h1 className="text-3xl md:text-4xl font-bold mb-4">
               Facade AMC <span className="text-gradient-gold">Guide India</span>
             </h1>
-            <p className="text-lg text-white/80 mb-8">
+            <p className="text-lg text-paper/80 mb-8">
               A facade Annual Maintenance Contract (AMC) schedules inspection, cleaning and repair of a building's glass, sealant and cladding systems so problems are found before they cause leaks. Fine Glaze offers facade AMC for buildings in Pune and Mumbai.
             </p>
             <div className="flex gap-4">
-              <Link to="/contact"><Button size="lg" className="bg-amber-600 hover:bg-amber-700">Book a call</Button></Link>
+              <Link to="/contact"><Button size="lg" className="bg-lamp hover:bg-lamp/90">Book a call</Button></Link>
               <Link to="/maintenance-services"><Button size="lg" variant="outline">Our Services</Button></Link>
             </div>
           </div>
-          <img src="/projects/embassy-247-37-1.webp" alt="Embassy 247, Vikhroli, Mumbai — facade sealant renewal and glass replacement by Fine Glaze for Embassy REIT" className="rounded-xl shadow-2xl object-cover h-[420px] w-full" loading="eager" width="600" height="420" />
+          <img src="/projects/embassy-247-37-1.webp" alt="Embassy 247, Vikhroli, Mumbai — facade sealant renewal and glass replacement by Fine Glaze for Embassy REIT" className="object-cover h-[420px] w-full" loading="eager" width="600" height="420" />
         </div>
       </section>
 
@@ -97,7 +97,7 @@ export default function FacadeMaintenanceAMC() {
           <h2 className="text-3xl font-bold mb-10 text-center">What Our AMC Covers</h2>
           <div className="grid md:grid-cols-2 gap-4">
             {["Periodic Facade Inspection", "Written Condition Report", "Glass Cleaning and Restoration", "Sealant Re-application and Joint Repair", "Glass Replacement and Breakage Response", "Leakage Investigation and Rectification"].map(f => (
-              <div key={f} className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">{f}</span></div>
+              <div key={f} className="flex items-center gap-3"><CheckCircle2 size={20} className="text-lamp shrink-0" /><span className="text-muted-foreground">{f}</span></div>
             ))}
           </div>
         </div>
@@ -107,16 +107,16 @@ export default function FacadeMaintenanceAMC() {
         <div className="container mx-auto px-4 max-w-4xl">
           <h2 className="text-3xl font-bold mb-10 text-center">Frequently Asked Questions</h2>
           <div className="space-y-6">
-            <div className="bg-background rounded-xl p-6 shadow-sm"><h3 className="text-lg font-bold mb-2">What is included in a facade AMC?</h3><p className="text-muted-foreground">A facade AMC covers scheduled inspection of glass, sealants, cladding and drainage, plus repair work agreed in the contract, such as sealant repair, glass replacement and leakage rectification. Fine Glaze also provides a written condition report after periodic inspection.</p></div>
-            <div className="bg-background rounded-xl p-6 shadow-sm"><h3 className="text-lg font-bold mb-2">How much does a facade AMC cost in India?</h3><p className="text-muted-foreground">Facade AMC cost depends on facade area and type, building height, access method, visit frequency and the repairs included, so there is no single rate. Fine Glaze prepares a quotation after reviewing the building and scope.</p></div>
-            <div className="bg-background rounded-xl p-6 shadow-sm"><h3 className="text-lg font-bold mb-2">How often should a building facade be professionally inspected?</h3><p className="text-muted-foreground">A building facade should be professionally inspected at least once a year, and twice a year, before and after the monsoon, for coastal buildings and structural glazing facades. This is general guidance. Fine Glaze reports findings in writing.</p></div>
+            <div className="bg-background p-6"><h3 className="text-lg font-bold mb-2">What is included in a facade AMC?</h3><p className="text-muted-foreground">A facade AMC covers scheduled inspection of glass, sealants, cladding and drainage, plus repair work agreed in the contract, such as sealant repair, glass replacement and leakage rectification. Fine Glaze also provides a written condition report after periodic inspection.</p></div>
+            <div className="bg-background p-6"><h3 className="text-lg font-bold mb-2">How much does a facade AMC cost in India?</h3><p className="text-muted-foreground">Facade AMC cost depends on facade area and type, building height, access method, visit frequency and the repairs included, so there is no single rate. Fine Glaze prepares a quotation after reviewing the building and scope.</p></div>
+            <div className="bg-background p-6"><h3 className="text-lg font-bold mb-2">How often should a building facade be professionally inspected?</h3><p className="text-muted-foreground">A building facade should be professionally inspected at least once a year, and twice a year, before and after the monsoon, for coastal buildings and structural glazing facades. This is general guidance. Fine Glaze reports findings in writing.</p></div>
           </div>
         </div>
       </section>
 
-      <section className="py-12 bg-slate-50 border-t border-slate-100">
+      <section className="py-12 bg-night-2 border-t border-line">
         <div className="container mx-auto px-4 max-w-5xl">
-          <h2 className="text-xl font-bold text-slate-800 mb-5">Related Services</h2>
+          <h2 className="text-xl font-bold text-paper mb-5">Related Services</h2>
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
             {[
               { title: "Facade Maintenance", href: "/maintenance-services", desc: "Full maintenance service" },
@@ -126,9 +126,9 @@ export default function FacadeMaintenanceAMC() {
               { title: "Facade Contractor Pune", href: "/facade-contractor-pune", desc: "Facade services Pune" },
               { title: "Facade Contractor Mumbai", href: "/facade-contractor-mumbai", desc: "Facade services Mumbai" },
             ].map(r => (
-              <Link key={r.href} to={r.href} className="group flex items-start gap-3 p-4 rounded-xl border border-slate-200 hover:border-amber-300 hover:bg-amber-50 transition-all bg-white">
-                <ArrowRight size={15} className="text-amber-600 shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" />
-                <div><p className="font-semibold text-slate-800 text-sm">{r.title}</p><p className="text-xs text-slate-500">{r.desc}</p></div>
+              <Link key={r.href} to={r.href} className="group flex items-start gap-3 p-4 border border-line hover:border-lamp/40 hover:bg-lamp/10 transition-all bg-night">
+                <ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" />
+                <div><p className="font-semibold text-paper text-sm">{r.title}</p><p className="text-xs text-mute">{r.desc}</p></div>
               </Link>
             ))}
           </div>

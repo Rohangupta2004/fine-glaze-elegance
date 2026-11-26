@@ -154,7 +154,7 @@ export default function Admin() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 p-8">
+    <div className="min-h-screen bg-night-2 p-8">
       <SEO title="Admin Hub | Fine Glaze" description="Fine Glaze admin management hub" noindex />
       <div className="max-w-7xl mx-auto space-y-8">
         <div className="flex justify-between items-center">
@@ -162,10 +162,10 @@ export default function Admin() {
             <h1 className="text-3xl font-bold">Admin Hub</h1>
             <p className="text-muted-foreground">Manage projects, approvals & financials</p>
             <div className="flex flex-wrap gap-2 mt-3">
-              <a href="/admin/content" className="text-xs px-3 py-1.5 bg-amber-100 text-amber-700 rounded-full font-medium hover:bg-amber-200 transition-colors">🖼 Website Images</a>
-              <a href="/admin/blog-images" className="text-xs px-3 py-1.5 bg-blue-50 text-blue-700 rounded-full font-medium hover:bg-blue-100 transition-colors">📰 Blog Images</a>
-              <a href="/admin/images" className="text-xs px-3 py-1.5 bg-slate-100 text-slate-700 rounded-full font-medium hover:bg-slate-200 transition-colors">🏗 Project Gallery</a>
-              <a href="/admin/logos" className="text-xs px-3 py-1.5 bg-slate-100 text-slate-700 rounded-full font-medium hover:bg-slate-200 transition-colors">🏢 Client Logos</a>
+              <a href="/admin/content" className="text-xs px-3 py-1.5 bg-lamp/10 text-lamp font-medium hover:bg-lamp/10 transition-colors">🖼 Website Images</a>
+              <a href="/admin/blog-images" className="text-xs px-3 py-1.5 bg-blue-50 text-blue-700 font-medium hover:bg-blue-100 transition-colors">📰 Blog Images</a>
+              <a href="/admin/images" className="text-xs px-3 py-1.5 bg-night-2 text-paper font-medium hover:bg-line transition-colors">🏗 Project Gallery</a>
+              <a href="/admin/logos" className="text-xs px-3 py-1.5 bg-night-2 text-paper font-medium hover:bg-line transition-colors">🏢 Client Logos</a>
             </div>
           </div>
           <Dialog open={createOpen} onOpenChange={setCreateOpen}>
@@ -184,7 +184,7 @@ export default function Admin() {
           </Dialog>
         </div>
 
-        <div className="bg-white rounded-md border shadow-sm">
+        <div className="bg-night border">
           <Table>
             <TableHeader><TableRow><TableHead>Project Details</TableHead><TableHead>Status</TableHead><TableHead>Approvals</TableHead><TableHead className="text-right">Actions</TableHead></TableRow></TableHeader>
             <TableBody>
@@ -223,7 +223,7 @@ export default function Admin() {
                       <DialogContent className="max-w-2xl">
                         <DialogHeader><DialogTitle>Documents</DialogTitle></DialogHeader>
                         <div className="space-y-6">
-                          <div className="bg-slate-50 p-4 rounded border space-y-3">
+                          <div className="bg-night-2 p-4 border space-y-3">
                             <Label>Upload New</Label>
                             <div className="flex items-center gap-4">
                               <Input type="file" onChange={(e) => handleFileUpload(e, p.id)} />
@@ -235,7 +235,7 @@ export default function Admin() {
                           </div>
                           <div className="space-y-2">
                             {(files[p.id] || []).map(f => (
-                              <div key={f.id} className="flex justify-between items-center border p-2 rounded text-sm">
+                              <div key={f.id} className="flex justify-between items-center border p-2 text-sm">
                                 <div className="flex items-center gap-2">
                                   <a href={f.url} target="_blank" className="text-blue-600 hover:underline">{f.name}</a>
                                   {f.status === 'Approved' && <CheckCircle2 size={14} className="text-green-500"/>}
@@ -269,7 +269,7 @@ export default function Admin() {
                       <DialogContent>
                         <DialogHeader><DialogTitle>Timeline</DialogTitle></DialogHeader>
                         <div className="space-y-4">
-                          <div className="bg-slate-50 p-4 rounded border space-y-3">
+                          <div className="bg-night-2 p-4 border space-y-3">
                             <Input placeholder="Title" value={newEvent.title} onChange={e => setNewEvent({...newEvent, title: e.target.value})} />
                             <Textarea placeholder="Desc" value={newEvent.desc} onChange={e => setNewEvent({...newEvent, desc: e.target.value})} />
                             <Button onClick={handleAddTimeline} size="sm" className="w-full">Add Entry</Button>

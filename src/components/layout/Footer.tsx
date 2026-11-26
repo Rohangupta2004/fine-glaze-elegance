@@ -43,7 +43,7 @@ export const Footer = () => {
                 href="https://www.linkedin.com/company/fine-glaze"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-white/10 flex items-center justify-center hover:bg-lamp hover:text-lamp-ink transition-colors"
+                className="w-10 h-10 bg-paper/10 flex items-center justify-center hover:bg-lamp hover:text-lamp-ink transition-colors"
                 aria-label="LinkedIn"
               >
                 <Linkedin size={18} />
@@ -103,7 +103,7 @@ export const Footer = () => {
                   href="https://www.google.com/maps/search/?api=1&query=Fine+Glaze+A3+LW-13+Pragati+Serene+Mohammed+Wadi+Pune+411060"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-paper/70 hover:text-white text-sm transition-colors"
+                  className="text-paper/70 hover:text-paper text-sm transition-colors"
                 >
                   A3 LW-13, Pragati Serene Building, Sr.No.2, HDFC Bank Chowk, Plot B, Autadwadi Handewadi, Mahadev Wadi, Mohammed Wadi,
                   <br />
@@ -113,11 +113,11 @@ export const Footer = () => {
               <li className="flex items-center gap-3">
                 <Phone size={18} className="text-lamp shrink-0" />
                 <span className="text-sm">
-                  <a href={telHref} className="text-paper/70 hover:text-white transition-colors">
+                  <a href={telHref} className="text-paper/70 hover:text-paper transition-colors">
                     {company.phone.mobileDisplay}
                   </a>
                   <br />
-                  <a href={officeTelHref} className="text-paper/70 hover:text-white transition-colors">
+                  <a href={officeTelHref} className="text-paper/70 hover:text-paper transition-colors">
                     {company.phone.officeDisplay}
                   </a>
                   <br />
@@ -125,7 +125,7 @@ export const Footer = () => {
                     href={`https://wa.me/${company.whatsapp}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-paper/70 hover:text-white transition-colors"
+                    className="text-paper/70 hover:text-paper transition-colors"
                   >
                     WhatsApp
                   </a>
@@ -135,7 +135,7 @@ export const Footer = () => {
                 <Mail size={18} className="text-lamp shrink-0" />
                 <a
                   href={`mailto:${company.email}`}
-                  className="text-paper/70 hover:text-white text-sm transition-colors"
+                  className="text-paper/70 hover:text-paper text-sm transition-colors"
                 >
                   {company.email}
                 </a>

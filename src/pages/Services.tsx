@@ -313,17 +313,17 @@ export default function Services() {
               hero.isVisible && "visible"
             )}
           >
-            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/20 text-primary-foreground text-sm font-bold uppercase tracking-wider border border-primary/40">
+            <span className="inline-flex items-center gap-2 px-4 py-2 bg-primary/20 text-primary-foreground text-sm font-bold border border-primary/40">
               <Building2 size={16} />
               End-to-End Facade Solutions
             </span>
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-paper leading-tight">
               Facade, Glazing &{" "}
               <span className="text-gradient-gold">Aluminium Solutions</span>
             </h1>
 
-            <p className="max-w-2xl mx-auto text-slate-300 text-lg leading-relaxed">
+            <p className="max-w-2xl mx-auto text-paper/80 text-lg leading-relaxed">
               Full-range facade solutions — from engineering-grade curtain walls and
               skylights to frameless glass partitions and shower enclosures.
               One expert team for every glass & aluminium need.
@@ -331,13 +331,13 @@ export default function Services() {
 
             {/* Trust Badge */}
             <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
-              <div className="flex items-center gap-2 px-4 py-2 bg-white/8 border border-white/15 rounded-full backdrop-blur-sm">
+              <div className="flex items-center gap-2 px-4 py-2 bg-paper/8 border border-line">
                 <ShieldCheck size={15} className="text-[#C8782A]" />
-                <span className="text-xs text-white/80 font-semibold">Best Performance Vendor — Embassy REIT 2024</span>
+                <span className="text-xs text-paper/80 font-semibold">Best Performance Vendor — Embassy REIT 2024</span>
               </div>
-              <div className="flex items-center gap-2 px-4 py-2 bg-white/8 border border-white/15 rounded-full backdrop-blur-sm">
+              <div className="flex items-center gap-2 px-4 py-2 bg-paper/8 border border-line">
                 <Users size={15} className="text-[#C8782A]" />
-                <span className="text-xs text-white/80 font-semibold">Embassy REIT · L&T Construction · Jindal Stainless</span>
+                <span className="text-xs text-paper/80 font-semibold">Embassy REIT · L&T Construction · Jindal Stainless</span>
               </div>
             </div>
 
@@ -398,7 +398,7 @@ export default function Services() {
                     <div
                       key={i}
                       className={cn(
-                        "rounded-xl overflow-hidden shadow-lg",
+                        " overflow-hidden ",
                         i === 0 ? "aspect-[4/3] col-span-2" : "aspect-square"
                       )}
                     >
@@ -426,7 +426,7 @@ export default function Services() {
                 >
                   {/* Header */}
                   <div>
-                    <h3 className="text-primary uppercase text-xs font-bold tracking-widest mb-2">
+                    <h3 className="text-primary text-xs font-bold mb-2">
                       {service.subtitle}
                     </h3>
                     <h2
@@ -459,7 +459,7 @@ export default function Services() {
                   </div>
 
                   {/* Stat Highlight */}
-                  <div className="flex items-center gap-4 p-4 bg-primary/8 border border-primary/25 rounded-xl">
+                  <div className="flex items-center gap-4 p-4 bg-primary/8 border border-primary/25">
                     <span className="text-3xl font-black text-primary">
                       {service.stats.value}
                     </span>
@@ -477,7 +477,7 @@ export default function Services() {
                       </Button>
                     </Link>
                     <Link to={service.href}>
-                      <Button variant="outline" className="border-amber-600 text-amber-700 bg-transparent hover:bg-amber-50">Learn More</Button>
+                      <Button variant="outline" className="border-lamp/40 text-lamp bg-transparent hover:bg-lamp/10">Learn More</Button>
                     </Link>
                   </div>
                 </div>
@@ -489,7 +489,7 @@ export default function Services() {
 
       {/* ==================== PROCESS ==================== */}
       <section
-        className="py-24 text-white"
+        className="py-24 text-paper"
         style={{ background: "linear-gradient(160deg, #1a0d05 0%, #251208 60%, #1a0d05 100%)" }}
         ref={processRef.ref}
       >
@@ -500,13 +500,13 @@ export default function Services() {
               processRef.isVisible && "visible"
             )}
           >
-            <span className="text-[#C8782A] font-bold uppercase tracking-widest text-sm">
+            <span className="text-[#C8782A] font-bold text-sm">
               How We Work
             </span>
             <h2 className="text-3xl md:text-4xl font-bold mt-3">
               Our <span className="text-gradient-light">Execution</span> Process
             </h2>
-            <p className="text-slate-400 mt-4">
+            <p className="text-mute mt-4">
               From your first call to project handover — a streamlined,
               transparent process that keeps you informed at every stage.
             </p>
@@ -519,21 +519,21 @@ export default function Services() {
                 <div
                   key={step.title}
                   className={cn(
-                    "text-center p-8 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm slide-up relative",
+                    "text-center p-8  bg-paper/5 border border-line  slide-up relative",
                     processRef.isVisible && "visible"
                   )}
                   style={{ transitionDelay: `${i * 0.1}s` }}
                 >
                   {/* Step Number */}
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-sm font-bold text-primary-foreground">
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 bg-primary flex items-center justify-center text-sm font-bold text-primary-foreground">
                     {i + 1}
                   </div>
 
-                  <div className="w-14 h-14 bg-primary/20 rounded-xl flex items-center justify-center mx-auto mb-5 mt-2">
+                  <div className="w-14 h-14 bg-primary/20 flex items-center justify-center mx-auto mb-5 mt-2">
                     <StepIcon size={26} className="text-[#C8782A]" />
                   </div>
                   <h3 className="text-lg font-bold mb-2">{step.title}</h3>
-                  <p className="text-sm text-slate-400 leading-relaxed">
+                  <p className="text-sm text-mute leading-relaxed">
                     {step.desc}
                   </p>
                 </div>
@@ -552,7 +552,7 @@ export default function Services() {
               whyRef.isVisible && "visible"
             )}
           >
-            <span className="text-primary font-bold uppercase tracking-widest text-sm">
+            <span className="text-primary font-bold text-sm">
               Why Fine Glaze
             </span>
             <h2 className="text-3xl md:text-4xl font-bold mt-3">
@@ -571,12 +571,12 @@ export default function Services() {
                 <div
                   key={item.title}
                   className={cn(
-                    "p-6 rounded-2xl border bg-card hover:shadow-lg transition-all duration-300 slide-up",
+                    "p-6  border bg-card  transition-all duration-300 slide-up",
                     whyRef.isVisible && "visible"
                   )}
                   style={{ transitionDelay: `${i * 0.1}s` }}
                 >
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                  <div className="w-12 h-12 bg-primary/10 flex items-center justify-center mb-4">
                     <ItemIcon size={24} className="text-primary" />
                   </div>
                   <h3 className="text-lg font-bold mb-2">{item.title}</h3>
@@ -592,7 +592,7 @@ export default function Services() {
 
       {/* ==================== CTA ==================== */}
       <section
-        className="py-24 text-white text-center"
+        className="py-24 text-paper text-center"
         style={{
           background:
             "linear-gradient(135deg, hsl(27 65% 32%) 0%, hsl(22 72% 18%) 100%)",
@@ -604,7 +604,7 @@ export default function Services() {
             <span className="text-gradient-light">Transform</span>{" "}
             Your Building?
           </h2>
-          <p className="text-white/80 text-lg mb-8">
+          <p className="text-paper/80 text-lg mb-8">
             Talk to our engineering team about your facade project.
             We call you back the same business day, Monday to Saturday, 9am to 6pm.
           </p>
@@ -612,7 +612,7 @@ export default function Services() {
             <Link to="/contact">
               <Button
                 size="lg"
-                className="bg-white text-slate-900 hover:bg-slate-100 px-10 py-6 text-base font-bold"
+                className="bg-night text-paper hover:bg-night-2 px-10 py-6 text-base font-bold"
               >
                 Book a call
                 <ArrowRight className="ml-2 h-4 w-4" />
@@ -622,7 +622,7 @@ export default function Services() {
               <Button
                 size="lg"
                 variant="outline"
-                className="bg-white text-slate-900 hover:bg-white/90 border-white font-bold px-10 py-6 text-base gap-2"
+                className="bg-night text-paper hover:bg-night/90 border-line font-bold px-10 py-6 text-base gap-2"
               >
                 <Phone size={18} />
                 Call +91 8369233566

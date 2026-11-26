@@ -52,18 +52,18 @@ function FadeIn({
 function FAQItem({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = useState(false);
   return (
-    <div className="border-b border-stone-200">
+    <div className="border-b border-line">
       <button
         onClick={() => setOpen(!open)}
         className="w-full flex items-center justify-between py-4 text-left group"
       >
-        <span className="text-[15px] font-semibold text-stone-800 pr-8 group-hover:text-amber-700 transition-colors">
+        <span className="text-[15px] font-semibold text-paper pr-8 group-hover:text-lamp transition-colors">
           {q}
         </span>
         <ChevronDown
           size={18}
           className={cn(
-            "text-stone-400 shrink-0 transition-transform duration-300",
+            "text-mute shrink-0 transition-transform duration-300",
             open && "rotate-180"
           )}
         />
@@ -74,7 +74,7 @@ function FAQItem({ q, a }: { q: string; a: string }) {
           open ? "max-h-96 pb-4" : "max-h-0"
         )}
       >
-        <p className="text-stone-500 leading-relaxed text-sm">{a}</p>
+        <p className="text-mute leading-relaxed text-sm">{a}</p>
       </div>
     </div>
   );
@@ -260,14 +260,14 @@ export default function CurtainWall() {
 
         <div className="absolute inset-x-0 bottom-0 px-5 md:px-16 pb-10 md:pb-20 pt-24">
           <p
-            className="text-amber-400 text-xs font-bold tracking-[0.4em] uppercase mb-5 animate-fade-in"
+            className="text-lamp text-xs font-bold mb-5 animate-fade-in"
             style={{ animationDelay: "0.05s" }}
           >
             Fine Glaze · Pune & Mumbai
           </p>
 
           <h1
-            className="font-extrabold text-white leading-tight tracking-tight animate-fade-in-up"
+            className="font-extrabold text-paper leading-tight tracking-tight animate-fade-in-up"
             style={{ fontSize: "clamp(2.2rem, 4.5vw, 3.5rem)", animationDelay: "0.1s" }}
           >
             Curtain Wall<br />
@@ -278,7 +278,7 @@ export default function CurtainWall() {
           </h1>
 
           <p
-            className="mt-6 text-white/70 text-base md:text-lg max-w-xl leading-relaxed animate-fade-in-up"
+            className="mt-6 text-paper/70 text-base md:text-lg max-w-xl leading-relaxed animate-fade-in-up"
             style={{ animationDelay: "0.2s" }}
           >
             As curtain wall contractors based in Pune and Mumbai, Fine Glaze delivers engineered unitized, stick, and semi-unitized glass curtain wall systems for commercial towers, IT parks, and high-rise office developments.
@@ -290,13 +290,13 @@ export default function CurtainWall() {
           >
             <Link
               to="/contact"
-              className="text-white font-semibold text-base border-b border-amber-400 pb-0.5 hover:text-amber-400 transition-colors tracking-wide"
+              className="text-paper font-semibold text-base border-b border-lamp/40 pb-0.5 hover:text-lamp transition-colors tracking-wide"
             >
               Request a Quotation
             </Link>
             <a
               href="tel:+918369233566"
-              className="text-white/60 font-medium text-base hover:text-white transition-colors tracking-wide"
+              className="text-mute font-medium text-base hover:text-paper transition-colors tracking-wide"
             >
               +91 83692 33566
             </a>
@@ -306,37 +306,37 @@ export default function CurtainWall() {
             className="flex items-center gap-1.5 mt-4 animate-fade-in-up"
             style={{ animationDelay: "0.4s" }}
           >
-            <span className="text-white/50 text-xs font-medium ml-0.5">
+            <span className="text-mute text-xs font-medium ml-0.5">
               Embassy REIT Best Vendor Performance 2024. 16 project records.
             </span>
           </div>
         </div>
 
         <div className="absolute bottom-8 right-8 flex flex-col items-center gap-2 opacity-40">
-          <span className="text-white text-[10px] uppercase tracking-[0.25em] rotate-90 mb-3">Scroll</span>
-          <div className="w-px h-12 bg-gradient-to-b from-white to-transparent" />
+          <span className="text-paper text-[10px] rotate-90 mb-3">Scroll</span>
+          <div className="w-px h-12 bg-gradient-to-b from-night to-transparent" />
         </div>
       </section>
 
       {/* ════════════ MANUFACTURERS OVERVIEW ════════════ */}
-      <section className="py-16 md:py-20 bg-white">
+      <section className="py-16 md:py-20 bg-night">
         <div className="container mx-auto px-6 md:px-16 max-w-4xl text-center">
           <FadeIn>
-            <p className="text-amber-700 text-xs font-bold tracking-[0.3em] uppercase mb-4">
+            <p className="text-lamp text-xs font-bold mb-4">
               Curtain Wall Fabrication &amp; Installation
             </p>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-stone-900 leading-snug mb-5">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-paper leading-snug mb-5">
               Curtain Wall Systems for Modern Architecture —{" "}
-              <span className="text-stone-500">engineered for wind load, thermal performance & longevity.</span>
+              <span className="text-mute">engineered for wind load, thermal performance & longevity.</span>
             </h2>
-            <p className="text-stone-600 text-[15px] md:text-base leading-relaxed mb-6">
+            <p className="text-mute text-[15px] md:text-base leading-relaxed mb-6">
               Fine Glaze designs, fabricates and installs curtain wall building envelopes. We use aluminium extrusions from major Indian mills, DOWSIL structural silicone or approved equivalents, and double-glazed units (DGU) with Low-E coatings where the specification calls for them, in Pune, Mumbai and across India.
             </p>
-            <div className="flex flex-wrap justify-center gap-4 text-xs font-medium text-stone-500">
-              <span className="bg-stone-100 px-3 py-1.5 rounded-full">Own Fabrication Unit, Pune</span>
-              <span className="bg-stone-100 px-3 py-1.5 rounded-full">Wind Load Engineering Check</span>
-              <span className="bg-stone-100 px-3 py-1.5 rounded-full">DOWSIL Structural Silicone</span>
-              <span className="bg-stone-100 px-3 py-1.5 rounded-full">Safety Glass Where Required</span>
+            <div className="flex flex-wrap justify-center gap-4 text-xs font-medium text-mute">
+              <span className="bg-night-2 px-3 py-1.5">Own Fabrication Unit, Pune</span>
+              <span className="bg-night-2 px-3 py-1.5">Wind Load Engineering Check</span>
+              <span className="bg-night-2 px-3 py-1.5">DOWSIL Structural Silicone</span>
+              <span className="bg-night-2 px-3 py-1.5">Safety Glass Where Required</span>
             </div>
           </FadeIn>
         </div>
@@ -361,18 +361,18 @@ export default function CurtainWall() {
       />
 
       {/* ════════════ STATS ════════════ */}
-      <section className="bg-stone-900 py-10">
+      <section className="bg-night-2 py-10">
         <div className="container mx-auto px-6 md:px-16">
           <FadeIn>
-            <div className="grid grid-cols-3 gap-6 md:gap-0 md:divide-x md:divide-stone-700">
+            <div className="grid grid-cols-3 gap-6 md:gap-0 md:divide-x md:divide-line">
               {[
                 { number: "16", label: "Project Records Documented" },
                 { number: "40+", label: "Core Team" },
                 { number: "2024", label: "Embassy REIT Best Vendor Performance" },
               ].map((s) => (
                 <div key={s.label} className="text-center px-4">
-                  <p className="text-2xl md:text-3xl font-bold text-white">{s.number}</p>
-                  <p className="text-stone-500 text-[11px] uppercase tracking-widest mt-1">{s.label}</p>
+                  <p className="text-2xl md:text-3xl font-bold text-paper">{s.number}</p>
+                  <p className="text-mute text-[11px] mt-1">{s.label}</p>
                 </div>
               ))}
             </div>
@@ -381,51 +381,51 @@ export default function CurtainWall() {
       </section>
 
       {/* ════════════ UNITIZED CURTAIN WALL DEEP-DIVE ════════════ */}
-      <section className="py-16 md:py-20 bg-stone-900 text-white">
+      <section className="py-16 md:py-20 bg-night-2 text-paper">
         <div className="container mx-auto px-6 md:px-16">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <FadeIn>
-              <p className="text-amber-400 text-xs font-bold tracking-[0.3em] uppercase mb-3">
+              <p className="text-lamp text-xs font-bold mb-3">
                 High-Rise Technology
               </p>
               <h2 className="text-2xl md:text-4xl font-bold mb-6 leading-tight">
                 Unitized Curtain Wall Systems
               </h2>
-              <p className="text-stone-300 text-sm md:text-base leading-relaxed mb-6">
+              <p className="text-paper/80 text-sm md:text-base leading-relaxed mb-6">
                 Unitized curtain wall systems consist of large pre-assembled, factory-glazed panels that are transported to the construction site and anchored directly to the building floor slab. This system is commonly chosen for tall commercial towers and IT parks.
               </p>
-              <ul className="space-y-3 text-sm text-stone-300 mb-8">
+              <ul className="space-y-3 text-sm text-paper/80 mb-8">
                 <li className="flex items-start gap-2">
-                  <CheckCircle2 size={18} className="text-amber-400 shrink-0 mt-0.5" />
+                  <CheckCircle2 size={18} className="text-lamp shrink-0 mt-0.5" />
                   <span><strong>Faster On-Site Erection</strong> — Pre-fabricated modules reduce the work done at height.</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <CheckCircle2 size={18} className="text-amber-400 shrink-0 mt-0.5" />
+                  <CheckCircle2 size={18} className="text-lamp shrink-0 mt-0.5" />
                   <span><strong>Controlled Factory Quality</strong> — Structural silicone application and EPDM gasket sealing are executed in controlled indoor environments.</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <CheckCircle2 size={18} className="text-amber-400 shrink-0 mt-0.5" />
+                  <CheckCircle2 size={18} className="text-lamp shrink-0 mt-0.5" />
                   <span><strong>Superior Weather Tightness</strong> — Interlocking stack joints accommodate building movement and thermal expansion naturally.</span>
                 </li>
               </ul>
               <Link to="/contact">
-                <Button className="bg-amber-400 hover:bg-amber-500 text-stone-950 font-bold gap-2">
+                <Button className="bg-lamp hover:bg-lamp/90 text-paper font-bold gap-2">
                   Request Unitized Quotation <ArrowRight size={16} />
                 </Button>
               </Link>
             </FadeIn>
 
             <FadeIn delay={150}>
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-stone-800">
+              <div className="relative overflow-hidden border border-line">
                 <img
                   src={IMG.hero}
                   alt="Unitized curtain wall manufacturers — Fine Glaze"
                   className="w-full h-[400px] object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-transparent to-transparent" />
-                <div className="absolute bottom-6 left-6 right-6 p-4 bg-stone-900/90 backdrop-blur-md rounded-xl border border-stone-800">
-                  <p className="text-amber-400 text-xs font-bold uppercase tracking-wider">Unitized Curtain Wall Specs</p>
-                  <p className="text-white text-sm mt-1">6063-T6 Extrusions · 6mm + 12mm Argon + 6mm Low-E DGU · EPDM Gasket Seal</p>
+                <div className="absolute inset-0 bg-gradient-to-t from-night via-transparent to-transparent" />
+                <div className="absolute bottom-6 left-6 right-6 p-4 bg-night-2/90 border border-line">
+                  <p className="text-lamp text-xs font-bold">Unitized Curtain Wall Specs</p>
+                  <p className="text-paper text-sm mt-1">6063-T6 Extrusions · 6mm + 12mm Argon + 6mm Low-E DGU · EPDM Gasket Seal</p>
                 </div>
               </div>
             </FadeIn>
@@ -434,13 +434,13 @@ export default function CurtainWall() {
       </section>
 
       {/* ════════════ SYSTEMS TABBED ════════════ */}
-      <section className="py-16 md:py-20 bg-stone-50">
+      <section className="py-16 md:py-20 bg-night-2">
         <div className="container mx-auto px-6 md:px-16">
           <FadeIn className="mb-10">
-            <p className="text-amber-700 text-xs font-bold tracking-[0.3em] uppercase mb-3">
+            <p className="text-lamp text-xs font-bold mb-3">
               Our Product Range
             </p>
-            <h2 className="text-2xl md:text-3xl font-bold text-stone-900">
+            <h2 className="text-2xl md:text-3xl font-bold text-paper">
               Curtain Wall Systems We Manufacture & Install
             </h2>
           </FadeIn>
@@ -454,8 +454,8 @@ export default function CurtainWall() {
                   className={cn(
                     "px-4 py-2 text-sm font-medium transition-all duration-200",
                     activeSystem === i
-                      ? "bg-stone-900 text-white"
-                      : "bg-white text-stone-600 hover:bg-stone-100 border border-stone-200"
+                      ? "bg-night-2 text-paper"
+                      : "bg-night text-mute hover:bg-night-2 border border-line"
                   )}
                 >
                   {sys.title}
@@ -463,7 +463,7 @@ export default function CurtainWall() {
               ))}
             </div>
 
-            <div className="grid md:grid-cols-2 gap-0 bg-white overflow-hidden" key={current.num}>
+            <div className="grid md:grid-cols-2 gap-0 bg-night overflow-hidden" key={current.num}>
               <div className="relative h-[280px] md:h-[360px] overflow-hidden">
                 <img
                   src={IMG[current.img]}
@@ -471,35 +471,35 @@ export default function CurtainWall() {
                   className="w-full h-full object-cover transition-opacity duration-500"
                   loading="lazy"
                 />
-                <div className="absolute top-4 left-4 bg-stone-900/80 text-white text-xs font-bold px-3 py-1.5 tracking-wider">
+                <div className="absolute top-4 left-4 bg-night-2/80 text-paper text-xs font-bold px-3 py-1.5">
                   {current.num}
                 </div>
               </div>
               <div className="p-8 md:p-10 flex flex-col justify-center">
-                <h3 className="text-xl md:text-2xl font-bold text-stone-900 mb-3">{current.title}</h3>
-                <p className="text-stone-500 text-sm leading-relaxed mb-6">{current.desc}</p>
+                <h3 className="text-xl md:text-2xl font-bold text-paper mb-3">{current.title}</h3>
+                <p className="text-mute text-sm leading-relaxed mb-6">{current.desc}</p>
 
                 <div className="grid grid-cols-2 gap-3 mb-6">
-                  <div className="bg-stone-50 p-3">
-                    <p className="text-[10px] uppercase tracking-wider text-stone-400 mb-1">Frame</p>
-                    <p className="text-sm font-semibold text-stone-800">{current.glass}</p>
+                  <div className="bg-night-2 p-3">
+                    <p className="text-[10px] text-mute mb-1">Frame</p>
+                    <p className="text-sm font-semibold text-paper">{current.glass}</p>
                   </div>
-                  <div className="bg-stone-50 p-3">
-                    <p className="text-[10px] uppercase tracking-wider text-stone-400 mb-1">Wind Load</p>
-                    <p className="text-sm font-semibold text-stone-800">{current.wind}</p>
+                  <div className="bg-night-2 p-3">
+                    <p className="text-[10px] text-mute mb-1">Wind Load</p>
+                    <p className="text-sm font-semibold text-paper">{current.wind}</p>
                   </div>
-                  <div className="bg-stone-50 p-3">
-                    <p className="text-[10px] uppercase tracking-wider text-stone-400 mb-1">Best For</p>
-                    <p className="text-sm font-semibold text-stone-800">{current.bestFor}</p>
+                  <div className="bg-night-2 p-3">
+                    <p className="text-[10px] text-mute mb-1">Best For</p>
+                    <p className="text-sm font-semibold text-paper">{current.bestFor}</p>
                   </div>
-                  <div className="bg-amber-50 p-3 border border-amber-200">
-                    <p className="text-[10px] uppercase tracking-wider text-amber-600 mb-1">Pricing</p>
-                    <p className="text-sm font-bold text-stone-900">{current.price}</p>
+                  <div className="bg-lamp/10 p-3 border border-lamp/40">
+                    <p className="text-[10px] text-lamp mb-1">Pricing</p>
+                    <p className="text-sm font-bold text-paper">{current.price}</p>
                   </div>
                 </div>
 
                 <Link to="/contact">
-                  <Button size="sm" className="bg-stone-900 hover:bg-stone-800 text-white gap-2">
+                  <Button size="sm" className="bg-night-2 hover:bg-night-2 text-paper gap-2">
                     Book a call <ArrowRight size={14} />
                   </Button>
                 </Link>
@@ -512,42 +512,42 @@ export default function CurtainWall() {
 
 
       {/* ════════════ CURTAIN WALL COST SECTION ════════════ */}
-      <section className="py-16 md:py-20 bg-stone-50">
+      <section className="py-16 md:py-20 bg-night-2">
         <div className="container mx-auto px-6 md:px-16 max-w-4xl">
           <FadeIn className="text-center mb-10">
-            <p className="text-amber-700 text-xs font-bold tracking-[0.3em] uppercase mb-3">
+            <p className="text-lamp text-xs font-bold mb-3">
               Cost & Rate Breakdown
             </p>
-            <h2 className="text-2xl md:text-3xl font-bold text-stone-900 mb-2">
+            <h2 className="text-2xl md:text-3xl font-bold text-paper mb-2">
               Curtain Wall Cost Per Sq Ft in India (2026 Guide)
             </h2>
-            <p className="text-stone-500 text-sm max-w-xl mx-auto">
+            <p className="text-mute text-sm max-w-xl mx-auto">
               Transparent rate comparison based on project complexity, glass specifications, and installation methods across Maharashtra.
             </p>
           </FadeIn>
 
           <FadeIn delay={100}>
-            <div className="bg-white rounded-xl shadow-sm border border-stone-200 overflow-hidden mb-8">
+            <div className="bg-night border border-line overflow-hidden mb-8">
               <div className="overflow-x-auto">
                 <table className="w-full text-left">
                   <thead>
-                    <tr className="bg-stone-900 text-white">
-                      <th className="py-3.5 px-6 text-xs font-bold uppercase tracking-wider">System Type</th>
-                      <th className="py-3.5 px-6 text-xs font-bold uppercase tracking-wider">Specifications</th>
-                      <th className="py-3.5 px-6 text-xs font-bold uppercase tracking-wider text-right">Pricing</th>
+                    <tr className="bg-night-2 text-paper">
+                      <th className="py-3.5 px-6 text-xs font-bold">System Type</th>
+                      <th className="py-3.5 px-6 text-xs font-bold">Specifications</th>
+                      <th className="py-3.5 px-6 text-xs font-bold text-right">Pricing</th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-stone-100 text-sm">
+                  <tbody className="divide-y divide-line text-sm">
                     {[
                       { system: "Unitized Curtain Wall", glass: "Factory pre-assembled aluminium, DGU Low-E, EPDM", price: "Quoted on drawings" },
                       { system: "Stick Curtain Wall System", glass: "On-site assembled mullions, 6mm / DGU glass", price: "Quoted on drawings" },
                       { system: "Semi-Unitized System", glass: "Pre-glazed shop units with site-fixed frames", price: "Quoted on drawings" },
                       { system: "Spider Point-Fixed System", glass: "Stainless steel fittings with laminated toughened glass", price: "Quoted on drawings" },
                     ].map((row) => (
-                      <tr key={row.system} className="hover:bg-stone-50 transition-colors">
-                        <td className="py-4 px-6 font-bold text-stone-900">{row.system}</td>
-                        <td className="py-4 px-6 text-stone-500 text-xs">{row.glass}</td>
-                        <td className="py-4 px-6 text-right font-bold text-amber-700">{row.price}</td>
+                      <tr key={row.system} className="hover:bg-night-2 transition-colors">
+                        <td className="py-4 px-6 font-bold text-paper">{row.system}</td>
+                        <td className="py-4 px-6 text-mute text-xs">{row.glass}</td>
+                        <td className="py-4 px-6 text-right font-bold text-lamp">{row.price}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -555,37 +555,37 @@ export default function CurtainWall() {
               </div>
             </div>
 
-            <p className="text-center text-xs text-stone-400">
-              Note: Cost depends on system, glass, height and access. Read our guide on <Link to="/blog/curtain-wall-cost-per-sq-ft-india-2026" className="text-amber-700 underline font-medium">what drives curtain wall cost</Link>.
+            <p className="text-center text-xs text-mute">
+              Note: Cost depends on system, glass, height and access. Read our guide on <Link to="/blog/curtain-wall-cost-per-sq-ft-india-2026" className="text-lamp underline font-medium">what drives curtain wall cost</Link>.
             </p>
           </FadeIn>
         </div>
       </section>
 
       {/* ════════════ REQUEST A QUOTATION CTA ════════════ */}
-      <section className="py-16 md:py-24 bg-stone-900 text-white relative overflow-hidden">
+      <section className="py-16 md:py-24 bg-night-2 text-paper relative overflow-hidden">
         <div className="container mx-auto px-6 md:px-16 relative z-10 max-w-4xl text-center">
           <FadeIn>
-            <span className="inline-block bg-amber-400/20 text-amber-400 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-6">
+            <span className="inline-block bg-lamp/20 text-lamp text-xs font-bold px-4 py-1.5 mb-6">
               Request a BOQ-Based Quotation
             </span>
             <h2 className="text-3xl md:text-5xl font-extrabold mb-6 tracking-tight">
               Request a Curtain Wall Quotation
             </h2>
-            <p className="text-stone-300 text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
+            <p className="text-paper/80 text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
               Planning a commercial facade, office tower, or IT park in Pune, Mumbai, or Navi Mumbai? Send drawings and we will prepare a BOQ-based quotation with glass specification options. Our office hours are Monday to Saturday, 09:00 to 18:00.
             </p>
 
             <div className="grid md:grid-cols-3 gap-4 max-w-2xl mx-auto mb-10">
-              <a href="tel:+918369233566" className="flex items-center justify-center gap-3 p-4 bg-stone-800/80 hover:bg-stone-800 rounded-xl border border-stone-700 transition-colors">
-                <Phone size={18} className="text-amber-400" />
+              <a href="tel:+918369233566" className="flex items-center justify-center gap-3 p-4 bg-night-2/80 hover:bg-night-2 border border-line transition-colors">
+                <Phone size={18} className="text-lamp" />
                 <span className="text-sm font-semibold">+91 83692 33566</span>
               </a>
-              <a href="mailto:info@fineglaze.com" className="flex items-center justify-center gap-3 p-4 bg-stone-800/80 hover:bg-stone-800 rounded-xl border border-stone-700 transition-colors">
-                <Mail size={18} className="text-amber-400" />
+              <a href="mailto:info@fineglaze.com" className="flex items-center justify-center gap-3 p-4 bg-night-2/80 hover:bg-night-2 border border-line transition-colors">
+                <Mail size={18} className="text-lamp" />
                 <span className="text-sm font-semibold">info@fineglaze.com</span>
               </a>
-              <Link to="/contact" className="flex items-center justify-center gap-3 p-4 bg-amber-400 hover:bg-amber-500 text-stone-950 font-bold rounded-xl transition-colors">
+              <Link to="/contact" className="flex items-center justify-center gap-3 p-4 bg-lamp hover:bg-lamp/90 text-paper font-bold transition-colors">
                 <FileText size={18} />
                 <span className="text-sm">Submit Project BOQ</span>
               </Link>
@@ -595,13 +595,13 @@ export default function CurtainWall() {
       </section>
 
       {/* ════════════ FAQ SECTION ════════════ */}
-      <section className="py-16 md:py-20 bg-stone-50">
+      <section className="py-16 md:py-20 bg-night-2">
         <div className="container mx-auto px-6 md:px-16 max-w-3xl">
           <FadeIn className="mb-8">
-            <p className="text-amber-700 text-xs font-bold tracking-[0.3em] uppercase mb-3">
+            <p className="text-lamp text-xs font-bold mb-3">
               Frequently Asked Questions
             </p>
-            <h2 className="text-2xl md:text-3xl font-bold text-stone-900">
+            <h2 className="text-2xl md:text-3xl font-bold text-paper">
               Curtain Wall Manufacturers FAQ
             </h2>
           </FadeIn>
@@ -634,26 +634,26 @@ export default function CurtainWall() {
       </section>
 
       {/* ════════════ INTERNAL LINKS / SERVICE MESH ════════════ */}
-      <section className="bg-stone-900 py-12">
+      <section className="bg-night-2 py-12">
         <div className="container mx-auto px-6 md:px-16">
           <FadeIn>
             <div className="grid md:grid-cols-2 gap-10 md:gap-16">
               <div>
-                <p className="text-amber-400 text-xs font-bold tracking-[0.3em] uppercase mb-4">
+                <p className="text-lamp text-xs font-bold mb-4">
                   Key Service Areas
                 </p>
                 <div className="flex flex-wrap gap-x-6 gap-y-2">
                   {["Pune", "Mumbai BKC", "Navi Mumbai", "Thane", "Hinjewadi", "Kharadi"].map((city) => (
                     <div key={city} className="flex items-center gap-1.5">
-                      <MapPin size={11} className="text-amber-500" />
-                      <span className="text-white/60 text-sm">{city}</span>
+                      <MapPin size={11} className="text-lamp" />
+                      <span className="text-mute text-sm">{city}</span>
                     </div>
                   ))}
                 </div>
               </div>
 
               <div>
-                <p className="text-amber-400 text-xs font-bold tracking-[0.3em] uppercase mb-4">
+                <p className="text-lamp text-xs font-bold mb-4">
                   Explore Related Facade Services
                 </p>
                 <div className="grid grid-cols-2 gap-x-6 gap-y-1.5">
@@ -668,7 +668,7 @@ export default function CurtainWall() {
                     <Link
                       key={link.href}
                       to={link.href}
-                      className="text-white/50 text-sm hover:text-amber-400 transition-colors"
+                      className="text-mute text-sm hover:text-lamp transition-colors"
                     >
                       {link.title}
                     </Link>

@@ -131,7 +131,7 @@ export default function AluminiumWindowsDoors() {
       />
 
       {/* HERO */}
-      <section className="relative min-h-[78vh] flex items-end overflow-hidden bg-stone-950">
+      <section className="relative min-h-[78vh] flex items-end overflow-hidden bg-night">
         <img
           src={HERO}
           alt="Aluminium sliding and fixed glass terrace enclosure by Fine Glaze at Samundra Tarang, Dadar"
@@ -140,31 +140,31 @@ export default function AluminiumWindowsDoors() {
           height={459}
           loading="eager"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-stone-950/70 via-stone-950/50 to-stone-950/95" />
+        <div className="absolute inset-0 bg-gradient-to-b from-night/70 via-night/50 to-night/95" />
         <div className="relative z-10 container mx-auto px-4 pb-14 pt-32">
-          <p className="text-amber-400 text-xs font-bold tracking-[0.3em] uppercase mb-4">Fine Glaze · Pune &amp; Mumbai</p>
-          <h1 className="text-3xl sm:text-5xl font-extrabold text-white leading-tight max-w-3xl">
+          <p className="text-lamp text-xs font-bold mb-4">Fine Glaze · Pune &amp; Mumbai</p>
+          <h1 className="text-3xl sm:text-5xl font-extrabold text-paper leading-tight max-w-3xl">
             Aluminium Windows &amp; Doors in Pune &amp; Mumbai
           </h1>
-          <p className="mt-5 text-stone-200 text-base sm:text-lg max-w-2xl">
+          <p className="mt-5 text-paper text-base sm:text-lg max-w-2xl">
             Sliding, casement, tilt-turn and lift-slide systems — measured by us, fabricated at our {company.fabricationUnit.location} unit,
             installed under a dedicated site in-charge and supervisor, and water-tested before handover.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-3">
             <button
               onClick={() => setQuoteOpen(true)}
-              className="inline-flex items-center justify-center rounded-xl bg-amber-500 hover:bg-amber-400 text-stone-950 font-bold px-7 py-4"
+              className="inline-flex items-center justify-center bg-lamp hover:bg-lamp/90 text-paper font-bold px-7 py-4"
             >
               Request a site measurement <ArrowRight className="ml-2 h-5 w-5" />
             </button>
             <a
               href={telHref}
-              className="inline-flex items-center justify-center rounded-xl border border-white/40 bg-white/10 text-white font-bold px-7 py-4 hover:bg-white hover:text-stone-900"
+              className="inline-flex items-center justify-center border border-paper/40 bg-paper/10 text-paper font-bold px-7 py-4 hover:bg-night hover:text-paper"
             >
               <Phone className="mr-2 h-4 w-4" /> {company.phone.mobileDisplay}
             </a>
           </div>
-          <p className="mt-4 text-xs text-white/50">Pictured: terrace enclosure, Samundra Tarang, Dadar (W) — completed by Fine Glaze.</p>
+          <p className="mt-4 text-xs text-mute">Pictured: terrace enclosure, Samundra Tarang, Dadar (W) — completed by Fine Glaze.</p>
         </div>
       </section>
 
@@ -179,7 +179,7 @@ export default function AluminiumWindowsDoors() {
           </div>
           <div className="grid sm:grid-cols-2 gap-5">
             {windowSystems.map((s) => (
-              <article key={s.id} className="rounded-xl border border-border bg-card p-6">
+              <article key={s.id} className="border border-border bg-card p-6">
                 <div className="flex items-start justify-between gap-4">
                   <h3 className="text-xl font-semibold text-foreground">{s.name}</h3>
                 </div>
@@ -210,7 +210,7 @@ export default function AluminiumWindowsDoors() {
           </div>
           <ul className="grid gap-3">
             {GLASS_OPTIONS.map((g) => (
-              <li key={g.name} className="rounded-xl bg-card border border-border p-5">
+              <li key={g.name} className="bg-card border border-border p-5">
                 <p className="font-semibold text-foreground">{g.name}</p>
                 <p className="text-sm text-muted-foreground mt-1">{g.use}</p>
               </li>
@@ -228,8 +228,8 @@ export default function AluminiumWindowsDoors() {
           </p>
           <ol className="mt-8 space-y-3">
             {QUOTE_CHECKLIST.map((item, i) => (
-              <li key={item} className="flex gap-4 rounded-xl border border-border bg-card p-4">
-                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-amber-500/15 text-sm font-bold text-amber-700">{i + 1}</span>
+              <li key={item} className="flex gap-4 border border-border bg-card p-4">
+                <span className="flex h-7 w-7 shrink-0 items-center justify-center bg-lamp/15 text-sm font-bold text-lamp">{i + 1}</span>
                 <span className="text-foreground/90">{item}</span>
               </li>
             ))}
@@ -238,18 +238,18 @@ export default function AluminiumWindowsDoors() {
       </section>
 
       {/* PROJECTS */}
-      <section className="py-16 md:py-20 bg-stone-950 text-white" aria-labelledby="projects">
+      <section className="py-16 md:py-20 bg-night text-paper" aria-labelledby="projects">
         <div className="container mx-auto px-4">
           <h2 id="projects" className="text-2xl md:text-4xl font-bold">Window work we have done</h2>
-          <p className="mt-3 text-stone-300 max-w-2xl">Real projects from our company profile, with our actual scope and status.</p>
+          <p className="mt-3 text-paper/80 max-w-2xl">Real projects from our company profile, with our actual scope and status.</p>
           <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {PROJECTS.map((p) => (
-              <Link key={p.href} to={p.href} className="group rounded-xl overflow-hidden border border-stone-800 bg-stone-900 hover:border-amber-500/60">
+              <Link key={p.href} to={p.href} className="group overflow-hidden border border-line bg-night-2 hover:border-lamp/60">
                 <img src={p.img} alt={p.title} className="h-44 w-full object-cover" loading="lazy" />
                 <div className="p-4">
-                  <p className="text-xs font-semibold uppercase tracking-wider text-amber-400">{p.status}</p>
-                  <h3 className="mt-1 font-semibold leading-snug group-hover:text-amber-300">{p.title}</h3>
-                  <p className="mt-2 text-sm text-stone-400">{p.scope}</p>
+                  <p className="text-xs font-semibold text-lamp">{p.status}</p>
+                  <h3 className="mt-1 font-semibold leading-snug group-hover:text-lamp">{p.title}</h3>
+                  <p className="mt-2 text-sm text-mute">{p.scope}</p>
                 </div>
               </Link>
             ))}
@@ -269,15 +269,15 @@ export default function AluminiumWindowsDoors() {
               ["Installation", "Fixed, packed and sealed under a dedicated site in-charge and supervisor."],
               ["Water test & handover", "Site water test, snag list closed, defect liability per contract."],
             ].map(([t, d], i) => (
-              <li key={t} className="rounded-xl border border-border bg-card p-5">
-                <p className="text-xs font-bold text-amber-700">STEP {i + 1}</p>
+              <li key={t} className="border border-border bg-card p-5">
+                <p className="text-xs font-bold text-lamp">STEP {i + 1}</p>
                 <p className="mt-1 font-semibold text-foreground">{t}</p>
                 <p className="mt-1 text-sm text-muted-foreground">{d}</p>
               </li>
             ))}
           </ol>
           <div className="mt-8 flex flex-wrap gap-3">
-            <Link to="/quality-safety" className="inline-flex items-center rounded-lg border border-border px-5 py-3 font-semibold hover:border-primary">
+            <Link to="/quality-safety" className="inline-flex items-center border border-border px-5 py-3 font-semibold hover:border-primary">
               <CheckCircle2 className="mr-2 h-4 w-4 text-primary" /> Our quality &amp; safety checks
             </Link>
           </div>
@@ -290,7 +290,7 @@ export default function AluminiumWindowsDoors() {
           <h2 id="faq" className="text-2xl md:text-4xl font-bold text-foreground mb-8">Aluminium window FAQs</h2>
           <div className="space-y-3">
             {FAQS.map((f) => (
-              <details key={f.q} className="group rounded-xl border border-border bg-card p-5">
+              <details key={f.q} className="group border border-border bg-card p-5">
                 <summary className="cursor-pointer font-semibold text-foreground list-none flex justify-between gap-4">
                   {f.q}
                   <span className="text-primary group-open:rotate-45 transition-transform" aria-hidden="true">+</span>
@@ -303,15 +303,15 @@ export default function AluminiumWindowsDoors() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 bg-amber-500">
+      <section className="py-16 bg-lamp">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-2xl md:text-3xl font-extrabold text-stone-950">Get your windows measured and quoted</h2>
-          <p className="mt-2 text-stone-900/80">Pune, PCMC, Mumbai, Navi Mumbai and Thane.</p>
+          <h2 className="text-2xl md:text-3xl font-extrabold text-paper">Get your windows measured and quoted</h2>
+          <p className="mt-2 text-paper/80">Pune, PCMC, Mumbai, Navi Mumbai and Thane.</p>
           <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
-            <button onClick={() => setQuoteOpen(true)} className="rounded-xl bg-stone-950 text-white font-bold px-7 py-4 hover:bg-stone-800">
+            <button onClick={() => setQuoteOpen(true)} className="bg-night text-paper font-bold px-7 py-4 hover:bg-night-2">
               Request a site measurement
             </button>
-            <a href={telHref} className="rounded-xl border-2 border-stone-950 text-stone-950 font-bold px-7 py-4 hover:bg-stone-950 hover:text-white">
+            <a href={telHref} className="border-2 border-line text-paper font-bold px-7 py-4 hover:bg-night-2 hover:text-paper">
               Call {company.phone.mobileDisplay}
             </a>
           </div>

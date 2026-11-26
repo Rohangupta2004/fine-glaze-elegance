@@ -74,7 +74,7 @@ export default function BlogArticle() {
           </nav>
 
           <div className="flex flex-wrap items-center gap-3 text-sm text-muted-foreground mb-4">
-            <span className="px-3 py-1 rounded-full bg-primary/10 text-primary font-bold text-xs">
+            <span className="px-3 py-1 bg-primary/10 text-primary font-bold text-xs">
               {post.category}
             </span>
             <span className="flex items-center gap-1">
@@ -93,7 +93,7 @@ export default function BlogArticle() {
           </div>
 
           {enhancement && (
-            <section aria-labelledby="quick-answer" className="mb-8 rounded-2xl border border-primary/20 bg-primary/5 p-5 sm:p-6">
+            <section aria-labelledby="quick-answer" className="mb-8 border border-primary/20 bg-primary/5 p-5 sm:p-6">
               <h2 id="quick-answer" className="text-lg font-bold leading-snug mb-3">{enhancement.question}</h2>
               <p className="leading-relaxed text-foreground/85">{enhancement.answer}</p>
               <ul className="mt-4 space-y-2 text-sm text-muted-foreground list-disc pl-5">
@@ -110,7 +110,7 @@ export default function BlogArticle() {
               alt={visual?.alt ?? post.title}
               width={visual?.width}
               height={visual?.height}
-              className="w-full aspect-video rounded-2xl object-cover bg-muted"
+              className="w-full aspect-video object-cover bg-muted"
               loading="eager"
               decoding="async"
               {...{ fetchpriority: "high" }}
@@ -118,7 +118,7 @@ export default function BlogArticle() {
             {visual && <figcaption className="mt-3 text-xs text-muted-foreground leading-relaxed">{visual.caption}</figcaption>}
           </figure>
 
-          <nav aria-label="On this page" className="mb-10 rounded-xl border border-border p-5">
+          <nav aria-label="On this page" className="mb-10 border border-border p-5">
             <details>
               <summary className="cursor-pointer font-semibold">On this page</summary>
               <ul className="mt-4 space-y-2 text-sm">
@@ -131,7 +131,7 @@ export default function BlogArticle() {
           <div className="space-y-10">
             {sections.map((section, i) => (
               <section key={i} id={articleSectionId(section.heading, i)} className="scroll-mt-28">
-                <h2 className="text-xl md:text-2xl font-bold mb-3 text-foreground border-l-4 border-amber-500 pl-3">
+                <h2 className="text-xl md:text-2xl font-bold mb-3 text-foreground border-l-4 border-lamp/40 pl-3">
                   {section.heading}
                 </h2>
 
@@ -143,7 +143,7 @@ export default function BlogArticle() {
                   const table = normalizeArticleTable(section.table);
                   if (!table) return null;
                   return <div className="my-6">
-                    <div className="overflow-x-auto rounded-xl border border-border focus-visible:outline-primary" role="region" aria-label={`${section.heading} table`} tabIndex={0}>
+                    <div className="overflow-x-auto border border-border focus-visible:outline-primary" role="region" aria-label={`${section.heading} table`} tabIndex={0}>
                       <table className="w-full min-w-[560px] text-sm text-left">
                         <caption className="sr-only">{section.heading}</caption>
                         <thead className="bg-muted"><tr>{table.headers.map((header, cell) => <th key={cell} scope="col" className="p-4 font-semibold align-top">{header}</th>)}</tr></thead>
@@ -160,7 +160,7 @@ export default function BlogArticle() {
                         key={li}
                         className="flex gap-3 text-base text-foreground/80 leading-relaxed"
                       >
-                        <span className="text-amber-600 font-bold mt-0.5 shrink-0">
+                        <span className="text-lamp font-bold mt-0.5 shrink-0">
                           {li + 1}.
                         </span>
                         <span>{item}</span>
@@ -169,7 +169,7 @@ export default function BlogArticle() {
                   </ul>
                 )}
                 {visual && i === visual.inline.afterSection && (
-                  <figure className="mt-8 overflow-hidden rounded-2xl border border-border bg-stone-50">
+                  <figure className="mt-8 overflow-hidden border border-border bg-night-2">
                     <img
                       src={visual.inline.src}
                       alt={visual.inline.alt}
@@ -188,14 +188,14 @@ export default function BlogArticle() {
 
           {enhancement && (
             <>
-              <section id="quote-checklist" className="scroll-mt-28 mt-12 rounded-2xl border border-primary/20 bg-primary/5 p-6">
+              <section id="quote-checklist" className="scroll-mt-28 mt-12 border border-primary/20 bg-primary/5 p-6">
                 <h2 className="text-xl font-bold mb-4">Before You Ask for a Quote</h2>
                 <ol className="list-decimal pl-5 space-y-3 text-foreground/80 leading-relaxed">{enhancement.quoteChecklist.map((item) => <li key={item}>{item}</li>)}</ol>
                 <Link to="/contact" className="mt-5 inline-flex items-center gap-2 font-semibold text-primary">Discuss your project scope <ArrowRight size={16} /></Link>
               </section>
 
               {enhancement.project && <aside className="mt-8 border-l-2 border-primary pl-5 py-2" aria-label="Fine Glaze project reference">
-                <p className="text-xs uppercase tracking-widest text-muted-foreground mb-2">Fine Glaze Project Reference</p>
+                <p className="text-xs text-muted-foreground mb-2">Fine Glaze Project Reference</p>
                 <Link to={`/project/${enhancement.project.slug}`} className="text-lg font-semibold hover:text-primary">{enhancement.project.title}</Link>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{enhancement.project.scope}</p>
               </aside>}
@@ -218,7 +218,7 @@ export default function BlogArticle() {
             </>
           )}
 
-          <div className="mt-14 rounded-2xl border p-6 bg-muted/30">
+          <div className="mt-14 border p-6 bg-muted/30">
             <h3 className="text-2xl font-bold mb-4">
               Explore More Facade Solutions
             </h3>
@@ -231,7 +231,7 @@ export default function BlogArticle() {
                 <Link
                   key={link.href}
                   to={link.href}
-                  className="rounded-xl border p-4 hover:border-primary hover:bg-primary/5 transition-all"
+                  className="border p-4 hover:border-primary hover:bg-primary/5 transition-all"
                 >
                   <div className="flex items-center justify-between gap-3">
                     <span className="font-semibold text-sm md:text-base">
@@ -244,22 +244,22 @@ export default function BlogArticle() {
             </div>
           </div>
 
-          <div className="mt-12 p-8 bg-slate-900 rounded-2xl text-white text-center">
+          <div className="mt-12 p-8 bg-night-2 text-paper text-center">
             <h3 className="text-xl font-bold mb-2">
               Need Help With Your Facade Project?
             </h3>
-            <p className="text-slate-400 mb-5 text-sm">
+            <p className="text-mute mb-5 text-sm">
               We call you back the same business day, Monday to Saturday, 9am to 6pm.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
               <Link to="/contact">
-                <Button className="bg-amber-600 hover:bg-amber-700 text-white gap-2">
+                <Button className="bg-lamp hover:bg-lamp/90 text-lamp-ink gap-2">
                   Book a call <ArrowRight size={16} />
                 </Button>
               </Link>
               <a href="tel:+918369233566">
                 <Button
-                  className="bg-white text-slate-900 hover:bg-white/90 font-bold gap-2"
+                  className="bg-night text-paper hover:bg-night/90 font-bold gap-2"
                 >
                   <Phone size={16} /> Call Now
                 </Button>
@@ -275,14 +275,14 @@ export default function BlogArticle() {
                   <Link
                     key={r.slug}
                     to={`/blog/${r.slug}`}
-                    className="group flex gap-4 p-4 rounded-xl border hover:shadow-md transition-all"
+                    className="group flex gap-4 p-4 border transition-all"
                   >
                     <img
                       src={getHeroImage(r.slug, r.heroImage)}
                       srcSet={getArticleImageSrcSet(r.slug)}
                       sizes="96px"
                       alt={r.title}
-                      className="w-24 h-24 rounded-lg object-cover shrink-0"
+                      className="w-24 h-24 object-cover shrink-0"
                       loading="lazy"
                     />
                     <div className="space-y-1">

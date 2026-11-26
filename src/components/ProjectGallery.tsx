@@ -18,9 +18,9 @@ export function ProjectGallery({ title, images }: { title: string; images: strin
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {images.map((src, index) => (
-          <button key={src} type="button" onClick={() => setActive(index)} aria-label={`View ${title} photo ${index + 1} full size`} className="group relative rounded-xl overflow-hidden bg-stone-100 border border-border focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-4">
+          <button key={src} type="button" onClick={() => setActive(index)} aria-label={`View ${title} photo ${index + 1} full size`} className="group relative overflow-hidden bg-night-2 border border-border focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-4">
             <img src={src} alt={`${title} — project photograph ${index + 1}`} loading="lazy" decoding="async" className="w-full h-64 object-contain transition-transform duration-300 motion-safe:group-hover:scale-105" />
-            <span className="absolute bottom-3 right-3 flex items-center gap-2 rounded-full bg-black/75 text-white text-xs px-3 py-2"><Expand size={14} /> View photo</span>
+            <span className="absolute bottom-3 right-3 flex items-center gap-2 bg-night/75 text-paper text-xs px-3 py-2"><Expand size={14} /> View photo</span>
           </button>
         ))}
       </div>
@@ -31,7 +31,7 @@ export function ProjectGallery({ title, images }: { title: string; images: strin
         }}>
           <DialogTitle className="pr-8">{title}</DialogTitle>
           <DialogDescription>Photo {(active ?? 0) + 1} of {images.length}. Use the arrows to browse, or Escape to close.</DialogDescription>
-          {active !== null && <img src={images[active]} alt={`${title} — project photograph ${active + 1}`} className="w-full h-[65vh] object-contain bg-stone-100 rounded-lg" />}
+          {active !== null && <img src={images[active]} alt={`${title} — project photograph ${active + 1}`} className="w-full h-[65vh] object-contain bg-night-2" />}
           <div className="flex items-center justify-between">
             <Button variant="outline" onClick={() => move(-1)} disabled={images.length < 2}><ChevronLeft size={18} /> Previous</Button>
             <span className="text-sm text-muted-foreground">{(active ?? 0) + 1} / {images.length}</span>

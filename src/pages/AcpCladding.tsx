@@ -48,18 +48,18 @@ function FadeIn({
 function FAQItem({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = useState(false);
   return (
-    <div className="border-b border-stone-200">
+    <div className="border-b border-line">
       <button
         onClick={() => setOpen(!open)}
         className="w-full flex items-center justify-between py-4 text-left group"
       >
-        <span className="text-[15px] font-semibold text-stone-800 pr-8 group-hover:text-amber-700 transition-colors">
+        <span className="text-[15px] font-semibold text-paper pr-8 group-hover:text-lamp transition-colors">
           {q}
         </span>
         <ChevronDown
           size={18}
           className={cn(
-            "text-stone-400 shrink-0 transition-transform duration-300",
+            "text-mute shrink-0 transition-transform duration-300",
             open && "rotate-180"
           )}
         />
@@ -70,7 +70,7 @@ function FAQItem({ q, a }: { q: string; a: string }) {
           open ? "max-h-96 pb-4" : "max-h-0"
         )}
       >
-        <p className="text-stone-500 leading-relaxed text-sm">{a}</p>
+        <p className="text-mute leading-relaxed text-sm">{a}</p>
       </div>
     </div>
   );
@@ -256,14 +256,14 @@ export default function AcpCladding() {
 
         <div className="absolute inset-x-0 bottom-0 px-5 md:px-16 pb-10 md:pb-20 pt-24">
           <p
-            className="text-amber-400 text-xs font-bold tracking-[0.4em] uppercase mb-5 animate-fade-in"
+            className="text-lamp text-xs font-bold mb-5 animate-fade-in"
             style={{ animationDelay: "0.05s" }}
           >
             Fine Glaze · Pune & Mumbai
           </p>
 
           <h1
-            className="font-extrabold text-white leading-tight tracking-tight animate-fade-in-up"
+            className="font-extrabold text-paper leading-tight tracking-tight animate-fade-in-up"
             style={{ fontSize: "clamp(2.2rem, 4.5vw, 3.5rem)", animationDelay: "0.1s" }}
           >
             ACP & Aluminium<br />
@@ -274,7 +274,7 @@ export default function AcpCladding() {
           </h1>
 
           <p
-            className="mt-6 text-white/70 text-base md:text-lg max-w-lg leading-relaxed animate-fade-in-up"
+            className="mt-6 text-paper/70 text-base md:text-lg max-w-lg leading-relaxed animate-fade-in-up"
             style={{ animationDelay: "0.2s" }}
           >
             Fire-retardant ACP and aluminium cladding for durable, weather-resistant building exteriors in Pune and Mumbai.
@@ -286,13 +286,13 @@ export default function AcpCladding() {
           >
             <Link
               to="/contact"
-              className="text-white font-semibold text-base border-b border-amber-400 pb-0.5 hover:text-amber-400 transition-colors tracking-wide"
+              className="text-paper font-semibold text-base border-b border-lamp/40 pb-0.5 hover:text-lamp transition-colors tracking-wide"
             >
               Book a call
             </Link>
             <a
               href="tel:+918369233566"
-              className="text-white/60 font-medium text-base hover:text-white transition-colors tracking-wide"
+              className="text-mute font-medium text-base hover:text-paper transition-colors tracking-wide"
             >
               +91 83692 33566
             </a>
@@ -303,31 +303,31 @@ export default function AcpCladding() {
             className="flex items-center gap-1.5 mt-4 animate-fade-in-up"
             style={{ animationDelay: "0.4s" }}
           >
-            <span className="text-white/50 text-xs font-medium ml-0.5">
+            <span className="text-mute text-xs font-medium ml-0.5">
               Embassy REIT Best Vendor Performance 2024. 16 project records.
             </span>
           </div>
         </div>
 
         <div className="absolute bottom-8 right-8 flex flex-col items-center gap-2 opacity-40">
-          <span className="text-white text-[10px] uppercase tracking-[0.25em] rotate-90 mb-3">Scroll</span>
-          <div className="w-px h-12 bg-gradient-to-b from-white to-transparent" />
+          <span className="text-paper text-[10px] rotate-90 mb-3">Scroll</span>
+          <div className="w-px h-12 bg-gradient-to-b from-night to-transparent" />
         </div>
       </section>
 
 
       {/* ════════════ INTRO ════════════ */}
-      <section className="py-16 md:py-20 bg-white">
+      <section className="py-16 md:py-20 bg-night">
         <div className="container mx-auto px-6 md:px-16 max-w-3xl text-center">
           <FadeIn>
-            <p className="text-amber-700 text-xs font-bold tracking-[0.3em] uppercase mb-4">
+            <p className="text-lamp text-xs font-bold mb-4">
               What is ACP Cladding
             </p>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-stone-900 leading-snug mb-5">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-paper leading-snug mb-5">
               Two aluminium sheets bonded to a mineral core —{"  "}
-              <span className="text-stone-400">lightweight, fire-safe, and available in unlimited finishes.</span>
+              <span className="text-mute">lightweight, fire-safe, and available in unlimited finishes.</span>
             </h2>
-            <p className="text-stone-500 text-[15px] md:text-base leading-relaxed">
+            <p className="text-mute text-[15px] md:text-base leading-relaxed">
               Aluminium Composite Panels (ACP) consist of two aluminium sheets bonded to a non-combustible mineral-filled core. They provide a flat, seamless cladding surface that transforms any building exterior. Available in PVDF and PE coatings with solid, metallic, wood-grain, stone, and mirror finishes.
             </p>
           </FadeIn>
@@ -354,18 +354,18 @@ export default function AcpCladding() {
 
 
       {/* ════════════ STATS ════════════ */}
-      <section className="bg-stone-900 py-10">
+      <section className="bg-night-2 py-10">
         <div className="container mx-auto px-6 md:px-16">
           <FadeIn>
-            <div className="grid grid-cols-3 gap-6 md:gap-0 md:divide-x md:divide-stone-700">
+            <div className="grid grid-cols-3 gap-6 md:gap-0 md:divide-x md:divide-line">
               {[
                 { number: "16", label: "Project Records Documented" },
                 { number: "40+", label: "Core Team" },
                 { number: "2024", label: "Embassy REIT Best Vendor Performance" },
               ].map((s) => (
                 <div key={s.label} className="text-center px-4">
-                  <p className="text-2xl md:text-3xl font-bold text-white">{s.number}</p>
-                  <p className="text-stone-500 text-[11px] uppercase tracking-widest mt-1">{s.label}</p>
+                  <p className="text-2xl md:text-3xl font-bold text-paper">{s.number}</p>
+                  <p className="text-mute text-[11px] mt-1">{s.label}</p>
                 </div>
               ))}
             </div>
@@ -375,13 +375,13 @@ export default function AcpCladding() {
 
 
       {/* ════════════ SYSTEMS ════════════ */}
-      <section className="py-16 md:py-20 bg-stone-50">
+      <section className="py-16 md:py-20 bg-night-2">
         <div className="container mx-auto px-6 md:px-16">
           <FadeIn className="mb-10">
-            <p className="text-amber-700 text-xs font-bold tracking-[0.3em] uppercase mb-3">
+            <p className="text-lamp text-xs font-bold mb-3">
               Our Panels
             </p>
-            <h2 className="text-2xl md:text-3xl font-bold text-stone-900">
+            <h2 className="text-2xl md:text-3xl font-bold text-paper">
               ACP Panel Systems We Install
             </h2>
           </FadeIn>
@@ -395,8 +395,8 @@ export default function AcpCladding() {
                   className={cn(
                     "px-4 py-2 text-sm font-medium transition-all duration-200",
                     activeSystem === i
-                      ? "bg-stone-900 text-white"
-                      : "bg-white text-stone-600 hover:bg-stone-100 border border-stone-200"
+                      ? "bg-night-2 text-paper"
+                      : "bg-night text-mute hover:bg-night-2 border border-line"
                   )}
                 >
                   {sys.title}
@@ -404,7 +404,7 @@ export default function AcpCladding() {
               ))}
             </div>
 
-            <div className="grid md:grid-cols-2 gap-0 bg-white overflow-hidden" key={current.num}>
+            <div className="grid md:grid-cols-2 gap-0 bg-night overflow-hidden" key={current.num}>
               <div className="relative h-[280px] md:h-[360px] overflow-hidden">
                 <img
                   src={IMG[current.img]}
@@ -412,35 +412,35 @@ export default function AcpCladding() {
                   className="w-full h-full object-cover transition-opacity duration-500"
                   loading="lazy"
                 />
-                <div className="absolute top-4 left-4 bg-stone-900/80 text-white text-xs font-bold px-3 py-1.5 tracking-wider">
+                <div className="absolute top-4 left-4 bg-night-2/80 text-paper text-xs font-bold px-3 py-1.5">
                   {current.num}
                 </div>
               </div>
               <div className="p-8 md:p-10 flex flex-col justify-center">
-                <h3 className="text-xl md:text-2xl font-bold text-stone-900 mb-3">{current.title}</h3>
-                <p className="text-stone-500 text-sm leading-relaxed mb-6">{current.desc}</p>
+                <h3 className="text-xl md:text-2xl font-bold text-paper mb-3">{current.title}</h3>
+                <p className="text-mute text-sm leading-relaxed mb-6">{current.desc}</p>
 
                 <div className="grid grid-cols-2 gap-3 mb-6">
-                  <div className="bg-stone-50 p-3">
-                    <p className="text-[10px] uppercase tracking-wider text-stone-400 mb-1">Coating</p>
-                    <p className="text-sm font-semibold text-stone-800">{current.glass}</p>
+                  <div className="bg-night-2 p-3">
+                    <p className="text-[10px] text-mute mb-1">Coating</p>
+                    <p className="text-sm font-semibold text-paper">{current.glass}</p>
                   </div>
-                  <div className="bg-stone-50 p-3">
-                    <p className="text-[10px] uppercase tracking-wider text-stone-400 mb-1">Core</p>
-                    <p className="text-sm font-semibold text-stone-800">{current.wind}</p>
+                  <div className="bg-night-2 p-3">
+                    <p className="text-[10px] text-mute mb-1">Core</p>
+                    <p className="text-sm font-semibold text-paper">{current.wind}</p>
                   </div>
-                  <div className="bg-stone-50 p-3">
-                    <p className="text-[10px] uppercase tracking-wider text-stone-400 mb-1">Best For</p>
-                    <p className="text-sm font-semibold text-stone-800">{current.bestFor}</p>
+                  <div className="bg-night-2 p-3">
+                    <p className="text-[10px] text-mute mb-1">Best For</p>
+                    <p className="text-sm font-semibold text-paper">{current.bestFor}</p>
                   </div>
-                  <div className="bg-amber-50 p-3 border border-amber-200">
-                    <p className="text-[10px] uppercase tracking-wider text-amber-600 mb-1">Pricing</p>
-                    <p className="text-sm font-bold text-stone-900">{current.price}</p>
+                  <div className="bg-lamp/10 p-3 border border-lamp/40">
+                    <p className="text-[10px] text-lamp mb-1">Pricing</p>
+                    <p className="text-sm font-bold text-paper">{current.price}</p>
                   </div>
                 </div>
 
                 <Link to="/contact">
-                  <Button size="sm" className="bg-stone-900 hover:bg-stone-800 text-white gap-2">
+                  <Button size="sm" className="bg-night-2 hover:bg-night-2 text-paper gap-2">
                     Book a call <ArrowRight size={14} />
                   </Button>
                 </Link>
@@ -452,13 +452,13 @@ export default function AcpCladding() {
 
 
       {/* ════════════ WHY FINE GLAZE ════════════ */}
-      <section className="py-16 md:py-20 bg-white">
+      <section className="py-16 md:py-20 bg-night">
         <div className="container mx-auto px-6 md:px-16">
           <FadeIn className="text-center mb-12">
-            <p className="text-amber-700 text-xs font-bold tracking-[0.3em] uppercase mb-3">
+            <p className="text-lamp text-xs font-bold mb-3">
               Why Fine Glaze
             </p>
-            <h2 className="text-2xl md:text-3xl font-bold text-stone-900">
+            <h2 className="text-2xl md:text-3xl font-bold text-paper">
               Built for performance. Delivered on schedule.
             </h2>
           </FadeIn>
@@ -488,21 +488,21 @@ export default function AcpCladding() {
                 },
               ].map((item) => (
                 <div key={item.title} className="text-center">
-                  <div className="inline-flex items-center justify-center w-12 h-12 bg-amber-50 text-amber-700 mb-4">
+                  <div className="inline-flex items-center justify-center w-12 h-12 bg-lamp/10 text-lamp mb-4">
                     <item.icon size={22} />
                   </div>
-                  <h3 className="text-sm font-bold text-stone-900 mb-2">{item.title}</h3>
-                  <p className="text-stone-500 text-xs leading-relaxed">{item.desc}</p>
+                  <h3 className="text-sm font-bold text-paper mb-2">{item.title}</h3>
+                  <p className="text-mute text-xs leading-relaxed">{item.desc}</p>
                 </div>
               ))}
             </div>
           </FadeIn>
 
           <FadeIn delay={200} className="mt-12 text-center">
-            <p className="text-stone-400 text-sm">
-              Clients include <span className="text-stone-700 font-semibold">Embassy REIT</span> ·{" "}
-              <span className="text-stone-700 font-semibold">L&amp;T Construction</span> ·{" "}
-              <span className="text-stone-700 font-semibold">Jindal Stainless Limited</span>
+            <p className="text-mute text-sm">
+              Clients include <span className="text-paper font-semibold">Embassy REIT</span> ·{" "}
+              <span className="text-paper font-semibold">L&amp;T Construction</span> ·{" "}
+              <span className="text-paper font-semibold">Jindal Stainless Limited</span>
             </p>
           </FadeIn>
         </div>
@@ -510,13 +510,13 @@ export default function AcpCladding() {
 
 
       {/* ════════════ HOW WE WORK ════════════ */}
-      <section className="py-16 md:py-20 bg-stone-50">
+      <section className="py-16 md:py-20 bg-night-2">
         <div className="container mx-auto px-6 md:px-16">
           <FadeIn className="mb-10">
-            <p className="text-amber-700 text-xs font-bold tracking-[0.3em] uppercase mb-3">
+            <p className="text-lamp text-xs font-bold mb-3">
               How We Work
             </p>
-            <h2 className="text-2xl md:text-3xl font-bold text-stone-900">
+            <h2 className="text-2xl md:text-3xl font-bold text-paper">
               From first visit to final handover
             </h2>
           </FadeIn>
@@ -526,12 +526,12 @@ export default function AcpCladding() {
               {STEPS.map((step, i) => (
                 <div key={step.num} className="relative">
                   {i < STEPS.length - 1 && (
-                    <div className="hidden md:block absolute top-5 left-[60%] right-0 h-px bg-stone-300" />
+                    <div className="hidden md:block absolute top-5 left-[60%] right-0 h-px bg-line" />
                   )}
-                  <div className="bg-white p-5 relative">
-                    <span className="text-3xl font-bold text-stone-100 block mb-3">{step.num}</span>
-                    <h3 className="text-sm font-bold text-stone-900 mb-1">{step.title}</h3>
-                    <p className="text-stone-500 text-xs leading-relaxed">{step.desc}</p>
+                  <div className="bg-night p-5 relative">
+                    <span className="text-3xl font-bold text-paper block mb-3">{step.num}</span>
+                    <h3 className="text-sm font-bold text-paper mb-1">{step.title}</h3>
+                    <p className="text-mute text-xs leading-relaxed">{step.desc}</p>
                   </div>
                 </div>
               ))}
@@ -550,11 +550,11 @@ export default function AcpCladding() {
             className="w-full h-full object-cover"
             loading="lazy"
           />
-          <div className="absolute inset-0 bg-black/40" />
+          <div className="absolute inset-0 bg-night/40" />
           <div className="absolute inset-0 flex items-center justify-center text-center px-4">
             <div>
-              <p className="text-white/60 text-sm uppercase tracking-widest mb-2">Our Promise</p>
-              <p className="text-white text-xl md:text-3xl font-bold max-w-xl">
+              <p className="text-mute text-sm mb-2">Our Promise</p>
+              <p className="text-paper text-xl md:text-3xl font-bold max-w-xl">
                 Panel routing at our own unit in Pisoli, Pune, shop drawings prepared in-house, and silicone-sealed joints on site.
               </p>
             </div>
@@ -564,16 +564,16 @@ export default function AcpCladding() {
 
 
       {/* ════════════ PRICING ════════════ */}
-      <section className="py-16 md:py-20 bg-white">
+      <section className="py-16 md:py-20 bg-night">
         <div className="container mx-auto px-6 md:px-16 max-w-3xl">
           <FadeIn className="text-center mb-8">
-            <p className="text-amber-700 text-xs font-bold tracking-[0.3em] uppercase mb-3">
+            <p className="text-lamp text-xs font-bold mb-3">
               Pricing
             </p>
-            <h2 className="text-2xl md:text-3xl font-bold text-stone-900 mb-2">
+            <h2 className="text-2xl md:text-3xl font-bold text-paper mb-2">
               ACP Cladding Cost: How We Quote
             </h2>
-            <p className="text-stone-400 text-sm">
+            <p className="text-mute text-sm">
               We quote against drawings. Final cost depends on specification and complexity.
             </p>
           </FadeIn>
@@ -582,10 +582,10 @@ export default function AcpCladding() {
             <div className="overflow-x-auto">
               <table className="w-full text-left">
                 <thead>
-                  <tr className="border-b-2 border-stone-800">
-                    <th className="py-3 text-xs font-bold uppercase tracking-wider text-stone-500">System</th>
-                    <th className="py-3 text-xs font-bold uppercase tracking-wider text-stone-500">Coating / Finish</th>
-                    <th className="py-3 text-xs font-bold uppercase tracking-wider text-stone-500 text-right">Pricing</th>
+                  <tr className="border-b-2 border-line">
+                    <th className="py-3 text-xs font-bold text-mute">System</th>
+                    <th className="py-3 text-xs font-bold text-mute">Coating / Finish</th>
+                    <th className="py-3 text-xs font-bold text-mute text-right">Pricing</th>
                   </tr>
                 </thead>
                 <tbody className="text-sm">
@@ -595,10 +595,10 @@ export default function AcpCladding() {
                     { system: "Wood-Grain / Stone", glass: "Digital print + PVDF", price: "Quoted on drawings" },
                     { system: "Mirror / Metallic", glass: "Anodised / mirror finish", price: "Quoted on drawings" },
                   ].map((row) => (
-                    <tr key={row.system} className="border-b border-stone-100 hover:bg-stone-50 transition-colors">
-                      <td className="py-3 font-semibold text-stone-800">{row.system}</td>
-                      <td className="py-3 text-stone-500">{row.glass}</td>
-                      <td className="py-3 text-right font-bold text-stone-900">{row.price}</td>
+                    <tr key={row.system} className="border-b border-line hover:bg-night-2 transition-colors">
+                      <td className="py-3 font-semibold text-paper">{row.system}</td>
+                      <td className="py-3 text-mute">{row.glass}</td>
+                      <td className="py-3 text-right font-bold text-paper">{row.price}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -607,7 +607,7 @@ export default function AcpCladding() {
 
             <div className="mt-8 text-center">
               <Link to="/contact">
-                <Button size="lg" className="bg-stone-900 hover:bg-stone-800 text-white gap-2 px-8">
+                <Button size="lg" className="bg-night-2 hover:bg-night-2 text-paper gap-2 px-8">
                   Book a call <ArrowRight size={16} />
                 </Button>
               </Link>
@@ -618,13 +618,13 @@ export default function AcpCladding() {
 
 
       {/* ════════════ FAQ ════════════ */}
-      <section className="py-14 md:py-16 bg-stone-50">
+      <section className="py-14 md:py-16 bg-night-2">
         <div className="container mx-auto px-6 md:px-16 max-w-3xl">
           <FadeIn className="mb-8">
-            <p className="text-amber-700 text-xs font-bold tracking-[0.3em] uppercase mb-3">
+            <p className="text-lamp text-xs font-bold mb-3">
               Common Questions
             </p>
-            <h2 className="text-2xl md:text-3xl font-bold text-stone-900">
+            <h2 className="text-2xl md:text-3xl font-bold text-paper">
               FAQ
             </h2>
           </FadeIn>
@@ -658,26 +658,26 @@ export default function AcpCladding() {
 
 
       {/* ════════════ AREAS + SERVICES ════════════ */}
-      <section className="bg-stone-900 py-12">
+      <section className="bg-night-2 py-12">
         <div className="container mx-auto px-6 md:px-16">
           <FadeIn>
             <div className="grid md:grid-cols-2 gap-10 md:gap-16">
               <div>
-                <p className="text-amber-400 text-xs font-bold tracking-[0.3em] uppercase mb-4">
+                <p className="text-lamp text-xs font-bold mb-4">
                   Where We Work
                 </p>
                 <div className="flex flex-wrap gap-x-6 gap-y-2">
                   {["Pune", "Mumbai BKC", "Navi Mumbai", "Thane", "Hinjewadi", "Pimpri-Chinchwad"].map((city) => (
                     <div key={city} className="flex items-center gap-1.5">
-                      <MapPin size={11} className="text-amber-500" />
-                      <span className="text-white/60 text-sm">{city}</span>
+                      <MapPin size={11} className="text-lamp" />
+                      <span className="text-mute text-sm">{city}</span>
                     </div>
                   ))}
                 </div>
               </div>
 
               <div>
-                <p className="text-amber-400 text-xs font-bold tracking-[0.3em] uppercase mb-4">
+                <p className="text-lamp text-xs font-bold mb-4">
                   Other Services
                 </p>
                 <div className="grid grid-cols-2 gap-x-6 gap-y-1.5">
@@ -692,7 +692,7 @@ export default function AcpCladding() {
                     <Link
                       key={link.href}
                       to={link.href}
-                      className="text-white/50 text-sm hover:text-amber-400 transition-colors"
+                      className="text-mute text-sm hover:text-lamp transition-colors"
                     >
                       {link.title}
                     </Link>

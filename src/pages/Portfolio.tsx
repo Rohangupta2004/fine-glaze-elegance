@@ -113,13 +113,13 @@ function ShowcaseProject({
       <Link
         to={`/project/${p.slug}`}
         className={cn(
-          "group grid grid-cols-1 lg:grid-cols-2 gap-0 bg-white border border-stone-200 hover:border-amber-400 hover:shadow-lg transition-all duration-300 overflow-hidden rounded-xl"
+          "group grid grid-cols-1 lg:grid-cols-2 gap-0 bg-night border border-line hover:border-lamp/40  transition-all duration-300 overflow-hidden "
         )}
       >
         {/* Image side */}
         <div
           className={cn(
-            "relative h-[260px] sm:h-[320px] lg:h-[420px] overflow-hidden bg-stone-900",
+            "relative h-[260px] sm:h-[320px] lg:h-[420px] overflow-hidden bg-night-2",
             reversed && "lg:order-2"
           )}
         >
@@ -129,22 +129,22 @@ function ShowcaseProject({
             className="w-full h-full object-cover group-hover:scale-[1.04] transition-transform duration-700"
             loading="lazy"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-night/50 via-transparent to-transparent" />
 
           {/* Badges */}
           <div className="absolute top-4 left-4 flex flex-wrap gap-2">
             {p.status === "Ongoing" ? (
-              <span className="bg-amber-500 text-stone-950 font-extrabold text-[10px] uppercase tracking-wider px-3 py-1 rounded-full shadow-md">
+              <span className="bg-lamp text-paper font-extrabold text-[10px] px-3 py-1">
                 Ongoing Work
               </span>
             ) : (
-              <span className="bg-stone-900/90 text-stone-200 font-bold text-[10px] uppercase tracking-wider px-3 py-1 rounded-full border border-stone-700 shadow-md">
+              <span className="bg-night-2/90 text-paper font-bold text-[10px] px-3 py-1 border border-line">
                 Completed
               </span>
             )}
 
             {p.isAwardWinner && (
-              <span className="bg-emerald-600 text-white text-[10px] font-extrabold uppercase tracking-widest px-3 py-1 rounded-full shadow-md">
+              <span className="bg-emerald-600 text-paper text-[10px] font-extrabold px-3 py-1">
                 Award Winner 2024
               </span>
             )}
@@ -152,7 +152,7 @@ function ShowcaseProject({
 
           {/* Big number overlay */}
           <div className="absolute bottom-4 right-4 lg:bottom-6 lg:right-6">
-            <span className="text-white/20 text-6xl lg:text-8xl font-black leading-none select-none">
+            <span className="text-mute text-6xl lg:text-8xl font-black leading-none select-none">
               {num}
             </span>
           </div>
@@ -161,50 +161,50 @@ function ShowcaseProject({
         {/* Details side */}
         <div
           className={cn(
-            "p-6 sm:p-8 lg:p-10 flex flex-col justify-center bg-stone-50/50",
+            "p-6 sm:p-8 lg:p-10 flex flex-col justify-center bg-night-2/50",
             reversed && "lg:order-1"
           )}
         >
           <div className="flex items-center gap-3 mb-3">
-            <span className="text-amber-700 text-xs font-bold tracking-[0.2em] uppercase">
+            <span className="text-lamp text-xs font-bold">
               {p.category === "award"
                 ? "Award Winner"
                 : p.category === "corporate"
                 ? "Commercial Facade"
                 : "Residential Facade"}
             </span>
-            <span className="w-8 h-px bg-stone-300" />
-            <span className="text-stone-400 text-xs font-bold">{num}</span>
+            <span className="w-8 h-px bg-line" />
+            <span className="text-mute text-xs font-bold">{num}</span>
           </div>
 
-          <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-stone-900 leading-tight mb-3 group-hover:text-amber-700 transition-colors">
+          <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-paper leading-tight mb-3 group-hover:text-lamp transition-colors">
             {p.title}
           </h3>
 
           <div className="space-y-2 mb-6">
-            <p className="text-stone-700 text-sm font-semibold flex items-start gap-2">
-              <span className="text-amber-700 font-bold shrink-0">Scope:</span>
+            <p className="text-paper text-sm font-semibold flex items-start gap-2">
+              <span className="text-lamp font-bold shrink-0">Scope:</span>
               <span>{p.scope}</span>
             </p>
           </div>
 
           {/* Meta grid */}
-          <div className="grid grid-cols-2 gap-3 mb-6 border-t border-stone-200 pt-4">
-            <div className="flex items-center gap-2 text-stone-600 text-xs">
-              <MapPin size={14} className="text-amber-600 shrink-0" />
+          <div className="grid grid-cols-2 gap-3 mb-6 border-t border-line pt-4">
+            <div className="flex items-center gap-2 text-mute text-xs">
+              <MapPin size={14} className="text-lamp shrink-0" />
               <span>{p.location}</span>
             </div>
-            <div className="flex items-center gap-2 text-stone-600 text-xs">
-              <Calendar size={14} className="text-amber-600 shrink-0" />
+            <div className="flex items-center gap-2 text-mute text-xs">
+              <Calendar size={14} className="text-lamp shrink-0" />
               <span>{p.year}</span>
             </div>
-            <div className="flex items-center gap-2 text-stone-600 text-xs col-span-2">
-              <User size={14} className="text-amber-600 shrink-0" />
+            <div className="flex items-center gap-2 text-mute text-xs col-span-2">
+              <User size={14} className="text-lamp shrink-0" />
               <span>Client: {p.client}</span>
             </div>
           </div>
 
-          <div className="inline-flex items-center justify-between w-full bg-white group-hover:bg-amber-600 group-hover:text-white border border-stone-300 text-stone-800 font-bold text-sm px-4 py-2.5 rounded-lg transition-all shadow-sm">
+          <div className="inline-flex items-center justify-between w-full bg-night group-hover:bg-lamp/90 group-hover:text-lamp-ink border border-line text-paper font-bold text-sm px-4 py-2.5 transition-all">
             <span>Explore Project</span>
             <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
           </div>
@@ -231,7 +231,7 @@ function CompactCard({ p, index }: CompactCardProps) {
     <FadeIn delay={(index % 3) * 80}>
       <Link
         to={`/project/${p.slug}`}
-        className="group block bg-white border border-stone-200 hover:border-amber-300 transition-all duration-300 overflow-hidden"
+        className="group block bg-night border border-line hover:border-lamp/40 transition-all duration-300 overflow-hidden"
       >
         <div className="relative h-[200px] sm:h-[240px] overflow-hidden">
           <img
@@ -240,21 +240,21 @@ function CompactCard({ p, index }: CompactCardProps) {
             className="w-full h-full object-cover group-hover:scale-[1.04] transition-transform duration-700"
             loading="lazy"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-night/30 to-transparent" />
 
           {p.isAwardWinner && (
-            <div className="absolute top-3 left-3 bg-amber-600 text-white text-[9px] font-bold uppercase tracking-widest px-2 py-0.5">
+            <div className="absolute top-3 left-3 bg-lamp text-lamp-ink text-[9px] font-bold px-2 py-0.5">
               Award
             </div>
           )}
 
           <div className="absolute bottom-3 right-3">
-            <span className="text-white/20 text-4xl font-black">{num}</span>
+            <span className="text-mute text-4xl font-black">{num}</span>
           </div>
         </div>
 
         <div className="p-4 sm:p-5">
-          <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-amber-700 mb-1.5">
+          <p className="text-[10px] font-bold text-lamp mb-1.5">
             {p.category === "award"
               ? "Award Winner"
               : p.category === "corporate"
@@ -263,20 +263,20 @@ function CompactCard({ p, index }: CompactCardProps) {
             · {p.year}
           </p>
 
-          <h3 className="text-base font-bold text-stone-900 leading-snug mb-2 group-hover:text-amber-700 transition-colors">
+          <h3 className="text-base font-bold text-paper leading-snug mb-2 group-hover:text-lamp transition-colors">
             {p.title}
           </h3>
 
-          <div className="flex items-center gap-1.5 text-stone-400 text-xs mb-2">
+          <div className="flex items-center gap-1.5 text-mute text-xs mb-2">
             <MapPin size={11} />
             <span>{p.location}</span>
           </div>
 
-          <p className="text-stone-500 text-xs leading-relaxed mb-3 line-clamp-2">
+          <p className="text-mute text-xs leading-relaxed mb-3 line-clamp-2">
             {p.scope}
           </p>
 
-          <div className="flex items-center gap-1.5 text-stone-800 font-semibold text-xs group-hover:text-amber-700 group-hover:gap-2.5 transition-all">
+          <div className="flex items-center gap-1.5 text-paper font-semibold text-xs group-hover:text-lamp group-hover:gap-2.5 transition-all">
             View Project <ArrowRight size={12} />
           </div>
         </div>
@@ -364,17 +364,17 @@ const Portfolio = () => {
         />
 
         <div className="absolute inset-x-0 bottom-0 px-5 md:px-16 pb-8 md:pb-16">
-          <p className="text-amber-400 text-[10px] md:text-xs font-bold tracking-[0.4em] uppercase mb-3 md:mb-4">
+          <p className="text-lamp text-[10px] md:text-xs font-bold mb-3 md:mb-4">
             Fine Glaze · Portfolio
           </p>
           <h1
-            className="font-extrabold text-white leading-tight tracking-tight"
+            className="font-extrabold text-paper leading-tight tracking-tight"
             style={{ fontSize: "clamp(2.2rem, 4.5vw, 3.5rem)" }}
           >
             Facade Projects in<br />
             <span className="text-gradient-gold">Pune &amp; Mumbai</span>
           </h1>
-          <p className="mt-3 md:mt-5 text-white/60 text-sm md:text-lg max-w-lg leading-relaxed">
+          <p className="mt-3 md:mt-5 text-mute text-sm md:text-lg max-w-lg leading-relaxed">
             Every project below lists the client, our actual scope and its
             current status — completed or ongoing.
           </p>
@@ -385,9 +385,9 @@ const Portfolio = () => {
       {/* ════════════════════════════════════════════════════
           STATS — dark band with Numbers in Count-Up Motion
           ════════════════════════════════════════════════════ */}
-      <section className="bg-stone-900 py-6 md:py-8 border-y border-stone-800">
+      <section className="bg-night-2 py-6 md:py-8 border-y border-line">
         <div className="container mx-auto px-5 md:px-16">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-0 md:divide-x md:divide-stone-700">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-0 md:divide-x md:divide-line">
             {[
               { number: "16", label: "Project Records Documented" },
               { number: "2 Cities", label: "Pune & Mumbai" },
@@ -395,10 +395,10 @@ const Portfolio = () => {
               { number: "Award 2024", label: "Embassy REIT Best Vendor" },
             ].map((s) => (
               <div key={s.label} className="text-center px-3 py-1">
-                <p className="text-lg md:text-2xl font-bold text-amber-400 tracking-tight">
+                <p className="text-lg md:text-2xl font-bold text-lamp tracking-tight">
                   <AnimatedNumber value={s.number} />
                 </p>
-                <p className="text-stone-400 text-[10px] uppercase tracking-wider mt-1">{s.label}</p>
+                <p className="text-mute text-[10px] mt-1">{s.label}</p>
               </div>
             ))}
           </div>
@@ -409,7 +409,7 @@ const Portfolio = () => {
       {/* ════════════════════════════════════════════════════
           FILTER — underline tabs
           ════════════════════════════════════════════════════ */}
-      <section className="sticky top-16 lg:top-20 z-30 bg-white border-b border-stone-200">
+      <section className="sticky top-16 lg:top-20 z-30 bg-night border-b border-line">
         <div className="container mx-auto px-5 md:px-16 flex items-center gap-4 md:gap-8 overflow-x-auto">
           {TABS.map((t) => (
             <button
@@ -418,14 +418,14 @@ const Portfolio = () => {
               className={cn(
                 "py-3 md:py-4 text-xs md:text-sm font-semibold tracking-wide transition-all duration-200 border-b-2 -mb-px whitespace-nowrap",
                 active === t.id
-                  ? "border-stone-900 text-stone-900"
-                  : "border-transparent text-stone-400 hover:text-stone-600"
+                  ? "border-line text-paper"
+                  : "border-transparent text-mute hover:text-mute"
               )}
             >
               {t.label}
             </button>
           ))}
-          <span className="ml-auto text-xs text-stone-400 font-medium hidden sm:block whitespace-nowrap">
+          <span className="ml-auto text-xs text-mute font-medium hidden sm:block whitespace-nowrap">
             {filtered.length} {filtered.length === 1 ? "project" : "projects"}
           </span>
         </div>
@@ -435,10 +435,10 @@ const Portfolio = () => {
       {/* ════════════════════════════════════════════════════
           PROJECTS — alternating showcase + grid
           ════════════════════════════════════════════════════ */}
-      <section className="py-8 md:py-14 bg-stone-100">
+      <section className="py-8 md:py-14 bg-night-2">
         <div className="container mx-auto px-5 md:px-16">
           {filtered.length === 0 ? (
-            <p className="text-center text-stone-400 py-20">
+            <p className="text-center text-mute py-20">
               No projects in this category yet.
             </p>
           ) : (
@@ -472,9 +472,9 @@ const Portfolio = () => {
       {/* ════════════════════════════════════════════════════
           CLIENTS — trust strip
           ════════════════════════════════════════════════════ */}
-      <section className="py-10 bg-white">
+      <section className="py-10 bg-night">
         <div className="container mx-auto px-5 md:px-16 text-center">
-          <p className="text-stone-400 text-xs font-bold tracking-[0.3em] uppercase mb-6">
+          <p className="text-mute text-xs font-bold mb-6">
             Clients We Have Delivered For
           </p>
           <div className="flex flex-wrap items-center justify-center gap-x-8 md:gap-x-10 gap-y-3">
@@ -488,7 +488,7 @@ const Portfolio = () => {
             ].map((name) => (
               <span
                 key={name}
-                className="text-stone-300 text-base md:text-xl font-bold tracking-wide"
+                className="text-paper/80 text-base md:text-xl font-bold tracking-wide"
               >
                 {name}
               </span>

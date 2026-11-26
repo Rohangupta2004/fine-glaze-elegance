@@ -35,7 +35,7 @@ export const InspectionReport = forwardRef<HTMLDivElement, InspectionReportProps
     return (
       <div
         ref={ref}
-        className="bg-white text-black p-8 max-w-[800px] mx-auto"
+        className="bg-night text-paper p-8 max-w-[800px] mx-auto"
         style={{ fontFamily: "Arial, sans-serif" }}
       >
         {/* Header */}
@@ -45,7 +45,7 @@ export const InspectionReport = forwardRef<HTMLDivElement, InspectionReportProps
               <h1 className="text-2xl font-bold text-blue-900">
                 FINE GLAZE
               </h1>
-              <p className="text-sm text-gray-500">
+              <p className="text-sm text-mute">
                 Facade & Glazing Solutions
               </p>
             </div>
@@ -53,7 +53,7 @@ export const InspectionReport = forwardRef<HTMLDivElement, InspectionReportProps
               <h2 className="text-lg font-bold text-blue-800">
                 DAILY SITE INSPECTION REPORT
               </h2>
-              <p className="text-sm text-gray-500">
+              <p className="text-sm text-mute">
                 Report ID: {inspection.id.slice(0, 8).toUpperCase()}
               </p>
             </div>
@@ -64,15 +64,15 @@ export const InspectionReport = forwardRef<HTMLDivElement, InspectionReportProps
         <div className="grid grid-cols-2 gap-4 mb-6">
           <div className="space-y-2">
             <div>
-              <span className="text-xs text-gray-500 uppercase">Project</span>
+              <span className="text-xs text-mute">Project</span>
               <p className="font-semibold">{inspection.project_name}</p>
             </div>
             <div>
-              <span className="text-xs text-gray-500 uppercase">Location</span>
+              <span className="text-xs text-mute">Location</span>
               <p>{inspection.site_location}</p>
             </div>
             <div>
-              <span className="text-xs text-gray-500 uppercase">
+              <span className="text-xs text-mute">
                 Supervisor
               </span>
               <p>
@@ -84,11 +84,11 @@ export const InspectionReport = forwardRef<HTMLDivElement, InspectionReportProps
           </div>
           <div className="space-y-2">
             <div>
-              <span className="text-xs text-gray-500 uppercase">Date</span>
+              <span className="text-xs text-mute">Date</span>
               <p className="font-semibold">{dateStr}</p>
             </div>
             <div>
-              <span className="text-xs text-gray-500 uppercase">
+              <span className="text-xs text-mute">
                 Shift / Weather
               </span>
               <p className="capitalize">
@@ -96,7 +96,7 @@ export const InspectionReport = forwardRef<HTMLDivElement, InspectionReportProps
               </p>
             </div>
             <div>
-              <span className="text-xs text-gray-500 uppercase">
+              <span className="text-xs text-mute">
                 Workers on Site
               </span>
               <p>{inspection.workers_present}</p>
@@ -106,13 +106,13 @@ export const InspectionReport = forwardRef<HTMLDivElement, InspectionReportProps
 
         {/* Progress */}
         <div className="mb-6">
-          <h3 className="text-sm font-bold text-blue-800 uppercase border-b mb-2 pb-1">
+          <h3 className="text-sm font-bold text-blue-800 border-b mb-2 pb-1">
             Overall Progress
           </h3>
           <div className="flex items-center gap-4">
-            <div className="flex-1 h-4 bg-gray-200 rounded-full overflow-hidden">
+            <div className="flex-1 h-4 bg-line overflow-hidden">
               <div
-                className="h-full bg-blue-600 rounded-full"
+                className="h-full bg-blue-600"
                 style={{ width: `${inspection.overall_progress}%` }}
               />
             </div>
@@ -124,7 +124,7 @@ export const InspectionReport = forwardRef<HTMLDivElement, InspectionReportProps
 
         {/* Work Completed */}
         <div className="mb-6">
-          <h3 className="text-sm font-bold text-blue-800 uppercase border-b mb-2 pb-1">
+          <h3 className="text-sm font-bold text-blue-800 border-b mb-2 pb-1">
             Work Completed Today
           </h3>
           <p className="whitespace-pre-wrap text-sm">
@@ -135,7 +135,7 @@ export const InspectionReport = forwardRef<HTMLDivElement, InspectionReportProps
         {/* Work Planned */}
         {inspection.work_planned_tomorrow && (
           <div className="mb-6">
-            <h3 className="text-sm font-bold text-blue-800 uppercase border-b mb-2 pb-1">
+            <h3 className="text-sm font-bold text-blue-800 border-b mb-2 pb-1">
               Work Planned for Tomorrow
             </h3>
             <p className="whitespace-pre-wrap text-sm">
@@ -147,12 +147,12 @@ export const InspectionReport = forwardRef<HTMLDivElement, InspectionReportProps
         {/* Issues */}
         {inspection.issues.length > 0 && (
           <div className="mb-6">
-            <h3 className="text-sm font-bold text-blue-800 uppercase border-b mb-2 pb-1">
+            <h3 className="text-sm font-bold text-blue-800 border-b mb-2 pb-1">
               Issues & Observations ({inspection.issues.length})
             </h3>
             <table className="w-full text-sm">
               <thead>
-                <tr className="bg-gray-100">
+                <tr className="bg-night-2">
                   <th className="text-left p-2 font-medium">#</th>
                   <th className="text-left p-2 font-medium">Description</th>
                   <th className="text-left p-2 font-medium">Severity</th>
@@ -176,12 +176,12 @@ export const InspectionReport = forwardRef<HTMLDivElement, InspectionReportProps
         {/* Materials Used */}
         {inspection.materials_used.length > 0 && (
           <div className="mb-6">
-            <h3 className="text-sm font-bold text-blue-800 uppercase border-b mb-2 pb-1">
+            <h3 className="text-sm font-bold text-blue-800 border-b mb-2 pb-1">
               Materials Used ({inspection.materials_used.length})
             </h3>
             <table className="w-full text-sm">
               <thead>
-                <tr className="bg-gray-100">
+                <tr className="bg-night-2">
                   <th className="text-left p-2 font-medium">#</th>
                   <th className="text-left p-2 font-medium">Material</th>
                   <th className="text-left p-2 font-medium">Quantity</th>
@@ -204,7 +204,7 @@ export const InspectionReport = forwardRef<HTMLDivElement, InspectionReportProps
 
         {/* Safety Checklist */}
         <div className="mb-6">
-          <h3 className="text-sm font-bold text-blue-800 uppercase border-b mb-2 pb-1">
+          <h3 className="text-sm font-bold text-blue-800 border-b mb-2 pb-1">
             Safety Checklist ({safetyPassed}/{safetyTotal})
           </h3>
           <div className="grid grid-cols-2 gap-2 text-sm">
@@ -224,7 +224,7 @@ export const InspectionReport = forwardRef<HTMLDivElement, InspectionReportProps
         {/* Notes */}
         {inspection.notes && (
           <div className="mb-6">
-            <h3 className="text-sm font-bold text-blue-800 uppercase border-b mb-2 pb-1">
+            <h3 className="text-sm font-bold text-blue-800 border-b mb-2 pb-1">
               Additional Notes
             </h3>
             <p className="whitespace-pre-wrap text-sm">{inspection.notes}</p>
@@ -232,15 +232,15 @@ export const InspectionReport = forwardRef<HTMLDivElement, InspectionReportProps
         )}
 
         {/* Footer */}
-        <div className="border-t-2 border-gray-300 pt-4 mt-8">
-          <div className="flex justify-between text-xs text-gray-500">
+        <div className="border-t-2 border-line pt-4 mt-8">
+          <div className="flex justify-between text-xs text-mute">
             <span>
               Generated on{" "}
               {format(new Date(inspection.created_at), "dd MMM yyyy, hh:mm a")}
             </span>
             <span>Fine Glaze — Facade & Glazing Solutions, Pune</span>
           </div>
-          <div className="text-xs text-gray-400 mt-1">
+          <div className="text-xs text-mute mt-1">
             info@fineglaze.com | +91-8369233566
           </div>
         </div>

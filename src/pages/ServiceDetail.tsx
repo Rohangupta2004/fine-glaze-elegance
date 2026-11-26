@@ -326,37 +326,37 @@ export default function ServiceDetail() {
       />
 
       {/* ── HERO ── */}
-      <section className="relative pt-20 pb-12 md:pt-32 md:pb-24 bg-slate-900 text-white overflow-hidden">
+      <section className="relative pt-20 pb-12 md:pt-32 md:pb-24 bg-night-2 text-paper overflow-hidden">
         <div
           className="absolute inset-0 opacity-20 bg-cover bg-center"
           style={{ backgroundImage: `url('${serviceData.image}')` }}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/90 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-night-2 via-night-2/90 to-transparent" />
 
         <div className="container mx-auto px-4 relative z-10 max-w-5xl">
-          <div className="flex items-center gap-2 text-sm text-slate-400 mb-4">
-            <Link to="/" className="hover:text-amber-400 transition-colors">Home</Link>
+          <div className="flex items-center gap-2 text-sm text-mute mb-4">
+            <Link to="/" className="hover:text-lamp transition-colors">Home</Link>
             <ChevronRight size={14} />
-            <Link to="/services" className="hover:text-amber-400 transition-colors">Services</Link>
+            <Link to="/services" className="hover:text-lamp transition-colors">Services</Link>
             <ChevronRight size={14} />
-            <span className="text-amber-400">{serviceData.label}</span>
+            <span className="text-lamp">{serviceData.label}</span>
           </div>
 
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/20 border border-amber-500/30 text-amber-400 text-sm font-bold mb-6">
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-lamp/20 border border-lamp/30 text-lamp text-sm font-bold mb-6">
             <Building2 size={16} /> Commercial Facade Engineering
           </div>
           <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 leading-tight">
             Advanced{" "}
-            <span className="text-amber-500">{serviceData.label}</span>
+            <span className="text-lamp">{serviceData.label}</span>
           </h1>
-          <p className="text-lg md:text-xl text-slate-300 max-w-2xl leading-relaxed mb-6 md:mb-10">
+          <p className="text-lg md:text-xl text-paper/80 max-w-2xl leading-relaxed mb-6 md:mb-10">
             {serviceData.desc}
           </p>
           <div className="flex flex-wrap gap-4">
             <Link to="/contact">
               <Button
                 size="lg"
-                className="bg-amber-600 hover:bg-amber-700 px-8 py-6 text-lg border-0 text-white"
+                className="bg-lamp hover:bg-lamp/90 px-8 py-6 text-lg border-0 text-lamp-ink"
               >
                 Consult an Engineer <ArrowRight size={18} className="ml-2" />
               </Button>
@@ -366,30 +366,30 @@ export default function ServiceDetail() {
       </section>
 
       {/* ── OVERVIEW ── */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-night">
         <div className="container mx-auto px-4 max-w-6xl grid lg:grid-cols-2 gap-16 items-center">
           <div>
-            <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            <h2 className="text-3xl font-bold text-paper mb-6">
               Precision Engineering & Execution
             </h2>
-            <p className="text-lg text-slate-600 leading-relaxed mb-8">
+            <p className="text-lg text-mute leading-relaxed mb-8">
               {serviceData.extendedDesc}
             </p>
 
-            <h3 className="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
-              <ShieldCheck className="text-amber-600" /> Core Advantages
+            <h3 className="text-xl font-bold text-paper mb-6 flex items-center gap-2">
+              <ShieldCheck className="text-lamp" /> Core Advantages
             </h3>
             <div className="space-y-4">
               {serviceData.benefits.map((benefit) => (
                 <div
                   key={benefit}
-                  className="flex items-center gap-3 p-4 bg-slate-50 rounded-xl border border-slate-100"
+                  className="flex items-center gap-3 p-4 bg-night-2 border border-line"
                 >
                   <CheckCircle2
                     size={20}
-                    className="text-amber-600 shrink-0"
+                    className="text-lamp shrink-0"
                   />
-                  <span className="font-semibold text-slate-800">
+                  <span className="font-semibold text-paper">
                     {benefit}
                   </span>
                 </div>
@@ -397,11 +397,11 @@ export default function ServiceDetail() {
             </div>
           </div>
           <div className="relative">
-            <div className="absolute inset-0 bg-amber-500 rounded-2xl transform translate-x-4 translate-y-4 opacity-20" />
+            <div className="absolute inset-0 bg-lamp transform translate-x-4 translate-y-4 opacity-20" />
             <img
               src={serviceData.image}
               alt={serviceData.label}
-              className="relative rounded-2xl shadow-xl w-full h-[500px] object-cover"
+              className="relative w-full h-[500px] object-cover"
               loading="lazy"
               width="800"
               height="600"
@@ -411,17 +411,17 @@ export default function ServiceDetail() {
       </section>
 
       {/* ── TYPES SECTION ── */}
-      <section className="py-24 bg-slate-50 border-t border-slate-200">
+      <section className="py-24 bg-night-2 border-t border-line">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-16">
-            <span className="inline-block text-amber-600 font-bold uppercase tracking-widest text-xs mb-3">
+            <span className="inline-block text-lamp font-bold text-xs mb-3">
               All Variants & Types
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-paper mb-4">
               {serviceData.label}:{" "}
-              <span className="text-amber-600">Which Type Suits You?</span>
+              <span className="text-lamp">Which Type Suits You?</span>
             </h2>
-            <p className="text-slate-500 max-w-2xl mx-auto">
+            <p className="text-mute max-w-2xl mx-auto">
               Not every project is the same. Choose from our complete range of{" "}
               {serviceData.label.toLowerCase()} variants — each engineered for
               specific building types, budgets, and performance requirements.
@@ -432,7 +432,7 @@ export default function ServiceDetail() {
             {serviceData.types.map((type, idx) => (
               <div
                 key={type.name}
-                className="bg-white rounded-2xl border border-slate-200 overflow-hidden hover:shadow-lg hover:border-amber-300 transition-all duration-300 group"
+                className="bg-night border border-line overflow-hidden hover:border-lamp/40 transition-all duration-300 group"
               >
                 {/* Card image */}
                 <div className="relative h-48 overflow-hidden">
@@ -442,20 +442,20 @@ export default function ServiceDetail() {
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent" />
-                  <div className="absolute bottom-3 left-4 text-amber-400 text-xs font-bold uppercase tracking-wider">
+                  <div className="absolute inset-0 bg-gradient-to-t from-night-2/60 to-transparent" />
+                  <div className="absolute bottom-3 left-4 text-lamp text-xs font-bold">
                     Type {String(idx + 1).padStart(2, "0")}
                   </div>
                 </div>
 
                 {/* Card header */}
-                <div className="bg-gradient-to-r from-slate-800 to-slate-900 px-6 py-5">
+                <div className="bg-night-2 px-6 py-5">
                   <div className="flex items-start justify-between gap-3">
                     <div>
-                      <h3 className="text-lg font-bold text-white leading-tight">
+                      <h3 className="text-lg font-bold text-paper leading-tight">
                         {type.name}
                       </h3>
-                      <p className="text-slate-400 text-sm mt-1">
+                      <p className="text-mute text-sm mt-1">
                         {type.tagline}
                       </p>
                     </div>
@@ -464,7 +464,7 @@ export default function ServiceDetail() {
 
                 {/* Card body */}
                 <div className="p-6 space-y-5">
-                  <p className="text-slate-600 text-sm leading-relaxed">
+                  <p className="text-mute text-sm leading-relaxed">
                     {type.description}
                   </p>
 
@@ -475,12 +475,12 @@ export default function ServiceDetail() {
                       onClick={() => toggleSpec(idx)}
                       className="flex items-center justify-between w-full text-left cursor-pointer group/spec"
                     >
-                      <p className="text-xs font-bold text-slate-400 uppercase tracking-wider">
+                      <p className="text-xs font-bold text-mute">
                         Technical Specs
                       </p>
                       <ChevronDown
                         size={16}
-                        className={`text-slate-400 group-hover/spec:text-amber-500 transition-transform duration-300 ${
+                        className={`text-mute group-hover/spec:text-lamp transition-transform duration-300 ${
                           expandedSpecs[idx] ? "rotate-180" : ""
                         }`}
                       />
@@ -498,8 +498,8 @@ export default function ServiceDetail() {
                             key={spec}
                             className="flex items-start gap-2 text-sm"
                           >
-                            <span className="w-1.5 h-1.5 rounded-full bg-amber-500 mt-1.5 shrink-0" />
-                            <span className="text-slate-700">{spec}</span>
+                            <span className="w-1.5 h-1.5 bg-lamp mt-1.5 shrink-0" />
+                            <span className="text-paper">{spec}</span>
                           </div>
                         ))}
                       </div>
@@ -507,12 +507,12 @@ export default function ServiceDetail() {
                   </div>
 
                   {/* Best for */}
-                  <div className="flex items-center gap-2 px-4 py-3 bg-amber-50 rounded-xl border border-amber-100">
+                  <div className="flex items-center gap-2 px-4 py-3 bg-lamp/10 border border-lamp/40">
                     <CheckCircle2
                       size={16}
-                      className="text-amber-600 shrink-0"
+                      className="text-lamp shrink-0"
                     />
-                    <span className="text-sm text-amber-800">
+                    <span className="text-sm text-lamp">
                       <span className="font-bold">Best for:</span>{" "}
                       {type.bestFor}
                     </span>
@@ -523,7 +523,7 @@ export default function ServiceDetail() {
                     <Button
                       variant="outline"
                       size="sm"
-                      className="w-full border-amber-300 text-amber-700 hover:bg-amber-50 group-hover:border-amber-500 transition-colors"
+                      className="w-full border-lamp/40 text-lamp hover:bg-lamp/10 group-hover:border-lamp/40 transition-colors"
                     >
                       Book a call
                       <ArrowRight size={14} className="ml-2" />
@@ -535,17 +535,17 @@ export default function ServiceDetail() {
           </div>
 
           {/* Comparison CTA */}
-          <div className="mt-12 text-center p-8 bg-white rounded-2xl border border-slate-200 shadow-sm">
-            <h3 className="text-xl font-bold text-slate-900 mb-2">
+          <div className="mt-12 text-center p-8 bg-night border border-line">
+            <h3 className="text-xl font-bold text-paper mb-2">
               Not sure which type you need?
             </h3>
-            <p className="text-slate-500 mb-6">
+            <p className="text-mute mb-6">
               Our engineers will assess your project requirements — building
               height, wind zone, budget, and aesthetics — and recommend the
               optimal system.
             </p>
             <Link to="/contact">
-              <Button className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-5">
+              <Button className="bg-lamp hover:bg-lamp/90 text-lamp-ink px-8 py-5">
                 Book a call{" "}
                 <ArrowRight size={16} className="ml-2" />
               </Button>
@@ -555,12 +555,12 @@ export default function ServiceDetail() {
       </section>
 
       {/* ── LOCALIZED EXECUTION ZONES ── */}
-      <section className="py-20 bg-white border-t border-slate-200">
+      <section className="py-20 bg-night border-t border-line">
         <div className="container mx-auto px-4 max-w-5xl text-center">
-          <h2 className="text-3xl font-bold text-slate-900 mb-4">
+          <h2 className="text-3xl font-bold text-paper mb-4">
             Localized Execution Zones
           </h2>
-          <p className="text-slate-600 mb-10 max-w-2xl mx-auto">
+          <p className="text-mute mb-10 max-w-2xl mx-auto">
             We provide dedicated engineering and installation teams for{" "}
             {serviceData.label.toLowerCase()} across major commercial hubs in
             Maharashtra.
@@ -571,13 +571,13 @@ export default function ServiceDetail() {
               <Link
                 key={hub.slug}
                 to={`/facade-contractor/${slug}-${hub.slug}`}
-                className="flex flex-col items-center justify-center gap-2 p-6 bg-slate-50 rounded-xl border border-slate-200 hover:border-amber-500 hover:shadow-md transition-all group"
+                className="flex flex-col items-center justify-center gap-2 p-6 bg-night-2 border border-line hover:border-lamp/40 transition-all group"
               >
                 <MapPin
-                  className="text-slate-400 group-hover:text-amber-500 transition-colors"
+                  className="text-mute group-hover:text-lamp transition-colors"
                   size={24}
                 />
-                <span className="font-bold text-slate-800 group-hover:text-amber-600 transition-colors">
+                <span className="font-bold text-paper group-hover:text-lamp transition-colors">
                   {hub.name}
                 </span>
               </Link>

@@ -102,11 +102,11 @@ export default function AdminImages() {
 
   if (!authed) {
     return (
-      <div className="min-h-screen bg-slate-50 flex items-center justify-center p-4">
+      <div className="min-h-screen bg-night-2 flex items-center justify-center p-4">
         <Toaster />
-        <div className="w-full max-w-sm bg-white rounded-2xl shadow-lg border p-8 space-y-6 text-center">
-          <div className="mx-auto w-14 h-14 rounded-full bg-amber-100 flex items-center justify-center">
-            <Lock className="w-6 h-6 text-amber-700" />
+        <div className="w-full max-w-sm bg-night border p-8 space-y-6 text-center">
+          <div className="mx-auto w-14 h-14 bg-lamp/10 flex items-center justify-center">
+            <Lock className="w-6 h-6 text-lamp" />
           </div>
           <div>
             <h1 className="text-xl font-bold">Fine Glaze Admin</h1>
@@ -151,10 +151,10 @@ export default function AdminImages() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="min-h-screen bg-night-2">
       <Toaster />
       {/* Header */}
-      <header className="sticky top-0 z-10 bg-white border-b shadow-sm">
+      <header className="sticky top-0 z-10 bg-night border-b">
         <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
           <div>
             <h1 className="text-xl font-bold">Project Images</h1>
@@ -195,10 +195,10 @@ export default function AdminImages() {
                 <button
                   key={p.id}
                   onClick={() => setSelected(p)}
-                  className="group bg-white rounded-xl border shadow-sm hover:shadow-md transition-all text-left overflow-hidden"
+                  className="group bg-night border transition-all text-left overflow-hidden"
                 >
                   {/* Thumbnail */}
-                  <div className="relative h-44 bg-slate-100">
+                  <div className="relative h-44 bg-night-2">
                     {imgSrc ? (
                       <img
                         src={imgSrc}
@@ -214,17 +214,17 @@ export default function AdminImages() {
                       </div>
                     )}
                     {/* Category badge */}
-                    <span className="absolute top-3 left-3 px-2.5 py-0.5 rounded-full bg-white/90 text-xs font-semibold capitalize shadow-sm">
+                    <span className="absolute top-3 left-3 px-2.5 py-0.5 bg-night/90 text-xs font-semibold capitalize">
                       {p.category}
                     </span>
                     {p.is_award_winner && (
                       <span className="absolute top-3 right-3">
-                        <Star className="w-5 h-5 text-amber-500 fill-amber-500" />
+                        <Star className="w-5 h-5 text-lamp fill-lamp" />
                       </span>
                     )}
                     {/* Gallery badge */}
                     {galleryCount > 0 && (
-                      <span className="absolute bottom-3 right-3 px-2 py-0.5 rounded bg-black/60 text-white text-xs font-medium">
+                      <span className="absolute bottom-3 right-3 px-2 py-0.5 bg-night/60 text-paper text-xs font-medium">
                         +{galleryCount} gallery
                       </span>
                     )}
@@ -369,9 +369,9 @@ function ProjectEditor({
   };
 
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="min-h-screen bg-night-2">
       {/* Header */}
-      <header className="sticky top-0 z-10 bg-white border-b shadow-sm">
+      <header className="sticky top-0 z-10 bg-night border-b">
         <div className="max-w-4xl mx-auto px-4 py-4 flex items-center gap-4">
           <Button variant="ghost" size="icon" onClick={onBack}>
             <ArrowLeft className="w-5 h-5" />
@@ -382,7 +382,7 @@ function ProjectEditor({
               {project.location} · {project.year} · {project.client}
             </p>
           </div>
-          <span className="px-3 py-1 rounded-full bg-slate-100 text-xs font-semibold capitalize">
+          <span className="px-3 py-1 bg-night-2 text-xs font-semibold capitalize">
             {project.category}
           </span>
         </div>
@@ -391,15 +391,15 @@ function ProjectEditor({
       <main className="max-w-4xl mx-auto px-4 py-8 space-y-8">
         {/* Old image notice */}
         {oldImage && (
-          <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 text-sm text-amber-800">
-            Current image is a local file path: <code className="bg-amber-100 px-1 rounded">{oldImage}</code>
+          <div className="bg-lamp/10 border border-lamp/40 p-4 text-sm text-lamp">
+            Current image is a local file path: <code className="bg-lamp/10 px-1">{oldImage}</code>
             <br />
             Upload a new image below to replace it with a proper hosted URL.
           </div>
         )}
 
         {/* ── Main Image ─────────────────────────────────────── */}
-        <section className="bg-white rounded-xl border shadow-sm p-6 space-y-4">
+        <section className="bg-night border p-6 space-y-4">
           <div>
             <h2 className="text-lg font-bold">Main Image</h2>
             <p className="text-sm text-muted-foreground">
@@ -424,8 +424,8 @@ function ProjectEditor({
             onDragLeave={() => setDragOver(false)}
             onDrop={(e) => handleDrop(e, "main")}
             className={`
-              relative rounded-xl border-2 border-dashed transition-all cursor-pointer
-              ${dragOver ? "border-amber-500 bg-amber-50" : "border-slate-200 hover:border-amber-400 hover:bg-slate-50"}
+              relative  border-2 border-dashed transition-all cursor-pointer
+              ${dragOver ? "border-lamp/40 bg-lamp/10" : "border-line hover:border-lamp/40 hover:bg-night-2"}
               ${uploading ? "pointer-events-none opacity-60" : ""}
             `}
           >
@@ -434,10 +434,10 @@ function ProjectEditor({
                 <img
                   src={imgSrc}
                   alt={project.title}
-                  className="w-full h-64 md:h-80 object-cover rounded-lg"
+                  className="w-full h-64 md:h-80 object-cover"
                 />
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all rounded-lg flex items-center justify-center">
-                  <div className="opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center gap-2 text-white">
+                <div className="absolute inset-0 bg-night/0 group-hover:bg-night/40 transition-all flex items-center justify-center">
+                  <div className="opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center gap-2 text-paper">
                     <Upload className="w-8 h-8" />
                     <span className="text-sm font-medium">
                       Click or drop to replace
@@ -448,9 +448,9 @@ function ProjectEditor({
             ) : (
               <div className="flex flex-col items-center justify-center py-16 gap-3">
                 {uploading ? (
-                  <Loader2 className="w-10 h-10 animate-spin text-amber-600" />
+                  <Loader2 className="w-10 h-10 animate-spin text-lamp" />
                 ) : (
-                  <ImagePlus className="w-10 h-10 text-slate-400" />
+                  <ImagePlus className="w-10 h-10 text-mute" />
                 )}
                 <div className="text-center">
                   <p className="font-medium text-sm">
@@ -466,15 +466,15 @@ function ProjectEditor({
             )}
 
             {uploading && imgSrc && (
-              <div className="absolute inset-0 bg-black/50 rounded-lg flex items-center justify-center">
-                <Loader2 className="w-8 h-8 animate-spin text-white" />
+              <div className="absolute inset-0 bg-night/50 flex items-center justify-center">
+                <Loader2 className="w-8 h-8 animate-spin text-paper" />
               </div>
             )}
           </div>
         </section>
 
         {/* ── Gallery ─────────────────────────────────────────── */}
-        <section className="bg-white rounded-xl border shadow-sm p-6 space-y-4">
+        <section className="bg-night border p-6 space-y-4">
           <div>
             <h2 className="text-lg font-bold">Gallery Images</h2>
             <p className="text-sm text-muted-foreground">
@@ -498,7 +498,7 @@ function ProjectEditor({
               {gallery.map((url, i) => (
                 <div
                   key={i}
-                  className="relative group rounded-lg overflow-hidden border bg-slate-100 aspect-[4/3]"
+                  className="relative group overflow-hidden border bg-night-2 aspect-[4/3]"
                 >
                   <img
                     src={url}
@@ -510,12 +510,12 @@ function ProjectEditor({
                       e.stopPropagation();
                       removeGalleryImage(i);
                     }}
-                    className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity bg-red-500 text-white rounded-full p-1.5 shadow-lg hover:scale-110"
+                    className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity bg-red-500 text-paper p-1.5 hover:scale-110"
                   >
                     <Trash2 className="w-3.5 h-3.5" />
                   </button>
-                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/50 to-transparent p-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                    <span className="text-white text-xs font-medium">
+                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-night/50 to-transparent p-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <span className="text-paper text-xs font-medium">
                       Image {i + 1}
                     </span>
                   </div>
@@ -534,16 +534,16 @@ function ProjectEditor({
             onDragLeave={() => setDragOverGallery(false)}
             onDrop={(e) => handleDrop(e, "gallery")}
             className={`
-              rounded-xl border-2 border-dashed transition-all cursor-pointer
-              ${dragOverGallery ? "border-amber-500 bg-amber-50" : "border-slate-200 hover:border-amber-400 hover:bg-slate-50"}
+               border-2 border-dashed transition-all cursor-pointer
+              ${dragOverGallery ? "border-lamp/40 bg-lamp/10" : "border-line hover:border-lamp/40 hover:bg-night-2"}
               ${uploadingGallery ? "pointer-events-none opacity-60" : ""}
             `}
           >
             <div className="flex flex-col items-center justify-center py-10 gap-2">
               {uploadingGallery ? (
-                <Loader2 className="w-8 h-8 animate-spin text-amber-600" />
+                <Loader2 className="w-8 h-8 animate-spin text-lamp" />
               ) : (
-                <ImagePlus className="w-8 h-8 text-slate-400" />
+                <ImagePlus className="w-8 h-8 text-mute" />
               )}
               <p className="font-medium text-sm">
                 {uploadingGallery
@@ -563,7 +563,7 @@ function ProjectEditor({
             href={`/project/${project.slug}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-amber-700 transition-colors"
+            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-lamp transition-colors"
           >
             <Eye className="w-4 h-4" />
             Preview project page →

@@ -76,7 +76,7 @@ const About = () => {
       <section className="relative pt-32 pb-20 overflow-hidden" ref={heroRef.ref}>
         <div className="absolute inset-0">
           <img src={aboutHero} alt="" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-b from-slate-900/80 via-slate-900/70 to-slate-900/90" />
+          <div className="absolute inset-0 bg-night-2" />
         </div>
         <div className="container mx-auto px-4 relative z-10">
           <div
@@ -85,14 +85,14 @@ const About = () => {
               heroRef.isVisible && "visible"
             )}
           >
-            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-500/20 text-amber-400 text-sm font-bold uppercase tracking-wider border border-amber-500/30">
+            <span className="inline-flex items-center gap-2 px-4 py-2 bg-lamp/20 text-lamp text-sm font-bold border border-lamp/30">
               About Us
             </span>
-            <h1 className="text-3xl md:text-4xl font-bold text-white">
+            <h1 className="text-3xl md:text-4xl font-bold text-paper">
               Facade Specialists in{" "}
               <span className="text-gradient-gold">Pune &amp; Mumbai</span>
             </h1>
-            <p className="text-white/80 text-lg">
+            <p className="text-paper/80 text-lg">
               Fine Glaze designs, fabricates, installs and maintains facade
               systems for developers and building owners in Pune and Mumbai.
               Everything on this page is taken from our company profile — and
@@ -112,7 +112,7 @@ const About = () => {
                 storyRef.isVisible && "visible"
               )}
             >
-              <figure className="rounded-xl overflow-hidden border border-border bg-card">
+              <figure className="overflow-hidden border border-border bg-card">
                 <img
                   src={aboutStoryPhoto}
                   alt="Fine Glaze store frontage in Mohammed Wadi, Pune"
@@ -127,7 +127,7 @@ const About = () => {
                 </figcaption>
               </figure>
 
-              <div className="mt-5 bg-primary text-primary-foreground p-5 rounded-xl shadow-lg">
+              <div className="mt-5 bg-primary text-primary-foreground p-5">
                 <Award size={32} className="mb-2" />
                 <p className="font-semibold">{company.award.title}</p>
                 <p className="text-sm text-primary-foreground/70">
@@ -143,7 +143,7 @@ const About = () => {
               )}
               style={{ transitionDelay: "0.1s" }}
             >
-              <span className="text-primary font-medium uppercase tracking-wider text-sm">
+              <span className="text-primary font-medium text-sm">
                 Our Story
               </span>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground">
@@ -185,7 +185,7 @@ const About = () => {
               videoRef.isVisible && "visible"
             )}
           >
-            <span className="text-primary font-medium uppercase tracking-wider text-sm">
+            <span className="text-primary font-medium text-sm">
               Company Overview
             </span>
 
@@ -200,7 +200,7 @@ const About = () => {
               commitment to quality and safety.
             </p>
 
-            <div className="rounded-xl overflow-hidden shadow-xl" style={{ padding: "56.25% 0 0 0", position: "relative" }}>
+            <div className="overflow-hidden" style={{ padding: "56.25% 0 0 0", position: "relative" }}>
               <iframe
                 src="https://player.vimeo.com/video/1191408845?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479"
                 frameBorder="0"
@@ -219,7 +219,7 @@ const About = () => {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-8">
             <div className="glass-card metallic-border p-8 space-y-4">
-              <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center">
+              <div className="w-14 h-14 bg-primary/10 flex items-center justify-center">
                 <Target size={28} className="text-primary" />
               </div>
               <h3 className="text-2xl font-bold text-foreground">
@@ -231,7 +231,7 @@ const About = () => {
             </div>
 
             <div className="glass-card metallic-border p-8 space-y-4">
-              <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center">
+              <div className="w-14 h-14 bg-primary/10 flex items-center justify-center">
                 <Eye size={28} className="text-primary" />
               </div>
               <h3 className="text-2xl font-bold text-foreground">
@@ -249,7 +249,7 @@ const About = () => {
       <section className="py-20 bg-muted" aria-labelledby="team-heading">
         <div className="container mx-auto px-4">
           <div className="text-center space-y-3 mb-12 max-w-2xl mx-auto">
-            <span className="text-primary font-medium uppercase tracking-wider text-sm">Our Team</span>
+            <span className="text-primary font-medium text-sm">Our Team</span>
             <h2 id="team-heading" className="text-3xl md:text-4xl font-bold text-foreground">
               The people who answer for your facade
             </h2>
@@ -259,13 +259,13 @@ const About = () => {
             </p>
           </div>
           <div className="grid lg:grid-cols-3 gap-6">
-            <article className="lg:row-span-2 rounded-xl border border-amber-500/30 bg-amber-500/5 p-6 space-y-3">
-              <p className="text-xs font-bold uppercase tracking-widest text-amber-700">{company.founder.role}</p>
+            <article className="lg:row-span-2 border border-lamp/30 bg-lamp/5 p-6 space-y-3">
+              <p className="text-xs font-bold text-lamp">{company.founder.role}</p>
               <h3 className="text-2xl font-bold text-foreground">{company.founder.name}</h3>
               <p className="text-muted-foreground">{company.founder.bio}</p>
             </article>
             {company.team.map((m) => (
-              <article key={m.name} className="rounded-xl border border-border bg-card p-5">
+              <article key={m.name} className="border border-border bg-card p-5">
                 <h3 className="text-lg font-semibold text-foreground">{m.name}</h3>
                 <p className="text-sm font-medium text-primary">{m.role}</p>
                 <p className="text-sm text-muted-foreground mt-1">{m.note}</p>
@@ -279,7 +279,7 @@ const About = () => {
       <section className="py-20 bg-background" aria-labelledby="credentials-heading">
         <div className="container mx-auto px-4">
           <div className="text-center space-y-3 mb-12 max-w-2xl mx-auto">
-            <span className="text-primary font-medium uppercase tracking-wider text-sm">Company Facts</span>
+            <span className="text-primary font-medium text-sm">Company Facts</span>
             <h2 id="credentials-heading" className="text-3xl md:text-4xl font-bold text-foreground">
               Credentials for vendor registration
             </h2>
@@ -299,10 +299,10 @@ const About = () => {
               { icon: Shield, k: "Third-party testing", v: "Air, water and structural testing (ASTM) arranged on request" },
               { icon: Award, k: "Defect liability", v: "DLP support offered as per contract terms" },
             ].map(({ icon: Icon, k, v }) => (
-              <div key={k} className="rounded-xl border border-border bg-card p-5 flex gap-3">
+              <div key={k} className="border border-border bg-card p-5 flex gap-3">
                 <Icon size={20} className="text-primary shrink-0 mt-0.5" aria-hidden="true" />
                 <div>
-                  <dt className="text-xs font-bold uppercase tracking-wider text-muted-foreground">{k}</dt>
+                  <dt className="text-xs font-bold text-muted-foreground">{k}</dt>
                   <dd className="text-sm font-medium text-foreground mt-1">{v}</dd>
                 </div>
               </div>
@@ -311,13 +311,13 @@ const About = () => {
           <div className="mt-10 flex flex-col sm:flex-row gap-3 justify-center">
             <Link
               to="/quality-safety"
-              className="inline-flex items-center justify-center rounded-lg bg-primary text-primary-foreground px-6 py-3 font-semibold hover:opacity-90"
+              className="inline-flex items-center justify-center bg-primary text-primary-foreground px-6 py-3 font-semibold hover:opacity-90"
             >
               How we control quality &amp; safety
             </Link>
             <a
               href={telHref}
-              className="inline-flex items-center justify-center rounded-lg border border-border bg-card px-6 py-3 font-semibold hover:border-primary"
+              className="inline-flex items-center justify-center border border-border bg-card px-6 py-3 font-semibold hover:border-primary"
             >
               Call {company.phone.mobileDisplay}
             </a>
@@ -334,7 +334,7 @@ const About = () => {
               valuesRef.isVisible && "visible"
             )}
           >
-            <span className="text-primary font-medium uppercase tracking-wider text-sm">
+            <span className="text-primary font-medium text-sm">
               Our Values
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground">
@@ -352,7 +352,7 @@ const About = () => {
                 )}
                 style={{ transitionDelay: `${index * 0.1}s` }}
               >
-                <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto">
+                <div className="w-16 h-16 bg-primary/10 flex items-center justify-center mx-auto">
                   <value.icon size={32} className="text-primary" />
                 </div>
                 <h3 className="text-xl font-semibold text-foreground">

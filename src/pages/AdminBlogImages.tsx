@@ -156,12 +156,12 @@ export default function AdminBlogImages() {
   // ─── Login screen ─────────────────────────────────────────────────────────
   if (!authed) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-slate-950 p-4">
+      <div className="min-h-screen flex items-center justify-center bg-night p-4">
         <Toaster richColors position="top-center" />
         <div className="w-full max-w-sm space-y-4 text-center">
-          <Lock className="mx-auto text-amber-500" size={40} />
-          <h1 className="text-2xl font-bold text-white">Blog Images Admin</h1>
-          <p className="text-slate-400 text-sm">
+          <Lock className="mx-auto text-lamp" size={40} />
+          <h1 className="text-2xl font-bold text-paper">Blog Images Admin</h1>
+          <p className="text-mute text-sm">
             Upload hero images for blog articles
           </p>
           <form
@@ -176,9 +176,9 @@ export default function AdminBlogImages() {
               placeholder="Password"
               value={pass}
               onChange={(e) => setPass(e.target.value)}
-              className="bg-slate-800 border-slate-700 text-white"
+              className="bg-night-2 border-line text-paper"
             />
-            <Button type="submit" className="bg-amber-600 hover:bg-amber-700">
+            <Button type="submit" className="bg-lamp hover:bg-lamp/90">
               Enter
             </Button>
           </form>
@@ -199,22 +199,22 @@ export default function AdminBlogImages() {
 
   // ─── Main UI ──────────────────────────────────────────────────────────────
   return (
-    <div className="min-h-screen bg-slate-950 text-white">
+    <div className="min-h-screen bg-night text-paper">
       <Toaster richColors position="top-center" />
 
       {/* Header */}
-      <header className="sticky top-0 z-50 bg-slate-900/90 backdrop-blur border-b border-slate-800">
+      <header className="sticky top-0 z-50 bg-night-2/90 border-b border-line">
         <div className="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <a
               href="/admin"
-              className="text-slate-400 hover:text-white transition-colors"
+              className="text-mute hover:text-paper transition-colors"
             >
               <ArrowLeft size={20} />
             </a>
             <div>
               <h1 className="text-lg font-bold">Blog Images</h1>
-              <p className="text-xs text-slate-400">
+              <p className="text-xs text-mute">
                 {uploadedCount}/{totalCount} articles have custom images
               </p>
             </div>
@@ -222,13 +222,13 @@ export default function AdminBlogImages() {
           <div className="relative w-64">
             <Search
               size={16}
-              className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500"
+              className="absolute left-3 top-1/2 -translate-y-1/2 text-mute"
             />
             <Input
               placeholder="Search articles…"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="pl-9 bg-slate-800 border-slate-700 text-white text-sm"
+              className="pl-9 bg-night-2 border-line text-paper text-sm"
             />
           </div>
         </div>
@@ -238,7 +238,7 @@ export default function AdminBlogImages() {
       <main className="max-w-5xl mx-auto px-4 py-8">
         {loading ? (
           <div className="flex justify-center py-20">
-            <Loader2 className="animate-spin text-amber-500" size={32} />
+            <Loader2 className="animate-spin text-lamp" size={32} />
           </div>
         ) : (
           <div className="space-y-4">
@@ -252,14 +252,14 @@ export default function AdminBlogImages() {
               return (
                 <div
                   key={post.slug}
-                  className={`flex items-center gap-4 p-4 rounded-xl border transition-colors ${
+                  className={`flex items-center gap-4 p-4  border transition-colors ${
                     hasCustom
                       ? "border-emerald-800/50 bg-emerald-950/20"
-                      : "border-slate-800 bg-slate-900/50"
+                      : "border-line bg-night-2/50"
                   }`}
                 >
                   {/* Thumbnail */}
-                  <div className="w-24 h-16 rounded-lg overflow-hidden shrink-0 bg-slate-800">
+                  <div className="w-24 h-16 overflow-hidden shrink-0 bg-night-2">
                     <img
                       src={displayImage}
                       alt={post.title}
@@ -279,14 +279,14 @@ export default function AdminBlogImages() {
                       ) : (
                         <XCircle
                           size={14}
-                          className="text-slate-500 shrink-0"
+                          className="text-mute shrink-0"
                         />
                       )}
                       <h3 className="text-sm font-semibold truncate">
                         {post.title}
                       </h3>
                     </div>
-                    <p className="text-xs text-slate-500 truncate">
+                    <p className="text-xs text-mute truncate">
                       {post.slug} · {post.date}
                     </p>
                   </div>
@@ -313,7 +313,7 @@ export default function AdminBlogImages() {
                       onClick={() =>
                         fileRefs.current[post.slug]?.click()
                       }
-                      className="text-xs gap-1.5 border-slate-700 hover:border-amber-600 hover:text-amber-500"
+                      className="text-xs gap-1.5 border-line hover:border-lamp/40 hover:text-lamp"
                     >
                       {isUploading ? (
                         <Loader2 size={14} className="animate-spin" />

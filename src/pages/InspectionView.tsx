@@ -56,9 +56,9 @@ export default function InspectionView() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen bg-night-2">
       {/* Header - hidden during print */}
-      <div className="bg-white border-b sticky top-0 z-40 print:hidden">
+      <div className="bg-night border-b sticky top-0 z-40 print:hidden">
         <div className="max-w-4xl mx-auto px-4 py-3">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
@@ -106,7 +106,7 @@ export default function InspectionView() {
 
       {/* Report Content */}
       <div className="max-w-4xl mx-auto px-4 py-6 print:p-0 print:max-w-none">
-        <div className="bg-white rounded-lg shadow-sm print:shadow-none print:rounded-none">
+        <div className="bg-night print:rounded-none">
           <InspectionReport ref={reportRef} inspection={inspection} />
         </div>
       </div>

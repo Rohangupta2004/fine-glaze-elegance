@@ -30,19 +30,19 @@ export default function Blog() {
       />
 
       {/* HERO */}
-      <section className="relative pt-32 pb-16 text-white overflow-hidden">
+      <section className="relative pt-32 pb-16 text-paper overflow-hidden">
         <div className="absolute inset-0">
           <img src="/Glazing.webp" alt="" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-b from-slate-900/85 via-slate-900/75 to-slate-900/90" />
+          <div className="absolute inset-0 bg-night-2" />
         </div>
         <div className="container mx-auto px-4 text-center max-w-3xl relative z-10">
-          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-transparent text-amber-400 text-sm font-bold uppercase tracking-wider border border-amber-500/40 mb-6">
+          <span className="inline-flex items-center gap-2 px-4 py-2 bg-transparent text-lamp text-sm font-bold border border-lamp/40 mb-6">
             <Tag size={14} /> Knowledge Hub
           </span>
           <h1 className="text-3xl md:text-4xl font-extrabold mb-4">
             Facade & Glazing <span className="text-gradient">Insights</span>
           </h1>
-          <p className="text-slate-300 text-lg">
+          <p className="text-paper/80 text-lg">
             Pricing guides, technical comparisons, and expert tips to help you
             make smarter facade decisions.
           </p>
@@ -57,7 +57,7 @@ export default function Blog() {
               <Link
                 key={post.slug}
                 to={`/blog/${post.slug}`}
-                className="group bg-background rounded-2xl overflow-hidden shadow-sm border hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                className="group bg-background overflow-hidden border hover:-translate-y-1 transition-all duration-300"
               >
                 {/* Image */}
                 <div className="aspect-[16/9] overflow-hidden">
@@ -76,7 +76,7 @@ export default function Blog() {
                 {/* Content */}
                 <div className="p-6 space-y-3">
                   <div className="flex items-center gap-3 text-xs text-muted-foreground">
-                    <span className="px-2.5 py-1 rounded-full bg-primary/10 text-primary font-bold">
+                    <span className="px-2.5 py-1 bg-primary/10 text-primary font-bold">
                       {post.category}
                     </span>
                     <span className="flex items-center gap-1">
@@ -107,14 +107,14 @@ export default function Blog() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 bg-slate-900 text-white text-center">
+      <section className="py-16 bg-night-2 text-paper text-center">
         <div className="container mx-auto px-4">
           <h2 className="text-2xl font-bold mb-3">Have a Facade Question?</h2>
-          <p className="text-slate-400 mb-6">
+          <p className="text-mute mb-6">
             Our team is happy to help. Get in touch to discuss your project.
           </p>
           <Link to="/contact">
-            <button className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
+            <button className="bg-lamp hover:bg-lamp/90 text-lamp-ink px-8 py-3 font-semibold transition-colors">
               Ask Our Experts
             </button>
           </Link>

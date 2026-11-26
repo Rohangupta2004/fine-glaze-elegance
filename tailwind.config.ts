@@ -69,9 +69,15 @@ export default {
   			}
   		},
   		borderRadius: {
-  			lg: 'var(--radius)',
-  			md: 'calc(var(--radius) - 2px)',
-  			sm: 'calc(var(--radius) - 4px)'
+  			none: '0',
+  			sm: '0',
+  			DEFAULT: '0',
+  			md: '0',
+  			lg: '0',
+  			xl: '0',
+  			'2xl': '0',
+  			'3xl': '0',
+  			full: '0'
   		},
   		fontFamily: {
   			sans: [
@@ -174,15 +180,16 @@ export default {
   			shimmer: 'shimmer 2s linear infinite'
   		},
   		boxShadow: {
-  			glass: '0 8px 32px 0 hsl(220 30% 10% / 0.1)',
-  			glow: '0 0 40px hsl(32 100% 70% / 0.3)',
-  			'2xs': 'var(--shadow-2xs)',
-  			xs: 'var(--shadow-xs)',
-  			sm: 'var(--shadow-sm)',
-  			md: 'var(--shadow-md)',
-  			lg: 'var(--shadow-lg)',
-  			xl: 'var(--shadow-xl)',
-  			'2xl': 'var(--shadow-2xl)'
+  			glass: 'none',
+  			glow: 'none',
+  			'2xs': 'none',
+  			xs: 'none',
+  			sm: 'none',
+  			DEFAULT: 'none',
+  			md: 'none',
+  			lg: 'none',
+  			xl: 'none',
+  			'2xl': 'none'
   		}
   	}
   },

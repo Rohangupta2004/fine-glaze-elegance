@@ -66,14 +66,14 @@ export default function InspectionDashboard() {
       : 0;
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-night-2">
       {/* Header */}
-      <div className="bg-white border-b sticky top-0 z-40">
+      <div className="bg-night border-b sticky top-0 z-40">
         <div className="max-w-4xl mx-auto px-4 py-3">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="h-8 w-8 bg-blue-800 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xs">FG</span>
+              <div className="h-8 w-8 bg-blue-800 flex items-center justify-center">
+                <span className="text-paper font-bold text-xs">FG</span>
               </div>
               <div>
                 <h1 className="text-lg font-bold">Site Inspections</h1>
@@ -107,7 +107,7 @@ export default function InspectionDashboard() {
           <Card>
             <CardContent className="pt-4 pb-3 px-4">
               <div className="flex items-center gap-2">
-                <AlertTriangle className="h-4 w-4 text-amber-500" />
+                <AlertTriangle className="h-4 w-4 text-lamp" />
                 <div>
                   <p className="text-2xl font-bold">
                     {totalIssues}

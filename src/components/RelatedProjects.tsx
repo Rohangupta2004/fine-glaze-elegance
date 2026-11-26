@@ -41,14 +41,14 @@ export function RelatedProjects({ heading, intro, ...filter }: RelatedProjectsPr
   const items = matchProjects(filter);
   if (items.length === 0) return null;
   return (
-    <section className="py-16 bg-stone-950 text-white" aria-labelledby="related-projects">
+    <section className="py-16 bg-night text-paper" aria-labelledby="related-projects">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
           <div className="max-w-2xl">
             <h2 id="related-projects" className="text-2xl md:text-3xl font-bold">{heading}</h2>
-            {intro && <p className="mt-2 text-stone-400">{intro}</p>}
+            {intro && <p className="mt-2 text-mute">{intro}</p>}
           </div>
-          <Link to="/portfolio" className="inline-flex items-center text-amber-400 font-semibold hover:text-amber-300">
+          <Link to="/portfolio" className="inline-flex items-center text-lamp font-semibold hover:text-lamp">
             All projects <ArrowRight className="ml-1 h-4 w-4" aria-hidden="true" />
           </Link>
         </div>
@@ -57,18 +57,18 @@ export function RelatedProjects({ heading, intro, ...filter }: RelatedProjectsPr
             <li key={slug}>
               <Link
                 to={`/project/${slug}`}
-                className="group block h-full rounded-xl overflow-hidden border border-stone-800 bg-stone-900 hover:border-amber-500/60 transition-colors"
+                className="group block h-full overflow-hidden border border-line bg-night-2 hover:border-lamp/60 transition-colors"
               >
                 <img src={p.image} alt={`${p.title}, ${p.location} — ${p.scope}`} className="h-44 w-full object-cover" loading="lazy" />
                 <div className="p-4">
-                  <p className="text-[11px] font-semibold uppercase tracking-wider text-amber-400">
+                  <p className="text-[11px] font-semibold text-lamp">
                     {p.status === "Completed" ? `Completed ${p.year}` : "Ongoing"} · {p.client}
                   </p>
-                  <h3 className="mt-1 font-semibold leading-snug group-hover:text-amber-300">{p.title}</h3>
-                  <p className="mt-1 flex items-center gap-1 text-xs text-stone-400">
+                  <h3 className="mt-1 font-semibold leading-snug group-hover:text-lamp">{p.title}</h3>
+                  <p className="mt-1 flex items-center gap-1 text-xs text-mute">
                     <MapPin className="h-3 w-3" aria-hidden="true" /> {p.location}
                   </p>
-                  <p className="mt-2 text-sm text-stone-300">{p.scope}</p>
+                  <p className="mt-2 text-sm text-paper/80">{p.scope}</p>
                 </div>
               </Link>
             </li>

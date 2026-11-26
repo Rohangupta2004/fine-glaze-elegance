@@ -49,16 +49,16 @@ export const ServiceHero = ({
           loading="eager"
         />
         {/* Light top gradient just for navbar legibility */}
-        <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-slate-900/50 to-transparent" />
+        <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-night-2/50 to-transparent" />
         {/* Seam that blends the image into the dark panel on large screens */}
-        <div className="hidden lg:block absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-slate-900 to-transparent" />
+        <div className="hidden lg:block absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-night-2 to-transparent" />
       </div>
 
       {/* LEFT — dark text panel */}
-      <div className="relative order-2 lg:order-1 bg-gradient-to-br from-slate-900 to-slate-800 text-white flex items-center">
+      <div className="relative order-2 lg:order-1 bg-night-2 text-paper flex items-center">
         <div className="w-full px-6 md:px-12 lg:px-14 xl:px-20 pt-12 lg:pt-32 pb-14">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-transparent border border-amber-400/40 text-amber-300 text-xs font-semibold uppercase tracking-[0.15em] mb-5">
-            <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-transparent border border-lamp/40 text-lamp text-xs font-semibold mb-5">
+            <span className="w-2 h-2 bg-lamp animate-pulse" />
             Fine Glaze
           </div>
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight mb-5">
@@ -66,10 +66,10 @@ export const ServiceHero = ({
             <span className="text-gradient-gold">{titleAccent}</span>
             {titleTail}
           </h1>
-          <p className="text-lg text-white/75 mb-8 max-w-xl">{subtitle}</p>
+          <p className="text-lg text-paper/75 mb-8 max-w-xl">{subtitle}</p>
           <div className="flex flex-wrap gap-4 mb-10">
             <Link to={primaryCta.to}>
-              <Button size="lg" className="bg-amber-600 hover:bg-amber-700">
+              <Button size="lg" className="bg-lamp hover:bg-lamp/90">
                 {primaryCta.label}
               </Button>
             </Link>
@@ -77,7 +77,7 @@ export const ServiceHero = ({
               <Button
                 size="lg"
                 variant="outline"
-                className="border-white/40 text-white bg-white/5 hover:bg-white hover:text-slate-900"
+                className="border-paper/40 text-paper bg-paper/5 hover:bg-night hover:text-paper"
               >
                 {secondaryCta.label}
               </Button>
@@ -85,19 +85,19 @@ export const ServiceHero = ({
           </div>
 
           {/* Feature icons */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-5 gap-y-6 border-t border-white/15 pt-7">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-5 gap-y-6 border-t border-line pt-7">
             {features.map((f, i) => {
               const Icon = f.icon;
               return (
                 <div key={i} className="group flex flex-col gap-2.5">
-                  <div className="w-11 h-11 bg-white/10 backdrop-blur-sm border border-white/15 flex items-center justify-center text-amber-400 group-hover:bg-amber-500 group-hover:text-white transition-colors duration-200">
+                  <div className="w-11 h-11 bg-paper/10 border border-line flex items-center justify-center text-lamp group-hover:bg-lamp/90 group-hover:text-lamp-ink transition-colors duration-200">
                     <Icon size={20} />
                   </div>
                   <div>
-                    <h3 className="font-bold text-xs uppercase tracking-wide mb-0.5 leading-tight">
+                    <h3 className="font-bold text-xs tracking-wide mb-0.5 leading-tight">
                       {f.title}
                     </h3>
-                    <p className="text-xs text-white/60 leading-snug">
+                    <p className="text-xs text-mute leading-snug">
                       {f.description}
                     </p>
                   </div>

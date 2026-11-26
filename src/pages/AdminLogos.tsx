@@ -178,12 +178,12 @@ export default function AdminLogos() {
   // ─── Login screen ─────────────────────────────────────────────────────────
   if (!authed) {
     return (
-      <div className="min-h-screen bg-slate-50 flex items-center justify-center">
+      <div className="min-h-screen bg-night-2 flex items-center justify-center">
         <Toaster richColors />
-        <div className="bg-white p-8 rounded-xl shadow-lg w-full max-w-sm space-y-4">
+        <div className="bg-night p-8 w-full max-w-sm space-y-4">
           <div className="flex items-center gap-3 mb-2">
-            <div className="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center">
-              <Lock className="w-5 h-5 text-amber-600" />
+            <div className="w-10 h-10 bg-lamp/10 flex items-center justify-center">
+              <Lock className="w-5 h-5 text-lamp" />
             </div>
             <div>
               <h1 className="text-lg font-bold">Client Logos</h1>
@@ -207,11 +207,11 @@ export default function AdminLogos() {
 
   // ─── Main UI ──────────────────────────────────────────────────────────────
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="min-h-screen bg-night-2">
       <Toaster richColors />
 
       {/* Header */}
-      <div className="bg-white border-b sticky top-0 z-50">
+      <div className="bg-night border-b sticky top-0 z-50">
         <div className="max-w-4xl mx-auto px-4 py-4 flex items-center gap-4">
           <a
             href="/admin/images"
@@ -230,9 +230,9 @@ export default function AdminLogos() {
 
       <div className="max-w-4xl mx-auto px-4 py-8 space-y-8">
         {/* Upload Section */}
-        <div className="bg-white rounded-xl border p-6 space-y-4">
+        <div className="bg-night border p-6 space-y-4">
           <h2 className="text-lg font-semibold flex items-center gap-2">
-            <ImagePlus size={20} className="text-amber-600" />
+            <ImagePlus size={20} className="text-lamp" />
             Add Client Logo
           </h2>
 
@@ -255,13 +255,13 @@ export default function AdminLogos() {
                 ref={fileRef}
                 type="file"
                 accept="image/*"
-                className="file:mr-2 file:py-1 file:px-3 file:rounded-md file:border-0 file:text-sm file:bg-slate-100 file:text-slate-700 hover:file:bg-slate-200"
+                className="file:mr-2 file:py-1 file:px-3 file:border-0 file:text-sm file:bg-night-2 file:text-paper hover:file:bg-line"
               />
             </div>
             <Button
               onClick={handleUpload}
               disabled={uploading}
-              className="bg-amber-600 hover:bg-amber-700 h-10"
+              className="bg-lamp hover:bg-lamp/90 h-10"
             >
               {uploading ? (
                 <Loader2 size={16} className="animate-spin mr-2" />
@@ -278,7 +278,7 @@ export default function AdminLogos() {
         </div>
 
         {/* Logos List */}
-        <div className="bg-white rounded-xl border">
+        <div className="bg-night border">
           <div className="p-4 border-b">
             <h2 className="font-semibold">
               Uploaded Logos ({logos.length})
@@ -305,7 +305,7 @@ export default function AdminLogos() {
               {logos.map((logo, i) => (
                 <div
                   key={logo.filename}
-                  className="flex items-center gap-4 p-4 hover:bg-slate-50 transition-colors"
+                  className="flex items-center gap-4 p-4 hover:bg-night-2 transition-colors"
                 >
                   {/* Grip icon */}
                   <div className="text-muted-foreground/40">
@@ -313,7 +313,7 @@ export default function AdminLogos() {
                   </div>
 
                   {/* Logo preview */}
-                  <div className="w-24 h-14 rounded-lg border bg-white flex items-center justify-center p-2 flex-shrink-0">
+                  <div className="w-24 h-14 border bg-night flex items-center justify-center p-2 flex-shrink-0">
                     <img
                       src={getPublicUrl(logo.filename)}
                       alt={logo.name}
