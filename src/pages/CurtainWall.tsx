@@ -194,18 +194,34 @@ export default function CurtainWall() {
       },
       {
         "@type": "Question",
-        name: "What is a unitized curtain wall system?",
+        name: "What is the advantage of a unitized curtain wall system?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Unitized curtain walls are factory pre-assembled and pre-glazed glass modules that interlock on site, shortening erection time and giving controlled factory quality. They suit tall buildings.",
+          text: "Unitized curtain walls are factory-assembled and pre-glazed in controlled conditions, which shortens on-site erection and improves quality control. They suit tall buildings and tight programmes, subject to design and access.",
         },
       },
       {
         "@type": "Question",
-        name: "How much does a curtain wall cost per sq ft in India?",
+        name: "What is the typical curtain wall cost per sq ft in India?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Curtain wall cost depends on the system, glass, height, wind load and access. Fine Glaze prepares BOQ-based quotations against drawings.",
+          text: "Curtain wall cost depends on the system (stick, semi-unitized, unitized or spider), glass, height, wind load and access, so a reliable figure needs drawings. Fine Glaze prepares BOQ-based quotations.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "How do I request a quotation for a commercial curtain wall project?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "You can request a quotation by uploading your project drawings or BOQ on our contact page, calling +91 8369233566, or emailing info@fineglaze.com. Our office hours are Monday to Saturday, 09:00 to 18:00.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Do you install structural glazing and ACP cladding alongside curtain walls?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes, Fine Glaze offers complete building envelope solutions including structural glazing, ACP aluminium cladding, glass railings, and glass skylights.",
         },
       },
     ],
@@ -524,10 +540,10 @@ export default function CurtainWall() {
                   </thead>
                   <tbody className="divide-y divide-stone-100 text-sm">
                     {[
-                      { system: "Unitized Curtain Wall", glass: "Factory pre-assembled 6063-T6, DGU Low-E, EPDM", price: "Quoted on drawings" },
+                      { system: "Unitized Curtain Wall", glass: "Factory pre-assembled aluminium, DGU Low-E, EPDM", price: "Quoted on drawings" },
                       { system: "Stick Curtain Wall System", glass: "On-site assembled mullions, 6mm / DGU glass", price: "Quoted on drawings" },
                       { system: "Semi-Unitized System", glass: "Pre-glazed shop units with site-fixed frames", price: "Quoted on drawings" },
-                      { system: "Spider Point-Fixed System", glass: "SS 316 fittings with laminated toughened glass", price: "Quoted on drawings" },
+                      { system: "Spider Point-Fixed System", glass: "Stainless steel fittings with laminated toughened glass", price: "Quoted on drawings" },
                     ].map((row) => (
                       <tr key={row.system} className="hover:bg-stone-50 transition-colors">
                         <td className="py-4 px-6 font-bold text-stone-900">{row.system}</td>
@@ -541,7 +557,7 @@ export default function CurtainWall() {
             </div>
 
             <p className="text-center text-xs text-stone-400">
-              Note: Rates include materials, structural silicone, and installation. High-rise scaffolding (&gt;5 floors) adds ₹30-60/sq ft. Read our detailed guide on <Link to="/blog/curtain-wall-cost-per-sq-ft-india-2026" className="text-amber-700 underline font-medium">curtain wall cost per sq ft</Link>.
+              Note: Cost depends on system, glass, height and access. Read our guide on <Link to="/blog/curtain-wall-cost-per-sq-ft-india-2026" className="text-amber-700 underline font-medium">what drives curtain wall cost</Link>.
             </p>
           </FadeIn>
         </div>
@@ -552,13 +568,13 @@ export default function CurtainWall() {
         <div className="container mx-auto px-6 md:px-16 relative z-10 max-w-4xl text-center">
           <FadeIn>
             <span className="inline-block bg-amber-400/20 text-amber-400 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-6">
-              Get Expert Advice & Free BOQ
+              Request a BOQ-Based Quotation
             </span>
             <h2 className="text-3xl md:text-5xl font-extrabold mb-6 tracking-tight">
               Request a Curtain Wall Quotation
             </h2>
             <p className="text-stone-300 text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
-              Planning a commercial facade, office tower, or IT park in Pune, Mumbai, or Navi Mumbai? Receive a detailed BOQ, structural feasibility assessment, and glass specification options. We call you back the same business day, Monday to Saturday, 9am to 6pm.
+              Planning a commercial facade, office tower, or IT park in Pune, Mumbai, or Navi Mumbai? Send drawings and we will prepare a BOQ-based quotation with glass specification options. Our office hours are Monday to Saturday, 09:00 to 18:00.
             </p>
 
             <div className="grid md:grid-cols-3 gap-4 max-w-2xl mx-auto mb-10">
@@ -607,7 +623,7 @@ export default function CurtainWall() {
               />
               <FAQItem
                 q="How do I request a quotation for a commercial curtain wall project?"
-                a="You can request a quotation by uploading your project drawings or BOQ on our contact page, calling +91 8369233566, or emailing info@fineglaze.com. We call you back the same business day, Monday to Saturday, 9am to 6pm."
+                a="You can request a quotation by uploading your project drawings or BOQ on our contact page, calling +91 8369233566, or emailing info@fineglaze.com. Our office hours are Monday to Saturday, 09:00 to 18:00."
               />
               <FAQItem
                 q="Do you install structural glazing and ACP cladding alongside curtain walls?"

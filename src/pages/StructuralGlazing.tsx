@@ -193,10 +193,34 @@ export default function StructuralGlazing() {
       },
       {
         "@type": "Question",
-        name: "How much does structural glazing cost per sq ft in India in 2026?",
+        name: "How much does structural glazing cost per sq ft in India?",
         acceptedAnswer: {
           "@type": "Answer",
           text: "Structural glazing cost depends on the configuration (2-side, 4-side or spider), glass, height and access, so it needs drawings to price. Fine Glaze prepares BOQ-based quotations.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Is structural glazing safe for high-rise buildings?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Structural glazing can be used on tall buildings when it is designed for the project wind load, with proper sealant, retention and drainage. Fine Glaze checks member sizing, fixing and anchorage and procures DOWSIL structural silicone or approved equivalents.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "How long does installation take?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Installation time depends on facade area, building height, access and glass lead time, so we confirm the programme per project after survey and design approval. Fabrication is batched at our Pisoli unit and despatched to site.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Do you offer maintenance after installation?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes. We offer annual maintenance contracts for glazing, glass and cladding, covering inspection, sealant re-application, glass replacement and cleaning, with a written condition report.",
         },
       },
     ],

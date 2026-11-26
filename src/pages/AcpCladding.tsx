@@ -204,6 +204,22 @@ export default function AcpCladding() {
           text: "ACP cladding cost depends on panel brand, core, finish, sub-frame, height and access, so a fair figure needs drawings. Fine Glaze prepares BOQ-based quotations with the brand and finish specification stated.",
         },
       },
+      {
+        "@type": "Question",
+        name: "How long does PVDF ACP last?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "PVDF (fluorocarbon) coated ACP panels typically carry a manufacturer colour warranty of up to 20 years (check the brand's warranty document for your project). They resist UV fading, chalking, and chemical exposure far better than PE coated panels — making them the preferred choice for external facades.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Can ACP be used for renovation and existing buildings?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes. ACP is ideal for building renovation because it is lightweight, installs over existing facades, and transforms the appearance quickly. The aluminium sub-frame can be adapted to any building surface.",
+        },
+      },
     ],
   };
 

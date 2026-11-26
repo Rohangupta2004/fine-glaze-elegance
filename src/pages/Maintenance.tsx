@@ -203,6 +203,22 @@ export default function Maintenance() {
           text: "Facade cleaning cost depends on building height, access method (rope access, cradle or BMU), glass area and how soiled the glass is. Fine Glaze quotes per project after reviewing the building.",
         },
       },
+      {
+        "@type": "Question",
+        name: "Can you replace glass panels on occupied buildings?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes. Glass replacement on an occupied building is planned with the building management, with agreed access, timing, edge protection and debris control. Fine Glaze plans the sequence per site.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Do you service facades installed by other companies?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes. We service all facade types regardless of the original installer. Our engineers assess the system, identify the glass and sealant specifications, and source matching materials for seamless repairs.",
+        },
+      },
     ],
   };
 

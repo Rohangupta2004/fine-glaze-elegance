@@ -203,6 +203,22 @@ export default function Louvers() {
           text: "Louver cost depends on blade profile, fixed or operable or motorised type, size, finish and access, so a reliable figure needs drawings. Fine Glaze prepares BOQ-based quotations.",
         },
       },
+      {
+        "@type": "Question",
+        name: "Can motorised louvers be connected to building management systems?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Motorised louvers can often be linked to a building management system with sun sensors, temperature input or timers, depending on the motor and control system chosen. Confirm integration needs at design stage.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "What finishes are available for aluminium louvers?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Louvers are available in any RAL colour via powder coating, or in natural/bronze/black anodised finishes. Wood-grain effect coatings are also available for architectural projects requiring a natural appearance.",
+        },
+      },
     ],
   };
 

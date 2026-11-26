@@ -205,6 +205,22 @@ export default function Skylights() {
           text: "Skylights can cut daytime lighting use by bringing in daylight, and low-E or solar-control glass limits heat gain. Net energy effect depends on size, orientation and glass, so check it with the project's energy model.",
         },
       },
+      {
+        "@type": "Question",
+        name: "What type of glass is used in skylights?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Overhead glazing is normally laminated safety glass, where two layers are bonded with an interlayer so broken pieces stay in place. Double glazed and low-E options are available, and the build-up follows the structural check.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "How long does skylight installation take?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Installation time depends on span, structure, glass lead time and site access, so we confirm the programme per project after survey and design approval. We work around your construction schedule.",
+        },
+      },
     ],
   };
 

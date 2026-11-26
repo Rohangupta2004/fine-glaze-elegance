@@ -203,6 +203,22 @@ export default function GlassPartitions() {
           text: "Glass partition cost depends on glass type (single, double glazed or smart glass), hardware, doors and floor-to-ceiling height, so it is priced against drawings. Fine Glaze prepares BOQ-based quotations.",
         },
       },
+      {
+        "@type": "Question",
+        name: "Can glass partitions have doors?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes. We install frameless glass swing doors, sliding doors, and even automatic sensor doors within glass partition systems. All doors come with floor springs or patch fittings and soft-close mechanisms.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Is the nano-coating on shower glass worth it?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes. Nano-coating creates a hydrophobic surface that repels water and prevents limescale build-up. Shower glass stays cleaner for longer and requires significantly less scrubbing — especially valuable in hard-water areas across India.",
+        },
+      },
     ],
   };
 

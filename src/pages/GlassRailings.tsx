@@ -204,6 +204,22 @@ export default function GlassRailings() {
           text: "Glass railing cost depends on the system (frameless, semi-frameless, spigot or standoff), glass thickness, hardware finish and site conditions. It is priced per running foot against drawings. Fine Glaze prepares BOQ-based quotations.",
         },
       },
+      {
+        "@type": "Question",
+        name: "Can glass railings be used outdoors and in coastal areas?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes. Toughened glass is weather-resistant, and outdoor and coastal installations need stainless steel hardware of a suitable grade. Fine Glaze selects the grade per project, and nano-coated glass is an option for easier cleaning.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "How long does glass railing installation take?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Installation time depends on railing length, number of floors, site access and glass lead time, so we confirm the programme per project after measurement. Glass is cut and toughened to size before installation.",
+        },
+      },
     ],
   };
 
