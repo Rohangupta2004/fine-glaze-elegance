@@ -461,7 +461,7 @@ export default function StructuralGlazing() {
             className="w-full h-full object-cover"
             loading="lazy"
           />
-          <div className="absolute inset-0 bg-[rgba(24,19,15,0.55)]" />
+          <div className="absolute inset-0 bg-[rgba(24,19,15,0.72)]" />
           <div className="absolute inset-0 flex items-center">
             <div className="px-6 md:px-10">
               <p className="text-[#e6ded2] text-sm mb-2">Our Promise</p>

@@ -278,7 +278,7 @@ export function BookCallDialog({ open, session, work: workDefault, source, onClo
               <button className="bk-go" type="submit" disabled={sending} aria-busy={sending}>{sending ? "Booking" : "Book a call"}</button>
               <button className="bk-back" type="button" onClick={() => setStep(1)} disabled={sending}>Back</button>
             </div>
-            <p className="bk-note">We call you back the same business day, Monday to Saturday, 9am to 6pm. Requests after 6pm are called the next business morning.</p>
+            <p className="bk-note">We call you back the same business day, Monday to Saturday, 9am to 6pm.</p>
           </fieldset>
         </form>
 

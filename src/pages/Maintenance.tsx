@@ -67,7 +67,7 @@ const SYSTEMS = [
     num: "01",
     title: "Sealant Renewal & Waterproofing",
     desc: "Complete removal and replacement of degraded structural silicone and weather sealants. We use approved sealants from major manufacturers. Includes joint preparation, priming, and quality-tested application.",
-    glass: "Dow Corning / Sika",
+    glass: "DOWSIL or approved equivalents",
     wind: "Per condition report",
     bestFor: "Leaking facades, old buildings",
     price: "Quoted on drawings",
@@ -76,8 +76,8 @@ const SYSTEMS = [
   {
     num: "02",
     title: "Glass Panel Replacement",
-    desc: "Safe removal and replacement of cracked, broken, or hazy glass panels. We stock common DGU and toughened glass specifications for fast turnaround. Includes gasket and sealant renewal.",
-    glass: "Rope-access / scaffold",
+    desc: "Safe removal and replacement of cracked, broken, or hazy glass panels. Includes gasket and sealant renewal.",
+    glass: "Safe site access",
     wind: "As needed",
     bestFor: "Damaged panels, upgrades",
     price: "Quoted on drawings",
@@ -86,9 +86,9 @@ const SYSTEMS = [
   {
     num: "03",
     title: "Facade Cleaning",
-    desc: "Professional rope-access or BMU-based facade cleaning using pH-neutral solutions. Removes pollution deposits, hard water stains, and biological growth without damaging glass coatings or sealants.",
-    glass: "Rope-access / BMU",
-    wind: "2x per year",
+    desc: "Specialist facade glass cleaning and restoration using pH-neutral solutions. Removes pollution deposits, hard water stains, and biological growth without damaging glass coatings or sealants.",
+    glass: "As per site access",
+    wind: "As scheduled",
     bestFor: "Commercial towers, malls",
     price: "Quoted on drawings",
     img: "cleaning",
@@ -96,7 +96,7 @@ const SYSTEMS = [
   {
     num: "04",
     title: "Annual Maintenance Contract",
-    desc: "Comprehensive AMC covering bi-annual inspections, sealant checks, hardware lubrication, drainage clearing, and priority emergency repairs. Includes detailed condition reports with photo documentation.",
+    desc: "Comprehensive AMC covering bi-annual inspections, sealant checks, hardware lubrication, drainage clearing, and glass breakage response. Includes detailed condition reports with photo documentation.",
     glass: "Scheduled programme",
     wind: "Bi-annual visits",
     bestFor: "All commercial buildings",
@@ -459,9 +459,9 @@ export default function Maintenance() {
                 </thead>
                 <tbody className="text-sm">
                   {[
-                    { system: "Sealant Renewal", glass: "Dow Corning / Sika", price: "Quoted on drawings" },
+                    { system: "Sealant Renewal", glass: "DOWSIL or approved equivalents", price: "Quoted on drawings" },
                     { system: "Glass Replacement", glass: "DGU / toughened", price: "Quoted on drawings" },
-                    { system: "Facade Cleaning", glass: "Rope-access / BMU", price: "Quoted on drawings" },
+                    { system: "Facade Cleaning", glass: "As per site access", price: "Quoted on drawings" },
                     { system: "Annual AMC", glass: "Bi-annual programme", price: "Custom quote" },
                   ].map((row) => (
                     <tr key={row.system} className="border-b border-line hover:bg-night-2 transition-colors">

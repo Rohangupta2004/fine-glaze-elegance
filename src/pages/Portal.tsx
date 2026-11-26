@@ -89,7 +89,7 @@ export default function Portal() {
       <div className="min-h-screen flex items-center justify-center bg-night-2 p-4">
         <Card className="w-full max-w-md border-t-4 border-t-primary">
           <CardHeader className="text-center">
-            <CardTitle className="text-2xl font-bold">Client Portal</CardTitle>
+            <h1 className="tracking-tight text-2xl font-medium font-display">Client Portal</h1>
           </CardHeader>
           <CardContent className="space-y-6">
             <Button variant="outline" className="w-full h-12 gap-2" onClick={signInWithGoogle}>Continue with Google</Button>

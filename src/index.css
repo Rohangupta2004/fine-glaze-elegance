@@ -159,7 +159,7 @@
     .text-gradient-warm,
     .text-gradient-light,
     .text-gradient-subtle {
-      background-image: linear-gradient(100deg, #6b3a14 0%, #a0581f 38%, #b8702f 62%, #7a4317 100%);
+      background-image: linear-gradient(100deg, #6b3a14 0%, #a0581f 38%, #a65e25 62%, #7a4317 100%);
       background-size: 200% 100%;
       background-position: 0 0;
       -webkit-background-clip: text;
@@ -335,7 +335,7 @@ input[type="radio"]:checked, input[type="checkbox"]:checked { background: #9b552
 /* Big figures in stat bands take the bronze gradient too. */
 @supports ((-webkit-background-clip: text) or (background-clip: text)) {
   .fg-stats dt, .fg-home .ng dt {
-    background-image: linear-gradient(100deg, #6b3a14 0%, #a0581f 38%, #b8702f 62%, #7a4317 100%);
+    background-image: linear-gradient(100deg, #6b3a14 0%, #a0581f 38%, #a65e25 62%, #7a4317 100%);
       background-size: 200% 100%;
       background-position: 0 0;
     -webkit-background-clip: text;
