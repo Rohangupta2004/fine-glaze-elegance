@@ -36,7 +36,7 @@ export default function HotelFacade() {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      { "@type": "Question", "name": "What facade system is used in 5-star hotels in India?", "acceptedAnswer": { "@type": "Answer", "text": "Hotels of all categories commonly use unitized or stick curtain wall with double glazed or specialty glass on guest floors, structural glazing for lobbies and canopies, and aluminium louvers for shading. The system follows the architect's brief." } },
+      { "@type": "Question", "name": "What facade system is used in hotels in India?", "acceptedAnswer": { "@type": "Answer", "text": "Hotels of all categories commonly use unitized or stick curtain wall with double glazed or specialty glass on guest floors, structural glazing for lobbies and canopies, and aluminium louvers for shading. The system follows the architect's brief." } },
       { "@type": "Question", "name": "How does Fine Glaze ensure facade quality standards for hotel projects?", "acceptedAnswer": { "@type": "Answer", "text": "Fine Glaze checks material on receipt, inspects dimensions and finish at the workshop, and verifies line, level, plumb and fixing floor by floor. Installed glazing gets a site water penetration test, and the snag register is closed before handover." } },
       { "@type": "Question", "name": "What glass is used for hotel guest room facades?", "acceptedAnswer": { "@type": "Answer", "text": "Guest room facades typically use double glazed units with tinted or reflective outer glass for solar control, a low-E coating for comfort, and laminated glass where traffic or aircraft noise is a concern. The exact build-up follows the hotel's brief." } },
     ]
@@ -131,7 +131,7 @@ export default function HotelFacade() {
           <h2 className="text-3xl font-bold mb-10 text-center">Frequently Asked Questions</h2>
           <div className="space-y-6">
             <div className="bg-background rounded-xl p-6 shadow-sm">
-              <h3 className="text-lg font-bold mb-2">What facade system is used in 5-star hotels in India?</h3>
+              <h3 className="text-lg font-bold mb-2">What facade system is used in hotels in India?</h3>
               <p className="text-muted-foreground">Hotels of all categories commonly use unitized or stick curtain wall with double glazed or specialty glass on guest floors, structural glazing for lobbies and canopies, and aluminium louvers for shading. The system follows the architect's brief.</p>
             </div>
             <div className="bg-background rounded-xl p-6 shadow-sm">

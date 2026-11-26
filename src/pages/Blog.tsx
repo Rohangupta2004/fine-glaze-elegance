@@ -13,7 +13,7 @@ export default function Blog() {
     <Layout darkHero>
       <SEO
         title="Facade & Glazing Guides, Costs & Tips | Fine Glaze"
-        description="Expert articles on facade engineering, structural glazing costs, curtain wall comparisons, glass types, and how to choose the right contractor in India. Free knowledge by Fine Glaze."
+        description="Expert articles on facade engineering, structural glazing costs, curtain wall comparisons, glass types, and how to choose the right contractor in India. A knowledge base by Fine Glaze."
         canonical="https://fineglaze.com/blog"
         keywords="facade blog India, structural glazing cost guide, curtain wall article, glass facade tips, ACP vs HPL, facade contractor guide"
         schema={{
@@ -111,8 +111,7 @@ export default function Blog() {
         <div className="container mx-auto px-4">
           <h2 className="text-2xl font-bold mb-3">Have a Facade Question?</h2>
           <p className="text-slate-400 mb-6">
-            Our engineering team is happy to help — free consultation, no
-            commitment.
+            Our team is happy to help. Get in touch to discuss your project.
           </p>
           <Link to="/contact">
             <button className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors">

@@ -36,7 +36,7 @@ export default function StructuralGlazingMumbai() {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      { "@type": "Question", "name": "Is structural glazing safe in Mumbai cyclone zone?", "acceptedAnswer": { "@type": "Answer", "text": "Structural glazing can be used in coastal Mumbai when designed for the project's wind load, with suitable sealant, retention and drainage. Fine Glaze checks sizing, fixing and anchorage against the project wind load before approval." } },
+      { "@type": "Question", "name": "Is structural glazing safe in Mumbai's coastal wind conditions?", "acceptedAnswer": { "@type": "Answer", "text": "Structural glazing can be used in coastal Mumbai when designed for the project's wind load, with suitable sealant, retention and drainage. Fine Glaze checks sizing, fixing and anchorage against the project wind load before approval." } },
       { "@type": "Question", "name": "How does structural glazing perform during Mumbai monsoon?", "acceptedAnswer": { "@type": "Answer", "text": "Well-designed structural glazing sheds monsoon water through its sealed joints and drainage paths, and installation quality decides the result. Fine Glaze checks installed glazing with a site water penetration test before handover." } },
       { "@type": "Question", "name": "What glass thickness for structural glazing on Mumbai high-rises?", "acceptedAnswer": { "@type": "Answer", "text": "Glass thickness on high-rises is set by the structural calculation for wind load, panel size and support, not by a fixed rule. Toughened, heat-soaked or laminated glass may be specified; our engineering check confirms the build-up." } },
     ]
@@ -135,7 +135,7 @@ export default function StructuralGlazingMumbai() {
           <h2 className="text-3xl font-bold mb-10 text-center">Frequently Asked Questions</h2>
           <div className="space-y-6">
             <div className="bg-background rounded-xl p-6 shadow-sm">
-              <h3 className="text-lg font-bold mb-2">Is structural glazing safe in Mumbai cyclone zone?</h3>
+              <h3 className="text-lg font-bold mb-2">Is structural glazing safe in Mumbai's coastal wind conditions?</h3>
               <p className="text-muted-foreground">Structural glazing can be used in coastal Mumbai when designed for the project's wind load, with suitable sealant, retention and drainage. Fine Glaze checks sizing, fixing and anchorage against the project wind load before approval.</p>
             </div>
             <div className="bg-background rounded-xl p-6 shadow-sm">

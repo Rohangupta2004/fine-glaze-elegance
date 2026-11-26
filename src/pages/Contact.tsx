@@ -177,7 +177,7 @@ const Contact = () => {
             <span className="text-gradient-gold">Together.</span>
           </h1>
           <p className="mt-3 md:mt-4 text-white/60 text-sm md:text-lg max-w-md leading-relaxed">
-            We call you back the same business day, Monday to Saturday, 9am to 6pm.
+            Office hours are Monday to Saturday, 9am to 6pm.
           </p>
         </div>
       </section>
@@ -190,9 +190,9 @@ const Contact = () => {
         <div className="container mx-auto px-5 md:px-16 py-4 md:py-5">
           <div className="flex flex-wrap items-center justify-center gap-4 md:gap-8 text-xs md:text-sm text-stone-600">
             {[
-              { icon: <ShieldCheck size={16} className="text-amber-600" />, text: "No automated replies — real engineers" },
-              { icon: <CheckCircle2 size={16} className="text-amber-600" />, text: "Free site visit & measurement" },
-              { icon: <Clock size={16} className="text-amber-600" />, text: "We call you back the same business day, Monday to Saturday, 9am to 6pm" },
+              { icon: <ShieldCheck size={16} className="text-amber-600" />, text: "Call, WhatsApp or write to our team" },
+              { icon: <CheckCircle2 size={16} className="text-amber-600" />, text: "Site survey and measurement for your project" },
+              { icon: <Clock size={16} className="text-amber-600" />, text: "Office hours Monday to Saturday, 9am to 6pm" },
             ].map((item) => (
               <div key={item.text} className="flex items-center gap-2 font-medium">
                 {item.icon}
@@ -233,7 +233,7 @@ const Contact = () => {
                         Message Sent
                       </h3>
                       <p className="text-stone-500 text-sm max-w-md mx-auto">
-                        Thank you. We call you back the same business day, Monday to Saturday, 9am to 6pm.
+                        Thank you. Office hours are Monday to Saturday, 9am to 6pm.
                       </p>
                       <Button
                         onClick={() => {
@@ -387,7 +387,7 @@ const Contact = () => {
                       </div>
 
                       <p className="text-[11px] text-stone-400 text-center">
-                        We'll never share your information. We call you back the same business day, Monday to Saturday, 9am to 6pm.
+                        We'll never share your information. Office hours are Monday to Saturday, 9am to 6pm.
                       </p>
                     </form>
                   )}
@@ -405,14 +405,14 @@ const Contact = () => {
                   Why Reach Out
                 </p>
                 <h3 className="text-lg font-bold text-stone-900 mb-4">
-                  We call you back the same business day, Monday to Saturday, 9am to 6pm.
+                  Office hours are Monday to Saturday, 9am to 6pm.
                 </h3>
                 <p className="text-stone-500 text-sm leading-relaxed mb-5">
-                  No automated replies — you'll speak directly with our engineering team.
+                  Call or message us and we will take it from there.
                 </p>
                 <div className="space-y-3">
                   {[
-                    { text: "Free site visit & measurement", sub: "Our engineers visit at no cost" },
+                    { text: "Site survey & measurement", sub: "We confirm scope after surveying the site" },
                     { text: "No obligation", sub: "Get the information you need" },
                   ].map((item) => (
                     <div key={item.text} className="flex gap-3 group">
@@ -448,7 +448,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-sm font-semibold">info@fineglaze.com</p>
-                    <p className="text-[10px] text-stone-400">Same business day call back</p>
+                    <p className="text-[10px] text-stone-400">Mon–Sat, 9am to 6pm</p>
                   </div>
                 </a>
                 <div className="flex items-center gap-3 text-stone-400 opacity-80">
@@ -503,9 +503,9 @@ const Contact = () => {
               {/* Quick stat strip */}
               <div className="grid grid-cols-3 gap-px bg-stone-200">
                 {[
-                  { num: "10+", label: "Projects" },
-                  { num: "10+", label: "Years" },
-                  { num: "<1hr", label: "Response" },
+                  { num: "16", label: "Project Records" },
+                  { num: "40+", label: "Core Team" },
+                  { num: "Mon–Sat", label: "9am to 6pm" },
                 ].map((s) => (
                   <div key={s.label} className="bg-white text-center py-4 md:py-5">
                     <p className="text-lg md:text-xl font-extrabold text-stone-900">{s.num}</p>
@@ -540,7 +540,7 @@ const Contact = () => {
           />
           <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-5">
             <p className="text-amber-400 text-[10px] md:text-xs font-bold tracking-[0.4em] uppercase mb-2">
-              Trusted Across Maharashtra
+              Facade Projects in Pune and Mumbai
             </p>
             <p
               className="text-white font-bold leading-snug max-w-xl"

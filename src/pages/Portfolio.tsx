@@ -55,7 +55,7 @@ const portfolioSchema = {
   "@type": "CollectionPage",
   name: "Fine Glaze Project Portfolio",
   description:
-    "Landmark facade projects delivered across Maharashtra — curtain walls, structural glazing, ACP cladding, and glass railings.",
+    "Documented Fine Glaze facade projects in Pune and Mumbai: curtain walls, structural glazing, ACP cladding, railings, louvers and maintenance.",
   url: "https://fineglaze.com/portfolio",
   provider: {
     "@type": "LocalBusiness",
@@ -86,7 +86,7 @@ const portfolioSchema = {
         ? "Commercial Facade"
         : p.category === "residential"
         ? "Residential Facade"
-        : "Award-Winning Facade",
+        : "Facade Project",
   })),
 };
 

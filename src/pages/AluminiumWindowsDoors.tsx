@@ -161,7 +161,7 @@ export default function AluminiumWindowsDoors() {
           </h1>
           <p className="mt-5 text-stone-200 text-base sm:text-lg max-w-2xl">
             Sliding, casement, tilt-turn and lift-slide systems — measured by us, fabricated at our {company.fabricationUnit.location} unit,
-            installed by our own team and water-tested before handover.
+            installed under a dedicated site in-charge and supervisor, and water-tested before handover.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-3">
             <button
@@ -284,7 +284,7 @@ export default function AluminiumWindowsDoors() {
               ["Site measurement", "Every opening measured and checked for level and plumb."],
               ["Drawing & sample", "Window schedule, sections and colour sample for approval."],
               ["Fabrication", `Cut and assembled at our ${company.fabricationUnit.location} unit.`],
-              ["Installation", "Fixed, packed and sealed by our own team."],
+              ["Installation", "Fixed, packed and sealed under a dedicated site in-charge and supervisor."],
               ["Water test & handover", "Site water test, snag list closed, defect liability per contract."],
             ].map(([t, d], i) => (
               <li key={t} className="rounded-xl border border-border bg-card p-5">
