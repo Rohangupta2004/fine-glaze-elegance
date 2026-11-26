@@ -229,7 +229,7 @@ export default function QualitySafety() {
           <ol className="mt-8 space-y-3">
             {VERIFY_CHECKLIST.map((v, i) => (
               <li key={v} className="flex gap-4 border border-border bg-card p-4">
-                <span className="flex h-7 w-7 shrink-0 items-center justify-center bg-lamp/15 text-sm font-bold text-lamp">{i + 1}</span>
+                <span className="flex h-7 w-7 shrink-0 items-center justify-center bg-lamp/15 text-sm font-bold text-paper">{i + 1}</span>
                 <span className="text-foreground/90">{v}</span>
               </li>
             ))}
@@ -238,18 +238,18 @@ export default function QualitySafety() {
       </section>
 
       {/* PREQUALIFICATION */}
-      <section className="py-16 bg-lamp">
+      <section className="py-16 bg-night-2 border-t border-line">
         <div className="fg-wrap grid lg:grid-cols-[1.5fr_1fr] gap-8 items-center">
           <div>
             <h2 className="text-2xl md:text-3xl font-medium text-paper">Registering us as a vendor?</h2>
-            <p className="mt-2 text-paper/80">
+            <p className="mt-2 text-mute">
               We can send our company profile, GST registration ({company.gstin}), trademark details, project references and
               work-at-height documentation for prequalification.
             </p>
           </div>
           <div className="flex flex-col sm:flex-row lg:flex-col gap-3">
-            <button onClick={() => setQuoteOpen(true)} className="bg-night text-paper font-bold px-6 py-4 hover:bg-night-2 inline-flex items-center justify-center">
-              <FileText className="mr-2 h-4 w-4" /> Request prequalification documents
+            <button onClick={() => setQuoteOpen(true)} className="bg-lamp text-lamp-ink font-bold px-6 py-4 hover:brightness-110 inline-flex items-center justify-center">
+              <FileText className="mr-2 h-4 w-4" /> Book a call
             </button>
             <Link
               to="/company-profile"

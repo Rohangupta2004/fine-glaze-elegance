@@ -203,7 +203,7 @@ export default function AluminiumWindowsDoors() {
           <ol className="mt-8 space-y-3">
             {QUOTE_CHECKLIST.map((item, i) => (
               <li key={item} className="flex gap-4 border border-border bg-card p-4">
-                <span className="flex h-7 w-7 shrink-0 items-center justify-center bg-lamp/15 text-sm font-bold text-lamp">{i + 1}</span>
+                <span className="flex h-7 w-7 shrink-0 items-center justify-center bg-lamp/15 text-sm font-bold text-paper">{i + 1}</span>
                 <span className="text-foreground/90">{item}</span>
               </li>
             ))}

@@ -114,6 +114,9 @@ export default defineConfig(({ mode }) => ({
         '/acp-aluminium-cladding', '/glass-railings', '/maintenance-services',
         '/skylights-canopies', '/aluminium-louvers', '/glass-partitions',
         '/privacy-policy', '/terms-of-service',
+        // Client-only screens: prerendered so a direct visit hydrates against its own HTML, not the home page.
+        '/admin', '/admin/images', '/admin/logos', '/admin/blog-images', '/admin/media', '/admin/content',
+        '/portal', '/inspection', '/inspection/new',
         // Generated lists
         ...blogUrls,
         ...projectUrls,
