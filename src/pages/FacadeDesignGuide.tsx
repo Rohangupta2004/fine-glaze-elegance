@@ -28,7 +28,7 @@ export default function FacadeDesignGuide() {
       { "@type": "City", "name": "Mumbai" },
       { "@type": "State", "name": "Maharashtra" }
     ],
-    "description": "Complete facade design guide for India 2024. Principles, materials, energy performance, regulatory requirements & best practices for commercial and residential buildings."
+    "description": "Building facade design guide for India: materials, design principles and what architects and owners should settle early. A general guide by Fine Glaze, Pune."
   };
 
   const faqSchema = {
@@ -53,8 +53,8 @@ export default function FacadeDesignGuide() {
   return (
     <Layout darkHero>
       <SEO
-        title="Building Facade Design Guide: Principles & Materials"
-        description="Complete facade design guide for India 2024. Principles, materials, energy performance, regulatory requirements & best practices for commercial and residential buildings."
+        title="Building Facade Design Guide India: Materials | Fine Glaze"
+        description="Building facade design guide for India: materials, design principles and what architects and owners should settle early. A general guide by Fine Glaze, Pune."
         canonical="https://fineglaze.com/facade-design-guide"
         keywords="facade design guide India, building facade design principles India, commercial facade design India, window wall ratio India, facade design ECBC India, glass facade design India 2024"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}

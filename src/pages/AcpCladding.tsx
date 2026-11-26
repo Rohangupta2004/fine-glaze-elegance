@@ -214,7 +214,7 @@ export default function AcpCladding() {
     <Layout darkHero>
       <SEO
         title="ACP Cladding Contractor in Pune & Mumbai | Fine Glaze"
-        description="ACP cladding contractor in Pune & Mumbai. PVDF-coated fire-retardant aluminium composite panels for commercial facades, IT parks & retail buildings."
+        description="ACP cladding contractor in Pune, Mumbai and across India. ACP and aluminium cladding, with panel routing and preparation at our own fabrication unit in Pune."
         canonical="https://fineglaze.com/acp-aluminium-cladding"
         keywords="ACP cladding contractor, aluminium composite panel cladding, ACP facade, aluminium cladding, PVDF ACP, fire-retardant ACP"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}

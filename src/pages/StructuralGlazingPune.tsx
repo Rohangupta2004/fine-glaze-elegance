@@ -29,7 +29,7 @@ export default function StructuralGlazingPune() {
       { "@type": "City", "name": "Mumbai" },
       { "@type": "State", "name": "Maharashtra" }
     ],
-    "description": "Structural glazing contractor in Pune. 2-side, 4-side & spider glazing for showrooms, offices & high-rises. IS:875 compliant. Free site visit."
+    "description": "Structural glazing in Pune: 2-side, 4-side and spider glazing for showrooms and commercial buildings, with in-house shop drawings and a site water test."
   };
 
   const faqSchema = {
@@ -54,8 +54,8 @@ export default function StructuralGlazingPune() {
   return (
     <Layout darkHero>
       <SEO
-        title="Structural Glazing Contractor in Pune | Fine Glaze"
-        description="Structural glazing contractor in Pune. 2-side, 4-side & spider glazing for showrooms & commercial buildings in Hinjewadi, Kharadi, Baner & Wakad."
+        title="Structural Glazing in Pune: SSG and Spider | Fine Glaze"
+        description="Structural glazing in Pune: 2-side, 4-side and spider glazing for showrooms and commercial buildings, with in-house shop drawings and a site water test."
         canonical="https://fineglaze.com/structural-glazing-pune"
         keywords="structural glazing Pune, structural glass facade Pune, frameless glazing Pune, spider glazing Pune"
         ogImage="https://fineglaze.com/projects/embassy-techzone-41-1.webp"

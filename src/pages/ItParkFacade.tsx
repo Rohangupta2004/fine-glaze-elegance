@@ -29,7 +29,7 @@ export default function ItParkFacade() {
       { "@type": "City", "name": "Mumbai" },
       { "@type": "State", "name": "Maharashtra" }
     ],
-    "description": "Specialist facade contractor for IT parks and tech campuses in India. LEED-compliant curtain walls, DGU Low-E glass, fast installation for Hinjewadi, Kharadi & Mahape. Free site visit."
+    "description": "IT park facade contractor in Pune and Mumbai: curtain walls and glazing for offices and campuses. Project records include LTIMindtree, Mahape."
   };
 
   const faqSchema = {
@@ -55,7 +55,7 @@ export default function ItParkFacade() {
     <Layout darkHero>
       <SEO
         title="IT Park Facade Contractor in Pune & Mumbai | Fine Glaze"
-        description="IT park facade contractor in Pune & Mumbai. Unitized curtain walls & energy-efficient DGU Low-E glass facades for tech campuses & corporate towers."
+        description="IT park facade contractor in Pune and Mumbai: curtain walls and glazing for offices and campuses. Project records include LTIMindtree, Mahape."
         canonical="https://fineglaze.com/it-park-facade"
         keywords="IT park facade contractor, office facade contractor, corporate building facade, technology park facade, curtain wall IT park"
         ogImage="https://fineglaze.com/projects/embassy-techzone-41-1.webp"

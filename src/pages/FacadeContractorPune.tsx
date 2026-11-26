@@ -29,16 +29,16 @@ export default function FacadeContractorPune() {
       { "@type": "City", "name": "Mumbai" },
       { "@type": "State", "name": "Maharashtra" }
     ],
-    "description": "Facade contractor in Pune. Curtain walls, structural glazing, ACP cladding, glass railings & facade maintenance. Serving Hinjewadi, Kharadi, Baner. Free site visit."
+    "description": "Facade contractor in Pune with its own fabrication unit at Pisoli. Curtain walls, structural glazing, ACP cladding, glass railings and maintenance."
   };
 
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      { "@type": "Question", "name": "How do I choose a facade contractor in Pune?", "acceptedAnswer": { "@type": "Answer", "text": "Look for: a portfolio of 10+ completed projects with verifiable references; in-house technical team with structural glazing certification; direct relationships with glass and aluminium suppliers; documented quality assurance process; and post-completion AMC capability. Fine Glaze meets all criteria." } },
-      { "@type": "Question", "name": "What does facade work cost per sq ft in Pune?", "acceptedAnswer": { "@type": "Answer", "text": "Facade costs in Pune vary by system: ACP cladding Rs 180-450/sq ft, structural glazing Rs 300-900/sq ft, curtain wall Rs 350-1200/sq ft, aluminium windows Rs 350-800/sq ft. Fine Glaze provides BOQ-based quotations after a free site assessment." } },
-      { "@type": "Question", "name": "Does Fine Glaze handle facade design as well as installation in Pune?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Our in-house design team prepares facade concepts, shop drawings, structural calculations, and material schedules. We coordinate with architects and structural consultants from concept approval to as-built documentation." } },
+      { "@type": "Question", "name": "How do I choose a facade contractor in Pune?", "acceptedAnswer": { "@type": "Answer", "text": "Choose a facade contractor by checking completed projects you can verify, an in-house design and engineering team, a documented quality process and maintenance support after handover. Ask any contractor, including Fine Glaze, for these documents." } },
+      { "@type": "Question", "name": "What does facade work cost per sq ft in Pune?", "acceptedAnswer": { "@type": "Answer", "text": "Facade cost in Pune depends on the system, glass or panel specification, building height, access and site conditions, so a fair figure needs drawings. Fine Glaze prepares BOQ-based quotations after reviewing the drawings and the site." } },
+      { "@type": "Question", "name": "Does Fine Glaze handle facade design as well as installation in Pune?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Fine Glaze prepares fabrication and installation shop drawings in-house and checks member sizing, fixing and anchorage against project wind load. We coordinate with architects and consultants through approval and GFC release." } },
     ]
   };
 
@@ -54,8 +54,8 @@ export default function FacadeContractorPune() {
   return (
     <Layout darkHero>
       <SEO
-        title="Facade Contractor in Pune | Fine Glaze"
-        description="Facade contractor in Pune. Curtain walls, structural glazing, ACP cladding, glass railings & facade maintenance. Serving Hinjewadi, Kharadi, Baner. Free site visit."
+        title="Facade Contractor in Pune: Glazing and ACP | Fine Glaze"
+        description="Facade contractor in Pune with its own fabrication unit at Pisoli. Curtain walls, structural glazing, ACP cladding, glass railings and maintenance."
         canonical="https://fineglaze.com/facade-contractor-pune"
         keywords="facade contractor Pune, building facade Pune, glass facade contractor Pune, curtain wall contractor Pune, ACP cladding Pune, facade company Pune Maharashtra"
         ogImage="https://fineglaze.com/projects/embassy-techzone-41-1.webp"
@@ -69,7 +69,7 @@ export default function FacadeContractorPune() {
             <h1 className="text-3xl md:text-4xl font-bold mb-4">
               Facade Contractor <span className="text-gradient-gold">in Pune</span>
             </h1>
-            <p className="text-lg text-white/80 mb-8">Fine Glaze is a facade contractor based in Pune, delivering complete building envelope solutions for developers, architects, builders, and corporate clients. From initial design consultation through fabrication, installation, and long-term AMC — we manage every stage of the facade lifecycle.</p>
+            <p className="text-lg text-white/80 mb-8">Fine Glaze is a facade contractor based in Pune, working with developers, architects, builders and corporate clients. From design consultation through fabrication, installation and AMC, we handle the facade lifecycle.</p>
             <div className="flex gap-4">
               <Link to="/contact">
                 <Button size="lg" className="bg-amber-600 hover:bg-amber-700">Book a call</Button>
@@ -94,21 +94,21 @@ export default function FacadeContractorPune() {
       <section className="py-20">
         <div className="container mx-auto px-4 max-w-5xl space-y-6">
           
-          <h2 className="text-3xl font-bold">Complete Facade Solutions for Pune's Buildings</h2>
+          <h2 className="text-3xl font-bold">Facade Solutions for Pune's Buildings</h2>
           <p className="text-muted-foreground">
-            Led by a founder with <strong>11+ years in the facade industry</strong> and backed by <strong>16 documented projects</strong> across Pune and Mumbai, Fine Glaze brings contractor-grade reliability with consultant-level technical expertise. Our services span curtain walls, structural glazing, ACP cladding, aluminium windows and doors, glass railings, and facade maintenance and AMC.
+            Fine Glaze is led by a founder with <strong>11+ years in the facade industry</strong>, and our company profile documents <strong>16 projects</strong> across Pune and Mumbai. Our services span curtain walls, structural glazing, ACP cladding, aluminium windows and doors, glass railings, and facade maintenance and AMC.
           </p>
           <p className="text-muted-foreground mt-4">
-            Pune's rapid urban expansion — particularly in Hinjewadi (IT), Kharadi (commercial), Wakad (residential), and Undri (mixed-use) — demands facade contractors who can manage complex projects with strict quality, safety, and timeline standards. Fine Glaze operates with an in-house design team, a QHSE-compliant site execution team, and a dedicated procurement desk that sources from certified global suppliers.
+            Pune's growth in areas such as Hinjewadi, Kharadi, Wakad and Undri creates steady demand for facade work. Fine Glaze prepares shop and fabrication drawings in-house, checks member sizing, fixing and anchorage against project wind load, and runs a dedicated safety officer across active sites.
           </p>
           <p className="text-muted-foreground mt-4">
-            Our notable Pune projects include office towers in Hinjewadi IT Park Phases 1 &amp; 2, luxury residential projects in Koregaon Park and Kalyani Nagar, hospital buildings in Kharadi and Viman Nagar, and mixed-use complexes in Magarpatta and Undri.
+            Our documented Pune projects include Embassy Techzone in Hinjewadi (spider glazing, ACP cladding, glass doors and facade AMC for Embassy REIT), the Pune International Airport terminal (SS column cladding for Jindal Stainless Limited) and Nirmaann Estrellaa (windows, louvers, aluminium fins and glass railings).
           </p>
           <p className="text-muted-foreground mt-4">
-            Fine Glaze maintains a strong Pune team with dedicated roles: project managers, site supervisors, quality inspectors, and a local procurement liaison. This structure allows us to run multiple simultaneous projects in Pune without compromising attention on any single project. Our Pune-based team means faster response times, shorter material lead times, and lower mobilisation costs compared to out-of-city contractors.
+            Fine Glaze fabricates at its own unit in Pisoli, Pune, where cutting, assembly and finishing are batched per project and despatched to site. Our office is in Mohammed Wadi (Undri), Pune, and we also take facade projects elsewhere in India.
           </p>
           <p className="text-muted-foreground mt-4">
-            We are a preferred vendor for several Tier-1 Pune developers and have established long-term relationships with major architects and PMC firms operating in the Pune market. Our references are available upon request for all project types and budget ranges.
+            Ask us for project references that match your building type and scope, and we will share what we are able to disclose.
           </p>
     
         </div>
@@ -124,7 +124,7 @@ export default function FacadeContractorPune() {
               <div key="ACP & Aluminium Cladding" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">ACP & Aluminium Cladding</span></div>
               <div key="Glass Railings" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Glass Railings</span></div>
               <div key="Facade AMC & Maintenance" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Facade AMC & Maintenance</span></div>
-              <div key="Turnkey Project Management" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Turnkey Project Management</span></div>
+              <div key="Turnkey Project Management" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Project Management</span></div>
           </div>
         </div>
       </section>
@@ -136,15 +136,15 @@ export default function FacadeContractorPune() {
           <div className="space-y-6">
             <div className="bg-background rounded-xl p-6 shadow-sm">
               <h3 className="text-lg font-bold mb-2">How do I choose a facade contractor in Pune?</h3>
-              <p className="text-muted-foreground">Look for: a portfolio of 10+ completed projects with verifiable references; in-house technical team with structural glazing certification; direct relationships with glass and aluminium suppliers; documented quality assurance process; and post-completion AMC capability. Fine Glaze meets all criteria.</p>
+              <p className="text-muted-foreground">Choose a facade contractor by checking completed projects you can verify, an in-house design and engineering team, a documented quality process and maintenance support after handover. Ask any contractor, including Fine Glaze, for these documents.</p>
             </div>
             <div className="bg-background rounded-xl p-6 shadow-sm">
               <h3 className="text-lg font-bold mb-2">What does facade work cost per sq ft in Pune?</h3>
-              <p className="text-muted-foreground">Facade costs in Pune vary by system: ACP cladding Rs 180-450/sq ft, structural glazing Rs 300-900/sq ft, curtain wall Rs 350-1200/sq ft, aluminium windows Rs 350-800/sq ft. Fine Glaze provides BOQ-based quotations after a free site assessment.</p>
+              <p className="text-muted-foreground">Facade cost in Pune depends on the system, glass or panel specification, building height, access and site conditions, so a fair figure needs drawings. Fine Glaze prepares BOQ-based quotations after reviewing the drawings and the site.</p>
             </div>
             <div className="bg-background rounded-xl p-6 shadow-sm">
               <h3 className="text-lg font-bold mb-2">Does Fine Glaze handle facade design as well as installation in Pune?</h3>
-              <p className="text-muted-foreground">Yes. Our in-house design team prepares facade concepts, shop drawings, structural calculations, and material schedules. We coordinate with architects and structural consultants from concept approval to as-built documentation.</p>
+              <p className="text-muted-foreground">Yes. Fine Glaze prepares fabrication and installation shop drawings in-house and checks member sizing, fixing and anchorage against project wind load. We coordinate with architects and consultants through approval and GFC release.</p>
             </div>
           </div>
         </div>

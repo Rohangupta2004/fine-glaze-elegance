@@ -29,7 +29,7 @@ export default function HospitalFacade() {
       { "@type": "City", "name": "Mumbai" },
       { "@type": "State", "name": "Maharashtra" }
     ],
-    "description": "Specialist facade contractor for hospitals and healthcare buildings in India. Hygienic ACP cladding, anti-bacterial coatings, curtain wall systems. projects."
+    "description": "Hospital facade contractor in Pune and Mumbai: glazing, ACP cladding and curtain wall, with in-house shop drawings. Nanavati Max Hospital is a project record."
   };
 
   const faqSchema = {
@@ -55,7 +55,7 @@ export default function HospitalFacade() {
     <Layout darkHero>
       <SEO
         title="Hospital Facade Contractor in Pune & Mumbai | Fine Glaze"
-        description="Hospital facade contractor in Pune & Mumbai. Hygienic ACP cladding, acoustic glass facades & curtain wall systems for healthcare facilities."
+        description="Hospital facade contractor in Pune and Mumbai: glazing, ACP cladding and curtain wall, with in-house shop drawings. Nanavati Max Hospital is a project record."
         canonical="https://fineglaze.com/hospital-facade"
         keywords="hospital facade contractor, hospital glass facade, healthcare building facade, hygienic facade systems, hospital curtain wall"
         ogImage="https://fineglaze.com/projects/nanavati-max-hospital-38-1.webp"

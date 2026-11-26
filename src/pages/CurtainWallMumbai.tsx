@@ -29,7 +29,7 @@ export default function CurtainWallMumbai() {
       { "@type": "City", "name": "Mumbai" },
       { "@type": "State", "name": "Maharashtra" }
     ],
-    "description": "Curtain wall contractor in Mumbai. Unitized & stick system glazing for BKC, Andheri, Powai & Lower Parel. Cyclone Zone IV/V engineered. Free site visit."
+    "description": "Curtain wall contractor in Mumbai: unitized and stick glass curtain walls for commercial towers, in-house shop drawings. Embassy REIT Best Vendor 2024."
   };
 
   const faqSchema = {
@@ -54,8 +54,8 @@ export default function CurtainWallMumbai() {
   return (
     <Layout darkHero>
       <SEO
-        title="Curtain Wall Contractor in Mumbai | Fine Glaze"
-        description="Curtain wall contractor in Mumbai. Unitized & stick system glass curtain walls for high-rises in BKC, Andheri, Powai, Goregaon & Worli."
+        title="Curtain Wall Contractor in Mumbai, Maharashtra | Fine Glaze"
+        description="Curtain wall contractor in Mumbai: unitized and stick glass curtain walls for commercial towers, in-house shop drawings. Embassy REIT Best Vendor 2024."
         canonical="https://fineglaze.com/curtain-wall-mumbai"
         keywords="curtain wall contractor Mumbai, curtain wall systems Mumbai, glass curtain wall Mumbai, commercial facade Mumbai"
         ogImage="https://fineglaze.com/projects/naman-chambers-48-1.webp"

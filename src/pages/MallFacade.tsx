@@ -28,7 +28,7 @@ export default function MallFacade() {
       { "@type": "City", "name": "Mumbai" },
       { "@type": "State", "name": "Maharashtra" }
     ],
-    "description": "Shopping mall facade contractor in India. Structural glazing, ACP cladding, entrance canopies & curtain wall for retail malls. Maharashtra projects. Free site visit."
+    "description": "Mall facade contractor in Pune and Mumbai: glass facades, retail ACP cladding, canopies and curtain wall, with in-house shop drawings and own Pune unit."
   };
 
   const faqSchema = {
@@ -54,7 +54,7 @@ export default function MallFacade() {
     <Layout darkHero>
       <SEO
         title="Mall Facade Contractor in Pune & Mumbai | Fine Glaze"
-        description="Shopping mall facade contractor in Pune & Mumbai. High-impact glass facades, retail ACP cladding, spider glass canopies & curtain wall systems."
+        description="Mall facade contractor in Pune and Mumbai: glass facades, retail ACP cladding, canopies and curtain wall, with in-house shop drawings and own Pune unit."
         canonical="https://fineglaze.com/mall-facade"
         keywords="mall facade contractor, shopping mall glass facade, retail facade, mall ACP cladding, mall entrance canopy"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}

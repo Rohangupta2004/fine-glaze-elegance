@@ -28,7 +28,7 @@ export default function CurtainWallCostGuide() {
       { "@type": "City", "name": "Mumbai" },
       { "@type": "State", "name": "Maharashtra" }
     ],
-    "description": "Complete curtain wall cost guide India 2024. Stick system vs unitized pricing, glass types, installation factors. All prices explained. Get a custom quote from Fine Glaze."
+    "description": "What drives curtain wall cost in India: stick vs unitized systems, glass, height and access. A general guide by Fine Glaze. Ask us for a quotation."
   };
 
   const faqSchema = {
@@ -53,8 +53,8 @@ export default function CurtainWallCostGuide() {
   return (
     <Layout darkHero>
       <SEO
-        title="Curtain Wall Cost in India: Price Guide | Fine Glaze"
-        description="Complete curtain wall cost guide India 2024. Stick system vs unitized pricing, glass types, installation factors. All prices explained. Get a custom quote from Fine Glaze."
+        title="Curtain Wall Cost per Sq Ft India: Factors | Fine Glaze"
+        description="What drives curtain wall cost in India: stick vs unitized systems, glass, height and access. A general guide by Fine Glaze. Ask us for a quotation."
         canonical="https://fineglaze.com/curtain-wall-cost-guide"
         keywords="curtain wall cost India, curtain wall price per sq ft, unitized curtain wall cost, stick system curtain wall price, glass facade cost India, curtain wall budget India 2024"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}

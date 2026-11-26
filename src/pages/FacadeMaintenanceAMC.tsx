@@ -20,7 +20,7 @@ export default function FacadeMaintenanceAMC() {
       "address": { "@type": "PostalAddress", "addressLocality": "Pune", "addressRegion": "Maharashtra", "addressCountry": "IN" }
     },
     "areaServed": [{ "@type": "City", "name": "Pune" }, { "@type": "City", "name": "Mumbai" }, { "@type": "State", "name": "Maharashtra" }],
-    "description": "Facade AMC (Annual Maintenance Contract) for curtain walls, structural glazing, ACP cladding and glass railings in Pune and Mumbai. Comprehensive inspection, sealant, glass & hardware services."
+    "description": "Facade AMC guide for India: what an annual maintenance contract covers, how often to inspect, and what to ask for in scope. A general guide by Fine Glaze."
   };
 
   const faqSchema = {
@@ -45,8 +45,8 @@ export default function FacadeMaintenanceAMC() {
   return (
     <Layout darkHero>
       <SEO
-        title="Facade AMC Guide: Scope, Schedule & Cost | Fine Glaze"
-        description="Complete guide to facade AMC (Annual Maintenance Contracts) in India. What's included, costs, inspection frequency, and why it matters for your building. By Fine Glaze."
+        title="Facade AMC Guide India: Scope and Schedule | Fine Glaze"
+        description="Facade AMC guide for India: what an annual maintenance contract covers, how often to inspect, and what to ask for in scope. A general guide by Fine Glaze."
         canonical="https://fineglaze.com/facade-amc-guide"
         keywords="facade AMC India, facade annual maintenance contract, building facade inspection India, glass facade AMC"
         ogImage="https://fineglaze.com/projects/embassy-247-37-1.webp"

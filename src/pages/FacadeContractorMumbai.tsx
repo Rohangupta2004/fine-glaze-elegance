@@ -29,16 +29,16 @@ export default function FacadeContractorMumbai() {
       { "@type": "City", "name": "Mumbai" },
       { "@type": "State", "name": "Maharashtra" }
     ],
-    "description": "Expert facade contractor in Mumbai. Curtain walls, structural glazing, ACP cladding for BKC, Andheri, Powai & Lower Parel. Cyclone-rated systems. Free site visit."
+    "description": "Facade contractor in Mumbai: curtain walls, structural glazing and ACP cladding. Embassy REIT Best Vendor Performance 2024 for Embassy 247, Vikhroli."
   };
 
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      { "@type": "Question", "name": "Does Fine Glaze serve all of Mumbai for facade work?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Fine Glaze serves all Mumbai zones including South Mumbai, Central Mumbai (Worli, Lower Parel, Dadar), Western suburbs (Bandra, Andheri, Goregaon, Borivali), Eastern suburbs (Vikhroli, Powai), and BKC. We also cover Navi Mumbai and Thane." } },
-      { "@type": "Question", "name": "What makes Mumbai facade work different from Pune?", "acceptedAnswer": { "@type": "Answer", "text": "Mumbai requires anti-corrosion engineering throughout: marine-grade SS hardware, PVDF-coated aluminium extrusions, high-build sealants for saline environments, and design for higher wind loads (Zone IV/V). Fine Glaze engineers all Mumbai facades specifically for these conditions." } },
-      { "@type": "Question", "name": "How much does facade work cost in Mumbai?", "acceptedAnswer": { "@type": "Answer", "text": "Mumbai facade costs are typically 10-15% higher than Pune due to higher logistics costs, coastal engineering requirements, and higher labour rates. ACP cladding: Rs 200-500/sq ft; structural glazing: Rs 350-1000/sq ft; curtain walls: Rs 400-1300/sq ft installed." } },
+      { "@type": "Question", "name": "Does Fine Glaze serve all of Mumbai for facade work?", "acceptedAnswer": { "@type": "Answer", "text": "Fine Glaze is based in Pune and Mumbai and takes facade projects across Mumbai, Navi Mumbai, Thane and Panvel. Our documented Mumbai projects are in BKC, Andheri, Vikhroli, Vile Parle, Byculla, Juhu and Dadar." } },
+      { "@type": "Question", "name": "What makes Mumbai facade work different from Pune?", "acceptedAnswer": { "@type": "Answer", "text": "Mumbai's coastal air, humidity and wind load make material and finish selection more demanding than inland sites. Corrosion-resistant hardware, suitable finishes and sealants, and a wind-load check against the project design basis are standard concerns." } },
+      { "@type": "Question", "name": "How much does facade work cost in Mumbai?", "acceptedAnswer": { "@type": "Answer", "text": "Facade cost in Mumbai depends on the system, glass or panel specification, height, access and logistics, so a reliable figure needs drawings. Fine Glaze prepares BOQ-based quotations after reviewing the drawings and the site." } },
     ]
   };
 
@@ -54,8 +54,8 @@ export default function FacadeContractorMumbai() {
   return (
     <Layout darkHero>
       <SEO
-        title="Facade Contractor in Mumbai | Fine Glaze"
-        description="Expert facade contractor in Mumbai. Curtain walls, structural glazing, ACP cladding for BKC, Andheri, Powai & Lower Parel. Cyclone-rated systems. Free site visit."
+        title="Facade Contractor in Mumbai: Glazing and ACP | Fine Glaze"
+        description="Facade contractor in Mumbai: curtain walls, structural glazing and ACP cladding. Embassy REIT Best Vendor Performance 2024 for Embassy 247, Vikhroli."
         canonical="https://fineglaze.com/facade-contractor-mumbai"
         keywords="facade contractor Mumbai, glass facade Mumbai, curtain wall Mumbai, ACP cladding Mumbai, structural glazing BKC, facade contractor Andheri, facade company Mumbai"
         ogImage="https://fineglaze.com/projects/naman-chambers-48-1.webp"
@@ -69,7 +69,7 @@ export default function FacadeContractorMumbai() {
             <h1 className="text-3xl md:text-4xl font-bold mb-4">
               Facade Contractor <span className="text-gradient-gold">in Mumbai</span>
             </h1>
-            <p className="text-lg text-white/80 mb-8">Fine Glaze brings award-winning facade expertise to Mumbai's demanding commercial and residential landscape. As an established facade contractor in Mumbai, we have delivered curtain wall systems, structural glazing, ACP cladding, and glass railings across BKC, Andheri, Powai, Lower Parel, Worli, Vikhroli, and beyond.</p>
+            <p className="text-lg text-white/80 mb-8">Fine Glaze is a facade contractor working in Mumbai on curtain wall, structural glazing, ACP cladding, railings, louvers and maintenance. Embassy REIT gave us the Best Vendor Performance 2024 award for Embassy 247, Vikhroli.</p>
             <div className="flex gap-4">
               <Link to="/contact">
                 <Button size="lg" className="bg-amber-600 hover:bg-amber-700">Book a call</Button>
@@ -94,21 +94,21 @@ export default function FacadeContractorMumbai() {
       <section className="py-20">
         <div className="container mx-auto px-4 max-w-5xl space-y-6">
           
-          <h2 className="text-3xl font-bold">Mumbai's Trusted Facade Partner</h2>
+          <h2 className="text-3xl font-bold">Facade Work in Mumbai</h2>
           <p className="text-muted-foreground">
-            Mumbai's real estate market — one of Asia's most dynamic — requires facade contractors with deep technical expertise, reliable supply chains, and the project management muscle to execute on tight urban timelines. Fine Glaze has built a strong Mumbai presence, delivering precision-engineered facade systems on landmark projects including the Leela Hotel facade, Leela Business Park, and Embassy 247 curtain wall installations.
+            Mumbai's building market needs facade contractors who can manage tight urban sites and timelines. Fine Glaze documents Mumbai work including Embassy 247 in Vikhroli (facade sealant, glass replacement and repairs), Leela Business Park (aluminium louvers) and Salsette-27 in Byculla (railings and canopies).
           </p>
           <p className="text-muted-foreground mt-4">
-            Our Mumbai projects are engineered for cyclone-zone wind loads (IS:875 Zone IV/V coastal requirements), high humidity, and saline air conditions. We use marine-grade SS 316 hardware, high-build PVDF coatings, and heavy-duty EPDM gaskets to ensure longevity in Mumbai's aggressive climate.
+            Coastal buildings in Mumbai face salt air, humidity and high wind. As general guidance, designers there usually specify corrosion-resistant hardware and finishes, durable gaskets and sealants, and wind loads taken from the project's design basis. Fine Glaze's engineering check verifies member sizing, fixing and anchorage against the project wind load.
           </p>
           <p className="text-muted-foreground mt-4">
-            Key service areas in Mumbai include <strong>BKC</strong> for corporate tower facades, <strong>Lower Parel &amp; Worli</strong> for premium residential high-rises, <strong>Andheri MIDC &amp; Powai</strong> for tech park campuses, <strong>Vikhroli</strong> for industrial and commercial cladding, and <strong>Nariman Point</strong> for heritage-zone compliant facade refurbishment.
+            Areas we work in include <strong>BKC</strong>, <strong>Andheri</strong>, <strong>Powai</strong>, <strong>Vikhroli</strong>, <strong>Byculla</strong>, <strong>Vile Parle</strong> and <strong>Juhu</strong>, where our project records are located.
           </p>
           <p className="text-muted-foreground mt-4">
-            Fine Glaze's Mumbai projects are coordinated from our Pune headquarters with a dedicated Mumbai site team and local procurement links. We maintain strong relationships with Mumbai-based structural engineers, architects, and project managers, enabling fast response to RFIs and change orders that are inevitable in Mumbai's complex construction environment.
+            Mumbai projects are run by our team from Pune and Mumbai, with a site in-charge and supervisor on each site. Drawings are prepared in-house and routed through the architect, PMC and client until GFC release.
           </p>
           <p className="text-muted-foreground mt-4">
-            Our Mumbai facade portfolio spans diverse building types: Grade-A commercial towers in BKC, 5-star hotel facades, premium residential towers in South Mumbai and the western suburbs, IT park campuses in Powai and Thane, healthcare facilities, and shopping centres. This breadth of experience means we bring relevant reference projects to every new Mumbai tender.
+            Our documented Mumbai work covers commercial towers in BKC, a hospital (Nanavati Max, Vile Parle), hotel glazing (Leela Hotel, Andheri East), private residences and corporate campuses. Ask us for references that match your project.
           </p>
     
         </div>
@@ -119,12 +119,12 @@ export default function FacadeContractorMumbai() {
         <div className="container mx-auto px-4 max-w-5xl">
           <h2 className="text-3xl font-bold mb-10 text-center">What We Offer</h2>
           <div className="grid md:grid-cols-2 gap-4">
-              <div key="Cyclone Zone Wind Load Design" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Cyclone Zone Wind Load Design</span></div>
-              <div key="Marine Grade SS 316 Hardware" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Marine Grade SS 316 Hardware</span></div>
-              <div key="High-Rise Facade Expertise" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">High-Rise Facade Expertise</span></div>
-              <div key="PVDF Anti-Corrosion Coatings" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">PVDF Anti-Corrosion Coatings</span></div>
-              <div key="BKC & South Mumbai Projects" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">BKC & South Mumbai Projects</span></div>
-              <div key="Leela Hotel & Embassy Reference" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Leela Hotel & Embassy Reference</span></div>
+              <div key="Wind Load Engineering Check" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Wind Load Engineering Check</span></div>
+              <div key="Corrosion-Resistant Hardware" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Corrosion-Resistant Hardware</span></div>
+              <div key="High-Rise Facade Work" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">High-Rise Facade Work</span></div>
+              <div key="Finish Selection to Specification" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Finish Selection to Specification</span></div>
+              <div key="BKC and Mumbai Projects" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">BKC and Mumbai Projects</span></div>
+              <div key="Leela Hotel and Embassy 247 Records" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Leela Hotel and Embassy 247 Records</span></div>
           </div>
         </div>
       </section>
@@ -136,15 +136,15 @@ export default function FacadeContractorMumbai() {
           <div className="space-y-6">
             <div className="bg-background rounded-xl p-6 shadow-sm">
               <h3 className="text-lg font-bold mb-2">Does Fine Glaze serve all of Mumbai for facade work?</h3>
-              <p className="text-muted-foreground">Yes. Fine Glaze serves all Mumbai zones including South Mumbai, Central Mumbai (Worli, Lower Parel, Dadar), Western suburbs (Bandra, Andheri, Goregaon, Borivali), Eastern suburbs (Vikhroli, Powai), and BKC. We also cover Navi Mumbai and Thane.</p>
+              <p className="text-muted-foreground">Fine Glaze is based in Pune and Mumbai and takes facade projects across Mumbai, Navi Mumbai, Thane and Panvel. Our documented Mumbai projects are in BKC, Andheri, Vikhroli, Vile Parle, Byculla, Juhu and Dadar.</p>
             </div>
             <div className="bg-background rounded-xl p-6 shadow-sm">
               <h3 className="text-lg font-bold mb-2">What makes Mumbai facade work different from Pune?</h3>
-              <p className="text-muted-foreground">Mumbai requires anti-corrosion engineering throughout: marine-grade SS hardware, PVDF-coated aluminium extrusions, high-build sealants for saline environments, and design for higher wind loads (Zone IV/V). Fine Glaze engineers all Mumbai facades specifically for these conditions.</p>
+              <p className="text-muted-foreground">Mumbai's coastal air, humidity and wind load make material and finish selection more demanding than inland sites. Corrosion-resistant hardware, suitable finishes and sealants, and a wind-load check against the project design basis are standard concerns.</p>
             </div>
             <div className="bg-background rounded-xl p-6 shadow-sm">
               <h3 className="text-lg font-bold mb-2">How much does facade work cost in Mumbai?</h3>
-              <p className="text-muted-foreground">Mumbai facade costs are typically 10-15% higher than Pune due to higher logistics costs, coastal engineering requirements, and higher labour rates. ACP cladding: Rs 200-500/sq ft; structural glazing: Rs 350-1000/sq ft; curtain walls: Rs 400-1300/sq ft installed.</p>
+              <p className="text-muted-foreground">Facade cost in Mumbai depends on the system, glass or panel specification, height, access and logistics, so a reliable figure needs drawings. Fine Glaze prepares BOQ-based quotations after reviewing the drawings and the site.</p>
             </div>
           </div>
         </div>

@@ -214,8 +214,8 @@ export default function Skylights() {
   return (
     <Layout darkHero>
       <SEO
-        title="Glass Skylights & Canopies in Pune & Mumbai | Fine Glaze"
-        description="Glass skylight contractor in Pune & Mumbai. Atrium skylights, entrance glass canopies, spider-supported glass canopies & overhead glazing systems."
+        title="Glass Skylight Contractor in Pune & Mumbai | Fine Glaze"
+        description="Glass skylight and canopy contractor in Pune, Mumbai and across India. Atrium skylights, entrance canopies and overhead glazing, with in-house shop drawings."
         canonical="https://fineglaze.com/skylights-canopies"
         keywords="glass skylight contractor, atrium skylight, glass canopy contractor, frameless glass canopy, spider canopy, overhead glazing"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}

@@ -213,7 +213,7 @@ export default function GlassPartitions() {
     <Layout darkHero>
       <SEO
         title="Glass Partition Contractor in Pune & Mumbai | Fine Glaze"
-        description="Glass partition contractor in Pune & Mumbai. Frameless office glass partitions, acoustic DGU partitions, smart glass, and luxury shower enclosures."
+        description="Glass partition contractor in Pune, Mumbai and across India. Frameless office partitions, DGU and smart glass, with in-house shop drawings for approval."
         canonical="https://fineglaze.com/glass-partitions"
         keywords="glass partition contractor, office glass partitions, frameless glass partition, DGU glass partition, acoustic glass partition"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}

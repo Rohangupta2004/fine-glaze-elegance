@@ -29,7 +29,7 @@ export default function CommercialBuildingFacade() {
       { "@type": "City", "name": "Mumbai" },
       { "@type": "State", "name": "Maharashtra" }
     ],
-    "description": "Complete guide to commercial building facade systems in India. Curtain walls, structural glazing, ACP cladding, costs, and regulatory requirements. Expert advice by Fine Glaze."
+    "description": "Commercial building facade contractor in Pune and Mumbai: curtain walls, structural glazing and ACP cladding for offices, with in-house shop drawings."
   };
 
   const faqSchema = {
@@ -54,8 +54,8 @@ export default function CommercialBuildingFacade() {
   return (
     <Layout darkHero>
       <SEO
-        title="Office Building Facade Contractor, Pune & Mumbai | Fine Glaze"
-        description="Commercial building facade contractor in Pune & Mumbai. Curtain walls, structural glazing & ACP cladding for corporate office buildings."
+        title="Commercial Building Facade Contractor | Fine Glaze"
+        description="Commercial building facade contractor in Pune and Mumbai: curtain walls, structural glazing and ACP cladding for offices, with in-house shop drawings."
         canonical="https://fineglaze.com/commercial-building-facade"
         keywords="commercial building facade contractor, commercial facade company, office building facade, glass facade commercial building, facade engineering"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}

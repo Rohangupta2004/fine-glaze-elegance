@@ -217,8 +217,8 @@ export default function CurtainWall() {
   return (
     <Layout darkHero>
       <SEO
-        title="Curtain Wall Systems in Pune & Mumbai | Fine Glaze"
-        description="Curtain wall manufacturers in Pune & Mumbai. Unitized, stick & semi-unitized glass curtain wall systems for IT parks & commercial towers. Book a call with our team."
+        title="Curtain Wall Contractor in Pune & Mumbai | Fine Glaze"
+        description="Curtain wall contractor in Pune, Mumbai and across India. Unitized, stick and semi-unitized systems, in-house shop drawings, own Pune fabrication unit."
         canonical="https://fineglaze.com/curtain-wall-systems"
         keywords="Curtain wall manufacturers, curtain wall manufacturers Pune, curtain wall manufacturers Mumbai, unitized curtain wall, curtain wall cost, curtain wall systems"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}

@@ -28,7 +28,7 @@ export default function PVDFvsPowderCoating() {
       { "@type": "City", "name": "Mumbai" },
       { "@type": "State", "name": "Maharashtra" }
     ],
-    "description": "PVDF vs powder coating for aluminium facades — complete comparison for Indian buildings. Durability, cost, UV resistance, coastal performance. Expert guide by Fine Glaze."
+    "description": "PVDF vs powder coating for aluminium facades compared on durability, UV and coastal exposure and upkeep. A general guide by Fine Glaze, Pune and Mumbai."
   };
 
   const faqSchema = {
@@ -53,8 +53,8 @@ export default function PVDFvsPowderCoating() {
   return (
     <Layout darkHero>
       <SEO
-        title="PVDF vs Powder Coating for Aluminium Facades"
-        description="PVDF vs powder coating for aluminium facades — complete comparison for Indian buildings. Durability, cost, UV resistance, coastal performance. Expert guide by Fine Glaze."
+        title="PVDF vs Powder Coating for Aluminium Facades | Fine Glaze"
+        description="PVDF vs powder coating for aluminium facades compared on durability, UV and coastal exposure and upkeep. A general guide by Fine Glaze, Pune and Mumbai."
         canonical="https://fineglaze.com/pvdf-vs-powder-coating-aluminium"
         keywords="PVDF vs powder coating aluminium India, PVDF coating facade India, powder coating aluminium facade, aluminium finish guide India, PVDF Kynar aluminium building, facade coating comparison"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}

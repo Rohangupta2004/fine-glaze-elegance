@@ -214,7 +214,7 @@ export default function GlassRailings() {
     <Layout darkHero>
       <SEO
         title="Glass Railing Contractor in Pune & Mumbai | Fine Glaze"
-        description="Glass railing contractor in Pune & Mumbai. Frameless, semi-frameless & SS spigot glass railing systems for balconies, staircases & terraces."
+        description="Glass railing contractor in Pune, Mumbai and across India. Frameless and spigot glass railings for balconies and staircases, with in-house shop drawings."
         canonical="https://fineglaze.com/glass-railings"
         keywords="glass railing contractor, frameless glass railing, toughened glass railing, glass balustrade, staircase glass railing, balcony glass railing"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}

@@ -29,7 +29,7 @@ export default function AcpCladdingPune() {
       { "@type": "City", "name": "Mumbai" },
       { "@type": "State", "name": "Maharashtra" }
     ],
-    "description": "ACP cladding contractor in Pune. Fire-retardant aluminium composite panels, PVDF finishes, CNC routing. NBC 2016 compliant. Free site visit."
+    "description": "ACP cladding contractor in Pune for commercial facades, with panel routing and preparation at our own fabrication unit in Pisoli and in-house shop drawings."
   };
 
   const faqSchema = {
@@ -54,8 +54,8 @@ export default function AcpCladdingPune() {
   return (
     <Layout darkHero>
       <SEO
-        title="ACP Cladding Contractor in Pune | Fine Glaze"
-        description="Top ACP cladding contractor in Pune. Fire-retardant aluminium composite panels for commercial facades in Baner, Hinjewadi, Kharadi & Wakad."
+        title="ACP Cladding Contractor in Pune, Maharashtra | Fine Glaze"
+        description="ACP cladding contractor in Pune for commercial facades, with panel routing and preparation at our own fabrication unit in Pisoli and in-house shop drawings."
         canonical="https://fineglaze.com/acp-cladding-pune"
         keywords="ACP cladding contractor Pune, ACP facade Pune, aluminium composite panel Pune, ACP sheet installation Pune"
         ogImage="https://fineglaze.com/projects/embassy-techzone-40-1.webp"

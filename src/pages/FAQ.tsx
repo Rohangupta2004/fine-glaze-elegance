@@ -136,8 +136,8 @@ export default function FAQ() {
     <Layout>
     <div className="bg-slate-50 text-slate-900 font-sans selection:bg-amber-200">
       <SEO
-        title="Facade, Glazing, ACP and Curtain Wall FAQs | Fine Glaze"
-        description="Facade contractor FAQ India — 11 expert answers on curtain wall installation, structural glazing costs, ACP cladding prices, waterproofing, and facade maintenance AMC."
+        title="Facade Contractor FAQ India: Glazing and ACP | Fine Glaze"
+        description="Answers to common questions on curtain wall, structural glazing, ACP cladding, facade leakage and maintenance AMC, written as general guidance by Fine Glaze."
         canonical="https://fineglaze.com/faq"
         keywords="facade contractor FAQ India, curtain wall FAQ, structural glazing FAQ, ACP cladding FAQ, facade cost, facade maintenance questions"
         schema={jsonLd}

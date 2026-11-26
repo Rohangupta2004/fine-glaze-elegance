@@ -29,7 +29,7 @@ export default function AluminiumFacadeMumbai() {
       { "@type": "City", "name": "Mumbai" },
       { "@type": "State", "name": "Maharashtra" }
     ],
-    "description": "Aluminium facade contractor in Mumbai. Thermal break doors, windows, louvers & ACP cladding for BKC, Andheri, Powai & Vikhroli. Marine-grade quality. Free site visit."
+    "description": "Aluminium facade contractor in Mumbai: aluminium windows, doors, louvers and ACP cladding for BKC, Andheri, Powai and Vikhroli, with in-house shop drawings."
   };
 
   const faqSchema = {
@@ -54,8 +54,8 @@ export default function AluminiumFacadeMumbai() {
   return (
     <Layout darkHero>
       <SEO
-        title="Aluminium Facade & Windows Contractor, Mumbai | Fine Glaze"
-        description="Aluminium facade contractor in Mumbai. Thermal break doors, windows, louvers & ACP cladding for BKC, Andheri, Powai & Vikhroli. Marine-grade quality. Free site visit."
+        title="Aluminium Facade Contractor in Mumbai | Fine Glaze"
+        description="Aluminium facade contractor in Mumbai: aluminium windows, doors, louvers and ACP cladding for BKC, Andheri, Powai and Vikhroli, with in-house shop drawings."
         canonical="https://fineglaze.com/aluminium-facade-mumbai"
         keywords="aluminium facade contractor Mumbai, aluminium windows Mumbai, thermal break windows Mumbai, aluminium cladding BKC, aluminium doors Mumbai, facade contractor Andheri, aluminium facade Worli"
         ogImage="https://fineglaze.com/projects/samundra-tarang-51-1.webp"

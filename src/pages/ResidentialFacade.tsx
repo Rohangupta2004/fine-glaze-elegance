@@ -29,7 +29,7 @@ export default function ResidentialFacade() {
       { "@type": "City", "name": "Mumbai" },
       { "@type": "State", "name": "Maharashtra" }
     ],
-    "description": "Residential facade contractor in India. Glass railings, ACP cladding, aluminium windows & structural glazing for apartments and villas. projects. Free site visit."
+    "description": "Residential facade contractor in Pune and Mumbai: glass railings, ACP cladding, aluminium windows and doors for apartments, with in-house shop drawings."
   };
 
   const faqSchema = {
@@ -55,7 +55,7 @@ export default function ResidentialFacade() {
     <Layout darkHero>
       <SEO
         title="Residential Facade Contractor in Pune & Mumbai | Fine Glaze"
-        description="Residential facade contractor in Pune & Mumbai. Glass railings, ACP cladding, aluminium doors & windows for apartment towers & luxury villas."
+        description="Residential facade contractor in Pune and Mumbai: glass railings, ACP cladding, aluminium windows and doors for apartments, with in-house shop drawings."
         canonical="https://fineglaze.com/residential-facade"
         keywords="residential facade contractor, apartment facade, villa facade, residential ACP cladding, residential glass railing, aluminium windows"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}

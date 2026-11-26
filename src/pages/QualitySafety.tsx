@@ -52,8 +52,8 @@ export default function QualitySafety() {
   return (
     <Layout>
       <SEO
-        title="Quality, Testing & Site Safety | How Fine Glaze Works"
-        description="Eight delivery stages, in-house drawings and engineering checks, a Pune fabrication unit, stage inspections, site water testing and a dedicated safety officer — how Fine Glaze delivers facades."
+        title="Facade Contractor Quality Control and Safety | Fine Glaze"
+        description="How Fine Glaze controls facade quality and safety: in-house shop drawings, stage inspections, a site water penetration test and a dedicated safety officer."
         canonical={PAGE_URL}
         keywords="facade quality control, facade water test, facade contractor safety, work at height facade, facade contractor vendor registration, Fine Glaze process"
         schemas={schemas}

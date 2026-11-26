@@ -29,7 +29,7 @@ export default function CurtainWallPune() {
       { "@type": "City", "name": "Mumbai" },
       { "@type": "State", "name": "Maharashtra" }
     ],
-    "description": "Expert curtain wall glazing contractor in Pune. Unitized & stick system curtain walls for IT parks, offices & malls. Projects in Hinjewadi, Kharadi, Baner. Free site visit."
+    "description": "Curtain wall contractor in Pune: unitized and stick glass curtain walls for offices and commercial towers, with in-house shop drawings, own fabrication unit."
   };
 
   const faqSchema = {
@@ -54,8 +54,8 @@ export default function CurtainWallPune() {
   return (
     <Layout darkHero>
       <SEO
-        title="Curtain Wall Contractor in Pune | Fine Glaze"
-        description="Expert curtain wall contractor in Pune. Unitized & stick system glass curtain walls for IT parks & commercial towers in Hinjewadi, Kharadi, Baner & Wakad."
+        title="Curtain Wall Contractor in Pune, Maharashtra | Fine Glaze"
+        description="Curtain wall contractor in Pune: unitized and stick glass curtain walls for offices and commercial towers, with in-house shop drawings, own fabrication unit."
         canonical="https://fineglaze.com/curtain-wall-pune"
         keywords="curtain wall contractor Pune, curtain wall systems Pune, glass facade Pune, unitized curtain wall Pune"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}

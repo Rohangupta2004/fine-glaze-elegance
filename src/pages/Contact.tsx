@@ -121,8 +121,8 @@ const Contact = () => {
   return (
     <Layout darkHero>
       <SEO
-        title="Contact Fine Glaze for a Facade Project Consultation | Fine Glaze"
-        description="Contact Fine Glaze for a facade project consultation in Pune and Mumbai. Request a site visit, quotation, and engineering assessment for aluminium facades, curtain walls, and structural glazing."
+        title="Facade Contractor Consultation in Pune | Fine Glaze"
+        description="Contact Fine Glaze about a facade project in Pune, Mumbai or elsewhere in India. Call, WhatsApp or write to us. Office in Mohammed Wadi (Undri), Pune."
         canonical="https://fineglaze.com/contact"
         keywords="facade contractor consultation in Pune and Mumbai, facade site visit, facade quotation, glazing contractor contact, facade project enquiry"
         schema={{

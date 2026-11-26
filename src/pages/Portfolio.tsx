@@ -336,8 +336,8 @@ const Portfolio = () => {
   return (
     <Layout darkHero>
       <SEO
-        title="Facade Projects in Pune & Mumbai | Fine Glaze Portfolio"
-        description="Documented Fine Glaze facade projects with client, scope and status: Embassy 247 (Embassy REIT), Pune Airport SS cladding, LTIMindtree Mahape, Nanavati Max Hospital, Salsette-27 and more."
+        title="Facade Projects Portfolio in Pune & Mumbai | Fine Glaze"
+        description="Fine Glaze facade projects in Pune and Mumbai with client, scope and status: Embassy 247, Pune Airport, LTIMindtree Mahape and Nanavati Max Hospital."
         canonical="https://fineglaze.com/portfolio"
         keywords="facade projects Pune, facade projects Mumbai, Fine Glaze projects, glass facade projects, ACP cladding projects"
         schema={portfolioSchema}

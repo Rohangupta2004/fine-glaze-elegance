@@ -28,7 +28,7 @@ export default function IndustrialFacade() {
       { "@type": "City", "name": "Mumbai" },
       { "@type": "State", "name": "Maharashtra" }
     ],
-    "description": "Industrial building facade contractor in India. ACP cladding, metal composite panels, aluminium windows for factories, warehouses & industrial facilities. Maharashtra projects."
+    "description": "Industrial facade contractor in Pune and Mumbai: ACP and metal cladding for factories and warehouses, with in-house shop drawings and own Pune unit."
   };
 
   const faqSchema = {
@@ -53,8 +53,8 @@ export default function IndustrialFacade() {
   return (
     <Layout darkHero>
       <SEO
-        title="Industrial Facade & Cladding, Pune & Mumbai | Fine Glaze"
-        description="Industrial facade contractor in Pune and Mumbai. Durable ACP cladding, metal composite panels & industrial curtain walls for factories, warehouses & MIDC industrial parks."
+        title="Industrial Facade Contractor in Pune & Mumbai | Fine Glaze"
+        description="Industrial facade contractor in Pune and Mumbai: ACP and metal cladding for factories and warehouses, with in-house shop drawings and own Pune unit."
         canonical="https://fineglaze.com/industrial-facade"
         keywords="industrial facade contractor, factory facade, warehouse facade, industrial cladding, industrial curtain wall"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}

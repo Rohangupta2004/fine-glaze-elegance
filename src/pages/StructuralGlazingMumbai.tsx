@@ -29,7 +29,7 @@ export default function StructuralGlazingMumbai() {
       { "@type": "City", "name": "Mumbai" },
       { "@type": "State", "name": "Maharashtra" }
     ],
-    "description": "Structural glazing contractor in Mumbai. 2-side, 4-side & spider glazing for commercial towers, showrooms & hotels. Cyclone-rated design. Free site visit."
+    "description": "Structural glazing in Mumbai: 2-side, 4-side and spider glass facades for commercial buildings, with in-house shop drawings and a site water test."
   };
 
   const faqSchema = {
@@ -54,8 +54,8 @@ export default function StructuralGlazingMumbai() {
   return (
     <Layout darkHero>
       <SEO
-        title="Structural Glazing Contractor in Mumbai | Fine Glaze"
-        description="Structural glazing contractor in Mumbai. 2-side, 4-side & spider glass facades for commercial towers in BKC, Andheri, Powai, Goregaon & Worli."
+        title="Structural Glazing in Mumbai: SSG and Spider | Fine Glaze"
+        description="Structural glazing in Mumbai: 2-side, 4-side and spider glass facades for commercial buildings, with in-house shop drawings and a site water test."
         canonical="https://fineglaze.com/structural-glazing-mumbai"
         keywords="structural glazing Mumbai, structural glass facade Mumbai, frameless glazing Mumbai, spider glazing Mumbai"
         ogImage="https://fineglaze.com/projects/naman-chambers-48-1.webp"

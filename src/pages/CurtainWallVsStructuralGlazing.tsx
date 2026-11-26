@@ -28,7 +28,7 @@ export default function CurtainWallVsStructuralGlazing() {
       { "@type": "City", "name": "Mumbai" },
       { "@type": "State", "name": "Maharashtra" }
     ],
-    "description": "Curtain wall vs structural glazing — detailed comparison for Indian buildings. Cost, aesthetics, performance, installation & which to choose. Expert guide by Fine Glaze."
+    "description": "Curtain wall vs structural glazing explained: how each is built, where each suits a building, and what to compare in quotes. A general guide by Fine Glaze."
   };
 
   const faqSchema = {
@@ -53,8 +53,8 @@ export default function CurtainWallVsStructuralGlazing() {
   return (
     <Layout darkHero>
       <SEO
-        title="Curtain Wall vs Structural Glazing: Key Differences"
-        description="Curtain wall vs structural glazing — detailed comparison for Indian buildings. Cost, aesthetics, performance, installation & which to choose. Expert guide by Fine Glaze."
+        title="Curtain Wall vs Structural Glazing: Differences | Fine Glaze"
+        description="Curtain wall vs structural glazing explained: how each is built, where each suits a building, and what to compare in quotes. A general guide by Fine Glaze."
         canonical="https://fineglaze.com/curtain-wall-vs-structural-glazing"
         keywords="curtain wall vs structural glazing India, SSG vs curtain wall, structural glazing or curtain wall, glass facade types India, curtain wall vs SSG comparison, facade system selection India"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}

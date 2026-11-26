@@ -133,8 +133,8 @@ export default function AluminiumWindowsDoors() {
   return (
     <Layout darkHero>
       <SEO
-        title="Aluminium Windows & Doors in Pune & Mumbai | Fine Glaze"
-        description="Sliding, casement, tilt-turn and lift-slide aluminium windows & doors, fabricated in Pune and installed by our own team. Glass options, a quote checklist and real projects."
+        title="Aluminium Windows and Doors in Pune & Mumbai | Fine Glaze"
+        description="Aluminium windows and doors in Pune, Mumbai and across India. Sliding, casement, tilt-turn and lift-slide systems, fabricated at our own unit in Pune."
         canonical={PAGE_URL}
         keywords="aluminium windows Pune, aluminium windows Mumbai, aluminium sliding windows, casement windows, tilt and turn windows, thermal break aluminium windows, aluminium doors, window installation Pune"
         ogImage={`https://fineglaze.com${HERO}`}

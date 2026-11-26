@@ -209,7 +209,7 @@ export default function StructuralGlazing() {
     <Layout darkHero>
       <SEO
         title="Structural Glazing Contractor in Pune & Mumbai | Fine Glaze"
-        description="Structural glazing contractor in Pune & Mumbai. 2-side, 4-side & spider glazed facade systems for commercial buildings, IT parks & showrooms."
+        description="Structural glazing contractor in Pune, Mumbai and across India. 2-side, 4-side and spider glazing, in-house shop drawings, site water penetration test."
         canonical="https://fineglaze.com/structural-glazing"
         keywords="structural glazing contractor, structural glazing systems, glass facade contractor, 2-side structural glazing, 4-side structural glazing, frameless glass facade"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}
