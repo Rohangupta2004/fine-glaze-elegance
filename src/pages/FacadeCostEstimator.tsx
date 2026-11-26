@@ -197,7 +197,7 @@ export default function FacadeCostEstimator() {
                 <button
                   type="button"
                   onClick={() => book.open({ work: summary, source: "estimator" })}
-                  className="bg-lamp hover:bg-lamp/90 text-paper font-bold px-5 py-3"
+                  className="bg-lamp hover:bg-lamp/90 text-lamp-ink font-bold px-5 py-3"
                 >
                   Book a call
                 </button>

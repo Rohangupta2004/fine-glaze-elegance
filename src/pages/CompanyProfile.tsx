@@ -142,7 +142,7 @@ export default function CompanyProfilePage() {
             <div className="flex flex-wrap items-center gap-2.5">
               <Button
                 onClick={() => openProfile(currentSlide, viewMode)}
-                className="bg-lamp hover:bg-lamp/90 text-paper font-bold text-xs sm:text-sm px-4 py-2.5 shadow-amber-500/20 gap-2 cursor-pointer"
+                className="bg-lamp hover:bg-lamp/90 text-lamp-ink font-bold text-xs sm:text-sm px-4 py-2.5 shadow-amber-500/20 gap-2 cursor-pointer"
               >
                 <Maximize2 className="w-4 h-4" />
                 Fullscreen View
@@ -226,7 +226,7 @@ export default function CompanyProfilePage() {
                   onClick={() => setViewMode("slides")}
                   className={cn(
                     "px-2.5 py-1 text-xs font-semibold  transition-all",
-                    viewMode === "slides" ? "bg-lamp text-paper font-bold" : "text-paper/80"
+                    viewMode === "slides" ? "bg-lamp text-lamp-ink font-bold" : "text-paper/80"
                   )}
                 >
                   Deck View
@@ -235,7 +235,7 @@ export default function CompanyProfilePage() {
                   onClick={() => setViewMode("pdf")}
                   className={cn(
                     "px-2.5 py-1 text-xs font-semibold  transition-all",
-                    viewMode === "pdf" ? "bg-lamp text-paper font-bold" : "text-paper/80"
+                    viewMode === "pdf" ? "bg-lamp text-lamp-ink font-bold" : "text-paper/80"
                   )}
                 >
                   Native PDF
@@ -300,7 +300,7 @@ export default function CompanyProfilePage() {
                     <p className="text-paper/80">PDF document is ready for download or interactive preview.</p>
                     <a
                       href={pdfUrl}
-                      className="px-6 py-3 bg-lamp text-paper font-bold"
+                      className="px-6 py-3 bg-lamp text-lamp-ink font-bold"
                       download
                     >
                       Download PDF (7.3 MB)
@@ -320,7 +320,7 @@ export default function CompanyProfilePage() {
                 className={cn(
                   "flex-none text-left px-3 py-2  border text-xs font-medium transition-all cursor-pointer",
                   currentSlide === sec.slide
-                    ? "bg-lamp text-paper font-bold border-lamp/40 "
+                    ? "bg-lamp text-lamp-ink font-bold border-lamp/40 "
                     : "bg-night-2/80 text-paper/80 border-line hover:border-line hover:text-paper"
                 )}
               >
@@ -364,7 +364,7 @@ export default function CompanyProfilePage() {
             <div className="flex flex-wrap items-center gap-3">
               <Button
                 onClick={() => setIsQuoteOpen(true)}
-                className="bg-lamp hover:bg-lamp/90 text-paper font-bold px-6 py-6 shadow-amber-500/20 text-sm cursor-pointer"
+                className="bg-lamp hover:bg-lamp/90 text-lamp-ink font-bold px-6 py-6 shadow-amber-500/20 text-sm cursor-pointer"
               >
                 Request Proposal <ArrowRight className="w-4 h-4 ml-1" />
               </Button>

@@ -323,7 +323,7 @@ export default function CurtainWall() {
                 </li>
               </ul>
               <Link to="/contact">
-                <Button className="bg-lamp hover:bg-lamp/90 text-paper font-bold gap-2">
+                <Button className="bg-lamp hover:bg-lamp/90 text-lamp-ink font-bold gap-2">
                   Request Unitized Quotation <ArrowRight size={16} />
                 </Button>
               </Link>
@@ -496,7 +496,7 @@ export default function CurtainWall() {
                 <Mail size={18} className="text-lamp" />
                 <span className="text-sm font-semibold">info@fineglaze.com</span>
               </a>
-              <Link to="/contact" className="flex items-center justify-center gap-3 p-4 bg-lamp hover:bg-lamp/90 text-paper font-bold transition-colors">
+              <Link to="/contact" className="flex items-center justify-center gap-3 p-4 bg-lamp hover:bg-lamp/90 text-lamp-ink font-bold transition-colors">
                 <FileText size={18} />
                 <span className="text-sm">Submit Project BOQ</span>
               </Link>

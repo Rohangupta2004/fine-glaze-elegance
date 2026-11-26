@@ -246,7 +246,7 @@ export const CompanyProfileViewerModal: React.FC = () => {
               className={cn(
                 "px-2.5 py-1 text-xs font-semibold  transition-all flex items-center gap-1.5",
                 viewMode === "slides"
-                  ? "bg-lamp text-paper "
+                  ? "bg-lamp text-lamp-ink "
                   : "text-paper/80 hover:text-paper"
               )}
               title="Interactive Slide Deck"
@@ -259,7 +259,7 @@ export const CompanyProfileViewerModal: React.FC = () => {
               className={cn(
                 "px-2.5 py-1 text-xs font-semibold  transition-all flex items-center gap-1.5",
                 viewMode === "pdf"
-                  ? "bg-lamp text-paper "
+                  ? "bg-lamp text-lamp-ink "
                   : "text-paper/80 hover:text-paper"
               )}
               title="Native PDF"
@@ -389,7 +389,7 @@ export const CompanyProfileViewerModal: React.FC = () => {
                 <div className="flex gap-3">
                   <Button
                     onClick={() => setViewMode("slides")}
-                    className="bg-lamp text-paper hover:bg-lamp/90 font-bold"
+                    className="bg-lamp text-lamp-ink hover:bg-lamp/90 font-bold"
                   >
                     Switch to Interactive Deck
                   </Button>
