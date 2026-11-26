@@ -292,7 +292,7 @@ export default function GlassPartitions() {
                   className="w-full h-full object-cover transition-opacity duration-500"
                   loading="lazy"
                 />
-                <div className="absolute top-4 left-4 bg-night-2/80 text-paper text-xs font-bold px-3 py-1.5">
+                <div className="absolute top-4 left-4 bg-[rgba(24,19,15,0.78)] text-[#f5f2ee] text-xs font-bold px-3 py-1.5">
                   {current.num}
                 </div>
               </div>
@@ -420,7 +420,7 @@ export default function GlassPartitions() {
             className="w-full h-full object-cover"
             loading="lazy"
           />
-          <div className="absolute inset-0 bg-night/40" />
+          <div className="absolute inset-0 bg-[rgba(24,19,15,0.55)]" />
           <div className="absolute inset-0 flex items-center">
             <div className="px-6 md:px-10">
               <p className="text-mute text-sm mb-2">Our Promise</p>

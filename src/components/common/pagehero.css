@@ -11,7 +11,6 @@
 .ph-crumbs a:hover { color: #2b1d12; text-decoration: underline; text-underline-offset: 4px; }
 .ph-crumbs [aria-current] { color: #2b1d12; }
 .ph h1 { margin: 0; font-family: 'Lora', ui-serif, Georgia, 'Times New Roman', serif; font-weight: 500; font-size: clamp(36px, 5vw, 76px); line-height: 1.08; letter-spacing: -0.02em; color: #2b1d12; text-wrap: balance; }
-.ph h1 .text-gradient-gold, .ph h1 .text-gradient { color: #9b5520; }
 .ph-intro { margin: clamp(18px, 2.2vw, 28px) 0 0; max-width: 36rem; font-size: clamp(17px, 1.5vw, 20px); line-height: 1.5; color: #6f6152; }
 .ph-act { margin-top: clamp(26px, 3vw, 40px); display: flex; flex-wrap: wrap; align-items: center; gap: 18px 30px; }
 .ph-extra { margin-top: 22px; font-size: 15px; color: #6f6152; max-width: 36rem; }

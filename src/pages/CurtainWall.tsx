@@ -364,7 +364,7 @@ export default function CurtainWall() {
                   className="w-full h-full object-cover transition-opacity duration-500"
                   loading="lazy"
                 />
-                <div className="absolute top-4 left-4 bg-night-2/80 text-paper text-xs font-bold px-3 py-1.5">
+                <div className="absolute top-4 left-4 bg-[rgba(24,19,15,0.78)] text-[#f5f2ee] text-xs font-bold px-3 py-1.5">
                   {current.num}
                 </div>
               </div>

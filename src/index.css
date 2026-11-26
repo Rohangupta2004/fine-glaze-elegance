@@ -6,56 +6,56 @@
 
 @layer base {
   :root, .dark {
-    --background: 25 20% 8%;
-    --foreground: 35 20% 95%;
+    --background: 35 20% 97%;
+    --foreground: 22 40% 12%;
 
-    --card: 25 20% 12%;
-    --card-foreground: 35 20% 95%;
+    --card: 0 0% 100%;
+    --card-foreground: 22 40% 12%;
 
-    --popover: 25 20% 12%;
-    --popover-foreground: 35 20% 95%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 22 40% 12%;
 
-    --primary: 28 55% 50%;
-    --primary-foreground: 28 50% 7%;
+    --primary: 25 67% 33%;
+    --primary-foreground: 35 25% 97%;
 
-    --secondary: 25 15% 18%;
-    --secondary-foreground: 35 20% 95%;
+    --secondary: 33 22% 91%;
+    --secondary-foreground: 27 35% 20%;
 
-    --muted: 25 15% 18%;
-    --muted-foreground: 35 12% 65%;
+    --muted: 33 22% 91%;
+    --muted-foreground: 30 20% 38%;
 
-    --accent: 30 55% 48%;
-    --accent-foreground: 28 50% 7%;
+    --accent: 27 60% 40%;
+    --accent-foreground: 35 25% 97%;
 
-    --destructive: 0 65% 55%;
+    --destructive: 0 65% 45%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 25 22% 19%;
-    --input: 25 22% 19%;
-    --ring: 28 55% 50%;
+    --border: 35 15% 85%;
+    --input: 35 15% 85%;
+    --ring: 25 55% 35%;
 
-    --glass-bg: 25 20% 10% / 0.75;
-    --glass-border: 28 35% 50% / 0.35;
+    --glass-bg: 35 25% 97% / 0.8;
+    --glass-border: 25 25% 65% / 0.35;
 
-    --chart-1: 28 55% 50%;
+    --chart-1: 25 55% 45%;
     --chart-2: 32 60% 55%;
-    --chart-3: 35 25% 75%;
-    --chart-4: 25 15% 45%;
+    --chart-3: 20 50% 40%;
+    --chart-4: 35 25% 75%;
     --chart-5: 28 40% 60%;
 
-    --sidebar-background: 25 20% 10%;
-    --sidebar-foreground: 35 20% 95%;
-    --sidebar-primary: 28 55% 50%;
-    --sidebar-primary-foreground: 28 50% 7%;
-    --sidebar-accent: 25 15% 18%;
-    --sidebar-accent-foreground: 35 20% 95%;
-    --sidebar-border: 25 22% 19%;
-    --sidebar-ring: 28 55% 50%;
-    --sidebar: 25 20% 12%;
+    --sidebar-background: 35 20% 95%;
+    --sidebar-foreground: 25 20% 15%;
+    --sidebar-primary: 25 55% 35%;
+    --sidebar-primary-foreground: 35 25% 97%;
+    --sidebar-accent: 35 18% 90%;
+    --sidebar-accent-foreground: 25 20% 18%;
+    --sidebar-border: 35 15% 85%;
+    --sidebar-ring: 25 55% 35%;
+    --sidebar: 35 25% 97%;
 
     --radius: 0rem;
     --glass-blur: 0px;
-    color-scheme: dark;
+    color-scheme: light;
   }
 }
 
@@ -127,7 +127,7 @@
   }
 
   .btn-glossy:hover {
-    background: #d9975a;
+    background: #86481a;
   }
 
   .slide-up {
@@ -144,13 +144,28 @@
         rgba(24,19,15, 0.9) 100%);
   }
 
-  /* Headline accents are a plain lamp colour, never a gradient. */
+  /* Bronze text gradients, as on the earlier site. A solid colour comes first as the fallback;
+     the darker stops keep large text above 4.5:1 on the cream page. */
   .text-gradient,
   .text-gradient-gold,
   .text-gradient-warm,
   .text-gradient-light,
   .text-gradient-subtle {
     color: #9b5520;
+  }
+  @supports ((-webkit-background-clip: text) or (background-clip: text)) {
+    .text-gradient,
+    .text-gradient-gold,
+    .text-gradient-warm,
+    .text-gradient-light,
+    .text-gradient-subtle {
+      background-image: linear-gradient(135deg, hsl(27 62% 40%) 0%, hsl(21 68% 27%) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      -webkit-box-decoration-break: clone;
+      box-decoration-break: clone;
+    }
   }
 
   .bronze-glow {
