@@ -36,9 +36,8 @@ export default function ItParkFacade() {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      { "@type": "Question", "name": "What facade system is standard for IT parks in India?", "acceptedAnswer": { "@type": "Answer", "text": "Unitized curtain wall with DGU Low-E glass (SHGC 0.25-0.35) is the industry standard for IT parks in India. It delivers LEED energy performance credits, fast installation to meet tight occupier timelines, factory-controlled quality, and the premium glass aesthetic that MNC occupiers expect." } },
-      { "@type": "Question", "name": "Does Fine Glaze have experience with LEED facade compliance?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Fine Glaze has completed multiple LEED-targeted IT park projects, providing glass with certified SHGC and U-value test reports, aluminium with low-VOC PVDF coating certification, and facade performance documentation required for LEED EAc1 and IEQc8.1 credits." } },
-      { "@type": "Question", "name": "How does Fine Glaze handle large multi-building IT campus projects?", "acceptedAnswer": { "@type": "Answer", "text": "Fine Glaze assigns a dedicated project director for campus projects, runs parallel fabrication for multiple blocks, maintains a dedicated on-site quality team, and provides weekly progress reporting with Gantt chart tracking. Our IT-campus references include Embassy Techzone (Hinjewadi, Pune), Embassy 247 (Vikhroli, Mumbai) and ACP and silicone work at the LTIMindtree campus in Mahape for L&T Construction." } },
+      { "@type": "Question", "name": "What facade system is standard for IT parks in India?", "acceptedAnswer": { "@type": "Answer", "text": "Unitized curtain wall with double glazed low-E glass is a common choice for IT parks because factory-made panels install quickly and suit repeated floors. The final system depends on height, programme, energy brief and budget." } },
+      { "@type": "Question", "name": "How does Fine Glaze handle large multi-building IT campus projects?", "acceptedAnswer": { "@type": "Answer", "text": "Fine Glaze runs campus projects with a dedicated site in-charge and supervisor, batches fabrication per project at its Pisoli unit and despatches directly to site. Our campus records include Embassy Techzone, Hinjewadi and the LTIMindtree Mensa Campus, Mahape." } },
     ]
   };
 
@@ -69,7 +68,7 @@ export default function ItParkFacade() {
             <h1 className="text-3xl md:text-4xl font-bold mb-4">
               IT Park Facade <span className="text-gradient-gold">Contractor India</span>
             </h1>
-            <p className="text-lg text-white/80 mb-8">Fine Glaze is a specialist facade contractor for IT parks, technology campuses, and corporate office complexes in Pune and Mumbai. Our LEED-compatible curtain wall systems, energy-efficient glazing specifications, backed by work on Embassy REIT and L&T Construction campuses.</p>
+            <p className="text-lg text-white/80 mb-8">Fine Glaze is a facade contractor for IT parks, technology campuses and corporate offices in Pune and Mumbai, with records on Embassy REIT and L&T Construction campuses.</p>
             <div className="flex gap-4">
               <Link to="/contact">
                 <Button size="lg" className="bg-amber-600 hover:bg-amber-700">Book a call</Button>
@@ -94,18 +93,18 @@ export default function ItParkFacade() {
       <section className="py-20">
         <div className="container mx-auto px-4 max-w-5xl space-y-6">
           
-          <h2 className="text-3xl font-bold">What IT Parks Demand from Facade Contractors</h2>
+          <h2 className="text-3xl font-bold">What IT Parks Need from Facade Contractors</h2>
           <p className="text-muted-foreground">
-            IT parks and technology campuses have unique facade requirements that distinguish them from standard commercial buildings. Key requirements include: <strong>LEED certification compliance</strong> — most MNC occupiers mandate LEED Gold or Platinum; <strong>tight construction schedules</strong> — IT park developers frequently work to aggressive timelines driven by occupier pre-commitments; <strong>large-scale simultaneous multi-block execution</strong>; and <strong>long-term performance guarantees</strong> to satisfy institutional building owners.
+            IT parks and campuses have particular facade needs. Occupiers often ask for energy-efficient glazing, developers work to tight programmes, and campuses involve several blocks built in parallel. Owners also expect clear documentation and defect liability terms.
           </p>
           <p className="text-muted-foreground mt-4">
-            Fine Glaze has directly addressed these requirements through our landmark IT park projects. The <strong>LTIMindtree Mensa Campus in Mahape, Navi Mumbai</strong> — one of our flagship projects — required coordinated facade execution across multiple buildings with unitized curtain wall systems, DGU Low-E glazing for LEED energy compliance, and strict quality control to satisfy the building owner's international standards.
+            Fine Glaze documents several campus-scale records: the <strong>LTIMindtree Mensa Campus in Mahape, Navi Mumbai</strong> (ACP and silicone facade work for L&T Construction) and <strong>Embassy Techzone in Hinjewadi, Pune</strong> (spider glazing, ACP cladding, glass doors and facade AMC for Embassy REIT).
           </p>
           <p className="text-muted-foreground mt-4">
-            For IT park facades, Fine Glaze consistently specifies: <strong>unitized curtain wall</strong> for buildings above 6 storeys; <strong>DGU with Low-E glass</strong> (SHGC 0.25–0.35, U-value below 2.0 W/m2K); <strong>6063-T6 aluminium extrusions</strong> with PVDF coating for 20+ year performance; and <strong>stainless steel anchors and EPDM gaskets</strong> for long-term weather resistance.
+            As general guidance, IT park facades often use <strong>unitized curtain wall</strong> on taller blocks, <strong>double glazed low-E glass</strong> chosen to the energy brief, <strong>aluminium extrusions</strong> with a durable finish, and <strong>stainless steel anchors and EPDM gaskets</strong>. We follow the project's specification.
           </p>
           <p className="text-muted-foreground mt-4">
-            We serve all major IT park corridors in India: Hinjewadi IT Park Phases 1-3 (Pune), Kharadi EON IT Park (Pune), Mahape MIDC (Navi Mumbai), Airoli (Navi Mumbai), Whitefield (Bangalore), HITEC City (Hyderabad), and Rajiv Gandhi IT Corridor (Chennai). Fine Glaze's experience in each of these locations translates into faster mobilisation, better local supplier relationships, and more competitive pricing.
+            We take IT park and campus projects in Pune and Mumbai, and elsewhere in India on request. Our documented IT campus records are in Hinjewadi, Pune and Mahape, Navi Mumbai.
           </p>
     
         </div>
@@ -116,12 +115,12 @@ export default function ItParkFacade() {
         <div className="container mx-auto px-4 max-w-5xl">
           <h2 className="text-3xl font-bold mb-10 text-center">What We Offer</h2>
           <div className="grid md:grid-cols-2 gap-4">
-              <div key="LEED Gold/Platinum Compliance" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">LEED Gold/Platinum Compliance</span></div>
-              <div key="DGU Low-E Glass Specification" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">DGU Low-E Glass Specification</span></div>
+              <div key="Glass Specified to Energy Brief" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Glass Specified to Energy Brief</span></div>
+              <div key="DGU Low-E Glass Options" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">DGU Low-E Glass Options</span></div>
               <div key="Unitized Curtain Wall Systems" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Unitized Curtain Wall Systems</span></div>
               <div key="Multi-Block Campus Projects" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Multi-Block Campus Projects</span></div>
-              <div key="LTIMindtree Campus Reference" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">LTIMindtree Campus Reference</span></div>
-              <div key="Fast-Track Installation Programs" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Fast-Track Installation Programs</span></div>
+              <div key="LTIMindtree Campus Record" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">LTIMindtree Campus Record</span></div>
+              <div key="Batched Fabrication and Sequenced Erection" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Batched Fabrication and Sequenced Erection</span></div>
           </div>
         </div>
       </section>
@@ -133,15 +132,11 @@ export default function ItParkFacade() {
           <div className="space-y-6">
             <div className="bg-background rounded-xl p-6 shadow-sm">
               <h3 className="text-lg font-bold mb-2">What facade system is standard for IT parks in India?</h3>
-              <p className="text-muted-foreground">Unitized curtain wall with DGU Low-E glass (SHGC 0.25-0.35) is the industry standard for IT parks in India. It delivers LEED energy performance credits, fast installation to meet tight occupier timelines, factory-controlled quality, and the premium glass aesthetic that MNC occupiers expect.</p>
-            </div>
-            <div className="bg-background rounded-xl p-6 shadow-sm">
-              <h3 className="text-lg font-bold mb-2">Does Fine Glaze have experience with LEED facade compliance?</h3>
-              <p className="text-muted-foreground">Yes. Fine Glaze has completed multiple LEED-targeted IT park projects, providing glass with certified SHGC and U-value test reports, aluminium with low-VOC PVDF coating certification, and facade performance documentation required for LEED EAc1 and IEQc8.1 credits.</p>
+              <p className="text-muted-foreground">Unitized curtain wall with double glazed low-E glass is a common choice for IT parks because factory-made panels install quickly and suit repeated floors. The final system depends on height, programme, energy brief and budget.</p>
             </div>
             <div className="bg-background rounded-xl p-6 shadow-sm">
               <h3 className="text-lg font-bold mb-2">How does Fine Glaze handle large multi-building IT campus projects?</h3>
-              <p className="text-muted-foreground">Fine Glaze assigns a dedicated project director for campus projects, runs parallel fabrication for multiple blocks, maintains a dedicated on-site quality team, and provides weekly progress reporting with Gantt chart tracking. Our IT-campus references include Embassy Techzone (Hinjewadi, Pune), Embassy 247 (Vikhroli, Mumbai) and ACP and silicone work at the LTIMindtree campus in Mahape for L&T Construction.</p>
+              <p className="text-muted-foreground">Fine Glaze runs campus projects with a dedicated site in-charge and supervisor, batches fabrication per project at its Pisoli unit and despatches directly to site. Our campus records include Embassy Techzone, Hinjewadi and the LTIMindtree Mensa Campus, Mahape.</p>
             </div>
           </div>
         </div>
