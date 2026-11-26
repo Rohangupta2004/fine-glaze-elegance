@@ -71,7 +71,7 @@ export default function GlassRailingPune() {
             <p className="text-lg text-white/80 mb-8">Fine Glaze installs premium frameless and semi-frameless glass railing systems across Pune for residential apartments, commercial offices, hotels, shopping centres, and public spaces. Our glass railings combine toughened safety glass with precision-engineered stainless steel fittings.</p>
             <div className="flex gap-4">
               <Link to="/contact">
-                <Button size="lg" className="bg-amber-600 hover:bg-amber-700">Get Free Quote</Button>
+                <Button size="lg" className="bg-amber-600 hover:bg-amber-700">Book a call</Button>
               </Link>
               <Link to="/portfolio">
                 <Button size="lg" variant="outline">View Projects</Button>

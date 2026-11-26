@@ -70,7 +70,7 @@ export default function FacadeDesignGuide() {
             <p className="text-lg text-white/80 mb-8">Designing a building facade in India requires balancing architectural vision, structural engineering, energy performance, fire safety regulations, local climate conditions, and construction budget. This comprehensive guide covers all the key principles and best practices for facade design in the Indian context.</p>
             <div className="flex gap-4">
               <Link to="/contact">
-                <Button size="lg" className="bg-amber-600 hover:bg-amber-700">Get Free Quote</Button>
+                <Button size="lg" className="bg-amber-600 hover:bg-amber-700">Book a call</Button>
               </Link>
               <Link to="/portfolio">
                 <Button size="lg" variant="outline">View Projects</Button>

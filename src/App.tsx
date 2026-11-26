@@ -8,6 +8,7 @@ import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { PageLoader } from "@/components/PageLoader";
 import { CompanyProfileProvider } from "@/context/CompanyProfileContext";
 import { CompanyProfileViewerModal } from "@/components/CompanyProfileViewerModal";
+import { BookCallProvider } from "@/components/booking/BookCallProvider";
 
 // Eager-load home page (most visited, LCP critical)
 import Index from "./pages/Index";
@@ -95,10 +96,12 @@ const AppWrapper = () => (
     <CompanyProfileProvider>
       <TooltipProvider>
         <ErrorBoundary>
-          <Toaster />
-          <Sonner />
-          <CompanyProfileViewerModal />
-          <Outlet />
+          <BookCallProvider>
+            <Toaster />
+            <Sonner />
+            <CompanyProfileViewerModal />
+            <Outlet />
+          </BookCallProvider>
         </ErrorBoundary>
       </TooltipProvider>
     </CompanyProfileProvider>

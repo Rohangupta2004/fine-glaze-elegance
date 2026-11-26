@@ -35,10 +35,10 @@ export default function MobileBottomCTA() {
           <button
             onClick={() => setIsQuoteOpen(true)}
             className="flex flex-col items-center justify-center py-2 px-2 rounded-lg bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-white text-xs font-bold tracking-wide uppercase transition-all shadow-md active:scale-95 cursor-pointer"
-            aria-label="Get a Project Quote"
+            aria-label="Book a call"
           >
             <FileText className="h-4 w-4 text-white mb-0.5" />
-            <span>Get Quote</span>
+            <span>Book a call</span>
           </button>
         </div>
       </aside>

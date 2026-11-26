@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { MapPin, Phone, Mail, Linkedin } from "lucide-react";
+import { company, telHref, officeTelHref } from "@/data/company";
 
 const quickLinks = [
   { href: "/", label: "Home" },
@@ -23,21 +24,18 @@ const services = [
 
 export const Footer = () => {
   return (
-    <footer 
-      className="text-white"
-      style={{ background: "linear-gradient(180deg, hsl(25 25% 12%) 0%, hsl(20 20% 8%) 100%)" }}
-    >
+    <footer className="bg-night text-paper border-t border-line pb-[calc(4.5rem+env(safe-area-inset-bottom))] md:pb-0">
       {/* Main Footer */}
       <div className="container mx-auto px-4 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="space-y-5">
             <img
-              src="Logofg.webp"
-             alt="Fine Glaze Logo"
+              src="/Logofg.webp"
+              alt="Fine Glaze Logo"
               className="h-12 w-auto brightness-0 invert"
             />
-            <p className="text-white/70 text-sm leading-relaxed">
+            <p className="text-paper/70 text-sm leading-relaxed">
               Facade design, fabrication, installation and maintenance — from Pune and Mumbai.
               Own fabrication unit at Pisoli, Pune. Embassy REIT Best Vendor Performance 2024.
             </p>
@@ -47,7 +45,7 @@ export const Footer = () => {
                 href="https://www.linkedin.com/company/fine-glaze"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-white/10 flex items-center justify-center hover:bg-amber-600 transition-colors"
+                className="w-10 h-10 bg-white/10 flex items-center justify-center hover:bg-lamp hover:text-lamp-ink transition-colors"
                 aria-label="LinkedIn"
               >
                 <Linkedin size={18} />
@@ -57,13 +55,13 @@ export const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-semibold mb-6">Quick Links</h4>
+            <h4 className="font-display font-extrabold text-2xl mb-6">Quick Links</h4>
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     to={link.href}
-                    className="text-white/70 hover:text-amber-400 transition-colors text-sm"
+                    className="text-paper/70 hover:text-lamp transition-colors text-sm"
                   >
                     {link.label}
                   </Link>
@@ -72,7 +70,7 @@ export const Footer = () => {
               <li>
                 <Link
                   to="/faq"
-                  className="text-white/70 hover:text-amber-400 transition-colors text-sm"
+                  className="text-paper/70 hover:text-lamp transition-colors text-sm"
                 >
                   FAQ
                 </Link>
@@ -82,13 +80,13 @@ export const Footer = () => {
 
           {/* Services — Now with internal links */}
           <div>
-            <h4 className="text-lg font-semibold mb-6">Our Services</h4>
+            <h4 className="font-display font-extrabold text-2xl mb-6">Our Services</h4>
             <ul className="space-y-3">
               {services.map((service) => (
                 <li key={service.href}>
                   <Link
                     to={service.href}
-                    className="text-white/70 hover:text-amber-400 transition-colors text-sm"
+                    className="text-paper/70 hover:text-lamp transition-colors text-sm"
                   >
                     {service.label}
                   </Link>
@@ -99,15 +97,15 @@ export const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h4 className="text-lg font-semibold mb-6">Contact Us</h4>
+            <h4 className="font-display font-extrabold text-2xl mb-6">Contact Us</h4>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
-                <MapPin size={18} className="text-amber-500 mt-1 shrink-0" />
+                <MapPin size={18} className="text-lamp mt-1 shrink-0" />
                 <a
                   href="https://www.google.com/maps/search/?api=1&query=Fine+Glaze+A3+LW-13+Pragati+Serene+Mohammed+Wadi+Pune+411060"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-white/70 hover:text-white text-sm transition-colors"
+                  className="text-paper/70 hover:text-white text-sm transition-colors"
                 >
                   A3 LW-13, Pragati Serene Building, Sr.No.2, HDFC Bank Chowk, Plot B, Autadwadi Handewadi, Mahadev Wadi, Mohammed Wadi,
                   <br />
@@ -115,23 +113,33 @@ export const Footer = () => {
                 </a>
               </li>
               <li className="flex items-center gap-3">
-                <Phone size={18} className="text-amber-500 shrink-0" />
-                <a
-                  href="tel:+918369233566"
-                  className="text-white/70 hover:text-white text-sm transition-colors"
-                >
-                  +91 8369233566
+                <Phone size={18} className="text-lamp shrink-0" />
+                <span className="text-sm">
+                  <a href={telHref} className="text-paper/70 hover:text-white transition-colors">
+                    {company.phone.mobileDisplay}
+                  </a>
                   <br />
-                  +91 02068299428
-                </a>
+                  <a href={officeTelHref} className="text-paper/70 hover:text-white transition-colors">
+                    {company.phone.officeDisplay}
+                  </a>
+                  <br />
+                  <a
+                    href={`https://wa.me/${company.whatsapp}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-paper/70 hover:text-white transition-colors"
+                  >
+                    WhatsApp
+                  </a>
+                </span>
               </li>
               <li className="flex items-center gap-3">
-                <Mail size={18} className="text-amber-500 shrink-0" />
+                <Mail size={18} className="text-lamp shrink-0" />
                 <a
-                  href="mailto:info@fineglaze.com"
-                  className="text-white/70 hover:text-white text-sm transition-colors"
+                  href={`mailto:${company.email}`}
+                  className="text-paper/70 hover:text-white text-sm transition-colors"
                 >
-                  info@fineglaze.com
+                  {company.email}
                 </a>
               </li>
             </ul>
@@ -140,42 +148,42 @@ export const Footer = () => {
       </div>
 
       {/* Where we work — only places we actually operate */}
-      <div className="border-t border-white/10 py-5">
+      <div className="border-t border-line py-5">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-3 text-xs text-white/60">
-            <span className="font-semibold text-amber-400 uppercase tracking-wider shrink-0">
-              Where we work:
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-3 text-xs text-mute">
+            <span className="font-semibold text-lamp shrink-0">
+              Where we work
             </span>
-            <nav aria-label="Service areas" className="flex flex-wrap gap-x-3 gap-y-1 text-white/70">
+            <nav aria-label="Service areas" className="flex flex-wrap gap-x-3 gap-y-1 text-paper/70">
               {[
                 { name: "Facade contractor in Pune", href: "/facade-contractor-pune" },
                 { name: "Mumbai", href: "/facade-contractor-mumbai" },
                 { name: "Navi Mumbai", href: "/facade-contractor-navi-mumbai" },
                 { name: "Thane", href: "/facade-contractor-thane" },
               ].map((loc) => (
-                <Link key={loc.href} to={loc.href} className="hover:text-amber-400 transition-colors">
+                <Link key={loc.href} to={loc.href} className="hover:text-lamp transition-colors">
                   {loc.name}
                 </Link>
               ))}
-              <span className="text-white/50">· Other locations considered case by case</span>
+              <span className="text-mute">Other locations considered case by case</span>
             </nav>
           </div>
         </div>
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-white/10">
+      <div className="border-t border-line">
         <div className="container mx-auto px-4 py-5 flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="flex flex-col sm:flex-row items-center gap-3 text-sm text-white/50">
+          <div className="flex flex-col sm:flex-row items-center gap-3 text-sm text-mute">
             <p>© {new Date().getFullYear()} Fine Glaze. All rights reserved.</p>
-            <span className="hidden sm:inline text-white/20">|</span>
+            <span className="hidden sm:inline text-line">|</span>
             <p>GST No: 27BFJPG1853A1ZU</p>
           </div>
           <div className="flex gap-6 text-sm">
-            <Link to="/privacy-policy" className="text-white/50 hover:text-amber-400 transition-colors">
+            <Link to="/privacy-policy" className="text-mute hover:text-lamp transition-colors">
               Privacy Policy
             </Link>
-            <Link to="/terms-of-service" className="text-white/50 hover:text-amber-400 transition-colors">
+            <Link to="/terms-of-service" className="text-mute hover:text-lamp transition-colors">
               Terms of Service
             </Link>
           </div>

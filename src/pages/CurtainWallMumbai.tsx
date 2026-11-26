@@ -72,7 +72,7 @@ export default function CurtainWallMumbai() {
             <p className="text-lg text-white/80 mb-8">Fine Glaze delivers engineering-grade curtain wall glazing systems in Mumbai — from complex unitized towers in BKC to stick system installations in Andheri's commercial belt. All Mumbai curtain walls are specifically engineered for coastal wind loads, cyclone zone requirements, and high-salinity environment.</p>
             <div className="flex gap-4">
               <Link to="/contact">
-                <Button size="lg" className="bg-amber-600 hover:bg-amber-700">Get Free Quote</Button>
+                <Button size="lg" className="bg-amber-600 hover:bg-amber-700">Book a call</Button>
               </Link>
               <Link to="/portfolio">
                 <Button size="lg" variant="outline">View Projects</Button>

@@ -71,7 +71,7 @@ export default function ResidentialFacade() {
             <p className="text-lg text-white/80 mb-8">Residential buildings are increasingly investing in premium facade systems — not just for aesthetics but for thermal comfort, sound insulation, reduced maintenance, and property value. Fine Glaze provides complete residential facade solutions for apartment towers, villas, gated communities, and row houses in Pune and Mumbai.</p>
             <div className="flex gap-4">
               <Link to="/contact">
-                <Button size="lg" className="bg-amber-600 hover:bg-amber-700">Get Free Quote</Button>
+                <Button size="lg" className="bg-amber-600 hover:bg-amber-700">Book a call</Button>
               </Link>
               <Link to="/portfolio">
                 <Button size="lg" variant="outline">View Projects</Button>

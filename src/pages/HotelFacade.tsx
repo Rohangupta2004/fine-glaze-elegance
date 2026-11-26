@@ -71,7 +71,7 @@ export default function HotelFacade() {
             <p className="text-lg text-white/80 mb-8">Hotel and hospitality facades are among the most demanding in the construction industry — combining premium aesthetics, iconic architectural identity, high-performance weather protection, and luxurious material finishes. Fine Glaze has delivered facade systems for hospitality projects including the Leela Hotel, establishing our credentials in India's premier hotel construction sector.</p>
             <div className="flex gap-4">
               <Link to="/contact">
-                <Button size="lg" className="bg-amber-600 hover:bg-amber-700">Get Free Quote</Button>
+                <Button size="lg" className="bg-amber-600 hover:bg-amber-700">Book a call</Button>
               </Link>
               <Link to="/portfolio">
                 <Button size="lg" variant="outline">View Projects</Button>

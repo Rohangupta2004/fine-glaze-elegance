@@ -347,7 +347,7 @@ export default function Services() {
                   size="lg"
                   className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-base"
                 >
-                  Get Free Quote
+                  Book a call
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </Link>
@@ -472,7 +472,7 @@ export default function Services() {
                   <div className="flex flex-wrap gap-3 pt-2">
                     <Link to="/contact">
                       <Button className="btn-glossy group">
-                        Get {service.title} Quote
+                        Book a call
                         <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                       </Button>
                     </Link>
@@ -605,8 +605,8 @@ export default function Services() {
             Your Building?
           </h2>
           <p className="text-white/80 text-lg mb-8">
-            Get a free consultation and custom quote for your facade project.
-            Our engineering team responds within 24 hours.
+            Talk to our engineering team about your facade project.
+            We call you back the same business day, Monday to Saturday, 9am to 6pm.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link to="/contact">
@@ -614,7 +614,7 @@ export default function Services() {
                 size="lg"
                 className="bg-white text-slate-900 hover:bg-slate-100 px-10 py-6 text-base font-bold"
               >
-                Get Free Quote
+                Book a call
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>

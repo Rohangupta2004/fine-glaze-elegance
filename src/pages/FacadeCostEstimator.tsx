@@ -300,7 +300,7 @@ export default function FacadeCostEstimator() {
                       onClick={() => setQuoteOpen(true)}
                       className="rounded-xl bg-amber-500 hover:bg-amber-400 text-stone-950 font-bold px-5 py-3"
                     >
-                      Get a site-specific quote
+                      Book a call
                     </button>
                     <a
                       href={whatsappHref(`Hi Fine Glaze, I used your estimator. ${summary} Can you quote for my project?`)}

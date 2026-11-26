@@ -71,7 +71,7 @@ export default function CommercialBuildingFacade() {
             <p className="text-lg text-white/80 mb-8">The facade is the most visible — and often the most technically complex — element of any commercial building. This comprehensive guide covers all major commercial facade types, cost benchmarks, design considerations, and regulatory requirements for India, drawn from Fine Glaze's 10+ commercial projects.</p>
             <div className="flex gap-4">
               <Link to="/contact">
-                <Button size="lg" className="bg-amber-600 hover:bg-amber-700">Get Free Quote</Button>
+                <Button size="lg" className="bg-amber-600 hover:bg-amber-700">Book a call</Button>
               </Link>
               <Link to="/portfolio">
                 <Button size="lg" variant="outline">View Projects</Button>

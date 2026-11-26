@@ -63,7 +63,7 @@ export default function FacadeMaintenanceAMC() {
               A facade Annual Maintenance Contract (AMC) is the most cost-effective way to protect your building's glass, sealant, and cladding systems — preventing expensive reactive repairs and maintaining property value. Fine Glaze provides comprehensive facade AMC programmes for buildings of all types in Pune and Mumbai.
             </p>
             <div className="flex gap-4">
-              <Link to="/contact"><Button size="lg" className="bg-amber-600 hover:bg-amber-700">Get AMC Quote</Button></Link>
+              <Link to="/contact"><Button size="lg" className="bg-amber-600 hover:bg-amber-700">Book a call</Button></Link>
               <Link to="/maintenance-services"><Button size="lg" variant="outline">Our Services</Button></Link>
             </div>
           </div>
@@ -86,7 +86,7 @@ export default function FacadeMaintenanceAMC() {
             <li><strong>Hardware inspection and lubrication</strong> — all operable windows, louvres, and doors checked for operation, adjusted, and lubricated</li>
             <li><strong>Gasket and weatherseal check</strong> — replacement of any failed EPDM or TPE gaskets</li>
             <li><strong>Drainage channel clearance</strong> — pressure-flush of all weep holes and drainage slots to maintain free drainage</li>
-            <li><strong>Priority emergency response</strong> — 24-48 hour response for active leaks during monsoon season outside scheduled visits</li>
+            <li><strong>Priority emergency response</strong> — priority response for active leaks during monsoon season outside scheduled visits</li>
           </ul>
 
           <h2 className="text-3xl font-bold mt-10">Facade AMC Cost Benchmarks India</h2>

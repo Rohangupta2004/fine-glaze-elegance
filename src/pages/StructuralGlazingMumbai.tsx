@@ -72,7 +72,7 @@ export default function StructuralGlazingMumbai() {
             <p className="text-lg text-white/80 mb-8">Fine Glaze delivers precision-engineered structural glazing systems in Mumbai for corporate towers, luxury hotels, showroom facades, and high-rise residential buildings. Our systems are cyclone-rated, coastal-engineered, and designed to withstand Mumbai's extreme weather while delivering breathtaking glass exteriors.</p>
             <div className="flex gap-4">
               <Link to="/contact">
-                <Button size="lg" className="bg-amber-600 hover:bg-amber-700">Get Free Quote</Button>
+                <Button size="lg" className="bg-amber-600 hover:bg-amber-700">Book a call</Button>
               </Link>
               <Link to="/portfolio">
                 <Button size="lg" variant="outline">View Projects</Button>

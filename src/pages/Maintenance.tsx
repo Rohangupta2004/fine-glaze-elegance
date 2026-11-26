@@ -12,7 +12,6 @@ import {
   Clock,
   Award,
   Wrench,
-  Star,
 } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { cn } from "@/lib/utils";
@@ -194,7 +193,7 @@ export default function Maintenance() {
         name: "What does a facade AMC include?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Our AMC covers bi-annual inspections, sealant integrity checks, hardware lubrication, drainage clearing, minor repairs, and detailed condition reports with photo documentation. Emergency repairs get priority 48-hour response.",
+          text: "Our AMC covers bi-annual inspections, sealant integrity checks, hardware lubrication, drainage clearing, minor repairs, and detailed condition reports with photo documentation. Emergency repairs get priority.",
         },
       },
       {
@@ -273,7 +272,7 @@ export default function Maintenance() {
               to="/contact"
               className="text-white font-semibold text-base border-b border-amber-400 pb-0.5 hover:text-amber-400 transition-colors tracking-wide"
             >
-              Get Free Quote
+              Book a call
             </Link>
             <Link
               to="/service-request"
@@ -294,13 +293,8 @@ export default function Maintenance() {
             className="flex items-center gap-1.5 mt-4 animate-fade-in-up"
             style={{ animationDelay: "0.4s" }}
           >
-            <div className="flex">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} size={12} className="text-amber-400 fill-amber-400" />
-              ))}
-            </div>
             <span className="text-white/50 text-xs font-medium ml-0.5">
-              Embassy REIT Best Vendor 2024 · 16 Documented Projects
+              Embassy REIT Best Vendor Performance 2024. 16 project records.
             </span>
           </div>
         </div>
@@ -420,7 +414,7 @@ export default function Maintenance() {
 
                 <Link to="/contact">
                   <Button size="sm" className="bg-stone-900 hover:bg-stone-800 text-white gap-2">
-                    Get Quote for {current.title.split(" ")[0]} <ArrowRight size={14} />
+                    Book a call <ArrowRight size={14} />
                   </Button>
                 </Link>
               </div>
@@ -452,8 +446,8 @@ export default function Maintenance() {
                 },
                 {
                   icon: Clock,
-                  title: "48-Hour Response",
-                  desc: "Emergency glass replacement and leak repairs within 48 hours for AMC clients.",
+                  title: "Emergency response",
+                  desc: "Emergency glass replacement and leak repairs for AMC clients.",
                 },
                 {
                   icon: Award,
@@ -587,7 +581,7 @@ export default function Maintenance() {
             <div className="mt-8 text-center">
               <Link to="/contact">
                 <Button size="lg" className="bg-stone-900 hover:bg-stone-800 text-white gap-2 px-8">
-                  Get Exact Quote — Free Site Visit <ArrowRight size={16} />
+                  Book a call <ArrowRight size={16} />
                 </Button>
               </Link>
             </div>
@@ -616,7 +610,7 @@ export default function Maintenance() {
               />
               <FAQItem
                 q="What does a facade AMC include?"
-                a="Our AMC covers bi-annual inspections, sealant integrity checks, hardware lubrication, drainage clearing, minor repairs, and detailed condition reports with photo documentation. Emergency repairs get priority 48-hour response."
+                a="Our AMC covers bi-annual inspections, sealant integrity checks, hardware lubrication, drainage clearing, minor repairs, and detailed condition reports with photo documentation. Emergency repairs get priority."
               />
               <FAQItem
                 q="How much does facade cleaning cost?"

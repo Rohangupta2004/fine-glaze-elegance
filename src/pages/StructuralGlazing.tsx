@@ -270,7 +270,7 @@ export default function StructuralGlazing() {
               to="/contact"
               className="text-white font-semibold text-base border-b border-amber-400 pb-0.5 hover:text-amber-400 transition-colors tracking-wide"
             >
-              Get Free Quote
+              Book a call
             </Link>
             <a
               href="tel:+918369233566"
@@ -285,13 +285,8 @@ export default function StructuralGlazing() {
             className="flex items-center gap-1.5 mt-4 animate-fade-in-up"
             style={{ animationDelay: "0.4s" }}
           >
-            <div className="flex">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} size={12} className="text-amber-400 fill-amber-400" />
-              ))}
-            </div>
             <span className="text-amber-400 text-xs font-semibold ml-0.5">
-              Embassy REIT Best Vendor 2024 · 16 Documented Projects
+              Embassy REIT Best Vendor Performance 2024. 16 project records.
             </span>
           </div>
         </div>
@@ -441,7 +436,7 @@ export default function StructuralGlazing() {
 
                 <Link to="/contact">
                   <Button size="sm" className="bg-stone-900 hover:bg-stone-800 text-white gap-2">
-                    Get Quote for {current.title.split(" ")[0]} <ArrowRight size={14} />
+                    Book a call <ArrowRight size={14} />
                   </Button>
                 </Link>
               </div>
@@ -617,7 +612,7 @@ export default function StructuralGlazing() {
             <div className="mt-8 text-center">
               <Link to="/contact">
                 <Button size="lg" className="bg-stone-900 hover:bg-stone-800 text-white gap-2 px-8">
-                  Get Exact Quote — Free Site Visit <ArrowRight size={16} />
+                  Book a call <ArrowRight size={16} />
                 </Button>
               </Link>
             </div>

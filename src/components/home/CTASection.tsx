@@ -1,93 +1,53 @@
-import { ArrowRight, Phone } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
-import { fadeUp, stagger, viewport } from "@/hooks/useMotion";
+import { useBookCall } from "@/components/booking/BookCallProvider";
+import { company, telHref, whatsappHref } from "@/data/company";
 
+/** Closing band used at the foot of the service, city and guide pages. */
 export const CTASection = () => {
+  const { open } = useBookCall();
+
   return (
-    <section
-      className="relative py-28 overflow-hidden"
-      style={{
-        background:
-          "linear-gradient(135deg, hsl(25 80% 25%) 0%, hsl(20 75% 18%) 50%, hsl(15 70% 14%) 100%)",
-      }}
-    >
-      {/* Glow blobs */}
-      <div className="absolute -top-24 -left-24 w-96 h-96 bg-white/10 blur-3xl" />
-      <div className="absolute -bottom-32 -right-32 w-[30rem] h-[30rem] bg-white/10 blur-3xl" />
-
-      {/* Pattern */}
-      <div className="absolute inset-0 opacity-[0.07]">
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Ccircle cx='2' cy='2' r='2'/%3E%3C/g%3E%3C/svg%3E")`,
-          }}
-        />
-      </div>
-
-      <div className="container mx-auto px-4 relative z-10">
-        <motion.div
-          className="max-w-3xl mx-auto text-center space-y-8"
-          initial="hidden"
-          whileInView="visible"
-          viewport={viewport}
-          variants={stagger(0.12)}
-        >
-          <motion.h2
-            variants={fadeUp}
-            className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-tight tracking-tight"
-          >
-            Transform Your Building Into a{" "}
-            <br className="hidden sm:block" />
-            <span className="text-gradient-light">
-              Modern Architectural Landmark
-            </span>
-          </motion.h2>
-
-          <motion.p
-            variants={fadeUp}
-            className="text-white/80 text-lg max-w-xl mx-auto leading-relaxed"
-          >
-            Award-winning facade solutions engineered for performance, lasting
-            aesthetics, and measurable long-term value.
-          </motion.p>
-
-          {/* ===== BUTTONS ===== */}
-          <motion.div
-            variants={fadeUp}
-            className="flex flex-col sm:flex-row items-center justify-center gap-5 pt-6"
-          >
-            {/* WhatsApp */}
-            <Button
-              asChild
-              size="lg"
-              className="bg-white text-primary hover:bg-white/90 px-10 py-6 text-base font-semibold shadow-xl group active:scale-[0.97] transition-transform"
+    <section className="bg-night-2 text-paper">
+      <div className="container mx-auto px-4 py-20 md:py-28">
+        <div className="grid gap-10 md:grid-cols-[7fr_5fr] md:items-end">
+          <div>
+            <h2 className="font-display font-extrabold leading-[0.94] text-5xl md:text-7xl max-w-[9ch]">
+              Tell us about your facade.
+            </h2>
+            <button
+              type="button"
+              onClick={() => open({ source: "page_close" })}
+              className="mt-8 h-[52px] px-7 rounded-sm bg-lamp text-lamp-ink font-semibold transition-transform active:scale-[0.98] hover:brightness-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-glass"
             >
-              <a
-                href="https://wa.me/918369233566?text=Hello%20Fine%20Glaze%2C%20I%20would%20like%20to%20discuss%20a%20facade%20project."
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Get Instant Quote
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </a>
-            </Button>
+              Book a call
+            </button>
+            <p className="mt-5 max-w-sm text-[15.5px] text-mute">
+              We call you back the same business day, Monday to Saturday, 9am to 6pm.
+            </p>
+          </div>
 
-            {/* Call */}
-            <Button
-              asChild
-              size="lg"
-              variant="outline"
-              className="bg-white text-slate-900 hover:bg-white/90 border-white px-10 py-6 text-base font-bold active:scale-[0.97] transition-transform"
-            >
-              <a href="tel:+918369233566">
-                <Phone className="mr-2 h-4 w-4" />
-                Call Expert
+          <dl className="grid grid-cols-[auto_minmax(0,1fr)] gap-x-6 gap-y-2.5 text-base">
+            <dt className="text-mute">Mobile</dt>
+            <dd>
+              <a href={telHref} className="underline underline-offset-4">
+                {company.phone.mobileDisplay}
               </a>
-            </Button>
-          </motion.div>
-        </motion.div>
+            </dd>
+            <dt className="text-mute">WhatsApp</dt>
+            <dd>
+              <a href={whatsappHref()} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">
+                Message us
+              </a>
+            </dd>
+            <dt className="text-mute">Email</dt>
+            <dd>
+              <a href={`mailto:${company.email}`} className="underline underline-offset-4">
+                {company.email}
+              </a>
+            </dd>
+            <dt className="text-mute">Office</dt>
+            <dd>{company.address.short}</dd>
+          </dl>
+        </div>
       </div>
     </section>
   );

@@ -72,7 +72,7 @@ export default function FacadeContractorMumbai() {
             <p className="text-lg text-white/80 mb-8">Fine Glaze brings award-winning facade expertise to Mumbai's demanding commercial and residential landscape. As an established facade contractor in Mumbai, we have delivered curtain wall systems, structural glazing, ACP cladding, and glass railings across BKC, Andheri, Powai, Lower Parel, Worli, Vikhroli, and beyond.</p>
             <div className="flex gap-4">
               <Link to="/contact">
-                <Button size="lg" className="bg-amber-600 hover:bg-amber-700">Get Free Quote</Button>
+                <Button size="lg" className="bg-amber-600 hover:bg-amber-700">Book a call</Button>
               </Link>
               <Link to="/portfolio">
                 <Button size="lg" variant="outline">View Projects</Button>

@@ -1,16 +1,13 @@
 import { Layout } from "@/components/layout/Layout";
-import { HeroSection, HERO_POSTER } from "@/components/home/HeroSection";
 import { Helmet } from "react-helmet-async";
-import { TrustStrip } from "@/components/home/TrustStrip";
-import { CompanyVideoSection } from "@/components/home/CompanyVideoSection";
-import { PortfolioSection } from "@/components/home/PortfolioSection";
-import { ServicesSection } from "@/components/home/ServicesSection";
-import { ProcessSection } from "@/components/home/ProcessSection";
-import { ReviewsSection } from "@/components/home/ReviewsSection";
-import { ArticlesSection } from "@/components/home/ArticlesSection";
-import { ContactFormSection } from "@/components/home/ContactFormSection";
-import { CTASection } from "@/components/home/CTASection";
 import SEO from "@/components/SEO";
+import FacadeScene from "@/components/home/cinematic/FacadeScene";
+import AssemblySequence from "@/components/home/cinematic/AssemblySequence";
+import HomeWork from "@/components/home/cinematic/HomeWork";
+import HomeClose from "@/components/home/cinematic/HomeClose";
+import "@/components/home/cinematic/home.css";
+
+const HERO_IMAGE = "/Embassy.webp";
 
 const Index = () => {
   // Organization / LocalBusiness entities live once, sitewide, in index.html.
@@ -22,7 +19,7 @@ const Index = () => {
     "name": "Facade & Glazing Contractor in Pune & Mumbai | Fine Glaze",
     "isPartOf": { "@id": "https://fineglaze.com/#website" },
     "about": { "@id": "https://fineglaze.com/#organization" },
-    "primaryImageOfPage": "https://fineglaze.com" + HERO_POSTER,
+    "primaryImageOfPage": "https://fineglaze.com" + HERO_IMAGE,
     "inLanguage": "en-IN",
   };
 
@@ -36,18 +33,14 @@ const Index = () => {
         schema={webPageSchema}
       />
       <Helmet>
-        <link rel="preload" as="image" href={HERO_POSTER} {...{ fetchpriority: "high" }} />
+        <link rel="preload" as="image" href={HERO_IMAGE} {...{ fetchpriority: "high" }} />
       </Helmet>
-      <HeroSection />
-      <TrustStrip />
-      <CompanyVideoSection />
-      <ServicesSection />
-      <ProcessSection />
-      <PortfolioSection />
-      <ReviewsSection />
-      <ArticlesSection />
-      <ContactFormSection />
-      <CTASection />
+      <div className="fg-home">
+        <FacadeScene />
+        <AssemblySequence />
+        <HomeWork />
+        <HomeClose />
+      </div>
     </Layout>
   );
 };

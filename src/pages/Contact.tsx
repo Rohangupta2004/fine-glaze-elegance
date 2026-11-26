@@ -23,12 +23,11 @@ import {
   CheckCircle2,
   ArrowRight,
   Building2,
-  Star,
   ShieldCheck,
 } from "lucide-react";
 import { toast } from "sonner";
 import SEO from "@/components/SEO";
-import { supabase, isSupabaseConfigured } from "@/lib/supabase";
+import { submitLead } from "@/lib/leads";
 
 /* ─── Reusable fade-in wrapper ─── */
 function FadeIn({
@@ -98,63 +97,25 @@ const Contact = () => {
 
     setIsSubmitting(true);
 
-    try {
-      const res = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          access_key: "74dce7dc-85a9-4479-ab00-bd002f23409a",
-          name: formData.name,
-          email: formData.email,
-          phone: formData.phone,
-          project_type: formData.projectType,
-          message: formData.message || "(No details provided)",
-          prefers_callback: formData.preferCallback ? "Yes" : "No",
-          subject: "New Enquiry – Fine Glaze Website",
-          from_name: "Fine Glaze Website",
-        }),
-      });
-
-      const data = await res.json();
-
-      if (isSupabaseConfigured) {
-        try {
-          await supabase.from("contact_leads").insert({
-            name: formData.name,
-            email: formData.email,
-            phone: formData.phone,
-            project_type: formData.projectType,
-            message: formData.message || null,
-            prefers_callback: formData.preferCallback,
-            source: "website",
-          });
-        } catch {
-          console.warn("Supabase lead save failed (non-blocking)");
-        }
-      }
-
-      if (data.success) {
-        setIsSubmitted(true);
-        toast.success("Message sent successfully!");
-
-        // GA4 conversion event
-        if (typeof window !== "undefined" && (window as any).gtag) {
-          (window as any).gtag("event", "generate_lead", {
-            event_category: "Contact",
-            event_label: formData.projectType || "General",
-            value: 1,
-          });
-        }
-
-        setFormData({ name: "", email: "", phone: "", projectType: "", message: "", preferCallback: false });
-      } else {
-        throw new Error("Submission failed");
-      }
-    } catch {
+    const ok = await submitLead({
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      projectType: formData.projectType,
+      message: formData.message,
+      preferCallback: formData.preferCallback,
+      source: "website",
+      subject: "New Enquiry – Fine Glaze Website",
+      fromName: "Fine Glaze Website",
+    });
+    if (ok) {
+      setIsSubmitted(true);
+      toast.success("Message sent successfully!");
+      setFormData({ name: "", email: "", phone: "", projectType: "", message: "", preferCallback: false });
+    } else {
       toast.error("Something went wrong. Please try again.");
-    } finally {
-      setIsSubmitting(false);
     }
+    setIsSubmitting(false);
   };
 
   return (
@@ -216,7 +177,7 @@ const Contact = () => {
             <span className="text-gradient-gold">Together.</span>
           </h1>
           <p className="mt-3 md:mt-4 text-white/60 text-sm md:text-lg max-w-md leading-relaxed">
-            Free site consultation. Detailed quote within 24 hours.
+            We call you back the same business day, Monday to Saturday, 9am to 6pm.
           </p>
         </div>
       </section>
@@ -231,8 +192,7 @@ const Contact = () => {
             {[
               { icon: <ShieldCheck size={16} className="text-amber-600" />, text: "No automated replies — real engineers" },
               { icon: <CheckCircle2 size={16} className="text-amber-600" />, text: "Free site visit & measurement" },
-              { icon: <Clock size={16} className="text-amber-600" />, text: "Written proposal in 48 hours" },
-              { icon: <Star size={16} className="text-amber-600" />, text: "5-Star Rated on Google" },
+              { icon: <Clock size={16} className="text-amber-600" />, text: "We call you back the same business day, Monday to Saturday, 9am to 6pm" },
             ].map((item) => (
               <div key={item.text} className="flex items-center gap-2 font-medium">
                 {item.icon}
@@ -273,8 +233,7 @@ const Contact = () => {
                         Message Sent
                       </h3>
                       <p className="text-stone-500 text-sm max-w-md mx-auto">
-                        Thank you. Our team will review your inquiry and get back
-                        to you within 1 business hour during working hours.
+                        Thank you. We call you back the same business day, Monday to Saturday, 9am to 6pm.
                       </p>
                       <Button
                         onClick={() => {
@@ -422,18 +381,13 @@ const Contact = () => {
 
                       {/* Social proof nudge */}
                       <div className="flex items-center justify-center gap-3 pt-1">
-                        <div className="flex items-center gap-0.5">
-                          {[...Array(5)].map((_, i) => (
-                            <Star key={i} size={12} className="fill-amber-400 text-amber-400" />
-                          ))}
-                        </div>
                         <p className="text-[11px] text-stone-500">
-                          5-Star Rated on Google · Trusted by Embassy REIT, LTIMindtree & more
+                          Work for Embassy REIT, LTIMindtree and others
                         </p>
                       </div>
 
                       <p className="text-[11px] text-stone-400 text-center">
-                        We'll never share your information. Expect a reply within 1 business hour.
+                        We'll never share your information. We call you back the same business day, Monday to Saturday, 9am to 6pm.
                       </p>
                     </form>
                   )}
@@ -451,7 +405,7 @@ const Contact = () => {
                   Why Reach Out
                 </p>
                 <h3 className="text-lg font-bold text-stone-900 mb-4">
-                  We respond within 1 business hour.
+                  We call you back the same business day, Monday to Saturday, 9am to 6pm.
                 </h3>
                 <p className="text-stone-500 text-sm leading-relaxed mb-5">
                   No automated replies — you'll speak directly with our engineering team.
@@ -459,7 +413,6 @@ const Contact = () => {
                 <div className="space-y-3">
                   {[
                     { text: "Free site visit & measurement", sub: "Our engineers visit at no cost" },
-                    { text: "Written proposal in 48 hours", sub: "Transparent scope, specs & pricing" },
                     { text: "No obligation", sub: "Get the information you need" },
                   ].map((item) => (
                     <div key={item.text} className="flex gap-3 group">
@@ -495,7 +448,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-sm font-semibold">info@fineglaze.com</p>
-                    <p className="text-[10px] text-stone-400">We reply within 1 hour</p>
+                    <p className="text-[10px] text-stone-400">Same business day call back</p>
                   </div>
                 </a>
                 <div className="flex items-center gap-3 text-stone-400 opacity-80">

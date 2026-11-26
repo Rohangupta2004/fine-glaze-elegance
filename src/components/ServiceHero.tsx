@@ -35,7 +35,7 @@ export const ServiceHero = ({
   titleTail = "",
   subtitle,
   features,
-  primaryCta = { label: "Get Quote", to: "/contact" },
+  primaryCta = { label: "Book a call", to: "/contact" },
   secondaryCta = { label: "View Projects", to: "/portfolio" },
 }: ServiceHeroProps) => {
   return (

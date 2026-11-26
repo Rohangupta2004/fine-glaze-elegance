@@ -70,7 +70,7 @@ export default function MallFacade() {
             <p className="text-lg text-white/80 mb-8">Shopping mall facades are high-impact, high-visibility architectural statements that must attract footfall, withstand heavy public use, and require minimal maintenance. Fine Glaze delivers complete mall facade solutions — from grand entrance structural glazing to ACP cladding and aluminium retail fronts — for shopping centres in Pune and Mumbai.</p>
             <div className="flex gap-4">
               <Link to="/contact">
-                <Button size="lg" className="bg-amber-600 hover:bg-amber-700">Get Free Quote</Button>
+                <Button size="lg" className="bg-amber-600 hover:bg-amber-700">Book a call</Button>
               </Link>
               <Link to="/portfolio">
                 <Button size="lg" variant="outline">View Projects</Button>

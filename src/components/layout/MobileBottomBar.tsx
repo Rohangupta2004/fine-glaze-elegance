@@ -38,7 +38,7 @@ export const MobileBottomBar = ({ onOpenQuote }: MobileBottomBarProps) => {
           className="flex-1 bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold py-3 h-auto rounded-lg shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
         >
           <FileText className="h-4 w-4 mr-1" />
-          <span>Get Quote</span>
+          <span>Book a call</span>
         </Button>
       </div>
     </aside>

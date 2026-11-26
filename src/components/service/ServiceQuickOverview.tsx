@@ -40,7 +40,7 @@ export const ServiceQuickOverview = ({
               className="bg-amber-600 hover:bg-amber-700 text-white font-bold px-6 py-2.5 shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
             >
               <FileText className="w-4 h-4 mr-2" />
-              Request BOQ &amp; Quote
+              Book a call
             </Button>
           </div>
 

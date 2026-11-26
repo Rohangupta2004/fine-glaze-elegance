@@ -67,7 +67,7 @@ export default function FacadeContractorThane() {
               Fine Glaze serves Thane's booming residential and commercial real estate market with complete facade solutions — ACP cladding, curtain walls, glass railings, structural glazing, and facade AMC — all engineered for Maharashtra's coastal-proximate environment.
             </p>
             <div className="flex gap-4">
-              <Link to="/contact"><Button size="lg" className="bg-amber-600 hover:bg-amber-700">Get Free Quote</Button></Link>
+              <Link to="/contact"><Button size="lg" className="bg-amber-600 hover:bg-amber-700">Book a call</Button></Link>
               <Link to="/portfolio"><Button size="lg" variant="outline">View Projects</Button></Link>
             </div>
           </div>

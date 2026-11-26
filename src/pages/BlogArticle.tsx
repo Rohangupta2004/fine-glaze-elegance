@@ -191,7 +191,7 @@ export default function BlogArticle() {
           {enhancement && (
             <>
               <section id="quote-checklist" className="scroll-mt-28 mt-12 rounded-2xl border border-primary/20 bg-primary/5 p-6">
-                <h2 className="text-xl font-bold mb-4">Before You Request a Quote</h2>
+                <h2 className="text-xl font-bold mb-4">Before You Ask for a Quote</h2>
                 <ol className="list-decimal pl-5 space-y-3 text-foreground/80 leading-relaxed">{enhancement.quoteChecklist.map((item) => <li key={item}>{item}</li>)}</ol>
                 <Link to="/contact" className="mt-5 inline-flex items-center gap-2 font-semibold text-primary">Discuss your project scope <ArrowRight size={16} /></Link>
               </section>
@@ -251,12 +251,12 @@ export default function BlogArticle() {
               Need Help With Your Facade Project?
             </h3>
             <p className="text-slate-400 mb-5 text-sm">
-              Free site visit & quotation — our team responds within 24 hours.
+              We call you back the same business day, Monday to Saturday, 9am to 6pm.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
               <Link to="/contact">
                 <Button className="bg-amber-600 hover:bg-amber-700 text-white gap-2">
-                  Get Free Quote <ArrowRight size={16} />
+                  Book a call <ArrowRight size={16} />
                 </Button>
               </Link>
               <a href="tel:+918369233566">

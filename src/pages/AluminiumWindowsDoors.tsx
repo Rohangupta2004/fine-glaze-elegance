@@ -100,15 +100,17 @@ export default function AluminiumWindowsDoors() {
         itemListElement: windowSystems.map((s) => ({
           "@type": "Offer",
           itemOffered: { "@type": "Service", name: s.name },
-          ...(PRICING_APPROVED && {
-            priceSpecification: {
+          ...(PRICING_APPROVED
+            ? {
+                priceSpecification: {
               "@type": "UnitPriceSpecification",
               priceCurrency: "INR",
               minPrice: s.min,
               maxPrice: s.max,
               unitText: "per sq ft, installed (indicative)",
             },
-          }),
+              }
+            : {}),
         })),
       },
     },

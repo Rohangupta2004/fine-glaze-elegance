@@ -14,6 +14,16 @@ export default {
   	},
   	extend: {
   		colors: {
+  			night: '#060a13',
+  			'night-2': '#0d1422',
+  			paper: '#ece8df',
+  			mute: '#9aa6b8',
+  			line: '#243044',
+  			glass: '#86c2ae',
+  			lamp: '#ffb866',
+  			'lamp-ink': '#1b1206',
+  			stone: {50:'#f4f5f7',100:'#e9ecf0',200:'#d5dae2',300:'#b4bcc9',400:'#8a94a6',500:'#667085',600:'#4a5468',700:'#343d50',800:'#1c2434',900:'#0d1422',950:'#060a13'},
+  			amber: {50:'#fff7ea',100:'#ffecd0',200:'#ffd9a0',300:'#ffc880',400:'#ffb866',500:'#f5a54a',600:'#d98a2b',700:'#b06c1c',800:'#8a5416',900:'#6b4112',950:'#3d2408'},
   			border: 'hsl(var(--border))',
   			input: 'hsl(var(--input))',
   			ring: 'hsl(var(--ring))',
@@ -65,7 +75,7 @@ export default {
   		},
   		fontFamily: {
   			sans: [
-  				'Inter',
+  				'Schibsted Grotesk',
   				'ui-sans-serif',
   				'system-ui',
   				'-apple-system',
@@ -74,7 +84,12 @@ export default {
   				'Roboto',
   				'Helvetica Neue',
   				'Arial',
-  				'Noto Sans',
+  				'sans-serif'
+  			],
+  			display: [
+  				'Big Shoulders Display',
+  				'Impact',
+  				'Arial Narrow',
   				'sans-serif'
   			],
   			serif: [
@@ -160,7 +175,7 @@ export default {
   		},
   		boxShadow: {
   			glass: '0 8px 32px 0 hsl(220 30% 10% / 0.1)',
-  			glow: '0 0 40px hsl(210 100% 45% / 0.3)',
+  			glow: '0 0 40px hsl(32 100% 70% / 0.3)',
   			'2xs': 'var(--shadow-2xs)',
   			xs: 'var(--shadow-xs)',
   			sm: 'var(--shadow-sm)',

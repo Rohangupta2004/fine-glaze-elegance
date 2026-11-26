@@ -525,7 +525,7 @@ export default function ServiceDetail() {
                       size="sm"
                       className="w-full border-amber-300 text-amber-700 hover:bg-amber-50 group-hover:border-amber-500 transition-colors"
                     >
-                      Get Quote for {type.name.split("(")[0].trim()}
+                      Book a call
                       <ArrowRight size={14} className="ml-2" />
                     </Button>
                   </Link>
@@ -546,7 +546,7 @@ export default function ServiceDetail() {
             </p>
             <Link to="/contact">
               <Button className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-5">
-                Free Engineering Consultation{" "}
+                Book a call{" "}
                 <ArrowRight size={16} className="ml-2" />
               </Button>
             </Link>

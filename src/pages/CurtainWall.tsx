@@ -10,7 +10,6 @@ import {
   Clock,
   Award,
   Wrench,
-  Star,
   CheckCircle2,
   Phone,
   Mail,
@@ -219,7 +218,7 @@ export default function CurtainWall() {
     <Layout darkHero>
       <SEO
         title="Curtain Wall Systems in Pune & Mumbai | Fine Glaze"
-        description="Curtain wall manufacturers in Pune & Mumbai. Unitized, stick & semi-unitized glass curtain wall systems for IT parks & commercial towers. Get a free quote!"
+        description="Curtain wall manufacturers in Pune & Mumbai. Unitized, stick & semi-unitized glass curtain wall systems for IT parks & commercial towers. Book a call with our team."
         canonical="https://fineglaze.com/curtain-wall-systems"
         keywords="Curtain wall manufacturers, curtain wall manufacturers Pune, curtain wall manufacturers Mumbai, unitized curtain wall, curtain wall cost, curtain wall systems"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}
@@ -292,13 +291,8 @@ export default function CurtainWall() {
             className="flex items-center gap-1.5 mt-4 animate-fade-in-up"
             style={{ animationDelay: "0.4s" }}
           >
-            <div className="flex">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} size={12} className="text-amber-400 fill-amber-400" />
-              ))}
-            </div>
             <span className="text-white/50 text-xs font-medium ml-0.5">
-              Embassy REIT Best Vendor 2024 · 16 Documented Projects
+              Embassy REIT Best Vendor Performance 2024. 16 project records.
             </span>
           </div>
         </div>
@@ -493,7 +487,7 @@ export default function CurtainWall() {
 
                 <Link to="/contact">
                   <Button size="sm" className="bg-stone-900 hover:bg-stone-800 text-white gap-2">
-                    Request Quote for {current.title.split(" ")[0]} <ArrowRight size={14} />
+                    Book a call <ArrowRight size={14} />
                   </Button>
                 </Link>
               </div>
@@ -566,7 +560,7 @@ export default function CurtainWall() {
               Request a Curtain Wall Quotation
             </h2>
             <p className="text-stone-300 text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
-              Planning a commercial facade, office tower, or IT park in Pune, Mumbai, or Navi Mumbai? Receive a detailed BOQ, structural feasibility assessment, and glass specification options within 48 hours.
+              Planning a commercial facade, office tower, or IT park in Pune, Mumbai, or Navi Mumbai? Receive a detailed BOQ, structural feasibility assessment, and glass specification options. We call you back the same business day, Monday to Saturday, 9am to 6pm.
             </p>
 
             <div className="grid md:grid-cols-3 gap-4 max-w-2xl mx-auto mb-10">
@@ -615,7 +609,7 @@ export default function CurtainWall() {
               />
               <FAQItem
                 q="How do I request a quotation for a commercial curtain wall project?"
-                a="You can request a quotation by uploading your project drawings or BOQ on our contact page, calling +91 8369233566, or emailing info@fineglaze.com. We provide comprehensive estimates within 48 hours."
+                a="You can request a quotation by uploading your project drawings or BOQ on our contact page, calling +91 8369233566, or emailing info@fineglaze.com. We call you back the same business day, Monday to Saturday, 9am to 6pm."
               />
               <FAQItem
                 q="Do you install structural glazing and ACP cladding alongside curtain walls?"

@@ -226,7 +226,7 @@ const ProjectDetail = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Request a Consultation
+                    Book a call
                     <ArrowRight size={14} className="ml-1.5" />
                   </a>
                 </Button>

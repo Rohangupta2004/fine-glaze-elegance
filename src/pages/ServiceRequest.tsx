@@ -4,8 +4,7 @@ import { AlertTriangle, CheckCircle2, MessageCircle, Phone, Send, Wrench } from 
 import SEO from "@/components/SEO";
 import { Layout } from "@/components/layout/Layout";
 import { company, telHref, whatsappHref } from "@/data/company";
-import { supabase, isSupabaseConfigured } from "@/lib/supabase";
-import { trackEvent } from "@/lib/analytics";
+import { submitLead } from "@/lib/leads";
 
 const PAGE_URL = "https://fineglaze.com/service-request";
 
@@ -56,48 +55,24 @@ export default function ServiceRequest() {
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSending(true);
-    try {
-      const res = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          access_key: "74dce7dc-85a9-4479-ab00-bd002f23409a",
-          subject: `Service request: ${form.issue} — ${form.building}, ${form.city}`,
-          from_name: "Fine Glaze Service Request",
-          name: form.name,
-          phone: form.phone,
-          city: form.city,
-          building: form.building,
-          issue: form.issue,
-          urgency: form.urgency,
-          message: form.details,
-        }),
-      });
-      if (!res.ok) throw new Error("submit failed");
-      if (isSupabaseConfigured) {
-        try {
-          await supabase.from("contact_leads").insert({
-            name: form.name,
-            phone: form.phone,
-            city: form.city,
-            project_type: `Service: ${form.issue}`,
-            approx_area: form.urgency,
-            message: `${form.building}\n${form.details}`,
-            source: "service_request",
-          });
-        } catch {
-          /* non-blocking */
-        }
-      }
-      trackEvent("generate_lead", { form: "service_request", issue: form.issue, urgency: form.urgency, city: form.city });
-      setSent(true);
-    } catch {
+    const ok = await submitLead({
+      name: form.name,
+      phone: form.phone,
+      city: form.city,
+      projectType: `Service: ${form.issue}`,
+      approxArea: form.urgency,
+      message: `${form.building}\n${form.details}`,
+      source: "service_request",
+      subject: `Service request: ${form.issue} — ${form.building}, ${form.city}`,
+      fromName: "Fine Glaze Service Request",
+      extra: { building: form.building, issue: form.issue, urgency: form.urgency },
+    });
+    if (!ok) {
       // Never lose a request: hand it to WhatsApp instead.
       window.open(whatsappHref(summary), "_blank");
-      setSent(true);
-    } finally {
-      setSending(false);
     }
+    setSent(true);
+    setSending(false);
   };
 
   const schemas = [

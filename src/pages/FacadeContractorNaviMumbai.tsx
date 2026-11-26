@@ -72,7 +72,7 @@ export default function FacadeContractorNaviMumbai() {
             <p className="text-lg text-white/80 mb-8">Fine Glaze has established a strong foothold in Navi Mumbai as a go-to facade contractor for large-scale IT campuses, commercial complexes, and residential towers. Our flagship Navi Mumbai project — the LTIMindtree Mensa Campus in Mahape — showcases our capability to deliver complex, multi-block facade systems on India's fastest-growing tech corridor.</p>
             <div className="flex gap-4">
               <Link to="/contact">
-                <Button size="lg" className="bg-amber-600 hover:bg-amber-700">Get Free Quote</Button>
+                <Button size="lg" className="bg-amber-600 hover:bg-amber-700">Book a call</Button>
               </Link>
               <Link to="/portfolio">
                 <Button size="lg" variant="outline">View Projects</Button>
