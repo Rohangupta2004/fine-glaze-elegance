@@ -72,10 +72,10 @@ export default function HospitalFacade() {
       />
 
       {/* RICH CONTENT */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 max-w-5xl space-y-6">
+      <section className="fg-sec">
+        <div className="fg-wrap fg-prose">
           
-          <h2 className="text-3xl font-bold">Facade Requirements for Healthcare Buildings</h2>
+          <h2>Facade Requirements for Healthcare Buildings</h2>
           <p className="text-muted-foreground">
             Healthcare buildings have distinct facade needs: hygiene, patient comfort, continuity of operations and infection control. Common considerations are smooth, cleanable cladding surfaces, daylight through considered glazing, and acoustic performance against external noise.
           </p>
@@ -93,10 +93,10 @@ export default function HospitalFacade() {
       </section>
 
       {/* FEATURES */}
-      <section className="py-20 bg-muted">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <h2 className="text-3xl font-bold mb-10 text-center">What We Offer</h2>
-          <div className="grid md:grid-cols-2 gap-4">
+      <section className="fg-sec">
+        <div className="fg-wrap">
+          <h2>What We Offer</h2>
+          <div className="fg-grid c2">
               <div key="Cleanable ACP Cladding" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-lamp shrink-0" /><span className="text-muted-foreground">Cleanable ACP Cladding</span></div>
               <div key="Acoustic DGU Glass" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-lamp shrink-0" /><span className="text-muted-foreground">Acoustic DGU Glass</span></div>
               <div key="Materials Specified to Project Brief" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-lamp shrink-0" /><span className="text-muted-foreground">Materials Specified to Project Brief</span></div>
@@ -108,37 +108,37 @@ export default function HospitalFacade() {
       </section>
 
       {/* FAQ */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <h2 className="text-3xl font-bold mb-10 text-center">Frequently Asked Questions</h2>
-          <div className="space-y-6">
-            <div className="bg-background p-6">
-              <h3 className="text-lg font-bold mb-2">What facade cladding is best for hospitals in India?</h3>
-              <p className="text-muted-foreground">Smooth, cleanable cladding such as coated ACP is commonly used on opaque hospital facades, with curtain wall or windows on ward floors. Fire performance and finishes should be confirmed with the consultant and local regulations.</p>
-            </div>
-            <div className="bg-background p-6">
-              <h3 className="text-lg font-bold mb-2">Does facade work need to happen while a hospital is operational?</h3>
-              <p className="text-muted-foreground">Often yes, especially for repairs and refurbishment, which are done section by section with agreed access and timings. Fine Glaze's Nanavati Max Hospital work includes window leakage rectification on a building in use.</p>
-            </div>
-            <div className="bg-background p-6">
-              <h3 className="text-lg font-bold mb-2">What acoustic glass is used for hospital ward facades?</h3>
-              <p className="text-muted-foreground">Ward facades needing noise control commonly use double glazed units with a laminated pane, and the build-up follows an acoustic specification from the consultant. We do not quote performance figures without a tested system.</p>
-            </div>
+      <section className="fg-sec">
+        <div className="fg-wrap">
+          <h2>Frequently Asked Questions</h2>
+          <div className="fg-faq">
+            <details>
+              <summary><h3>What facade cladding is best for hospitals in India?</h3></summary>
+              <div className="fg-a">Smooth, cleanable cladding such as coated ACP is commonly used on opaque hospital facades, with curtain wall or windows on ward floors. Fire performance and finishes should be confirmed with the consultant and local regulations.</div>
+            </details>
+            <details>
+              <summary><h3>Does facade work need to happen while a hospital is operational?</h3></summary>
+              <div className="fg-a">Often yes, especially for repairs and refurbishment, which are done section by section with agreed access and timings. Fine Glaze's Nanavati Max Hospital work includes window leakage rectification on a building in use.</div>
+            </details>
+            <details>
+              <summary><h3>What acoustic glass is used for hospital ward facades?</h3></summary>
+              <div className="fg-a">Ward facades needing noise control commonly use double glazed units with a laminated pane, and the build-up follows an acoustic specification from the consultant. We do not quote performance figures without a tested system.</div>
+            </details>
           </div>
         </div>
       </section>
 
       {/* INTERNAL LINKS */}
-      <section className="py-12 bg-night-2 border-t border-line">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <h2 className="text-xl font-bold text-paper mb-5">Explore Related Services</h2>
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
-            <Link key="/acp-aluminium-cladding" to="/acp-aluminium-cladding" className="group flex items-start gap-3 p-4 border border-line hover:border-lamp/40 hover:bg-lamp/10 transition-all bg-night"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">ACP Cladding</p><p className="text-xs text-mute">ACP cladding systems</p></div></Link>
-            <Link key="/curtain-wall-systems" to="/curtain-wall-systems" className="group flex items-start gap-3 p-4 border border-line hover:border-lamp/40 hover:bg-lamp/10 transition-all bg-night"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Curtain Wall Systems</p><p className="text-xs text-mute">Curtain wall glazing</p></div></Link>
-            <Link key="/facade-contractor-pune" to="/facade-contractor-pune" className="group flex items-start gap-3 p-4 border border-line hover:border-lamp/40 hover:bg-lamp/10 transition-all bg-night"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Facade Contractor Pune</p><p className="text-xs text-mute">Facade services Pune</p></div></Link>
-            <Link key="/commercial-building-facade" to="/commercial-building-facade" className="group flex items-start gap-3 p-4 border border-line hover:border-lamp/40 hover:bg-lamp/10 transition-all bg-night"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Commercial Facade Guide</p><p className="text-xs text-mute">Commercial facade overview</p></div></Link>
-            <Link key="/maintenance-services" to="/maintenance-services" className="group flex items-start gap-3 p-4 border border-line hover:border-lamp/40 hover:bg-lamp/10 transition-all bg-night"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Facade Maintenance</p><p className="text-xs text-mute">AMC & maintenance</p></div></Link>
-            <Link key="/contact" to="/contact" className="group flex items-start gap-3 p-4 border border-line hover:border-lamp/40 hover:bg-lamp/10 transition-all bg-night"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Book a call</p><p className="text-xs text-mute">Talk to our team</p></div></Link>
+      <section className="fg-sec">
+        <div className="fg-wrap">
+          <h2>Explore Related Services</h2>
+          <div className="fg-grid">
+            <Link key="/acp-aluminium-cladding" to="/acp-aluminium-cladding" className="group fg-row"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">ACP Cladding</p><p className="text-xs text-mute">ACP cladding systems</p></div></Link>
+            <Link key="/curtain-wall-systems" to="/curtain-wall-systems" className="group fg-row"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Curtain Wall Systems</p><p className="text-xs text-mute">Curtain wall glazing</p></div></Link>
+            <Link key="/facade-contractor-pune" to="/facade-contractor-pune" className="group fg-row"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Facade Contractor Pune</p><p className="text-xs text-mute">Facade services Pune</p></div></Link>
+            <Link key="/commercial-building-facade" to="/commercial-building-facade" className="group fg-row"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Commercial Facade Guide</p><p className="text-xs text-mute">Commercial facade overview</p></div></Link>
+            <Link key="/maintenance-services" to="/maintenance-services" className="group fg-row"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Facade Maintenance</p><p className="text-xs text-mute">AMC & maintenance</p></div></Link>
+            <Link key="/contact" to="/contact" className="group fg-row"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Book a call</p><p className="text-xs text-mute">Talk to our team</p></div></Link>
           </div>
         </div>
       </section>

@@ -70,10 +70,10 @@ export default function MallFacade() {
       />
 
       {/* RICH CONTENT */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 max-w-5xl space-y-6">
+      <section className="fg-sec">
+        <div className="fg-wrap fg-prose">
           
-          <h2 className="text-3xl font-bold">Mall Facade Design and Construction</h2>
+          <h2>Mall Facade Design and Construction</h2>
           <p className="text-muted-foreground">
             Malls need high-visibility facades that handle heavy public use with little upkeep. They often combine large-format structural glazing, entrance canopies and cladding to give the building a clear identity.
           </p>
@@ -91,10 +91,10 @@ export default function MallFacade() {
       </section>
 
       {/* FEATURES */}
-      <section className="py-20 bg-muted">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <h2 className="text-3xl font-bold mb-10 text-center">What We Offer</h2>
-          <div className="grid md:grid-cols-2 gap-4">
+      <section className="fg-sec">
+        <div className="fg-wrap">
+          <h2>What We Offer</h2>
+          <div className="fg-grid c2">
               <div key="Large Atrium Spider Glazing" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-lamp shrink-0" /><span className="text-muted-foreground">Large Atrium Spider Glazing</span></div>
               <div key="Multi-Level Curtain Wall" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-lamp shrink-0" /><span className="text-muted-foreground">Multi-Level Curtain Wall</span></div>
               <div key="ACP Brand Zone Cladding" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-lamp shrink-0" /><span className="text-muted-foreground">ACP Brand Zone Cladding</span></div>
@@ -106,37 +106,37 @@ export default function MallFacade() {
       </section>
 
       {/* FAQ */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <h2 className="text-3xl font-bold mb-10 text-center">Frequently Asked Questions</h2>
-          <div className="space-y-6">
-            <div className="bg-background p-6">
-              <h3 className="text-lg font-bold mb-2">What facade system is used for shopping mall entrances in India?</h3>
-              <p className="text-muted-foreground">Mall entrances in India commonly use spider glazing or 4-side structural glazing for a frameless glass look, sometimes with a steel frame for long spans. Fine Glaze takes structural glazing entrance systems, including glass, fixings and weather sealing.</p>
-            </div>
-            <div className="bg-background p-6">
-              <h3 className="text-lg font-bold mb-2">How is ACP cladding used in shopping malls?</h3>
-              <p className="text-muted-foreground">In malls, ACP cladding covers elevations above the glazing, parking structures, service entrances and brand feature walls. For external use, coated panels are chosen for durability and easy cleaning, with fire requirements checked by the consultant.</p>
-            </div>
-            <div className="bg-background p-6">
-              <h3 className="text-lg font-bold mb-2">What glass is best for a mall facade in India?</h3>
-              <p className="text-muted-foreground">Solar control glass in a double glazed unit is commonly chosen for malls to limit solar heat gain while keeping daylight. The exact glass depends on orientation and the energy brief, and Fine Glaze procures from Saint-Gobain and other major brands.</p>
-            </div>
+      <section className="fg-sec">
+        <div className="fg-wrap">
+          <h2>Frequently Asked Questions</h2>
+          <div className="fg-faq">
+            <details>
+              <summary><h3>What facade system is used for shopping mall entrances in India?</h3></summary>
+              <div className="fg-a">Mall entrances in India commonly use spider glazing or 4-side structural glazing for a frameless glass look, sometimes with a steel frame for long spans. Fine Glaze takes structural glazing entrance systems, including glass, fixings and weather sealing.</div>
+            </details>
+            <details>
+              <summary><h3>How is ACP cladding used in shopping malls?</h3></summary>
+              <div className="fg-a">In malls, ACP cladding covers elevations above the glazing, parking structures, service entrances and brand feature walls. For external use, coated panels are chosen for durability and easy cleaning, with fire requirements checked by the consultant.</div>
+            </details>
+            <details>
+              <summary><h3>What glass is best for a mall facade in India?</h3></summary>
+              <div className="fg-a">Solar control glass in a double glazed unit is commonly chosen for malls to limit solar heat gain while keeping daylight. The exact glass depends on orientation and the energy brief, and Fine Glaze procures from Saint-Gobain and other major brands.</div>
+            </details>
           </div>
         </div>
       </section>
 
       {/* INTERNAL LINKS */}
-      <section className="py-12 bg-night-2 border-t border-line">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <h2 className="text-xl font-bold text-paper mb-5">Explore Related Services</h2>
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
-            <Link key="/structural-glazing" to="/structural-glazing" className="group flex items-start gap-3 p-4 border border-line hover:border-lamp/40 hover:bg-lamp/10 transition-all bg-night"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Structural Glazing</p><p className="text-xs text-mute">Structural glazing systems</p></div></Link>
-            <Link key="/acp-aluminium-cladding" to="/acp-aluminium-cladding" className="group flex items-start gap-3 p-4 border border-line hover:border-lamp/40 hover:bg-lamp/10 transition-all bg-night"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">ACP Cladding</p><p className="text-xs text-mute">ACP cladding</p></div></Link>
-            <Link key="/curtain-wall-systems" to="/curtain-wall-systems" className="group flex items-start gap-3 p-4 border border-line hover:border-lamp/40 hover:bg-lamp/10 transition-all bg-night"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Curtain Wall Systems</p><p className="text-xs text-mute">Curtain wall service</p></div></Link>
-            <Link key="/commercial-building-facade" to="/commercial-building-facade" className="group flex items-start gap-3 p-4 border border-line hover:border-lamp/40 hover:bg-lamp/10 transition-all bg-night"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Commercial Facade Guide</p><p className="text-xs text-mute">Commercial facade overview</p></div></Link>
-            <Link key="/facade-contractor-pune" to="/facade-contractor-pune" className="group flex items-start gap-3 p-4 border border-line hover:border-lamp/40 hover:bg-lamp/10 transition-all bg-night"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Facade Contractor Pune</p><p className="text-xs text-mute">Facade services Pune</p></div></Link>
-            <Link key="/maintenance-services" to="/maintenance-services" className="group flex items-start gap-3 p-4 border border-line hover:border-lamp/40 hover:bg-lamp/10 transition-all bg-night"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Facade Maintenance</p><p className="text-xs text-mute">AMC & cleaning</p></div></Link>
+      <section className="fg-sec">
+        <div className="fg-wrap">
+          <h2>Explore Related Services</h2>
+          <div className="fg-grid">
+            <Link key="/structural-glazing" to="/structural-glazing" className="group fg-row"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Structural Glazing</p><p className="text-xs text-mute">Structural glazing systems</p></div></Link>
+            <Link key="/acp-aluminium-cladding" to="/acp-aluminium-cladding" className="group fg-row"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">ACP Cladding</p><p className="text-xs text-mute">ACP cladding</p></div></Link>
+            <Link key="/curtain-wall-systems" to="/curtain-wall-systems" className="group fg-row"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Curtain Wall Systems</p><p className="text-xs text-mute">Curtain wall service</p></div></Link>
+            <Link key="/commercial-building-facade" to="/commercial-building-facade" className="group fg-row"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Commercial Facade Guide</p><p className="text-xs text-mute">Commercial facade overview</p></div></Link>
+            <Link key="/facade-contractor-pune" to="/facade-contractor-pune" className="group fg-row"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Facade Contractor Pune</p><p className="text-xs text-mute">Facade services Pune</p></div></Link>
+            <Link key="/maintenance-services" to="/maintenance-services" className="group fg-row"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Facade Maintenance</p><p className="text-xs text-mute">AMC & cleaning</p></div></Link>
           </div>
         </div>
       </section>

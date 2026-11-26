@@ -71,10 +71,10 @@ export default function CurtainWallPune() {
       />
 
       {/* RICH CONTENT */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 max-w-5xl space-y-6">
+      <section className="fg-sec">
+        <div className="fg-wrap fg-prose">
           
-          <h2 className="text-3xl font-bold">Curtain Wall Work in Pune</h2>
+          <h2>Curtain Wall Work in Pune</h2>
           <p className="text-muted-foreground">
             Fine Glaze offers curtain wall systems in Pune for offices, commercial buildings and residential towers. Every project starts with a site survey and in-house shop drawings, and member sizing, fixing and anchorage are checked against the project wind load before approval.
           </p>
@@ -95,10 +95,10 @@ export default function CurtainWallPune() {
       </section>
 
       {/* FEATURES */}
-      <section className="py-20 bg-muted">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <h2 className="text-3xl font-bold mb-10 text-center">What We Offer</h2>
-          <div className="grid md:grid-cols-2 gap-4">
+      <section className="fg-sec">
+        <div className="fg-wrap">
+          <h2>What We Offer</h2>
+          <div className="fg-grid c2">
               <div key="Unitized Curtain Walls" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-lamp shrink-0" /><span className="text-muted-foreground">Unitized Curtain Walls</span></div>
               <div key="Stick System Glazing" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-lamp shrink-0" /><span className="text-muted-foreground">Stick System Glazing</span></div>
               <div key="DOWSIL Structural Silicone" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-lamp shrink-0" /><span className="text-muted-foreground">DOWSIL Structural Silicone</span></div>
@@ -110,37 +110,37 @@ export default function CurtainWallPune() {
       </section>
 
       {/* FAQ */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <h2 className="text-3xl font-bold mb-10 text-center">Frequently Asked Questions</h2>
-          <div className="space-y-6">
-            <div className="bg-background p-6">
-              <h3 className="text-lg font-bold mb-2">What is the cost of curtain wall glazing in Pune?</h3>
-              <p className="text-muted-foreground">Curtain wall cost in Pune depends on the system, glass type, aluminium profile, building height, wind load and access, so it needs drawings to price. Fine Glaze prepares BOQ-based quotations after reviewing the drawings.</p>
-            </div>
-            <div className="bg-background p-6">
-              <h3 className="text-lg font-bold mb-2">Which areas in Pune does Fine Glaze serve for curtain walls?</h3>
-              <p className="text-muted-foreground">Fine Glaze takes curtain wall projects across Pune and PCMC, including Hinjewadi, Kharadi, Baner, Wakad, Magarpatta, Undri and Pimpri-Chinchwad, and also elsewhere in India. Our fabrication unit is in Pisoli, Pune.</p>
-            </div>
-            <div className="bg-background p-6">
-              <h3 className="text-lg font-bold mb-2">How long does curtain wall installation take in Pune?</h3>
-              <p className="text-muted-foreground">Programme depends on building size, system, glass lead time and site access, so we confirm it per project after survey and design approval. Fabrication is batched per project and despatched directly to site.</p>
-            </div>
+      <section className="fg-sec">
+        <div className="fg-wrap">
+          <h2>Frequently Asked Questions</h2>
+          <div className="fg-faq">
+            <details>
+              <summary><h3>What is the cost of curtain wall glazing in Pune?</h3></summary>
+              <div className="fg-a">Curtain wall cost in Pune depends on the system, glass type, aluminium profile, building height, wind load and access, so it needs drawings to price. Fine Glaze prepares BOQ-based quotations after reviewing the drawings.</div>
+            </details>
+            <details>
+              <summary><h3>Which areas in Pune does Fine Glaze serve for curtain walls?</h3></summary>
+              <div className="fg-a">Fine Glaze takes curtain wall projects across Pune and PCMC, including Hinjewadi, Kharadi, Baner, Wakad, Magarpatta, Undri and Pimpri-Chinchwad, and also elsewhere in India. Our fabrication unit is in Pisoli, Pune.</div>
+            </details>
+            <details>
+              <summary><h3>How long does curtain wall installation take in Pune?</h3></summary>
+              <div className="fg-a">Programme depends on building size, system, glass lead time and site access, so we confirm it per project after survey and design approval. Fabrication is batched per project and despatched directly to site.</div>
+            </details>
           </div>
         </div>
       </section>
 
       {/* INTERNAL LINKS */}
-      <section className="py-12 bg-night-2 border-t border-line">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <h2 className="text-xl font-bold text-paper mb-5">Explore Related Services</h2>
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
-            <Link key="/curtain-wall-systems" to="/curtain-wall-systems" className="group flex items-start gap-3 p-4 border border-line hover:border-lamp/40 hover:bg-lamp/10 transition-all bg-night"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Curtain Wall Systems</p><p className="text-xs text-mute">Full curtain wall overview</p></div></Link>
-            <Link key="/structural-glazing-pune" to="/structural-glazing-pune" className="group flex items-start gap-3 p-4 border border-line hover:border-lamp/40 hover:bg-lamp/10 transition-all bg-night"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Structural Glazing Pune</p><p className="text-xs text-mute">Frameless glass facades Pune</p></div></Link>
-            <Link key="/aluminium-windows-doors" to="/aluminium-windows-doors" className="group flex items-start gap-3 p-4 border border-line hover:border-lamp/40 hover:bg-lamp/10 transition-all bg-night"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Aluminium Facade</p><p className="text-xs text-mute">Aluminium cladding systems</p></div></Link>
-            <Link key="/acp-cladding-pune" to="/acp-cladding-pune" className="group flex items-start gap-3 p-4 border border-line hover:border-lamp/40 hover:bg-lamp/10 transition-all bg-night"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">ACP Cladding Pune</p><p className="text-xs text-mute">Composite panel facades Pune</p></div></Link>
-            <Link key="/facade-contractor-pune" to="/facade-contractor-pune" className="group flex items-start gap-3 p-4 border border-line hover:border-lamp/40 hover:bg-lamp/10 transition-all bg-night"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Facade Contractor Pune</p><p className="text-xs text-mute">Complete facade services</p></div></Link>
-            <Link key="/glass-railings" to="/glass-railings" className="group flex items-start gap-3 p-4 border border-line hover:border-lamp/40 hover:bg-lamp/10 transition-all bg-night"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Glass Railings</p><p className="text-xs text-mute">Balcony glass railings Pune</p></div></Link>
+      <section className="fg-sec">
+        <div className="fg-wrap">
+          <h2>Explore Related Services</h2>
+          <div className="fg-grid">
+            <Link key="/curtain-wall-systems" to="/curtain-wall-systems" className="group fg-row"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Curtain Wall Systems</p><p className="text-xs text-mute">Full curtain wall overview</p></div></Link>
+            <Link key="/structural-glazing-pune" to="/structural-glazing-pune" className="group fg-row"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Structural Glazing Pune</p><p className="text-xs text-mute">Frameless glass facades Pune</p></div></Link>
+            <Link key="/aluminium-windows-doors" to="/aluminium-windows-doors" className="group fg-row"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Aluminium Facade</p><p className="text-xs text-mute">Aluminium cladding systems</p></div></Link>
+            <Link key="/acp-cladding-pune" to="/acp-cladding-pune" className="group fg-row"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">ACP Cladding Pune</p><p className="text-xs text-mute">Composite panel facades Pune</p></div></Link>
+            <Link key="/facade-contractor-pune" to="/facade-contractor-pune" className="group fg-row"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Facade Contractor Pune</p><p className="text-xs text-mute">Complete facade services</p></div></Link>
+            <Link key="/glass-railings" to="/glass-railings" className="group fg-row"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Glass Railings</p><p className="text-xs text-mute">Balcony glass railings Pune</p></div></Link>
           </div>
         </div>
       </section>

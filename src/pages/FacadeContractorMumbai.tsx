@@ -72,10 +72,10 @@ export default function FacadeContractorMumbai() {
       />
 
       {/* RICH CONTENT */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 max-w-5xl space-y-6">
+      <section className="fg-sec">
+        <div className="fg-wrap fg-prose">
           
-          <h2 className="text-3xl font-bold">Facade Work in Mumbai</h2>
+          <h2>Facade Work in Mumbai</h2>
           <p className="text-muted-foreground">
             Mumbai's building market needs facade contractors who can manage tight urban sites and timelines. Fine Glaze documents Mumbai work including Embassy 247 in Vikhroli (facade sealant, glass replacement and repairs), Leela Business Park (aluminium louvers) and Salsette-27 in Byculla (railings and canopies).
           </p>
@@ -96,10 +96,10 @@ export default function FacadeContractorMumbai() {
       </section>
 
       {/* FEATURES */}
-      <section className="py-20 bg-muted">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <h2 className="text-3xl font-bold mb-10 text-center">What We Offer</h2>
-          <div className="grid md:grid-cols-2 gap-4">
+      <section className="fg-sec">
+        <div className="fg-wrap">
+          <h2>What We Offer</h2>
+          <div className="fg-grid c2">
               <div key="Wind Load Engineering Check" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-lamp shrink-0" /><span className="text-muted-foreground">Wind Load Engineering Check</span></div>
               <div key="Corrosion-Resistant Hardware" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-lamp shrink-0" /><span className="text-muted-foreground">Corrosion-Resistant Hardware</span></div>
               <div key="High-Rise Facade Work" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-lamp shrink-0" /><span className="text-muted-foreground">High-Rise Facade Work</span></div>
@@ -111,37 +111,37 @@ export default function FacadeContractorMumbai() {
       </section>
 
       {/* FAQ */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <h2 className="text-3xl font-bold mb-10 text-center">Frequently Asked Questions</h2>
-          <div className="space-y-6">
-            <div className="bg-background p-6">
-              <h3 className="text-lg font-bold mb-2">Does Fine Glaze serve all of Mumbai for facade work?</h3>
-              <p className="text-muted-foreground">Fine Glaze is based in Pune and Mumbai and takes facade projects across Mumbai, Navi Mumbai, Thane and Panvel. Our documented Mumbai projects are in BKC, Andheri, Vikhroli, Vile Parle, Byculla, Juhu and Dadar.</p>
-            </div>
-            <div className="bg-background p-6">
-              <h3 className="text-lg font-bold mb-2">What makes Mumbai facade work different from Pune?</h3>
-              <p className="text-muted-foreground">Mumbai's coastal air, humidity and wind load make material and finish selection more demanding than inland sites. Corrosion-resistant hardware, suitable finishes and sealants, and a wind-load check against the project design basis are standard concerns.</p>
-            </div>
-            <div className="bg-background p-6">
-              <h3 className="text-lg font-bold mb-2">How much does facade work cost in Mumbai?</h3>
-              <p className="text-muted-foreground">Facade cost in Mumbai depends on the system, glass or panel specification, height, access and logistics, so a reliable figure needs drawings. Fine Glaze prepares BOQ-based quotations after reviewing the drawings and the site.</p>
-            </div>
+      <section className="fg-sec">
+        <div className="fg-wrap">
+          <h2>Frequently Asked Questions</h2>
+          <div className="fg-faq">
+            <details>
+              <summary><h3>Does Fine Glaze serve all of Mumbai for facade work?</h3></summary>
+              <div className="fg-a">Fine Glaze is based in Pune and Mumbai and takes facade projects across Mumbai, Navi Mumbai, Thane and Panvel. Our documented Mumbai projects are in BKC, Andheri, Vikhroli, Vile Parle, Byculla, Juhu and Dadar.</div>
+            </details>
+            <details>
+              <summary><h3>What makes Mumbai facade work different from Pune?</h3></summary>
+              <div className="fg-a">Mumbai's coastal air, humidity and wind load make material and finish selection more demanding than inland sites. Corrosion-resistant hardware, suitable finishes and sealants, and a wind-load check against the project design basis are standard concerns.</div>
+            </details>
+            <details>
+              <summary><h3>How much does facade work cost in Mumbai?</h3></summary>
+              <div className="fg-a">Facade cost in Mumbai depends on the system, glass or panel specification, height, access and logistics, so a reliable figure needs drawings. Fine Glaze prepares BOQ-based quotations after reviewing the drawings and the site.</div>
+            </details>
           </div>
         </div>
       </section>
 
       {/* INTERNAL LINKS */}
-      <section className="py-12 bg-night-2 border-t border-line">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <h2 className="text-xl font-bold text-paper mb-5">Explore Related Services</h2>
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
-            <Link key="/facade-contractor-pune" to="/facade-contractor-pune" className="group flex items-start gap-3 p-4 border border-line hover:border-lamp/40 hover:bg-lamp/10 transition-all bg-night"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Facade Contractor Pune</p><p className="text-xs text-mute">Facade services Pune</p></div></Link>
-            <Link key="/curtain-wall-systems" to="/curtain-wall-systems" className="group flex items-start gap-3 p-4 border border-line hover:border-lamp/40 hover:bg-lamp/10 transition-all bg-night"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Curtain Wall Systems</p><p className="text-xs text-mute">Full curtain wall service</p></div></Link>
-            <Link key="/structural-glazing-mumbai" to="/structural-glazing-mumbai" className="group flex items-start gap-3 p-4 border border-line hover:border-lamp/40 hover:bg-lamp/10 transition-all bg-night"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Structural Glazing Mumbai</p><p className="text-xs text-mute">Structural glazing Mumbai</p></div></Link>
-            <Link key="/acp-aluminium-cladding" to="/acp-aluminium-cladding" className="group flex items-start gap-3 p-4 border border-line hover:border-lamp/40 hover:bg-lamp/10 transition-all bg-night"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">ACP Cladding</p><p className="text-xs text-mute">ACP panel cladding</p></div></Link>
-            <Link key="/facade-contractor-navi-mumbai" to="/facade-contractor-navi-mumbai" className="group flex items-start gap-3 p-4 border border-line hover:border-lamp/40 hover:bg-lamp/10 transition-all bg-night"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Facade Contractor Navi Mumbai</p><p className="text-xs text-mute">Navi Mumbai facade services</p></div></Link>
-            <Link key="/maintenance-services" to="/maintenance-services" className="group flex items-start gap-3 p-4 border border-line hover:border-lamp/40 hover:bg-lamp/10 transition-all bg-night"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Facade Maintenance</p><p className="text-xs text-mute">AMC & facade repair</p></div></Link>
+      <section className="fg-sec">
+        <div className="fg-wrap">
+          <h2>Explore Related Services</h2>
+          <div className="fg-grid">
+            <Link key="/facade-contractor-pune" to="/facade-contractor-pune" className="group fg-row"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Facade Contractor Pune</p><p className="text-xs text-mute">Facade services Pune</p></div></Link>
+            <Link key="/curtain-wall-systems" to="/curtain-wall-systems" className="group fg-row"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Curtain Wall Systems</p><p className="text-xs text-mute">Full curtain wall service</p></div></Link>
+            <Link key="/structural-glazing-mumbai" to="/structural-glazing-mumbai" className="group fg-row"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Structural Glazing Mumbai</p><p className="text-xs text-mute">Structural glazing Mumbai</p></div></Link>
+            <Link key="/acp-aluminium-cladding" to="/acp-aluminium-cladding" className="group fg-row"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">ACP Cladding</p><p className="text-xs text-mute">ACP panel cladding</p></div></Link>
+            <Link key="/facade-contractor-navi-mumbai" to="/facade-contractor-navi-mumbai" className="group fg-row"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Facade Contractor Navi Mumbai</p><p className="text-xs text-mute">Navi Mumbai facade services</p></div></Link>
+            <Link key="/maintenance-services" to="/maintenance-services" className="group fg-row"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Facade Maintenance</p><p className="text-xs text-mute">AMC & facade repair</p></div></Link>
           </div>
         </div>
       </section>

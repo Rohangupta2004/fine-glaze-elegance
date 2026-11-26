@@ -72,10 +72,10 @@ export default function FacadeWaterproofing() {
       />
 
       {/* RICH CONTENT */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 max-w-5xl space-y-6">
+      <section className="fg-sec">
+        <div className="fg-wrap fg-prose">
           
-          <h2 className="text-3xl font-bold">Why Facade Leakage Happens and How to Fix It</h2>
+          <h2>Why Facade Leakage Happens and How to Fix It</h2>
           <p className="text-muted-foreground">
             Water entering through a facade can damage interiors, false ceilings and building services. Heavy monsoon rain in Mumbai and Pune makes sealant, gasket and drainage condition important to check before every rainy season. This is general guidance.
           </p>
@@ -99,10 +99,10 @@ export default function FacadeWaterproofing() {
       </section>
 
       {/* FEATURES */}
-      <section className="py-20 bg-muted">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <h2 className="text-3xl font-bold mb-10 text-center">What We Offer</h2>
-          <div className="grid md:grid-cols-2 gap-4">
+      <section className="fg-sec">
+        <div className="fg-wrap">
+          <h2>What We Offer</h2>
+          <div className="fg-grid c2">
               <div key="Water Test Leak Tracing" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-lamp shrink-0" /><span className="text-muted-foreground">Water Test Leak Tracing</span></div>
               <div key="Sealant Adhesion Check" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-lamp shrink-0" /><span className="text-muted-foreground">Sealant Adhesion Check</span></div>
               <div key="Joint-by-Joint Remediation" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-lamp shrink-0" /><span className="text-muted-foreground">Joint-by-Joint Remediation</span></div>
@@ -114,37 +114,37 @@ export default function FacadeWaterproofing() {
       </section>
 
       {/* FAQ */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <h2 className="text-3xl font-bold mb-10 text-center">Frequently Asked Questions</h2>
-          <div className="space-y-6">
-            <div className="bg-background p-6">
-              <h3 className="text-lg font-bold mb-2">How much does facade leak repair cost in India?</h3>
-              <p className="text-muted-foreground">Facade leak repair cost depends on joint length, access method, sealant specification and how much glass or gasket work is needed, so it needs an inspection first. Fine Glaze quotes after investigating the leak.</p>
-            </div>
-            <div className="bg-background p-6">
-              <h3 className="text-lg font-bold mb-2">How often should facade sealant be replaced in India?</h3>
-              <p className="text-muted-foreground">Facade sealant life depends on the product, exposure and workmanship, so there is no single replacement date. Inspect joints at least annually and before each monsoon, and replace sealant that has cracked, hardened or lost adhesion.</p>
-            </div>
-            <div className="bg-background p-6">
-              <h3 className="text-lg font-bold mb-2">Can Fine Glaze repair leaking curtain wall in an occupied building?</h3>
-              <p className="text-muted-foreground">Yes. Curtain wall sealant repair can be done in an occupied building by working section by section and agreeing access and timing with the building management. We plan the sequence per site.</p>
-            </div>
+      <section className="fg-sec">
+        <div className="fg-wrap">
+          <h2>Frequently Asked Questions</h2>
+          <div className="fg-faq">
+            <details>
+              <summary><h3>How much does facade leak repair cost in India?</h3></summary>
+              <div className="fg-a">Facade leak repair cost depends on joint length, access method, sealant specification and how much glass or gasket work is needed, so it needs an inspection first. Fine Glaze quotes after investigating the leak.</div>
+            </details>
+            <details>
+              <summary><h3>How often should facade sealant be replaced in India?</h3></summary>
+              <div className="fg-a">Facade sealant life depends on the product, exposure and workmanship, so there is no single replacement date. Inspect joints at least annually and before each monsoon, and replace sealant that has cracked, hardened or lost adhesion.</div>
+            </details>
+            <details>
+              <summary><h3>Can Fine Glaze repair leaking curtain wall in an occupied building?</h3></summary>
+              <div className="fg-a">Yes. Curtain wall sealant repair can be done in an occupied building by working section by section and agreeing access and timing with the building management. We plan the sequence per site.</div>
+            </details>
           </div>
         </div>
       </section>
 
       {/* INTERNAL LINKS */}
-      <section className="py-12 bg-night-2 border-t border-line">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <h2 className="text-xl font-bold text-paper mb-5">Explore Related Services</h2>
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
-            <Link key="/maintenance-services" to="/maintenance-services" className="group flex items-start gap-3 p-4 border border-line hover:border-lamp/40 hover:bg-lamp/10 transition-all bg-night"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Facade Maintenance</p><p className="text-xs text-mute">Full AMC service</p></div></Link>
-            <Link key="/curtain-wall-systems" to="/curtain-wall-systems" className="group flex items-start gap-3 p-4 border border-line hover:border-lamp/40 hover:bg-lamp/10 transition-all bg-night"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Curtain Wall Systems</p><p className="text-xs text-mute">Curtain wall systems</p></div></Link>
-            <Link key="/structural-glazing" to="/structural-glazing" className="group flex items-start gap-3 p-4 border border-line hover:border-lamp/40 hover:bg-lamp/10 transition-all bg-night"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Structural Glazing</p><p className="text-xs text-mute">Structural glazing</p></div></Link>
-            <Link key="/facade-contractor-pune" to="/facade-contractor-pune" className="group flex items-start gap-3 p-4 border border-line hover:border-lamp/40 hover:bg-lamp/10 transition-all bg-night"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Facade Contractor Pune</p><p className="text-xs text-mute">Facade contractor Pune</p></div></Link>
-            <Link key="/facade-contractor-mumbai" to="/facade-contractor-mumbai" className="group flex items-start gap-3 p-4 border border-line hover:border-lamp/40 hover:bg-lamp/10 transition-all bg-night"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Facade Contractor Mumbai</p><p className="text-xs text-mute">Facade contractor Mumbai</p></div></Link>
-            <Link key="/contact" to="/contact" className="group flex items-start gap-3 p-4 border border-line hover:border-lamp/40 hover:bg-lamp/10 transition-all bg-night"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Book a call</p><p className="text-xs text-mute">Free leak inspection</p></div></Link>
+      <section className="fg-sec">
+        <div className="fg-wrap">
+          <h2>Explore Related Services</h2>
+          <div className="fg-grid">
+            <Link key="/maintenance-services" to="/maintenance-services" className="group fg-row"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Facade Maintenance</p><p className="text-xs text-mute">Full AMC service</p></div></Link>
+            <Link key="/curtain-wall-systems" to="/curtain-wall-systems" className="group fg-row"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Curtain Wall Systems</p><p className="text-xs text-mute">Curtain wall systems</p></div></Link>
+            <Link key="/structural-glazing" to="/structural-glazing" className="group fg-row"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Structural Glazing</p><p className="text-xs text-mute">Structural glazing</p></div></Link>
+            <Link key="/facade-contractor-pune" to="/facade-contractor-pune" className="group fg-row"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Facade Contractor Pune</p><p className="text-xs text-mute">Facade contractor Pune</p></div></Link>
+            <Link key="/facade-contractor-mumbai" to="/facade-contractor-mumbai" className="group fg-row"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Facade Contractor Mumbai</p><p className="text-xs text-mute">Facade contractor Mumbai</p></div></Link>
+            <Link key="/contact" to="/contact" className="group fg-row"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Book a call</p><p className="text-xs text-mute">Free leak inspection</p></div></Link>
           </div>
         </div>
       </section>

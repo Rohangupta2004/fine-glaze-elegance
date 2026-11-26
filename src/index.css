@@ -331,3 +331,9 @@ main > .fg-sec:nth-of-type(even) {
 @media (prefers-reduced-motion: reduce) {
   .fg-grid a::before { transition: none; }
 }
+
+.fg-sec > .fg-wrap.fg-prose { max-width: 1280px; font-size: inherit; color: inherit; }
+.fg-sec > .fg-wrap.fg-prose > * { max-width: 68ch; }
+.fg-grid > div { padding: clamp(16px, 2vw, 26px); }
+.fg-grid a.fg-row { flex-direction: row; align-items: flex-start; gap: 12px; }
+.fg-grid a.fg-row p { margin: 0; }

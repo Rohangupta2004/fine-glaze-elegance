@@ -70,10 +70,10 @@ export default function FacadeDesignGuide() {
       />
 
       {/* RICH CONTENT */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 max-w-5xl space-y-6">
+      <section className="fg-sec">
+        <div className="fg-wrap fg-prose">
           
-          <h2 className="text-3xl font-bold">Facade Design Principles for Indian Buildings</h2>
+          <h2>Facade Design Principles for Indian Buildings</h2>
           <p className="text-muted-foreground">
             A well-designed facade is a multi-performance system. In India it must address solar heat gain, monsoon weather resistance (wind-driven rain and humidity), seismic and wind loads, fire safety under the National Building Code, and durability across climates from coastal to semi-arid.
           </p>
@@ -94,10 +94,10 @@ export default function FacadeDesignGuide() {
       </section>
 
       {/* FEATURES */}
-      <section className="py-20 bg-muted">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <h2 className="text-3xl font-bold mb-10 text-center">What We Offer</h2>
-          <div className="grid md:grid-cols-2 gap-4">
+      <section className="fg-sec">
+        <div className="fg-wrap">
+          <h2>What We Offer</h2>
+          <div className="fg-grid c2">
               <div key="Window-to-Wall Ratio Guidance" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-lamp shrink-0" /><span className="text-muted-foreground">Window-to-Wall Ratio Guidance</span></div>
               <div key="Solar Shading Design" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-lamp shrink-0" /><span className="text-muted-foreground">Solar Shading Design</span></div>
               <div key="ECBC Pointers" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-lamp shrink-0" /><span className="text-muted-foreground">ECBC Pointers</span></div>
@@ -109,37 +109,37 @@ export default function FacadeDesignGuide() {
       </section>
 
       {/* FAQ */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <h2 className="text-3xl font-bold mb-10 text-center">Frequently Asked Questions</h2>
-          <div className="space-y-6">
-            <div className="bg-background p-6">
-              <h3 className="text-lg font-bold mb-2">What WWR (Window-to-Wall Ratio) is recommended for Indian commercial buildings?</h3>
-              <p className="text-muted-foreground">The recommended window-to-wall ratio for Indian commercial buildings is set by the Energy Conservation Building Code for the climate zone, along with glass performance. Check the current ECBC and your energy modeller's results for the project.</p>
-            </div>
-            <div className="bg-background p-6">
-              <h3 className="text-lg font-bold mb-2">How do I choose the right glass for a facade in India?</h3>
-              <p className="text-muted-foreground">Choose facade glass by balancing solar heat gain, visible light transmittance, thermal performance, glare control and appearance for the building's orientation and climate. Your facade consultant or energy modeller should set the target values.</p>
-            </div>
-            <div className="bg-background p-6">
-              <h3 className="text-lg font-bold mb-2">What is a facade consultant and do I need one for my project?</h3>
-              <p className="text-muted-foreground">A facade consultant is a specialist who designs and specifies the building envelope, including structural analysis, thermal modelling and performance requirements. Large or complex buildings usually benefit from one. Fine Glaze works with consultants on project drawings.</p>
-            </div>
+      <section className="fg-sec">
+        <div className="fg-wrap">
+          <h2>Frequently Asked Questions</h2>
+          <div className="fg-faq">
+            <details>
+              <summary><h3>What WWR (Window-to-Wall Ratio) is recommended for Indian commercial buildings?</h3></summary>
+              <div className="fg-a">The recommended window-to-wall ratio for Indian commercial buildings is set by the Energy Conservation Building Code for the climate zone, along with glass performance. Check the current ECBC and your energy modeller's results for the project.</div>
+            </details>
+            <details>
+              <summary><h3>How do I choose the right glass for a facade in India?</h3></summary>
+              <div className="fg-a">Choose facade glass by balancing solar heat gain, visible light transmittance, thermal performance, glare control and appearance for the building's orientation and climate. Your facade consultant or energy modeller should set the target values.</div>
+            </details>
+            <details>
+              <summary><h3>What is a facade consultant and do I need one for my project?</h3></summary>
+              <div className="fg-a">A facade consultant is a specialist who designs and specifies the building envelope, including structural analysis, thermal modelling and performance requirements. Large or complex buildings usually benefit from one. Fine Glaze works with consultants on project drawings.</div>
+            </details>
           </div>
         </div>
       </section>
 
       {/* INTERNAL LINKS */}
-      <section className="py-12 bg-night-2 border-t border-line">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <h2 className="text-xl font-bold text-paper mb-5">Explore Related Services</h2>
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
-            <Link key="/curtain-wall-systems" to="/curtain-wall-systems" className="group flex items-start gap-3 p-4 border border-line hover:border-lamp/40 hover:bg-lamp/10 transition-all bg-night"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Curtain Wall Systems</p><p className="text-xs text-mute">Curtain wall service</p></div></Link>
-            <Link key="/commercial-building-facade" to="/commercial-building-facade" className="group flex items-start gap-3 p-4 border border-line hover:border-lamp/40 hover:bg-lamp/10 transition-all bg-night"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Commercial Facade Guide</p><p className="text-xs text-mute">Commercial facade overview</p></div></Link>
-            <Link key="/aluminium-vs-acp-cladding" to="/aluminium-vs-acp-cladding" className="group flex items-start gap-3 p-4 border border-line hover:border-lamp/40 hover:bg-lamp/10 transition-all bg-night"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Aluminium vs ACP Guide</p><p className="text-xs text-mute">Material comparison</p></div></Link>
-            <Link key="/pvdf-vs-powder-coating-aluminium" to="/pvdf-vs-powder-coating-aluminium" className="group flex items-start gap-3 p-4 border border-line hover:border-lamp/40 hover:bg-lamp/10 transition-all bg-night"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">PVDF vs Powder Coating</p><p className="text-xs text-mute">Coating guide</p></div></Link>
-            <Link key="/structural-glazing" to="/structural-glazing" className="group flex items-start gap-3 p-4 border border-line hover:border-lamp/40 hover:bg-lamp/10 transition-all bg-night"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Structural Glazing</p><p className="text-xs text-mute">Structural glazing</p></div></Link>
-            <Link key="/facade-contractor-pune" to="/facade-contractor-pune" className="group flex items-start gap-3 p-4 border border-line hover:border-lamp/40 hover:bg-lamp/10 transition-all bg-night"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Facade Contractor Pune</p><p className="text-xs text-mute">Facade contractor</p></div></Link>
+      <section className="fg-sec">
+        <div className="fg-wrap">
+          <h2>Explore Related Services</h2>
+          <div className="fg-grid">
+            <Link key="/curtain-wall-systems" to="/curtain-wall-systems" className="group fg-row"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Curtain Wall Systems</p><p className="text-xs text-mute">Curtain wall service</p></div></Link>
+            <Link key="/commercial-building-facade" to="/commercial-building-facade" className="group fg-row"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Commercial Facade Guide</p><p className="text-xs text-mute">Commercial facade overview</p></div></Link>
+            <Link key="/aluminium-vs-acp-cladding" to="/aluminium-vs-acp-cladding" className="group fg-row"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Aluminium vs ACP Guide</p><p className="text-xs text-mute">Material comparison</p></div></Link>
+            <Link key="/pvdf-vs-powder-coating-aluminium" to="/pvdf-vs-powder-coating-aluminium" className="group fg-row"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">PVDF vs Powder Coating</p><p className="text-xs text-mute">Coating guide</p></div></Link>
+            <Link key="/structural-glazing" to="/structural-glazing" className="group fg-row"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Structural Glazing</p><p className="text-xs text-mute">Structural glazing</p></div></Link>
+            <Link key="/facade-contractor-pune" to="/facade-contractor-pune" className="group fg-row"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Facade Contractor Pune</p><p className="text-xs text-mute">Facade contractor</p></div></Link>
           </div>
         </div>
       </section>

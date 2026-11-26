@@ -72,10 +72,10 @@ export default function AluminiumFacadeMumbai() {
       />
 
       {/* RICH CONTENT */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 max-w-5xl space-y-6">
+      <section className="fg-sec">
+        <div className="fg-wrap fg-prose">
           
-          <h2 className="text-3xl font-bold">Aluminium Facades for Mumbai</h2>
+          <h2>Aluminium Facades for Mumbai</h2>
           <p className="text-muted-foreground">
             Aluminium is widely used on coastal facades because it is light and resists corrosion better than many metals. In salty coastal air, finish matters: as general guidance, designers there specify anodised or high-performance powder or PVDF-coated extrusions and corrosion-resistant hardware, with the coating class set by the project specification.
           </p>
@@ -96,10 +96,10 @@ export default function AluminiumFacadeMumbai() {
       </section>
 
       {/* FEATURES */}
-      <section className="py-20 bg-muted">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <h2 className="text-3xl font-bold mb-10 text-center">What We Offer</h2>
-          <div className="grid md:grid-cols-2 gap-4">
+      <section className="fg-sec">
+        <div className="fg-wrap">
+          <h2>What We Offer</h2>
+          <div className="fg-grid c2">
               <div key="Anodised or Coated Extrusions" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-lamp shrink-0" /><span className="text-muted-foreground">Anodised or Coated Extrusions</span></div>
               <div key="Thermal Break Options" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-lamp shrink-0" /><span className="text-muted-foreground">Thermal Break Options</span></div>
               <div key="Finish to Project Spec" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-lamp shrink-0" /><span className="text-muted-foreground">Finish to Project Spec</span></div>
@@ -111,37 +111,37 @@ export default function AluminiumFacadeMumbai() {
       </section>
 
       {/* FAQ */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <h2 className="text-3xl font-bold mb-10 text-center">Frequently Asked Questions</h2>
-          <div className="space-y-6">
-            <div className="bg-background p-6">
-              <h3 className="text-lg font-bold mb-2">What aluminium coating is best for Mumbai coastal environment?</h3>
-              <p className="text-muted-foreground">For coastal Mumbai, designers usually choose anodising or a high-performance coating such as PVDF, because salty air and moisture wear ordinary finishes faster. The class and thickness should come from the project specification and supplier data.</p>
-            </div>
-            <div className="bg-background p-6">
-              <h3 className="text-lg font-bold mb-2">What is thermal break aluminium and why is it important in Mumbai?</h3>
-              <p className="text-muted-foreground">Thermal break aluminium has a polyamide barrier between the inner and outer sections of the frame, which slows heat transfer through the frame. It can help comfort and cooling load, with the benefit depending on the full window and glass.</p>
-            </div>
-            <div className="bg-background p-6">
-              <h3 className="text-lg font-bold mb-2">Does Fine Glaze supply and install aluminium windows in Mumbai?</h3>
-              <p className="text-muted-foreground">Yes. Fine Glaze takes supply and installation of aluminium windows, doors and louvers in Mumbai, covering glass, hardware and weather sealing as part of one scope. Our Mumbai records include Leela Hotel and Leela Business Park.</p>
-            </div>
+      <section className="fg-sec">
+        <div className="fg-wrap">
+          <h2>Frequently Asked Questions</h2>
+          <div className="fg-faq">
+            <details>
+              <summary><h3>What aluminium coating is best for Mumbai coastal environment?</h3></summary>
+              <div className="fg-a">For coastal Mumbai, designers usually choose anodising or a high-performance coating such as PVDF, because salty air and moisture wear ordinary finishes faster. The class and thickness should come from the project specification and supplier data.</div>
+            </details>
+            <details>
+              <summary><h3>What is thermal break aluminium and why is it important in Mumbai?</h3></summary>
+              <div className="fg-a">Thermal break aluminium has a polyamide barrier between the inner and outer sections of the frame, which slows heat transfer through the frame. It can help comfort and cooling load, with the benefit depending on the full window and glass.</div>
+            </details>
+            <details>
+              <summary><h3>Does Fine Glaze supply and install aluminium windows in Mumbai?</h3></summary>
+              <div className="fg-a">Yes. Fine Glaze takes supply and installation of aluminium windows, doors and louvers in Mumbai, covering glass, hardware and weather sealing as part of one scope. Our Mumbai records include Leela Hotel and Leela Business Park.</div>
+            </details>
           </div>
         </div>
       </section>
 
       {/* INTERNAL LINKS */}
-      <section className="py-12 bg-night-2 border-t border-line">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <h2 className="text-xl font-bold text-paper mb-5">Explore Related Services</h2>
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
-            <Link key="/aluminium-windows-doors" to="/aluminium-windows-doors" className="group flex items-start gap-3 p-4 border border-line hover:border-lamp/40 hover:bg-lamp/10 transition-all bg-night"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Aluminium Facade</p><p className="text-xs text-mute">Full aluminium facade service</p></div></Link>
-            <Link key="/facade-contractor-mumbai" to="/facade-contractor-mumbai" className="group flex items-start gap-3 p-4 border border-line hover:border-lamp/40 hover:bg-lamp/10 transition-all bg-night"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Facade Contractor Mumbai</p><p className="text-xs text-mute">Complete facade services</p></div></Link>
-            <Link key="/curtain-wall-mumbai" to="/curtain-wall-mumbai" className="group flex items-start gap-3 p-4 border border-line hover:border-lamp/40 hover:bg-lamp/10 transition-all bg-night"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Curtain Wall Mumbai</p><p className="text-xs text-mute">Curtain wall glazing Mumbai</p></div></Link>
-            <Link key="/acp-aluminium-cladding" to="/acp-aluminium-cladding" className="group flex items-start gap-3 p-4 border border-line hover:border-lamp/40 hover:bg-lamp/10 transition-all bg-night"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">ACP Cladding</p><p className="text-xs text-mute">ACP composite panels</p></div></Link>
-            <Link key="/structural-glazing-mumbai" to="/structural-glazing-mumbai" className="group flex items-start gap-3 p-4 border border-line hover:border-lamp/40 hover:bg-lamp/10 transition-all bg-night"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Structural Glazing Mumbai</p><p className="text-xs text-mute">Structural glazing</p></div></Link>
-            <Link key="/maintenance-services" to="/maintenance-services" className="group flex items-start gap-3 p-4 border border-line hover:border-lamp/40 hover:bg-lamp/10 transition-all bg-night"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Facade Maintenance</p><p className="text-xs text-mute">AMC & maintenance</p></div></Link>
+      <section className="fg-sec">
+        <div className="fg-wrap">
+          <h2>Explore Related Services</h2>
+          <div className="fg-grid">
+            <Link key="/aluminium-windows-doors" to="/aluminium-windows-doors" className="group fg-row"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Aluminium Facade</p><p className="text-xs text-mute">Full aluminium facade service</p></div></Link>
+            <Link key="/facade-contractor-mumbai" to="/facade-contractor-mumbai" className="group fg-row"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Facade Contractor Mumbai</p><p className="text-xs text-mute">Complete facade services</p></div></Link>
+            <Link key="/curtain-wall-mumbai" to="/curtain-wall-mumbai" className="group fg-row"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Curtain Wall Mumbai</p><p className="text-xs text-mute">Curtain wall glazing Mumbai</p></div></Link>
+            <Link key="/acp-aluminium-cladding" to="/acp-aluminium-cladding" className="group fg-row"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">ACP Cladding</p><p className="text-xs text-mute">ACP composite panels</p></div></Link>
+            <Link key="/structural-glazing-mumbai" to="/structural-glazing-mumbai" className="group fg-row"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Structural Glazing Mumbai</p><p className="text-xs text-mute">Structural glazing</p></div></Link>
+            <Link key="/maintenance-services" to="/maintenance-services" className="group fg-row"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Facade Maintenance</p><p className="text-xs text-mute">AMC & maintenance</p></div></Link>
           </div>
         </div>
       </section>

@@ -70,17 +70,17 @@ export default function PVDFvsPowderCoating() {
       />
 
       {/* RICH CONTENT */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 max-w-5xl space-y-6">
+      <section className="fg-sec">
+        <div className="fg-wrap fg-prose">
           
-          <h2 className="text-3xl font-bold">What is PVDF Coating?</h2>
+          <h2>What is PVDF Coating?</h2>
           <p className="text-muted-foreground">
             PVDF (polyvinylidene fluoride) is a high-performance fluoropolymer coating applied to aluminium extrusions and ACP panels. It is widely specified on premium commercial and coastal projects, and is known for good resistance to UV, pollution and weathering.
           </p>
           <p className="text-muted-foreground mt-4">
             PVDF coatings get their durability from the chemical stability of the fluoropolymer. Coating thickness, the percentage of PVDF resin and the pre-treatment affect performance, and the manufacturer's warranty states what is covered. Confirm these details in writing for your project.
           </p>
-          <h2 className="text-3xl font-bold mt-10">What is Powder Coating for Aluminium?</h2>
+          <h2>What is Powder Coating for Aluminium?</h2>
           <p className="text-muted-foreground mt-4">
             Polyester powder coating is the most widely used architectural coating for aluminium in India. It costs less, comes in a very wide colour range and performs adequately in moderate environments. Dry powder is applied electrostatically to pre-treated aluminium and cured in an oven.
           </p>
@@ -106,7 +106,7 @@ export default function PVDFvsPowderCoating() {
               </tbody>
             </table>
           </div>
-          <h2 className="text-3xl font-bold mt-10">Fine Glaze Recommendation</h2>
+          <h2>Fine Glaze Recommendation</h2>
           <p className="text-muted-foreground mt-4">
             As general guidance, PVDF is often chosen for coastal sites, buildings with long design lives and low maintenance access, and premium or institutional buildings. Powder coating suits inland projects on lower-rise buildings with accessible maintenance and tighter budgets. Fine Glaze applies the finish stated in the project specification.
           </p>
@@ -115,10 +115,10 @@ export default function PVDFvsPowderCoating() {
       </section>
 
       {/* FEATURES */}
-      <section className="py-20 bg-muted">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <h2 className="text-3xl font-bold mb-10 text-center">What We Offer</h2>
-          <div className="grid md:grid-cols-2 gap-4">
+      <section className="fg-sec">
+        <div className="fg-wrap">
+          <h2>What We Offer</h2>
+          <div className="fg-grid c2">
               <div key="PVDF vs Powder Comparison" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-lamp shrink-0" /><span className="text-muted-foreground">PVDF vs Powder Comparison</span></div>
               <div key="Cost and Lifespan Factors" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-lamp shrink-0" /><span className="text-muted-foreground">Cost and Lifespan Factors</span></div>
               <div key="Coastal Climate Guidance" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-lamp shrink-0" /><span className="text-muted-foreground">Coastal Climate Guidance</span></div>
@@ -130,37 +130,37 @@ export default function PVDFvsPowderCoating() {
       </section>
 
       {/* FAQ */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <h2 className="text-3xl font-bold mb-10 text-center">Frequently Asked Questions</h2>
-          <div className="space-y-6">
-            <div className="bg-background p-6">
-              <h3 className="text-lg font-bold mb-2">Is PVDF coating worth the extra cost in India?</h3>
-              <p className="text-muted-foreground">PVDF often pays off on buildings meant to last many years, especially coastal or hard-to-reach facades, because it holds colour and gloss longer and delays recoating. Compare full life cost, not first cost alone.</p>
-            </div>
-            <div className="bg-background p-6">
-              <h3 className="text-lg font-bold mb-2">Can I repaint powder-coated aluminium facade in India?</h3>
-              <p className="text-muted-foreground">Powder-coated aluminium can be recoated, but only after professional preparation: stripping or abrading the old coating, priming and recoating, which is feasible on accessible low-rise facades. High-rise recoating is costly and disruptive, so choose the finish carefully.</p>
-            </div>
-            <div className="bg-background p-6">
-              <h3 className="text-lg font-bold mb-2">Is anodising better than PVDF for aluminium facades?</h3>
-              <p className="text-muted-foreground">Neither finish is better in every case: anodising forms an integral oxide layer that cannot peel but offers a narrower colour range, while PVDF offers more colour choice and strong UV durability. Choose from the project specification and exposure.</p>
-            </div>
+      <section className="fg-sec">
+        <div className="fg-wrap">
+          <h2>Frequently Asked Questions</h2>
+          <div className="fg-faq">
+            <details>
+              <summary><h3>Is PVDF coating worth the extra cost in India?</h3></summary>
+              <div className="fg-a">PVDF often pays off on buildings meant to last many years, especially coastal or hard-to-reach facades, because it holds colour and gloss longer and delays recoating. Compare full life cost, not first cost alone.</div>
+            </details>
+            <details>
+              <summary><h3>Can I repaint powder-coated aluminium facade in India?</h3></summary>
+              <div className="fg-a">Powder-coated aluminium can be recoated, but only after professional preparation: stripping or abrading the old coating, priming and recoating, which is feasible on accessible low-rise facades. High-rise recoating is costly and disruptive, so choose the finish carefully.</div>
+            </details>
+            <details>
+              <summary><h3>Is anodising better than PVDF for aluminium facades?</h3></summary>
+              <div className="fg-a">Neither finish is better in every case: anodising forms an integral oxide layer that cannot peel but offers a narrower colour range, while PVDF offers more colour choice and strong UV durability. Choose from the project specification and exposure.</div>
+            </details>
           </div>
         </div>
       </section>
 
       {/* INTERNAL LINKS */}
-      <section className="py-12 bg-night-2 border-t border-line">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <h2 className="text-xl font-bold text-paper mb-5">Explore Related Services</h2>
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
-            <Link key="/aluminium-windows-doors" to="/aluminium-windows-doors" className="group flex items-start gap-3 p-4 border border-line hover:border-lamp/40 hover:bg-lamp/10 transition-all bg-night"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Aluminium Facade</p><p className="text-xs text-mute">Aluminium facade systems</p></div></Link>
-            <Link key="/acp-aluminium-cladding" to="/acp-aluminium-cladding" className="group flex items-start gap-3 p-4 border border-line hover:border-lamp/40 hover:bg-lamp/10 transition-all bg-night"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">ACP Cladding</p><p className="text-xs text-mute">ACP cladding systems</p></div></Link>
-            <Link key="/maintenance-services" to="/maintenance-services" className="group flex items-start gap-3 p-4 border border-line hover:border-lamp/40 hover:bg-lamp/10 transition-all bg-night"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Facade Maintenance</p><p className="text-xs text-mute">Facade AMC</p></div></Link>
-            <Link key="/aluminium-vs-acp-cladding" to="/aluminium-vs-acp-cladding" className="group flex items-start gap-3 p-4 border border-line hover:border-lamp/40 hover:bg-lamp/10 transition-all bg-night"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Aluminium vs ACP Guide</p><p className="text-xs text-mute">System comparison</p></div></Link>
-            <Link key="/facade-contractor-pune" to="/facade-contractor-pune" className="group flex items-start gap-3 p-4 border border-line hover:border-lamp/40 hover:bg-lamp/10 transition-all bg-night"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Facade Contractor Pune</p><p className="text-xs text-mute">Facade contractor Pune</p></div></Link>
-            <Link key="/contact" to="/contact" className="group flex items-start gap-3 p-4 border border-line hover:border-lamp/40 hover:bg-lamp/10 transition-all bg-night"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Book a call</p><p className="text-xs text-mute">Talk to our team</p></div></Link>
+      <section className="fg-sec">
+        <div className="fg-wrap">
+          <h2>Explore Related Services</h2>
+          <div className="fg-grid">
+            <Link key="/aluminium-windows-doors" to="/aluminium-windows-doors" className="group fg-row"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Aluminium Facade</p><p className="text-xs text-mute">Aluminium facade systems</p></div></Link>
+            <Link key="/acp-aluminium-cladding" to="/acp-aluminium-cladding" className="group fg-row"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">ACP Cladding</p><p className="text-xs text-mute">ACP cladding systems</p></div></Link>
+            <Link key="/maintenance-services" to="/maintenance-services" className="group fg-row"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Facade Maintenance</p><p className="text-xs text-mute">Facade AMC</p></div></Link>
+            <Link key="/aluminium-vs-acp-cladding" to="/aluminium-vs-acp-cladding" className="group fg-row"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Aluminium vs ACP Guide</p><p className="text-xs text-mute">System comparison</p></div></Link>
+            <Link key="/facade-contractor-pune" to="/facade-contractor-pune" className="group fg-row"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Facade Contractor Pune</p><p className="text-xs text-mute">Facade contractor Pune</p></div></Link>
+            <Link key="/contact" to="/contact" className="group fg-row"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Book a call</p><p className="text-xs text-mute">Talk to our team</p></div></Link>
           </div>
         </div>
       </section>
