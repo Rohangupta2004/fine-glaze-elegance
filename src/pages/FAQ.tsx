@@ -13,12 +13,6 @@ import {
   Layers,
   Wind
 } from "lucide-react";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
 import PageHero from "@/components/common/PageHero";
 import SEO from "@/components/SEO";
 import { Layout } from "@/components/layout/Layout";
@@ -151,16 +145,18 @@ export default function FAQ() {
 
       <section className="fg-sec">
         <div className="fg-wrap">
-          <Accordion type="single" collapsible className="w-full border-t border-line">
+          <div className="fg-faq">
             {faqDatabase.map((faq) => (
-              <AccordionItem key={faq.id} value={faq.id} className="border-b border-line">
-                <AccordionTrigger className="hover:no-underline">
-                  <span className="flex flex-col items-start gap-1 text-left">
-                    <span className="text-sm font-normal text-mute">{faq.category}</span>
-                    <span className="text-lg md:text-xl font-medium text-paper leading-snug">{faq.question}</span>
-                  </span>
-                </AccordionTrigger>
-                <AccordionContent className="pb-8 pt-1">
+              <details key={faq.id}>
+                <summary>
+                  <h3>
+                    <span className="flex flex-col items-start gap-1 text-left">
+                      <span className="text-sm font-normal text-mute">{faq.category}</span>
+                      <span className="text-lg md:text-xl font-medium text-paper leading-snug">{faq.question}</span>
+                    </span>
+                  </h3>
+                </summary>
+                <div className="fg-a" style={{ maxWidth: "none", paddingTop: 4 }}>
                   <div className="grid md:grid-cols-[minmax(0,1fr)_minmax(0,18rem)] gap-8 items-start">
                     <div className="space-y-4">
                       <p className="text-mute leading-relaxed text-base max-w-[68ch]">{faq.answer}</p>
@@ -169,7 +165,7 @@ export default function FAQ() {
                         onClick={() => openBooking({ source: "faq_drawings", work: "Technical drawings" })}
                         className="fg-lnk"
                       >
-                        Book a call about drawings
+                        Book a call
                       </button>
                     </div>
                     <div className="border-l border-line pl-6">
@@ -177,10 +173,10 @@ export default function FAQ() {
                       <div className="text-sm text-mute mt-2">{faq.stats.label}</div>
                     </div>
                   </div>
-                </AccordionContent>
-              </AccordionItem>
+                </div>
+              </details>
             ))}
-          </Accordion>
+          </div>
         </div>
       </section>
     </Layout>
