@@ -1,7 +1,4 @@
-import { useState } from "react";
-import { CheckCircle2, MapPin, Building2, Briefcase, FileText } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { QuoteModal } from "@/components/QuoteModal";
+import { useBookCall } from "@/components/booking/BookCallProvider";
 
 export interface ServiceQuickOverviewProps {
   serviceTitle: string;
@@ -12,6 +9,7 @@ export interface ServiceQuickOverviewProps {
   relevantProjects: string[];
 }
 
+/** Service overview as a ruled grid of rectangular panels, like the home services elevation. */
 export const ServiceQuickOverview = ({
   serviceTitle,
   whatWeProvide,
@@ -19,96 +17,51 @@ export const ServiceQuickOverview = ({
   bestProjectTypes,
   relevantProjects,
 }: ServiceQuickOverviewProps) => {
-  const [isQuoteOpen, setIsQuoteOpen] = useState(false);
+  const { open } = useBookCall();
 
   return (
-    <>
-      <section className="bg-night-2 border-y border-line text-paper py-10 my-8">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-8 border-b border-line pb-4">
-            <div>
-              <span className="text-lamp text-xs font-bold">
-                Service Specification
-              </span>
-              <h2 className="text-2xl md:text-3xl font-bold text-paper mt-1">
-                {serviceTitle} Overview
-              </h2>
-            </div>
-            <Button
-              onClick={() => setIsQuoteOpen(true)}
-              className="bg-lamp hover:bg-lamp/90 text-lamp-ink font-bold px-6 py-2.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lamp"
-            >
-              <FileText className="w-4 h-4 mr-2" />
-              Book a call
-            </Button>
+    <section className="bg-night-2 border-y border-line py-12 md:py-16">
+      <div className="fg-wrap">
+        <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-6 mb-8">
+          <h2 className="font-display font-semibold text-3xl md:text-4xl tracking-[-0.03em] text-paper">
+            {serviceTitle} overview
+          </h2>
+          <button type="button" className="fg-btn" onClick={() => open({ source: "service_overview", work: serviceTitle })}>
+            Book a call
+          </button>
+        </div>
+
+        <div className="fg-grid">
+          <div>
+            <h3 className="text-lg font-semibold text-paper mb-3">What Fine Glaze provides</h3>
+            <p className="text-[15.5px] text-mute leading-relaxed">{whatWeProvide}</p>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {/* What Fine Glaze Provides */}
-            <div className="bg-night/70 p-5 border border-line">
-              <div className="flex items-center gap-2 text-lamp font-semibold mb-3 text-sm">
-                <CheckCircle2 className="w-4 h-4" />
-                <span>What Fine Glaze Provides</span>
-              </div>
-              <p className="text-xs sm:text-sm text-paper/80 leading-relaxed">
-                {whatWeProvide}
-              </p>
-            </div>
-
-            {/* Locations Served */}
-            <div className="bg-night/70 p-5 border border-line">
-              <div className="flex items-center gap-2 text-lamp font-semibold mb-3 text-sm">
-                <MapPin className="w-4 h-4" />
-                <span>Service Locations</span>
-              </div>
-              <div className="flex flex-wrap gap-1.5">
-                {locationsServed.map((loc) => (
-                  <span
-                    key={loc}
-                    className="bg-night-2 text-paper/80 text-xs font-medium px-2.5 py-1"
-                  >
-                    {loc}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            {/* Best Project Types */}
-            <div className="bg-night/70 p-5 border border-line">
-              <div className="flex items-center gap-2 text-lamp font-semibold mb-3 text-sm">
-                <Building2 className="w-4 h-4" />
-                <span>Ideal Building Types</span>
-              </div>
-              <ul className="space-y-1.5 text-xs sm:text-sm text-paper/80">
-                {bestProjectTypes.map((type) => (
-                  <li key={type} className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 bg-lamp" />
-                    <span>{type}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Relevant Projects */}
-            <div className="bg-night/70 p-5 border border-line md:col-span-2 lg:col-span-2">
-              <div className="flex items-center gap-2 text-lamp font-semibold mb-3 text-sm">
-                <Briefcase className="w-4 h-4" />
-                <span>Verified Project References</span>
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-paper/80">
-                {relevantProjects.map((proj) => (
-                  <div key={proj} className="flex items-center gap-2 bg-night-2 px-3 py-2">
-                    <span className="w-2 h-2 bg-emerald-500" />
-                    <span className="font-medium text-paper">{proj}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
+          <div>
+            <h3 className="text-lg font-semibold text-paper mb-3">Service locations</h3>
+            <ul className="text-[15.5px] text-mute space-y-1.5">
+              {locationsServed.map((loc) => (
+                <li key={loc}>{loc}</li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h3 className="text-lg font-semibold text-paper mb-3">Ideal building types</h3>
+            <ul className="text-[15.5px] text-mute space-y-1.5">
+              {bestProjectTypes.map((type) => (
+                <li key={type}>{type}</li>
+              ))}
+            </ul>
+          </div>
+          <div style={{ gridColumn: "1 / -1" }}>
+            <h3 className="text-lg font-semibold text-paper mb-3">Project references</h3>
+            <ul className="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-1.5 text-[15.5px] text-mute">
+              {relevantProjects.map((proj) => (
+                <li key={proj}>{proj}</li>
+              ))}
+            </ul>
           </div>
         </div>
-      </section>
-
-      <QuoteModal open={isQuoteOpen} onOpenChange={setIsQuoteOpen} />
-    </>
+      </div>
+    </section>
   );
 };
