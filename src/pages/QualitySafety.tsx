@@ -126,7 +126,7 @@ export default function QualitySafety() {
             <Factory className="h-7 w-7 text-primary" aria-hidden="true" />
             <h2 className="mt-3 text-2xl font-bold text-foreground">Our fabrication unit — {company.fabricationUnit.location}</h2>
             <p className="mt-3 text-muted-foreground">
-              A {company.fabricationUnit.areaSqft} unit feeding both Pune and Mumbai sites.
+              Our own unit, feeding both Pune and Mumbai sites.
             </p>
             <ul className="mt-5 space-y-2 text-sm text-muted-foreground list-disc pl-5">
               {company.fabricationUnit.capability.map((c) => <li key={c}>{c}</li>)}

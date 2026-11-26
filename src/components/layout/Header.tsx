@@ -132,7 +132,13 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
             aria-label="Fine Glaze, home"
             className="flex-shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-glass"
           >
-            <img src="/Logofg.webp" alt="Fine Glaze" width={1920} height={603} className="h-10 lg:h-12 w-auto brightness-150" />
+            <img
+              src="/Logofg.webp"
+              alt="Fine Glaze"
+              width={1920}
+              height={603}
+              className={cn("h-10 lg:h-12 w-auto transition-[filter] duration-300", transparent ? "brightness-0 invert opacity-95" : "brightness-125")}
+            />
           </Link>
 
           {/* DESKTOP NAV */}

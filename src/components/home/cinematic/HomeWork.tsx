@@ -1,6 +1,3 @@
-import { useEffect, useRef } from "react";
-import { company } from "@/data/company";
-
 const PLATES = [
   {
     img: "/Embassy.webp",
@@ -54,96 +51,44 @@ const PLATES = [
   },
 ];
 
-const HomeWork = () => {
-  const recRef = useRef<HTMLElement>(null);
+const HomeWork = () => (
+  <>
+    <section className="voice full rv">
+      <div className="wrap">
+        <p className="wipe">Checked at source, checked at site, and closed before handover.</p>
+        <p className="v2">Facade work is height work, and it is managed as height work.</p>
+      </div>
+    </section>
 
-  // Reveal: the js flag goes on the .fg-home wrapper, plates get "in" when 20% visible.
-  // Without JS every plate is shown as is.
-  useEffect(() => {
-    const rec = recRef.current;
-    if (!rec) return;
-    const root = rec.closest(".fg-home");
-    root?.classList.add("js");
-    const plates = Array.from(rec.querySelectorAll<HTMLElement>(".pl"));
-    let io: IntersectionObserver | undefined;
-    if ("IntersectionObserver" in window) {
-      io = new IntersectionObserver(
-        (es) => {
-          es.forEach((e) => {
-            if (e.isIntersecting) {
-              e.target.classList.add("in");
-              io?.unobserve(e.target);
-            }
-          });
-        },
-        { threshold: 0.2 },
-      );
-      plates.forEach((n) => io!.observe(n));
-    } else {
-      plates.forEach((n) => n.classList.add("in"));
-    }
-    return () => {
-      io?.disconnect();
-      root?.classList.remove("js");
-      plates.forEach((n) => n.classList.remove("in"));
-    };
-  }, []);
-
-  return (
-    <>
-      <section className="voice">
-        <div className="wrap">
-          <p>Checked at source, checked at site, and closed before handover.</p>
-          <p className="v2">Facade work is height work, and it is managed as height work.</p>
-        </div>
-      </section>
-
-      <section className="rec" ref={recRef} aria-label="Major projects and clients">
-        <div className="wrap">
-          <h2>Work we have put our name to.</h2>
-        </div>
-        <div className="plates">
-          {PLATES.map((pl) => (
-            <figure className="pl" key={pl.name}>
-              <img src={pl.img} width={pl.w} height={pl.h} alt={pl.alt} loading="lazy" />
-              <div className="mul" aria-hidden="true">
-                <i />
-                <i />
-                <i />
-                <i />
-                <i />
-                <i />
-              </div>
-              <figcaption>
-                <small>{pl.place}</small>
-                <b>{pl.name}</b>
-                <em>{pl.status}</em>
-                <ul className="sc">
-                  {pl.scope.map((s) => (
-                    <li key={s}>{s}</li>
-                  ))}
-                </ul>
-              </figcaption>
-            </figure>
-          ))}
-        </div>
-        <div className="wrap">
-          <p className="rec-n">Five of the 16 project records in our company profile.</p>
-          <div className="ch">
-            <h2>Worked with</h2>
-            <ul className="cl">
-              {company.clients.map((c) => (
-                <li key={c.name}>
-                  <b>{c.name}</b>
-                  <span>{c.work.split(" · ").join(". ")}.</span>
-                </li>
+    <section className="rec" aria-label="Major projects">
+      {PLATES.map((pl) => (
+        <figure className="pl" key={pl.name}>
+          <div className="pl-i">
+            <img src={pl.img} width={pl.w} height={pl.h} alt={pl.alt} loading="lazy" />
+          </div>
+          <div className="mul" aria-hidden="true">
+            <i />
+            <i />
+            <i />
+            <i />
+            <i />
+            <i />
+          </div>
+          <figcaption>
+            <small>{pl.place}</small>
+            <b>{pl.name}</b>
+            <em>{pl.status}</em>
+            <ul className="sc">
+              {pl.scope.map((s) => (
+                <li key={s}>{s}</li>
               ))}
             </ul>
-          </div>
-        </div>
-      </section>
-    </>
-  );
-};
+          </figcaption>
+        </figure>
+      ))}
+      <p className="rec-n">Five of the 16 project records in our company profile.</p>
+    </section>
+  </>
+);
 
 export default HomeWork;

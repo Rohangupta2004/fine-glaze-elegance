@@ -1,14 +1,21 @@
+import { useRef } from "react";
 import { Layout } from "@/components/layout/Layout";
 import { Helmet } from "react-helmet-async";
 import SEO from "@/components/SEO";
 import StoryHero from "@/components/home/cinematic/StoryHero";
+import HomeNumbers from "@/components/home/cinematic/HomeNumbers";
+import HomeClients from "@/components/home/cinematic/HomeClients";
 import HomeWork from "@/components/home/cinematic/HomeWork";
 import HomeClose from "@/components/home/cinematic/HomeClose";
+import { useReveal } from "@/components/home/cinematic/useReveal";
 import "@/components/home/cinematic/home.css";
 
 const HERO_IMAGE = "/Embassy.webp";
 
 const Index = () => {
+  const homeRef = useRef<HTMLDivElement>(null);
+  useReveal(homeRef);
+
   // Organization / LocalBusiness entities live once, sitewide, in index.html.
   const webPageSchema = {
     "@context": "https://schema.org",
@@ -34,8 +41,10 @@ const Index = () => {
       <Helmet>
         <link rel="preload" as="image" href={HERO_IMAGE} {...{ fetchpriority: "high" }} />
       </Helmet>
-      <div className="fg-home">
+      <div className="fg-home" ref={homeRef}>
         <StoryHero />
+        <HomeNumbers />
+        <HomeClients />
         <HomeWork />
         <HomeClose />
       </div>

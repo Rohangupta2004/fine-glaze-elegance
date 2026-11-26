@@ -1,4 +1,4 @@
-.bk{--bk-bg:#0d1422;--bk-ink:#ece8df;--bk-muted:#9aa6b8;--bk-line:#2c3a52;--bk-field:#111a2b;--bk-accent:#ffb866;--bk-accent-ink:#1b1206;--bk-font:"Inter",ui-sans-serif,system-ui,sans-serif;--bk-radius:2px;--bk-err:#ff9d8a;--bk-veil:rgba(3,5,10,.62);--bk-focus:#86c2ae;--bk-head-weight:800}
+.bk{--bk-bg:#0d1422;--bk-ink:#ece8df;--bk-muted:#9aa6b8;--bk-line:#2c3a52;--bk-field:#111a2b;--bk-accent:#dd9a5b;--bk-accent-ink:#1a0e04;--bk-font:"Inter",ui-sans-serif,system-ui,sans-serif;--bk-radius:2px;--bk-err:#ff9d8a;--bk-veil:rgba(3,5,10,.62);--bk-focus:#86c2ae;--bk-head-weight:800}
 /* Shared booking sheet. Each page themes it with the --bk-* variables. */
 .bk{position:fixed;inset:0 0 0 auto;margin:0;width:min(460px,100vw);max-width:none;height:100dvh;max-height:none;border:0;padding:0;
   background:var(--bk-bg);color:var(--bk-ink);font-family:var(--bk-font);font-size:16px;line-height:1.45;overflow:auto;

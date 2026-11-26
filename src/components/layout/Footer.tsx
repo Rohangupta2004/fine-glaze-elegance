@@ -165,7 +165,7 @@ export const Footer = () => {
                   {loc.name}
                 </Link>
               ))}
-              <span className="text-mute">Other locations considered case by case</span>
+              <span className="text-mute">Projects taken across India</span>
             </nav>
           </div>
         </div>

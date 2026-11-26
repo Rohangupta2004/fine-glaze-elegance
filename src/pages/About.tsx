@@ -163,7 +163,7 @@ const About = () => {
                 </p>
                 <p>
                   Drawings and engineering are produced in-house before anything
-                  is cut. Fabrication happens at our own {company.fabricationUnit.areaSqft} unit
+                  is cut. Fabrication happens at our own unit
                   in {company.fabricationUnit.location}, and installation is run by our
                   own site in-charges and supervisors under a dedicated safety officer.
                   Since starting out we have delivered {company.stats.sqmDelivered} sqm of
@@ -293,7 +293,7 @@ const About = () => {
               { icon: FileCheck2, k: "GSTIN", v: company.gstin },
               { icon: FileCheck2, k: "Trademark", v: company.trademark },
               { icon: Shield, k: "Quality, environment & safety", v: company.isoStatus },
-              { icon: Factory, k: "Fabrication unit", v: `${company.fabricationUnit.location} (${company.fabricationUnit.areaSqft})` },
+              { icon: Factory, k: "Fabrication unit", v: company.fabricationUnit.location },
               { icon: MapPin, k: "Registered office", v: `${company.address.short}` },
               { icon: HardHat, k: "Work at height", v: "Documentation maintained and available on request" },
               { icon: Shield, k: "Third-party testing", v: "Air, water and structural testing (ASTM) arranged on request" },

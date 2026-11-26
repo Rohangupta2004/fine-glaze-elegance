@@ -366,13 +366,13 @@ const StoryHero = () => {
         ctx.globalAlpha = al * (on ? 1 : 0.75);
         ctx.beginPath();
         ctx.arc(d[0], d[1], rr, 0, 6.283);
-        ctx.fillStyle = on ? "#ffb866" : "#0d1422";
+        ctx.fillStyle = on ? "#dd9a5b" : "#0d1422";
         ctx.fill();
-        ctx.strokeStyle = "#ffb866";
+        ctx.strokeStyle = "#dd9a5b";
         ctx.lineWidth = 1.4;
         ctx.stroke();
         ctx.lineWidth = 0.8;
-        ctx.fillStyle = on ? "#1b1206" : "#ffb866";
+        ctx.fillStyle = on ? "#1a0e04" : "#dd9a5b";
         ctx.font = "700 " + (on ? 15 : 12) + 'px "Inter",Arial,sans-serif';
         ctx.textAlign = "center";
         ctx.textBaseline = "middle";
@@ -388,7 +388,7 @@ const StoryHero = () => {
         ctx.fillStyle = "rgba(6,10,19,.78)";
         ctx.fillRect(lx, ly - fsz * 0.72, tw + 14, fsz * 1.44);
         ctx.globalAlpha = al * (on ? 1 : 0.7);
-        ctx.fillStyle = on ? "#ffb866" : "#ece8df";
+        ctx.fillStyle = on ? "#dd9a5b" : "#ece8df";
         ctx.fillText(NAMES[i], lx + 7, ly + 1);
       }
       ctx.globalAlpha = 1;

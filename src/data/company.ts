@@ -44,7 +44,6 @@ export const company = {
 
   fabricationUnit: {
     location: "Pisoli, Pune",
-    areaSqft: "~2,500 sq ft",
     capability: [
       "Aluminium and mild steel cutting, fabrication and assembly",
       "ACP routing, grooving and panel preparation",
@@ -55,11 +54,11 @@ export const company = {
     note: "Heavy processing is outsourced to approved vendors while the unit expands with the order book.",
   },
 
-  /** Where we actively operate today. Do not widen without real projects. */
+  /** Where our offices and completed work are. We take projects across India. */
   operatingRegions: ["Pune", "Mumbai"],
   serviceArea: ["Pune & PCMC", "Mumbai", "Navi Mumbai", "Thane", "Panvel"],
   serviceAreaNote:
-    "We operate from Pune and Mumbai. Projects elsewhere in India are taken up case by case, after a site visit.",
+    "We are based in Pune and Mumbai and take facade projects across India.",
 
   stats: {
     sqmDelivered: "~20,566",

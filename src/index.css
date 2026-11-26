@@ -15,7 +15,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 220 52% 5%;
 
-    --primary: 32 100% 70%;
+    --primary: 29 66% 61%;
     --primary-foreground: 35 64% 6%;
 
     --secondary: 220 20% 92%;
@@ -24,7 +24,7 @@
     --muted: 220 20% 92%;
     --muted-foreground: 220 12% 40%;
 
-    --accent: 32 100% 70%;
+    --accent: 29 66% 61%;
     --accent-foreground: 35 64% 6%;
 
     --destructive: 0 65% 50%;
@@ -40,7 +40,7 @@
     --glass-border: 220 18% 70% / 0.35;
     --glass-blur: 16px;
 
-    --chart-1: 32 100% 70%;
+    --chart-1: 29 66% 61%;
     --chart-2: 160 30% 61%;
     --chart-3: 220 15% 40%;
     --chart-4: 220 18% 75%;
@@ -48,7 +48,7 @@
 
     --sidebar-background: 220 20% 95%;
     --sidebar-foreground: 220 52% 5%;
-    --sidebar-primary: 32 100% 70%;
+    --sidebar-primary: 29 66% 61%;
     --sidebar-primary-foreground: 35 64% 6%;
     --sidebar-accent: 220 20% 90%;
     --sidebar-accent-foreground: 220 45% 14%;
@@ -67,7 +67,7 @@
     --popover: 220 45% 9%;
     --popover-foreground: 40 22% 90%;
 
-    --primary: 32 100% 70%;
+    --primary: 29 66% 61%;
     --primary-foreground: 35 64% 6%;
 
     --secondary: 220 35% 14%;
@@ -76,7 +76,7 @@
     --muted: 220 35% 14%;
     --muted-foreground: 215 18% 65%;
 
-    --accent: 32 100% 70%;
+    --accent: 29 66% 61%;
     --accent-foreground: 35 64% 6%;
 
     --destructive: 0 65% 55%;
@@ -84,12 +84,12 @@
 
     --border: 217 36% 20%;
     --input: 217 36% 20%;
-    --ring: 32 100% 70%;
+    --ring: 29 66% 61%;
 
     --glass-bg: 220 45% 9% / 0.75;
     --glass-border: 217 36% 30% / 0.35;
 
-    --chart-1: 32 100% 70%;
+    --chart-1: 29 66% 61%;
     --chart-2: 160 30% 61%;
     --chart-3: 40 22% 90%;
     --chart-4: 215 18% 65%;
@@ -97,12 +97,12 @@
 
     --sidebar-background: 220 45% 9%;
     --sidebar-foreground: 40 22% 90%;
-    --sidebar-primary: 32 100% 70%;
+    --sidebar-primary: 29 66% 61%;
     --sidebar-primary-foreground: 35 64% 6%;
     --sidebar-accent: 220 35% 14%;
     --sidebar-accent-foreground: 40 22% 90%;
     --sidebar-border: 217 36% 20%;
-    --sidebar-ring: 32 100% 70%;
+    --sidebar-ring: 29 66% 61%;
     --sidebar: 220 45% 9%;
   }
 }
@@ -153,13 +153,13 @@
     @apply relative;
     border: 1px solid transparent;
     background: linear-gradient(hsl(var(--card)), hsl(var(--card))) padding-box,
-      linear-gradient(135deg, hsl(32 100% 70%), hsl(32 100% 70%)) border-box;
+      linear-gradient(135deg, hsl(29 66% 61%), hsl(29 66% 61%)) border-box;
   }
 
   .btn-glossy {
     @apply relative overflow-hidden;
-    background: #ffb866;
-    color: #1b1206;
+    background: #dd9a5b;
+    color: #1a0e04;
     border-radius: 2px;
   }
 
@@ -207,6 +207,6 @@
   }
 
   .bronze-glow {
-    box-shadow: 0 0 40px hsl(32 100% 70% / 0.3);
+    box-shadow: 0 0 40px hsl(29 66% 61% / 0.3);
   }
 }

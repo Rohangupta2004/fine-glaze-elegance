@@ -350,9 +350,9 @@ export default function CompanyProfilePage() {
             </div>
 
             <div className="bg-stone-950/80 border border-stone-800 p-5 rounded-2xl">
-              <div className="text-2xl font-black text-amber-400">2,500 SQFT</div>
+              <div className="text-2xl font-black text-amber-400">PISOLI, PUNE</div>
               <div className="text-xs text-stone-400 mt-1 uppercase tracking-wider font-semibold">Fabrication Unit</div>
-              <p className="text-xs text-stone-300 mt-2">State-of-the-art facility at Pisoli, Pune with strict QC.</p>
+              <p className="text-xs text-stone-300 mt-2">Our own unit for cutting, fabrication and assembly, with inspection at source.</p>
             </div>
 
             <div className="bg-stone-950/80 border border-stone-800 p-5 rounded-2xl">
