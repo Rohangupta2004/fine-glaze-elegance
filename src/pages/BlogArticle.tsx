@@ -5,12 +5,15 @@ import { useBlogImages } from "@/hooks/useBlogImages";
 import { Clock, Phone, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import SEO from "@/components/SEO";
+import PageHero from "@/components/common/PageHero";
+import { useBookCall } from "@/components/booking/BookCallProvider";
 import { articleKeywords, articleSectionId, buildArticleSchemas, getArticleEnhancement, normalizeArticleSections, normalizeArticleTable, relatedArticles } from "@/lib/articleSeo";
 import { getArticleVisual, getArticleImageSrcSet } from "@/data/articleVisuals";
 
 export default function BlogArticle() {
   const { slug } = useParams<{ slug: string }>();
   const { getHeroImage } = useBlogImages();
+  const { open: openBooking } = useBookCall();
   const post = slug ? blogPosts[slug] : undefined;
 
   if (!post) return <Navigate to="/blog" replace />;
@@ -48,7 +51,7 @@ export default function BlogArticle() {
   const serviceLinks = enhancement?.serviceLinks ?? seoLinks.map((link) => ({ label: link.title, href: link.href }));
 
   return (
-    <Layout>
+    <Layout darkHero>
       <SEO
         title={enhancement?.metaTitle ?? post.metaTitle}
         description={enhancement?.metaDescription ?? post.metaDescription}
@@ -61,62 +64,36 @@ export default function BlogArticle() {
         ogImageHeight={visual?.height}
       />
 
-      <article className="py-16 pt-28">
-        <div className="container mx-auto px-4 max-w-3xl">
-          <nav aria-label="Breadcrumb" className="mb-6 text-sm text-muted-foreground">
-            <ol className="flex flex-wrap items-center gap-2">
-              <li><Link to="/" className="hover:text-primary">Home</Link></li>
-              <li aria-hidden="true">/</li>
-              <li><Link to="/blog" className="hover:text-primary">Articles</Link></li>
-              <li aria-hidden="true">/</li>
-              <li aria-current="page" className="font-medium text-foreground">{title}</li>
-            </ol>
-          </nav>
+      <PageHero
+        crumbs={[{ label: "Articles", to: "/blog" }, { label: title }]}
+        title={title}
+        image={{ src: heroImg, alt: visual?.alt ?? post.title, width: visual?.width, height: visual?.height }}
+        hideAction
+        compact
+        source="article_hero"
+        extra={
+          <>
+            <span>{post.category}, {post.readTime}. </span>
+            <Link to="/about" rel="author" className="text-paper underline underline-offset-4">By Fine Glaze</Link>
+            <span>. Published <time dateTime={post.date}>{formatDate(post.date)}</time></span>
+            {enhancement && <span>. Updated <time dateTime={enhancement.updated}>{formatDate(enhancement.updated)}</time></span>}
+          </>
+        }
+      />
 
-          <div className="flex flex-wrap items-center gap-3 text-sm text-muted-foreground mb-4">
-            <span className="px-3 py-1 bg-primary/10 text-primary font-bold text-xs">
-              {post.category}
-            </span>
-            <span className="flex items-center gap-1">
-              <Clock size={14} /> {post.readTime}
-            </span>
-          </div>
-
-          <h1 className="text-3xl md:text-4xl font-extrabold leading-tight mb-6">
-            {title}
-          </h1>
-
-          <div className="flex flex-wrap gap-x-4 gap-y-2 text-sm text-muted-foreground mb-6">
-            <Link to="/about" rel="author" className="font-medium text-foreground hover:text-primary">By Fine Glaze</Link>
-            <span>Published <time dateTime={post.date}>{formatDate(post.date)}</time></span>
-            {enhancement && <span>Updated <time dateTime={enhancement.updated}>{formatDate(enhancement.updated)}</time></span>}
-          </div>
+      <article className="fg-sec">
+        <div className="fg-wrap fg-art">
+          {visual && <p className="text-sm text-mute leading-relaxed mb-8">{visual.caption}</p>}
 
           {enhancement && (
-            <section aria-labelledby="quick-answer" className="mb-8 border border-primary/20 bg-primary/5 p-5 sm:p-6">
-              <h2 id="quick-answer" className="text-lg font-bold leading-snug mb-3">{enhancement.question}</h2>
-              <p className="leading-relaxed text-foreground/85">{enhancement.answer}</p>
-              <ul className="mt-4 space-y-2 text-sm text-muted-foreground list-disc pl-5">
+            <section aria-labelledby="quick-answer" className="mb-10 border border-line bg-night-2 p-5 sm:p-7">
+              <h2 id="quick-answer" className="text-xl font-semibold tracking-tight leading-snug mb-3">{enhancement.question}</h2>
+              <p className="leading-relaxed text-paper/90">{enhancement.answer}</p>
+              <ul className="mt-4 space-y-2 text-[15.5px] text-mute list-[square] pl-5">
                 {enhancement.takeaways.map((takeaway) => <li key={takeaway}>{takeaway}</li>)}
               </ul>
             </section>
           )}
-
-          <figure className="mb-10">
-            <img
-              src={heroImg}
-              srcSet={getArticleImageSrcSet(post.slug)}
-              sizes="(max-width: 768px) calc(100vw - 2rem), 736px"
-              alt={visual?.alt ?? post.title}
-              width={visual?.width}
-              height={visual?.height}
-              className="w-full aspect-video object-cover bg-muted"
-              loading="eager"
-              decoding="async"
-              {...{ fetchpriority: "high" }}
-            />
-            {visual && <figcaption className="mt-3 text-xs text-muted-foreground leading-relaxed">{visual.caption}</figcaption>}
-          </figure>
 
           <nav aria-label="On this page" className="mb-10 border border-border p-5">
             <details>
@@ -131,7 +108,7 @@ export default function BlogArticle() {
           <div className="space-y-10">
             {sections.map((section, i) => (
               <section key={i} id={articleSectionId(section.heading, i)} className="scroll-mt-28">
-                <h2 className="text-xl md:text-2xl font-bold mb-3 text-foreground border-l-4 border-lamp/40 pl-3">
+                <h2 className="fg-h2 !mb-4">
                   {section.heading}
                 </h2>
 
@@ -191,7 +168,7 @@ export default function BlogArticle() {
               <section id="quote-checklist" className="scroll-mt-28 mt-12 border border-primary/20 bg-primary/5 p-6">
                 <h2 className="text-xl font-bold mb-4">Before You Ask for a Quote</h2>
                 <ol className="list-decimal pl-5 space-y-3 text-foreground/80 leading-relaxed">{enhancement.quoteChecklist.map((item) => <li key={item}>{item}</li>)}</ol>
-                <Link to="/contact" className="mt-5 inline-flex items-center gap-2 font-semibold text-primary">Discuss your project scope <ArrowRight size={16} /></Link>
+                <button type="button" className="fg-btn mt-5" onClick={() => openBooking({ source: "article_checklist" })}>Book a call</button>
               </section>
 
               {enhancement.project && <aside className="mt-8 border-l-2 border-primary pl-5 py-2" aria-label="Fine Glaze project reference">
@@ -218,7 +195,7 @@ export default function BlogArticle() {
             </>
           )}
 
-          <div className="mt-14 border p-6 bg-muted/30">
+          <div className="mt-14 border border-line p-6">
             <h3 className="text-2xl font-bold mb-4">
               Explore More Facade Solutions
             </h3>
@@ -244,26 +221,16 @@ export default function BlogArticle() {
             </div>
           </div>
 
-          <div className="mt-12 p-8 bg-night-2 text-paper text-center">
+          <div className="mt-12 p-8 bg-night-2 border border-line text-paper">
             <h3 className="text-xl font-bold mb-2">
               Need Help With Your Facade Project?
             </h3>
             <p className="text-mute mb-5 text-sm">
               We call you back the same business day, Monday to Saturday, 9am to 6pm.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-              <Link to="/contact">
-                <Button className="bg-lamp hover:bg-lamp/90 text-lamp-ink gap-2">
-                  Book a call <ArrowRight size={16} />
-                </Button>
-              </Link>
-              <a href="tel:+918369233566">
-                <Button
-                  className="bg-night text-paper hover:bg-night/90 font-bold gap-2"
-                >
-                  <Phone size={16} /> Call Now
-                </Button>
-              </a>
+            <div className="flex flex-col sm:flex-row items-center gap-6">
+              <button type="button" className="fg-btn" onClick={() => openBooking({ source: "article_close" })}>Book a call</button>
+              <a href="tel:+918369233566" className="fg-lnk">+91 83692 33566</a>
             </div>
           </div>
 

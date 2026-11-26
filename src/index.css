@@ -350,3 +350,5 @@ main > .fg-sec:nth-of-type(even) {
 .fg-foot-c:first-child { border-left: 0; padding-left: 0; }
 @media (max-width: 1000px) { .fg-foot-g { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 40px; } .fg-foot-c:nth-child(odd) { border-left: 0; padding-left: 0; } }
 @media (max-width: 600px) { .fg-foot-g { grid-template-columns: minmax(0, 1fr); } .fg-foot-c { border-left: 0; padding-left: 0; border-top: 1px solid #243044; padding-top: 28px; } .fg-foot-c:first-child { border-top: 0; padding-top: 0; } }
+.fg-art > * { max-width: 68ch; }
+.fg-art > .overflow-x-auto { max-width: none; }

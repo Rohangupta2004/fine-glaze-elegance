@@ -26,17 +26,19 @@ export interface PageHeroProps {
   extra?: ReactNode;
   /** Hide the Book a call button (legal pages). */
   hideAction?: boolean;
+  /** Smaller headline for long titles such as article names. */
+  compact?: boolean;
 }
 
 /** Shared hero for service, city, industry, guide and static pages. Use inside <Layout darkHero>. */
-export const PageHero = ({ crumbs = [], title, intro, image, secondary, source = "page_hero", extra, hideAction }: PageHeroProps) => {
+export const PageHero = ({ crumbs = [], title, intro, image, secondary, source = "page_hero", extra, hideAction, compact }: PageHeroProps) => {
   const { open } = useBookCall();
   const fig = useRef<HTMLElement>(null);
   const [armed, seen] = useWipe(fig);
   const trail: Crumb[] = [{ label: "Home", to: "/" }, ...crumbs];
 
   return (
-    <section className="ph">
+    <section className={`ph${compact ? " compact" : ""}`}>
       <div className="fg-wrap" style={{ width: "100%" }}>
         <div className={`ph-g${image ? "" : " solo"}`}>
           <div className="ph-copy">

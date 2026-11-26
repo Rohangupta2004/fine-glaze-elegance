@@ -27,3 +27,5 @@
 @media (prefers-reduced-motion: reduce) {
   .ph-fig, .ph-fig.armed:not(.seen) { clip-path: none; transition: none; }
 }
+.ph.compact h1 { font-size: clamp(30px, 3.6vw, 54px); line-height: 1.06; }
+.ph-extra a { color: #ece8df; }
