@@ -36,9 +36,9 @@ export default function ResidentialFacade() {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      { "@type": "Question", "name": "What glass railing is best for apartment balconies in India?", "acceptedAnswer": { "@type": "Answer", "text": "Toughened + laminated glass (10mm + 10mm with PVB interlayer) in a frameless base-channel system is the gold standard for apartment balcony railings. It provides a completely unobstructed view, maximum safety (laminated glass holds in place even if broken), and a premium appearance that enhances property value." } },
-      { "@type": "Question", "name": "How much does facade renovation cost for an existing residential building in India?", "acceptedAnswer": { "@type": "Answer", "text": "Residential facade renovation costs depend on scope: ACP re-cladding of an existing building Rs 200-400/sq ft; glass railing replacement Rs 800-1500/running ft; aluminium window replacement Rs 400-800/sq ft. Fine Glaze provides detailed BOQ-based quotations for renovation projects after a site survey." } },
-      { "@type": "Question", "name": "What building height requires curtain wall for residential in India?", "acceptedAnswer": { "@type": "Answer", "text": "There is no regulatory height requirement for curtain wall in residential buildings — it is a design and performance choice. For premium residential towers above 15 storeys, curtain wall glazing on the living room bay provides a floor-to-ceiling glass feature that maximises views and natural light." } },
+      { "@type": "Question", "name": "What glass railing is best for apartment balconies in India?", "acceptedAnswer": { "@type": "Answer", "text": "Toughened laminated glass in a frameless base-channel system is a common choice for apartment balconies, because laminated glass holds in place if broken and the view stays clear. The build-up and anchorage come from the structural check." } },
+      { "@type": "Question", "name": "How much does facade renovation cost for an existing residential building in India?", "acceptedAnswer": { "@type": "Answer", "text": "Renovation cost depends on scope: re-cladding area, railing length, number of windows, access method and building height. Fine Glaze prepares BOQ-based quotations after a site survey." } },
+      { "@type": "Question", "name": "What building height requires curtain wall for residential in India?", "acceptedAnswer": { "@type": "Answer", "text": "No regulation requires curtain wall on residential buildings at any height. It is a design and performance choice, often used on taller premium towers for floor-to-ceiling glass features." } },
     ]
   };
 
@@ -68,7 +68,7 @@ export default function ResidentialFacade() {
             <h1 className="text-3xl md:text-4xl font-bold mb-4">
               Residential Building <span className="text-gradient-gold">Facade Contractor India</span>
             </h1>
-            <p className="text-lg text-white/80 mb-8">Residential buildings are increasingly investing in premium facade systems — not just for aesthetics but for thermal comfort, sound insulation, reduced maintenance, and property value. Fine Glaze provides complete residential facade solutions for apartment towers, villas, gated communities, and row houses in Pune and Mumbai.</p>
+            <p className="text-lg text-white/80 mb-8">Fine Glaze takes residential facade work in Pune and Mumbai for apartment towers, villas and gated communities: glass railings, windows, ACP cladding and structural glazing.</p>
             <div className="flex gap-4">
               <Link to="/contact">
                 <Button size="lg" className="bg-amber-600 hover:bg-amber-700">Book a call</Button>
@@ -93,18 +93,18 @@ export default function ResidentialFacade() {
       <section className="py-20">
         <div className="container mx-auto px-4 max-w-5xl space-y-6">
           
-          <h2 className="text-3xl font-bold">Premium Facade Systems for Indian Residential Buildings</h2>
+          <h2 className="text-3xl font-bold">Facade Systems for Residential Buildings</h2>
           <p className="text-muted-foreground">
-            India's residential real estate market is experiencing a strong shift towards premium and luxury segments, driving demand for high-quality facade systems that were previously only seen in commercial buildings. Fine Glaze has been at the forefront of this trend, bringing commercial-grade facade engineering to residential projects across Pune's premium corridors in Koregaon Park, Kalyani Nagar, Kharadi, and Wakad.
+            Residential buildings increasingly use premium facade elements for thermal comfort, sound control, low upkeep and appearance. Fine Glaze takes residential facade work for apartment towers, villas and gated communities in Pune and Mumbai.
           </p>
           <p className="text-muted-foreground mt-4">
-            The most popular residential facade systems supplied and installed by Fine Glaze include: <strong>Frameless glass railings</strong> for balconies and terraces — the defining luxury feature for premium apartments; <strong>Aluminium sliding and casement windows</strong> with toughened DGU for thermal comfort and noise reduction; <strong>ACP cladding</strong> for building exterior elevations — a cost-effective way to dramatically transform building appearance; <strong>Structural glazing</strong> for feature elements such as bay windows, lobby entries, and common area facades; and <strong>Glass partition and feature walls</strong> for common lobbies and amenity areas.
+            Common residential systems include <strong>frameless glass railings</strong> for balconies and terraces, <strong>aluminium sliding and casement windows</strong>, <strong>ACP cladding</strong> for elevations, <strong>structural glazing</strong> for feature elements such as bay windows and lobbies, and <strong>glass partitions</strong> for common areas.
           </p>
           <p className="text-muted-foreground mt-4">
-            For Pune's residential market, Fine Glaze offers competitive bulk rates for developers and builders constructing multi-tower projects. Our residential project packages include standardised specifications that balance quality and cost, enabling consistent delivery across multiple buildings or phases without compromising finish quality.
+            Our documented residential records include Nirmaann Estrellaa in Pune (windows, louvers, aluminium fins and SS glass railings), Salsette-27 in Byculla (railings and canopies), and private residences such as Jindal House and Mittal House in Mumbai.
           </p>
           <p className="text-muted-foreground mt-4">
-            Energy efficiency is increasingly important for residential buildings seeking IGBC ratings or targeting lower electricity bills for residents. Fine Glaze's thermally broken aluminium window systems with Low-E DGU can reduce apartment cooling loads by 25-35% compared to standard single-glazed windows, delivering a payback period of 4-7 years through energy savings alone.
+            For energy comfort, thermally broken aluminium windows with low-E double glazing are a common choice. Savings depend on the whole building and use, so treat any figure with caution and ask for the specification behind it.
           </p>
     
         </div>
@@ -119,8 +119,8 @@ export default function ResidentialFacade() {
               <div key="Thermally Broken Windows" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Thermally Broken Windows</span></div>
               <div key="ACP Building Cladding" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">ACP Building Cladding</span></div>
               <div key="Structural Glazing Features" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Structural Glazing Features</span></div>
-              <div key="Bulk Developer Packages" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Bulk Developer Packages</span></div>
-              <div key="Energy-Efficient DGU Systems" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Energy-Efficient DGU Systems</span></div>
+              <div key="Developer Quotations on Drawings" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Developer Quotations on Drawings</span></div>
+              <div key="DGU Glass Options" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">DGU Glass Options</span></div>
           </div>
         </div>
       </section>
@@ -132,15 +132,15 @@ export default function ResidentialFacade() {
           <div className="space-y-6">
             <div className="bg-background rounded-xl p-6 shadow-sm">
               <h3 className="text-lg font-bold mb-2">What glass railing is best for apartment balconies in India?</h3>
-              <p className="text-muted-foreground">Toughened + laminated glass (10mm + 10mm with PVB interlayer) in a frameless base-channel system is the gold standard for apartment balcony railings. It provides a completely unobstructed view, maximum safety (laminated glass holds in place even if broken), and a premium appearance that enhances property value.</p>
+              <p className="text-muted-foreground">Toughened laminated glass in a frameless base-channel system is a common choice for apartment balconies, because laminated glass holds in place if broken and the view stays clear. The build-up and anchorage come from the structural check.</p>
             </div>
             <div className="bg-background rounded-xl p-6 shadow-sm">
               <h3 className="text-lg font-bold mb-2">How much does facade renovation cost for an existing residential building in India?</h3>
-              <p className="text-muted-foreground">Residential facade renovation costs depend on scope: ACP re-cladding of an existing building Rs 200-400/sq ft; glass railing replacement Rs 800-1500/running ft; aluminium window replacement Rs 400-800/sq ft. Fine Glaze provides detailed BOQ-based quotations for renovation projects after a site survey.</p>
+              <p className="text-muted-foreground">Renovation cost depends on scope: re-cladding area, railing length, number of windows, access method and building height. Fine Glaze prepares BOQ-based quotations after a site survey.</p>
             </div>
             <div className="bg-background rounded-xl p-6 shadow-sm">
               <h3 className="text-lg font-bold mb-2">What building height requires curtain wall for residential in India?</h3>
-              <p className="text-muted-foreground">There is no regulatory height requirement for curtain wall in residential buildings — it is a design and performance choice. For premium residential towers above 15 storeys, curtain wall glazing on the living room bay provides a floor-to-ceiling glass feature that maximises views and natural light.</p>
+              <p className="text-muted-foreground">No regulation requires curtain wall on residential buildings at any height. It is a design and performance choice, often used on taller premium towers for floor-to-ceiling glass features.</p>
             </div>
           </div>
         </div>

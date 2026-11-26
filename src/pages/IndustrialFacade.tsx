@@ -35,9 +35,9 @@ export default function IndustrialFacade() {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      { "@type": "Question", "name": "What is the most cost-effective facade for an industrial building in India?", "acceptedAnswer": { "@type": "Answer", "text": "For industrial buildings in India, FR-grade ACP with polyester powder coating (not PVDF) is typically the most cost-effective option — balancing fire safety compliance, adequate weather performance, and low installed cost. For office blocks within industrial facilities, PVDF-coated ACP is recommended for better long-term appearance." } },
-      { "@type": "Question", "name": "Does Fine Glaze work in MIDC zones in Maharashtra?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Fine Glaze regularly works in Pune's Bhosari, Pimpri, Chakan, and Hadapsar MIDC zones, and Navi Mumbai's Mahape and Turbhe MIDC corridors. We understand MIDC building regulations, local contractor coordination requirements, and the logistics of working in active industrial zones." } },
-      { "@type": "Question", "name": "What windows are recommended for factory buildings in India?", "acceptedAnswer": { "@type": "Answer", "text": "For factory and warehouse buildings, aluminium fixed lights with 6mm toughened glass in simple aluminium frames are the most practical and cost-effective solution. Where natural ventilation is required, aluminium louvre windows or top-hung ventilators are recommended. Fine Glaze sizes window openings to meet NBC 2016 minimum daylight factor requirements for industrial buildings." } },
+      { "@type": "Question", "name": "What is the most cost-effective facade for an industrial building in India?", "acceptedAnswer": { "@type": "Answer", "text": "Fire-retardant ACP with a durable coating is often a practical choice for industrial buildings, balancing fire requirements, weather performance and installed cost. Office blocks may justify a higher-grade finish. Confirm with your consultant." } },
+      { "@type": "Question", "name": "Does Fine Glaze work in MIDC zones in Maharashtra?", "acceptedAnswer": { "@type": "Answer", "text": "Fine Glaze takes industrial facade work in Maharashtra, and our documented work includes Navi Mumbai (Mahape) and Pune. We coordinate access and logistics with the site contractor in active industrial zones." } },
+      { "@type": "Question", "name": "What windows are recommended for factory buildings in India?", "acceptedAnswer": { "@type": "Answer", "text": "Factories commonly use aluminium fixed lights with toughened glass, plus louver windows or top-hung ventilators where natural ventilation is needed. Opening sizes should follow the daylight and ventilation requirements in the project brief and applicable codes." } },
     ]
   };
 
@@ -67,7 +67,7 @@ export default function IndustrialFacade() {
             <h1 className="text-3xl md:text-4xl font-bold mb-4">
               Industrial Building <span className="text-gradient-gold">Facade Contractor India</span>
             </h1>
-            <p className="text-lg text-white/80 mb-8">Industrial buildings — factories, warehouses, pharmaceutical plants, and logistics facilities — require facade systems that prioritise durability, weather resistance, maintenance efficiency, and structural performance over architectural complexity. Fine Glaze provides cost-effective, high-durability facade solutions for industrial buildings in Pune and Mumbai.</p>
+            <p className="text-lg text-white/80 mb-8">Fine Glaze takes industrial facade work in Pune and Mumbai: ACP and metal cladding, windows and sub-frames for factories, warehouses and plants, fabricated at our own unit in Pisoli, Pune.</p>
             <div className="flex gap-4">
               <Link to="/contact">
                 <Button size="lg" className="bg-amber-600 hover:bg-amber-700">Book a call</Button>
@@ -92,18 +92,18 @@ export default function IndustrialFacade() {
       <section className="py-20">
         <div className="container mx-auto px-4 max-w-5xl space-y-6">
           
-          <h2 className="text-3xl font-bold">Industrial Facade Systems — Durability First</h2>
+          <h2 className="text-3xl font-bold">Industrial Facade Systems: Durability First</h2>
           <p className="text-muted-foreground">
-            Industrial facilities operate in demanding environments — chemical exposure, heavy vehicle vibration, thermal cycling from process heat, and reduced maintenance access windows. Fine Glaze's industrial facade systems are engineered for these conditions, prioritising service life and weather performance over aesthetic complexity.
+            Industrial buildings such as factories and warehouses need facades that put durability, weather resistance and easy upkeep ahead of architectural complexity. Exposure to dust, vibration, heat and limited maintenance windows shapes the choice of system.
           </p>
           <p className="text-muted-foreground mt-4">
-            The most suitable facade systems for industrial buildings in India include: <strong>FR-grade ACP cladding</strong> with heavy-gauge aluminium sub-frames for administrative blocks and office areas; <strong>Metal composite panels (MCM)</strong> with aluminium or steel face for extreme durability in production and warehouse areas; <strong>Aluminium fixed windows</strong> with toughened glass for natural light without compromising thermal envelope; and <strong>Polycarbonate or translucent sheeting</strong> for controlled diffused daylighting in production halls without direct glare.
+            Suitable systems include <strong>fire-retardant ACP cladding</strong> on administrative blocks, <strong>metal composite panels</strong> in production and warehouse areas, <strong>aluminium fixed windows</strong> with toughened glass, and <strong>translucent sheeting</strong> for daylight in production halls. Specifications follow the project brief.
           </p>
           <p className="text-muted-foreground mt-4">
-            Fine Glaze regularly works in MIDC (Maharashtra Industrial Development Corporation) zones including Pune's Bhosari, Pimpri, and Chakan MIDC, and Navi Mumbai's Mahape and Turbhe MIDC corridors. Our familiarity with MIDC building regulations, local authorities, and the specific facade needs of industrial clients means we can mobilise quickly and deliver cost-effective results.
+            Fine Glaze, based in Pune and Mumbai, takes industrial facade work in Maharashtra and elsewhere in India. Our own fabrication unit in Pisoli, Pune handles aluminium and mild steel cutting, fabrication and assembly, and ACP routing and panel preparation.
           </p>
           <p className="text-muted-foreground mt-4">
-            Pharmaceutical manufacturing facilities in India are subject to GMP (Good Manufacturing Practice) requirements that extend to building exteriors. Fine Glaze provides smooth, chemical-resistant ACP cladding and sealed window systems appropriate for pharma exterior walls in containment and controlled environment zones, in compliance with WHO and PICS GMP guidelines.
+            Facilities that follow GMP or similar rules, such as pharmaceutical plants, usually have exterior requirements set by their consultants. Share the specification and we will review scope against it.
           </p>
     
         </div>
@@ -116,10 +116,10 @@ export default function IndustrialFacade() {
           <div className="grid md:grid-cols-2 gap-4">
               <div key="FR-Grade ACP for Industrial" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">FR-Grade ACP for Industrial</span></div>
               <div key="Heavy-Gauge Aluminium Sub-Frames" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Heavy-Gauge Aluminium Sub-Frames</span></div>
-              <div key="MIDC Zone Experience" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">MIDC Zone Experience</span></div>
-              <div key="Pharma GMP Compliant Cladding" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Pharma GMP Compliant Cladding</span></div>
+              <div key="Industrial Zone Projects" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Industrial Zone Projects</span></div>
+              <div key="Cladding to Pharma Specifications" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Cladding to Pharma Specifications</span></div>
               <div key="Metal Composite Panels" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Metal Composite Panels</span></div>
-              <div key="Cost-Effective Industrial Specs" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Cost-Effective Industrial Specs</span></div>
+              <div key="Durable Industrial Specs" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Durable Industrial Specs</span></div>
           </div>
         </div>
       </section>
@@ -131,15 +131,15 @@ export default function IndustrialFacade() {
           <div className="space-y-6">
             <div className="bg-background rounded-xl p-6 shadow-sm">
               <h3 className="text-lg font-bold mb-2">What is the most cost-effective facade for an industrial building in India?</h3>
-              <p className="text-muted-foreground">For industrial buildings in India, FR-grade ACP with polyester powder coating (not PVDF) is typically the most cost-effective option — balancing fire safety compliance, adequate weather performance, and low installed cost. For office blocks within industrial facilities, PVDF-coated ACP is recommended for better long-term appearance.</p>
+              <p className="text-muted-foreground">Fire-retardant ACP with a durable coating is often a practical choice for industrial buildings, balancing fire requirements, weather performance and installed cost. Office blocks may justify a higher-grade finish. Confirm with your consultant.</p>
             </div>
             <div className="bg-background rounded-xl p-6 shadow-sm">
               <h3 className="text-lg font-bold mb-2">Does Fine Glaze work in MIDC zones in Maharashtra?</h3>
-              <p className="text-muted-foreground">Yes. Fine Glaze regularly works in Pune's Bhosari, Pimpri, Chakan, and Hadapsar MIDC zones, and Navi Mumbai's Mahape and Turbhe MIDC corridors. We understand MIDC building regulations, local contractor coordination requirements, and the logistics of working in active industrial zones.</p>
+              <p className="text-muted-foreground">Fine Glaze takes industrial facade work in Maharashtra, and our documented work includes Navi Mumbai (Mahape) and Pune. We coordinate access and logistics with the site contractor in active industrial zones.</p>
             </div>
             <div className="bg-background rounded-xl p-6 shadow-sm">
               <h3 className="text-lg font-bold mb-2">What windows are recommended for factory buildings in India?</h3>
-              <p className="text-muted-foreground">For factory and warehouse buildings, aluminium fixed lights with 6mm toughened glass in simple aluminium frames are the most practical and cost-effective solution. Where natural ventilation is required, aluminium louvre windows or top-hung ventilators are recommended. Fine Glaze sizes window openings to meet NBC 2016 minimum daylight factor requirements for industrial buildings.</p>
+              <p className="text-muted-foreground">Factories commonly use aluminium fixed lights with toughened glass, plus louver windows or top-hung ventilators where natural ventilation is needed. Opening sizes should follow the daylight and ventilation requirements in the project brief and applicable codes.</p>
             </div>
           </div>
         </div>

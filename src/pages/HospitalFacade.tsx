@@ -36,9 +36,9 @@ export default function HospitalFacade() {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      { "@type": "Question", "name": "What facade cladding is best for hospitals in India?", "acceptedAnswer": { "@type": "Answer", "text": "For external hospital facades, Fine Glaze recommends FR-grade ACP with PVDF coating for opaque zones (smooth, cleanable, fire-rated), and curtain wall with acoustic DGU for patient room floors. PVDF-coated surfaces resist biofilm adhesion and can be cleaned with standard hospital-grade disinfectants without surface degradation." } },
-      { "@type": "Question", "name": "Does facade work need to happen while a hospital is operational?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, most hospital facade refurbishment projects must be completed with minimal disruption to ongoing operations. Fine Glaze uses section-by-section working strategies, noise and dust isolation, and scheduling critical work in periods of lower clinical activity. Our team has experience managing the logistics of working adjacent to ICUs, OTs, and wards." } },
-      { "@type": "Question", "name": "What acoustic glass is used for hospital ward facades?", "acceptedAnswer": { "@type": "Answer", "text": "Fine Glaze specifies DGU with laminated outer pane (6.38mm VSG + 12mm argon + 6mm toughened) for hospital ward facades requiring acoustic performance. This specification achieves Rw 38-42 dB sound reduction, reducing external traffic and mechanical noise to acceptable levels for patient recovery." } },
+      { "@type": "Question", "name": "What facade cladding is best for hospitals in India?", "acceptedAnswer": { "@type": "Answer", "text": "Smooth, cleanable cladding such as coated ACP is commonly used on opaque hospital facades, with curtain wall or windows on ward floors. Fire performance and finishes should be confirmed with the consultant and local regulations." } },
+      { "@type": "Question", "name": "Does facade work need to happen while a hospital is operational?", "acceptedAnswer": { "@type": "Answer", "text": "Often yes, especially for repairs and refurbishment, which are done section by section with agreed access and timings. Fine Glaze's Nanavati Max Hospital work includes window leakage rectification on a building in use." } },
+      { "@type": "Question", "name": "What acoustic glass is used for hospital ward facades?", "acceptedAnswer": { "@type": "Answer", "text": "Ward facades needing noise control commonly use double glazed units with a laminated pane, and the build-up follows an acoustic specification from the consultant. We do not quote performance figures without a tested system." } },
     ]
   };
 
@@ -69,7 +69,7 @@ export default function HospitalFacade() {
             <h1 className="text-3xl md:text-4xl font-bold mb-4">
               Hospital & Healthcare <span className="text-gradient-gold">Facade Specialist India</span>
             </h1>
-            <p className="text-lg text-white/80 mb-8">Hospital and healthcare building facades demand performance standards beyond typical commercial projects. Fine Glaze specialises in facade systems for hospitals, diagnostic centres, pharmaceutical facilities, and medical colleges — combining hygienic surface finishes, infection-control cladding materials, and robust weatherproofing with attractive architectural design.</p>
+            <p className="text-lg text-white/80 mb-8">Fine Glaze takes facade work on hospitals and healthcare buildings in Pune and Mumbai: ACP cladding, glazing, aluminium windows and leakage rectification. Our hospital record is Nanavati Max Hospital, Vile Parle.</p>
             <div className="flex gap-4">
               <Link to="/contact">
                 <Button size="lg" className="bg-amber-600 hover:bg-amber-700">Book a call</Button>
@@ -94,15 +94,15 @@ export default function HospitalFacade() {
       <section className="py-20">
         <div className="container mx-auto px-4 max-w-5xl space-y-6">
           
-          <h2 className="text-3xl font-bold">Unique Facade Requirements for Healthcare Buildings</h2>
+          <h2 className="text-3xl font-bold">Facade Requirements for Healthcare Buildings</h2>
           <p className="text-muted-foreground">
-            Healthcare buildings have distinctive facade requirements driven by hygiene, patient comfort, operational continuity, and infection control. Fine Glaze's hospital facade specifications address: <strong>anti-bacterial and anti-fungal surface coatings</strong> for external wall areas adjacent to sterile zones; <strong>smooth, cleanable cladding surfaces</strong> (ACP with PVDF coating or powder coating) that resist biofilm adhesion; <strong>natural daylighting</strong> through considered glazing design to support patient recovery; and <strong>acoustic performance</strong> to reduce external noise transmission to sensitive clinical areas.
+            Healthcare buildings have distinct facade needs: hygiene, patient comfort, continuity of operations and infection control. Common considerations are smooth, cleanable cladding surfaces, daylight through considered glazing, and acoustic performance against external noise.
           </p>
           <p className="text-muted-foreground mt-4">
-            Indian healthcare facilities increasingly adopt international design standards as the sector upgrades facilities for JCI and NABH accreditation. These standards include requirements for facade materials free from volatile organic compounds (VOC), non-combustible external cladding materials, and passive design features that contribute to patient wellbeing including views of greenery through optimally-sized window openings.
+            Facade materials for hospitals are usually chosen with the consultant against the hospital's accreditation and fire requirements. Confirm cladding fire performance, finishes and coatings with the project team before specifying.
           </p>
           <p className="text-muted-foreground mt-4">
-            Fine Glaze has completed facade projects for hospitals in Pune and surrounding areas, including both new build and facade refurbishment contracts. Our hospital facade packages typically include: <strong>ACP cladding</strong> for service zones and car parks; <strong>curtain wall glazing</strong> for patient ward floors (with acoustic DGU); <strong>aluminium windows</strong> for clinical areas requiring natural ventilation; and <strong>feature entrance structural glazing</strong> for welcoming, light-filled reception areas.
+            Fine Glaze documents hospital work at the <strong>Nanavati Max Super Speciality Hospital in Vile Parle, Mumbai</strong> (ACP cladding, top coping and window leakage rectification, with L&T Building & Construction; listed as ongoing). Hospital facade packages can include <strong>ACP cladding</strong>, <strong>curtain wall glazing</strong>, <strong>aluminium windows</strong> and <strong>entrance structural glazing</strong>.
           </p>
           <p className="text-muted-foreground mt-4">
             For critical infrastructure considerations, Fine Glaze can provide <strong>blast-resistant or hurricane-rated facade systems</strong> for healthcare buildings requiring continuity of operations in extreme weather events — increasingly relevant for coastal hospitals in Maharashtra and Gujarat.
@@ -116,11 +116,11 @@ export default function HospitalFacade() {
         <div className="container mx-auto px-4 max-w-5xl">
           <h2 className="text-3xl font-bold mb-10 text-center">What We Offer</h2>
           <div className="grid md:grid-cols-2 gap-4">
-              <div key="Anti-Bacterial ACP Coatings" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Anti-Bacterial ACP Coatings</span></div>
+              <div key="Cleanable ACP Cladding" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Cleanable ACP Cladding</span></div>
               <div key="Acoustic DGU Glass" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Acoustic DGU Glass</span></div>
-              <div key="NABH & JCI Compatible Materials" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">NABH & JCI Compatible Materials</span></div>
-              <div key="Low-VOC PVDF Finishes" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Low-VOC PVDF Finishes</span></div>
-              <div key="Natural Daylighting Design" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Natural Daylighting Design</span></div>
+              <div key="Materials Specified to Project Brief" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Materials Specified to Project Brief</span></div>
+              <div key="PVDF and Coated Finishes" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">PVDF and Coated Finishes</span></div>
+              <div key="Daylighting Through Glazing Design" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Daylighting Through Glazing Design</span></div>
               <div key="Cleanable Smooth Surfaces" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Cleanable Smooth Surfaces</span></div>
           </div>
         </div>
@@ -133,15 +133,15 @@ export default function HospitalFacade() {
           <div className="space-y-6">
             <div className="bg-background rounded-xl p-6 shadow-sm">
               <h3 className="text-lg font-bold mb-2">What facade cladding is best for hospitals in India?</h3>
-              <p className="text-muted-foreground">For external hospital facades, Fine Glaze recommends FR-grade ACP with PVDF coating for opaque zones (smooth, cleanable, fire-rated), and curtain wall with acoustic DGU for patient room floors. PVDF-coated surfaces resist biofilm adhesion and can be cleaned with standard hospital-grade disinfectants without surface degradation.</p>
+              <p className="text-muted-foreground">Smooth, cleanable cladding such as coated ACP is commonly used on opaque hospital facades, with curtain wall or windows on ward floors. Fire performance and finishes should be confirmed with the consultant and local regulations.</p>
             </div>
             <div className="bg-background rounded-xl p-6 shadow-sm">
               <h3 className="text-lg font-bold mb-2">Does facade work need to happen while a hospital is operational?</h3>
-              <p className="text-muted-foreground">Yes, most hospital facade refurbishment projects must be completed with minimal disruption to ongoing operations. Fine Glaze uses section-by-section working strategies, noise and dust isolation, and scheduling critical work in periods of lower clinical activity. Our team has experience managing the logistics of working adjacent to ICUs, OTs, and wards.</p>
+              <p className="text-muted-foreground">Often yes, especially for repairs and refurbishment, which are done section by section with agreed access and timings. Fine Glaze's Nanavati Max Hospital work includes window leakage rectification on a building in use.</p>
             </div>
             <div className="bg-background rounded-xl p-6 shadow-sm">
               <h3 className="text-lg font-bold mb-2">What acoustic glass is used for hospital ward facades?</h3>
-              <p className="text-muted-foreground">Fine Glaze specifies DGU with laminated outer pane (6.38mm VSG + 12mm argon + 6mm toughened) for hospital ward facades requiring acoustic performance. This specification achieves Rw 38-42 dB sound reduction, reducing external traffic and mechanical noise to acceptable levels for patient recovery.</p>
+              <p className="text-muted-foreground">Ward facades needing noise control commonly use double glazed units with a laminated pane, and the build-up follows an acoustic specification from the consultant. We do not quote performance figures without a tested system.</p>
             </div>
           </div>
         </div>

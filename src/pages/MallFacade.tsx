@@ -35,9 +35,9 @@ export default function MallFacade() {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      { "@type": "Question", "name": "What facade system is used for shopping mall entrances in India?", "acceptedAnswer": { "@type": "Answer", "text": "Shopping mall grand entrances in India most commonly use spider glazing or 4-side SSG structural glazing for a dramatic frameless glass effect. These are often combined with a steel space frame or cable-net structure for very large spans. Fine Glaze designs and installs complete structural glazing entrance systems including the glass, fixing hardware, and weatherseal." } },
-      { "@type": "Question", "name": "How is ACP cladding used in shopping malls?", "acceptedAnswer": { "@type": "Answer", "text": "ACP cladding in malls is used for: external elevations above curtain wall level; parking structure facades; service entrances and back-of-house areas; signage and brand feature walls; and interior atrium walls where a smooth, colourful surface is required. PVDF-coated ACP is specified for all external applications for longevity and easy cleaning." } },
-      { "@type": "Question", "name": "What glass is best for a mall facade in India?", "acceptedAnswer": { "@type": "Answer", "text": "For Indian malls, solar control glass with SHGC 0.25-0.30 is recommended to reduce air conditioning costs. Fine Glaze typically specifies Saint-Gobain Parsol or Pilkington Suncool reflective glass, which provides strong external reflectivity for architectural character while controlling solar heat gain. DGU configuration improves thermal comfort for occupants near the glass." } },
+      { "@type": "Question", "name": "What facade system is used for shopping mall entrances in India?", "acceptedAnswer": { "@type": "Answer", "text": "Mall entrances in India commonly use spider glazing or 4-side structural glazing for a frameless glass look, sometimes with a steel frame for long spans. Fine Glaze takes structural glazing entrance systems, including glass, fixings and weather sealing." } },
+      { "@type": "Question", "name": "How is ACP cladding used in shopping malls?", "acceptedAnswer": { "@type": "Answer", "text": "In malls, ACP cladding covers elevations above the glazing, parking structures, service entrances and brand feature walls. For external use, coated panels are chosen for durability and easy cleaning, with fire requirements checked by the consultant." } },
+      { "@type": "Question", "name": "What glass is best for a mall facade in India?", "acceptedAnswer": { "@type": "Answer", "text": "Solar control glass in a double glazed unit is commonly chosen for malls to limit solar heat gain while keeping daylight. The exact glass depends on orientation and the energy brief, and Fine Glaze procures from Saint-Gobain and other major brands." } },
     ]
   };
 
@@ -67,7 +67,7 @@ export default function MallFacade() {
             <h1 className="text-3xl md:text-4xl font-bold mb-4">
               Shopping Mall <span className="text-gradient-gold">Facade Specialist India</span>
             </h1>
-            <p className="text-lg text-white/80 mb-8">Shopping mall facades are high-impact, high-visibility architectural statements that must attract footfall, withstand heavy public use, and require minimal maintenance. Fine Glaze delivers complete mall facade solutions — from grand entrance structural glazing to ACP cladding and aluminium retail fronts — for shopping centres in Pune and Mumbai.</p>
+            <p className="text-lg text-white/80 mb-8">Fine Glaze takes mall and retail facade work in Pune and Mumbai: entrance glazing, ACP cladding, aluminium shopfronts, canopies and curtain wall.</p>
             <div className="flex gap-4">
               <Link to="/contact">
                 <Button size="lg" className="bg-amber-600 hover:bg-amber-700">Book a call</Button>
@@ -92,18 +92,18 @@ export default function MallFacade() {
       <section className="py-20">
         <div className="container mx-auto px-4 max-w-5xl space-y-6">
           
-          <h2 className="text-3xl font-bold">Mall Facade Design and Construction Expertise</h2>
+          <h2 className="text-3xl font-bold">Mall Facade Design and Construction</h2>
           <p className="text-muted-foreground">
-            Shopping malls represent some of the most architecturally ambitious facade projects in India's construction sector — requiring large-format structural glazing, dramatic entrance canopies, complex geometric cladding, and the ability to create powerful brand identity through architecture. Fine Glaze brings proven experience in delivering these complex facade systems on time and within budget.
+            Malls need high-visibility facades that handle heavy public use with little upkeep. They often combine large-format structural glazing, entrance canopies and cladding to give the building a clear identity.
           </p>
           <p className="text-muted-foreground mt-4">
-            Key facade elements for shopping malls include: <strong>Grand entrance atrium glazing</strong> — spider-fix or structural silicone for maximum transparency and architectural drama; <strong>Multi-level curtain wall</strong> on all elevations with solar control glass; <strong>ACP cladding</strong> for service areas, parking structures, and brand identification zones; <strong>Aluminium shopfront systems</strong> for ground floor retail frontages; and <strong>Entrance canopies</strong> spanning 10-20+ metres with structural glass and steel.
+            Key mall facade elements include <strong>entrance and atrium glazing</strong> in spider-fixed or structural silicone systems, <strong>curtain wall</strong> with solar control glass, <strong>ACP cladding</strong> for service areas and brand zones, <strong>aluminium shopfront systems</strong> and <strong>entrance canopies</strong> in glass and steel.
           </p>
           <p className="text-muted-foreground mt-4">
-            Mall facades also require careful consideration of maintenance access. Fine Glaze designs all mall facade systems with gondola and Building Maintenance Unit (BMU) track provisions, ensuring efficient future window cleaning and periodic sealant maintenance without requiring scaffold setup for every access.
+            Maintenance access deserves early thought. As general guidance, facade designs should plan gondola or BMU provisions with the architect so that cleaning and sealant maintenance do not need fresh scaffolding every time.
           </p>
           <p className="text-muted-foreground mt-4">
-            For retailers and mall developers concerned about energy costs, Fine Glaze's mall facade specifications include solar control glass with SHGC below 0.30 for the diverse Indian climate, integrated sun shading systems for south and west facades, and thermally broken aluminium systems to reduce HVAC load on the tenant floors.
+            For energy, solar control glass, shading on sun-facing elevations and thermally broken aluminium frames are the usual levers. The right mix depends on the climate, orientation and the project's energy brief.
           </p>
     
         </div>
@@ -118,8 +118,8 @@ export default function MallFacade() {
               <div key="Multi-Level Curtain Wall" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Multi-Level Curtain Wall</span></div>
               <div key="ACP Brand Zone Cladding" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">ACP Brand Zone Cladding</span></div>
               <div key="Entrance Canopy Systems" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Entrance Canopy Systems</span></div>
-              <div key="BMU Track Integration" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">BMU Track Integration</span></div>
-              <div key="Solar Control Glass Specification" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Solar Control Glass Specification</span></div>
+              <div key="Maintenance Access Planning" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Maintenance Access Planning</span></div>
+              <div key="Solar Control Glass Options" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Solar Control Glass Options</span></div>
           </div>
         </div>
       </section>
@@ -131,15 +131,15 @@ export default function MallFacade() {
           <div className="space-y-6">
             <div className="bg-background rounded-xl p-6 shadow-sm">
               <h3 className="text-lg font-bold mb-2">What facade system is used for shopping mall entrances in India?</h3>
-              <p className="text-muted-foreground">Shopping mall grand entrances in India most commonly use spider glazing or 4-side SSG structural glazing for a dramatic frameless glass effect. These are often combined with a steel space frame or cable-net structure for very large spans. Fine Glaze designs and installs complete structural glazing entrance systems including the glass, fixing hardware, and weatherseal.</p>
+              <p className="text-muted-foreground">Mall entrances in India commonly use spider glazing or 4-side structural glazing for a frameless glass look, sometimes with a steel frame for long spans. Fine Glaze takes structural glazing entrance systems, including glass, fixings and weather sealing.</p>
             </div>
             <div className="bg-background rounded-xl p-6 shadow-sm">
               <h3 className="text-lg font-bold mb-2">How is ACP cladding used in shopping malls?</h3>
-              <p className="text-muted-foreground">ACP cladding in malls is used for: external elevations above curtain wall level; parking structure facades; service entrances and back-of-house areas; signage and brand feature walls; and interior atrium walls where a smooth, colourful surface is required. PVDF-coated ACP is specified for all external applications for longevity and easy cleaning.</p>
+              <p className="text-muted-foreground">In malls, ACP cladding covers elevations above the glazing, parking structures, service entrances and brand feature walls. For external use, coated panels are chosen for durability and easy cleaning, with fire requirements checked by the consultant.</p>
             </div>
             <div className="bg-background rounded-xl p-6 shadow-sm">
               <h3 className="text-lg font-bold mb-2">What glass is best for a mall facade in India?</h3>
-              <p className="text-muted-foreground">For Indian malls, solar control glass with SHGC 0.25-0.30 is recommended to reduce air conditioning costs. Fine Glaze typically specifies Saint-Gobain Parsol or Pilkington Suncool reflective glass, which provides strong external reflectivity for architectural character while controlling solar heat gain. DGU configuration improves thermal comfort for occupants near the glass.</p>
+              <p className="text-muted-foreground">Solar control glass in a double glazed unit is commonly chosen for malls to limit solar heat gain while keeping daylight. The exact glass depends on orientation and the energy brief, and Fine Glaze procures from Saint-Gobain and other major brands.</p>
             </div>
           </div>
         </div>
