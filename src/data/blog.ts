@@ -725,7 +725,7 @@ export const blogPosts: Record<string, BlogPost> = {
         ]
       },
       {
-        "heading": "Expert Recommendation & Free Consultation",
+        "heading": "Expert Recommendation",
         "body": "For commercial buildings in India under 15m, FR-grade ACP with PVDF coating offers the best balance of cost, compliance, and design flexibility. For high-rises and hospitals, A2 non-combustible ACP or HPL is recommended. Discover our full range of [ACP cladding systems](https://fineglaze.com/acp-aluminium-cladding) or Book a call to consult with Fine Glaze."
       }
     ]
@@ -833,7 +833,7 @@ export const blogPosts: Record<string, BlogPost> = {
       },
       {
         "heading": "Conclusion: Engineering is the Foundation",
-        "body": "Curtain wall failures — water leaks, glass breakage, anchor pull-outs — are almost always the result of inadequate engineering at the design stage, not poor installation. At Fine Glaze, every project begins with a full structural calculation package. This rigour allows us to provide performance guarantees on projects like the Pune Airport terminal and Embassy REIT buildings. Contact us at info@fineglaze.com or call +91 8369233566."
+        "body": "Curtain wall failures — water leaks, glass breakage, anchor pull-outs — are almost always the result of inadequate engineering at the design stage, not poor installation. At Fine Glaze, every project begins with a full structural calculation package. Book a call and we will go through your building with you."
       }
     ]
   },
@@ -1911,7 +1911,7 @@ export const blogPosts: Record<string, BlogPost> = {
       },
       {
         "heading": "Expert Facade Engineering with Fine Glaze",
-        "body": "Choosing the right aluminium section is a blend of engineering precision and architectural vision. At Fine Glaze, we don't just install facades; we engineer them. Our team provides detailed structural calculations, wind load analysis, and custom profile design to ensure your building stands strong for decades. For a technical consultation or a quote for your next project, contact us at info@fineglaze.com or call +91 8369233566. Visit our office in Pune to see our range of high-performance curtain wall systems."
+        "body": "Choosing the right aluminium section is a blend of engineering precision and architectural vision. At Fine Glaze, we don't just install facades; we engineer them. Our team provides detailed structural calculations, wind load analysis, and custom profile design to ensure your building stands strong for decades. Book a call and we will go through your building with you. Visit our office in Pune to see our range of high-performance curtain wall systems."
       }
     ]
   },
@@ -1998,7 +1998,7 @@ export const blogPosts: Record<string, BlogPost> = {
       },
       {
         "heading": "Professional Facade Solutions by Fine Glaze",
-        "body": "At Fine Glaze, we understand that a building's facade is its face to the world. Beyond installation, we provide expert consultation on facade maintenance and can help design integrated BMU systems for new projects. Our engineering team ensures that your facade remains as stunning as the day it was installed. For maintenance advice or a quote for your next glazing project, contact us at info@fineglaze.com or call +91 8369233566. Visit our Pune office to discuss your building envelope needs."
+        "body": "At Fine Glaze, we understand that a building's facade is its face to the world. Beyond installation, we provide expert consultation on facade maintenance and can help design integrated BMU systems for new projects. Our engineering team ensures that your facade remains as stunning as the day it was installed. Book a call and we will go through your building with you. Visit our Pune office to discuss your building envelope needs."
       }
     ]
   },
@@ -2100,7 +2100,7 @@ export const blogPosts: Record<string, BlogPost> = {
       },
       {
         "heading": "Expert Facade Consultation by Fine Glaze",
-        "body": "At Fine Glaze, we specialize in both curtain wall and window wall systems. Our engineering team in Pune works closely with architects to determine the most efficient system for your specific project requirements. From wind load analysis to custom profile design, we ensure your facade is both beautiful and high-performing. For a technical consultation or a project quote, contact us at info@fineglaze.com or call +91 8369233566. Let's build the future of Indian architecture together."
+        "body": "At Fine Glaze, we specialize in both curtain wall and window wall systems. Our engineering team in Pune works closely with architects to determine the most efficient system for your specific project requirements. From wind load analysis to custom profile design, we ensure your facade is both beautiful and high-performing. Book a call and we will go through your building with you. Let's build the future of Indian architecture together."
       }
     ]
   },
@@ -2206,7 +2206,7 @@ export const blogPosts: Record<string, BlogPost> = {
       },
       {
         "heading": "Expert Facade Solutions with Fine Glaze",
-        "body": "At Fine Glaze, we specialize in both high-performance curtain walls and intricate point-fixed glazing systems. Our engineering team ensures that your facade is not only beautiful but also compliant with Indian structural standards. Contact us today for a consultation on your next project.\n\nEmail: info@fineglaze.com\nPhone: +91 8369233566"
+        "body": "At Fine Glaze, we specialize in both high-performance curtain walls and intricate point-fixed glazing systems. Our engineering team ensures that your facade is not only beautiful but also compliant with Indian structural standards. Book a call and we will go through your building with you."
       }
     ]
   },
@@ -2318,7 +2318,7 @@ export const blogPosts: Record<string, BlogPost> = {
       },
       {
         "heading": "Expert Facade Engineering with Fine Glaze",
-        "body": "At Fine Glaze, we don't just build facades; we ensure they are sustainable and maintainable. Our engineering team provides comprehensive advice on facade access strategy, from initial design to system selection. Contact us today to discuss your high-rise project.\n\nEmail: info@fineglaze.com\nPhone: +91 8369233566"
+        "body": "At Fine Glaze, we don't just build facades; we ensure they are sustainable and maintainable. Our engineering team provides comprehensive advice on facade access strategy, from initial design to system selection. Book a call and we will go through your building with you."
       }
     ]
   },
@@ -2693,7 +2693,7 @@ export const blogPosts: Record<string, BlogPost> = {
       },
       {
         "heading": "Expert Facade Solutions by Fine Glaze",
-        "body": "Fine Glaze is a leading provider of premium glazing and facade solutions in India. From high-performance aluminium windows to complex curtain wall systems, we bring engineering excellence to every project.\n\nContact us for a consultation:\nEmail: info@fineglaze.com\nPhone: +91 8369233566\nWebsite: www.fineglaze.com"
+        "body": "Fine Glaze is a leading provider of premium glazing and facade solutions in India. From high-performance aluminium windows to complex curtain wall systems, we bring engineering excellence to every project.\n\nBook a call and we will go through your building with you."
       }
     ]
   },
@@ -2788,7 +2788,7 @@ export const blogPosts: Record<string, BlogPost> = {
       },
       {
         "heading": "Expert Facade Solutions by Fine Glaze",
-        "body": "Fine Glaze is a leading provider of premium glazing and facade solutions in India. We partner with top ACP brands to deliver world-class cladding for commercial and residential projects.\n\nContact us for a consultation:\nEmail: info@fineglaze.com\nPhone: +91 8369233566\nWebsite: www.fineglaze.com"
+        "body": "Fine Glaze is a leading provider of premium glazing and facade solutions in India. We partner with top ACP brands to deliver world-class cladding for commercial and residential projects.\n\nBook a call and we will go through your building with you."
       }
     ]
   },
@@ -2885,7 +2885,7 @@ export const blogPosts: Record<string, BlogPost> = {
       },
       {
         "heading": "Expert Installation by Fine Glaze",
-        "body": "At Fine Glaze, we specialize in both high-performance glass roofing and premium polycarbonate installations. Our engineering team ensures that the support structure is wind-load compliant and the glazing is perfectly sealed against the Indian monsoon.\n\nContact us for a site visit and quote:\nEmail: info@fineglaze.com\nPhone: +91 8369233566\nWebsite: www.fineglaze.com"
+        "body": "At Fine Glaze, we specialize in both high-performance glass roofing and premium polycarbonate installations. Our engineering team ensures that the support structure is wind-load compliant and the glazing is perfectly sealed against the Indian monsoon.\n\nBook a call and we will go through your building with you."
       }
     ]
   },
@@ -3105,7 +3105,7 @@ export const blogPosts: Record<string, BlogPost> = {
         "list": [
           "Custom Engineering: Tailored glass configurations based on site noise audits.",
           "Premium Partnerships: Sourcing world-class acoustic interlayers and glass.",
-          "Expert Execution: Flawless installation to guarantee rated performance."
+          "Expert Execution: Careful installation to the approved drawings."
         ]
       },
       {
@@ -3643,7 +3643,7 @@ export const blogPosts: Record<string, BlogPost> = {
       },
       {
         "heading": "Expert Facade Solutions by Fine Glaze",
-        "body": "At Fine Glaze, we specialize in both frameless spider glazing and advanced framed curtain wall systems. Our team of engineers ensures that every installation meets international safety standards while delivering the aesthetic vision of the architect.\n\nContact us today for a consultation on your next project:\nEmail: info@fineglaze.com\nPhone: +91 8369233566"
+        "body": "At Fine Glaze, we specialize in both frameless spider glazing and advanced framed curtain wall systems. Our team of engineers ensures that every installation meets international safety standards while delivering the aesthetic vision of the architect.\n\nBook a call and we will go through your building with you."
       }
     ]
   },
@@ -3739,7 +3739,7 @@ export const blogPosts: Record<string, BlogPost> = {
       },
       {
         "heading": "Expert Facade Solutions by Fine Glaze",
-        "body": "At Fine Glaze, we specialize in designing and installing high-performance glazing systems tailored to the Indian climate. Whether you need standard DGUs for an office complex or specialized acoustic triple glazing for a luxury residence, our team provides end-to-end support from engineering to installation.\n\nContact us today for a consultation:\nEmail: info@fineglaze.com\nPhone: +91 8369233566\nWebsite: www.fineglaze.com"
+        "body": "At Fine Glaze, we specialize in designing and installing high-performance glazing systems tailored to the Indian climate. Whether you need standard DGUs for an office complex or specialized acoustic triple glazing for a luxury residence, our team provides end-to-end support from engineering to installation.\n\nBook a call and we will go through your building with you."
       }
     ]
   },
@@ -3930,7 +3930,7 @@ export const blogPosts: Record<string, BlogPost> = {
       },
       {
         "heading": "Partner with Fine Glaze for Your Facade Needs",
-        "body": "At Fine Glaze, we specialize in high-quality facade solutions, from new installations to complex refurbishments. Our team of experts ensures that your building's exterior is safe, efficient, and visually stunning.\n\nContact us today for a facade audit or a project quote:\n\nEmail: info@fineglaze.com\nPhone: +91 8369233566\nWebsite: www.fineglaze.com"
+        "body": "At Fine Glaze, we specialize in high-quality facade solutions, from new installations to complex refurbishments. Our team of experts ensures that your building's exterior is safe, efficient, and visually stunning.\n\nBook a call and we will go through your building with you."
       }
     ]
   },
@@ -4026,7 +4026,7 @@ export const blogPosts: Record<string, BlogPost> = {
       },
       {
         "heading": "Transform Your Office with Fine Glaze",
-        "body": "Fine Glaze specializes in premium interior glazing solutions across India. From design to expert installation, we ensure your office partitions meet the highest standards of safety and aesthetics.\\n\\nContact us for a consultation:\\n\\nEmail: info@fineglaze.com\\nPhone: +91 8369233566\\nWebsite: www.fineglaze.com"
+        "body": "Fine Glaze specializes in premium interior glazing solutions across India. From design to expert installation, we ensure your office partitions meet the highest standards of safety and aesthetics.\\n\\nBook a call and we will go through your building with you."
       }
     ]
   },
