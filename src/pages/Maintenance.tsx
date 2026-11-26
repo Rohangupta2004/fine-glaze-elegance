@@ -94,7 +94,7 @@ const SYSTEMS = [
     glass: "Dow Corning / Sika",
     wind: "Every 8–12 years",
     bestFor: "Leaking facades, old buildings",
-    price: "₹80 – ₹200 /rft",
+    price: "Quoted on drawings",
     img: "sealant",
   },
   {
@@ -104,7 +104,7 @@ const SYSTEMS = [
     glass: "Rope-access / scaffold",
     wind: "As needed",
     bestFor: "Damaged panels, upgrades",
-    price: "₹350 – ₹1,200 /sq ft",
+    price: "Quoted on drawings",
     img: "glass",
   },
   {
@@ -114,7 +114,7 @@ const SYSTEMS = [
     glass: "Rope-access / BMU",
     wind: "2x per year",
     bestFor: "Commercial towers, malls",
-    price: "₹8 – ₹25 /sq ft",
+    price: "Quoted on drawings",
     img: "cleaning",
   },
   {
@@ -150,7 +150,6 @@ export default function Maintenance() {
       "@id": "https://fineglaze.com",
       url: "https://fineglaze.com",
       telephone: "+91-8369233566",
-      priceRange: "₹₹₹",
       address: {
         "@type": "PostalAddress",
         addressLocality: "Pune",
@@ -331,11 +330,10 @@ export default function Maintenance() {
           <FadeIn>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-0 md:divide-x md:divide-stone-700">
               {[
-                { number: "2x/yr", label: "Recommended Checks" },
-                { number: "10+", label: "Years Experience" },
-                { number: "0", label: "Safety Incidents" },
-                { number: "48hr", label: "Emergency Response" },
-              ].map((s) => (
+                { number: "16", label: "Project Records Documented" },
+                { number: "~20,566", label: "Sqm Facade Delivered" },
+                { number: "40+", label: "Core Team" },
+                { number: "2024", label: "Embassy REIT Best Vendor Performance" },].map((s) => (
                 <div key={s.label} className="text-center px-4">
                   <p className="text-2xl md:text-3xl font-bold text-white">{s.number}</p>
                   <p className="text-stone-500 text-[11px] uppercase tracking-widest mt-1">{s.label}</p>
@@ -407,7 +405,7 @@ export default function Maintenance() {
                     <p className="text-sm font-semibold text-stone-800">{current.bestFor}</p>
                   </div>
                   <div className="bg-amber-50 p-3 border border-amber-200">
-                    <p className="text-[10px] uppercase tracking-wider text-amber-600 mb-1">Rate</p>
+                    <p className="text-[10px] uppercase tracking-wider text-amber-600 mb-1">Pricing</p>
                     <p className="text-sm font-bold text-stone-900">{current.price}</p>
                   </div>
                 </div>
@@ -473,9 +471,9 @@ export default function Maintenance() {
 
           <FadeIn delay={200} className="mt-12 text-center">
             <p className="text-stone-400 text-sm">
-              Trusted by <span className="text-stone-700 font-semibold">Embassy REIT</span> ·{" "}
-              <span className="text-stone-700 font-semibold">LTIMindtree</span> ·{" "}
-              <span className="text-stone-700 font-semibold">Pune International Airport</span>
+              Clients include <span className="text-stone-700 font-semibold">Embassy REIT</span> ·{" "}
+              <span className="text-stone-700 font-semibold">L&amp;T Construction</span> ·{" "}
+              <span className="text-stone-700 font-semibold">Jindal Stainless Limited</span>
             </p>
           </FadeIn>
         </div>
@@ -544,10 +542,10 @@ export default function Maintenance() {
               Pricing
             </p>
             <h2 className="text-2xl md:text-3xl font-bold text-stone-900 mb-2">
-              Facade Maintenance Cost — 2026
+              Facade Maintenance Cost: How We Quote
             </h2>
             <p className="text-stone-400 text-sm">
-              Indicative rates. Final cost depends on specifications & complexity. GST extra.
+              We quote against drawings. Final cost depends on specification and complexity.
             </p>
           </FadeIn>
 
@@ -558,14 +556,14 @@ export default function Maintenance() {
                   <tr className="border-b-2 border-stone-800">
                     <th className="py-3 text-xs font-bold uppercase tracking-wider text-stone-500">System</th>
                     <th className="py-3 text-xs font-bold uppercase tracking-wider text-stone-500">Method</th>
-                    <th className="py-3 text-xs font-bold uppercase tracking-wider text-stone-500 text-right">Rate / sq ft</th>
+                    <th className="py-3 text-xs font-bold uppercase tracking-wider text-stone-500 text-right">Pricing</th>
                   </tr>
                 </thead>
                 <tbody className="text-sm">
                   {[
-                    { system: "Sealant Renewal", glass: "Dow Corning / Sika", price: "₹80 – ₹200 /rft" },
-                    { system: "Glass Replacement", glass: "DGU / toughened", price: "₹350 – ₹1,200 /sq ft" },
-                    { system: "Facade Cleaning", glass: "Rope-access / BMU", price: "₹8 – ₹25 /sq ft" },
+                    { system: "Sealant Renewal", glass: "Dow Corning / Sika", price: "Quoted on drawings" },
+                    { system: "Glass Replacement", glass: "DGU / toughened", price: "Quoted on drawings" },
+                    { system: "Facade Cleaning", glass: "Rope-access / BMU", price: "Quoted on drawings" },
                     { system: "Annual AMC", glass: "Bi-annual programme", price: "Custom quote" },
                   ].map((row) => (
                     <tr key={row.system} className="border-b border-stone-100 hover:bg-stone-50 transition-colors">
@@ -640,7 +638,7 @@ export default function Maintenance() {
                   Where We Work
                 </p>
                 <div className="flex flex-wrap gap-x-6 gap-y-2">
-                  {["Pune", "Mumbai BKC", "Navi Mumbai", "Thane", "Nashik", "Hinjewadi", "Pimpri-Chinchwad"].map((city) => (
+                  {["Pune", "Mumbai BKC", "Navi Mumbai", "Thane", "Hinjewadi", "Pimpri-Chinchwad"].map((city) => (
                     <div key={city} className="flex items-center gap-1.5">
                       <MapPin size={11} className="text-amber-500" />
                       <span className="text-white/60 text-sm">{city}</span>

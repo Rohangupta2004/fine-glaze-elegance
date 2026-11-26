@@ -97,9 +97,9 @@ const SYSTEMS = [
     title: "Unitized Curtain Wall",
     desc: "Factory-assembled panels shipped ready to install. Fastest method — ideal for high-rises. Each panel interlocks with the next for a seamless, watertight envelope.",
     glass: "6063-T6 aluminium",
-    wind: "Up to 4.5 kPa",
+    wind: "Sized to project wind load",
     bestFor: "High-rises, IT parks",
-    price: "₹600 – ₹1,200 /sq ft",
+    price: "Quoted on drawings",
     img: "unitized",
   },
   {
@@ -107,9 +107,9 @@ const SYSTEMS = [
     title: "Stick System Curtain Wall",
     desc: "Aluminium mullions and transoms assembled piece-by-piece on site. Cost-effective for low-to-mid rise buildings with varying floor heights.",
     glass: "6063-T6 aluminium",
-    wind: "Up to 3.5 kPa",
+    wind: "Sized to project wind load",
     bestFor: "Offices, showrooms",
-    price: "₹400 – ₹700 /sq ft",
+    price: "Quoted on drawings",
     img: "stick",
   },
   {
@@ -117,9 +117,9 @@ const SYSTEMS = [
     title: "Semi-Unitized System",
     desc: "Mullions fixed on-site, pre-glazed panels slotted in. Combines unitized speed with stick-system flexibility — great for renovation projects.",
     glass: "6063-T6 aluminium",
-    wind: "Up to 4.0 kPa",
+    wind: "Sized to project wind load",
     bestFor: "Renovations, mid-rises",
-    price: "₹500 – ₹900 /sq ft",
+    price: "Quoted on drawings",
     img: "semi",
   },
   {
@@ -129,7 +129,7 @@ const SYSTEMS = [
     glass: "SS 316 fittings",
     wind: "Structural glass fins",
     bestFor: "Lobbies, atriums",
-    price: "₹900 – ₹1,500 /sq ft",
+    price: "Quoted on drawings",
     img: "point",
   },
 ];
@@ -138,7 +138,7 @@ const STEPS = [
   { num: "01", title: "Site Survey", desc: "Engineers assess the structure and design requirements" },
   { num: "02", title: "Engineering", desc: "Shop drawings, wind-load calculations & thermal analysis" },
   { num: "03", title: "Fabrication", desc: "Precision CNC cutting & assembly at our Pune facility" },
-  { num: "04", title: "Installation", desc: "Certified crews install with crane-assisted panel placement" },
+  { num: "04", title: "Installation", desc: "Site crews install with crane-assisted panel placement" },
 ];
 
 export default function CurtainWall() {
@@ -155,7 +155,6 @@ export default function CurtainWall() {
       "@id": "https://fineglaze.com",
       url: "https://fineglaze.com",
       telephone: "+91-8369233566",
-      priceRange: "₹₹₹",
       address: {
         "@type": "PostalAddress",
         addressLocality: "Pune",
@@ -338,7 +337,6 @@ export default function CurtainWall() {
           "Mixed-Use Retail & Commercial Podiums",
           "Hospitality & Luxury Hotel Towers"
         ]}
-        priceBenchmark="₹450 – ₹1,200 per sq ft (Stick, Semi-Unitized & Unitized Systems)"
         relevantProjects={[
           "Embassy 247 (Vikhroli, Mumbai)",
           "SSG Honesty (Panvel)",
@@ -352,11 +350,10 @@ export default function CurtainWall() {
           <FadeIn>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-0 md:divide-x md:divide-stone-700">
               {[
-                { number: "10+", label: "Years Experience" },
-                { number: "10+", label: "Facade Projects" },
-                { number: "4.5 kPa", label: "Max Wind Load" },
-                { number: "40%", label: "Faster (Unitized)" },
-              ].map((s) => (
+                { number: "16", label: "Project Records Documented" },
+                { number: "~20,566", label: "Sqm Facade Delivered" },
+                { number: "40+", label: "Core Team" },
+                { number: "2024", label: "Embassy REIT Best Vendor Performance" },].map((s) => (
                 <div key={s.label} className="text-center px-4">
                   <p className="text-2xl md:text-3xl font-bold text-white">{s.number}</p>
                   <p className="text-stone-500 text-[11px] uppercase tracking-widest mt-1">{s.label}</p>
@@ -480,7 +477,7 @@ export default function CurtainWall() {
                     <p className="text-sm font-semibold text-stone-800">{current.bestFor}</p>
                   </div>
                   <div className="bg-amber-50 p-3 border border-amber-200">
-                    <p className="text-[10px] uppercase tracking-wider text-amber-600 mb-1">Rate</p>
+                    <p className="text-[10px] uppercase tracking-wider text-amber-600 mb-1">Pricing</p>
                     <p className="text-sm font-bold text-stone-900">{current.price}</p>
                   </div>
                 </div>
@@ -521,15 +518,15 @@ export default function CurtainWall() {
                     <tr className="bg-stone-900 text-white">
                       <th className="py-3.5 px-6 text-xs font-bold uppercase tracking-wider">System Type</th>
                       <th className="py-3.5 px-6 text-xs font-bold uppercase tracking-wider">Specifications</th>
-                      <th className="py-3.5 px-6 text-xs font-bold uppercase tracking-wider text-right">Curtain Wall Cost (₹/sq ft)</th>
+                      <th className="py-3.5 px-6 text-xs font-bold uppercase tracking-wider text-right">Pricing</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-stone-100 text-sm">
                     {[
-                      { system: "Unitized Curtain Wall", glass: "Factory pre-assembled 6063-T6, DGU Low-E, EPDM", price: "₹650 – ₹1,200" },
-                      { system: "Stick Curtain Wall System", glass: "On-site assembled mullions, 6mm / DGU glass", price: "₹350 – ₹550" },
-                      { system: "Semi-Unitized System", glass: "Pre-glazed shop units with site-fixed frames", price: "₹500 – ₹900" },
-                      { system: "Spider Point-Fixed System", glass: "SS 316 fittings with laminated toughened glass", price: "₹800 – ₹1,500" },
+                      { system: "Unitized Curtain Wall", glass: "Factory pre-assembled 6063-T6, DGU Low-E, EPDM", price: "Quoted on drawings" },
+                      { system: "Stick Curtain Wall System", glass: "On-site assembled mullions, 6mm / DGU glass", price: "Quoted on drawings" },
+                      { system: "Semi-Unitized System", glass: "Pre-glazed shop units with site-fixed frames", price: "Quoted on drawings" },
+                      { system: "Spider Point-Fixed System", glass: "SS 316 fittings with laminated toughened glass", price: "Quoted on drawings" },
                     ].map((row) => (
                       <tr key={row.system} className="hover:bg-stone-50 transition-colors">
                         <td className="py-4 px-6 font-bold text-stone-900">{row.system}</td>
@@ -630,7 +627,7 @@ export default function CurtainWall() {
                   Key Service Areas
                 </p>
                 <div className="flex flex-wrap gap-x-6 gap-y-2">
-                  {["Pune", "Mumbai BKC", "Navi Mumbai", "Thane", "Nashik", "Hinjewadi", "Kharadi"].map((city) => (
+                  {["Pune", "Mumbai BKC", "Navi Mumbai", "Thane", "Hinjewadi", "Kharadi"].map((city) => (
                     <div key={city} className="flex items-center gap-1.5">
                       <MapPin size={11} className="text-amber-500" />
                       <span className="text-white/60 text-sm">{city}</span>

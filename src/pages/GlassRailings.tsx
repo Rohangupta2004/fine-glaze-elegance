@@ -95,7 +95,7 @@ const SYSTEMS = [
     glass: "12–19mm toughened",
     wind: "Aluminium U-channel",
     bestFor: "Balconies, terraces, decks",
-    price: "₹800 – ₹1,400 /rft",
+    price: "Quoted on drawings",
     img: "frameless",
   },
   {
@@ -105,7 +105,7 @@ const SYSTEMS = [
     glass: "12–15mm toughened",
     wind: "SS 304 mini-posts",
     bestFor: "Corridors, malls, offices",
-    price: "₹600 – ₹1,000 /rft",
+    price: "Quoted on drawings",
     img: "semi",
   },
   {
@@ -115,7 +115,7 @@ const SYSTEMS = [
     glass: "12–15mm toughened",
     wind: "SS 316 spigots",
     bestFor: "Hotels, lobbies, restaurants",
-    price: "₹700 – ₹1,200 /rft",
+    price: "Quoted on drawings",
     img: "spigot",
   },
   {
@@ -125,7 +125,7 @@ const SYSTEMS = [
     glass: "10–12mm toughened",
     wind: "SS standoff fittings",
     bestFor: "Staircases, residential",
-    price: "₹500 – ₹800 /rft",
+    price: "Quoted on drawings",
     img: "standoff",
   },
 ];
@@ -151,7 +151,6 @@ export default function GlassRailings() {
       "@id": "https://fineglaze.com",
       url: "https://fineglaze.com",
       telephone: "+91-8369233566",
-      priceRange: "₹₹₹",
       address: {
         "@type": "PostalAddress",
         addressLocality: "Pune",
@@ -330,7 +329,6 @@ export default function GlassRailings() {
           "Commercial Mall Atrium Balustrades",
           "Hotel Pool Decks & Roof Top Bars"
         ]}
-        priceBenchmark="₹800 – ₹2,200 per running ft (Base Channel, Standoff & Spigot Systems)"
         relevantProjects={[
           "Salsette-27 (Byculla, Mumbai)",
           "Jindal House Balkeshwar 32 (Mumbai)",
@@ -345,11 +343,10 @@ export default function GlassRailings() {
           <FadeIn>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-0 md:divide-x md:divide-stone-700">
               {[
-                { number: "10+", label: "Years Experience" },
-                { number: "10+", label: "Projects Delivered" },
-                { number: "19mm", label: "Max Glass Thickness" },
-                { number: "SS 316", label: "Marine-Grade Hardware" },
-              ].map((s) => (
+                { number: "16", label: "Project Records Documented" },
+                { number: "~20,566", label: "Sqm Facade Delivered" },
+                { number: "40+", label: "Core Team" },
+                { number: "2024", label: "Embassy REIT Best Vendor Performance" },].map((s) => (
                 <div key={s.label} className="text-center px-4">
                   <p className="text-2xl md:text-3xl font-bold text-white">{s.number}</p>
                   <p className="text-stone-500 text-[11px] uppercase tracking-widest mt-1">{s.label}</p>
@@ -421,7 +418,7 @@ export default function GlassRailings() {
                     <p className="text-sm font-semibold text-stone-800">{current.bestFor}</p>
                   </div>
                   <div className="bg-amber-50 p-3 border border-amber-200">
-                    <p className="text-[10px] uppercase tracking-wider text-amber-600 mb-1">Rate</p>
+                    <p className="text-[10px] uppercase tracking-wider text-amber-600 mb-1">Pricing</p>
                     <p className="text-sm font-bold text-stone-900">{current.price}</p>
                   </div>
                 </div>
@@ -487,9 +484,9 @@ export default function GlassRailings() {
 
           <FadeIn delay={200} className="mt-12 text-center">
             <p className="text-stone-400 text-sm">
-              Trusted by <span className="text-stone-700 font-semibold">Embassy REIT</span> ·{" "}
-              <span className="text-stone-700 font-semibold">LTIMindtree</span> ·{" "}
-              <span className="text-stone-700 font-semibold">Pune International Airport</span>
+              Clients include <span className="text-stone-700 font-semibold">Embassy REIT</span> ·{" "}
+              <span className="text-stone-700 font-semibold">L&amp;T Construction</span> ·{" "}
+              <span className="text-stone-700 font-semibold">Jindal Stainless Limited</span>
             </p>
           </FadeIn>
         </div>
@@ -558,10 +555,10 @@ export default function GlassRailings() {
               Pricing
             </p>
             <h2 className="text-2xl md:text-3xl font-bold text-stone-900 mb-2">
-              Glass Railing Cost — 2026
+              Glass Railing Cost: How We Quote
             </h2>
             <p className="text-stone-400 text-sm">
-              Indicative rates. Final cost depends on specifications & complexity. GST extra.
+              We quote against drawings. Final cost depends on specification and complexity.
             </p>
           </FadeIn>
 
@@ -572,15 +569,15 @@ export default function GlassRailings() {
                   <tr className="border-b-2 border-stone-800">
                     <th className="py-3 text-xs font-bold uppercase tracking-wider text-stone-500">System</th>
                     <th className="py-3 text-xs font-bold uppercase tracking-wider text-stone-500">Glass</th>
-                    <th className="py-3 text-xs font-bold uppercase tracking-wider text-stone-500 text-right">Rate / sq ft</th>
+                    <th className="py-3 text-xs font-bold uppercase tracking-wider text-stone-500 text-right">Pricing</th>
                   </tr>
                 </thead>
                 <tbody className="text-sm">
                   {[
-                    { system: "Frameless (U-Channel)", glass: "12–19 mm toughened", price: "₹800 – ₹1,400 /rft" },
-                    { system: "Semi-Frameless (Mini-Post)", glass: "12–15 mm toughened", price: "₹600 – ₹1,000 /rft" },
-                    { system: "Spigot Mount", glass: "12–15 mm toughened", price: "₹700 – ₹1,200 /rft" },
-                    { system: "Standoff Mount", glass: "10–12 mm toughened", price: "₹500 – ₹800 /rft" },
+                    { system: "Frameless (U-Channel)", glass: "12–19 mm toughened", price: "Quoted on drawings" },
+                    { system: "Semi-Frameless (Mini-Post)", glass: "12–15 mm toughened", price: "Quoted on drawings" },
+                    { system: "Spigot Mount", glass: "12–15 mm toughened", price: "Quoted on drawings" },
+                    { system: "Standoff Mount", glass: "10–12 mm toughened", price: "Quoted on drawings" },
                   ].map((row) => (
                     <tr key={row.system} className="border-b border-stone-100 hover:bg-stone-50 transition-colors">
                       <td className="py-3 font-semibold text-stone-800">{row.system}</td>
@@ -654,7 +651,7 @@ export default function GlassRailings() {
                   Where We Work
                 </p>
                 <div className="flex flex-wrap gap-x-6 gap-y-2">
-                  {["Pune", "Mumbai BKC", "Navi Mumbai", "Thane", "Nashik", "Hinjewadi", "Pimpri-Chinchwad"].map((city) => (
+                  {["Pune", "Mumbai BKC", "Navi Mumbai", "Thane", "Hinjewadi", "Pimpri-Chinchwad"].map((city) => (
                     <div key={city} className="flex items-center gap-1.5">
                       <MapPin size={11} className="text-amber-500" />
                       <span className="text-white/60 text-sm">{city}</span>

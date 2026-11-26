@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { CheckCircle2, MapPin, Building2, Tag, Briefcase, FileText } from "lucide-react";
+import { CheckCircle2, MapPin, Building2, Briefcase, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { QuoteModal } from "@/components/QuoteModal";
 
@@ -8,7 +8,7 @@ export interface ServiceQuickOverviewProps {
   whatWeProvide: string;
   locationsServed?: string[];
   bestProjectTypes: string[];
-  priceBenchmark: string;
+  priceBenchmark?: string;
   relevantProjects: string[];
 }
 
@@ -17,7 +17,6 @@ export const ServiceQuickOverview = ({
   whatWeProvide,
   locationsServed = ["Pune & PCMC", "Mumbai", "Navi Mumbai", "Thane"],
   bestProjectTypes,
-  priceBenchmark,
   relevantProjects,
 }: ServiceQuickOverviewProps) => {
   const [isQuoteOpen, setIsQuoteOpen] = useState(false);
@@ -29,7 +28,7 @@ export const ServiceQuickOverview = ({
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-8 border-b border-stone-800 pb-4">
             <div>
               <span className="text-amber-400 text-xs font-bold uppercase tracking-widest">
-                Service Specification &amp; Pricing Benchmark
+                Service Specification
               </span>
               <h2 className="text-2xl md:text-3xl font-bold text-white mt-1">
                 {serviceTitle} Overview
@@ -88,20 +87,6 @@ export const ServiceQuickOverview = ({
                   </li>
                 ))}
               </ul>
-            </div>
-
-            {/* Pricing Benchmark */}
-            <div className="bg-stone-950/70 rounded-xl p-5 border border-stone-800">
-              <div className="flex items-center gap-2 text-amber-400 font-semibold mb-3 text-sm">
-                <Tag className="w-4 h-4" />
-                <span>Price / BOQ Benchmark</span>
-              </div>
-              <p className="text-sm font-bold text-amber-300 mb-1">
-                {priceBenchmark}
-              </p>
-              <p className="text-xs text-stone-400">
-                *Final rates depend on glass specification, structural wind load calculations &amp; site access.
-              </p>
             </div>
 
             {/* Relevant Projects */}

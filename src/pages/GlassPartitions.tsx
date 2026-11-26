@@ -94,7 +94,7 @@ const SYSTEMS = [
     glass: "10–12mm toughened",
     wind: "Frameless patch fittings",
     bestFor: "Offices, co-working spaces",
-    price: "₹350 – ₹600 /sq ft",
+    price: "Quoted on drawings",
     img: "office",
   },
   {
@@ -104,7 +104,7 @@ const SYSTEMS = [
     glass: "6+12+6mm DGU",
     wind: "Up to 42dB STC rating",
     bestFor: "Boardrooms, conference rooms",
-    price: "₹600 – ₹1,000 /sq ft",
+    price: "Quoted on drawings",
     img: "acoustic",
   },
   {
@@ -114,7 +114,7 @@ const SYSTEMS = [
     glass: "Smart PDLC laminated",
     wind: "Electric privacy switch",
     bestFor: "CEO cabins, meeting rooms",
-    price: "₹1,200 – ₹2,500 /sq ft",
+    price: "Quoted on drawings",
     img: "smart",
   },
   {
@@ -124,7 +124,7 @@ const SYSTEMS = [
     glass: "8–12mm toughened",
     wind: "Nano anti-limescale coat",
     bestFor: "Premium homes, hotels",
-    price: "₹15,000 – ₹45,000 /unit",
+    price: "Quoted on drawings",
     img: "shower",
   },
 ];
@@ -150,7 +150,6 @@ export default function GlassPartitions() {
       "@id": "https://fineglaze.com",
       url: "https://fineglaze.com",
       telephone: "+91-8369233566",
-      priceRange: "₹₹₹",
       address: {
         "@type": "PostalAddress",
         addressLocality: "Pune",
@@ -325,11 +324,10 @@ export default function GlassPartitions() {
           <FadeIn>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-0 md:divide-x md:divide-stone-700">
               {[
-                { number: "42dB", label: "Sound Insulation (DGU)" },
-                { number: "10+", label: "Years Experience" },
-                { number: "12mm", label: "Max Glass Thickness" },
-                { number: "0", label: "Safety Incidents" },
-              ].map((s) => (
+                { number: "16", label: "Project Records Documented" },
+                { number: "~20,566", label: "Sqm Facade Delivered" },
+                { number: "40+", label: "Core Team" },
+                { number: "2024", label: "Embassy REIT Best Vendor Performance" },].map((s) => (
                 <div key={s.label} className="text-center px-4">
                   <p className="text-2xl md:text-3xl font-bold text-white">{s.number}</p>
                   <p className="text-stone-500 text-[11px] uppercase tracking-widest mt-1">{s.label}</p>
@@ -401,7 +399,7 @@ export default function GlassPartitions() {
                     <p className="text-sm font-semibold text-stone-800">{current.bestFor}</p>
                   </div>
                   <div className="bg-amber-50 p-3 border border-amber-200">
-                    <p className="text-[10px] uppercase tracking-wider text-amber-600 mb-1">Rate</p>
+                    <p className="text-[10px] uppercase tracking-wider text-amber-600 mb-1">Pricing</p>
                     <p className="text-sm font-bold text-stone-900">{current.price}</p>
                   </div>
                 </div>
@@ -467,9 +465,9 @@ export default function GlassPartitions() {
 
           <FadeIn delay={200} className="mt-12 text-center">
             <p className="text-stone-400 text-sm">
-              Trusted by <span className="text-stone-700 font-semibold">Embassy REIT</span> ·{" "}
-              <span className="text-stone-700 font-semibold">LTIMindtree</span> ·{" "}
-              <span className="text-stone-700 font-semibold">Pune International Airport</span>
+              Clients include <span className="text-stone-700 font-semibold">Embassy REIT</span> ·{" "}
+              <span className="text-stone-700 font-semibold">L&amp;T Construction</span> ·{" "}
+              <span className="text-stone-700 font-semibold">Jindal Stainless Limited</span>
             </p>
           </FadeIn>
         </div>
@@ -538,10 +536,10 @@ export default function GlassPartitions() {
               Pricing
             </p>
             <h2 className="text-2xl md:text-3xl font-bold text-stone-900 mb-2">
-              Glass Partition & Enclosure Cost — 2026
+              Glass Partition & Enclosure Cost: How We Quote
             </h2>
             <p className="text-stone-400 text-sm">
-              Indicative rates. Final cost depends on specifications & complexity. GST extra.
+              We quote against drawings. Final cost depends on specification and complexity.
             </p>
           </FadeIn>
 
@@ -552,15 +550,15 @@ export default function GlassPartitions() {
                   <tr className="border-b-2 border-stone-800">
                     <th className="py-3 text-xs font-bold uppercase tracking-wider text-stone-500">System</th>
                     <th className="py-3 text-xs font-bold uppercase tracking-wider text-stone-500">Glass Type</th>
-                    <th className="py-3 text-xs font-bold uppercase tracking-wider text-stone-500 text-right">Rate / sq ft</th>
+                    <th className="py-3 text-xs font-bold uppercase tracking-wider text-stone-500 text-right">Pricing</th>
                   </tr>
                 </thead>
                 <tbody className="text-sm">
                   {[
-                    { system: "Frameless Partition", glass: "10–12mm toughened", price: "₹350 – ₹600 /sq ft" },
-                    { system: "Acoustic DGU Partition", glass: "6+12+6mm DGU", price: "₹600 – ₹1,000 /sq ft" },
-                    { system: "Smart Glass Wall", glass: "PDLC laminated", price: "₹1,200 – ₹2,500 /sq ft" },
-                    { system: "Shower Enclosure", glass: "8–12mm toughened", price: "₹15,000 – ₹45,000 /unit" },
+                    { system: "Frameless Partition", glass: "10–12mm toughened", price: "Quoted on drawings" },
+                    { system: "Acoustic DGU Partition", glass: "6+12+6mm DGU", price: "Quoted on drawings" },
+                    { system: "Smart Glass Wall", glass: "PDLC laminated", price: "Quoted on drawings" },
+                    { system: "Shower Enclosure", glass: "8–12mm toughened", price: "Quoted on drawings" },
                   ].map((row) => (
                     <tr key={row.system} className="border-b border-stone-100 hover:bg-stone-50 transition-colors">
                       <td className="py-3 font-semibold text-stone-800">{row.system}</td>
@@ -634,7 +632,7 @@ export default function GlassPartitions() {
                   Where We Work
                 </p>
                 <div className="flex flex-wrap gap-x-6 gap-y-2">
-                  {["Pune", "Mumbai BKC", "Navi Mumbai", "Thane", "Nashik", "Hinjewadi", "Pimpri-Chinchwad"].map((city) => (
+                  {["Pune", "Mumbai BKC", "Navi Mumbai", "Thane", "Hinjewadi", "Pimpri-Chinchwad"].map((city) => (
                     <div key={city} className="flex items-center gap-1.5">
                       <MapPin size={11} className="text-amber-500" />
                       <span className="text-white/60 text-sm">{city}</span>

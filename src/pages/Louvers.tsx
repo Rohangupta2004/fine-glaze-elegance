@@ -94,7 +94,7 @@ const SYSTEMS = [
     glass: "Flat / elliptical blade",
     wind: "Fixed angle",
     bestFor: "Parking, facades, utilities",
-    price: "₹250 – ₹500 /sq ft",
+    price: "Quoted on drawings",
     img: "fixed",
   },
   {
@@ -104,7 +104,7 @@ const SYSTEMS = [
     glass: "Aerofoil blade",
     wind: "Manual rod-operated",
     bestFor: "Offices, residential",
-    price: "₹400 – ₹700 /sq ft",
+    price: "Quoted on drawings",
     img: "operable",
   },
   {
@@ -114,7 +114,7 @@ const SYSTEMS = [
     glass: "Aerofoil blade",
     wind: "Motorised + sensor",
     bestFor: "Green buildings, IT parks",
-    price: "₹700 – ₹1,200 /sq ft",
+    price: "Quoted on drawings",
     img: "motorised",
   },
   {
@@ -124,7 +124,7 @@ const SYSTEMS = [
     glass: "Custom profiles",
     wind: "Fixed / operable",
     bestFor: "Feature facades, screens",
-    price: "₹350 – ₹800 /sq ft",
+    price: "Quoted on drawings",
     img: "fins",
   },
 ];
@@ -150,7 +150,6 @@ export default function Louvers() {
       "@id": "https://fineglaze.com",
       url: "https://fineglaze.com",
       telephone: "+91-8369233566",
-      priceRange: "₹₹₹",
       address: {
         "@type": "PostalAddress",
         addressLocality: "Pune",
@@ -325,11 +324,10 @@ export default function Louvers() {
           <FadeIn>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-0 md:divide-x md:divide-stone-700">
               {[
-                { number: "70%", label: "Solar Heat Reduction" },
-                { number: "10+", label: "Years Experience" },
-                { number: "300mm", label: "Max Blade Width" },
-                { number: "Any RAL", label: "Custom Colours" },
-              ].map((s) => (
+                { number: "16", label: "Project Records Documented" },
+                { number: "~20,566", label: "Sqm Facade Delivered" },
+                { number: "40+", label: "Core Team" },
+                { number: "2024", label: "Embassy REIT Best Vendor Performance" },].map((s) => (
                 <div key={s.label} className="text-center px-4">
                   <p className="text-2xl md:text-3xl font-bold text-white">{s.number}</p>
                   <p className="text-stone-500 text-[11px] uppercase tracking-widest mt-1">{s.label}</p>
@@ -401,7 +399,7 @@ export default function Louvers() {
                     <p className="text-sm font-semibold text-stone-800">{current.bestFor}</p>
                   </div>
                   <div className="bg-amber-50 p-3 border border-amber-200">
-                    <p className="text-[10px] uppercase tracking-wider text-amber-600 mb-1">Rate</p>
+                    <p className="text-[10px] uppercase tracking-wider text-amber-600 mb-1">Pricing</p>
                     <p className="text-sm font-bold text-stone-900">{current.price}</p>
                   </div>
                 </div>
@@ -467,9 +465,9 @@ export default function Louvers() {
 
           <FadeIn delay={200} className="mt-12 text-center">
             <p className="text-stone-400 text-sm">
-              Trusted by <span className="text-stone-700 font-semibold">Embassy REIT</span> ·{" "}
-              <span className="text-stone-700 font-semibold">LTIMindtree</span> ·{" "}
-              <span className="text-stone-700 font-semibold">Pune International Airport</span>
+              Clients include <span className="text-stone-700 font-semibold">Embassy REIT</span> ·{" "}
+              <span className="text-stone-700 font-semibold">L&amp;T Construction</span> ·{" "}
+              <span className="text-stone-700 font-semibold">Jindal Stainless Limited</span>
             </p>
           </FadeIn>
         </div>
@@ -538,10 +536,10 @@ export default function Louvers() {
               Pricing
             </p>
             <h2 className="text-2xl md:text-3xl font-bold text-stone-900 mb-2">
-              Aluminium Louver Cost — 2026
+              Aluminium Louver Cost: How We Quote
             </h2>
             <p className="text-stone-400 text-sm">
-              Indicative rates. Final cost depends on specifications & complexity. GST extra.
+              We quote against drawings. Final cost depends on specification and complexity.
             </p>
           </FadeIn>
 
@@ -552,15 +550,15 @@ export default function Louvers() {
                   <tr className="border-b-2 border-stone-800">
                     <th className="py-3 text-xs font-bold uppercase tracking-wider text-stone-500">System</th>
                     <th className="py-3 text-xs font-bold uppercase tracking-wider text-stone-500">Blade Type</th>
-                    <th className="py-3 text-xs font-bold uppercase tracking-wider text-stone-500 text-right">Rate / sq ft</th>
+                    <th className="py-3 text-xs font-bold uppercase tracking-wider text-stone-500 text-right">Pricing</th>
                   </tr>
                 </thead>
                 <tbody className="text-sm">
                   {[
-                    { system: "Fixed Louvers", glass: "Flat / elliptical blade", price: "₹250 – ₹500" },
-                    { system: "Operable Louvers", glass: "Aerofoil + rod mechanism", price: "₹400 – ₹700" },
-                    { system: "Motorised System", glass: "Aerofoil + motor + sensor", price: "₹700 – ₹1,200" },
-                    { system: "Vertical Fins / Screens", glass: "Custom profiles", price: "₹350 – ₹800" },
+                    { system: "Fixed Louvers", glass: "Flat / elliptical blade", price: "Quoted on drawings" },
+                    { system: "Operable Louvers", glass: "Aerofoil + rod mechanism", price: "Quoted on drawings" },
+                    { system: "Motorised System", glass: "Aerofoil + motor + sensor", price: "Quoted on drawings" },
+                    { system: "Vertical Fins / Screens", glass: "Custom profiles", price: "Quoted on drawings" },
                   ].map((row) => (
                     <tr key={row.system} className="border-b border-stone-100 hover:bg-stone-50 transition-colors">
                       <td className="py-3 font-semibold text-stone-800">{row.system}</td>
@@ -634,7 +632,7 @@ export default function Louvers() {
                   Where We Work
                 </p>
                 <div className="flex flex-wrap gap-x-6 gap-y-2">
-                  {["Pune", "Mumbai BKC", "Navi Mumbai", "Thane", "Nashik", "Hinjewadi", "Pimpri-Chinchwad"].map((city) => (
+                  {["Pune", "Mumbai BKC", "Navi Mumbai", "Thane", "Hinjewadi", "Pimpri-Chinchwad"].map((city) => (
                     <div key={city} className="flex items-center gap-1.5">
                       <MapPin size={11} className="text-amber-500" />
                       <span className="text-white/60 text-sm">{city}</span>

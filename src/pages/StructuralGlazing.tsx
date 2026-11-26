@@ -92,11 +92,11 @@ const SYSTEMS = [
   {
     num: "01",
     title: "2-Side Structural Glazing",
-    desc: "Two edges bonded with structural silicone, remaining two held with aluminium pressure caps. The most cost-effective way to get a partially frameless facade.",
+    desc: "Two edges bonded with structural silicone, remaining two held with aluminium pressure caps. A partially frameless facade option.",
     glass: "6–12mm toughened",
-    wind: "Up to 3.0 kPa",
+    wind: "Sized to project wind load",
     bestFor: "IT parks, offices, showrooms",
-    price: "₹350 – ₹550 /sq ft",
+    price: "Quoted on drawings",
     img: "twoSide" as const,
   },
   {
@@ -104,9 +104,9 @@ const SYSTEMS = [
     title: "4-Side Structural Glazing",
     desc: "All four edges bonded — no external frame visible. The premium choice for high-end towers and corporate headquarters.",
     glass: "10–19mm DGU / Low-E",
-    wind: "Up to 4.5 kPa",
+    wind: "Sized to project wind load",
     bestFor: "Towers, hotels, airports",
-    price: "₹500 – ₹800 /sq ft",
+    price: "Quoted on drawings",
     img: "fourSide" as const,
   },
   {
@@ -114,9 +114,9 @@ const SYSTEMS = [
     title: "Spider / Point-Fixed Glazing",
     desc: "Glass panels held by stainless steel spider fittings at drilled points — near-invisible structure for maximum transparency.",
     glass: "12–19mm laminated",
-    wind: "SS 316 marine-grade",
+    wind: "Stainless steel fittings",
     bestFor: "Atriums, lobbies, feature walls",
-    price: "₹800 – ₹1,500 /sq ft",
+    price: "Quoted on drawings",
     img: "spider" as const,
   },
   {
@@ -132,10 +132,10 @@ const SYSTEMS = [
 ];
 
 const STEPS = [
-  { num: "01", title: "Site Visit", desc: "Engineers assess your building and design intent" },
-  { num: "02", title: "Engineering", desc: "Shop drawings & IS-standard structural calculations" },
-  { num: "03", title: "Fabrication", desc: "Aluminium & glass systems built in our Pune facility" },
-  { num: "04", title: "Installation", desc: "Certified crews install with quality checkpoints" },
+  { num: "01", title: "Site Survey", desc: "Measurement, access study and scope freeze" },
+  { num: "02", title: "Engineering", desc: "In-house shop drawings and wind-load engineering check" },
+  { num: "03", title: "Fabrication", desc: "Fabrication at our Pisoli, Pune unit, batched per project" },
+  { num: "04", title: "Installation", desc: "Sequenced erection with line, level and plumb checks" },
 ];
 
 export default function StructuralGlazing() {
@@ -153,7 +153,6 @@ export default function StructuralGlazing() {
       "@id": "https://fineglaze.com",
       url: "https://fineglaze.com",
       telephone: "+91-8369233566",
-      priceRange: "₹₹₹",
       address: {
         "@type": "PostalAddress",
         addressLocality: "Pune",
@@ -167,7 +166,7 @@ export default function StructuralGlazing() {
       { "@type": "City", name: "Navi Mumbai" },
     ],
     description:
-      "Frameless structural glazing systems — 2-side, 4-side & spider glazing for commercial buildings, showrooms, and premium architecture across India. ₹350–₹1,500/sq ft.",
+      "Frameless structural glazing systems: 2-side, 4-side and spider glazing for commercial buildings and showrooms, in Pune, Mumbai and across India.",
   };
 
   const breadcrumbSchema = {
@@ -189,7 +188,7 @@ export default function StructuralGlazing() {
         name: "What is structural glazing and how does it work?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Structural glazing bonds glass to an aluminium frame using structural silicone sealant instead of mechanical fixings — creating a seamless, frameless glass appearance while maintaining structural integrity.",
+          text: "Structural glazing bonds glass to an aluminium frame with structural silicone instead of mechanical fixings, giving a seamless, frameless look while the silicone and frame carry the glass loads. The system is sized to the project wind load.",
         },
       },
       {
@@ -197,7 +196,7 @@ export default function StructuralGlazing() {
         name: "How much does structural glazing cost per sq ft in India in 2026?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Standard 2-side SSG: ₹350–₹550/sq ft. Premium 4-side SSG: ₹500–₹800/sq ft. Spider glazing: ₹800–₹1,500/sq ft.",
+          text: "Structural glazing cost depends on the configuration (2-side, 4-side or spider), glass, height and access, so it needs drawings to price. Fine Glaze prepares BOQ-based quotations.",
         },
       },
     ],
@@ -323,15 +322,14 @@ export default function StructuralGlazing() {
       {/* ════════════ CONVERSION QUICK OVERVIEW ════════════ */}
       <ServiceQuickOverview
         serviceTitle="Structural Glazing Systems"
-        whatWeProvide="In-house shop drawings and engineering checks, fabrication at our Pisoli (Pune) unit, DOWSIL structural silicone bonding (or the approved equivalent), on-site installation & AAMA 501.2 hose testing."
+        whatWeProvide="In-house shop drawings and engineering checks, fabrication at our Pisoli (Pune) unit, DOWSIL structural silicone bonding (or the approved equivalent), on-site installation & a site water penetration test."
         locationsServed={["Pune (Hinjewadi, Kharadi)", "Mumbai (BKC, Andheri, Vikhroli)", "Thane", "Navi Mumbai"]}
         bestProjectTypes={[
           "Grade-A Office Towers",
           "IT Park Buildings",
-          "5-Star Hotel Entrance Canopies",
+          "Hotel Entrance Canopies",
           "Commercial Automobile Showrooms"
         ]}
-        priceBenchmark="₹350 – ₹900 per sq ft (2-Side SSG, 4-Side SSG & Spider Glazing)"
         relevantProjects={[
           "Embassy 247 (Vikhroli, Mumbai)",
           "LTIMindtree Mensa Campus (Navi Mumbai)",
@@ -349,11 +347,10 @@ export default function StructuralGlazing() {
           <FadeIn>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-0 md:divide-x md:divide-stone-700">
               {[
-                { number: "10+", label: "Years Experience" },
-                { number: "10+", label: "Projects Delivered" },
-                { number: "0", label: "Safety Incidents" },
-                { number: "DLP", label: "Defect Liability per Contract" },
-              ].map((s) => (
+                { number: "16", label: "Project Records Documented" },
+                { number: "~20,566", label: "Sqm Facade Delivered" },
+                { number: "40+", label: "Core Team" },
+                { number: "2024", label: "Embassy REIT Best Vendor Performance" },].map((s) => (
                 <div key={s.label} className="text-center px-4">
                   <p className="text-2xl md:text-3xl font-bold text-white">{s.number}</p>
                   <p className="text-stone-500 text-[11px] uppercase tracking-widest mt-1">{s.label}</p>
@@ -429,7 +426,7 @@ export default function StructuralGlazing() {
                     <p className="text-sm font-semibold text-stone-800">{current.bestFor}</p>
                   </div>
                   <div className="bg-amber-50 p-3 border border-amber-200">
-                    <p className="text-[10px] uppercase tracking-wider text-amber-600 mb-1">Rate</p>
+                    <p className="text-[10px] uppercase tracking-wider text-amber-600 mb-1">Pricing</p>
                     <p className="text-sm font-bold text-stone-900">{current.price}</p>
                   </div>
                 </div>
@@ -465,18 +462,18 @@ export default function StructuralGlazing() {
               {[
                 {
                   icon: Shield,
-                  title: "Zero Incidents",
-                  desc: "Strict safety protocols on every project. Certified installation crews only.",
+                  title: "Dedicated Safety Officer",
+                  desc: "A nominated safety officer oversees elevation work across active sites.",
                 },
                 {
                   icon: Clock,
-                  title: "On-Time Delivery",
-                  desc: "Milestone-based handovers. Embassy 247 completed with zero delays.",
+                  title: "Stage Inspections",
+                  desc: "Material, fabrication and installation checks, with the snag register closed before handover.",
                 },
                 {
                   icon: Award,
-                  title: "In-House Facility",
-                  desc: "We design, fabricate & install from our own Pune facility. No subcontracting.",
+                  title: "Own Fabrication Unit",
+                  desc: "Shop drawings are prepared in-house and fabrication is at our Pisoli, Pune unit. Heavy processing goes to approved vendors.",
                 },
                 {
                   icon: Wrench,
@@ -497,9 +494,9 @@ export default function StructuralGlazing() {
 
           <FadeIn delay={200} className="mt-12 text-center">
             <p className="text-stone-400 text-sm">
-              Trusted by <span className="text-stone-700 font-semibold">Embassy REIT</span> ·{" "}
-              <span className="text-stone-700 font-semibold">LTIMindtree</span> ·{" "}
-              <span className="text-stone-700 font-semibold">Pune International Airport</span>
+              Clients include <span className="text-stone-700 font-semibold">Embassy REIT</span> ·{" "}
+              <span className="text-stone-700 font-semibold">L&amp;T Construction</span> ·{" "}
+              <span className="text-stone-700 font-semibold">Jindal Stainless Limited</span>
             </p>
           </FadeIn>
         </div>
@@ -557,7 +554,7 @@ export default function StructuralGlazing() {
             <div>
               <p className="text-white/60 text-sm uppercase tracking-widest mb-2">Our Promise</p>
               <p className="text-white text-xl md:text-3xl font-bold max-w-xl">
-                Every facade engineered in-house. Every installation by our own teams.
+                Shop drawings prepared in-house. Installation run by a dedicated site in-charge and supervisor.
               </p>
             </div>
           </div>
@@ -575,10 +572,10 @@ export default function StructuralGlazing() {
               Pricing
             </p>
             <h2 className="text-2xl md:text-3xl font-bold text-stone-900 mb-2">
-              Structural Glazing Cost — 2026
+              Structural Glazing Cost: How We Quote
             </h2>
             <p className="text-stone-400 text-sm">
-              Indicative rates. Final cost depends on height, glass spec & complexity. GST extra.
+              We quote against drawings. Final cost depends on height, glass spec and complexity.
             </p>
           </FadeIn>
 
@@ -589,14 +586,14 @@ export default function StructuralGlazing() {
                   <tr className="border-b-2 border-stone-800">
                     <th className="py-3 text-xs font-bold uppercase tracking-wider text-stone-500">System</th>
                     <th className="py-3 text-xs font-bold uppercase tracking-wider text-stone-500">Glass</th>
-                    <th className="py-3 text-xs font-bold uppercase tracking-wider text-stone-500 text-right">Rate / sq ft</th>
+                    <th className="py-3 text-xs font-bold uppercase tracking-wider text-stone-500 text-right">Pricing</th>
                   </tr>
                 </thead>
                 <tbody className="text-sm">
                   {[
-                    { system: "2-Side SSG", glass: "6 – 12 mm toughened", price: "₹350 – ₹550" },
-                    { system: "4-Side SSG", glass: "10 – 19 mm DGU / Low-E", price: "₹500 – ₹800" },
-                    { system: "Spider / Point-Fixed", glass: "12 – 19 mm laminated", price: "₹800 – ₹1,500" },
+                    { system: "2-Side SSG", glass: "6 – 12 mm toughened", price: "Quoted on drawings" },
+                    { system: "4-Side SSG", glass: "10 – 19 mm DGU / Low-E", price: "Quoted on drawings" },
+                    { system: "Spider / Point-Fixed", glass: "12 – 19 mm laminated", price: "Quoted on drawings" },
                     { system: "Frameless Canopy", glass: "17.52 – 21.52 mm laminated", price: "On request" },
                   ].map((row) => (
                     <tr key={row.system} className="border-b border-stone-100 hover:bg-stone-50 transition-colors">
@@ -639,23 +636,23 @@ export default function StructuralGlazing() {
             <div>
               <FAQItem
                 q="What is structural glazing and how does it work?"
-                a="Structural glazing bonds glass to an aluminium frame using structural silicone sealant instead of mechanical fixings — creating a seamless, frameless glass appearance while maintaining structural integrity against wind loads and weather."
+                a="Structural glazing bonds glass to an aluminium frame with structural silicone instead of mechanical fixings, giving a seamless, frameless look while the silicone and frame carry the glass loads. The system is sized to the project wind load."
               />
               <FAQItem
                 q="How much does structural glazing cost per sq ft in India?"
-                a="Standard 2-side SSG ranges from ₹350–₹550 per sq ft. Premium 4-side SSG starts at ₹500–₹800 per sq ft. Spider glazing ranges from ₹800–₹1,500 per sq ft depending on glass type and fittings."
+                a="Structural glazing cost depends on the configuration (2-side, 4-side or spider), glass, height and access, so it needs drawings to price. Fine Glaze prepares BOQ-based quotations."
               />
               <FAQItem
                 q="Is structural glazing safe for high-rise buildings?"
-                a="Yes. Systems are engineered to IS 875 standards, withstanding wind loads of 1.5–4.5 kPa. Fine Glaze uses Dow Corning / Sika structural silicone rated for 25+ years of adhesion strength."
+                a="Structural glazing can be used on tall buildings when it is designed for the project wind load, with proper sealant, retention and drainage. Fine Glaze checks member sizing, fixing and anchorage and procures DOWSIL structural silicone or approved equivalents."
               />
               <FAQItem
                 q="How long does installation take?"
-                a="Typically 2–6 weeks depending on facade area and building height. Fine Glaze works with milestone-based handovers. Embassy 247 was completed on time with zero delays."
+                a="Installation time depends on facade area, building height, access and glass lead time, so we confirm the programme per project after survey and design approval. Fabrication is batched at our Pisoli unit and despatched to site."
               />
               <FAQItem
                 q="Do you offer maintenance after installation?"
-                a="Yes. We provide AMC (Annual Maintenance Contracts) covering sealant inspection, glass replacement, weather seal renewal, and facade cleaning — ensuring long-term performance."
+                a="Yes. We offer annual maintenance contracts for glazing, glass and cladding, covering inspection, sealant re-application, glass replacement and cleaning, with a written condition report."
               />
             </div>
           </FadeIn>
@@ -676,7 +673,7 @@ export default function StructuralGlazing() {
                   Where We Work
                 </p>
                 <div className="flex flex-wrap gap-x-6 gap-y-2">
-                  {["Pune", "Mumbai BKC", "Navi Mumbai", "Thane", "Nashik", "Hinjewadi", "Pimpri-Chinchwad"].map((city) => (
+                  {["Pune", "Mumbai BKC", "Navi Mumbai", "Thane", "Hinjewadi", "Pimpri-Chinchwad"].map((city) => (
                     <div key={city} className="flex items-center gap-1.5">
                       <MapPin size={11} className="text-amber-500" />
                       <span className="text-white/60 text-sm">{city}</span>

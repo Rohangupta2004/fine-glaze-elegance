@@ -96,7 +96,7 @@ const SYSTEMS = [
     glass: "Laminated DGU / Low-E",
     wind: "Aluminium ridge-&-rafter",
     bestFor: "Atriums, malls, hotels",
-    price: "₹600 – ₹1,200 /sq ft",
+    price: "Quoted on drawings",
     img: "atrium",
   },
   {
@@ -106,7 +106,7 @@ const SYSTEMS = [
     glass: "17.52–21.52mm laminated",
     wind: "SS spider / glass fins",
     bestFor: "Entrances, walkways",
-    price: "₹800 – ₹1,500 /sq ft",
+    price: "Quoted on drawings",
     img: "frameless",
   },
   {
@@ -116,7 +116,7 @@ const SYSTEMS = [
     glass: "12–19mm laminated",
     wind: "SS 316 spider arms",
     bestFor: "Commercial entries, bridges",
-    price: "₹900 – ₹1,800 /sq ft",
+    price: "Quoted on drawings",
     img: "spider",
   },
   {
@@ -126,7 +126,7 @@ const SYSTEMS = [
     glass: "10–25mm multiwall PC",
     wind: "Aluminium frame",
     bestFor: "Car parks, factories",
-    price: "₹150 – ₹350 /sq ft",
+    price: "Quoted on drawings",
     img: "poly",
   },
 ];
@@ -152,7 +152,6 @@ export default function Skylights() {
       "@id": "https://fineglaze.com",
       url: "https://fineglaze.com",
       telephone: "+91-8369233566",
-      priceRange: "₹₹₹",
       address: {
         "@type": "PostalAddress",
         addressLocality: "Pune",
@@ -326,12 +325,11 @@ export default function Skylights() {
         whatWeProvide="Laminated safety glass skylights, atrium overhead glazing, spider glass canopies & MS/SS structural support framing. Includes integrated gutting, flashing & Dow Corning 795 weather sealing."
         locationsServed={["Pune", "Mumbai (South Mumbai, BKC)", "Thane", "Navi Mumbai"]}
         bestProjectTypes={[
-          "5-Star Hotel Grand Entrance Canopies",
+          "Hotel Entrance Canopies",
           "Shopping Mall Atrium Skylights",
           "Corporate HQ Entry Porticos",
           "Luxury Villa Skylights & Courtyards"
         ]}
-        priceBenchmark="₹600 – ₹1,800 per sq ft (Depending on span, glass thickness & SS fittings)"
         relevantProjects={[
           "Salsette-27 Entrance Canopy (Mumbai)",
           "Pune Airport Terminal Column & Canopy Works"
@@ -345,11 +343,10 @@ export default function Skylights() {
           <FadeIn>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-0 md:divide-x md:divide-stone-700">
               {[
-                { number: "50%", label: "More Natural Light" },
-                { number: "10+", label: "Years Experience" },
-                { number: "0", label: "Leak Incidents" },
-                { number: "DLP", label: "Defect Liability per Contract" },
-              ].map((s) => (
+                { number: "16", label: "Project Records Documented" },
+                { number: "~20,566", label: "Sqm Facade Delivered" },
+                { number: "40+", label: "Core Team" },
+                { number: "2024", label: "Embassy REIT Best Vendor Performance" },].map((s) => (
                 <div key={s.label} className="text-center px-4">
                   <p className="text-2xl md:text-3xl font-bold text-white">{s.number}</p>
                   <p className="text-stone-500 text-[11px] uppercase tracking-widest mt-1">{s.label}</p>
@@ -421,7 +418,7 @@ export default function Skylights() {
                     <p className="text-sm font-semibold text-stone-800">{current.bestFor}</p>
                   </div>
                   <div className="bg-amber-50 p-3 border border-amber-200">
-                    <p className="text-[10px] uppercase tracking-wider text-amber-600 mb-1">Rate</p>
+                    <p className="text-[10px] uppercase tracking-wider text-amber-600 mb-1">Pricing</p>
                     <p className="text-sm font-bold text-stone-900">{current.price}</p>
                   </div>
                 </div>
@@ -487,9 +484,9 @@ export default function Skylights() {
 
           <FadeIn delay={200} className="mt-12 text-center">
             <p className="text-stone-400 text-sm">
-              Trusted by <span className="text-stone-700 font-semibold">Embassy REIT</span> ·{" "}
-              <span className="text-stone-700 font-semibold">LTIMindtree</span> ·{" "}
-              <span className="text-stone-700 font-semibold">Pune International Airport</span>
+              Clients include <span className="text-stone-700 font-semibold">Embassy REIT</span> ·{" "}
+              <span className="text-stone-700 font-semibold">L&amp;T Construction</span> ·{" "}
+              <span className="text-stone-700 font-semibold">Jindal Stainless Limited</span>
             </p>
           </FadeIn>
         </div>
@@ -558,10 +555,10 @@ export default function Skylights() {
               Pricing
             </p>
             <h2 className="text-2xl md:text-3xl font-bold text-stone-900 mb-2">
-              Skylight & Canopy Cost — 2026
+              Skylight & Canopy Cost: How We Quote
             </h2>
             <p className="text-stone-400 text-sm">
-              Indicative rates. Final cost depends on specifications & complexity. GST extra.
+              We quote against drawings. Final cost depends on specification and complexity.
             </p>
           </FadeIn>
 
@@ -572,15 +569,15 @@ export default function Skylights() {
                   <tr className="border-b-2 border-stone-800">
                     <th className="py-3 text-xs font-bold uppercase tracking-wider text-stone-500">System</th>
                     <th className="py-3 text-xs font-bold uppercase tracking-wider text-stone-500">Material</th>
-                    <th className="py-3 text-xs font-bold uppercase tracking-wider text-stone-500 text-right">Rate / sq ft</th>
+                    <th className="py-3 text-xs font-bold uppercase tracking-wider text-stone-500 text-right">Pricing</th>
                   </tr>
                 </thead>
                 <tbody className="text-sm">
                   {[
-                    { system: "Atrium Skylight", glass: "Laminated DGU + aluminium", price: "₹600 – ₹1,200" },
-                    { system: "Frameless Canopy", glass: "17.52mm laminated + SS", price: "₹800 – ₹1,500" },
-                    { system: "Spider-Fitting Canopy", glass: "Laminated + SS 316", price: "₹900 – ₹1,800" },
-                    { system: "Polycarbonate Roof", glass: "Multiwall PC + aluminium", price: "₹150 – ₹350" },
+                    { system: "Atrium Skylight", glass: "Laminated DGU + aluminium", price: "Quoted on drawings" },
+                    { system: "Frameless Canopy", glass: "17.52mm laminated + SS", price: "Quoted on drawings" },
+                    { system: "Spider-Fitting Canopy", glass: "Laminated + SS 316", price: "Quoted on drawings" },
+                    { system: "Polycarbonate Roof", glass: "Multiwall PC + aluminium", price: "Quoted on drawings" },
                   ].map((row) => (
                     <tr key={row.system} className="border-b border-stone-100 hover:bg-stone-50 transition-colors">
                       <td className="py-3 font-semibold text-stone-800">{row.system}</td>
@@ -654,7 +651,7 @@ export default function Skylights() {
                   Where We Work
                 </p>
                 <div className="flex flex-wrap gap-x-6 gap-y-2">
-                  {["Pune", "Mumbai BKC", "Navi Mumbai", "Thane", "Nashik", "Hinjewadi", "Pimpri-Chinchwad"].map((city) => (
+                  {["Pune", "Mumbai BKC", "Navi Mumbai", "Thane", "Hinjewadi", "Pimpri-Chinchwad"].map((city) => (
                     <div key={city} className="flex items-center gap-1.5">
                       <MapPin size={11} className="text-amber-500" />
                       <span className="text-white/60 text-sm">{city}</span>
