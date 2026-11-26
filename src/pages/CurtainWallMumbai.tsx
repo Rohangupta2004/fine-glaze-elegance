@@ -36,9 +36,9 @@ export default function CurtainWallMumbai() {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      { "@type": "Question", "name": "What wind load standards apply to curtain walls in Mumbai?", "acceptedAnswer": { "@type": "Answer", "text": "Mumbai falls in IS:875 Part 3 Wind Zone IV (basic wind speed 44 m/s). All Fine Glaze curtain wall systems for Mumbai are designed for this wind zone with gust factors for building height. Above 30 storeys, CFD analysis is used for accurate wind pressure coefficients." } },
-      { "@type": "Question", "name": "How does Fine Glaze handle curtain wall logistics in Mumbai?", "acceptedAnswer": { "@type": "Answer", "text": "Fine Glaze uses just-in-time delivery, crane coordination with building management, night shifts for road deliveries, and pre-positioned mobile cranes for efficient installation without disrupting building occupants or street traffic." } },
-      { "@type": "Question", "name": "Does Fine Glaze provide curtain wall refurbishment in Mumbai?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We offer full curtain wall refurbishment including sealant replacement, glass panel replacement, gasket renewal, and frame recladding for older Mumbai commercial buildings needing facade upgrades." } },
+      { "@type": "Question", "name": "What wind load standards apply to curtain walls in Mumbai?", "acceptedAnswer": { "@type": "Answer", "text": "Curtain wall wind loads in India are normally taken from IS 875 Part 3, using the project's basic wind speed, height and terrain. Fine Glaze checks member sizing, fixing and anchorage against the wind load in the project design basis." } },
+      { "@type": "Question", "name": "How does Fine Glaze handle curtain wall logistics in Mumbai?", "acceptedAnswer": { "@type": "Answer", "text": "Logistics on tight Mumbai sites are planned per project, covering material access, hoisting and delivery windows agreed with the main contractor or building management. Fine Glaze fabricates in batches and despatches directly to site." } },
+      { "@type": "Question", "name": "Does Fine Glaze provide curtain wall refurbishment in Mumbai?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Fine Glaze handles sealant re-application, glass replacement, joint repair and leakage rectification on existing facades, with a written condition report from periodic inspection where required." } },
     ]
   };
 
@@ -69,7 +69,7 @@ export default function CurtainWallMumbai() {
             <h1 className="text-3xl md:text-4xl font-bold mb-4">
               Curtain Wall Glazing <span className="text-gradient-gold">Contractor in Mumbai</span>
             </h1>
-            <p className="text-lg text-white/80 mb-8">Fine Glaze delivers engineering-grade curtain wall glazing systems in Mumbai — from complex unitized towers in BKC to stick system installations in Andheri's commercial belt. All Mumbai curtain walls are specifically engineered for coastal wind loads, cyclone zone requirements, and high-salinity environment.</p>
+            <p className="text-lg text-white/80 mb-8">Fine Glaze takes curtain wall projects in Mumbai, from unitized towers to stick-system installations. Shop drawings are prepared in-house and engineered against the project wind load before approval.</p>
             <div className="flex gap-4">
               <Link to="/contact">
                 <Button size="lg" className="bg-amber-600 hover:bg-amber-700">Book a call</Button>
@@ -94,21 +94,21 @@ export default function CurtainWallMumbai() {
       <section className="py-20">
         <div className="container mx-auto px-4 max-w-5xl space-y-6">
           
-          <h2 className="text-3xl font-bold">Mumbai High-Rise Curtain Wall Specialists</h2>
+          <h2 className="text-3xl font-bold">Curtain Wall Work in Mumbai</h2>
           <p className="text-muted-foreground">
-            Mumbai is one of India's most demanding environments for facade systems — combining high-rise density, coastal wind loads (Zone IV/V), monsoon rainfall intensity, and saline air. Fine Glaze's Mumbai curtain wall systems are engineered from the ground up for these conditions, using marine-grade components, heavy-duty EPDM gaskets, and coastal-certified structural sealants.
+            Mumbai combines high-rise density, coastal wind, heavy monsoon rainfall and salty air, so curtain wall design there needs careful attention to wind load, drainage and material durability. Fine Glaze prepares shop drawings in-house and checks member sizing, fixing and anchorage against the project wind load.
           </p>
           <p className="text-muted-foreground mt-4">
-            Our Mumbai curtain wall portfolio includes prestigious projects in <strong>BKC</strong> (corporate towers), <strong>Lower Parel</strong> (premium residential and commercial high-rises), <strong>Andheri SEEPZ &amp; MIDC</strong> (industrial and tech campus facades), and <strong>Powai</strong> (lakeside corporate parks). Each project undergoes independent third-party water penetration and air infiltration testing per ASTM E331 / IS:11197 standards.
+            Our documented Mumbai work includes structural glazing and ACP cladding at Naman Chambers in BKC and facade maintenance at Embassy 247, Vikhroli. For curtain wall projects we can share relevant references on request.
           </p>
           <p className="text-muted-foreground mt-4">
-            For Mumbai high-rises above 30 storeys, Fine Glaze recommends <strong>unitized curtain wall systems</strong> with inter-lock pressure equalisation — the industry gold standard for tall buildings in cyclone-prone coastal zones. This system design prevents water ingress even at wind speeds up to 220 km/h, far exceeding Mumbai's design wind speed of 44 m/s.
+            As general guidance, unitized curtain walls suit tall buildings and tight programmes because panels are assembled in a factory, while stick systems suit lower and mid-rise buildings with easier access. The right choice depends on height, access, programme and budget.
           </p>
           <p className="text-muted-foreground mt-4">
-            Glass selection is critical in Mumbai's coastal environment. Fine Glaze specifies Low-E DGU glass with argon fill for all BKC and CBD towers, delivering LEED EAc1 energy performance credits while maintaining high visible light transmittance. For residential towers near the seafront, we recommend tinted glass with 30-40% solar heat gain coefficient (SHGC) to reduce cooling loads.
+            Glass choice affects cooling load and daylight. Low-E double glazed units are commonly specified on commercial towers, and the exact build-up should follow the project's energy and daylight brief.
           </p>
           <p className="text-muted-foreground mt-4">
-            Fine Glaze provides complete Mumbai curtain wall services: structural design coordination, shop drawings, material procurement, factory fabrication, logistics management (including crane and gondola planning for tight urban sites), installation, testing, and post-completion AMC.
+            Fine Glaze handles curtain wall scope from survey and shop drawings through fabrication, installation, site water penetration testing, snagging and handover, with AMC available afterwards.
           </p>
     
         </div>
@@ -119,12 +119,12 @@ export default function CurtainWallMumbai() {
         <div className="container mx-auto px-4 max-w-5xl">
           <h2 className="text-3xl font-bold mb-10 text-center">What We Offer</h2>
           <div className="grid md:grid-cols-2 gap-4">
-              <div key="Cyclone Zone IV/V Engineering" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Cyclone Zone IV/V Engineering</span></div>
-              <div key="ASTM E331 Water Test" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">ASTM E331 Water Test</span></div>
-              <div key="Marine Grade Hardware" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Marine Grade Hardware</span></div>
-              <div key="Inter-lock Pressure Equalisation" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Inter-lock Pressure Equalisation</span></div>
-              <div key="BKC & South Mumbai Projects" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">BKC & South Mumbai Projects</span></div>
-              <div key="LEED DGU Low-E Glass" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">LEED DGU Low-E Glass</span></div>
+              <div key="Wind Load Engineering Check" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Wind Load Engineering Check</span></div>
+              <div key="Site Water Penetration Test" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Site Water Penetration Test</span></div>
+              <div key="Corrosion-Resistant Hardware" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Corrosion-Resistant Hardware</span></div>
+              <div key="Pressure-Equalised Joint Design" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Pressure-Equalised Joint Design</span></div>
+              <div key="BKC and Mumbai Projects" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">BKC and Mumbai Projects</span></div>
+              <div key="DGU Low-E Glass Options" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">DGU Low-E Glass Options</span></div>
           </div>
         </div>
       </section>
@@ -136,15 +136,15 @@ export default function CurtainWallMumbai() {
           <div className="space-y-6">
             <div className="bg-background rounded-xl p-6 shadow-sm">
               <h3 className="text-lg font-bold mb-2">What wind load standards apply to curtain walls in Mumbai?</h3>
-              <p className="text-muted-foreground">Mumbai falls in IS:875 Part 3 Wind Zone IV (basic wind speed 44 m/s). All Fine Glaze curtain wall systems for Mumbai are designed for this wind zone with gust factors for building height. Above 30 storeys, CFD analysis is used for accurate wind pressure coefficients.</p>
+              <p className="text-muted-foreground">Curtain wall wind loads in India are normally taken from IS 875 Part 3, using the project's basic wind speed, height and terrain. Fine Glaze checks member sizing, fixing and anchorage against the wind load in the project design basis.</p>
             </div>
             <div className="bg-background rounded-xl p-6 shadow-sm">
               <h3 className="text-lg font-bold mb-2">How does Fine Glaze handle curtain wall logistics in Mumbai?</h3>
-              <p className="text-muted-foreground">Fine Glaze uses just-in-time delivery, crane coordination with building management, night shifts for road deliveries, and pre-positioned mobile cranes for efficient installation without disrupting building occupants or street traffic.</p>
+              <p className="text-muted-foreground">Logistics on tight Mumbai sites are planned per project, covering material access, hoisting and delivery windows agreed with the main contractor or building management. Fine Glaze fabricates in batches and despatches directly to site.</p>
             </div>
             <div className="bg-background rounded-xl p-6 shadow-sm">
               <h3 className="text-lg font-bold mb-2">Does Fine Glaze provide curtain wall refurbishment in Mumbai?</h3>
-              <p className="text-muted-foreground">Yes. We offer full curtain wall refurbishment including sealant replacement, glass panel replacement, gasket renewal, and frame recladding for older Mumbai commercial buildings needing facade upgrades.</p>
+              <p className="text-muted-foreground">Yes. Fine Glaze handles sealant re-application, glass replacement, joint repair and leakage rectification on existing facades, with a written condition report from periodic inspection where required.</p>
             </div>
           </div>
         </div>
