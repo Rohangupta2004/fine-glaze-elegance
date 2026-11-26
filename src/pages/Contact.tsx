@@ -440,6 +440,15 @@ const Contact = () => {
                 <div className="absolute top-0 right-0 w-24 h-24 border border-line" />
 
                 <div className="relative">
+                  <img
+                    src="/fine-glaze-office.webp"
+                    alt="Fine Glaze office"
+                    width={1600}
+                    height={737}
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-auto mb-5 border border-line"
+                  />
                   <div className="flex items-center gap-3 mb-4">
                     <Building2 size={18} className="text-lamp" />
                     <p className="text-[13px] font-bold text-mute">

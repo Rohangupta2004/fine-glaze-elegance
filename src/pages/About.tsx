@@ -107,6 +107,19 @@ const About = () => {
                 </figcaption>
               </figure>
 
+              <figure className="mt-5 overflow-hidden border border-border bg-card">
+                <img
+                  src="/fine-glaze-office.webp"
+                  alt="Fine Glaze office"
+                  className="w-full h-auto"
+                  width={1600}
+                  height={737}
+                  loading="lazy"
+                  decoding="async"
+                />
+                <figcaption className="px-5 py-3 text-sm">Our office, Pune</figcaption>
+              </figure>
+
               <div className="mt-5 bg-primary text-primary-foreground p-5">
                 <Award size={32} className="mb-2" />
                 <p className="font-semibold">{company.award.title}</p>
