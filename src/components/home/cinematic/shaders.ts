@@ -33,10 +33,10 @@ vec3 skyline(vec3 c,float a,float y,vec3 hor){
   vec3 col=mix(vec3(.5,.55,.62),hor*.96,.72)*(.92+.16*b.y);
   c=mix(c,col,b.x*.9);
   b=bl(a,y,20.,2.3,.022,.092);
-  col=mix(vec3(.38,.43,.5),hor*.96,.5)*(.88+.24*b.y);
+  col=mix(vec3(.3,.35,.43),hor*.96,.46)*(.88+.24*b.y);
   c=mix(c,col,b.x*.92);
   b=bl(a,y,12.,3.9,.03,.14);
-  col=mix(vec3(.3,.34,.4),hor*.96,.26)*(.84+.3*b.y)*vec3(1.06,1.01,.94);
+  col=mix(vec3(.22,.26,.32),hor*.96,.2)*(.84+.3*b.y)*vec3(1.06,1.01,.94);
   if(uQ>.75) col*=1.-.24*(1.-b.z)*(1.-gLod);
   col=mix(col,hor,exp(-y*26.)*.5);
   return mix(c,col,b.x*.95);
@@ -45,7 +45,7 @@ vec3 ground(vec3 rd,vec3 hor){
   float gy=-rd.y; vec2 gp=rd.xz/(gy+.04)*.8;
   vec3 pave=mix(vec3(.46,.43,.39),vec3(.58,.54,.47),fbm(gp*.18+7.));
   float can=sst(.47,.6,fbm(gp*.55+2.));
-  vec3 cc=mix(vec3(.065,.09,.05),vec3(.17,.22,.1),vn(gp*3.1));
+  vec3 cc=mix(vec3(.07,.085,.06),vec3(.16,.18,.11),vn(gp*3.1));
   vec3 g=mix(pave,cc,can)*vec3(1.05,1.,.92);
   return mix(hor*.95,g,sst(.02,.28,gy));
 }
@@ -87,7 +87,7 @@ vec3 facade(vec2 uv,vec3 n,vec3 tx,vec3 rd,bool front){
   gLod=lod;
   // glass: per-panel tilt, roller wave and a centre-weighted pillow bow that differs from unit to unit
   vec2 v=f-.5;
-  vec2 pert=((vec2(r1,r2)-.5)*.014+vec2(sin(f.y*9.+r1*6.)*.0035,sin(f.x*7.+r2*6.)*.002)+v*(1.4-1.6*abs(v))*vec2(.02,.011)*(.6+.9*r5))*(1.-lod);
+  vec2 pert=((vec2(r1,r2)-.5)*.014+vec2(sin(f.y*9.+r1*6.)*.0035,sin(f.x*7.+r2*6.)*.002)+v*(1.4-1.6*abs(v))*vec2(.015,.009)*(.6+.9*r5))*(1.-lod);
   vec3 nn=normalize(n+tx*pert.x+vec3(0,1,0)*pert.y);
   vec3 R=reflect(rd,nn);
   float cs=clamp(dot(-rd,nn),0.,1.), gz=pow(1.-cs,4.5);
@@ -140,17 +140,17 @@ vec3 facade(vec2 uv,vec3 n,vec3 tx,vec3 rd,bool front){
   float litn=clamp(lit*3.,0.,1.);
   vec3 rc=mix(vec3(.62,.68,.76),warm,litn);
   float cl=exp(-tt*.07);
-  vec3 insN=rm.r*rc*(.14+lit*.34)+warm*fx*(.7*lit+.04*step(.88,r1))*cl;
+  vec3 insN=rm.r*rc*(.36+lit*.34)+warm*fx*(.7*lit+.04*step(.88,r1))*cl;
   float gy=clamp((f.y-SP)/(1.-SP),0.,1.);
   float hasB=step(.4,h21(rid+17.9))*(1.-isB), drop=.08+.52*h21(rid+91.3);
   float blv=hasB*sst(1.-drop-fw.y*1.5,1.-drop+fw.y*1.5,gy);
   float slat=.5+.5*cos(gy*FH*(1.-SP)/.06*6.2832), sv=1.-sst(.15,.4,fw.y*60.);
   if(uQ<.75) sv=0.;
   float bar=sst(.012+fw.y,.0,abs(gy-(1.-drop)))*hasB;
-  vec3 bc=mix(vec3(.3,.3,.285),vec3(.25,.25,.245),slat*sv)*(1.+litn*1.4)*mix(vec3(1.),warm,litn*.5);
+  vec3 bc=mix(vec3(.42,.41,.39),vec3(.33,.33,.32),slat*sv)*(1.+litn*1.4)*mix(vec3(1.),warm,litn*.5);
   insN=mix(insN,bc,blv*.9);
   insN=mix(insN,vec3(.07,.065,.06),bar*.7*(1.-lod));
-  vec3 insF=mix(vec3(.62,.68,.76)*.04,vec3(.3,.3,.285)*.7,hasB*drop*.8)+warm*prob*.1;
+  vec3 insF=mix(vec3(.62,.68,.76)*.09,vec3(.42,.41,.39)*.7,hasB*drop*.8)+warm*prob*.1;
   vec3 lowE=mix(vec3(.78,.86,.88),vec3(1.),graz);
   vec3 inside=mix(insN,insF,lod)*lowE;
   float dE=min(min(f.x,1.-f.x),min(1.-f.y,max(f.y-SP,0.))*2.4);
