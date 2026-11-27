@@ -1,10 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, ChevronDown, FileText } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Menu, X, ChevronDown, Download, FileText } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { QuoteModal } from "@/components/QuoteModal";
+import CallNow from "@/components/common/CallNow";
 import { useCompanyProfile } from "@/context/CompanyProfileContext";
+import "./header.css";
 
 /* ================= SERVICES & INDUSTRIES ================= */
 const serviceLinks = [
@@ -29,21 +29,13 @@ const industryLinks = [
   { href: "/residential-facade", label: "High-Rise Residential" },
 ];
 
-export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
+export const Header = () => {
   const { openProfile } = useCompanyProfile();
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isServiceOpen, setIsServiceOpen] = useState(false);
   const [isIndustryOpen, setIsIndustryOpen] = useState(false);
-  const [isQuoteOpen, setIsQuoteOpen] = useState(false);
+  const industryRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
-
-  /* Scroll detect */
-  useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 50);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   /* Close menus on route change */
   useEffect(() => {
@@ -59,6 +51,25 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
       document.body.style.overflow = "";
     };
   }, [isMobileMenuOpen]);
+
+  /* Escape and outside click close the desktop dropdowns */
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setIsServiceOpen(false);
+        setIsIndustryOpen(false);
+      }
+    };
+    const onDown = (e: MouseEvent) => {
+      if (industryRef.current && !industryRef.current.contains(e.target as Node)) setIsIndustryOpen(false);
+    };
+    document.addEventListener("keydown", onKey);
+    document.addEventListener("mousedown", onDown);
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.removeEventListener("mousedown", onDown);
+    };
+  }, []);
 
   const isPathActive = (path: string) => {
     if (path === "/services") {
@@ -82,57 +93,32 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
     return location.pathname === path;
   };
 
-  const getLinkClass = (path: string) => {
-    const active = isPathActive(path);
-    return cn(
-      "px-3 py-2 text-sm font-semibold rounded-md transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500",
-      active
-        ? isScrolled
-          ? "bg-amber-100/80 text-amber-800 font-bold"
-          : darkHero
-          ? "bg-amber-500/20 text-amber-300 border border-amber-500/30 font-bold backdrop-blur-sm shadow-sm"
-          : "bg-amber-100/80 text-amber-800 font-bold"
-        : isScrolled
-        ? "text-slate-800 hover:bg-slate-100"
-        : darkHero
-        ? "text-white hover:bg-white/20"
-        : "text-slate-800 hover:bg-slate-100/80"
-    );
-  };
+  const getLinkClass = (_path: string) =>
+    "fg-nl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lamp";
 
   return (
     <>
       {/* HEADER */}
-      <header
-        className={cn(
-          "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-          isScrolled
-            ? "bg-white/95 backdrop-blur-md py-2 md:py-3 shadow-md border-b"
-            : "bg-gradient-to-b from-black/60 via-black/20 to-transparent py-3 md:py-4"
-        )}
-      >
-        <div className="container mx-auto px-4 flex items-center justify-between">
-          {/* Logo */}
-          <Link to="/" className="flex-shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 rounded-md">
-            <img
-              src="/Logofg.webp"
-              alt="Fine Glaze - Facade & Glazing Contractor"
-              className={cn(
-                "h-10 md:h-12 w-auto object-contain transition-all duration-300",
-                darkHero && !isScrolled && "brightness-0 invert"
-              )}
-            />
+      <header className="fg-hdr sticky top-0 z-50 text-paper">
+        <div className="container mx-auto px-4 h-14 lg:h-[72px] flex items-center justify-between">
+          {/* Wordmark */}
+          <Link
+            to="/"
+            aria-label="Fine Glaze, home"
+            className="flex-shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lamp"
+          >
+            <img decoding="async" src="/Logofg.webp" alt="Fine Glaze" width={1920} height={603} className="fg-logo-img" />
           </Link>
 
           {/* DESKTOP NAV */}
-          <nav className="hidden lg:flex items-center gap-1" aria-label="Main Navigation">
+          <nav className="hidden lg:flex items-stretch self-stretch gap-7" aria-label="Main Navigation">
             {/* Services Dropdown */}
             <div
-              className="relative"
+              className="relative group flex"
               onMouseEnter={() => setIsServiceOpen(true)}
               onMouseLeave={() => setIsServiceOpen(false)}
             >
-              <Link to="/services" className={getLinkClass("/services")}>
+              <Link to="/services" className={getLinkClass("/services")} aria-current={isPathActive("/services") ? "page" : undefined}>
                 <span className="flex items-center gap-1">
                   Services
                   <ChevronDown size={14} className="opacity-75" />
@@ -141,20 +127,18 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
 
               <div
                 className={cn(
-                  "absolute left-0 top-full pt-2 w-64 transition-all duration-200",
+                  "absolute left-0 top-full pt-3 w-60 transition-opacity duration-200 group-focus-within:opacity-100 group-focus-within:visible",
                   isServiceOpen ? "opacity-100 visible" : "opacity-0 invisible"
                 )}
               >
-                <div className="bg-white shadow-xl border border-slate-200 rounded-lg p-2">
+                <div className="fg-menu p-1.5">
                   {serviceLinks.map((service) => (
                     <Link
                       key={service.href}
                       to={service.href}
                       className={cn(
-                        "block px-3 py-2 text-sm rounded-md transition-colors",
-                        location.pathname === service.href
-                          ? "bg-amber-50 text-amber-800 font-bold"
-                          : "text-slate-700 hover:bg-amber-50 hover:text-amber-900 font-medium"
+                        "block px-3 py-2 text-[14px] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lamp",
+                        location.pathname === service.href ? "text-lamp" : "text-paper hover:text-lamp"
                       )}
                     >
                       {service.label}
@@ -166,31 +150,37 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
 
             {/* Industries Dropdown */}
             <div
-              className="relative"
+              ref={industryRef}
+              className="relative group flex"
               onMouseEnter={() => setIsIndustryOpen(true)}
               onMouseLeave={() => setIsIndustryOpen(false)}
             >
-              <span className={cn(getLinkClass("/industries"), "cursor-pointer inline-flex items-center gap-1")}>
+              <button
+                type="button"
+                aria-expanded={isIndustryOpen}
+                aria-controls="industries-menu"
+                onClick={() => setIsIndustryOpen((v) => !v)}
+                className={getLinkClass("/industries")}
+              >
                 Industries
                 <ChevronDown size={14} className="opacity-75" />
-              </span>
+              </button>
 
               <div
+                id="industries-menu"
                 className={cn(
-                  "absolute left-0 top-full pt-2 w-64 transition-all duration-200",
+                  "absolute left-0 top-full pt-3 w-60 transition-opacity duration-200 group-focus-within:opacity-100 group-focus-within:visible",
                   isIndustryOpen ? "opacity-100 visible" : "opacity-0 invisible"
                 )}
               >
-                <div className="bg-white shadow-xl border border-slate-200 rounded-lg p-2">
+                <div className="fg-menu p-1.5">
                   {industryLinks.map((ind) => (
                     <Link
                       key={ind.href}
                       to={ind.href}
                       className={cn(
-                        "block px-3 py-2 text-sm rounded-md transition-colors",
-                        location.pathname === ind.href
-                          ? "bg-amber-50 text-amber-800 font-bold"
-                          : "text-slate-700 hover:bg-amber-50 hover:text-amber-900 font-medium"
+                        "block px-3 py-2 text-[14px] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lamp",
+                        location.pathname === ind.href ? "text-lamp" : "text-paper hover:text-lamp"
                       )}
                     >
                       {ind.label}
@@ -200,40 +190,31 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
               </div>
             </div>
 
-            <Link to="/portfolio" className={getLinkClass("/portfolio")}>Projects</Link>
-            <Link to="/blog" className={getLinkClass("/blog")}>Articles</Link>
-            <Link to="/about" className={getLinkClass("/about")}>About</Link>
-            <Link to="/contact" className={getLinkClass("/contact")}>Contact</Link>
+            <Link to="/portfolio" className={getLinkClass("/portfolio")} aria-current={isPathActive("/portfolio") ? "page" : undefined}>Projects</Link>
+            <Link to="/blog" className={getLinkClass("/blog")} aria-current={isPathActive("/blog") ? "page" : undefined}>Articles</Link>
+            <Link to="/about" className={getLinkClass("/about")} aria-current={isPathActive("/about") ? "page" : undefined}>About</Link>
+            <Link to="/contact" className={getLinkClass("/contact")} aria-current={isPathActive("/contact") ? "page" : undefined}>Contact</Link>
 
             <Link
               to="/company-profile"
               onClick={() => openProfile(1, "slides")}
-              className={cn(getLinkClass("/company-profile"), "inline-flex items-center gap-1.5")}
+              className={getLinkClass("/company-profile")}
             >
-              <FileText size={14} className="text-amber-500 shrink-0" />
               <span>Company Profile</span>
-              <span className="text-[10px] uppercase font-black px-1.5 py-0.5 bg-amber-500 text-stone-950 rounded-full">PDF</span>
+              <Download size={13} className="shrink-0 opacity-70" aria-hidden="true" />
             </Link>
           </nav>
 
-          {/* DESKTOP & MOBILE ACTIONS */}
+          {/* ACTIONS */}
           <div className="flex items-center gap-3">
-            {/* Get a Quote — Always visible */}
-            <Button
-              onClick={() => setIsQuoteOpen(true)}
-              className="bg-gradient-to-r from-amber-500 via-amber-600 to-amber-500 hover:from-amber-400 hover:to-amber-600 text-white font-bold text-xs md:text-sm tracking-wide uppercase px-4 md:px-6 py-2.5 rounded-full shadow-lg shadow-amber-900/20 hover:shadow-amber-500/30 border border-amber-400/40 transition-all duration-300 active:scale-95 cursor-pointer"
-            >
-              Get a Quote
-            </Button>
+            <CallNow className="fg-call" iconSize={15} />
 
             {/* MOBILE TOGGLE */}
             <button
+              type="button"
               onClick={() => setIsMobileMenuOpen(true)}
               aria-label="Open Mobile Menu"
-              className={cn(
-                "lg:hidden p-2 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500",
-                isScrolled ? "text-slate-900" : darkHero ? "text-white" : "text-slate-900"
-              )}
+              className="lg:hidden p-2 text-paper focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lamp"
             >
               <Menu size={24} />
             </button>
@@ -245,27 +226,27 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
       {isMobileMenuOpen && (
         <>
           <div
-            className="fixed inset-0 z-[55] bg-black/50 backdrop-blur-sm lg:hidden"
+            className="fixed inset-0 z-[55] bg-[rgba(21,24,27,0.55)] lg:hidden"
             onClick={() => setIsMobileMenuOpen(false)}
           />
-          <div className="fixed top-0 left-0 right-0 z-[60] bg-white shadow-2xl max-h-[85vh] overflow-y-auto lg:hidden animate-in slide-in-from-top duration-200 rounded-b-2xl">
-            <div className="flex items-center justify-between px-5 py-4 border-b sticky top-0 bg-white z-10">
-              <span className="font-bold text-lg text-stone-900">Fine Glaze Menu</span>
-              <button onClick={() => setIsMobileMenuOpen(false)} aria-label="Close menu" className="p-1">
+          <div className="fixed top-0 left-0 right-0 z-[60] fg-menu-m text-paper max-h-[90vh] overflow-y-auto lg:hidden animate-in slide-in-from-top duration-200">
+            <div className="flex items-center justify-between px-5 h-14 border-b border-line sticky top-0 z-10">
+              <img decoding="async" src="/Logofg.webp" alt="Fine Glaze" width={1920} height={603} className="fg-logo-img" />
+              <button type="button" onClick={() => setIsMobileMenuOpen(false)} aria-label="Close menu" className="p-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lamp">
                 <X size={24} />
               </button>
             </div>
 
             <div className="px-5 py-4 space-y-4">
               <div>
-                <p className="text-xs uppercase font-bold text-amber-700 tracking-wider mb-2">Services</p>
-                <div className="grid grid-cols-1 gap-1 pl-2 border-l-2 border-amber-200">
+                <p className="font-mono text-[12px] uppercase tracking-[0.08em] text-mute mb-2">Services</p>
+                <div className="grid grid-cols-1 gap-1 pl-2 border-l border-line">
                   {serviceLinks.map((s) => (
                     <Link
                       key={s.href}
                       to={s.href}
                       onClick={() => setIsMobileMenuOpen(false)}
-                      className="py-1 text-sm text-slate-700 hover:text-amber-700 font-medium"
+                      className="py-1.5 text-sm text-paper hover:text-lamp"
                     >
                       {s.label}
                     </Link>
@@ -274,14 +255,14 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
               </div>
 
               <div>
-                <p className="text-xs uppercase font-bold text-amber-700 tracking-wider mb-2">Industries</p>
-                <div className="grid grid-cols-1 gap-1 pl-2 border-l-2 border-amber-200">
+                <p className="font-mono text-[12px] uppercase tracking-[0.08em] text-mute mb-2">Industries</p>
+                <div className="grid grid-cols-1 gap-1 pl-2 border-l border-line">
                   {industryLinks.map((ind) => (
                     <Link
                       key={ind.href}
                       to={ind.href}
                       onClick={() => setIsMobileMenuOpen(false)}
-                      className="py-1 text-sm text-slate-700 hover:text-amber-700 font-medium"
+                      className="py-1.5 text-sm text-paper hover:text-lamp"
                     >
                       {ind.label}
                     </Link>
@@ -289,45 +270,37 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
                 </div>
               </div>
 
-              <div className="pt-2 border-t space-y-2">
-                <Link to="/portfolio" onClick={() => setIsMobileMenuOpen(false)} className="block text-base font-semibold py-1">Projects</Link>
+              <div className="pt-2 border-t border-line space-y-2">
+                <Link to="/portfolio" onClick={() => setIsMobileMenuOpen(false)} className="block text-base font-medium py-1">Projects</Link>
                 <Link
                   to="/company-profile"
                   onClick={() => {
                     setIsMobileMenuOpen(false);
                     openProfile(1, "slides");
                   }}
-                  className="flex items-center justify-between text-base font-semibold py-1.5 text-slate-800 hover:text-amber-700"
+                  className="flex items-center justify-between text-base font-medium py-1.5 hover:text-lamp"
                 >
                   <span className="flex items-center gap-2">
-                    <FileText size={18} className="text-amber-600 shrink-0" />
+                    <FileText size={18} className="text-lamp shrink-0" />
                     <span>Company Profile</span>
                   </span>
-                  <span className="text-[10px] uppercase font-black px-2 py-0.5 bg-amber-500 text-stone-950 rounded-full">PDF</span>
+                  <span className="font-mono text-[11px] font-medium px-2 py-0.5 bg-lamp text-lamp-ink">PDF</span>
                 </Link>
-                <Link to="/blog" onClick={() => setIsMobileMenuOpen(false)} className="block text-base font-semibold py-1">Articles</Link>
-                <Link to="/about" onClick={() => setIsMobileMenuOpen(false)} className="block text-base font-semibold py-1">About</Link>
-                <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)} className="block text-base font-semibold py-1">Contact</Link>
+                <Link to="/blog" onClick={() => setIsMobileMenuOpen(false)} className="block text-base font-medium py-1">Articles</Link>
+                <Link to="/about" onClick={() => setIsMobileMenuOpen(false)} className="block text-base font-medium py-1">About</Link>
+                <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)} className="block text-base font-medium py-1">Contact</Link>
               </div>
 
               <div className="pt-2 pb-4">
-                <Button
-                  onClick={() => {
-                    setIsMobileMenuOpen(false);
-                    setTimeout(() => setIsQuoteOpen(true), 200);
-                  }}
-                  className="w-full bg-gradient-to-r from-amber-500 via-amber-600 to-amber-500 hover:from-amber-400 hover:to-amber-600 text-white font-bold text-sm tracking-wider uppercase py-3.5 rounded-xl shadow-lg border border-amber-400/30 active:scale-95 transition-all"
-                >
-                  Get a Project Quote
-                </Button>
+                <CallNow
+                  className="w-full h-11 inline-flex items-center justify-center bg-lamp text-lamp-ink font-medium text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lamp"
+                  iconSize={18}
+                />
               </div>
             </div>
           </div>
         </>
       )}
-
-      {/* QUOTE MODAL */}
-      <QuoteModal open={isQuoteOpen} onOpenChange={setIsQuoteOpen} />
     </>
   );
 };

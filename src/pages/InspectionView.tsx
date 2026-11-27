@@ -20,7 +20,7 @@ export default function InspectionView() {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
-          <h2 className="text-lg font-semibold">Inspection not found</h2>
+          <h2 className="text-lg font-medium">Inspection not found</h2>
           <p className="text-muted-foreground text-sm mt-1">
             This report may have been deleted.
           </p>
@@ -51,14 +51,14 @@ export default function InspectionView() {
 
   const statusColors: Record<string, string> = {
     draft: "bg-yellow-100 text-yellow-800",
-    submitted: "bg-blue-100 text-blue-800",
+    submitted: "bg-night-2 text-paper",
     reviewed: "bg-green-100 text-green-800",
   };
 
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen bg-night-2">
       {/* Header - hidden during print */}
-      <div className="bg-white border-b sticky top-0 z-40 print:hidden">
+      <div className="bg-night border-b sticky top-0 z-40 print:hidden">
         <div className="max-w-4xl mx-auto px-4 py-3">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
@@ -71,7 +71,7 @@ export default function InspectionView() {
               </Button>
               <div>
                 <div className="flex items-center gap-2">
-                  <h1 className="text-lg font-bold">Inspection Report</h1>
+                  <h1 className="text-lg font-medium">Inspection Report</h1>
                   <Badge
                     variant="outline"
                     className={statusColors[inspection.status]}
@@ -106,7 +106,7 @@ export default function InspectionView() {
 
       {/* Report Content */}
       <div className="max-w-4xl mx-auto px-4 py-6 print:p-0 print:max-w-none">
-        <div className="bg-white rounded-lg shadow-sm print:shadow-none print:rounded-none">
+        <div className="bg-night print:rounded-none">
           <InspectionReport ref={reportRef} inspection={inspection} />
         </div>
       </div>

@@ -1,10 +1,11 @@
+import Illustration from "@/components/common/Illustration";
 import SEO from "@/components/SEO";
+import PageHero from "@/components/common/PageHero";
 import { RelatedProjects } from "@/components/RelatedProjects";
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/home/CTASection";
-import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
-import { CheckCircle2, ArrowRight } from "lucide-react";
+import FaqList from "@/components/common/FaqList";
+import { DeliveryProcess, LinkTable, Prose, Sec, SpecList, SchematicFig } from "@/components/common/Sheet";
 
 export default function CurtainWallPune() {
   const serviceSchema = {
@@ -29,16 +30,16 @@ export default function CurtainWallPune() {
       { "@type": "City", "name": "Mumbai" },
       { "@type": "State", "name": "Maharashtra" }
     ],
-    "description": "Expert curtain wall glazing contractor in Pune. Unitized & stick system curtain walls for IT parks, offices & malls. Projects in Hinjewadi, Kharadi, Baner. Free site visit."
+    "description": "Curtain wall contractor in Pune: unitized and stick glass curtain walls for offices and commercial towers, with in-house shop drawings, own fabrication unit."
   };
 
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      { "@type": "Question", "name": "What is the cost of curtain wall glazing in Pune?", "acceptedAnswer": { "@type": "Answer", "text": "Curtain wall glazing in Pune costs Rs 350-1200 per sq ft. Stick system curtain walls range from Rs 350-600/sq ft, while unitized systems are Rs 700-1200/sq ft. Pricing depends on glass type, aluminium profile grade, building height, and wind zone." } },
-      { "@type": "Question", "name": "Which areas in Pune does Fine Glaze serve for curtain walls?", "acceptedAnswer": { "@type": "Answer", "text": "Fine Glaze serves all of Pune including Hinjewadi, Kharadi, Baner, Wakad, Viman Nagar, Magarpatta, Hadapsar, Pimpri-Chinchwad, Undri, Kalyani Nagar, Koregaon Park, Aundh, and Balewadi." } },
-      { "@type": "Question", "name": "How long does curtain wall installation take in Pune?", "acceptedAnswer": { "@type": "Answer", "text": "For a typical 10-storey building, fabrication takes 6-10 weeks and on-site installation 4-8 weeks. Fine Glaze runs parallel fabrication and site prep to compress overall timelines." } },
+      { "@type": "Question", "name": "What is the cost of curtain wall glazing in Pune?", "acceptedAnswer": { "@type": "Answer", "text": "Curtain wall cost in Pune depends on the system, glass type, aluminium profile, building height, wind load and access, so it needs drawings to price. Fine Glaze prepares BOQ-based quotations after reviewing the drawings." } },
+      { "@type": "Question", "name": "Which areas in Pune does Fine Glaze serve for curtain walls?", "acceptedAnswer": { "@type": "Answer", "text": "Fine Glaze takes curtain wall projects across Pune and PCMC, including Hinjewadi, Kharadi, Baner, Wakad, Magarpatta, Undri and Pimpri-Chinchwad, and also elsewhere in India. Our fabrication unit is in Pisoli, Pune." } },
+      { "@type": "Question", "name": "How long does curtain wall installation take in Pune?", "acceptedAnswer": { "@type": "Answer", "text": "Programme depends on building size, system, glass lead time and site access, so we confirm it per project after survey and design approval. Fabrication is batched per project and despatched directly to site." } },
     ]
   };
 
@@ -54,117 +55,82 @@ export default function CurtainWallPune() {
   return (
     <Layout darkHero>
       <SEO
-        title="Curtain Wall Contractor in Pune | Fine Glaze"
-        description="Expert curtain wall contractor in Pune. Unitized & stick system glass curtain walls for IT parks & commercial towers in Hinjewadi, Kharadi, Baner & Wakad."
+        title="Curtain Wall Contractor in Pune, Maharashtra | Fine Glaze"
+        description="Curtain wall contractor in Pune: unitized and stick glass curtain walls for offices and commercial towers, with in-house shop drawings, own fabrication unit."
         canonical="https://fineglaze.com/curtain-wall-pune"
         keywords="curtain wall contractor Pune, curtain wall systems Pune, glass facade Pune, unitized curtain wall Pune"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}
       />
 
-      {/* HERO */}
-      <section className="relative py-24 bg-gradient-to-br from-slate-900 to-slate-800 text-white">
-        <div className="container mx-auto px-4 max-w-6xl grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h1 className="text-3xl md:text-4xl font-bold mb-4">
-              Curtain Wall Glazing <span className="text-gradient-gold">Contractor in Pune</span>
-            </h1>
-            <p className="text-lg text-white/80 mb-8">Fine Glaze is a curtain wall glazing contractor based in Pune, specialising in unitized, semi-unitized, and stick system installations for IT parks, corporate towers, hospitals, shopping malls, and residential high-rises.</p>
-            <div className="flex gap-4">
-              <Link to="/contact">
-                <Button size="lg" className="bg-amber-600 hover:bg-amber-700">Get Free Quote</Button>
-              </Link>
-              <Link to="/portfolio">
-                <Button size="lg" variant="outline">View Projects</Button>
-              </Link>
+      <PageHero
+        crumbs={[{ label: "Curtain Wall Glazing Contractor in Pune" }]}
+        title={<>Curtain Wall Glazing <span className="text-gradient-gold">Contractor in Pune</span></>}
+        intro="Fine Glaze is a curtain wall contractor in Pune, offering unitized, semi-unitized and stick systems for offices, commercial buildings and residential towers."
+        secondary={{ label: "View Projects", to: "/portfolio" }}
+        image={{ src: "/projects/embassy-techzone-40-1.webp", alt: "Embassy Techzone, Hinjewadi, Pune — facade works by Fine Glaze for Embassy REIT", width: 600, height: 420 }}
+      />
+
+      <Sec no="01" label="Overview" title={<>Curtain Wall Work in Pune</>} sheetLabel="Overview">
+          <div className="sx-split">
+            <Prose>
+<p>
+            Fine Glaze offers curtain wall systems in Pune for offices, commercial buildings and residential towers. Every project starts with a site survey and in-house shop drawings, and member sizing, fixing and anchorage are checked against the project wind load before approval.
+          </p>
+          <p>
+            We fabricate at our own unit in Pisoli, Pune, using aluminium extrusions from major Indian mills, glass from Saint-Gobain or other major brands, and DOWSIL structural silicone or approved equivalents, unless the project's approved vendor list says otherwise.
+          </p>
+          <p>
+            We work across Pune, including Hinjewadi, Kharadi, Baner, Wakad, Magarpatta, Pimpri-Chinchwad and Undri. Our documented Pune projects include Embassy Techzone in Hinjewadi, the Pune International Airport terminal and Nirmaann Estrellaa.
+          </p>
+          <p>
+            As general guidance, stick systems suit lower and mid-rise buildings, semi-unitized systems suit mid-rise buildings with repeating floors, and unitized systems suit taller buildings and tight programmes. We help choose against height, access, programme and budget.
+          </p>
+          <p>
+            Installed glazing is checked with a site water penetration test, and snags are logged and closed before handover. Defect liability support follows the contract terms, and an AMC can be quoted separately.
+          </p>
+            </Prose>
+            <div className="sx-side">
+              <SchematicFig kind="curtain" fig="02" />
+              <Illustration name="city-pune" flush sizes="(max-width: 960px) 100vw, 480px" />
             </div>
           </div>
-          <img
-            src="/projects/embassy-techzone-40-1.webp"
-            alt="Embassy Techzone, Hinjewadi, Pune — facade works by Fine Glaze for Embassy REIT"
-            className="rounded-xl shadow-2xl object-cover h-[420px] w-full"
-            loading="eager"
-            width="600"
-            height="420"
+      </Sec>
+
+      <Sec no="02" label="Scope" title={<>What We Offer</>} sheetLabel="Scope of work">
+        <SpecList items={[<>Unitized Curtain Walls</>, <>Stick System Glazing</>, <>DOWSIL Structural Silicone</>, <>DGU & Low-E Glass</>, <>Wind Load Check to Project Basis</>, <>Anchorage Checked to Project Design</>]} />
+      </Sec>
+
+      <Sec no="03" label="Process" title="From survey to handover." sheetLabel="Process">
+        <DeliveryProcess />
+      </Sec>
+
+      <RelatedProjects no="04" heading="Our glazing work in Pune" locations={["Pune"]} keywords={["glazing", "glass", "window"]} />
+
+      <Sec no="05" label="FAQ" title={<>Frequently Asked Questions</>} sheetLabel="FAQ">
+        <div className="sx-faq">
+          <FaqList
+            items={[
+              { q: <>What is the cost of curtain wall glazing in Pune?</>, a: <>Curtain wall cost in Pune depends on the system, glass type, aluminium profile, building height, wind load and access, so it needs drawings to price. Fine Glaze prepares BOQ-based quotations after reviewing the drawings.</> },
+              { q: <>Which areas in Pune does Fine Glaze serve for curtain walls?</>, a: <>Fine Glaze takes curtain wall projects across Pune and PCMC, including Hinjewadi, Kharadi, Baner, Wakad, Magarpatta, Undri and Pimpri-Chinchwad, and also elsewhere in India. Our fabrication unit is in Pisoli, Pune.</> },
+              { q: <>How long does curtain wall installation take in Pune?</>, a: <>Programme depends on building size, system, glass lead time and site access, so we confirm it per project after survey and design approval. Fabrication is batched per project and despatched directly to site.</> },
+            ]}
           />
         </div>
-      </section>
+      </Sec>
 
-      {/* RICH CONTENT */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 max-w-5xl space-y-6">
-          
-          <h2 className="text-3xl font-bold">Curtain Wall Work in Pune — What We Handle</h2>
-          <p className="text-muted-foreground">
-            Fine Glaze has been at the centre of Pune's commercial real estate growth, installing curtain wall systems on projects ranging from 5-storey tech parks to 30-storey residential towers. Every project begins with a detailed site survey, wind load analysis, and shop drawing submission — ensuring structural compliance with IS:875 and BIS standards.
-          </p>
-          <p className="text-muted-foreground mt-4">
-            Our Pune fabrication team works with premium aluminium extrusions sourced from Hindalco and Jindal Aluminium, combined with Dow Corning structural sealants and Pilkington / Saint-Gobain glass. This translates into curtain walls certified for seismic zone III requirements applicable to the Pune region.
-          </p>
-          <p className="text-muted-foreground mt-4">
-            We serve all major Pune micro-markets: <strong>Hinjewadi IT Park (Phase 1, 2 &amp; 3), Kharadi EON IT Park, Baner–Balewadi corporate corridor, Magarpatta Cybercity, Viman Nagar, Kalyani Nagar, Koregaon Park, Undri–Pisoli residential zone,</strong> and the Pimpri-Chinchwad industrial belt.
-          </p>
-          <p className="text-muted-foreground mt-4">
-            Fine Glaze's Pune curtain wall installations include stick system glazing for 4–8 storey office buildings, semi-unitized systems for mid-rise commercial projects, and fully unitized panel systems for high-rise residential and commercial towers. Each project is delivered with complete as-built documentation, water penetration test certificates, and a structured AMC offer for long-term maintenance.
-          </p>
-          <p className="text-muted-foreground mt-4">
-            We understand that Pune's construction market runs on tight schedules — particularly in Hinjewadi and Kharadi where IT park handovers drive hard deadlines. Fine Glaze's dedicated Pune project team runs parallel fabrication and site preparation workflows to ensure we hit critical milestones without compromising quality or safety standards.
-          </p>
-    
-        </div>
-      </section>
+      <Sec no="06" label="Related" title={<>Explore Related Services</>} sheetLabel="Related services">
+        <LinkTable
+          items={[
+            { to: "/curtain-wall-systems", title: "Curtain Wall Systems", desc: "Full curtain wall overview" },
+            { to: "/structural-glazing-pune", title: "Structural Glazing Pune", desc: "Frameless glass facades Pune" },
+            { to: "/aluminium-windows-doors", title: "Aluminium Facade", desc: "Aluminium cladding systems" },
+            { to: "/acp-cladding-pune", title: "ACP Cladding Pune", desc: "Composite panel facades Pune" },
+            { to: "/facade-contractor-pune", title: "Facade Contractor Pune", desc: "Complete facade services" },
+            { to: "/glass-railings", title: "Glass Railings", desc: "Balcony glass railings Pune" },
+          ]}
+        />
+      </Sec>
 
-      {/* FEATURES */}
-      <section className="py-20 bg-muted">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <h2 className="text-3xl font-bold mb-10 text-center">What We Offer</h2>
-          <div className="grid md:grid-cols-2 gap-4">
-              <div key="Unitized Curtain Walls" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Unitized Curtain Walls</span></div>
-              <div key="Stick System Glazing" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Stick System Glazing</span></div>
-              <div key="Structural Silicone Bonding" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Structural Silicone Bonding</span></div>
-              <div key="DGU & Low-E Glass" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">DGU & Low-E Glass</span></div>
-              <div key="IS:875 Wind Load Compliance" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">IS:875 Wind Load Compliance</span></div>
-              <div key="Seismic Zone III Ready" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Seismic Zone III Ready</span></div>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <h2 className="text-3xl font-bold mb-10 text-center">Frequently Asked Questions</h2>
-          <div className="space-y-6">
-            <div className="bg-background rounded-xl p-6 shadow-sm">
-              <h3 className="text-lg font-bold mb-2">What is the cost of curtain wall glazing in Pune?</h3>
-              <p className="text-muted-foreground">Curtain wall glazing in Pune costs Rs 350-1200 per sq ft. Stick system curtain walls range from Rs 350-600/sq ft, while unitized systems are Rs 700-1200/sq ft. Pricing depends on glass type, aluminium profile grade, building height, and wind zone.</p>
-            </div>
-            <div className="bg-background rounded-xl p-6 shadow-sm">
-              <h3 className="text-lg font-bold mb-2">Which areas in Pune does Fine Glaze serve for curtain walls?</h3>
-              <p className="text-muted-foreground">Fine Glaze serves all of Pune including Hinjewadi, Kharadi, Baner, Wakad, Viman Nagar, Magarpatta, Hadapsar, Pimpri-Chinchwad, Undri, Kalyani Nagar, Koregaon Park, Aundh, and Balewadi.</p>
-            </div>
-            <div className="bg-background rounded-xl p-6 shadow-sm">
-              <h3 className="text-lg font-bold mb-2">How long does curtain wall installation take in Pune?</h3>
-              <p className="text-muted-foreground">For a typical 10-storey building, fabrication takes 6-10 weeks and on-site installation 4-8 weeks. Fine Glaze runs parallel fabrication and site prep to compress overall timelines.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* INTERNAL LINKS */}
-      <section className="py-12 bg-slate-50 border-t border-slate-100">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <h2 className="text-xl font-bold text-slate-800 mb-5">Explore Related Services</h2>
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
-            <Link key="/curtain-wall-systems" to="/curtain-wall-systems" className="group flex items-start gap-3 p-4 rounded-xl border border-slate-200 hover:border-amber-300 hover:bg-amber-50 transition-all bg-white"><ArrowRight size={15} className="text-amber-600 shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-slate-800 text-sm">Curtain Wall Systems</p><p className="text-xs text-slate-500">Full curtain wall overview</p></div></Link>
-            <Link key="/structural-glazing-pune" to="/structural-glazing-pune" className="group flex items-start gap-3 p-4 rounded-xl border border-slate-200 hover:border-amber-300 hover:bg-amber-50 transition-all bg-white"><ArrowRight size={15} className="text-amber-600 shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-slate-800 text-sm">Structural Glazing Pune</p><p className="text-xs text-slate-500">Frameless glass facades Pune</p></div></Link>
-            <Link key="/aluminium-windows-doors" to="/aluminium-windows-doors" className="group flex items-start gap-3 p-4 rounded-xl border border-slate-200 hover:border-amber-300 hover:bg-amber-50 transition-all bg-white"><ArrowRight size={15} className="text-amber-600 shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-slate-800 text-sm">Aluminium Facade</p><p className="text-xs text-slate-500">Aluminium cladding systems</p></div></Link>
-            <Link key="/acp-cladding-pune" to="/acp-cladding-pune" className="group flex items-start gap-3 p-4 rounded-xl border border-slate-200 hover:border-amber-300 hover:bg-amber-50 transition-all bg-white"><ArrowRight size={15} className="text-amber-600 shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-slate-800 text-sm">ACP Cladding Pune</p><p className="text-xs text-slate-500">Composite panel facades Pune</p></div></Link>
-            <Link key="/facade-contractor-pune" to="/facade-contractor-pune" className="group flex items-start gap-3 p-4 rounded-xl border border-slate-200 hover:border-amber-300 hover:bg-amber-50 transition-all bg-white"><ArrowRight size={15} className="text-amber-600 shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-slate-800 text-sm">Facade Contractor Pune</p><p className="text-xs text-slate-500">Complete facade services</p></div></Link>
-            <Link key="/glass-railings" to="/glass-railings" className="group flex items-start gap-3 p-4 rounded-xl border border-slate-200 hover:border-amber-300 hover:bg-amber-50 transition-all bg-white"><ArrowRight size={15} className="text-amber-600 shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-slate-800 text-sm">Glass Railings</p><p className="text-xs text-slate-500">Balcony glass railings Pune</p></div></Link>
-          </div>
-        </div>
-      </section>
-
-      <RelatedProjects heading="Our glazing work in Pune" locations={["Pune"]} keywords={["glazing", "glass", "window"]} />
       <CTASection />
     </Layout>
   );

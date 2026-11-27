@@ -14,6 +14,20 @@ export default {
   	},
   	extend: {
   		colors: {
+  			night: '#f4f4f1',
+  			'night-2': '#e9eae6',
+  			paper: '#15181b',
+  			mute: '#555b62',
+  			line: '#cfd2cd',
+  			hairline: '#cfd2cd',
+  			glass: '#555b62',
+  			lamp: '#9b5520',
+  			'lamp-soft': '#d9a574',
+  			'lamp-ink': '#ffffff',
+  			'dark-sec': '#15181b',
+  			'dark-sec-ink': '#e9eae6',
+  			stone: {50:'#f7f5f2',100:'#ece8e2',200:'#d9d3ca',300:'#bdb5a8',400:'#9a9181',500:'#776e61',600:'#564e44',700:'#3d362e',800:'#2a231c',900:'#251d17',950:'#18130f'},
+  			amber: {50:'#fbf3ea',100:'#f6e3cf',200:'#eecba6',300:'#e6b380',400:'#d9975a',500:'#c6803a',600:'#a96831',700:'#865126',800:'#663e1f',900:'#4a2d18',950:'#2a190c'},
   			border: 'hsl(var(--border))',
   			input: 'hsl(var(--input))',
   			ring: 'hsl(var(--ring))',
@@ -59,44 +73,21 @@ export default {
   			}
   		},
   		borderRadius: {
-  			lg: 'var(--radius)',
-  			md: 'calc(var(--radius) - 2px)',
-  			sm: 'calc(var(--radius) - 4px)'
+  			none: '0',
+  			sm: '0',
+  			DEFAULT: '0',
+  			md: '0',
+  			lg: '0',
+  			xl: '0',
+  			'2xl': '0',
+  			'3xl': '0',
+  			full: '0'
   		},
   		fontFamily: {
-  			sans: [
-  				'Inter',
-  				'ui-sans-serif',
-  				'system-ui',
-  				'-apple-system',
-  				'BlinkMacSystemFont',
-  				'Segoe UI',
-  				'Roboto',
-  				'Helvetica Neue',
-  				'Arial',
-  				'Noto Sans',
-  				'sans-serif'
-  			],
-  			serif: [
-  				'Lora',
-  				'ui-serif',
-  				'Georgia',
-  				'Cambria',
-  				'Times New Roman',
-  				'Times',
-  				'serif'
-  			],
-  			mono: [
-  				'Space Mono',
-  				'ui-monospace',
-  				'SFMono-Regular',
-  				'Menlo',
-  				'Monaco',
-  				'Consolas',
-  				'Liberation Mono',
-  				'Courier New',
-  				'monospace'
-  			]
+  			sans: ['"IBM Plex Sans"', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+  			display: ['"IBM Plex Sans"', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+  			serif: ['"IBM Plex Sans"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+  			mono: ['"IBM Plex Mono"', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', 'monospace']
   		},
   		keyframes: {
   			'accordion-down': {
@@ -154,20 +145,21 @@ export default {
   			'accordion-down': 'accordion-down 0.2s ease-out',
   			'accordion-up': 'accordion-up 0.2s ease-out',
   			marquee: 'marquee 25s linear infinite',
-  			'fade-in-up': 'fade-in-up 0.6s ease-out forwards',
-  			'fade-in': 'fade-in 0.4s ease-out forwards',
+  			'fade-in-up': 'fade-in 0.2s ease-out forwards',
+  			'fade-in': 'fade-in 0.2s ease-out forwards',
   			shimmer: 'shimmer 2s linear infinite'
   		},
   		boxShadow: {
-  			glass: '0 8px 32px 0 hsl(220 30% 10% / 0.1)',
-  			glow: '0 0 40px hsl(210 100% 45% / 0.3)',
-  			'2xs': 'var(--shadow-2xs)',
-  			xs: 'var(--shadow-xs)',
-  			sm: 'var(--shadow-sm)',
-  			md: 'var(--shadow-md)',
-  			lg: 'var(--shadow-lg)',
-  			xl: 'var(--shadow-xl)',
-  			'2xl': 'var(--shadow-2xl)'
+  			glass: 'none',
+  			glow: 'none',
+  			'2xs': 'none',
+  			xs: 'none',
+  			sm: 'none',
+  			DEFAULT: 'none',
+  			md: 'none',
+  			lg: 'none',
+  			xl: 'none',
+  			'2xl': 'none'
   		}
   	}
   },

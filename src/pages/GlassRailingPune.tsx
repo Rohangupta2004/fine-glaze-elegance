@@ -1,10 +1,11 @@
+import Illustration from "@/components/common/Illustration";
 import SEO from "@/components/SEO";
+import PageHero from "@/components/common/PageHero";
 import { RelatedProjects } from "@/components/RelatedProjects";
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/home/CTASection";
-import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
-import { CheckCircle2, ArrowRight } from "lucide-react";
+import FaqList from "@/components/common/FaqList";
+import { DeliveryProcess, LinkTable, Prose, Sec, SpecList, SchematicFig } from "@/components/common/Sheet";
 
 export default function GlassRailingPune() {
   const serviceSchema = {
@@ -29,16 +30,16 @@ export default function GlassRailingPune() {
       { "@type": "City", "name": "Mumbai" },
       { "@type": "State", "name": "Maharashtra" }
     ],
-    "description": "Frameless toughened glass railing contractor in Pune. Balcony, staircase & terrace railings for residential & commercial buildings. IS:2553 compliant. Free site visit."
+    "description": "Glass railing contractor in Pune: frameless balcony, staircase and terrace glass railings for homes and offices, with in-house shop drawings."
   };
 
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      { "@type": "Question", "name": "What is the cost of glass railing in Pune?", "acceptedAnswer": { "@type": "Answer", "text": "Glass railing in Pune costs Rs 800-2500 per running foot depending on system type (frameless vs post system), glass thickness, hardware finish, and site conditions. Frameless systems start from Rs 1200/running ft installed." } },
-      { "@type": "Question", "name": "Is toughened glass railing safe for balconies in Pune?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, when properly specified. Fine Glaze uses toughened + laminated glass compliant with IS:2553 Part 1. Even if broken, the PVB interlayer holds glass in place, preventing shard fall risk — critical for elevated balconies." } },
-      { "@type": "Question", "name": "Do glass railings need maintenance in Pune?", "acceptedAnswer": { "@type": "Answer", "text": "Glass railings are low-maintenance. Regular cleaning with mild detergent is sufficient. Stainless steel hardware should be checked annually. Sealant joints at the base channel should be re-done every 7-10 years as preventive maintenance." } },
+      { "@type": "Question", "name": "What is the cost of glass railing in Pune?", "acceptedAnswer": { "@type": "Answer", "text": "Glass railing cost in Pune depends on the system (frameless or post), glass thickness, hardware finish and site conditions, so it is priced per running foot against drawings. Fine Glaze prepares BOQ-based quotations." } },
+      { "@type": "Question", "name": "Is toughened glass railing safe for balconies in Pune?", "acceptedAnswer": { "@type": "Answer", "text": "Toughened glass railing is widely used on balconies when the glass build-up, supports and anchorage are designed for the load. Laminated glass adds a layer that helps hold broken pieces in place. We confirm the specification per project." } },
+      { "@type": "Question", "name": "Do glass railings need maintenance in Pune?", "acceptedAnswer": { "@type": "Answer", "text": "Glass railings need little upkeep: regular cleaning with mild detergent, plus periodic checks of fittings, anchors and sealant joints at the base channel. Replace worn sealant as part of routine maintenance." } },
     ]
   };
 
@@ -54,117 +55,82 @@ export default function GlassRailingPune() {
   return (
     <Layout darkHero>
       <SEO
-        title="Glass Railing Contractor in Pune | Fine Glaze"
-        description="Glass railing contractor in Pune. Frameless balcony, staircase & terrace glass railings for residential & commercial properties in Baner, Kharadi, Wakad & Viman Nagar."
+        title="Glass Railing Contractor in Pune, Maharashtra | Fine Glaze"
+        description="Glass railing contractor in Pune: frameless balcony, staircase and terrace glass railings for homes and offices, with in-house shop drawings."
         canonical="https://fineglaze.com/glass-railing-pune"
         keywords="glass railing contractor Pune, balcony glass railing Pune, staircase glass railing Pune, frameless railing Pune"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}
       />
 
-      {/* HERO */}
-      <section className="relative py-24 bg-gradient-to-br from-slate-900 to-slate-800 text-white">
-        <div className="container mx-auto px-4 max-w-6xl grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h1 className="text-3xl md:text-4xl font-bold mb-4">
-              Glass Railing <span className="text-gradient-gold">Contractor in Pune</span>
-            </h1>
-            <p className="text-lg text-white/80 mb-8">Fine Glaze installs premium frameless and semi-frameless glass railing systems across Pune for residential apartments, commercial offices, hotels, shopping centres, and public spaces. Our glass railings combine toughened safety glass with precision-engineered stainless steel fittings.</p>
-            <div className="flex gap-4">
-              <Link to="/contact">
-                <Button size="lg" className="bg-amber-600 hover:bg-amber-700">Get Free Quote</Button>
-              </Link>
-              <Link to="/portfolio">
-                <Button size="lg" variant="outline">View Projects</Button>
-              </Link>
+      <PageHero
+        crumbs={[{ label: "Glass Railing Contractor in Pune" }]}
+        title={<>Glass Railing <span className="text-gradient-gold">Contractor in Pune</span></>}
+        intro="Fine Glaze installs frameless and semi-frameless glass railing systems in Pune for apartments, offices, hotels and commercial buildings, using toughened glass and stainless steel fittings."
+        secondary={{ label: "View Projects", to: "/portfolio" }}
+        image={{ src: "/projects/jindal-house-46-2.webp", alt: "Sea-front terrace glass railing at Jindal House, Mumbai — completed by Fine Glaze in 2023", width: 600, height: 420 }}
+      />
+
+      <Sec no="01" label="Overview" title={<>Glass Railings in Pune</>} sheetLabel="Overview">
+          <div className="sx-split">
+            <Prose>
+<p>
+            Glass railings are common on apartment balconies, staircases, terraces and commercial lobbies. Fine Glaze offers frameless railings with base channels, post systems with glass infill, and handrail-supported systems, and we choose the system with you against the drawings and the load requirements.
+          </p>
+          <p>
+            Railing glass is normally toughened or toughened laminated, and its thickness, supports and anchorage come from the structural check for the project. Confirm the glass specification against IS 2553 and the consultant's requirements before ordering.
+          </p>
+          <p>
+            We take residential and commercial railing projects across Pune and PCMC. Our documented railing work includes SS glass railings at Nirmaann Estrellaa in Pune and shaft railings at Salsette-27 and Jindal House in Mumbai. Stainless steel fittings are available in common finishes.
+          </p>
+          <p>
+            Fine Glaze handles the full railing scope: site measurement and structural check, glass procurement to exact sizes, hardware supply and fabrication, installation and silicone joint finishing.
+          </p>
+          <p>
+            For developers with multiple floors or buildings, we can quote a bulk package. Send drawings and quantities for a BOQ-based quotation.
+          </p>
+            </Prose>
+            <div className="sx-side">
+              <SchematicFig kind="railing" fig="02" />
+              <Illustration name="city-pune" flush sizes="(max-width: 960px) 100vw, 480px" />
             </div>
           </div>
-          <img
-            src="/projects/jindal-house-46-2.webp"
-            alt="Sea-front terrace glass railing at Jindal House, Mumbai — completed by Fine Glaze in 2023"
-            className="rounded-xl shadow-2xl object-cover h-[420px] w-full"
-            loading="eager"
-            width="600"
-            height="420"
+      </Sec>
+
+      <Sec no="02" label="Scope" title={<>What We Offer</>} sheetLabel="Scope of work">
+        <SpecList items={[<>Frameless Glass Railings</>, <>Toughened + Laminated Glass</>, <>Stainless Steel Fittings</>, <>Balcony & Staircase Systems</>, <>Glass Specified to IS 2553</>, <>Hardware Finish Options</>]} />
+      </Sec>
+
+      <Sec no="03" label="Process" title="From survey to handover." sheetLabel="Process">
+        <DeliveryProcess />
+      </Sec>
+
+      <RelatedProjects no="04" heading="Glass railing work we have delivered" keywords={["railing"]} />
+
+      <Sec no="05" label="FAQ" title={<>Frequently Asked Questions</>} sheetLabel="FAQ">
+        <div className="sx-faq">
+          <FaqList
+            items={[
+              { q: <>What is the cost of glass railing in Pune?</>, a: <>Glass railing cost in Pune depends on the system (frameless or post), glass thickness, hardware finish and site conditions, so it is priced per running foot against drawings. Fine Glaze prepares BOQ-based quotations.</> },
+              { q: <>Is toughened glass railing safe for balconies in Pune?</>, a: <>Toughened glass railing is widely used on balconies when the glass build-up, supports and anchorage are designed for the load. Laminated glass adds a layer that helps hold broken pieces in place. We confirm the specification per project.</> },
+              { q: <>Do glass railings need maintenance in Pune?</>, a: <>Glass railings need little upkeep: regular cleaning with mild detergent, plus periodic checks of fittings, anchors and sealant joints at the base channel. Replace worn sealant as part of routine maintenance.</> },
+            ]}
           />
         </div>
-      </section>
+      </Sec>
 
-      {/* RICH CONTENT */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 max-w-5xl space-y-6">
-          
-          <h2 className="text-3xl font-bold">Premium Glass Railings for Pune's Best Buildings</h2>
-          <p className="text-muted-foreground">
-            Glass railings are the defining feature of premium apartments, penthouses, and commercial lobbies across Pune's upscale developments. Fine Glaze offers multiple system types: fully frameless glass railings with concealed base channels, handrail-top-fix systems for balconies, stainless steel post systems with glass infill, and structural glass balustrades.
-          </p>
-          <p className="text-muted-foreground mt-4">
-            Safety is paramount. All our glass railing installations use <strong>toughened + laminated glass (10mm toughened + 10mm toughened with PVB interlayer)</strong> or 12mm heat-soaked toughened glass, compliant with IS:2553 and NBC 2016 fall protection requirements. Every installation is load-tested to 0.74 kN/m horizontal thrust.
-          </p>
-          <p className="text-muted-foreground mt-4">
-            We serve <strong>residential projects</strong> in Wakad, Baner, Kharadi, Viman Nagar, Koregaon Park, and Undri, as well as <strong>commercial projects</strong> in Hinjewadi IT Park, Magarpatta Cybercity, and Pune's hospitality sector. Our stainless steel fittings are available in mirror polish, satin finish, and PVD gold/black coating.
-          </p>
-          <p className="text-muted-foreground mt-4">
-            Fine Glaze handles complete glass railing project execution — from site measurement and structural check, glass procurement (toughened/laminated to exact sizes), hardware supply and fabrication, installation, and silicone joint finishing. Our Pune team can typically complete a standard apartment balcony railing installation in 1-2 days per floor.
-          </p>
-          <p className="text-muted-foreground mt-4">
-            For Pune developers and builders, we offer competitive rates for bulk glass railing contracts across multiple floors or multiple buildings in a project. Our team has completed glass railing installations on Pune projects of up to 30 floors with consistent quality and finish standards across all levels.
-          </p>
-    
-        </div>
-      </section>
+      <Sec no="06" label="Related" title={<>Explore Related Services</>} sheetLabel="Related services">
+        <LinkTable
+          items={[
+            { to: "/glass-railings", title: "Glass Railings", desc: "Full glass railing service" },
+            { to: "/structural-glazing-pune", title: "Structural Glazing Pune", desc: "Structural glazing systems" },
+            { to: "/facade-contractor-pune", title: "Facade Contractor Pune", desc: "Complete facade solutions" },
+            { to: "/acp-cladding-pune", title: "ACP Cladding Pune", desc: "ACP panel facades" },
+            { to: "/curtain-wall-pune", title: "Curtain Wall Pune", desc: "Glass curtain walls" },
+            { to: "/maintenance-services", title: "Facade Maintenance", desc: "Glass railing maintenance" },
+          ]}
+        />
+      </Sec>
 
-      {/* FEATURES */}
-      <section className="py-20 bg-muted">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <h2 className="text-3xl font-bold mb-10 text-center">What We Offer</h2>
-          <div className="grid md:grid-cols-2 gap-4">
-              <div key="Frameless Glass Railings" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Frameless Glass Railings</span></div>
-              <div key="Toughened + Laminated Glass" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Toughened + Laminated Glass</span></div>
-              <div key="SS 316 Marine Grade Fittings" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">SS 316 Marine Grade Fittings</span></div>
-              <div key="Balcony & Staircase Systems" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Balcony & Staircase Systems</span></div>
-              <div key="IS:2553 Compliant" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">IS:2553 Compliant</span></div>
-              <div key="PVD Coated Hardware Options" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">PVD Coated Hardware Options</span></div>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <h2 className="text-3xl font-bold mb-10 text-center">Frequently Asked Questions</h2>
-          <div className="space-y-6">
-            <div className="bg-background rounded-xl p-6 shadow-sm">
-              <h3 className="text-lg font-bold mb-2">What is the cost of glass railing in Pune?</h3>
-              <p className="text-muted-foreground">Glass railing in Pune costs Rs 800-2500 per running foot depending on system type (frameless vs post system), glass thickness, hardware finish, and site conditions. Frameless systems start from Rs 1200/running ft installed.</p>
-            </div>
-            <div className="bg-background rounded-xl p-6 shadow-sm">
-              <h3 className="text-lg font-bold mb-2">Is toughened glass railing safe for balconies in Pune?</h3>
-              <p className="text-muted-foreground">Yes, when properly specified. Fine Glaze uses toughened + laminated glass compliant with IS:2553 Part 1. Even if broken, the PVB interlayer holds glass in place, preventing shard fall risk — critical for elevated balconies.</p>
-            </div>
-            <div className="bg-background rounded-xl p-6 shadow-sm">
-              <h3 className="text-lg font-bold mb-2">Do glass railings need maintenance in Pune?</h3>
-              <p className="text-muted-foreground">Glass railings are low-maintenance. Regular cleaning with mild detergent is sufficient. Stainless steel hardware should be checked annually. Sealant joints at the base channel should be re-done every 7-10 years as preventive maintenance.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* INTERNAL LINKS */}
-      <section className="py-12 bg-slate-50 border-t border-slate-100">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <h2 className="text-xl font-bold text-slate-800 mb-5">Explore Related Services</h2>
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
-            <Link key="/glass-railings" to="/glass-railings" className="group flex items-start gap-3 p-4 rounded-xl border border-slate-200 hover:border-amber-300 hover:bg-amber-50 transition-all bg-white"><ArrowRight size={15} className="text-amber-600 shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-slate-800 text-sm">Glass Railings</p><p className="text-xs text-slate-500">Full glass railing service</p></div></Link>
-            <Link key="/structural-glazing-pune" to="/structural-glazing-pune" className="group flex items-start gap-3 p-4 rounded-xl border border-slate-200 hover:border-amber-300 hover:bg-amber-50 transition-all bg-white"><ArrowRight size={15} className="text-amber-600 shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-slate-800 text-sm">Structural Glazing Pune</p><p className="text-xs text-slate-500">Structural glazing systems</p></div></Link>
-            <Link key="/facade-contractor-pune" to="/facade-contractor-pune" className="group flex items-start gap-3 p-4 rounded-xl border border-slate-200 hover:border-amber-300 hover:bg-amber-50 transition-all bg-white"><ArrowRight size={15} className="text-amber-600 shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-slate-800 text-sm">Facade Contractor Pune</p><p className="text-xs text-slate-500">Complete facade solutions</p></div></Link>
-            <Link key="/acp-cladding-pune" to="/acp-cladding-pune" className="group flex items-start gap-3 p-4 rounded-xl border border-slate-200 hover:border-amber-300 hover:bg-amber-50 transition-all bg-white"><ArrowRight size={15} className="text-amber-600 shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-slate-800 text-sm">ACP Cladding Pune</p><p className="text-xs text-slate-500">ACP panel facades</p></div></Link>
-            <Link key="/curtain-wall-pune" to="/curtain-wall-pune" className="group flex items-start gap-3 p-4 rounded-xl border border-slate-200 hover:border-amber-300 hover:bg-amber-50 transition-all bg-white"><ArrowRight size={15} className="text-amber-600 shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-slate-800 text-sm">Curtain Wall Pune</p><p className="text-xs text-slate-500">Glass curtain walls</p></div></Link>
-            <Link key="/maintenance-services" to="/maintenance-services" className="group flex items-start gap-3 p-4 rounded-xl border border-slate-200 hover:border-amber-300 hover:bg-amber-50 transition-all bg-white"><ArrowRight size={15} className="text-amber-600 shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-slate-800 text-sm">Facade Maintenance</p><p className="text-xs text-slate-500">Glass railing maintenance</p></div></Link>
-          </div>
-        </div>
-      </section>
-
-      <RelatedProjects heading="Glass railing work we have delivered" keywords={["railing"]} />
       <CTASection />
     </Layout>
   );

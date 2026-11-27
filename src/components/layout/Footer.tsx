@@ -1,14 +1,15 @@
+import "./header.css";
 import { Link } from "react-router-dom";
-import { MapPin, Phone, Mail, Linkedin } from "lucide-react";
+import { Phone, Mail, Linkedin } from "lucide-react";
+import { company, telHref, officeTelHref } from "@/data/company";
+import { TitleBlock } from "@/components/common/Drawing";
 
-const quickLinks = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About Us" },
-  { href: "/services", label: "Services" },
-  { href: "/portfolio", label: "Portfolio" },
+const companyLinks = [
+  { href: "/about", label: "About" },
+  { href: "/portfolio", label: "Projects" },
+  { href: "/blog", label: "Articles" },
   { href: "/quality-safety", label: "Quality & Safety" },
-  { href: "/service-request", label: "Service Request" },
-  { href: "/blog", label: "Blog" },
+  { href: "/faq", label: "FAQ" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -21,163 +22,117 @@ const services = [
   { label: "Facade Maintenance", href: "/maintenance-services" },
 ];
 
+const linkCls = "text-[#c9ced3] hover:text-lamp-soft transition-colors text-[14.5px]";
+
 export const Footer = () => {
   return (
-    <footer 
-      className="text-white"
-      style={{ background: "linear-gradient(180deg, hsl(25 25% 12%) 0%, hsl(20 20% 8%) 100%)" }}
-    >
-      {/* Main Footer */}
-      <div className="container mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-          {/* Brand */}
-          <div className="space-y-5">
-            <img
-              src="Logofg.webp"
-             alt="Fine Glaze Logo"
-              className="h-12 w-auto brightness-0 invert"
-            />
-            <p className="text-white/70 text-sm leading-relaxed">
-              Facade design, fabrication, installation and maintenance — from Pune and Mumbai.
-              Own fabrication unit at Pisoli, Pune. Embassy REIT Best Vendor Performance 2024.
+    <footer className="fg-footer pb-[calc(4.5rem+env(safe-area-inset-bottom))] md:pb-0">
+      <div className="fg-wrap pt-10 md:pt-14">
+        <div className="fg-foot-top">
+          <div className="space-y-4">
+            <span className="fg-logo-plate">
+              <img decoding="async" src="/Logofg.webp" alt="Fine Glaze" width={1920} height={603} className="fg-logo-img fg-logo-foot" />
+            </span>
+            <p className="text-[#c9ced3] text-[14.5px] leading-relaxed max-w-sm">
+              Facade design, fabrication, installation and maintenance from Pune and Mumbai.
             </p>
-            {/* Social Links */}
-            <div className="flex gap-3 pt-2">
-              <a
-                href="https://www.linkedin.com/company/fine-glaze"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 bg-white/10 flex items-center justify-center hover:bg-amber-600 transition-colors"
-                aria-label="LinkedIn"
-              >
-                <Linkedin size={18} />
-              </a>
-            </div>
+            <a
+              href="https://www.linkedin.com/company/fine-glaze"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 min-h-[44px] text-[14.5px] text-[#c9ced3] hover:text-lamp-soft transition-colors"
+              aria-label="LinkedIn"
+            >
+              <Linkedin size={16} /> LinkedIn
+            </a>
           </div>
+          <TitleBlock
+            dark
+            className="fg-foot-tb"
+            rows={[
+              ["SHEET", "FG-00 / FOOTER"],
+              ["FIRM", company.name],
+              ["OFFICE", "Undri, Pune"],
+              ["GSTIN", company.gstin],
+            ]}
+          />
+        </div>
 
-          {/* Quick Links */}
-          <div>
-            <h4 className="text-lg font-semibold mb-6">Quick Links</h4>
-            <ul className="space-y-3">
-              {quickLinks.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    to={link.href}
-                    className="text-white/70 hover:text-amber-400 transition-colors text-sm"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-              <li>
-                <Link
-                  to="/faq"
-                  className="text-white/70 hover:text-amber-400 transition-colors text-sm"
-                >
-                  FAQ
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Services — Now with internal links */}
-          <div>
-            <h4 className="text-lg font-semibold mb-6">Our Services</h4>
-            <ul className="space-y-3">
+        <div className="fg-foot-g">
+          <div className="fg-foot-c">
+            <h4 className="fg-foot-h">Services</h4>
+            <ul className="fg-foot-l">
               {services.map((service) => (
                 <li key={service.href}>
-                  <Link
-                    to={service.href}
-                    className="text-white/70 hover:text-amber-400 transition-colors text-sm"
-                  >
-                    {service.label}
-                  </Link>
+                  <Link to={service.href} className={`${linkCls} inline-block py-0.5`}>{service.label}</Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Contact Info */}
-          <div>
-            <h4 className="text-lg font-semibold mb-6">Contact Us</h4>
-            <ul className="space-y-4">
-              <li className="flex items-start gap-3">
-                <MapPin size={18} className="text-amber-500 mt-1 shrink-0" />
-                <a
-                  href="https://www.google.com/maps/search/?api=1&query=Fine+Glaze+A3+LW-13+Pragati+Serene+Mohammed+Wadi+Pune+411060"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-white/70 hover:text-white text-sm transition-colors"
-                >
-                  A3 LW-13, Pragati Serene Building, Sr.No.2, HDFC Bank Chowk, Plot B, Autadwadi Handewadi, Mahadev Wadi, Mohammed Wadi,
-                  <br />
-                  Pune – 411060
+          <div className="fg-foot-c">
+            <h4 className="fg-foot-h">Company</h4>
+            <ul className="fg-foot-l">
+              {companyLinks.map((link) => (
+                <li key={link.href}>
+                  <Link to={link.href} className={`${linkCls} inline-block py-0.5`}>{link.label}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="fg-foot-c fg-foot-ct">
+            <h4 className="fg-foot-h">Contact</h4>
+            <ul className="space-y-2.5">
+              <li>
+                <a href={telHref} className="inline-flex items-center gap-2 font-mono text-[20px] leading-none text-white hover:text-lamp-soft transition-colors">
+                  <Phone size={16} className="text-lamp-soft shrink-0" aria-hidden="true" />
+                  {company.phone.mobileDisplay}
                 </a>
+                <span className="block text-[13px] text-[#aab0b6] mt-1">Mobile and WhatsApp</span>
               </li>
-              <li className="flex items-center gap-3">
-                <Phone size={18} className="text-amber-500 shrink-0" />
-                <a
-                  href="tel:+918369233566"
-                  className="text-white/70 hover:text-white text-sm transition-colors"
-                >
-                  +91 8369233566
-                  <br />
-                  +91 02068299428
-                </a>
+              <li>
+                <a href={officeTelHref} className={`${linkCls} font-mono`}>{company.phone.officeDisplay}</a>
+                <span className="text-[13px] text-[#aab0b6]"> office</span>
               </li>
-              <li className="flex items-center gap-3">
-                <Mail size={18} className="text-amber-500 shrink-0" />
-                <a
-                  href="mailto:info@fineglaze.com"
-                  className="text-white/70 hover:text-white text-sm transition-colors"
-                >
-                  info@fineglaze.com
-                </a>
+              <li className="flex items-center gap-2">
+                <Mail size={15} className="text-lamp-soft shrink-0" aria-hidden="true" />
+                <a href={`mailto:${company.email}`} className={`${linkCls} break-all`}>{company.email}</a>
+              </li>
+              <li className="text-[14.5px] text-[#c9ced3] leading-snug">
+                Mohammed Wadi (Undri),<br />Pune 411060{" "}
+                <Link to="/contact" className="block mt-1 text-white underline underline-offset-4 decoration-lamp-soft hover:text-lamp-soft">Full address</Link>
               </li>
             </ul>
           </div>
         </div>
       </div>
 
-      {/* Where we work — only places we actually operate */}
-      <div className="border-t border-white/10 py-5">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-3 text-xs text-white/60">
-            <span className="font-semibold text-amber-400 uppercase tracking-wider shrink-0">
-              Where we work:
-            </span>
-            <nav aria-label="Service areas" className="flex flex-wrap gap-x-3 gap-y-1 text-white/70">
+      <div className="fg-foot-rule py-4">
+        <div className="fg-wrap">
+          <div className="flex flex-col md:flex-row items-start md:items-center gap-x-5 gap-y-1 text-[14px] text-[#c9ced3]">
+            <span className="font-mono text-[12px] uppercase tracking-[0.08em] text-[#aab0b6] shrink-0">Where we work</span>
+            <nav aria-label="Service areas" className="flex flex-wrap gap-x-5 gap-y-1">
               {[
-                { name: "Facade contractor in Pune", href: "/facade-contractor-pune" },
+                { name: "Pune", href: "/facade-contractor-pune" },
                 { name: "Mumbai", href: "/facade-contractor-mumbai" },
                 { name: "Navi Mumbai", href: "/facade-contractor-navi-mumbai" },
                 { name: "Thane", href: "/facade-contractor-thane" },
               ].map((loc) => (
-                <Link key={loc.href} to={loc.href} className="hover:text-amber-400 transition-colors">
-                  {loc.name}
-                </Link>
+                <Link key={loc.href} to={loc.href} className="hover:text-lamp-soft transition-colors py-1">{loc.name}</Link>
               ))}
-              <span className="text-white/50">· Other locations considered case by case</span>
+              <span className="py-1">Projects taken across India</span>
             </nav>
           </div>
         </div>
       </div>
 
-      {/* Bottom Bar */}
-      <div className="border-t border-white/10">
-        <div className="container mx-auto px-4 py-5 flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="flex flex-col sm:flex-row items-center gap-3 text-sm text-white/50">
-            <p>© {new Date().getFullYear()} Fine Glaze. All rights reserved.</p>
-            <span className="hidden sm:inline text-white/20">|</span>
-            <p>GST No: 27BFJPG1853A1ZU</p>
-          </div>
-          <div className="flex gap-6 text-sm">
-            <Link to="/privacy-policy" className="text-white/50 hover:text-amber-400 transition-colors">
-              Privacy Policy
-            </Link>
-            <Link to="/terms-of-service" className="text-white/50 hover:text-amber-400 transition-colors">
-              Terms of Service
-            </Link>
+      <div className="fg-foot-rule">
+        <div className="fg-wrap py-4 flex flex-col md:flex-row md:items-center justify-between gap-2 text-[13.5px] text-[#aab0b6]">
+          <p>&copy; {new Date().getFullYear()} Fine Glaze. GST No: <span className="font-mono">27BFJPG1853A1ZU</span></p>
+          <div className="flex gap-5">
+            <Link to="/privacy-policy" className="hover:text-lamp-soft transition-colors py-1">Privacy Policy</Link>
+            <Link to="/terms-of-service" className="hover:text-lamp-soft transition-colors py-1">Terms of Service</Link>
           </div>
         </div>
       </div>

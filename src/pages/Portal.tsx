@@ -86,14 +86,14 @@ export default function Portal() {
 
   if (!session) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-slate-50 p-4">
-        <Card className="w-full max-w-md shadow-xl border-t-4 border-t-primary">
+      <div className="min-h-screen flex items-center justify-center bg-night-2 p-4">
+        <Card className="w-full max-w-md border-t-4 border-t-primary">
           <CardHeader className="text-center">
-            <CardTitle className="text-2xl font-bold">Client Portal</CardTitle>
+            <h1 className="tracking-tight text-2xl font-medium font-display">Client Portal</h1>
           </CardHeader>
           <CardContent className="space-y-6">
             <Button variant="outline" className="w-full h-12 gap-2" onClick={signInWithGoogle}>Continue with Google</Button>
-            <div className="relative text-center text-xs uppercase text-muted-foreground"><span className="bg-white px-2 relative z-10">Or use email</span><div className="absolute inset-0 top-1/2 border-t -z-0" /></div>
+            <div className="relative text-center text-xs text-muted-foreground"><span className="bg-night px-2 relative z-10">Or use email</span><div className="absolute inset-0 top-1/2 border-t -z-0" /></div>
             <div className="flex gap-2">
               <Input type="email" placeholder="client@gmail.com" value={email} onChange={(e) => setEmail(e.target.value)} />
               <Button onClick={signInWithEmail} disabled={isAuthLoading}><Mail size={18} /></Button>
@@ -105,16 +105,16 @@ export default function Portal() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-50 p-4 md:p-10">
+    <div className="min-h-screen bg-night-2 p-4 md:p-10">
       <SEO title="Client Portal | Fine Glaze" description="Fine Glaze client project status portal" noindex />
       <div className="max-w-6xl mx-auto space-y-8">
         <div className="flex justify-between items-center">
-          <div><h1 className="text-3xl font-bold text-slate-900">Project Dashboard</h1><p className="text-slate-500">Welcome, {session.user.email}</p></div>
+          <div><h1 className="text-3xl font-medium text-paper">Project Dashboard</h1><p className="text-mute">Welcome, {session.user.email}</p></div>
           <Button variant="outline" onClick={() => supabase.auth.signOut()}>Sign Out</Button>
         </div>
 
         {loading ? (
-          <div className="space-y-4"><Skeleton className="h-48 w-full rounded-xl" /><Skeleton className="h-32 w-full rounded-xl" /></div>
+          <div className="space-y-4"><Skeleton className="h-48 w-full" /><Skeleton className="h-32 w-full" /></div>
         ) : !project ? (
           <Card className="border-dashed border-2 p-10 text-center"><h3 className="text-xl">No Active Project</h3><p>Contact support if this is an error.</p></Card>
         ) : (
@@ -122,42 +122,42 @@ export default function Portal() {
             
             {/* LEFT: INFO & FINANCE */}
             <div className="space-y-6">
-              <Card className="shadow-md border-t-4 border-t-primary">
+              <Card className="border-t-4 border-t-primary">
                 <CardHeader className="pb-2"><CardTitle>{project.project_name}</CardTitle><Badge className="w-fit">{project.status}</Badge></CardHeader>
                 <CardContent className="space-y-4 pt-4">
                   <div className="space-y-2 text-sm">
-                    <div className="flex items-center gap-2 text-slate-600"><MapPin size={14} className="text-primary"/> {project.site_address || "Address pending"}</div>
-                    <div className="flex items-center gap-2 text-slate-600"><Building size={14} className="text-primary"/> Arch: {project.architect_name || "N/A"}</div>
-                    <div className="flex items-center gap-2 text-slate-600"><User size={14} className="text-primary"/> {project.client_phone || "No phone"}</div>
+                    <div className="flex items-center gap-2 text-mute"><MapPin size={14} className="text-primary"/> {project.site_address || "Address pending"}</div>
+                    <div className="flex items-center gap-2 text-mute"><Building size={14} className="text-primary"/> Arch: {project.architect_name || "N/A"}</div>
+                    <div className="flex items-center gap-2 text-mute"><User size={14} className="text-primary"/> {project.client_phone || "No phone"}</div>
                   </div>
                   <div className="space-y-1"><div className="flex justify-between text-xs font-medium"><span>Progress</span><span>{project.progress}%</span></div><Progress value={project.progress} className="h-2" /></div>
                 </CardContent>
               </Card>
 
-              <Card className="shadow-md">
+              <Card className="">
                 <CardHeader className="pb-2"><CardTitle className="flex items-center gap-2 text-base"><IndianRupee size={18}/> Financials</CardTitle></CardHeader>
                 <CardContent className="space-y-3 pt-4">
-                  <div className="flex justify-between items-center p-3 bg-slate-100 rounded-lg"><span className="text-sm text-slate-600">Total</span><span className="font-bold">₹{project.total_amount?.toLocaleString()}</span></div>
-                  <div className="flex justify-between items-center p-3 bg-green-50 text-green-700 rounded-lg border border-green-100"><span className="text-sm">Paid</span><span className="font-bold">₹{project.paid_amount?.toLocaleString()}</span></div>
-                  <div className="text-xs text-center text-slate-400">Pending: ₹{((project.total_amount || 0) - (project.paid_amount || 0)).toLocaleString()}</div>
+                  <div className="flex justify-between items-center p-3 bg-night-2"><span className="text-sm text-mute">Total</span><span className="font-bold">₹{project.total_amount?.toLocaleString()}</span></div>
+                  <div className="flex justify-between items-center p-3 bg-green-50 text-green-700 border border-green-100"><span className="text-sm">Paid</span><span className="font-bold">₹{project.paid_amount?.toLocaleString()}</span></div>
+                  <div className="text-xs text-center text-mute">Pending: ₹{((project.total_amount || 0) - (project.paid_amount || 0)).toLocaleString()}</div>
                 </CardContent>
               </Card>
             </div>
 
             {/* MIDDLE: DOCUMENTS */}
-            <Card className="md:col-span-2 shadow-md h-fit">
-              <CardHeader><CardTitle className="flex items-center gap-2"><FileText className="text-blue-600"/> Documents & Approvals</CardTitle></CardHeader>
+            <Card className="md:col-span-2 h-fit">
+              <CardHeader><CardTitle className="flex items-center gap-2"><FileText className="text-sky-300"/> Documents & Approvals</CardTitle></CardHeader>
               <CardContent>
                 <div className="space-y-3">
                   {files.length === 0 && <p className="text-muted-foreground text-sm text-center py-4">No documents shared yet.</p>}
                   {files.map((file) => (
-                    <div key={file.id} className="flex flex-col md:flex-row md:items-center justify-between p-4 rounded-lg border bg-white hover:shadow-sm transition-all gap-4">
+                    <div key={file.id} className="flex flex-col md:flex-row md:items-center justify-between p-4 border bg-night transition-all gap-4">
                       <div className="flex items-center gap-3 overflow-hidden">
-                        <div className={`p-2 rounded-full ${file.status === 'Approved' ? 'bg-green-100 text-green-600' : 'bg-slate-100 text-slate-500'}`}>
+                        <div className={`p-2 ${file.status === 'Approved' ? 'bg-green-100 text-green-600' : 'bg-night-2 text-mute'}`}>
                            {file.status === 'Approved' ? <CheckCircle2 size={20}/> : file.status === 'Rejected' ? <XCircle size={20}/> : <FileText size={20}/>}
                         </div>
                         <div>
-                          <a href={file.url} target="_blank" className="font-medium hover:underline text-blue-700 block truncate max-w-[180px]">{file.name}</a>
+                          <a href={file.url} target="_blank" className="font-medium hover:underline text-sky-300 block truncate max-w-[180px]">{file.name}</a>
                           <div className="text-xs text-muted-foreground">{new Date(file.created_at).toLocaleDateString()}</div>
                         </div>
                       </div>
@@ -179,20 +179,20 @@ export default function Portal() {
             </Card>
             
             {/* RIGHT: TIMELINE (Full Width on Mobile, Col-span-3) */}
-            <Card className="md:col-span-3 shadow-md flex flex-col max-h-[500px]">
-              <CardHeader><CardTitle className="flex items-center gap-2"><Calendar className="text-purple-600" size={20}/> Project Timeline</CardTitle></CardHeader>
+            <Card className="md:col-span-3 flex flex-col max-h-[500px]">
+              <CardHeader><CardTitle className="flex items-center gap-2"><Calendar className="text-violet-300" size={20}/> Project Timeline</CardTitle></CardHeader>
               <CardContent className="overflow-y-auto">
                 {(!project.timeline || project.timeline.length === 0) ? (
                   <div className="text-center py-6 text-sm text-muted-foreground">No updates yet.</div>
                 ) : (
                   <div className="space-y-6 relative pl-2 pt-2">
-                    <div className="absolute left-[7px] top-2 bottom-2 w-[2px] bg-slate-100" />
+                    <div className="absolute left-[7px] top-2 bottom-2 w-[2px] bg-night-2" />
                     {project.timeline.map((event, i) => (
                       <div key={i} className="relative flex gap-4">
-                        <div className={`w-4 h-4 rounded-full border-2 border-white shadow-sm z-10 mt-1 shrink-0 ${i === 0 ? 'bg-purple-600 ring-2 ring-purple-100' : 'bg-slate-300'}`} />
+                        <div className={`w-4 h-4 border-2 border-line z-10 mt-1 shrink-0 ${i === 0 ? 'bg-purple-600 ring-2 ring-purple-100' : 'bg-line'}`} />
                         <div className="space-y-1 pb-2">
-                          <p className="text-xs font-medium text-slate-500 uppercase">{new Date(event.date).toLocaleDateString()}</p>
-                          <h4 className={`font-semibold ${i === 0 ? 'text-slate-900' : 'text-slate-600'}`}>{event.title}</h4>
+                          <p className="text-xs font-medium text-mute">{new Date(event.date).toLocaleDateString()}</p>
+                          <h4 className={`font-semibold ${i === 0 ? 'text-paper' : 'text-mute'}`}>{event.title}</h4>
                           {event.desc && <p className="text-sm text-muted-foreground">{event.desc}</p>}
                         </div>
                       </div>

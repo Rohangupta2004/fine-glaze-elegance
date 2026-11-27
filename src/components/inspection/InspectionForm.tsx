@@ -383,7 +383,7 @@ export function InspectionForm({ onSubmit }: InspectionFormProps) {
             {issues.map((issue, idx) => (
               <div
                 key={idx}
-                className="p-3 border rounded-lg space-y-3 bg-muted/30"
+                className="p-3 border space-y-3 bg-muted/30"
               >
                 <div className="flex items-center justify-between">
                   <span className="text-sm font-medium">Issue #{idx + 1}</span>
@@ -447,7 +447,7 @@ export function InspectionForm({ onSubmit }: InspectionFormProps) {
             {materials.map((mat, idx) => (
               <div
                 key={idx}
-                className="p-3 border rounded-lg space-y-3 bg-muted/30"
+                className="p-3 border space-y-3 bg-muted/30"
               >
                 <div className="flex items-center justify-between">
                   <span className="text-sm font-medium">
@@ -565,7 +565,7 @@ export function InspectionForm({ onSubmit }: InspectionFormProps) {
       </Card>
 
       {/* Sticky Submit Buttons */}
-      <div className="fixed bottom-0 left-0 right-0 p-4 bg-background border-t shadow-lg z-50">
+      <div className="fixed bottom-0 left-0 right-0 p-4 bg-background border-t z-50">
         <div className="max-w-2xl mx-auto flex gap-3">
           <Button
             variant="outline"

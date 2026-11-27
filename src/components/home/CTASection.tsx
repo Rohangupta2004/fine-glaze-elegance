@@ -1,94 +1,40 @@
-import { ArrowRight, Phone } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
-import { fadeUp, stagger, viewport } from "@/hooks/useMotion";
+import CallNow from "@/components/common/CallNow";
+import { Link } from "react-router-dom";
+import { GridBg, TitleBlock } from "@/components/common/Drawing";
+import { company, whatsappHref } from "@/data/company";
+import "@/components/common/sheet.css";
 
-export const CTASection = () => {
-  return (
-    <section
-      className="relative py-28 overflow-hidden"
-      style={{
-        background:
-          "linear-gradient(135deg, hsl(25 80% 25%) 0%, hsl(20 75% 18%) 50%, hsl(15 70% 14%) 100%)",
-      }}
-    >
-      {/* Glow blobs */}
-      <div className="absolute -top-24 -left-24 w-96 h-96 bg-white/10 blur-3xl" />
-      <div className="absolute -bottom-32 -right-32 w-[30rem] h-[30rem] bg-white/10 blur-3xl" />
-
-      {/* Pattern */}
-      <div className="absolute inset-0 opacity-[0.07]">
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Ccircle cx='2' cy='2' r='2'/%3E%3C/g%3E%3C/svg%3E")`,
-          }}
-        />
+/** Dark closing band used at the foot of the service, city, guide and static pages. Same language as the home page close. */
+export const CTASection = () => (
+  <section className="sx-close" aria-label="Contact">
+    <GridBg dark />
+    <div className="fg-wrap sx-close-in">
+      <div>
+        <p className="dw-no">Contact</p>
+        <h2>Tell us about your facade.</h2>
+        <p className="sx-close-p">
+          Call us to arrange a site visit, or send drawings for a quotation. We call back the same business day.
+        </p>
+        <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "14px 22px", marginTop: 28 }}>
+          <CallNow className="fg-btn" number />
+          <Link to="/contact" className="fg-btn2" style={{ color: "#ffffff", borderColor: "#e9eae6" }}>
+            Send an enquiry
+          </Link>
+        </div>
+        <p className="sx-close-h">
+          Open {company.hours.days}, {company.hours.opens} to {company.hours.closes}.
+        </p>
       </div>
-
-      <div className="container mx-auto px-4 relative z-10">
-        <motion.div
-          className="max-w-3xl mx-auto text-center space-y-8"
-          initial="hidden"
-          whileInView="visible"
-          viewport={viewport}
-          variants={stagger(0.12)}
-        >
-          <motion.h2
-            variants={fadeUp}
-            className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-tight tracking-tight"
-          >
-            Transform Your Building Into a{" "}
-            <br className="hidden sm:block" />
-            <span className="text-gradient-light">
-              Modern Architectural Landmark
-            </span>
-          </motion.h2>
-
-          <motion.p
-            variants={fadeUp}
-            className="text-white/80 text-lg max-w-xl mx-auto leading-relaxed"
-          >
-            Award-winning facade solutions engineered for performance, lasting
-            aesthetics, and measurable long-term value.
-          </motion.p>
-
-          {/* ===== BUTTONS ===== */}
-          <motion.div
-            variants={fadeUp}
-            className="flex flex-col sm:flex-row items-center justify-center gap-5 pt-6"
-          >
-            {/* WhatsApp */}
-            <Button
-              asChild
-              size="lg"
-              className="bg-white text-primary hover:bg-white/90 px-10 py-6 text-base font-semibold shadow-xl group active:scale-[0.97] transition-transform"
-            >
-              <a
-                href="https://wa.me/918369233566?text=Hello%20Fine%20Glaze%2C%20I%20would%20like%20to%20discuss%20a%20facade%20project."
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Get Instant Quote
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </a>
-            </Button>
-
-            {/* Call */}
-            <Button
-              asChild
-              size="lg"
-              variant="outline"
-              className="bg-white text-slate-900 hover:bg-white/90 border-white px-10 py-6 text-base font-bold active:scale-[0.97] transition-transform"
-            >
-              <a href="tel:+918369233566">
-                <Phone className="mr-2 h-4 w-4" />
-                Call Expert
-              </a>
-            </Button>
-          </motion.div>
-        </motion.div>
-      </div>
-    </section>
-  );
-};
+      <TitleBlock
+        dark
+        className="sx-close-tb"
+        rows={[
+          ["MOBILE", <a key="m" href={`tel:${company.phone.mobileE164}`}>{company.phone.mobileDisplay}</a>],
+          ["WHATSAPP", <a key="w" href={whatsappHref()} target="_blank" rel="noopener noreferrer">Message us</a>],
+          ["EMAIL", <a key="e" href={`mailto:${company.email}`}>{company.email}</a>],
+          ["OFFICE", company.address.short],
+        ]}
+      />
+    </div>
+  </section>
+);

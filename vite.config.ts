@@ -1,5 +1,5 @@
 import { defineConfig, type Plugin } from "vite";
-import { readFileSync } from "node:fs";
+import { readFileSync, existsSync } from "node:fs";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
@@ -23,6 +23,26 @@ const articleSitemapPlugin = (): Plugin => {
     },
   };
 };
+
+// `vite preview` falls back to the home page for any extensionless path, which makes
+// every inner route hydrate against the wrong prerendered HTML. Mirror Vercel's
+// cleanUrls behaviour: serve dist/<route>/index.html for /<route>.
+const cleanUrlsPreviewPlugin = (): Plugin => ({
+  name: "clean-urls-preview",
+  configurePreviewServer(server) {
+    const outDir = path.resolve(__dirname, "dist");
+    server.middlewares.use((req, _res, next) => {
+      const [pathname, query = ""] = (req.url || "/").split("?");
+      if (pathname !== "/" && !path.extname(pathname)) {
+        const clean = pathname.replace(/\/+$/, "");
+        if (existsSync(path.join(outDir, clean, "index.html"))) {
+          req.url = clean + "/index.html" + (query ? "?" + query : "");
+        }
+      }
+      next();
+    });
+  },
+});
 
 // Retired: the ~600 auto-generated /facade-contractor/:city pages are no longer
 // pre-rendered. vercel.json 301-redirects every old URL to a genuine page
@@ -63,7 +83,6 @@ const staticSeoUrls = [
   "/aluminium-windows-doors",
   "/quality-safety",
   "/service-request",
-  "/facade-cost-estimator",
 ];
 
 // 4. Project Slugs — derived from src/data/projects.ts so new projects are always pre-rendered.
@@ -76,7 +95,7 @@ export default defineConfig(({ mode }) => ({
     port: 8080,
     hmr: { overlay: false },
   },
-  plugins: [react(), articleSitemapPlugin(), mode === "development" && componentTagger()].filter(Boolean),
+  plugins: [react(), articleSitemapPlugin(), cleanUrlsPreviewPlugin(), mode === "development" && componentTagger()].filter(Boolean),
   resolve: {
     alias: { "@": path.resolve(__dirname, "./src") },
   },
@@ -95,6 +114,9 @@ export default defineConfig(({ mode }) => ({
         '/acp-aluminium-cladding', '/glass-railings', '/maintenance-services',
         '/skylights-canopies', '/aluminium-louvers', '/glass-partitions',
         '/privacy-policy', '/terms-of-service',
+        // Client-only screens: prerendered so a direct visit hydrates against its own HTML, not the home page.
+        '/admin', '/admin/images', '/admin/logos', '/admin/blog-images', '/admin/media', '/admin/content',
+        '/portal', '/inspection', '/inspection/new',
         // Generated lists
         ...blogUrls,
         ...projectUrls,

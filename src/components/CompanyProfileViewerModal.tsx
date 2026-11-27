@@ -1,3 +1,4 @@
+import "@/components/layout/header.css";
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import {
   X,
@@ -204,29 +205,29 @@ export const CompanyProfileViewerModal: React.FC = () => {
   return (
     <div
       ref={containerRef}
-      className="fixed inset-0 z-[100] flex flex-col bg-stone-950 text-white select-none overflow-hidden h-[100dvh] max-h-[100dvh] animate-in fade-in duration-200"
+      className="fixed inset-0 z-[100] flex flex-col bg-night text-paper select-none overflow-hidden h-[100dvh] max-h-[100dvh] animate-in fade-in duration-200"
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
     >
       {/* Top Header Bar */}
-      <header className="flex-none h-14 sm:h-16 border-b border-stone-800/80 bg-stone-900/95 px-2.5 sm:px-6 flex items-center justify-between gap-1.5 sm:gap-2 z-20">
+      <header className="flex-none h-14 sm:h-16 border-b border-line bg-night-2/95 px-2.5 sm:px-6 flex items-center justify-between gap-1.5 sm:gap-2 z-20">
         {/* Brand & Jump Dropdown */}
         <div className="flex items-center gap-2 sm:gap-3 min-w-0">
           <div className="flex items-center gap-2 shrink-0">
-            <img src="/Logofg.webp" alt="Fine Glaze" className="h-6 sm:h-8 w-auto brightness-0 invert" />
-            <span className="hidden md:inline-block text-xs uppercase tracking-widest text-amber-400 font-bold border-l border-stone-700 pl-3">
+            <img decoding="async" src="/Logofg.webp" alt="Fine Glaze" width={1920} height={603} className="fg-logo-img" />
+            <span className="hidden md:inline-block text-xs text-lamp font-bold border-l border-line pl-3">
               Company Profile
             </span>
           </div>
 
-          <div className="hidden sm:block h-5 w-px bg-stone-800" />
+          <div className="hidden sm:block h-5 w-px bg-night-2" />
 
           {/* Jump dropdown */}
           <div className="relative min-w-0 max-w-[135px] xs:max-w-[180px] sm:max-w-xs">
             <select
               value={currentSlide}
               onChange={(e) => goToSlide(Number(e.target.value))}
-              className="w-full bg-stone-800/90 hover:bg-stone-700/90 text-stone-200 text-xs sm:text-sm rounded-lg px-2 sm:px-3 py-1.5 border border-stone-700 focus:outline-none focus:ring-1 focus:ring-amber-400 truncate cursor-pointer font-medium"
+              className="w-full bg-night-2/90 hover:bg-line/90 text-paper text-xs sm:text-sm px-2 sm:px-3 py-1.5 border border-line focus:outline-none focus:ring-1 focus:ring-lamp truncate cursor-pointer font-medium"
             >
               {PROFILE_SECTIONS.map((sec) => (
                 <option key={sec.slide} value={sec.slide}>
@@ -240,14 +241,14 @@ export const CompanyProfileViewerModal: React.FC = () => {
         {/* Action Controls */}
         <div className="flex items-center gap-1 sm:gap-2 shrink-0">
           {/* Mode Switcher */}
-          <div className="bg-stone-800/80 p-0.5 rounded-lg border border-stone-700 hidden sm:flex">
+          <div className="bg-night-2/80 p-0.5 border border-line hidden sm:flex">
             <button
               onClick={() => setViewMode("slides")}
               className={cn(
-                "px-2.5 py-1 text-xs font-semibold rounded-md transition-all flex items-center gap-1.5",
+                "px-2.5 py-1 text-xs font-semibold  transition-all flex items-center gap-1.5",
                 viewMode === "slides"
-                  ? "bg-amber-500 text-stone-950 shadow"
-                  : "text-stone-300 hover:text-white"
+                  ? "bg-lamp text-lamp-ink "
+                  : "text-paper/80 hover:text-paper"
               )}
               title="Interactive Slide Deck"
             >
@@ -257,10 +258,10 @@ export const CompanyProfileViewerModal: React.FC = () => {
             <button
               onClick={() => setViewMode("pdf")}
               className={cn(
-                "px-2.5 py-1 text-xs font-semibold rounded-md transition-all flex items-center gap-1.5",
+                "px-2.5 py-1 text-xs font-semibold  transition-all flex items-center gap-1.5",
                 viewMode === "pdf"
-                  ? "bg-amber-500 text-stone-950 shadow"
-                  : "text-stone-300 hover:text-white"
+                  ? "bg-lamp text-lamp-ink "
+                  : "text-paper/80 hover:text-paper"
               )}
               title="Native PDF"
             >
@@ -274,8 +275,8 @@ export const CompanyProfileViewerModal: React.FC = () => {
             <button
               onClick={() => setIsPlaying(!isPlaying)}
               className={cn(
-                "p-1.5 sm:p-2 rounded-lg border border-stone-700/80 text-stone-300 hover:text-white transition-colors hidden md:block",
-                isPlaying ? "bg-amber-500/20 text-amber-400 border-amber-500/40" : "bg-stone-800/80 hover:bg-stone-700/80"
+                "p-1.5 sm:p-2  border border-line text-paper/80 hover:text-paper transition-colors hidden md:block",
+                isPlaying ? "bg-lamp/20 text-lamp border-lamp/40" : "bg-night-2/80 hover:bg-line/80"
               )}
               title={isPlaying ? "Pause" : "Play"}
             >
@@ -288,8 +289,8 @@ export const CompanyProfileViewerModal: React.FC = () => {
             <button
               onClick={() => setShowThumbnails(!showThumbnails)}
               className={cn(
-                "p-1.5 sm:p-2 rounded-lg border border-stone-700/80 text-stone-300 hover:text-white transition-colors hidden md:block",
-                showThumbnails ? "bg-amber-500/20 text-amber-400 border-amber-500/40" : "bg-stone-800/80 hover:bg-stone-700/80"
+                "p-1.5 sm:p-2  border border-line text-paper/80 hover:text-paper transition-colors hidden md:block",
+                showThumbnails ? "bg-lamp/20 text-lamp border-lamp/40" : "bg-night-2/80 hover:bg-line/80"
               )}
               title="Toggle Thumbnails"
             >
@@ -301,7 +302,7 @@ export const CompanyProfileViewerModal: React.FC = () => {
           <a
             href={pdfUrl}
             download="fine-glaze-company-profile.pdf"
-            className="flex items-center gap-1.5 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-stone-950 font-bold px-2.5 sm:px-3 py-1.5 rounded-lg text-xs transition-all shadow-md active:scale-95 cursor-pointer"
+            className="flex items-center gap-1.5 bg-night-2 text-paper font-bold px-2.5 sm:px-3 py-1.5 text-xs transition-all active:scale-95 cursor-pointer"
             title="Download PDF (7.3 MB)"
           >
             <Download className="w-3.5 h-3.5" />
@@ -311,7 +312,7 @@ export const CompanyProfileViewerModal: React.FC = () => {
           {/* Share */}
           <button
             onClick={handleShare}
-            className="p-1.5 sm:p-2 bg-stone-800/80 hover:bg-stone-700/80 rounded-lg border border-stone-700/80 text-stone-300 hover:text-white transition-colors"
+            className="p-1.5 sm:p-2 bg-night-2/80 hover:bg-line/80 border border-line text-paper/80 hover:text-paper transition-colors"
             title="Copy Share Link"
           >
             {copied ? <Check className="w-4 h-4 text-emerald-400" /> : <Share2 className="w-4 h-4" />}
@@ -320,7 +321,7 @@ export const CompanyProfileViewerModal: React.FC = () => {
           {/* Fullscreen */}
           <button
             onClick={toggleFullscreen}
-            className="p-1.5 sm:p-2 bg-stone-800/80 hover:bg-stone-700/80 rounded-lg border border-stone-700/80 text-stone-300 hover:text-white transition-colors hidden md:block"
+            className="p-1.5 sm:p-2 bg-night-2/80 hover:bg-line/80 border border-line text-paper/80 hover:text-paper transition-colors hidden md:block"
             title={isFullscreen ? "Exit Fullscreen" : "Enter Fullscreen"}
           >
             {isFullscreen ? <Minimize2 className="w-4 h-4" /> : <Maximize2 className="w-4 h-4" />}
@@ -329,7 +330,7 @@ export const CompanyProfileViewerModal: React.FC = () => {
           {/* Close */}
           <button
             onClick={closeProfile}
-            className="p-1.5 sm:p-2 bg-stone-800/80 hover:bg-red-600/80 text-stone-300 hover:text-white rounded-lg border border-stone-700/80 transition-all cursor-pointer ml-0.5"
+            className="p-1.5 sm:p-2 bg-night-2/80 hover:bg-red-600/80 text-paper/80 hover:text-paper border border-line transition-all cursor-pointer ml-0.5"
             title="Close Viewer (Esc)"
           >
             <X className="w-5 h-5" />
@@ -338,16 +339,16 @@ export const CompanyProfileViewerModal: React.FC = () => {
       </header>
 
       {/* Main Viewing Canvas */}
-      <main className="flex-1 relative overflow-hidden flex items-center justify-center p-1 sm:p-4 bg-stone-950 w-full h-full min-h-0">
+      <main className="flex-1 relative overflow-hidden flex items-center justify-center p-1 sm:p-4 bg-night w-full h-full min-h-0">
         {viewMode === "slides" ? (
           <div className="relative w-full h-full flex items-center justify-center min-h-0">
             {/* Slide Image */}
             <div className="relative w-full h-full flex items-center justify-center">
-              <img
+              <img decoding="async"
                 key={currentSlide}
                 src={`/profile-slides/slide-${currentSlide}.webp`}
                 alt={`Fine Glaze Company Profile - Slide ${currentSlide}: ${currentSection.title}`}
-                className="max-w-full max-h-full w-auto h-auto object-contain rounded-md sm:rounded-xl shadow-2xl shadow-black border border-stone-800/60 transition-opacity duration-200"
+                className="max-w-full max-h-full w-auto h-auto object-contain shadow-black border border-line transition-opacity duration-200"
                 loading="eager"
               />
 
@@ -355,7 +356,7 @@ export const CompanyProfileViewerModal: React.FC = () => {
               <button
                 onClick={prevSlide}
                 disabled={currentSlide === 1}
-                className="hidden sm:flex absolute left-3 top-1/2 -translate-y-1/2 p-3 rounded-full bg-stone-900/80 hover:bg-amber-500 text-white hover:text-stone-950 backdrop-blur-md border border-stone-700/80 transition-all disabled:opacity-20 disabled:pointer-events-none shadow-xl active:scale-95 cursor-pointer z-10"
+                className="hidden sm:flex absolute left-3 top-1/2 -translate-y-1/2 p-3 bg-night-2/80 hover:bg-lamp/90 text-lamp-ink hover:text-paper border border-line transition-all disabled:opacity-20 disabled:pointer-events-none active:scale-95 cursor-pointer z-10"
                 aria-label="Previous Slide"
               >
                 <ChevronLeft className="w-6 h-6" />
@@ -365,7 +366,7 @@ export const CompanyProfileViewerModal: React.FC = () => {
               <button
                 onClick={nextSlide}
                 disabled={currentSlide === totalSlides}
-                className="hidden sm:flex absolute right-3 top-1/2 -translate-y-1/2 p-3 rounded-full bg-stone-900/80 hover:bg-amber-500 text-white hover:text-stone-950 backdrop-blur-md border border-stone-700/80 transition-all disabled:opacity-20 disabled:pointer-events-none shadow-xl active:scale-95 cursor-pointer z-10"
+                className="hidden sm:flex absolute right-3 top-1/2 -translate-y-1/2 p-3 bg-night-2/80 hover:bg-lamp/90 text-lamp-ink hover:text-paper border border-line transition-all disabled:opacity-20 disabled:pointer-events-none active:scale-95 cursor-pointer z-10"
                 aria-label="Next Slide"
               >
                 <ChevronRight className="w-6 h-6" />
@@ -374,22 +375,22 @@ export const CompanyProfileViewerModal: React.FC = () => {
           </div>
         ) : (
           /* Native PDF Iframe / Object Mode */
-          <div className="w-full h-full max-w-6xl rounded-xl overflow-hidden border border-stone-800 shadow-2xl bg-stone-900 min-h-0">
+          <div className="w-full h-full max-w-6xl overflow-hidden border border-line bg-night-2 min-h-0">
             <object
               data={`${pdfUrl}#page=${currentSlide}&toolbar=1&navpanes=1`}
               type="application/pdf"
               className="w-full h-full"
             >
               <div className="w-full h-full flex flex-col items-center justify-center p-6 text-center space-y-4">
-                <FileText className="w-16 h-16 text-amber-500" />
-                <h3 className="text-xl font-bold">PDF Ready to Open</h3>
-                <p className="text-stone-400 text-sm max-w-md">
+                <FileText className="w-16 h-16 text-lamp" />
+                <h3 className="text-xl font-medium">PDF Ready to Open</h3>
+                <p className="text-mute text-sm max-w-md">
                   Your browser does not support embedded PDF rendering directly. You can view via our interactive deck or open/download the file below.
                 </p>
                 <div className="flex gap-3">
                   <Button
                     onClick={() => setViewMode("slides")}
-                    className="bg-amber-500 text-stone-950 hover:bg-amber-400 font-bold"
+                    className="bg-lamp text-lamp-ink hover:bg-lamp/90 font-bold"
                   >
                     Switch to Interactive Deck
                   </Button>
@@ -397,7 +398,7 @@ export const CompanyProfileViewerModal: React.FC = () => {
                     href={pdfUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-4 py-2 bg-stone-800 hover:bg-stone-700 rounded-lg text-sm font-semibold text-white border border-stone-700"
+                    className="inline-flex items-center gap-2 px-4 py-2 bg-night-2 hover:bg-line text-sm font-semibold text-paper border border-line"
                   >
                     Open in New Tab <ExternalLink className="w-4 h-4" />
                   </a>
@@ -410,25 +411,25 @@ export const CompanyProfileViewerModal: React.FC = () => {
 
       {/* Bottom Thumbnail Strip (Collapsible / Toggleable) */}
       {showThumbnails && viewMode === "slides" && (
-        <div className="flex-none h-24 border-t border-stone-800 bg-stone-900/90 px-4 py-2 overflow-x-auto flex items-center gap-2.5 z-20 scrollbar-thin">
+        <div className="flex-none h-24 border-t border-line bg-night-2/90 px-4 py-2 overflow-x-auto flex items-center gap-2.5 z-20 scrollbar-thin">
           {PROFILE_SECTIONS.map((sec) => (
             <button
               key={sec.slide}
               onClick={() => goToSlide(sec.slide)}
               className={cn(
-                "relative flex-none h-18 aspect-video rounded-lg overflow-hidden border-2 transition-all cursor-pointer group",
+                "relative flex-none h-18 aspect-video  overflow-hidden border-2 transition-all cursor-pointer group",
                 currentSlide === sec.slide
-                  ? "border-amber-400 ring-2 ring-amber-400/50 scale-105"
-                  : "border-stone-700 opacity-60 hover:opacity-100"
+                  ? "border-lamp/40 ring-2 ring-lamp/50 scale-105"
+                  : "border-line opacity-60 hover:opacity-100"
               )}
             >
-              <img
+              <img decoding="async"
                 src={`/profile-slides/thumb-${sec.slide}.webp`}
                 alt={sec.title}
                 className="w-full h-full object-cover"
                 loading="lazy"
               />
-              <span className="absolute bottom-0 inset-x-0 bg-stone-950/80 text-[10px] text-stone-300 px-1 py-0.5 truncate text-center font-bold">
+              <span className="absolute bottom-0 inset-x-0 bg-[rgba(21,24,27,0.82)] text-[13px] text-white px-1 py-0.5 truncate text-center font-bold">
                 {sec.slide}
               </span>
             </button>
@@ -437,32 +438,32 @@ export const CompanyProfileViewerModal: React.FC = () => {
       )}
 
       {/* Bottom Navigation & Status Bar */}
-      <footer className="flex-none h-14 border-t border-stone-800/80 bg-stone-900/95 px-3 sm:px-6 flex items-center justify-between text-xs text-stone-400 z-20">
+      <footer className="flex-none h-14 border-t border-line bg-night-2/95 px-3 sm:px-6 flex items-center justify-between text-xs text-mute z-20">
         <div className="flex items-center gap-1.5 sm:gap-2">
           {/* Mobile Thumb Navigation Buttons */}
           <button
             onClick={prevSlide}
             disabled={currentSlide === 1}
-            className="sm:hidden p-1.5 rounded-lg bg-stone-800 text-stone-200 hover:bg-stone-700 disabled:opacity-30 disabled:pointer-events-none transition-colors border border-stone-700/80 active:scale-95"
+            className="sm:hidden p-1.5 bg-night-2 text-paper hover:bg-line disabled:opacity-30 disabled:pointer-events-none transition-colors border border-line active:scale-95"
             aria-label="Previous Slide"
           >
             <ChevronLeft className="w-4 h-4" />
           </button>
 
-          <span className="font-bold text-amber-400 bg-amber-500/10 border border-amber-500/20 px-2 sm:px-2.5 py-1 rounded-md text-xs">
+          <span className="font-bold text-lamp bg-lamp/10 border border-lamp/20 px-2 sm:px-2.5 py-1 text-xs">
             {currentSlide} / {totalSlides}
           </span>
 
           <button
             onClick={nextSlide}
             disabled={currentSlide === totalSlides}
-            className="sm:hidden p-1.5 rounded-lg bg-stone-800 text-stone-200 hover:bg-stone-700 disabled:opacity-30 disabled:pointer-events-none transition-colors border border-stone-700/80 active:scale-95"
+            className="sm:hidden p-1.5 bg-night-2 text-paper hover:bg-line disabled:opacity-30 disabled:pointer-events-none transition-colors border border-line active:scale-95"
             aria-label="Next Slide"
           >
             <ChevronRight className="w-4 h-4" />
           </button>
 
-          <span className="hidden sm:inline-block text-stone-300 font-medium truncate max-w-sm ml-2">
+          <span className="hidden sm:inline-block text-paper/80 font-medium truncate max-w-sm ml-2">
             {currentSection.title}
           </span>
         </div>
@@ -471,21 +472,21 @@ export const CompanyProfileViewerModal: React.FC = () => {
         <div className="flex items-center gap-3">
           <a
             href="tel:+918369233566"
-            className="inline-flex items-center gap-1.5 text-stone-300 hover:text-amber-400 transition-colors"
+            className="inline-flex items-center gap-1.5 text-paper/80 hover:text-lamp transition-colors"
           >
-            <PhoneCall className="w-3.5 h-3.5 text-amber-500" />
+            <PhoneCall className="w-3.5 h-3.5 text-lamp" />
             <span className="hidden sm:inline">+91 8369233566</span>
             <span className="sm:hidden text-xs">Call</span>
           </a>
 
           <a
             href="mailto:info@fineglaze.com"
-            className="hidden sm:inline-flex items-center gap-1.5 text-stone-300 hover:text-amber-400 transition-colors"
+            className="hidden sm:inline-flex items-center gap-1.5 text-paper/80 hover:text-lamp transition-colors"
           >
             <span>info@fineglaze.com</span>
           </a>
 
-          <span className="text-[11px] text-stone-500 hidden lg:inline">
+          <span className="text-[13px] text-mute hidden lg:inline">
             Use ← → arrows or swipe to navigate
           </span>
         </div>

@@ -1,0 +1,42 @@
+/* Shared page hero, engineering style. With a photo: text left, framed viewport right. Without: text over a faint 12-column grid. */
+.ph { position: relative; background: #f4f4f1; color: #15181b; padding: clamp(40px, 5vw, 72px) 0 clamp(40px, 5vw, 72px); border-bottom: 1px solid #cfd2cd; overflow: hidden; }
+.ph-wrap { position: relative; z-index: 1; }
+.ph-g { display: grid; grid-template-columns: minmax(0, 1fr); gap: 32px; align-items: end; }
+.ph-img .ph-g { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); align-items: center; gap: clamp(32px, 4vw, 64px); }
+.ph-txt .ph-g { grid-template-columns: minmax(0, 1fr) auto; }
+.ph-copy { min-width: 0; max-width: 46rem; }
+.ph-crumbs { margin: 0 0 clamp(20px, 2.6vw, 32px); }
+.ph-crumbs ol { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 4px 0; font-family: 'IBM Plex Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12.5px; letter-spacing: 0.04em; text-transform: uppercase; color: #555b62; }
+.ph-crumbs li { display: inline-flex; align-items: center; }
+.ph-crumbs li + li::before { content: "/"; margin: 0 10px; color: #8a9097; }
+.ph-crumbs a { color: #555b62; text-decoration: none; }
+.ph-crumbs a:hover { color: #9b5520; text-decoration: underline; text-underline-offset: 4px; }
+.ph-crumbs [aria-current] { color: #15181b; }
+.ph h1 { margin: 0; font-family: 'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif; font-weight: 500; font-size: clamp(32px, 4.2vw, 58px); line-height: 1.08; letter-spacing: -0.02em; color: #15181b; text-wrap: balance; font-style: normal; }
+.ph-intro { margin: clamp(16px, 2vw, 24px) 0 0; max-width: 38rem; font-size: clamp(16.5px, 1.4vw, 19px); line-height: 1.55; color: #555b62; }
+.ph-act { margin-top: clamp(24px, 2.8vw, 36px); display: flex; flex-wrap: wrap; align-items: center; gap: 14px 18px; }
+.ph-extra { margin-top: 20px; font-size: 15px; color: #555b62; max-width: 38rem; }
+.ph-extra a { color: #15181b; }
+.ph.compact h1 { font-size: clamp(28px, 3.2vw, 44px); line-height: 1.12; }
+.ph h1 .ph-sub { display: block; margin-top: 0.35em; font-size: 0.5em; font-weight: 400; letter-spacing: -0.01em; color: #555b62; }
+
+/* No photo: the title block sits bottom right */
+.ph-tb { width: 260px; align-self: end; }
+
+/* Framed viewport */
+.ph-view { margin: 0; min-width: 0; }
+.ph-frame { position: relative; border: 1px solid #15181b; background: #e9eae6; aspect-ratio: 4 / 3; }
+.ph-frame img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.ph-view figcaption { margin-top: 10px; font-family: 'IBM Plex Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; line-height: 1.4; letter-spacing: 0.03em; color: #555b62; }
+.ph-view figcaption span { color: #9b5520; margin-right: 8px; }
+.ph-view figcaption { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+
+@media (max-width: 900px) {
+  .ph-img .ph-g, .ph-txt .ph-g { grid-template-columns: minmax(0, 1fr); }
+  .ph-tb { display: none; }
+  .ph-act .fg-btn, .ph-act .cn-wrap, .ph-act .fg-btn2 { width: 100%; }
+  .ph-act .cn-wrap .fg-btn { width: 100%; }
+}
+.ph-sch { margin: 0; }
+.ph-sch .sx-fig-f { aspect-ratio: 4 / 3; }
+@media (max-width: 900px) { .ph-sch { max-width: 420px; } }

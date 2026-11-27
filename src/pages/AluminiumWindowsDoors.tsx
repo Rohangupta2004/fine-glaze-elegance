@@ -1,11 +1,14 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, CheckCircle2, Phone, Calculator } from "lucide-react";
 import SEO from "@/components/SEO";
+import PageHero from "@/components/common/PageHero";
 import { Layout } from "@/components/layout/Layout";
 import { QuoteModal } from "@/components/QuoteModal";
 import { company, telHref } from "@/data/company";
-import { COST_SYSTEMS, PRICING_APPROVED } from "@/data/costRanges";
+import { COST_SYSTEMS } from "@/data/costRanges";
+import FaqList from "@/components/common/FaqList";
+import { CTASection } from "@/components/home/CTASection";
+import { Process, Prose, Sec, SpecList, SpecTable } from "@/components/common/Sheet";
 
 const PAGE_URL = "https://fineglaze.com/aluminium-windows-doors";
 const HERO = "/projects/samundra-tarang-51-1.webp";
@@ -49,18 +52,16 @@ const QUOTE_CHECKLIST = [
 ];
 
 const PROJECTS = [
-  { title: "Terrace enclosure — Samundra Tarang, Dadar (W)", scope: "Four-track sliding windows, fixed glazing and internal GS structure.", status: "Completed", href: "/project/samundra-tarang", img: "/projects/samundra-tarang-51-1.webp" },
-  { title: "Leela Hotel — laundry area, Andheri (E)", scope: "Fixed glass windows and openable aluminium window units.", status: "Completed 2023", href: "/project/leela-hotel", img: "/projects/leela-hotel-50-2.webp" },
+  { title: "Terrace enclosure, Samundra Tarang, Dadar (W)", scope: "Four-track sliding windows, fixed glazing and internal GS structure.", status: "Completed", href: "/project/samundra-tarang", img: "/projects/samundra-tarang-51-1.webp" },
+  { title: "Leela Hotel, laundry area, Andheri (E)", scope: "Fixed glass windows and openable aluminium window units.", status: "Completed 2023", href: "/project/leela-hotel", img: "/projects/leela-hotel-50-1.webp" },
   { title: "Nirmaann Estrellaa, Pune", scope: "25 mm Series 3-track sliding windows, fixed glass windows, louvers and fins.", status: "Ongoing", href: "/project/nirmaann-estrellaa", img: "/projects/nirmaann-estrellaa-36-1.webp" },
   { title: "Nanavati Max Hospital, Vile Parle", scope: "Window leakage rectification and consultation for L&T Construction.", status: "Ongoing", href: "/project/nanavati-max-hospital", img: "/projects/nanavati-max-hospital-39-4.webp" },
 ];
 
 const FAQS = [
   {
-    q: "How much do aluminium windows cost per sq ft in Pune and Mumbai?",
-    a: PRICING_APPROVED
-      ? `Indicative installed ranges: sliding ₹450–₹800/sq ft, casement ₹500–₹900/sq ft, tilt-turn ₹700–₹1,200/sq ft and lift-slide doors ₹900–₹1,500/sq ft. The spread comes from profile series, glass build-up and hardware. We give a firm price only after measuring on site.`
-      : "It depends mainly on the profile series, the glass build-up (single toughened, DGU or laminated) and the hardware brand — the same “sliding window” can vary a lot in price. We measure on site and give a written, itemised quotation so you can compare like for like.",
+    q: "How much do aluminium windows cost in Pune and Mumbai?",
+    a: "It depends mainly on the profile series, the glass build-up (single toughened, DGU or laminated) and the hardware brand — the same “sliding window” can vary a lot in price. We measure on site and give a written, itemised quotation so you can compare like for like.",
   },
   {
     q: "Are aluminium windows better than uPVC?",
@@ -100,15 +101,6 @@ export default function AluminiumWindowsDoors() {
         itemListElement: windowSystems.map((s) => ({
           "@type": "Offer",
           itemOffered: { "@type": "Service", name: s.name },
-          ...(PRICING_APPROVED && {
-            priceSpecification: {
-              "@type": "UnitPriceSpecification",
-              priceCurrency: "INR",
-              minPrice: s.min,
-              maxPrice: s.max,
-              unitText: "per sq ft, installed (indicative)",
-            },
-          }),
         })),
       },
     },
@@ -131,8 +123,8 @@ export default function AluminiumWindowsDoors() {
   return (
     <Layout darkHero>
       <SEO
-        title="Aluminium Windows & Doors in Pune & Mumbai | Fine Glaze"
-        description="Sliding, casement, tilt-turn and lift-slide aluminium windows & doors, fabricated in Pune and installed by our own team. Glass options, a quote checklist and real projects."
+        title="Aluminium Windows and Doors in Pune & Mumbai | Fine Glaze"
+        description="Aluminium windows and doors in Pune, Mumbai and across India. Sliding, casement, tilt-turn and lift-slide systems, fabricated at our own unit in Pune."
         canonical={PAGE_URL}
         keywords="aluminium windows Pune, aluminium windows Mumbai, aluminium sliding windows, casement windows, tilt and turn windows, thermal break aluminium windows, aluminium doors, window installation Pune"
         ogImage={`https://fineglaze.com${HERO}`}
@@ -142,202 +134,119 @@ export default function AluminiumWindowsDoors() {
       />
 
       {/* HERO */}
-      <section className="relative min-h-[78vh] flex items-end overflow-hidden bg-stone-950">
-        <img
-          src={HERO}
-          alt="Aluminium sliding and fixed glass terrace enclosure by Fine Glaze at Samundra Tarang, Dadar"
-          className="absolute inset-0 w-full h-full object-cover opacity-70"
-          width={816}
-          height={459}
-          loading="eager"
+      <PageHero
+        schematic="windows"
+        crumbs={[{ label: "Aluminium windows and doors" }]}
+        title={<>Aluminium Windows &amp; Doors in <span className="text-gradient-gold">Pune &amp; Mumbai</span></>}
+        intro={`Sliding, casement, tilt-turn and lift-slide systems, measured by us, fabricated at our ${company.fabricationUnit.location} unit, installed under a dedicated site in-charge and supervisor, and water-tested before handover.`}
+        secondary={{ label: company.phone.mobileDisplay, href: telHref }}
+        source="windows_hero"
+      />
+
+      <Sec no="01" label="Systems" title={<>Window &amp; door systems we install</>} sheetLabel="System schedule" dim={`${windowSystems.length} systems`}>
+        <p className="sx-note">
+          Every system is priced after a site measurement, with the profile series, glass and hardware written into an itemised quotation.
+        </p>
+        <SpecTable
+          caption="Window and door systems"
+          columns={["No.", "System", "Best for", "Price moves with"]}
+          rows={windowSystems.map((s, i) => [
+            String(i + 1).padStart(2, "0"),
+            <>
+              <b>{s.name}</b>
+              <small>{SYSTEM_NOTES[s.id]?.what}</small>
+            </>,
+            SYSTEM_NOTES[s.id]?.bestFor,
+            s.drivers.join(", "),
+          ])}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-stone-950/70 via-stone-950/50 to-stone-950/95" />
-        <div className="relative z-10 container mx-auto px-4 pb-14 pt-32">
-          <p className="text-amber-400 text-xs font-bold tracking-[0.3em] uppercase mb-4">Fine Glaze · Pune &amp; Mumbai</p>
-          <h1 className="text-3xl sm:text-5xl font-extrabold text-white leading-tight max-w-3xl">
-            Aluminium Windows &amp; Doors in Pune &amp; Mumbai
-          </h1>
-          <p className="mt-5 text-stone-200 text-base sm:text-lg max-w-2xl">
-            Sliding, casement, tilt-turn and lift-slide systems — measured by us, fabricated at our {company.fabricationUnit.location} unit,
-            installed by our own team and water-tested before handover.
-          </p>
-          <div className="mt-8 flex flex-col sm:flex-row gap-3">
-            <button
-              onClick={() => setQuoteOpen(true)}
-              className="inline-flex items-center justify-center rounded-xl bg-amber-500 hover:bg-amber-400 text-stone-950 font-bold px-7 py-4"
-            >
-              Request a site measurement <ArrowRight className="ml-2 h-5 w-5" />
-            </button>
-            <a
-              href={telHref}
-              className="inline-flex items-center justify-center rounded-xl border border-white/40 bg-white/10 text-white font-bold px-7 py-4 hover:bg-white hover:text-stone-900"
-            >
-              <Phone className="mr-2 h-4 w-4" /> {company.phone.mobileDisplay}
-            </a>
-          </div>
-          <p className="mt-4 text-xs text-white/50">Pictured: terrace enclosure, Samundra Tarang, Dadar (W) — completed by Fine Glaze.</p>
-        </div>
-      </section>
+        <p className="sx-note" style={{ marginTop: 22, marginBottom: 0 }}>
+          We also fabricate fixed glazing, sliding &amp; folding doors, safety gates and mirror glass work. Thermal-break profiles are available on request.
+        </p>
+      </Sec>
 
-      {/* SYSTEMS */}
-      <section className="py-16 md:py-20 bg-background" aria-labelledby="systems">
-        <div className="container mx-auto px-4">
-          <div className="max-w-2xl mb-10">
-            <h2 id="systems" className="text-2xl md:text-4xl font-bold text-foreground">Window &amp; door systems we install</h2>
-            <p className="mt-3 text-muted-foreground">
-              Every system is priced after a site measurement, with the profile series, glass and hardware written into an itemised quotation.
-            </p>
-          </div>
-          <div className="grid sm:grid-cols-2 gap-5">
-            {windowSystems.map((s) => (
-              <article key={s.id} className="rounded-xl border border-border bg-card p-6">
-                <div className="flex items-start justify-between gap-4">
-                  <h3 className="text-xl font-semibold text-foreground">{s.name}</h3>
-                  {PRICING_APPROVED && (
-                    <p className="text-sm font-bold text-amber-700 whitespace-nowrap">
-                      ₹{s.min.toLocaleString("en-IN")}–₹{s.max.toLocaleString("en-IN")}/sq ft
-                    </p>
-                  )}
-                </div>
-                <p className="mt-3 text-sm text-muted-foreground">{SYSTEM_NOTES[s.id]?.what}</p>
-                <p className="mt-3 text-sm"><span className="font-semibold text-foreground">Best for:</span> <span className="text-muted-foreground">{SYSTEM_NOTES[s.id]?.bestFor}</span></p>
-                <p className="mt-2 text-xs text-muted-foreground">Price moves with: {s.drivers.join(" · ")}</p>
-              </article>
-            ))}
-          </div>
-          <p className="mt-6 text-sm text-muted-foreground">
-            We also fabricate fixed glazing, sliding &amp; folding doors, safety gates and mirror glass work. Thermal-break profiles are available on request.
-          </p>
-        </div>
-      </section>
-
-      {/* GLASS */}
-      <section className="py-16 md:py-20 bg-muted" aria-labelledby="glass">
-        <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-10 items-start">
-          <div>
-            <h2 id="glass" className="text-2xl md:text-4xl font-bold text-foreground">The glass matters as much as the frame</h2>
-            <p className="mt-4 text-muted-foreground">
+      <Sec no="02" label="Glass" title={<>The glass matters as much as the frame</>} sheetLabel="Glass build-up">
+        <div className="sx-split">
+          <Prose>
+            <p>
               Heat and noise mostly come through the glass, so we specify the glass build-up window by window — not one type for the whole house.
               Heat-gain and acoustic figures depend on the exact glass and frame, and we share the glass maker's data sheet with every quote.
             </p>
-            <p className="mt-4 text-muted-foreground">
-              Glass is sourced from Saint-Gobain and other major Indian processors, or strictly from your architect's approved list.
-            </p>
-          </div>
-          <ul className="grid gap-3">
-            {GLASS_OPTIONS.map((g) => (
-              <li key={g.name} className="rounded-xl bg-card border border-border p-5">
-                <p className="font-semibold text-foreground">{g.name}</p>
-                <p className="text-sm text-muted-foreground mt-1">{g.use}</p>
-              </li>
+            <p>Glass is sourced from Saint-Gobain and other major Indian processors, or strictly from your architect's approved list.</p>
+          </Prose>
+          <SpecList
+            items={GLASS_OPTIONS.map((g) => (
+              <>
+                <b style={{ fontWeight: 500 }}>{g.name}</b>
+                <span className="sx-d">{g.use}</span>
+              </>
             ))}
-          </ul>
+          />
         </div>
-      </section>
+      </Sec>
 
-      {/* QUOTE CHECKLIST */}
-      <section className="py-16 md:py-20 bg-background" aria-labelledby="checklist">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <h2 id="checklist" className="text-2xl md:text-4xl font-bold text-foreground">Comparing window quotes? Check these 7 lines</h2>
-          <p className="mt-3 text-muted-foreground">
-            Two quotes that both say “aluminium sliding window” can differ a lot — often for good reason. Ask every supplier — including us — to put these in writing.
-          </p>
-          <ol className="mt-8 space-y-3">
-            {QUOTE_CHECKLIST.map((item, i) => (
-              <li key={item} className="flex gap-4 rounded-xl border border-border bg-card p-4">
-                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-amber-500/15 text-sm font-bold text-amber-700">{i + 1}</span>
-                <span className="text-foreground/90">{item}</span>
-              </li>
-            ))}
-          </ol>
-        </div>
-      </section>
+      <Sec no="03" label="Quotes" title={<>Comparing window quotes? Check these 7 lines</>} sheetLabel="Quote checklist">
+        <p className="sx-note">
+          Two quotes that both say “aluminium sliding window” can differ a lot — often for good reason. Ask every supplier — including us — to put these in writing.
+        </p>
+        <SpecList items={QUOTE_CHECKLIST} />
+      </Sec>
 
-      {/* PROJECTS */}
-      <section className="py-16 md:py-20 bg-stone-950 text-white" aria-labelledby="projects">
-        <div className="container mx-auto px-4">
-          <h2 id="projects" className="text-2xl md:text-4xl font-bold">Window work we have done</h2>
-          <p className="mt-3 text-stone-300 max-w-2xl">Real projects from our company profile, with our actual scope and status.</p>
-          <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      <Sec no="04" label="Projects" title={<>Window work we have done</>} sheetLabel="Project record">
+        <p className="sx-note">Real projects from our company profile, with our actual scope and status.</p>
+        <table className="sx-pt">
+          <caption className="sr-only">Window projects with scope and status</caption>
+          <thead>
+            <tr>
+              <th scope="col" aria-label="Photo" />
+              <th scope="col">Project</th>
+              <th scope="col">Scope</th>
+              <th scope="col">Status</th>
+            </tr>
+          </thead>
+          <tbody>
             {PROJECTS.map((p) => (
-              <Link key={p.href} to={p.href} className="group rounded-xl overflow-hidden border border-stone-800 bg-stone-900 hover:border-amber-500/60">
-                <img src={p.img} alt={p.title} className="h-44 w-full object-cover" loading="lazy" />
-                <div className="p-4">
-                  <p className="text-xs font-semibold uppercase tracking-wider text-amber-400">{p.status}</p>
-                  <h3 className="mt-1 font-semibold leading-snug group-hover:text-amber-300">{p.title}</h3>
-                  <p className="mt-2 text-sm text-stone-400">{p.scope}</p>
-                </div>
-              </Link>
+              <tr key={p.href}>
+                <td className="ph">
+                  <img src={p.img} alt={p.title} width={112} height={72} loading="lazy" decoding="async" />
+                </td>
+                <td className="pn">
+                  <Link to={p.href}>{p.title}</Link>
+                </td>
+                <td className="pc">{p.scope}</td>
+                <td>
+                  <span className={`sx-st sx-st-${p.status.startsWith("Completed") ? "completed" : "ongoing"}`}>{p.status}</span>
+                </td>
+              </tr>
             ))}
-          </div>
-        </div>
-      </section>
+          </tbody>
+        </table>
+      </Sec>
 
-      {/* PROCESS */}
-      <section className="py-16 md:py-20 bg-background" aria-labelledby="process">
-        <div className="container mx-auto px-4">
-          <h2 id="process" className="text-2xl md:text-4xl font-bold text-foreground">How a window order runs</h2>
-          <ol className="mt-8 grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
-            {[
-              ["Site measurement", "Every opening measured and checked for level and plumb."],
-              ["Drawing & sample", "Window schedule, sections and colour sample for approval."],
-              ["Fabrication", `Cut and assembled at our ${company.fabricationUnit.location} unit.`],
-              ["Installation", "Fixed, packed and sealed by our own team."],
-              ["Water test & handover", "Site water test, snag list closed, defect liability per contract."],
-            ].map(([t, d], i) => (
-              <li key={t} className="rounded-xl border border-border bg-card p-5">
-                <p className="text-xs font-bold text-amber-700">STEP {i + 1}</p>
-                <p className="mt-1 font-semibold text-foreground">{t}</p>
-                <p className="mt-1 text-sm text-muted-foreground">{d}</p>
-              </li>
-            ))}
-          </ol>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Link to="/quality-safety" className="inline-flex items-center rounded-lg border border-border px-5 py-3 font-semibold hover:border-primary">
-              <CheckCircle2 className="mr-2 h-4 w-4 text-primary" /> Our quality &amp; safety checks
-            </Link>
-            {PRICING_APPROVED && (
-              <Link to="/facade-cost-estimator" className="inline-flex items-center rounded-lg border border-border px-5 py-3 font-semibold hover:border-primary">
-                <Calculator className="mr-2 h-4 w-4 text-primary" /> Estimate your window budget
-              </Link>
-            )}
-          </div>
-        </div>
-      </section>
+      <Sec no="05" label="Process" title={<>How a window order runs</>} sheetLabel="Process">
+        <Process
+          steps={[
+            { title: "Site measurement", desc: "Every opening measured and checked for level and plumb." },
+            { title: "Drawing & sample", desc: "Window schedule, sections and colour sample for approval." },
+            { title: "Fabrication", desc: `Cut and assembled at our ${company.fabricationUnit.location} unit.` },
+            { title: "Installation", desc: "Fixed, packed and sealed under a dedicated site in-charge and supervisor." },
+            { title: "Water test & handover", desc: "Site water test, snag list closed, defect liability per contract." },
+          ]}
+        />
+        <p className="sx-more">
+          <Link to="/quality-safety" className="fg-btn2">
+            Our quality &amp; safety checks
+          </Link>
+        </p>
+      </Sec>
 
-      {/* FAQ */}
-      <section className="py-16 md:py-20 bg-muted" aria-labelledby="faq">
-        <div className="container mx-auto px-4 max-w-3xl">
-          <h2 id="faq" className="text-2xl md:text-4xl font-bold text-foreground mb-8">Aluminium window FAQs</h2>
-          <div className="space-y-3">
-            {FAQS.map((f) => (
-              <details key={f.q} className="group rounded-xl border border-border bg-card p-5">
-                <summary className="cursor-pointer font-semibold text-foreground list-none flex justify-between gap-4">
-                  {f.q}
-                  <span className="text-primary group-open:rotate-45 transition-transform" aria-hidden="true">+</span>
-                </summary>
-                <p className="mt-3 text-muted-foreground">{f.a}</p>
-              </details>
-            ))}
-          </div>
+      <Sec no="06" label="FAQ" title={<>Aluminium window FAQs</>} sheetLabel="FAQ">
+        <div className="sx-faq">
+          <FaqList items={FAQS} />
         </div>
-      </section>
+      </Sec>
 
-      {/* CTA */}
-      <section className="py-16 bg-amber-500">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-2xl md:text-3xl font-extrabold text-stone-950">Get your windows measured and quoted</h2>
-          <p className="mt-2 text-stone-900/80">Pune, PCMC, Mumbai, Navi Mumbai and Thane.</p>
-          <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
-            <button onClick={() => setQuoteOpen(true)} className="rounded-xl bg-stone-950 text-white font-bold px-7 py-4 hover:bg-stone-800">
-              Request a site measurement
-            </button>
-            <a href={telHref} className="rounded-xl border-2 border-stone-950 text-stone-950 font-bold px-7 py-4 hover:bg-stone-950 hover:text-white">
-              Call {company.phone.mobileDisplay}
-            </a>
-          </div>
-        </div>
-      </section>
+      <CTASection />
 
       <QuoteModal
         open={quoteOpen}

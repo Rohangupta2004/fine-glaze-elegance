@@ -1,91 +1,10 @@
 import SEO from "@/components/SEO";
+import PageHero from "@/components/common/PageHero";
 import { RelatedProjects } from "@/components/RelatedProjects";
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/home/CTASection";
+import { ServiceBody } from "@/components/service/ServiceBody";
 import { ServiceQuickOverview } from "@/components/service/ServiceQuickOverview";
-import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
-import {
-  ArrowRight,
-  MapPin,
-  ChevronDown,
-  Shield,
-  Clock,
-  Award,
-  Wrench,
-  Star,
-} from "lucide-react";
-import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { cn } from "@/lib/utils";
-import { useState } from "react";
-
-/* ─── Reusable fade-in wrapper ─── */
-function FadeIn({
-  children,
-  className,
-  delay = 0,
-}: {
-  children: React.ReactNode;
-  className?: string;
-  delay?: number;
-}) {
-  const { ref, isVisible } = useScrollAnimation();
-  return (
-    <div
-      ref={ref}
-      className={cn(
-        "transition-all duration-700",
-        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8",
-        className
-      )}
-      style={{ transitionDelay: `${delay}ms` }}
-    >
-      {children}
-    </div>
-  );
-}
-
-/* ── Accordion FAQ item ── */
-function FAQItem({ q, a }: { q: string; a: string }) {
-  const [open, setOpen] = useState(false);
-  return (
-    <div className="border-b border-stone-200">
-      <button
-        onClick={() => setOpen(!open)}
-        className="w-full flex items-center justify-between py-4 text-left group"
-      >
-        <span className="text-[15px] font-semibold text-stone-800 pr-8 group-hover:text-amber-700 transition-colors">
-          {q}
-        </span>
-        <ChevronDown
-          size={18}
-          className={cn(
-            "text-stone-400 shrink-0 transition-transform duration-300",
-            open && "rotate-180"
-          )}
-        />
-      </button>
-      <div
-        className={cn(
-          "overflow-hidden transition-all duration-300",
-          open ? "max-h-96 pb-4" : "max-h-0"
-        )}
-      >
-        <p className="text-stone-500 leading-relaxed text-sm">{a}</p>
-      </div>
-    </div>
-  );
-}
-
-/* ── Images ── */
-const IMG: Record<string, string> = {
-  hero: "/skylight-atrium.webp",
-  atrium: "/canopy-spider.webp",
-  frameless: "/skylight-atrium.webp",
-  spider: "/canopy-detail.webp",
-  poly: "/canopy-spider.webp",
-  process: "/projects/salsette-27-32-2.webp",
-};
 
 /* ── System data ── */
 const SYSTEMS = [
@@ -96,50 +15,49 @@ const SYSTEMS = [
     glass: "Laminated DGU / Low-E",
     wind: "Aluminium ridge-&-rafter",
     bestFor: "Atriums, malls, hotels",
-    price: "₹600 – ₹1,200 /sq ft",
+    price: "Quoted on drawings",
     img: "atrium",
   },
   {
     num: "02",
     title: "Frameless Glass Canopy",
-    desc: "Minimal overhead glass structures supported by stainless steel spider fittings or glass fins. Creates a floating-glass effect at building entrances and walkways. Fully waterproof with concealed drainage.",
+    desc: "Minimal overhead glass structures supported by stainless steel spider fittings or glass fins. Creates a floating-glass effect at building entrances and walkways. Designed with concealed drainage.",
     glass: "17.52–21.52mm laminated",
     wind: "SS spider / glass fins",
     bestFor: "Entrances, walkways",
-    price: "₹800 – ₹1,500 /sq ft",
+    price: "Quoted on drawings",
     img: "frameless",
   },
   {
     num: "03",
     title: "Spider-Fitting Canopy",
-    desc: "Point-fixed glass canopy using stainless steel spider arms connected to steel or cable structures. Maximum transparency with industrial-grade strength for exposed and wind-prone locations.",
+    desc: "Point-fixed glass canopy using stainless steel spider arms connected to steel or cable structures. Maximum transparency, with the structure sized to the project wind load.",
     glass: "12–19mm laminated",
     wind: "SS 316 spider arms",
     bestFor: "Commercial entries, bridges",
-    price: "₹900 – ₹1,800 /sq ft",
+    price: "Quoted on drawings",
     img: "spider",
   },
   {
     num: "04",
     title: "Polycarbonate Roofing",
-    desc: "Lightweight multiwall polycarbonate sheets on aluminium frames. Excellent light transmission with UV protection and impact resistance — a cost-effective alternative to glass for car parks and warehouses.",
+    desc: "Lightweight multiwall polycarbonate sheets on aluminium frames. Excellent light transmission with UV protection and impact resistance, an alternative to glass for car parks and warehouses.",
     glass: "10–25mm multiwall PC",
     wind: "Aluminium frame",
     bestFor: "Car parks, factories",
-    price: "₹150 – ₹350 /sq ft",
+    price: "Quoted on drawings",
     img: "poly",
   },
 ];
 
 const STEPS = [
   { num: "01", title: "Site Survey", desc: "Assess opening size, structural support & drainage requirements" },
-  { num: "02", title: "Engineering", desc: "Wind-load calculations, thermal analysis & shop drawings" },
+  { num: "02", title: "Engineering", desc: "In-house shop drawings and an engineering check against project wind load" },
   { num: "03", title: "Fabrication", desc: "Frame fabrication, glass ordering & waterproofing prep" },
   { num: "04", title: "Installation", desc: "Frame erection, glazing, sealing & drainage testing" },
 ];
 
 export default function Skylights() {
-  const [activeSystem, setActiveSystem] = useState(0);
 
   const serviceSchema = {
     "@context": "https://schema.org",
@@ -152,7 +70,6 @@ export default function Skylights() {
       "@id": "https://fineglaze.com",
       url: "https://fineglaze.com",
       telephone: "+91-8369233566",
-      priceRange: "₹₹₹",
       address: {
         "@type": "PostalAddress",
         addressLocality: "Pune",
@@ -187,7 +104,7 @@ export default function Skylights() {
         name: "Are glass skylights waterproof?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Yes. Our skylight systems use structural silicone sealing, EPDM gaskets, and integrated drainage channels. Every installation is water-tested on site before handover, and any leak found is traced and closed out on the snag register.",
+          text: "A well-designed glass skylight is waterproof when sealants, gaskets and drainage are detailed properly and installed well. Fine Glaze checks installed glazing with a site water penetration test before handover and closes any leak on the snag register.",
         },
       },
       {
@@ -195,7 +112,7 @@ export default function Skylights() {
         name: "How much does a glass skylight cost per sq ft in India?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Polycarbonate roofing starts at ₹150/sq ft. Aluminium-framed glass skylights range from ₹600–₹1,200/sq ft. Frameless spider-fitting canopies cost ₹900–₹1,800/sq ft depending on glass spec and structure.",
+          text: "Skylight and canopy cost depends on the span, glass, framing, structure and access, so a reliable figure needs drawings. Fine Glaze prepares BOQ-based quotations.",
         },
       },
       {
@@ -203,502 +120,108 @@ export default function Skylights() {
         name: "Can skylights reduce energy costs?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Yes. Skylights can reduce artificial lighting costs by up to 50%. With Low-E or heat-reflective glass coatings, they also limit solar heat gain — reducing air conditioning loads in commercial spaces.",
+          text: "Skylights can cut daytime lighting use by bringing in daylight, and low-E or solar-control glass limits heat gain. Net energy effect depends on size, orientation and glass, so check it with the project's energy model.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "What type of glass is used in skylights?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Overhead glazing is normally laminated safety glass, where two layers are bonded with an interlayer so broken pieces stay in place. Double glazed and low-E options are available, and the build-up follows the structural check.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "How long does skylight installation take?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Installation time depends on span, structure, glass lead time and site access, so we confirm the programme per project after survey and design approval. We work around your construction schedule.",
         },
       },
     ],
   };
 
-  const current = SYSTEMS[activeSystem];
 
   return (
     <Layout darkHero>
       <SEO
-        title="Glass Skylights & Canopies in Pune & Mumbai | Fine Glaze"
-        description="Glass skylight contractor in Pune & Mumbai. Atrium skylights, entrance glass canopies, spider-supported glass canopies & overhead glazing systems."
+        title="Glass Skylight Contractor in Pune & Mumbai | Fine Glaze"
+        description="Glass skylight and canopy contractor in Pune, Mumbai and across India. Atrium skylights, entrance canopies and overhead glazing, with in-house shop drawings."
         canonical="https://fineglaze.com/skylights-canopies"
         keywords="glass skylight contractor, atrium skylight, glass canopy contractor, frameless glass canopy, spider canopy, overhead glazing"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}
       />
 
-      {/* ════════════ HERO ════════════ */}
-      <section className="relative h-screen overflow-hidden">
-        <img
-          src={IMG.hero}
-          alt="Glass skylight system — Fine Glaze"
-          className="absolute inset-0 w-full h-full object-cover object-center"
-          style={{ animation: "sgZoom 20s ease-in-out infinite alternate" }}
-          loading="eager"
-        />
-        <style>{`@keyframes sgZoom { from { transform: scale(1.0); } to { transform: scale(1.08); } }`}</style>
+      <PageHero
+        schematic="skylight"
+        crumbs={[{ label: "Skylights & Glass Canopies" }]}
+        title={<>Skylights &<br /> <span className="text-gradient-gold">Glass</span><span className="ph-sub">Canopies.</span></>}
+        intro="Engineered overhead glazing for atriums, lobbies, entrances & commercial spaces."
+        secondary={{ label: "+91 83692 33566", href: "tel:+918369233566" }}
+        extra=""
+      />
 
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(to bottom, rgba(0,0,0,0.60) 0%, rgba(0,0,0,0.25) 30%, rgba(0,0,0,0.55) 65%, rgba(0,0,0,0.92) 100%)",
-          }}
-        />
-
-        <div className="absolute inset-x-0 bottom-0 px-5 md:px-16 pb-10 md:pb-20 pt-24">
-          <p
-            className="text-amber-400 text-xs font-bold tracking-[0.4em] uppercase mb-5 animate-fade-in"
-            style={{ animationDelay: "0.05s" }}
-          >
-            Fine Glaze · Pune & Mumbai
-          </p>
-
-          <h1
-            className="font-extrabold text-white leading-tight tracking-tight animate-fade-in-up"
-            style={{ fontSize: "clamp(2.2rem, 4.5vw, 3.5rem)", animationDelay: "0.1s" }}
-          >
-            Skylights &<br />
-            <span className="text-gradient-gold">Glass</span><br />
-            <span style={{ fontSize: "clamp(1.25rem, 2.5vw, 2rem)", fontWeight: 600, color: "rgba(255,255,255,0.85)" }}>
-              Canopies.
-            </span>
-          </h1>
-
-          <p
-            className="mt-6 text-white/70 text-base md:text-lg max-w-lg leading-relaxed animate-fade-in-up"
-            style={{ animationDelay: "0.2s" }}
-          >
-            Engineered overhead glazing for atriums, lobbies, entrances & commercial spaces.
-          </p>
-
-          <div
-            className="mt-8 flex items-center gap-8 animate-fade-in-up"
-            style={{ animationDelay: "0.3s" }}
-          >
-            <Link
-              to="/contact"
-              className="text-white font-semibold text-base border-b border-amber-400 pb-0.5 hover:text-amber-400 transition-colors tracking-wide"
-            >
-              Get Free Quote
-            </Link>
-            <a
-              href="tel:+918369233566"
-              className="text-white/60 font-medium text-base hover:text-white transition-colors tracking-wide"
-            >
-              +91 83692 33566
-            </a>
-          </div>
-
-          {/* Trust signal */}
-          <div
-            className="flex items-center gap-1.5 mt-4 animate-fade-in-up"
-            style={{ animationDelay: "0.4s" }}
-          >
-            <div className="flex">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} size={12} className="text-amber-400 fill-amber-400" />
-              ))}
-            </div>
-            <span className="text-white/50 text-xs font-medium ml-0.5">
-              Embassy REIT Best Vendor 2024 · 16 Documented Projects
-            </span>
-          </div>
-        </div>
-
-        <div className="absolute bottom-8 right-8 flex flex-col items-center gap-2 opacity-40">
-          <span className="text-white text-[10px] uppercase tracking-[0.25em] rotate-90 mb-3">Scroll</span>
-          <div className="w-px h-12 bg-gradient-to-b from-white to-transparent" />
-        </div>
-      </section>
-
-
-      {/* ════════════ INTRO ════════════ */}
-      <section className="py-16 md:py-20 bg-white">
-        <div className="container mx-auto px-6 md:px-16 max-w-3xl text-center">
-          <FadeIn>
-            <p className="text-amber-700 text-xs font-bold tracking-[0.3em] uppercase mb-4">
-              Why Overhead Glazing
-            </p>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-stone-900 leading-snug mb-5">
-              Bring natural light indoors —{"  "}
-              <span className="text-stone-400">engineered for weather, wind loads & thermal comfort.</span>
-            </h2>
-            <p className="text-stone-500 text-[15px] md:text-base leading-relaxed">
-              Our skylight and canopy systems use laminated safety glass with heat-reflective coatings, supported by structural aluminium or stainless steel frameworks. Every system is waterproofed and engineered for local wind and rain load requirements, with integrated drainage channels.
-            </p>
-          </FadeIn>
-        </div>
-      </section>
-
-      {/* ════════════ CONVERSION QUICK OVERVIEW ════════════ */}
-      <ServiceQuickOverview
+      <ServiceBody
+        schematic="skylight"
+        intro={{ lead: <>Bring natural light indoors,</>, tail: <>designed for weather, wind loads and thermal comfort.</>, body: <>Our skylight and canopy systems use laminated safety glass with heat-reflective coatings, supported by structural aluminium or stainless steel frameworks. Each system is detailed for weatherproofing and drainage and checked against the project wind load.</> }}
+        overview={(no) => <ServiceQuickOverview no={no}
         serviceTitle="Glass Skylights &amp; Entrance Canopies"
-        whatWeProvide="Laminated safety glass skylights, atrium overhead glazing, spider glass canopies & MS/SS structural support framing. Includes integrated gutting, flashing & Dow Corning 795 weather sealing."
+        whatWeProvide="Laminated safety glass skylights, atrium overhead glazing, spider glass canopies & MS/SS structural support framing. Includes integrated gutters, flashing and structural and weather silicone from approved manufacturers."
         locationsServed={["Pune", "Mumbai (South Mumbai, BKC)", "Thane", "Navi Mumbai"]}
         bestProjectTypes={[
-          "5-Star Hotel Grand Entrance Canopies",
+          "Hotel Entrance Canopies",
           "Shopping Mall Atrium Skylights",
           "Corporate HQ Entry Porticos",
           "Luxury Villa Skylights & Courtyards"
         ]}
-        priceBenchmark="₹600 – ₹1,800 per sq ft (Depending on span, glass thickness & SS fittings)"
         relevantProjects={[
           "Salsette-27 Entrance Canopy (Mumbai)",
           "Pune Airport Terminal Column & Canopy Works"
         ]}
+      />}
+        systemsTitle={<>Skylight & Canopy Systems We Install</>}
+        systems={SYSTEMS}
+        systemCols={["Glass", "Structure"]}
+        featuresTitle={<>Built for performance. Delivered on schedule.</>}
+        features={[
+          { title: "Water-Tested", desc: "Installed glazing is checked with a site water penetration test before handover, and any leak found is closed out on the snag register." },
+          { title: "Stage Inspections", desc: "Material, fabrication and installation checks, with the snag register closed before handover." },
+          { title: "In-House Engineering", desc: "Structural calculations and shop drawings done in-house for precise fit and performance." },
+          { title: "Maintenance Ready", desc: "Access points and cleaning provisions designed in from day one. AMC available." },
+        ]}
+        stepsTitle={<>From first visit to final handover</>}
+        steps={STEPS}
+        promise={<>Installed glazing water-tested before handover. Canopies detailed for drainage and maintenance access.</>}
+        pricing={{
+          title: <>Skylight & Canopy Cost: How We Quote</>,
+          intro: <>We quote against drawings. Final cost depends on specification and complexity.</>,
+          colLabel: "Material",
+          rows: [
+            { system: "Atrium Skylight", glass: "Laminated DGU + aluminium", price: "Quoted on drawings" },
+            { system: "Frameless Canopy", glass: "17.52mm laminated + SS", price: "Quoted on drawings" },
+            { system: "Spider-Fitting Canopy", glass: "Laminated + SS 316", price: "Quoted on drawings" },
+            { system: "Polycarbonate Roof", glass: "Multiwall PC + aluminium", price: "Quoted on drawings" },
+          ],
+        }}
+        faq={[
+          { q: <>Are glass skylights waterproof?</>, a: <>A well-designed glass skylight is waterproof when sealants, gaskets and drainage are detailed properly and installed well. Fine Glaze checks installed glazing with a site water penetration test before handover and closes any leak on the snag register.</> },
+          { q: <>How much does a glass skylight cost per sq ft in India?</>, a: <>Skylight and canopy cost depends on the span, glass, framing, structure and access, so a reliable figure needs drawings. Fine Glaze prepares BOQ-based quotations.</> },
+          { q: <>Can skylights reduce energy costs?</>, a: <>Skylights can cut daytime lighting use by bringing in daylight, and low-E or solar-control glass limits heat gain. Net energy effect depends on size, orientation and glass, so check it with the project's energy model.</> },
+          { q: <>What type of glass is used in skylights?</>, a: <>Overhead glazing is normally laminated safety glass, where two layers are bonded with an interlayer so broken pieces stay in place. Double glazed and low-E options are available, and the build-up follows the structural check.</> },
+          { q: <>How long does skylight installation take?</>, a: <>Installation time depends on span, structure, glass lead time and site access, so we confirm the programme per project after survey and design approval. We work around your construction schedule.</> },
+        ]}
+        areas={["Pune", "Mumbai BKC", "Navi Mumbai", "Thane", "Hinjewadi", "Pimpri-Chinchwad"]}
+        others={[
+          { title: "Structural Glazing", href: "/structural-glazing" },
+          { title: "Curtain Wall Systems", href: "/curtain-wall-systems" },
+          { title: "ACP Cladding", href: "/acp-aluminium-cladding" },
+          { title: "Glass Railings", href: "/glass-railings" },
+          { title: "Facade AMC", href: "/maintenance-services" },
+          { title: "All Services →", href: "/services" },
+        ]}
+        related={(no) => <RelatedProjects no={no} heading="Canopy projects" keywords={["canopy", "canopies"]} />}
       />
-
-
-      {/* ════════════ STATS ════════════ */}
-      <section className="bg-stone-900 py-10">
-        <div className="container mx-auto px-6 md:px-16">
-          <FadeIn>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-0 md:divide-x md:divide-stone-700">
-              {[
-                { number: "50%", label: "More Natural Light" },
-                { number: "10+", label: "Years Experience" },
-                { number: "0", label: "Leak Incidents" },
-                { number: "DLP", label: "Defect Liability per Contract" },
-              ].map((s) => (
-                <div key={s.label} className="text-center px-4">
-                  <p className="text-2xl md:text-3xl font-bold text-white">{s.number}</p>
-                  <p className="text-stone-500 text-[11px] uppercase tracking-widest mt-1">{s.label}</p>
-                </div>
-              ))}
-            </div>
-          </FadeIn>
-        </div>
-      </section>
-
-
-      {/* ════════════ SYSTEMS ════════════ */}
-      <section className="py-16 md:py-20 bg-stone-50">
-        <div className="container mx-auto px-6 md:px-16">
-          <FadeIn className="mb-10">
-            <p className="text-amber-700 text-xs font-bold tracking-[0.3em] uppercase mb-3">
-              Our Systems
-            </p>
-            <h2 className="text-2xl md:text-3xl font-bold text-stone-900">
-              Skylight & Canopy Systems We Install
-            </h2>
-          </FadeIn>
-
-          <FadeIn delay={100}>
-            <div className="flex flex-wrap gap-2 mb-8">
-              {SYSTEMS.map((sys, i) => (
-                <button
-                  key={sys.num}
-                  onClick={() => setActiveSystem(i)}
-                  className={cn(
-                    "px-4 py-2 text-sm font-medium transition-all duration-200",
-                    activeSystem === i
-                      ? "bg-stone-900 text-white"
-                      : "bg-white text-stone-600 hover:bg-stone-100 border border-stone-200"
-                  )}
-                >
-                  {sys.title}
-                </button>
-              ))}
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-0 bg-white overflow-hidden" key={current.num}>
-              <div className="relative h-[280px] md:h-[360px] overflow-hidden">
-                <img
-                  src={IMG[current.img]}
-                  alt={current.title}
-                  className="w-full h-full object-cover transition-opacity duration-500"
-                  loading="lazy"
-                />
-                <div className="absolute top-4 left-4 bg-stone-900/80 text-white text-xs font-bold px-3 py-1.5 tracking-wider">
-                  {current.num}
-                </div>
-              </div>
-              <div className="p-8 md:p-10 flex flex-col justify-center">
-                <h3 className="text-xl md:text-2xl font-bold text-stone-900 mb-3">{current.title}</h3>
-                <p className="text-stone-500 text-sm leading-relaxed mb-6">{current.desc}</p>
-
-                <div className="grid grid-cols-2 gap-3 mb-6">
-                  <div className="bg-stone-50 p-3">
-                    <p className="text-[10px] uppercase tracking-wider text-stone-400 mb-1">Glass</p>
-                    <p className="text-sm font-semibold text-stone-800">{current.glass}</p>
-                  </div>
-                  <div className="bg-stone-50 p-3">
-                    <p className="text-[10px] uppercase tracking-wider text-stone-400 mb-1">Structure</p>
-                    <p className="text-sm font-semibold text-stone-800">{current.wind}</p>
-                  </div>
-                  <div className="bg-stone-50 p-3">
-                    <p className="text-[10px] uppercase tracking-wider text-stone-400 mb-1">Best For</p>
-                    <p className="text-sm font-semibold text-stone-800">{current.bestFor}</p>
-                  </div>
-                  <div className="bg-amber-50 p-3 border border-amber-200">
-                    <p className="text-[10px] uppercase tracking-wider text-amber-600 mb-1">Rate</p>
-                    <p className="text-sm font-bold text-stone-900">{current.price}</p>
-                  </div>
-                </div>
-
-                <Link to="/contact">
-                  <Button size="sm" className="bg-stone-900 hover:bg-stone-800 text-white gap-2">
-                    Get Quote for {current.title.split(" ")[0]} <ArrowRight size={14} />
-                  </Button>
-                </Link>
-              </div>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
-
-
-      {/* ════════════ WHY FINE GLAZE ════════════ */}
-      <section className="py-16 md:py-20 bg-white">
-        <div className="container mx-auto px-6 md:px-16">
-          <FadeIn className="text-center mb-12">
-            <p className="text-amber-700 text-xs font-bold tracking-[0.3em] uppercase mb-3">
-              Why Fine Glaze
-            </p>
-            <h2 className="text-2xl md:text-3xl font-bold text-stone-900">
-              Built for performance. Delivered on schedule.
-            </h2>
-          </FadeIn>
-
-          <FadeIn delay={100}>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              {[
-                {
-                  icon: Shield,
-                  title: "Water-Tested",
-                  desc: "Every skylight is water-tested before handover. Integrated drainage channels prevent pooling.",
-                },
-                {
-                  icon: Clock,
-                  title: "On-Time Delivery",
-                  desc: "Pre-engineered frames and scheduled glass deliveries ensure project timelines are met.",
-                },
-                {
-                  icon: Award,
-                  title: "In-House Engineering",
-                  desc: "Structural calculations and shop drawings done in-house for precise fit and performance.",
-                },
-                {
-                  icon: Wrench,
-                  title: "Maintenance Ready",
-                  desc: "Access points and cleaning provisions designed in from day one. AMC available.",
-                },
-              ].map((item) => (
-                <div key={item.title} className="text-center">
-                  <div className="inline-flex items-center justify-center w-12 h-12 bg-amber-50 text-amber-700 mb-4">
-                    <item.icon size={22} />
-                  </div>
-                  <h3 className="text-sm font-bold text-stone-900 mb-2">{item.title}</h3>
-                  <p className="text-stone-500 text-xs leading-relaxed">{item.desc}</p>
-                </div>
-              ))}
-            </div>
-          </FadeIn>
-
-          <FadeIn delay={200} className="mt-12 text-center">
-            <p className="text-stone-400 text-sm">
-              Trusted by <span className="text-stone-700 font-semibold">Embassy REIT</span> ·{" "}
-              <span className="text-stone-700 font-semibold">LTIMindtree</span> ·{" "}
-              <span className="text-stone-700 font-semibold">Pune International Airport</span>
-            </p>
-          </FadeIn>
-        </div>
-      </section>
-
-
-      {/* ════════════ HOW WE WORK ════════════ */}
-      <section className="py-16 md:py-20 bg-stone-50">
-        <div className="container mx-auto px-6 md:px-16">
-          <FadeIn className="mb-10">
-            <p className="text-amber-700 text-xs font-bold tracking-[0.3em] uppercase mb-3">
-              How We Work
-            </p>
-            <h2 className="text-2xl md:text-3xl font-bold text-stone-900">
-              From first visit to final handover
-            </h2>
-          </FadeIn>
-
-          <FadeIn delay={100}>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              {STEPS.map((step, i) => (
-                <div key={step.num} className="relative">
-                  {i < STEPS.length - 1 && (
-                    <div className="hidden md:block absolute top-5 left-[60%] right-0 h-px bg-stone-300" />
-                  )}
-                  <div className="bg-white p-5 relative">
-                    <span className="text-3xl font-bold text-stone-100 block mb-3">{step.num}</span>
-                    <h3 className="text-sm font-bold text-stone-900 mb-1">{step.title}</h3>
-                    <p className="text-stone-500 text-xs leading-relaxed">{step.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </FadeIn>
-        </div>
-      </section>
-
-
-      {/* ════════════ PHOTO BREAK ════════════ */}
-      <FadeIn>
-        <div className="relative h-[35vh] md:h-[40vh] overflow-hidden">
-          <img
-            src={IMG.process}
-            alt="Steel framing for the podium canopy at Salsette-27, Byculla, Mumbai — Fine Glaze"
-            className="w-full h-full object-cover"
-            loading="lazy"
-          />
-          <div className="absolute inset-0 bg-black/40" />
-          <div className="absolute inset-0 flex items-center justify-center text-center px-4">
-            <div>
-              <p className="text-white/60 text-sm uppercase tracking-widest mb-2">Our Promise</p>
-              <p className="text-white text-xl md:text-3xl font-bold max-w-xl">
-                Every skylight water-tested before handover. Every canopy detailed for drainage and maintenance access.
-              </p>
-            </div>
-          </div>
-        </div>
-      </FadeIn>
-
-
-      {/* ════════════ PRICING ════════════ */}
-      <section className="py-16 md:py-20 bg-white">
-        <div className="container mx-auto px-6 md:px-16 max-w-3xl">
-          <FadeIn className="text-center mb-8">
-            <p className="text-amber-700 text-xs font-bold tracking-[0.3em] uppercase mb-3">
-              Pricing
-            </p>
-            <h2 className="text-2xl md:text-3xl font-bold text-stone-900 mb-2">
-              Skylight & Canopy Cost — 2026
-            </h2>
-            <p className="text-stone-400 text-sm">
-              Indicative rates. Final cost depends on specifications & complexity. GST extra.
-            </p>
-          </FadeIn>
-
-          <FadeIn delay={100}>
-            <div className="overflow-x-auto">
-              <table className="w-full text-left">
-                <thead>
-                  <tr className="border-b-2 border-stone-800">
-                    <th className="py-3 text-xs font-bold uppercase tracking-wider text-stone-500">System</th>
-                    <th className="py-3 text-xs font-bold uppercase tracking-wider text-stone-500">Material</th>
-                    <th className="py-3 text-xs font-bold uppercase tracking-wider text-stone-500 text-right">Rate / sq ft</th>
-                  </tr>
-                </thead>
-                <tbody className="text-sm">
-                  {[
-                    { system: "Atrium Skylight", glass: "Laminated DGU + aluminium", price: "₹600 – ₹1,200" },
-                    { system: "Frameless Canopy", glass: "17.52mm laminated + SS", price: "₹800 – ₹1,500" },
-                    { system: "Spider-Fitting Canopy", glass: "Laminated + SS 316", price: "₹900 – ₹1,800" },
-                    { system: "Polycarbonate Roof", glass: "Multiwall PC + aluminium", price: "₹150 – ₹350" },
-                  ].map((row) => (
-                    <tr key={row.system} className="border-b border-stone-100 hover:bg-stone-50 transition-colors">
-                      <td className="py-3 font-semibold text-stone-800">{row.system}</td>
-                      <td className="py-3 text-stone-500">{row.glass}</td>
-                      <td className="py-3 text-right font-bold text-stone-900">{row.price}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-
-            <div className="mt-8 text-center">
-              <Link to="/contact">
-                <Button size="lg" className="bg-stone-900 hover:bg-stone-800 text-white gap-2 px-8">
-                  Get Exact Quote — Free Site Visit <ArrowRight size={16} />
-                </Button>
-              </Link>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
-
-
-      {/* ════════════ FAQ ════════════ */}
-      <section className="py-14 md:py-16 bg-stone-50">
-        <div className="container mx-auto px-6 md:px-16 max-w-3xl">
-          <FadeIn className="mb-8">
-            <p className="text-amber-700 text-xs font-bold tracking-[0.3em] uppercase mb-3">
-              Common Questions
-            </p>
-            <h2 className="text-2xl md:text-3xl font-bold text-stone-900">
-              FAQ
-            </h2>
-          </FadeIn>
-
-          <FadeIn delay={100}>
-            <div>
-              <FAQItem
-                q="Are glass skylights waterproof?"
-                a="Yes. Our skylight systems use structural silicone sealing, EPDM gaskets, and integrated drainage channels. Every installation is water-tested on site before handover, and any leak found is traced and closed out on the snag register."
-              />
-              <FAQItem
-                q="How much does a glass skylight cost per sq ft in India?"
-                a="Polycarbonate roofing starts at ₹150/sq ft. Aluminium-framed glass skylights range from ₹600–₹1,200/sq ft. Frameless spider-fitting canopies cost ₹900–₹1,800/sq ft depending on glass spec and structure."
-              />
-              <FAQItem
-                q="Can skylights reduce energy costs?"
-                a="Yes. Skylights can reduce artificial lighting costs by up to 50%. With Low-E or heat-reflective glass coatings, they also limit solar heat gain — reducing air conditioning loads in commercial spaces."
-              />
-              <FAQItem
-                q="What type of glass is used in skylights?"
-                a="We use laminated safety glass (two layers bonded with PVB interlayer) for all overhead applications. This ensures that if the glass breaks, fragments stay bonded to the interlayer instead of falling. DGU and Low-E options are available."
-              />
-              <FAQItem
-                q="How long does skylight installation take?"
-                a="Small canopy projects take 1–2 weeks. Large atrium skylights typically require 4–8 weeks depending on span size and structural complexity. We work around your construction schedule."
-              />
-            </div>
-          </FadeIn>
-        </div>
-      </section>
-
-
-      {/* ════════════ AREAS + SERVICES ════════════ */}
-      <section className="bg-stone-900 py-12">
-        <div className="container mx-auto px-6 md:px-16">
-          <FadeIn>
-            <div className="grid md:grid-cols-2 gap-10 md:gap-16">
-              <div>
-                <p className="text-amber-400 text-xs font-bold tracking-[0.3em] uppercase mb-4">
-                  Where We Work
-                </p>
-                <div className="flex flex-wrap gap-x-6 gap-y-2">
-                  {["Pune", "Mumbai BKC", "Navi Mumbai", "Thane", "Nashik", "Hinjewadi", "Pimpri-Chinchwad"].map((city) => (
-                    <div key={city} className="flex items-center gap-1.5">
-                      <MapPin size={11} className="text-amber-500" />
-                      <span className="text-white/60 text-sm">{city}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div>
-                <p className="text-amber-400 text-xs font-bold tracking-[0.3em] uppercase mb-4">
-                  Other Services
-                </p>
-                <div className="grid grid-cols-2 gap-x-6 gap-y-1.5">
-                  {[
-                    { title: "Structural Glazing", href: "/structural-glazing" },
-                    { title: "Curtain Wall Systems", href: "/curtain-wall-systems" },
-                    { title: "ACP Cladding", href: "/acp-aluminium-cladding" },
-                    { title: "Glass Railings", href: "/glass-railings" },
-                    { title: "Facade AMC", href: "/maintenance-services" },
-                    { title: "All Services →", href: "/services" },
-                  ].map((link) => (
-                    <Link
-                      key={link.href}
-                      to={link.href}
-                      className="text-white/50 text-sm hover:text-amber-400 transition-colors"
-                    >
-                      {link.title}
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
-
-
-      {/* ════════════ CTA ════════════ */}
-      <RelatedProjects heading="Canopy projects" keywords={["canopy", "canopies"]} />
       <CTASection />
     </Layout>
   );

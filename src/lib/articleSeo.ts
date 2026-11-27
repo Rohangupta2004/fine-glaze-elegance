@@ -101,3 +101,9 @@ export function buildArticleSchemas(post: BlogPost, imageUrl: string, enhancemen
   };
   return [article, breadcrumbs] as [typeof article, typeof breadcrumbs];
 }
+
+/** Dates in the blog data are either ISO (2026-06-16) or long form (June 16, 2026). */
+export const formatArticleDate = (date: string) => {
+  const d = /^\d{4}-\d{2}-\d{2}$/.test(date) ? new Date(`${date}T00:00:00+05:30`) : new Date(`${date} 00:00:00 GMT+0530`);
+  return Number.isNaN(d.getTime()) ? date : d.toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric", timeZone: "Asia/Kolkata" });
+};

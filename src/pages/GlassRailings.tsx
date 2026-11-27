@@ -1,91 +1,10 @@
 import SEO from "@/components/SEO";
+import PageHero from "@/components/common/PageHero";
 import { RelatedProjects } from "@/components/RelatedProjects";
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/home/CTASection";
+import { ServiceBody } from "@/components/service/ServiceBody";
 import { ServiceQuickOverview } from "@/components/service/ServiceQuickOverview";
-import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
-import {
-  ArrowRight,
-  MapPin,
-  ChevronDown,
-  Shield,
-  Clock,
-  Award,
-  Wrench,
-  Star,
-} from "lucide-react";
-import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { cn } from "@/lib/utils";
-import { useState } from "react";
-
-/* ─── Reusable fade-in wrapper ─── */
-function FadeIn({
-  children,
-  className,
-  delay = 0,
-}: {
-  children: React.ReactNode;
-  className?: string;
-  delay?: number;
-}) {
-  const { ref, isVisible } = useScrollAnimation();
-  return (
-    <div
-      ref={ref}
-      className={cn(
-        "transition-all duration-700",
-        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8",
-        className
-      )}
-      style={{ transitionDelay: `${delay}ms` }}
-    >
-      {children}
-    </div>
-  );
-}
-
-/* ── Accordion FAQ item ── */
-function FAQItem({ q, a }: { q: string; a: string }) {
-  const [open, setOpen] = useState(false);
-  return (
-    <div className="border-b border-stone-200">
-      <button
-        onClick={() => setOpen(!open)}
-        className="w-full flex items-center justify-between py-4 text-left group"
-      >
-        <span className="text-[15px] font-semibold text-stone-800 pr-8 group-hover:text-amber-700 transition-colors">
-          {q}
-        </span>
-        <ChevronDown
-          size={18}
-          className={cn(
-            "text-stone-400 shrink-0 transition-transform duration-300",
-            open && "rotate-180"
-          )}
-        />
-      </button>
-      <div
-        className={cn(
-          "overflow-hidden transition-all duration-300",
-          open ? "max-h-96 pb-4" : "max-h-0"
-        )}
-      >
-        <p className="text-stone-500 leading-relaxed text-sm">{a}</p>
-      </div>
-    </div>
-  );
-}
-
-/* ── Images ── */
-const IMG: Record<string, string> = {
-  hero: "/railing-spigot.webp",
-  frameless: "/Railing.webp",
-  semi: "/railing-semi.webp",
-  spigot: "/railing-spigot.webp",
-  standoff: "/railing-standoff.webp",
-  process: "/projects/jindal-house-46-4.webp",
-};
 
 /* ── System data ── */
 const SYSTEMS = [
@@ -96,7 +15,7 @@ const SYSTEMS = [
     glass: "12–19mm toughened",
     wind: "Aluminium U-channel",
     bestFor: "Balconies, terraces, decks",
-    price: "₹800 – ₹1,400 /rft",
+    price: "Quoted on drawings",
     img: "frameless",
   },
   {
@@ -106,7 +25,7 @@ const SYSTEMS = [
     glass: "12–15mm toughened",
     wind: "SS 304 mini-posts",
     bestFor: "Corridors, malls, offices",
-    price: "₹600 – ₹1,000 /rft",
+    price: "Quoted on drawings",
     img: "semi",
   },
   {
@@ -116,7 +35,7 @@ const SYSTEMS = [
     glass: "12–15mm toughened",
     wind: "SS 316 spigots",
     bestFor: "Hotels, lobbies, restaurants",
-    price: "₹700 – ₹1,200 /rft",
+    price: "Quoted on drawings",
     img: "spigot",
   },
   {
@@ -126,7 +45,7 @@ const SYSTEMS = [
     glass: "10–12mm toughened",
     wind: "SS standoff fittings",
     bestFor: "Staircases, residential",
-    price: "₹500 – ₹800 /rft",
+    price: "Quoted on drawings",
     img: "standoff",
   },
 ];
@@ -139,7 +58,6 @@ const STEPS = [
 ];
 
 export default function GlassRailings() {
-  const [activeSystem, setActiveSystem] = useState(0);
 
   const serviceSchema = {
     "@context": "https://schema.org",
@@ -152,7 +70,6 @@ export default function GlassRailings() {
       "@id": "https://fineglaze.com",
       url: "https://fineglaze.com",
       telephone: "+91-8369233566",
-      priceRange: "₹₹₹",
       address: {
         "@type": "PostalAddress",
         addressLocality: "Pune",
@@ -187,7 +104,7 @@ export default function GlassRailings() {
         name: "Is toughened glass safe for railings?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Yes. Toughened glass is 4–5 times stronger than regular glass. If it breaks, it shatters into small harmless granules instead of sharp shards. We use 12–19mm IS 2553 certified toughened glass for all railing projects.",
+          text: "Toughened glass is safe for railings when the glass build-up, supports and anchorage are designed for the load. It is stronger than ordinary glass and breaks into small granules, and laminated glass adds a layer that holds pieces in place.",
         },
       },
       {
@@ -203,132 +120,54 @@ export default function GlassRailings() {
         name: "How much do glass railings cost per running foot in India?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Standoff systems start at ₹500/rft. Frameless railings range from ₹800–₹1,400/rft depending on glass thickness and hardware quality. Spigot systems fall in between at ₹700–₹1,200/rft.",
+          text: "Glass railing cost depends on the system (frameless, semi-frameless, spigot or standoff), glass thickness, hardware finish and site conditions. It is priced per running foot against drawings. Fine Glaze prepares BOQ-based quotations.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Can glass railings be used outdoors and in coastal areas?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes. Toughened glass is weather-resistant, and outdoor and coastal installations need stainless steel hardware of a suitable grade. Fine Glaze selects the grade per project, and nano-coated glass is an option for easier cleaning.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "How long does glass railing installation take?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Installation time depends on railing length, number of floors, site access and glass lead time, so we confirm the programme per project after measurement. Glass is cut and toughened to size before installation.",
         },
       },
     ],
   };
 
-  const current = SYSTEMS[activeSystem];
 
   return (
     <Layout darkHero>
       <SEO
         title="Glass Railing Contractor in Pune & Mumbai | Fine Glaze"
-        description="Glass railing contractor in Pune & Mumbai. Frameless, semi-frameless & SS spigot glass railing systems for balconies, staircases & terraces."
+        description="Glass railing contractor in Pune, Mumbai and across India. Frameless and spigot glass railings for balconies and staircases, with in-house shop drawings."
         canonical="https://fineglaze.com/glass-railings"
         keywords="glass railing contractor, frameless glass railing, toughened glass railing, glass balustrade, staircase glass railing, balcony glass railing"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}
       />
 
-      {/* ════════════ HERO ════════════ */}
-      <section className="relative h-screen overflow-hidden">
-        <img
-          src={IMG.hero}
-          alt="Frameless glass railing — Fine Glaze"
-          className="absolute inset-0 w-full h-full object-cover object-center"
-          style={{ animation: "sgZoom 20s ease-in-out infinite alternate" }}
-          loading="eager"
-        />
-        <style>{`@keyframes sgZoom { from { transform: scale(1.0); } to { transform: scale(1.08); } }`}</style>
+      <PageHero
+        schematic="railing"
+        crumbs={[{ label: "Glass Railing Contractors Pune & Mumbai" }]}
+        title={<>Glass Railing<br /> <span className="text-gradient-gold">Contractors</span><span className="ph-sub">Pune &amp; Mumbai.</span></>}
+        intro="Frameless and semi-frameless toughened glass railings for balconies, terraces, staircases and commercial spaces in Pune and Mumbai."
+        secondary={{ label: "+91 83692 33566", href: "tel:+918369233566" }}
+        extra=""
+      />
 
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(to bottom, rgba(0,0,0,0.60) 0%, rgba(0,0,0,0.25) 30%, rgba(0,0,0,0.55) 65%, rgba(0,0,0,0.92) 100%)",
-          }}
-        />
-
-        <div className="absolute inset-x-0 bottom-0 px-5 md:px-16 pb-10 md:pb-20 pt-24">
-          <p
-            className="text-amber-400 text-xs font-bold tracking-[0.4em] uppercase mb-5 animate-fade-in"
-            style={{ animationDelay: "0.05s" }}
-          >
-            Fine Glaze · Pune & Mumbai
-          </p>
-
-          <h1
-            className="font-extrabold text-white leading-tight tracking-tight animate-fade-in-up"
-            style={{ fontSize: "clamp(2.2rem, 4.5vw, 3.5rem)", animationDelay: "0.1s" }}
-          >
-            Glass Railing<br />
-            <span className="text-gradient-gold">Contractors</span><br />
-            <span style={{ fontSize: "clamp(1.25rem, 2.5vw, 2rem)", fontWeight: 600, color: "rgba(255,255,255,0.85)" }}>
-              Pune &amp; Mumbai.
-            </span>
-          </h1>
-
-          <p
-            className="mt-6 text-white/70 text-base md:text-lg max-w-lg leading-relaxed animate-fade-in-up"
-            style={{ animationDelay: "0.2s" }}
-          >
-            Frameless and semi-frameless toughened glass railings for balconies, terraces, staircases and commercial spaces in Pune and Mumbai.
-          </p>
-
-          <div
-            className="mt-8 flex items-center gap-8 animate-fade-in-up"
-            style={{ animationDelay: "0.3s" }}
-          >
-            <Link
-              to="/contact"
-              className="text-white font-semibold text-base border-b border-amber-400 pb-0.5 hover:text-amber-400 transition-colors tracking-wide"
-            >
-              Get Free Quote
-            </Link>
-            <a
-              href="tel:+918369233566"
-              className="text-white/60 font-medium text-base hover:text-white transition-colors tracking-wide"
-            >
-              +91 83692 33566
-            </a>
-          </div>
-
-          {/* Trust signal */}
-          <div
-            className="flex items-center gap-1.5 mt-4 animate-fade-in-up"
-            style={{ animationDelay: "0.4s" }}
-          >
-            <div className="flex">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} size={12} className="text-amber-400 fill-amber-400" />
-              ))}
-            </div>
-            <span className="text-white/50 text-xs font-medium ml-0.5">
-              Embassy REIT Best Vendor 2024 · 16 Documented Projects
-            </span>
-          </div>
-        </div>
-
-        <div className="absolute bottom-8 right-8 flex flex-col items-center gap-2 opacity-40">
-          <span className="text-white text-[10px] uppercase tracking-[0.25em] rotate-90 mb-3">Scroll</span>
-          <div className="w-px h-12 bg-gradient-to-b from-white to-transparent" />
-        </div>
-      </section>
-
-
-      {/* ════════════ INTRO ════════════ */}
-      <section className="py-16 md:py-20 bg-white">
-        <div className="container mx-auto px-6 md:px-16 max-w-3xl text-center">
-          <FadeIn>
-            <p className="text-amber-700 text-xs font-bold tracking-[0.3em] uppercase mb-4">
-              Why Glass Railings
-            </p>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-stone-900 leading-snug mb-5">
-              Unobstructed views with maximum safety —{"  "}
-              <span className="text-stone-400">toughened glass that meets every building code.</span>
-            </h2>
-            <p className="text-stone-500 text-[15px] md:text-base leading-relaxed">
-              Glass railings use 12–19mm toughened or laminated safety glass mounted with precision-engineered stainless steel or aluminium hardware. They provide fall protection while preserving views, natural light, and modern architectural aesthetics.
-            </p>
-          </FadeIn>
-        </div>
-      </section>
-
-      {/* ════════════ CONVERSION QUICK OVERVIEW ════════════ */}
-      <ServiceQuickOverview
+      <ServiceBody
+        schematic="railing"
+        intro={{ lead: <>Unobstructed views with maximum safety,</>, tail: <>toughened glass that meets every building code.</>, body: <>Glass railings use 12–19mm toughened or laminated safety glass mounted with precision-engineered stainless steel or aluminium hardware. They provide fall protection while preserving views, natural light, and modern architectural aesthetics.</> }}
+        overview={(no) => <ServiceQuickOverview no={no}
         serviceTitle="Glass Balustrades &amp; Railing Systems"
-        whatWeProvide="Frameless base-channel glass railings, standoff pin balustrades, spigot railings & SS-316 top handrail systems. IS 2553 laminated glass safety compliance & 1.5–3.0 kN/m line load certification."
+        whatWeProvide="Frameless base-channel glass railings, standoff pin balustrades, spigot railings & SS-316 top handrail systems. Toughened and laminated glass specified against IS 2553 and the project load requirements, with a structural check before fabrication."
         locationsServed={["Pune (Koregaon Park, Kalyani Nagar)", "Mumbai (Byculla, Bandra, Worli)", "Thane", "Navi Mumbai"]}
         bestProjectTypes={[
           "High-Rise Residential Balconies & Terraces",
@@ -336,370 +175,54 @@ export default function GlassRailings() {
           "Commercial Mall Atrium Balustrades",
           "Hotel Pool Decks & Roof Top Bars"
         ]}
-        priceBenchmark="₹800 – ₹2,200 per running ft (Base Channel, Standoff & Spigot Systems)"
         relevantProjects={[
           "Salsette-27 (Byculla, Mumbai)",
           "Jindal House Balkeshwar 32 (Mumbai)",
           "Nirmaann Estrellaa (Pune)"
         ]}
+      />}
+        systemsTitle={<>Glass Railing Systems We Install</>}
+        systems={SYSTEMS}
+        systemCols={["Glass", "Hardware"]}
+        featuresTitle={<>Built for performance. Delivered on schedule.</>}
+        features={[
+          { title: "Safety Glass", desc: "Toughened or laminated glass specified to IS 2553 and the project's load requirements. Confirm the build-up with your consultant." },
+          { title: "Measured and Fabricated to Order", desc: "Each railing is measured on site, drawn in-house and fabricated to size. Programme is confirmed per project." },
+          { title: "Stainless Steel Hardware", desc: "Stainless steel hardware in finishes chosen to the specification. Coastal sites need particular attention to grade." },
+          { title: "AMC Support", desc: "Maintenance contracts available for glazing, glass and cladding." },
+        ]}
+        stepsTitle={<>From first visit to final handover</>}
+        steps={STEPS}
+        promise={<>Shop drawings prepared in-house. Installation run by a dedicated site in-charge and supervisor.</>}
+        pricing={{
+          title: <>Glass Railing Cost: How We Quote</>,
+          intro: <>We quote against drawings. Final cost depends on specification and complexity.</>,
+          colLabel: "Glass",
+          rows: [
+            { system: "Frameless (U-Channel)", glass: "12–19 mm toughened", price: "Quoted on drawings" },
+            { system: "Semi-Frameless (Mini-Post)", glass: "12–15 mm toughened", price: "Quoted on drawings" },
+            { system: "Spigot Mount", glass: "12–15 mm toughened", price: "Quoted on drawings" },
+            { system: "Standoff Mount", glass: "10–12 mm toughened", price: "Quoted on drawings" },
+          ],
+        }}
+        faq={[
+          { q: <>Is toughened glass safe for railings?</>, a: <>Toughened glass is safe for railings when the glass build-up, supports and anchorage are designed for the load. It is stronger than ordinary glass and breaks into small granules, and laminated glass adds a layer that holds pieces in place.</> },
+          { q: <>What is the difference between frameless and semi-frameless glass railings?</>, a: <>Frameless railings use U-channels or base shoes with no visible posts — giving maximum transparency. Semi-frameless railings use slim stainless steel posts at intervals — slightly more visible structure but often more cost-effective for longer runs.</> },
+          { q: <>How much do glass railings cost per running foot in India?</>, a: <>Glass railing cost depends on the system (frameless, semi-frameless, spigot or standoff), glass thickness, hardware finish and site conditions. It is priced per running foot against drawings. Fine Glaze prepares BOQ-based quotations.</> },
+          { q: <>Can glass railings be used outdoors and in coastal areas?</>, a: <>Yes. Toughened glass is weather-resistant, and outdoor and coastal installations need stainless steel hardware of a suitable grade. Fine Glaze selects the grade per project, and nano-coated glass is an option for easier cleaning.</> },
+          { q: <>How long does glass railing installation take?</>, a: <>Installation time depends on railing length, number of floors, site access and glass lead time, so we confirm the programme per project after measurement. Glass is cut and toughened to size before installation.</> },
+        ]}
+        areas={["Pune", "Mumbai BKC", "Navi Mumbai", "Thane", "Hinjewadi", "Pimpri-Chinchwad"]}
+        others={[
+          { title: "Structural Glazing", href: "/structural-glazing" },
+          { title: "Curtain Wall Systems", href: "/curtain-wall-systems" },
+          { title: "Glass Partitions", href: "/glass-partitions" },
+          { title: "Aluminium Facade", href: "/aluminium-windows-doors" },
+          { title: "Facade AMC", href: "/maintenance-services" },
+          { title: "All Services →", href: "/services" },
+        ]}
+        related={(no) => <RelatedProjects no={no} heading="Glass railing projects" keywords={["railing"]} />}
       />
-
-
-      {/* ════════════ STATS ════════════ */}
-      <section className="bg-stone-900 py-10">
-        <div className="container mx-auto px-6 md:px-16">
-          <FadeIn>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-0 md:divide-x md:divide-stone-700">
-              {[
-                { number: "10+", label: "Years Experience" },
-                { number: "10+", label: "Projects Delivered" },
-                { number: "19mm", label: "Max Glass Thickness" },
-                { number: "SS 316", label: "Marine-Grade Hardware" },
-              ].map((s) => (
-                <div key={s.label} className="text-center px-4">
-                  <p className="text-2xl md:text-3xl font-bold text-white">{s.number}</p>
-                  <p className="text-stone-500 text-[11px] uppercase tracking-widest mt-1">{s.label}</p>
-                </div>
-              ))}
-            </div>
-          </FadeIn>
-        </div>
-      </section>
-
-
-      {/* ════════════ SYSTEMS ════════════ */}
-      <section className="py-16 md:py-20 bg-stone-50">
-        <div className="container mx-auto px-6 md:px-16">
-          <FadeIn className="mb-10">
-            <p className="text-amber-700 text-xs font-bold tracking-[0.3em] uppercase mb-3">
-              Our Systems
-            </p>
-            <h2 className="text-2xl md:text-3xl font-bold text-stone-900">
-              Glass Railing Systems We Install
-            </h2>
-          </FadeIn>
-
-          <FadeIn delay={100}>
-            <div className="flex flex-wrap gap-2 mb-8">
-              {SYSTEMS.map((sys, i) => (
-                <button
-                  key={sys.num}
-                  onClick={() => setActiveSystem(i)}
-                  className={cn(
-                    "px-4 py-2 text-sm font-medium transition-all duration-200",
-                    activeSystem === i
-                      ? "bg-stone-900 text-white"
-                      : "bg-white text-stone-600 hover:bg-stone-100 border border-stone-200"
-                  )}
-                >
-                  {sys.title}
-                </button>
-              ))}
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-0 bg-white overflow-hidden" key={current.num}>
-              <div className="relative h-[280px] md:h-[360px] overflow-hidden">
-                <img
-                  src={IMG[current.img]}
-                  alt={current.title}
-                  className="w-full h-full object-cover transition-opacity duration-500"
-                  loading="lazy"
-                />
-                <div className="absolute top-4 left-4 bg-stone-900/80 text-white text-xs font-bold px-3 py-1.5 tracking-wider">
-                  {current.num}
-                </div>
-              </div>
-              <div className="p-8 md:p-10 flex flex-col justify-center">
-                <h3 className="text-xl md:text-2xl font-bold text-stone-900 mb-3">{current.title}</h3>
-                <p className="text-stone-500 text-sm leading-relaxed mb-6">{current.desc}</p>
-
-                <div className="grid grid-cols-2 gap-3 mb-6">
-                  <div className="bg-stone-50 p-3">
-                    <p className="text-[10px] uppercase tracking-wider text-stone-400 mb-1">Glass</p>
-                    <p className="text-sm font-semibold text-stone-800">{current.glass}</p>
-                  </div>
-                  <div className="bg-stone-50 p-3">
-                    <p className="text-[10px] uppercase tracking-wider text-stone-400 mb-1">Hardware</p>
-                    <p className="text-sm font-semibold text-stone-800">{current.wind}</p>
-                  </div>
-                  <div className="bg-stone-50 p-3">
-                    <p className="text-[10px] uppercase tracking-wider text-stone-400 mb-1">Best For</p>
-                    <p className="text-sm font-semibold text-stone-800">{current.bestFor}</p>
-                  </div>
-                  <div className="bg-amber-50 p-3 border border-amber-200">
-                    <p className="text-[10px] uppercase tracking-wider text-amber-600 mb-1">Rate</p>
-                    <p className="text-sm font-bold text-stone-900">{current.price}</p>
-                  </div>
-                </div>
-
-                <Link to="/contact">
-                  <Button size="sm" className="bg-stone-900 hover:bg-stone-800 text-white gap-2">
-                    Get Quote for {current.title.split(" ")[0]} <ArrowRight size={14} />
-                  </Button>
-                </Link>
-              </div>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
-
-
-      {/* ════════════ WHY FINE GLAZE ════════════ */}
-      <section className="py-16 md:py-20 bg-white">
-        <div className="container mx-auto px-6 md:px-16">
-          <FadeIn className="text-center mb-12">
-            <p className="text-amber-700 text-xs font-bold tracking-[0.3em] uppercase mb-3">
-              Why Fine Glaze
-            </p>
-            <h2 className="text-2xl md:text-3xl font-bold text-stone-900">
-              Built for performance. Delivered on schedule.
-            </h2>
-          </FadeIn>
-
-          <FadeIn delay={100}>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              {[
-                {
-                  icon: Shield,
-                  title: "Safety Tested",
-                  desc: "All glass is IS 2553 certified toughened. Every railing passes load testing before handover.",
-                },
-                {
-                  icon: Clock,
-                  title: "Quick Turnaround",
-                  desc: "Most residential railing projects completed within 5–7 working days from measurement.",
-                },
-                {
-                  icon: Award,
-                  title: "Premium Hardware",
-                  desc: "Marine-grade SS 304/316 hardware — rust-proof even in Mumbai's coastal climate.",
-                },
-                {
-                  icon: Wrench,
-                  title: "After-Sales Care",
-                  desc: "Free alignment check at 6 months. Replacement glass available within 48 hours.",
-                },
-              ].map((item) => (
-                <div key={item.title} className="text-center">
-                  <div className="inline-flex items-center justify-center w-12 h-12 bg-amber-50 text-amber-700 mb-4">
-                    <item.icon size={22} />
-                  </div>
-                  <h3 className="text-sm font-bold text-stone-900 mb-2">{item.title}</h3>
-                  <p className="text-stone-500 text-xs leading-relaxed">{item.desc}</p>
-                </div>
-              ))}
-            </div>
-          </FadeIn>
-
-          <FadeIn delay={200} className="mt-12 text-center">
-            <p className="text-stone-400 text-sm">
-              Trusted by <span className="text-stone-700 font-semibold">Embassy REIT</span> ·{" "}
-              <span className="text-stone-700 font-semibold">LTIMindtree</span> ·{" "}
-              <span className="text-stone-700 font-semibold">Pune International Airport</span>
-            </p>
-          </FadeIn>
-        </div>
-      </section>
-
-
-      {/* ════════════ HOW WE WORK ════════════ */}
-      <section className="py-16 md:py-20 bg-stone-50">
-        <div className="container mx-auto px-6 md:px-16">
-          <FadeIn className="mb-10">
-            <p className="text-amber-700 text-xs font-bold tracking-[0.3em] uppercase mb-3">
-              How We Work
-            </p>
-            <h2 className="text-2xl md:text-3xl font-bold text-stone-900">
-              From first visit to final handover
-            </h2>
-          </FadeIn>
-
-          <FadeIn delay={100}>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              {STEPS.map((step, i) => (
-                <div key={step.num} className="relative">
-                  {i < STEPS.length - 1 && (
-                    <div className="hidden md:block absolute top-5 left-[60%] right-0 h-px bg-stone-300" />
-                  )}
-                  <div className="bg-white p-5 relative">
-                    <span className="text-3xl font-bold text-stone-100 block mb-3">{step.num}</span>
-                    <h3 className="text-sm font-bold text-stone-900 mb-1">{step.title}</h3>
-                    <p className="text-stone-500 text-xs leading-relaxed">{step.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </FadeIn>
-        </div>
-      </section>
-
-
-      {/* ════════════ PHOTO BREAK ════════════ */}
-      <FadeIn>
-        <div className="relative h-[35vh] md:h-[40vh] overflow-hidden">
-          <img
-            src={IMG.process}
-            alt="Shop drawing of an SS railing for Jindal House, Mumbai — drawn in-house by Fine Glaze"
-            className="w-full h-full object-cover"
-            loading="lazy"
-          />
-          <div className="absolute inset-0 bg-black/40" />
-          <div className="absolute inset-0 flex items-center justify-center text-center px-4">
-            <div>
-              <p className="text-white/60 text-sm uppercase tracking-widest mb-2">Our Promise</p>
-              <p className="text-white text-xl md:text-3xl font-bold max-w-xl">
-                Every railing measured, fabricated & installed by our own expert teams.
-              </p>
-            </div>
-          </div>
-        </div>
-      </FadeIn>
-
-
-      {/* ════════════ PRICING ════════════ */}
-      <section className="py-16 md:py-20 bg-white">
-        <div className="container mx-auto px-6 md:px-16 max-w-3xl">
-          <FadeIn className="text-center mb-8">
-            <p className="text-amber-700 text-xs font-bold tracking-[0.3em] uppercase mb-3">
-              Pricing
-            </p>
-            <h2 className="text-2xl md:text-3xl font-bold text-stone-900 mb-2">
-              Glass Railing Cost — 2026
-            </h2>
-            <p className="text-stone-400 text-sm">
-              Indicative rates. Final cost depends on specifications & complexity. GST extra.
-            </p>
-          </FadeIn>
-
-          <FadeIn delay={100}>
-            <div className="overflow-x-auto">
-              <table className="w-full text-left">
-                <thead>
-                  <tr className="border-b-2 border-stone-800">
-                    <th className="py-3 text-xs font-bold uppercase tracking-wider text-stone-500">System</th>
-                    <th className="py-3 text-xs font-bold uppercase tracking-wider text-stone-500">Glass</th>
-                    <th className="py-3 text-xs font-bold uppercase tracking-wider text-stone-500 text-right">Rate / sq ft</th>
-                  </tr>
-                </thead>
-                <tbody className="text-sm">
-                  {[
-                    { system: "Frameless (U-Channel)", glass: "12–19 mm toughened", price: "₹800 – ₹1,400 /rft" },
-                    { system: "Semi-Frameless (Mini-Post)", glass: "12–15 mm toughened", price: "₹600 – ₹1,000 /rft" },
-                    { system: "Spigot Mount", glass: "12–15 mm toughened", price: "₹700 – ₹1,200 /rft" },
-                    { system: "Standoff Mount", glass: "10–12 mm toughened", price: "₹500 – ₹800 /rft" },
-                  ].map((row) => (
-                    <tr key={row.system} className="border-b border-stone-100 hover:bg-stone-50 transition-colors">
-                      <td className="py-3 font-semibold text-stone-800">{row.system}</td>
-                      <td className="py-3 text-stone-500">{row.glass}</td>
-                      <td className="py-3 text-right font-bold text-stone-900">{row.price}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-
-            <div className="mt-8 text-center">
-              <Link to="/contact">
-                <Button size="lg" className="bg-stone-900 hover:bg-stone-800 text-white gap-2 px-8">
-                  Get Exact Quote — Free Site Visit <ArrowRight size={16} />
-                </Button>
-              </Link>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
-
-
-      {/* ════════════ FAQ ════════════ */}
-      <section className="py-14 md:py-16 bg-stone-50">
-        <div className="container mx-auto px-6 md:px-16 max-w-3xl">
-          <FadeIn className="mb-8">
-            <p className="text-amber-700 text-xs font-bold tracking-[0.3em] uppercase mb-3">
-              Common Questions
-            </p>
-            <h2 className="text-2xl md:text-3xl font-bold text-stone-900">
-              FAQ
-            </h2>
-          </FadeIn>
-
-          <FadeIn delay={100}>
-            <div>
-              <FAQItem
-                q="Is toughened glass safe for railings?"
-                a="Yes. Toughened glass is 4–5 times stronger than regular glass. If it breaks, it shatters into small harmless granules instead of sharp shards. We use 12–19mm IS 2553 certified toughened glass for all railing projects."
-              />
-              <FAQItem
-                q="What is the difference between frameless and semi-frameless glass railings?"
-                a="Frameless railings use U-channels or base shoes with no visible posts — giving maximum transparency. Semi-frameless railings use slim stainless steel posts at intervals — slightly more visible structure but often more cost-effective for longer runs."
-              />
-              <FAQItem
-                q="How much do glass railings cost per running foot in India?"
-                a="Standoff systems start at ₹500/rft. Frameless railings range from ₹800–₹1,400/rft depending on glass thickness and hardware quality. Spigot systems fall in between at ₹700–₹1,200/rft."
-              />
-              <FAQItem
-                q="Can glass railings be used outdoors and in coastal areas?"
-                a="Yes. We use SS 316 marine-grade hardware for coastal and outdoor installations. The toughened glass itself is weather-resistant. We also offer nano-coated glass for easy cleaning and water-spot resistance."
-              />
-              <FAQItem
-                q="How long does glass railing installation take?"
-                a="Most residential projects are completed in 5–7 working days from measurement. Commercial projects with longer runs typically take 2–4 weeks depending on the scope."
-              />
-            </div>
-          </FadeIn>
-        </div>
-      </section>
-
-
-      {/* ════════════ AREAS + SERVICES ════════════ */}
-      <section className="bg-stone-900 py-12">
-        <div className="container mx-auto px-6 md:px-16">
-          <FadeIn>
-            <div className="grid md:grid-cols-2 gap-10 md:gap-16">
-              <div>
-                <p className="text-amber-400 text-xs font-bold tracking-[0.3em] uppercase mb-4">
-                  Where We Work
-                </p>
-                <div className="flex flex-wrap gap-x-6 gap-y-2">
-                  {["Pune", "Mumbai BKC", "Navi Mumbai", "Thane", "Nashik", "Hinjewadi", "Pimpri-Chinchwad"].map((city) => (
-                    <div key={city} className="flex items-center gap-1.5">
-                      <MapPin size={11} className="text-amber-500" />
-                      <span className="text-white/60 text-sm">{city}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div>
-                <p className="text-amber-400 text-xs font-bold tracking-[0.3em] uppercase mb-4">
-                  Other Services
-                </p>
-                <div className="grid grid-cols-2 gap-x-6 gap-y-1.5">
-                  {[
-                    { title: "Structural Glazing", href: "/structural-glazing" },
-                    { title: "Curtain Wall Systems", href: "/curtain-wall-systems" },
-                    { title: "Glass Partitions", href: "/glass-partitions" },
-                    { title: "Aluminium Facade", href: "/aluminium-windows-doors" },
-                    { title: "Facade AMC", href: "/maintenance-services" },
-                    { title: "All Services →", href: "/services" },
-                  ].map((link) => (
-                    <Link
-                      key={link.href}
-                      to={link.href}
-                      className="text-white/50 text-sm hover:text-amber-400 transition-colors"
-                    >
-                      {link.title}
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
-
-
-      {/* ════════════ CTA ════════════ */}
-      <RelatedProjects heading="Glass railing projects" keywords={["railing"]} />
       <CTASection />
     </Layout>
   );

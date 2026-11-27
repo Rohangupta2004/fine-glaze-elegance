@@ -1,7 +1,10 @@
 import { useState } from "react";
+import CallNow from "@/components/common/CallNow";
 import { Link } from "react-router-dom";
-import { ClipboardCheck, Factory, HardHat, Layers, PenTool, ShieldCheck, Droplets, FileText, Phone } from "lucide-react";
 import SEO from "@/components/SEO";
+import PageHero from "@/components/common/PageHero";
+import { DataStrip, Prose, Sec, SpecList, SpecTable } from "@/components/common/Sheet";
+import { CTASection } from "@/components/home/CTASection";
 import { Layout } from "@/components/layout/Layout";
 import { QuoteModal } from "@/components/QuoteModal";
 import { useCompanyProfile } from "@/context/CompanyProfileContext";
@@ -50,229 +53,151 @@ export default function QualitySafety() {
   ];
 
   return (
-    <Layout>
+    <Layout darkHero>
       <SEO
-        title="Quality, Testing & Site Safety | How Fine Glaze Works"
-        description="Eight delivery stages, in-house drawings and engineering checks, a Pune fabrication unit, stage inspections, site water testing and a dedicated safety officer — how Fine Glaze delivers facades."
+        title="Facade Contractor Quality Control and Safety | Fine Glaze"
+        description="How Fine Glaze controls facade quality and safety: in-house shop drawings, stage inspections, a site water penetration test and a dedicated safety officer."
         canonical={PAGE_URL}
         keywords="facade quality control, facade water test, facade contractor safety, work at height facade, facade contractor vendor registration, Fine Glaze process"
         schemas={schemas}
       />
 
-      {/* INTRO */}
-      <section className="bg-stone-950 text-white">
-        <div className="container mx-auto px-4 py-16 md:py-24 grid lg:grid-cols-[1.4fr_1fr] gap-10 items-center">
+      <PageHero
+        crumbs={[{ label: "Quality and safety" }]}
+        title="One accountable team, from drawing to defect liability"
+        intro="Large brands sell a product. On a facade, what decides the result is who draws it, who checks it, who builds it and who answers when it rains. Here is exactly how we do each step."
+        source="quality_hero"
+      />
+
+      <Sec no="01" label="Record" title="The firm in figures." sheetLabel="Company facts">
+        <DataStrip
+          items={[
+            { value: String(company.stats.projectRecords), label: "Documented projects" },
+            { value: String(company.stats.coreTeam), label: "Core team" },
+            { value: "2024", label: `${company.award.by} Best Vendor` },
+          ]}
+        />
+      </Sec>
+
+      <Sec no="02" label="Stages" title="Eight controlled stages on every package." sheetLabel="Delivery stages" dim="8 stages">
+        <SpecTable
+          caption="Delivery stages"
+          columns={["No.", "Stage", "What happens"]}
+          rows={company.deliveryStages.map((s, i) => [String(i + 1).padStart(2, "0"), <b key={s.title}>{s.title}</b>, s.desc])}
+        />
+      </Sec>
+
+      <Sec no="03" label="Design and fabrication" title="Drawn in-house, built in our own unit." sheetLabel="Design and fabrication">
+        <div className="sx-split">
           <div>
-            <p className="text-amber-400 text-xs font-bold tracking-[0.3em] uppercase mb-4">How we work</p>
-            <h1 className="text-3xl sm:text-5xl font-extrabold leading-tight">
-              One accountable team, from drawing to defect liability
-            </h1>
-            <p className="mt-5 text-stone-300 text-lg max-w-2xl">
-              Large brands sell a product. On a facade, what decides the result is who draws it, who checks it, who
-              builds it and who answers when it rains. Here is exactly how we do each step — nothing on this page is a
-              promise we don't already practise.
-            </p>
+            <h3 className="sx-sub">Design &amp; engineering, in-house</h3>
+            <p className="sx-note">Every package is drawn in-house before anything is cut, so the workshop and the site work from one approved set.</p>
+            <dl className="sx-kv">
+              <div><dt>Shop &amp; fabrication drawings</dt><dd>Yogesh, Design Head</dd></div>
+              <div><dt>Member sizing, fixing &amp; anchorage</dt><dd>Checked against project wind load. Swikrut, Structural Engineer</dd></div>
+              <div><dt>QHSE &amp; design lead</dt><dd>{company.founder.name}, Founder</dd></div>
+              <div><dt>Approvals</dt><dd>Submissions and revisions managed with architect, PMC and client until GFC release</dd></div>
+            </dl>
           </div>
-          <dl className="grid grid-cols-2 gap-3">
-            {[
-              [company.stats.sqmDelivered, "sqm delivered"],
-              [company.stats.projectRecords, "documented projects"],
-              [company.stats.coreTeam, "core team"],
-              ["2024", `${company.award.by} Best Vendor`],
-            ].map(([v, l]) => (
-              <div key={l} className="rounded-xl border border-stone-800 bg-stone-900 p-4">
-                <dt className="sr-only">{l}</dt>
-                <dd className="text-2xl font-extrabold text-amber-400">{v}</dd>
-                <dd className="text-xs text-stone-400 uppercase tracking-wider mt-1">{l}</dd>
-              </div>
-            ))}
-          </dl>
-        </div>
-      </section>
-
-      {/* 8 STAGES */}
-      <section className="py-16 md:py-20 bg-background" aria-labelledby="stages">
-        <div className="container mx-auto px-4">
-          <h2 id="stages" className="text-2xl md:text-4xl font-bold text-foreground">Eight controlled stages on every package</h2>
-          <ol className="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {company.deliveryStages.map((s, i) => (
-              <li key={s.title} className="rounded-xl border border-border bg-card p-5">
-                <p className="text-xs font-bold text-amber-700">{String(i + 1).padStart(2, "0")}</p>
-                <h3 className="mt-1 font-semibold text-foreground">{s.title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground">{s.desc}</p>
-              </li>
-            ))}
-          </ol>
-        </div>
-      </section>
-
-      {/* DESIGN + FABRICATION */}
-      <section className="py-16 md:py-20 bg-muted" aria-labelledby="design">
-        <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-8">
-          <article className="rounded-2xl bg-card border border-border p-7">
-            <PenTool className="h-7 w-7 text-primary" aria-hidden="true" />
-            <h2 id="design" className="mt-3 text-2xl font-bold text-foreground">Design &amp; engineering, in-house</h2>
-            <p className="mt-3 text-muted-foreground">
-              Every package is drawn in-house before anything is cut, so the workshop and the site work from one approved set.
-            </p>
-            <ul className="mt-5 space-y-3 text-sm">
-              <li><strong className="text-foreground">Shop &amp; fabrication drawings</strong> — Yogesh, Design Head</li>
-              <li><strong className="text-foreground">Member sizing, fixing &amp; anchorage</strong> checked against project wind load — Swikrut, Structural Engineer</li>
-              <li><strong className="text-foreground">QHSE &amp; design lead</strong> — {company.founder.name}, Founder</li>
-              <li><strong className="text-foreground">Approvals</strong> — submissions and revisions managed with architect, PMC and client until GFC release</li>
-            </ul>
-          </article>
-          <article className="rounded-2xl bg-card border border-border p-7">
-            <Factory className="h-7 w-7 text-primary" aria-hidden="true" />
-            <h2 className="mt-3 text-2xl font-bold text-foreground">Our fabrication unit — {company.fabricationUnit.location}</h2>
-            <p className="mt-3 text-muted-foreground">
-              A {company.fabricationUnit.areaSqft} unit feeding both Pune and Mumbai sites.
-            </p>
-            <ul className="mt-5 space-y-2 text-sm text-muted-foreground list-disc pl-5">
-              {company.fabricationUnit.capability.map((c) => <li key={c}>{c}</li>)}
-            </ul>
-            <p className="mt-4 text-xs text-muted-foreground">
-              In plain terms: {company.fabricationUnit.note}
-            </p>
-          </article>
-        </div>
-      </section>
-
-      {/* QA + TESTING */}
-      <section className="py-16 md:py-20 bg-background" aria-labelledby="qa">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center gap-3">
-            <ClipboardCheck className="h-7 w-7 text-primary" aria-hidden="true" />
-            <h2 id="qa" className="text-2xl md:text-4xl font-bold text-foreground">Checked at source, at site, and before handover</h2>
+          <div>
+            <h3 className="sx-sub">Our fabrication unit, {company.fabricationUnit.location}</h3>
+            <p className="sx-note">Our own unit, feeding both Pune and Mumbai sites.</p>
+            <SpecList items={company.fabricationUnit.capability} />
+            <p className="sx-note" style={{ marginTop: 18 }}>In plain terms: {company.fabricationUnit.note}</p>
           </div>
-          <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {company.qualityStages.map((q) => (
-              <div key={q.title} className="rounded-xl border border-border bg-card p-5">
-                <h3 className="font-semibold text-foreground">{q.title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground">{q.desc}</p>
-              </div>
-            ))}
-          </div>
-          <div className="mt-6 rounded-xl border border-amber-500/30 bg-amber-500/5 p-6">
-            <div className="flex items-center gap-2 font-semibold text-foreground">
-              <Droplets className="h-5 w-5 text-amber-700" aria-hidden="true" /> Testing
+        </div>
+      </Sec>
+
+      <Sec no="04" label="Quality and testing" title="Checked at source, at site, and before handover." sheetLabel="Quality control">
+        <SpecTable
+          caption="Quality checks"
+          columns={["No.", "Check", "What is verified"]}
+          rows={company.qualityStages.map((q, i) => [String(i + 1).padStart(2, "0"), <b key={q.title}>{q.title}</b>, q.desc])}
+        />
+        <h3 className="sx-sub" style={{ marginTop: 36 }}>Testing</h3>
+        <SpecList
+          items={[...company.testing, `Snag register raised, tracked and closed before handover. ${company.defectLiability}`]}
+        />
+      </Sec>
+
+      <Sec no="05" label="Safety" title="Facade work is height work, and we manage it that way." sheetLabel="Safety">
+        <SpecTable
+          caption="Safety measures"
+          columns={["No.", "Measure", "Detail"]}
+          rows={[
+            ...company.safety.map((s, i) => [String(i + 1).padStart(2, "0"), <b key={s.title}>{s.title}</b>, s.desc]),
+            [String(company.safety.length + 1).padStart(2, "0"), <b key="cert">Certification status</b>, `${company.isoStatus}. We will say so plainly until it is granted.`],
+          ]}
+        />
+        <p className="sx-note" style={{ marginTop: 18, marginBottom: 0 }}>Safety officer: Akash, oversees elevation work across all active sites.</p>
+      </Sec>
+
+      <Sec no="06" label="Materials" title="Material partners." sheetLabel="Materials">
+        <p className="sx-note">Brands are matched to the project specification and the consultant's approved list.</p>
+        <dl className="sx-kv">
+          {company.materialPartners.map((m) => (
+            <div key={m.category}>
+              <dt>{m.category}</dt>
+              <dd>{m.detail}</dd>
             </div>
-            <ul className="mt-3 space-y-2 text-sm text-muted-foreground list-disc pl-5">
-              {company.testing.map((t) => <li key={t}>{t}</li>)}
-              <li>Snag register raised, tracked and closed before handover. {company.defectLiability}</li>
-            </ul>
-          </div>
-        </div>
-      </section>
+          ))}
+        </dl>
+        <p className="sx-note" style={{ marginTop: 18, marginBottom: 0 }}>{company.materialPartnersNote}</p>
+      </Sec>
 
-      {/* SAFETY */}
-      <section className="py-16 md:py-20 bg-stone-950 text-white" aria-labelledby="safety">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center gap-3">
-            <HardHat className="h-7 w-7 text-amber-400" aria-hidden="true" />
-            <h2 id="safety" className="text-2xl md:text-4xl font-bold">Facade work is height work — we manage it that way</h2>
-          </div>
-          <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {company.safety.map((s) => (
-              <div key={s.title} className="rounded-xl border border-stone-800 bg-stone-900 p-5">
-                <h3 className="font-semibold">{s.title}</h3>
-                <p className="mt-2 text-sm text-stone-400">{s.desc}</p>
-              </div>
-            ))}
-            <div className="rounded-xl border border-stone-800 bg-stone-900 p-5">
-              <h3 className="font-semibold">Certification status</h3>
-              <p className="mt-2 text-sm text-stone-400">{company.isoStatus}. We will say so plainly until it is granted.</p>
-            </div>
-          </div>
-          <p className="mt-6 text-sm text-stone-400">Safety officer: Akash · oversees elevation work across all active sites.</p>
-        </div>
-      </section>
-
-      {/* MATERIALS */}
-      <section className="py-16 md:py-20 bg-background" aria-labelledby="materials">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center gap-3">
-            <Layers className="h-7 w-7 text-primary" aria-hidden="true" />
-            <h2 id="materials" className="text-2xl md:text-4xl font-bold text-foreground">Material partners</h2>
-          </div>
-          <p className="mt-3 text-muted-foreground max-w-2xl">Brands are matched to the project specification and the consultant's approved list.</p>
-          <dl className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {company.materialPartners.map((m) => (
-              <div key={m.category} className="rounded-xl border border-border bg-card p-5">
-                <dt className="text-xs font-bold uppercase tracking-wider text-muted-foreground">{m.category}</dt>
-                <dd className="mt-1 text-foreground">{m.detail}</dd>
-              </div>
-            ))}
-          </dl>
-          <p className="mt-4 text-sm text-muted-foreground">{company.materialPartnersNote}</p>
-        </div>
-      </section>
-
-      {/* AFTER HANDOVER */}
-      <section className="py-16 md:py-20 bg-muted" aria-labelledby="after">
-        <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-10 items-start">
+      <Sec no="07" label="After handover" title="After handover, we are still your facade team." sheetLabel="Maintenance">
+        <div className="sx-split">
           <div>
-            <ShieldCheck className="h-7 w-7 text-primary" aria-hidden="true" />
-            <h2 id="after" className="mt-3 text-2xl md:text-4xl font-bold text-foreground">After handover, we are still your facade team</h2>
-            <p className="mt-3 text-muted-foreground">
-              Maintenance is a core service line for us, run with the same drawing control, safety protocol and snag discipline as new work —
-              for example our running contract at Embassy Techzone, Hinjewadi for Embassy REIT.
-            </p>
-            <Link to="/maintenance-services" className="mt-5 inline-flex rounded-lg bg-primary text-primary-foreground px-5 py-3 font-semibold hover:opacity-90">
-              Facade maintenance &amp; AMC
-            </Link>
-          </div>
-          <ul className="grid gap-3">
-            {company.maintenanceScope.map((m) => (
-              <li key={m} className="rounded-xl border border-border bg-card px-5 py-4 text-foreground">{m}</li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      {/* HOW TO VERIFY */}
-      <section className="py-16 md:py-20 bg-background" aria-labelledby="verify">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <h2 id="verify" className="text-2xl md:text-4xl font-bold text-foreground">How to check any facade contractor — including us</h2>
-          <p className="mt-3 text-muted-foreground">Seven questions that separate a capable contractor from a good brochure.</p>
-          <ol className="mt-8 space-y-3">
-            {VERIFY_CHECKLIST.map((v, i) => (
-              <li key={v} className="flex gap-4 rounded-xl border border-border bg-card p-4">
-                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-amber-500/15 text-sm font-bold text-amber-700">{i + 1}</span>
-                <span className="text-foreground/90">{v}</span>
-              </li>
-            ))}
-          </ol>
-        </div>
-      </section>
-
-      {/* PREQUALIFICATION */}
-      <section className="py-16 bg-amber-500">
-        <div className="container mx-auto px-4 grid lg:grid-cols-[1.5fr_1fr] gap-8 items-center">
-          <div>
-            <h2 className="text-2xl md:text-3xl font-extrabold text-stone-950">Registering us as a vendor?</h2>
-            <p className="mt-2 text-stone-900/80">
-              We can send our company profile, GST registration ({company.gstin}), trademark details, project references and
-              work-at-height documentation for prequalification.
+            <Prose>
+              <p>
+                Maintenance is a core service line for us, run with the same drawing control, safety protocol and snag discipline as new work —
+                for example our running contract at Embassy Techzone, Hinjewadi for Embassy REIT.
+              </p>
+            </Prose>
+            <p className="sx-more">
+              <Link to="/maintenance-services" className="fg-btn2">
+                Facade maintenance &amp; AMC
+              </Link>
             </p>
           </div>
-          <div className="flex flex-col sm:flex-row lg:flex-col gap-3">
-            <button onClick={() => setQuoteOpen(true)} className="rounded-xl bg-stone-950 text-white font-bold px-6 py-4 hover:bg-stone-800 inline-flex items-center justify-center">
-              <FileText className="mr-2 h-4 w-4" /> Request prequalification documents
-            </button>
-            <Link
-              to="/company-profile"
-              onClick={() => openProfile(1, "slides")}
-              className="rounded-xl border-2 border-stone-950 text-stone-950 font-bold px-6 py-4 text-center hover:bg-stone-950 hover:text-white"
-            >
-              View the company profile
-            </Link>
-            <a href={telHref} className="text-center font-semibold text-stone-950 underline underline-offset-4 inline-flex items-center justify-center">
-              <Phone className="mr-2 h-4 w-4" /> {company.phone.mobileDisplay}
-            </a>
-          </div>
+          <SpecList items={company.maintenanceScope} />
         </div>
-      </section>
+      </Sec>
+
+      <Sec no="08" label="Verification" title="How to check any facade contractor, including us." sheetLabel="Checklist">
+        <p className="sx-note">Seven questions that separate a capable contractor from a good brochure.</p>
+        <SpecList items={VERIFY_CHECKLIST} />
+      </Sec>
+
+      <Sec no="09" label="On site" title="On site." sheetLabel="Photographs">
+        <div className="sx-pair3">
+          {[
+              { src: "/projects/nanavati-max-hospital-39-2.webp", w: 1073, h: 900, alt: "Site crew installing ACP panels from a scaffold at Nanavati Max Hospital, Vile Parle, Mumbai", cap: "ACP panel installation, Nanavati Max Hospital, Vile Parle" },
+              { src: "/projects/nanavati-max-hospital-39-3.webp", w: 1071, h: 899, alt: "Site crew in safety gear at facade shutter louvers, Nanavati Max Hospital, Vile Parle, Mumbai", cap: "Site crew, Nanavati Max Hospital, Vile Parle" },
+              { src: "/images/profile/award-best-vendor-performance-2024.webp", w: 1523, h: 941, alt: "Best Vendor Performance 2024 trophy and certificate of appreciation from Embassy REIT", cap: "Best Vendor Performance 2024, awarded by Embassy REIT" },
+          ].map((f, i) => (
+            <figure key={f.src} className="sx-photo">
+              <img src={f.src} alt={f.alt} width={f.w} height={f.h} sizes="(max-width: 768px) 100vw, 33vw" loading="lazy" decoding="async" style={{ aspectRatio: "4 / 3", objectFit: "cover" }} />
+              <figcaption className="sx-cap"><span>FIG. {String(i + 1).padStart(2, "0")}</span> {f.cap}</figcaption>
+            </figure>
+          ))}
+        </div>
+      </Sec>
+
+      <Sec no="10" label="Prequalification" title="Registering us as a vendor?" sheetLabel="Vendor registration">
+        <p className="sx-note">
+          We can send our company profile, GST registration ({company.gstin}), trademark details, project references and
+          work-at-height documentation for prequalification.
+        </p>
+        <p className="sx-more">
+          <CallNow className="fg-btn" number />
+          <Link to="/company-profile" onClick={() => openProfile(1, "slides")} className="fg-btn2">
+            View the company profile
+          </Link>
+        </p>
+      </Sec>
+
+      <CTASection />
 
       <QuoteModal
         open={quoteOpen}

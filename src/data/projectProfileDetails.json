@@ -1,116 +1,234 @@
 {
-  "ltimindtree-campus": {
-    "client": "L&T Construction",
+  "ssg-honesty": {
+    "title": "SSG Honesty Nimkar Building",
+    "location": "Plot #198, Shivaji Maharaj Chowk, Panvel, District Raigad",
+    "year": "",
+    "client": "Hatchway Windoor Pvt. Ltd.",
+    "scope": "Structural Glazing, Curtain Wall, ACP & Openable Windows",
+    "status": "Completed",
+    "description": "Fine Glaze delivered structural glazing, curtain wall glazing, ACP work and openable windows at the SSG Honesty Nimkar Building in Panvel, for Hatchway Windoor Pvt. Ltd.",
+    "outcome": "Work completed, as recorded in the company profile.",
+    "features": [
+      "Structural glazing",
+      "Curtain wall glazing",
+      "ACP work",
+      "Openable windows"
+    ]
+  },
+  "salsette-27": {
+    "title": "Salsette-27",
+    "location": "Byculla East, Mumbai",
+    "year": "2024",
+    "client": "",
+    "scope": "Shaft Railing & Canopies",
+    "status": "Completed",
+    "description": "Fine Glaze installed shaft railings at Towers A and B, large canopies at the podium eco-deck level and an ACP canopy at ground floor. Curved ACP sheets were fabricated at different angles to follow the curved ramp.",
+    "outcome": "Installed in 2024, as a complete design, supply and installation package.",
+    "features": [
+      "Tower A and B: railing supply and installation, including design",
+      "Large canopies: supply and installation at podium eco-deck level",
+      "ACP canopy: supply and installation at ground floor"
+    ]
+  },
+  "nirmaann-estrellaa": {
+    "title": "Nirmaann Estrellaa",
+    "location": "Somji Chowk, Pune",
+    "year": "",
+    "client": "Nirmaann Encon Developer",
+    "scope": "Windows, Louvers, Aluminium Fins & SS Glass Railings",
     "status": "Ongoing",
-    "scope": "ACP & Silicone Facade Work",
-    "description": "Fine Glaze is executing ACP and silicone facade work at the LTIMindtree campus in Mahape, Navi Mumbai, for L&T Construction.",
-    "outcome": "Work ongoing, as recorded in the company profile."
+    "description": "Fine Glaze is carrying out window maintenance, aluminium louvers and fins, fixed glass windows, SS glass railing and 25mm Series 3 track sliding windows at Nirmaann Estrellaa, for Nirmaann Encon Developer.",
+    "outcome": "Work ongoing.",
+    "features": [
+      "Window maintenance",
+      "Aluminium louver",
+      "Aluminium fins",
+      "Fixed glass windows",
+      "SS glass railing",
+      "25mm Series 3 track sliding windows"
+    ]
   },
   "embassy-247": {
+    "title": "Embassy 247",
+    "location": "Gandhi Nagar, Vikhroli West, Mumbai",
+    "year": "",
+    "client": "Embassy REIT",
     "scope": "Facade Sealant, Glass Replacement & Repairs",
-    "description": "Fine Glaze undertakes water treatment and facade sealant work covering approximately 80,500 running metres at Embassy 247. The scope includes replacement of over 200 foggy or damaged glass panels, ground-floor triple-height glazing repairs, double-door maintenance and ACP cladding repairs.",
+    "status": "Ongoing",
+    "description": "Fine Glaze undertakes water treatment and facade sealant work of approx. 80,500 RMT at Embassy 247, with replacement of 200+ foggy or damaged glass panels, glazing maintenance, door maintenance and ACP cladding repair.",
+    "outcome": "Embassy REIT awarded Fine Glaze Best Vendor Performance 2024 for successfully completing the Embassy 247 project. Further work is ongoing.",
     "features": [
-      "Water treatment and facade sealant work — approx. 80,500 RMT",
-      "Replacement of 200+ foggy or damaged glass panels",
+      "Water treatment and facade sealant work, approx. 80,500 RMT",
+      "Replacement of 200+ foggy / damaged glass panels",
       "Ground-floor triple-height glazing maintenance and repair",
       "Double-door maintenance and broken glass replacement",
       "ACP cladding repair and fixing"
-    ],
-    "outcome": "Recognised by Embassy REIT with Best Vendor Performance 2024 for the completed Embassy 247 project. Further work is ongoing."
+    ]
   },
-  "salsette-27": {
-    "scope": "Shaft Railings, Ramp Canopy & Ground-Floor ACP Canopies",
-    "description": "Fine Glaze delivered design, supply and installation of shaft railings for Towers A and B, large ramp canopies at the podium eco-deck level, and ACP canopies at ground floor. Curved ACP sheets were fabricated at different angles to follow the ramp geometry.",
+  "nanavati-max-hospital": {
+    "title": "Nanavati Max Hospital",
+    "location": "Vile Parle, Mumbai",
+    "year": "",
+    "client": "L & T Building & Construction",
+    "scope": "ACP Cladding, ACP Top Coping & Window Leakage Rectification",
+    "status": "Ongoing",
+    "description": "Fine Glaze is carrying out ACP cladding, ACP top coping and window leakage rectification and consultation at Nanavati Max Hospital, Vile Parle, for L & T Building & Construction.",
+    "outcome": "Work ongoing.",
     "features": [
-      "Tower A and B shaft railing design, supply and installation",
-      "Curved ramp canopy at podium eco-deck level",
-      "Ground-floor ACP canopies for Towers A and B",
-      "Complete design, supply and installation package"
+      "ACP cladding",
+      "ACP top coping",
+      "Window leakage rectification and consultation",
+      "Facade shutter louvers"
+    ]
+  },
+  "embassy-techzone": {
+    "title": "Embassy Techzone Park",
+    "location": "Hinjewadi, Pune",
+    "year": "",
+    "client": "Embassy REIT",
+    "scope": "ACP Cladding, Spider Glass, Double Doors & Facade AMC",
+    "status": "Completed",
+    "description": "Fine Glaze completed ACP cladding installation, spider glass work and 12mm glass double doors across Blocks 1, 2 and 6 at Embassy Techzone, for Embassy REIT. Facade maintenance and AMC is a running contract.",
+    "outcome": "Installation completed; the maintenance contract is ongoing.",
+    "features": [
+      "Block 6: spider glass work and double-door canopy",
+      "New glass entrance, B Wing",
+      "Spider glass work, Block 2",
+      "ACP cladding at dead wall, Block 2",
+      "Running facade maintenance contract"
+    ]
+  },
+  "pune-airport-terminal": {
+    "title": "Pune International Airport",
+    "location": "New Integrated Terminal, Pune",
+    "year": "2023",
+    "client": "Jindal Stainless Limited",
+    "scope": "SS Column Cladding & MS Framing",
+    "status": "Completed",
+    "description": "Fine Glaze completed SS column cladding and MS framing at the new integrated terminal of Pune International Airport, for Jindal Stainless Limited.",
+    "outcome": "Completed in 2023.",
+    "features": [
+      "SS column cladding",
+      "MS framing",
+      "Concourse columns, departures hall"
+    ]
+  },
+  "ltimindtree-campus": {
+    "title": "LTIMindtree",
+    "location": "Mahape, Navi Mumbai",
+    "year": "",
+    "client": "L&T Construction",
+    "scope": "ACP Silicon Work",
+    "status": "Ongoing",
+    "description": "Fine Glaze is carrying out ACP silicon work at LTIMindtree, Mahape, for L&T Construction.",
+    "outcome": "Work ongoing.",
+    "features": [
+      "ACP silicon work"
+    ]
+  },
+  "jindal-house": {
+    "title": "Jindal House",
+    "location": "Balkeshwar 32, Mumbai",
+    "year": "2023",
+    "client": "",
+    "scope": "SS Glass Railing & SS Wire Mesh Railing",
+    "status": "Completed",
+    "description": "Fine Glaze completed stainless steel posts with structural glass infill, set out to the balcony line and terrace sea front, along with SS wire mesh railing.",
+    "outcome": "Completed in 2023.",
+    "features": [
+      "SS glass railing",
+      "SS wire mesh railing",
+      "Terrace railing, sea front",
+      "SS glass railing at window opening"
     ]
   },
   "leela-business-park": {
+    "title": "Leela Business Park",
+    "location": "Andheri East, Mumbai",
     "year": "2023",
-    "scope": "Aluminium Louvers — All Floors",
-    "outcome": "Aluminium louvers installed across all floors in 2023."
-  },
-  "jindal-house": {
-    "year": "2023",
-    "location": "Balkeshwar 32, Mumbai",
-    "scope": "SS Glass Railings & SS Wire Mesh Railings",
-    "description": "Fine Glaze completed stainless steel glass railings and stainless steel wire mesh railings at Jindal House in 2023. The package includes balcony, terrace sea-front and window-opening railings.",
+    "client": "",
+    "scope": "Aluminium Louvers, All Floors",
+    "status": "Completed",
+    "description": "Fine Glaze installed aluminium louvers on all floors of Leela Business Park, Andheri East.",
+    "outcome": "Installed in 2023.",
     "features": [
-      "Stainless steel posts with structural glass infill",
-      "Terrace sea-front railings",
-      "Window-opening glass railings",
-      "SS wire mesh railing systems"
-    ],
-    "outcome": "Railing works completed in 2023."
-  },
-  "nirmaann-estrellaa": {
-    "client": "Nirmaann Encon Developer",
-    "location": "Somji Chowk, Pune",
-    "status": "Ongoing",
-    "scope": "Windows, Louvers, Aluminium Fins & SS Glass Railings",
-    "description": "Fine Glaze is carrying out window maintenance, aluminium louvers and fins, fixed glass windows, stainless steel glass railings and 25mm series three-track sliding windows at Nirmaann Estrellaa.",
-    "features": [
-      "Window maintenance and fixed glass windows",
-      "Aluminium louvers and fins",
-      "SS glass railings",
-      "25mm series three-track sliding windows"
-    ],
-    "outcome": "Work ongoing, as recorded in the company profile."
-  },
-  "ssg-honesty": {
-    "title": "SSG Honesty Nimkar Building",
-    "location": "Plot 198, Shivaji Maharaj Chowk, Panvel, Raigad",
-    "client": "Hatchway Windoor Pvt. Ltd.",
-    "scope": "Structural Glazing, Curtain Wall, ACP & Openable Windows"
-  },
-  "leela-hotel": {
-    "year": "2023",
-    "description": "Fine Glaze completed fixed glass windows and openable window units in the laundry area at Leela Hotel, Andheri East, Mumbai.",
-    "scope": "Laundry-Area Fixed Glass & Openable Windows",
-    "outcome": "Laundry-area window works completed in 2023."
-  },
-  "embassy-techzone": {
-    "client": "Embassy REIT",
-    "scope": "Spider Glazing, ACP Cladding, Glass Doors & Facade AMC",
-    "status": "Ongoing",
-    "description": "At Embassy Techzone in Hinjewadi, Pune, Fine Glaze completed spider glazing, ACP cladding and 12mm glass double-door work across Blocks 1, 2 and 6. The project includes entrance and canopy glazing, dead-wall ACP cladding and an ongoing facade maintenance contract.",
-    "features": [
-      "Spider glazing at Blocks 2 and 6",
-      "12mm glass double doors and entrance canopy",
-      "New glass entrance at B Wing",
-      "Dead-wall ACP cladding at Block 2",
-      "Ongoing facade maintenance and AMC"
-    ],
-    "outcome": "Installation work completed; the facade maintenance contract remains ongoing."
-  },
-  "nanavati-max-hospital": {
-    "client": "L&T Building & Construction",
-    "scope": "ACP Cladding, Top Coping & Window Leakage Rectification",
-    "description": "Fine Glaze is executing ACP cladding, ACP top coping and window leakage rectification at Nanavati Max Hospital in Vile Parle, Mumbai. The documented site work includes ACP substructure, insulation, Eurobond panel installation, coping details and facade shutter louvers."
+      "Aluminium louvers, all floors"
+    ]
   },
   "naman-chambers": {
+    "title": "Naman Chambers",
+    "location": "Bandra Kurla Complex, Mumbai",
+    "year": "",
+    "client": "",
+    "scope": "Glazing & ACP Cladding",
     "status": "Ongoing",
-    "description": "Fine Glaze is executing glazing and ACP cladding works at Naman Chambers in Bandra Kurla Complex, Mumbai.",
-    "outcome": "Work in progress, as recorded in the company profile."
+    "description": "Fine Glaze is carrying out glazing and ACP cladding at Naman Chambers, Bandra Kurla Complex.",
+    "outcome": "Work in progress.",
+    "features": [
+      "Glazing",
+      "ACP cladding"
+    ]
   },
   "mittal-house": {
+    "title": "Mittal House",
+    "location": "Juhu, Mumbai",
+    "year": "",
+    "client": "",
+    "scope": "Shower Cubicles & Mirror Glass",
     "status": "Ongoing",
-    "description": "Fine Glaze is executing sliding shower cubicles with toughened glass and stainless steel hardware, together with mirror glass featuring concealed fixing and polished edges, at Mittal House in Juhu.",
-    "outcome": "Work in progress, as recorded in the company profile."
+    "description": "Fine Glaze is installing sliding shower cubicles in toughened glass with SS hardware, and mirror glass with concealed fixing and polished edges, at Mittal House, Juhu.",
+    "outcome": "Work in progress.",
+    "features": [
+      "Sliding shower cubicles, toughened glass, SS hardware",
+      "Mirror glass with concealed fixing and polished edges"
+    ]
   },
-  "fifc-tower": {
-    "outcome": "ACP cladding, water leakage repair and maintenance work in progress."
+  "leela-hotel": {
+    "title": "Leela Hotel, Laundry",
+    "location": "Andheri (E), Mumbai",
+    "year": "2023",
+    "client": "",
+    "scope": "Fixed Glass & Openable Windows",
+    "status": "Completed",
+    "description": "Fine Glaze completed fixed glass windows and openable units in the laundry area of Leela Hotel, Andheri (E).",
+    "outcome": "Completed in 2023.",
+    "features": [
+      "Fixed glass windows",
+      "Openable windows"
+    ]
   },
   "samundra-tarang": {
+    "title": "Terrace Enclosure, Samundra Tarang",
+    "location": "Near Shivaji Park, Dadar (W), Mumbai",
+    "year": "",
+    "client": "Mr. Pankaj Kanodia",
+    "scope": "Terrace Enclosure, Sliding Windows & Interiors",
+    "status": "Completed",
+    "description": "Fine Glaze completed a terrace enclosure at Samundra Tarang near Shivaji Park, Dadar (W), for Mr. Pankaj Kanodia.",
+    "outcome": "Completed.",
     "features": [
-      "Four-track sliding windows and fixed windows",
-      "False ceiling and pelmets",
+      "Sliding windows four-track & fixed",
       "Bison board on floors and walls",
-      "Toilet doors and painting",
-      "Internal GS structure"
+      "Toilet doors",
+      "Internal GS structure",
+      "False ceiling",
+      "Pelmets",
+      "Painting"
+    ]
+  },
+  "fifc-tower": {
+    "title": "FIFC Tower",
+    "location": "Bandra Kurla Complex (BKC), Bandra East, Mumbai",
+    "year": "",
+    "client": "",
+    "scope": "ACP Cladding, Water Leakage Repair & Maintenance",
+    "status": "Ongoing",
+    "description": "Fine Glaze is carrying out ACP cladding, water leakage repair and maintenance at FIFC Tower, Bandra Kurla Complex.",
+    "outcome": "Work in progress.",
+    "features": [
+      "ACP cladding",
+      "Water leakage repair",
+      "Maintenance"
     ]
   }
 }

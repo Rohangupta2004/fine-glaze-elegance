@@ -1,10 +1,11 @@
+import Illustration from "@/components/common/Illustration";
 import SEO from "@/components/SEO";
+import PageHero from "@/components/common/PageHero";
 import { RelatedProjects } from "@/components/RelatedProjects";
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/home/CTASection";
-import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
-import { CheckCircle2, ArrowRight } from "lucide-react";
+import FaqList from "@/components/common/FaqList";
+import { DeliveryProcess, LinkTable, Prose, Sec, SpecList, SchematicFig } from "@/components/common/Sheet";
 
 export default function StructuralGlazingPune() {
   const serviceSchema = {
@@ -29,16 +30,16 @@ export default function StructuralGlazingPune() {
       { "@type": "City", "name": "Mumbai" },
       { "@type": "State", "name": "Maharashtra" }
     ],
-    "description": "Structural glazing contractor in Pune. 2-side, 4-side & spider glazing for showrooms, offices & high-rises. IS:875 compliant. Free site visit."
+    "description": "Structural glazing in Pune: 2-side, 4-side and spider glazing for showrooms and commercial buildings, with in-house shop drawings and a site water test."
   };
 
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      { "@type": "Question", "name": "What is the cost of structural glazing in Pune?", "acceptedAnswer": { "@type": "Answer", "text": "Structural glazing in Pune costs Rs 300-900 per sq ft. 2-side SSG ranges from Rs 300-550/sq ft, 4-side full structural glazing is Rs 550-900/sq ft, and spider glazing is Rs 800-1400/sq ft for statement entries." } },
-      { "@type": "Question", "name": "Is structural glazing safe in Pune earthquake zone?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Fine Glaze designs structural glazing for Pune's seismic zone III using redundant mechanical clamping at corners and certified sealants. Designs comply with IS:1893 and NBC 2016 guidelines." } },
-      { "@type": "Question", "name": "What glass thickness is used for structural glazing in Pune?", "acceptedAnswer": { "@type": "Answer", "text": "We use minimum 12mm fully toughened glass, heat-soaked (HST tested) for large panels above 3 sq m to eliminate spontaneous breakage risk. Laminated toughened glass is used where fall protection is required." } },
+      { "@type": "Question", "name": "What is the cost of structural glazing in Pune?", "acceptedAnswer": { "@type": "Answer", "text": "Structural glazing cost in Pune depends on the configuration (2-side, 4-side or spider), glass, sealant, height and access, so a fair figure needs drawings. Fine Glaze prepares BOQ-based quotations after reviewing the project." } },
+      { "@type": "Question", "name": "Is structural glazing safe in Pune earthquake zone?", "acceptedAnswer": { "@type": "Answer", "text": "Structural glazing can be designed for Pune's wind and seismic conditions by sizing the frame, fixing and anchorage to the project design basis. Fine Glaze's engineering check covers member sizing, fixing and anchorage." } },
+      { "@type": "Question", "name": "What glass thickness is used for structural glazing in Pune?", "acceptedAnswer": { "@type": "Answer", "text": "Glass thickness is set by the structural calculation for wind load, panel size and support. Toughened, heat-soaked or laminated glass may be specified depending on location and fall-protection needs." } },
     ]
   };
 
@@ -54,118 +55,83 @@ export default function StructuralGlazingPune() {
   return (
     <Layout darkHero>
       <SEO
-        title="Structural Glazing Contractor in Pune | Fine Glaze"
-        description="Structural glazing contractor in Pune. 2-side, 4-side & spider glazing for showrooms & commercial buildings in Hinjewadi, Kharadi, Baner & Wakad."
+        title="Structural Glazing in Pune: SSG and Spider | Fine Glaze"
+        description="Structural glazing in Pune: 2-side, 4-side and spider glazing for showrooms and commercial buildings, with in-house shop drawings and a site water test."
         canonical="https://fineglaze.com/structural-glazing-pune"
         keywords="structural glazing Pune, structural glass facade Pune, frameless glazing Pune, spider glazing Pune"
         ogImage="https://fineglaze.com/projects/embassy-techzone-41-1.webp"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}
       />
 
-      {/* HERO */}
-      <section className="relative py-24 bg-gradient-to-br from-slate-900 to-slate-800 text-white">
-        <div className="container mx-auto px-4 max-w-6xl grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h1 className="text-3xl md:text-4xl font-bold mb-4">
-              Structural Glazing <span className="text-gradient-gold">Contractor in Pune</span>
-            </h1>
-            <p className="text-lg text-white/80 mb-8">Fine Glaze is a Pune-based structural glazing contractor, offering 2-side, 4-side, and spider glazing systems for commercial showrooms, corporate offices, IT campuses, and residential towers. Structural glazing creates a seamless, frameless glass exterior that maximises natural light and architectural impact.</p>
-            <div className="flex gap-4">
-              <Link to="/contact">
-                <Button size="lg" className="bg-amber-600 hover:bg-amber-700">Get Free Quote</Button>
-              </Link>
-              <Link to="/portfolio">
-                <Button size="lg" variant="outline">View Projects</Button>
-              </Link>
+      <PageHero
+        crumbs={[{ label: "Structural Glazing Contractor in Pune" }]}
+        title={<>Structural Glazing <span className="text-gradient-gold">Contractor in Pune</span></>}
+        intro="Fine Glaze offers 2-side, 4-side and spider structural glazing in Pune for showrooms, offices, campuses and residential buildings, with in-house shop drawings."
+        secondary={{ label: "View Projects", to: "/portfolio" }}
+        image={{ src: "/projects/embassy-techzone-41-2.webp", alt: "Spider glass entrance at Embassy Techzone, Hinjewadi, Pune — installed by Fine Glaze", width: 600, height: 420 }}
+      />
+
+      <Sec no="01" label="Overview" title={<>Structural Glazing in Pune</>} sheetLabel="Overview">
+          <div className="sx-split">
+            <Prose>
+<p>
+            Structural glazing uses high-strength structural silicone to bond glass to aluminium frames, leaving no visible exterior fixings. Fine Glaze procures DOWSIL structural silicone or approved equivalents. Our documented projects include spider glazing at Embassy Techzone in Hinjewadi and structural glazing at SSG Honesty, Panvel.
+          </p>
+          <p>
+            Systems are sized against the project wind load, with member sizing, fixing and anchorage checked before approval. Installed glazing is checked with a site water penetration test, and snags are closed before handover.
+          </p>
+          <p>
+            Typical applications in Pune include showroom glass facades, office entrance lobbies, residential glass elements and atrium or canopy glazing.
+          </p>
+          <p>
+            We offer three configurations: <strong>2-side SSG</strong>, where sealant bonds two sides and mechanical caps hold the others; <strong>4-side SSG</strong>, for a fully frameless appearance; and <strong>spider glazing</strong>, for entries, atriums and canopies where minimal structure is wanted.
+          </p>
+          <p>
+            For residential balcony and bay-window glazing, we set glass thickness and joint sizing with the structural check and the architect's brief.
+          </p>
+            </Prose>
+            <div className="sx-side">
+              <SchematicFig kind="structural" fig="02" />
+              <Illustration name="city-pune" flush sizes="(max-width: 960px) 100vw, 480px" />
             </div>
           </div>
-          <img
-            src="/projects/embassy-techzone-41-2.webp"
-            alt="Spider glass entrance at Embassy Techzone, Hinjewadi, Pune — installed by Fine Glaze"
-            className="rounded-xl shadow-2xl object-cover h-[420px] w-full"
-            loading="eager"
-            width="600"
-            height="420"
+      </Sec>
+
+      <Sec no="02" label="Scope" title={<>What We Offer</>} sheetLabel="Scope of work">
+        <SpecList items={[<>2-Side SSG Systems</>, <>4-Side SSG Systems</>, <>Spider Glazing</>, <>DOWSIL Structural Silicone</>, <>Site Water Penetration Test</>, <>DGU Glass Options</>]} />
+      </Sec>
+
+      <Sec no="03" label="Process" title="From survey to handover." sheetLabel="Process">
+        <DeliveryProcess />
+      </Sec>
+
+      <RelatedProjects no="04" heading="Our glazing work in Pune" locations={["Pune"]} keywords={["glazing", "spider", "glass"]} />
+
+      <Sec no="05" label="FAQ" title={<>Frequently Asked Questions</>} sheetLabel="FAQ">
+        <div className="sx-faq">
+          <FaqList
+            items={[
+              { q: <>What is the cost of structural glazing in Pune?</>, a: <>Structural glazing cost in Pune depends on the configuration (2-side, 4-side or spider), glass, sealant, height and access, so a fair figure needs drawings. Fine Glaze prepares BOQ-based quotations after reviewing the project.</> },
+              { q: <>Is structural glazing safe in Pune earthquake zone?</>, a: <>Structural glazing can be designed for Pune's wind and seismic conditions by sizing the frame, fixing and anchorage to the project design basis. Fine Glaze's engineering check covers member sizing, fixing and anchorage.</> },
+              { q: <>What glass thickness is used for structural glazing in Pune?</>, a: <>Glass thickness is set by the structural calculation for wind load, panel size and support. Toughened, heat-soaked or laminated glass may be specified depending on location and fall-protection needs.</> },
+            ]}
           />
         </div>
-      </section>
+      </Sec>
 
-      {/* RICH CONTENT */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 max-w-5xl space-y-6">
-          
-          <h2 className="text-3xl font-bold">Why Pune Architects Choose Fine Glaze for Structural Glazing</h2>
-          <p className="text-muted-foreground">
-            Structural glazing uses high-strength silicone sealants (Dow Corning 795/983 series) to bond glass panels directly to aluminium frames, eliminating visible exterior fixings. Fine Glaze has completed structural glazing projects across Hinjewadi IT Park, BKC Mumbai, and Navi Mumbai's MIDC corridor.
-          </p>
-          <p className="text-muted-foreground mt-4">
-            Our structural glazing systems are engineered for Pune's wind zone II/III conditions, meeting IS:875 Part 3 wind load requirements. We use only certified structural sealants with documented shear and tensile test results. Every installation includes a 24-hour water ponding test and pull-off test before final handover.
-          </p>
-          <p className="text-muted-foreground mt-4">
-            Popular applications in Pune include <strong>showroom glass facades</strong> along Nagar Road and FC Road, <strong>IT park entrance lobbies</strong> in Hinjewadi and Kharadi, <strong>high-rise residential towers</strong> in Wakad and Baner, and <strong>hospital building facades</strong> in Koregaon Park and Kalyani Nagar.
-          </p>
-          <p className="text-muted-foreground mt-4">
-            Fine Glaze offers three structural glazing configurations: <strong>2-side SSG</strong> (structural sealant on two sides, mechanical caps on two sides) for a semi-frameless look at lower cost; <strong>4-side SSG</strong> (full frameless appearance) for premium architectural projects; and <strong>spider glazing</strong> for statement entries, atriums, and canopies where minimal structure is desired.
-          </p>
-          <p className="text-muted-foreground mt-4">
-            For Pune's residential sector, structural glazing on balcony parapets and large bay windows is increasingly popular in premium projects in Koregaon Park, Kalyani Nagar, and Undri. Fine Glaze customises glass thickness and sealant joint sizing for these residential applications to balance aesthetics with structural safety at lower floor-to-floor heights.
-          </p>
-    
-        </div>
-      </section>
+      <Sec no="06" label="Related" title={<>Explore Related Services</>} sheetLabel="Related services">
+        <LinkTable
+          items={[
+            { to: "/structural-glazing", title: "Structural Glazing", desc: "Full structural glazing service" },
+            { to: "/curtain-wall-pune", title: "Curtain Wall Pune", desc: "Curtain wall systems Pune" },
+            { to: "/aluminium-windows-doors", title: "Aluminium Facade", desc: "Aluminium facade systems" },
+            { to: "/glass-railings", title: "Glass Railings", desc: "Frameless glass railings" },
+            { to: "/acp-cladding-pune", title: "ACP Cladding Pune", desc: "ACP panel facades Pune" },
+            { to: "/facade-contractor-pune", title: "Facade Contractor Pune", desc: "Complete facade solutions" },
+          ]}
+        />
+      </Sec>
 
-      {/* FEATURES */}
-      <section className="py-20 bg-muted">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <h2 className="text-3xl font-bold mb-10 text-center">What We Offer</h2>
-          <div className="grid md:grid-cols-2 gap-4">
-              <div key="2-Side SSG Systems" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">2-Side SSG Systems</span></div>
-              <div key="4-Side SSG Systems" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">4-Side SSG Systems</span></div>
-              <div key="Spider Glazing" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Spider Glazing</span></div>
-              <div key="Dow Corning Sealants" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Dow Corning Sealants</span></div>
-              <div key="Water Penetration Tested" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Water Penetration Tested</span></div>
-              <div key="Thermal Insulated DGU Units" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Thermal Insulated DGU Units</span></div>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <h2 className="text-3xl font-bold mb-10 text-center">Frequently Asked Questions</h2>
-          <div className="space-y-6">
-            <div className="bg-background rounded-xl p-6 shadow-sm">
-              <h3 className="text-lg font-bold mb-2">What is the cost of structural glazing in Pune?</h3>
-              <p className="text-muted-foreground">Structural glazing in Pune costs Rs 300-900 per sq ft. 2-side SSG ranges from Rs 300-550/sq ft, 4-side full structural glazing is Rs 550-900/sq ft, and spider glazing is Rs 800-1400/sq ft for statement entries.</p>
-            </div>
-            <div className="bg-background rounded-xl p-6 shadow-sm">
-              <h3 className="text-lg font-bold mb-2">Is structural glazing safe in Pune earthquake zone?</h3>
-              <p className="text-muted-foreground">Yes. Fine Glaze designs structural glazing for Pune's seismic zone III using redundant mechanical clamping at corners and certified sealants. Designs comply with IS:1893 and NBC 2016 guidelines.</p>
-            </div>
-            <div className="bg-background rounded-xl p-6 shadow-sm">
-              <h3 className="text-lg font-bold mb-2">What glass thickness is used for structural glazing in Pune?</h3>
-              <p className="text-muted-foreground">We use minimum 12mm fully toughened glass, heat-soaked (HST tested) for large panels above 3 sq m to eliminate spontaneous breakage risk. Laminated toughened glass is used where fall protection is required.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* INTERNAL LINKS */}
-      <section className="py-12 bg-slate-50 border-t border-slate-100">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <h2 className="text-xl font-bold text-slate-800 mb-5">Explore Related Services</h2>
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
-            <Link key="/structural-glazing" to="/structural-glazing" className="group flex items-start gap-3 p-4 rounded-xl border border-slate-200 hover:border-amber-300 hover:bg-amber-50 transition-all bg-white"><ArrowRight size={15} className="text-amber-600 shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-slate-800 text-sm">Structural Glazing</p><p className="text-xs text-slate-500">Full structural glazing service</p></div></Link>
-            <Link key="/curtain-wall-pune" to="/curtain-wall-pune" className="group flex items-start gap-3 p-4 rounded-xl border border-slate-200 hover:border-amber-300 hover:bg-amber-50 transition-all bg-white"><ArrowRight size={15} className="text-amber-600 shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-slate-800 text-sm">Curtain Wall Pune</p><p className="text-xs text-slate-500">Curtain wall systems Pune</p></div></Link>
-            <Link key="/aluminium-windows-doors" to="/aluminium-windows-doors" className="group flex items-start gap-3 p-4 rounded-xl border border-slate-200 hover:border-amber-300 hover:bg-amber-50 transition-all bg-white"><ArrowRight size={15} className="text-amber-600 shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-slate-800 text-sm">Aluminium Facade</p><p className="text-xs text-slate-500">Aluminium facade systems</p></div></Link>
-            <Link key="/glass-railings" to="/glass-railings" className="group flex items-start gap-3 p-4 rounded-xl border border-slate-200 hover:border-amber-300 hover:bg-amber-50 transition-all bg-white"><ArrowRight size={15} className="text-amber-600 shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-slate-800 text-sm">Glass Railings</p><p className="text-xs text-slate-500">Frameless glass railings</p></div></Link>
-            <Link key="/acp-cladding-pune" to="/acp-cladding-pune" className="group flex items-start gap-3 p-4 rounded-xl border border-slate-200 hover:border-amber-300 hover:bg-amber-50 transition-all bg-white"><ArrowRight size={15} className="text-amber-600 shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-slate-800 text-sm">ACP Cladding Pune</p><p className="text-xs text-slate-500">ACP panel facades Pune</p></div></Link>
-            <Link key="/facade-contractor-pune" to="/facade-contractor-pune" className="group flex items-start gap-3 p-4 rounded-xl border border-slate-200 hover:border-amber-300 hover:bg-amber-50 transition-all bg-white"><ArrowRight size={15} className="text-amber-600 shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-slate-800 text-sm">Facade Contractor Pune</p><p className="text-xs text-slate-500">Complete facade solutions</p></div></Link>
-          </div>
-        </div>
-      </section>
-
-      <RelatedProjects heading="Our glazing work in Pune" locations={["Pune"]} keywords={["glazing", "spider", "glass"]} />
       <CTASection />
     </Layout>
   );

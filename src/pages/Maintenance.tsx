@@ -1,127 +1,47 @@
 import SEO from "@/components/SEO";
+import PageHero from "@/components/common/PageHero";
 import { RelatedProjects } from "@/components/RelatedProjects";
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/home/CTASection";
-import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
-import {
-  ArrowRight,
-  MapPin,
-  ChevronDown,
-  Shield,
-  Clock,
-  Award,
-  Wrench,
-  Star,
-} from "lucide-react";
-import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { cn } from "@/lib/utils";
-import { useState } from "react";
-
-/* ─── Reusable fade-in wrapper ─── */
-function FadeIn({
-  children,
-  className,
-  delay = 0,
-}: {
-  children: React.ReactNode;
-  className?: string;
-  delay?: number;
-}) {
-  const { ref, isVisible } = useScrollAnimation();
-  return (
-    <div
-      ref={ref}
-      className={cn(
-        "transition-all duration-700",
-        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8",
-        className
-      )}
-      style={{ transitionDelay: `${delay}ms` }}
-    >
-      {children}
-    </div>
-  );
-}
-
-/* ── Accordion FAQ item ── */
-function FAQItem({ q, a }: { q: string; a: string }) {
-  const [open, setOpen] = useState(false);
-  return (
-    <div className="border-b border-stone-200">
-      <button
-        onClick={() => setOpen(!open)}
-        className="w-full flex items-center justify-between py-4 text-left group"
-      >
-        <span className="text-[15px] font-semibold text-stone-800 pr-8 group-hover:text-amber-700 transition-colors">
-          {q}
-        </span>
-        <ChevronDown
-          size={18}
-          className={cn(
-            "text-stone-400 shrink-0 transition-transform duration-300",
-            open && "rotate-180"
-          )}
-        />
-      </button>
-      <div
-        className={cn(
-          "overflow-hidden transition-all duration-300",
-          open ? "max-h-96 pb-4" : "max-h-0"
-        )}
-      >
-        <p className="text-stone-500 leading-relaxed text-sm">{a}</p>
-      </div>
-    </div>
-  );
-}
-
-/* ── Images ── */
-const IMG: Record<string, string> = {
-  hero: "/facade-maintenance.webp",
-  sealant: "/Sealent.webp",
-  glass: "/Glass.webp",
-  cleaning: "/Amc.webp",
-  amc: "/Amc1.webp",
-  process: "/projects/embassy-247-37-1.webp",
-};
+import { ServiceBody } from "@/components/service/ServiceBody";
+import { ServiceQuickOverview } from "@/components/service/ServiceQuickOverview";
 
 /* ── System data ── */
 const SYSTEMS = [
   {
     num: "01",
     title: "Sealant Renewal & Waterproofing",
-    desc: "Complete removal and replacement of degraded structural silicone and weather sealants. We use Dow Corning and Sika sealants rated for 25+ years. Includes joint preparation, priming, and quality-tested application.",
-    glass: "Dow Corning / Sika",
-    wind: "Every 8–12 years",
+    desc: "Complete removal and replacement of degraded structural silicone and weather sealants. We use approved sealants from major manufacturers. Includes joint preparation, priming, and quality-tested application.",
+    glass: "DOWSIL or approved equivalents",
+    wind: "Per condition report",
     bestFor: "Leaking facades, old buildings",
-    price: "₹80 – ₹200 /rft",
+    price: "Quoted on drawings",
     img: "sealant",
   },
   {
     num: "02",
     title: "Glass Panel Replacement",
-    desc: "Safe removal and replacement of cracked, broken, or hazy glass panels. We stock common DGU and toughened glass specifications for fast turnaround. Includes gasket and sealant renewal.",
-    glass: "Rope-access / scaffold",
+    desc: "Safe removal and replacement of cracked, broken, or hazy glass panels. Includes gasket and sealant renewal.",
+    glass: "Safe site access",
     wind: "As needed",
     bestFor: "Damaged panels, upgrades",
-    price: "₹350 – ₹1,200 /sq ft",
+    price: "Quoted on drawings",
     img: "glass",
   },
   {
     num: "03",
     title: "Facade Cleaning",
-    desc: "Professional rope-access or BMU-based facade cleaning using pH-neutral solutions. Removes pollution deposits, hard water stains, and biological growth without damaging glass coatings or sealants.",
-    glass: "Rope-access / BMU",
-    wind: "2x per year",
+    desc: "Specialist facade glass cleaning and restoration using pH-neutral solutions. Removes pollution deposits, hard water stains, and biological growth without damaging glass coatings or sealants.",
+    glass: "As per site access",
+    wind: "As scheduled",
     bestFor: "Commercial towers, malls",
-    price: "₹8 – ₹25 /sq ft",
+    price: "Quoted on drawings",
     img: "cleaning",
   },
   {
     num: "04",
     title: "Annual Maintenance Contract",
-    desc: "Comprehensive AMC covering bi-annual inspections, sealant checks, hardware lubrication, drainage clearing, and priority emergency repairs. Includes detailed condition reports with photo documentation.",
+    desc: "Comprehensive AMC covering bi-annual inspections, sealant checks, hardware lubrication, drainage clearing, and glass breakage response. Includes detailed condition reports with photo documentation.",
     glass: "Scheduled programme",
     wind: "Bi-annual visits",
     bestFor: "All commercial buildings",
@@ -133,12 +53,11 @@ const SYSTEMS = [
 const STEPS = [
   { num: "01", title: "Inspection", desc: "Full facade audit with photo documentation of all issues" },
   { num: "02", title: "Report", desc: "Detailed condition report with prioritised repair recommendations" },
-  { num: "03", title: "Execution", desc: "Scheduled repairs by trained rope-access technicians" },
-  { num: "04", title: "Handover", desc: "Completion report with before/after photos & warranty" },
+  { num: "03", title: "Execution", desc: "Scheduled repairs with safe access for the site" },
+  { num: "04", title: "Handover", desc: "Completion report with before and after photos; defect liability support as per contract" },
 ];
 
 export default function Maintenance() {
-  const [activeSystem, setActiveSystem] = useState(0);
 
   const serviceSchema = {
     "@context": "https://schema.org",
@@ -151,7 +70,6 @@ export default function Maintenance() {
       "@id": "https://fineglaze.com",
       url: "https://fineglaze.com",
       telephone: "+91-8369233566",
-      priceRange: "₹₹₹",
       address: {
         "@type": "PostalAddress",
         addressLocality: "Pune",
@@ -186,7 +104,7 @@ export default function Maintenance() {
         name: "How often should a facade be maintained?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "We recommend bi-annual inspections — once before monsoon and once after. Cleaning should be done 2x per year for commercial buildings. Sealant replacement is typically needed every 8–12 years depending on exposure and quality.",
+          text: "A facade should be inspected at least once a year, and twice a year (before and after the monsoon) for coastal or structural glazing facades. Cleaning frequency depends on the building. Sealant life depends on product, exposure and workmanship.",
         },
       },
       {
@@ -194,7 +112,7 @@ export default function Maintenance() {
         name: "What does a facade AMC include?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Our AMC covers bi-annual inspections, sealant integrity checks, hardware lubrication, drainage clearing, minor repairs, and detailed condition reports with photo documentation. Emergency repairs get priority 48-hour response.",
+          text: "A facade AMC covers scheduled inspection and repair agreed in the contract. Fine Glaze's scope includes periodic inspection with a written condition report, cleaning, sealant re-application, glass replacement and leakage investigation.",
         },
       },
       {
@@ -202,490 +120,94 @@ export default function Maintenance() {
         name: "How much does facade cleaning cost?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Professional rope-access facade cleaning costs ₹8–₹25 per sq ft depending on building height, accessibility, and contamination level. BMU-based cleaning for very tall buildings is quoted per project.",
+          text: "Facade cleaning cost depends on building height, access method (rope access, cradle or BMU), glass area and how soiled the glass is. Fine Glaze quotes per project after reviewing the building.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Can you replace glass panels on occupied buildings?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes. Glass replacement on an occupied building is planned with the building management, with agreed access, timing, edge protection and debris control. Fine Glaze plans the sequence per site.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Do you service facades installed by other companies?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes. We service all facade types regardless of the original installer. Our engineers assess the system, identify the glass and sealant specifications, and source matching materials for seamless repairs.",
         },
       },
     ],
   };
 
-  const current = SYSTEMS[activeSystem];
 
   return (
     <Layout darkHero>
       <SEO
-        title="Facade Maintenance & Repair in Pune & Mumbai | Fine Glaze"
-        description="Facade maintenance company in Pune & Mumbai. Facade AMC, structural sealant replacement, glass panel repair, curtain wall restoration & inspections."
+        title="Facade Maintenance Company in Pune & Mumbai | Fine Glaze"
+        description="Facade maintenance company in Pune, Mumbai and across India. AMC, glass cleaning, sealant repair and leakage checks, with a written facade condition report."
         canonical="https://fineglaze.com/maintenance-services"
         keywords="facade maintenance company, facade maintenance AMC, glass facade cleaning, sealant replacement, curtain wall repair, facade inspection"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}
       />
 
-      {/* ════════════ HERO ════════════ */}
-      <section className="relative h-screen overflow-hidden">
-        <img
-          src={IMG.hero}
-          alt="Facade maintenance work — Fine Glaze"
-          className="absolute inset-0 w-full h-full object-cover object-center"
-          style={{ animation: "sgZoom 20s ease-in-out infinite alternate" }}
-          loading="eager"
-        />
-        <style>{`@keyframes sgZoom { from { transform: scale(1.0); } to { transform: scale(1.08); } }`}</style>
+      <PageHero
+        schematic="maintenance"
+        crumbs={[{ label: "Facade Maintenance & AMC" }]}
+        title={<>Facade<br /> <span className="text-gradient-gold">Maintenance</span><span className="ph-sub">& AMC.</span></>}
+        intro="Sealant renewal, glass replacement, cleaning & annual maintenance contracts for commercial buildings."
+        secondary={{ label: "+91 83692 33566", href: "tel:+918369233566" }}
+        extra=""
+      />
 
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(to bottom, rgba(0,0,0,0.60) 0%, rgba(0,0,0,0.25) 30%, rgba(0,0,0,0.55) 65%, rgba(0,0,0,0.92) 100%)",
-          }}
-        />
-
-        <div className="absolute inset-x-0 bottom-0 px-5 md:px-16 pb-10 md:pb-20 pt-24">
-          <p
-            className="text-amber-400 text-xs font-bold tracking-[0.4em] uppercase mb-5 animate-fade-in"
-            style={{ animationDelay: "0.05s" }}
-          >
-            Fine Glaze · Pune & Mumbai
-          </p>
-
-          <h1
-            className="font-extrabold text-white leading-tight tracking-tight animate-fade-in-up"
-            style={{ fontSize: "clamp(2.2rem, 4.5vw, 3.5rem)", animationDelay: "0.1s" }}
-          >
-            Facade<br />
-            <span className="text-gradient-gold">Maintenance</span><br />
-            <span style={{ fontSize: "clamp(1.25rem, 2.5vw, 2rem)", fontWeight: 600, color: "rgba(255,255,255,0.85)" }}>
-              & AMC.
-            </span>
-          </h1>
-
-          <p
-            className="mt-6 text-white/70 text-base md:text-lg max-w-lg leading-relaxed animate-fade-in-up"
-            style={{ animationDelay: "0.2s" }}
-          >
-            Sealant renewal, glass replacement, cleaning & annual maintenance contracts for commercial buildings.
-          </p>
-
-          <div
-            className="mt-8 flex items-center gap-8 animate-fade-in-up"
-            style={{ animationDelay: "0.3s" }}
-          >
-            <Link
-              to="/contact"
-              className="text-white font-semibold text-base border-b border-amber-400 pb-0.5 hover:text-amber-400 transition-colors tracking-wide"
-            >
-              Get Free Quote
-            </Link>
-            <Link
-              to="/service-request"
-              className="text-white font-semibold text-base border-b border-white/40 pb-0.5 hover:text-amber-400 transition-colors tracking-wide"
-            >
-              Report an Issue
-            </Link>
-            <a
-              href="tel:+918369233566"
-              className="text-white/60 font-medium text-base hover:text-white transition-colors tracking-wide"
-            >
-              +91 83692 33566
-            </a>
-          </div>
-
-          {/* Trust signal */}
-          <div
-            className="flex items-center gap-1.5 mt-4 animate-fade-in-up"
-            style={{ animationDelay: "0.4s" }}
-          >
-            <div className="flex">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} size={12} className="text-amber-400 fill-amber-400" />
-              ))}
-            </div>
-            <span className="text-white/50 text-xs font-medium ml-0.5">
-              Embassy REIT Best Vendor 2024 · 16 Documented Projects
-            </span>
-          </div>
-        </div>
-
-        <div className="absolute bottom-8 right-8 flex flex-col items-center gap-2 opacity-40">
-          <span className="text-white text-[10px] uppercase tracking-[0.25em] rotate-90 mb-3">Scroll</span>
-          <div className="w-px h-12 bg-gradient-to-b from-white to-transparent" />
-        </div>
-      </section>
-
-
-      {/* ════════════ INTRO ════════════ */}
-      <section className="py-16 md:py-20 bg-white">
-        <div className="container mx-auto px-6 md:px-16 max-w-3xl text-center">
-          <FadeIn>
-            <p className="text-amber-700 text-xs font-bold tracking-[0.3em] uppercase mb-4">
-              Why Facade Maintenance
-            </p>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-stone-900 leading-snug mb-5">
-              Protect your building investment —{"  "}
-              <span className="text-stone-400">preventive care that saves lakhs in emergency repairs.</span>
-            </h2>
-            <p className="text-stone-500 text-[15px] md:text-base leading-relaxed">
-              Facade systems need regular maintenance to perform. UV-degraded sealant causes leaks, dirty glass reduces building value, and unchecked corrosion leads to costly structural failures. Our AMC programs catch problems early with scheduled inspections and proactive repairs.
-            </p>
-          </FadeIn>
-        </div>
-      </section>
-
-
-      {/* ════════════ STATS ════════════ */}
-      <section className="bg-stone-900 py-10">
-        <div className="container mx-auto px-6 md:px-16">
-          <FadeIn>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-0 md:divide-x md:divide-stone-700">
-              {[
-                { number: "2x/yr", label: "Recommended Checks" },
-                { number: "10+", label: "Years Experience" },
-                { number: "0", label: "Safety Incidents" },
-                { number: "48hr", label: "Emergency Response" },
-              ].map((s) => (
-                <div key={s.label} className="text-center px-4">
-                  <p className="text-2xl md:text-3xl font-bold text-white">{s.number}</p>
-                  <p className="text-stone-500 text-[11px] uppercase tracking-widest mt-1">{s.label}</p>
-                </div>
-              ))}
-            </div>
-          </FadeIn>
-        </div>
-      </section>
-
-
-      {/* ════════════ SYSTEMS ════════════ */}
-      <section className="py-16 md:py-20 bg-stone-50">
-        <div className="container mx-auto px-6 md:px-16">
-          <FadeIn className="mb-10">
-            <p className="text-amber-700 text-xs font-bold tracking-[0.3em] uppercase mb-3">
-              Our Services
-            </p>
-            <h2 className="text-2xl md:text-3xl font-bold text-stone-900">
-              Facade Maintenance Services We Offer
-            </h2>
-          </FadeIn>
-
-          <FadeIn delay={100}>
-            <div className="flex flex-wrap gap-2 mb-8">
-              {SYSTEMS.map((sys, i) => (
-                <button
-                  key={sys.num}
-                  onClick={() => setActiveSystem(i)}
-                  className={cn(
-                    "px-4 py-2 text-sm font-medium transition-all duration-200",
-                    activeSystem === i
-                      ? "bg-stone-900 text-white"
-                      : "bg-white text-stone-600 hover:bg-stone-100 border border-stone-200"
-                  )}
-                >
-                  {sys.title}
-                </button>
-              ))}
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-0 bg-white overflow-hidden" key={current.num}>
-              <div className="relative h-[280px] md:h-[360px] overflow-hidden">
-                <img
-                  src={IMG[current.img]}
-                  alt={current.title}
-                  className="w-full h-full object-cover transition-opacity duration-500"
-                  loading="lazy"
-                />
-                <div className="absolute top-4 left-4 bg-stone-900/80 text-white text-xs font-bold px-3 py-1.5 tracking-wider">
-                  {current.num}
-                </div>
-              </div>
-              <div className="p-8 md:p-10 flex flex-col justify-center">
-                <h3 className="text-xl md:text-2xl font-bold text-stone-900 mb-3">{current.title}</h3>
-                <p className="text-stone-500 text-sm leading-relaxed mb-6">{current.desc}</p>
-
-                <div className="grid grid-cols-2 gap-3 mb-6">
-                  <div className="bg-stone-50 p-3">
-                    <p className="text-[10px] uppercase tracking-wider text-stone-400 mb-1">Method</p>
-                    <p className="text-sm font-semibold text-stone-800">{current.glass}</p>
-                  </div>
-                  <div className="bg-stone-50 p-3">
-                    <p className="text-[10px] uppercase tracking-wider text-stone-400 mb-1">Frequency</p>
-                    <p className="text-sm font-semibold text-stone-800">{current.wind}</p>
-                  </div>
-                  <div className="bg-stone-50 p-3">
-                    <p className="text-[10px] uppercase tracking-wider text-stone-400 mb-1">Best For</p>
-                    <p className="text-sm font-semibold text-stone-800">{current.bestFor}</p>
-                  </div>
-                  <div className="bg-amber-50 p-3 border border-amber-200">
-                    <p className="text-[10px] uppercase tracking-wider text-amber-600 mb-1">Rate</p>
-                    <p className="text-sm font-bold text-stone-900">{current.price}</p>
-                  </div>
-                </div>
-
-                <Link to="/contact">
-                  <Button size="sm" className="bg-stone-900 hover:bg-stone-800 text-white gap-2">
-                    Get Quote for {current.title.split(" ")[0]} <ArrowRight size={14} />
-                  </Button>
-                </Link>
-              </div>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
-
-
-      {/* ════════════ WHY FINE GLAZE ════════════ */}
-      <section className="py-16 md:py-20 bg-white">
-        <div className="container mx-auto px-6 md:px-16">
-          <FadeIn className="text-center mb-12">
-            <p className="text-amber-700 text-xs font-bold tracking-[0.3em] uppercase mb-3">
-              Why Fine Glaze
-            </p>
-            <h2 className="text-2xl md:text-3xl font-bold text-stone-900">
-              Built for performance. Delivered on schedule.
-            </h2>
-          </FadeIn>
-
-          <FadeIn delay={100}>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              {[
-                {
-                  icon: Shield,
-                  title: "Certified Crews",
-                  desc: "All technicians are IRATA-trained for rope-access work. Full safety compliance on every project.",
-                },
-                {
-                  icon: Clock,
-                  title: "48-Hour Response",
-                  desc: "Emergency glass replacement and leak repairs within 48 hours for AMC clients.",
-                },
-                {
-                  icon: Award,
-                  title: "Original Installer",
-                  desc: "As facade installers ourselves, we understand every system inside-out — faster, better repairs.",
-                },
-                {
-                  icon: Wrench,
-                  title: "Quality Materials",
-                  desc: "Only Dow Corning & Sika sealants. OEM-spec glass and hardware. No shortcuts, no substitutes.",
-                },
-              ].map((item) => (
-                <div key={item.title} className="text-center">
-                  <div className="inline-flex items-center justify-center w-12 h-12 bg-amber-50 text-amber-700 mb-4">
-                    <item.icon size={22} />
-                  </div>
-                  <h3 className="text-sm font-bold text-stone-900 mb-2">{item.title}</h3>
-                  <p className="text-stone-500 text-xs leading-relaxed">{item.desc}</p>
-                </div>
-              ))}
-            </div>
-          </FadeIn>
-
-          <FadeIn delay={200} className="mt-12 text-center">
-            <p className="text-stone-400 text-sm">
-              Trusted by <span className="text-stone-700 font-semibold">Embassy REIT</span> ·{" "}
-              <span className="text-stone-700 font-semibold">LTIMindtree</span> ·{" "}
-              <span className="text-stone-700 font-semibold">Pune International Airport</span>
-            </p>
-          </FadeIn>
-        </div>
-      </section>
-
-
-      {/* ════════════ HOW WE WORK ════════════ */}
-      <section className="py-16 md:py-20 bg-stone-50">
-        <div className="container mx-auto px-6 md:px-16">
-          <FadeIn className="mb-10">
-            <p className="text-amber-700 text-xs font-bold tracking-[0.3em] uppercase mb-3">
-              How We Work
-            </p>
-            <h2 className="text-2xl md:text-3xl font-bold text-stone-900">
-              From first visit to final handover
-            </h2>
-          </FadeIn>
-
-          <FadeIn delay={100}>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              {STEPS.map((step, i) => (
-                <div key={step.num} className="relative">
-                  {i < STEPS.length - 1 && (
-                    <div className="hidden md:block absolute top-5 left-[60%] right-0 h-px bg-stone-300" />
-                  )}
-                  <div className="bg-white p-5 relative">
-                    <span className="text-3xl font-bold text-stone-100 block mb-3">{step.num}</span>
-                    <h3 className="text-sm font-bold text-stone-900 mb-1">{step.title}</h3>
-                    <p className="text-stone-500 text-xs leading-relaxed">{step.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </FadeIn>
-        </div>
-      </section>
-
-
-      {/* ════════════ PHOTO BREAK ════════════ */}
-      <FadeIn>
-        <div className="relative h-[35vh] md:h-[40vh] overflow-hidden">
-          <img
-            src={IMG.process}
-            alt="Embassy 247, Vikhroli, Mumbai — facade sealant and glass replacement by Fine Glaze for Embassy REIT"
-            className="w-full h-full object-cover"
-            loading="lazy"
-          />
-          <div className="absolute inset-0 bg-black/40" />
-          <div className="absolute inset-0 flex items-center justify-center text-center px-4">
-            <div>
-              <p className="text-white/60 text-sm uppercase tracking-widest mb-2">Our Promise</p>
-              <p className="text-white text-xl md:text-3xl font-bold max-w-xl">
-                Every repair done right — because we built these facades in the first place.
-              </p>
-            </div>
-          </div>
-        </div>
-      </FadeIn>
-
-
-      {/* ════════════ PRICING ════════════ */}
-      <section className="py-16 md:py-20 bg-white">
-        <div className="container mx-auto px-6 md:px-16 max-w-3xl">
-          <FadeIn className="text-center mb-8">
-            <p className="text-amber-700 text-xs font-bold tracking-[0.3em] uppercase mb-3">
-              Pricing
-            </p>
-            <h2 className="text-2xl md:text-3xl font-bold text-stone-900 mb-2">
-              Facade Maintenance Cost — 2026
-            </h2>
-            <p className="text-stone-400 text-sm">
-              Indicative rates. Final cost depends on specifications & complexity. GST extra.
-            </p>
-          </FadeIn>
-
-          <FadeIn delay={100}>
-            <div className="overflow-x-auto">
-              <table className="w-full text-left">
-                <thead>
-                  <tr className="border-b-2 border-stone-800">
-                    <th className="py-3 text-xs font-bold uppercase tracking-wider text-stone-500">System</th>
-                    <th className="py-3 text-xs font-bold uppercase tracking-wider text-stone-500">Method</th>
-                    <th className="py-3 text-xs font-bold uppercase tracking-wider text-stone-500 text-right">Rate / sq ft</th>
-                  </tr>
-                </thead>
-                <tbody className="text-sm">
-                  {[
-                    { system: "Sealant Renewal", glass: "Dow Corning / Sika", price: "₹80 – ₹200 /rft" },
-                    { system: "Glass Replacement", glass: "DGU / toughened", price: "₹350 – ₹1,200 /sq ft" },
-                    { system: "Facade Cleaning", glass: "Rope-access / BMU", price: "₹8 – ₹25 /sq ft" },
-                    { system: "Annual AMC", glass: "Bi-annual programme", price: "Custom quote" },
-                  ].map((row) => (
-                    <tr key={row.system} className="border-b border-stone-100 hover:bg-stone-50 transition-colors">
-                      <td className="py-3 font-semibold text-stone-800">{row.system}</td>
-                      <td className="py-3 text-stone-500">{row.glass}</td>
-                      <td className="py-3 text-right font-bold text-stone-900">{row.price}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-
-            <div className="mt-8 text-center">
-              <Link to="/contact">
-                <Button size="lg" className="bg-stone-900 hover:bg-stone-800 text-white gap-2 px-8">
-                  Get Exact Quote — Free Site Visit <ArrowRight size={16} />
-                </Button>
-              </Link>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
-
-
-      {/* ════════════ FAQ ════════════ */}
-      <section className="py-14 md:py-16 bg-stone-50">
-        <div className="container mx-auto px-6 md:px-16 max-w-3xl">
-          <FadeIn className="mb-8">
-            <p className="text-amber-700 text-xs font-bold tracking-[0.3em] uppercase mb-3">
-              Common Questions
-            </p>
-            <h2 className="text-2xl md:text-3xl font-bold text-stone-900">
-              FAQ
-            </h2>
-          </FadeIn>
-
-          <FadeIn delay={100}>
-            <div>
-              <FAQItem
-                q="How often should a facade be maintained?"
-                a="We recommend bi-annual inspections — once before monsoon and once after. Cleaning should be done 2x per year for commercial buildings. Sealant replacement is typically needed every 8–12 years depending on exposure and quality."
-              />
-              <FAQItem
-                q="What does a facade AMC include?"
-                a="Our AMC covers bi-annual inspections, sealant integrity checks, hardware lubrication, drainage clearing, minor repairs, and detailed condition reports with photo documentation. Emergency repairs get priority 48-hour response."
-              />
-              <FAQItem
-                q="How much does facade cleaning cost?"
-                a="Professional rope-access facade cleaning costs ₹8–₹25 per sq ft depending on building height, accessibility, and contamination level. BMU-based cleaning for very tall buildings is quoted per project."
-              />
-              <FAQItem
-                q="Can you replace glass panels on occupied buildings?"
-                a="Yes. Our rope-access teams work safely on occupied buildings without disrupting tenants. We schedule work during low-traffic hours and use safety nets and debris protection throughout the process."
-              />
-              <FAQItem
-                q="Do you service facades installed by other companies?"
-                a="Yes. We service all facade types regardless of the original installer. Our engineers assess the system, identify the glass and sealant specifications, and source matching materials for seamless repairs."
-              />
-            </div>
-          </FadeIn>
-        </div>
-      </section>
-
-
-      {/* ════════════ AREAS + SERVICES ════════════ */}
-      <section className="bg-stone-900 py-12">
-        <div className="container mx-auto px-6 md:px-16">
-          <FadeIn>
-            <div className="grid md:grid-cols-2 gap-10 md:gap-16">
-              <div>
-                <p className="text-amber-400 text-xs font-bold tracking-[0.3em] uppercase mb-4">
-                  Where We Work
-                </p>
-                <div className="flex flex-wrap gap-x-6 gap-y-2">
-                  {["Pune", "Mumbai BKC", "Navi Mumbai", "Thane", "Nashik", "Hinjewadi", "Pimpri-Chinchwad"].map((city) => (
-                    <div key={city} className="flex items-center gap-1.5">
-                      <MapPin size={11} className="text-amber-500" />
-                      <span className="text-white/60 text-sm">{city}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div>
-                <p className="text-amber-400 text-xs font-bold tracking-[0.3em] uppercase mb-4">
-                  Other Services
-                </p>
-                <div className="grid grid-cols-2 gap-x-6 gap-y-1.5">
-                  {[
-                    { title: "Curtain Wall Systems", href: "/curtain-wall-systems" },
-                    { title: "Structural Glazing", href: "/structural-glazing" },
-                    { title: "ACP Cladding", href: "/acp-aluminium-cladding" },
-                    { title: "Aluminium Facade", href: "/aluminium-windows-doors" },
-                    { title: "Glass Railings", href: "/glass-railings" },
-                    { title: "All Services →", href: "/services" },
-                  ].map((link) => (
-                    <Link
-                      key={link.href}
-                      to={link.href}
-                      className="text-white/50 text-sm hover:text-amber-400 transition-colors"
-                    >
-                      {link.title}
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
-
-
-      {/* ════════════ CTA ════════════ */}
-      <RelatedProjects heading="Maintenance & repair work we run" keywords={["sealant", "maintenance", "leakage", "replacement", "repair"]} />
+      <ServiceBody
+        schematic="maintenance"
+        intro={{ lead: <>Protect your building investment,</>, tail: <>preventive care that costs less than emergency repairs.</>, body: <>Facade systems need regular maintenance to perform. UV-degraded sealant causes leaks, dirty glass reduces building value, and unchecked corrosion leads to costly structural failures. Our AMC programs catch problems early with scheduled inspections and proactive repairs.</> }}
+        overview={undefined}
+        systemsTitle={<>Facade Maintenance Services We Offer</>}
+        systems={SYSTEMS}
+        systemCols={["Method", "Frequency"]}
+        featuresTitle={<>Built for performance. Delivered on schedule.</>}
+        features={[
+          { title: "Safety on Site", desc: "A nominated safety officer oversees work at height across our sites, with harness, lifeline and anchorage on every elevation activity." },
+          { title: "Emergency response", desc: "Emergency glass replacement and leak repairs for AMC clients." },
+          { title: "Facade Installers", desc: "As a facade contractor, we understand how these systems are built, which helps diagnose and repair them." },
+          { title: "Approved Materials", desc: "Sealants from approved manufacturers, with glass and hardware matched to the existing specification where possible." },
+        ]}
+        stepsTitle={<>From first visit to final handover</>}
+        steps={STEPS}
+        promise={<>Inspection first, a written condition report next, then repair. We service facades we did not install too.</>}
+        pricing={{
+          title: <>Facade Maintenance Cost: How We Quote</>,
+          intro: <>We quote against drawings. Final cost depends on specification and complexity.</>,
+          colLabel: "Method",
+          rows: [
+            { system: "Sealant Renewal", glass: "DOWSIL or approved equivalents", price: "Quoted on drawings" },
+            { system: "Glass Replacement", glass: "DGU / toughened", price: "Quoted on drawings" },
+            { system: "Facade Cleaning", glass: "As per site access", price: "Quoted on drawings" },
+            { system: "Annual AMC", glass: "Bi-annual programme", price: "Custom quote" },
+          ],
+        }}
+        faq={[
+          { q: <>How often should a facade be maintained?</>, a: <>A facade should be inspected at least once a year, and twice a year (before and after the monsoon) for coastal or structural glazing facades. Cleaning frequency depends on the building. Sealant life depends on product, exposure and workmanship.</> },
+          { q: <>What does a facade AMC include?</>, a: <>A facade AMC covers scheduled inspection and repair agreed in the contract. Fine Glaze's scope includes periodic inspection with a written condition report, cleaning, sealant re-application, glass replacement and leakage investigation.</> },
+          { q: <>How much does facade cleaning cost?</>, a: <>Facade cleaning cost depends on building height, access method (rope access, cradle or BMU), glass area and how soiled the glass is. Fine Glaze quotes per project after reviewing the building.</> },
+          { q: <>Can you replace glass panels on occupied buildings?</>, a: <>Yes. Glass replacement on an occupied building is planned with the building management, with agreed access, timing, edge protection and debris control. Fine Glaze plans the sequence per site.</> },
+          { q: <>Do you service facades installed by other companies?</>, a: <>Yes. We service all facade types regardless of the original installer. Our engineers assess the system, identify the glass and sealant specifications, and source matching materials for seamless repairs.</> },
+        ]}
+        areas={["Pune", "Mumbai BKC", "Navi Mumbai", "Thane", "Hinjewadi", "Pimpri-Chinchwad"]}
+        others={[
+          { title: "Curtain Wall Systems", href: "/curtain-wall-systems" },
+          { title: "Structural Glazing", href: "/structural-glazing" },
+          { title: "ACP Cladding", href: "/acp-aluminium-cladding" },
+          { title: "Aluminium Facade", href: "/aluminium-windows-doors" },
+          { title: "Glass Railings", href: "/glass-railings" },
+          { title: "All Services →", href: "/services" },
+        ]}
+        related={(no) => <RelatedProjects no={no} heading="Maintenance & repair work we run" keywords={["sealant", "maintenance", "leakage", "replacement", "repair"]} />}
+      />
       <CTASection />
     </Layout>
   );

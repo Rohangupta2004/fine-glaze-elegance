@@ -1,16 +1,15 @@
 import { Layout } from "@/components/layout/Layout";
-import { HeroSection, HERO_POSTER } from "@/components/home/HeroSection";
 import { Helmet } from "react-helmet-async";
-import { TrustStrip } from "@/components/home/TrustStrip";
-import { CompanyVideoSection } from "@/components/home/CompanyVideoSection";
-import { PortfolioSection } from "@/components/home/PortfolioSection";
-import { ServicesSection } from "@/components/home/ServicesSection";
-import { ProcessSection } from "@/components/home/ProcessSection";
-import { ReviewsSection } from "@/components/home/ReviewsSection";
-import { ArticlesSection } from "@/components/home/ArticlesSection";
-import { ContactFormSection } from "@/components/home/ContactFormSection";
-import { CTASection } from "@/components/home/CTASection";
 import SEO from "@/components/SEO";
+import EngHero from "@/components/home/eng/EngHero";
+import Capabilities from "@/components/home/eng/Capabilities";
+import SelectedProjects from "@/components/home/eng/SelectedProjects";
+import Method from "@/components/home/eng/Method";
+import RecordStrip from "@/components/home/eng/RecordStrip";
+import Clients from "@/components/home/eng/Clients";
+import Close from "@/components/home/eng/Close";
+import { HERO } from "@/components/home/eng/data";
+import "@/components/home/eng/eng.css";
 
 const Index = () => {
   // Organization / LocalBusiness entities live once, sitewide, in index.html.
@@ -22,32 +21,29 @@ const Index = () => {
     "name": "Facade & Glazing Contractor in Pune & Mumbai | Fine Glaze",
     "isPartOf": { "@id": "https://fineglaze.com/#website" },
     "about": { "@id": "https://fineglaze.com/#organization" },
-    "primaryImageOfPage": "https://fineglaze.com" + HERO_POSTER,
+    "primaryImageOfPage": "https://fineglaze.com" + HERO.src,
     "inLanguage": "en-IN",
   };
 
   return (
-    <Layout darkHero>
+    <Layout>
       <SEO
-        title="Facade & Glazing Contractor in Pune & Mumbai | Fine Glaze"
-        description="Facade & glazing contractor in Pune & Mumbai: curtain walls, structural glazing, aluminium windows, ACP cladding and facade AMC. Embassy REIT Best Vendor 2024."
+        title="Facade Contractor in Pune, Mumbai & India | Fine Glaze"
+        description="Facade contractor based in Pune and Mumbai, taking projects across India: curtain wall, glazing, ACP and AMC. Embassy REIT Best Vendor Performance 2024."
         canonical="https://fineglaze.com/"
-        keywords="facade contractor Pune, facade contractor Mumbai, structural glazing contractor, curtain wall contractor, aluminium windows Pune, ACP cladding contractor, facade maintenance Mumbai, Fine Glaze"
+        keywords="facade contractor Pune Mumbai, facade contractor India, structural glazing contractor, curtain wall contractor, aluminium windows Pune, ACP cladding contractor, facade maintenance Mumbai, Fine Glaze"
         schema={webPageSchema}
       />
       <Helmet>
-        <link rel="preload" as="image" href={HERO_POSTER} {...{ fetchpriority: "high" }} />
+        <link rel="preload" as="image" href={HERO.src} {...{ fetchpriority: "high" }} />
       </Helmet>
-      <HeroSection />
-      <TrustStrip />
-      <CompanyVideoSection />
-      <ServicesSection />
-      <ProcessSection />
-      <PortfolioSection />
-      <ReviewsSection />
-      <ArticlesSection />
-      <ContactFormSection />
-      <CTASection />
+      <EngHero />
+      <Capabilities />
+      <SelectedProjects />
+      <Method />
+      <RecordStrip />
+      <Clients />
+      <Close />
     </Layout>
   );
 };

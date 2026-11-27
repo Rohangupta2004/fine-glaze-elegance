@@ -1,0 +1,24 @@
+/* Sitewide header: solid white bar with a 1px hairline. Same on every page. */
+.fg-hdr{
+  background:#ffffff;
+  box-shadow:inset 0 -1px 0 #cfd2cd;
+}
+/* Nav links: Plex Sans 15px, 2px bronze underline on the current page, a hairline one on hover. */
+.fg-nl{position:relative;display:inline-flex;align-items:center;gap:4px;height:100%;padding:0 2px;font-size:15px;font-weight:400;line-height:1.2;color:#15181b;transition:color .15s ease}
+.fg-nl::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:#9b5520;opacity:0;transition:opacity .15s ease}
+.fg-nl:hover{color:#9b5520}
+.fg-nl[aria-current="page"]{font-weight:500}
+.fg-nl[aria-current="page"]::after{opacity:1}
+.fg-nl:hover::after{opacity:.4}
+.fg-nl[aria-current="page"]:hover::after{opacity:1}
+.fg-call{display:inline-flex;align-items:center;justify-content:center;height:44px;padding:0 16px;font-size:15px;font-weight:500;background:#9b5520;color:#ffffff;transition:background-color .15s ease}
+.fg-call:hover{background:#7f4318}
+.fg-call:focus-visible{outline:2px solid #15181b;outline-offset:2px}
+/* Dropdowns and the phone menu: white panels with a hairline, square, no blur or shadow. */
+.fg-menu{background:#ffffff;border:1px solid #cfd2cd}
+.fg-menu-m{background:#ffffff;border-bottom:1px solid #cfd2cd}
+@media (prefers-reduced-motion:reduce){.fg-hdr,.fg-nl::after{transition:none}}
+
+/* The bronze logo is drawn for light grounds and is shown as supplied. 28px on phones, 40px on desktop. */
+.fg-logo-img{display:block;height:28px;width:auto}
+@media (min-width:1024px){.fg-logo-img{height:40px}}

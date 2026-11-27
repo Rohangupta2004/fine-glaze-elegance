@@ -1,9 +1,10 @@
+import Illustration from "@/components/common/Illustration";
 import SEO from "@/components/SEO";
+import PageHero from "@/components/common/PageHero";
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/home/CTASection";
-import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
-import { CheckCircle2, ArrowRight } from "lucide-react";
+import FaqList from "@/components/common/FaqList";
+import { DeliveryProcess, LinkTable, Prose, Sec, SpecList, SchematicFig } from "@/components/common/Sheet";
 
 export default function IndustrialFacade() {
   const serviceSchema = {
@@ -28,16 +29,16 @@ export default function IndustrialFacade() {
       { "@type": "City", "name": "Mumbai" },
       { "@type": "State", "name": "Maharashtra" }
     ],
-    "description": "Industrial building facade contractor in India. ACP cladding, metal composite panels, aluminium windows for factories, warehouses & industrial facilities. Maharashtra projects."
+    "description": "Industrial facade contractor in Pune and Mumbai: ACP and metal cladding for factories and warehouses, with in-house shop drawings and own Pune unit."
   };
 
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      { "@type": "Question", "name": "What is the most cost-effective facade for an industrial building in India?", "acceptedAnswer": { "@type": "Answer", "text": "For industrial buildings in India, FR-grade ACP with polyester powder coating (not PVDF) is typically the most cost-effective option — balancing fire safety compliance, adequate weather performance, and low installed cost. For office blocks within industrial facilities, PVDF-coated ACP is recommended for better long-term appearance." } },
-      { "@type": "Question", "name": "Does Fine Glaze work in MIDC zones in Maharashtra?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Fine Glaze regularly works in Pune's Bhosari, Pimpri, Chakan, and Hadapsar MIDC zones, and Navi Mumbai's Mahape and Turbhe MIDC corridors. We understand MIDC building regulations, local contractor coordination requirements, and the logistics of working in active industrial zones." } },
-      { "@type": "Question", "name": "What windows are recommended for factory buildings in India?", "acceptedAnswer": { "@type": "Answer", "text": "For factory and warehouse buildings, aluminium fixed lights with 6mm toughened glass in simple aluminium frames are the most practical and cost-effective solution. Where natural ventilation is required, aluminium louvre windows or top-hung ventilators are recommended. Fine Glaze sizes window openings to meet NBC 2016 minimum daylight factor requirements for industrial buildings." } },
+      { "@type": "Question", "name": "What is the most cost-effective facade for an industrial building in India?", "acceptedAnswer": { "@type": "Answer", "text": "Fire-retardant ACP with a durable coating is often a practical choice for industrial buildings, balancing fire requirements, weather performance and installed cost. Office blocks may justify a higher-grade finish. Confirm with your consultant." } },
+      { "@type": "Question", "name": "Does Fine Glaze work in MIDC zones in Maharashtra?", "acceptedAnswer": { "@type": "Answer", "text": "Fine Glaze takes industrial facade work in Maharashtra, and our documented work includes Navi Mumbai (Mahape) and Pune. We coordinate access and logistics with the site contractor in active industrial zones." } },
+      { "@type": "Question", "name": "What windows are recommended for factory buildings in India?", "acceptedAnswer": { "@type": "Answer", "text": "Factories commonly use aluminium fixed lights with toughened glass, plus louver windows or top-hung ventilators where natural ventilation is needed. Opening sizes should follow the daylight and ventilation requirements in the project brief and applicable codes." } },
     ]
   };
 
@@ -53,112 +54,76 @@ export default function IndustrialFacade() {
   return (
     <Layout darkHero>
       <SEO
-        title="Industrial Facade & Cladding, Pune & Mumbai | Fine Glaze"
-        description="Industrial facade contractor in Pune and Mumbai. Durable ACP cladding, metal composite panels & industrial curtain walls for factories, warehouses & MIDC industrial parks."
+        title="Industrial Facade Contractor in Pune & Mumbai | Fine Glaze"
+        description="Industrial facade contractor in Pune and Mumbai: ACP and metal cladding for factories and warehouses, with in-house shop drawings and own Pune unit."
         canonical="https://fineglaze.com/industrial-facade"
         keywords="industrial facade contractor, factory facade, warehouse facade, industrial cladding, industrial curtain wall"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}
       />
 
-      {/* HERO */}
-      <section className="relative py-24 bg-gradient-to-br from-slate-900 to-slate-800 text-white">
-        <div className="container mx-auto px-4 max-w-6xl grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h1 className="text-3xl md:text-4xl font-bold mb-4">
-              Industrial Building <span className="text-gradient-gold">Facade Contractor India</span>
-            </h1>
-            <p className="text-lg text-white/80 mb-8">Industrial buildings — factories, warehouses, pharmaceutical plants, and logistics facilities — require facade systems that prioritise durability, weather resistance, maintenance efficiency, and structural performance over architectural complexity. Fine Glaze provides cost-effective, high-durability facade solutions for industrial buildings in Pune and Mumbai.</p>
-            <div className="flex gap-4">
-              <Link to="/contact">
-                <Button size="lg" className="bg-amber-600 hover:bg-amber-700">Get Free Quote</Button>
-              </Link>
-              <Link to="/portfolio">
-                <Button size="lg" variant="outline">View Projects</Button>
-              </Link>
+      <PageHero
+        crumbs={[{ label: "Industrial Building Facade Contractor India" }]}
+        title={<>Industrial Building <span className="text-gradient-gold">Facade Contractor India</span></>}
+        intro="Fine Glaze takes industrial facade work in Pune and Mumbai: ACP and metal cladding, windows and sub-frames for factories, warehouses and plants, fabricated at our own unit in Pisoli, Pune."
+        secondary={{ label: "View Projects", to: "/portfolio" }}
+        image={{ src: "/projects/nanavati-max-hospital-39-2.webp", alt: "ACP cladding installation in progress at Nanavati Max Hospital, Vile Parle, Mumbai — Fine Glaze for L&T", width: 600, height: 420 }}
+      />
+
+      <Sec no="01" label="Overview" title={<>Industrial Facade Systems: Durability First</>} sheetLabel="Overview">
+          <div className="sx-split">
+            <Prose>
+<p>
+            Industrial buildings such as factories and warehouses need facades that put durability, weather resistance and easy upkeep ahead of architectural complexity. Exposure to dust, vibration, heat and limited maintenance windows shapes the choice of system.
+          </p>
+          <p>
+            Suitable systems include <strong>fire-retardant ACP cladding</strong> on administrative blocks, <strong>metal composite panels</strong> in production and warehouse areas, <strong>aluminium fixed windows</strong> with toughened glass, and <strong>translucent sheeting</strong> for daylight in production halls. Specifications follow the project brief.
+          </p>
+          <p>
+            Fine Glaze, based in Pune and Mumbai, takes industrial facade work in Maharashtra and elsewhere in India. Our own fabrication unit in Pisoli, Pune handles aluminium and mild steel cutting, fabrication and assembly, and ACP routing and panel preparation.
+          </p>
+          <p>
+            Facilities that follow GMP or similar rules, such as pharmaceutical plants, usually have exterior requirements set by their consultants. Share the specification and we will review scope against it.
+          </p>
+            </Prose>
+            <div className="sx-side">
+              <Illustration name="ind-industrial" flush sizes="(max-width: 960px) 100vw, 480px" />
             </div>
           </div>
-          <img
-            src="/projects/nanavati-max-hospital-39-2.webp"
-            alt="ACP cladding installation in progress at Nanavati Max Hospital, Vile Parle, Mumbai — Fine Glaze for L&T"
-            className="rounded-xl shadow-2xl object-cover h-[420px] w-full"
-            loading="eager"
-            width="600"
-            height="420"
+      </Sec>
+
+      <Sec no="02" label="Scope" title={<>What We Offer</>} sheetLabel="Scope of work">
+        <SpecList items={[<>FR-Grade ACP for Industrial</>, <>Heavy-Gauge Aluminium Sub-Frames</>, <>Industrial Zone Projects</>, <>Cladding to Pharma Specifications</>, <>Metal Composite Panels</>, <>Durable Industrial Specs</>]} />
+      </Sec>
+
+      <Sec no="03" label="Process" title="From survey to handover." sheetLabel="Process">
+        <DeliveryProcess />
+      </Sec>
+
+      
+
+      <Sec no="04" label="FAQ" title={<>Frequently Asked Questions</>} sheetLabel="FAQ">
+        <div className="sx-faq">
+          <FaqList
+            items={[
+              { q: <>What is the most cost-effective facade for an industrial building in India?</>, a: <>Fire-retardant ACP with a durable coating is often a practical choice for industrial buildings, balancing fire requirements, weather performance and installed cost. Office blocks may justify a higher-grade finish. Confirm with your consultant.</> },
+              { q: <>Does Fine Glaze work in MIDC zones in Maharashtra?</>, a: <>Fine Glaze takes industrial facade work in Maharashtra, and our documented work includes Navi Mumbai (Mahape) and Pune. We coordinate access and logistics with the site contractor in active industrial zones.</> },
+              { q: <>What windows are recommended for factory buildings in India?</>, a: <>Factories commonly use aluminium fixed lights with toughened glass, plus louver windows or top-hung ventilators where natural ventilation is needed. Opening sizes should follow the daylight and ventilation requirements in the project brief and applicable codes.</> },
+            ]}
           />
         </div>
-      </section>
+      </Sec>
 
-      {/* RICH CONTENT */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 max-w-5xl space-y-6">
-          
-          <h2 className="text-3xl font-bold">Industrial Facade Systems — Durability First</h2>
-          <p className="text-muted-foreground">
-            Industrial facilities operate in demanding environments — chemical exposure, heavy vehicle vibration, thermal cycling from process heat, and reduced maintenance access windows. Fine Glaze's industrial facade systems are engineered for these conditions, prioritising service life and weather performance over aesthetic complexity.
-          </p>
-          <p className="text-muted-foreground mt-4">
-            The most suitable facade systems for industrial buildings in India include: <strong>FR-grade ACP cladding</strong> with heavy-gauge aluminium sub-frames for administrative blocks and office areas; <strong>Metal composite panels (MCM)</strong> with aluminium or steel face for extreme durability in production and warehouse areas; <strong>Aluminium fixed windows</strong> with toughened glass for natural light without compromising thermal envelope; and <strong>Polycarbonate or translucent sheeting</strong> for controlled diffused daylighting in production halls without direct glare.
-          </p>
-          <p className="text-muted-foreground mt-4">
-            Fine Glaze regularly works in MIDC (Maharashtra Industrial Development Corporation) zones including Pune's Bhosari, Pimpri, and Chakan MIDC, and Navi Mumbai's Mahape and Turbhe MIDC corridors. Our familiarity with MIDC building regulations, local authorities, and the specific facade needs of industrial clients means we can mobilise quickly and deliver cost-effective results.
-          </p>
-          <p className="text-muted-foreground mt-4">
-            Pharmaceutical manufacturing facilities in India are subject to GMP (Good Manufacturing Practice) requirements that extend to building exteriors. Fine Glaze provides smooth, chemical-resistant ACP cladding and sealed window systems appropriate for pharma exterior walls in containment and controlled environment zones, in compliance with WHO and PICS GMP guidelines.
-          </p>
-    
-        </div>
-      </section>
-
-      {/* FEATURES */}
-      <section className="py-20 bg-muted">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <h2 className="text-3xl font-bold mb-10 text-center">What We Offer</h2>
-          <div className="grid md:grid-cols-2 gap-4">
-              <div key="FR-Grade ACP for Industrial" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">FR-Grade ACP for Industrial</span></div>
-              <div key="Heavy-Gauge Aluminium Sub-Frames" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Heavy-Gauge Aluminium Sub-Frames</span></div>
-              <div key="MIDC Zone Experience" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">MIDC Zone Experience</span></div>
-              <div key="Pharma GMP Compliant Cladding" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Pharma GMP Compliant Cladding</span></div>
-              <div key="Metal Composite Panels" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Metal Composite Panels</span></div>
-              <div key="Cost-Effective Industrial Specs" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Cost-Effective Industrial Specs</span></div>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <h2 className="text-3xl font-bold mb-10 text-center">Frequently Asked Questions</h2>
-          <div className="space-y-6">
-            <div className="bg-background rounded-xl p-6 shadow-sm">
-              <h3 className="text-lg font-bold mb-2">What is the most cost-effective facade for an industrial building in India?</h3>
-              <p className="text-muted-foreground">For industrial buildings in India, FR-grade ACP with polyester powder coating (not PVDF) is typically the most cost-effective option — balancing fire safety compliance, adequate weather performance, and low installed cost. For office blocks within industrial facilities, PVDF-coated ACP is recommended for better long-term appearance.</p>
-            </div>
-            <div className="bg-background rounded-xl p-6 shadow-sm">
-              <h3 className="text-lg font-bold mb-2">Does Fine Glaze work in MIDC zones in Maharashtra?</h3>
-              <p className="text-muted-foreground">Yes. Fine Glaze regularly works in Pune's Bhosari, Pimpri, Chakan, and Hadapsar MIDC zones, and Navi Mumbai's Mahape and Turbhe MIDC corridors. We understand MIDC building regulations, local contractor coordination requirements, and the logistics of working in active industrial zones.</p>
-            </div>
-            <div className="bg-background rounded-xl p-6 shadow-sm">
-              <h3 className="text-lg font-bold mb-2">What windows are recommended for factory buildings in India?</h3>
-              <p className="text-muted-foreground">For factory and warehouse buildings, aluminium fixed lights with 6mm toughened glass in simple aluminium frames are the most practical and cost-effective solution. Where natural ventilation is required, aluminium louvre windows or top-hung ventilators are recommended. Fine Glaze sizes window openings to meet NBC 2016 minimum daylight factor requirements for industrial buildings.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* INTERNAL LINKS */}
-      <section className="py-12 bg-slate-50 border-t border-slate-100">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <h2 className="text-xl font-bold text-slate-800 mb-5">Explore Related Services</h2>
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
-            <Link key="/acp-aluminium-cladding" to="/acp-aluminium-cladding" className="group flex items-start gap-3 p-4 rounded-xl border border-slate-200 hover:border-amber-300 hover:bg-amber-50 transition-all bg-white"><ArrowRight size={15} className="text-amber-600 shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-slate-800 text-sm">ACP Cladding</p><p className="text-xs text-slate-500">ACP cladding systems</p></div></Link>
-            <Link key="/aluminium-windows-doors" to="/aluminium-windows-doors" className="group flex items-start gap-3 p-4 rounded-xl border border-slate-200 hover:border-amber-300 hover:bg-amber-50 transition-all bg-white"><ArrowRight size={15} className="text-amber-600 shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-slate-800 text-sm">Aluminium Facade</p><p className="text-xs text-slate-500">Aluminium facade</p></div></Link>
-            <Link key="/facade-contractor-pune" to="/facade-contractor-pune" className="group flex items-start gap-3 p-4 rounded-xl border border-slate-200 hover:border-amber-300 hover:bg-amber-50 transition-all bg-white"><ArrowRight size={15} className="text-amber-600 shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-slate-800 text-sm">Facade Contractor Pune</p><p className="text-xs text-slate-500">Facade contractor Pune</p></div></Link>
-            <Link key="/facade-contractor-navi-mumbai" to="/facade-contractor-navi-mumbai" className="group flex items-start gap-3 p-4 rounded-xl border border-slate-200 hover:border-amber-300 hover:bg-amber-50 transition-all bg-white"><ArrowRight size={15} className="text-amber-600 shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-slate-800 text-sm">Facade Contractor Navi Mumbai</p><p className="text-xs text-slate-500">Navi Mumbai facade</p></div></Link>
-            <Link key="/maintenance-services" to="/maintenance-services" className="group flex items-start gap-3 p-4 rounded-xl border border-slate-200 hover:border-amber-300 hover:bg-amber-50 transition-all bg-white"><ArrowRight size={15} className="text-amber-600 shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-slate-800 text-sm">Facade Maintenance</p><p className="text-xs text-slate-500">AMC & maintenance</p></div></Link>
-            <Link key="/contact" to="/contact" className="group flex items-start gap-3 p-4 rounded-xl border border-slate-200 hover:border-amber-300 hover:bg-amber-50 transition-all bg-white"><ArrowRight size={15} className="text-amber-600 shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-slate-800 text-sm">Get a Quote</p><p className="text-xs text-slate-500">Free consultation</p></div></Link>
-          </div>
-        </div>
-      </section>
+      <Sec no="05" label="Related" title={<>Explore Related Services</>} sheetLabel="Related services">
+        <LinkTable
+          items={[
+            { to: "/acp-aluminium-cladding", title: "ACP Cladding", desc: "ACP cladding systems" },
+            { to: "/aluminium-windows-doors", title: "Aluminium Facade", desc: "Aluminium facade" },
+            { to: "/facade-contractor-pune", title: "Facade Contractor Pune", desc: "Facade contractor Pune" },
+            { to: "/facade-contractor-navi-mumbai", title: "Facade Contractor Navi Mumbai", desc: "Navi Mumbai facade" },
+            { to: "/maintenance-services", title: "Facade Maintenance", desc: "AMC & maintenance" },
+          ]}
+        />
+      </Sec>
 
       <CTASection />
     </Layout>

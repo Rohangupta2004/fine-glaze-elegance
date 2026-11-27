@@ -66,17 +66,17 @@ export default function InspectionDashboard() {
       : 0;
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-night-2">
       {/* Header */}
-      <div className="bg-white border-b sticky top-0 z-40">
+      <div className="bg-night border-b sticky top-0 z-40">
         <div className="max-w-4xl mx-auto px-4 py-3">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="h-8 w-8 bg-blue-800 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xs">FG</span>
+              <div className="h-8 w-8 bg-paper flex items-center justify-center">
+                <span className="text-paper font-bold text-xs">FG</span>
               </div>
               <div>
-                <h1 className="text-lg font-bold">Site Inspections</h1>
+                <h1 className="text-lg font-medium">Site Inspections</h1>
                 <p className="text-xs text-muted-foreground">
                   Fine Glaze Daily Reports
                 </p>
@@ -96,7 +96,7 @@ export default function InspectionDashboard() {
           <Card>
             <CardContent className="pt-4 pb-3 px-4">
               <div className="flex items-center gap-2">
-                <ClipboardList className="h-4 w-4 text-blue-600" />
+                <ClipboardList className="h-4 w-4 text-sky-300" />
                 <div>
                   <p className="text-2xl font-bold">{totalInspections}</p>
                   <p className="text-xs text-muted-foreground">Inspections</p>
@@ -107,12 +107,12 @@ export default function InspectionDashboard() {
           <Card>
             <CardContent className="pt-4 pb-3 px-4">
               <div className="flex items-center gap-2">
-                <AlertTriangle className="h-4 w-4 text-amber-500" />
+                <AlertTriangle className="h-4 w-4 text-lamp" />
                 <div>
                   <p className="text-2xl font-bold">
                     {totalIssues}
                     {criticalIssues > 0 && (
-                      <span className="text-sm text-red-500 ml-1">
+                      <span className="text-sm text-red-400 ml-1">
                         ({criticalIssues}🔴)
                       </span>
                     )}
@@ -125,7 +125,7 @@ export default function InspectionDashboard() {
           <Card>
             <CardContent className="pt-4 pb-3 px-4">
               <div className="flex items-center gap-2">
-                <Users className="h-4 w-4 text-green-600" />
+                <Users className="h-4 w-4 text-emerald-400" />
                 <div>
                   <p className="text-2xl font-bold">{avgWorkers}</p>
                   <p className="text-xs text-muted-foreground">Avg. Workers</p>
@@ -136,7 +136,7 @@ export default function InspectionDashboard() {
           <Card>
             <CardContent className="pt-4 pb-3 px-4">
               <div className="flex items-center gap-2">
-                <TrendingUp className="h-4 w-4 text-purple-600" />
+                <TrendingUp className="h-4 w-4 text-violet-300" />
                 <div>
                   <p className="text-2xl font-bold">{avgProgress}%</p>
                   <p className="text-xs text-muted-foreground">Avg. Progress</p>
@@ -178,7 +178,7 @@ export default function InspectionDashboard() {
         ) : filtered.length === 0 ? (
           <div className="text-center py-12">
             <ClipboardList className="h-12 w-12 text-muted-foreground mx-auto mb-3" />
-            <h3 className="font-semibold text-lg">No inspections yet</h3>
+            <h3 className="font-medium text-lg">No inspections yet</h3>
             <p className="text-muted-foreground text-sm mt-1">
               {inspections.length === 0
                 ? "Start by creating your first site inspection report."

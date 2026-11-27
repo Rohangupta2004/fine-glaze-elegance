@@ -6,16 +6,15 @@ import ScrollToTop from "@/components/ScrollToTop";
 
 interface LayoutProps {
   children: ReactNode;
+  /** Kept for existing callers. The header is a solid white bar on every page, so it no longer changes anything. */
   darkHero?: boolean;
 }
 
-export const Layout = ({ children, darkHero = false }: LayoutProps) => {
+export const Layout = ({ children }: LayoutProps) => {
   return (
     <div className="min-h-screen flex flex-col">
       <ScrollToTop />
-      <Header darkHero={darkHero} />
-      {/* Spacer for fixed navbar on non-hero pages */}
-      {!darkHero && <div className="h-16 lg:h-20" />}
+      <Header />
       <main className="flex-1">{children}</main>
       <Footer />
       <FloatingCTA />

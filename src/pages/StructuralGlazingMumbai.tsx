@@ -1,10 +1,11 @@
+import Illustration from "@/components/common/Illustration";
 import SEO from "@/components/SEO";
+import PageHero from "@/components/common/PageHero";
 import { RelatedProjects } from "@/components/RelatedProjects";
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/home/CTASection";
-import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
-import { CheckCircle2, ArrowRight } from "lucide-react";
+import FaqList from "@/components/common/FaqList";
+import { DeliveryProcess, LinkTable, Prose, Sec, SpecList, SchematicFig } from "@/components/common/Sheet";
 
 export default function StructuralGlazingMumbai() {
   const serviceSchema = {
@@ -29,16 +30,16 @@ export default function StructuralGlazingMumbai() {
       { "@type": "City", "name": "Mumbai" },
       { "@type": "State", "name": "Maharashtra" }
     ],
-    "description": "Structural glazing contractor in Mumbai. 2-side, 4-side & spider glazing for commercial towers, showrooms & hotels. Cyclone-rated design. Free site visit."
+    "description": "Structural glazing in Mumbai: 2-side, 4-side and spider glass facades for commercial buildings, with in-house shop drawings and a site water test."
   };
 
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      { "@type": "Question", "name": "Is structural glazing safe in Mumbai cyclone zone?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, when designed to IS:875 Zone IV/V specifications. Fine Glaze uses redundant mechanical clamping at panel corners and Dow Corning 795 sealant, certified for coastal and tropical climates with 30+ year service life." } },
-      { "@type": "Question", "name": "How does structural glazing perform during Mumbai monsoon?", "acceptedAnswer": { "@type": "Answer", "text": "Properly designed structural glazing is impermeable to water. Two-stage drainage channels provide secondary protection. Fine Glaze includes a hose test (AAMA 501.2) on all installations before handover to verify monsoon-proof performance." } },
-      { "@type": "Question", "name": "What glass thickness for structural glazing on Mumbai high-rises?", "acceptedAnswer": { "@type": "Answer", "text": "Fine Glaze uses minimum 12mm fully toughened heat-soaked glass (HST). For buildings above 30 storeys, 15mm HST toughened or 6+6 laminated toughened glass is used depending on structural engineer specifications." } },
+      { "@type": "Question", "name": "Is structural glazing safe in Mumbai's coastal wind conditions?", "acceptedAnswer": { "@type": "Answer", "text": "Structural glazing can be used in coastal Mumbai when designed for the project's wind load, with suitable sealant, retention and drainage. Fine Glaze checks sizing, fixing and anchorage against the project wind load before approval." } },
+      { "@type": "Question", "name": "How does structural glazing perform during Mumbai monsoon?", "acceptedAnswer": { "@type": "Answer", "text": "Well-designed structural glazing sheds monsoon water through its sealed joints and drainage paths, and installation quality decides the result. Fine Glaze checks installed glazing with a site water penetration test before handover." } },
+      { "@type": "Question", "name": "What glass thickness for structural glazing on Mumbai high-rises?", "acceptedAnswer": { "@type": "Answer", "text": "Glass thickness on high-rises is set by the structural calculation for wind load, panel size and support, not by a fixed rule. Toughened, heat-soaked or laminated glass may be specified; our engineering check confirms the build-up." } },
     ]
   };
 
@@ -54,118 +55,83 @@ export default function StructuralGlazingMumbai() {
   return (
     <Layout darkHero>
       <SEO
-        title="Structural Glazing Contractor in Mumbai | Fine Glaze"
-        description="Structural glazing contractor in Mumbai. 2-side, 4-side & spider glass facades for commercial towers in BKC, Andheri, Powai, Goregaon & Worli."
+        title="Structural Glazing in Mumbai: SSG and Spider | Fine Glaze"
+        description="Structural glazing in Mumbai: 2-side, 4-side and spider glass facades for commercial buildings, with in-house shop drawings and a site water test."
         canonical="https://fineglaze.com/structural-glazing-mumbai"
         keywords="structural glazing Mumbai, structural glass facade Mumbai, frameless glazing Mumbai, spider glazing Mumbai"
         ogImage="https://fineglaze.com/projects/naman-chambers-48-1.webp"
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}
       />
 
-      {/* HERO */}
-      <section className="relative py-24 bg-gradient-to-br from-slate-900 to-slate-800 text-white">
-        <div className="container mx-auto px-4 max-w-6xl grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h1 className="text-3xl md:text-4xl font-bold mb-4">
-              Structural Glazing <span className="text-gradient-gold">Contractor in Mumbai</span>
-            </h1>
-            <p className="text-lg text-white/80 mb-8">Fine Glaze delivers precision-engineered structural glazing systems in Mumbai for corporate towers, luxury hotels, showroom facades, and high-rise residential buildings. Our systems are cyclone-rated, coastal-engineered, and designed to withstand Mumbai's extreme weather while delivering breathtaking glass exteriors.</p>
-            <div className="flex gap-4">
-              <Link to="/contact">
-                <Button size="lg" className="bg-amber-600 hover:bg-amber-700">Get Free Quote</Button>
-              </Link>
-              <Link to="/portfolio">
-                <Button size="lg" variant="outline">View Projects</Button>
-              </Link>
+      <PageHero
+        crumbs={[{ label: "Structural Glazing Contractor in Mumbai" }]}
+        title={<>Structural Glazing <span className="text-gradient-gold">Contractor in Mumbai</span></>}
+        intro="Fine Glaze takes structural glazing projects in Mumbai: corporate towers, hotels, showrooms and residential buildings. Shop drawings are prepared in-house and checked against the project wind load."
+        secondary={{ label: "View Projects", to: "/portfolio" }}
+        image={{ src: "/projects/naman-chambers-48-1.webp", alt: "Naman Chambers, Bandra Kurla Complex, Mumbai — glazing and ACP works by Fine Glaze (in progress)", width: 600, height: 420 }}
+      />
+
+      <Sec no="01" label="Overview" title={<>Structural Glazing in Mumbai</>} sheetLabel="Overview">
+          <div className="sx-split">
+            <Prose>
+<p>
+            Glass defines much of Mumbai's commercial skyline. Fine Glaze takes structural glazing projects in Mumbai, creating frameless glass facades where sealant bonds the glass to the aluminium frame. Our documented Mumbai work includes structural glazing and ACP cladding at Naman Chambers in BKC.
+          </p>
+          <p>
+            Coastal conditions bring high wind, heavy monsoon rain and salty air. As general guidance, designers there pay close attention to wind load, sealant selection, mechanical retention and drainage. Fine Glaze checks member sizing, fixing and anchorage against the project wind load and procures structural silicone such as DOWSIL or approved equivalents.
+          </p>
+          <p>
+            We take showroom facades, corporate lobby entrances, hotel and residential glass elements, and spider-glazed statement entries. Drawings are prepared in-house and approved before fabrication.
+          </p>
+          <p>
+            Work follows the approved shop drawings and the sealant manufacturer's application guidance. Installed glazing is checked with a site water penetration test, and snags are closed before handover.
+          </p>
+          <p>
+            Defect liability support applies as per contract terms. Third-party testing to ASTM can be arranged on request through an accredited laboratory.
+          </p>
+            </Prose>
+            <div className="sx-side">
+              <SchematicFig kind="structural" fig="02" />
+              <Illustration name="city-mumbai" flush sizes="(max-width: 960px) 100vw, 480px" />
             </div>
           </div>
-          <img
-            src="/projects/naman-chambers-48-1.webp"
-            alt="Naman Chambers, Bandra Kurla Complex, Mumbai — glazing and ACP works by Fine Glaze (in progress)"
-            className="rounded-xl shadow-2xl object-cover h-[420px] w-full"
-            loading="eager"
-            width="600"
-            height="420"
+      </Sec>
+
+      <Sec no="02" label="Scope" title={<>What We Offer</>} sheetLabel="Scope of work">
+        <SpecList items={[<>Wind Load Engineering Check</>, <>DOWSIL Structural Silicone</>, <>Mechanical Retention Where Specified</>, <>Drainage Detailing</>, <>Spider Glazing Systems</>, <>Defect Liability Support</>]} />
+      </Sec>
+
+      <Sec no="03" label="Process" title="From survey to handover." sheetLabel="Process">
+        <DeliveryProcess />
+      </Sec>
+
+      <RelatedProjects no="04" heading="Our glazing work in Mumbai" locations={["Mumbai"]} excludeLocations={["Navi Mumbai"]} keywords={["glazing", "glass", "sealant", "window"]} />
+
+      <Sec no="05" label="FAQ" title={<>Frequently Asked Questions</>} sheetLabel="FAQ">
+        <div className="sx-faq">
+          <FaqList
+            items={[
+              { q: <>Is structural glazing safe in Mumbai's coastal wind conditions?</>, a: <>Structural glazing can be used in coastal Mumbai when designed for the project's wind load, with suitable sealant, retention and drainage. Fine Glaze checks sizing, fixing and anchorage against the project wind load before approval.</> },
+              { q: <>How does structural glazing perform during Mumbai monsoon?</>, a: <>Well-designed structural glazing sheds monsoon water through its sealed joints and drainage paths, and installation quality decides the result. Fine Glaze checks installed glazing with a site water penetration test before handover.</> },
+              { q: <>What glass thickness for structural glazing on Mumbai high-rises?</>, a: <>Glass thickness on high-rises is set by the structural calculation for wind load, panel size and support, not by a fixed rule. Toughened, heat-soaked or laminated glass may be specified; our engineering check confirms the build-up.</> },
+            ]}
           />
         </div>
-      </section>
+      </Sec>
 
-      {/* RICH CONTENT */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 max-w-5xl space-y-6">
-          
-          <h2 className="text-3xl font-bold">Coastal-Engineered Structural Glazing for Mumbai</h2>
-          <p className="text-muted-foreground">
-            Mumbai's skyline is defined by glass — from the iconic towers of BKC to the residential high-rises of Worli Seaface. Fine Glaze has contributed to this vision, installing structural glazing systems that create seamless, frameless glass facades with exceptional wind resistance and visual impact.
-          </p>
-          <p className="text-muted-foreground mt-4">
-            For Mumbai coastal projects, structural glazing presents unique engineering challenges: cyclone-zone wind pressures, high seismic risk, and saline air affecting sealant longevity. Fine Glaze addresses these through structural sealant selection rated for coastal exposure (Dow Corning 795 with extended UV and moisture resistance), redundant mechanical retention at panel corners, and two-stage drainage silicone weather seals designed for Mumbai's 2,400mm+ annual rainfall.
-          </p>
-          <p className="text-muted-foreground mt-4">
-            Our Mumbai structural glazing portfolio includes <strong>showroom facades</strong> along Linking Road, Hill Road, and SV Road in the western suburbs; <strong>corporate lobby entrances</strong> in BKC and Nariman Point; and <strong>high-rise residential glass elements</strong> in Lower Parel and Worli. Spider glazing installations for statement entries complete our Mumbai portfolio.
-          </p>
-          <p className="text-muted-foreground mt-4">
-            Fine Glaze's Mumbai structural glazing projects include installations for 5-star hotel entrance canopies in South Mumbai — where the aesthetic demand is extremely high and the tolerance for any visual defect is near zero. Our installation team includes experienced structural glazing applicators who work to the approved shop drawings and sealant manufacturer's guidelines.
-          </p>
-          <p className="text-muted-foreground mt-4">
-            Fine Glaze structural glazing projects in Mumbai include pre-construction mock-up panel testing, certified sealant application training records, a hose test (AAMA 501.2) after installation, with the sealant manufacturer's material warranty and defect liability support as per contract.
-          </p>
-    
-        </div>
-      </section>
+      <Sec no="06" label="Related" title={<>Explore Related Services</>} sheetLabel="Related services">
+        <LinkTable
+          items={[
+            { to: "/structural-glazing", title: "Structural Glazing", desc: "Full structural glazing service" },
+            { to: "/structural-glazing-pune", title: "Structural Glazing Pune", desc: "Structural glazing Pune" },
+            { to: "/facade-contractor-mumbai", title: "Facade Contractor Mumbai", desc: "Complete facade solutions" },
+            { to: "/curtain-wall-mumbai", title: "Curtain Wall Mumbai", desc: "Curtain wall Mumbai" },
+            { to: "/aluminium-facade-mumbai", title: "Aluminium Facade Mumbai", desc: "Aluminium facade Mumbai" },
+            { to: "/maintenance-services", title: "Facade Maintenance", desc: "Structural glazing maintenance" },
+          ]}
+        />
+      </Sec>
 
-      {/* FEATURES */}
-      <section className="py-20 bg-muted">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <h2 className="text-3xl font-bold mb-10 text-center">What We Offer</h2>
-          <div className="grid md:grid-cols-2 gap-4">
-              <div key="Cyclone Wind Pressure Design" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Cyclone Wind Pressure Design</span></div>
-              <div key="Dow Corning 795 Coastal Sealant" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Dow Corning 795 Coastal Sealant</span></div>
-              <div key="Redundant Mechanical Retention" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Redundant Mechanical Retention</span></div>
-              <div key="Two-Stage Weather Drainage" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Two-Stage Weather Drainage</span></div>
-              <div key="Spider Glazing Systems" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Spider Glazing Systems</span></div>
-              <div key="Sealant Manufacturer Warranty" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-amber-600 shrink-0" /><span className="text-muted-foreground">Sealant Manufacturer Warranty</span></div>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <h2 className="text-3xl font-bold mb-10 text-center">Frequently Asked Questions</h2>
-          <div className="space-y-6">
-            <div className="bg-background rounded-xl p-6 shadow-sm">
-              <h3 className="text-lg font-bold mb-2">Is structural glazing safe in Mumbai cyclone zone?</h3>
-              <p className="text-muted-foreground">Yes, when designed to IS:875 Zone IV/V specifications. Fine Glaze uses redundant mechanical clamping at panel corners and Dow Corning 795 sealant, certified for coastal and tropical climates with 30+ year service life.</p>
-            </div>
-            <div className="bg-background rounded-xl p-6 shadow-sm">
-              <h3 className="text-lg font-bold mb-2">How does structural glazing perform during Mumbai monsoon?</h3>
-              <p className="text-muted-foreground">Properly designed structural glazing is impermeable to water. Two-stage drainage channels provide secondary protection. Fine Glaze includes a hose test (AAMA 501.2) on all installations before handover to verify monsoon-proof performance.</p>
-            </div>
-            <div className="bg-background rounded-xl p-6 shadow-sm">
-              <h3 className="text-lg font-bold mb-2">What glass thickness for structural glazing on Mumbai high-rises?</h3>
-              <p className="text-muted-foreground">Fine Glaze uses minimum 12mm fully toughened heat-soaked glass (HST). For buildings above 30 storeys, 15mm HST toughened or 6+6 laminated toughened glass is used depending on structural engineer specifications.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* INTERNAL LINKS */}
-      <section className="py-12 bg-slate-50 border-t border-slate-100">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <h2 className="text-xl font-bold text-slate-800 mb-5">Explore Related Services</h2>
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
-            <Link key="/structural-glazing" to="/structural-glazing" className="group flex items-start gap-3 p-4 rounded-xl border border-slate-200 hover:border-amber-300 hover:bg-amber-50 transition-all bg-white"><ArrowRight size={15} className="text-amber-600 shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-slate-800 text-sm">Structural Glazing</p><p className="text-xs text-slate-500">Full structural glazing service</p></div></Link>
-            <Link key="/structural-glazing-pune" to="/structural-glazing-pune" className="group flex items-start gap-3 p-4 rounded-xl border border-slate-200 hover:border-amber-300 hover:bg-amber-50 transition-all bg-white"><ArrowRight size={15} className="text-amber-600 shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-slate-800 text-sm">Structural Glazing Pune</p><p className="text-xs text-slate-500">Structural glazing Pune</p></div></Link>
-            <Link key="/facade-contractor-mumbai" to="/facade-contractor-mumbai" className="group flex items-start gap-3 p-4 rounded-xl border border-slate-200 hover:border-amber-300 hover:bg-amber-50 transition-all bg-white"><ArrowRight size={15} className="text-amber-600 shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-slate-800 text-sm">Facade Contractor Mumbai</p><p className="text-xs text-slate-500">Complete facade solutions</p></div></Link>
-            <Link key="/curtain-wall-mumbai" to="/curtain-wall-mumbai" className="group flex items-start gap-3 p-4 rounded-xl border border-slate-200 hover:border-amber-300 hover:bg-amber-50 transition-all bg-white"><ArrowRight size={15} className="text-amber-600 shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-slate-800 text-sm">Curtain Wall Mumbai</p><p className="text-xs text-slate-500">Curtain wall Mumbai</p></div></Link>
-            <Link key="/aluminium-facade-mumbai" to="/aluminium-facade-mumbai" className="group flex items-start gap-3 p-4 rounded-xl border border-slate-200 hover:border-amber-300 hover:bg-amber-50 transition-all bg-white"><ArrowRight size={15} className="text-amber-600 shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-slate-800 text-sm">Aluminium Facade Mumbai</p><p className="text-xs text-slate-500">Aluminium facade Mumbai</p></div></Link>
-            <Link key="/maintenance-services" to="/maintenance-services" className="group flex items-start gap-3 p-4 rounded-xl border border-slate-200 hover:border-amber-300 hover:bg-amber-50 transition-all bg-white"><ArrowRight size={15} className="text-amber-600 shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-slate-800 text-sm">Facade Maintenance</p><p className="text-xs text-slate-500">Structural glazing maintenance</p></div></Link>
-          </div>
-        </div>
-      </section>
-
-      <RelatedProjects heading="Our glazing work in Mumbai" locations={["Mumbai"]} excludeLocations={["Navi Mumbai"]} keywords={["glazing", "glass", "sealant", "window"]} />
       <CTASection />
     </Layout>
   );

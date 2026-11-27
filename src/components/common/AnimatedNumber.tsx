@@ -9,7 +9,7 @@ interface AnimatedNumberProps {
 
 /**
  * Parses formatted numbers with prefixes & suffixes:
- * "~20,566 SQM" -> { prefix: "~", number: 20566, suffix: " SQM" }
+ * "~500 SQM" -> { prefix: "~", number: 500, suffix: " SQM" }
  * "5+ Yrs"      -> { prefix: "", number: 5, suffix: "+ Yrs" }
  * "45+ Years"   -> { prefix: "", number: 45, suffix: "+ Years" }
  * "Up to 540"   -> { prefix: "Up to ", number: 540, suffix: "" }
