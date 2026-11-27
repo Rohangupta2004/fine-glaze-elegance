@@ -5,7 +5,7 @@ precision highp float;
 out vec4 o;
 uniform vec2 uRes; uniform float uT,uP,uIn,uSun,uN,uAsp,uNi;
 uniform vec3 uRo,uF,uR,uU; uniform vec4 uTR; uniform sampler2D uTx; uniform vec2 uBay; uniform float uOpen,uLit,uSg,uScr,uQ;
-float gTm=0.; vec3 gTc=vec3(.984,.973,.957);
+float gTm=0.,gSh=0.; vec3 gTc=vec3(.984,.973,.957);
 vec3 gSun=vec3(0.,.2,.98); vec3 gHaze=vec3(.9,.8,.7); float gLod=0.,gDist=0.;
 const float W=42.,H=162.,D=30.,PW=1.5,FH=3.6,SP=.2;
 float sst(float a,float b,float x){float t=clamp((x-a)/(b-a),0.,1.);return t*t*(3.-2.*t);}
@@ -125,10 +125,13 @@ vec3 facade(vec2 uv,vec3 n,vec3 tx,vec3 rd,bool front){
       float li=floor((1.-t.y)*uN);
       float on=clamp(uIn*(uN+1.6)-li,0.,1.); on*=on*(3.-2.*on);
       gTm=texture(uTx,vec2(t.x,1.-t.y)).r*on*uSg;
+      // soft shadow under the glyphs so the headline holds over bright reflections
+      vec2 tc=vec2(t.x,1.-t.y)+vec2(-.001,.004); vec2 bo=vec2(.0035,.009);
+      gSh=(texture(uTx,tc).r+texture(uTx,tc+vec2(bo.x,0.)).r+texture(uTx,tc-vec2(bo.x,0.)).r+texture(uTx,tc+vec2(0.,bo.y)).r+texture(uTx,tc-vec2(0.,bo.y)).r)*.2*on*uSg;
       if(li>uN-1.5){
         // last line: the warm logo gradient, left to right
         float ax=clamp(t.x*1.12,0.,1.)*2.;
-        vec3 a0=vec3(.953,.851,.722), a1=vec3(.910,.706,.478), a2=vec3(.816,.541,.271);
+        vec3 a0=vec3(.953,.851,.722), a1=vec3(.910,.706,.478), a2=vec3(.878,.627,.361);
         gTc=ax<1.?mix(a0,a1,ax):mix(a1,a2,ax-1.);
       }
     }
@@ -213,6 +216,7 @@ void main(){
   vec2 sp2=gl_FragCoord.xy/uRes;
   float scr=uAsp<.85?1.-sst(.55,1.,sp2.y):1.-sst(.12,.55,sp2.x);
   c=mix(c,vec3(.078,.055,.035),.72*scr*uScr);
+  c=mix(c,vec3(.05,.035,.02),clamp(gSh*1.5,0.,1.)*.5);
   c=mix(c,gTc,gTm);
   c+=(h21(gl_FragCoord.xy+fract(uT)*91.)-.5)/150.;
   o=vec4(c,1.);
