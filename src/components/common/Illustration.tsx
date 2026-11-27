@@ -1,12 +1,21 @@
 import { ILLUSTRATIONS, illusSrc, illusSrcSet, type IllustrationName } from "@/lib/illustrations";
 
+interface IllustrationProps {
+  name: IllustrationName;
+  className?: string;
+  /** No top margin and no frame: the caller places and rules the image itself. */
+  flush?: boolean;
+  /** Responsive sizes hint; defaults to the narrow article column. */
+  sizes?: string;
+}
+
 /** A general illustration in a ruled frame. Not a project photo, so there is no caption. */
-export const Illustration = ({ name, className = "" }: { name: IllustrationName; className?: string }) => (
-  <figure className={`fg-illus ${className}`} style={{ margin: "40px 0 0", border: "1px solid #ddd5ca" }}>
+export const Illustration = ({ name, className = "", flush = false, sizes = "(max-width: 768px) 100vw, 720px" }: IllustrationProps) => (
+  <figure className={`fg-illus ${className}`} style={flush ? { margin: 0 } : { margin: "40px 0 0", border: "1px solid #ddd5ca" }}>
     <img
       src={illusSrc(name)}
       srcSet={illusSrcSet(name)}
-      sizes="(max-width: 768px) 100vw, 720px"
+      sizes={sizes}
       alt={ILLUSTRATIONS[name]}
       width={1376}
       height={768}
