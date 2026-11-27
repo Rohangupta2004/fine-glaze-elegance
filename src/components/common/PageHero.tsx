@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import { Link } from "react-router-dom";
 import CallNow from "./CallNow";
+import { TitleBlock, GridBg, CornerTicks } from "./Drawing";
 import "./pagehero.css";
 
 export interface Crumb {
@@ -15,7 +16,7 @@ export interface PageHeroProps {
   title: ReactNode;
   /** One line of intro. */
   intro?: ReactNode;
-  /** Optional hero photograph, shown full-bleed behind the text under a dark warm overlay. */
+  /** Optional hero photograph, shown right of the text in a framed viewport with corner ticks and a mono caption. */
   image?: { src: string; alt: string; width?: number; height?: number; position?: string; srcSet?: string; sizes?: string };
   /** Secondary text link next to the primary button. */
   secondary?: { label: string; to?: string; href?: string };
@@ -29,44 +30,16 @@ export interface PageHeroProps {
   compact?: boolean;
 }
 
-/** Shared hero for service, city, industry, guide and static pages. Use inside <Layout darkHero>. */
-/** Plain-string titles get the bronze gradient on their last word, as the JSX titles do. */
-const accentLast = (t: string) => {
-  const i = t.trimEnd().lastIndexOf(" ");
-  if (i < 0) return <span className="text-gradient">{t}</span>;
-  return (
-    <>
-      {t.slice(0, i + 1)}
-      <span className="text-gradient">{t.slice(i + 1)}</span>
-    </>
-  );
-};
-
-export const PageHero = ({ crumbs = [], title, intro, image, secondary, source = "page_hero", extra, hideAction, compact }: PageHeroProps) => {
+/** Shared hero for service, city, industry, guide and static pages. Engineering style: split layout with a framed viewport when there is a photo, a text hero over a faint grid when there is not. */
+export const PageHero = ({ crumbs = [], title, intro, image, secondary, extra, hideAction, compact }: PageHeroProps) => {
   const trail: Crumb[] = [{ label: "Home", to: "/" }, ...crumbs];
+  const current = trail[trail.length - 1].label;
 
   return (
-    <section className={`ph${image ? " ph-img" : " aurora-glow"}${compact ? " compact" : ""}`}>
-      {image && (
-        <>
-          <img
-            className="ph-bg"
-            decoding="async"
-            src={image.src}
-            srcSet={image.srcSet}
-            sizes={image.srcSet ? "100vw" : image.sizes}
-            alt={image.alt}
-            width={image.width}
-            height={image.height}
-            loading="eager"
-            {...({ fetchpriority: "high" } as Record<string, string>)}
-            style={image.position ? { objectPosition: image.position } : undefined}
-          />
-          <div className="ph-shade" aria-hidden="true" />
-        </>
-      )}
-      <div className="fg-wrap" style={{ width: "100%" }}>
-        <div className="ph-g solo">
+    <section className={`ph${image ? " ph-img" : " ph-txt"}${compact ? " compact" : ""}`}>
+      {!image && <GridBg />}
+      <div className="fg-wrap ph-wrap">
+        <div className="ph-g">
           <div className="ph-copy">
             <nav className="ph-crumbs" aria-label="Breadcrumb">
               <ol>
@@ -84,25 +57,55 @@ export const PageHero = ({ crumbs = [], title, intro, image, secondary, source =
                 })}
               </ol>
             </nav>
-            <h1>{typeof title === "string" ? accentLast(title) : title}</h1>
+            <h1>{title}</h1>
             {intro && <p className="ph-intro">{intro}</p>}
             <div className="ph-act" hidden={hideAction && !secondary ? true : undefined}>
-              {!hideAction && (
-                <CallNow className="fg-btn" number={!secondary?.href?.startsWith("tel:")} numberClassName={image ? "ph-num" : ""} />
-              )}
+              {!hideAction && <CallNow className="fg-btn" number={!secondary?.href?.startsWith("tel:")} />}
               {secondary &&
                 (secondary.href ? (
-                  <a className="fg-lnk" href={secondary.href}>
+                  <a className="fg-btn2" href={secondary.href}>
                     {secondary.label}
                   </a>
                 ) : (
-                  <Link className="fg-lnk" to={secondary.to || "/portfolio"}>
+                  <Link className="fg-btn2" to={secondary.to || "/portfolio"}>
                     {secondary.label}
                   </Link>
                 ))}
             </div>
             {extra && <div className="ph-extra">{extra}</div>}
           </div>
+
+          {image ? (
+            <figure className="ph-view">
+              <div className="ph-frame">
+                <img
+                  decoding="async"
+                  src={image.src}
+                  srcSet={image.srcSet}
+                  sizes={image.srcSet ? image.sizes || "(max-width: 900px) 100vw, 560px" : image.sizes}
+                  alt={image.alt}
+                  width={image.width}
+                  height={image.height}
+                  loading="eager"
+                  {...({ fetchpriority: "high" } as Record<string, string>)}
+                  style={image.position ? { objectPosition: image.position } : undefined}
+                />
+                <CornerTicks />
+              </div>
+              <figcaption aria-hidden="true">
+                <span>FIG. 01</span> {image.alt}
+              </figcaption>
+            </figure>
+          ) : (
+            <TitleBlock
+              className="ph-tb"
+              rows={[
+                ["SHEET", current],
+                ["FIRM", "Fine Glaze"],
+                ["BASED", "Pune / Mumbai"],
+              ]}
+            />
+          )}
         </div>
       </div>
     </section>

@@ -3,23 +3,18 @@ import { Header } from "./Header";
 import { Footer } from "./Footer";
 import FloatingCTA from "@/components/FloatingCTA";
 import ScrollToTop from "@/components/ScrollToTop";
-import ScrollProgress from "@/components/common/ScrollProgress";
-import { useHeadingReveal } from "@/components/common/useHeadingReveal";
 
 interface LayoutProps {
   children: ReactNode;
+  /** Kept for existing callers. The header is a solid white bar on every page, so it no longer changes anything. */
   darkHero?: boolean;
 }
 
-export const Layout = ({ children, darkHero = false }: LayoutProps) => {
-  useHeadingReveal();
+export const Layout = ({ children }: LayoutProps) => {
   return (
     <div className="min-h-screen flex flex-col">
       <ScrollToTop />
-      <ScrollProgress />
-      <Header darkHero={darkHero} />
-      {/* Spacer for fixed navbar on non-hero pages */}
-      {!darkHero && <div className="h-16 lg:h-20" />}
+      <Header />
       <main className="flex-1">{children}</main>
       <Footer />
       <FloatingCTA />
