@@ -1,4 +1,5 @@
 import { useState } from "react";
+import CallNow from "@/components/common/CallNow";
 import { telHref } from "@/data/company";
 import { RelatedProjects } from "@/components/RelatedProjects";
 import { Link } from "react-router-dom";
@@ -265,18 +266,18 @@ export default function CurtainWall() {
       <section className="fg-sec">
         <div className="fg-wrap">
           <FadeIn>
-            <div className="grid grid-cols-3 gap-6 md:gap-0 md:divide-x md:divide-line">
+            <dl className="fg-stats" style={{ ["--n" as string]: 3 }}>
               {[
                 { number: "16", label: "Project Records Documented" },
                 { number: "40+", label: "Core Team" },
                 { number: "2024", label: "Embassy REIT Best Vendor Performance" },
               ].map((s) => (
-                <div key={s.label} className="px-4 first:pl-0">
-                  <p className="text-2xl md:text-3xl font-bold text-gradient">{s.number}</p>
-                  <p className="text-mute text-[13px] mt-1">{s.label}</p>
+                <div key={s.label}>
+                  <dt>{s.number}</dt>
+                  <dd className="nm">{s.label}</dd>
                 </div>
               ))}
-            </div>
+            </dl>
           </FadeIn>
         </div>
       </section>
@@ -306,7 +307,7 @@ export default function CurtainWall() {
                   <span><strong>Superior Weather Tightness</strong> — Interlocking stack joints accommodate building movement and thermal expansion naturally.</span>
                 </li>
               </ul>
-              <Button asChild className="bg-lamp hover:bg-lamp/90 text-lamp-ink font-bold gap-2"><a href={telHref} data-call-now><Phone size={16} aria-hidden="true" /> Call now</a></Button>
+              <CallNow className="fg-btn self-start" number />
             </FadeIn>
 
             <FadeIn delay={150}>
@@ -389,7 +390,7 @@ export default function CurtainWall() {
                   </div>
                 </div>
 
-                <Button asChild size="sm" className="bg-night-2 hover:bg-night-2 text-paper gap-2"><a href={telHref} data-call-now><Phone size={14} aria-hidden="true" /> Call now</a></Button>
+                <CallNow className="fg-btn self-start" />
               </div>
             </div>
           </FadeIn>

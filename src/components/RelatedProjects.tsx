@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, MapPin } from "lucide-react";
+import { MapPin } from "lucide-react";
 import { projectsData, type ProjectData } from "@/data/projects";
 
 /**
@@ -46,15 +46,15 @@ export function RelatedProjects({ heading, intro, ...filter }: RelatedProjectsPr
   const items = matchProjects(filter);
   if (items.length === 0) return null;
   return (
-    <section className="py-16 bg-night text-paper" aria-labelledby="related-projects">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
+    <section className="fg-sec" aria-labelledby="related-projects">
+      <div className="fg-wrap">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8 md:mb-12">
           <div className="max-w-2xl">
-            <h2 id="related-projects" className="text-2xl md:text-3xl font-medium">{heading}</h2>
-            {intro && <p className="mt-2 text-mute">{intro}</p>}
+            <h2 id="related-projects" className="fg-h2 !mb-0">{heading}</h2>
+            {intro && <p className="mt-3 text-mute">{intro}</p>}
           </div>
-          <Link to="/portfolio" className="inline-flex items-center text-lamp font-semibold hover:text-lamp">
-            All projects <ArrowRight className="ml-1 h-4 w-4" aria-hidden="true" />
+          <Link to="/portfolio" className="fg-lnk self-start md:self-auto">
+            See all projects
           </Link>
         </div>
         <ul className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -66,11 +66,11 @@ export function RelatedProjects({ heading, intro, ...filter }: RelatedProjectsPr
               >
                 <img decoding="async" src={p.image} alt={`${p.title}, ${p.location} — ${p.scope}`} className="h-44 w-full object-cover" loading="lazy" />
                 <div className="p-4">
-                  <p className="text-[13px] font-semibold text-lamp">
+                  <p className="font-mono text-[12px] tracking-[0.02em] text-lamp">
                     {p.status === "Completed" ? `Completed${p.year ? ` ${p.year}` : ""}` : "Ongoing"}{p.client ? `, ${p.client}` : ""}
                   </p>
-                  <h3 className="mt-1 font-medium leading-snug group-hover:text-lamp">{p.title}</h3>
-                  <p className="mt-1 flex items-center gap-1 text-xs text-mute">
+                  <h3 className="mt-1.5 text-lg font-medium leading-snug group-hover:text-lamp">{p.title}</h3>
+                  <p className="mt-1 flex items-center gap-1 text-sm text-mute">
                     <MapPin className="h-3 w-3" aria-hidden="true" /> {p.location}
                   </p>
                   <p className="mt-2 text-sm text-paper/80">{p.scope}</p>

@@ -42,3 +42,5 @@
 @media (prefers-reduced-motion: reduce) {
   .ph-bg { animation: none; }
 }
+/* The location line under a photo hero's title: readable on the dark shade. */
+.ph-img h1 .ph-sub { color: rgba(251,248,244,.78); }

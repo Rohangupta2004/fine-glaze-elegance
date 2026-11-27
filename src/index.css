@@ -394,3 +394,15 @@ html.hd-js main h2.hd-r.hd-in { clip-path: inset(-0.2em -2% -0.2em 0); }
 .cn-link { text-decoration: none; }
 .cn-num-hdr { display: none; font-family: 'Space Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 13px; color: #6f6152; white-space: nowrap; font-variant-numeric: tabular-nums; }
 @media (min-width: 1280px) { .cn-num-hdr { display: inline; } }
+
+/* ------------------------------------------------------------------
+   Consistency layer: shared pieces the inner pages reuse so they read
+   like the home page (mono kickers, boxed step numbers, one width).
+   ------------------------------------------------------------------ */
+/* Small mono label above a heading, as on the home page */
+.fg-kicker { display: block; margin-bottom: 14px; font-family: 'Space Mono', ui-monospace, monospace; font-size: 12.5px; letter-spacing: 0.06em; text-transform: uppercase; color: #9b5520; }
+.fg-kicker-light { color: #e8b47a; }
+/* Boxed step number, matching the home process */
+.fg-step-n { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; margin-bottom: 18px; border: 1px solid #9b5520; color: #9b5520; font-family: 'Space Mono', ui-monospace, monospace; font-size: 13px; font-variant-numeric: tabular-nums; }
+/* Tailwind's .container matches .fg-wrap so every band shares one edge */
+.container { max-width: 1280px; }

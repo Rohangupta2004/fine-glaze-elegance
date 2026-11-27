@@ -1,5 +1,5 @@
 import { ILLUSTRATIONS, illusSrc, illusSrcSet } from "@/lib/illustrations";
-import { telHref } from "@/data/company";
+import CallNow from "@/components/common/CallNow";
 import SEO from "@/components/SEO";
 import PageHero from "@/components/common/PageHero";
 import { RelatedProjects } from "@/components/RelatedProjects";
@@ -7,8 +7,7 @@ import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/home/CTASection";
 import { ServiceQuickOverview } from "@/components/service/ServiceQuickOverview";
 import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
-import { ArrowRight, MapPin, Phone } from "lucide-react";
+import { MapPin } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
@@ -260,18 +259,18 @@ export default function Skylights() {
       <section className="fg-sec">
         <div className="fg-wrap">
           <FadeIn>
-            <div className="grid grid-cols-3 gap-6 md:gap-0 md:divide-x md:divide-line">
+            <dl className="fg-stats" style={{ ["--n" as string]: 3 }}>
               {[
                 { number: "16", label: "Project Records Documented" },
                 { number: "40+", label: "Core Team" },
                 { number: "2024", label: "Embassy REIT Best Vendor Performance" },
               ].map((s) => (
-                <div key={s.label} className="px-4 first:pl-0">
-                  <p className="text-2xl md:text-3xl font-bold text-gradient">{s.number}</p>
-                  <p className="text-mute text-[13px] mt-1">{s.label}</p>
+                <div key={s.label}>
+                  <dt>{s.number}</dt>
+                  <dd className="nm">{s.label}</dd>
                 </div>
               ))}
-            </div>
+            </dl>
           </FadeIn>
         </div>
       </section>
@@ -339,7 +338,7 @@ export default function Skylights() {
                   </div>
                 </div>
 
-                <Button asChild size="sm" className="bg-night-2 hover:bg-night-2 text-paper gap-2"><a href={telHref} data-call-now><Phone size={14} aria-hidden="true" /> Call now</a></Button>
+                <CallNow className="fg-btn self-start" />
               </div>
             </div>
           </FadeIn>
@@ -357,7 +356,7 @@ export default function Skylights() {
           </FadeIn>
 
           <FadeIn delay={100}>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
               {[
                 {
                   title: "Water-Tested",
@@ -377,8 +376,8 @@ export default function Skylights() {
                 },
               ].map((item) => (
                 <div key={item.title}>
-                  <h3 className="text-sm font-medium text-paper mb-2">{item.title}</h3>
-                  <p className="text-mute text-xs leading-relaxed">{item.desc}</p>
+                  <h3 className="text-lg font-medium text-paper mb-2">{item.title}</h3>
+                  <p className="text-mute text-[15px] leading-relaxed">{item.desc}</p>
                 </div>
               ))}
             </div>
@@ -405,16 +404,16 @@ export default function Skylights() {
           </FadeIn>
 
           <FadeIn delay={100}>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
               {STEPS.map((step, i) => (
                 <div key={step.num} className="relative">
                   {i < STEPS.length - 1 && (
                     <div className="hidden md:block absolute top-5 left-[60%] right-0 h-px bg-line" />
                   )}
                   <div className="bg-night p-5 relative">
-                    <span className="text-3xl font-bold text-paper block mb-3">{step.num}</span>
-                    <h3 className="text-sm font-medium text-paper mb-1">{step.title}</h3>
-                    <p className="text-mute text-xs leading-relaxed">{step.desc}</p>
+                    <span className="fg-step-n">{step.num}</span>
+                    <h3 className="text-lg font-medium text-paper mb-1">{step.title}</h3>
+                    <p className="text-mute text-[15px] leading-relaxed">{step.desc}</p>
                   </div>
                 </div>
               ))}
@@ -467,12 +466,12 @@ export default function Skylights() {
               <table className="w-full text-left">
                 <thead>
                   <tr className="border-b-2 border-line">
-                    <th className="py-3 text-xs font-bold text-mute">System</th>
-                    <th className="py-3 text-xs font-bold text-mute">Material</th>
-                    <th className="py-3 text-xs font-bold text-mute text-right">Pricing</th>
+                    <th className="py-3 text-[13px] font-medium text-mute">System</th>
+                    <th className="py-3 text-[13px] font-medium text-mute">Material</th>
+                    <th className="py-3 text-[13px] font-medium text-mute text-right">Pricing</th>
                   </tr>
                 </thead>
-                <tbody className="text-sm">
+                <tbody className="text-[15.5px]">
                   {[
                     { system: "Atrium Skylight", glass: "Laminated DGU + aluminium", price: "Quoted on drawings" },
                     { system: "Frameless Canopy", glass: "17.52mm laminated + SS", price: "Quoted on drawings" },
@@ -490,7 +489,7 @@ export default function Skylights() {
             </div>
 
             <div className="mt-8">
-              <Button asChild size="lg" className="bg-night-2 hover:bg-night-2 text-paper gap-2 px-8"><a href={telHref} data-call-now><Phone size={16} aria-hidden="true" /> Call now</a></Button>
+              <CallNow className="fg-btn" number />
             </div>
           </FadeIn>
         </div>

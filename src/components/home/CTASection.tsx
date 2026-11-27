@@ -6,11 +6,11 @@ import { company, telHref, whatsappHref } from "@/data/company";
 export const CTASection = () => {
   return (
     <section className="bg-night-2 text-paper">
-      <div className="container mx-auto px-4 py-20 md:py-28">
+      <div className="fg-wrap py-20 md:py-28">
         <div className="grid gap-10 md:grid-cols-[7fr_5fr] md:items-end">
           <div>
             <h2 className="font-display font-medium leading-[1.04] tracking-[-0.015em] text-4xl md:text-6xl max-w-[11ch]">
-              Tell us about your facade.
+              Tell us about your <span className="text-gradient">facade.</span>
             </h2>
             <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-4">
               <CallNow className="fg-btn" number />

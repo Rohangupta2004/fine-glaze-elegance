@@ -3,7 +3,8 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { cn } from "@/lib/utils";
 import { Target, Eye, Shield, Users, Award, Clock, FileCheck2, Factory, MapPin, HardHat } from "lucide-react";
 import { Link } from "react-router-dom";
-import { company, telHref } from "@/data/company";
+import { company } from "@/data/company";
+import CallNow from "@/components/common/CallNow";
 import SEO from "@/components/SEO";
 import PageHero from "@/components/common/PageHero";
 import { useSiteMedia } from "@/hooks/useSiteMedia";
@@ -75,7 +76,7 @@ const About = () => {
       />
       <PageHero
         crumbs={[{ label: "About" }]}
-        title={<>Facade Specialists in <span className="text-gradient-gold">Pune &amp; Mumbai</span></>}
+        title={<>Facade specialists in <span className="text-gradient-gold">Pune &amp; Mumbai.</span></>}
         intro="Fine Glaze designs, fabricates, installs and maintains facade systems for developers and asset owners from Pune and Mumbai, across India. Everything on this page is taken from our company profile, and we are happy to share the documents behind it."
         image={{ src: aboutHero, alt: "Facade by Fine Glaze" }}
         secondary={{ label: "View Projects", to: "/portfolio" }}
@@ -131,13 +132,9 @@ const About = () => {
               )}
               style={{ transitionDelay: "0.1s" }}
             >
-              <span className="text-primary font-medium text-sm">
-                Our Story
-              </span>
-              <h2 className="text-3xl md:text-4xl font-medium text-foreground">
-                Building{" "}
-                <span className="text-gradient-subtle">Trust</span>{" "}
-                Through Excellence
+              <span className="fg-kicker">Our story</span>
+              <h2 className="fg-h2 !mb-0">
+                One accountable team, <span className="text-gradient">start to finish.</span>
               </h2>
               <div className="space-y-4 text-muted-foreground">
                 <p>
@@ -169,20 +166,17 @@ const About = () => {
         <div className="fg-wrap">
           <div
             className={cn(
-              "max-w-5xl mx-auto text-center space-y-6 slide-up",
+              "space-y-6 slide-up",
               videoRef.isVisible && "visible"
             )}
           >
-            <span className="text-primary font-medium text-sm">
-              Company Overview
-            </span>
+            <span className="fg-kicker">Company overview</span>
 
-            <h2 className="text-3xl md:text-4xl font-medium text-foreground">
-              See Fine Glaze{" "}
-              <span className="text-gradient-subtle">in Action</span>
+            <h2 className="fg-h2 !mb-0">
+              See our work <span className="text-gradient">on film.</span>
             </h2>
 
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-muted-foreground max-w-2xl">
               Watch how Fine Glaze delivers facade systems, from design and
               fabrication to installation and maintenance.
             </p>
@@ -206,11 +200,11 @@ const About = () => {
         <div className="fg-wrap">
           <div className="grid md:grid-cols-2 gap-8">
             <div className="glass-card metallic-border p-8 space-y-4">
-              <div className="w-14 h-14 border border-line flex items-center justify-center">
-                <Target size={28} className="text-primary" />
+              <div className="w-12 h-12 border border-line flex items-center justify-center">
+                <Target size={22} className="text-primary" aria-hidden="true" />
               </div>
               <h3 className="text-2xl font-medium text-foreground">
-                Our <span className="text-gradient-subtle">Mission</span>
+                Our <span className="text-gradient">mission</span>
               </h3>
               <p className="text-muted-foreground">
                 {company.mission}
@@ -218,11 +212,11 @@ const About = () => {
             </div>
 
             <div className="glass-card metallic-border p-8 space-y-4">
-              <div className="w-14 h-14 border border-line flex items-center justify-center">
-                <Eye size={28} className="text-primary" />
+              <div className="w-12 h-12 border border-line flex items-center justify-center">
+                <Eye size={22} className="text-primary" aria-hidden="true" />
               </div>
               <h3 className="text-2xl font-medium text-foreground">
-                Our <span className="text-gradient-subtle">Vision</span>
+                Our <span className="text-gradient">vision</span>
               </h3>
               <p className="text-muted-foreground">
                 {company.vision}
@@ -236,9 +230,9 @@ const About = () => {
       <section className="fg-sec" aria-labelledby="team-heading">
         <div className="fg-wrap">
           <div className="space-y-3 mb-12 max-w-2xl">
-            <span className="text-primary font-medium text-sm">Our Team</span>
-            <h2 id="team-heading" className="text-3xl md:text-4xl font-medium text-foreground">
-              The people who answer for your facade
+            <span className="fg-kicker">Our team</span>
+            <h2 id="team-heading" className="fg-h2 !mb-0">
+              The people who answer for your <span className="text-gradient">facade.</span>
             </h2>
             <p className="text-muted-foreground">
               A core team of {company.stats.coreTeam} across engineering, supervision and site execution
@@ -247,7 +241,7 @@ const About = () => {
           </div>
           <div className="grid lg:grid-cols-3 gap-6">
             <article className="lg:row-span-2 border border-lamp/30 bg-lamp/5 p-6 space-y-3">
-              <p className="text-xs font-bold text-lamp">{company.founder.role}</p>
+              <p className="font-mono text-[12px] tracking-[0.02em] text-lamp">{company.founder.role}</p>
               <h3 className="text-2xl font-medium text-foreground">{company.founder.name}</h3>
               <p className="text-muted-foreground">{company.founder.bio}</p>
             </article>
@@ -265,7 +259,8 @@ const About = () => {
       {/* Our office */}
       <section className="fg-sec" aria-labelledby="office-heading">
         <div className="fg-wrap">
-          <h2 id="office-heading" className="fg-h2">Our office</h2>
+          <span className="fg-kicker">Head office, Pune</span>
+          <h2 id="office-heading" className="fg-h2">Where the drawings <span className="text-gradient">are made.</span></h2>
           <div className="grid gap-4 md:grid-cols-3">
             {[
               { src: "/images/profile/office-director-room.webp", caption: "Director's Office", alt: "Director's office at the Fine Glaze head office in Pune" },
@@ -285,7 +280,8 @@ const About = () => {
       <section className="fg-sec" aria-labelledby="where-heading">
         <div className="fg-wrap grid gap-10 md:grid-cols-2 items-center">
           <div>
-            <h2 id="where-heading" className="fg-h2">Where we work</h2>
+            <span className="fg-kicker">Coverage</span>
+            <h2 id="where-heading" className="fg-h2">Where we <span className="text-gradient">work.</span></h2>
             <p className="text-mute max-w-prose">
               Based in Pune and Mumbai, taking projects across India.
             </p>
@@ -300,15 +296,15 @@ const About = () => {
       <section className="fg-sec" aria-labelledby="credentials-heading">
         <div className="fg-wrap">
           <div className="space-y-3 mb-12 max-w-2xl">
-            <span className="text-primary font-medium text-sm">Company Facts</span>
-            <h2 id="credentials-heading" className="text-3xl md:text-4xl font-medium text-foreground">
-              Credentials for vendor registration
+            <span className="fg-kicker">Company facts</span>
+            <h2 id="credentials-heading" className="fg-h2 !mb-0">
+              Credentials for vendor <span className="text-gradient">registration.</span>
             </h2>
             <p className="text-muted-foreground">
               The details procurement teams usually ask for. Copies are available on request.
             </p>
           </div>
-          <dl className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
+          <dl className="fg-grid">
             {[
               { icon: FileCheck2, k: "Legal status", v: company.legalStatus },
               { icon: FileCheck2, k: "GSTIN", v: company.gstin },
@@ -320,28 +316,20 @@ const About = () => {
               { icon: Shield, k: "Third-party testing", v: "Air, water and structural testing (ASTM) arranged on request" },
               { icon: Award, k: "Defect liability", v: "DLP support offered as per contract terms" },
             ].map(({ icon: Icon, k, v }) => (
-              <div key={k} className="border border-border bg-card p-5 flex gap-3">
+              <div key={k} className="flex gap-3">
                 <Icon size={20} className="text-primary shrink-0 mt-0.5" aria-hidden="true" />
                 <div>
-                  <dt className="text-xs font-bold text-muted-foreground">{k}</dt>
-                  <dd className="text-sm font-medium text-foreground mt-1">{v}</dd>
+                  <dt className="text-[13px] text-muted-foreground">{k}</dt>
+                  <dd className="text-[15px] font-medium text-foreground mt-1">{v}</dd>
                 </div>
               </div>
             ))}
           </dl>
-          <div className="mt-10 flex flex-col sm:flex-row gap-3 justify-center">
-            <Link
-              to="/quality-safety"
-              className="inline-flex items-center justify-center bg-primary text-primary-foreground px-6 py-3 font-semibold hover:opacity-90"
-            >
+          <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4">
+            <CallNow className="fg-btn" number />
+            <Link to="/quality-safety" className="fg-lnk">
               How we control quality &amp; safety
             </Link>
-            <a
-              href={telHref}
-              className="inline-flex items-center justify-center border border-border bg-card px-6 py-3 font-semibold hover:border-primary"
-            >
-              Call {company.phone.mobileDisplay}
-            </a>
           </div>
         </div>
       </section>
@@ -351,35 +339,33 @@ const About = () => {
         <div className="fg-wrap">
           <div
             className={cn(
-              "text-center space-y-4 mb-12 slide-up",
+              "mb-10 md:mb-12 slide-up",
               valuesRef.isVisible && "visible"
             )}
           >
-            <span className="text-primary font-medium text-sm">
-              Our Values
-            </span>
-            <h2 className="text-3xl md:text-4xl font-medium text-foreground">
-              What <span className="text-gradient-subtle">Drives</span> Us
+            <span className="fg-kicker">Our values</span>
+            <h2 className="fg-h2 !mb-0">
+              What <span className="text-gradient">drives us.</span>
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="fg-grid c4">
             {values.map((value, index) => (
               <div
                 key={value.title}
                 className={cn(
-                  "text-center p-6 space-y-4 slide-up",
+                  "space-y-3 slide-up",
                   valuesRef.isVisible && "visible"
                 )}
                 style={{ transitionDelay: `${index * 0.1}s` }}
               >
-                <div className="w-16 h-16 border border-line flex items-center justify-center mx-auto">
-                  <value.icon size={32} className="text-primary" />
+                <div className="w-12 h-12 border border-line flex items-center justify-center">
+                  <value.icon size={22} className="text-primary" aria-hidden="true" />
                 </div>
                 <h3 className="text-xl font-medium text-foreground">
                   {value.title}
                 </h3>
-                <p className="text-muted-foreground text-sm">
+                <p className="text-muted-foreground text-[15px] leading-relaxed">
                   {value.description}
                 </p>
               </div>
