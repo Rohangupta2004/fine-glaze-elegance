@@ -118,7 +118,7 @@ const StoryHero = () => {
     gl.enableVertexAttribArray(la);
     gl.vertexAttribPointer(la, 2, gl.FLOAT, false, 0, 0);
     const U: Record<string, WebGLUniformLocation | null> = {};
-    ["uRes", "uT", "uP", "uIn", "uSun", "uN", "uAsp", "uNi", "uRo", "uF", "uR", "uU", "uTR", "uTx", "uBay", "uOpen", "uLit", "uSg", "uScr"].forEach((k) => {
+    ["uRes", "uT", "uP", "uIn", "uSun", "uN", "uAsp", "uNi", "uRo", "uF", "uR", "uU", "uTR", "uTx", "uBay", "uOpen", "uLit", "uSg", "uScr", "uQ"].forEach((k) => {
       U[k] = gl.getUniformLocation(pr, k);
     });
     const tex = gl.createTexture();
@@ -450,8 +450,18 @@ const StoryHero = () => {
       pT = span > 0 ? Math.min(1, Math.max(0, -r.top / span)) : 0;
     }
 
+    // quality for the extra realism work: 1 on desktop, 0.5 on phones or once frames run slow
+    let qLow = false, lastNow = 0, ema = 16, slow = 0, nf = 0;
     function frame(now: number) {
       raf = 0;
+      const dt = lastNow ? now - lastNow : 0;
+      lastNow = now;
+      if (dt > 0 && dt < 200 && !reduce) {
+        ema += (dt - ema) * 0.1;
+        nf++;
+        slow = nf > 30 && ema > 22 ? slow + 1 : 0;
+        if (slow > 20) qLow = true;
+      }
       const t = (now - t0) / 1000;
       if (!reduce) {
         p += (pT - p) * 0.09;
@@ -480,6 +490,7 @@ const StoryHero = () => {
       gl!.uniform1f(U.uOpen, 1 - ease((p - 0.715) / 0.04));
       gl!.uniform1f(U.uLit, ease((p - 0.74) / 0.05));
       gl!.uniform1f(U.uScr, 1 - ease((p - 0.07) / 0.08));
+      gl!.uniform1f(U.uQ, qLow || innerWidth < 820 ? 0.5 : 1);
       gl!.uniform1f(U.uSg, 1 - 0.96 * ease((p - 0.08) / 0.08) + 0.96 * ease((p - 0.88) / 0.08));
       gl!.activeTexture(gl!.TEXTURE0);
       gl!.bindTexture(gl!.TEXTURE_2D, tex);
