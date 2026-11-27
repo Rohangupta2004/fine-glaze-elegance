@@ -1,35 +1,30 @@
 import { Layout } from "@/components/layout/Layout";
-import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { cn } from "@/lib/utils";
-import { Target, Eye, Shield, Users, Award, Clock, FileCheck2, Factory, MapPin, HardHat } from "lucide-react";
 import { Link } from "react-router-dom";
-import { company } from "@/data/company";
-import CallNow from "@/components/common/CallNow";
+import { company, telHref } from "@/data/company";
 import SEO from "@/components/SEO";
 import PageHero from "@/components/common/PageHero";
+import { CTASection } from "@/components/home/CTASection";
+import { Prose, Sec, SpecList, SpecTable } from "@/components/common/Sheet";
+import { TitleBlock } from "@/components/common/Drawing";
 import { useSiteMedia } from "@/hooks/useSiteMedia";
 
 const values = [
   {
-    icon: Target,
     title: "Precision",
     description:
       "Careful measurements, detailing and fabrication at every stage.",
   },
   {
-    icon: Shield,
     title: "Quality",
     description:
       "Materials matched to project specifications, supported by checks throughout fabrication and installation.",
   },
   {
-    icon: Clock,
     title: "Timeliness",
     description:
       "Planned fabrication and installation coordinated with your construction schedule.",
   },
   {
-    icon: Users,
     title: "Collaboration",
     description:
       "Close coordination with architects, consultants and contractors from planning to handover.",
@@ -37,10 +32,6 @@ const values = [
 ];
 
 const About = () => {
-  const heroRef = useScrollAnimation();
-  const storyRef = useScrollAnimation();
-  const videoRef = useScrollAnimation();
-  const valuesRef = useScrollAnimation();
   const { getMedia } = useSiteMedia();
   const aboutHero = getMedia("about_hero", "/Embassy.webp");
   const aboutStoryPhoto = "/fine-glaze-storefront.webp";
@@ -76,113 +67,136 @@ const About = () => {
       />
       <PageHero
         crumbs={[{ label: "About" }]}
-        title={<>Facade specialists in <span className="text-gradient-gold">Pune &amp; Mumbai.</span></>}
+        title={<>Facade Specialists in <span className="text-gradient-gold">Pune &amp; Mumbai</span></>}
         intro="Fine Glaze designs, fabricates, installs and maintains facade systems for developers and asset owners from Pune and Mumbai, across India. Everything on this page is taken from our company profile, and we are happy to share the documents behind it."
         image={{ src: aboutHero, alt: "Facade by Fine Glaze" }}
         secondary={{ label: "View Projects", to: "/portfolio" }}
         source="about_hero"
       />
 
-      {/* Story Section */}
-      <section className="fg-sec" ref={storyRef.ref}>
-        <div className="fg-wrap">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div
-              className={cn(
-                "relative mx-auto w-full max-w-md slide-up",
-                storyRef.isVisible && "visible"
-              )}
-            >
-              <figure className="overflow-hidden border border-border bg-card">
-                <img
-                  src={aboutStoryPhoto}
-                  alt="Fine Glaze store frontage in Mohammed Wadi, Pune"
-                  className="w-full h-auto object-contain"
-                  width={1243}
-                  height={1034}
-                  loading="lazy"
-                  decoding="async"
-                />
-                <figcaption className="px-5 py-4 text-sm font-semibold">
-                  Our Store, Mohammed Wadi, Pune
-                </figcaption>
-              </figure>
-
-              <figure className="mt-5 overflow-hidden border border-border bg-card">
-                <img
-                  src="/images/profile/award-best-vendor-performance-2024.webp"
-                  alt="Best Vendor Performance 2024 trophy and certificate of appreciation from Embassy REIT"
-                  className="w-full h-auto"
-                  width={1523}
-                  height={941}
-                  sizes="(max-width: 1024px) 100vw, 448px"
-                  loading="lazy"
-                  decoding="async"
-                />
-                <figcaption className="px-5 py-3 text-sm">
-                  {company.award.title}, awarded by {company.award.by}. {company.award.citation}
-                </figcaption>
-              </figure>
-            </div>
-
-            <div
-              className={cn(
-                "space-y-6 slide-up",
-                storyRef.isVisible && "visible"
-              )}
-              style={{ transitionDelay: "0.1s" }}
-            >
-              <span className="fg-kicker">Our story</span>
-              <h2 className="fg-h2 !mb-0">
-                One accountable team, <span className="text-gradient">start to finish.</span>
-              </h2>
-              <div className="space-y-4 text-muted-foreground">
-                <p>
-                  Founded by <strong>{company.founder.name}</strong> in Pune, Fine Glaze
-                  is a specialist facade contractor — design, fabrication,
-                  installation and long-term maintenance handled by one
-                  accountable team.
-                </p>
-                <p>
-                  {company.founder.bio}
-                </p>
-                <p>
-                  Drawings and engineering are produced in-house before anything
-                  is cut. Fabrication happens at our interim unit
-                  in {company.fabricationUnit.location}, and installation is run under a
-                  dedicated site incharge and supervisor, with a nominated safety officer.
-                  Since starting out we have delivered facade projects across Pune and
-                  Mumbai, and were named{" "}
-                  <strong>{company.award.title}</strong> by {company.award.by}.
-                </p>
-              </div>
-            </div>
+      <Sec no="01" label="Company" title="One accountable team, from drawing to handover." sheetLabel="Company">
+        <div className="sx-split">
+          <div>
+            <Prose>
+              <p>
+                Founded by <strong>{company.founder.name}</strong> in Pune, Fine Glaze is a specialist facade contractor: design, fabrication,
+                installation and long-term maintenance handled by one accountable team.
+              </p>
+              <p>{company.founder.bio}</p>
+              <p>
+                Drawings and engineering are produced in-house before anything is cut. Fabrication happens at our interim unit in{" "}
+                {company.fabricationUnit.location}, and installation is run under a dedicated site incharge and supervisor, with a nominated
+                safety officer. Since starting out we have delivered facade projects across Pune and Mumbai, and were named{" "}
+                <strong>{company.award.title}</strong> by {company.award.by}.
+              </p>
+            </Prose>
+          </div>
+          <div className="sx-side">
+            <TitleBlock
+              className="sx-pd-tb"
+              rows={[
+                ["FIRM", company.name],
+                ["STATUS", company.legalStatus],
+                ["FOUNDER", company.founder.name],
+                ["BASED", "Pune and Mumbai"],
+                ["FABRICATION", company.fabricationUnit.location],
+                ["TEAM", `${company.stats.coreTeam} core team`],
+                ["RECORDS", `${company.stats.projectRecords} project records`],
+                ["AWARD", `${company.award.title}, ${company.award.by}`],
+              ]}
+            />
           </div>
         </div>
-      </section>
+        <div className="sx-pair">
+          <figure className="sx-photo">
+            <img src={aboutStoryPhoto} alt="Fine Glaze store frontage in Mohammed Wadi, Pune" width={1243} height={1034} loading="lazy" decoding="async" />
+            <figcaption className="sx-cap"><span>FIG. 01</span> Our store, Mohammed Wadi, Pune</figcaption>
+          </figure>
+          <figure className="sx-photo">
+            <img
+              src="/images/profile/award-best-vendor-performance-2024.webp"
+              alt="Best Vendor Performance 2024 trophy and certificate of appreciation from Embassy REIT"
+              width={1523}
+              height={941}
+              sizes="(max-width: 1024px) 100vw, 560px"
+              loading="lazy"
+              decoding="async"
+            />
+            <figcaption className="sx-cap">
+              <span>FIG. 02</span> {company.award.title}, awarded by {company.award.by}. {company.award.citation}
+            </figcaption>
+          </figure>
+        </div>
+      </Sec>
 
-      {/* 🎥 Video Section */}
-      <section className="fg-sec" ref={videoRef.ref}>
-        <div className="fg-wrap">
-          <div
-            className={cn(
-              "space-y-6 slide-up",
-              videoRef.isVisible && "visible"
-            )}
-          >
-            <span className="fg-kicker">Company overview</span>
+      <Sec no="02" label="Mission and vision" title="What we are working towards." sheetLabel="Direction">
+        <dl className="sx-kv">
+          <div>
+            <dt>Mission</dt>
+            <dd>{company.mission}</dd>
+          </div>
+          <div>
+            <dt>Vision</dt>
+            <dd>{company.vision}</dd>
+          </div>
+        </dl>
+      </Sec>
 
-            <h2 className="fg-h2 !mb-0">
-              See our work <span className="text-gradient">on film.</span>
-            </h2>
+      <Sec no="03" label="Team" title="The people who answer for your facade." sheetLabel="Team" dim={`${company.team.length + 1} named, ${company.stats.coreTeam} core team`}>
+        <p className="sx-note">
+          A core team of {company.stats.coreTeam} across engineering, supervision and site execution supports the leadership below.
+        </p>
+        <SpecTable
+          caption="Leadership team with roles"
+          columns={["No.", "Name", "Role", "Note"]}
+          rows={[
+            ["01", <b key="f">{company.founder.name}</b>, company.founder.role, company.founder.bio],
+            ...company.team.map((m, i) => [String(i + 2).padStart(2, "0"), <b key={m.name}>{m.name}</b>, m.role, m.note]),
+          ]}
+        />
+      </Sec>
 
-            <p className="text-muted-foreground max-w-2xl">
-              Watch how Fine Glaze delivers facade systems, from design and
-              fabrication to installation and maintenance.
-            </p>
+      <Sec no="04" label="Facilities" title="Fabrication unit and offices." sheetLabel="Facilities">
+        <div className="sx-split">
+          <dl className="sx-kv">
+            <div>
+              <dt>Fabrication unit</dt>
+              <dd>{company.fabricationUnit.summary}</dd>
+            </div>
+            <div>
+              <dt>Capability</dt>
+              <dd>
+                <ul style={{ margin: 0, padding: 0, listStyle: "none", display: "grid", gap: 4 }}>
+                  {company.fabricationUnit.capability.map((c) => (
+                    <li key={c}>{c}</li>
+                  ))}
+                </ul>
+              </dd>
+            </div>
+            <div>
+              <dt>Note</dt>
+              <dd>{company.fabricationUnit.note}</dd>
+            </div>
+          </dl>
+          <div className="sx-side">
+            {[
+              { src: "/images/profile/office-director-room.webp", caption: "Director's Office", alt: "Director's office at the Fine Glaze head office in Pune" },
+              { src: "/images/profile/office-design-project-room.webp", caption: "Design & Project Office", alt: "Design and project office at the Fine Glaze head office in Pune" },
+              { src: "/images/profile/office-client-meeting-room.webp", caption: "Client Meeting Room", alt: "Client meeting room at the Fine Glaze head office in Pune" },
+            ].map((r, i) => (
+              <figure key={r.src} className="sx-photo">
+                <img src={r.src} alt={r.alt} width={1600} height={493} sizes="(max-width: 960px) 100vw, 480px" loading="lazy" decoding="async" />
+                <figcaption className="sx-cap"><span>FIG. {String(i + 3).padStart(2, "0")}</span> {r.caption}</figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
+      </Sec>
 
-            <div className="overflow-hidden" style={{ padding: "56.25% 0 0 0", position: "relative" }}>
-              <iframe
+      <Sec no="05" label="Overview film" title="See Fine Glaze in action." sheetLabel="Film">
+        <p className="sx-note">Watch how Fine Glaze delivers facade systems, from design and fabrication to installation and maintenance.</p>
+        <div className="sx-video">
+          <iframe
                 src="https://player.vimeo.com/video/1191408845?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479"
                 frameBorder="0"
                 allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
@@ -190,190 +204,65 @@ const About = () => {
                 style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}
                 title="FINE GLAZE"
               />
-            </div>
-          </div>
         </div>
-      </section>
+      </Sec>
 
-      {/* Mission & Vision */}
-      <section className="fg-sec">
-        <div className="fg-wrap">
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="glass-card metallic-border p-8 space-y-4">
-              <div className="w-12 h-12 border border-line flex items-center justify-center">
-                <Target size={22} className="text-primary" aria-hidden="true" />
-              </div>
-              <h3 className="text-2xl font-medium text-foreground">
-                Our <span className="text-gradient">mission</span>
-              </h3>
-              <p className="text-muted-foreground">
-                {company.mission}
-              </p>
-            </div>
-
-            <div className="glass-card metallic-border p-8 space-y-4">
-              <div className="w-12 h-12 border border-line flex items-center justify-center">
-                <Eye size={22} className="text-primary" aria-hidden="true" />
-              </div>
-              <h3 className="text-2xl font-medium text-foreground">
-                Our <span className="text-gradient">vision</span>
-              </h3>
-              <p className="text-muted-foreground">
-                {company.vision}
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Team */}
-      <section className="fg-sec" aria-labelledby="team-heading">
-        <div className="fg-wrap">
-          <div className="space-y-3 mb-12 max-w-2xl">
-            <span className="fg-kicker">Our team</span>
-            <h2 id="team-heading" className="fg-h2 !mb-0">
-              The people who answer for your <span className="text-gradient">facade.</span>
-            </h2>
-            <p className="text-muted-foreground">
-              A core team of {company.stats.coreTeam} across engineering, supervision and site execution
-              supports the leadership below.
-            </p>
-          </div>
-          <div className="grid lg:grid-cols-3 gap-6">
-            <article className="lg:row-span-2 border border-lamp/30 bg-lamp/5 p-6 space-y-3">
-              <p className="font-mono text-[12px] tracking-[0.02em] text-lamp">{company.founder.role}</p>
-              <h3 className="text-2xl font-medium text-foreground">{company.founder.name}</h3>
-              <p className="text-muted-foreground">{company.founder.bio}</p>
-            </article>
-            {company.team.map((m) => (
-              <article key={m.name} className="border border-border bg-card p-5">
-                <h3 className="text-lg font-medium text-foreground">{m.name}</h3>
-                <p className="text-sm font-medium text-primary">{m.role}</p>
-                <p className="text-sm text-muted-foreground mt-1">{m.note}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Our office */}
-      <section className="fg-sec" aria-labelledby="office-heading">
-        <div className="fg-wrap">
-          <span className="fg-kicker">Head office, Pune</span>
-          <h2 id="office-heading" className="fg-h2">Where the drawings <span className="text-gradient">are made.</span></h2>
-          <div className="grid gap-4 md:grid-cols-3">
-            {[
-              { src: "/images/profile/office-director-room.webp", caption: "Director's Office", alt: "Director's office at the Fine Glaze head office in Pune" },
-              { src: "/images/profile/office-design-project-room.webp", caption: "Design & Project Office", alt: "Design and project office at the Fine Glaze head office in Pune" },
-              { src: "/images/profile/office-client-meeting-room.webp", caption: "Client Meeting Room", alt: "Client meeting room at the Fine Glaze head office in Pune" },
-            ].map((r) => (
-              <figure key={r.src} className="border border-line bg-night-2">
-                <img src={r.src} alt={r.alt} width={1600} height={493} sizes="(max-width: 768px) 100vw, 33vw" loading="lazy" decoding="async" className="w-full h-auto" />
-                <figcaption className="px-4 py-3 text-sm text-mute">{r.caption}</figcaption>
-              </figure>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Where we work */}
-      <section className="fg-sec" aria-labelledby="where-heading">
-        <div className="fg-wrap grid gap-10 md:grid-cols-2 items-center">
+      <Sec no="06" label="Coverage" title="Where we work." sheetLabel="Coverage">
+        <div className="sx-split">
           <div>
-            <span className="fg-kicker">Coverage</span>
-            <h2 id="where-heading" className="fg-h2">Where we <span className="text-gradient">work.</span></h2>
-            <p className="text-mute max-w-prose">
-              Based in Pune and Mumbai, taking projects across India.
-            </p>
+            <Prose>
+              <p>Based in Pune and Mumbai, taking projects across India.</p>
+              <p>{company.serviceArea.join(", ")}.</p>
+            </Prose>
           </div>
-          <figure className="border border-line" style={{ background: "#ffffff" }}>
+          <figure className="sx-photo" style={{ background: "#ffffff" }}>
             <img src="/images/profile/india-map-pune-mumbai.webp" alt="Map of India with Pune and Mumbai marked in Maharashtra" width={1516} height={1024} sizes="(max-width: 768px) 100vw, 40vw" loading="lazy" decoding="async" className="w-full h-auto max-h-[420px] object-contain" />
           </figure>
         </div>
-      </section>
+      </Sec>
 
-      {/* Credentials */}
-      <section className="fg-sec" aria-labelledby="credentials-heading">
-        <div className="fg-wrap">
-          <div className="space-y-3 mb-12 max-w-2xl">
-            <span className="fg-kicker">Company facts</span>
-            <h2 id="credentials-heading" className="fg-h2 !mb-0">
-              Credentials for vendor <span className="text-gradient">registration.</span>
-            </h2>
-            <p className="text-muted-foreground">
-              The details procurement teams usually ask for. Copies are available on request.
-            </p>
-          </div>
-          <dl className="fg-grid">
-            {[
-              { icon: FileCheck2, k: "Legal status", v: company.legalStatus },
-              { icon: FileCheck2, k: "GSTIN", v: company.gstin },
-              { icon: FileCheck2, k: "Trademark", v: company.trademark },
-              { icon: Shield, k: "Quality, environment & safety", v: company.isoStatus },
-              { icon: Factory, k: "Fabrication unit", v: `${company.fabricationUnit.location} (interim unit, about 2,500 sq ft)` },
-              { icon: MapPin, k: "Registered office", v: company.registeredOffice },
-              { icon: HardHat, k: "Work at height", v: "Documentation maintained and available on request" },
-              { icon: Shield, k: "Third-party testing", v: "Air, water and structural testing (ASTM) arranged on request" },
-              { icon: Award, k: "Defect liability", v: "DLP support offered as per contract terms" },
-            ].map(({ icon: Icon, k, v }) => (
-              <div key={k} className="flex gap-3">
-                <Icon size={20} className="text-primary shrink-0 mt-0.5" aria-hidden="true" />
-                <div>
-                  <dt className="text-[13px] text-muted-foreground">{k}</dt>
-                  <dd className="text-[15px] font-medium text-foreground mt-1">{v}</dd>
-                </div>
-              </div>
-            ))}
-          </dl>
-          <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4">
-            <CallNow className="fg-btn" number />
-            <Link to="/quality-safety" className="fg-lnk">
-              How we control quality &amp; safety
-            </Link>
-          </div>
-        </div>
-      </section>
+      <Sec no="07" label="Credentials" title="Credentials for vendor registration." sheetLabel="Company facts">
+        <p className="sx-note">The details procurement teams usually ask for. Copies are available on request.</p>
+        <dl className="sx-kv">
+          {[
+            ["Legal status", company.legalStatus],
+            ["GSTIN", company.gstin],
+            ["Trademark", company.trademark],
+            ["Quality, environment & safety", company.isoStatus],
+            ["Fabrication unit", `${company.fabricationUnit.location} (interim unit, about 2,500 sq ft)`],
+            ["Registered office", company.registeredOffice],
+            ["Work at height", "Documentation maintained and available on request"],
+            ["Third-party testing", "Air, water and structural testing (ASTM) arranged on request"],
+            ["Defect liability", "DLP support offered as per contract terms"],
+          ].map(([k, v]) => (
+            <div key={k}>
+              <dt>{k}</dt>
+              <dd className={k === "GSTIN" ? "m" : undefined}>{v}</dd>
+            </div>
+          ))}
+        </dl>
+        <p className="sx-more">
+          <Link to="/quality-safety" className="fg-btn2">
+            How we control quality &amp; safety
+          </Link>
+          <a href={telHref} className="fg-btn">
+            Call {company.phone.mobileDisplay}
+          </a>
+        </p>
+      </Sec>
 
-      {/* Values */}
-      <section className="fg-sec" ref={valuesRef.ref}>
-        <div className="fg-wrap">
-          <div
-            className={cn(
-              "mb-10 md:mb-12 slide-up",
-              valuesRef.isVisible && "visible"
-            )}
-          >
-            <span className="fg-kicker">Our values</span>
-            <h2 className="fg-h2 !mb-0">
-              What <span className="text-gradient">drives us.</span>
-            </h2>
-          </div>
+      <Sec no="08" label="Values" title="What drives us." sheetLabel="Values">
+        <SpecList
+          items={values.map((v) => (
+            <>
+              <b style={{ fontWeight: 500 }}>{v.title}</b>
+              <span className="sx-d">{v.description}</span>
+            </>
+          ))}
+        />
+      </Sec>
 
-          <div className="fg-grid c4">
-            {values.map((value, index) => (
-              <div
-                key={value.title}
-                className={cn(
-                  "space-y-3 slide-up",
-                  valuesRef.isVisible && "visible"
-                )}
-                style={{ transitionDelay: `${index * 0.1}s` }}
-              >
-                <div className="w-12 h-12 border border-line flex items-center justify-center">
-                  <value.icon size={22} className="text-primary" aria-hidden="true" />
-                </div>
-                <h3 className="text-xl font-medium text-foreground">
-                  {value.title}
-                </h3>
-                <p className="text-muted-foreground text-[15px] leading-relaxed">
-                  {value.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
+      <CTASection />
     </Layout>
   );
 };

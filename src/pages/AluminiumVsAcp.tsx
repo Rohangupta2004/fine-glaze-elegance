@@ -1,10 +1,9 @@
 import SEO from "@/components/SEO";
-import { telHref } from "@/data/company";
 import PageHero from "@/components/common/PageHero";
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/home/CTASection";
-import { Link } from "react-router-dom";
-import { CheckCircle2, ArrowRight, Phone } from "lucide-react";
+import FaqList from "@/components/common/FaqList";
+import { DeliveryProcess, LinkTable, Prose, Sec, SpecList, SchematicFig } from "@/components/common/Sheet";
 
 export default function AluminiumVsAcp() {
   const serviceSchema = {
@@ -61,7 +60,6 @@ export default function AluminiumVsAcp() {
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}
       />
 
-      {/* HERO */}
       <PageHero
         crumbs={[{ label: "Aluminium Facade vs ACP Cladding" }]}
         title={<>Aluminium Facade vs <span className="text-gradient-gold">ACP Cladding</span></>}
@@ -70,12 +68,9 @@ export default function AluminiumVsAcp() {
         image={{ src: "/projects/salsette-27-35-1.webp", alt: "ACP canopy at ground floor of Salsette-27, Byculla, Mumbai — designed and installed by Fine Glaze", width: 600, height: 420 }}
       />
 
-      {/* RICH CONTENT */}
-      <section className="fg-sec">
-        <div className="fg-wrap fg-prose">
-          
-          <h2>Head-to-Head: Aluminium Facade vs ACP Cladding</h2>
-          <div className="overflow-x-auto mt-6">
+      <Sec no="01" label="Overview" title={<>Head-to-Head: Aluminium Facade vs ACP Cladding</>} sheetLabel="Overview">
+          <Prose>
+<div className="overflow-x-auto mt-6">
             <table className="w-full border-collapse text-sm">
               <thead>
                 <tr className="bg-muted">
@@ -96,71 +91,53 @@ export default function AluminiumVsAcp() {
             </table>
           </div>
           <h2>When to Choose ACP Cladding</h2>
-          <p className="text-muted-foreground mt-4">
+          <p>
             ACP cladding suits projects where: (1) budget is a primary constraint; (2) the building is low-rise or a fire-retardant core is specified for mid-rise; (3) complex 3D forms or curved cladding are needed; (4) fast installation matters; (5) large opaque areas need covering without glass.
           </p>
           <h2>When to Choose Aluminium Facade</h2>
-          <p className="text-muted-foreground mt-4">
+          <p>
             Aluminium facade systems suit projects where: (1) glass integration (curtain wall, windows) is required; (2) the building is tall and needs structural performance; (3) long-term durability is a priority; (4) the site is coastal and corrosion-resistant systems are needed; (5) thermal performance and energy efficiency are targets.
           </p>
           <h2>Fire Safety in India: The Critical Difference</h2>
-          <p className="text-muted-foreground mt-4">
+          <p>
             Fire safety rules for external cladding in India are strict, and the National Building Code and state regulations set limits on combustible cladding on taller buildings. Fire-retardant mineral-core ACP is the usual choice for external use. Aluminium extrusions are non-combustible. Always confirm the core type and test documents with your consultant and the fire authority.
           </p>
-    
-        </div>
-      </section>
+            </Prose>
+      </Sec>
 
-      {/* FEATURES */}
-      <section className="fg-sec">
-        <div className="fg-wrap">
-          <h2>What We Offer</h2>
-          <div className="fg-grid c2">
-              <div key="Cost Comparison Factors" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-lamp shrink-0" /><span className="text-muted-foreground">Cost Comparison Factors</span></div>
-              <div key="Fire Safety Analysis India" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-lamp shrink-0" /><span className="text-muted-foreground">Fire Safety Analysis India</span></div>
-              <div key="Durability Factors" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-lamp shrink-0" /><span className="text-muted-foreground">Durability Factors</span></div>
-              <div key="Design Flexibility Guide" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-lamp shrink-0" /><span className="text-muted-foreground">Design Flexibility Guide</span></div>
-              <div key="Building Code Pointers" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-lamp shrink-0" /><span className="text-muted-foreground">Building Code Pointers</span></div>
-              <div key="Selection Checklist" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-lamp shrink-0" /><span className="text-muted-foreground">Selection Checklist</span></div>
-          </div>
-        </div>
-      </section>
+      <Sec no="02" label="Scope" title={<>What We Offer</>} sheetLabel="Scope of work">
+        <SpecList items={[<>Cost Comparison Factors</>, <>Fire Safety Analysis India</>, <>Durability Factors</>, <>Design Flexibility Guide</>, <>Building Code Pointers</>, <>Selection Checklist</>]} />
+      </Sec>
 
-      {/* FAQ */}
-      <section className="fg-sec">
-        <div className="fg-wrap">
-          <h2>Frequently Asked Questions</h2>
-          <div className="fg-faq">
-            <details>
-              <summary><h3>Is ACP cladding banned in India?</h3></summary>
-              <div className="fg-a">ACP cladding is not banned in India, but combustible polyethylene-core panels are restricted on taller buildings under the National Building Code and state fire rules. Fire-retardant mineral-core panels are the usual choice. Confirm limits with your consultant.</div>
-            </details>
-            <details>
-              <summary><h3>Can ACP cladding be combined with glass on a building?</h3></summary>
-              <div className="fg-a">ACP cladding can be combined with glass on the same building, most often as spandrel panels or opaque infill beside windows or curtain wall glazing, which mixes solid and glazed areas. The cladding and glazing details must be coordinated.</div>
-            </details>
-            <details>
-              <summary><h3>Which lasts longer — aluminium facade or ACP?</h3></summary>
-              <div className="fg-a">Aluminium framing and extrusions generally outlast ACP panels over the long term, because coated ACP depends on its coating and panel bond. Actual life depends on finish, exposure, detailing and upkeep, so check the manufacturer's warranty terms.</div>
-            </details>
-          </div>
-        </div>
-      </section>
+      <Sec no="03" label="Process" title="From survey to handover." sheetLabel="Process">
+        <DeliveryProcess />
+      </Sec>
 
-      {/* INTERNAL LINKS */}
-      <section className="fg-sec">
-        <div className="fg-wrap">
-          <h2>Explore Related Services</h2>
-          <div className="fg-grid">
-            <Link key="/aluminium-windows-doors" to="/aluminium-windows-doors" className="group fg-row"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Aluminium Facade</p><p className="text-xs text-mute">Aluminium facade systems</p></div></Link>
-            <Link key="/acp-aluminium-cladding" to="/acp-aluminium-cladding" className="group fg-row"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">ACP Cladding</p><p className="text-xs text-mute">ACP cladding systems</p></div></Link>
-            <Link key="/curtain-wall-cost-guide" to="/curtain-wall-cost-guide" className="group fg-row"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Curtain Wall Cost Guide</p><p className="text-xs text-mute">Curtain wall pricing India</p></div></Link>
-            <Link key="/facade-contractor-pune" to="/facade-contractor-pune" className="group fg-row"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Facade Contractor Pune</p><p className="text-xs text-mute">Facade services Pune</p></div></Link>
-            <Link key="/commercial-building-facade" to="/commercial-building-facade" className="group fg-row"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Commercial Facade Guide</p><p className="text-xs text-mute">Commercial facade overview</p></div></Link>
-            <a key="tel" href={telHref} className="group fg-row"><Phone size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Call now</p><p className="text-xs text-mute">Site assessment</p></div></a>
-          </div>
+      
+
+      <Sec no="04" label="FAQ" title={<>Frequently Asked Questions</>} sheetLabel="FAQ">
+        <div className="sx-faq">
+          <FaqList
+            items={[
+              { q: <>Is ACP cladding banned in India?</>, a: <>ACP cladding is not banned in India, but combustible polyethylene-core panels are restricted on taller buildings under the National Building Code and state fire rules. Fire-retardant mineral-core panels are the usual choice. Confirm limits with your consultant.</> },
+              { q: <>Can ACP cladding be combined with glass on a building?</>, a: <>ACP cladding can be combined with glass on the same building, most often as spandrel panels or opaque infill beside windows or curtain wall glazing, which mixes solid and glazed areas. The cladding and glazing details must be coordinated.</> },
+              { q: <>Which lasts longer — aluminium facade or ACP?</>, a: <>Aluminium framing and extrusions generally outlast ACP panels over the long term, because coated ACP depends on its coating and panel bond. Actual life depends on finish, exposure, detailing and upkeep, so check the manufacturer's warranty terms.</> },
+            ]}
+          />
         </div>
-      </section>
+      </Sec>
+
+      <Sec no="05" label="Related" title={<>Explore Related Services</>} sheetLabel="Related services">
+        <LinkTable
+          items={[
+            { to: "/aluminium-windows-doors", title: "Aluminium Facade", desc: "Aluminium facade systems" },
+            { to: "/acp-aluminium-cladding", title: "ACP Cladding", desc: "ACP cladding systems" },
+            { to: "/curtain-wall-cost-guide", title: "Curtain Wall Cost Guide", desc: "Curtain wall pricing India" },
+            { to: "/facade-contractor-pune", title: "Facade Contractor Pune", desc: "Facade services Pune" },
+            { to: "/commercial-building-facade", title: "Commercial Facade Guide", desc: "Commercial facade overview" },
+          ]}
+        />
+      </Sec>
 
       <CTASection />
     </Layout>

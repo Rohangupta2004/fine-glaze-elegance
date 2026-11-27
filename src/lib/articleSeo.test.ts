@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import { readFileSync } from "node:fs";
 import { blogPosts, blogPostsList } from "@/data/blog";
 import { projectsData } from "@/data/projects";
-import { articleEnhancements, articleKeywords, articleSectionId, buildArticleSchemas, normalizeArticleSections, normalizeArticleTable, relatedArticles } from "./articleSeo";
+import { articleEnhancements, articleKeywords, formatArticleDate, articleSectionId, buildArticleSchemas, normalizeArticleSections, normalizeArticleTable, relatedArticles } from "./articleSeo";
 import { buildArticleSitemap } from "./articleSitemap";
 
 describe("article search data", () => {
@@ -84,5 +84,15 @@ describe("article sitemap", () => {
     expect(xml).not.toContain("old-slug");
     expect(xml).toContain("<image:loc>https://fineglaze.com/cover.webp</image:loc>");
     expect(xml).toContain("<lastmod>2026-10-21</lastmod>");
+  });
+});
+
+describe("formatArticleDate", () => {
+  it("formats ISO and long-form dates the same way", () => {
+    expect(formatArticleDate("2026-06-16")).toBe("16 Jun 2026");
+    expect(formatArticleDate("June 16, 2026")).toBe("16 Jun 2026");
+  });
+  it("falls back to the raw text when a date cannot be parsed", () => {
+    expect(formatArticleDate("soon")).toBe("soon");
   });
 });

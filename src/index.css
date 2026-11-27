@@ -339,10 +339,8 @@ input[type="radio"]:checked, input[type="checkbox"]:checked { background: #9b552
 .fg-art .fg-h2 { font-size: clamp(24px, 2.4vw, 34px); margin-bottom: 16px; max-width: none; }
 
 /* ---- Accent tokens ----
-   The old aurora gradient is gone. The variables stay so existing markup resolves, as solid colours. */
+   Solid colour tokens. */
 :root {
-  --aurora-light: #d9a574;
-  --aurora-ink: #9b5520;
   --ink: #15181b;
   --paper: #f4f4f1;
   --panel: #e9eae6;
@@ -351,7 +349,6 @@ input[type="radio"]:checked, input[type="checkbox"]:checked { background: #9b552
   --bronze: #9b5520;
   --bronze-soft: #d9a574;
 }
-.aurora-glow { position: relative; isolation: isolate; }
 
 .fg-stats dt { color: #15181b; }
 
@@ -367,15 +364,3 @@ input[type="radio"]:checked, input[type="checkbox"]:checked { background: #9b552
 .cn-link { text-decoration: none; }
 .cn-num-hdr { display: none; font-family: 'IBM Plex Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 13px; color: #555b62; white-space: nowrap; font-variant-numeric: tabular-nums; }
 @media (min-width: 1280px) { .cn-num-hdr { display: inline; } }
-
-/* ------------------------------------------------------------------
-   Consistency layer: shared pieces the inner pages reuse so they read
-   like the home page (mono kickers, boxed step numbers, one width).
-   ------------------------------------------------------------------ */
-/* Small mono label above a heading, as on the home page */
-.fg-kicker { display: block; margin-bottom: 14px; font-family: 'IBM Plex Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12.5px; letter-spacing: 0.04em; text-transform: uppercase; color: #9b5520; }
-.fg-kicker-light { color: #e8b47a; }
-/* Boxed step number, matching the home process */
-.fg-step-n { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; margin-bottom: 18px; border: 1px solid #9b5520; color: #9b5520; font-family: 'IBM Plex Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 13px; font-variant-numeric: tabular-nums; }
-/* Tailwind's .container matches .fg-wrap so every band shares one edge */
-.container { max-width: 1280px; }

@@ -4,8 +4,8 @@ import PageHero from "@/components/common/PageHero";
 import { RelatedProjects } from "@/components/RelatedProjects";
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/home/CTASection";
-import { Link } from "react-router-dom";
-import { CheckCircle2, ArrowRight } from "lucide-react";
+import FaqList from "@/components/common/FaqList";
+import { DeliveryProcess, LinkTable, Prose, Sec, SpecList, SchematicFig } from "@/components/common/Sheet";
 
 export default function StructuralGlazingMumbai() {
   const serviceSchema = {
@@ -63,7 +63,6 @@ export default function StructuralGlazingMumbai() {
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}
       />
 
-      {/* HERO */}
       <PageHero
         crumbs={[{ label: "Structural Glazing Contractor in Mumbai" }]}
         title={<>Structural Glazing <span className="text-gradient-gold">Contractor in Mumbai</span></>}
@@ -72,83 +71,67 @@ export default function StructuralGlazingMumbai() {
         image={{ src: "/projects/naman-chambers-48-1.webp", alt: "Naman Chambers, Bandra Kurla Complex, Mumbai — glazing and ACP works by Fine Glaze (in progress)", width: 600, height: 420 }}
       />
 
-      {/* RICH CONTENT */}
-      <section className="fg-sec">
-        <div className="fg-wrap fg-prose">
-          
-          <h2>Structural Glazing in Mumbai</h2>
-          <p className="text-muted-foreground">
+      <Sec no="01" label="Overview" title={<>Structural Glazing in Mumbai</>} sheetLabel="Overview">
+          <div className="sx-split">
+            <Prose>
+<p>
             Glass defines much of Mumbai's commercial skyline. Fine Glaze takes structural glazing projects in Mumbai, creating frameless glass facades where sealant bonds the glass to the aluminium frame. Our documented Mumbai work includes structural glazing and ACP cladding at Naman Chambers in BKC.
           </p>
-          <p className="text-muted-foreground mt-4">
+          <p>
             Coastal conditions bring high wind, heavy monsoon rain and salty air. As general guidance, designers there pay close attention to wind load, sealant selection, mechanical retention and drainage. Fine Glaze checks member sizing, fixing and anchorage against the project wind load and procures structural silicone such as DOWSIL or approved equivalents.
           </p>
-          <p className="text-muted-foreground mt-4">
+          <p>
             We take showroom facades, corporate lobby entrances, hotel and residential glass elements, and spider-glazed statement entries. Drawings are prepared in-house and approved before fabrication.
           </p>
-          <p className="text-muted-foreground mt-4">
+          <p>
             Work follows the approved shop drawings and the sealant manufacturer's application guidance. Installed glazing is checked with a site water penetration test, and snags are closed before handover.
           </p>
-          <p className="text-muted-foreground mt-4">
+          <p>
             Defect liability support applies as per contract terms. Third-party testing to ASTM can be arranged on request through an accredited laboratory.
           </p>
-    
-          <Illustration name="city-mumbai" />
-        </div>
-      </section>
-
-      {/* FEATURES */}
-      <section className="fg-sec">
-        <div className="fg-wrap">
-          <h2>What We Offer</h2>
-          <div className="fg-grid c2">
-              <div key="Wind Load Engineering Check" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-lamp shrink-0" /><span className="text-muted-foreground">Wind Load Engineering Check</span></div>
-              <div key="DOWSIL Structural Silicone" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-lamp shrink-0" /><span className="text-muted-foreground">DOWSIL Structural Silicone</span></div>
-              <div key="Mechanical Retention Where Specified" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-lamp shrink-0" /><span className="text-muted-foreground">Mechanical Retention Where Specified</span></div>
-              <div key="Drainage Detailing" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-lamp shrink-0" /><span className="text-muted-foreground">Drainage Detailing</span></div>
-              <div key="Spider Glazing Systems" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-lamp shrink-0" /><span className="text-muted-foreground">Spider Glazing Systems</span></div>
-              <div key="Defect Liability Support" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-lamp shrink-0" /><span className="text-muted-foreground">Defect Liability Support</span></div>
+            </Prose>
+            <div className="sx-side">
+              <SchematicFig kind="structural" fig="02" />
+              <Illustration name="city-mumbai" flush sizes="(max-width: 960px) 100vw, 480px" />
+            </div>
           </div>
-        </div>
-      </section>
+      </Sec>
 
-      {/* FAQ */}
-      <section className="fg-sec">
-        <div className="fg-wrap">
-          <h2>Frequently Asked Questions</h2>
-          <div className="fg-faq">
-            <details>
-              <summary><h3>Is structural glazing safe in Mumbai's coastal wind conditions?</h3></summary>
-              <div className="fg-a">Structural glazing can be used in coastal Mumbai when designed for the project's wind load, with suitable sealant, retention and drainage. Fine Glaze checks sizing, fixing and anchorage against the project wind load before approval.</div>
-            </details>
-            <details>
-              <summary><h3>How does structural glazing perform during Mumbai monsoon?</h3></summary>
-              <div className="fg-a">Well-designed structural glazing sheds monsoon water through its sealed joints and drainage paths, and installation quality decides the result. Fine Glaze checks installed glazing with a site water penetration test before handover.</div>
-            </details>
-            <details>
-              <summary><h3>What glass thickness for structural glazing on Mumbai high-rises?</h3></summary>
-              <div className="fg-a">Glass thickness on high-rises is set by the structural calculation for wind load, panel size and support, not by a fixed rule. Toughened, heat-soaked or laminated glass may be specified; our engineering check confirms the build-up.</div>
-            </details>
-          </div>
-        </div>
-      </section>
+      <Sec no="02" label="Scope" title={<>What We Offer</>} sheetLabel="Scope of work">
+        <SpecList items={[<>Wind Load Engineering Check</>, <>DOWSIL Structural Silicone</>, <>Mechanical Retention Where Specified</>, <>Drainage Detailing</>, <>Spider Glazing Systems</>, <>Defect Liability Support</>]} />
+      </Sec>
 
-      {/* INTERNAL LINKS */}
-      <section className="fg-sec">
-        <div className="fg-wrap">
-          <h2>Explore Related Services</h2>
-          <div className="fg-grid">
-            <Link key="/structural-glazing" to="/structural-glazing" className="group fg-row"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Structural Glazing</p><p className="text-xs text-mute">Full structural glazing service</p></div></Link>
-            <Link key="/structural-glazing-pune" to="/structural-glazing-pune" className="group fg-row"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Structural Glazing Pune</p><p className="text-xs text-mute">Structural glazing Pune</p></div></Link>
-            <Link key="/facade-contractor-mumbai" to="/facade-contractor-mumbai" className="group fg-row"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Facade Contractor Mumbai</p><p className="text-xs text-mute">Complete facade solutions</p></div></Link>
-            <Link key="/curtain-wall-mumbai" to="/curtain-wall-mumbai" className="group fg-row"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Curtain Wall Mumbai</p><p className="text-xs text-mute">Curtain wall Mumbai</p></div></Link>
-            <Link key="/aluminium-facade-mumbai" to="/aluminium-facade-mumbai" className="group fg-row"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Aluminium Facade Mumbai</p><p className="text-xs text-mute">Aluminium facade Mumbai</p></div></Link>
-            <Link key="/maintenance-services" to="/maintenance-services" className="group fg-row"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Facade Maintenance</p><p className="text-xs text-mute">Structural glazing maintenance</p></div></Link>
-          </div>
-        </div>
-      </section>
+      <Sec no="03" label="Process" title="From survey to handover." sheetLabel="Process">
+        <DeliveryProcess />
+      </Sec>
 
-      <RelatedProjects heading="Our glazing work in Mumbai" locations={["Mumbai"]} excludeLocations={["Navi Mumbai"]} keywords={["glazing", "glass", "sealant", "window"]} />
+      <RelatedProjects no="04" heading="Our glazing work in Mumbai" locations={["Mumbai"]} excludeLocations={["Navi Mumbai"]} keywords={["glazing", "glass", "sealant", "window"]} />
+
+      <Sec no="05" label="FAQ" title={<>Frequently Asked Questions</>} sheetLabel="FAQ">
+        <div className="sx-faq">
+          <FaqList
+            items={[
+              { q: <>Is structural glazing safe in Mumbai's coastal wind conditions?</>, a: <>Structural glazing can be used in coastal Mumbai when designed for the project's wind load, with suitable sealant, retention and drainage. Fine Glaze checks sizing, fixing and anchorage against the project wind load before approval.</> },
+              { q: <>How does structural glazing perform during Mumbai monsoon?</>, a: <>Well-designed structural glazing sheds monsoon water through its sealed joints and drainage paths, and installation quality decides the result. Fine Glaze checks installed glazing with a site water penetration test before handover.</> },
+              { q: <>What glass thickness for structural glazing on Mumbai high-rises?</>, a: <>Glass thickness on high-rises is set by the structural calculation for wind load, panel size and support, not by a fixed rule. Toughened, heat-soaked or laminated glass may be specified; our engineering check confirms the build-up.</> },
+            ]}
+          />
+        </div>
+      </Sec>
+
+      <Sec no="06" label="Related" title={<>Explore Related Services</>} sheetLabel="Related services">
+        <LinkTable
+          items={[
+            { to: "/structural-glazing", title: "Structural Glazing", desc: "Full structural glazing service" },
+            { to: "/structural-glazing-pune", title: "Structural Glazing Pune", desc: "Structural glazing Pune" },
+            { to: "/facade-contractor-mumbai", title: "Facade Contractor Mumbai", desc: "Complete facade solutions" },
+            { to: "/curtain-wall-mumbai", title: "Curtain Wall Mumbai", desc: "Curtain wall Mumbai" },
+            { to: "/aluminium-facade-mumbai", title: "Aluminium Facade Mumbai", desc: "Aluminium facade Mumbai" },
+            { to: "/maintenance-services", title: "Facade Maintenance", desc: "Structural glazing maintenance" },
+          ]}
+        />
+      </Sec>
+
       <CTASection />
     </Layout>
   );

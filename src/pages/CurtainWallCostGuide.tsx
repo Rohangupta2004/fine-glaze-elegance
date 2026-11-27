@@ -1,10 +1,9 @@
 import SEO from "@/components/SEO";
-import { telHref } from "@/data/company";
 import PageHero from "@/components/common/PageHero";
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/home/CTASection";
-import { Link } from "react-router-dom";
-import { CheckCircle2, ArrowRight, Phone } from "lucide-react";
+import FaqList from "@/components/common/FaqList";
+import { DeliveryProcess, LinkTable, Prose, Sec, SpecList, SchematicFig } from "@/components/common/Sheet";
 
 export default function CurtainWallCostGuide() {
   const serviceSchema = {
@@ -61,7 +60,6 @@ export default function CurtainWallCostGuide() {
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}
       />
 
-      {/* HERO */}
       <PageHero
         crumbs={[{ label: "Curtain Wall Cost Guide India" }]}
         title={<>Curtain Wall Cost <span className="text-gradient-gold">Guide India</span></>}
@@ -70,12 +68,9 @@ export default function CurtainWallCostGuide() {
         image={{ src: "/projects/naman-chambers-48-1.webp", alt: "Naman Chambers, Bandra Kurla Complex, Mumbai — glazing and ACP works by Fine Glaze (in progress)", width: 600, height: 420 }}
       />
 
-      {/* RICH CONTENT */}
-      <section className="fg-sec">
-        <div className="fg-wrap fg-prose">
-          
-          <h2>What Curtain Wall Cost Depends On</h2>
-          <p className="text-muted-foreground">
+      <Sec no="01" label="Overview" title={<>What Curtain Wall Cost Depends On</>} sheetLabel="Overview">
+          <Prose>
+<p>
             Curtain wall cost in India varies with the system type, glass specification, building height, site complexity and scope. Fine Glaze does not publish price ranges on this page, because a reliable figure needs drawings, a glass and finish specification and an access plan. The table below shows how the main system types compare in use, not in price.
           </p>
           <div className="overflow-x-auto mt-6">
@@ -104,63 +99,45 @@ export default function CurtainWallCostGuide() {
             <li><strong>Spandrel treatment:</strong> insulated opaque panels between floors add to the scope.</li>
           </ul>
           <h2>Curtain Wall Budget Planning Tips</h2>
-          <p className="text-muted-foreground mt-4">
+          <p>
             For early budgeting, ask two or three contractors to price the same drawings and the same glass and finish specification so the quotations compare like for like. Always get a BOQ-based quotation before fixing the facade budget, and keep a contingency for interfaces with the structure. Fine Glaze prepares quotations after reviewing drawings.
           </p>
-    
-        </div>
-      </section>
+            </Prose>
+      </Sec>
 
-      {/* FEATURES */}
-      <section className="fg-sec">
-        <div className="fg-wrap">
-          <h2>What We Offer</h2>
-          <div className="fg-grid c2">
-              <div key="Cost Drivers Explained" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-lamp shrink-0" /><span className="text-muted-foreground">Cost Drivers Explained</span></div>
-              <div key="All System Types Covered" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-lamp shrink-0" /><span className="text-muted-foreground">All System Types Covered</span></div>
-              <div key="Glass Specification Effects" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-lamp shrink-0" /><span className="text-muted-foreground">Glass Specification Effects</span></div>
-              <div key="Site and Wind Load Effects" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-lamp shrink-0" /><span className="text-muted-foreground">Site and Wind Load Effects</span></div>
-              <div key="Glass and Energy Brief" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-lamp shrink-0" /><span className="text-muted-foreground">Glass and Energy Brief</span></div>
-              <div key="Quotation on Drawings" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-lamp shrink-0" /><span className="text-muted-foreground">Quotation on Drawings</span></div>
-          </div>
-        </div>
-      </section>
+      <Sec no="02" label="Scope" title={<>What We Offer</>} sheetLabel="Scope of work">
+        <SpecList items={[<>Cost Drivers Explained</>, <>All System Types Covered</>, <>Glass Specification Effects</>, <>Site and Wind Load Effects</>, <>Glass and Energy Brief</>, <>Quotation on Drawings</>]} />
+      </Sec>
 
-      {/* FAQ */}
-      <section className="fg-sec">
-        <div className="fg-wrap">
-          <h2>Frequently Asked Questions</h2>
-          <div className="fg-faq">
-            <details>
-              <summary><h3>What is the cheapest curtain wall system in India?</h3></summary>
-              <div className="fg-a">A basic stick system with single clear glass is usually the lowest-cost curtain wall, but it may not meet thermal, safety or height requirements. Double glazed or laminated glass adds cost. Compare quotations on the same specification.</div>
-            </details>
-            <details>
-              <summary><h3>Should I choose unitized or stick system for my building in India?</h3></summary>
-              <div className="fg-a">Stick systems suit lower buildings, irregular bay sizes and refurbishment, while unitized systems suit tall buildings, tight programmes and high wind exposure. Height, access, programme and budget decide the final choice.</div>
-            </details>
-            <details>
-              <summary><h3>How much does curtain wall cost for a typical 10-storey office building?</h3></summary>
-              <div className="fg-a">Cost for a 10-storey office depends on facade area, system, glass, wind load and access, so no single figure applies. Send drawings to Fine Glaze for a BOQ-based quotation.</div>
-            </details>
-          </div>
-        </div>
-      </section>
+      <Sec no="03" label="Process" title="From survey to handover." sheetLabel="Process">
+        <DeliveryProcess />
+      </Sec>
 
-      {/* INTERNAL LINKS */}
-      <section className="fg-sec">
-        <div className="fg-wrap">
-          <h2>Explore Related Services</h2>
-          <div className="fg-grid">
-            <Link key="/curtain-wall-systems" to="/curtain-wall-systems" className="group fg-row"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Curtain Wall Systems</p><p className="text-xs text-mute">Our curtain wall services</p></div></Link>
-            <Link key="/curtain-wall-pune" to="/curtain-wall-pune" className="group fg-row"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Curtain Wall Pune</p><p className="text-xs text-mute">Curtain wall contractor Pune</p></div></Link>
-            <Link key="/curtain-wall-mumbai" to="/curtain-wall-mumbai" className="group fg-row"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Curtain Wall Mumbai</p><p className="text-xs text-mute">Curtain wall contractor Mumbai</p></div></Link>
-            <Link key="/aluminium-vs-acp-cladding" to="/aluminium-vs-acp-cladding" className="group fg-row"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Aluminium vs ACP Guide</p><p className="text-xs text-mute">System comparison guide</p></div></Link>
-            <Link key="/commercial-building-facade" to="/commercial-building-facade" className="group fg-row"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Commercial Facade Guide</p><p className="text-xs text-mute">Commercial facade overview</p></div></Link>
-            <a key="tel" href={telHref} className="group fg-row"><Phone size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Call now</p><p className="text-xs text-mute">Free custom quotation</p></div></a>
-          </div>
+      
+
+      <Sec no="04" label="FAQ" title={<>Frequently Asked Questions</>} sheetLabel="FAQ">
+        <div className="sx-faq">
+          <FaqList
+            items={[
+              { q: <>What is the cheapest curtain wall system in India?</>, a: <>A basic stick system with single clear glass is usually the lowest-cost curtain wall, but it may not meet thermal, safety or height requirements. Double glazed or laminated glass adds cost. Compare quotations on the same specification.</> },
+              { q: <>Should I choose unitized or stick system for my building in India?</>, a: <>Stick systems suit lower buildings, irregular bay sizes and refurbishment, while unitized systems suit tall buildings, tight programmes and high wind exposure. Height, access, programme and budget decide the final choice.</> },
+              { q: <>How much does curtain wall cost for a typical 10-storey office building?</>, a: <>Cost for a 10-storey office depends on facade area, system, glass, wind load and access, so no single figure applies. Send drawings to Fine Glaze for a BOQ-based quotation.</> },
+            ]}
+          />
         </div>
-      </section>
+      </Sec>
+
+      <Sec no="05" label="Related" title={<>Explore Related Services</>} sheetLabel="Related services">
+        <LinkTable
+          items={[
+            { to: "/curtain-wall-systems", title: "Curtain Wall Systems", desc: "Our curtain wall services" },
+            { to: "/curtain-wall-pune", title: "Curtain Wall Pune", desc: "Curtain wall contractor Pune" },
+            { to: "/curtain-wall-mumbai", title: "Curtain Wall Mumbai", desc: "Curtain wall contractor Mumbai" },
+            { to: "/aluminium-vs-acp-cladding", title: "Aluminium vs ACP Guide", desc: "System comparison guide" },
+            { to: "/commercial-building-facade", title: "Commercial Facade Guide", desc: "Commercial facade overview" },
+          ]}
+        />
+      </Sec>
 
       <CTASection />
     </Layout>

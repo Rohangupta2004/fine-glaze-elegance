@@ -429,7 +429,7 @@ export const CompanyProfileViewerModal: React.FC = () => {
                 className="w-full h-full object-cover"
                 loading="lazy"
               />
-              <span className="absolute bottom-0 inset-x-0 bg-[rgba(24,19,15,0.8)] text-[13px] text-[#f5f2ee] px-1 py-0.5 truncate text-center font-bold">
+              <span className="absolute bottom-0 inset-x-0 bg-[rgba(21,24,27,0.82)] text-[13px] text-white px-1 py-0.5 truncate text-center font-bold">
                 {sec.slide}
               </span>
             </button>

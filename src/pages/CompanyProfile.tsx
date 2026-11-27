@@ -20,6 +20,7 @@ import {
   Check
 } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
+import { CTASection } from "@/components/home/CTASection";
 import { Button } from "@/components/ui/button";
 import { QuoteModal } from "@/components/QuoteModal";
 import { PROFILE_SECTIONS } from "@/components/CompanyProfileViewerModal";
@@ -140,38 +141,29 @@ export default function CompanyProfilePage() {
           <div className="flex flex-wrap items-center justify-between gap-6">
             {/* Action Buttons */}
             <div className="flex flex-wrap items-center gap-2.5">
-              <Button
-                onClick={() => openProfile(currentSlide, viewMode)}
-                className="bg-lamp hover:bg-lamp/90 text-lamp-ink font-bold text-xs sm:text-sm px-4 py-2.5 shadow-amber-500/20 gap-2 cursor-pointer"
-              >
-                <Maximize2 className="w-4 h-4" />
-                Fullscreen View
-              </Button>
+              <button type="button" onClick={() => openProfile(currentSlide, viewMode)} className="fg-btn">
+                <Maximize2 className="w-4 h-4" style={{ marginRight: 8 }} />
+                Fullscreen view
+              </button>
 
               <a
                 href={pdfUrl}
                 download="fine-glaze-company-profile.pdf"
-                className="inline-flex items-center gap-2 bg-night-2 hover:bg-line text-paper font-bold text-xs sm:text-sm px-4 py-2.5 border border-line transition-all active:scale-95 cursor-pointer"
+                className="fg-btn2"
               >
-                <Download className="w-4 h-4 text-lamp" />
                 Download PDF (7.3 MB)
               </a>
 
-              <Button
-                variant="outline"
-                onClick={handleShare}
-                className="border-line bg-night-2 text-paper hover:bg-night-2 text-xs sm:text-sm px-3.5 py-2.5 gap-2 cursor-pointer"
-              >
-                {copied ? <Check className="w-4 h-4 text-emerald-400" /> : <Share2 className="w-4 h-4" />}
-                {copied ? "Link Copied!" : "Share"}
-              </Button>
+              <button type="button" onClick={handleShare} className="fg-btn2">
+                {copied ? "Link copied" : "Share"}
+              </button>
             </div>
           </div>
         </div>
       </section>
 
       {/* Embedded Viewer Container */}
-      <section className="bg-night-2 py-8 min-h-[70vh]">
+      <section className="sx-sec" style={{ background: "#e9eae6", minHeight: "70vh" }}>
         <div className="fg-wrap">
           {/* Viewer Toolbar */}
           <div className="bg-night border border-line p-2.5 sm:p-4 flex flex-wrap items-center justify-between gap-2.5">
@@ -186,7 +178,7 @@ export default function CompanyProfilePage() {
                 <ChevronLeft className="w-4 h-4" />
               </button>
 
-              <span className="text-xs font-bold text-lamp bg-lamp/10 border border-lamp/20 px-2 sm:px-2.5 py-1">
+              <span className="text-xs font-bold text-paper bg-night-2 border border-line px-2 sm:px-2.5 py-1">
                 {currentSlide} / {TOTAL_SLIDES}
               </span>
 
@@ -330,55 +322,20 @@ export default function CompanyProfilePage() {
             ))}
           </div>
 
-          {/* Key Facts Summary Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-10">
-            <div className="bg-night/80 border border-line p-5">
-              <div className="text-2xl font-black text-lamp">40+ Team</div>
-              <div className="text-xs text-mute mt-1 font-semibold">Core Engineering</div>
-              <p className="text-xs text-paper/80 mt-2">In-house design, structural engineering, and site supervision.</p>
-            </div>
-
-            <div className="bg-night/80 border border-line p-5">
-              <div className="text-2xl font-black text-lamp">PISOLI, PUNE</div>
-              <div className="text-xs text-mute mt-1 font-semibold">Fabrication Unit</div>
-              <p className="text-xs text-paper/80 mt-2">Our own unit for cutting, fabrication and assembly, with inspection at source.</p>
-            </div>
-
-            <div className="bg-night/80 border border-line p-5">
-              <div className="text-2xl font-black text-lamp">Award 2024</div>
-              <div className="text-xs text-mute mt-1 font-semibold">Best Vendor</div>
-              <p className="text-xs text-paper/80 mt-2">Honored by Embassy REIT for Embassy 247 Vikhroli execution.</p>
-            </div>
-          </div>
-
-          {/* Bottom CTA Banner */}
-          <div className="mt-12 bg-night-2 border border-lamp/30 p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-between gap-6">
-            <div className="space-y-2 text-center sm:text-left">
-              <h3 className="text-xl sm:text-2xl font-medium text-paper">
-                Planning a Commercial or High-Rise Facade Package?
-              </h3>
-              <p className="text-sm text-paper/80 max-w-xl">
-                Get an engineered estimate, design consultation, or technical proposal tailored to your architectural specifications.
-              </p>
-            </div>
-            <div className="flex flex-wrap items-center gap-3">
-              <Button
-                onClick={() => setIsQuoteOpen(true)}
-                className="bg-lamp hover:bg-lamp/90 text-lamp-ink font-bold px-6 py-6 shadow-amber-500/20 text-sm cursor-pointer"
-              >
-                Request Proposal <ArrowRight className="w-4 h-4 ml-1" />
-              </Button>
-              <a
-                href="tel:+918369233566"
-                className="inline-flex items-center gap-2 px-5 py-3 border border-line hover:bg-night-2 text-paper font-semibold text-sm transition-colors"
-              >
-                <PhoneCall className="w-4 h-4 text-lamp" />
-                +91 8369233566
-              </a>
-            </div>
-          </div>
+          {/* Key facts */}
+          <dl className="sx-kv" style={{ marginTop: 40 }}>
+            <div><dt>Core team</dt><dd className="m">40+ <small>In-house design, structural engineering, and site supervision.</small></dd></div>
+            <div><dt>Fabrication unit</dt><dd>Pisoli, Pune <small>Our own unit for cutting, fabrication and assembly, with inspection at source.</small></dd></div>
+            <div><dt>Award 2024</dt><dd>Best Vendor <small>Honored by Embassy REIT for Embassy 247 Vikhroli execution.</small></dd></div>
+          </dl>
+          <p className="sx-more">
+            <button type="button" onClick={() => setIsQuoteOpen(true)} className="fg-btn">Request proposal</button>
+            <a href="tel:+918369233566" className="fg-btn2">+91 8369233566</a>
+          </p>
         </div>
       </section>
+
+      <CTASection />
 
       <QuoteModal open={isQuoteOpen} onOpenChange={setIsQuoteOpen} />
     </Layout>

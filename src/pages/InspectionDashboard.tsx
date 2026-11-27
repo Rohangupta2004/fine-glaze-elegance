@@ -72,7 +72,7 @@ export default function InspectionDashboard() {
         <div className="max-w-4xl mx-auto px-4 py-3">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="h-8 w-8 bg-blue-800 flex items-center justify-center">
+              <div className="h-8 w-8 bg-paper flex items-center justify-center">
                 <span className="text-paper font-bold text-xs">FG</span>
               </div>
               <div>

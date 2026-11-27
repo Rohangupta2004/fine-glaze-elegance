@@ -2,6 +2,7 @@ import { ReactNode } from "react";
 import { Link } from "react-router-dom";
 import CallNow from "./CallNow";
 import { TitleBlock, GridBg, CornerTicks } from "./Drawing";
+import { SchematicFig, type SchematicKey } from "./Sheet";
 import "./pagehero.css";
 
 export interface Crumb {
@@ -18,6 +19,8 @@ export interface PageHeroProps {
   intro?: ReactNode;
   /** Optional hero photograph, shown right of the text in a framed viewport with corner ticks and a mono caption. */
   image?: { src: string; alt: string; width?: number; height?: number; position?: string; srcSet?: string; sizes?: string };
+  /** Inline line schematic in place of a photo (service pages). */
+  schematic?: SchematicKey;
   /** Secondary text link next to the primary button. */
   secondary?: { label: string; to?: string; href?: string };
   /** Kept for existing callers; no longer used now that the primary action is a phone call. */
@@ -31,13 +34,13 @@ export interface PageHeroProps {
 }
 
 /** Shared hero for service, city, industry, guide and static pages. Engineering style: split layout with a framed viewport when there is a photo, a text hero over a faint grid when there is not. */
-export const PageHero = ({ crumbs = [], title, intro, image, secondary, extra, hideAction, compact }: PageHeroProps) => {
+export const PageHero = ({ crumbs = [], title, intro, image, schematic, secondary, extra, hideAction, compact }: PageHeroProps) => {
   const trail: Crumb[] = [{ label: "Home", to: "/" }, ...crumbs];
   const current = trail[trail.length - 1].label;
 
   return (
-    <section className={`ph${image ? " ph-img" : " ph-txt"}${compact ? " compact" : ""}`}>
-      {!image && <GridBg />}
+    <section className={`ph${image || schematic ? " ph-img" : " ph-txt"}${compact ? " compact" : ""}`}>
+      {!image && !schematic && <GridBg />}
       <div className="fg-wrap ph-wrap">
         <div className="ph-g">
           <div className="ph-copy">
@@ -75,7 +78,9 @@ export const PageHero = ({ crumbs = [], title, intro, image, secondary, extra, h
             {extra && <div className="ph-extra">{extra}</div>}
           </div>
 
-          {image ? (
+          {schematic ? (
+            <SchematicFig kind={schematic} className="ph-view ph-sch" />
+          ) : image ? (
             <figure className="ph-view">
               <div className="ph-frame">
                 <img

@@ -163,7 +163,7 @@ export default function Admin() {
             <p className="text-muted-foreground">Manage projects, approvals & financials</p>
             <div className="flex flex-wrap gap-2 mt-3">
               <a href="/admin/content" className="text-xs px-3 py-1.5 bg-lamp/10 text-lamp font-medium hover:bg-lamp/10 transition-colors">🖼 Website Images</a>
-              <a href="/admin/blog-images" className="text-xs px-3 py-1.5 bg-blue-50 text-blue-700 font-medium hover:bg-blue-100 transition-colors">📰 Blog Images</a>
+              <a href="/admin/blog-images" className="text-xs px-3 py-1.5 bg-night-2 text-paper font-medium hover:bg-line border border-line transition-colors">📰 Blog Images</a>
               <a href="/admin/images" className="text-xs px-3 py-1.5 bg-night-2 text-paper font-medium hover:bg-line transition-colors">🏗 Project Gallery</a>
               <a href="/admin/logos" className="text-xs px-3 py-1.5 bg-night-2 text-paper font-medium hover:bg-line transition-colors">🏢 Client Logos</a>
             </div>

@@ -1,65 +1,10 @@
-import { ILLUSTRATIONS, illusSrc, illusSrcSet } from "@/lib/illustrations";
-import CallNow from "@/components/common/CallNow";
 import SEO from "@/components/SEO";
 import PageHero from "@/components/common/PageHero";
 import { RelatedProjects } from "@/components/RelatedProjects";
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/home/CTASection";
-import { Link } from "react-router-dom";
-import { MapPin } from "lucide-react";
-import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { cn } from "@/lib/utils";
-import { useState } from "react";
-
-/* ─── Reusable fade-in wrapper ─── */
-function FadeIn({
-  children,
-  className,
-  delay = 0,
-}: {
-  children: React.ReactNode;
-  className?: string;
-  delay?: number;
-}) {
-  const { ref, isVisible } = useScrollAnimation();
-  return (
-    <div
-      ref={ref}
-      className={cn(
-        "transition-all duration-700",
-        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8",
-        className
-      )}
-      style={{ transitionDelay: `${delay}ms` }}
-    >
-      {children}
-    </div>
-  );
-}
-
-/* ── Accordion FAQ item ── */
-function FAQItem({ q, a }: { q: string; a: string }) {
-  return (
-    <div className="fg-faq">
-      <details>
-        <summary>
-          <h3>{q}</h3>
-        </summary>
-        <div className="fg-a">{a}</div>
-      </details>
-    </div>
-  );
-}
-
-/* ── Images ── */
-const IMG: Record<string, string> = {
-  hero: illusSrc("svc-louvers"),
-  fixed: "/louvers-vertical.webp",
-  operable: "/louvers-closeup.webp",
-  motorised: "/louvers-motorized.webp",
-  fins: "/louvers-vertical.webp",
-  process: "/projects/nanavati-max-hospital-39-3.webp",
-};
+import { ServiceBody } from "@/components/service/ServiceBody";
+import { ServiceQuickOverview } from "@/components/service/ServiceQuickOverview";
 
 /* ── System data ── */
 const SYSTEMS = [
@@ -113,7 +58,6 @@ const STEPS = [
 ];
 
 export default function Louvers() {
-  const [activeSystem, setActiveSystem] = useState(0);
 
   const serviceSchema = {
     "@context": "https://schema.org",
@@ -198,7 +142,6 @@ export default function Louvers() {
     ],
   };
 
-  const current = SYSTEMS[activeSystem];
 
   return (
     <Layout darkHero>
@@ -210,357 +153,61 @@ export default function Louvers() {
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}
       />
 
-      {/* HERO */}
       <PageHero
+        schematic="louver"
         crumbs={[{ label: "Aluminium Louvers & Sun Shading" }]}
         title={<>Aluminium<br /> <span className="text-gradient-gold">Louvers</span><span className="ph-sub">& Sun Shading.</span></>}
         intro="Architectural solar control systems that cut direct sun on the glass line while adding design character."
         secondary={{ label: "+91 83692 33566", href: "tel:+918369233566" }}
-        image={{ src: IMG.hero, srcSet: illusSrcSet("svc-louvers"), sizes: "(max-width: 1024px) 100vw, 640px", alt: ILLUSTRATIONS["svc-louvers"], width: 1376, height: 768 }}
         extra=""
       />
 
-
-      {/* ════════════ INTRO ════════════ */}
-      <section className="fg-sec">
-        <div className="fg-wrap">
-          <FadeIn>
-            <h2 className="fg-h2 wide">
-              Control direct sunlight,{" "}
-              <span className="text-mute">with louvers that double as architectural features.</span>
-            </h2>
-            <p className="text-mute text-[15px] md:text-base leading-relaxed">
-              Aluminium louver systems block direct solar radiation while maintaining airflow and outward visibility. They cut direct sun on the glass and can lower cooling demand, depending on orientation and design. Available in fixed, operable, and motorised configurations with elliptical, aerofoil, and flat blade profiles.
-            </p>
-          </FadeIn>
-        </div>
-      </section>
-
-
-      {/* ════════════ STATS ════════════ */}
-      <section className="fg-sec">
-        <div className="fg-wrap">
-          <FadeIn>
-            <dl className="fg-stats" style={{ ["--n" as string]: 3 }}>
-              {[
-                { number: "16", label: "Project Records Documented" },
-                { number: "40+", label: "Core Team" },
-                { number: "2024", label: "Embassy REIT Best Vendor Performance" },
-              ].map((s) => (
-                <div key={s.label}>
-                  <dt>{s.number}</dt>
-                  <dd className="nm">{s.label}</dd>
-                </div>
-              ))}
-            </dl>
-          </FadeIn>
-        </div>
-      </section>
-
-
-      {/* ════════════ SYSTEMS ════════════ */}
-      <section className="fg-sec">
-        <div className="fg-wrap">
-          <FadeIn className="mb-10">
-            <h2 className="fg-h2">
-              Louver Systems We Install
-            </h2>
-          </FadeIn>
-
-          <FadeIn delay={100}>
-            <div className="flex flex-wrap gap-2 mb-8">
-              {SYSTEMS.map((sys, i) => (
-                <button
-                  key={sys.num}
-                  onClick={() => setActiveSystem(i)}
-                  className={cn(
-                    "px-4 py-2 text-sm font-medium transition-all duration-200",
-                    activeSystem === i
-                      ? "bg-night-2 text-paper"
-                      : "bg-night text-mute hover:bg-night-2 border border-line"
-                  )}
-                >
-                  {sys.title}
-                </button>
-              ))}
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-0 bg-night overflow-hidden" key={current.num}>
-              <div className="relative h-[280px] md:h-[360px] overflow-hidden">
-                <img decoding="async"
-                  src={IMG[current.img]}
-                  alt={current.title}
-                  className="w-full h-full object-cover transition-opacity duration-500"
-                  loading="lazy"
-                />
-                <div className="absolute top-4 left-4 bg-[rgba(24,19,15,0.78)] text-[#f5f2ee] text-xs font-bold px-3 py-1.5">
-                  {current.num}
-                </div>
-              </div>
-              <div className="p-8 md:p-10 flex flex-col justify-center">
-                <h3 className="text-xl md:text-2xl font-medium text-paper mb-3">{current.title}</h3>
-                <p className="text-mute text-sm leading-relaxed mb-6">{current.desc}</p>
-
-                <div className="grid grid-cols-2 gap-3 mb-6">
-                  <div className="bg-night-2 p-3">
-                    <p className="text-[13px] text-mute mb-1">Blade Profile</p>
-                    <p className="text-sm font-semibold text-paper">{current.glass}</p>
-                  </div>
-                  <div className="bg-night-2 p-3">
-                    <p className="text-[13px] text-mute mb-1">Operation</p>
-                    <p className="text-sm font-semibold text-paper">{current.wind}</p>
-                  </div>
-                  <div className="bg-night-2 p-3">
-                    <p className="text-[13px] text-mute mb-1">Best For</p>
-                    <p className="text-sm font-semibold text-paper">{current.bestFor}</p>
-                  </div>
-                  <div className="bg-lamp/10 p-3 border border-lamp/40">
-                    <p className="text-[13px] text-lamp mb-1">Pricing</p>
-                    <p className="text-sm font-bold text-paper">{current.price}</p>
-                  </div>
-                </div>
-
-                <CallNow className="fg-btn self-start" />
-              </div>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
-
-
-      {/* ════════════ WHY FINE GLAZE ════════════ */}
-      <section className="fg-sec">
-        <div className="fg-wrap">
-          <FadeIn className="mb-12">
-            <h2 className="fg-h2">
-              Built for performance. Delivered on schedule.
-            </h2>
-          </FadeIn>
-
-          <FadeIn delay={100}>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
-              {[
-                {
-                  title: "Sun-Path Optimised",
-                  desc: "Blade angles calculated for your building's orientation. Orientation and sun path are part of the design brief.",
-                },
-                {
-                  title: "Own Fabrication Unit",
-                  desc: "Sub-assembly and framing at our Pisoli, Pune unit, with shop drawings prepared in-house.",
-                },
-                {
-                  title: "Aluminium Extrusions",
-                  desc: "Extrusions from major Indian mills with powder-coat or anodised finishes, as specified.",
-                },
-                {
-                  title: "Motorised Options",
-                  desc: "Motorised systems can be quoted with controls; BMS integration depends on the project.",
-                },
-              ].map((item) => (
-                <div key={item.title}>
-                  <h3 className="text-lg font-medium text-paper mb-2">{item.title}</h3>
-                  <p className="text-mute text-[15px] leading-relaxed">{item.desc}</p>
-                </div>
-              ))}
-            </div>
-          </FadeIn>
-
-          <FadeIn delay={200} className="mt-12">
-            <p className="text-mute text-sm">
-              Clients include <span className="text-paper font-semibold">Embassy REIT</span>,{" "}
-              <span className="text-paper font-semibold">L&amp;T Construction</span>,{" "}
-              <span className="text-paper font-semibold">Jindal Stainless Limited</span>
-            </p>
-          </FadeIn>
-        </div>
-      </section>
-
-
-      {/* ════════════ HOW WE WORK ════════════ */}
-      <section className="fg-sec">
-        <div className="fg-wrap">
-          <FadeIn className="mb-10">
-            <h2 className="fg-h2">
-              From first visit to final handover
-            </h2>
-          </FadeIn>
-
-          <FadeIn delay={100}>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
-              {STEPS.map((step, i) => (
-                <div key={step.num} className="relative">
-                  {i < STEPS.length - 1 && (
-                    <div className="hidden md:block absolute top-5 left-[60%] right-0 h-px bg-line" />
-                  )}
-                  <div className="bg-night p-5 relative">
-                    <span className="fg-step-n">{step.num}</span>
-                    <h3 className="text-lg font-medium text-paper mb-1">{step.title}</h3>
-                    <p className="text-mute text-[15px] leading-relaxed">{step.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </FadeIn>
-        </div>
-      </section>
-
-
-      {/* ════════════ PHOTO BREAK ════════════ */}
-      <FadeIn>
-        <div className="fg-wrap">
-        <div className="relative h-[35vh] md:h-[40vh] overflow-hidden" style={{ maxWidth: 1071 }}>
-          <img
-            src={IMG.process}
-            sizes="(max-width: 1280px) 100vw, 1152px"
-            decoding="async"
-            alt="Fine Glaze team installing facade louvers at Nanavati Max Hospital, Vile Parle, Mumbai"
-            className="w-full h-full object-cover"
-            loading="lazy"
-          />
-          <div className="absolute inset-0 bg-[rgba(24,19,15,0.55)]" />
-          <div className="absolute inset-0 flex items-center">
-            <div className="px-6 md:px-10">
-              <p className="text-mute text-sm mb-2">Our Promise</p>
-              <p className="text-paper text-xl md:text-3xl font-bold max-w-xl">
-                Solar control detailed for your building and orientation.
-              </p>
-            </div>
-          </div>
-        </div>
-        </div>
-      </FadeIn>
-
-
-      {/* ════════════ PRICING ════════════ */}
-      <section className="fg-sec">
-        <div className="fg-wrap">
-          <FadeIn className="mb-8">
-            <h2 className="fg-h2">
-              Aluminium Louver Cost: How We Quote
-            </h2>
-            <p className="text-mute text-sm">
-              We quote against drawings. Final cost depends on specification and complexity.
-            </p>
-          </FadeIn>
-
-          <FadeIn delay={100}>
-            <div className="overflow-x-auto">
-              <table className="w-full text-left">
-                <thead>
-                  <tr className="border-b-2 border-line">
-                    <th className="py-3 text-[13px] font-medium text-mute">System</th>
-                    <th className="py-3 text-[13px] font-medium text-mute">Blade Type</th>
-                    <th className="py-3 text-[13px] font-medium text-mute text-right">Pricing</th>
-                  </tr>
-                </thead>
-                <tbody className="text-[15.5px]">
-                  {[
-                    { system: "Fixed Louvers", glass: "Flat / elliptical blade", price: "Quoted on drawings" },
-                    { system: "Operable Louvers", glass: "Aerofoil + rod mechanism", price: "Quoted on drawings" },
-                    { system: "Motorised System", glass: "Aerofoil + motor + sensor", price: "Quoted on drawings" },
-                    { system: "Vertical Fins / Screens", glass: "Custom profiles", price: "Quoted on drawings" },
-                  ].map((row) => (
-                    <tr key={row.system} className="border-b border-line hover:bg-night-2 transition-colors">
-                      <td className="py-3 font-semibold text-paper">{row.system}</td>
-                      <td className="py-3 text-mute">{row.glass}</td>
-                      <td className="py-3 text-right font-bold text-paper">{row.price}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-
-            <div className="mt-8">
-              <CallNow className="fg-btn" number />
-            </div>
-          </FadeIn>
-        </div>
-      </section>
-
-
-      {/* ════════════ FAQ ════════════ */}
-      <section className="fg-sec">
-        <div className="fg-wrap">
-          <FadeIn className="mb-8">
-            <h2 className="fg-h2">
-              FAQ
-            </h2>
-          </FadeIn>
-
-          <FadeIn delay={100}>
-            <div>
-              <FAQItem
-                q="How much do aluminium louvers reduce heat?"
-                a="Well-designed aluminium louvers cut direct solar heat on the glass line, and the effect depends on orientation, blade angle, glass and building use. We do not quote a fixed percentage; ask for an energy model if you need numbers."
-              />
-              <FAQItem
-                q="What is the difference between fixed and operable louvers?"
-                a="Fixed louvers have permanently set blade angles — simple and low maintenance. Operable louvers allow manual or motorised angle adjustment throughout the day for optimal light and heat control based on changing sun position."
-              />
-              <FAQItem
-                q="How much do aluminium louvers cost per sq ft?"
-                a="Louver cost depends on blade profile, fixed or operable or motorised type, size, finish and access, so a reliable figure needs drawings. Fine Glaze prepares BOQ-based quotations."
-              />
-              <FAQItem
-                q="Can motorised louvers be connected to building management systems?"
-                a="Motorised louvers can often be linked to a building management system with sun sensors, temperature input or timers, depending on the motor and control system chosen. Confirm integration needs at design stage."
-              />
-              <FAQItem
-                q="What finishes are available for aluminium louvers?"
-                a="Louvers are available in any RAL colour via powder coating, or in natural/bronze/black anodised finishes. Wood-grain effect coatings are also available for architectural projects requiring a natural appearance."
-              />
-            </div>
-          </FadeIn>
-        </div>
-      </section>
-
-
-      {/* ════════════ AREAS + SERVICES ════════════ */}
-      <section className="fg-sec">
-        <div className="fg-wrap">
-          <FadeIn>
-            <div className="grid md:grid-cols-2 gap-10 md:gap-16">
-              <div>
-                <h3 className="font-display text-2xl font-medium text-paper mb-5">Where we work</h3>
-                <div className="flex flex-wrap gap-x-6 gap-y-2">
-                  {["Pune", "Mumbai BKC", "Navi Mumbai", "Thane", "Hinjewadi", "Pimpri-Chinchwad"].map((city) => (
-                    <div key={city} className="flex items-center gap-1.5">
-                      <MapPin size={11} className="text-lamp" />
-                      <span className="text-mute text-sm">{city}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div>
-                <h3 className="font-display text-2xl font-medium text-paper mb-5">Other services</h3>
-                <div className="grid grid-cols-2 gap-x-6 gap-y-1.5">
-                  {[
-                    { title: "Aluminium Facade", href: "/aluminium-windows-doors" },
-                    { title: "Curtain Wall Systems", href: "/curtain-wall-systems" },
-                    { title: "ACP Cladding", href: "/acp-aluminium-cladding" },
-                    { title: "Structural Glazing", href: "/structural-glazing" },
-                    { title: "Facade AMC", href: "/maintenance-services" },
-                    { title: "All Services →", href: "/services" },
-                  ].map((link) => (
-                    <Link
-                      key={link.href}
-                      to={link.href}
-                      className="text-mute text-sm hover:text-lamp transition-colors"
-                    >
-                      {link.title}
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
-
-
-      {/* ════════════ CTA ════════════ */}
-      <RelatedProjects heading="Louver projects" keywords={["louver", "louvre", "fins"]} />
+      <ServiceBody
+        schematic="louver"
+        intro={{ lead: <>Control direct sunlight,</>, tail: <>with louvers that double as architectural features.</>, body: <>Aluminium louver systems block direct solar radiation while maintaining airflow and outward visibility. They cut direct sun on the glass and can lower cooling demand, depending on orientation and design. Available in fixed, operable, and motorised configurations with elliptical, aerofoil, and flat blade profiles.</> }}
+        overview={undefined}
+        systemsTitle={<>Louver Systems We Install</>}
+        systems={SYSTEMS}
+        systemCols={["Blade Profile", "Operation"]}
+        featuresTitle={<>Built for performance. Delivered on schedule.</>}
+        features={[
+          { title: "Sun-Path Optimised", desc: "Blade angles calculated for your building's orientation. Orientation and sun path are part of the design brief." },
+          { title: "Own Fabrication Unit", desc: "Sub-assembly and framing at our Pisoli, Pune unit, with shop drawings prepared in-house." },
+          { title: "Aluminium Extrusions", desc: "Extrusions from major Indian mills with powder-coat or anodised finishes, as specified." },
+          { title: "Motorised Options", desc: "Motorised systems can be quoted with controls; BMS integration depends on the project." },
+        ]}
+        stepsTitle={<>From first visit to final handover</>}
+        steps={STEPS}
+        promise={<>Solar control detailed for your building and orientation.</>}
+        pricing={{
+          title: <>Aluminium Louver Cost: How We Quote</>,
+          intro: <>We quote against drawings. Final cost depends on specification and complexity.</>,
+          colLabel: "Blade Type",
+          rows: [
+            { system: "Fixed Louvers", glass: "Flat / elliptical blade", price: "Quoted on drawings" },
+            { system: "Operable Louvers", glass: "Aerofoil + rod mechanism", price: "Quoted on drawings" },
+            { system: "Motorised System", glass: "Aerofoil + motor + sensor", price: "Quoted on drawings" },
+            { system: "Vertical Fins / Screens", glass: "Custom profiles", price: "Quoted on drawings" },
+          ],
+        }}
+        faq={[
+          { q: <>How much do aluminium louvers reduce heat?</>, a: <>Well-designed aluminium louvers cut direct solar heat on the glass line, and the effect depends on orientation, blade angle, glass and building use. We do not quote a fixed percentage; ask for an energy model if you need numbers.</> },
+          { q: <>What is the difference between fixed and operable louvers?</>, a: <>Fixed louvers have permanently set blade angles — simple and low maintenance. Operable louvers allow manual or motorised angle adjustment throughout the day for optimal light and heat control based on changing sun position.</> },
+          { q: <>How much do aluminium louvers cost per sq ft?</>, a: <>Louver cost depends on blade profile, fixed or operable or motorised type, size, finish and access, so a reliable figure needs drawings. Fine Glaze prepares BOQ-based quotations.</> },
+          { q: <>Can motorised louvers be connected to building management systems?</>, a: <>Motorised louvers can often be linked to a building management system with sun sensors, temperature input or timers, depending on the motor and control system chosen. Confirm integration needs at design stage.</> },
+          { q: <>What finishes are available for aluminium louvers?</>, a: <>Louvers are available in any RAL colour via powder coating, or in natural/bronze/black anodised finishes. Wood-grain effect coatings are also available for architectural projects requiring a natural appearance.</> },
+        ]}
+        areas={["Pune", "Mumbai BKC", "Navi Mumbai", "Thane", "Hinjewadi", "Pimpri-Chinchwad"]}
+        others={[
+          { title: "Aluminium Facade", href: "/aluminium-windows-doors" },
+          { title: "Curtain Wall Systems", href: "/curtain-wall-systems" },
+          { title: "ACP Cladding", href: "/acp-aluminium-cladding" },
+          { title: "Structural Glazing", href: "/structural-glazing" },
+          { title: "Facade AMC", href: "/maintenance-services" },
+          { title: "All Services →", href: "/services" },
+        ]}
+        related={(no) => <RelatedProjects no={no} heading="Louver projects" keywords={["louver", "louvre", "fins"]} />}
+      />
       <CTASection />
     </Layout>
   );
