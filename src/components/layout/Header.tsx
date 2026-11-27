@@ -120,7 +120,7 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
         data-clear={transparent ? "true" : "false"}
         className="fg-hdr fixed top-0 left-0 right-0 z-50 text-paper"
       >
-        <div className="container mx-auto px-4 h-14 lg:h-16 flex items-center justify-between">
+        <div className="container mx-auto px-4 h-14 lg:h-[72px] flex items-center justify-between">
           {/* Wordmark */}
           <Link
             to="/"
