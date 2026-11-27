@@ -10,6 +10,7 @@ vec3 gSun=vec3(0.,.2,.98); vec3 gHaze=vec3(.9,.8,.7); float gLod=0.,gDist=0.;
 const float W=42.,H=162.,D=30.,PW=1.5,FH=3.6,SP=.2;
 float sst(float a,float b,float x){float t=clamp((x-a)/(b-a),0.,1.);return t*t*(3.-2.*t);}
 float h21(vec2 p){p=fract(p*vec2(123.34,456.21));p+=dot(p,p+45.32);return fract(p.x*p.y);}
+float hb(vec2 p){return fract(sin(dot(p,vec2(12.9898,78.233)))*43758.5453);}
 float vn(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);
   return mix(mix(h21(i),h21(i+vec2(1,0)),f.x),mix(h21(i+vec2(0,1)),h21(i+1.),f.x),f.y);}
 float fbm(vec2 p){float a=.5,s=0.;for(int i=0;i<5;i++){s+=a*vn(p);p=mat2(1.6,1.2,-1.2,1.6)*p+11.;a*=.5;}return s;}
@@ -142,7 +143,7 @@ vec3 facade(vec2 uv,vec3 n,vec3 tx,vec3 rd,bool front){
   float cl=exp(-tt*.07);
   vec3 insN=rm.r*rc*(.36+lit*.34)+warm*fx*(.7*lit+.04*step(.88,r1))*cl;
   float gy=clamp((f.y-SP)/(1.-SP),0.,1.);
-  float hasB=step(.4,h21(rid+17.9))*(1.-isB), drop=.08+.52*h21(rid+91.3);
+  float hasB=step(.4,hb(rid+17.9))*(1.-isB), drop=.1+.5*hb(rid+91.3);
   float blv=hasB*sst(1.-drop-fw.y*1.5,1.-drop+fw.y*1.5,gy);
   float slat=.5+.5*cos(gy*FH*(1.-SP)/.06*6.2832), sv=1.-sst(.15,.4,fw.y*60.);
   if(uQ<.75) sv=0.;
