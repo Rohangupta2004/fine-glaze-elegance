@@ -171,11 +171,11 @@ vec3 facade(vec2 uv,vec3 n,vec3 tx,vec3 rd,bool front){
   float ym1=(fract(g.y+.5)-.5)/.011, ym2=(fract(g.y-SP+.5)-.5)/.011;
   float ym=abs(ym1)<abs(ym2)?ym1:ym2;
   float sI2=max(sI,.18), vis=1.-lod;
-  float eV=sst(.25,.95,xm*sSide)*vis, dV=sst(-.2,-.9,xm*sSide)*vis;
+  float eV=sst(.45,1.,xm*sSide)*vis, dV=sst(-.2,-.9,xm*sSide)*vis;
   float eH=sst(.1,.9,ym)*vis, dH=sst(-.1,-.9,ym)*vis;
   float useV=step(mh,mv);
   float edge=mix(eH,eV,useV), dark=mix(dH,dV,useV);
-  vec3 mc=vec3(.085,.062,.044)*(1.-.45*dark)+vec3(1.,.78,.55)*edge*.36*sI2+refl*.04;
+  vec3 mc=vec3(.085,.062,.044)*(1.-.45*dark)+vec3(1.,.78,.55)*edge*.24*sI2+refl*.04;
   c=mix(c,mc,mull);
   // depth haze: a little more sky on the upper floors and far panels
   float hzA=clamp(.03+.13*sst(10.,H,uv.y)+(1.-exp(-gDist*.003))*.18,0.,.4);

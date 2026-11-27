@@ -378,7 +378,7 @@ body::before {
 
 /* heading mask reveal (set up by useHeadingReveal) */
 html.hd-js main h2.hd-r { transition: clip-path 0.9s cubic-bezier(0.7, 0, 0.15, 1); }
-html.hd-js main h2.hd-r:not(.hd-in) { clip-path: inset(-0.2em 100% -0.2em 0); }
+html.hd-js main h2.hd-r:not(.hd-in) { clip-path: inset(-0.2em calc(100% - 2px) -0.2em 0); }
 html.hd-js main h2.hd-r.hd-in { clip-path: inset(-0.2em -2% -0.2em 0); }
 @media (prefers-reduced-motion: reduce) { html.hd-js main h2.hd-r, html.hd-js main h2.hd-r:not(.hd-in) { clip-path: none; transition: none; } }
 

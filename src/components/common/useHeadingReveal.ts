@@ -15,7 +15,7 @@ export function useHeadingReveal() {
             io.unobserve(e.target);
           }
         }),
-      { threshold: 0.2 },
+      { threshold: 0, rootMargin: "0px 0px -12% 0px" },
     );
     const t = window.setTimeout(() => {
       document.querySelectorAll<HTMLElement>("main h2").forEach((h) => {
