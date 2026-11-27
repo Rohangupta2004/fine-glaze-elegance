@@ -76,10 +76,10 @@ vec3 facade(vec2 uv,vec3 n,vec3 tx,vec3 rd,bool front){
       float on=clamp(uIn*(uN+1.6)-li,0.,1.); on*=on*(3.-2.*on);
       gTm=texture(uTx,vec2(t.x,1.-t.y)).r*on*uSg;
       if(li>uN-1.5){
-        // last line: the light aurora spectrum, left to right
-        float ax=clamp(t.x*1.12,0.,1.)*3.;
-        vec3 a0=vec3(.663,.812,.910), a1=vec3(.765,.706,.902), a2=vec3(.953,.757,.643), a3=vec3(.914,.698,.478);
-        gTc=ax<1.?mix(a0,a1,ax):(ax<2.?mix(a1,a2,ax-1.):mix(a2,a3,ax-2.));
+        // last line: the warm logo gradient, left to right
+        float ax=clamp(t.x*1.12,0.,1.)*2.;
+        vec3 a0=vec3(.953,.851,.722), a1=vec3(.910,.706,.478), a2=vec3(.816,.541,.271);
+        gTc=ax<1.?mix(a0,a1,ax):mix(a1,a2,ax-1.);
       }
     }
   }

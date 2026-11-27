@@ -5,7 +5,7 @@ import { company, telHref, whatsappHref } from "@/data/company";
 /** Closing band used at the foot of the service, city and guide pages. */
 export const CTASection = () => {
   return (
-    <section className="bg-night-2 text-paper aurora-glow">
+    <section className="bg-night-2 text-paper">
       <div className="container mx-auto px-4 py-20 md:py-28">
         <div className="grid gap-10 md:grid-cols-[7fr_5fr] md:items-end">
           <div>

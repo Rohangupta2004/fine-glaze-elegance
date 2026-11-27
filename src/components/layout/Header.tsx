@@ -1,9 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, ChevronDown, FileText } from "lucide-react";
+import { Menu, X, ChevronDown, Download, FileText } from "lucide-react";
 import { cn } from "@/lib/utils";
 import CallNow from "@/components/common/CallNow";
-import { company } from "@/data/company";
 import { useCompanyProfile } from "@/context/CompanyProfileContext";
 import "./header.css";
 
@@ -45,7 +44,7 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
     // transparent until that section has scrolled past, so it never sits over the scene.
     const handleScroll = () => {
       const hero = document.querySelector<HTMLElement>("[data-header-clear]");
-      setIsScrolled(hero ? hero.getBoundingClientRect().bottom < 96 : window.scrollY > 50);
+      setIsScrolled(hero ? hero.getBoundingClientRect().bottom < 96 : window.scrollY > 8);
     };
     handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -108,13 +107,11 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
     return location.pathname === path;
   };
 
-  const getLinkClass = (path: string) =>
-    cn(
-      "px-3 py-2 text-[15px] font-medium text-paper transition-colors duration-200 hover:text-lamp focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-glass",
-      isPathActive(path) && "text-lamp"
-    );
+  const getLinkClass = (_path: string) =>
+    "fg-nl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-glass";
 
-  const transparent = darkHero && !isScrolled;
+  // Transparent at the top of light pages; over the dark 3D hero it stays glass so the links remain legible.
+  const transparent = !isScrolled && !darkHero;
 
   return (
     <>
@@ -123,7 +120,7 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
         data-clear={transparent ? "true" : "false"}
         className="fg-hdr fixed top-0 left-0 right-0 z-50 text-paper"
       >
-        <div className="container mx-auto px-4 h-16 lg:h-20 flex items-center justify-between">
+        <div className="container mx-auto px-4 h-14 lg:h-16 flex items-center justify-between">
           {/* Wordmark */}
           <Link
             to="/"
@@ -134,14 +131,14 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
           </Link>
 
           {/* DESKTOP NAV */}
-          <nav className="hidden lg:flex items-center gap-1" aria-label="Main Navigation">
+          <nav className="hidden lg:flex items-center gap-6" aria-label="Main Navigation">
             {/* Services Dropdown */}
             <div
               className="relative group"
               onMouseEnter={() => setIsServiceOpen(true)}
               onMouseLeave={() => setIsServiceOpen(false)}
             >
-              <Link to="/services" className={getLinkClass("/services")}>
+              <Link to="/services" className={getLinkClass("/services")} aria-current={isPathActive("/services") ? "page" : undefined}>
                 <span className="flex items-center gap-1">
                   Services
                   <ChevronDown size={14} className="opacity-75" />
@@ -150,17 +147,17 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
 
               <div
                 className={cn(
-                  "absolute left-0 top-full pt-2 w-64 transition-opacity duration-200 group-focus-within:opacity-100 group-focus-within:visible",
+                  "absolute left-0 top-full pt-3 w-60 transition-opacity duration-200 group-focus-within:opacity-100 group-focus-within:visible",
                   isServiceOpen ? "opacity-100 visible" : "opacity-0 invisible"
                 )}
               >
-                <div className="fg-menu p-2">
+                <div className="fg-menu p-1.5">
                   {serviceLinks.map((service) => (
                     <Link
                       key={service.href}
                       to={service.href}
                       className={cn(
-                        "block px-3 py-2 text-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-glass",
+                        "block px-3 py-1.5 text-[13.5px] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-glass",
                         location.pathname === service.href ? "text-lamp" : "text-paper hover:text-lamp"
                       )}
                     >
@@ -183,7 +180,7 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
                 aria-expanded={isIndustryOpen}
                 aria-controls="industries-menu"
                 onClick={() => setIsIndustryOpen((v) => !v)}
-                className={cn(getLinkClass("/industries"), "inline-flex items-center gap-1")}
+                className={getLinkClass("/industries")}
               >
                 Industries
                 <ChevronDown size={14} className="opacity-75" />
@@ -192,17 +189,17 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
               <div
                 id="industries-menu"
                 className={cn(
-                  "absolute left-0 top-full pt-2 w-64 transition-opacity duration-200 group-focus-within:opacity-100 group-focus-within:visible",
+                  "absolute left-0 top-full pt-3 w-60 transition-opacity duration-200 group-focus-within:opacity-100 group-focus-within:visible",
                   isIndustryOpen ? "opacity-100 visible" : "opacity-0 invisible"
                 )}
               >
-                <div className="fg-menu p-2">
+                <div className="fg-menu p-1.5">
                   {industryLinks.map((ind) => (
                     <Link
                       key={ind.href}
                       to={ind.href}
                       className={cn(
-                        "block px-3 py-2 text-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-glass",
+                        "block px-3 py-1.5 text-[13.5px] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-glass",
                         location.pathname === ind.href ? "text-lamp" : "text-paper hover:text-lamp"
                       )}
                     >
@@ -213,31 +210,24 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
               </div>
             </div>
 
-            <Link to="/portfolio" className={getLinkClass("/portfolio")}>Projects</Link>
-            <Link to="/blog" className={getLinkClass("/blog")}>Articles</Link>
-            <Link to="/about" className={getLinkClass("/about")}>About</Link>
-            <Link to="/contact" className={getLinkClass("/contact")}>Contact</Link>
+            <Link to="/portfolio" className={getLinkClass("/portfolio")} aria-current={isPathActive("/portfolio") ? "page" : undefined}>Projects</Link>
+            <Link to="/blog" className={getLinkClass("/blog")} aria-current={isPathActive("/blog") ? "page" : undefined}>Articles</Link>
+            <Link to="/about" className={getLinkClass("/about")} aria-current={isPathActive("/about") ? "page" : undefined}>About</Link>
+            <Link to="/contact" className={getLinkClass("/contact")} aria-current={isPathActive("/contact") ? "page" : undefined}>Contact</Link>
 
             <Link
               to="/company-profile"
               onClick={() => openProfile(1, "slides")}
-              className={cn(getLinkClass("/company-profile"), "inline-flex items-center gap-1.5")}
+              className={getLinkClass("/company-profile")}
             >
-              <FileText size={14} className="text-lamp shrink-0" />
               <span>Company Profile</span>
-              <span className="text-[11px] font-semibold px-1.5 py-0.5 bg-lamp text-lamp-ink">PDF</span>
+              <Download size={13} className="shrink-0 opacity-70" aria-hidden="true" />
             </Link>
           </nav>
 
           {/* ACTIONS */}
           <div className="flex items-center gap-3">
-            <span className="hdr-call inline-flex items-center gap-3">
-              <CallNow
-                className="inline-flex items-center justify-center h-11 px-[18px] text-[15px] font-medium text-paper bg-transparent shadow-[inset_0_0_0_1px_rgba(43,29,18,0.45)] transition-[filter,box-shadow] hover:shadow-[inset_0_0_0_1px_#9b5520] hover:text-lamp focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-glass"
-                iconSize={15}
-              />
-              <span className="cn-num-hdr">{company.phone.mobileDisplay}</span>
-            </span>
+            <CallNow className="fg-call" iconSize={14} />
 
             {/* MOBILE TOGGLE */}
             <button
@@ -260,7 +250,7 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
             onClick={() => setIsMobileMenuOpen(false)}
           />
           <div className="fixed top-0 left-0 right-0 z-[60] fg-menu-m text-paper max-h-[90vh] overflow-y-auto lg:hidden animate-in slide-in-from-top duration-200">
-            <div className="flex items-center justify-between px-5 h-16 border-b border-line sticky top-0 z-10">
+            <div className="flex items-center justify-between px-5 h-14 border-b border-line sticky top-0 z-10">
               <img decoding="async" src="/Logofg.webp" alt="Fine Glaze" width={1920} height={603} className="fg-logo-img" />
               <button type="button" onClick={() => setIsMobileMenuOpen(false)} aria-label="Close menu" className="p-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-glass">
                 <X size={24} />

@@ -7,7 +7,7 @@ const FOUNDER_YEARS = 11;
 const HomeNumbers = () => {
   const team = parseInt(company.stats.coreTeam, 10);
   return (
-    <section className="nums full rv aurora-glow" aria-label="Fine Glaze in numbers">
+    <section className="nums full rv" aria-label="Fine Glaze in numbers">
       <div className="wrap">
         <h2 className="wipe">On the <span className="text-gradient">record.</span></h2>
         <dl className="ng">

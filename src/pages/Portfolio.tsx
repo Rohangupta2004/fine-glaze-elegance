@@ -80,8 +80,8 @@ function scopeTags(scope: string): string[] {
     .slice(0, 3);
 }
 
-/** Pastel spectrum, one thin top bar per card. */
-const TINTS = ["#a9cfe8", "#c3b4e6", "#f3c1a4", "#e9b27a"];
+/** Logo-colour tints, one thin top bar per card. */
+const TINTS = ["#4a2108", "#8a4512", "#a85a1c", "#d08a45"];
 
 function ProjectCard({ p, n }: { p: Project; n: number }) {
   const fig = useRef<HTMLDivElement>(null);

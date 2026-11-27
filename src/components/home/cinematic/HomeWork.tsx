@@ -144,8 +144,8 @@ const HomeWork = () => {
     <>
       <section className="voice full rv">
         <div className="wrap">
-          <p className="wipe">Checked at source, checked at site, and closed before handover.</p>
-          <p className="v2">Facade work is height work, and it is managed as height work.</p>
+          <p className="wipe">Checked at source and at site, closed before handover.</p>
+          <p className="v2">Facade work is height work, and we manage it that way.</p>
         </div>
       </section>
 
@@ -154,7 +154,7 @@ const HomeWork = () => {
           <div className="sec-h">
             <div>
               <h2 className="wipe">Recent <span className="text-gradient">work.</span></h2>
-              <p className="wk-n">Five of the {PROJECT_COUNT} projects in our company profile.</p>
+              <p className="wk-n">Five of {PROJECT_COUNT} projects in our profile.</p>
             </div>
             <Link className="lnk" to="/portfolio">
               See all projects

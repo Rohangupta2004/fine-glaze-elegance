@@ -1,17 +1,26 @@
 /* Sitewide glass header. Not scoped to .fg-home: the header appears on every page. */
 .fg-hdr{
-  background:rgba(249,247,244,.78);
-  -webkit-backdrop-filter:blur(16px) saturate(1.2);
-  backdrop-filter:blur(16px) saturate(1.2);
-  border-bottom:1px solid rgba(43,29,18,.14);
-  transition:background-color .3s ease,border-color .3s ease;
+  background:rgba(249,247,244,.82);
+  -webkit-backdrop-filter:blur(14px) saturate(1.2);
+  backdrop-filter:blur(14px) saturate(1.2);
+  box-shadow:inset 0 -1px 0 rgba(43,29,18,.1);
+  transition:background-color .3s ease,box-shadow .3s ease;
 }
+/* At the top of the page the bar is fully transparent, no border. */
 .fg-hdr[data-clear="true"]{
-  background:rgba(249,247,244,.72);
-  -webkit-backdrop-filter:blur(10px) saturate(1.2);
-  backdrop-filter:blur(10px) saturate(1.2);
-  border-bottom-color:rgba(43,29,18,.1);
+  background:transparent;
+  -webkit-backdrop-filter:none;
+  backdrop-filter:none;
+  box-shadow:none;
 }
+/* Nav links: a 1px bronze underline slides in on hover and for the current page. */
+.fg-nl{position:relative;display:inline-flex;align-items:center;gap:4px;padding:6px 2px;font-size:14px;font-weight:500;line-height:1.2;color:#2b1d12;transition:color .2s ease}
+.fg-nl::after{content:"";position:absolute;left:2px;right:2px;bottom:0;height:1px;background:#9b5520;transform:scaleX(0);transform-origin:left;transition:transform .25s ease}
+.fg-nl:hover,.fg-nl[aria-current="page"]{color:#9b5520}
+.fg-nl:hover::after,.fg-nl[aria-current="page"]::after{transform:scaleX(1)}
+.fg-call{display:inline-flex;align-items:center;justify-content:center;height:36px;padding:0 14px;font-size:14px;font-weight:600;background:#9b5520;color:#fff;transition:background-color .2s ease}
+.fg-call:hover{background:#7a3f12}
+.fg-call:focus-visible{outline:2px solid #2b1d12;outline-offset:2px}
 /* Dropdowns sit inside the header's own backdrop root, so they stay fairly opaque to remain legible. */
 .fg-menu{
   background:rgba(249,247,244,.97);
@@ -28,8 +37,8 @@
 @supports not (backdrop-filter:blur(1px)){
   .fg-hdr,.fg-hdr[data-clear="true"],.fg-menu,.fg-menu-m{background:rgba(249,247,244,.98)}
 }
-@media (prefers-reduced-motion:reduce){.fg-hdr{transition:none}}
+@media (prefers-reduced-motion:reduce){.fg-hdr,.fg-nl::after{transition:none}}
 
 /* The bronze logo is drawn for light grounds and is shown as supplied. */
-.fg-logo-img{display:block;height:34px;width:auto}
-@media (min-width:1024px){.fg-logo-img{height:44px}}
+.fg-logo-img{display:block;height:28px;width:auto}
+@media (min-width:1024px){.fg-logo-img{height:34px}}

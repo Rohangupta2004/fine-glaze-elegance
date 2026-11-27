@@ -584,8 +584,7 @@ const StoryHero = () => {
             <span className="lbl">01 / 10</span>
             <h1 className="sr">We build the face of your building.</h1>
             <p>
-              Fine Glaze designs, fabricates, installs and maintains facade systems for developers and asset owners,
-              from Pune and Mumbai across India.
+              We design, fabricate, install and maintain facades from Pune and Mumbai.
             </p>
             <div className="cta">
               <a className="btn" href={telHref} data-call-now>
@@ -596,41 +595,40 @@ const StoryHero = () => {
           </div>
           <div className="blk say">
             <span className="lbl">02 / 10</span>
-            <h2 className="gl">{["Facade specialists,", "start to finish."].map((l, i) => (<span className="ln" key={l} style={{ ["--i" as string]: i }}><span className="li">{l}</span></span>))}</h2>
+            <h2 className="gl">{["One team,", "start to finish."].map((l, i) => (<span className="ln" key={l} style={{ ["--i" as string]: i }}><span className="li">{l}</span></span>))}</h2>
             <p>
-              Design, fabrication, installation and maintenance from one accountable team of {company.stats.coreTeam},
-              led by Deepak Gupta, B.E. Civil, with 11+ years in facades.
+              A core team of {company.stats.coreTeam}, led by Deepak Gupta, who has 11+ years in facades.
             </p>
           </div>
           <div className="blk fact">
             <span className="lbl">03 / 10</span>
-            <h2 className="gl">{["Every fixing checked", "against the wind load."].map((l, i) => (<span className="ln" key={l} style={{ ["--i" as string]: i }}><span className="li">{l}</span></span>))}</h2>
-            <p>Member sizing, fixing and anchorage are verified in-house before anything goes on the slab.</p>
+            <h2 className="gl">{["Fixings checked", "against wind load."].map((l, i) => (<span className="ln" key={l} style={{ ["--i" as string]: i }}><span className="li">{l}</span></span>))}</h2>
+            <p>We verify member sizing, fixing and anchorage in-house before installation.</p>
           </div>
           <div className="blk fact">
             <span className="lbl">04 / 10</span>
-            <h2 className="gl">{["Made at our", "Pisoli unit."].map((l, i) => (<span className="ln" key={l} style={{ ["--i" as string]: i }}><span className="li">{l}</span></span>))}</h2>
-            <p>Aluminium and mild steel are cut, fabricated and assembled in Pune, batched for each project.</p>
+            <h2 className="gl">{["Made in", "our own workshop."].map((l, i) => (<span className="ln" key={l} style={{ ["--i" as string]: i }}><span className="li">{l}</span></span>))}</h2>
+            <p>Cut, assembled and finished in-house, batched per project.</p>
           </div>
           <div className="blk fact">
             <span className="lbl">05 / 10</span>
             <h2 className="gl">{["Water-tested", "on site."].map((l, i) => (<span className="ln" key={l} style={{ ["--i" as string]: i }}><span className="li">{l}</span></span>))}</h2>
-            <p>Installed glazing gets a site water penetration test, and the snag register is closed before handover.</p>
+            <p>We run a site water penetration test and close the snag register before handover.</p>
           </div>
           <div className="blk fact">
             <span className="lbl">06 / 10</span>
-            <h2 className="gl">{["Glass checked", "on receipt."].map((l, i) => (<span className="ln" key={l} style={{ ["--i" as string]: i }}><span className="li">{l}</span></span>))}</h2>
-            <p>Section, glass and panel are checked against the approved specification when material arrives.</p>
+            <h2 className="gl">{["Checked on", "arrival."].map((l, i) => (<span className="ln" key={l} style={{ ["--i" as string]: i }}><span className="li">{l}</span></span>))}</h2>
+            <p>Sections, glass and panels are checked against the approved spec on receipt.</p>
           </div>
           <div className="blk fact">
             <span className="lbl">07 / 10</span>
-            <h2 className="gl">{["Sealed to the", "specification."].map((l, i) => (<span className="ln" key={l} style={{ ["--i" as string]: i }}><span className="li">{l}</span></span>))}</h2>
-            <p>DOWSIL structural and weather silicone, or approved equivalents.</p>
+            <h2 className="gl">{["Sealed to", "specification."].map((l, i) => (<span className="ln" key={l} style={{ ["--i" as string]: i }}><span className="li">{l}</span></span>))}</h2>
+            <p>We use DOWSIL structural and weather silicone, or approved equivalents.</p>
           </div>
           <div className="blk say">
             <span className="lbl">08 / 10</span>
-            <h2 className="gl">{["Drawn in-house,", "before anything is cut."].map((l, i) => (<span className="ln" key={l} style={{ ["--i" as string]: i }}><span className="li">{l}</span></span>))}</h2>
-            <p>Shop drawings and engineering come from our own design team.</p>
+            <h2 className="gl">{["Drawn in-house,", "then cut."].map((l, i) => (<span className="ln" key={l} style={{ ["--i" as string]: i }}><span className="li">{l}</span></span>))}</h2>
+            <p>Shop drawings and engineering come from our own design team before fabrication starts.</p>
           </div>
           <div className="blk say">
             <span className="lbl">09 / 10</span>

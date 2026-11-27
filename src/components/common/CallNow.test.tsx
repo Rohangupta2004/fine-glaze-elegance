@@ -43,9 +43,9 @@ const ratio = (a: string, b: string) => {
 
 describe("aurora accent colours", () => {
   it("every dark-ink stop is at least 3:1 on the cream page", () => {
-    for (const stop of ["#2f6c98", "#6a4c9c", "#b0502c", "#9b5520"]) expect(ratio(stop, "#f9f7f4")).toBeGreaterThanOrEqual(3);
+    for (const stop of ["#4a2108", "#8a4512", "#a85a1c", "#7a3a0e", "#9b5520"]) expect(ratio(stop, "#f9f7f4")).toBeGreaterThanOrEqual(3);
   });
   it("every light stop is at least 3:1 on the dark story scrim", () => {
-    for (const stop of ["#a9cfe8", "#c3b4e6", "#f3c1a4", "#e9b27a"]) expect(ratio(stop, "#2a1f17")).toBeGreaterThanOrEqual(3);
+    for (const stop of ["#f3d9b8", "#e8b47a", "#d08a45"]) expect(ratio(stop, "#2a1f17")).toBeGreaterThanOrEqual(3);
   });
 });

@@ -3,7 +3,7 @@ import { company } from "@/data/company";
 
 const HomeClose = () => {
   return (
-    <section className="end aurora-glow">
+    <section className="end">
       <div className="wrap">
         <div className="end-g">
           <div>
