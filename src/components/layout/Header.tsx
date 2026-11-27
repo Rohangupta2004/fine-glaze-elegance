@@ -100,7 +100,7 @@ export const Header = () => {
     <>
       {/* HEADER */}
       <header className="fg-hdr sticky top-0 z-50 text-paper">
-        <div className="container mx-auto px-4 h-14 lg:h-[72px] flex items-center justify-between">
+        <div className="fg-wrap h-14 lg:h-[72px] flex items-center justify-between">
           {/* Wordmark */}
           <Link
             to="/"
