@@ -1,26 +1,17 @@
-import { useRef } from "react";
 import { Layout } from "@/components/layout/Layout";
 import { Helmet } from "react-helmet-async";
 import SEO from "@/components/SEO";
-import StoryHero from "@/components/home/cinematic/StoryHero";
-import HomeNumbers from "@/components/home/cinematic/HomeNumbers";
-import HomeClients from "@/components/home/cinematic/HomeClients";
-import HomeServices from "@/components/home/cinematic/HomeServices";
-import HomeProcess from "@/components/home/cinematic/HomeProcess";
-import HomeVideo from "@/components/home/cinematic/HomeVideo";
-import HomeReviews from "@/components/home/cinematic/HomeReviews";
-import HomeArticles from "@/components/home/cinematic/HomeArticles";
-import HomeWork from "@/components/home/cinematic/HomeWork";
-import HomeClose from "@/components/home/cinematic/HomeClose";
-import { useReveal } from "@/components/home/cinematic/useReveal";
-import "@/components/home/cinematic/home.css";
-
-const HERO_IMAGE = "/Embassy.webp";
+import EngHero from "@/components/home/eng/EngHero";
+import Capabilities from "@/components/home/eng/Capabilities";
+import SelectedProjects from "@/components/home/eng/SelectedProjects";
+import Method from "@/components/home/eng/Method";
+import RecordStrip from "@/components/home/eng/RecordStrip";
+import Clients from "@/components/home/eng/Clients";
+import Close from "@/components/home/eng/Close";
+import { HERO } from "@/components/home/eng/data";
+import "@/components/home/eng/eng.css";
 
 const Index = () => {
-  const homeRef = useRef<HTMLDivElement>(null);
-  useReveal(homeRef);
-
   // Organization / LocalBusiness entities live once, sitewide, in index.html.
   const webPageSchema = {
     "@context": "https://schema.org",
@@ -30,12 +21,12 @@ const Index = () => {
     "name": "Facade & Glazing Contractor in Pune & Mumbai | Fine Glaze",
     "isPartOf": { "@id": "https://fineglaze.com/#website" },
     "about": { "@id": "https://fineglaze.com/#organization" },
-    "primaryImageOfPage": "https://fineglaze.com" + HERO_IMAGE,
+    "primaryImageOfPage": "https://fineglaze.com" + HERO.src,
     "inLanguage": "en-IN",
   };
 
   return (
-    <Layout darkHero>
+    <Layout>
       <SEO
         title="Facade Contractor in Pune, Mumbai & India | Fine Glaze"
         description="Facade contractor based in Pune and Mumbai, taking projects across India: curtain wall, glazing, ACP and AMC. Embassy REIT Best Vendor Performance 2024."
@@ -44,20 +35,15 @@ const Index = () => {
         schema={webPageSchema}
       />
       <Helmet>
-        <link rel="preload" as="image" href={HERO_IMAGE} {...{ fetchpriority: "high" }} />
+        <link rel="preload" as="image" href={HERO.src} {...{ fetchpriority: "high" }} />
       </Helmet>
-      <div className="fg-home" ref={homeRef}>
-        <StoryHero />
-        <HomeNumbers />
-        <HomeClients />
-        <HomeServices />
-        <HomeProcess />
-        <HomeVideo />
-        <HomeWork />
-        <HomeReviews />
-        <HomeArticles />
-        <HomeClose />
-      </div>
+      <EngHero />
+      <Capabilities />
+      <SelectedProjects />
+      <Method />
+      <RecordStrip />
+      <Clients />
+      <Close />
     </Layout>
   );
 };

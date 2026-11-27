@@ -286,7 +286,7 @@ const About = () => {
               Based in Pune and Mumbai, taking projects across India.
             </p>
           </div>
-          <figure className="border border-line" style={{ background: "#fbf8f4" }}>
+          <figure className="border border-line" style={{ background: "#ffffff" }}>
             <img src="/images/profile/india-map-pune-mumbai.webp" alt="Map of India with Pune and Mumbai marked in Maharashtra" width={1516} height={1024} sizes="(max-width: 768px) 100vw, 40vw" loading="lazy" decoding="async" className="w-full h-auto max-h-[420px] object-contain" />
           </figure>
         </div>

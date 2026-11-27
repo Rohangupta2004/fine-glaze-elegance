@@ -41,11 +41,25 @@ const ratio = (a: string, b: string) => {
   return (hi + 0.05) / (lo + 0.05);
 };
 
-describe("aurora accent colours", () => {
-  it("every dark-ink stop is at least 3:1 on the cream page", () => {
-    for (const stop of ["#4a2108", "#8a4512", "#a85a1c", "#7a3a0e", "#9b5520"]) expect(ratio(stop, "#f9f7f4")).toBeGreaterThanOrEqual(3);
+describe("engineering palette", () => {
+  const PAPER = "#f4f4f1";
+  const PANEL = "#e9eae6";
+  const INK = "#15181b";
+  const GRAPHITE = "#555b62";
+  const BRONZE = "#9b5520";
+
+  it("ink and graphite text reach 4.5:1 on the paper and panel grounds", () => {
+    for (const ground of [PAPER, PANEL]) {
+      expect(ratio(INK, ground)).toBeGreaterThanOrEqual(4.5);
+      expect(ratio(GRAPHITE, ground)).toBeGreaterThanOrEqual(4.5);
+    }
   });
-  it("every light stop is at least 3:1 on the dark story scrim", () => {
-    for (const stop of ["#f3d9b8", "#e8b47a", "#d08a45"]) expect(ratio(stop, "#2a1f17")).toBeGreaterThanOrEqual(3);
+  it("the bronze accent reaches 4.5:1 as text on paper and panel, and white on bronze reaches 4.5:1", () => {
+    expect(ratio(BRONZE, PAPER)).toBeGreaterThanOrEqual(4.5);
+    expect(ratio(BRONZE, PANEL)).toBeGreaterThanOrEqual(4.5);
+    expect(ratio("#ffffff", BRONZE)).toBeGreaterThanOrEqual(4.5);
+  });
+  it("text on the dark section reaches 4.5:1, including the soft bronze accent", () => {
+    for (const fg of ["#e9eae6", "#c9ced3", "#aab0b6", "#d9a574"]) expect(ratio(fg, INK)).toBeGreaterThanOrEqual(4.5);
   });
 });

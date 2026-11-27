@@ -34,14 +34,14 @@ export default function FloatingCTA() {
         href={telHref}
         data-call-now
         aria-label={`Call now ${company.phone.mobileDisplay}`}
-        className="flex-1 h-12 inline-flex items-center justify-center bg-lamp text-lamp-ink font-semibold text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-glass"
+        className="flex-1 h-11 inline-flex items-center justify-center bg-lamp text-lamp-ink font-medium text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lamp"
       >
         <Phone size={18} aria-hidden="true" className="mr-2" />
         Call now
       </a>
       <Link
         to="/contact"
-        className="h-12 px-5 inline-flex items-center text-paper font-medium text-base shadow-[inset_0_0_0_1px_rgba(43,29,18,0.45)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-glass"
+        className="h-11 px-5 inline-flex items-center text-paper font-medium text-base shadow-[inset_0_0_0_1px_rgba(21,24,27,0.45)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lamp"
       >
         Enquire
       </Link>

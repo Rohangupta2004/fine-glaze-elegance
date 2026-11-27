@@ -11,7 +11,7 @@ interface IllustrationProps {
 
 /** A general illustration in a ruled frame. Not a project photo, so there is no caption. */
 export const Illustration = ({ name, className = "", flush = false, sizes = "(max-width: 768px) 100vw, 720px" }: IllustrationProps) => (
-  <figure className={`fg-illus ${className}`} style={flush ? { margin: 0 } : { margin: "40px 0 0", border: "1px solid #ddd5ca" }}>
+  <figure className={`fg-illus ${className}`} style={flush ? { margin: 0 } : { margin: "40px 0 0", border: "1px solid #cfd2cd" }}>
     <img
       src={illusSrc(name)}
       srcSet={illusSrcSet(name)}

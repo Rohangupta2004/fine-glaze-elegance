@@ -280,7 +280,7 @@ export default function AluminiumWindowsDoors() {
       {/* CTA */}
       <section className="py-16 bg-lamp">
         <div className="fg-wrap">
-          <h2 className="fg-h2" style={{ color: "#fbf8f4", marginBottom: 12 }}>Get your windows measured and quoted</h2>
+          <h2 className="fg-h2" style={{ color: "#ffffff", marginBottom: 12 }}>Get your windows measured and quoted</h2>
           <p className="mt-2 text-lamp-ink">Pune, PCMC, Mumbai, Navi Mumbai and Thane.</p>
           <div className="mt-6 flex flex-col sm:flex-row gap-3">
             <CallNow className="bg-night text-paper font-bold px-7 py-4 hover:bg-night-2 inline-flex items-center justify-center" />

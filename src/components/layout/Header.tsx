@@ -29,27 +29,13 @@ const industryLinks = [
   { href: "/residential-facade", label: "High-Rise Residential" },
 ];
 
-export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
+export const Header = () => {
   const { openProfile } = useCompanyProfile();
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isServiceOpen, setIsServiceOpen] = useState(false);
   const [isIndustryOpen, setIsIndustryOpen] = useState(false);
   const industryRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
-
-  /* Scroll detect */
-  useEffect(() => {
-    // A page can mark a tall dark hero with data-header-clear: the bar stays
-    // transparent until that section has scrolled past, so it never sits over the scene.
-    const handleScroll = () => {
-      const hero = document.querySelector<HTMLElement>("[data-header-clear]");
-      setIsScrolled(hero ? hero.getBoundingClientRect().bottom < 96 : window.scrollY > 8);
-    };
-    handleScroll();
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   /* Close menus on route change */
   useEffect(() => {
@@ -108,33 +94,27 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
   };
 
   const getLinkClass = (_path: string) =>
-    "fg-nl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-glass";
-
-  // Transparent at the top of light pages; over the dark 3D hero it stays glass so the links remain legible.
-  const transparent = !isScrolled && !darkHero;
+    "fg-nl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lamp";
 
   return (
     <>
       {/* HEADER */}
-      <header
-        data-clear={transparent ? "true" : "false"}
-        className="fg-hdr fixed top-0 left-0 right-0 z-50 text-paper"
-      >
-        <div className="fg-wrap h-14 lg:h-16 flex items-center justify-between">
+      <header className="fg-hdr sticky top-0 z-50 text-paper">
+        <div className="fg-wrap h-14 lg:h-[72px] flex items-center justify-between">
           {/* Wordmark */}
           <Link
             to="/"
             aria-label="Fine Glaze, home"
-            className="flex-shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-glass"
+            className="flex-shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lamp"
           >
             <img decoding="async" src="/Logofg.webp" alt="Fine Glaze" width={1920} height={603} className="fg-logo-img" />
           </Link>
 
           {/* DESKTOP NAV */}
-          <nav className="hidden lg:flex items-center gap-6" aria-label="Main Navigation">
+          <nav className="hidden lg:flex items-stretch self-stretch gap-7" aria-label="Main Navigation">
             {/* Services Dropdown */}
             <div
-              className="relative group"
+              className="relative group flex"
               onMouseEnter={() => setIsServiceOpen(true)}
               onMouseLeave={() => setIsServiceOpen(false)}
             >
@@ -157,7 +137,7 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
                       key={service.href}
                       to={service.href}
                       className={cn(
-                        "block px-3 py-1.5 text-[13.5px] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-glass",
+                        "block px-3 py-2 text-[14px] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lamp",
                         location.pathname === service.href ? "text-lamp" : "text-paper hover:text-lamp"
                       )}
                     >
@@ -171,7 +151,7 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
             {/* Industries Dropdown */}
             <div
               ref={industryRef}
-              className="relative group"
+              className="relative group flex"
               onMouseEnter={() => setIsIndustryOpen(true)}
               onMouseLeave={() => setIsIndustryOpen(false)}
             >
@@ -199,7 +179,7 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
                       key={ind.href}
                       to={ind.href}
                       className={cn(
-                        "block px-3 py-1.5 text-[13.5px] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-glass",
+                        "block px-3 py-2 text-[14px] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lamp",
                         location.pathname === ind.href ? "text-lamp" : "text-paper hover:text-lamp"
                       )}
                     >
@@ -227,14 +207,14 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
 
           {/* ACTIONS */}
           <div className="flex items-center gap-3">
-            <CallNow className="fg-call" iconSize={14} />
+            <CallNow className="fg-call" iconSize={15} />
 
             {/* MOBILE TOGGLE */}
             <button
               type="button"
               onClick={() => setIsMobileMenuOpen(true)}
               aria-label="Open Mobile Menu"
-              className="lg:hidden p-2 text-paper focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-glass"
+              className="lg:hidden p-2 text-paper focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lamp"
             >
               <Menu size={24} />
             </button>
@@ -246,20 +226,20 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
       {isMobileMenuOpen && (
         <>
           <div
-            className="fixed inset-0 z-[55] bg-[rgba(24,19,15,0.55)] lg:hidden"
+            className="fixed inset-0 z-[55] bg-[rgba(21,24,27,0.55)] lg:hidden"
             onClick={() => setIsMobileMenuOpen(false)}
           />
           <div className="fixed top-0 left-0 right-0 z-[60] fg-menu-m text-paper max-h-[90vh] overflow-y-auto lg:hidden animate-in slide-in-from-top duration-200">
             <div className="flex items-center justify-between px-5 h-14 border-b border-line sticky top-0 z-10">
               <img decoding="async" src="/Logofg.webp" alt="Fine Glaze" width={1920} height={603} className="fg-logo-img" />
-              <button type="button" onClick={() => setIsMobileMenuOpen(false)} aria-label="Close menu" className="p-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-glass">
+              <button type="button" onClick={() => setIsMobileMenuOpen(false)} aria-label="Close menu" className="p-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lamp">
                 <X size={24} />
               </button>
             </div>
 
             <div className="px-5 py-4 space-y-4">
               <div>
-                <p className="text-sm font-semibold text-mute mb-2">Services</p>
+                <p className="font-mono text-[12px] uppercase tracking-[0.08em] text-mute mb-2">Services</p>
                 <div className="grid grid-cols-1 gap-1 pl-2 border-l border-line">
                   {serviceLinks.map((s) => (
                     <Link
@@ -275,7 +255,7 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
               </div>
 
               <div>
-                <p className="text-sm font-semibold text-mute mb-2">Industries</p>
+                <p className="font-mono text-[12px] uppercase tracking-[0.08em] text-mute mb-2">Industries</p>
                 <div className="grid grid-cols-1 gap-1 pl-2 border-l border-line">
                   {industryLinks.map((ind) => (
                     <Link
@@ -304,7 +284,7 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
                     <FileText size={18} className="text-lamp shrink-0" />
                     <span>Company Profile</span>
                   </span>
-                  <span className="text-[11px] font-semibold px-2 py-0.5 bg-lamp text-lamp-ink">PDF</span>
+                  <span className="font-mono text-[11px] font-medium px-2 py-0.5 bg-lamp text-lamp-ink">PDF</span>
                 </Link>
                 <Link to="/blog" onClick={() => setIsMobileMenuOpen(false)} className="block text-base font-medium py-1">Articles</Link>
                 <Link to="/about" onClick={() => setIsMobileMenuOpen(false)} className="block text-base font-medium py-1">About</Link>
@@ -313,7 +293,7 @@ export const Header = ({ darkHero = false }: { darkHero?: boolean }) => {
 
               <div className="pt-2 pb-4">
                 <CallNow
-                  className="w-full h-12 inline-flex items-center justify-center bg-lamp text-lamp-ink font-semibold text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-glass"
+                  className="w-full h-11 inline-flex items-center justify-center bg-lamp text-lamp-ink font-medium text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lamp"
                   iconSize={18}
                 />
               </div>
