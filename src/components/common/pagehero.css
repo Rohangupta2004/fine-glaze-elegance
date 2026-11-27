@@ -19,15 +19,15 @@
 /* Photo variant */
 .ph-img { background: #1a110a; color: #fbf8f4; }
 .ph-bg { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover; display: block; transform-origin: 60% 50%; animation: ph-in 1.8s cubic-bezier(0.22, 0.61, 0.36, 1) both; }
-.ph-shade { position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(26,17,10,.78) 0%, rgba(26,17,10,.55) 45%, rgba(26,17,10,.15) 100%); }
+.ph-shade { position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(26,17,10,.66) 0%, rgba(26,17,10,0) 50%), linear-gradient(90deg, rgba(26,17,10,.78) 0%, rgba(26,17,10,.55) 45%, rgba(26,17,10,.15) 100%); }
 .ph-img .ph-crumbs ol { color: rgba(251,248,244,.75); }
 .ph-img .ph-crumbs li + li::before { background: rgba(251,248,244,.35); }
-.ph-img .ph-crumbs a { color: rgba(251,248,244,.75); }
+.ph-img .ph-crumbs a { color: rgba(251,248,244,.95); }
 .ph-img .ph-crumbs a:hover, .ph-img .ph-crumbs [aria-current] { color: #fbf8f4; }
 .ph-img h1 { color: #fbf8f4; text-shadow: 0 1px 24px rgba(26,17,10,.35); }
 .ph-img .text-gradient, .ph-img .text-gradient-gold { background-image: var(--aurora-light); color: #e8b47a; }
 .ph-img .ph-intro { color: #fbf8f4; }
-.ph-img .ph-extra { color: rgba(251,248,244,.88); }
+.ph-img .ph-extra { color: rgba(251,248,244,.95); }
 .ph-img .ph-extra a { color: #fbf8f4; }
 .ph-img .fg-lnk { color: #fbf8f4; border-bottom-color: #e8b47a; }
 .ph-img .fg-lnk:hover { color: #f3d9b8; }
@@ -36,9 +36,10 @@
 @media (max-width: 900px) {
   .ph { min-height: 0; align-items: flex-start; }
   .ph-img { min-height: 64svh; align-items: flex-end; padding-top: 120px; }
-  .ph-shade { background: linear-gradient(180deg, rgba(26,17,10,.45) 0%, rgba(26,17,10,.55) 35%, rgba(26,17,10,.9) 100%); }
+  .ph-shade { background: linear-gradient(180deg, rgba(26,17,10,.6) 0%, rgba(26,17,10,.6) 35%, rgba(26,17,10,.9) 100%); }
   .ph-act .fg-btn { width: 100%; }
 }
 @media (prefers-reduced-motion: reduce) {
   .ph-bg { animation: none; }
 }
+.ph-img h1 .ph-sub { color: rgba(251,248,244,.9); }

@@ -212,7 +212,7 @@ void main(){
   // soft dark scrim under the headline: left side on wide screens, bottom on phones
   vec2 sp2=gl_FragCoord.xy/uRes;
   float scr=uAsp<.85?1.-sst(.55,1.,sp2.y):1.-sst(.12,.55,sp2.x);
-  c=mix(c,vec3(.078,.055,.035),.62*scr*uScr);
+  c=mix(c,vec3(.078,.055,.035),.72*scr*uScr);
   c=mix(c,gTc,gTm);
   c+=(h21(gl_FragCoord.xy+fract(uT)*91.)-.5)/150.;
   o=vec4(c,1.);
