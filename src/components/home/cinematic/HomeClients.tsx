@@ -56,14 +56,13 @@ const HomeClients = () => {
             <img
               src={getPublicUrl(logo.filename)}
               alt={hidden ? "" : c.name}
-              height={48}
+              height={40}
               decoding="async"
               onError={() => setBad((s) => new Set(s).add(logo.filename))}
             />
           ) : (
             <b>{c.name}</b>
           )}
-          <span>{c.work.split(" · ").join(". ")}.</span>
         </li>
       );
     });

@@ -1,7 +1,6 @@
-import { ReactNode, useRef } from "react";
+import { ReactNode } from "react";
 import { Link } from "react-router-dom";
 import CallNow from "./CallNow";
-import { useWipe } from "./useWipe";
 import "./pagehero.css";
 
 export interface Crumb {
@@ -16,7 +15,7 @@ export interface PageHeroProps {
   title: ReactNode;
   /** One line of intro. */
   intro?: ReactNode;
-  /** Optional hero photograph, shown in a square frame revealed with a panel wipe. */
+  /** Optional hero photograph, shown full-bleed behind the text under a dark warm overlay. */
   image?: { src: string; alt: string; width?: number; height?: number; position?: string; srcSet?: string; sizes?: string };
   /** Secondary text link next to the primary button. */
   secondary?: { label: string; to?: string; href?: string };
@@ -44,14 +43,30 @@ const accentLast = (t: string) => {
 };
 
 export const PageHero = ({ crumbs = [], title, intro, image, secondary, source = "page_hero", extra, hideAction, compact }: PageHeroProps) => {
-  const fig = useRef<HTMLElement>(null);
-  const [armed, seen] = useWipe(fig);
   const trail: Crumb[] = [{ label: "Home", to: "/" }, ...crumbs];
 
   return (
-    <section className={`ph aurora-glow${compact ? " compact" : ""}`}>
+    <section className={`ph${image ? " ph-img" : " aurora-glow"}${compact ? " compact" : ""}`}>
+      {image && (
+        <>
+          <img
+            className="ph-bg"
+            decoding="async"
+            src={image.src}
+            srcSet={image.srcSet}
+            sizes={image.srcSet ? "100vw" : image.sizes}
+            alt={image.alt}
+            width={image.width}
+            height={image.height}
+            loading="eager"
+            {...({ fetchpriority: "high" } as Record<string, string>)}
+            style={image.position ? { objectPosition: image.position } : undefined}
+          />
+          <div className="ph-shade" aria-hidden="true" />
+        </>
+      )}
       <div className="fg-wrap" style={{ width: "100%" }}>
-        <div className={`ph-g${image ? "" : " solo"}`}>
+        <div className="ph-g solo">
           <div className="ph-copy">
             <nav className="ph-crumbs" aria-label="Breadcrumb">
               <ol>
@@ -73,7 +88,7 @@ export const PageHero = ({ crumbs = [], title, intro, image, secondary, source =
             {intro && <p className="ph-intro">{intro}</p>}
             <div className="ph-act" hidden={hideAction && !secondary ? true : undefined}>
               {!hideAction && (
-                <CallNow className="fg-btn" number={!secondary?.href?.startsWith("tel:")} />
+                <CallNow className="fg-btn" number={!secondary?.href?.startsWith("tel:")} numberClassName={image ? "ph-num" : ""} />
               )}
               {secondary &&
                 (secondary.href ? (
@@ -88,21 +103,6 @@ export const PageHero = ({ crumbs = [], title, intro, image, secondary, source =
             </div>
             {extra && <div className="ph-extra">{extra}</div>}
           </div>
-          {image && (
-            <figure ref={fig} className={`ph-fig${armed ? " armed" : ""}${seen ? " seen" : ""}`}>
-              <img decoding="async"
-                src={image.src}
-                srcSet={image.srcSet}
-                sizes={image.sizes}
-                alt={image.alt}
-                width={image.width}
-                height={image.height}
-                loading="eager"
-                {...({ fetchpriority: "high" } as Record<string, string>)}
-                style={image.position ? { objectPosition: image.position } : undefined}
-              />
-            </figure>
-          )}
         </div>
       </div>
     </section>
