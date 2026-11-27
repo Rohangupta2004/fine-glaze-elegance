@@ -1,17 +1,15 @@
 import { Layout } from "@/components/layout/Layout";
 import CallNow from "@/components/common/CallNow";
 import { Link } from "react-router-dom";
-import { Building2, ArrowRight, Layers, ShieldCheck, Clock, Users, Phone, Ruler, Sparkles } from "lucide-react";
 import SEO from "@/components/SEO";
 import PageHero from "@/components/common/PageHero";
 import { CTASection } from "@/components/home/CTASection";
-import Illustration from "@/components/common/Illustration";
-import { ILLUSTRATIONS, illusSrc, illusSrcSet, type IllustrationName } from "@/lib/illustrations";
+import { Process, Sec, SchematicFig, SpecList, type SchematicKey } from "@/components/common/Sheet";
 import "./services.css";
 
 interface ServiceItem {
   id: string;
-  illus?: IllustrationName;
+  schematic: SchematicKey;
   title: string;
   subtitle: string;
   href: string;
@@ -24,22 +22,11 @@ const indexLabel: Record<string, string> = {
   facade: "Curtain Wall & Structural Glazing",
 };
 
-const accentLast = (t: string) => {
-  const i = t.trimEnd().lastIndexOf(" ");
-  if (i < 0) return <span className="text-gradient">{t}</span>;
-  return (
-    <>
-      {t.slice(0, i + 1)}
-      <span className="text-gradient">{t.slice(i + 1)}</span>
-    </>
-  );
-};
-
 /* ================= SERVICES DATA ================= */
 const services: ServiceItem[] = [
   {
     id: "facade",
-    illus: "svc-structural-glazing" as IllustrationName,
+    schematic: "curtain",
     title: "Facade Systems",
     subtitle: "Curtain Walls & Structural Glazing",
     href: "/curtain-wall-systems",
@@ -56,7 +43,7 @@ const services: ServiceItem[] = [
   },
   {
     id: "railings",
-    illus: "svc-glass-railings" as IllustrationName,
+    schematic: "railing",
     title: "Glass Railings",
     subtitle: "Frameless & Semi-Frameless Systems",
     href: "/glass-railings",
@@ -73,7 +60,7 @@ const services: ServiceItem[] = [
   },
   {
     id: "doors-windows",
-    illus: "svc-aluminium-windows" as IllustrationName,
+    schematic: "windows",
     title: "Aluminium Doors & Windows",
     subtitle: "Premium Aluminium Systems",
     href: "/aluminium-windows-doors",
@@ -90,7 +77,7 @@ const services: ServiceItem[] = [
   },
   {
     id: "maintenance",
-    illus: "svc-maintenance" as IllustrationName,
+    schematic: "maintenance",
     title: "Facade AMC & Maintenance",
     subtitle: "Facade Care & Repair Services",
     href: "/maintenance-services",
@@ -107,7 +94,7 @@ const services: ServiceItem[] = [
   },
   {
     id: "acp-cladding",
-    illus: "svc-acp-cladding" as IllustrationName,
+    schematic: "cladding",
     title: "ACP & Metal Cladding",
     subtitle: "Aluminium Composite Panels",
     href: "/acp-aluminium-cladding",
@@ -124,7 +111,7 @@ const services: ServiceItem[] = [
   },
   {
     id: "skylights",
-    illus: "svc-skylights" as IllustrationName,
+    schematic: "skylight",
     title: "Skylights & Glass Canopies",
     subtitle: "Overhead Glazing Solutions",
     href: "/skylights-canopies",
@@ -141,7 +128,7 @@ const services: ServiceItem[] = [
   },
   {
     id: "louvers",
-    illus: "svc-louvers" as IllustrationName,
+    schematic: "louver",
     title: "Aluminium Louvers & Sun Shading",
     subtitle: "Solar Control Systems",
     href: "/aluminium-louvers",
@@ -158,7 +145,7 @@ const services: ServiceItem[] = [
   },
   {
     id: "partitions",
-    illus: "svc-glass-partitions" as IllustrationName,
+    schematic: "partition",
     title: "Glass Partitions & Shower Enclosures",
     subtitle: "Interior Glass Solutions",
     href: "/glass-partitions",
@@ -178,22 +165,18 @@ const services: ServiceItem[] = [
 /* ================= PROCESS STEPS ================= */
 const processSteps = [
   {
-    icon: Phone,
     title: "Consultation",
     desc: "Site survey and requirement discussion with our team.",
   },
   {
-    icon: Ruler,
     title: "Survey & Design",
     desc: "Measurements and in-house shop drawings for approval.",
   },
   {
-    icon: Layers,
     title: "Fabrication",
     desc: "Cutting, assembly and quality checks at our Pisoli, Pune unit.",
   },
   {
-    icon: Sparkles,
     title: "Installation",
     desc: "Sequenced on-site erection with a dedicated site in-charge, supervisor and safety officer.",
   },
@@ -202,22 +185,18 @@ const processSteps = [
 /* ================= WHY CHOOSE US ================= */
 const whyUs = [
   {
-    icon: ShieldCheck,
     title: "Quality Assurance",
     desc: "Materials from approved brands — Saint-Gobain glass, Alubond ACP, DOWSIL sealants — with a site water test on installed glazing and third-party ASTM testing arranged on request.",
   },
   {
-    icon: Clock,
     title: "Programme Planning",
     desc: "We plan fabrication in project batches and sequence erection to the main contractor's programme. Programmes are confirmed per project.",
   },
   {
-    icon: Users,
     title: "Expert Team",
     desc: "A core engineering, supervision and site team of 40+, led by a founder with 11+ years in the facade industry.",
   },
   {
-    icon: Building2,
     title: "Landmark Projects",
     desc: "Work for Embassy REIT, L&T Construction, Jindal Stainless and Nirmaann. Embassy REIT Best Vendor 2024.",
   },
@@ -251,97 +230,73 @@ export default function Services() {
         title={<>Facade, Glazing &amp; <span className="text-gradient-gold">Aluminium Solutions</span></>}
         intro="Curtain walls, structural glazing, ACP cladding, windows, railings, skylights, louvers, partitions and facade maintenance, from one team in Pune and Mumbai."
         secondary={{ label: "View Our Projects", to: "/portfolio" }}
-        image={{ src: illusSrc("svc-curtain-wall"), srcSet: illusSrcSet("svc-curtain-wall"), sizes: "100vw", alt: ILLUSTRATIONS["svc-curtain-wall"], width: 1376, height: 768 }}
         extra="Best Vendor Performance 2024, awarded by Embassy REIT."
         source="services_hero"
       />
 
-      <nav className="sv-idx" aria-label="Services index">
-        <div className="fg-wrap">
-          <p className="sv-eyebrow">All services</p>
-          <ol>
-            {services.map((service, index) => (
-              <li key={service.id}>
-                <a href={`#${service.id}`}>
-                  <span className="sv-no">N&ordm; {String(index + 1).padStart(2, "0")}</span>
-                  <span className="sv-nm">{indexLabel[service.id] || service.title}</span>
-                  <ArrowRight size={16} aria-hidden="true" className="sv-ar" />
-                </a>
-              </li>
-            ))}
-          </ol>
-        </div>
-      </nav>
+      <Sec no="01" label="Index" title="Facade, glazing and aluminium services." sheetLabel="Service index" dim={`${services.length} service groups`}>
+        <ol className="sx-links">
+          {services.map((service, index) => (
+            <li key={service.id}>
+              <a href={`#${service.id}`}>
+                <b>
+                  <span className="sx-mono" style={{ color: "#555b62", marginRight: 12, fontWeight: 400, fontSize: 13 }}>
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  {indexLabel[service.id] || service.title}
+                </b>
+                <span>{service.subtitle}</span>
+                <i aria-hidden="true">{"→"}</i>
+              </a>
+            </li>
+          ))}
+        </ol>
+      </Sec>
 
-      {services.map((service, index) => {
-        const flip = index % 2 === 1;
-        const no = `N\u00BA ${String(index + 1).padStart(2, "0")}`;
-        return (
-          <section key={service.id} id={service.id} aria-labelledby={`${service.id}-heading`} className="sv-sec">
-            <div className="fg-wrap">
-              <div className={`sv-row${flip ? " flip" : ""}`}>
-                {service.illus && (
-                  <div className="sv-media">
-                    <Illustration name={service.illus} flush sizes="(max-width: 1024px) 100vw, 58vw" />
-                  </div>
-                )}
-                <div className="sv-copy">
-                  <p className="sv-eyebrow">
-                    <span className="sv-no">{no}</span>
-                    <span>{service.subtitle}</span>
-                  </p>
-                  <h2 id={`${service.id}-heading`} className="sv-h">{accentLast(service.title)}</h2>
-                  <p className="sv-p">{service.longDescription}</p>
-                  <ul className="sv-ft">
-                    {service.features.map((f) => (
-                      <li key={f}>{f}</li>
-                    ))}
-                  </ul>
-                  <div className="sv-act">
-                    <CallNow className="fg-btn" number />
-                    <Link className="fg-lnk" to={service.href}>
-                      Learn more
-                    </Link>
-                  </div>
-                </div>
+      {services.map((service, index) => (
+        <Sec
+          key={service.id}
+          id={service.id}
+          no={String(index + 2).padStart(2, "0")}
+          label={service.subtitle}
+          title={service.title}
+          sheetLabel={service.title}
+        >
+          <div className="sx-split">
+            <div>
+              <div className="sx-prose">
+                <p>{service.longDescription}</p>
               </div>
+              <div style={{ height: 28 }} />
+              <SpecList items={service.features} />
+              <p className="sx-more">
+                <CallNow className="fg-btn" number />
+                <Link className="fg-btn2" to={service.href}>
+                  Learn more
+                </Link>
+              </p>
             </div>
-          </section>
-        );
-      })}
+            <div className="sx-side">
+              <SchematicFig kind={service.schematic} fig={String(index + 1).padStart(2, "0")} />
+            </div>
+          </div>
+        </Sec>
+      ))}
 
-      <section className="fg-sec">
-        <div className="fg-wrap">
-          <h2>Our execution process</h2>
-          <ol className="fg-grid c4" style={{ listStyle: "none" }}>
-            {processSteps.map((step, i) => (
-              <li key={step.title}>
-                <div className="fg-cell">
-                  <span className="text-mute text-sm tabular-nums">{String(i + 1).padStart(2, "0")}</span>
-                  <h3 className="text-xl font-medium tracking-[-0.015em] text-paper">{step.title}</h3>
-                  <p className="text-[15.5px] text-mute leading-relaxed">{step.desc}</p>
-                </div>
-              </li>
-            ))}
-          </ol>
-        </div>
-      </section>
+      <Sec no={String(services.length + 2).padStart(2, "0")} label="Process" title="Our execution process" sheetLabel="Process">
+        <Process steps={processSteps} />
+      </Sec>
 
-      <section className="fg-sec">
-        <div className="fg-wrap">
-          <h2>What sets us apart</h2>
-          <ul className="fg-grid c4">
-            {whyUs.map((item) => (
-              <li key={item.title}>
-                <div className="fg-cell">
-                  <h3 className="text-xl font-medium tracking-[-0.015em] text-paper">{item.title}</h3>
-                  <p className="text-[15.5px] text-mute leading-relaxed">{item.desc}</p>
-                </div>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
+      <Sec no={String(services.length + 3).padStart(2, "0")} label="Record" title="What sets us apart" sheetLabel="Why Fine Glaze">
+        <SpecList
+          items={whyUs.map((w) => (
+            <>
+              <b style={{ fontWeight: 500 }}>{w.title}</b>
+              <span className="sx-d">{w.desc}</span>
+            </>
+          ))}
+        />
+      </Sec>
 
       <CTASection />
     </Layout>

@@ -62,7 +62,7 @@ export function ProjectCarousel({ title, location, images }: ProjectCarouselProp
   return (
     <section className="pc" role="region" aria-roledescription="carousel" aria-label={`${title} photographs`}>
       <div className="pc-head">
-        <h2 className="pc-h">Photographs</h2>
+        <p className="pc-h">Photographs</p>
         <p className="pc-n" aria-live="polite">
           N&ordm; {String(active + 1).padStart(2, "0")} / {String(n).padStart(2, "0")}
         </p>

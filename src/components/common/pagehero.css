@@ -37,3 +37,6 @@
   .ph-act .fg-btn, .ph-act .cn-wrap, .ph-act .fg-btn2 { width: 100%; }
   .ph-act .cn-wrap .fg-btn { width: 100%; }
 }
+.ph-sch { margin: 0; }
+.ph-sch .sx-fig-f { aspect-ratio: 4 / 3; }
+@media (max-width: 900px) { .ph-sch { max-width: 420px; } }

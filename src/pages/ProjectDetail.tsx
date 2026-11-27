@@ -8,6 +8,9 @@ import SEO from "@/components/SEO";
 import PageHero from "@/components/common/PageHero";
 import { ProjectCarousel } from "@/components/ProjectCarousel";
 import { RelatedProjects } from "@/components/RelatedProjects";
+import { CTASection } from "@/components/home/CTASection";
+import { Prose, Pull, Sec } from "@/components/common/Sheet";
+import { TitleBlock } from "@/components/common/Drawing";
 import projectPhotos from "@/data/projectPhotos.json";
 
 /** "Project – main scope | Fine Glaze", kept short enough to show in search results. */
@@ -26,7 +29,7 @@ const ProjectDetail = () => {
     return (
       <Layout darkHero>
         <div className="min-h-[60vh] flex items-center justify-center">
-          <div className="w-8 h-8 border-4 border-primary/30 border-t-primary animate-spin" />
+          <p className="sx-note">Loading project record.</p>
         </div>
       </Layout>
     );
@@ -122,65 +125,49 @@ const ProjectDetail = () => {
         source="project_hero"
       />
 
-      {photos.length > 1 && (
-        <section className="fg-sec">
-          <div className="fg-wrap">
-            <ProjectCarousel title={project.title} location={project.location} images={photos} />
+      <Sec no="01" label="Project record" title={project.scope} sheetLabel="Project record">
+        <div className="sx-split">
+          <div>
+            <Prose>
+              <p>{summary}</p>
+            </Prose>
+            {project.isAwardWinner && project.award && (
+              <div style={{ marginTop: 28 }}>
+                <Pull label="Client recognition">
+                  {project.award}
+                  <span style={{ display: "block", marginTop: 6, fontSize: 15, fontWeight: 400, color: "#555b62" }}>Awarded by Embassy REIT</span>
+                </Pull>
+              </div>
+            )}
           </div>
-        </section>
-      )}
-
-      <section className="fg-sec">
-        <div className="fg-wrap">
-          <div className="grid lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)] gap-12 lg:gap-0 items-start">
-            <div className="lg:pr-16 space-y-10">
-              <div>
-                <p className="text-[15px] text-mute mb-4">Our contribution</p>
-                <h2 className="font-display font-medium text-3xl md:text-5xl leading-[1.05] tracking-[-0.015em] mb-6">{project.scope}</h2>
-                <p className="text-mute leading-relaxed text-lg max-w-[68ch]">{summary}</p>
-              </div>
-
-              {project.isAwardWinner && project.award && (
-                <div className="border-l border-line pl-6 py-1">
-                  <p className="text-[15px] text-mute mb-2">Client recognition</p>
-                  <p className="text-xl font-semibold">{project.award}</p>
-                  <p className="text-[15px] text-mute mt-1">Awarded by Embassy REIT</p>
-                </div>
-              )}
-            </div>
-
-            <aside className="lg:border-l border-line lg:pl-10 space-y-10 lg:sticky lg:top-28 self-start">
-              <div>
-                <h3 className="text-xl font-medium tracking-[-0.015em] mb-4">At a glance</h3>
-                <dl className="border-t border-line text-[15.5px]">
-                  {[
-                    ...(project.client ? [["Client", project.client]] : []),
-                    ["Location", project.location],
-                    ["Status", project.status],
-                    ["Category", project.category],
-                    ...(project.isAwardWinner ? [["Award", project.award]] : []),
-                  ].map(([k, v]) => (
-                    <div key={k} className="grid grid-cols-[96px_minmax(0,1fr)] gap-4 py-3 border-b border-line">
-                      <dt className="text-mute">{k}</dt>
-                      <dd className="capitalize-first">{v}</dd>
-                    </div>
-                  ))}
-                </dl>
-              </div>
-
-              <div>
-                <h3 className="text-xl font-medium tracking-[-0.015em] mb-3">Discuss your project</h3>
-                <p className="text-[15.5px] text-mute leading-relaxed mb-5">
-                  Speak with our team about the right facade solution for your building.
-                </p>
-                <CallNow className="fg-btn" number />
-              </div>
-            </aside>
+          <div className="sx-side">
+            <TitleBlock
+              className="sx-pd-tb"
+              rows={[
+                ["PROJECT", project.title],
+                ["LOCATION", project.location],
+                ["CLIENT", project.client || "Not listed"],
+                ["SCOPE", project.scope],
+                ["STATUS", project.status === "Completed" && project.year ? `Completed ${project.year}` : project.status || "Not listed"],
+                ["CATEGORY", project.category],
+                ...(project.isAwardWinner && project.award ? ([["AWARD", project.award]] as Array<[string, string]>) : []),
+              ]}
+            />
+            <p className="sx-more" style={{ margin: 0 }}>
+              <CallNow className="fg-btn" number />
+            </p>
           </div>
         </div>
-      </section>
+      </Sec>
 
-      <RelatedProjects heading="More Fine Glaze projects" excludeSlugs={[project.slug]} preferCategory={project.category} limit={4} />
+      {photos.length > 1 && (
+        <Sec no="02" label="Photographs" title="Photographs of the works." sheetLabel="Photographs" dim={`${photos.length} photographs`}>
+          <ProjectCarousel title={project.title} location={project.location} images={photos} />
+        </Sec>
+      )}
+
+      <RelatedProjects no={photos.length > 1 ? "03" : "02"} heading="More Fine Glaze projects" excludeSlugs={[project.slug]} preferCategory={project.category} limit={4} />
+      <CTASection />
     </Layout>
   );
 };

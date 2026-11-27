@@ -1,13 +1,14 @@
 import { useState } from "react";
-import CallNow from "@/components/common/CallNow";
 import { Link } from "react-router-dom";
-import { ArrowRight, CheckCircle2, Phone } from "lucide-react";
 import SEO from "@/components/SEO";
 import PageHero from "@/components/common/PageHero";
 import { Layout } from "@/components/layout/Layout";
 import { QuoteModal } from "@/components/QuoteModal";
 import { company, telHref } from "@/data/company";
 import { COST_SYSTEMS } from "@/data/costRanges";
+import FaqList from "@/components/common/FaqList";
+import { CTASection } from "@/components/home/CTASection";
+import { Process, Prose, Sec, SpecList, SpecTable } from "@/components/common/Sheet";
 
 const PAGE_URL = "https://fineglaze.com/aluminium-windows-doors";
 const HERO = "/projects/samundra-tarang-51-1.webp";
@@ -134,162 +135,118 @@ export default function AluminiumWindowsDoors() {
 
       {/* HERO */}
       <PageHero
+        schematic="windows"
         crumbs={[{ label: "Aluminium windows and doors" }]}
         title={<>Aluminium Windows &amp; Doors in <span className="text-gradient-gold">Pune &amp; Mumbai</span></>}
         intro={`Sliding, casement, tilt-turn and lift-slide systems, measured by us, fabricated at our ${company.fabricationUnit.location} unit, installed under a dedicated site in-charge and supervisor, and water-tested before handover.`}
         secondary={{ label: company.phone.mobileDisplay, href: telHref }}
-        image={{ src: HERO, alt: "Aluminium sliding and fixed glass terrace enclosure by Fine Glaze at Samundra Tarang, Dadar", width: 816, height: 459 }}
-        extra="Pictured: terrace enclosure, Samundra Tarang, Dadar (W), completed by Fine Glaze."
         source="windows_hero"
       />
 
-      {/* SYSTEMS */}
-      <section className="fg-sec" aria-labelledby="systems">
-        <div className="fg-wrap">
-          <div className="max-w-2xl mb-10">
-            <h2 id="systems" className="fg-h2">Window &amp; door systems we install</h2>
-            <p className="mt-3 text-muted-foreground">
-              Every system is priced after a site measurement, with the profile series, glass and hardware written into an itemised quotation.
-            </p>
-          </div>
-          <div className="grid sm:grid-cols-2 gap-5">
-            {windowSystems.map((s) => (
-              <article key={s.id} className="border border-border bg-card p-6">
-                <div className="flex items-start justify-between gap-4">
-                  <h3 className="text-xl font-medium text-foreground">{s.name}</h3>
-                </div>
-                <p className="mt-3 text-sm text-muted-foreground">{SYSTEM_NOTES[s.id]?.what}</p>
-                <p className="mt-3 text-sm"><span className="font-semibold text-foreground">Best for:</span> <span className="text-muted-foreground">{SYSTEM_NOTES[s.id]?.bestFor}</span></p>
-                <p className="mt-2 text-xs text-muted-foreground">Price moves with: {s.drivers.join(", ")}</p>
-              </article>
-            ))}
-          </div>
-          <p className="mt-6 text-sm text-muted-foreground">
-            We also fabricate fixed glazing, sliding &amp; folding doors, safety gates and mirror glass work. Thermal-break profiles are available on request.
-          </p>
-        </div>
-      </section>
+      <Sec no="01" label="Systems" title={<>Window &amp; door systems we install</>} sheetLabel="System schedule" dim={`${windowSystems.length} systems`}>
+        <p className="sx-note">
+          Every system is priced after a site measurement, with the profile series, glass and hardware written into an itemised quotation.
+        </p>
+        <SpecTable
+          caption="Window and door systems"
+          columns={["No.", "System", "Best for", "Price moves with"]}
+          rows={windowSystems.map((s, i) => [
+            String(i + 1).padStart(2, "0"),
+            <>
+              <b>{s.name}</b>
+              <small>{SYSTEM_NOTES[s.id]?.what}</small>
+            </>,
+            SYSTEM_NOTES[s.id]?.bestFor,
+            s.drivers.join(", "),
+          ])}
+        />
+        <p className="sx-note" style={{ marginTop: 22, marginBottom: 0 }}>
+          We also fabricate fixed glazing, sliding &amp; folding doors, safety gates and mirror glass work. Thermal-break profiles are available on request.
+        </p>
+      </Sec>
 
-      {/* GLASS */}
-      <section className="fg-sec" aria-labelledby="glass">
-        <div className="fg-wrap grid lg:grid-cols-2 gap-10 items-start">
-          <div>
-            <h2 id="glass" className="fg-h2">The glass matters as much as the frame</h2>
-            <p className="mt-4 text-muted-foreground">
+      <Sec no="02" label="Glass" title={<>The glass matters as much as the frame</>} sheetLabel="Glass build-up">
+        <div className="sx-split">
+          <Prose>
+            <p>
               Heat and noise mostly come through the glass, so we specify the glass build-up window by window — not one type for the whole house.
               Heat-gain and acoustic figures depend on the exact glass and frame, and we share the glass maker's data sheet with every quote.
             </p>
-            <p className="mt-4 text-muted-foreground">
-              Glass is sourced from Saint-Gobain and other major Indian processors, or strictly from your architect's approved list.
-            </p>
-          </div>
-          <ul className="grid gap-3">
-            {GLASS_OPTIONS.map((g) => (
-              <li key={g.name} className="bg-card border border-border p-5">
-                <p className="font-semibold text-foreground">{g.name}</p>
-                <p className="text-sm text-muted-foreground mt-1">{g.use}</p>
-              </li>
+            <p>Glass is sourced from Saint-Gobain and other major Indian processors, or strictly from your architect's approved list.</p>
+          </Prose>
+          <SpecList
+            items={GLASS_OPTIONS.map((g) => (
+              <>
+                <b style={{ fontWeight: 500 }}>{g.name}</b>
+                <span className="sx-d">{g.use}</span>
+              </>
             ))}
-          </ul>
+          />
         </div>
-      </section>
+      </Sec>
 
-      {/* QUOTE CHECKLIST */}
-      <section className="fg-sec" aria-labelledby="checklist">
-        <div className="fg-wrap">
-          <h2 id="checklist" className="fg-h2">Comparing window quotes? Check these 7 lines</h2>
-          <p className="mt-3 text-muted-foreground">
-            Two quotes that both say “aluminium sliding window” can differ a lot — often for good reason. Ask every supplier — including us — to put these in writing.
-          </p>
-          <ol className="mt-8 space-y-3">
-            {QUOTE_CHECKLIST.map((item, i) => (
-              <li key={item} className="flex gap-4 border border-border bg-card p-4">
-                <span className="flex h-7 w-7 shrink-0 items-center justify-center bg-lamp/15 text-sm font-bold text-paper">{i + 1}</span>
-                <span className="text-foreground/90">{item}</span>
-              </li>
-            ))}
-          </ol>
-        </div>
-      </section>
+      <Sec no="03" label="Quotes" title={<>Comparing window quotes? Check these 7 lines</>} sheetLabel="Quote checklist">
+        <p className="sx-note">
+          Two quotes that both say “aluminium sliding window” can differ a lot — often for good reason. Ask every supplier — including us — to put these in writing.
+        </p>
+        <SpecList items={QUOTE_CHECKLIST} />
+      </Sec>
 
-      {/* PROJECTS */}
-      <section className="py-16 md:py-20 bg-night text-paper" aria-labelledby="projects">
-        <div className="fg-wrap">
-          <h2 id="projects" className="fg-h2">Window work we have done</h2>
-          <p className="mt-3 text-paper/80 max-w-2xl">Real projects from our company profile, with our actual scope and status.</p>
-          <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      <Sec no="04" label="Projects" title={<>Window work we have done</>} sheetLabel="Project record">
+        <p className="sx-note">Real projects from our company profile, with our actual scope and status.</p>
+        <table className="sx-pt">
+          <caption className="sr-only">Window projects with scope and status</caption>
+          <thead>
+            <tr>
+              <th scope="col" aria-label="Photo" />
+              <th scope="col">Project</th>
+              <th scope="col">Scope</th>
+              <th scope="col">Status</th>
+            </tr>
+          </thead>
+          <tbody>
             {PROJECTS.map((p) => (
-              <Link key={p.href} to={p.href} className="group overflow-hidden border border-line bg-night-2 hover:border-lamp/60">
-                <img src={p.img} alt={p.title} width={400} height={176} sizes="(max-width: 640px) 100vw, 300px" decoding="async" className="h-44 w-full object-cover" loading="lazy" />
-                <div className="p-4">
-                  <p className="text-xs font-semibold text-lamp">{p.status}</p>
-                  <h3 className="mt-1 font-medium leading-snug group-hover:text-lamp">{p.title}</h3>
-                  <p className="mt-2 text-sm text-mute">{p.scope}</p>
-                </div>
-              </Link>
+              <tr key={p.href}>
+                <td className="ph">
+                  <img src={p.img} alt={p.title} width={112} height={72} loading="lazy" decoding="async" />
+                </td>
+                <td className="pn">
+                  <Link to={p.href}>{p.title}</Link>
+                </td>
+                <td className="pc">{p.scope}</td>
+                <td>
+                  <span className={`sx-st sx-st-${p.status.startsWith("Completed") ? "completed" : "ongoing"}`}>{p.status}</span>
+                </td>
+              </tr>
             ))}
-          </div>
-        </div>
-      </section>
+          </tbody>
+        </table>
+      </Sec>
 
-      {/* PROCESS */}
-      <section className="fg-sec" aria-labelledby="process">
-        <div className="fg-wrap">
-          <h2 id="process" className="fg-h2">How a window order runs</h2>
-          <ol className="mt-8 grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
-            {[
-              ["Site measurement", "Every opening measured and checked for level and plumb."],
-              ["Drawing & sample", "Window schedule, sections and colour sample for approval."],
-              ["Fabrication", `Cut and assembled at our ${company.fabricationUnit.location} unit.`],
-              ["Installation", "Fixed, packed and sealed under a dedicated site in-charge and supervisor."],
-              ["Water test & handover", "Site water test, snag list closed, defect liability per contract."],
-            ].map(([t, d], i) => (
-              <li key={t} className="border border-border bg-card p-5">
-                <p className="text-xs font-bold text-lamp">STEP {i + 1}</p>
-                <p className="mt-1 font-semibold text-foreground">{t}</p>
-                <p className="mt-1 text-sm text-muted-foreground">{d}</p>
-              </li>
-            ))}
-          </ol>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Link to="/quality-safety" className="inline-flex items-center border border-border px-5 py-3 font-semibold hover:border-primary">
-              <CheckCircle2 className="mr-2 h-4 w-4 text-primary" /> Our quality &amp; safety checks
-            </Link>
-          </div>
-        </div>
-      </section>
+      <Sec no="05" label="Process" title={<>How a window order runs</>} sheetLabel="Process">
+        <Process
+          steps={[
+            { title: "Site measurement", desc: "Every opening measured and checked for level and plumb." },
+            { title: "Drawing & sample", desc: "Window schedule, sections and colour sample for approval." },
+            { title: "Fabrication", desc: `Cut and assembled at our ${company.fabricationUnit.location} unit.` },
+            { title: "Installation", desc: "Fixed, packed and sealed under a dedicated site in-charge and supervisor." },
+            { title: "Water test & handover", desc: "Site water test, snag list closed, defect liability per contract." },
+          ]}
+        />
+        <p className="sx-more">
+          <Link to="/quality-safety" className="fg-btn2">
+            Our quality &amp; safety checks
+          </Link>
+        </p>
+      </Sec>
 
-      {/* FAQ */}
-      <section className="fg-sec" aria-labelledby="faq">
-        <div className="fg-wrap">
-          <h2 id="faq" className="fg-h2">Aluminium window FAQs</h2>
-          <div className="space-y-3">
-            {FAQS.map((f) => (
-              <details key={f.q} className="group border border-border bg-card p-5">
-                <summary className="cursor-pointer font-semibold text-foreground list-none flex justify-between gap-4">
-                  {f.q}
-                  <span className="text-primary group-open:rotate-45 transition-transform" aria-hidden="true">+</span>
-                </summary>
-                <p className="mt-3 text-muted-foreground">{f.a}</p>
-              </details>
-            ))}
-          </div>
+      <Sec no="06" label="FAQ" title={<>Aluminium window FAQs</>} sheetLabel="FAQ">
+        <div className="sx-faq">
+          <FaqList items={FAQS} />
         </div>
-      </section>
+      </Sec>
 
-      {/* CTA */}
-      <section className="py-16 bg-lamp">
-        <div className="fg-wrap">
-          <h2 className="fg-h2" style={{ color: "#ffffff", marginBottom: 12 }}>Get your windows measured and quoted</h2>
-          <p className="mt-2 text-lamp-ink">Pune, PCMC, Mumbai, Navi Mumbai and Thane.</p>
-          <div className="mt-6 flex flex-col sm:flex-row gap-3">
-            <CallNow className="bg-night text-paper font-bold px-7 py-4 hover:bg-night-2 inline-flex items-center justify-center" />
-            <a href={telHref} className="border-2 border-night text-lamp-ink font-bold px-7 py-4 hover:bg-night hover:text-paper">
-              {company.phone.mobileDisplay}
-            </a>
-          </div>
-        </div>
-      </section>
+      <CTASection />
 
       <QuoteModal
         open={quoteOpen}

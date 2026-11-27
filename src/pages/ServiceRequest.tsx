@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { AlertTriangle, CheckCircle2, MessageCircle, Phone, Send, Wrench } from "lucide-react";
 import SEO from "@/components/SEO";
 import PageHero from "@/components/common/PageHero";
+import FaqList from "@/components/common/FaqList";
+import { Pull, Sec, SpecList } from "@/components/common/Sheet";
+import { CTASection } from "@/components/home/CTASection";
 import { Layout } from "@/components/layout/Layout";
 import { company, telHref, whatsappHref } from "@/data/company";
 import { submitLead } from "@/lib/leads";
@@ -103,8 +105,6 @@ export default function ServiceRequest() {
     },
   ];
 
-  const field = "w-full  border border-input bg-background px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-lamp";
-
   return (
     <Layout darkHero>
       <SEO
@@ -122,147 +122,115 @@ export default function ServiceRequest() {
         source="service_request_hero"
         secondary={{ label: `Urgent? Call ${company.phone.mobileDisplay}`, href: telHref }}
         extra={
-          <a href={whatsappHref("Hi Fine Glaze, I'd like to report a facade issue. Sending photos:")} target="_blank" rel="noopener noreferrer" className="fg-lnk">
+          <a href={whatsappHref("Hi Fine Glaze, I'd like to report a facade issue. Sending photos:")} target="_blank" rel="noopener noreferrer" className="fg-btn2">
             Send photos on WhatsApp
           </a>
         }
       />
 
 
-      <section className="fg-sec">
-        <div className="fg-wrap grid lg:grid-cols-[1.3fr_1fr] gap-8">
+      <Sec no="01" label="Request" title="Tell us about the issue." sheetLabel="Service request">
+        <div className="sx-split">
           {sent ? (
-            <div className="border border-emerald-500/40 bg-emerald-500/5 p-8">
-              <CheckCircle2 className="h-10 w-10 text-emerald-600" />
-              <h2 className="mt-3 text-2xl font-medium text-foreground">Request received</h2>
-              <p className="mt-2 text-muted-foreground">
+            <div className="sx-sent" role="status">
+              <p className="sx-lab">Request received</p>
+              <p className="sx-note">
                 We'll call you on {form.phone || "the number you gave"} to arrange a visit. Photos help us bring the right
                 material — you can send them on WhatsApp now.
               </p>
-              <a
-                href={whatsappHref(`${summary}\n\nPhotos:`)}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-5 inline-flex items-center bg-emerald-600 text-paper font-bold px-5 py-3 hover:bg-emerald-500"
-              >
-                <MessageCircle className="mr-2 h-4 w-4" /> Send photos on WhatsApp
+              <a href={whatsappHref(`${summary}\n\nPhotos:`)} target="_blank" rel="noopener noreferrer" className="fg-btn">
+                Send photos on WhatsApp
               </a>
             </div>
           ) : (
-            <form onSubmit={submit} className="border border-border bg-card p-6 space-y-4" aria-labelledby="sr-form">
-              <h2 id="sr-form" className="text-xl font-medium text-foreground">Tell us about the issue</h2>
-              <div className="grid sm:grid-cols-2 gap-4">
-                <label className="block text-sm font-medium text-foreground">
-                  Your name *
-                  <input required value={form.name} onChange={set("name")} className={`mt-1 ${field}`} autoComplete="name" />
-                </label>
-                <label className="block text-sm font-medium text-foreground">
-                  Phone / WhatsApp *
-                  <input required type="tel" value={form.phone} onChange={set("phone")} className={`mt-1 ${field}`} autoComplete="tel" />
-                </label>
+            <form onSubmit={submit} className="sx-form" aria-label="Service request form">
+              <div className="sx-row">
+                <div>
+                  <label htmlFor="sr-name" className="sx-lab">Your name <i aria-hidden="true">*</i></label>
+                  <input id="sr-name" required value={form.name} onChange={set("name")} className="sx-in" autoComplete="name" />
+                </div>
+                <div>
+                  <label htmlFor="sr-phone" className="sx-lab">Phone / WhatsApp <i aria-hidden="true">*</i></label>
+                  <input id="sr-phone" required type="tel" value={form.phone} onChange={set("phone")} className="sx-in" autoComplete="tel" />
+                </div>
               </div>
-              <div className="grid sm:grid-cols-[1.6fr_1fr] gap-4">
-                <label className="block text-sm font-medium text-foreground">
-                  Building name &amp; area *
-                  <input required value={form.building} onChange={set("building")} placeholder="e.g. Tower B, Baner" className={`mt-1 ${field}`} />
-                </label>
-                <label className="block text-sm font-medium text-foreground">
-                  City
-                  <select value={form.city} onChange={set("city")} className={`mt-1 ${field}`}>
+              <div className="sx-row">
+                <div>
+                  <label htmlFor="sr-building" className="sx-lab">Building name &amp; area <i aria-hidden="true">*</i></label>
+                  <input id="sr-building" required value={form.building} onChange={set("building")} placeholder="e.g. Tower B, Baner" className="sx-in" />
+                </div>
+                <div>
+                  <label htmlFor="sr-city" className="sx-lab">City</label>
+                  <select id="sr-city" value={form.city} onChange={set("city")} className="sx-in">
                     {CITIES.map((c) => <option key={c}>{c}</option>)}
                   </select>
-                </label>
+                </div>
               </div>
-              <label className="block text-sm font-medium text-foreground">
-                What's the problem?
-                <select value={form.issue} onChange={set("issue")} className={`mt-1 ${field}`}>
+              <div>
+                <label htmlFor="sr-issue" className="sx-lab">What's the problem?</label>
+                <select id="sr-issue" value={form.issue} onChange={set("issue")} className="sx-in">
                   {ISSUES.map((i) => <option key={i}>{i}</option>)}
                 </select>
-              </label>
-              <fieldset>
-                <legend className="text-sm font-medium text-foreground">How urgent is it?</legend>
-                <div className="mt-2 grid gap-2">
+              </div>
+              <fieldset style={{ border: 0, margin: 0, padding: 0 }}>
+                <legend className="sx-lab">How urgent is it?</legend>
+                <div style={{ display: "grid", gap: 0, borderTop: "1px solid #15181b" }}>
                   {URGENCY.map((u) => (
-                    <label key={u} className={`flex items-center gap-2 border px-3 py-2 text-sm cursor-pointer ${form.urgency === u ? "border-lamp/40 bg-lamp/5" : "border-border"}`}>
+                    <label key={u} className="sx-chk" style={{ borderBottom: "1px solid #cfd2cd" }}>
                       <input type="radio" name="urgency" value={u} checked={form.urgency === u} onChange={set("urgency")} />
-                      {u}
+                      <span>{u}</span>
                     </label>
                   ))}
                 </div>
               </fieldset>
-              <label className="block text-sm font-medium text-foreground">
-                Details
+              <div>
+                <label htmlFor="sr-details" className="sx-lab">Details</label>
                 <textarea
+                  id="sr-details"
                   value={form.details}
                   onChange={set("details")}
                   rows={4}
                   placeholder="Which floor / side of the building, when it happens, how long it's been going on…"
-                  className={`mt-1 ${field}`}
+                  className="sx-in"
                 />
-              </label>
-              <button
-                type="submit"
-                disabled={sending}
-                className="w-full inline-flex items-center justify-center bg-night text-paper font-bold px-6 py-3.5 hover:bg-night-2 disabled:opacity-60"
-              >
-                <Send className="mr-2 h-4 w-4" /> {sending ? "Sending…" : "Send service request"}
-              </button>
-              <p className="text-xs text-muted-foreground">
+              </div>
+              <div className="sx-more" style={{ margin: 0 }}>
+                <button type="submit" disabled={sending} className="fg-btn">
+                  {sending ? "Sending…" : "Send service request"}
+                </button>
+              </div>
+              <p className="sx-hint">
                 We only use these details to contact you about this request. See our{" "}
-                <Link to="/privacy-policy" className="underline underline-offset-2">privacy policy</Link>.
+                <Link to="/privacy-policy" style={{ textDecoration: "underline", textUnderlineOffset: 3 }}>privacy policy</Link>.
               </p>
             </form>
           )}
 
-          <aside className="space-y-4">
-            <div className="border border-border bg-muted p-6">
-              <div className="flex items-center gap-2 font-semibold text-foreground">
-                <Wrench className="h-5 w-5 text-primary" aria-hidden="true" /> What we handle
-              </div>
-              <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
-                {company.maintenanceScope.map((m) => (
-                  <li key={m} className="flex gap-2">
-                    <CheckCircle2 className="h-4 w-4 mt-0.5 shrink-0 text-primary" aria-hidden="true" /> {m}
-                  </li>
-                ))}
-              </ul>
+          <aside className="sx-side">
+            <div>
+              <h3 className="sx-sub">What we handle</h3>
+              <SpecList items={company.maintenanceScope} />
             </div>
-            <div className="border border-lamp/30 bg-lamp/5 p-6 text-sm">
-              <div className="flex items-center gap-2 font-semibold text-foreground">
-                <AlertTriangle className="h-5 w-5 text-lamp" aria-hidden="true" /> Broken glass at height?
-              </div>
-              <p className="mt-2 text-muted-foreground">
-                Keep people away from the area below and call us. Don't try to remove loose glass yourself.
+            <Pull label="Broken glass at height?">Keep people away from the area below and call us. Don't try to remove loose glass yourself.</Pull>
+            <div>
+              <h3 className="sx-sub">Maintenance we run today</h3>
+              <p className="sx-note">Running facade contract at Embassy Techzone, Hinjewadi (Embassy REIT), and sealant and glass work at Embassy 247, Vikhroli.</p>
+              <p className="sx-more" style={{ margin: 0 }}>
+                <Link to="/maintenance-services" className="fg-btn2">Maintenance services</Link>
+                <Link to="/facade-amc-guide" className="fg-btn2">Facade AMC guide</Link>
               </p>
-            </div>
-            <div className="border border-border bg-card p-6 text-sm text-muted-foreground">
-              <p className="font-semibold text-foreground">Maintenance we run today</p>
-              <p className="mt-1">Running facade contract at Embassy Techzone, Hinjewadi (Embassy REIT), and sealant and glass work at Embassy 247, Vikhroli.</p>
-              <div className="mt-3 flex flex-wrap gap-3">
-                <Link to="/maintenance-services" className="font-semibold text-primary underline underline-offset-4">Maintenance services</Link>
-                <Link to="/facade-amc-guide" className="font-semibold text-primary underline underline-offset-4">Facade AMC guide</Link>
-              </div>
             </div>
           </aside>
         </div>
-      </section>
+      </Sec>
 
-      <section className="fg-sec">
-        <div className="fg-wrap">
-          <h2 className="text-2xl md:text-3xl font-medium text-foreground mb-6">Service FAQs</h2>
-          <div className="space-y-3">
-            {FAQS.map((f) => (
-              <details key={f.q} className="group border border-border bg-card p-5">
-                <summary className="cursor-pointer font-semibold text-foreground list-none flex justify-between gap-4">
-                  {f.q}
-                  <span className="text-primary group-open:rotate-45 transition-transform" aria-hidden="true">+</span>
-                </summary>
-                <p className="mt-3 text-muted-foreground">{f.a}</p>
-              </details>
-            ))}
-          </div>
+      <Sec no="02" label="FAQ" title="Service FAQs." sheetLabel="FAQ">
+        <div className="sx-faq">
+          <FaqList items={FAQS} />
         </div>
-      </section>
+      </Sec>
+
+      <CTASection />
     </Layout>
   );
 }

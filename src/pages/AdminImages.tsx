@@ -514,7 +514,7 @@ function ProjectEditor({
                   >
                     <Trash2 className="w-3.5 h-3.5" />
                   </button>
-                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-night/50 to-transparent p-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <div className="absolute bottom-0 left-0 right-0 bg-night/80 p-2 opacity-0 group-hover:opacity-100 transition-opacity">
                     <span className="text-paper text-xs font-medium">
                       Image {i + 1}
                     </span>

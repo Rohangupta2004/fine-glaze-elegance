@@ -1,17 +1,15 @@
 import { Layout } from "@/components/layout/Layout";
 import { Link } from "react-router-dom";
-import { ArrowRight, Clock, Tag } from "lucide-react";
 import { blogPostsList } from "@/data/blog";
-import { useBlogImages } from "@/hooks/useBlogImages";
-import { illusSrcSetFor } from "@/lib/illustrations";
 import SEO from "@/components/SEO";
 import { CTASection } from "@/components/home/CTASection";
 import PageHero from "@/components/common/PageHero";
-import { getArticleImageSrcSet } from "@/data/articleVisuals";
-import { getArticleEnhancement } from "@/lib/articleSeo";
+import { Sec } from "@/components/common/Sheet";
+import { formatArticleDate, getArticleEnhancement } from "@/lib/articleSeo";
+
+const formatDate = formatArticleDate;
 
 export default function Blog() {
-  const { getHeroImage } = useBlogImages();
   return (
     <Layout darkHero>
       <SEO
@@ -36,47 +34,30 @@ export default function Blog() {
         crumbs={[{ label: "Articles" }]}
         title={<>Facade &amp; Glazing <span className="text-gradient">Insights</span></>}
         intro="Pricing guides, technical comparisons, and expert tips to help you make smarter facade decisions."
-        image={{ src: "/Glazing.webp", alt: "Glazing work by Fine Glaze" }}
-        source="blog_hero"
       />
 
-      <section className="fg-sec">
-        <div className="fg-wrap">
-          <ul className="fg-grid">
-            {blogPostsList.map((post) => (
+      <Sec no="01" label="Articles" title="Guides, costs and technical notes." sheetLabel="Article index" dim={`${blogPostsList.length} articles`}>
+        <ol className="sx-al">
+          {blogPostsList.map((post, i) => {
+            const t = getArticleEnhancement(post.slug)?.metaDescription ?? post.excerpt;
+            const blurb = t.includes("₹") ? `${t} Market range, not a Fine Glaze quotation.` : t;
+            return (
               <li key={post.slug}>
-                <Link to={`/blog/${post.slug}`} className="group">
-                  <div className="aspect-[16/10] overflow-hidden bg-night-2">
-                    <img decoding="async"
-                      src={getHeroImage(post.slug, post.heroImage)}
-                      srcSet={getArticleImageSrcSet(post.slug) ?? illusSrcSetFor(getHeroImage(post.slug, post.heroImage))}
-                      sizes="(max-width: 767px) calc(100vw - 2rem), (max-width: 1023px) 50vw, 33vw"
-                      alt={post.title}
-                      className="w-full h-full object-cover"
-                      loading="lazy"
-                      width="600"
-                      height="338"
-                    />
-                  </div>
-                  <p className="text-[15px] text-mute">
-                    {post.category}, {post.readTime}
-                  </p>
-                  <h2 className="font-medium text-[clamp(18px,1.5vw,22px)] leading-snug tracking-[-0.015em] text-paper">
-                    {getArticleEnhancement(post.slug)?.title ?? post.title}
-                  </h2>
-                  <p className="text-[15.5px] text-mute line-clamp-4">
-                    {(() => {
-                      const t = getArticleEnhancement(post.slug)?.metaDescription ?? post.excerpt;
-                      return t.includes("₹") ? `${t} Market range, not a Fine Glaze quotation.` : t;
-                    })()}
-                  </p>
-                  <span className="mt-auto pt-2 text-[15px] text-lamp group-hover:underline underline-offset-4">Read article</span>
+                <Link to={`/blog/${post.slug}`}>
+                  <span className="sx-al-n" aria-hidden="true">{String(i + 1).padStart(2, "0")}</span>
+                  <time className="sx-al-d" dateTime={post.date}>{formatDate(post.date)}</time>
+                  <span className="sx-al-c">{post.category}</span>
+                  <span className="sx-al-t">
+                    <b>{getArticleEnhancement(post.slug)?.title ?? post.title}</b>
+                    <span>{blurb}</span>
+                  </span>
+                  <span className="sx-al-r">{post.readTime}</span>
                 </Link>
               </li>
-            ))}
-          </ul>
-        </div>
-      </section>
+            );
+          })}
+        </ol>
+      </Sec>
 
       <CTASection />
     </Layout>

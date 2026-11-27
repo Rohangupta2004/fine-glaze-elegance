@@ -1,5 +1,5 @@
 import { landmarkProjectOrder } from "@/data/projectPresentation";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/home/CTASection";
 import { useProjects, type Project } from "@/hooks/useProjects";
@@ -7,9 +7,9 @@ import { projectsData } from "@/data/projects";
 import { Link } from "react-router-dom";
 import SEO from "@/components/SEO";
 import PageHero from "@/components/common/PageHero";
-import StatBand from "@/components/common/StatBand";
-import { useWipe } from "@/components/common/useWipe";
-import "./portfolio.css";
+import { DataStrip, Sec } from "@/components/common/Sheet";
+import { ProjectsTable } from "@/components/RelatedProjects";
+import { company } from "@/data/company";
 
 // Static projects for schema
 const staticProjects = Object.entries(projectsData).map(([slug, p]) => ({
@@ -71,69 +71,11 @@ function cityOf(location: string): string {
   return /raigad/i.test(last) ? "Panvel" : last;
 }
 
-/** Up to three short scope tags from the stored scope line. */
-function scopeTags(scope: string): string[] {
-  return scope
-    .split(/,|&| and | - |\u2014/)
-    .map((t) => t.trim())
-    .filter(Boolean)
-    .slice(0, 3);
-}
-
-/** Logo-colour tints, one thin top bar per card. */
-const TINTS = ["#4a2108", "#8a4512", "#a85a1c", "#d08a45"];
-
-function ProjectCard({ p, n }: { p: Project; n: number }) {
-  const fig = useRef<HTMLDivElement>(null);
-  const [armed, seen] = useWipe(fig);
-  const tags = scopeTags(p.scope);
+function Tab({ on, onClick, n, children }: { on: boolean; onClick: () => void; n: number; children: React.ReactNode }) {
   return (
-    <li>
-      <Link to={`/project/${p.slug}`} className="pf-card" style={{ ["--tint" as string]: TINTS[(n - 1) % TINTS.length] }}>
-        <span className="pf-bar-t" aria-hidden="true" />
-        <p className="pf-no">N&ordm; {String(n).padStart(2, "0")}</p>
-        <div ref={fig} className={`pf-fig${armed ? " armed" : ""}${seen ? " seen" : ""}`}>
-          <img decoding="async"
-            src={p.image}
-            alt={`Fine Glaze project: ${p.title} (${p.scope}) in ${p.location}`}
-            loading="lazy"
-            width={600}
-            height={450}
-          />
-          <span className="pf-m" aria-hidden="true" />
-        </div>
-        <h2 className="pf-t">{p.title}</h2>
-        <p className="pf-p">{p.location}</p>
-        <dl className="pf-d">
-          {p.client && (
-            <div>
-              <dt>Client</dt>
-              <dd>{p.client}</dd>
-            </div>
-          )}
-          {(p.status || p.year) && (
-            <div>
-              <dt>Status</dt>
-              <dd>{p.status === "Completed" ? `Completed${p.year ? ` ${p.year}` : ""}` : p.status || p.year}</dd>
-            </div>
-          )}
-        </dl>
-        {tags.length > 0 && (
-          <ul className="pf-tags">
-            {tags.map((t) => (
-              <li key={t}>{t}</li>
-            ))}
-          </ul>
-        )}
-      </Link>
-    </li>
-  );
-}
-
-function Toggle({ on, onClick, children }: { on: boolean; onClick: () => void; children: React.ReactNode }) {
-  return (
-    <button type="button" className="pf-tg" aria-pressed={on} onClick={onClick}>
+    <button type="button" aria-pressed={on} onClick={onClick}>
       {children}
+      <span>{n}</span>
     </button>
   );
 }
@@ -149,6 +91,7 @@ const Portfolio = () => {
   });
   const [type, setType] = useState("all");
   const [city, setCity] = useState("all");
+  const [view, setView] = useState<"table" | "grid">("table");
 
   const cities = Array.from(new Set(projects.map((p) => cityOf(p.location))));
   const matches = (p: Project, t: string, c: string) =>
@@ -170,54 +113,66 @@ const Portfolio = () => {
         crumbs={[{ label: "Projects" }]}
         title={<>Facade Projects in <span className="text-gradient-gold">Pune &amp; Mumbai</span></>}
         intro="Every project below lists the client, our actual scope and its current status, completed or ongoing."
-        image={{ src: "/Unitized.webp", alt: "Fine Glaze facade portfolio" }}
-        source="portfolio_hero"
       />
 
-      <section className="fg-sec">
-        <div className="fg-wrap">
-          <div className="pf-bar" role="group" aria-label="Filter projects">
-            <div className="pf-grp" role="group" aria-label="Type">
-              <Toggle on={type === "all"} onClick={() => setType("all")}>All types ({countFor("all", city)})</Toggle>
+      <Sec no="01" label="Project register" title="Work on record." sheetLabel="Project register" dim={`${projects.length} project records`}>
+        <div className="sx-bar">
+          <div>
+            <div className="sx-tabs" role="group" aria-label="Type">
+              <Tab on={type === "all"} onClick={() => setType("all")} n={countFor("all", city)}>All types</Tab>
               {TYPES.map((t) => (
-                <Toggle key={t.id} on={type === t.id} onClick={() => setType(t.id)}>{t.label} ({countFor(t.id, city)})</Toggle>
+                <Tab key={t.id} on={type === t.id} onClick={() => setType(t.id)} n={countFor(t.id, city)}>{t.label}</Tab>
               ))}
             </div>
-            <div className="pf-grp" role="group" aria-label="City">
-              <Toggle on={city === "all"} onClick={() => setCity("all")}>All cities ({countFor(type, "all")})</Toggle>
+            <div className="sx-tabs" role="group" aria-label="City">
+              <Tab on={city === "all"} onClick={() => setCity("all")} n={countFor(type, "all")}>All cities</Tab>
               {cities.map((c) => (
-                <Toggle key={c} on={city === c} onClick={() => setCity(c)}>{c} ({countFor(type, c)})</Toggle>
+                <Tab key={c} on={city === c} onClick={() => setCity(c)} n={countFor(type, c)}>{c}</Tab>
               ))}
             </div>
-            <p className="pf-n" aria-live="polite">
-              {filtered.length} {filtered.length === 1 ? "project" : "projects"}
-            </p>
           </div>
-
-          {filtered.length === 0 ? (
-            <p className="text-mute py-16">No projects match these filters yet.</p>
-          ) : (
-            <ul className="fg-grid pf-grid">
-              {filtered.map((p) => (
-                <ProjectCard key={p.slug} p={p} n={projects.indexOf(p) + 1} />
-              ))}
-            </ul>
-          )}
+          <div className="sx-tabs" role="group" aria-label="View">
+            <button type="button" aria-pressed={view === "table"} onClick={() => setView("table")}>Table</button>
+            <button type="button" aria-pressed={view === "grid"} onClick={() => setView("grid")}>Photos</button>
+          </div>
         </div>
-      </section>
+        <p className="sx-note" aria-live="polite">
+          {filtered.length} {filtered.length === 1 ? "project" : "projects"} shown.
+        </p>
 
-      <section className="fg-sec">
-        <div className="fg-wrap">
-          <StatBand
-            stats={[
-              { value: String(Object.keys(projectsData).length), name: "Project records", line: "documented in our company profile" },
-              { value: "2", name: "Cities", line: "Pune and Mumbai" },
-              { value: "40+", name: "Core team", line: "engineering, supervision and site work" },
-              { value: "2024", name: "Best Vendor Performance", line: "awarded by Embassy REIT" },
-            ]}
-          />
-        </div>
-      </section>
+        {filtered.length === 0 ? (
+          <p className="sx-note">No projects match these filters yet.</p>
+        ) : view === "table" ? (
+          <ProjectsTable items={filtered.map((p) => [p.slug, p] as [string, Project])} />
+        ) : (
+          <ul className="sx-pg">
+            {filtered.map((p) => (
+              <li key={p.slug}>
+                <Link to={`/project/${p.slug}`}>
+                  <img decoding="async" src={p.image} alt={`Fine Glaze project: ${p.title} (${p.scope}) in ${p.location}`} loading="lazy" width={600} height={450} />
+                  <span className="c">
+                    <small>{p.location}</small>
+                    <b>{p.title}</b>
+                    <p>{p.scope}</p>
+                    <small>{p.client ? `${p.client} / ` : ""}{p.status === "Completed" && p.year ? `Completed ${p.year}` : p.status}</small>
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        )}
+      </Sec>
+
+      <Sec no="02" label="Record" title="The firm in figures." sheetLabel="Company facts">
+        <DataStrip
+          items={[
+            { value: company.stats.projectRecords, label: "Project records" },
+            { value: company.stats.cities, label: "Cities, Pune and Mumbai" },
+            { value: company.stats.coreTeam, label: "Core team" },
+            { value: String(company.award.year), label: `${company.award.by}, ${company.award.title}` },
+          ]}
+        />
+      </Sec>
 
       <CTASection />
     </Layout>

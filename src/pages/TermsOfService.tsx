@@ -17,15 +17,15 @@ const TermsOfService = () => {
 
 
       {/* Content */}
-      <section className="fg-sec">
+      <section className="sx-sec">
         <div className="fg-wrap">
-          <div className="prose prose-stone prose-sm max-w-none space-y-8">
+          <div className="space-y-8 sx-legal">
 
             <div>
               <h2 className="text-lg font-medium text-paper mb-3">1. Agreement to Terms</h2>
               <p className="text-mute text-sm leading-relaxed">
                 By accessing and using the Fine Glaze website (
-                <a href="https://fineglaze.com" className="text-lamp hover:underline">
+                <a href="https://fineglaze.com" className="text-lamp underline underline-offset-4">
                   fineglaze.com
                 </a>
                 ), you agree to be bound by these Terms of Service. If you do not agree with any
@@ -122,13 +122,13 @@ const TermsOfService = () => {
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
                   <Mail size={16} className="text-lamp shrink-0" />
-                  <a href="mailto:info@fineglaze.com" className="text-sm text-lamp hover:underline">
+                  <a href="mailto:info@fineglaze.com" className="text-sm text-lamp underline underline-offset-4">
                     info@fineglaze.com
                   </a>
                 </div>
                 <div className="flex items-center gap-3">
                   <Phone size={16} className="text-lamp shrink-0" />
-                  <a href="tel:+918369233566" className="text-sm text-lamp hover:underline">
+                  <a href="tel:+918369233566" className="text-sm text-lamp underline underline-offset-4">
                     +91 83692 33566
                   </a>
                 </div>

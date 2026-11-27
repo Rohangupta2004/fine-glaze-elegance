@@ -1,11 +1,10 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, MapPin } from "lucide-react";
 import { projectsData, type ProjectData } from "@/data/projects";
+import { Sec } from "@/components/common/Sheet";
 
 /**
- * Real Fine Glaze projects matching a city or a service — local proof and
- * internal links on city and service pages. Data comes from
- * src/data/projects.ts (the company-profile project records).
+ * Real Fine Glaze projects matching a city or a service, as a spec table with each project's own photo.
+ * Data comes from src/data/projects.ts (the company-profile project records).
  */
 interface RelatedProjectsProps {
   heading: string;
@@ -21,11 +20,14 @@ interface RelatedProjectsProps {
   excludeSlugs?: string[];
   /** Rank projects of this category first. */
   preferCategory?: string;
+  /** Section number in the sheet set; defaults to "05". */
+  no?: string;
+  alt?: boolean;
 }
 
 const has = (text: string, words: string[]) => words.some((w) => text.toLowerCase().includes(w.toLowerCase()));
 
-export function matchProjects({ locations, excludeLocations, keywords, limit = 4, excludeSlugs, preferCategory }: Omit<RelatedProjectsProps, "heading" | "intro">) {
+export function matchProjects({ locations, excludeLocations, keywords, limit = 4, excludeSlugs, preferCategory }: Omit<RelatedProjectsProps, "heading" | "intro" | "no" | "alt">) {
   return Object.entries(projectsData)
     .filter(([slug]) => !excludeSlugs || !excludeSlugs.includes(slug))
     .filter(([, p]) => !locations || has(p.location, locations))
@@ -42,44 +44,56 @@ export function matchProjects({ locations, excludeLocations, keywords, limit = 4
     .slice(0, limit) as [string, ProjectData][];
 }
 
-export function RelatedProjects({ heading, intro, ...filter }: RelatedProjectsProps) {
+/** The table itself, also used on project pages and the portfolio. */
+type TableProject = Pick<ProjectData, "title" | "location" | "client" | "scope" | "image" | "year"> & { status?: string };
+
+export const ProjectsTable = ({ items }: { items: [string, TableProject][] }) => (
+  <table className="sx-pt">
+    <caption className="sr-only">Projects with location, client, scope and status</caption>
+    <thead>
+      <tr>
+        <th scope="col" aria-label="Photo" />
+        <th scope="col">Project</th>
+        <th scope="col">Client</th>
+        <th scope="col">Scope</th>
+        <th scope="col">Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      {items.map(([slug, p]) => (
+        <tr key={slug}>
+          <td className="ph">
+            <img src={p.image} alt={`${p.title}, ${p.location}`} width={112} height={72} loading="lazy" decoding="async" />
+          </td>
+          <td className="pn">
+            <Link to={`/project/${slug}`}>
+              {p.title}
+              <small>{p.location}</small>
+            </Link>
+          </td>
+          <td>{p.client || <span aria-label="not listed">{"—"}</span>}</td>
+          <td className="pc">{p.scope}</td>
+          <td>
+            <span className={`sx-st sx-st-${(p.status || "").toLowerCase()}`}>{p.status === "Completed" && p.year ? `Completed ${p.year}` : p.status}</span>
+          </td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+);
+
+export function RelatedProjects({ heading, intro, no = "05", alt = false, ...filter }: RelatedProjectsProps) {
   const items = matchProjects(filter);
   if (items.length === 0) return null;
   return (
-    <section className="py-16 bg-night text-paper" aria-labelledby="related-projects">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
-          <div className="max-w-2xl">
-            <h2 id="related-projects" className="text-2xl md:text-3xl font-medium">{heading}</h2>
-            {intro && <p className="mt-2 text-mute">{intro}</p>}
-          </div>
-          <Link to="/portfolio" className="inline-flex items-center text-lamp font-semibold hover:text-lamp">
-            All projects <ArrowRight className="ml-1 h-4 w-4" aria-hidden="true" />
-          </Link>
-        </div>
-        <ul className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {items.map(([slug, p]) => (
-            <li key={slug}>
-              <Link
-                to={`/project/${slug}`}
-                className="group block h-full overflow-hidden border border-line bg-night-2 hover:border-lamp/60 transition-colors"
-              >
-                <img decoding="async" src={p.image} alt={`${p.title}, ${p.location} — ${p.scope}`} className="h-44 w-full object-cover" loading="lazy" />
-                <div className="p-4">
-                  <p className="text-[13px] font-semibold text-lamp">
-                    {p.status === "Completed" ? `Completed${p.year ? ` ${p.year}` : ""}` : "Ongoing"}{p.client ? `, ${p.client}` : ""}
-                  </p>
-                  <h3 className="mt-1 font-medium leading-snug group-hover:text-lamp">{p.title}</h3>
-                  <p className="mt-1 flex items-center gap-1 text-xs text-mute">
-                    <MapPin className="h-3 w-3" aria-hidden="true" /> {p.location}
-                  </p>
-                  <p className="mt-2 text-sm text-paper/80">{p.scope}</p>
-                </div>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </section>
+    <Sec no={no} label="Projects" title={heading} sheetLabel="Project record" alt={alt} dim={`${items.length} of ${Object.keys(projectsData).length} project records`}>
+      {intro && <p className="sx-note">{intro}</p>}
+      <ProjectsTable items={items} />
+      <p className="sx-more">
+        <Link to="/portfolio" className="fg-btn2">
+          All projects
+        </Link>
+      </p>
+    </Sec>
   );
 }

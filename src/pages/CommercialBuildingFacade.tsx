@@ -4,8 +4,8 @@ import PageHero from "@/components/common/PageHero";
 import { RelatedProjects } from "@/components/RelatedProjects";
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/home/CTASection";
-import { Link } from "react-router-dom";
-import { CheckCircle2, ArrowRight } from "lucide-react";
+import FaqList from "@/components/common/FaqList";
+import { DeliveryProcess, LinkTable, Prose, Sec, SpecList, SchematicFig } from "@/components/common/Sheet";
 
 export default function CommercialBuildingFacade() {
   const serviceSchema = {
@@ -62,7 +62,6 @@ export default function CommercialBuildingFacade() {
         schema={[serviceSchema, faqSchema, breadcrumbSchema]}
       />
 
-      {/* HERO */}
       <PageHero
         crumbs={[{ label: "Commercial Building Facade Systems India" }]}
         title={<>Commercial Building <span className="text-gradient-gold">Facade Systems India</span></>}
@@ -71,12 +70,10 @@ export default function CommercialBuildingFacade() {
         image={{ src: "/projects/embassy-techzone-40-1.webp", alt: "Embassy Techzone, Hinjewadi, Pune — spider glazing and ACP cladding by Fine Glaze for Embassy REIT", width: 600, height: 420 }}
       />
 
-      {/* RICH CONTENT */}
-      <section className="fg-sec">
-        <div className="fg-wrap fg-prose">
-          
-          <h2>Facade Systems for Commercial Buildings in India</h2>
-          <p className="text-muted-foreground">
+      <Sec no="01" label="Overview" title={<>Facade Systems for Commercial Buildings in India</>} sheetLabel="Overview">
+          <div className="sx-split">
+            <Prose>
+<p>
             A commercial building facade handles weather protection, thermal and acoustic control, fire safety and architectural expression at once. Choosing a system means balancing performance, budget, programme and long-term upkeep.
           </p>
           <ul className="list-disc list-inside text-muted-foreground space-y-3 mt-6">
@@ -87,70 +84,55 @@ export default function CommercialBuildingFacade() {
             <li><strong>Aluminium louvers and brise-soleils:</strong> solar shading elements that cut direct sun on the glass line.</li>
           </ul>
           <h2>Regulatory Requirements for Commercial Facades in India</h2>
-          <p className="text-muted-foreground mt-4">
+          <p>
             Commercial facades in India are normally designed against the National Building Code, IS 875 (loads), IS 2553 (glass safety) and state fire regulations. Fire-retardant cladding cores, structural calculations for wind and seismic loads and fire stopping at floor levels are typical concerns. Green-building rating schemes add thermal targets, which the project brief should state. Confirm requirements with your consultant.
           </p>
           <h2>Facade Design Best Practices for Indian Climate</h2>
-          <p className="text-muted-foreground mt-4">
+          <p>
             Climate drives glass and shading choices. As general guidance, hot-humid and hot-dry sites benefit from solar-control glass and external shading, while cooler or composite climates allow more latitude. Orientation and glass-to-wall ratio matter as much as glass type, and an energy modeller can test options against the project brief.
           </p>
-    
-          <Illustration name="ind-commercial" />
-        </div>
-      </section>
-
-      {/* FEATURES */}
-      <section className="fg-sec">
-        <div className="fg-wrap">
-          <h2>What We Offer</h2>
-          <div className="fg-grid c2">
-              <div key="All Commercial Facade Systems" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-lamp shrink-0" /><span className="text-muted-foreground">All Commercial Facade Systems</span></div>
-              <div key="Code and Standards Guide" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-lamp shrink-0" /><span className="text-muted-foreground">Code and Standards Guide</span></div>
-              <div key="Green Building Considerations" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-lamp shrink-0" /><span className="text-muted-foreground">Green Building Considerations</span></div>
-              <div key="Climate-Aware Design" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-lamp shrink-0" /><span className="text-muted-foreground">Climate-Aware Design</span></div>
-              <div key="IT Park and Office Facades" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-lamp shrink-0" /><span className="text-muted-foreground">IT Park and Office Facades</span></div>
-              <div key="Hotel and Retail Facades" className="flex items-center gap-3"><CheckCircle2 size={20} className="text-lamp shrink-0" /><span className="text-muted-foreground">Hotel and Retail Facades</span></div>
+            </Prose>
+            <div className="sx-side">
+              <Illustration name="ind-commercial" flush sizes="(max-width: 960px) 100vw, 480px" />
+            </div>
           </div>
-        </div>
-      </section>
+      </Sec>
 
-      {/* FAQ */}
-      <section className="fg-sec">
-        <div className="fg-wrap">
-          <h2>Frequently Asked Questions</h2>
-          <div className="fg-faq">
-            <details>
-              <summary><h3>What facade system is best for an IT park in India?</h3></summary>
-              <div className="fg-a">Unitized curtain wall with double glazed low-E glass is commonly chosen for large IT campuses because panels are made in a factory and installed quickly. The final choice depends on height, programme, access and budget.</div>
-            </details>
-            <details>
-              <summary><h3>How much should I budget for a commercial building facade in India?</h3></summary>
-              <div className="fg-a">Facade budget depends on the system, glass or panel specification, height, access and testing scope, so a reliable figure needs drawings and a brief. Ask contractors for a BOQ-based quotation, including Fine Glaze.</div>
-            </details>
-            <details>
-              <summary><h3>How long does commercial facade installation take in India?</h3></summary>
-              <div className="fg-a">Programme depends on building size, system, glass lead time and site access, so contractors confirm it after survey and design approval. Fabrication is normally done first, with installation following floor by floor.</div>
-            </details>
-          </div>
-        </div>
-      </section>
+      <Sec no="02" label="Scope" title={<>What We Offer</>} sheetLabel="Scope of work">
+        <SpecList items={[<>All Commercial Facade Systems</>, <>Code and Standards Guide</>, <>Green Building Considerations</>, <>Climate-Aware Design</>, <>IT Park and Office Facades</>, <>Hotel and Retail Facades</>]} />
+      </Sec>
 
-      {/* INTERNAL LINKS */}
-      <section className="fg-sec">
-        <div className="fg-wrap">
-          <h2>Explore Related Services</h2>
-          <div className="fg-grid">
-            <Link key="/curtain-wall-systems" to="/curtain-wall-systems" className="group fg-row"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Curtain Wall Systems</p><p className="text-xs text-mute">Curtain wall service</p></div></Link>
-            <Link key="/structural-glazing" to="/structural-glazing" className="group fg-row"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Structural Glazing</p><p className="text-xs text-mute">Structural glazing</p></div></Link>
-            <Link key="/acp-aluminium-cladding" to="/acp-aluminium-cladding" className="group fg-row"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">ACP Cladding</p><p className="text-xs text-mute">ACP cladding</p></div></Link>
-            <Link key="/it-park-facade" to="/it-park-facade" className="group fg-row"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">IT Park Facade</p><p className="text-xs text-mute">IT campus facade guide</p></div></Link>
-            <Link key="/facade-contractor-pune" to="/facade-contractor-pune" className="group fg-row"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Facade Contractor Pune</p><p className="text-xs text-mute">Facade contractor Pune</p></div></Link>
-            <Link key="/curtain-wall-cost-guide" to="/curtain-wall-cost-guide" className="group fg-row"><ArrowRight size={15} className="text-lamp shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" /><div><p className="font-semibold text-paper text-sm">Curtain Wall Cost Guide</p><p className="text-xs text-mute">Detailed cost analysis</p></div></Link>
-          </div>
-        </div>
-      </section>
+      <Sec no="03" label="Process" title="From survey to handover." sheetLabel="Process">
+        <DeliveryProcess />
+      </Sec>
 
-      <RelatedProjects heading="Commercial building projects" keywords={["Embassy", "Naman", "FIFC", "LTIMindtree"]} />
+      <RelatedProjects no="04" heading="Commercial building projects" keywords={["Embassy", "Naman", "FIFC", "LTIMindtree"]} />
+
+      <Sec no="05" label="FAQ" title={<>Frequently Asked Questions</>} sheetLabel="FAQ">
+        <div className="sx-faq">
+          <FaqList
+            items={[
+              { q: <>What facade system is best for an IT park in India?</>, a: <>Unitized curtain wall with double glazed low-E glass is commonly chosen for large IT campuses because panels are made in a factory and installed quickly. The final choice depends on height, programme, access and budget.</> },
+              { q: <>How much should I budget for a commercial building facade in India?</>, a: <>Facade budget depends on the system, glass or panel specification, height, access and testing scope, so a reliable figure needs drawings and a brief. Ask contractors for a BOQ-based quotation, including Fine Glaze.</> },
+              { q: <>How long does commercial facade installation take in India?</>, a: <>Programme depends on building size, system, glass lead time and site access, so contractors confirm it after survey and design approval. Fabrication is normally done first, with installation following floor by floor.</> },
+            ]}
+          />
+        </div>
+      </Sec>
+
+      <Sec no="06" label="Related" title={<>Explore Related Services</>} sheetLabel="Related services">
+        <LinkTable
+          items={[
+            { to: "/curtain-wall-systems", title: "Curtain Wall Systems", desc: "Curtain wall service" },
+            { to: "/structural-glazing", title: "Structural Glazing", desc: "Structural glazing" },
+            { to: "/acp-aluminium-cladding", title: "ACP Cladding", desc: "ACP cladding" },
+            { to: "/it-park-facade", title: "IT Park Facade", desc: "IT campus facade guide" },
+            { to: "/facade-contractor-pune", title: "Facade Contractor Pune", desc: "Facade contractor Pune" },
+            { to: "/curtain-wall-cost-guide", title: "Curtain Wall Cost Guide", desc: "Detailed cost analysis" },
+          ]}
+        />
+      </Sec>
+
       <CTASection />
     </Layout>
   );

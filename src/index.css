@@ -339,10 +339,8 @@ input[type="radio"]:checked, input[type="checkbox"]:checked { background: #9b552
 .fg-art .fg-h2 { font-size: clamp(24px, 2.4vw, 34px); margin-bottom: 16px; max-width: none; }
 
 /* ---- Accent tokens ----
-   The old aurora gradient is gone. The variables stay so existing markup resolves, as solid colours. */
+   Solid colour tokens. */
 :root {
-  --aurora-light: #d9a574;
-  --aurora-ink: #9b5520;
   --ink: #15181b;
   --paper: #f4f4f1;
   --panel: #e9eae6;
@@ -351,7 +349,6 @@ input[type="radio"]:checked, input[type="checkbox"]:checked { background: #9b552
   --bronze: #9b5520;
   --bronze-soft: #d9a574;
 }
-.aurora-glow { position: relative; isolation: isolate; }
 
 .fg-stats dt { color: #15181b; }
 
